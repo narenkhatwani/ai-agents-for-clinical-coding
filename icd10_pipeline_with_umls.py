@@ -30,13 +30,23 @@ OLLAMA_URL   = "http://localhost:11434/api/generate"
 MODEL        = "qwen2.5:7b"
 UMLS_API_KEY = "YOUR_UMLS_API_KEY_HERE"   # ← paste your key here
 
+# Runtime overrides (set by Streamlit UI or callers of run_pipeline)
+_runtime_ollama = {"url": OLLAMA_URL, "model": MODEL}
+
+
+def _ollama_generate_url(base_url: str) -> str:
+    base = base_url.strip().rstrip("/")
+    if base.endswith("/api/generate"):
+        return base
+    return f"{base}/api/generate"
+
 
 # ── Core Ollama caller ────────────────────────────────────────────────────────
 def call_ollama(prompt: str, agent_name: str) -> str:
     print(f"\n  [Agent: {agent_name}] thinking...", end="", flush=True)
     start = time.time()
-    response = requests.post(OLLAMA_URL, json={
-        "model": MODEL, "prompt": prompt, "stream": False
+    response = requests.post(_runtime_ollama["url"], json={
+        "model": _runtime_ollama["model"], "prompt": prompt, "stream": False
     })
     response.raise_for_status()
     raw = response.json()["response"]
@@ -652,7 +662,17 @@ Validated Codes:
 # PIPELINE ORCHESTRATOR
 # ═══════════════════════════════════════════════════════════════════════════
 
-def run_pipeline(clinical_note: str, umls_api_key: str = UMLS_API_KEY):
+def run_pipeline(
+    clinical_note: str,
+    umls_api_key: str = UMLS_API_KEY,
+    model: str = None,
+    ollama_base_url: str = None,
+):
+    prev = _runtime_ollama.copy()
+    if model:
+        _runtime_ollama["model"] = model
+    if ollama_base_url:
+        _runtime_ollama["url"] = _ollama_generate_url(ollama_base_url)
 
     print("\n" + "═" * 65)
     print("  ICD-10 MULTI-AGENT PIPELINE  (UMLS + MCP Grounded)")
@@ -756,6 +776,7 @@ def run_pipeline(clinical_note: str, umls_api_key: str = UMLS_API_KEY):
 
     finally:
         mcp.close()
+        _runtime_ollama.update(prev)
         print("\n  [MCP] Server stopped.")
 
 
