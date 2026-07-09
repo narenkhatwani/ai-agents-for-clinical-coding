@@ -1,0 +1,89 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 17774110
+Admission ID     : 27339772
+
+Reasoning:
+  The patient presents with septic shock, hypoxic respiratory failure, and multiple organ failures including liver and renal failure, along with signs of severe coagulopathy and hepatic encephalopathy.
+
+Key symptoms     : Septic shock, Hypoxic respiratory failure
+Red flags        : Hepatic encephalopathy, Renal failure
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, severe] Septic shock
+      evidence: "Septic shock"
+      related: Klebsiella Aerogenes blood cultures grew
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [present, severe] Hypoxic respiratory failure
+      evidence: "intubated for hypoxic respiratory failure"
+      related: large pleural effusion with compressive consolidation versus atelectasis
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present, mild] Atrial fibrillation/flutter
+      evidence: "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
+
+NEUROLOGIC → Neurology
+----------------------
+
+  • [present, moderate] Hepatic encephalopathy
+      evidence: "hepatic encephalopathy"
+      related: worsening liver failure
+
+GI → Gastrointestinal
+---------------------
+
+  • [present, moderate] GI bleeding
+      evidence: "concern for GI bleeding (black coffee-ground GI contents)"
+      related: epistaxis
+
+RENAL → Renal
+-------------
+
+  • [present, severe] Renal failure
+      evidence: "acute renal failure ___ to septic shock and ATN on dialysis"
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, severe] Klebsiella Aerogenes infection
+      evidence: "Klebsiella Aerogenes blood cultures grew"
+      related: broad spectrum antibiotics started
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present] Potential VAP or GI source
+      evidence: "Klebsiella Aerogenes infection, distributive shock picture"
+      related: large pleural effusion with compressive consolidation versus atelectasis
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, severe] Distributive shock
+      evidence: "distributive shock picture"
+      related: hypotension
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, severe] Coagulopathy
+      evidence: "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
+      related: INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, moderate] Metastatic HCC
+      evidence: "multifocal metastatic HCC with known metastases to the left adrenal gland"
+      related: large heterogeneous solid mass within the left upper quadrant

@@ -1,0 +1,705 @@
+[
+  {
+    "hadm_id": 22465519,
+    "admission_id": "22465519",
+    "admittime": "2150-02-21 14:45:00",
+    "dischtime": "2150-02-27 15:13:00",
+    "admission_type": "EW EMER.",
+    "primary_icd_code": "K420",
+    "primary_dx_title": "Umbilical hernia with obstruction, without gangrene",
+    "ground_truth_icd10": [
+      "K420",
+      "I5022",
+      "I472",
+      "N179",
+      "I420",
+      "E119",
+      "E669",
+      "I10",
+      "G4733",
+      "Z96652",
+      "I272",
+      "M25569",
+      "M109",
+      "E785",
+      "Z95810",
+      "Z8673",
+      "Z7682",
+      "Z6837"
+    ],
+    "ground_truth_dx_titles": [
+      "Umbilical hernia with obstruction, without gangrene",
+      "Chronic systolic (congestive) heart failure",
+      "Ventricular tachycardia",
+      "Acute kidney failure, unspecified",
+      "Dilated cardiomyopathy",
+      "Type 2 diabetes mellitus without complications",
+      "Obesity, unspecified",
+      "Essential (primary) hypertension",
+      "Obstructive sleep apnea (adult) (pediatric)",
+      "Presence of left artificial knee joint",
+      "Other secondary pulmonary hypertension",
+      "Pain in unspecified knee",
+      "Gout, unspecified",
+      "Hyperlipidemia, unspecified",
+      "Presence of automatic (implantable) cardiac defibrillator",
+      "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
+      "Awaiting organ transplant status",
+      "Body mass index [BMI] 37.0-37.9, adult"
+    ],
+    "n_diagnoses": 18,
+    "note_excerpt": " \nName:  ___               Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nabdominal pain \n \nMajor Surgical or Invasive Procedure:\nNone\n\n \nHistory of Present Illness:\n___ year old ___ speaking man with history of a \nnon-ischemic dilated cardiomyopathy s/p DT Heartmate II LVAD \nimplant on ___ for ___ class IV heart failure complicated \nby RV dysfunction and ventricular arrhythmias. He was previously \ndeclined for heart\ntransplantation at ___ and ___ due to morbid obesity and BMI\nhowever ___ has been able to lose weight and keep it off since\nLVAD implant and ___ has agreed to list him for heart\ntransplantation. \n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "37.2",
+        "unit": "",
+        "charttime": "2150-02-21",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "266.75",
+        "unit": "",
+        "charttime": "2150-02-21",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "INR(PT)",
+        "value": "2.1",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "22.9",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "23.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "34.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "10.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.4",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "4.06",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "47.3",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2150-02-27 05:55:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "PTT",
+        "value": "37.3",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-02-26 07:45:00",
+        "ref_range": "25.0-36.5"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.5",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-02-26 07:45:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Glucose",
+        "value": "106.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-02-23 07:35:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Alkaline Phosphatase",
+        "value": "182.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2150-02-22 05:58:00",
+        "ref_range": "40.0-130.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2150-02-21 03:05:00",
+        "excerpt": "INDICATION:  NO_PO contrast; History: ___ with n/v, known umbilical\nherniaNO_PO contrast  // eval for incarcerated hernia\n\nTECHNIQUE:  Multidetector CT images of the abdomen and pelvis were acquired\nwithout intravenous contrast. Non-contrast scan has several limitations in\ndetecting vascular and parenchymal organ abnormalities, including tumor\ndetection.\nOral contrast was not administered.\nCoronal"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2150-02-21 02:43:00",
+        "excerpt": "INDICATION:  History: ___ with cough, LVAD  // eval for pneumonia\n\nTECHNIQUE:  Chest PA and lateral\n\nCOMPARISON:  Chest radiograph ___.\n\nFINDINGS: \n\nSevere cardiomegaly is unchanged.  Left axillary device with associated leads\nis unchanged in position.  The left ventricular assist device is partly\nimaged.  There is a small left pleural effusion but no right pleural effusion\nor pneumothorax.  Mild "
+      }
+    ]
+  },
+  {
+    "hadm_id": 22999634,
+    "admission_id": "22999634",
+    "admittime": "2150-03-03 14:21:00",
+    "dischtime": "2150-03-12 17:53:00",
+    "admission_type": "ELECTIVE",
+    "primary_icd_code": "K429",
+    "primary_dx_title": "Umbilical hernia without obstruction or gangrene",
+    "ground_truth_icd10": [
+      "K429",
+      "Z95811",
+      "I472",
+      "N179",
+      "I420",
+      "I5022",
+      "D696",
+      "L7621",
+      "R710",
+      "Z4502",
+      "E119",
+      "Z8673",
+      "E785",
+      "E669",
+      "L539",
+      "Z6838",
+      "Z7901",
+      "Z87891",
+      "I129",
+      "N189",
+      "I272",
+      "M109",
+      "Y838",
+      "Y92239"
+    ],
+    "ground_truth_dx_titles": [
+      "Umbilical hernia without obstruction or gangrene",
+      "Presence of heart assist device",
+      "Ventricular tachycardia",
+      "Acute kidney failure, unspecified",
+      "Dilated cardiomyopathy",
+      "Chronic systolic (congestive) heart failure",
+      "Thrombocytopenia, unspecified",
+      "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure",
+      "Precipitous drop in hematocrit",
+      "Encounter for adjustment and management of automatic implantable cardiac defibrillator",
+      "Type 2 diabetes mellitus without complications",
+      "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
+      "Hyperlipidemia, unspecified",
+      "Obesity, unspecified",
+      "Erythematous condition, unspecified",
+      "Body mass index [BMI] 38.0-38.9, adult",
+      "Long term (current) use of anticoagulants",
+      "Personal history of nicotine dependence",
+      "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+      "Chronic kidney disease, unspecified",
+      "Other secondary pulmonary hypertension",
+      "Gout, unspecified",
+      "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure",
+      "Unspecified place in hospital as the place of occurrence of the external cause"
+    ],
+    "n_diagnoses": 24,
+    "note_excerpt": " \nName:  ___               Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nelective periumbilical hernia repair surgery\n \nMajor Surgical or Invasive Procedure:\n___ Umbilical hernia repair with mesh\n\n \nHistory of Present Illness:\n___ year old ___ speaking man with history of a \nnon-ischemic dilated cardiomyopathy s/p DT Heartmate II LVAD \nimplant on ___ for ___ class IV heart failure complicated \nby RV dysfunction and ventricular arrhythmias, and T2DM, CVA in \n___ w/ no residual deficits. He was recently admitted for \nabdominal pain ___ - ___, thought to be due to \nincarceration of his umbilical hernia. He pres\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "37.9",
+        "unit": "",
+        "charttime": "2150-03-12",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "271.9",
+        "unit": "",
+        "charttime": "2150-03-12",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "28.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "9.0",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.1",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "RDW",
+        "value": "15.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.34",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "49.9",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "2.4",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "26.6",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "PTT",
+        "value": "38.9",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-03-12 07:55:00",
+        "ref_range": "25.0-36.5"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "146.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2150-03-10 13:15:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "Urobilinogen",
+        "value": "8.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-03-09 13:07:00",
+        "ref_range": "0.2-1.0"
+      },
+      {
+        "name": "Glucose",
+        "value": "103.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-03-09 07:40:00",
+        "ref_range": "70.0-100.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2150-03-10 14:26:00",
+        "excerpt": "INDICATION:  ___ year old ___ speaking man with history of a\nnon-ischemic dilated cardiomyopathy s/p DT Heartmate II LVAD implant on\n___ for ___ class IV heart failure complicated by RV dysfunction and\nventricular arrhythmias, and T2DM, CVA in ___ w/ no residual deficits. He was\nrecently admitted for abdominal pain ___ - ___, thought to be due to\nincarceration of his umbilical hernia. He presents "
+      },
+      {
+        "type": "radiology",
+        "charttime": "2150-03-09 11:58:00",
+        "excerpt": "INDICATION:  ___ year old ___ speaking man with history of a\nnon-ischemic dilated cardiomyopathy s/p DT Heartmate II LVAD implant on\n___ for NYHA class IV heart failure complicated by RV dysfunction and\nventricular arrhythmias, and T2DM, CVA in ___ w/ no residual deficits. Had\nelective umbilical hernia repair ___.  // any evidence of PNA? acute\nchange?\n\nTECHNIQUE:  Chest PA and lateral\n\nCOMPARISON"
+      }
+    ]
+  },
+  {
+    "hadm_id": 25619597,
+    "admission_id": "25619597",
+    "admittime": "2150-03-15 01:12:00",
+    "dischtime": "2150-03-15 18:34:00",
+    "admission_type": "EU OBSERVATION",
+    "primary_icd_code": "L7621",
+    "primary_dx_title": "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure",
+    "ground_truth_icd10": [
+      "L7621",
+      "Y838",
+      "I5022",
+      "I420",
+      "N179",
+      "E875",
+      "I4891",
+      "I272",
+      "E119",
+      "M1A9XX1",
+      "Z95810",
+      "Z7682",
+      "Z7901",
+      "I10",
+      "E785",
+      "E669",
+      "Z6838",
+      "G4730",
+      "Z87891",
+      "Z8673"
+    ],
+    "ground_truth_dx_titles": [
+      "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure",
+      "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure",
+      "Chronic systolic (congestive) heart failure",
+      "Dilated cardiomyopathy",
+      "Acute kidney failure, unspecified",
+      "Hyperkalemia",
+      "Unspecified atrial fibrillation",
+      "Other secondary pulmonary hypertension",
+      "Type 2 diabetes mellitus without complications",
+      "Chronic gout, unspecified, with tophus (tophi)",
+      "Presence of automatic (implantable) cardiac defibrillator",
+      "Awaiting organ transplant status",
+      "Long term (current) use of anticoagulants",
+      "Essential (primary) hypertension",
+      "Hyperlipidemia, unspecified",
+      "Obesity, unspecified",
+      "Body mass index [BMI] 38.0-38.9, adult",
+      "Sleep apnea, unspecified",
+      "Personal history of nicotine dependence",
+      "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+    ],
+    "n_diagnoses": 20,
+    "note_excerpt": " \nName:  ___               Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nwound eval, bleeding\n \nMajor Surgical or Invasive Procedure:\nNone\n\n \nHistory of Present Illness:\n___ man with recent hernia repair and non-ischemic \ndilated cardiomyopathy s/p DT Heartmate II LVAD implant on \n___ for ___ class IV heart failure complicated by RV \ndysfunction and ventricular arrhythmias, presenting to the ED \nwith oozing from his hernia repair site. Surgery was ___ ___ he has been doing well since then, without \nfevers/chills, N/V, diarrhea, or abdominal pain. He was \nconcerned this evening because the wound has been oozi\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "38.3",
+        "unit": "",
+        "charttime": "2150-03-15",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "274.91",
+        "unit": "",
+        "charttime": "2150-03-15",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "INR(PT)",
+        "value": "2.2",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "24.7",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "PTT",
+        "value": "37.3",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "25.0-36.5"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "29.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "9.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "RDW",
+        "value": "16.2",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.4",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "50.4",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2150-03-15 04:35:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Lymphocytes",
+        "value": "18.1",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-03-14 22:23:00",
+        "ref_range": "19.0-53.0"
+      },
+      {
+        "name": "Absolute Monocyte Count",
+        "value": "0.84",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2150-03-14 22:23:00",
+        "ref_range": "0.2-0.8"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.3",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-03-14 22:23:00",
+        "ref_range": "0.5-1.2"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2150-03-15 16:41:00",
+        "excerpt": "EXAMINATION:  CT abdomen pelvis without contrast\n\nINDICATION:  ___ man with recent hernia repair and non-ischemic\ndilated cardiomyopathy s/p DT Heartmate II LVAD implant on ___ for ___\nclass IV heart failure complicated by RV dysfunction and ventricular\narrhythmias, presenting to the ED with oozing from his hernia repair site.  //\nevaluate size of abdominal hematoma\n\nTECHNIQUE:  Multidetector CT i"
+      }
+    ]
+  },
+  {
+    "hadm_id": 24756239,
+    "admission_id": "24756239",
+    "admittime": "2150-06-02 10:48:00",
+    "dischtime": "2150-06-05 17:21:00",
+    "admission_type": "EU OBSERVATION",
+    "primary_icd_code": "I472",
+    "primary_dx_title": "Ventricular tachycardia",
+    "ground_truth_icd10": [
+      "I472",
+      "I420",
+      "I4891",
+      "Z7901",
+      "Z95810",
+      "G8929",
+      "M179",
+      "M109",
+      "E780",
+      "I10",
+      "E669",
+      "G4730",
+      "E119",
+      "Z7682",
+      "Z8673",
+      "Z87891"
+    ],
+    "ground_truth_dx_titles": [
+      "Ventricular tachycardia",
+      "Dilated cardiomyopathy",
+      "Unspecified atrial fibrillation",
+      "Long term (current) use of anticoagulants",
+      "Presence of automatic (implantable) cardiac defibrillator",
+      "Other chronic pain",
+      "Osteoarthritis of knee, unspecified",
+      "Gout, unspecified",
+      "Pure hypercholesterolemia",
+      "Essential (primary) hypertension",
+      "Obesity, unspecified",
+      "Sleep apnea, unspecified",
+      "Type 2 diabetes mellitus without complications",
+      "Awaiting organ transplant status",
+      "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
+      "Personal history of nicotine dependence"
+    ],
+    "n_diagnoses": 16,
+    "note_excerpt": " \nName:  ___               Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nICD fire\n \nMajor Surgical or Invasive Procedure:\nStellate Ganglion Block- Left side; ___\n\n \nHistory of Present Illness:\n___ year old male with chief complaint of ICD shock this am. He \nhas \n Heartmate II LVAD and is listed at ___ for heart \ntransplantation. He felt the shock around 7:40am on ___ after \ntaking his AM medications. Reports he is at his baseline dyspnea \non exertion, able to walk 3 minutes or up 2 flights of stairs, \nthough this causes to feel \"very tired.\" Reports twice daily \nlightheadedness with position changes though t\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "38.5",
+        "unit": "",
+        "charttime": "2150-06-02",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "276.0",
+        "unit": "",
+        "charttime": "2150-06-02",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Alkaline Phosphatase",
+        "value": "175.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "40.0-130.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "21.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "36.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "11.5",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "RDW",
+        "value": "15.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "4.28",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "49.5",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "3.1",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "34.1",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "PTT",
+        "value": "39.5",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2150-06-05 06:55:00",
+        "ref_range": "25.0-36.5"
+      },
+      {
+        "name": "Magnesium",
+        "value": "2.7",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2150-06-04 12:35:00",
+        "ref_range": "1.6-2.6"
+      }
+    ]
+  }
+]

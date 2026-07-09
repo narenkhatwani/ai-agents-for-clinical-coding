@@ -1,0 +1,38 @@
+{
+  "patient_id": "10361982",
+  "subject_id": 10361982,
+  "hadm_id": 24286431,
+  "admission_id": "24286431",
+  "admittime": "2162-05-25 16:55:00",
+  "dischtime": "2162-05-26 16:00:00",
+  "admission_type": "DIRECT OBSERVATION",
+  "gender": "F",
+  "anchor_age": 34,
+  "note_type": "discharge",
+  "text_len": 5497,
+  "n_structured_vitals": 3,
+  "n_structured_labs": 0,
+  "n_radiology_reports": 1,
+  "is_latest_admission": true,
+  "n_prior_admissions": 1,
+  "n_total_admissions": 2,
+  "ground_truth": {
+    "primary_icd_code": "N99820",
+    "primary_dx_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+    "icd10_codes": [
+      "N99820",
+      "Y836",
+      "Y92009",
+      "E039",
+      "F909"
+    ],
+    "dx_titles": [
+      "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure",
+      "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause",
+      "Hypothyroidism, unspecified",
+      "Attention-deficit hyperactivity disorder, unspecified type"
+    ],
+    "n_diagnoses": 5
+  }
+}

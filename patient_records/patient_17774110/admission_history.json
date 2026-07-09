@@ -1,0 +1,343 @@
+[
+  {
+    "hadm_id": 20726415,
+    "admission_id": "20726415",
+    "admittime": "2158-03-08 18:27:00",
+    "dischtime": "2158-03-15 21:20:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "E279",
+    "primary_dx_title": "Disorder of adrenal gland, unspecified",
+    "ground_truth_icd10": [
+      "E279",
+      "I8510",
+      "C220",
+      "K7469",
+      "K7210",
+      "J449",
+      "K219",
+      "B182",
+      "R410",
+      "F319",
+      "F909",
+      "G4700",
+      "F17210",
+      "K2270",
+      "Z590",
+      "Z98890"
+    ],
+    "ground_truth_dx_titles": [
+      "Disorder of adrenal gland, unspecified",
+      "Secondary esophageal varices without bleeding",
+      "Liver cell carcinoma",
+      "Other cirrhosis of liver",
+      "Chronic hepatic failure without coma",
+      "Chronic obstructive pulmonary disease, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Chronic viral hepatitis C",
+      "Disorientation, unspecified",
+      "Bipolar disorder, unspecified",
+      "Attention-deficit hyperactivity disorder, unspecified type",
+      "Insomnia, unspecified",
+      "Nicotine dependence, cigarettes, uncomplicated",
+      "Barrett's esophagus without dysplasia",
+      "Homelessness",
+      "Other specified postprocedural states"
+    ],
+    "n_diagnoses": 16,
+    "note_excerpt": " \nName:  ___                    Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nencephalopathy and adrenal mass\n \nMajor Surgical or Invasive Procedure:\nAdrenal biopsy ___\n\n \nHistory of Present Illness:\n___ with HCV cirrhosis, esophageal varices with history of\nbleeding (s/p TIPS on ___, and HCC who presents from liver\ntumor clinic today with hepatic encephalopathy and a new adrenal\nmass. His medical history is plagued by intermittent\nnon-adherence and loss of insurance. He had a surveillance CT \nabd\non ___, which revealed a lesion consistent with HCC, as well\nas a new, left adrenal mass of unclear etiology. He\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "30.0",
+        "unit": "",
+        "charttime": "2158-03-08",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "100/80",
+        "unit": "",
+        "charttime": "2158-03-08",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "195.4",
+        "unit": "",
+        "charttime": "2158-03-08",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Alanine Aminotransferase (ALT)",
+        "value": "67.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Asparate Aminotransferase (AST)",
+        "value": "124.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Glucose",
+        "value": "107.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.3",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "13.9",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "30.8",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "10.7",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCH",
+        "value": "33.3",
+        "unit": "pg",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "26.0-32.0"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "79.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.21",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "White Blood Cells",
+        "value": "3.6",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "4.0-10.0"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "50.9",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2158-03-15 06:14:00",
+        "ref_range": "35.1-46.3"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2158-03-14 14:33:00",
+        "excerpt": "ADDENDUM  The pathology showed:  Metastatic HCC.\nThis result is concordant with imaging findings.\nRecommendations: no further evaluation of this lesion is indicated.\nThe meeting was attended by: ___.\n"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2158-03-14 14:33:00",
+        "excerpt": "EXAMINATION:  CT-GUIDED LEFT ADRENAL MASS BIOPSY\n\nINDICATION:  ___ year old man with cirrhosis/___ p/w adrenal mass on imaging.\nHormonal studies have been negative, concern for HCC met// is this metastatic\nor primary adrenal mass (adenoma vs cancer?)\n\nCOMPARISON:  CT abdomen and pelvis from ___.\n\nPROCEDURE:  CT-guided left adrenal mass biopsy.\n\nOPERATORS:  Dr. ___, radiology trainee and Dr. ___, a"
+      }
+    ]
+  },
+  {
+    "hadm_id": 27309668,
+    "admission_id": "27309668",
+    "admittime": "2159-01-19 17:18:00",
+    "dischtime": "2159-01-21 15:00:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "K7200",
+    "primary_dx_title": "Acute and subacute hepatic failure without coma",
+    "ground_truth_icd10": [
+      "K7200",
+      "C7970",
+      "E871",
+      "D684",
+      "K7210",
+      "K7460",
+      "B1920",
+      "F901",
+      "F319",
+      "J449",
+      "R040",
+      "G4700",
+      "K219",
+      "K2270",
+      "F17210",
+      "Z9221",
+      "Z79899",
+      "Z7982"
+    ],
+    "ground_truth_dx_titles": [
+      "Acute and subacute hepatic failure without coma",
+      "Secondary malignant neoplasm of unspecified adrenal gland",
+      "Hypo-osmolality and hyponatremia",
+      "Acquired coagulation factor deficiency",
+      "Chronic hepatic failure without coma",
+      "Unspecified cirrhosis of liver",
+      "Unspecified viral hepatitis C without hepatic coma",
+      "Attention-deficit hyperactivity disorder, predominantly hyperactive type",
+      "Bipolar disorder, unspecified",
+      "Chronic obstructive pulmonary disease, unspecified",
+      "Epistaxis",
+      "Insomnia, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Barrett's esophagus without dysplasia",
+      "Nicotine dependence, cigarettes, uncomplicated",
+      "Personal history of antineoplastic chemotherapy",
+      "Other long term (current) drug therapy",
+      "Long term (current) use of aspirin"
+    ],
+    "n_diagnoses": 18,
+    "note_excerpt": " \nName:  ___                    Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nhepatic encephalopathy, shortness of breath\n \nMajor Surgical or Invasive Procedure:\nnone\n \nHistory of Present Illness:\n___ w/ PMH of HCV induced cirrhosis c/b esophageal varices s/p\nTIPS on ___ and HCC w/ bx proven mets to left adrenal \ngland;\nhistory ADHD, bipolar disorder, GERD, asthma/COPD, and ___\nesophagus presented to OSH with SOB. Patient states that\nshortness of breath began yesterday and is not exertional. \nDenies\ncough, fever, chest pain, leg swelling, abdominal pain, or\ndistention. Patient is poor historian. He was trans\n[... excerpt truncated ...]",
+    "labs_summary": [
+      {
+        "name": "INR(PT)",
+        "value": "1.7",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "18.3",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Alanine Aminotransferase (ALT)",
+        "value": "74.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Albumin",
+        "value": "2.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "3.5-5.2"
+      },
+      {
+        "name": "Anion Gap",
+        "value": "9.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "10.0-18.0"
+      },
+      {
+        "name": "Asparate Aminotransferase (AST)",
+        "value": "203.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Bilirubin, Total",
+        "value": "3.8",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "0.0-1.5"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "8.2",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Glucose",
+        "value": "138.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Sodium",
+        "value": "130.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "135.0-147.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "21.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "25.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2159-01-21 06:00:00",
+        "ref_range": "40.0-51.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2159-01-19 08:31:00",
+        "excerpt": "EXAMINATION:  DUPLEX DOP ABD/PEL LIMITED\n\nINDICATION:  History: ___ with cirrhosis, s/p TIPS// Evaluate for patent\nvasculature/TIPS\n\nTECHNIQUE:  Grey scale, color, and spectral Doppler ultrasound images of the\nabdomen were obtained.\n\nCOMPARISON:  CT abdomen pelvis from ___\n\nFINDINGS: \n\nThe liver appears diffusely coarsened and nodular consistent with known\ncirrhosis.  Hypoechoic mass is visualized"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2159-01-19 06:39:00",
+        "excerpt": "EXAMINATION:  Chest radiograph\n\nINDICATION:  History: ___ with shortness of breath// eval for pulmonary edema\n\nTECHNIQUE:  Chest PA and lateral\n\nCOMPARISON:  CT chest with contrast from ___.\nChest radiograph from ___\n\nFINDINGS: \n\nNo focal consolidation identified.  There is mild blunting of the right\ncostophrenic angle, compatible with small pleural effusion.  No evidence of\npulmonary edema or pne"
+      }
+    ]
+  }
+]

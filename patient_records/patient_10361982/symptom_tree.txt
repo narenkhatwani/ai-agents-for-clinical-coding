@@ -1,0 +1,34 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 10361982
+Admission ID     : 24286431
+
+Reasoning:
+  The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and previous surgeries.
+
+Key symptoms     : heavy vaginal bleeding, abdominal bloatedness
+
+GI → Gynecology
+---------------
+
+  • [present, moderate] heavy vaginal bleeding
+      evidence: "heavy vaginal bleeding after hysterectomy"
+      related: abnormal uterine and vaginal bleeding, unspecified
+      • [history] vaginal spotting to light bleeding
+          evidence: "vaginal spotting to light bleeding"
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present, mild] hemodynamic stability
+      evidence: "hemodynamically stable throughout her hospitalization"
+
+OTHER → Other
+-------------
+
+  • [history, mild] abdominal bloatedness
+      evidence: "abdominal bloatedness secondary to gas"

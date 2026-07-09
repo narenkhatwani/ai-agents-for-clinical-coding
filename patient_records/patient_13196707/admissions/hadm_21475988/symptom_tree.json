@@ -1,0 +1,110 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with severe sepsis secondary to RUL PNA, hypotension, and altered mental status, with a history of metastatic adenocarcinoma of unknown primary.",
+  "branches": [
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "new fever",
+          "related_findings": [
+            "RUL PNA"
+          ],
+          "children": []
+        },
+        {
+          "term": "pneumonia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "RUL PNA",
+          "related_findings": [
+            "CXR: persistent consolidative opacities in both lower lobes"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "hypotension",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "BP 90/47, hypotensive",
+          "related_findings": [
+            "Levophed started, pressures came up to the 90's systolic"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
+      "symptoms": [
+        {
+          "term": "altered mental status",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "altered mental status",
+          "related_findings": [
+            "EEG shows epileptiform discharges left paracentrally"
+          ],
+          "children": []
+        },
+        {
+          "term": "seizures",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "possibly seizures from metastases",
+          "related_findings": [
+            "EEG shows epileptiform discharges left paracentrally"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "chest pressure",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "chest pressure",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "back pain",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "back pain",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "fever",
+    "pneumonia"
+  ],
+  "red_flags": [
+    "hypotension",
+    "altered mental status"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "13196707",
+  "admission_id": "21475988",
+  "generated_at": "2026-07-09T00:30:18.760841"
+}

@@ -1,0 +1,76 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 10458324
+Admission ID     : 21744342
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [present] right sided rib fractures — "right sided ___ rib fractures"
+  • [present] right lateral chest pain — "right lateral chest against the bathtub"
+  • [present] hypoxia — "satting 96% on 4L and evaluated by trauma surgery"
+
+VITALS
+------
+
+• Heart Rate: 88.0 bpm
+• Respiratory Rate: 17.0 insp/min
+• SpO2: 98.0 %
+• Weight: 125.0 Lbs
+• BMI: 17.9
+
+LABS
+----
+
+• WBC: 10.5 * [high]
+• Neutrophils: 70.3 * [high]
+• Lymphocytes: 16.4 * [low]
+• Hemoglobin: 10.9 g/dL [low]
+• Hematocrit: 33.3 % [low]
+• Platelets: 623.0 K/uL [high]
+• Calcium: 8.3 mg/dL [low]
+• Glucose: 127.0 mg/dL [high]
+• Potassium: 5.2 mEq/L [high]
+• Albumin: 2.8 g/dL [low]
+• Thyroid Stimulating Hormone: 4.3 uIU/mL [high]
+• Creatinine Kinase (CK): 555.0 IU/L [high]
+• pO2: 258.0 mm Hg [high]
+• pCO2: 49.0 mm Hg [high]
+• pH: 7.29 units [low]
+• Sodium: 134.0 mEq/L [low]
+• Magnesium: 3.2 mg/dL [high]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] PTSD
+  • [confirmed] Bipolar disorder
+  • [confirmed] Polysubstance use
+  • [confirmed] Opiate dependence
+
+MEDICATIONS
+-----------
+
+  • Prozac (stopped)
+  • Thorazine (stopped)
+  • Haldol (stopped)
+
+PROCEDURES
+----------
+
+  • Pigtail placement: 
+
+NEGATIONS
+---------
+
+  • Denies harm to others
+  • Denies access to weapons
+  • Denies suicide attempts
+  • Denies past medical history
+
+TEMPORAL
+--------
+
+  • right sided rib fractures: mechanical fall

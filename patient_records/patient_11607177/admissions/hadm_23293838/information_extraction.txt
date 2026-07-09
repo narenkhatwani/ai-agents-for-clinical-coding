@@ -1,0 +1,96 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 11607177
+Admission ID     : 23293838
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [present] lightheaded — "lightheaded and then felt his ICD discharge"
+  • [present] ICD discharge — "ICD discharge"
+  • [present] shaking in his chest — "shaking"
+  • [present] increased edema — "increased edema in the week prior to the shock"
+  • [present] feeling at baseline — "felt at baseline"
+
+VITALS
+------
+
+• BMI: 36.7 kg/m2
+• Weight: 263.23 Lbs
+• HR: 80 bpm
+• BP: 140 mmHg
+• MAP: 100 mmHg
+• Respiratory Rate: 20 bpm
+• SpO2: 99 %RA
+
+LABS
+----
+
+• WBC: 5.7 K/uL [normal]
+• RBC: 4.46 m/uL [normal]
+• Hgb: 12.7 g/dL [normal]
+• Hct: 39.8 % [normal]
+• MCV: 89 fL [normal]
+• MCH: 28.5 pg [normal]
+• MCHC: 31.9 g/dL [low]
+• RDW: 16.9 % [normal]
+• RDW-SD: 54.9 fL [high]
+• Plt: 142 K/uL [low]
+• Creatinine: 1.4 mg/dL [normal]
+• Glucose: 105 mg/dL [normal]
+• Urea Nitrogen: 31 mg/dL [normal]
+• Alkaline Phosphatase: 186 IU/L [normal]
+• Lactate Dehydrogenase (LD): 252 IU/L [high]
+• Anion Gap: 15 mEq/L [normal]
+• Bicarbonate: 27 mEq/L [normal]
+• Calcium, Total: 9.5 mg/dL [normal]
+• Chloride: 102 mEq/L [normal]
+• Magnesium: 3.7 mEq/L [high]
+• Phosphate: 4.2 mg/dL [normal]
+• Sodium: 140 mEq/L [normal]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] Dilated non-ischemic cardiomyopathy
+  • [confirmed] Heartmate II LVAD
+  • [confirmed] Refractory VT
+  • [confirmed] ICD shock
+  • [confirmed] AVJ ablation
+  • [confirmed] CVA
+  • [confirmed] Diabetes
+  • [confirmed] Dyslipidemia
+  • [confirmed] Hypertension
+  • [confirmed] Sleep apnea
+  • [confirmed] Tophaceous Gout
+  • [confirmed] TKR (left)
+  • [confirmed] Schistosomiasis
+  • [confirmed] Gastritis
+  • [confirmed] Obesity
+
+MEDICATIONS
+-----------
+
+  • torsemide (continued)
+
+PROCEDURES
+----------
+
+  • stellate ganglion block (L): for refractory VT
+
+NEGATIONS
+---------
+
+  • chest pain
+  • fevers
+  • chills
+  • sick contacts
+  • cough
+  • n/v/d
+
+TEMPORAL
+--------
+
+  • ICD shock: ___ as DT

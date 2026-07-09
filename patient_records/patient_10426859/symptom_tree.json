@@ -1,0 +1,108 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with recurrent SVT, lightheadedness, headache, and pain in the right hip and leg, with no acute cardiovascular or respiratory findings.",
+  "branches": [
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "palpitations",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "palpitations",
+          "related_findings": [
+            "SVT"
+          ],
+          "children": [
+            {
+              "term": "SVT",
+              "status": "present",
+              "evidence": "recurrence of her SVT"
+            }
+          ]
+        },
+        {
+          "term": "lightheadedness",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "lightheadedness and palpitations",
+          "related_findings": [
+            "SVT"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "headache",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "headache",
+          "related_findings": [
+            "CT head: tiny chronic right cerebellar infarct"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "musculoskeletal",
+      "ontology_hint": "Musculoskeletal",
+      "symptoms": [
+        {
+          "term": "pain in right hip",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "pain in her right hip",
+          "related_findings": [
+            "nondisplaced comminuted fracture in the right superior pubic ramus"
+          ]
+        },
+        {
+          "term": "pain in right leg",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "pain in her entire right leg - her foot, ankle, leg, hip",
+          "related_findings": [
+            "nondisplaced comminuted fracture in the right superior pubic ramus"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "anemia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Red Blood Cells: 3.89 m/uL [abnormal]",
+          "related_findings": [
+            "RDW-SD: 47.2 fL [abnormal]"
+          ]
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "palpitations",
+    "lightheadedness",
+    "headache",
+    "pain in right hip",
+    "pain in right leg"
+  ],
+  "red_flags": [
+    "SVT",
+    "nondisplaced comminuted fracture in the right superior pubic ramus"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "10426859",
+  "admission_id": "29908281",
+  "generated_at": "2026-07-09T00:29:37.491161"
+}

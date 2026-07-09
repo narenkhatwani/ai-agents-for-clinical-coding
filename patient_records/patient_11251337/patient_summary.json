@@ -1,0 +1,21 @@
+{
+  "patient_id": "11251337",
+  "subject_id": 11251337,
+  "gender": "M",
+  "anchor_age": 55,
+  "n_admissions": 3,
+  "n_prior_admissions": 2,
+  "latest_hadm_id": "29568708",
+  "admissions": [
+    {
+      "hadm_id": "29568708",
+      "admittime": "2164-12-23 09:38:00",
+      "primary_icd_code": "N132",
+      "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+      "symptom_count": 5,
+      "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "is_latest": true
+    }
+  ],
+  "generated_at": "2026-07-09T00:31:41.833836"
+}

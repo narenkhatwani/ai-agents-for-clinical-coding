@@ -1,0 +1,141 @@
+STRUCTURED MIMIC DATA (objective vitals, labs, radiology — prefer over note text when they conflict):
+
+VITALS:
+  • DBP (non-invasive): last=82.0 min=54.0 max=110.0 mmHg (63 readings, icu_chartevents)
+  • Heart Rate: last=108.0 min=86.0 max=130.0 bpm (90 readings, icu_chartevents)
+  • Respiratory Rate: last=15.0 min=10.0 max=31.0 insp/min (90 readings, icu_chartevents)
+  • SBP (non-invasive): last=129.0 min=99.0 max=144.0 mmHg (63 readings, icu_chartevents)
+  • SpO2: last=100.0 min=84.0 max=100.0 % (90 readings, icu_chartevents)
+
+LABS (abnormal prioritized):
+  • Glucose: 183.0 mg/dL [abnormal]
+  • Hematocrit: 30.6 % [abnormal]
+  • Hemoglobin: 10.0 g/dL [abnormal]
+  • Monocytes: 4.8 % [abnormal]
+  • Red Blood Cells: 3.51 m/uL [abnormal]
+  • Lactate: 5.4 mmol/L [abnormal]
+  • Anion Gap: 19.0 mEq/L [abnormal]
+  • Bicarbonate: 20.0 mEq/L [abnormal]
+  • Calcium, Total: 8.1 mg/dL [abnormal]
+  • pO2: 46.0 mm Hg [abnormal]
+  • Potassium: 5.4 mEq/L [abnormal]
+  • Phosphate: 2.5 mg/dL [abnormal]
+  • Urea Nitrogen: nan mg/dL [abnormal]
+  • Bacteria: nan /hpf [abnormal]
+  • Hyaline Casts: 3.0 #/lpf [abnormal]
+  • Leukocytes: nan  [abnormal]
+  • Protein: nan mg/dL [abnormal]
+  • Urine Mucous: nan /hpf [abnormal]
+  • WBC: 10.0 #/hpf [abnormal]
+  • Calculated Total CO2: 19.0 mEq/L [abnormal]
+  • pCO2: 33.0 mm Hg [abnormal]
+  • pH: 7.34 units [abnormal]
+  • Granular Casts: 4.0 #/lpf [abnormal]
+  • Ketone: nan mg/dL [abnormal]
+  • RBC: 3.0 #/hpf [abnormal]
+  • Urine Appearance: nan  [abnormal]
+  • Albumin: 2.4 g/dL [abnormal]
+  • Alkaline Phosphatase: 125.0 IU/L [abnormal]
+  • Potassium, Whole Blood: 3.0 mEq/L [abnormal]
+  • Chloride: 109.0 mEq/L [abnormal]
+  • Lactate Dehydrogenase (LD): 276.0 IU/L [abnormal]
+  • Magnesium: 3.3 mg/dL [abnormal]
+  • Sodium: 148.0 mEq/L [abnormal]
+  • Eosinophils: 0.1 % [abnormal]
+  • Lymphocytes: 13.6 % [abnormal]
+  • MCHC: 31.5 g/dL [abnormal]
+  • Neutrophils: 80.6 % [abnormal]
+  • White Blood Cells: 19.2 K/uL [abnormal]
+  • Absolute Eosinophil Count: 0.01 K/uL [abnormal]
+  • Absolute Neutrophil Count: 15.51 K/uL [abnormal]
+
+RADIOLOGY REPORTS:
+  --- Report 1 (2120-07-13 13:54:00) ---
+    EXAMINATION:  CHEST (PA AND LAT)
+    
+    INDICATION:  ___ year old woman with unexplained lactic acidosis// eval for
+    infection, mass
+    
+    IMPRESSION: 
+    
+    In comparison with the study of ___, there are improved lung volumes. 
+    The left subclavian PICC line extends to about the level of the cavoatrial
+    junction.  No pneumonia, vascular congestion, or pleural effusion.
+  --- Report 2 (2120-07-13 13:54:00) ---
+    EXAMINATION:  PELVIS U.S., TRANSVAGINAL
+    
+    INDICATION:  ___ year old woman 5 weeks post-partum with persistent daily
+    vaginal bleeding// eval for retained products of conception
+    
+    TECHNIQUE:  Grayscale ultrasound images of the pelvis were obtained with
+    transabdominal approach followed by transvaginal approach for further
+    delineation of uterine and ovarian anatomy.
+    
+    COMPARISON:  None
+    
+    FINDINGS: 
+    
+    The uterus is anteverted and measures 9.4 x 4.6 x 6.9 cm.  There is
+    heterogeneous material within the endometrial canal, measuring up to 8 mm in
+    thickness, without internal vascularity, likely blood products.
+    
+    The ovaries are normal. There is a small to moderate amount of simple free
+    fluid in the cul-de-sac.
+    
+  --- Report 3 (2120-07-12 17:37:00) ---
+    EXAMINATION:  UNILAT UP EXT VEINS US RIGHT
+    
+    INDICATION:  ___ year old woman with RUE swelling and tenderness. Admitted to
+    ICU with DKA.// ?DVT or soft tissue abnormality?
+    
+    TECHNIQUE:  Grey scale and Doppler evaluation was performed on the left upper
+    extremity veins.
+    
+    COMPARISON:  None.
+    
+    FINDINGS: 
+    
+    There is normal flow with respiratory variation in the left subclavian vein.
+    The left internal jugular and axillary veins are patent, show normal color
+    flow and compressibility. The left brachial, basilic, and cephalic veins are
+    patent, compressible and show normal color flow and augmentation.
+    
+    IMPRESSION: 
+    
+    No evidence of deep vein thrombosis in the left upper extremity.  No soft
+  --- Report 4 (2120-07-10 13:25:00) ---
+    EXAMINATION:  Chest radiograph
+    
+    INDICATION:  ___ y/o F with DKA, confirm PICC placement// PICC placement (left
+    basilic 38cm)   Contact name: ___: ___
+    
+    TECHNIQUE:  Portable
+    
+    COMPARISON:  ___
+    
+    FINDINGS: 
+    
+    Left PICC terminates in the right atrium approximately 5.5 cm from the
+    cavoatrial junction.  The lungs are clear, and pulmonary vasculature is
+    unremarkable.  heart is normal in size and mediastinal silhouette is
+    unremarkable.  No evidence of pleural effusion or pneumothorax.
+    
+    IMPRESSION: 
+    
+    Left PICC terminates in the right atrium approximately 5.5 cm from the
+    cavoatrial junction.
+  --- Report 5 (2120-07-10 03:43:00) ---
+    INDICATION:  History: ___ with DKA// evaluate for intra-thoracic process
+    
+    TECHNIQUE:  Portable AP supine chest radiograph.
+    
+    COMPARISON:  Chest radiograph dated ___ and ___.
+    
+    FINDINGS: 
+    
+    The lungs are clear.  The pulmonary vasculature is unremarkable.  No pleural
+    abnormalities.  The cardiomediastinal silhouette is unremarkable.
+    
+    IMPRESSION: 
+    
+    No acute cardiopulmonary process.

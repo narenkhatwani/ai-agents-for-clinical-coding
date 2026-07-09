@@ -1,0 +1,52 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 10458324
+Admission ID     : 21744342
+
+Reasoning:
+  The patient presents with right-sided rib fractures and hypoxia following a mechanical fall, with ongoing respiratory distress and signs of volume overload.
+
+Key symptoms     : right sided rib fractures, hypoxia
+Red flags        : atrial fibrillation, pneumothorax
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [present, moderate] right sided rib fractures
+      evidence: "right sided ___ rib fractures"
+      related: right-sided pneumothorax, subcutaneous emphysema
+      • [present] right lateral chest pain
+          evidence: "right lateral chest against the bathtub"
+  • [present, mild] hypoxia
+      evidence: "satting 96% on 4L and evaluated by trauma surgery"
+      related: right-sided pneumothorax, subcutaneous emphysema
+  • [present, moderate] respiratory distress
+      evidence: "small right PTX, bilateral pulmonary opacities"
+      related: right-sided pneumothorax, subcutaneous emphysema
+  • [present, mild] pneumothorax
+      evidence: "small right PTX, tiny right apical pneumothorax"
+      related: right-sided rib fractures, subcutaneous emphysema
+  • [present, mild] pulmonary edema
+      evidence: "bilateral pulmonary opacities, increased left lung opacity"
+      related: right-sided rib fractures, subcutaneous emphysema
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present, mild] atrial fibrillation
+      evidence: "paroxysmal atrial fibrillation"
+      related: hypoxia, respiratory distress
+
+CONSTITUTIONAL → Infectious Diseases
+------------------------------------
+
+  • [history] fever
+      evidence: "spiked fever ___ the unit"
+      related: pneumonia, pneumothorax
+  • [present, mild] infection
+      evidence: "GRAM NEGATIVE ROD(S), BUDDING YEAST WITH PSEUDOHYPHAE, GRAM POSITIVE COCCI"
+      related: pneumonia, pneumothorax

@@ -1,0 +1,208 @@
+{
+  "symptoms": [
+    {
+      "term": "right sided rib fractures",
+      "status": "present",
+      "evidence": "right sided ___ rib fractures"
+    },
+    {
+      "term": "right lateral chest pain",
+      "status": "present",
+      "evidence": "right lateral chest against the bathtub"
+    },
+    {
+      "term": "hypoxia",
+      "status": "present",
+      "evidence": "satting 96% on 4L and evaluated by trauma surgery"
+    }
+  ],
+  "vitals": [
+    {
+      "name": "Heart Rate",
+      "value": "88.0",
+      "unit": "bpm"
+    },
+    {
+      "name": "Respiratory Rate",
+      "value": "17.0",
+      "unit": "insp/min"
+    },
+    {
+      "name": "SpO2",
+      "value": "98.0",
+      "unit": "%"
+    },
+    {
+      "name": "Weight",
+      "value": "125.0",
+      "unit": "Lbs"
+    },
+    {
+      "name": "BMI",
+      "value": "17.9",
+      "unit": ""
+    }
+  ],
+  "labs": [
+    {
+      "name": "WBC",
+      "value": "10.5",
+      "unit": "*",
+      "flag": "high"
+    },
+    {
+      "name": "Neutrophils",
+      "value": "70.3",
+      "unit": "*",
+      "flag": "high"
+    },
+    {
+      "name": "Lymphocytes",
+      "value": "16.4",
+      "unit": "*",
+      "flag": "low"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "10.9",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Hematocrit",
+      "value": "33.3",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "Platelets",
+      "value": "623.0",
+      "unit": "K/uL",
+      "flag": "high"
+    },
+    {
+      "name": "Calcium",
+      "value": "8.3",
+      "unit": "mg/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Glucose",
+      "value": "127.0",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Potassium",
+      "value": "5.2",
+      "unit": "mEq/L",
+      "flag": "high"
+    },
+    {
+      "name": "Albumin",
+      "value": "2.8",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Thyroid Stimulating Hormone",
+      "value": "4.3",
+      "unit": "uIU/mL",
+      "flag": "high"
+    },
+    {
+      "name": "Creatinine Kinase (CK)",
+      "value": "555.0",
+      "unit": "IU/L",
+      "flag": "high"
+    },
+    {
+      "name": "pO2",
+      "value": "258.0",
+      "unit": "mm Hg",
+      "flag": "high"
+    },
+    {
+      "name": "pCO2",
+      "value": "49.0",
+      "unit": "mm Hg",
+      "flag": "high"
+    },
+    {
+      "name": "pH",
+      "value": "7.29",
+      "unit": "units",
+      "flag": "low"
+    },
+    {
+      "name": "Sodium",
+      "value": "134.0",
+      "unit": "mEq/L",
+      "flag": "low"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3.2",
+      "unit": "mg/dL",
+      "flag": "high"
+    }
+  ],
+  "diagnoses_mentioned": [
+    {
+      "term": "PTSD",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Bipolar disorder",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Polysubstance use",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Opiate dependence",
+      "certainty": "confirmed"
+    }
+  ],
+  "medications": [
+    {
+      "name": "Prozac",
+      "dose": "",
+      "route": "",
+      "status": "stopped"
+    },
+    {
+      "name": "Thorazine",
+      "dose": "",
+      "route": "",
+      "status": "stopped"
+    },
+    {
+      "name": "Haldol",
+      "dose": "",
+      "route": "",
+      "status": "stopped"
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Pigtail placement",
+      "result": ""
+    }
+  ],
+  "negations": [
+    "Denies harm to others",
+    "Denies access to weapons",
+    "Denies suicide attempts",
+    "Denies past medical history"
+  ],
+  "temporal": [
+    {
+      "finding": "right sided rib fractures",
+      "onset": "mechanical fall"
+    }
+  ],
+  "_agent": "information_extraction",
+  "_n_prior_admissions": 1
+}

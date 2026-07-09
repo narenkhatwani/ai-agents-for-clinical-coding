@@ -1,0 +1,291 @@
+[
+  {
+    "hadm_id": 27937520,
+    "admission_id": "27937520",
+    "admittime": "2164-10-11 23:35:00",
+    "dischtime": "2164-10-17 18:03:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "N132",
+    "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+    "ground_truth_icd10": [
+      "N132",
+      "N179",
+      "I69834",
+      "Z841"
+    ],
+    "ground_truth_dx_titles": [
+      "Hydronephrosis with renal and ureteral calculous obstruction",
+      "Acute kidney failure, unspecified",
+      "Monoplegia of upper limb following other cerebrovascular disease affecting left non-dominant side",
+      "Family history of disorders of kidney and ureter"
+    ],
+    "n_diagnoses": 4,
+    "note_excerpt": " \nName:  ___                Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___\n \nChief Complaint:\ntransfer for ___, renal calculi\n \nMajor Surgical or Invasive Procedure:\nBilateral percutaneous nephrostomy tubes placed by ___ ___\n\n \nHistory of Present Illness:\nHPI: Mr. ___ is a ___ male from ___ who presents\nas transfer from ___ for further evaluation ___ in\nsetting of bilateral staghorn calculi\n\nHe was admitted to ___ from ___ to ___.  He\ninitially presented there for blood pressure medication refill \nas\nhe previously had been living in ___, moved to ___ about ___\nyears ago, and recently came to ___.  Labs incidentally noted\ncreatin\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "23.7",
+        "unit": "",
+        "charttime": "2164-10-12",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "165.50",
+        "unit": "",
+        "charttime": "2164-10-12",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "31.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "10.0",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.27",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "55.0",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Creatinine",
+        "value": "2.3",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Glucose",
+        "value": "109.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "28.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2164-10-17 04:42:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "RDW",
+        "value": "15.6",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2164-10-15 04:46:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Bacteria",
+        "value": "nan",
+        "unit": "/hpf",
+        "flag": "abnormal",
+        "charttime": "2164-10-13 11:43:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Blood",
+        "value": "nan",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2164-10-13 11:43:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Leukocytes",
+        "value": "nan",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2164-10-13 11:43:00",
+        "ref_range": ""
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2164-10-12 12:23:00",
+        "excerpt": "INDICATION:  ___ year old male w/ bilateral staghorn calculi// PCN placement\n\nCOMPARISON:  Noncontrast CT ___\n\nTECHNIQUE:   OPERATORS: Dr. ___, attending Interventional\nRadiologist performed the procedure.\nANESTHESIA: Moderate sedation was provided by administrating divided doses of\n150mcg of fentanyl and 2.5 mg of midazolam throughout the total intra-service\ntime of 1 hour 40 minutes during which"
+      }
+    ]
+  },
+  {
+    "hadm_id": 21161726,
+    "admission_id": "21161726",
+    "admittime": "2164-11-29 13:57:00",
+    "dischtime": "2164-11-30 20:00:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "N136",
+    "primary_dx_title": "Pyonephrosis",
+    "ground_truth_icd10": [
+      "N136",
+      "D631",
+      "B9689",
+      "Z23",
+      "Z936",
+      "I129",
+      "N189",
+      "I69154"
+    ],
+    "ground_truth_dx_titles": [
+      "Pyonephrosis",
+      "Anemia in chronic kidney disease",
+      "Other specified bacterial agents as the cause of diseases classified elsewhere",
+      "Encounter for immunization",
+      "Other artificial openings of urinary tract status",
+      "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+      "Chronic kidney disease, unspecified",
+      "Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side"
+    ],
+    "n_diagnoses": 8,
+    "note_excerpt": " \nName:  ___                Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nDysuria, fever\n \nMajor Surgical or Invasive Procedure:\nNone\n\n \nHistory of Present Illness:\nMr. ___ is a ___ year old man with a history of CVA \n___, residual L arm + L leg weakness), and HTN who was \nrecently hospitalized from ___ to ___ with bilateral \nstaghorn renal calculi s/p bilateral percutaneous nephrostomy \ntubes who presents with pain around the nephrostomy tubes and \nfevers. \n\nOn ___ a family member called the ___ clinic to report \nhematuria and dysuria since around ___.  He reports that when \nhe attempts to urinate he has pa\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "24.1",
+        "unit": "",
+        "charttime": "2164-11-29",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "167.99",
+        "unit": "",
+        "charttime": "2164-11-29",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Creatinine",
+        "value": "2.2",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Glucose",
+        "value": "113.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Iron",
+        "value": "37.0",
+        "unit": "ug/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "45.0-160.0"
+      },
+      {
+        "name": "Iron Binding Capacity, Total",
+        "value": "169.0",
+        "unit": "ug/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "260.0-470.0"
+      },
+      {
+        "name": "Transferrin",
+        "value": "130.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "200.0-360.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "27.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "29.5",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "9.4",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.0",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "52.5",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Anion Gap",
+        "value": "15.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2164-11-30 06:29:00",
+        "ref_range": "10.0-18.0"
+      }
+    ]
+  }
+]

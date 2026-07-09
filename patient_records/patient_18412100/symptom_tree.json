@@ -1,0 +1,71 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient is presenting with post-procedural pain and nausea following cryoablation of a desmoid tumor, with no signs of systemic infection or severe cardiovascular issues.",
+  "branches": [
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "post-procedural pain",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "post-procedural pain in the right side of the abdomen extending to the back",
+          "related_findings": [
+            "tender abdomen"
+          ],
+          "children": [
+            {
+              "term": "right upper and lower quadrant pain",
+              "status": "present",
+              "evidence": "tender in the right upper and right lower quadrant to palpation"
+            }
+          ]
+        },
+        {
+          "term": "nausea",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "one brief episode of nausea that then passed"
+        },
+        {
+          "term": "desmoid tumor",
+          "status": "present",
+          "severity": "stable",
+          "evidence": "desmoid tumor of the abdominal wall s/p partial cryoablation",
+          "related_findings": [
+            "tender abdomen"
+          ]
+        },
+        {
+          "term": "pain",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "similar to the previous procedure she had, and is less sharp in quality compared to her tumor pain"
+        }
+      ]
+    },
+    {
+      "category": "constitutional",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "absent",
+          "evidence": "On other review of systems, she denies headache, blurry vision, fevers, chills, shortness of breath, palpitations, chest pain, urinary frequency/urgency, diarrhea/constipation"
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "post-procedural pain",
+    "nausea"
+  ],
+  "red_flags": [],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "18412100",
+  "admission_id": "26093939",
+  "generated_at": "2026-07-09T00:31:01.927962"
+}

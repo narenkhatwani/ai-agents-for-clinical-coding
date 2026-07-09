@@ -1,0 +1,142 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient is a 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease who underwent ERCP for choledocholithiasis. He is currently stable post-procedure with no acute symptoms but has a history of nocturnal hypoxia and leg swelling.",
+  "branches": [
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "nocturnal hypoxia",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis",
+          "related_findings": [
+            "Hemoglobin: 12.6 g/dL (low)"
+          ],
+          "children": []
+        },
+        {
+          "term": "leg swelling",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Notes his ___ edema improves during the night and worsens during the day",
+          "related_findings": [
+            "Creatinine: 1.4 mg/dL (high)"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "respiratory rate",
+          "status": "normal",
+          "severity": "normal",
+          "evidence": "Respiratory Rate: 20 bpm",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "ciprofloxacin",
+          "status": "started",
+          "severity": "unknown",
+          "evidence": "Ciprofloxacin was started post-ERCP",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "atrial fibrillation",
+          "status": "confirmed",
+          "severity": "mild",
+          "evidence": "AFib: continued home propranolol and amiodarone",
+          "related_findings": [
+            "Hemoglobin: 12.6 g/dL (low)"
+          ],
+          "children": []
+        },
+        {
+          "term": "heart failure",
+          "status": "confirmed",
+          "severity": "mild",
+          "evidence": "HFpEF: held home Lasix ___",
+          "related_findings": [
+            "Creatinine: 1.4 mg/dL (high)"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "peripheral vascular disease",
+          "status": "confirmed",
+          "severity": "mild",
+          "evidence": "PVD: continued home aspirin 81mg, atorvastatin 20mg",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "creatinine",
+          "status": "high",
+          "severity": "mild",
+          "evidence": "Creatinine: 1.4 mg/dL",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "choledocholithiasis",
+          "status": "confirmed",
+          "severity": "mild",
+          "evidence": "Choledocholithiasis s/p ERCP: ERCP with multiple stones and sludge",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "nocturnal hypoxia",
+    "leg swelling"
+  ],
+  "red_flags": [
+    "hypotension",
+    "AMS"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "11474876",
+  "admission_id": "29672491",
+  "generated_at": "2026-07-09T00:29:58.655392"
+}

@@ -1,0 +1,156 @@
+[
+  {
+    "hadm_id": 23635816,
+    "admission_id": "23635816",
+    "admittime": "2181-09-05 21:21:00",
+    "dischtime": "2181-09-06 21:15:00",
+    "admission_type": "DIRECT OBSERVATION",
+    "primary_icd_code": "D481",
+    "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+    "ground_truth_icd10": [
+      "D481",
+      "G8918",
+      "R112",
+      "E669",
+      "Z6832",
+      "B182",
+      "G8929",
+      "R109",
+      "K219"
+    ],
+    "ground_truth_dx_titles": [
+      "Neoplasm of uncertain behavior of connective and other soft tissue",
+      "Other acute postprocedural pain",
+      "Nausea with vomiting, unspecified",
+      "Obesity, unspecified",
+      "Body mass index [BMI] 32.0-32.9, adult",
+      "Chronic viral hepatitis C",
+      "Other chronic pain",
+      "Unspecified abdominal pain",
+      "Gastro-esophageal reflux disease without esophagitis"
+    ],
+    "n_diagnoses": 9,
+    "note_excerpt": " \nName:  ___                   Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___\n \nChief Complaint:\npost-procedural pain/nausea/vomiting\n \nMajor Surgical or Invasive Procedure:\ncryoablation of R lower abdominal wall desmoid tumor ___\n\n \nHistory of Present Illness:\n HPI:  \n ___ with painful right anterior abdominal wall desmoid tumor, \ns/p CT-guided cryoablation of large portion of the tumor today. \nProcedure went well and as expected, no concern for \ncomplications. Post-procedure has significant nausea and pain \nthat is poorly controlled.  \n On the floor, she complains of ___ RLQ pain at site of \nprocedure, resolved nausea, request\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "31.8",
+        "unit": "",
+        "charttime": "2181-09-06",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "178.02",
+        "unit": "",
+        "charttime": "2181-09-06",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Bicarbonate",
+        "value": "21.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "22.0-32.0"
+      },
+      {
+        "name": "Glucose",
+        "value": "147.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Eosinophils",
+        "value": "0.0",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "1.0-7.0"
+      },
+      {
+        "name": "Lymphocytes",
+        "value": "6.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "19.0-53.0"
+      },
+      {
+        "name": "Monocytes",
+        "value": "2.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "5.0-13.0"
+      },
+      {
+        "name": "Neutrophils",
+        "value": "89.6",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "34.0-71.0"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "452.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "White Blood Cells",
+        "value": "19.4",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "4.0-10.0"
+      },
+      {
+        "name": "Absolute Eosinophil Count",
+        "value": "0.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "0.04-0.54"
+      },
+      {
+        "name": "Absolute Neutrophil Count",
+        "value": "17.07",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "1.6-6.1"
+      },
+      {
+        "name": "Anion Gap",
+        "value": "16.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "8.0-20.0"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "9.0",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2181-09-06 10:10:00",
+        "ref_range": "8.4-10.3"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2181-09-05 13:56:00",
+        "excerpt": "INDICATION:  ___ year old woman with painful desmoid for cryoablation (attn.\nDr. ___  // ___ year old woman with painful desmoid for cryoablation (attn.\nDr. ___\n\nEXAMINATION:  CT-guided cryoablation\n\nCOMPARISON:  MRI abdomen and pelvis ___\n\nTECHNIQUE:  OPERATORS: Dr. ___, radiology trainee and Dr. ___\n___, attending radiologist. Dr. ___ supervised the trainee\nduring the key components of the proce"
+      }
+    ]
+  }
+]

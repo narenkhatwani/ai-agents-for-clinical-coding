@@ -1,0 +1,62 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 13508515
+Admission ID     : 21834271
+
+Reasoning:
+  The patient is a 8cm left renal mass with a history of severe CHF, ischemic heart disease, and type 2 diabetes. Post-surgical recovery is ongoing with no major complications noted.
+
+Key symptoms     : 8cm left renal mass, severe CHF, ischemic heart disease, type 2 diabetes
+Red flags        : hypotension, AMS
+
+OTHER → Other
+-------------
+
+  • [present] 8cm left renal mass
+      evidence: "8cm left renal mass"
+      related: Laparoscopic left radical nephrectomy, Laparoscopic left retroperitoneal lymph node dissection
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history] severe CHF
+      evidence: "No Known Allergies / Adverse Drug Reactions"
+      related: Systolic CHF with ejection fraction 30%, Ischemic heart disease
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history] ischemic heart disease
+      evidence: "No Known Allergies / Adverse Drug Reactions"
+      related: CAD status post three-vessel CABG, Ischemic heart disease
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history] type 2 diabetes
+      evidence: "No Known Allergies / Adverse Drug Reactions"
+      related: Hypertension, Non-insulin-dependent diabetes
+
+RENAL → Renal
+-------------
+
+  • [present, mild] elevated creatinine
+      evidence: "Creatinine: 2.0 mg/dL"
+      related: Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %
+
+HEMATOLOGIC → Other
+-------------------
+
+  • [present, mild] anemia
+      evidence: "Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %"
+      related: RDW: 18.3 %, Red Blood Cells: 3.01 m/uL, RDW-SD: 60.4 fL, Platelet Count: 147.0 K/uL
+
+METABOLIC → Other
+-----------------
+
+  • [present, mild] hypokalemia
+      evidence: "Potassium: 3.9 mEq/L"

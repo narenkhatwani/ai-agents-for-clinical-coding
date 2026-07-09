@@ -1,0 +1,63 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and previous surgeries.",
+  "branches": [
+    {
+      "category": "gi",
+      "ontology_hint": "Gynecology",
+      "symptoms": [
+        {
+          "term": "heavy vaginal bleeding",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "heavy vaginal bleeding after hysterectomy",
+          "related_findings": [
+            "abnormal uterine and vaginal bleeding, unspecified"
+          ],
+          "children": [
+            {
+              "term": "vaginal spotting to light bleeding",
+              "status": "history",
+              "evidence": "vaginal spotting to light bleeding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "hemodynamic stability",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "hemodynamically stable throughout her hospitalization"
+        }
+      ]
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "abdominal bloatedness",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "abdominal bloatedness secondary to gas"
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "heavy vaginal bleeding",
+    "abdominal bloatedness"
+  ],
+  "red_flags": [],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "10361982",
+  "admission_id": "24286431",
+  "generated_at": "2026-07-09T00:29:28.658417"
+}

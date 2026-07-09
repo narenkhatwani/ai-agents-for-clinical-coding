@@ -1,0 +1,51 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 19632936
+Admission ID     : 26696232
+
+Reasoning:
+  The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of CAD, AFib, and moderate AS.
+
+Key symptoms     : dyspnea on exertion, fatigue
+Red flags        : hypotension, AMS
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present, moderate] dyspnea on exertion
+      evidence: "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+      related: Mild to moderate AS per TTE
+      • [present] mild to moderate AS
+          evidence: "Mild to moderate AS with mild pulmonary hypertension per TTE."
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, moderate] anemia
+      evidence: "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+      related: Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %
+      • [present] iron deficiency
+          evidence: "Iron 15* mg/dL, Ferritin 27* ng/mL"
+
+CONSTITUTIONAL → Other
+----------------------
+
+  • [present, moderate] fatigue
+      evidence: "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+      related: Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %
+
+NEUROLOGIC → Neurologic
+-----------------------
+
+  • [present] chronic venous stasis changes
+      evidence: "chronic venous stasis changes on ___ with swelling of feet/ankles, but no pitting edema."
+
+GI → GI
+-------
+
+  • [history] esophagitis
+      evidence: "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."

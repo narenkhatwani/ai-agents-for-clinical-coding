@@ -1,0 +1,289 @@
+{
+  "symptoms": [
+    {
+      "term": "lightheadedness",
+      "status": "present",
+      "evidence": "lightheadedness and palpitations"
+    },
+    {
+      "term": "palpitations",
+      "status": "present",
+      "evidence": "palpitations"
+    },
+    {
+      "term": "headache",
+      "status": "present",
+      "evidence": "headache"
+    },
+    {
+      "term": "pain in right hip",
+      "status": "present",
+      "evidence": "pain in her right hip"
+    },
+    {
+      "term": "pain in right leg",
+      "status": "present",
+      "evidence": "pain in her entire right leg - her foot, ankle, leg, hip"
+    }
+  ],
+  "vitals": [
+    {
+      "name": "BMI",
+      "value": "22.3",
+      "unit": "kg/m2"
+    },
+    {
+      "name": "Weight",
+      "value": "113.98",
+      "unit": "Lbs"
+    }
+  ],
+  "labs": [
+    {
+      "name": "Red Blood Cells",
+      "value": "3.89",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "47.2",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "Hyaline Casts",
+      "value": "16.0",
+      "unit": "#/lpf",
+      "flag": "high"
+    },
+    {
+      "name": "RBC",
+      "value": "15.0",
+      "unit": "#/hpf",
+      "flag": "high"
+    },
+    {
+      "name": "WBC",
+      "value": "45.0",
+      "unit": "#/hpf",
+      "flag": "high"
+    },
+    {
+      "name": "Eosinophils",
+      "value": "0.9",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "Neutrophils",
+      "value": "71.3",
+      "unit": "%",
+      "flag": "high"
+    },
+    {
+      "name": "Troponin T",
+      "value": "0.09",
+      "unit": "ng/mL",
+      "flag": "high"
+    },
+    {
+      "name": "Anion Gap",
+      "value": "15.0",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Bicarbonate",
+      "value": "25.0",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Calcium, Total",
+      "value": "9.2",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Chloride",
+      "value": "102.0",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Creatinine",
+      "value": "0.7",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Glucose",
+      "value": "82.0",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Magnesium",
+      "value": "2.1",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Phosphate",
+      "value": "3.1",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Potassium",
+      "value": "3.9",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Sodium",
+      "value": "138.0",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": "13.0",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Hematocrit",
+      "value": "36.8",
+      "unit": "%"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "12.1",
+      "unit": "g/dL"
+    },
+    {
+      "name": "MCH",
+      "value": "31.1",
+      "unit": "pg"
+    },
+    {
+      "name": "MCHC",
+      "value": "32.9",
+      "unit": "g/dL"
+    },
+    {
+      "name": "MCV",
+      "value": "95.0",
+      "unit": "fL"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "194.0",
+      "unit": "K/uL"
+    }
+  ],
+  "diagnoses_mentioned": [
+    {
+      "term": "SVT",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "CAD",
+      "certainty": "suspected"
+    },
+    {
+      "term": "TIA",
+      "certainty": "suspected"
+    },
+    {
+      "term": "HTN",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "HLD",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "anxiety",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Glucose intolerance",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "GERD",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "COPD",
+      "certainty": "history"
+    },
+    {
+      "term": "Meniere's disease",
+      "certainty": "history"
+    }
+  ],
+  "medications": [
+    {
+      "name": "Verapamil ER",
+      "dose": "240mg",
+      "route": "PO",
+      "status": "started"
+    },
+    {
+      "name": "Aspirin",
+      "dose": "324mg",
+      "route": "PO",
+      "status": "started"
+    }
+  ],
+  "procedures": [
+    {
+      "name": "IV Adenosine",
+      "result": "6 mg"
+    },
+    {
+      "name": "IV Ondansetron",
+      "result": "4 mg"
+    },
+    {
+      "name": "IV Verapamil",
+      "result": "2.5 mg x 2"
+    },
+    {
+      "name": "PO Aspirin",
+      "result": "324 mg"
+    }
+  ],
+  "negations": [
+    "no chest pain",
+    "no chest pressure",
+    "no shortness of breath",
+    "no head strike",
+    "no frank pulmonary edema",
+    "no heterotopic ossification",
+    "no dislocation",
+    "no periprosthetic lucency",
+    "no osteolysis",
+    "no evidence of dislocation",
+    "no focal consolidation",
+    "no pleural effusion",
+    "no pneumothorax",
+    "no acute infarction",
+    "no hemorrhage",
+    "no edema",
+    "no mass",
+    "no vascular calcifications",
+    "no heterotopic ossification",
+    "no dislocation",
+    "no evidence of dislocation",
+    "no focal consolidation",
+    "no pleural effusion",
+    "no pneumothorax",
+    "no acute infarction",
+    "no hemorrhage",
+    "no edema",
+    "no mass",
+    "no vascular calcifications"
+  ],
+  "temporal": [
+    {
+      "finding": "pain in right hip",
+      "onset": "when nurse tried to reposition her"
+    }
+  ],
+  "_agent": "information_extraction",
+  "_n_prior_admissions": 2
+}

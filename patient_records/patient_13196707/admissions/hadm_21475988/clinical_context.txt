@@ -1,0 +1,157 @@
+STRUCTURED MIMIC DATA (objective vitals, labs, radiology — prefer over note text when they conflict):
+
+VITALS:
+  • DBP (non-invasive): last=71.0 min=45.0 max=89.0 mmHg (122 readings, icu_chartevents)
+  • Heart Rate: last=93.0 min=74.0 max=119.0 bpm (130 readings, icu_chartevents)
+  • Respiratory Rate: last=14.0 min=5.0 max=34.0 insp/min (129 readings, icu_chartevents)
+  • SBP (non-invasive): last=138.0 min=82.0 max=158.0 mmHg (122 readings, icu_chartevents)
+  • SpO2: last=99.0 min=93.0 max=100.0 % (129 readings, icu_chartevents)
+
+LABS (abnormal prioritized):
+  • Calcium, Total: 6.8 mg/dL [abnormal]
+  • Chloride: 115.0 mEq/L [abnormal]
+  • Glucose: 122.0 mg/dL [abnormal]
+  • Phosphate: 1.3 mg/dL [abnormal]
+  • Sodium: 147.0 mEq/L [abnormal]
+  • Hematocrit: 24.3 % [abnormal]
+  • Hemoglobin: 7.0 g/dL [abnormal]
+  • MCHC: 28.8 g/dL [abnormal]
+  • MCV: 103.0 fL [abnormal]
+  • Platelet Count: 125.0 K/uL [abnormal]
+  • RDW: 17.9 % [abnormal]
+  • Red Blood Cells: 2.37 m/uL [abnormal]
+  • White Blood Cells: 10.9 K/uL [abnormal]
+  • RDW-SD: 66.4 fL [abnormal]
+  • Albumin: 2.0 g/dL [abnormal]
+  • Creatinine: 1.3 mg/dL [abnormal]
+  • Alkaline Phosphatase: 879.0 IU/L [abnormal]
+  • Lactate Dehydrogenase (LD): 344.0 IU/L [abnormal]
+  • INR(PT): 1.3  [abnormal]
+  • PT: 13.8 sec [abnormal]
+  • PTT: 43.9 sec [abnormal]
+  • Vancomycin: 23.7 ug/mL [abnormal]
+  • Bicarbonate: 21.0 mEq/L [abnormal]
+  • Urea Nitrogen: 21.0 mg/dL [abnormal]
+  • Reticulocyte Count, Absolute: 0.15 m/uL [abnormal]
+  • Reticulocyte Count, Automated: 6.9 % [abnormal]
+  • Ferritin: 2215.0 ng/mL [abnormal]
+  • Iron: 33.0 ug/dL [abnormal]
+  • Iron Binding Capacity, Total: 108.0 ug/dL [abnormal]
+  • Transferrin: 83.0 mg/dL [abnormal]
+  • Calculated Total CO2: 20.0 mEq/L [abnormal]
+  • pCO2: 33.0 mm Hg [abnormal]
+  • pO2: 108.0 mm Hg [abnormal]
+  • Absolute Lymphocyte Count: 0.59 K/uL [abnormal]
+  • Lymphocytes: 9.0 % [abnormal]
+  • Myelocytes: 1.0 % [abnormal]
+  • Neutrophils: 79.0 % [abnormal]
+  • Absolute Basophil Count: 0.0 K/uL [abnormal]
+  • Absolute Eosinophil Count: 0.0 K/uL [abnormal]
+  • Lactate: 2.6 mmol/L [abnormal]
+
+RADIOLOGY REPORTS:
+  --- Report 1 (2156-02-06 14:26:00) ---
+    EXAMINATION:  CT HEAD W/O CONTRAST.
+    
+    INDICATION:  ___ year old man with altered mental status  // Rule out bleed .
+    
+    TECHNIQUE:  Contiguous axial images from skullbase to vertex were obtained
+    without intravenous contrast.
+    
+    DOSE:  Acquisition sequence:
+       1) Stationary Acquisition 5.0 s, 18.8 cm; CTDIvol = 45.5 mGy (Head) DLP =
+    855.5 mGy-cm.
+     Total DLP (Head) = 856 mGy-cm.
+    
+    COMPARISON:  Noncontrast CT of the head from ___.
+    MR head from ___.
+    
+    FINDINGS: 
+    
+    Numerous scattered bilateral partially calcified lesions with extensive
+    surrounding vasogenic edema appear stable in number and size from ___. 
+    For example, in the right frontal lobe a 14 x 11 mm mass is unchanged from
+  --- Report 2 (2156-02-05 08:49:00) ---
+    EXAMINATION:  CHEST (PORTABLE AP)
+    
+    INDICATION:  ___ year old man with widely metastatic adenocarcinoma of unknown
+    primary, complicated hospital course including HCAP. New fever  // Eval fever.
+    Eval progression of PNA
+    
+    TECHNIQUE:  Portable chest radiograph
+    
+    COMPARISON:  Multiple prior chest radiographs, most recently performed on ___ ; outside facility chest CT ___
+    
+    FINDINGS: 
+    
+    Dobhoff tube terminates in the body of the stomach.  Right subclavian line has
+    been removed in the interim.  SVC stent appears unchanged in position.
+    
+    Bibasilar consolidations may represent a combination of pneumonia and/ or
+    atelectasis, not significantly changed.  Multiple bilateral pulmonary
+    metastases are known to the patient.  Small right pleural effusion has
+    decreased.  No pneumothorax.  Cardiomediastinal contours are stable.
+    
+  --- Report 3 (2156-01-30 17:05:00) ---
+    EXAMINATION:  PA and lateral chest radiographs
+    
+    INDICATION:  ___ with a history of recently diagnosedmetastatic adenocarcinoma
+    of unknown primary with brain, bone,liver metastases, SVC syndrome s/p
+    stenting and multiple UEthrombosis on lovenox, with hospital course notable
+    for pericardial effusion s/p pericardiocentesis, tx for PNA, and altered
+    mental status. Significant family meeting ___ -> pt is DNR/DNI.  // ?Pneumonia
+    
+    TECHNIQUE:  Chest PA and lateral
+    
+    COMPARISON:  Chest radiograph from ___.
+    
+    FINDINGS: 
+    
+    Right subclavian line has its tip in projected over the cavoatrial junction,
+    unchanged from prior.  Dobbhoff tube has its tip projecting over the stomach. 
+    There are  small-to-moderate bilateral pleural effusions, right greater than
+    left, unchanged from prior.  There has been interval improvement in the
+    diffuse haziness throughout both lungs likely represent improving pulmonary
+    edema.  There is persistent consolidative opacities in both lower lobes, that
+  --- Report 4 (2156-01-29 14:55:00) ---
+    INDICATION:  ___ with a history of recently diagnosedmetastatic adenocarcinoma
+    of unknown primary with brain, bone,liver metastases, SVC syndrome s/p
+    stenting and multiple UEthrombosis on lovenox, with hospital course notable
+    for pericardial effusion s/p pericardiocentesis, tx for PNA, and altered
+    mental status. Significant family meeting ___ -> pt is DNR/DNI. // For dobhoff
+    placement
+    
+    TECHNIQUE:  Portable chest radiograph.
+    
+    COMPARISON:  Chest radiograph dated ___.
+    
+    FINDINGS: 
+    
+    The Dobbhoff tube terminates in the stomach.  The right IJ central venous
+    catheter terminates in caval atrial junction.
+    
+    Lung volume is small.  The right atelectasis and pleural effusion has
+    increased.  The left atelectasis is unchanged.  The left costophrenic angle is
+    out of view.  The lungs are otherwise clear.  The cardiac silhouette is
+    enlarged and unchanged.  The mediastinum is unchanged.
+  --- Report 5 (2156-01-26 16:47:00) ---
+    EXAMINATION:  CT HEAD W/O CONTRAST Q111 CT HEAD
+    
+    INDICATION:  ___ with a history of recently diagnosedmetastatic adenocarcinoma
+    of unknown primary with brain, bone,liver metastases, SVC syndrome s/p
+    stenting and multiple UEthrombosis on lovenox now presenting with hypotension
+    ___ PNA oncefepime/flagyl or ___ tamponade iso pericarditis and
+    pericardialeffusion requiring pericardiocentesis course c/b ___ and ___
+    altered mental status possibly ___ seizures from metastases (EEG shows
+    epileptiform discharges left paracentrally) on keppra and vimpat. Significant
+    family meeting ___ -> pt is DNR/DNI.
+    
+    TECHNIQUE:  Contiguous axial images of the brain were obtained without
+    contrast.
+    
+    DOSE:  Acquisition sequence:
+       1) Stationary Acquisition 5.0 s, 18.8 cm; CTDIvol = 45.5 mGy (Head) DLP =
+    855.5 mGy-cm.
+       2) Stationary Acquisition 3.0 s, 11.4 cm; CTDIvol = 45.0 mGy (Head) DLP =
+    513.3 mGy-cm.
+     Total DLP (Head) = 1,369 mGy-cm.

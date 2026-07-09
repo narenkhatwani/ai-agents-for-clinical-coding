@@ -1,0 +1,88 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 19632936
+Admission ID     : 26696232
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [present] dyspnea on exertion — "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+  • [present] fatigue — "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+  • [present] anemia — "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+  • [history] esophagitis — "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
+  • [history] nodular gastritis — "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
+  • [absent] abdominal pain — "He denied any recent hematemesis, hematochezia, or melena."
+  • [absent] hematemesis — "He denied any recent hematemesis, hematochezia, or melena."
+  • [absent] hematochezia — "He denied any recent hematemesis, hematochezia, or melena."
+  • [absent] melena — "He denied any recent hematemesis, hematochezia, or melena."
+  • [absent] myalgias — "He denied HA, fevers, sore throat, abdominal pain, n/v/d, dysuria, or myalgias."
+
+VITALS
+------
+
+• Temperature: 96.8 °F
+• Heart Rate: 80 bpm
+• Blood Pressure: 154/68 mmHg
+• Respiratory Rate: 19 breaths/min
+• Oxygen Saturation: 100% %
+
+LABS
+----
+
+• Hematocrit: 28.1 % [low]
+• Hemoglobin: 8.7 g/dL [low]
+• MCV: 99.0 fL [low]
+• RDW: 18.2 % [high]
+• INR(PT): 1.9  [high]
+• PT: 20.5 sec [high]
+• Calcium, Total: 8.3 mg/dL [low]
+• Absolute Lymphocyte Count: 1.0 K/uL [low]
+• Haptoglobin: 208.0 mg/dL [high]
+• PTT: 37.7 sec [high]
+• Reticulocyte Count, Automated: 3.6 % [high]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] CAD s/p stent
+  • [confirmed] A-fib on warfarin
+  • [confirmed] Sick sinus syndrome s/p PPM
+  • [confirmed] HTN
+  • [confirmed] HLD
+  • [confirmed] Moderate AS
+  • [confirmed] Macrocytic anemia
+  • [confirmed] Colonic polyps
+  • [confirmed] Esophagitis
+
+MEDICATIONS
+-----------
+
+  • Coumadin (continued)
+  • PPM (continued)
+
+PROCEDURES
+----------
+
+  • 2 stents: s/p
+  • 3 colonoscopies: s/p
+  • endoscopy: s/p
+  • pill study: s/p
+  • bone marrow biopsy: scheduled
+
+NEGATIONS
+---------
+
+  • HA
+  • fevers
+  • sore throat
+  • abdominal pain
+  • n/v/d
+  • dysuria
+  • myalgias
+
+TEMPORAL
+--------
+
+  • worsening dyspnea and fatigue: over the past year

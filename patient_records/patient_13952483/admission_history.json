@@ -1,0 +1,393 @@
+[
+  {
+    "hadm_id": 23557636,
+    "admission_id": "23557636",
+    "admittime": "2192-09-17 18:30:00",
+    "dischtime": "2192-09-29 16:57:00",
+    "admission_type": "EW EMER.",
+    "primary_icd_code": "C3432",
+    "primary_dx_title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+    "ground_truth_icd10": [
+      "C3432",
+      "B190",
+      "N179",
+      "T8611",
+      "K5090",
+      "I5030",
+      "I272",
+      "Z940",
+      "D509",
+      "E119",
+      "E785",
+      "Y830",
+      "I10",
+      "F17210",
+      "Z7982"
+    ],
+    "ground_truth_dx_titles": [
+      "Malignant neoplasm of lower lobe, left bronchus or lung",
+      "Unspecified viral hepatitis with hepatic coma",
+      "Acute kidney failure, unspecified",
+      "Kidney transplant rejection",
+      "Crohn's disease, unspecified, without complications",
+      "Unspecified diastolic (congestive) heart failure",
+      "Other secondary pulmonary hypertension",
+      "Kidney transplant status",
+      "Iron deficiency anemia, unspecified",
+      "Type 2 diabetes mellitus without complications",
+      "Hyperlipidemia, unspecified",
+      "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure",
+      "Essential (primary) hypertension",
+      "Nicotine dependence, cigarettes, uncomplicated",
+      "Long term (current) use of aspirin"
+    ],
+    "n_diagnoses": 15,
+    "note_excerpt": " \nName:  ___                  ___ No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nShellfish Derived\n \nAttending: ___.\n \nChief Complaint:\nLLL spiculated nodule seen on CT\n \nMajor Surgical or Invasive Procedure:\nRight Heart Catheterization (___)\n___ guided lung biopsy (___)\n\n \nHistory of Present Illness:\n___ who underwent ECD kidney transplantation in ___, \nallograft nephropathy with proteinuria and creatinine between \n1.6 and 2 mg/dL, BK viruria without viremia, HTN, HLD who \npresented to ___ after imaging finding of LLL mass. Pt had \npreviously tolerated Sirolimus and leflunomide w/o issue, but \nwas switched to tacro from Sirolimus on ___ persistent \nproteinuria and ___ edema. In ___ edema and \n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "19.4",
+        "unit": "",
+        "charttime": "2192-09-18",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "120.00",
+        "unit": "",
+        "charttime": "2192-09-18",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "26.0",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "8.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "RDW",
+        "value": "19.0",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.11",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "56.0",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Bicarbonate",
+        "value": "21.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "22.0-32.0"
+      },
+      {
+        "name": "Creatinine",
+        "value": "2.1",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Glucose",
+        "value": "104.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Sodium",
+        "value": "131.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "133.0-145.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "36.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-29 10:45:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "tacroFK",
+        "value": "4.1",
+        "unit": "ng/mL",
+        "flag": "abnormal",
+        "charttime": "2192-09-25 05:40:00",
+        "ref_range": "5.0-20.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2192-09-27 09:38:00",
+        "excerpt": "EXAMINATION:  MR HEAD W AND W/O CONTRAST T9112 MR HEAD\n\nINDICATION:  ___ year old man with ESRD s/p kidney transplant, pulm HTN, newly\nDx LLL lung SCC. MRI for staging.  // Tumor mets to brain.\n\nTECHNIQUE:  Sagittal and axial T1 weighted imaging were performed. After\nadministration of  mL of Gadavist intravenous contrast, axial imaging was\nperformed with gradient echo, FLAIR, diffusion, and T1 tec"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2192-09-23 20:07:00",
+        "excerpt": "EXAMINATION:  CT scan of the chest\n\nINDICATION:  ___ year old man with history of renal transplant, presenting with\nsubacute dyspnea on exertion, found to have left lung mass s/p biopsy, with\nTTE and right heart cath demonstrating moderate to severe pulmonary\nhypertension. Additionally patient with tachycardia and intermittent pleuritic\nchest pain  // please evaluate for evidence of acute and/or c"
+      }
+    ]
+  },
+  {
+    "hadm_id": 28970521,
+    "admission_id": "28970521",
+    "admittime": "2192-12-15 16:01:00",
+    "dischtime": "2193-01-01 16:15:00",
+    "admission_type": "DIRECT EMER.",
+    "primary_icd_code": "J156",
+    "primary_dx_title": "Pneumonia due to other Gram-negative bacteria",
+    "ground_truth_icd10": [
+      "J156",
+      "D61810",
+      "N179",
+      "R64",
+      "I959",
+      "E872",
+      "E873",
+      "T8612",
+      "T8613",
+      "C3432",
+      "I270",
+      "Z681",
+      "E222",
+      "K521",
+      "T8619",
+      "E46",
+      "J449",
+      "F17210",
+      "F329",
+      "R627",
+      "Y842",
+      "K208",
+      "T66XXXA",
+      "Y92238",
+      "B9789",
+      "Y830",
+      "T451X5A",
+      "T3695XA",
+      "Y92230",
+      "Z7982",
+      "R000",
+      "R1310",
+      "R112",
+      "E861",
+      "I129",
+      "N183"
+    ],
+    "ground_truth_dx_titles": [
+      "Pneumonia due to other Gram-negative bacteria",
+      "Antineoplastic chemotherapy induced pancytopenia",
+      "Acute kidney failure, unspecified",
+      "Cachexia",
+      "Hypotension, unspecified",
+      "Acidosis",
+      "Alkalosis",
+      "Kidney transplant failure",
+      "Kidney transplant infection",
+      "Malignant neoplasm of lower lobe, left bronchus or lung",
+      "Primary pulmonary hypertension",
+      "Body mass index [BMI] 19.9 or less, adult",
+      "Syndrome of inappropriate secretion of antidiuretic hormone",
+      "Toxic gastroenteritis and colitis",
+      "Other complication of kidney transplant",
+      "Unspecified protein-calorie malnutrition",
+      "Chronic obstructive pulmonary disease, unspecified",
+      "Nicotine dependence, cigarettes, uncomplicated",
+      "Major depressive disorder, single episode, unspecified",
+      "Adult failure to thrive",
+      "Radiological procedure and radiotherapy as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure",
+      "Other esophagitis",
+      "Radiation sickness, unspecified, initial encounter",
+      "Other place in hospital as the place of occurrence of the external cause",
+      "Other viral agents as the cause of diseases classified elsewhere",
+      "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure",
+      "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+      "Adverse effect of unspecified systemic antibiotic, initial encounter",
+      "Patient room in hospital as the place of occurrence of the external cause",
+      "Long term (current) use of aspirin",
+      "Tachycardia, unspecified",
+      "Dysphagia, unspecified",
+      "Nausea with vomiting, unspecified",
+      "Hypovolemia",
+      "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+      "Chronic kidney disease, stage 3 (moderate)"
+    ],
+    "n_diagnoses": 36,
+    "note_excerpt": " \nName:  ___                  ___ No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nShellfish Derived\n \nAttending: ___\n \nChief Complaint:\nHypotension\n \nMajor Surgical or Invasive Procedure:\n___: ___ C4D1\n___: ___ C5D1\n___ - ___: Completed XRT as scheduled ___ fractions on \n___\n\n \nHistory of Present Illness:\n___ with pHTN, ESRD s/p DCDRT in ___ c/b BK viruria and \nallograft nephropathy, who was recently diagnosed with Stage 3a \nsquamous cell Lung CA (___) s/p 3 doses of taxol/carboplatin \nwith radiation, admitted from clinic for anorexia, fatigue, \nweight loss, and hypotension.\n\nMr. ___ was recently diagnosed with SCC of the Lung, stage 3a \nper PET CT in ___. He was started on chemo-rads with \ntax\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "16.8",
+        "unit": "",
+        "charttime": "2192-12-15",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "74/48",
+        "unit": "",
+        "charttime": "2192-12-15",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "98.90",
+        "unit": "",
+        "charttime": "2192-12-15",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Bicarbonate",
+        "value": "21.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "22.0-32.0"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "8.2",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Phosphate",
+        "value": "2.5",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "2.7-4.5"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "24.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "24.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "8.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "87.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.94",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "White Blood Cells",
+        "value": "1.7",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2193-01-01 05:25:00",
+        "ref_range": "4.0-10.0"
+      },
+      {
+        "name": "Absolute Lymphocyte Count",
+        "value": "0.05",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2192-12-31 05:00:00",
+        "ref_range": "1.2-3.7"
+      },
+      {
+        "name": "Lymphocytes",
+        "value": "2.0",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2192-12-31 05:00:00",
+        "ref_range": "19.0-53.0"
+      },
+      {
+        "name": "Monocytes",
+        "value": "1.0",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2192-12-31 05:00:00",
+        "ref_range": "5.0-13.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2192-12-26 14:25:00",
+        "excerpt": "EXAMINATION:  CHEST (PA AND LAT)\n\nINDICATION:  ___ year old man with recent hcap  // new cough\n\nTECHNIQUE:  Chest PA and lateral\n\nCOMPARISON:  ___\n\nFINDINGS: \n\nCardiomediastinal contours are unchanged.  Cardiac size is top-normal. \nPatient has known aortic aneurysm and enlargement of the pulmonary arteries. \nThe mediastinum is widened.  Biapical pleural-parenchymal scarring is\nunchanged.  Left low"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2192-12-16 13:28:00",
+        "excerpt": "EXAMINATION:  CT CHEST W/O CONTRAST\n\nINDICATION:  ___ year old man with ESRD ___ T2DM s/p DCDRT in ___, idiopathic\npHTN, recently diagnosed Stage 3a SCC of Lung, admitted for 10 pound weight\nloss, hypotension, malaise, chest pressure, productive cough and now fever\nwhile in hospital. Currently s/p 3 doses of taxol/carboplatin and 18\nmediastinal and lung radiation therapy tx.  // assess for interva"
+      }
+    ]
+  }
+]

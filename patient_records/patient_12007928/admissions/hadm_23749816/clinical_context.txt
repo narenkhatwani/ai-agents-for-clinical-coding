@@ -1,0 +1,73 @@
+STRUCTURED MIMIC DATA (objective vitals, labs, radiology — prefer over note text when they conflict):
+
+VITALS:
+  • DBP (non-invasive): last=54.0 min=46.0 max=62.0 mmHg (10 readings, icu_chartevents)
+  • Heart Rate: last=70.0 min=70.0 max=70.0 bpm (12 readings, icu_chartevents)
+  • Respiratory Rate: last=19.0 min=16.0 max=23.0 insp/min (13 readings, icu_chartevents)
+  • SBP (non-invasive): last=132.0 min=102.0 max=132.0 mmHg (10 readings, icu_chartevents)
+  • SpO2: last=100.0 min=94.0 max=100.0 % (12 readings, icu_chartevents)
+  • BMI (kg/m2): 40.9  (omr)
+  • Weight (Lbs): 253.53  (omr)
+
+LABS (abnormal prioritized):
+  • Creatinine: 1.6 mg/dL [abnormal]
+  • Urea Nitrogen: 32.0 mg/dL [abnormal]
+  • Hemoglobin: 10.2 g/dL [abnormal]
+  • MCH: 24.6 pg [abnormal]
+  • MCHC: 30.0 g/dL [abnormal]
+  • RDW: 18.2 % [abnormal]
+  • RDW-SD: 53.5 fL [abnormal]
+  • Glucose: 127.0 mg/dL [abnormal]
+  • Hematocrit: 32.1 % [abnormal]
+  • MCV: 81.0 fL [abnormal]
+  • White Blood Cells: 3.9 K/uL [abnormal]
+  • INR(PT): 1.3  [abnormal]
+  • PT: 14.5 sec [abnormal]
+  • Red Blood Cells: 3.87 m/uL [abnormal]
+  • Albumin: 3.1 g/dL [abnormal]
+  • Anion Gap: 15.0 mEq/L
+  • Bicarbonate: 29.0 mEq/L
+  • Calcium, Total: 8.9 mg/dL
+  • Chloride: 97.0 mEq/L
+  • Magnesium: 1.9 mg/dL
+  • Phosphate: 3.7 mg/dL
+  • Potassium: 4.1 mEq/L
+  • Sodium: 137.0 mEq/L
+  • Platelet Count: 207.0 K/uL
+  • PTT: 31.1 sec
+  • Alanine Aminotransferase (ALT): 15.0 IU/L
+  • Alkaline Phosphatase: 62.0 IU/L
+  • Asparate Aminotransferase (AST): 23.0 IU/L
+  • Bilirubin, Total: 0.4 mg/dL
+  • tacroFK: nan ng/mL
+  • Creatine Kinase, MB Isoenzyme: 3.0 ng/mL
+  • Troponin T: nan ng/mL
+  • Base Excess: 1.0 mEq/L
+  • Calculated Total CO2: 26.0 mEq/L
+  • Lactate: 1.3 mmol/L
+  • pCO2: 36.0 mm Hg
+  • pH: 7.45 units
+  • pO2: 103.0 mm Hg
+  • Specimen Type: ART. 
+
+RADIOLOGY REPORTS:
+  --- Report 1 (2192-09-10 15:30:00) ---
+    EXAMINATION:  CHEST (PORTABLE AP)
+    
+    INDICATION:  History: ___ with sob  // eval for pulm edema
+    
+    TECHNIQUE:  Single frontal view of the chest
+    
+    COMPARISON:  ___
+    
+    FINDINGS: 
+    
+    Dual lead left-sided pacer device is stable in position.  The cardiac
+    silhouette remains enlarged.  There is mild to moderate pulmonary edema. 
+    Bilateral pleural effusions are likely present.  No pneumothorax is seen. 
+    Mediastinal contours are stable.
+    
+    IMPRESSION: 
+    
+    Large cardiac silhouette, similar to prior, underlying pericardial effusion
+    not excluded.  Bilateral pleural effusions and pulmonary edema.

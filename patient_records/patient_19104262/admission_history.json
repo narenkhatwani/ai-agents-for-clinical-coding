@@ -1,0 +1,659 @@
+[
+  {
+    "hadm_id": 28850223,
+    "admission_id": "28850223",
+    "admittime": "2118-07-28 18:08:00",
+    "dischtime": "2118-07-31 15:06:00",
+    "admission_type": "EW EMER.",
+    "primary_icd_code": "O99281",
+    "primary_dx_title": "Endocrine, nutritional and metabolic diseases complicating pregnancy, first trimester",
+    "ground_truth_icd10": [
+      "O99281",
+      "O98811",
+      "E1010",
+      "A047",
+      "E10649",
+      "O021",
+      "Z794",
+      "O468X1",
+      "Z3A01",
+      "R300",
+      "O9989"
+    ],
+    "ground_truth_dx_titles": [
+      "Endocrine, nutritional and metabolic diseases complicating pregnancy, first trimester",
+      "Other maternal infectious and parasitic diseases complicating pregnancy, first trimester",
+      "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "Enterocolitis due to Clostridium difficile",
+      "Type 1 diabetes mellitus with hypoglycemia without coma",
+      "Missed abortion",
+      "Long term (current) use of insulin",
+      "Other antepartum hemorrhage, first trimester",
+      "Less than 8 weeks gestation of pregnancy",
+      "Dysuria",
+      "Other specified diseases and conditions complicating pregnancy, childbirth and the puerperium"
+    ],
+    "n_diagnoses": 11,
+    "note_excerpt": " \nName:  ___                 Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: MEDICINE\n \nAllergies: \nshellfish\n \nAttending: ___.\n \nChief Complaint:\nDiarrhea, Fatigue\n \nMajor Surgical or Invasive Procedure:\nManual vacuum aspiration to remove remnant fetal tissue\n\n \nHistory of Present Illness:\nMs. ___ is a ___ G5P2 who is pregnant ___ with a PMHx \nnotable for T1DM who is being admitted to the FICU for acidosis \nand DKA. \n\nPatient was recently admitted to ___ ICU \n(___) for a UTI and DKA. She was apparently treated with \nantibiotics (unclear if cipro or ceftriaxone). She now reports a \nsignificant amount of foul smelling diarrhea. Saw OB here this \nweek and ended up having a positive CDIFF on ___. Was \nwritten for F\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "DBP (non-invasive)",
+        "min": 50.0,
+        "max": 76.0,
+        "last": 59.0,
+        "unit": "mmHg",
+        "n_readings": 18,
+        "source": "icu_chartevents"
+      },
+      {
+        "name": "Heart Rate",
+        "min": 86.0,
+        "max": 106.0,
+        "last": 92.0,
+        "unit": "bpm",
+        "n_readings": 23,
+        "source": "icu_chartevents"
+      },
+      {
+        "name": "Respiratory Rate",
+        "min": 11.0,
+        "max": 24.0,
+        "last": 17.0,
+        "unit": "insp/min",
+        "n_readings": 23,
+        "source": "icu_chartevents"
+      },
+      {
+        "name": "SBP (non-invasive)",
+        "min": 94.0,
+        "max": 107.0,
+        "last": 107.0,
+        "unit": "mmHg",
+        "n_readings": 18,
+        "source": "icu_chartevents"
+      },
+      {
+        "name": "SpO2",
+        "min": 98.0,
+        "max": 100.0,
+        "last": 99.0,
+        "unit": "%",
+        "n_readings": 23,
+        "source": "icu_chartevents"
+      },
+      {
+        "name": "BMI (kg/m2)",
+        "value": "24.4",
+        "unit": "",
+        "charttime": "2118-07-29",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "125.00",
+        "unit": "",
+        "charttime": "2118-07-29",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "28.4",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2118-07-31 07:07:00",
+        "ref_range": "34.0-45.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "9.4",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2118-07-31 07:07:00",
+        "ref_range": "11.2-15.7"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.26",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2118-07-31 07:07:00",
+        "ref_range": "3.9-5.2"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "8.1",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2118-07-31 07:07:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Chloride",
+        "value": "110.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2118-07-31 07:07:00",
+        "ref_range": "96.0-108.0"
+      },
+      {
+        "name": "Phosphate",
+        "value": "2.5",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2118-07-30 09:45:00",
+        "ref_range": "2.7-4.5"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "3.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2118-07-30 09:45:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Calculated Total CO2",
+        "value": "14.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2118-07-29 01:15:00",
+        "ref_range": "21.0-30.0"
+      },
+      {
+        "name": "pCO2",
+        "value": "28.0",
+        "unit": "mm Hg",
+        "flag": "abnormal",
+        "charttime": "2118-07-29 01:15:00",
+        "ref_range": "35.0-45.0"
+      },
+      {
+        "name": "pH",
+        "value": "7.28",
+        "unit": "units",
+        "flag": "abnormal",
+        "charttime": "2118-07-29 01:15:00",
+        "ref_range": "7.35-7.45"
+      },
+      {
+        "name": "pO2",
+        "value": "44.0",
+        "unit": "mm Hg",
+        "flag": "abnormal",
+        "charttime": "2118-07-29 01:15:00",
+        "ref_range": "85.0-105.0"
+      },
+      {
+        "name": "Bicarbonate",
+        "value": "13.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2118-07-29 00:55:00",
+        "ref_range": "22.0-32.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2118-07-28 11:08:00",
+        "excerpt": "EXAMINATION:  Chest radiographs.\n\nINDICATION:  History: ___ with new right IJ  // Eval new CVL\n\nTECHNIQUE:  Single portable AP upright view of the chest.\n\nCOMPARISON:  ___.\n\nFINDINGS: \n\nThe patient is status post interval right internal jugular central venous line\nplacement, with the tip terminating in the proximal right atrium.  There is no\nevidence of consolidation, pleural effusion, pneumothora"
+      }
+    ]
+  },
+  {
+    "hadm_id": 21002595,
+    "admission_id": "21002595",
+    "admittime": "2119-12-18 18:18:00",
+    "dischtime": "2119-12-24 13:58:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "O24011",
+    "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester",
+    "ground_truth_icd10": [
+      "O24011",
+      "E1065",
+      "O2341",
+      "O98811",
+      "O98511",
+      "K047",
+      "E109",
+      "X58XXXA",
+      "K029",
+      "A6000",
+      "S025XXA",
+      "Z794",
+      "Z3A09",
+      "Y929",
+      "Z8759"
+    ],
+    "ground_truth_dx_titles": [
+      "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester",
+      "Type 1 diabetes mellitus with hyperglycemia",
+      "Unspecified infection of urinary tract in pregnancy, first trimester",
+      "Other maternal infectious and parasitic diseases complicating pregnancy, first trimester",
+      "Other viral diseases complicating pregnancy, first trimester",
+      "Periapical abscess without sinus",
+      "Type 1 diabetes mellitus without complications",
+      "Exposure to other specified factors, initial encounter",
+      "Dental caries, unspecified",
+      "Herpesviral infection of urogenital system, unspecified",
+      "Fracture of tooth (traumatic), initial encounter for closed fracture",
+      "Long term (current) use of insulin",
+      "9 weeks gestation of pregnancy",
+      "Unspecified place or not applicable",
+      "Personal history of other complications of pregnancy, childbirth and the puerperium"
+    ],
+    "n_diagnoses": 15,
+    "note_excerpt": " \nName:  ___                 Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: OBSTETRICS/GYNECOLOGY\n \nAllergies: \nshellfish\n \nAttending: ___.\n \nChief Complaint:\npoor glycemic control\n \nMajor Surgical or Invasive Procedure:\nnone\n \nHistory of Present Illness:\n___ G6P2(1) at 9+1 with poorly controlled T1DM h/o DKA and IUFD \npresents to triage from initial OB visit for admission for \nglycemic control and ___ consult. Pt currently being treated \nfor UTI and dental infection.  Has no complaints. Denies abd \npain, VB or LOF. +FH at ___ prior to arrival.\n \nPast Medical History:\nDating: ___ ___ by 6 wk US\n\nPObGynH:\n- G1: ___ SVD @ term (___), 6#5oz\n- G2: ___ SVD, IUFD @ 33 weeks (___), 3#8oz\n- G3: ___ SAB at 6 weeks, Mt _\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "27.5",
+        "unit": "",
+        "charttime": "2119-12-18",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "117/65",
+        "unit": "",
+        "charttime": "2119-12-18",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "140.7",
+        "unit": "",
+        "charttime": "2119-12-18",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Protein/Creatinine Ratio",
+        "value": "0.6",
+        "unit": "mg/mg",
+        "flag": "abnormal",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": "0.0-0.2"
+      },
+      {
+        "name": "24 hr Creatinine",
+        "value": "684.0",
+        "unit": "mg/24hr",
+        "flag": "",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": ""
+      },
+      {
+        "name": "24 hr Protein",
+        "value": "414.0",
+        "unit": "mg/24hr",
+        "flag": "",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Creatinine, Urine",
+        "value": "76.0",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Length of Urine Collection",
+        "value": "24.0",
+        "unit": "",
+        "flag": "",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": ""
+      },
+      {
+        "name": "pH",
+        "value": "8.0",
+        "unit": "",
+        "flag": "",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Total Protein, Urine",
+        "value": "46.0",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Urine Volume",
+        "value": "900.0",
+        "unit": "mL",
+        "flag": "",
+        "charttime": "2119-12-19 16:07:00",
+        "ref_range": ""
+      }
+    ]
+  },
+  {
+    "hadm_id": 29808351,
+    "admission_id": "29808351",
+    "admittime": "2120-01-20 23:07:00",
+    "dischtime": "2120-01-22 11:00:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "O24011",
+    "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester",
+    "ground_truth_icd10": [
+      "O24011",
+      "E1010",
+      "Z3A13",
+      "Z794"
+    ],
+    "ground_truth_dx_titles": [
+      "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester",
+      "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "13 weeks gestation of pregnancy",
+      "Long term (current) use of insulin"
+    ],
+    "n_diagnoses": 4,
+    "note_excerpt": " \nName:  ___                 Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: OBSTETRICS/GYNECOLOGY\n \nAllergies: \nshellfish\n \nAttending: ___.\n \nChief Complaint:\nnausea, vomiting, dizziness\n\n \nMajor Surgical or Invasive Procedure:\nPICC line placement and removal\n \nHistory of Present Illness:\nMs. ___ is a ___ year old G6P3 with a history of\nT1DM (diagnosed age ___ at ___ who presents with two days of\nnausea and vomiting and dizziness. She has been experiencing\n\"morning sickness\" for the past week or two of her pregnancy \nthat\nmakes it difficult to keep meals down throughout the day. For \nthe\npast two days she has not eaten much at all. Yester day all she\nate was a plum and some juice. As a result, she was not check\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "27.7",
+        "unit": "",
+        "charttime": "2120-01-21",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "142",
+        "unit": "",
+        "charttime": "2120-01-21",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "29.2",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "34.0-45.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "10.0",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "11.2-15.7"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.39",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "3.9-5.2"
+      },
+      {
+        "name": "Lactate",
+        "value": "4.4",
+        "unit": "mmol/L",
+        "flag": "abnormal",
+        "charttime": "2120-01-20 23:30:00",
+        "ref_range": "0.5-2.0"
+      },
+      {
+        "name": "pCO2",
+        "value": "32.0",
+        "unit": "mm Hg",
+        "flag": "abnormal",
+        "charttime": "2120-01-20 23:30:00",
+        "ref_range": "35.0-45.0"
+      },
+      {
+        "name": "pO2",
+        "value": "218.0",
+        "unit": "mm Hg",
+        "flag": "abnormal",
+        "charttime": "2120-01-20 23:30:00",
+        "ref_range": "85.0-105.0"
+      },
+      {
+        "name": "MCH",
+        "value": "29.5",
+        "unit": "pg",
+        "flag": "",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "26.0-32.0"
+      },
+      {
+        "name": "MCHC",
+        "value": "34.2",
+        "unit": "g/dL",
+        "flag": "",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "MCV",
+        "value": "86.0",
+        "unit": "fL",
+        "flag": "",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "82.0-98.0"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "223.0",
+        "unit": "K/uL",
+        "flag": "",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "RDW",
+        "value": "13.4",
+        "unit": "%",
+        "flag": "",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "White Blood Cells",
+        "value": "7.8",
+        "unit": "K/uL",
+        "flag": "",
+        "charttime": "2120-01-21 05:17:00",
+        "ref_range": "4.0-10.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2120-01-20 15:44:00",
+        "excerpt": "EXAMINATION:  Portable AP chest\n\nINDICATION:  ___ year old woman with DKA, PICC// PICC line placement   Contact\nname: ___: ___\n\nTECHNIQUE:  Portable AP chest, upright\n\nCOMPARISON:  Chest radiograph dated ___.\n\nFINDINGS: \n\nA right-sided PICC line is seen, with tip likely terminating in the atrium. \nLungs are well aerated and clear.  Cardiomediastinal and hilar silhouettes are\nunremarkable.  No pulm"
+      }
+    ]
+  },
+  {
+    "hadm_id": 26440534,
+    "admission_id": "26440534",
+    "admittime": "2120-03-29 20:20:00",
+    "dischtime": "2120-03-30 19:30:00",
+    "admission_type": "URGENT",
+    "primary_icd_code": "O24012",
+    "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in pregnancy, second trimester",
+    "ground_truth_icd10": [
+      "O24012",
+      "E1010",
+      "O9989",
+      "Z3A23",
+      "Z794",
+      "R109"
+    ],
+    "ground_truth_dx_titles": [
+      "Pre-existing type 1 diabetes mellitus, in pregnancy, second trimester",
+      "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "Other specified diseases and conditions complicating pregnancy, childbirth and the puerperium",
+      "23 weeks gestation of pregnancy",
+      "Long term (current) use of insulin",
+      "Unspecified abdominal pain"
+    ],
+    "n_diagnoses": 6,
+    "note_excerpt": " \nName:  ___                 Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: OBSTETRICS/GYNECOLOGY\n \nAllergies: \nshellfish\n \nAttending: ___.\n \nChief Complaint:\nelevated BG \n \nMajor Surgical or Invasive Procedure:\nnone\n\n \nHistory of Present Illness:\n___ ___ at ___ transferred from ___\nwith concern for DKA. \n\nShe states she had 6 teeth extracted on ___. She had limited PO\nintake due to pain and discomfort. She has been taking Tylenol.\nShe took a course of penicillin prophylactically prior to her\nprocedure. She did not take her home dose of Humalog given she\nwas not eating. However, she still took Levemir nightly. \n\nOn ___, she was walking outside and was struck by a car on her\nleft side. She denies abdominal traum\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "27.8",
+        "unit": "",
+        "charttime": "2120-03-30",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "142.5",
+        "unit": "",
+        "charttime": "2120-03-30",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "pCO2",
+        "value": "34.0",
+        "unit": "mm Hg",
+        "flag": "abnormal",
+        "charttime": "2120-03-30 04:21:00",
+        "ref_range": "35.0-45.0"
+      },
+      {
+        "name": "pO2",
+        "value": "118.0",
+        "unit": "mm Hg",
+        "flag": "abnormal",
+        "charttime": "2120-03-30 04:21:00",
+        "ref_range": "85.0-105.0"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "7.7",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2120-03-30 03:53:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Glucose",
+        "value": "62.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2120-03-30 03:53:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "27.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2120-03-30 03:53:00",
+        "ref_range": "34.0-45.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "9.5",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2120-03-30 03:53:00",
+        "ref_range": "11.2-15.7"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.18",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2120-03-30 03:53:00",
+        "ref_range": "3.9-5.2"
+      },
+      {
+        "name": "Leukocytes",
+        "value": "nan",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2120-03-29 22:43:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Protein",
+        "value": "100.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2120-03-29 22:43:00",
+        "ref_range": "0.0-0.0"
+      },
+      {
+        "name": "RBC",
+        "value": "5.0",
+        "unit": "#/hpf",
+        "flag": "abnormal",
+        "charttime": "2120-03-29 22:43:00",
+        "ref_range": "0.0-2.0"
+      },
+      {
+        "name": "Specific Gravity",
+        "value": "1.041",
+        "unit": " ",
+        "flag": "abnormal",
+        "charttime": "2120-03-29 22:43:00",
+        "ref_range": "1.001-1.035"
+      },
+      {
+        "name": "Urine Appearance",
+        "value": "nan",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2120-03-29 22:43:00",
+        "ref_range": ""
+      }
+    ]
+  },
+  {
+    "hadm_id": 26217333,
+    "admission_id": "26217333",
+    "admittime": "2120-05-14 07:32:00",
+    "dischtime": "2120-05-18 16:29:00",
+    "admission_type": "DIRECT EMER.",
+    "primary_icd_code": "O1493",
+    "primary_dx_title": "Unspecified pre-eclampsia, third trimester",
+    "ground_truth_icd10": [
+      "O1493",
+      "O24013",
+      "O4703",
+      "E1065",
+      "O365130",
+      "O365930",
+      "O368130",
+      "O358XX0",
+      "Z3A30",
+      "Z794"
+    ],
+    "ground_truth_dx_titles": [
+      "Unspecified pre-eclampsia, third trimester",
+      "Pre-existing type 1 diabetes mellitus, in pregnancy, third trimester",
+      "False labor before 37 completed weeks of gestation, third trimester",
+      "Type 1 diabetes mellitus with hyperglycemia",
+      "Maternal care for known or suspected placental insufficiency, third trimester, not applicable or unspecified",
+      "Maternal care for other known or suspected poor fetal growth, third trimester, not applicable or unspecified",
+      "Decreased fetal movements, third trimester, not applicable or unspecified",
+      "Maternal care for other (suspected) fetal abnormality and damage, not applicable or unspecified",
+      "30 weeks gestation of pregnancy",
+      "Long term (current) use of insulin"
+    ],
+    "n_diagnoses": 10,
+    "note_excerpt": " \nName:  ___                 Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: OBSTETRICS/GYNECOLOGY\n \nAllergies: \nshellfish\n \nAttending: ___.\n \nChief Complaint:\ncontractions, N/V, HA, decreased fetal movement, general malaise\n \nMajor Surgical or Invasive Procedure:\nnone\n \nHistory of Present Illness:\n___ G6P1222 at 30w1d with poorly controlled T1DM, worsening \nproteinuria, elevated BP x1, fetal CNS abnormalities and lagging \nAC with abnormal dopplers, concern for placental insufficiency \npresenting with persistent contractions, nausea and vomiting x2 \ndays, headache s/p Tylenol without improvement, decreased fetal \nmovement and generally feeling unwell. Reports she does not feel\nlike this is DKA, has had multiple \n[... excerpt truncated ...]"
+  }
+]

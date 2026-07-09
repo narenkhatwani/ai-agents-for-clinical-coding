@@ -1,0 +1,194 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with septic shock, hypoxic respiratory failure, and multiple organ failures including liver and renal failure, along with signs of severe coagulopathy and hepatic encephalopathy.",
+  "branches": [
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "Septic shock",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "Septic shock",
+          "related_findings": [
+            "Klebsiella Aerogenes blood cultures grew"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "Hypoxic respiratory failure",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "intubated for hypoxic respiratory failure",
+          "related_findings": [
+            "large pleural effusion with compressive consolidation versus atelectasis"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "Atrial fibrillation/flutter",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
+      "symptoms": [
+        {
+          "term": "Hepatic encephalopathy",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "hepatic encephalopathy",
+          "related_findings": [
+            "worsening liver failure"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "gi",
+      "ontology_hint": "Gastrointestinal",
+      "symptoms": [
+        {
+          "term": "GI bleeding",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "concern for GI bleeding (black coffee-ground GI contents)",
+          "related_findings": [
+            "epistaxis"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "Renal failure",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "acute renal failure ___ to septic shock and ATN on dialysis",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "Klebsiella Aerogenes infection",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "Klebsiella Aerogenes blood cultures grew",
+          "related_findings": [
+            "broad spectrum antibiotics started"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "Potential VAP or GI source",
+          "status": "present",
+          "severity": "unknown",
+          "evidence": "Klebsiella Aerogenes infection, distributive shock picture",
+          "related_findings": [
+            "large pleural effusion with compressive consolidation versus atelectasis"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "Distributive shock",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "distributive shock picture",
+          "related_findings": [
+            "hypotension"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "Coagulopathy",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
+          "related_findings": [
+            "INR(PT) 3.4",
+            "PT 36.5 sec",
+            "PTT 104.2 sec"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "Metastatic HCC",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland",
+          "related_findings": [
+            "large heterogeneous solid mass within the left upper quadrant"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "Septic shock",
+    "Hypoxic respiratory failure"
+  ],
+  "red_flags": [
+    "Hepatic encephalopathy",
+    "Renal failure"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "17774110",
+  "admission_id": "27339772",
+  "generated_at": "2026-07-09T00:30:57.676832"
+}

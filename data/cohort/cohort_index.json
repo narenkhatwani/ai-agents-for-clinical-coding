@@ -1,10 +1,13 @@
 {
   "stage": 1,
-  "description": "MIMIC cohort selection \u2014 15 patients, ICD-10 ground truth",
-  "generated_at": "2026-07-08T01:03:34.101131",
+  "description": "MIMIC cohort \u2014 latest admission note + prior admission history",
+  "cohort_mode": "latest_note_with_history",
+  "test_mode": false,
+  "generated_at": "2026-07-09T00:15:24.631385",
   "random_seed": 42,
   "n_patients": 15,
-  "n_admissions": 50,
+  "n_index_admissions": 15,
+  "avg_prior_admissions": 2.3333333333333335,
   "subject_ids": [
     10361982,
     10426859,
@@ -27,236 +30,121 @@
       "patient_id": "10361982",
       "subject_id": 10361982,
       "n_admissions": 2,
-      "admission_ids": [
-        "28540049",
-        "24286431"
-      ],
-      "primary_codes": [
-        "N939",
-        "N99820"
-      ]
+      "n_prior_admissions": 1,
+      "latest_hadm_id": 24286431,
+      "primary_codes": "N99820"
     },
     {
       "patient_id": "10426859",
       "subject_id": 10426859,
       "n_admissions": 3,
-      "admission_ids": [
-        "25245894",
-        "21013288",
-        "29908281"
-      ],
-      "primary_codes": [
-        "R0789",
-        "I471",
-        "I471"
-      ]
+      "n_prior_admissions": 2,
+      "latest_hadm_id": 29908281,
+      "primary_codes": "I471"
     },
     {
       "patient_id": "10458324",
       "subject_id": 10458324,
       "n_admissions": 2,
-      "admission_ids": [
-        "21719653",
-        "21744342"
-      ],
-      "primary_codes": [
-        "J09X2",
-        "S270XXA"
-      ]
+      "n_prior_admissions": 1,
+      "latest_hadm_id": 21744342,
+      "primary_codes": "S270XXA"
     },
     {
       "patient_id": "11251337",
       "subject_id": 11251337,
       "n_admissions": 3,
-      "admission_ids": [
-        "27937520",
-        "21161726",
-        "29568708"
-      ],
-      "primary_codes": [
-        "N132",
-        "N136",
-        "N132"
-      ]
+      "n_prior_admissions": 2,
+      "latest_hadm_id": 29568708,
+      "primary_codes": "N132"
     },
     {
       "patient_id": "11474876",
       "subject_id": 11474876,
       "n_admissions": 2,
-      "admission_ids": [
-        "24776937",
-        "29672491"
-      ],
-      "primary_codes": [
-        "K830",
-        "K8030"
-      ]
+      "n_prior_admissions": 1,
+      "latest_hadm_id": 29672491,
+      "primary_codes": "K8030"
     },
     {
       "patient_id": "11607177",
       "subject_id": 11607177,
       "n_admissions": 5,
-      "admission_ids": [
-        "22465519",
-        "22999634",
-        "25619597",
-        "24756239",
-        "23293838"
-      ],
-      "primary_codes": [
-        "K420",
-        "K429",
-        "L7621",
-        "I472",
-        "I472"
-      ]
+      "n_prior_admissions": 4,
+      "latest_hadm_id": 23293838,
+      "primary_codes": "I472"
     },
     {
       "patient_id": "12007928",
       "subject_id": 12007928,
       "n_admissions": 3,
-      "admission_ids": [
-        "27713859",
-        "20918106",
-        "23749816"
-      ],
-      "primary_codes": [
-        "R55",
-        "I5033",
-        "I5033"
-      ]
+      "n_prior_admissions": 2,
+      "latest_hadm_id": 23749816,
+      "primary_codes": "I5033"
     },
     {
       "patient_id": "13196707",
       "subject_id": 13196707,
       "n_admissions": 2,
-      "admission_ids": [
-        "21516900",
-        "21475988"
-      ],
-      "primary_codes": [
-        "C801",
-        "A419"
-      ]
+      "n_prior_admissions": 1,
+      "latest_hadm_id": 21475988,
+      "primary_codes": "A419"
     },
     {
       "patient_id": "13508515",
       "subject_id": 13508515,
       "n_admissions": 2,
-      "admission_ids": [
-        "21011434",
-        "21834271"
-      ],
-      "primary_codes": [
-        "I5023",
-        "C642"
-      ]
+      "n_prior_admissions": 1,
+      "latest_hadm_id": 21834271,
+      "primary_codes": "C642"
     },
     {
       "patient_id": "13952483",
       "subject_id": 13952483,
       "n_admissions": 3,
-      "admission_ids": [
-        "23557636",
-        "28970521",
-        "23852410"
-      ],
-      "primary_codes": [
-        "C3432",
-        "J156",
-        "I9589"
-      ]
+      "n_prior_admissions": 2,
+      "latest_hadm_id": 23852410,
+      "primary_codes": "I9589"
     },
     {
       "patient_id": "16014068",
       "subject_id": 16014068,
       "n_admissions": 10,
-      "admission_ids": [
-        "21573999",
-        "25360978",
-        "23909475",
-        "22582376",
-        "25483652",
-        "25305597",
-        "27129757",
-        "26538856",
-        "21400037",
-        "29042843"
-      ],
-      "primary_codes": [
-        "Z5111",
-        "Z5111",
-        "Z5111",
-        "Z5111",
-        "N179",
-        "I2699",
-        "D62",
-        "C4021",
-        "I2699",
-        "C7931"
-      ]
+      "n_prior_admissions": 9,
+      "latest_hadm_id": 29042843,
+      "primary_codes": "C7931"
     },
     {
       "patient_id": "17774110",
       "subject_id": 17774110,
       "n_admissions": 3,
-      "admission_ids": [
-        "20726415",
-        "27309668",
-        "27339772"
-      ],
-      "primary_codes": [
-        "E279",
-        "K7200",
-        "A4189"
-      ]
+      "n_prior_admissions": 2,
+      "latest_hadm_id": 27339772,
+      "primary_codes": "A4189"
     },
     {
       "patient_id": "18412100",
       "subject_id": 18412100,
       "n_admissions": 2,
-      "admission_ids": [
-        "23635816",
-        "26093939"
-      ],
-      "primary_codes": [
-        "D481",
-        "D481"
-      ]
+      "n_prior_admissions": 1,
+      "latest_hadm_id": 26093939,
+      "primary_codes": "D481"
     },
     {
       "patient_id": "19104262",
       "subject_id": 19104262,
       "n_admissions": 6,
-      "admission_ids": [
-        "28850223",
-        "21002595",
-        "29808351",
-        "26440534",
-        "26217333",
-        "24271247"
-      ],
-      "primary_codes": [
-        "O99281",
-        "O24011",
-        "O24011",
-        "O24012",
-        "O1493",
-        "O2403"
-      ]
+      "n_prior_admissions": 5,
+      "latest_hadm_id": 24271247,
+      "primary_codes": "O2403"
     },
     {
       "patient_id": "19632936",
       "subject_id": 19632936,
       "n_admissions": 2,
-      "admission_ids": [
-        "28139980",
-        "26696232"
-      ],
-      "primary_codes": [
-        "D62",
-        "D509"
-      ]
+      "n_prior_admissions": 1,
+      "latest_hadm_id": 26696232,
+      "primary_codes": "D509"
     }
   ],
   "cohort_pickle": "/Users/narenkhatwani/GitHub/ai-agents-for-clinical-coding/data/cohort/cohort.pkl"

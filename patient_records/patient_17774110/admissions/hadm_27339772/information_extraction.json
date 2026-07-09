@@ -1,0 +1,646 @@
+{
+  "symptoms": [
+    {
+      "term": "Septic shock",
+      "status": "present",
+      "evidence": "Septic shock"
+    },
+    {
+      "term": "Hypoxic respiratory failure",
+      "status": "present",
+      "evidence": "intubated for hypoxic respiratory failure"
+    },
+    {
+      "term": "Epistaxis",
+      "status": "present",
+      "evidence": "epistaxis"
+    },
+    {
+      "term": "GI bleeding",
+      "status": "present",
+      "evidence": "concern for GI bleeding (black coffee-ground GI contents)"
+    },
+    {
+      "term": "Liver failure",
+      "status": "present",
+      "evidence": "worsening liver failure"
+    },
+    {
+      "term": "Renal failure",
+      "status": "present",
+      "evidence": "acute renal failure ___ to septic shock and ATN on dialysis"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "status": "present",
+      "evidence": "hepatic encephalopathy"
+    },
+    {
+      "term": "Multifocal metastatic HCC",
+      "status": "present",
+      "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland s/p RFA"
+    },
+    {
+      "term": "Atelectasis",
+      "status": "present",
+      "evidence": "large pleural effusion with compressive consolidation versus atelectasis"
+    },
+    {
+      "term": "Thrombocytopenia",
+      "status": "present",
+      "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
+    },
+    {
+      "term": "Atrial fibrillation/flutter",
+      "status": "present",
+      "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
+    }
+  ],
+  "vitals": [
+    {
+      "name": "DBP",
+      "value": "51.0",
+      "unit": "mmHg"
+    },
+    {
+      "name": "Heart Rate",
+      "value": "0.0",
+      "unit": "bpm"
+    },
+    {
+      "name": "Respiratory Rate",
+      "value": "0.0",
+      "unit": "insp/min"
+    },
+    {
+      "name": "SBP",
+      "value": "95.0",
+      "unit": "mmHg"
+    },
+    {
+      "name": "SpO2",
+      "value": "94.0",
+      "unit": "%"
+    },
+    {
+      "name": "Temperature",
+      "value": "38.0",
+      "unit": "°C"
+    }
+  ],
+  "labs": [
+    {
+      "name": "WBC",
+      "value": "8.4",
+      "unit": "K/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "RBC",
+      "value": "2.65",
+      "unit": "m/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Hgb",
+      "value": "8.9",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Hct",
+      "value": "26.2",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "MCV",
+      "value": "99",
+      "unit": "fL",
+      "flag": "unknown"
+    },
+    {
+      "name": "MCH",
+      "value": "33.6",
+      "unit": "pg",
+      "flag": "unknown"
+    },
+    {
+      "name": "MCHC",
+      "value": "34.0",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "RDW",
+      "value": "20.9",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "71.4",
+      "unit": "fL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Plt Ct",
+      "value": "36",
+      "unit": "K/uL",
+      "flag": "low"
+    },
+    {
+      "name": "Neuts",
+      "value": "88.2",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "Lymphs",
+      "value": "5.5",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "Monos",
+      "value": "5.2",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "Eos",
+      "value": "0.2",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "Baso",
+      "value": "0.2",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "NRBC",
+      "value": "0.6",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "AbsNeut",
+      "value": "7.41",
+      "unit": "K/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "AbsLymp",
+      "value": "0.46",
+      "unit": "K/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "AbsMono",
+      "value": "0.44",
+      "unit": "K/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "AbsEos",
+      "value": "0.02",
+      "unit": "K/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "AbsBaso",
+      "value": "0.02",
+      "unit": "K/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "PTT",
+      "value": "40.7",
+      "unit": "sec",
+      "flag": "high"
+    },
+    {
+      "name": "Fibrino",
+      "value": "95",
+      "unit": "mg/dL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Glucose",
+      "value": "141",
+      "unit": "mg/dL",
+      "flag": "unknown"
+    },
+    {
+      "name": "UreaN",
+      "value": "22",
+      "unit": "mg/dL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Creat",
+      "value": "2.1",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Na",
+      "value": "127",
+      "unit": "mEq/L",
+      "flag": "unknown"
+    },
+    {
+      "name": "K",
+      "value": "4.5",
+      "unit": "mEq/L",
+      "flag": "unknown"
+    },
+    {
+      "name": "Cl",
+      "value": "94",
+      "unit": "mEq/L",
+      "flag": "unknown"
+    },
+    {
+      "name": "HCO3",
+      "value": "19",
+      "unit": "mEq/L",
+      "flag": "unknown"
+    },
+    {
+      "name": "AnGap",
+      "value": "22",
+      "unit": "mEq/L",
+      "flag": "unknown"
+    },
+    {
+      "name": "Bicarbonate",
+      "value": "7.0",
+      "unit": "mEq/L",
+      "flag": "low"
+    },
+    {
+      "name": "Calcium",
+      "value": "0.94",
+      "unit": "mmol/L",
+      "flag": "low"
+    },
+    {
+      "name": "pCO2",
+      "value": "33.0",
+      "unit": "mm Hg",
+      "flag": "unknown"
+    },
+    {
+      "name": "pH",
+      "value": "7.11",
+      "unit": "units",
+      "flag": "low"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "8.3",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "36",
+      "unit": "K/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW",
+      "value": "23.0",
+      "unit": "%",
+      "flag": "unknown"
+    },
+    {
+      "name": "MCV",
+      "value": "108.0",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "MCH",
+      "value": "35.5",
+      "unit": "pg",
+      "flag": "unknown"
+    },
+    {
+      "name": "INR(PT)",
+      "value": "3.4",
+      "unit": "",
+      "flag": "high"
+    },
+    {
+      "name": "PT",
+      "value": "36.5",
+      "unit": "sec",
+      "flag": "high"
+    },
+    {
+      "name": "PTT",
+      "value": "104.2",
+      "unit": "sec",
+      "flag": "high"
+    },
+    {
+      "name": "Fibrinogen, Functional",
+      "value": "77.0",
+      "unit": "mg/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Bicarbonate",
+      "value": "7.0",
+      "unit": "mEq/L",
+      "flag": "low"
+    },
+    {
+      "name": "Creatinine",
+      "value": "2.2",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Phosphate",
+      "value": "7.6",
+      "unit": "mg/dL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Potassium",
+      "value": "6.5",
+      "unit": "mEq/L",
+      "flag": "high"
+    },
+    {
+      "name": "Sodium",
+      "value": "129.0",
+      "unit": "mEq/L",
+      "flag": "high"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": "21.0",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Potassium, Whole Blood",
+      "value": "5.9",
+      "unit": "mEq/L",
+      "flag": "high"
+    },
+    {
+      "name": "White Blood Cells",
+      "value": "10.3",
+      "unit": "K/uL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Alanine Aminotransferase (ALT)",
+      "value": "439.0",
+      "unit": "IU/L",
+      "flag": "high"
+    },
+    {
+      "name": "Alkaline Phosphatase",
+      "value": "158.0",
+      "unit": "IU/L",
+      "flag": "unknown"
+    },
+    {
+      "name": "Asparate Aminotransferase (AST)",
+      "value": "2481.0",
+      "unit": "IU/L",
+      "flag": "high"
+    },
+    {
+      "name": "Bilirubin, Total",
+      "value": "13.3",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Triglycerides",
+      "value": "447.0",
+      "unit": "mg/dL",
+      "flag": "unknown"
+    },
+    {
+      "name": "pO2",
+      "value": "82.0",
+      "unit": "mm Hg",
+      "flag": "unknown"
+    },
+    {
+      "name": "Bacteria",
+      "value": "nan /hpf",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "Bilirubin",
+      "value": "nan",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "Blood",
+      "value": "nan",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "Protein",
+      "value": "nan mg/dL",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "RBC",
+      "value": "2.34",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RBC",
+      "value": "nan #/hpf",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "Urine Appearance",
+      "value": "nan",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "Urine Color",
+      "value": "nan",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "WBC",
+      "value": "6.0",
+      "unit": "#/hpf",
+      "flag": "unknown"
+    }
+  ],
+  "diagnoses_mentioned": [
+    {
+      "term": "Septic shock",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Multifocal metastatic HCC",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Liver cirrhosis",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Known varices s/p TIPS",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Coagulopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Pancytopenia",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "History of multifocal metastatic HCC with known metastases to the left adrenal gland s/p RFA",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "RFA on ___ to ___ lesion",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "RFA on ___ to the Left adrenal met",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "History of bipolar disorder",
+      "certainty": "suspected"
+    },
+    {
+      "term": "History of ADHD",
+      "certainty": "suspected"
+    },
+    {
+      "term": "GERD",
+      "certainty": "suspected"
+    },
+    {
+      "term": "Asthma/COPD",
+      "certainty": "suspected"
+    },
+    {
+      "term": "___ esophagus",
+      "certainty": "suspected"
+    },
+    {
+      "term": "Alcohol abuse",
+      "certainty": "suspected"
+    },
+    {
+      "term": "History of liver cancer",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "History of liver cirrhosis",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Known portal hypertension",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Esophageal varices, status post TIPS procedure",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Chronic anemia",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Schizophrenia",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Seizure disorder",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "COPD",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "History of prior drug use",
+      "certainty": "suspected"
+    }
+  ],
+  "medications": [
+    {
+      "name": "ceftriaxone",
+      "dose": "c8",
+      "route": "iv",
+      "status": "started"
+    },
+    {
+      "name": "metoprolol",
+      "dose": "metoprolol",
+      "route": "iv",
+      "status": "started"
+    },
+    {
+      "name": "octreotide",
+      "dose": "octreotide",
+      "route": "iv",
+      "status": "started"
+    },
+    {
+      "name": "protonix",
+      "dose": "protonix",
+      "route": "iv",
+      "status": "started"
+    }
+  ],
+  "procedures": [
+    {
+      "name": "arterial line",
+      "result": "placed"
+    }
+  ],
+  "negations": [],
+  "temporal": [
+    {
+      "finding": "Septic shock",
+      "onset": "admission"
+    }
+  ],
+  "_agent": "information_extraction",
+  "_n_prior_admissions": 2
+}

@@ -1,0 +1,78 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 12007928
+Admission ID     : 23749816
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [present] dyspnea — "Dyspnea"
+  • [present] orthopnea — "has quite significant orthopnea, and has to sleep on an incline"
+  • [present] tremors — "increased spasms in the upper extremities and in the bladder"
+  • [absent] chest pain — "She denies any chest pains today, chest pain at rest or with exertion"
+  • [present] urge incontinence — "She states that there are multiple times when she is trying to go to the bathroom and feels the urge however is unable to do so"
+  • [present] fatigue — "She states that all activities now are quite fatiguing"
+  • [present] spasms — "She reports that she has increased spasms in the upper extremities and in the bladder"
+
+VITALS
+------
+
+• DBP: 54.0 mmHg
+• Heart Rate: 70.0 bpm
+• Respiratory Rate: 19.0 insp/min
+• SBP: 132.0 mmHg
+• SpO2: 100.0 %
+• BMI: 40.9 kg/m2
+• Weight: 253.53 Lbs
+
+LABS
+----
+
+• Creatinine: 1.6 mg/dL [high]
+• Urea Nitrogen: 32.0 mg/dL [high]
+• Hemoglobin: 10.2 g/dL [low]
+• MCH: 24.6 pg [low]
+• MCHC: 30.0 g/dL [low]
+• RDW: 18.2 % [high]
+• RDW-SD: 53.5 fL [high]
+• Glucose: 127.0 mg/dL [high]
+• Hematocrit: 32.1 % [low]
+• MCV: 81.0 fL [low]
+• White Blood Cells: 3.9 K/uL [low]
+• INR(PT): 1.3  [normal]
+• PT: 14.5 sec [normal]
+• Red Blood Cells: 3.87 m/uL [low]
+• Albumin: 3.1 g/dL [low]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] paroxysmal atrial fibrillation
+  • [confirmed] diastolic CHF
+  • [confirmed] SSS s/p pacer
+  • [suspected] myasthenia
+  • [rule_out] chest pain
+
+MEDICATIONS
+-----------
+
+  • Lorazepam (started)
+  • Furosemide (started)
+  • Acetaminophen (started)
+
+PROCEDURES
+----------
+
+  • chest x-ray: mild to moderate pulmonary edema, bilateral pleural effusions
+
+NEGATIONS
+---------
+
+  • She denies any prior history of stroke, TIA, deep venous thrombosis, pulmonary embolism, bleeding at the time of surgery, myalgias, joint pains, cough, hemoptysis, black stools or red stools. Denies recent fevers, chills or rigors. Denies exertional buttock or calf pain.
+
+TEMPORAL
+--------
+
+  • dyspnea: upon leaving the hospital

@@ -1,0 +1,77 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 18412100
+Admission ID     : 26093939
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [present] post-procedural pain — "post-procedural pain in the right side of the abdomen extending to the back"
+  • [present] nausea — "one brief episode of nausea that then passed"
+  • [absent] fever — "On other review of systems, she denies headache, blurry vision, fevers, chills, shortness of breath, palpitations, chest pain, urinary frequency/urgency, diarrhea/constipation"
+  • [present] tender abdomen — "tender in the right upper and right lower quadrant to palpation. Otherwise soft, nondistended. No rebound tenderness or guarding"
+  • [present] desmoid tumor — "desmoid tumor of the abdominal wall s/p partial cryoablation"
+  • [present] pain — "similar to the previous procedure she had, and is less sharp in quality compared to her tumor pain"
+
+VITALS
+------
+
+• Weight: 179 Lbs
+• BMI: 31.7 kg/m2
+
+LABS
+----
+
+• MCHC: 31.7 g/dL [low]
+• Platelet Count: 484.0 K/uL [high]
+• White Blood Cells: 15.2 K/uL [high]
+• Hematocrit: 35.3 % [low]
+• Hemoglobin: 11.2 g/dL [low]
+• MCH: 27.1 pg [normal]
+• MCV: 85.0 fL [normal]
+• RDW: 13.8 % [low]
+• Red Blood Cells: 4.14 m/uL [low]
+• RDW-SD: 42.9 fL [normal]
+• Anion Gap: 18.0 mEq/L [normal]
+• Bicarbonate: 22.0 mEq/L [normal]
+• Calcium, Total: 8.5 mg/dL [low]
+• Chloride: 104.0 mEq/L [normal]
+• Creatinine: 0.5 mg/dL [normal]
+• Glucose: 95.0 mg/dL [normal]
+• Magnesium: 2.0 mg/dL [low]
+• Phosphate: 4.2 mg/dL [normal]
+• Potassium: 4.1 mEq/L [normal]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] desmoid tumor
+
+MEDICATIONS
+-----------
+
+  (none)
+
+PROCEDURES
+----------
+
+  • Cryoablation of residual desmoid tumor: Successful ultrasound and CT-guided cryoablation of the residual large right abdominal wall desmoid tumor.
+
+NEGATIONS
+---------
+
+  • fever
+  • headache
+  • blurry vision
+  • shortness of breath
+  • palpitations
+  • chest pain
+  • urinary frequency/urgency
+  • diarrhea/constipation
+
+TEMPORAL
+--------
+
+  • tender abdomen: after cryoablation of residual desmoid tumor

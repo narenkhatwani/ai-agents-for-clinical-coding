@@ -1,0 +1,42 @@
+{
+  "patient_id": "11251337",
+  "subject_id": 11251337,
+  "hadm_id": 29568708,
+  "admission_id": "29568708",
+  "admittime": "2164-12-23 09:38:00",
+  "dischtime": "2164-12-24 20:16:00",
+  "admission_type": "DIRECT OBSERVATION",
+  "gender": "M",
+  "anchor_age": 55,
+  "note_type": "discharge",
+  "text_len": 7627,
+  "n_structured_vitals": 2,
+  "n_structured_labs": 22,
+  "n_radiology_reports": 1,
+  "is_latest_admission": true,
+  "n_prior_admissions": 2,
+  "n_total_admissions": 3,
+  "ground_truth": {
+    "primary_icd_code": "N132",
+    "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+    "icd10_codes": [
+      "N132",
+      "Z936",
+      "E785",
+      "I69954",
+      "I10",
+      "N19",
+      "Z87440"
+    ],
+    "dx_titles": [
+      "Hydronephrosis with renal and ureteral calculous obstruction",
+      "Other artificial openings of urinary tract status",
+      "Hyperlipidemia, unspecified",
+      "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side",
+      "Essential (primary) hypertension",
+      "Unspecified kidney failure",
+      "Personal history of urinary (tract) infections"
+    ],
+    "n_diagnoses": 7
+  }
+}

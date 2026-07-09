@@ -1,0 +1,38 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 11607177
+Admission ID     : 23293838
+
+Reasoning:
+  The patient presents with a history of heart failure and refractory VT, with recent ICD shock and increased edema.
+
+Key symptoms     : ICD discharge, shaking in his chest, increased edema
+Red flags        : ICD shock
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present] ICD discharge
+      evidence: "ICD discharge"
+      related: ICD shock
+      • [present] ICD shock
+          evidence: "ICD shock on ___"
+  • [present] shaking in his chest
+      evidence: "shaking in his chest"
+      related: refractory VT
+  • [present] increased edema
+      evidence: "increased edema in the week prior to the shock"
+      related: Dilated non-ischemic cardiomyopathy
+  • [present] feeling at baseline
+      evidence: "felt at baseline"
+
+RENAL → Renal
+-------------
+
+  • [present] increased edema
+      evidence: "increased edema in the week prior to the shock"
+      related: Dilated non-ischemic cardiomyopathy

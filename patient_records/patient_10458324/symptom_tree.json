@@ -1,0 +1,125 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a mechanical fall, with ongoing respiratory distress and signs of volume overload.",
+  "branches": [
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "right sided rib fractures",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "right sided ___ rib fractures",
+          "related_findings": [
+            "right-sided pneumothorax",
+            "subcutaneous emphysema"
+          ],
+          "children": [
+            {
+              "term": "right lateral chest pain",
+              "status": "present",
+              "evidence": "right lateral chest against the bathtub"
+            }
+          ]
+        },
+        {
+          "term": "hypoxia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "satting 96% on 4L and evaluated by trauma surgery",
+          "related_findings": [
+            "right-sided pneumothorax",
+            "subcutaneous emphysema"
+          ]
+        },
+        {
+          "term": "respiratory distress",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "small right PTX, bilateral pulmonary opacities",
+          "related_findings": [
+            "right-sided pneumothorax",
+            "subcutaneous emphysema"
+          ]
+        },
+        {
+          "term": "pneumothorax",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "small right PTX, tiny right apical pneumothorax",
+          "related_findings": [
+            "right-sided rib fractures",
+            "subcutaneous emphysema"
+          ]
+        },
+        {
+          "term": "pulmonary edema",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "bilateral pulmonary opacities, increased left lung opacity",
+          "related_findings": [
+            "right-sided rib fractures",
+            "subcutaneous emphysema"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "atrial fibrillation",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "paroxysmal atrial fibrillation",
+          "related_findings": [
+            "hypoxia",
+            "respiratory distress"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "constitutional",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "spiked fever ___ the unit",
+          "related_findings": [
+            "pneumonia",
+            "pneumothorax"
+          ]
+        },
+        {
+          "term": "infection",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "GRAM NEGATIVE ROD(S), BUDDING YEAST WITH PSEUDOHYPHAE, GRAM POSITIVE COCCI",
+          "related_findings": [
+            "pneumonia",
+            "pneumothorax"
+          ]
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "right sided rib fractures",
+    "hypoxia"
+  ],
+  "red_flags": [
+    "atrial fibrillation",
+    "pneumothorax"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "10458324",
+  "admission_id": "21744342",
+  "generated_at": "2026-07-09T00:29:44.597572"
+}

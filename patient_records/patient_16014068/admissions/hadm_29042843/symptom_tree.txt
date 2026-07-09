@@ -1,0 +1,49 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 16014068
+Admission ID     : 29042843
+
+Reasoning:
+  The patient is a metastatic sarcoma patient with a history of recurrent disease and recent falls, presenting with weakness and minor abrasions. He has intracranial bleeding and pulmonary nodules, and is on hospice.
+
+Key symptoms     : weakness, pulmonary nodules, hematoma, anemia
+Red flags        : intracranial bleeding, pulmonary emboli
+
+NEUROLOGIC → Neurology
+----------------------
+
+  • [present, moderate] weakness
+      evidence: "He attributes it to weakness."
+      related: intracranial bleeding
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [suspected] pulmonary nodules
+      evidence: "Multiple scattered, rounded opacities in the left perihilar region and right lower lobe are consistent with known pulmonary nodules representing advanced metastatic disease."
+      related: pulmonary emboli
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [confirmed] pulmonary emboli
+      evidence: "Admitted for extensive bilateral pulmonary emboli."
+      related: IVC filter placement
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [chronic] hematoma
+      evidence: "Chronic thigh hematoma with poor erythropoietic response due to XRT."
+      related: anemia
+
+HEMATOLOGIC → Hematology
+------------------------
+
+  • [severe, severe] anemia
+      evidence: "Hematocrit 23.6%, Hemoglobin 7.7 g/dL, Platelet Count 63.0 K/uL."
+      related: thigh hematoma

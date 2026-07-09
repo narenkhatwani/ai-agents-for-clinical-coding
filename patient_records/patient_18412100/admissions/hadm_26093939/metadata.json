@@ -1,0 +1,44 @@
+{
+  "patient_id": "18412100",
+  "subject_id": 18412100,
+  "hadm_id": 26093939,
+  "admission_id": "26093939",
+  "admittime": "2181-10-03 19:54:00",
+  "dischtime": "2181-10-04 15:22:00",
+  "admission_type": "DIRECT OBSERVATION",
+  "gender": "F",
+  "anchor_age": 40,
+  "note_type": "discharge",
+  "text_len": 7297,
+  "n_structured_vitals": 2,
+  "n_structured_labs": 25,
+  "n_radiology_reports": 1,
+  "is_latest_admission": true,
+  "n_prior_admissions": 1,
+  "n_total_admissions": 2,
+  "ground_truth": {
+    "primary_icd_code": "D481",
+    "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+    "icd10_codes": [
+      "D481",
+      "B1920",
+      "K219",
+      "G8918",
+      "R109",
+      "R110",
+      "E669",
+      "Z6832"
+    ],
+    "dx_titles": [
+      "Neoplasm of uncertain behavior of connective and other soft tissue",
+      "Unspecified viral hepatitis C without hepatic coma",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Other acute postprocedural pain",
+      "Unspecified abdominal pain",
+      "Nausea",
+      "Obesity, unspecified",
+      "Body mass index [BMI] 32.0-32.9, adult"
+    ],
+    "n_diagnoses": 8
+  }
+}

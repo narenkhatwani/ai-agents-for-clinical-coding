@@ -1,0 +1,76 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with a history of heart failure and refractory VT, with recent ICD shock and increased edema.",
+  "branches": [
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "ICD discharge",
+          "status": "present",
+          "evidence": "ICD discharge",
+          "related_findings": [
+            "ICD shock"
+          ],
+          "children": [
+            {
+              "term": "ICD shock",
+              "status": "present",
+              "evidence": "ICD shock on ___"
+            }
+          ]
+        },
+        {
+          "term": "shaking in his chest",
+          "status": "present",
+          "evidence": "shaking in his chest",
+          "related_findings": [
+            "refractory VT"
+          ]
+        },
+        {
+          "term": "increased edema",
+          "status": "present",
+          "evidence": "increased edema in the week prior to the shock",
+          "related_findings": [
+            "Dilated non-ischemic cardiomyopathy"
+          ]
+        },
+        {
+          "term": "feeling at baseline",
+          "status": "present",
+          "evidence": "felt at baseline"
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "increased edema",
+          "status": "present",
+          "evidence": "increased edema in the week prior to the shock",
+          "related_findings": [
+            "Dilated non-ischemic cardiomyopathy"
+          ]
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "ICD discharge",
+    "shaking in his chest",
+    "increased edema"
+  ],
+  "red_flags": [
+    "ICD shock"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "11607177",
+  "admission_id": "23293838",
+  "generated_at": "2026-07-09T00:30:03.586906"
+}

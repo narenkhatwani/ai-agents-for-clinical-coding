@@ -1,0 +1,374 @@
+[
+  {
+    "hadm_id": 27713859,
+    "admission_id": "27713859",
+    "admittime": "2192-05-02 21:14:00",
+    "dischtime": "2192-05-04 16:50:00",
+    "admission_type": "EW EMER.",
+    "primary_icd_code": "R55",
+    "primary_dx_title": "Syncope and collapse",
+    "ground_truth_icd10": [
+      "R55",
+      "I5033",
+      "N179",
+      "G7000",
+      "I480",
+      "F0390",
+      "G40909",
+      "Z6841",
+      "I10",
+      "F329",
+      "E039",
+      "E785",
+      "G4733",
+      "Z45018",
+      "K219",
+      "Z7901",
+      "Z66",
+      "Z86711",
+      "W19XXXA",
+      "Y92009",
+      "E669",
+      "R7989"
+    ],
+    "ground_truth_dx_titles": [
+      "Syncope and collapse",
+      "Acute on chronic diastolic (congestive) heart failure",
+      "Acute kidney failure, unspecified",
+      "Myasthenia gravis without (acute) exacerbation",
+      "Paroxysmal atrial fibrillation",
+      "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety",
+      "Epilepsy, unspecified, not intractable, without status epilepticus",
+      "Body mass index [BMI] 40.0-44.9, adult",
+      "Essential (primary) hypertension",
+      "Major depressive disorder, single episode, unspecified",
+      "Hypothyroidism, unspecified",
+      "Hyperlipidemia, unspecified",
+      "Obstructive sleep apnea (adult) (pediatric)",
+      "Encounter for adjustment and management of other part of cardiac pacemaker",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Long term (current) use of anticoagulants",
+      "Do not resuscitate",
+      "Personal history of pulmonary embolism",
+      "Unspecified fall, initial encounter",
+      "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause",
+      "Obesity, unspecified",
+      "Other specified abnormal findings of blood chemistry"
+    ],
+    "n_diagnoses": 22,
+    "note_excerpt": " \nName:  ___                    Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: MEDICINE\n \nAllergies: \noranges\n \nAttending: ___.\n \nChief Complaint:\nfall\n \nMajor Surgical or Invasive Procedure:\nnone\n\n \nHistory of Present Illness:\nMs. ___ is an ___ year old female with a PMHx of diastolic \nheart failure (EF 55%, ___, paroxysmal AF, Sick sinus \nsyndrome, AV block s/p PPM, and myasthenia ___ who presented \nafter an unwitnessed fall preceded by chest pain. Her Lifealert \nbracelet was activated. The fire department and her son were \ncalled and she was found on the floor with a hurt shoulder and \nhip.  \nShe denies feeling strange before fall. She thinks she stumbled \nand fell due to myasthenia ___. Denies CP. She has a\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "42.7",
+        "unit": "",
+        "charttime": "2192-05-03",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "264.55",
+        "unit": "",
+        "charttime": "2192-05-03",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Creatinine",
+        "value": "1.3",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "0.4-1.1"
+      },
+      {
+        "name": "Glucose",
+        "value": "102.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.4",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "15.2",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "10.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "11.2-15.7"
+      },
+      {
+        "name": "MCHC",
+        "value": "30.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "RDW",
+        "value": "15.6",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.76",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "3.9-5.2"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "53.1",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2192-05-04 07:15:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Phosphate",
+        "value": "2.5",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-05-03 15:20:00",
+        "ref_range": "2.7-4.5"
+      },
+      {
+        "name": "D-Dimer",
+        "value": "766.0",
+        "unit": "ng/mL",
+        "flag": "abnormal",
+        "charttime": "2192-05-03 12:02:00",
+        "ref_range": "0.0-500.0"
+      },
+      {
+        "name": "Potassium",
+        "value": "3.1",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2192-05-03 05:55:00",
+        "ref_range": "3.3-5.1"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2192-05-03 17:39:00",
+        "excerpt": "INDICATION:  ___ year old woman with heart failure, s/p fall with ?syncope,\nfound to have elevated d-dimer.  // assess for PE\n\nTECHNIQUE:  Axial multidetector CT images were obtained through the thorax\nafter the uneventful administration of 100 cc of Omnipaque intravenous\ncontrast.\nReformatted coronal, sagittal, thin slice axial images, and oblique maximal\nintensity projection images were submitte"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2192-05-02 08:06:00",
+        "excerpt": "EXAMINATION:  CT C-SPINE W/O CONTRAST\n\nINDICATION:  ___ with head strike on blood thinners and neck pain  // bleed or\nneck fx?\n\nTECHNIQUE:  Non-contrast helical multidetector CT was performed.Soft tissue\nand bone algorithm images were generated.  Coronal and sagittal reformations\nwere then constructed.\n\nDOSE:  Total DLP (Body) = 733 mGy-cm.\n\nCOMPARISON:  CT chest dated ___.\nCT C-spine dated ___.\nC"
+      }
+    ]
+  },
+  {
+    "hadm_id": 20918106,
+    "admission_id": "20918106",
+    "admittime": "2192-08-30 20:37:00",
+    "dischtime": "2192-09-04 17:37:00",
+    "admission_type": "EW EMER.",
+    "primary_icd_code": "I5033",
+    "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
+    "ground_truth_icd10": [
+      "I5033",
+      "N179",
+      "D689",
+      "I480",
+      "G7000",
+      "G40909",
+      "F0390",
+      "I129",
+      "Z6841",
+      "E039",
+      "I8312",
+      "M79661",
+      "E669",
+      "Z950",
+      "W19XXXA",
+      "E785",
+      "G4733",
+      "Z7902",
+      "Z66",
+      "M25511",
+      "I8311",
+      "Y92009",
+      "N189"
+    ],
+    "ground_truth_dx_titles": [
+      "Acute on chronic diastolic (congestive) heart failure",
+      "Acute kidney failure, unspecified",
+      "Coagulation defect, unspecified",
+      "Paroxysmal atrial fibrillation",
+      "Myasthenia gravis without (acute) exacerbation",
+      "Epilepsy, unspecified, not intractable, without status epilepticus",
+      "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety",
+      "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+      "Body mass index [BMI] 40.0-44.9, adult",
+      "Hypothyroidism, unspecified",
+      "Varicose veins of left lower extremity with inflammation",
+      "Pain in right lower leg",
+      "Obesity, unspecified",
+      "Presence of cardiac pacemaker",
+      "Unspecified fall, initial encounter",
+      "Hyperlipidemia, unspecified",
+      "Obstructive sleep apnea (adult) (pediatric)",
+      "Long term (current) use of antithrombotics/antiplatelets",
+      "Do not resuscitate",
+      "Pain in right shoulder",
+      "Varicose veins of right lower extremity with inflammation",
+      "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause",
+      "Chronic kidney disease, unspecified"
+    ],
+    "n_diagnoses": 23,
+    "note_excerpt": " \nName:  ___                    Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: MEDICINE\n \nAllergies: \noranges\n \nAttending: ___.\n \nChief Complaint:\nfall\n \nMajor Surgical or Invasive Procedure:\nNone\n\n \nHistory of Present Illness:\n___ year old woman with hx pAF, diastolic CHF, SSS s/p pacer, \nmyasthenia ___ presenting s/p fall. She told triage that she \nthinks she fell over a threshold at home. She then told her \nnurse that she didn't fall but she just slipped out of chair to \nfloor with strike to ankle and knee. She called life alert, who \narrived at her home and took her to ___. She denies headstrike \nor LOC states she normally get around the house with a walker on \nher own. Denies neck pain. On interview with M\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "43.5",
+        "unit": "",
+        "charttime": "2192-08-31",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "269.62",
+        "unit": "",
+        "charttime": "2192-08-31",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hemoglobin",
+        "value": "10.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-04 06:15:00",
+        "ref_range": "11.2-15.7"
+      },
+      {
+        "name": "MCH",
+        "value": "25.2",
+        "unit": "pg",
+        "flag": "abnormal",
+        "charttime": "2192-09-04 06:15:00",
+        "ref_range": "26.0-32.0"
+      },
+      {
+        "name": "MCHC",
+        "value": "30.6",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-04 06:15:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "RDW",
+        "value": "18.0",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2192-09-04 06:15:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "52.5",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2192-09-04 06:15:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.5",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-04 06:15:00",
+        "ref_range": "0.4-1.1"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "23.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-04 06:15:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Glucose",
+        "value": "112.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2192-09-03 21:15:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "33.1",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2192-09-02 05:50:00",
+        "ref_range": "34.0-45.0"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.6",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2192-09-02 05:50:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "17.8",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2192-09-02 05:50:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "MCV",
+        "value": "81.0",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2192-08-31 07:55:00",
+        "ref_range": "82.0-98.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2192-08-31 00:08:00",
+        "excerpt": "EXAMINATION:  CT HEAD W/O CONTRAST Q111 CT HEAD\n\nINDICATION:  ___ year old woman with afib on apixaban, s/p unwitnessed fall.\nDecreased reactivity of right pupil  // Evidence of intracranial bleed\n\nTECHNIQUE:  Contiguous axial images of the brain were obtained without\ncontrast.\n\nDOSE:  Acquisition sequence:\n   1) Sequenced Acquisition 7.0 s, 14.2 cm; CTDIvol = 49.4 mGy (Head) DLP =\n702.4 mGy-cm.\n "
+      },
+      {
+        "type": "radiology",
+        "charttime": "2192-08-31 00:08:00",
+        "excerpt": "EXAMINATION:  CT C-SPINE W/O CONTRAST Q311 CT SPINE\n\nINDICATION:  ___ year old woman with afib on apixaban, s/p unwitnessed fall.\nDecreased reactivity of right pupil  // evidence of fracture      evidence of\nfracture\n\nTECHNIQUE:  Non-contrast helical multidetector CT was performed. Soft tissue\nand bone algorithm images were generated.  Coronal and sagittal reformations\nwere then constructed.\n\nDOSE"
+      }
+    ]
+  }
+]

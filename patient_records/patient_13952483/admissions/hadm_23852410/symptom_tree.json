@@ -1,0 +1,169 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms including cough, odynophagia, and chest pain, with recent neutropenia and thrombocytopenia.",
+  "branches": [
+    {
+      "category": "constitutional",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "hypotension",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Hypotension and Weight Loss",
+          "related_findings": [
+            "BP 86/54 --> 110/70 after 1L IVF"
+          ],
+          "children": []
+        },
+        {
+          "term": "weight loss",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "weight loss",
+          "related_findings": [
+            "BMI 15.8",
+            "94.7 lbs (about 5 pounds lower than prior admission)"
+          ],
+          "children": []
+        },
+        {
+          "term": "neutropenia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "new neutropenia (ANC 750)",
+          "related_findings": [
+            "WBC 2.7 K/uL",
+            "Lymphocytes 9.0 %",
+            "Bands 8.0 %"
+          ],
+          "children": []
+        },
+        {
+          "term": "thrombocytopenia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "thrombocytopenia (plts 93)",
+          "related_findings": [
+            "Platelet Count 137.0 K/uL"
+          ],
+          "children": []
+        },
+        {
+          "term": "anorexia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "overall anorexia and poor appetite",
+          "related_findings": [
+            "Weight loss",
+            "Neutropenia"
+          ],
+          "children": []
+        },
+        {
+          "term": "nausea",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "some nausea",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "cough",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "coughing",
+          "related_findings": [
+            "Coarse crackles at bases without rhonchi or wheezing"
+          ],
+          "children": []
+        },
+        {
+          "term": "odynophagia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "persistent odynophagia",
+          "related_findings": [
+            "Pain with swallowing"
+          ],
+          "children": []
+        },
+        {
+          "term": "chest pain",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "pleuritic/MSK chest pain",
+          "related_findings": [
+            "Loud systolic ejection murmur"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "systolic ejection murmur",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Loud systolic ejection murmur",
+          "related_findings": [
+            "Loud systolic ejection murmur"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "neutropenia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "new neutropenia (ANC 750)",
+          "related_findings": [
+            "WBC 2.7 K/uL",
+            "Lymphocytes 9.0 %",
+            "Bands 8.0 %"
+          ],
+          "children": []
+        },
+        {
+          "term": "thrombocytopenia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "thrombocytopenia (plts 93)",
+          "related_findings": [
+            "Platelet Count 137.0 K/uL"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "hypotension",
+    "cough"
+  ],
+  "red_flags": [
+    "hypotension",
+    "neutropenia",
+    "thrombocytopenia"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "13952483",
+  "admission_id": "23852410",
+  "generated_at": "2026-07-09T00:30:41.351859"
+}

@@ -1,0 +1,90 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with nephrolithiasis and post-procedural symptoms including residual stone, pain, and bleeding. Laboratory findings indicate anemia and renal dysfunction.",
+  "branches": [
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "nephrolithiasis",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "nephrolithiasis",
+          "related_findings": [
+            "Creatinine: 2.5 mg/dL",
+            "Glucose: 105 mg/dL",
+            "Urea Nitrogen: 22 mg/dL"
+          ],
+          "children": [
+            {
+              "term": "residual stone",
+              "status": "present",
+              "evidence": "There is some residual stone that will require interval right URS"
+            }
+          ]
+        },
+        {
+          "term": "pain",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
+        },
+        {
+          "term": "bleeding",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "You can expect to see occasional blood in your urine"
+        }
+      ]
+    },
+    {
+      "category": "hematologic",
+      "ontology_hint": "Hematologic",
+      "symptoms": [
+        {
+          "term": "anemia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL",
+          "related_findings": [
+            "MCV: 104.0 fL",
+            "RDW-SD: 59.6 fL"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "renal dysfunction",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "Creatinine: 2.5 mg/dL, Glucose: 105 mg/dL, Urea Nitrogen: 22 mg/dL",
+          "related_findings": [
+            "Hematocrit: 30.8 %",
+            "Hemoglobin: 9.4 g/dL"
+          ]
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "nephrolithiasis",
+    "residual stone",
+    "pain",
+    "bleeding"
+  ],
+  "red_flags": [
+    "anemia",
+    "renal dysfunction"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "11251337",
+  "admission_id": "29568708",
+  "generated_at": "2026-07-09T00:29:50.427181"
+}

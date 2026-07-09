@@ -1,0 +1,88 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 11474876
+Admission ID     : 29672491
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [history] nocturnal hypoxia — "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis"
+  • [absent] abdominal pain — "Today he underwent ERCP with extraction of stones and sphincterotomy, as well as stent removal. Per report he received 1.5 L ___ and received ciprofloxacin, although no further antibiotics or fluids were recommended after the procedure. Following the procedure, the patient reports feeling good, with no abdominal pain, dyspnea, CP, or other symptoms."
+  • [absent] dyspnea — "Following the procedure, the patient reports feeling good, with no abdominal pain, dyspnea, CP, or other symptoms."
+  • [present] leg swelling — "Notes his ___ edema improves during the night and worsens during the day."
+
+VITALS
+------
+
+• Weight: 0 Lbs
+• Temperature: 98.1 PO
+• Blood Pressure: 142 / 57 mmHg
+• Heart Rate: 68 bpm
+• Respiratory Rate: 20 bpm
+• O2 Saturation: 94 %
+
+LABS
+----
+
+• Creatinine: 1.4 mg/dL [high]
+• INR(PT): 1.3  [high]
+• PT: 13.7 sec [high]
+• Hematocrit: 38.3 % [high]
+• Hemoglobin: 12.6 g/dL [high]
+• MCH: 32.8 pg [high]
+• MCV: 100.0 fL [high]
+• Red Blood Cells: 3.84 m/uL [high]
+• RDW-SD: 54.1 fL [high]
+• Alanine Aminotransferase (ALT): 16.0 IU/L [normal]
+• Alkaline Phosphatase: 102.0 IU/L [normal]
+• Anion Gap: 16.0 mEq/L [normal]
+• Asparate Aminotransferase (AST): 23.0 IU/L [normal]
+• Bicarbonate: 26.0 mEq/L [normal]
+• Bilirubin, Total: 1.0 mg/dL [normal]
+• Calcium, Total: 8.7 mg/dL [low]
+• Chloride: 101.0 mEq/L [normal]
+• Estimated GFR (MDRD equation): nan  [unknown]
+• Glucose: 83.0 mg/dL [normal]
+• Magnesium: 1.7 mg/dL [low]
+• Phosphate: 2.9 mg/dL [low]
+• Potassium: 4.3 mEq/L [normal]
+• Sodium: 143.0 mEq/L [normal]
+• Urea Nitrogen: 15.0 mg/dL [normal]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] AFib
+  • [confirmed] HFpEF
+  • [confirmed] PVD
+  • [confirmed] CKD
+  • [confirmed] Cholangitis
+  • [confirmed] Peripheral vascular disease
+  • [confirmed] Right bundle branch block
+  • [confirmed] Hypertension
+  • [confirmed] Hyperlipidemia
+  • [confirmed] PTSD
+
+MEDICATIONS
+-----------
+
+  • Apixaban (continued)
+  • Lasix (continued)
+  • Ciprofloxacin (started)
+
+PROCEDURES
+----------
+
+  • ERCP: extraction of stones and sphincterotomy, as well as stent removal
+
+NEGATIONS
+---------
+
+  (none)
+
+TEMPORAL
+--------
+
+  • nocturnal hypoxia: improved with diuresis during prior admission

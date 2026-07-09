@@ -1,0 +1,186 @@
+[
+  {
+    "hadm_id": 28139980,
+    "admission_id": "28139980",
+    "admittime": "2139-11-06 17:01:00",
+    "dischtime": "2139-11-09 13:00:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "D62",
+    "primary_dx_title": "Acute posthemorrhagic anemia",
+    "ground_truth_icd10": [
+      "D62",
+      "N179",
+      "I5032",
+      "I272",
+      "E869",
+      "I4891",
+      "N281",
+      "I10",
+      "E785",
+      "I25118",
+      "I350",
+      "R195",
+      "Z45018",
+      "I714",
+      "K219",
+      "K8080",
+      "Z7901",
+      "Z955"
+    ],
+    "ground_truth_dx_titles": [
+      "Acute posthemorrhagic anemia",
+      "Acute kidney failure, unspecified",
+      "Chronic diastolic (congestive) heart failure",
+      "Other secondary pulmonary hypertension",
+      "Volume depletion, unspecified",
+      "Unspecified atrial fibrillation",
+      "Cyst of kidney, acquired",
+      "Essential (primary) hypertension",
+      "Hyperlipidemia, unspecified",
+      "Atherosclerotic heart disease of native coronary artery with other forms of angina pectoris",
+      "Nonrheumatic aortic (valve) stenosis",
+      "Other fecal abnormalities",
+      "Encounter for adjustment and management of other part of cardiac pacemaker",
+      "Abdominal aortic aneurysm, without rupture",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Other cholelithiasis without obstruction",
+      "Long term (current) use of anticoagulants",
+      "Presence of coronary angioplasty implant and graft"
+    ],
+    "n_diagnoses": 18,
+    "note_excerpt": " \nName:  ___                    Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nShortness of breath\n \nMajor Surgical or Invasive Procedure:\nTransfusion of 2 units packed red blood cells\n\n \nHistory of Present Illness:\n___ year old male ___ CAD s/p 2 stents, Afib on warfarin, sick \nsinus s/p PPM, HTN, HLD, moderate AS, macrocytic anemia, \nreferred from clinic with chief complaint of worsening SOB over \n2wk. \n\nPatient reports progressive SOB over the past 8 months up to ___ \nyears that has gradually worsened, but with acute progression \nover the past ___ weeks, particularly over the past few days. \nPatient report\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "32.2",
+        "unit": "",
+        "charttime": "2139-11-06",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "130/52",
+        "unit": "",
+        "charttime": "2139-11-06",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "217.81",
+        "unit": "",
+        "charttime": "2139-11-06",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "27.6",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "8.1",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "29.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "MCV",
+        "value": "107.0",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "82.0-98.0"
+      },
+      {
+        "name": "RDW",
+        "value": "19.4",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.59",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "73.8",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.6",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "17.6",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "8.3",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.5",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "23.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2139-11-09 07:40:00",
+        "ref_range": "6.0-20.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2139-11-08 11:59:00",
+        "excerpt": "EXAMINATION:  CT abdomen pelvis\n\nINDICATION:  ___ year old man with Afib on warfarin, presented with SOB, Hb 6.8\nconcerning for spontaneous retroperitoneal bleed vs other bleed source  //\n?bleed or hematoma. Please include thighs in scan. Thanks\n\nTECHNIQUE:  Multidetector CT images of the abdomen and pelvis were acquired\nwithout intravenous contrast. Non-contrast scan has several limitations in\nde"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2139-11-06 13:49:00",
+        "excerpt": "INDICATION:   ___ presenting with acute on chronic progressive dyspnea  // any\nacute cardiopulm etiology?\n\nTECHNIQUE:  AP and lateral views the chest.\n\nCOMPARISON:  None.\n\nFINDINGS: \n\nLeft chest wall dual lead pacing device is seen with leads in the right atrium\nand right ventricular apex.  Cardiac silhouette is within normal limits.  The\nlungs are clear without consolidation, effusion, or edema. "
+      }
+    ]
+  }
+]

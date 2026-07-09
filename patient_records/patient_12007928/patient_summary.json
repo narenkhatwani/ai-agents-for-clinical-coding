@@ -1,0 +1,21 @@
+{
+  "patient_id": "12007928",
+  "subject_id": 12007928,
+  "gender": "F",
+  "anchor_age": 76,
+  "n_admissions": 3,
+  "n_prior_admissions": 2,
+  "latest_hadm_id": "23749816",
+  "admissions": [
+    {
+      "hadm_id": "23749816",
+      "admittime": "2192-09-10 20:45:00",
+      "primary_icd_code": "I5033",
+      "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
+      "symptom_count": 8,
+      "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "is_latest": true
+    }
+  ],
+  "generated_at": "2026-07-09T00:31:41.840664"
+}

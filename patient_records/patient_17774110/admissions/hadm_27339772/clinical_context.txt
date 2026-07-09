@@ -1,0 +1,129 @@
+STRUCTURED MIMIC DATA (objective vitals, labs, radiology — prefer over note text when they conflict):
+
+VITALS:
+  • DBP (non-invasive): last=51.0 min=51.0 max=60.0 mmHg (3 readings, icu_chartevents)
+  • Heart Rate: last=0.0 min=0.0 max=103.0 bpm (70 readings, icu_chartevents)
+  • Respiratory Rate: last=0.0 min=0.0 max=32.0 insp/min (70 readings, icu_chartevents)
+  • SBP (non-invasive): last=95.0 min=95.0 max=104.0 mmHg (3 readings, icu_chartevents)
+  • SpO2: last=94.0 min=93.0 max=99.0 % (47 readings, icu_chartevents)
+  • Temperature (C): last=38.0 min=35.8 max=38.1 °C (30 readings, icu_chartevents)
+
+LABS (abnormal prioritized):
+  • Calculated Total CO2: 11.0 mEq/L [abnormal]
+  • Free Calcium: 0.94 mmol/L [abnormal]
+  • Glucose: 46.0 mg/dL [abnormal]
+  • Lactate: 13.2 mmol/L [abnormal]
+  • pCO2: 33.0 mm Hg [abnormal]
+  • pH: 7.11 units [abnormal]
+  • Hematocrit: 25.3 % [abnormal]
+  • Hemoglobin: 8.3 g/dL [abnormal]
+  • MCH: 35.5 pg [abnormal]
+  • MCV: 108.0 fL [abnormal]
+  • Platelet Count: 44.0 K/uL [abnormal]
+  • RDW: 23.0 % [abnormal]
+  • Red Blood Cells: 2.34 m/uL [abnormal]
+  • RDW-SD: 84.1 fL [abnormal]
+  • Fibrinogen, Functional: 77.0 mg/dL [abnormal]
+  • INR(PT): 3.4  [abnormal]
+  • PT: 36.5 sec [abnormal]
+  • PTT: 104.2 sec [abnormal]
+  • Bicarbonate: 7.0 mEq/L [abnormal]
+  • Creatinine: 2.2 mg/dL [abnormal]
+  • Phosphate: 7.6 mg/dL [abnormal]
+  • Potassium: 6.5 mEq/L [abnormal]
+  • Sodium: 129.0 mEq/L [abnormal]
+  • Urea Nitrogen: 21.0 mg/dL [abnormal]
+  • Potassium, Whole Blood: 5.9 mEq/L [abnormal]
+  • White Blood Cells: 10.3 K/uL [abnormal]
+  • Alanine Aminotransferase (ALT): 439.0 IU/L [abnormal]
+  • Alkaline Phosphatase: 158.0 IU/L [abnormal]
+  • Asparate Aminotransferase (AST): 2481.0 IU/L [abnormal]
+  • Bilirubin, Total: 13.3 mg/dL [abnormal]
+  • Triglycerides: 447.0 mg/dL [abnormal]
+  • pO2: 82.0 mm Hg [abnormal]
+  • Bacteria: nan /hpf [abnormal]
+  • Bilirubin: nan  [abnormal]
+  • Blood: nan  [abnormal]
+  • Protein: nan mg/dL [abnormal]
+  • RBC: nan #/hpf [abnormal]
+  • Urine Appearance: nan  [abnormal]
+  • Urine Color: nan  [abnormal]
+  • WBC: 6.0 #/hpf [abnormal]
+
+RADIOLOGY REPORTS:
+  --- Report 1 (2159-03-03 12:08:00) ---
+    INDICATION:  ___ year old man with left HD line moved// confirm placement
+    
+    TECHNIQUE:  Chest AP view
+    
+    COMPARISON:  ___
+    
+    IMPRESSION: 
+    
+    Lungs are low volume with worsening pulmonary edema.  Bilateral effusions
+    right greater than left are unchanged.  There are old healed left-sided rib
+    fractures.  The ETT, NG tube left IJ line and right IJ line are unchanged. 
+    Cardiomediastinal silhouette is stable.  No pneumothorax is seen.
+  --- Report 2 (2159-03-03 08:10:00) ---
+    EXAMINATION:  LIVER OR GALLBLADDER US (SINGLE ORGAN)
+    
+    INDICATION:  ___ year old man with known liver failure, question of IVC clot on
+    previously RUQUS// ?IVC clot
+    
+    TECHNIQUE:  Grey scale and color Doppler ultrasound images of the abdomen were
+    obtained.
+    
+    COMPARISON:  Abdominal ultrasound from ___ and the CT report from ___
+    
+    FINDINGS: 
+    
+    LIVER: The hepatic parenchyma appears coarsened. The contour of the liver is
+    nodular, consistent with cirrhosis. There is no new focal liver mass.
+    
+    A solid left hepatic mass is re-demonstrated measuring 2.6 x 2.6 x 2.3 cm
+    arising from the anterior left lobe.  This corresponds to the known lesion
+    previously characterized by a multiphasic CT from ___.
+    
+    The main portal vein is patent with hepatopetal flow. There is small volume
+  --- Report 3 (2159-03-03 08:03:00) ---
+    INDICATION:  ___ year old man with decreased bowel sounds, some bloody BMs, q2h
+    lactulose without movement// ?ileus/obstruction
+    
+    TECHNIQUE:  Portable supine abdominal radiograph was obtained.
+    
+    COMPARISON:  Chest x-ray dated ___, CT abdomen pelvis dated ___
+    
+    FINDINGS: 
+    
+    There are no abnormally dilated loops of large or small bowel.  There is
+    paucity of air within the small and large bowel without evidence of
+    obstruction.
+    Supine assessment limits detection for free air; there is no gross
+    pneumoperitoneum.
+    Osseous structures are unremarkable.
+    There are embolization coils that project over the left upper, right upper,
+    and mid upper abdomen, as well as a TIPS shunt over the right upper abdomen. 
+    There are clips in the left upper abdomen.
+    
+    IMPRESSION: 
+  --- Report 4 (2159-03-02 15:36:00) ---
+    INDICATION:  ___ year old man intubated and sedated transferred from OSH for
+    management of sepsis// ?ET placement
+    
+    TECHNIQUE:  AP portable chest radiograph
+    
+    COMPARISON:  ___
+    
+    FINDINGS: 
+    
+    The patient is intubated with the tip of the endotracheal tube projecting over
+    the midthoracic trachea.  An esophageal probe is present.  The gastric tube
+    projects over the stomach.  Bilateral central lines are present, the tips
+    terminating in the mid SVC.
+    
+    There is a moderate to large right pleural effusion with subjacent
+    atelectasis.  Mild left basilar atelectasis is new since prior.  No
+    pneumothorax.  The lung volumes are decreased.  The size of the cardiac
+    silhouette is within normal limits.  Embolization coils project over the left
+    upper quadrant.
+    

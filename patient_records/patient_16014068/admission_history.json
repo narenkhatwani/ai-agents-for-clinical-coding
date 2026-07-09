@@ -1,0 +1,1534 @@
+[
+  {
+    "hadm_id": 21573999,
+    "admission_id": "21573999",
+    "admittime": "2186-09-10 11:29:00",
+    "dischtime": "2186-09-13 13:30:00",
+    "admission_type": "ELECTIVE",
+    "primary_icd_code": "Z5111",
+    "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+    "ground_truth_icd10": [
+      "Z5111",
+      "C4021",
+      "I10",
+      "G629",
+      "K219",
+      "K449"
+    ],
+    "ground_truth_dx_titles": [
+      "Encounter for antineoplastic chemotherapy",
+      "Malignant neoplasm of long bones of right lower limb",
+      "Essential (primary) hypertension",
+      "Polyneuropathy, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Diaphragmatic hernia without obstruction or gangrene"
+    ],
+    "n_diagnoses": 6,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___.\n \nChief Complaint:\nSarcoma\nScheduled Chemotherapy\n \nMajor Surgical or Invasive Procedure:\nNone.\n\n \nHistory of Present Illness:\n___ yo male with a history of sarcoma of his R leg who is \nadmitted\nfor scheduled chemotherapy with cisplatin and doxorubicin cycle\n1. The patient states he has been feeling well and has been\ngetting around better and is requiring less pain medication. He\nactually would like to titrate the dose down. He still is\nfollowing a 50% weight bearing status on his R leg per \northopedic\nsurgery. He denies any other fevers, wound drainage, nausea, or\ndiarrhea.\n\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "29.9",
+        "unit": "",
+        "charttime": "2186-09-10",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "214.6",
+        "unit": "",
+        "charttime": "2186-09-10",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Calcium, Total",
+        "value": "8.3",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Glucose",
+        "value": "127.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "33.4",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "11.0",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.63",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "PTT",
+        "value": "37.0",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2186-09-10 13:05:00",
+        "ref_range": "25.0-36.5"
+      },
+      {
+        "name": "Phosphate",
+        "value": "4.7",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-09-10 13:05:00",
+        "ref_range": "2.7-4.5"
+      },
+      {
+        "name": "Uric Acid",
+        "value": "7.9",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-09-10 13:05:00",
+        "ref_range": "3.4-7.0"
+      },
+      {
+        "name": "Alanine Aminotransferase (ALT)",
+        "value": "16.0",
+        "unit": "IU/L",
+        "flag": "",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Alkaline Phosphatase",
+        "value": "64.0",
+        "unit": "IU/L",
+        "flag": "",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "40.0-130.0"
+      },
+      {
+        "name": "Anion Gap",
+        "value": "14.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "8.0-20.0"
+      },
+      {
+        "name": "Asparate Aminotransferase (AST)",
+        "value": "16.0",
+        "unit": "IU/L",
+        "flag": "",
+        "charttime": "2186-09-13 00:00:00",
+        "ref_range": "0.0-40.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2186-09-12 21:09:00",
+        "excerpt": "INDICATION:  post-op with intra-op femoral shaft fracture  // post-op with\nintra-op femoral shaft fracture\n\nCOMPARISON:  Radiographs from ___\n\nIMPRESSION: \n\nThere is a right bipolar hemiarthroplasty. There is a long stem femoral\ncomponent with cerclage wires along the femoral shaft.  2 cortical screws are\nseen within the distal femoral shaft fixating an oblique fracture of the\ndistal femoral shaft"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2186-09-10 13:12:00",
+        "excerpt": "INDICATION:  ___ year old man with malignant neoplasm of connective aand soft\ntissue  // please place SL port.  pt to be admitted for chemo, please schedure\nfor AM thank you, ___\n\nCOMPARISON:  Chest CT ___.\n\nTECHNIQUE:  OPERATORS: Dr. ___ and Dr.\n___ radiologist performed the procedure. Dr. ___\nsupervised the trainee during the key components of the procedure and has\nreviewed and agrees with the t"
+      }
+    ]
+  },
+  {
+    "hadm_id": 25360978,
+    "admission_id": "25360978",
+    "admittime": "2186-10-08 11:25:00",
+    "dischtime": "2186-10-11 12:38:00",
+    "admission_type": "ELECTIVE",
+    "primary_icd_code": "Z5111",
+    "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+    "ground_truth_icd10": [
+      "Z5111",
+      "C4021",
+      "N179",
+      "K521",
+      "T451X5A",
+      "R040",
+      "D6959",
+      "I10",
+      "F329",
+      "G629",
+      "K219",
+      "K449"
+    ],
+    "ground_truth_dx_titles": [
+      "Encounter for antineoplastic chemotherapy",
+      "Malignant neoplasm of long bones of right lower limb",
+      "Acute kidney failure, unspecified",
+      "Toxic gastroenteritis and colitis",
+      "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+      "Epistaxis",
+      "Other secondary thrombocytopenia",
+      "Essential (primary) hypertension",
+      "Major depressive disorder, single episode, unspecified",
+      "Polyneuropathy, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Diaphragmatic hernia without obstruction or gangrene"
+    ],
+    "n_diagnoses": 12,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___\n \nChief Complaint:\nScheduled chemotherapy admission: C2D1 Doxorubicin/Cisplatin \n \nMajor Surgical or Invasive Procedure:\nNone\n\n \nHistory of Present Illness:\n___ with high-grade unclassified sarcoma (malignant fibrous \nhistiocytoma) of the right femur s/p radical resection on \n___ now on adjuvant doxorubicin and cisplatin presenting for \nscheduled chemotherapy.\n\nHe was admitted to ___ on ___ for cycle 1 of doxorubicin \nand cisplatin. He had right chest wall port-a-cath placement and \nsubsequently completed completed his first cycle without \nsignificant issue. He was discharged \n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "29.0",
+        "unit": "",
+        "charttime": "2186-10-08",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "208.00",
+        "unit": "",
+        "charttime": "2186-10-08",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Calcium, Total",
+        "value": "8.1",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Glucose",
+        "value": "128.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "29.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "29.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "9.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "3.35",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "White Blood Cells",
+        "value": "11.6",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "4.0-10.0"
+      },
+      {
+        "name": "Anion Gap",
+        "value": "13.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "8.0-20.0"
+      },
+      {
+        "name": "Bicarbonate",
+        "value": "24.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "22.0-32.0"
+      },
+      {
+        "name": "Chloride",
+        "value": "102.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "96.0-108.0"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.2",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Magnesium",
+        "value": "1.9",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2186-10-11 06:40:00",
+        "ref_range": "1.6-2.6"
+      }
+    ]
+  },
+  {
+    "hadm_id": 23909475,
+    "admission_id": "23909475",
+    "admittime": "2186-10-29 11:18:00",
+    "dischtime": "2186-11-01 12:45:00",
+    "admission_type": "ELECTIVE",
+    "primary_icd_code": "Z5111",
+    "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+    "ground_truth_icd10": [
+      "Z5111",
+      "C4021",
+      "K521",
+      "D6481",
+      "G629",
+      "I10",
+      "Z87891",
+      "K219",
+      "K449",
+      "F329",
+      "R2231",
+      "T451X5D"
+    ],
+    "ground_truth_dx_titles": [
+      "Encounter for antineoplastic chemotherapy",
+      "Malignant neoplasm of long bones of right lower limb",
+      "Toxic gastroenteritis and colitis",
+      "Anemia due to antineoplastic chemotherapy",
+      "Polyneuropathy, unspecified",
+      "Essential (primary) hypertension",
+      "Personal history of nicotine dependence",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Diaphragmatic hernia without obstruction or gangrene",
+      "Major depressive disorder, single episode, unspecified",
+      "Localized swelling, mass and lump, right upper limb",
+      "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter"
+    ],
+    "n_diagnoses": 12,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___\n \nChief Complaint:\nSarcoma\n \nMajor Surgical or Invasive Procedure:\nCycle 3 of doxorubicin and cisplatin\n\n \nHistory of Present Illness:\n___ with high-grade unclassified sarcoma (malignant fibrous\nhistiocytoma) of the right femur s/p radical resection on \n___\nnow on adjuvant doxorubicin and cisplatin presenting for\nscheduled chemotherapy.\n\nPt tolerated C2 well. Had worsened diarrhea again towards end of\nthe infusion but managed at home w/ lomotil + immodium. He has\nbeen decreasing the dose now down to daily immodium, having ___\nsoft BM per day. did not have nausea. Had ___ after\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "29.4",
+        "unit": "",
+        "charttime": "2186-10-29",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "205.1",
+        "unit": "",
+        "charttime": "2186-10-29",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "23.4",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "7.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "141.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.65",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "6.9",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Glucose",
+        "value": "130.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "28.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "MCH",
+        "value": "29.8",
+        "unit": "pg",
+        "flag": "",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "26.0-32.0"
+      },
+      {
+        "name": "MCHC",
+        "value": "33.8",
+        "unit": "g/dL",
+        "flag": "",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "MCV",
+        "value": "88.0",
+        "unit": "fL",
+        "flag": "",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "82.0-98.0"
+      },
+      {
+        "name": "RDW",
+        "value": "14.4",
+        "unit": "%",
+        "flag": "",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "White Blood Cells",
+        "value": "8.2",
+        "unit": "K/uL",
+        "flag": "",
+        "charttime": "2186-11-01 05:43:00",
+        "ref_range": "4.0-10.0"
+      }
+    ]
+  },
+  {
+    "hadm_id": 22582376,
+    "admission_id": "22582376",
+    "admittime": "2186-11-19 11:31:00",
+    "dischtime": "2186-11-23 18:00:00",
+    "admission_type": "ELECTIVE",
+    "primary_icd_code": "Z5111",
+    "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+    "ground_truth_icd10": [
+      "Z5111",
+      "C4021",
+      "N179",
+      "E8351",
+      "E8342",
+      "G629",
+      "D638",
+      "T451X5S",
+      "R197",
+      "I10",
+      "Z87891",
+      "F329",
+      "K219",
+      "K449"
+    ],
+    "ground_truth_dx_titles": [
+      "Encounter for antineoplastic chemotherapy",
+      "Malignant neoplasm of long bones of right lower limb",
+      "Acute kidney failure, unspecified",
+      "Hypocalcemia",
+      "Hypomagnesemia",
+      "Polyneuropathy, unspecified",
+      "Anemia in other chronic diseases classified elsewhere",
+      "Adverse effect of antineoplastic and immunosuppressive drugs, sequela",
+      "Diarrhea, unspecified",
+      "Essential (primary) hypertension",
+      "Personal history of nicotine dependence",
+      "Major depressive disorder, single episode, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Diaphragmatic hernia without obstruction or gangrene"
+    ],
+    "n_diagnoses": 14,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___\n \nChief Complaint:\nPRIMARY DIAGNOSIS:  High-grade bone sarcoma  \nTREATMENT REGIMEN:  C3D1 Doxorubicin/Cisplatin \n \nCC:  ___ chemotherapy admission\n \nMajor Surgical or Invasive Procedure:\nC4D1 Doxorubicin and Cisplatin ___\n\n \nHistory of Present Illness:\n___ with high-grade unclassified sarcoma (malignant fibrous\nhistiocytoma) of the right femur s/p radical resection on \n___\nnow on adjuvant doxorubicin and cisplatin presenting for\nscheduled chemotherapy.\n\nPt tolerated C2 well. Had worsened diarrhea again towards end of\nthe infusion but managed at home w/ lomotil + immodium. He h\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "29.4",
+        "unit": "",
+        "charttime": "2186-11-19",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "205.20",
+        "unit": "",
+        "charttime": "2186-11-19",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Calcium, Total",
+        "value": "7.7",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 16:00:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.7",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 16:00:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Glucose",
+        "value": "102.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 16:00:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Phosphate",
+        "value": "4.6",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 16:00:00",
+        "ref_range": "2.7-4.5"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "33.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 16:00:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "25.8",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 04:48:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "8.7",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 04:48:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "RDW",
+        "value": "17.1",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 04:48:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.86",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 04:48:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "49.4",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 04:48:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Albumin",
+        "value": "3.3",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 04:48:00",
+        "ref_range": "3.5-5.2"
+      },
+      {
+        "name": "Bicarbonate",
+        "value": "20.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2186-11-23 04:48:00",
+        "ref_range": "22.0-32.0"
+      }
+    ]
+  },
+  {
+    "hadm_id": 25483652,
+    "admission_id": "25483652",
+    "admittime": "2186-11-29 12:54:00",
+    "dischtime": "2186-12-03 13:10:00",
+    "admission_type": "DIRECT EMER.",
+    "primary_icd_code": "N179",
+    "primary_dx_title": "Acute kidney failure, unspecified",
+    "ground_truth_icd10": [
+      "N179",
+      "D61810",
+      "C4021",
+      "D6959",
+      "D6481",
+      "T451X5D",
+      "I10",
+      "Z87891",
+      "F329",
+      "E8342",
+      "E876",
+      "G629",
+      "K449",
+      "Z515"
+    ],
+    "ground_truth_dx_titles": [
+      "Acute kidney failure, unspecified",
+      "Antineoplastic chemotherapy induced pancytopenia",
+      "Malignant neoplasm of long bones of right lower limb",
+      "Other secondary thrombocytopenia",
+      "Anemia due to antineoplastic chemotherapy",
+      "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter",
+      "Essential (primary) hypertension",
+      "Personal history of nicotine dependence",
+      "Major depressive disorder, single episode, unspecified",
+      "Hypomagnesemia",
+      "Hypokalemia",
+      "Polyneuropathy, unspecified",
+      "Diaphragmatic hernia without obstruction or gangrene",
+      "Encounter for palliative care"
+    ],
+    "n_diagnoses": 14,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___\n \nChief Complaint:\nabnormal labs\n \nMajor Surgical or Invasive Procedure:\nnone\n \nHistory of Present Illness:\nMr. ___ is a ___ with high-grade unclassified sarcoma \n(malignant fibrous histiocytoma) of the right femur s/p radical \nresection on ___ now on adjuvant doxorubicin and cisplatin x \n4 cycles. He was last treated on ___. He received post \nchemo hydration and required repletion of electrolytes prior to \ndischarge. He was sent home with instructions to continue oral \nmagnesium supplements but due to side effects of diarrhea, \nstopped taking these.\n\nHe went for routine lab t\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "28.7",
+        "unit": "",
+        "charttime": "2186-11-29",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "199.9",
+        "unit": "",
+        "charttime": "2186-11-29",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Calcium, Total",
+        "value": "8.1",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-12-03 05:17:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Magnesium",
+        "value": "1.4",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-12-03 05:17:00",
+        "ref_range": "1.6-2.6"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "23.4",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2186-12-03 05:17:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "8.1",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2186-12-03 05:17:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "25.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2186-12-03 05:17:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.68",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2186-12-03 05:17:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "Absolute Lymphocyte Count",
+        "value": "1.12",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2186-12-02 05:58:00",
+        "ref_range": "1.2-3.7"
+      },
+      {
+        "name": "Metamyelocytes",
+        "value": "1.0",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2186-12-02 05:58:00",
+        "ref_range": "0.0-0.0"
+      },
+      {
+        "name": "White Blood Cells",
+        "value": "3.1",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2186-12-02 05:58:00",
+        "ref_range": "4.0-10.0"
+      },
+      {
+        "name": "Absolute Basophil Count",
+        "value": "0.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2186-12-02 05:58:00",
+        "ref_range": "0.01-0.08"
+      },
+      {
+        "name": "Absolute Eosinophil Count",
+        "value": "0.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2186-12-02 05:58:00",
+        "ref_range": "0.04-0.54"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.4",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2186-12-02 05:58:00",
+        "ref_range": "0.5-1.2"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2186-11-29 17:38:00",
+        "excerpt": "EXAMINATION:  RENAL U.S.\n\nINDICATION:  ___ year old man with renal failure  // ?hydronephrosis\n\nTECHNIQUE:  Grey scale and color Doppler ultrasound images of the kidneys were\nobtained.\n\nCOMPARISON:  None.\n\nFINDINGS: \n\nThe right kidney measures 10.6 cm. The left kidney measures 11.0 cm. There is\nno hydronephrosis, stones, or masses bilaterally.  Normal cortical\nechogenicity and corticomedullary dif"
+      }
+    ]
+  },
+  {
+    "hadm_id": 25305597,
+    "admission_id": "25305597",
+    "admittime": "2187-03-22 18:32:00",
+    "dischtime": "2187-04-13 13:18:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "I2699",
+    "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+    "ground_truth_icd10": [
+      "I2699",
+      "C4921",
+      "C775",
+      "I82431",
+      "N179",
+      "D696",
+      "N183",
+      "E871",
+      "D62",
+      "I82491",
+      "Z9221",
+      "Z96641",
+      "Z87891",
+      "Y92239",
+      "F419",
+      "K5730",
+      "G629",
+      "R509",
+      "K649",
+      "Y838"
+    ],
+    "ground_truth_dx_titles": [
+      "Other pulmonary embolism without acute cor pulmonale",
+      "Malignant neoplasm of connective and soft tissue of right lower limb, including hip",
+      "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes",
+      "Acute embolism and thrombosis of right popliteal vein",
+      "Acute kidney failure, unspecified",
+      "Thrombocytopenia, unspecified",
+      "Chronic kidney disease, stage 3 (moderate)",
+      "Hypo-osmolality and hyponatremia",
+      "Acute posthemorrhagic anemia",
+      "Acute embolism and thrombosis of other specified deep vein of right lower extremity",
+      "Personal history of antineoplastic chemotherapy",
+      "Presence of right artificial hip joint",
+      "Personal history of nicotine dependence",
+      "Unspecified place in hospital as the place of occurrence of the external cause",
+      "Anxiety disorder, unspecified",
+      "Diverticulosis of large intestine without perforation or abscess without bleeding",
+      "Polyneuropathy, unspecified",
+      "Fever, unspecified",
+      "Unspecified hemorrhoids",
+      "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+    ],
+    "n_diagnoses": 20,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___.\n \nChief Complaint:\nDyspnea\n \nMajor Surgical or Invasive Procedure:\nEGD/Colonoscopy\n___ I&D right thigh hematoma\n___ debridement of right thigh with wound vac.\n___ removal of wound vac and surgical closure of right thigh \nwound\n___ pelvic lymph node biopsy\n___ IVC filter placement\n\n \nHistory of Present Illness:\nPer Dr. ___:\nThis is a ___ with high grade sarcoma s/p resection of the\nproximal femur with proximal femur replacement and adjuvant\ncisplatin doxorubicin who presented to clinic today complaining\nof worsening exertional dyspnea over the past week as well as\nleft-sided l\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "27.3",
+        "unit": "",
+        "charttime": "2187-03-23",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "109/92",
+        "unit": "",
+        "charttime": "2187-03-22",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "196",
+        "unit": "",
+        "charttime": "2187-03-23",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "23.9",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2187-04-13 05:15:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "7.7",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-04-13 05:15:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.5",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2187-04-13 05:15:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "50.3",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2187-04-13 05:15:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "PTT",
+        "value": "72.7",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2187-04-12 10:12:00",
+        "ref_range": "25.0-36.5"
+      },
+      {
+        "name": "Glucose",
+        "value": "127.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-04-12 03:57:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.2",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2187-04-12 03:57:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "13.0",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2187-04-12 03:57:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-04-11 20:00:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "Sodium",
+        "value": "132.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2187-04-11 04:50:00",
+        "ref_range": "133.0-145.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "23.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-04-10 06:30:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "149.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2187-04-07 05:08:00",
+        "ref_range": "150.0-400.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2187-04-12 11:18:00",
+        "excerpt": "INDICATION:  ___ year old man with hx of sarcoma p/w DVT   PE and anemia due to\nlarge right thigh hematoma (now s/p OR washout and closure)  // ? place IVC\nfilter\n\nCOMPARISON:  CT pelvis dated ___\n\nTECHNIQUE:  OPERATORS: Dr. ___, Interventional Radiology Fellow and Dr.\n___, attending radiologist performed the procedure. Dr. ___\npersonally supervised the trainee during the key components of the pro"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2187-04-11 08:57:00",
+        "excerpt": "EXAMINATION:  CT-guided right external iliac lymph node biopsy\n\nINDICATION:  ___ year old man with hx of sarcoma p/w hematoma in right thigh.\nNow s/p multiple ortho procedures with resolution of hematoma.  Onc requesting\n___ biopsy of right external iliac node that is concerning for sarcoma\nrecurrence.  // ? recurrence of sarcoma\n\nCOMPARISON:  CT from ___\n\nPROCEDURE:  CT-guided right external ilia"
+      }
+    ]
+  },
+  {
+    "hadm_id": 27129757,
+    "admission_id": "27129757",
+    "admittime": "2187-06-14 21:13:00",
+    "dischtime": "2187-06-18 16:30:00",
+    "admission_type": "URGENT",
+    "primary_icd_code": "D62",
+    "primary_dx_title": "Acute posthemorrhagic anemia",
+    "ground_truth_icd10": [
+      "D62",
+      "D684",
+      "N183",
+      "C4921",
+      "C775",
+      "I2782",
+      "M96830",
+      "I129",
+      "G629",
+      "K219",
+      "K449",
+      "F419",
+      "Z87891",
+      "M79606",
+      "Z9221"
+    ],
+    "ground_truth_dx_titles": [
+      "Acute posthemorrhagic anemia",
+      "Acquired coagulation factor deficiency",
+      "Chronic kidney disease, stage 3 (moderate)",
+      "Malignant neoplasm of connective and soft tissue of right lower limb, including hip",
+      "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes",
+      "Chronic pulmonary embolism",
+      "Postprocedural hemorrhage of a musculoskeletal structure following a musculoskeletal system procedure",
+      "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+      "Polyneuropathy, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Diaphragmatic hernia without obstruction or gangrene",
+      "Anxiety disorder, unspecified",
+      "Personal history of nicotine dependence",
+      "Pain in leg, unspecified",
+      "Personal history of antineoplastic chemotherapy"
+    ],
+    "n_diagnoses": 15,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___.\n \nChief Complaint:\nAnemia, RLE swelling \n \nMajor Surgical or Invasive Procedure:\nnone\n \nHistory of Present Illness:\nMr. ___ is a ___ with hx metastatic sarcoma of right thigh \n(s/p resection, chemoradiation with recurrence), stage III CKD, \npulmonary embolus (not on AC), anemia (most recent baseline Hgb \n___ who was admitted to ___ after being found to have \nsignificant anemia with H/H 4.4/14.5 while at his palliative XRT \nsession.  \n\nHe has had extensive history of complications from his RLE \nsarcoma, including multiple hematomas requiring surgical \nintervention. He last had\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "24.9",
+        "unit": "",
+        "charttime": "2187-06-14",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "104/58",
+        "unit": "",
+        "charttime": "2187-06-13",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "176.00",
+        "unit": "",
+        "charttime": "2187-06-14",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "INR(PT)",
+        "value": "1.5",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "16.3",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "24.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "7.7",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.2",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "78.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "RDW",
+        "value": "16.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.58",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "55.8",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "8.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Glucose",
+        "value": "111.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "23.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-06-18 05:43:00",
+        "ref_range": "6.0-20.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2187-06-15 14:24:00",
+        "excerpt": "ADDENDUM  Non-emergent MRI is recommended for further evaluation of patients\ncomplex left renal lesion is recommended.\n\n The updated recommendations were discussed with ___, M.D. by ___\n___, M.D. on the telephone on ___ at 9:51 AM.\n"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2187-06-15 14:24:00",
+        "excerpt": "EXAMINATION:  CTA LOWER EXT W/ANDW/O C AND RECONS\n\nINDICATION:  ___ RLE sarcoma metastatic to lung, now with large RLE bleed  //\nAssess for source of bleeding, and also any progression in lung lesions. Metal\nsuppression protocol if possible.\n\nTECHNIQUE:  Abdomen and pelvis CTA: Non-contrast and multiphasic post-contrast\nimages were acquired through the abdomen and pelvis.\nOral contrast was not adm"
+      }
+    ]
+  },
+  {
+    "hadm_id": 26538856,
+    "admission_id": "26538856",
+    "admittime": "2187-07-05 17:45:00",
+    "dischtime": "2187-07-12 15:49:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "C4021",
+    "primary_dx_title": "Malignant neoplasm of long bones of right lower limb",
+    "ground_truth_icd10": [
+      "C4021",
+      "D6189",
+      "L89322",
+      "C775",
+      "N183",
+      "D696",
+      "E538",
+      "E871",
+      "I129",
+      "R918",
+      "Z86711",
+      "G629",
+      "K219",
+      "Z87891",
+      "M7981",
+      "E8342",
+      "E8809",
+      "R791"
+    ],
+    "ground_truth_dx_titles": [
+      "Malignant neoplasm of long bones of right lower limb",
+      "Other specified aplastic anemias and other bone marrow failure syndromes",
+      "Pressure ulcer of left buttock, stage 2",
+      "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes",
+      "Chronic kidney disease, stage 3 (moderate)",
+      "Thrombocytopenia, unspecified",
+      "Deficiency of other specified B group vitamins",
+      "Hypo-osmolality and hyponatremia",
+      "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+      "Other nonspecific abnormal finding of lung field",
+      "Personal history of pulmonary embolism",
+      "Polyneuropathy, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Personal history of nicotine dependence",
+      "Nontraumatic hematoma of soft tissue",
+      "Hypomagnesemia",
+      "Other disorders of plasma-protein metabolism, not elsewhere classified",
+      "Abnormal coagulation profile"
+    ],
+    "n_diagnoses": 18,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___\n \nChief Complaint:\nSOB\n \nMajor Surgical or Invasive Procedure:\nNone\n \nHistory of Present Illness:\nMr. ___ is a very pleasant ___ w/ CKD III, high-grade \nunclassified sarcoma (malignant fibrous histiocytoma) of the R \nfemur s/p radical resection on ___, s/p adjuvant doxorubicin \nand cisplatin (completed ___, c/b b/l extensive PE (dx \n___, found to have local recurrence and pulmonary nodules, \nc/b by recurrent hematoma, now s/p IVC and off anticoagulation \nand receiving local XRT, who p/w recurrent anemia (Hg 4) in \nclinic. He presented to his clinic w/ significant dyspnea, \napp\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "24.3",
+        "unit": "",
+        "charttime": "2187-07-05",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "119/64",
+        "unit": "",
+        "charttime": "2187-07-05",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "171.5",
+        "unit": "",
+        "charttime": "2187-07-05",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Albumin",
+        "value": "2.5",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "3.5-5.2"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "8.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Chloride",
+        "value": "92.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "96.0-108.0"
+      },
+      {
+        "name": "Phosphate",
+        "value": "4.7",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "2.7-4.5"
+      },
+      {
+        "name": "Protein, Total",
+        "value": "6.0",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "6.4-8.3"
+      },
+      {
+        "name": "Sodium",
+        "value": "129.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "133.0-145.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "24.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Free Kappa",
+        "value": "143.2",
+        "unit": "mg/L",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "3.3-19.4"
+      },
+      {
+        "name": "Free Lambda",
+        "value": "116.2",
+        "unit": "mg/L",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "5.7-26.3"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.2",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "13.5",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "23.3",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2187-07-12 04:25:00",
+        "ref_range": "40.0-51.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2187-07-08 08:58:00",
+        "excerpt": "EXAMINATION:  ABDOMEN US (COMPLETE STUDY)\n\nINDICATION:  ___ man with CKD, high grade unclassified sarcoma\n(malignant fibrous histiocytoma) of the right femur status post radical\nresection in ___ with adjuvant chemotherapy now found of local\nrecurrence and pulmonary nodules, complicated by hematoma, with persistent\nanemia, evaluate for retroperitoneal bleed, splenomegaly, portal vein\nthrombus.\n\nTEC"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2187-07-05 17:14:00",
+        "excerpt": "EXAMINATION:  CTA LOWER EXT W/ANDW/O C AND RECONS RIGHT\n\nINDICATION:  ___ w/swelling to proximal right thigh, hx of osteosarcoma with\nresection, with right hip replacement, please eval for active extravasation\ninto proximal right thigh\n\nTECHNIQUE:  Right lower extremity CTA: Non-contrast and arterial phase\npost-contrast images were acquired through the right thigh.\nOral contrast was not administer"
+      }
+    ]
+  },
+  {
+    "hadm_id": 21400037,
+    "admission_id": "21400037",
+    "admittime": "2187-08-05 22:33:00",
+    "dischtime": "2187-08-15 16:45:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "I2699",
+    "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+    "ground_truth_icd10": [
+      "I2699",
+      "N179",
+      "C775",
+      "C7801",
+      "C7802",
+      "I959",
+      "D696",
+      "L03312",
+      "C7931",
+      "Z85830",
+      "M7981",
+      "T45515A",
+      "F419",
+      "Y929",
+      "G893",
+      "Z515",
+      "Z66",
+      "E861",
+      "Z86711",
+      "Z86718",
+      "G629",
+      "I10",
+      "R509",
+      "F329",
+      "R5383",
+      "K219",
+      "D500"
+    ],
+    "ground_truth_dx_titles": [
+      "Other pulmonary embolism without acute cor pulmonale",
+      "Acute kidney failure, unspecified",
+      "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes",
+      "Secondary malignant neoplasm of right lung",
+      "Secondary malignant neoplasm of left lung",
+      "Hypotension, unspecified",
+      "Thrombocytopenia, unspecified",
+      "Cellulitis of back [any part except buttock]",
+      "Secondary malignant neoplasm of brain",
+      "Personal history of malignant neoplasm of bone",
+      "Nontraumatic hematoma of soft tissue",
+      "Adverse effect of anticoagulants, initial encounter",
+      "Anxiety disorder, unspecified",
+      "Unspecified place or not applicable",
+      "Neoplasm related pain (acute) (chronic)",
+      "Encounter for palliative care",
+      "Do not resuscitate",
+      "Hypovolemia",
+      "Personal history of pulmonary embolism",
+      "Personal history of other venous thrombosis and embolism",
+      "Polyneuropathy, unspecified",
+      "Essential (primary) hypertension",
+      "Fever, unspecified",
+      "Major depressive disorder, single episode, unspecified",
+      "Other fatigue",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Iron deficiency anemia secondary to blood loss (chronic)"
+    ],
+    "n_diagnoses": 27,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \ncats, dogs,  pollen\n \nAttending: ___.\n \nChief Complaint:\nPulmonary Embolism\n \nMajor Surgical or Invasive Procedure:\nNone.\n\n \nHistory of Present Illness:\nMr. ___ is ___ man with a high-grade unclassified \nsarcoma (malignant fibrous histiocytoma) of the right femur s/p \nradical resection in ___ s/p adjuvant doxorubicin and \ncisplatin x 4 cycles completed ___, now with recently \ndiagnosed recurrence in the pelvis and likely in the lungs. \nCourse complicated by recurrent hemorrhage into the right leg \nsarcoma/hematoma. He is admitted from the ED with new incidental \nfinding of PE on imaging.\nPatient underwent routine\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "25.5",
+        "unit": "",
+        "charttime": "2187-08-06",
+        "source": "omr"
+      },
+      {
+        "name": "Blood Pressure",
+        "value": "117/68",
+        "unit": "",
+        "charttime": "2187-08-05",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "183.00",
+        "unit": "",
+        "charttime": "2187-08-06",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Glucose",
+        "value": "117.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "21.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "24.1",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "7.7",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "133.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "150.0-400.0"
+      },
+      {
+        "name": "RDW",
+        "value": "19.6",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "10.5-15.5"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.49",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "65.1",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2187-08-15 05:33:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "MCHC",
+        "value": "30.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2187-08-14 05:41:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "MCV",
+        "value": "99.0",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2187-08-14 05:41:00",
+        "ref_range": "82.0-98.0"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.3",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2187-08-13 06:34:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.3",
+        "unit": "",
+        "flag": "abnormal",
+        "charttime": "2187-08-12 04:28:00",
+        "ref_range": "0.9-1.1"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2187-08-06 19:11:00",
+        "excerpt": "INDICATION:  ___ year old man with IVC filter.  // Please evaluate IVC filter\nposition.\n\nTECHNIQUE:  Portable supine abdominal radiograph\n\nCOMPARISON:  PET-CT dated ___\n\nFINDINGS: \n\nThere are no abnormally dilated loops of large or small bowel.\nThe IVC filter projects over the right side of the L2 and L3 vertebral bodies.\nOsseous structures are unremarkable apart from a right hip hemiarthroplasty."
+      },
+      {
+        "type": "radiology",
+        "charttime": "2187-08-06 17:48:00",
+        "excerpt": "EXAMINATION:  MR HEAD W AND W/O CONTRAST T9112 MR HEAD.\n\nINDICATION:  History of metastatic sarcoma with PE and head CT demonstrating\nsmall right cerebellar lesion.  Evaluate for metastatic disease.\n\nTECHNIQUE:  Sagittal and axial T1 weighted imaging were performed. After\nadministration of 8 mL of Gadavist intravenous contrast, axial imaging was\nperformed with gradient echo, FLAIR, diffusion, and "
+      }
+    ]
+  }
+]

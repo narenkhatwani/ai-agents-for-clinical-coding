@@ -1,0 +1,209 @@
+[
+  {
+    "hadm_id": 21516900,
+    "admission_id": "21516900",
+    "admittime": "2155-12-09 23:47:00",
+    "dischtime": "2156-01-08 17:15:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "C801",
+    "primary_dx_title": "Malignant (primary) neoplasm, unspecified",
+    "ground_truth_icd10": [
+      "C801",
+      "N179",
+      "L89152",
+      "I82A12",
+      "I82290",
+      "I82B13",
+      "M8448XA",
+      "E871",
+      "N134",
+      "G8191",
+      "I871",
+      "I82612",
+      "C7951",
+      "C7931",
+      "C7802",
+      "G893",
+      "C7801",
+      "C7989",
+      "C7949",
+      "C7972",
+      "C7971",
+      "K1120",
+      "B9561",
+      "Z515",
+      "K259",
+      "M1990",
+      "H409",
+      "Z7902",
+      "R634",
+      "Z6821",
+      "K5900",
+      "E785",
+      "Z87891"
+    ],
+    "ground_truth_dx_titles": [
+      "Malignant (primary) neoplasm, unspecified",
+      "Acute kidney failure, unspecified",
+      "Pressure ulcer of sacral region, stage 2",
+      "Acute embolism and thrombosis of left axillary vein",
+      "Acute embolism and thrombosis of other thoracic veins",
+      "Acute embolism and thrombosis of subclavian vein, bilateral",
+      "Pathological fracture, other site, initial encounter for fracture",
+      "Hypo-osmolality and hyponatremia",
+      "Hydroureter",
+      "Hemiplegia, unspecified affecting right dominant side",
+      "Compression of vein",
+      "Acute embolism and thrombosis of superficial veins of left upper extremity",
+      "Secondary malignant neoplasm of bone",
+      "Secondary malignant neoplasm of brain",
+      "Secondary malignant neoplasm of left lung",
+      "Neoplasm related pain (acute) (chronic)",
+      "Secondary malignant neoplasm of right lung",
+      "Secondary malignant neoplasm of other specified sites",
+      "Secondary malignant neoplasm of other parts of nervous system",
+      "Secondary malignant neoplasm of left adrenal gland",
+      "Secondary malignant neoplasm of right adrenal gland",
+      "Sialoadenitis, unspecified",
+      "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere",
+      "Encounter for palliative care",
+      "Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation",
+      "Unspecified osteoarthritis, unspecified site",
+      "Unspecified glaucoma",
+      "Long term (current) use of antithrombotics/antiplatelets",
+      "Abnormal weight loss",
+      "Body mass index [BMI] 21.0-21.9, adult",
+      "Constipation, unspecified",
+      "Hyperlipidemia, unspecified",
+      "Personal history of nicotine dependence"
+    ],
+    "n_diagnoses": 33,
+    "note_excerpt": " \nName:  ___                   Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nNo Known Allergies / Adverse Drug Reactions\n \nAttending: ___.\n \nChief Complaint:\nBack pain\n \nMajor Surgical or Invasive Procedure:\nWhole Brain Radiation\nExternal beam radiation to the thoracic spine\n\n \nHistory of Present Illness:\n___ transferred from ___ with LBP and radicular \npain to his right leg. The patient states this started ___ \nmonths ago but has gotten worse over the last month. He was \nbeing evaluated in the chronic pain clinic on ___ and had an \nepidural injection and was complaining of 10 out of 10 pain \nafterwards and was therefore admitted. The pain goes down the \nanterior and posterior aspects of\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "21.2",
+        "unit": "",
+        "charttime": "2155-12-10",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "170",
+        "unit": "",
+        "charttime": "2155-12-10",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Hematocrit",
+        "value": "29.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "9.5",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCH",
+        "value": "32.2",
+        "unit": "pg",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "26.0-32.0"
+      },
+      {
+        "name": "MCV",
+        "value": "101.0",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "82.0-98.0"
+      },
+      {
+        "name": "Red Blood Cells",
+        "value": "2.95",
+        "unit": "m/uL",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "4.6-6.1"
+      },
+      {
+        "name": "RDW-SD",
+        "value": "49.1",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "35.1-46.3"
+      },
+      {
+        "name": "Alanine Aminotransferase (ALT)",
+        "value": "49.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Alkaline Phosphatase",
+        "value": "727.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "40.0-130.0"
+      },
+      {
+        "name": "Lactate Dehydrogenase (LD)",
+        "value": "267.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "94.0-250.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "28.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2156-01-08 05:03:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Chloride",
+        "value": "95.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2156-01-07 05:28:00",
+        "ref_range": "96.0-108.0"
+      },
+      {
+        "name": "Sodium",
+        "value": "130.0",
+        "unit": "mEq/L",
+        "flag": "abnormal",
+        "charttime": "2156-01-05 19:00:00",
+        "ref_range": "133.0-145.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2155-12-31 08:04:00",
+        "excerpt": "EXAMINATION:  CTU without contrast followed by with contrast\n\nINDICATION:  ___ year old man with metastatic adenocarcinoma of uncertain\nprimary with diffuse lung and spine metastasis, demonstrated to have new R\nhydroureteronephrosis on MRI. // Please eval new R hydroureteronephrosis\n\nTECHNIQUE:  Single phase split bolus contrast: MDCT axial images were acquired\nthrough the abdomen and pelvis follo"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2155-12-29 17:02:00",
+        "excerpt": "EXAMINATION:  MRI THORACIC AND LUMBAR PT6 MR SPINE\n\nINDICATION:  History of metastatic cancer, likely lung adenocarcinoma with new\nfinding of T1 vertebral body lesion with possible erosion into the spinal\ncanal.\n\nTECHNIQUE:  Sagittal imaging was performed with T2, T1, and STIR technique. \nAxial T2 imaging was performed. Axial GRE images of the cervical spine were\nperformed.  After the uneventful a"
+      }
+    ]
+  }
+]

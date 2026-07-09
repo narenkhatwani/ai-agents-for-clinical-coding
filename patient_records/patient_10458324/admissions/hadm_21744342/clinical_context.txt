@@ -1,0 +1,140 @@
+STRUCTURED MIMIC DATA (objective vitals, labs, radiology — prefer over note text when they conflict):
+
+VITALS:
+  • DBP (non-invasive): last=72.0 min=49.0 max=101.0 mmHg (46 readings, icu_chartevents)
+  • Heart Rate: last=88.0 min=56.0 max=97.0 bpm (65 readings, icu_chartevents)
+  • MAP (arterial): last=79.0 min=59.0 max=82.0 mmHg (19 readings, icu_chartevents)
+  • Respiratory Rate: last=17.0 min=11.0 max=38.0 insp/min (65 readings, icu_chartevents)
+  • SBP (non-invasive): last=121.0 min=92.0 max=157.0 mmHg (46 readings, icu_chartevents)
+  • SpO2: last=98.0 min=89.0 max=100.0 % (65 readings, icu_chartevents)
+  • BMI (kg/m2): 17.9  (omr)
+  • Weight (Lbs): 125  (omr)
+
+LABS (abnormal prioritized):
+  • Potassium: 5.2 mEq/L [abnormal]
+  • Hematocrit: 33.3 % [abnormal]
+  • Hemoglobin: 10.9 g/dL [abnormal]
+  • Platelet Count: 623.0 K/uL [abnormal]
+  • Red Blood Cells: 3.72 m/uL [abnormal]
+  • Calcium, Total: 8.3 mg/dL [abnormal]
+  • Glucose: 127.0 mg/dL [abnormal]
+  • Albumin: 2.8 g/dL [abnormal]
+  • Thyroid Stimulating Hormone: 4.3 uIU/mL [abnormal]
+  • White Blood Cells: 10.6 K/uL [abnormal]
+  • Urea Nitrogen: 22.0 mg/dL [abnormal]
+  • Free Calcium: 1.11 mmol/L [abnormal]
+  • Phosphate: 4.7 mg/dL [abnormal]
+  • Bacteria: nan /hpf [abnormal]
+  • Protein: 30.0 mg/dL [abnormal]
+  • Urine Mucous: nan /hpf [abnormal]
+  • Urobilinogen: 2.0 mg/dL [abnormal]
+  • pO2: 258.0 mm Hg [abnormal]
+  • Lactate: 2.7 mmol/L [abnormal]
+  • pCO2: 49.0 mm Hg [abnormal]
+  • pH: 7.29 units [abnormal]
+  • Sodium: 134.0 mEq/L [abnormal]
+  • Magnesium: 3.2 mg/dL [abnormal]
+  • Creatine Kinase (CK): 555.0 IU/L [abnormal]
+  • Anion Gap: 11.0 mEq/L
+  • Bicarbonate: 26.0 mEq/L
+  • Chloride: 100.0 mEq/L
+  • Creatinine: 0.8 mg/dL
+  • H: 5.0 
+  • I: 0.0 
+  • L: 6.0 
+  • MCH: 29.3 pg
+  • MCHC: 32.7 g/dL
+  • MCV: 90.0 fL
+  • RDW: 13.4 %
+  • RDW-SD: 43.5 fL
+  • Estimated GFR (MDRD equation): nan 
+  • Base Excess: 0.0 mEq/L
+  • Calculated Total CO2: 26.0 mEq/L
+  • Potassium, Whole Blood: 4.5 mEq/L
+
+RADIOLOGY REPORTS:
+  --- Report 1 (2178-07-24 11:55:00) ---
+    INDICATION:  ___ year old man with polysubstance abuse admitted w/ multiple rib
+    fractures subsequently developing hypoxemic resp failure requiring intubation.
+    Treated briefly for PNA. Also w/ new a-fib w/ RVR and some signs of volume
+    overload.// Eval for volume or consolidation
+    
+    TECHNIQUE:  Chest PA and lateral
+    
+    COMPARISON:  ___
+    
+    IMPRESSION: 
+    
+    Bilateral effusions right greater than left are stable.  Patchy parenchymal
+    opacities bilaterally right greater than left are also unchanged.  There are
+    multiple displaced right-sided rib fractures, unchanged.  Cardiomediastinal
+    silhouette is stable.  No pneumothorax is seen.
+  --- Report 2 (2178-07-20 04:11:00) ---
+    EXAMINATION:  CHEST (PORTABLE AP)
+    
+    INDICATION:  ___ year old man with ETT// eval for interval change      eval for
+    interval change
+    
+    IMPRESSION: 
+    
+    Comparison to ___.  The patient has been extubated.  The lung
+    volumes have decreased.  Bilateral parenchymal opacities are slightly denser
+    than on the previous image, the image resembles the 1 taken on ___, at 02:02.  No larger pleural effusions.  Normal size of the heart.
+  --- Report 3 (2178-07-19 11:24:00) ---
+    EXAMINATION:  Chest single view
+    
+    INDICATION:  ___ year old man with ETT advanced  2 cm// eval ETT position
+    
+    TECHNIQUE:  Chest portable AP
+    
+    COMPARISON:  ___, 10:47, about 45 minutes ago
+    
+    FINDINGS: 
+    
+    ET tube has been advanced and now terminates about 2 cm above the bifurcation
+    of the trachea NG tube is below the diaphragm.  Bilateral lung opacities
+    unchanged
+    
+    IMPRESSION: 
+    
+    Tip of ET tube 2 cm above bifurcation of the trachea
+  --- Report 4 (2178-07-19 10:42:00) ---
+    EXAMINATION:  Chest single view
+    
+    INDICATION:  ___ year old man with et tube// et tube placement
+    
+    TECHNIQUE:  Chest portable AP
+    
+    COMPARISON:  ___ 1 hour prior
+    
+    FINDINGS: 
+    
+    Tiny right apical pneumothorax persist.  An ET tube has been placed
+    terminating 4.5 cm above the bifurcation of the trachea.  NG tube is below the
+    diaphragm.  No change to bilateral opacities.
+    
+    IMPRESSION: 
+    
+    Tiny right apical pneumothorax, and bilateral opacities with no interval
+    change.  Placement of ET tube and NG tube.
+  --- Report 5 (2178-07-19 09:13:00) ---
+    EXAMINATION:  Chest single view
+    
+    INDICATION:  ___ year old man with flail chest// acute resp distress/ SOB
+    
+    TECHNIQUE:  Chest portable AP
+    
+    COMPARISON:  ___ 02:02
+    
+    FINDINGS: 
+    
+    Right chest tube is out.  There is persistent minute right apical
+    pneumothorax.  Small right effusion.  Small subcutaneous emphysema on the
+    right.  Bilateral pulmonary opacities are seen in the more severe on the right
+    the which is slightly worse than of the previous exam obtained 7 hours
+    previously.  Also increased is a left lung opacity particularly in the left
+    midlung field.  There acute changes likely present the pulmonary edema
+    Bilateral lower lobe atelectasis as previously.
+    
+    IMPRESSION: 
+    

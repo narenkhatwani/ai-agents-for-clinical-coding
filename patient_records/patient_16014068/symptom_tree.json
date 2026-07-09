@@ -1,0 +1,102 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient is a metastatic sarcoma patient with a history of recurrent disease and recent falls, presenting with weakness and minor abrasions. He has intracranial bleeding and pulmonary nodules, and is on hospice.",
+  "branches": [
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
+      "symptoms": [
+        {
+          "term": "weakness",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "He attributes it to weakness.",
+          "related_findings": [
+            "intracranial bleeding"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "pulmonary nodules",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "Multiple scattered, rounded opacities in the left perihilar region and right lower lobe are consistent with known pulmonary nodules representing advanced metastatic disease.",
+          "related_findings": [
+            "pulmonary emboli"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "pulmonary emboli",
+          "status": "confirmed",
+          "severity": "unknown",
+          "evidence": "Admitted for extensive bilateral pulmonary emboli.",
+          "related_findings": [
+            "IVC filter placement"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "hematoma",
+          "status": "chronic",
+          "severity": "unknown",
+          "evidence": "Chronic thigh hematoma with poor erythropoietic response due to XRT.",
+          "related_findings": [
+            "anemia"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "hematologic",
+      "ontology_hint": "Hematology",
+      "symptoms": [
+        {
+          "term": "anemia",
+          "status": "severe",
+          "severity": "severe",
+          "evidence": "Hematocrit 23.6%, Hemoglobin 7.7 g/dL, Platelet Count 63.0 K/uL.",
+          "related_findings": [
+            "thigh hematoma"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "weakness",
+    "pulmonary nodules",
+    "hematoma",
+    "anemia"
+  ],
+  "red_flags": [
+    "intracranial bleeding",
+    "pulmonary emboli"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "16014068",
+  "admission_id": "29042843",
+  "generated_at": "2026-07-09T00:30:47.475085"
+}

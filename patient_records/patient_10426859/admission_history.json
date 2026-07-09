@@ -1,0 +1,325 @@
+[
+  {
+    "hadm_id": 25245894,
+    "admission_id": "25245894",
+    "admittime": "2193-12-20 17:16:00",
+    "dischtime": "2193-12-21 20:00:00",
+    "admission_type": "DIRECT OBSERVATION",
+    "primary_icd_code": "R0789",
+    "primary_dx_title": "Other chest pain",
+    "ground_truth_icd10": [
+      "R0789",
+      "I10",
+      "Z87891",
+      "E785",
+      "I2510",
+      "Z66",
+      "F329",
+      "M545",
+      "C679",
+      "Z8673"
+    ],
+    "ground_truth_dx_titles": [
+      "Other chest pain",
+      "Essential (primary) hypertension",
+      "Personal history of nicotine dependence",
+      "Hyperlipidemia, unspecified",
+      "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "Do not resuscitate",
+      "Major depressive disorder, single episode, unspecified",
+      "Low back pain",
+      "Malignant neoplasm of bladder, unspecified",
+      "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+    ],
+    "n_diagnoses": 10,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: MEDICINE\n \nAllergies: \nAntibiotic / Prilosec / atorvastatin\n \nAttending: ___\n \nChief Complaint:\nChest pain\n \nMajor Surgical or Invasive Procedure:\nNone\n \nHistory of Present Illness:\n___ with H/O hypertension, hyperlipidemia, ? CAD (possible MI in \nthe ___, former tobacco use, remote TIA and untreated \nurothelial cell carcinoma who presents with one day of chest \npain. She began having left sided chest pain on the night prior \nto admission. She described the pain as sharp and located in the \nleft chest and going to the shoulder. It was worsened by lying \nflat, better when she got up and walked around. There was no \nassociated shortness \n[... excerpt truncated ...]",
+    "labs_summary": [
+      {
+        "name": "PTT",
+        "value": "58.0",
+        "unit": "sec",
+        "flag": "abnormal",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "25.0-36.5"
+      },
+      {
+        "name": "MCHC",
+        "value": "31.9",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "32.0-37.0"
+      },
+      {
+        "name": "INR(PT)",
+        "value": "1.1",
+        "unit": "",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "0.9-1.1"
+      },
+      {
+        "name": "PT",
+        "value": "12.3",
+        "unit": "sec",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "9.4-12.5"
+      },
+      {
+        "name": "Anion Gap",
+        "value": "14.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "8.0-20.0"
+      },
+      {
+        "name": "Bicarbonate",
+        "value": "25.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "22.0-32.0"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "9.1",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Chloride",
+        "value": "102.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "96.0-108.0"
+      },
+      {
+        "name": "Creatine Kinase, MB Isoenzyme",
+        "value": "2.0",
+        "unit": "ng/mL",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "0.0-10.0"
+      },
+      {
+        "name": "Creatinine",
+        "value": "0.7",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "0.4-1.1"
+      },
+      {
+        "name": "Glucose",
+        "value": "94.0",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "H",
+        "value": "19.0",
+        "unit": "",
+        "flag": "",
+        "charttime": "2193-12-21 05:44:00",
+        "ref_range": ""
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2193-12-20 21:25:00",
+        "excerpt": "EXAMINATION:  CHEST (PORTABLE AP)\n\nINDICATION:  ___ year old woman with chest pain  // any pulmonary abdnormality\nto explain CP>\n\nTECHNIQUE:  Chest single view\n\nCOMPARISON:  ___\n\nFINDINGS: \n\nShallow inspiration accentuates heart size, pulmonary vascularity.  Prominent\nmain pulmonary artery, suggests pulmonary artery hypertension.  Tortuous,\ncalcified aorta measuring 4.0 cm in diameter.  Mild inter"
+      }
+    ]
+  },
+  {
+    "hadm_id": 21013288,
+    "admission_id": "21013288",
+    "admittime": "2194-04-30 16:41:00",
+    "dischtime": "2194-05-02 17:19:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "I471",
+    "primary_dx_title": "Supraventricular tachycardia",
+    "ground_truth_icd10": [
+      "I471",
+      "I214",
+      "C801",
+      "Z5329",
+      "I2510",
+      "Z87891",
+      "I252",
+      "Z8673",
+      "F329",
+      "I10",
+      "E785",
+      "F419",
+      "K219",
+      "S8001XA",
+      "W19XXXA",
+      "Y929",
+      "G4700",
+      "J309",
+      "Z66",
+      "I441",
+      "E559"
+    ],
+    "ground_truth_dx_titles": [
+      "Supraventricular tachycardia",
+      "Non-ST elevation (NSTEMI) myocardial infarction",
+      "Malignant (primary) neoplasm, unspecified",
+      "Procedure and treatment not carried out because of patient's decision for other reasons",
+      "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "Personal history of nicotine dependence",
+      "Old myocardial infarction",
+      "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
+      "Major depressive disorder, single episode, unspecified",
+      "Essential (primary) hypertension",
+      "Hyperlipidemia, unspecified",
+      "Anxiety disorder, unspecified",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Contusion of right knee, initial encounter",
+      "Unspecified fall, initial encounter",
+      "Unspecified place or not applicable",
+      "Insomnia, unspecified",
+      "Allergic rhinitis, unspecified",
+      "Do not resuscitate",
+      "Atrioventricular block, second degree",
+      "Vitamin D deficiency, unspecified"
+    ],
+    "n_diagnoses": 21,
+    "note_excerpt": " \nName:  ___                  Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: MEDICINE\n \nAllergies: \nAntibiotic / Prilosec / atorvastatin\n \nAttending: ___\n \nChief Complaint:\nPalpitations\n \nMajor Surgical or Invasive Procedure:\nNone\n \nHistory of Present Illness:\n___ with H/O CAD, TIA, depression, hypertension, hyperlipidemia, \nSVT, and anxiety who presented with several days of dyspnea and \ntachycardia and was found to be in a SVT in the ED. She also had \na fall earlier this week and landed on her chest and right knee \nhad \"multiple images\" and tests done after her fall. Since that \ntime she has noted some knee pain and chest pain which \nsubsequently worsened the morning of presentation with \nassociated dyspnea a\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "22.9",
+        "unit": "",
+        "charttime": "2194-04-30",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "117.06",
+        "unit": "",
+        "charttime": "2194-04-30",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Troponin T",
+        "value": "0.02",
+        "unit": "ng/mL",
+        "flag": "abnormal",
+        "charttime": "2194-05-01 12:45:00",
+        "ref_range": "0.0-0.01"
+      },
+      {
+        "name": "Anion Gap",
+        "value": "14.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "8.0-20.0"
+      },
+      {
+        "name": "Bicarbonate",
+        "value": "24.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "22.0-32.0"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "9.3",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Chloride",
+        "value": "106.0",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "96.0-108.0"
+      },
+      {
+        "name": "Creatinine",
+        "value": "0.7",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "0.4-1.1"
+      },
+      {
+        "name": "Glucose",
+        "value": "80.0",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "H",
+        "value": "2.0",
+        "unit": "",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": ""
+      },
+      {
+        "name": "I",
+        "value": "1.0",
+        "unit": "",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": ""
+      },
+      {
+        "name": "Magnesium",
+        "value": "2.1",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "1.6-2.6"
+      },
+      {
+        "name": "Phosphate",
+        "value": "3.0",
+        "unit": "mg/dL",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "2.7-4.5"
+      },
+      {
+        "name": "Potassium",
+        "value": "3.4",
+        "unit": "mEq/L",
+        "flag": "",
+        "charttime": "2194-05-02 04:40:00",
+        "ref_range": "3.3-5.1"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2194-05-01 14:00:00",
+        "excerpt": "EXAMINATION:  RIB BILAT, W/AP CHEST\n\nINDICATION:  ___ year old woman with rib pain s/p fall// eval of fracture     \neval of fracture\n\nIMPRESSION: \n\nCompared to chest radiographs since ___ most recently ___.\n\nModerate cardiomegaly and severely tortuous and dilated thoracic aorta chronic\nand unchanged.  Lungs are clear.  No pleural effusion.  No pneumothorax.\n\nLeft second rib anterolaterally is defo"
+      },
+      {
+        "type": "radiology",
+        "charttime": "2194-04-30 14:01:00",
+        "excerpt": "EXAMINATION:  CHEST (PORTABLE AP)\n\nINDICATION:  History: ___ with shortness of breath   hypotension// any\npneumonia or edema?\n\nTECHNIQUE:  Single AP radiograph of the chest.\n\nCOMPARISON:  Chest radiograph dated ___.\n\nFINDINGS: \n\nIncreased opacification at the medial right lung base, which is concerning for\npneumonia.  There is also streaky retrocardiac opacification, which may\nrepresent atelectasi"
+      }
+    ]
+  }
+]

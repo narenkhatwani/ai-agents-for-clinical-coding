@@ -1,0 +1,154 @@
+{
+  "symptoms": [
+    {
+      "term": "weakness",
+      "status": "present",
+      "evidence": "He attributes it to weakness."
+    },
+    {
+      "term": "minor abrasions and soreness",
+      "status": "present",
+      "evidence": "He hit his knees and elbows resulting in minor abrasions and soreness."
+    },
+    {
+      "term": "headache",
+      "status": "present",
+      "evidence": "He also hit his head."
+    },
+    {
+      "term": "intracranial bleeding",
+      "status": "history",
+      "evidence": "He was evaluated by his local ED and found to have intracranial bleeding on a head CT and was then transferred."
+    }
+  ],
+  "vitals": [
+    {
+      "name": "BMI",
+      "value": "25.2",
+      "unit": "kg/m2"
+    },
+    {
+      "name": "Blood Pressure",
+      "value": "114/66",
+      "unit": ""
+    },
+    {
+      "name": "Weight",
+      "value": "181",
+      "unit": "Lbs"
+    }
+  ],
+  "labs": [
+    {
+      "name": "Hematocrit",
+      "value": "23.6",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "7.7",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "63.0",
+      "unit": "K/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW",
+      "value": "20.0",
+      "unit": "%",
+      "flag": "high"
+    },
+    {
+      "name": "Red Blood Cells",
+      "value": "2.41",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "White Blood Cells",
+      "value": "16.1",
+      "unit": "K/uL",
+      "flag": "high"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "70.2",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "Hyaline Casts",
+      "value": "4.0",
+      "unit": "#/lpf",
+      "flag": "high"
+    },
+    {
+      "name": "Calcium, Total",
+      "value": "8.3",
+      "unit": "mg/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Glucose",
+      "value": "106.0",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "MCHC",
+      "value": "31.1",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "MCV",
+      "value": "101.0",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "MCH",
+      "value": "32.0",
+      "unit": "pg"
+    }
+  ],
+  "diagnoses_mentioned": [
+    {
+      "term": "metastatic sarcoma to the brain",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "right femur x-rays showed post-surgical changes without complications",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "pulmonary nodules",
+      "certainty": "suspected"
+    },
+    {
+      "term": "pulmonary emboli",
+      "certainty": "confirmed"
+    }
+  ],
+  "medications": [],
+  "procedures": [
+    {
+      "name": "cyberknife radiation to the metastatic brain lesion",
+      "result": "planned"
+    }
+  ],
+  "negations": [],
+  "temporal": [
+    {
+      "finding": "inability to bear weight",
+      "onset": "chronic"
+    }
+  ],
+  "_agent": "information_extraction",
+  "_n_prior_admissions": 9
+}

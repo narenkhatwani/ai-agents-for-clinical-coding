@@ -1,0 +1,21 @@
+{
+  "patient_id": "13508515",
+  "subject_id": 13508515,
+  "gender": "M",
+  "anchor_age": 73,
+  "n_admissions": 2,
+  "n_prior_admissions": 1,
+  "latest_hadm_id": "21834271",
+  "admissions": [
+    {
+      "hadm_id": "21834271",
+      "admittime": "2189-01-31 00:00:00",
+      "primary_icd_code": "C642",
+      "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
+      "symptom_count": 7,
+      "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "is_latest": true
+    }
+  ],
+  "generated_at": "2026-07-09T00:31:41.844813"
+}

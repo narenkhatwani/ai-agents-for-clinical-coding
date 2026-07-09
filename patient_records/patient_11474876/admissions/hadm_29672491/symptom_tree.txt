@@ -1,0 +1,64 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 11474876
+Admission ID     : 29672491
+
+Reasoning:
+  The patient is a 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease who underwent ERCP for choledocholithiasis. He is currently stable post-procedure with no acute symptoms but has a history of nocturnal hypoxia and leg swelling.
+
+Key symptoms     : nocturnal hypoxia, leg swelling
+Red flags        : hypotension, AMS
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history] nocturnal hypoxia
+      evidence: "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis"
+      related: Hemoglobin: 12.6 g/dL (low)
+  • [present, mild] leg swelling
+      evidence: "Notes his ___ edema improves during the night and worsens during the day"
+      related: Creatinine: 1.4 mg/dL (high)
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [normal, normal] respiratory rate
+      evidence: "Respiratory Rate: 20 bpm"
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [started] ciprofloxacin
+      evidence: "Ciprofloxacin was started post-ERCP"
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [confirmed, mild] atrial fibrillation
+      evidence: "AFib: continued home propranolol and amiodarone"
+      related: Hemoglobin: 12.6 g/dL (low)
+  • [confirmed, mild] heart failure
+      evidence: "HFpEF: held home Lasix ___"
+      related: Creatinine: 1.4 mg/dL (high)
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [confirmed, mild] peripheral vascular disease
+      evidence: "PVD: continued home aspirin 81mg, atorvastatin 20mg"
+
+RENAL → Renal
+-------------
+
+  • [high, mild] creatinine
+      evidence: "Creatinine: 1.4 mg/dL"
+
+OTHER → Other
+-------------
+
+  • [confirmed, mild] choledocholithiasis
+      evidence: "Choledocholithiasis s/p ERCP: ERCP with multiple stones and sludge"

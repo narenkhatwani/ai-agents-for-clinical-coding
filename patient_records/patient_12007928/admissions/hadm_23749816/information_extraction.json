@@ -1,0 +1,227 @@
+{
+  "symptoms": [
+    {
+      "term": "dyspnea",
+      "status": "present",
+      "evidence": "Dyspnea"
+    },
+    {
+      "term": "orthopnea",
+      "status": "present",
+      "evidence": "has quite significant orthopnea, and has to sleep on an incline"
+    },
+    {
+      "term": "tremors",
+      "status": "present",
+      "evidence": "increased spasms in the upper extremities and in the bladder"
+    },
+    {
+      "term": "chest pain",
+      "status": "absent",
+      "evidence": "She denies any chest pains today, chest pain at rest or with exertion"
+    },
+    {
+      "term": "urge incontinence",
+      "status": "present",
+      "evidence": "She states that there are multiple times when she is trying to go to the bathroom and feels the urge however is unable to do so"
+    },
+    {
+      "term": "fatigue",
+      "status": "present",
+      "evidence": "She states that all activities now are quite fatiguing"
+    },
+    {
+      "term": "spasms",
+      "status": "present",
+      "evidence": "She reports that she has increased spasms in the upper extremities and in the bladder"
+    }
+  ],
+  "vitals": [
+    {
+      "name": "DBP",
+      "value": "54.0",
+      "unit": "mmHg"
+    },
+    {
+      "name": "Heart Rate",
+      "value": "70.0",
+      "unit": "bpm"
+    },
+    {
+      "name": "Respiratory Rate",
+      "value": "19.0",
+      "unit": "insp/min"
+    },
+    {
+      "name": "SBP",
+      "value": "132.0",
+      "unit": "mmHg"
+    },
+    {
+      "name": "SpO2",
+      "value": "100.0",
+      "unit": "%"
+    },
+    {
+      "name": "BMI",
+      "value": "40.9",
+      "unit": "kg/m2"
+    },
+    {
+      "name": "Weight",
+      "value": "253.53",
+      "unit": "Lbs"
+    }
+  ],
+  "labs": [
+    {
+      "name": "Creatinine",
+      "value": "1.6",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": "32.0",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "10.2",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "MCH",
+      "value": "24.6",
+      "unit": "pg",
+      "flag": "low"
+    },
+    {
+      "name": "MCHC",
+      "value": "30.0",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW",
+      "value": "18.2",
+      "unit": "%",
+      "flag": "high"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "53.5",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "Glucose",
+      "value": "127.0",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Hematocrit",
+      "value": "32.1",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "MCV",
+      "value": "81.0",
+      "unit": "fL",
+      "flag": "low"
+    },
+    {
+      "name": "White Blood Cells",
+      "value": "3.9",
+      "unit": "K/uL",
+      "flag": "low"
+    },
+    {
+      "name": "INR(PT)",
+      "value": "1.3",
+      "unit": "",
+      "flag": "normal"
+    },
+    {
+      "name": "PT",
+      "value": "14.5",
+      "unit": "sec",
+      "flag": "normal"
+    },
+    {
+      "name": "Red Blood Cells",
+      "value": "3.87",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "Albumin",
+      "value": "3.1",
+      "unit": "g/dL",
+      "flag": "low"
+    }
+  ],
+  "diagnoses_mentioned": [
+    {
+      "term": "paroxysmal atrial fibrillation",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "diastolic CHF",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "SSS s/p pacer",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "myasthenia",
+      "certainty": "suspected"
+    },
+    {
+      "term": "chest pain",
+      "certainty": "rule_out"
+    }
+  ],
+  "medications": [
+    {
+      "name": "Lorazepam",
+      "dose": "0.5 mg",
+      "route": "IV",
+      "status": "started"
+    },
+    {
+      "name": "Furosemide",
+      "dose": "20 mg",
+      "route": "IV",
+      "status": "started"
+    },
+    {
+      "name": "Acetaminophen",
+      "dose": "1000 mg",
+      "route": "PO",
+      "status": "started"
+    }
+  ],
+  "procedures": [
+    {
+      "name": "chest x-ray",
+      "result": "mild to moderate pulmonary edema, bilateral pleural effusions"
+    }
+  ],
+  "negations": [
+    "She denies any prior history of stroke, TIA, deep venous thrombosis, pulmonary embolism, bleeding at the time of surgery, myalgias, joint pains, cough, hemoptysis, black stools or red stools. Denies recent fevers, chills or rigors. Denies exertional buttock or calf pain."
+  ],
+  "temporal": [
+    {
+      "finding": "dyspnea",
+      "onset": "upon leaving the hospital"
+    }
+  ],
+  "_agent": "information_extraction",
+  "_n_prior_admissions": 2
+}

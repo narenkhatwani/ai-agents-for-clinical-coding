@@ -1,0 +1,139 @@
+{
+  "symptoms": [
+    {
+      "term": "nephrolithiasis",
+      "status": "present",
+      "evidence": "nephrolithiasis"
+    },
+    {
+      "term": "residual stone",
+      "status": "present",
+      "evidence": "There is some residual stone that will require interval right URS"
+    },
+    {
+      "term": "pain",
+      "status": "present",
+      "evidence": "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
+    },
+    {
+      "term": "bleeding",
+      "status": "present",
+      "evidence": "You can expect to see occasional blood in your urine"
+    }
+  ],
+  "vitals": [
+    {
+      "name": "Weight",
+      "value": "170",
+      "unit": "Lbs"
+    },
+    {
+      "name": "BMI",
+      "value": "24.4",
+      "unit": "kg/m2"
+    }
+  ],
+  "labs": [
+    {
+      "name": "Hematocrit",
+      "value": "30.8",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "9.4",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "MCV",
+      "value": "104.0",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "MCHC",
+      "value": "30.5",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Red Blood Cells",
+      "value": "2.95",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "59.6",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "Creatinine",
+      "value": "2.5",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Glucose",
+      "value": "105.0",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": "22.0",
+      "unit": "mg/dL",
+      "flag": "high"
+    }
+  ],
+  "diagnoses_mentioned": [
+    {
+      "term": "NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm",
+      "certainty": "confirmed"
+    }
+  ],
+  "medications": [
+    {
+      "name": "Acetaminophen",
+      "dose": "650 mg",
+      "route": "PO",
+      "status": "started"
+    },
+    {
+      "name": "Oxybutynin",
+      "dose": "5 mg",
+      "route": "PO",
+      "status": "started"
+    },
+    {
+      "name": "OxyCODONE (Immediate Release)",
+      "dose": "5 mg",
+      "route": "PO",
+      "status": "started"
+    },
+    {
+      "name": "Tamsulosin",
+      "dose": "0.4 mg",
+      "route": "PO",
+      "status": "started"
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Difficult right PCNL",
+      "result": "right antegrade nephrostogram, right antegrade ureteroscopy, right antegrade ureteral stent placement, right PCNL for stone greater than 2cm"
+    }
+  ],
+  "negations": [],
+  "temporal": [
+    {
+      "finding": "residual stone",
+      "onset": "present"
+    }
+  ],
+  "_agent": "information_extraction",
+  "_n_prior_admissions": 2
+}

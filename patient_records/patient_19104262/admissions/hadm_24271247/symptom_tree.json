@@ -1,0 +1,87 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with DKA and lactic acidosis, with a history of recurrent DKA and uncontrolled diabetes mellitus type 1.",
+  "branches": [
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": []
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": []
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": []
+    },
+    {
+      "category": "gi",
+      "ontology_hint": "Gastrointestinal",
+      "symptoms": []
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": []
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": []
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "DKA",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "DKA/lactic acidosis, in the setting of running out of medications.",
+          "related_findings": [
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "pH: 6.96 units",
+            "Lactate: 3.6 mmol/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "Potassium: 8.8 mEq/L",
+            "Hematocrit: 46.2%",
+            "Hemoglobin: 14.4 g/dL",
+            "Albumin: 3.6 g/dL"
+          ],
+          "children": []
+        },
+        {
+          "term": "vaginal spotting",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Vaginal spotting: No retained products of conception on the US; this is normal post-partum per the GYN consult team.",
+          "related_findings": [
+            "Abdominal ultrasound findings: heterogeneous material within the endometrial canal, measuring up to 8 mm in thickness, without internal vascularity, likely blood products.",
+            "Small to moderate amount of simple free fluid in the cul-de-sac.",
+            "Normal ovaries."
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "DKA",
+    "vaginal spotting"
+  ],
+  "red_flags": [
+    "lactic acidosis",
+    "severe metabolic acidosis"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "19104262",
+  "admission_id": "24271247",
+  "generated_at": "2026-07-09T00:31:07.761482"
+}

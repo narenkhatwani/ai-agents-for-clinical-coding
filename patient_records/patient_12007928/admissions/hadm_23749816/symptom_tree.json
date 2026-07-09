@@ -1,0 +1,112 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with dyspnea, orthopnea, and significant fatigue, along with signs of heart failure and renal dysfunction.",
+  "branches": [
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "dyspnea",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "Dyspnea",
+          "related_findings": [
+            "orthopnea",
+            "pulmonary edema",
+            "pleural effusions"
+          ],
+          "children": [
+            {
+              "term": "orthopnea",
+              "status": "present",
+              "evidence": "has quite significant orthopnea, and has to sleep on an incline"
+            },
+            {
+              "term": "pulmonary edema",
+              "status": "present",
+              "evidence": "mild to moderate pulmonary edema"
+            },
+            {
+              "term": "pleural effusions",
+              "status": "present",
+              "evidence": "bilateral pleural effusions"
+            }
+          ]
+        },
+        {
+          "term": "chest pain",
+          "status": "absent",
+          "evidence": "She denies any chest pains today, chest pain at rest or with exertion"
+        },
+        {
+          "term": "fatigue",
+          "status": "present",
+          "evidence": "She states that all activities now are quite fatiguing"
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "creatinine elevation",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Creatinine: 1.6 mg/dL [abnormal]",
+          "related_findings": [
+            "urea nitrogen elevation"
+          ]
+        },
+        {
+          "term": "urea nitrogen elevation",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Urea Nitrogen: 32.0 mg/dL [abnormal]"
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "tremors",
+          "status": "present",
+          "evidence": "increased spasms in the upper extremities and in the bladder"
+        },
+        {
+          "term": "spasms",
+          "status": "present",
+          "evidence": "increased spasms in the upper extremities and in the bladder"
+        }
+      ]
+    },
+    {
+      "category": "gi",
+      "ontology_hint": "GI",
+      "symptoms": [
+        {
+          "term": "urge incontinence",
+          "status": "present",
+          "evidence": "She states that there are multiple times when she is trying to go to the bathroom and feels the urge however is unable to do so"
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "dyspnea",
+    "orthopnea"
+  ],
+  "red_flags": [
+    "hypotension",
+    "chest pain"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "12007928",
+  "admission_id": "23749816",
+  "generated_at": "2026-07-09T00:30:12.587840"
+}

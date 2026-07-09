@@ -1,0 +1,49 @@
+SYMPTOM TREE
+============
+
+Type             : symptom_tree
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Root             : ClinicalPresentation
+Patient ID       : 13196707
+Admission ID     : 21475988
+
+Reasoning:
+  The patient presents with severe sepsis secondary to RUL PNA, hypotension, and altered mental status, with a history of metastatic adenocarcinoma of unknown primary.
+
+Key symptoms     : fever, pneumonia
+Red flags        : hypotension, altered mental status
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, mild] fever
+      evidence: "new fever"
+      related: RUL PNA
+  • [present, moderate] pneumonia
+      evidence: "RUL PNA"
+      related: CXR: persistent consolidative opacities in both lower lobes
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present, moderate] hypotension
+      evidence: "BP 90/47, hypotensive"
+      related: Levophed started, pressures came up to the 90's systolic
+
+NEUROLOGIC → Neurology
+----------------------
+
+  • [present, moderate] altered mental status
+      evidence: "altered mental status"
+      related: EEG shows epileptiform discharges left paracentrally
+  • [suspected] seizures
+      evidence: "possibly seizures from metastases"
+      related: EEG shows epileptiform discharges left paracentrally
+
+OTHER → Other
+-------------
+
+  • [present, mild] chest pressure
+      evidence: "chest pressure"
+  • [history, mild] back pain
+      evidence: "back pain"

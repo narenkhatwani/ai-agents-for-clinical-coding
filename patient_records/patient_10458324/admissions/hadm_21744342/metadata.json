@@ -1,0 +1,52 @@
+{
+  "patient_id": "10458324",
+  "subject_id": 10458324,
+  "hadm_id": 21744342,
+  "admission_id": "21744342",
+  "admittime": "2178-07-14 18:25:00",
+  "dischtime": "2178-07-26 15:58:00",
+  "admission_type": "OBSERVATION ADMIT",
+  "gender": "M",
+  "anchor_age": 57,
+  "note_type": "discharge",
+  "text_len": 12929,
+  "n_structured_vitals": 8,
+  "n_structured_labs": 40,
+  "n_radiology_reports": 5,
+  "is_latest_admission": true,
+  "n_prior_admissions": 1,
+  "n_total_admissions": 2,
+  "ground_truth": {
+    "primary_icd_code": "S270XXA",
+    "primary_dx_title": "Traumatic pneumothorax, initial encounter",
+    "icd10_codes": [
+      "S270XXA",
+      "J189",
+      "S2241XA",
+      "E46",
+      "F1120",
+      "Z681",
+      "I480",
+      "W1830XA",
+      "Y92002",
+      "R0902",
+      "R600",
+      "F4310"
+    ],
+    "dx_titles": [
+      "Traumatic pneumothorax, initial encounter",
+      "Pneumonia, unspecified organism",
+      "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+      "Unspecified protein-calorie malnutrition",
+      "Opioid dependence, uncomplicated",
+      "Body mass index [BMI] 19.9 or less, adult",
+      "Paroxysmal atrial fibrillation",
+      "Fall on same level, unspecified, initial encounter",
+      "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause",
+      "Hypoxemia",
+      "Localized edema",
+      "Post-traumatic stress disorder, unspecified"
+    ],
+    "n_diagnoses": 12
+  }
+}

@@ -1,0 +1,114 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 13196707
+Admission ID     : 21475988
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [present] chest pressure — "chest presure"
+  • [history] back pain — "back pain"
+  • [present] fever — "new fever"
+  • [present] pneumonia — "RUL PNA"
+  • [present] altered mental status — "altered mental status"
+  • [suspected] seizures — "possibly seizures from metastases (EEG shows epileptiform discharges left paracentrally) on keppra and vimpat"
+
+VITALS
+------
+
+• DBP: 71.0 mmHg
+• Heart Rate: 93.0 bpm
+• Respiratory Rate: 14.0 insp/min
+• SBP: 138.0 mmHg
+• SpO2: 99.0 %
+
+LABS
+----
+
+• Calcium, Total: 6.8 mg/dL [low]
+• Chloride: 115.0 mEq/L [low]
+• Glucose: 122.0 mg/dL [high]
+• Phosphate: 1.3 mg/dL [low]
+• Sodium: 147.0 mEq/L [normal]
+• Hematocrit: 24.3 % [low]
+• Hemoglobin: 7.0 g/dL [low]
+• MCHC: 28.8 g/dL [low]
+• MCV: 103.0 fL [high]
+• Platelet Count: 125.0 K/uL [low]
+• RDW: 17.9 % [high]
+• Red Blood Cells: 2.37 m/uL [low]
+• White Blood Cells: 10.9 K/uL [normal]
+• RDW-SD: 66.4 fL [high]
+• Albumin: 2.0 g/dL [low]
+• Creatinine: 1.3 mg/dL [normal]
+• Alkaline Phosphatase: 879.0 IU/L [high]
+• Lactate Dehydrogenase (LD): 344.0 IU/L [high]
+• INR(PT): 1.3  [normal]
+• PT: 13.8 sec [normal]
+• PTT: 43.9 sec [normal]
+• Vancomycin: 23.7 ug/mL [high]
+• Bicarbonate: 21.0 mEq/L [low]
+• Urea Nitrogen: 21.0 mg/dL [high]
+• Reticulocyte Count, Absolute: 0.15 m/uL [low]
+• Reticulocyte Count, Automated: 6.9 % [low]
+• Ferritin: 2215.0 ng/mL [high]
+• Iron: 33.0 ug/dL [low]
+• Iron Binding Capacity, Total: 108.0 ug/dL [low]
+• Transferrin: 83.0 mg/dL [low]
+• Calculated Total CO2: 20.0 mEq/L [low]
+• pCO2: 33.0 mm Hg [normal]
+• pO2: 108.0 mm Hg [high]
+• Absolute Lymphocyte Count: 0.59 K/uL [low]
+• Lymphocytes: 9.0 % [low]
+• Myelocytes: 1.0 % [normal]
+• Neutrophils: 79.0 % [high]
+• Absolute Basophil Count: 0.0 K/uL [low]
+• Absolute Eosinophil Count: 0.0 K/uL [low]
+• Lactate: 2.6 mmol/L [normal]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] metastatic adenocarcinoma of unknown primary
+  • [suspected] non-small cell lung cancer
+  • [confirmed] RUL PNA
+  • [confirmed] SVC syndrome
+  • [confirmed] thrombi in the right IJ, left IJ, left subclavian vein, L axillary v, L cephalic vein
+  • [confirmed] thrombectomy of R brachiocephalic and subclavian vein
+  • [confirmed] SVC stent placed
+  • [confirmed] Parotitis
+  • [confirmed] staph aureus
+  • [suspected] GI mass
+
+MEDICATIONS
+-----------
+
+  • Acetaminophen (started)
+  • Vancomycin (started)
+  • Ceftazidime (started)
+  • Dexamethasone (stopped)
+  • XRT (stopped)
+  • Lovenox (stopped)
+  • Clindamycin (started)
+  • Ciprofloxacin (started)
+
+PROCEDURES
+----------
+
+  • Pericardiocentesis: performed
+
+NEGATIONS
+---------
+
+  • No Known Allergies / Adverse Drug Reactions
+
+TEMPORAL
+--------
+
+  • chest pressure: recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer
+  • RUL PNA: recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer
+  • back pain: recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer
+  • altered mental status: recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer
+  • seizures: recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer

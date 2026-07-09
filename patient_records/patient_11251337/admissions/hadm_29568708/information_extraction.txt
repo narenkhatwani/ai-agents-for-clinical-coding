@@ -1,0 +1,61 @@
+INFORMATION EXTRACTION
+======================
+
+Patient ID       : 11251337
+Admission ID     : 29568708
+Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
+
+SYMPTOMS
+--------
+
+  • [present] nephrolithiasis — "nephrolithiasis"
+  • [present] residual stone — "There is some residual stone that will require interval right URS"
+  • [present] pain — "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
+  • [present] bleeding — "You can expect to see occasional blood in your urine"
+
+VITALS
+------
+
+• Weight: 170 Lbs
+• BMI: 24.4 kg/m2
+
+LABS
+----
+
+• Hematocrit: 30.8 % [low]
+• Hemoglobin: 9.4 g/dL [low]
+• MCV: 104.0 fL [high]
+• MCHC: 30.5 g/dL [low]
+• Red Blood Cells: 2.95 m/uL [low]
+• RDW-SD: 59.6 fL [high]
+• Creatinine: 2.5 mg/dL [high]
+• Glucose: 105.0 mg/dL [high]
+• Urea Nitrogen: 22.0 mg/dL [high]
+
+DIAGNOSES MENTIONED
+-------------------
+
+  • [confirmed] NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm
+
+MEDICATIONS
+-----------
+
+  • Acetaminophen (started)
+  • Oxybutynin (started)
+  • OxyCODONE (Immediate Release) (started)
+  • Tamsulosin (started)
+
+PROCEDURES
+----------
+
+  • Difficult right PCNL: right antegrade nephrostogram, right antegrade ureteroscopy, right antegrade ureteral stent placement, right PCNL for stone greater than 2cm
+
+NEGATIONS
+---------
+
+  (none)
+
+TEMPORAL
+--------
+
+  • residual stone: present

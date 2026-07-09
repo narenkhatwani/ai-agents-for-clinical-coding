@@ -1,0 +1,48 @@
+{
+  "patient_id": "19104262",
+  "subject_id": 19104262,
+  "hadm_id": 24271247,
+  "admission_id": "24271247",
+  "admittime": "2120-07-10 05:01:00",
+  "dischtime": "2120-07-15 15:21:00",
+  "admission_type": "DIRECT EMER.",
+  "gender": "F",
+  "anchor_age": 24,
+  "note_type": "discharge",
+  "text_len": 5309,
+  "n_structured_vitals": 5,
+  "n_structured_labs": 40,
+  "n_radiology_reports": 5,
+  "is_latest_admission": true,
+  "n_prior_admissions": 5,
+  "n_total_admissions": 6,
+  "ground_truth": {
+    "primary_icd_code": "O2403",
+    "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
+    "icd10_codes": [
+      "O2403",
+      "O904",
+      "G9340",
+      "E1010",
+      "E875",
+      "E860",
+      "O99355",
+      "O99285",
+      "Z794",
+      "Z9114"
+    ],
+    "dx_titles": [
+      "Pre-existing type 1 diabetes mellitus, in the puerperium",
+      "Postpartum acute kidney failure",
+      "Encephalopathy, unspecified",
+      "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "Hyperkalemia",
+      "Dehydration",
+      "Diseases of the nervous system complicating the puerperium",
+      "Endocrine, nutritional and metabolic diseases complicating the puerperium",
+      "Long term (current) use of insulin",
+      "Patient's other noncompliance with medication regimen"
+    ],
+    "n_diagnoses": 10
+  }
+}

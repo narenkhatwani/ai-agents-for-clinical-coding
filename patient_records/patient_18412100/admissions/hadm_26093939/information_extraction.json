@@ -1,0 +1,193 @@
+{
+  "symptoms": [
+    {
+      "term": "post-procedural pain",
+      "status": "present",
+      "evidence": "post-procedural pain in the right side of the abdomen extending to the back"
+    },
+    {
+      "term": "nausea",
+      "status": "present",
+      "evidence": "one brief episode of nausea that then passed"
+    },
+    {
+      "term": "fever",
+      "status": "absent",
+      "evidence": "On other review of systems, she denies headache, blurry vision, fevers, chills, shortness of breath, palpitations, chest pain, urinary frequency/urgency, diarrhea/constipation"
+    },
+    {
+      "term": "tender abdomen",
+      "status": "present",
+      "evidence": "tender in the right upper and right lower quadrant to palpation. Otherwise soft, nondistended. No rebound tenderness or guarding"
+    },
+    {
+      "term": "desmoid tumor",
+      "status": "present",
+      "evidence": "desmoid tumor of the abdominal wall s/p partial cryoablation"
+    },
+    {
+      "term": "pain",
+      "status": "present",
+      "evidence": "similar to the previous procedure she had, and is less sharp in quality compared to her tumor pain"
+    }
+  ],
+  "vitals": [
+    {
+      "name": "Weight",
+      "value": "179",
+      "unit": "Lbs"
+    },
+    {
+      "name": "BMI",
+      "value": "31.7",
+      "unit": "kg/m2"
+    }
+  ],
+  "labs": [
+    {
+      "name": "MCHC",
+      "value": "31.7",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "484.0",
+      "unit": "K/uL",
+      "flag": "high"
+    },
+    {
+      "name": "White Blood Cells",
+      "value": "15.2",
+      "unit": "K/uL",
+      "flag": "high"
+    },
+    {
+      "name": "Hematocrit",
+      "value": "35.3",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "11.2",
+      "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "MCH",
+      "value": "27.1",
+      "unit": "pg",
+      "flag": "normal"
+    },
+    {
+      "name": "MCV",
+      "value": "85.0",
+      "unit": "fL",
+      "flag": "normal"
+    },
+    {
+      "name": "RDW",
+      "value": "13.8",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
+      "name": "Red Blood Cells",
+      "value": "4.14",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "42.9",
+      "unit": "fL",
+      "flag": "normal"
+    },
+    {
+      "name": "Anion Gap",
+      "value": "18.0",
+      "unit": "mEq/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Bicarbonate",
+      "value": "22.0",
+      "unit": "mEq/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Calcium, Total",
+      "value": "8.5",
+      "unit": "mg/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Chloride",
+      "value": "104.0",
+      "unit": "mEq/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Creatinine",
+      "value": "0.5",
+      "unit": "mg/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "Glucose",
+      "value": "95.0",
+      "unit": "mg/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "Magnesium",
+      "value": "2.0",
+      "unit": "mg/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Phosphate",
+      "value": "4.2",
+      "unit": "mg/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "Potassium",
+      "value": "4.1",
+      "unit": "mEq/L",
+      "flag": "normal"
+    }
+  ],
+  "diagnoses_mentioned": [
+    {
+      "term": "desmoid tumor",
+      "certainty": "confirmed"
+    }
+  ],
+  "medications": [],
+  "procedures": [
+    {
+      "name": "Cryoablation of residual desmoid tumor",
+      "result": "Successful ultrasound and CT-guided cryoablation of the residual large right abdominal wall desmoid tumor."
+    }
+  ],
+  "negations": [
+    "fever",
+    "headache",
+    "blurry vision",
+    "shortness of breath",
+    "palpitations",
+    "chest pain",
+    "urinary frequency/urgency",
+    "diarrhea/constipation"
+  ],
+  "temporal": [
+    {
+      "finding": "tender abdomen",
+      "onset": "after cryoablation of residual desmoid tumor"
+    }
+  ],
+  "_agent": "information_extraction",
+  "_n_prior_admissions": 1
+}

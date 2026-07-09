@@ -1,0 +1,101 @@
+{
+  "root": "ClinicalPresentation",
+  "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of CAD, AFib, and moderate AS.",
+  "branches": [
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "dyspnea on exertion",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue.",
+          "related_findings": [
+            "Mild to moderate AS per TTE"
+          ],
+          "children": [
+            {
+              "term": "mild to moderate AS",
+              "status": "present",
+              "evidence": "Mild to moderate AS with mild pulmonary hypertension per TTE."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "anemia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue.",
+          "related_findings": [
+            "Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %"
+          ],
+          "children": [
+            {
+              "term": "iron deficiency",
+              "status": "present",
+              "evidence": "Iron 15* mg/dL, Ferritin 27* ng/mL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "constitutional",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "fatigue",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue.",
+          "related_findings": [
+            "Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "chronic venous stasis changes",
+          "status": "present",
+          "evidence": "chronic venous stasis changes on ___ with swelling of feet/ankles, but no pitting edema."
+        }
+      ]
+    },
+    {
+      "category": "gi",
+      "ontology_hint": "GI",
+      "symptoms": [
+        {
+          "term": "esophagitis",
+          "status": "history",
+          "evidence": "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
+        }
+      ]
+    }
+  ],
+  "key_symptoms": [
+    "dyspnea on exertion",
+    "fatigue"
+  ],
+  "red_flags": [
+    "hypotension",
+    "AMS"
+  ],
+  "type": "symptom_tree",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "symptom_tree",
+  "patient_id": "19632936",
+  "admission_id": "26696232",
+  "generated_at": "2026-07-09T00:31:14.204340"
+}

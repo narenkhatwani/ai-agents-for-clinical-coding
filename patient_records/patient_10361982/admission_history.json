@@ -1,0 +1,55 @@
+[
+  {
+    "hadm_id": 28540049,
+    "admission_id": "28540049",
+    "admittime": "2162-05-08 09:30:00",
+    "dischtime": "2162-05-10 15:30:00",
+    "admission_type": "DIRECT OBSERVATION",
+    "primary_icd_code": "N939",
+    "primary_dx_title": "Abnormal uterine and vaginal bleeding, unspecified",
+    "ground_truth_icd10": [
+      "N939",
+      "N800",
+      "D261",
+      "N838",
+      "Z23",
+      "R0602",
+      "Z87891",
+      "E039",
+      "F909",
+      "F329",
+      "F419"
+    ],
+    "ground_truth_dx_titles": [
+      "Abnormal uterine and vaginal bleeding, unspecified",
+      "Endometriosis of uterus",
+      "Other benign neoplasm of corpus uteri",
+      "Other noninflammatory disorders of ovary, fallopian tube and broad ligament",
+      "Encounter for immunization",
+      "Shortness of breath",
+      "Personal history of nicotine dependence",
+      "Hypothyroidism, unspecified",
+      "Attention-deficit hyperactivity disorder, unspecified type",
+      "Major depressive disorder, single episode, unspecified",
+      "Anxiety disorder, unspecified"
+    ],
+    "n_diagnoses": 11,
+    "note_excerpt": " \nName:  ___                    Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   F\n \nService: OBSTETRICS/GYNECOLOGY\n \nAllergies: \nCompazine\n \nAttending: ___\n \nChief Complaint:\nmenorrhagia\n \nMajor Surgical or Invasive Procedure:\ntotal laparoscopic hysterectomy, bilateral salpingectomy, \ncystoscopy\n\n \nHistory of Present Illness:\n___ yo G6 ___ LMP ___ with a history of abnormal uterine\nbleeding. She cycles approximately every 30 days and bleeding\nheavily for ___ weeks. During her heaviest bleeding period, she\nchanges a pad/tampon every 15 minutes. She endorses \ndysmenorrhea,\nintra-menstrual bleeding and post-coital bleeding. She denies\ndyspareunia. She takes NSAIDs daily without total resolution of\nher uterine pain/dysmenorrhea.\n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "21.1",
+        "unit": "",
+        "charttime": "2162-05-08",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "127",
+        "unit": "",
+        "charttime": "2162-05-08",
+        "source": "omr"
+      }
+    ]
+  }
+]

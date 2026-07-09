@@ -1,0 +1,184 @@
+[
+  {
+    "hadm_id": 24776937,
+    "admission_id": "24776937",
+    "admittime": "2132-08-13 14:46:00",
+    "dischtime": "2132-08-15 15:45:00",
+    "admission_type": "OBSERVATION ADMIT",
+    "primary_icd_code": "K830",
+    "primary_dx_title": "Cholangitis",
+    "ground_truth_icd10": [
+      "K830",
+      "I739",
+      "I4891",
+      "Z8546",
+      "E785",
+      "I480",
+      "Z7901",
+      "Z96642",
+      "T462X5A",
+      "Y92019",
+      "F4312",
+      "I4510",
+      "R0603",
+      "R001",
+      "I4581",
+      "N183",
+      "N400",
+      "D1803",
+      "E119",
+      "I110",
+      "I509",
+      "R0902",
+      "Z87891"
+    ],
+    "ground_truth_dx_titles": [
+      "Cholangitis",
+      "Peripheral vascular disease, unspecified",
+      "Unspecified atrial fibrillation",
+      "Personal history of malignant neoplasm of prostate",
+      "Hyperlipidemia, unspecified",
+      "Paroxysmal atrial fibrillation",
+      "Long term (current) use of anticoagulants",
+      "Presence of left artificial hip joint",
+      "Adverse effect of other antidysrhythmic drugs, initial encounter",
+      "Unspecified place in single-family (private) house as the place of occurrence of the external cause",
+      "Post-traumatic stress disorder, chronic",
+      "Unspecified right bundle-branch block",
+      "Acute respiratory distress",
+      "Bradycardia, unspecified",
+      "Long QT syndrome",
+      "Chronic kidney disease, stage 3 (moderate)",
+      "Benign prostatic hyperplasia without lower urinary tract symptoms",
+      "Hemangioma of intra-abdominal structures",
+      "Type 2 diabetes mellitus without complications",
+      "Hypertensive heart disease with heart failure",
+      "Heart failure, unspecified",
+      "Hypoxemia",
+      "Personal history of nicotine dependence"
+    ],
+    "n_diagnoses": 23,
+    "note_excerpt": " \nName:  ___                   Unit No:   ___\n \nAdmission Date:  ___              Discharge Date:   ___\n \nDate of Birth:  ___             Sex:   M\n \nService: MEDICINE\n \nAllergies: \nClavulanic Acid\n \nAttending: ___.\n \nChief Complaint:\nabdominal pain\n \nMajor Surgical or Invasive Procedure:\nERCP ___:\nA limited/partial cholangiogram was obtained due to the clinical \nconcern for cholangitis.  No evidence of overt filling defects.  \nGallbladder was opacified.  No sphincterotomy done given patient \non Eliquis.\nStent placement: A 10 ___, 7 cm straight plastic biliary \nstent was placed successfully.\nImpressions: Successful ERCP with stent placement as described \nabove.\nRecommendations: Repeat ERCP in 4 weeks for stent removal and \nreevaluation.\n\n \nHistory of Present Illness:\nMr. ___ is an ___ male \n[... excerpt truncated ...]",
+    "vitals_summary": [
+      {
+        "name": "BMI (kg/m2)",
+        "value": "29.0",
+        "unit": "",
+        "charttime": "2132-08-13",
+        "source": "omr"
+      },
+      {
+        "name": "Weight (Lbs)",
+        "value": "180",
+        "unit": "",
+        "charttime": "2132-08-13",
+        "source": "omr"
+      }
+    ],
+    "labs_summary": [
+      {
+        "name": "Alanine Aminotransferase (ALT)",
+        "value": "165.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Albumin",
+        "value": "3.0",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "3.5-5.2"
+      },
+      {
+        "name": "Asparate Aminotransferase (AST)",
+        "value": "54.0",
+        "unit": "IU/L",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "0.0-40.0"
+      },
+      {
+        "name": "Calcium, Total",
+        "value": "7.7",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "8.4-10.3"
+      },
+      {
+        "name": "Creatinine",
+        "value": "1.8",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "0.5-1.2"
+      },
+      {
+        "name": "Glucose",
+        "value": "101.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "70.0-100.0"
+      },
+      {
+        "name": "Urea Nitrogen",
+        "value": "28.0",
+        "unit": "mg/dL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "6.0-20.0"
+      },
+      {
+        "name": "Hematocrit",
+        "value": "29.7",
+        "unit": "%",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "40.0-51.0"
+      },
+      {
+        "name": "Hemoglobin",
+        "value": "10.0",
+        "unit": "g/dL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "13.7-17.5"
+      },
+      {
+        "name": "MCH",
+        "value": "33.7",
+        "unit": "pg",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "26.0-32.0"
+      },
+      {
+        "name": "MCV",
+        "value": "100.0",
+        "unit": "fL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "82.0-98.0"
+      },
+      {
+        "name": "Platelet Count",
+        "value": "118.0",
+        "unit": "K/uL",
+        "flag": "abnormal",
+        "charttime": "2132-08-15 05:13:00",
+        "ref_range": "150.0-400.0"
+      }
+    ],
+    "reports_summary": [
+      {
+        "type": "radiology",
+        "charttime": "2132-08-13 12:49:00",
+        "excerpt": "EXAMINATION:\nChest:  Frontal and lateral views\n\nINDICATION:  History: ___ with hypoxia/tachypnea// acute process\n\nTECHNIQUE:  Chest:  Frontal and Lateral\n\nCOMPARISON:  ___\n\nFINDINGS: \n\nThere is subtle increase in opacity at the lateral left lung base may be due\nto atelectasis, but infection is not excluded in the appropriate clinical\nsetting.  No large pleural effusion or pneumothorax is seen.  Th"
+      }
+    ]
+  }
+]
