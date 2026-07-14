@@ -1,0 +1,28 @@
+# MIMIC-IV data — never commit patient data
+*.csv.gz
+*.csv
+*.db
+
+# Derived MIMIC outputs
+mimic_*.json
+pediatric_*.csv
+mimic_eval_set_*.json
+pipeline_results_*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Exports and local outputs
+conversation_exports/
+
+# macOS
+.DS_Store
+
+# API keys — never commit
+.env
+settings.json
+patient_records/
