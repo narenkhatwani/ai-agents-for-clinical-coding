@@ -1,0 +1,108 @@
+{
+  "patient_id": "16014068",
+  "admission_id": "29042843",
+  "subject_id": 16014068,
+  "hadm_id": 29042843,
+  "primary_icd_code": "C7931",
+  "primary_dx_title": "Secondary malignant neoplasm of brain",
+  "ground_truth_icd10": [
+    "C7931",
+    "G936",
+    "C7801",
+    "D619",
+    "C7802",
+    "C775",
+    "D696",
+    "M7981",
+    "Z86711",
+    "Z86718",
+    "E538",
+    "L8992",
+    "R791",
+    "G629",
+    "K219",
+    "I129",
+    "N183",
+    "Z85830",
+    "Z87891"
+  ],
+  "ground_truth_dx_titles": [
+    "Secondary malignant neoplasm of brain",
+    "Cerebral edema",
+    "Secondary malignant neoplasm of right lung",
+    "Aplastic anemia, unspecified",
+    "Secondary malignant neoplasm of left lung",
+    "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes",
+    "Thrombocytopenia, unspecified",
+    "Nontraumatic hematoma of soft tissue",
+    "Personal history of pulmonary embolism",
+    "Personal history of other venous thrombosis and embolism",
+    "Deficiency of other specified B group vitamins",
+    "Pressure ulcer of unspecified site, stage 2",
+    "Abnormal coagulation profile",
+    "Polyneuropathy, unspecified",
+    "Gastro-esophageal reflux disease without esophagitis",
+    "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+    "Chronic kidney disease, stage 3 (moderate)",
+    "Personal history of malignant neoplasm of bone",
+    "Personal history of nicotine dependence"
+  ],
+  "branch_pruning": {
+    "type": "branch_pruning",
+    "score_threshold": 40,
+    "n_input_candidates": 3,
+    "n_kept": 2,
+    "n_pruned": 1,
+    "kept_candidates": [
+      {
+        "disease": "Ischemic / Hemorrhagic Stroke",
+        "category": "neurologic",
+        "score": 85,
+        "supporting_evidence": [
+          "intracranial bleeding",
+          "headache"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has a history of intracranial bleeding and current headache, which are strong indicators of a stroke. The patient's severe anemia and thrombocytopenia could be related to the underlying metastatic sarcoma, but these findings do not contradict the stroke diagnosis."
+      },
+      {
+        "disease": "Pulmonary Embolism",
+        "category": "cardiovascular",
+        "score": 45,
+        "supporting_evidence": [
+          "pulmonary emboli"
+        ],
+        "contradicting_evidence": [
+          "history of extensive bilateral pulmonary emboli"
+        ],
+        "missing_evidence": [],
+        "rationale": "The patient has a history of extensive bilateral pulmonary emboli, which could be a contributing factor to his current condition. However, the current symptoms and findings do not strongly support an acute pulmonary embolism."
+      }
+    ],
+    "pruned_candidates": [
+      {
+        "disease": "Fever of Unknown Origin",
+        "category": "constitutional",
+        "score": 15,
+        "supporting_evidence": [
+          "weakness"
+        ],
+        "contradicting_evidence": [
+          "no specific evidence of fever"
+        ],
+        "missing_evidence": [
+          "key confirmatory evidence that is not documented, if relevant"
+        ],
+        "rationale": "The patient's weakness could be due to a systemic infection or other constitutional issues, but there is no specific evidence of fever. The patient's intracranial bleeding and headache are more strongly supported by the current evidence."
+      }
+    ],
+    "_method": "threshold:40",
+    "_agent": "branch_pruning",
+    "patient_id": "16014068",
+    "admission_id": "29042843",
+    "generated_at": "2026-07-10T04:07:43.165213"
+  },
+  "n_kept": 2,
+  "n_pruned": 1
+}

@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with DKA and lactic acidosis, with a history of recurrent DKA and uncontrolled diabetes mellitus type 1.",
+  "reasoning": "The patient is a female with a history of type 1 diabetes mellitus (DM1) who is currently presenting with diabetic ketoacidosis (DKA) and lactic acidosis, along with vaginal spotting.",
   "branches": [
     {
       "category": "infectious",
@@ -45,15 +45,25 @@
             "Glucose: 263 mg/dL",
             "Anion Gap: 19.0 mEq/L",
             "pH: 6.96 units",
-            "Lactate: 3.6 mmol/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Calcium, Total: 10.2 mg/dL",
-            "Potassium: 8.8 mEq/L",
-            "Hematocrit: 46.2%",
-            "Hemoglobin: 14.4 g/dL",
-            "Albumin: 3.6 g/dL"
+            "Lactate: 3.6 mmol/L"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "hyperglycemia",
+              "status": "present",
+              "evidence": "Glucose: 263 mg/dL"
+            },
+            {
+              "term": "metabolic acidosis",
+              "status": "present",
+              "evidence": "pH: 6.96 units, Anion Gap: 19.0 mEq/L"
+            },
+            {
+              "term": "lactic acidosis",
+              "status": "present",
+              "evidence": "Lactate: 3.6 mmol/L"
+            }
+          ]
         },
         {
           "term": "vaginal spotting",
@@ -61,11 +71,10 @@
           "severity": "mild",
           "evidence": "Vaginal spotting: No retained products of conception on the US; this is normal post-partum per the GYN consult team.",
           "related_findings": [
-            "Abdominal ultrasound findings: heterogeneous material within the endometrial canal, measuring up to 8 mm in thickness, without internal vascularity, likely blood products.",
-            "Small to moderate amount of simple free fluid in the cul-de-sac.",
-            "Normal ovaries."
-          ],
-          "children": []
+            "Hemoglobin: 10.0 g/dL",
+            "Hematocrit: 46.2%",
+            "Albumin: 3.6 g/dL"
+          ]
         }
       ]
     }
@@ -76,12 +85,12 @@
   ],
   "red_flags": [
     "lactic acidosis",
-    "severe metabolic acidosis"
+    "metabolic acidosis"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "19104262",
   "admission_id": "24271247",
-  "generated_at": "2026-07-09T00:31:07.761482"
+  "generated_at": "2026-07-09T21:38:17.859576"
 }

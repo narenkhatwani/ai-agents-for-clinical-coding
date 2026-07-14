@@ -1,0 +1,64 @@
+{
+  "patient_id": "19104262",
+  "admission_id": "24271247",
+  "subject_id": 19104262,
+  "hadm_id": 24271247,
+  "primary_icd_code": "O2403",
+  "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
+  "ground_truth_icd10": [
+    "O2403",
+    "O904",
+    "G9340",
+    "E1010",
+    "E875",
+    "E860",
+    "O99355",
+    "O99285",
+    "Z794",
+    "Z9114"
+  ],
+  "ground_truth_dx_titles": [
+    "Pre-existing type 1 diabetes mellitus, in the puerperium",
+    "Postpartum acute kidney failure",
+    "Encephalopathy, unspecified",
+    "Type 1 diabetes mellitus with ketoacidosis without coma",
+    "Hyperkalemia",
+    "Dehydration",
+    "Diseases of the nervous system complicating the puerperium",
+    "Endocrine, nutritional and metabolic diseases complicating the puerperium",
+    "Long term (current) use of insulin",
+    "Patient's other noncompliance with medication regimen"
+  ],
+  "branch_pruning": {
+    "type": "branch_pruning",
+    "score_threshold": 40,
+    "n_input_candidates": 1,
+    "n_kept": 1,
+    "n_pruned": 0,
+    "kept_candidates": [
+      {
+        "disease": "Diabetic Ketoacidosis",
+        "category": "other",
+        "score": 95,
+        "supporting_evidence": [
+          "DKA/lactic acidosis, in the setting of running out of medications.",
+          "Glucose: 263 mg/dL",
+          "Anion Gap: 19.0 mEq/L",
+          "pH: 6.96 units",
+          "Lactate: 3.6 mmol/L"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient's severe DKA and lactic acidosis, along with the documented hyperglycemia and metabolic acidosis, provide strong objective evidence supporting this diagnosis."
+      }
+    ],
+    "pruned_candidates": [],
+    "_method": "threshold:40",
+    "_agent": "branch_pruning",
+    "patient_id": "19104262",
+    "admission_id": "24271247",
+    "generated_at": "2026-07-10T04:07:43.165283"
+  },
+  "n_kept": 1,
+  "n_pruned": 0
+}

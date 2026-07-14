@@ -1,0 +1,114 @@
+{
+  "patient_id": "18412100",
+  "admission_id": "26093939",
+  "subject_id": 18412100,
+  "hadm_id": 26093939,
+  "primary_icd_code": "D481",
+  "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+  "ground_truth_icd10": [
+    "D481",
+    "B1920",
+    "K219",
+    "G8918",
+    "R109",
+    "R110",
+    "E669",
+    "Z6832"
+  ],
+  "ground_truth_dx_titles": [
+    "Neoplasm of uncertain behavior of connective and other soft tissue",
+    "Unspecified viral hepatitis C without hepatic coma",
+    "Gastro-esophageal reflux disease without esophagitis",
+    "Other acute postprocedural pain",
+    "Unspecified abdominal pain",
+    "Nausea",
+    "Obesity, unspecified",
+    "Body mass index [BMI] 32.0-32.9, adult"
+  ],
+  "ontology_routing_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "ontology_routing": {
+    "reasoning": "The patient's symptoms are primarily related to post-procedural pain and nausea, with no signs of systemic infection or severe systemic symptoms.",
+    "routed_branches": [
+      {
+        "category": "constitutional|gi",
+        "ontology_name": "Other",
+        "candidates": [
+          {
+            "disease": "Gastrointestinal Bleed",
+            "confidence": "low",
+            "supporting_symptoms": [
+              "post-procedural pain",
+              "tender abdomen"
+            ],
+            "rationale": "The tender abdomen and post-procedural pain could suggest a gastrointestinal issue, but there is no evidence of bleeding."
+          },
+          {
+            "disease": "Acute Pancreatitis",
+            "confidence": "low",
+            "supporting_symptoms": [
+              "post-procedural pain",
+              "tender abdomen"
+            ],
+            "rationale": "The tender abdomen and post-procedural pain could suggest acute pancreatitis, but there is no evidence of severe abdominal pain or other typical symptoms."
+          }
+        ]
+      },
+      {
+        "category": "neurologic",
+        "ontology_name": "Other",
+        "candidates": [
+          {
+            "disease": "Seizure Disorder",
+            "confidence": "low",
+            "supporting_symptoms": [
+              "pain"
+            ],
+            "rationale": "The pain described could be related to a seizure, but there is no evidence of a seizure event."
+          }
+        ]
+      }
+    ],
+    "type": "ontology_routing",
+    "top_candidates": [
+      {
+        "disease": "Gastrointestinal Bleed",
+        "category": "constitutional|gi",
+        "ontology_name": "Other",
+        "confidence": "low",
+        "supporting_symptoms": [
+          "post-procedural pain",
+          "tender abdomen"
+        ],
+        "rationale": "The tender abdomen and post-procedural pain could suggest a gastrointestinal issue, but there is no evidence of bleeding."
+      },
+      {
+        "disease": "Acute Pancreatitis",
+        "category": "constitutional|gi",
+        "ontology_name": "Other",
+        "confidence": "low",
+        "supporting_symptoms": [
+          "post-procedural pain",
+          "tender abdomen"
+        ],
+        "rationale": "The tender abdomen and post-procedural pain could suggest acute pancreatitis, but there is no evidence of severe abdominal pain or other typical symptoms."
+      },
+      {
+        "disease": "Seizure Disorder",
+        "category": "neurologic",
+        "ontology_name": "Other",
+        "confidence": "low",
+        "supporting_symptoms": [
+          "pain"
+        ],
+        "rationale": "The pain described could be related to a seizure, but there is no evidence of a seizure event."
+      }
+    ],
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "ontology_routing",
+    "patient_id": "18412100",
+    "admission_id": "26093939",
+    "generated_at": "2026-07-10T03:47:35.289534"
+  },
+  "n_candidates": 3,
+  "top_candidate": "Gastrointestinal Bleed"
+}

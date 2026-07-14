@@ -11,7 +11,7 @@ Reasoning:
   The patient presents with septic shock, hypoxic respiratory failure, and multiple organ failures including liver and renal failure, along with signs of severe coagulopathy and hepatic encephalopathy.
 
 Key symptoms     : Septic shock, Hypoxic respiratory failure
-Red flags        : Hepatic encephalopathy, Renal failure
+Red flags        : Atrial fibrillation/flutter, GI bleeding
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
@@ -33,57 +33,33 @@ CARDIOVASCULAR → Cardiovascular
   • [present, mild] Atrial fibrillation/flutter
       evidence: "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
 
-NEUROLOGIC → Neurology
-----------------------
+NEUROLOGIC → Neurologic
+-----------------------
 
-  • [present, moderate] Hepatic encephalopathy
+  • [present, severe] Hepatic encephalopathy
       evidence: "hepatic encephalopathy"
       related: worsening liver failure
 
-GI → Gastrointestinal
----------------------
+GI → GI
+-------
 
   • [present, moderate] GI bleeding
       evidence: "concern for GI bleeding (black coffee-ground GI contents)"
-      related: epistaxis
+      related: octreotide and protonix
 
 RENAL → Renal
 -------------
 
   • [present, severe] Renal failure
       evidence: "acute renal failure ___ to septic shock and ATN on dialysis"
+      related: 22L up LOS
 
-INFECTIOUS → Infectious Diseases
---------------------------------
+OTHER → Other
+-------------
 
-  • [present, severe] Klebsiella Aerogenes infection
-      evidence: "Klebsiella Aerogenes blood cultures grew"
-      related: broad spectrum antibiotics started
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [present] Potential VAP or GI source
-      evidence: "Klebsiella Aerogenes infection, distributive shock picture"
-      related: large pleural effusion with compressive consolidation versus atelectasis
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [present, severe] Distributive shock
-      evidence: "distributive shock picture"
-      related: hypotension
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [present, severe] Coagulopathy
-      evidence: "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
-      related: INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [present, moderate] Metastatic HCC
-      evidence: "multifocal metastatic HCC with known metastases to the left adrenal gland"
+  • [present, moderate] Multifocal metastatic HCC
+      evidence: "multifocal metastatic HCC with known metastases to the left adrenal gland s/p RFA"
       related: large heterogeneous solid mass within the left upper quadrant
+  • [present, moderate] Thrombocytopenia
+      evidence: "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
+      related: PTT-40.7 sec, INR(PT)-3.4

@@ -8,7 +8,7 @@ Patient ID       : 13196707
 Admission ID     : 21475988
 
 Reasoning:
-  The patient presents with severe sepsis secondary to RUL PNA, hypotension, and altered mental status, with a history of metastatic adenocarcinoma of unknown primary.
+  The patient presents with a history of metastatic adenocarcinoma, recent diagnosis of RUL PNA, and current sepsis with hypotension. The patient also has a history of SVC syndrome and multiple metastatic lesions.
 
 Key symptoms     : fever, pneumonia
 Red flags        : hypotension, altered mental status
@@ -21,29 +21,32 @@ INFECTIOUS → Infectious Diseases
       related: RUL PNA
   • [present, moderate] pneumonia
       evidence: "RUL PNA"
-      related: CXR: persistent consolidative opacities in both lower lobes
+      related: CXR shows bibasilar consolidations
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] hypotension
       evidence: "BP 90/47, hypotensive"
-      related: Levophed started, pressures came up to the 90's systolic
+      related: levophed started
 
 NEUROLOGIC → Neurology
 ----------------------
 
   • [present, moderate] altered mental status
       evidence: "altered mental status"
-      related: EEG shows epileptiform discharges left paracentrally
-  • [suspected] seizures
-      evidence: "possibly seizures from metastases"
-      related: EEG shows epileptiform discharges left paracentrally
+      related: EEG shows epileptiform discharges
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [present, mild] chest pressure
+      evidence: "chest pressure"
+      related: RUL PNA
 
 OTHER → Other
 -------------
 
-  • [present, mild] chest pressure
-      evidence: "chest pressure"
   • [history, mild] back pain
       evidence: "back pain"
+      related: recently diagnosed metastatic adenocarcinoma

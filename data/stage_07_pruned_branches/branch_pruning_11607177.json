@@ -1,0 +1,93 @@
+{
+  "patient_id": "11607177",
+  "admission_id": "23293838",
+  "subject_id": 11607177,
+  "hadm_id": 23293838,
+  "primary_icd_code": "I472",
+  "primary_dx_title": "Ventricular tachycardia",
+  "ground_truth_icd10": [
+    "I472",
+    "Z95811",
+    "N179",
+    "I429",
+    "Z8673",
+    "E119",
+    "E785",
+    "I10",
+    "M109",
+    "Z96652",
+    "I272",
+    "Z6837",
+    "E669"
+  ],
+  "ground_truth_dx_titles": [
+    "Ventricular tachycardia",
+    "Presence of heart assist device",
+    "Acute kidney failure, unspecified",
+    "Cardiomyopathy, unspecified",
+    "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
+    "Type 2 diabetes mellitus without complications",
+    "Hyperlipidemia, unspecified",
+    "Essential (primary) hypertension",
+    "Gout, unspecified",
+    "Presence of left artificial knee joint",
+    "Other secondary pulmonary hypertension",
+    "Body mass index [BMI] 37.0-37.9, adult",
+    "Obesity, unspecified"
+  ],
+  "branch_pruning": {
+    "type": "branch_pruning",
+    "score_threshold": 40,
+    "n_input_candidates": 3,
+    "n_kept": 2,
+    "n_pruned": 1,
+    "kept_candidates": [
+      {
+        "disease": "Heart Failure",
+        "category": "cardiovascular",
+        "score": 85,
+        "supporting_evidence": [
+          "Dilated non-ischemic cardiomyopathy",
+          "Increased edema",
+          "ICD shock"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has confirmed dilated cardiomyopathy, increased edema, and recent ICD shock, which are strong indicators of heart failure."
+      },
+      {
+        "disease": "Atrial Fibrillation / Arrhythmia",
+        "category": "cardiovascular",
+        "score": 80,
+        "supporting_evidence": [
+          "Refractory VT",
+          "ICD shock"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has confirmed refractory VT and ICD shock, which are strong indicators of atrial fibrillation or other arrhythmias."
+      }
+    ],
+    "pruned_candidates": [
+      {
+        "disease": "Myocardial Infarction / Acute Coronary Syndrome",
+        "category": "cardiovascular",
+        "score": 30,
+        "supporting_evidence": [
+          "ICD discharge",
+          "ICD shock"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has ICD discharge and shock, which suggest potential acute coronary issues, but there is no direct evidence of myocardial infarction."
+      }
+    ],
+    "_method": "threshold:40",
+    "_agent": "branch_pruning",
+    "patient_id": "11607177",
+    "admission_id": "23293838",
+    "generated_at": "2026-07-10T04:07:43.165097"
+  },
+  "n_kept": 2,
+  "n_pruned": 1
+}

@@ -1,0 +1,105 @@
+{
+  "patient_id": "19632936",
+  "admission_id": "26696232",
+  "subject_id": 19632936,
+  "hadm_id": 26696232,
+  "primary_icd_code": "D509",
+  "primary_dx_title": "Iron deficiency anemia, unspecified",
+  "ground_truth_icd10": [
+    "D509",
+    "I272",
+    "I495",
+    "I2510",
+    "I4891",
+    "I10",
+    "E785",
+    "I350",
+    "Z955",
+    "Z7901",
+    "Z950",
+    "Z87891",
+    "N400",
+    "K2270",
+    "I878"
+  ],
+  "ground_truth_dx_titles": [
+    "Iron deficiency anemia, unspecified",
+    "Other secondary pulmonary hypertension",
+    "Sick sinus syndrome",
+    "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+    "Unspecified atrial fibrillation",
+    "Essential (primary) hypertension",
+    "Hyperlipidemia, unspecified",
+    "Nonrheumatic aortic (valve) stenosis",
+    "Presence of coronary angioplasty implant and graft",
+    "Long term (current) use of anticoagulants",
+    "Presence of cardiac pacemaker",
+    "Personal history of nicotine dependence",
+    "Benign prostatic hyperplasia without lower urinary tract symptoms",
+    "Barrett's esophagus without dysplasia",
+    "Other specified disorders of veins"
+  ],
+  "branch_pruning": {
+    "type": "branch_pruning",
+    "score_threshold": 40,
+    "n_input_candidates": 3,
+    "n_kept": 1,
+    "n_pruned": 2,
+    "kept_candidates": [
+      {
+        "disease": "Heart Failure",
+        "category": "cardiovascular",
+        "score": 85,
+        "supporting_evidence": [
+          "dyspnea on exertion",
+          "mild to moderate AS",
+          "acute on chronic macrocytic anemia",
+          "low hemoglobin and MCV",
+          "low INR and PT, indicating possible anticoagulation issues",
+          "worsening dyspnea and fatigue over the past year"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient's dyspnea on exertion, fatigue, and confirmed macrocytic anemia strongly support heart failure. The presence of mild to moderate aortic stenosis further supports this diagnosis."
+      }
+    ],
+    "pruned_candidates": [
+      {
+        "disease": "Viral Infection",
+        "category": "infectious",
+        "score": 25,
+        "supporting_evidence": [
+          "macrocytic anemia",
+          "iron deficiency"
+        ],
+        "contradicting_evidence": [
+          "no recent history of fever, sore throat, or other typical viral symptoms",
+          "confirmed CAD, A-fib, and moderate AS"
+        ],
+        "missing_evidence": [],
+        "rationale": "While macrocytic anemia and iron deficiency could suggest a viral infection, the presence of confirmed cardiovascular conditions makes this less likely."
+      },
+      {
+        "disease": "Altered Mental Status / Encephalopathy",
+        "category": "neurologic",
+        "score": 10,
+        "supporting_evidence": [
+          "fatigue"
+        ],
+        "contradicting_evidence": [
+          "no recent history of fever, headache, or other typical encephalopathy symptoms",
+          "confirmed cardiovascular conditions"
+        ],
+        "missing_evidence": [],
+        "rationale": "Fatigue could be related to encephalopathy, but the presence of confirmed cardiovascular conditions makes this less likely."
+      }
+    ],
+    "_method": "threshold:40",
+    "_agent": "branch_pruning",
+    "patient_id": "19632936",
+    "admission_id": "26696232",
+    "generated_at": "2026-07-10T04:07:43.165305"
+  },
+  "n_kept": 1,
+  "n_pruned": 2
+}

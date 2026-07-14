@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a mechanical fall, with ongoing respiratory distress and signs of volume overload.",
+  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a fall, with ongoing respiratory issues and signs of volume overload.",
   "branches": [
     {
       "category": "respiratory",
@@ -12,8 +12,7 @@
           "severity": "moderate",
           "evidence": "right sided ___ rib fractures",
           "related_findings": [
-            "right-sided pneumothorax",
-            "subcutaneous emphysema"
+            "subcutaneous emphysema along the right posterior back"
           ],
           "children": [
             {
@@ -29,7 +28,8 @@
           "severity": "mild",
           "evidence": "satting 96% on 4L and evaluated by trauma surgery",
           "related_findings": [
-            "right-sided pneumothorax",
+            "right-sided pigtail catheter unchanged",
+            "right pneumothorax",
             "subcutaneous emphysema"
           ]
         },
@@ -37,30 +37,25 @@
           "term": "respiratory distress",
           "status": "present",
           "severity": "moderate",
-          "evidence": "small right PTX, bilateral pulmonary opacities",
-          "related_findings": [
-            "right-sided pneumothorax",
-            "subcutaneous emphysema"
-          ]
+          "evidence": "sent to unit for afib with RVR and increasing O2 requirement"
         },
         {
           "term": "pneumothorax",
           "status": "present",
           "severity": "mild",
-          "evidence": "small right PTX, tiny right apical pneumothorax",
+          "evidence": "probable small right apical pneumothorax",
           "related_findings": [
-            "right-sided rib fractures",
-            "subcutaneous emphysema"
+            "right-sided pigtail catheter"
           ]
         },
         {
-          "term": "pulmonary edema",
+          "term": "pneumonia",
           "status": "present",
           "severity": "mild",
-          "evidence": "bilateral pulmonary opacities, increased left lung opacity",
+          "evidence": "aspiration or pneumonia",
           "related_findings": [
-            "right-sided rib fractures",
-            "subcutaneous emphysema"
+            "areas of airway mucous plugging",
+            "multifocal nodular parenchymal opacities"
           ]
         }
       ]
@@ -73,10 +68,9 @@
           "term": "atrial fibrillation",
           "status": "present",
           "severity": "mild",
-          "evidence": "paroxysmal atrial fibrillation",
+          "evidence": "likely triggered ___ the setting of polysubstance abuse",
           "related_findings": [
-            "hypoxia",
-            "respiratory distress"
+            "increasing O2 requirement"
           ]
         }
       ]
@@ -87,22 +81,11 @@
       "symptoms": [
         {
           "term": "fever",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "spiked fever ___ the unit",
-          "related_findings": [
-            "pneumonia",
-            "pneumothorax"
-          ]
-        },
-        {
-          "term": "infection",
           "status": "present",
           "severity": "mild",
-          "evidence": "GRAM NEGATIVE ROD(S), BUDDING YEAST WITH PSEUDOHYPHAE, GRAM POSITIVE COCCI",
+          "evidence": "spiked fever ___ the unit",
           "related_findings": [
-            "pneumonia",
-            "pneumothorax"
+            "bacterial growth in sputum"
           ]
         }
       ]
@@ -114,12 +97,12 @@
   ],
   "red_flags": [
     "atrial fibrillation",
-    "pneumothorax"
+    "hypoxia"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10458324",
   "admission_id": "21744342",
-  "generated_at": "2026-07-09T00:29:44.597572"
+  "generated_at": "2026-07-09T21:35:35.959411"
 }

@@ -1,0 +1,200 @@
+{
+  "patient_id": "13952483",
+  "admission_id": "23852410",
+  "subject_id": 13952483,
+  "hadm_id": 23852410,
+  "primary_icd_code": "I9589",
+  "primary_dx_title": "Other hypotension",
+  "ground_truth_icd10": [
+    "I9589",
+    "N179",
+    "R64",
+    "D6959",
+    "B3781",
+    "I272",
+    "D701",
+    "C3432",
+    "Z940",
+    "Z681",
+    "J449",
+    "E860",
+    "R627",
+    "D649",
+    "T451X5A",
+    "T66XXXA",
+    "I10",
+    "E785",
+    "R1319",
+    "Y929",
+    "R630",
+    "B349",
+    "F329",
+    "F17210",
+    "Z79899"
+  ],
+  "ground_truth_dx_titles": [
+    "Other hypotension",
+    "Acute kidney failure, unspecified",
+    "Cachexia",
+    "Other secondary thrombocytopenia",
+    "Candidal esophagitis",
+    "Other secondary pulmonary hypertension",
+    "Agranulocytosis secondary to cancer chemotherapy",
+    "Malignant neoplasm of lower lobe, left bronchus or lung",
+    "Kidney transplant status",
+    "Body mass index [BMI] 19.9 or less, adult",
+    "Chronic obstructive pulmonary disease, unspecified",
+    "Dehydration",
+    "Adult failure to thrive",
+    "Anemia, unspecified",
+    "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+    "Radiation sickness, unspecified, initial encounter",
+    "Essential (primary) hypertension",
+    "Hyperlipidemia, unspecified",
+    "Other dysphagia",
+    "Unspecified place or not applicable",
+    "Anorexia",
+    "Viral infection, unspecified",
+    "Major depressive disorder, single episode, unspecified",
+    "Nicotine dependence, cigarettes, uncomplicated",
+    "Other long term (current) drug therapy"
+  ],
+  "ontology_routing_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "ontology_routing": {
+    "reasoning": "The patient presents with hypotension, weight loss, and multiple systemic symptoms, suggesting a complex clinical picture involving both infectious and non-infectious etiologies.",
+    "routed_branches": [
+      {
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "candidates": [
+          {
+            "disease": "Hypertensive Emergency",
+            "confidence": "medium",
+            "supporting_symptoms": [
+              "hypotension",
+              "loud systolic ejection murmur",
+              "neutropenia",
+              "thrombocytopenia"
+            ],
+            "rationale": "Hypotension and associated systemic symptoms suggest a hypertensive emergency, though the patient is hypotensive, which is unusual."
+          }
+        ]
+      },
+      {
+        "category": "respiratory",
+        "ontology_name": "Respiratory",
+        "candidates": [
+          {
+            "disease": "Pneumonia",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "cough",
+              "coarse crackles at bases",
+              "left basilar opacification",
+              "pain with swallowing"
+            ],
+            "rationale": "Cough, crackles, and opacification in the lungs strongly suggest pneumonia."
+          }
+        ]
+      },
+      {
+        "category": "infectious",
+        "ontology_name": "Infectious Diseases",
+        "candidates": [
+          {
+            "disease": "Sepsis",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "hypotension",
+              "neutropenia",
+              "thrombocytopenia"
+            ],
+            "rationale": "Neutropenia and thrombocytopenia with hypotension indicate sepsis."
+          }
+        ]
+      },
+      {
+        "category": "constitutional",
+        "ontology_name": "Other",
+        "candidates": [
+          {
+            "disease": "Fever of Unknown Origin",
+            "confidence": "medium",
+            "supporting_symptoms": [
+              "hypotension",
+              "neutropenia",
+              "thrombocytopenia",
+              "weight loss",
+              "anorexia",
+              "nausea"
+            ],
+            "rationale": "The combination of systemic symptoms and laboratory findings suggest a fever of unknown origin."
+          }
+        ]
+      }
+    ],
+    "type": "ontology_routing",
+    "top_candidates": [
+      {
+        "disease": "Pneumonia",
+        "category": "respiratory",
+        "ontology_name": "Respiratory",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "cough",
+          "coarse crackles at bases",
+          "left basilar opacification",
+          "pain with swallowing"
+        ],
+        "rationale": "Cough, crackles, and opacification in the lungs strongly suggest pneumonia."
+      },
+      {
+        "disease": "Sepsis",
+        "category": "infectious",
+        "ontology_name": "Infectious Diseases",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "hypotension",
+          "neutropenia",
+          "thrombocytopenia"
+        ],
+        "rationale": "Neutropenia and thrombocytopenia with hypotension indicate sepsis."
+      },
+      {
+        "disease": "Hypertensive Emergency",
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "confidence": "medium",
+        "supporting_symptoms": [
+          "hypotension",
+          "loud systolic ejection murmur",
+          "neutropenia",
+          "thrombocytopenia"
+        ],
+        "rationale": "Hypotension and associated systemic symptoms suggest a hypertensive emergency, though the patient is hypotensive, which is unusual."
+      },
+      {
+        "disease": "Fever of Unknown Origin",
+        "category": "constitutional",
+        "ontology_name": "Other",
+        "confidence": "medium",
+        "supporting_symptoms": [
+          "hypotension",
+          "neutropenia",
+          "thrombocytopenia",
+          "weight loss",
+          "anorexia",
+          "nausea"
+        ],
+        "rationale": "The combination of systemic symptoms and laboratory findings suggest a fever of unknown origin."
+      }
+    ],
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "ontology_routing",
+    "patient_id": "13952483",
+    "admission_id": "23852410",
+    "generated_at": "2026-07-10T03:47:12.602118"
+  },
+  "n_candidates": 4,
+  "top_candidate": "Pneumonia"
+}

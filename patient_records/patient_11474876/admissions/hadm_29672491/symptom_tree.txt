@@ -8,7 +8,7 @@ Patient ID       : 11474876
 Admission ID     : 29672491
 
 Reasoning:
-  The patient is a 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease who underwent ERCP for choledocholithiasis. He is currently stable post-procedure with no acute symptoms but has a history of nocturnal hypoxia and leg swelling.
+  The patient is a 70-year-old man with multiple comorbidities, including atrial fibrillation, heart failure with preserved ejection fraction, peripheral vascular disease, and chronic kidney disease. He recently underwent ERCP for choledocholithiasis and is being managed post-procedurally.
 
 Key symptoms     : nocturnal hypoxia, leg swelling
 Red flags        : hypotension, AMS
@@ -18,10 +18,10 @@ CARDIOVASCULAR → Cardiovascular
 
   • [history] nocturnal hypoxia
       evidence: "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis"
-      related: Hemoglobin: 12.6 g/dL (low)
+      related: HFpEF, CKD
   • [present, mild] leg swelling
       evidence: "Notes his ___ edema improves during the night and worsens during the day"
-      related: Creatinine: 1.4 mg/dL (high)
+      related: CKD, HFpEF
 
 RESPIRATORY → Respiratory
 -------------------------
@@ -32,33 +32,40 @@ RESPIRATORY → Respiratory
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [started] ciprofloxacin
-      evidence: "Ciprofloxacin was started post-ERCP"
+  • [present] ciprofloxacin
+      evidence: "Received ciprofloxacin"
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [confirmed, mild] atrial fibrillation
-      evidence: "AFib: continued home propranolol and amiodarone"
-      related: Hemoglobin: 12.6 g/dL (low)
-  • [confirmed, mild] heart failure
-      evidence: "HFpEF: held home Lasix ___"
-      related: Creatinine: 1.4 mg/dL (high)
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [confirmed, mild] peripheral vascular disease
-      evidence: "PVD: continued home aspirin 81mg, atorvastatin 20mg"
+  • [present, mild] atrial fibrillation
+      evidence: "Paroxysmal AFib, on Eliquis and amiodarone"
+      related: Apixaban held
+  • [present, mild] heart failure with preserved ejection fraction
+      evidence: "HFpEF, held home Lasix"
+      related: Leg swelling
 
 RENAL → Renal
 -------------
 
   • [high, mild] creatinine
       evidence: "Creatinine: 1.4 mg/dL"
+      related: CKD
+  • [normal, normal] potassium
+      evidence: "Potassium: 4.3 mEq/L"
+  • [low, mild] calcium
+      evidence: "Calcium, Total: 8.7 mg/dL"
+      related: CKD
+  • [low, mild] magnesium
+      evidence: "Magnesium: 1.7 mg/dL"
+      related: CKD
+  • [low, mild] phosphate
+      evidence: "Phosphate: 2.9 mg/dL"
+      related: CKD
 
-OTHER → Other
--------------
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
 
-  • [confirmed, mild] choledocholithiasis
-      evidence: "Choledocholithiasis s/p ERCP: ERCP with multiple stones and sludge"
+  • [present, mild] peripheral vascular disease
+      evidence: "Peripheral vascular disease s/p Aortobifemoral bypass graft"
+      related: Apixaban held

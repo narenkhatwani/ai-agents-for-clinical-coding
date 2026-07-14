@@ -1,0 +1,172 @@
+{
+  "patient_id": "12007928",
+  "admission_id": "23749816",
+  "subject_id": 12007928,
+  "hadm_id": 23749816,
+  "primary_icd_code": "I5033",
+  "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
+  "ground_truth_icd10": [
+    "I5033",
+    "N179",
+    "G7000",
+    "Q211",
+    "F0390",
+    "I480",
+    "G629",
+    "F329",
+    "I10",
+    "E041",
+    "G40909",
+    "E039",
+    "E785",
+    "Z7901",
+    "Z950",
+    "K219",
+    "G4730",
+    "N3941",
+    "Z66"
+  ],
+  "ground_truth_dx_titles": [
+    "Acute on chronic diastolic (congestive) heart failure",
+    "Acute kidney failure, unspecified",
+    "Myasthenia gravis without (acute) exacerbation",
+    "Atrial septal defect",
+    "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety",
+    "Paroxysmal atrial fibrillation",
+    "Polyneuropathy, unspecified",
+    "Major depressive disorder, single episode, unspecified",
+    "Essential (primary) hypertension",
+    "Nontoxic single thyroid nodule",
+    "Epilepsy, unspecified, not intractable, without status epilepticus",
+    "Hypothyroidism, unspecified",
+    "Hyperlipidemia, unspecified",
+    "Long term (current) use of anticoagulants",
+    "Presence of cardiac pacemaker",
+    "Gastro-esophageal reflux disease without esophagitis",
+    "Sleep apnea, unspecified",
+    "Urge incontinence",
+    "Do not resuscitate"
+  ],
+  "ontology_routing_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "ontology_routing": {
+    "reasoning": "The patient presents with dyspnea, orthopnea, and pulmonary edema, along with renal dysfunction and neurologic symptoms, indicating a need to route to cardiovascular and renal diseases.",
+    "routed_branches": [
+      {
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "candidates": [
+          {
+            "disease": "Heart Failure",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "dyspnea",
+              "orthopnea",
+              "pulmonary edema",
+              "pleural effusions"
+            ],
+            "rationale": "The patient's dyspnea, orthopnea, and pulmonary edema are consistent with heart failure, especially given the history of CHF and atrial fibrillation."
+          }
+        ]
+      },
+      {
+        "category": "renal",
+        "ontology_name": "Renal",
+        "candidates": [
+          {
+            "disease": "Acute Kidney Injury",
+            "confidence": "medium",
+            "supporting_symptoms": [
+              "creatinine elevation",
+              "urea nitrogen elevation"
+            ],
+            "rationale": "The elevation in creatinine and urea nitrogen suggest acute kidney injury, which is consistent with the patient's overall clinical presentation."
+          }
+        ]
+      },
+      {
+        "category": "neurologic",
+        "ontology_name": "Neurologic",
+        "candidates": [
+          {
+            "disease": "Seizure Disorder",
+            "confidence": "low",
+            "supporting_symptoms": [
+              "tremors",
+              "spasms"
+            ],
+            "rationale": "The presence of tremors and spasms could be indicative of a seizure disorder, though this is less likely given the primary focus on cardiovascular and renal issues."
+          }
+        ]
+      },
+      {
+        "category": "gi",
+        "ontology_name": "Gastrointestinal",
+        "candidates": [
+          {
+            "disease": "Gastrointestinal Bleed",
+            "confidence": "low",
+            "supporting_symptoms": [
+              "urge incontinence"
+            ],
+            "rationale": "The urge incontinence could be related to a gastrointestinal bleed, but this is less likely given the primary focus on cardiovascular and renal issues."
+          }
+        ]
+      }
+    ],
+    "type": "ontology_routing",
+    "top_candidates": [
+      {
+        "disease": "Heart Failure",
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "dyspnea",
+          "orthopnea",
+          "pulmonary edema",
+          "pleural effusions"
+        ],
+        "rationale": "The patient's dyspnea, orthopnea, and pulmonary edema are consistent with heart failure, especially given the history of CHF and atrial fibrillation."
+      },
+      {
+        "disease": "Acute Kidney Injury",
+        "category": "renal",
+        "ontology_name": "Renal",
+        "confidence": "medium",
+        "supporting_symptoms": [
+          "creatinine elevation",
+          "urea nitrogen elevation"
+        ],
+        "rationale": "The elevation in creatinine and urea nitrogen suggest acute kidney injury, which is consistent with the patient's overall clinical presentation."
+      },
+      {
+        "disease": "Seizure Disorder",
+        "category": "neurologic",
+        "ontology_name": "Neurologic",
+        "confidence": "low",
+        "supporting_symptoms": [
+          "tremors",
+          "spasms"
+        ],
+        "rationale": "The presence of tremors and spasms could be indicative of a seizure disorder, though this is less likely given the primary focus on cardiovascular and renal issues."
+      },
+      {
+        "disease": "Gastrointestinal Bleed",
+        "category": "gi",
+        "ontology_name": "Gastrointestinal",
+        "confidence": "low",
+        "supporting_symptoms": [
+          "urge incontinence"
+        ],
+        "rationale": "The urge incontinence could be related to a gastrointestinal bleed, but this is less likely given the primary focus on cardiovascular and renal issues."
+      }
+    ],
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "ontology_routing",
+    "patient_id": "12007928",
+    "admission_id": "23749816",
+    "generated_at": "2026-07-10T03:46:49.582946"
+  },
+  "n_candidates": 4,
+  "top_candidate": "Heart Failure"
+}

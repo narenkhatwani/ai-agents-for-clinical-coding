@@ -50,12 +50,12 @@
     },
     {
       "category": "neurologic",
-      "ontology_hint": "Neurology",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
           "term": "Hepatic encephalopathy",
           "status": "present",
-          "severity": "moderate",
+          "severity": "severe",
           "evidence": "hepatic encephalopathy",
           "related_findings": [
             "worsening liver failure"
@@ -66,7 +66,7 @@
     },
     {
       "category": "gi",
-      "ontology_hint": "Gastrointestinal",
+      "ontology_hint": "GI",
       "symptoms": [
         {
           "term": "GI bleeding",
@@ -74,7 +74,7 @@
           "severity": "moderate",
           "evidence": "concern for GI bleeding (black coffee-ground GI contents)",
           "related_findings": [
-            "epistaxis"
+            "octreotide and protonix"
           ],
           "children": []
         }
@@ -89,88 +89,35 @@
           "status": "present",
           "severity": "severe",
           "evidence": "acute renal failure ___ to septic shock and ATN on dialysis",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "Klebsiella Aerogenes infection",
-          "status": "present",
-          "severity": "severe",
-          "evidence": "Klebsiella Aerogenes blood cultures grew",
           "related_findings": [
-            "broad spectrum antibiotics started"
+            "22L up LOS"
           ],
           "children": []
         }
       ]
     },
     {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
+      "category": "other",
+      "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "Potential VAP or GI source",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "Klebsiella Aerogenes infection, distributive shock picture",
-          "related_findings": [
-            "large pleural effusion with compressive consolidation versus atelectasis"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "Distributive shock",
-          "status": "present",
-          "severity": "severe",
-          "evidence": "distributive shock picture",
-          "related_findings": [
-            "hypotension"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "Coagulopathy",
-          "status": "present",
-          "severity": "severe",
-          "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
-          "related_findings": [
-            "INR(PT) 3.4",
-            "PT 36.5 sec",
-            "PTT 104.2 sec"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "Metastatic HCC",
+          "term": "Multifocal metastatic HCC",
           "status": "present",
           "severity": "moderate",
-          "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland",
+          "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland s/p RFA",
           "related_findings": [
             "large heterogeneous solid mass within the left upper quadrant"
+          ],
+          "children": []
+        },
+        {
+          "term": "Thrombocytopenia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
+          "related_findings": [
+            "PTT-40.7 sec",
+            "INR(PT)-3.4"
           ],
           "children": []
         }
@@ -182,13 +129,13 @@
     "Hypoxic respiratory failure"
   ],
   "red_flags": [
-    "Hepatic encephalopathy",
-    "Renal failure"
+    "Atrial fibrillation/flutter",
+    "GI bleeding"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "17774110",
   "admission_id": "27339772",
-  "generated_at": "2026-07-09T00:30:57.676832"
+  "generated_at": "2026-07-09T21:37:55.588979"
 }

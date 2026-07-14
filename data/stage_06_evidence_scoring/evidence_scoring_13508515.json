@@ -1,0 +1,95 @@
+{
+  "patient_id": "13508515",
+  "admission_id": "21834271",
+  "subject_id": 13508515,
+  "hadm_id": 21834271,
+  "primary_icd_code": "C642",
+  "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
+  "ground_truth_icd10": [
+    "C642",
+    "Z6841",
+    "I429",
+    "I272",
+    "I509",
+    "I5020",
+    "J449",
+    "E119",
+    "I2510",
+    "Z951",
+    "G4733",
+    "E669",
+    "Z87891",
+    "I340"
+  ],
+  "ground_truth_dx_titles": [
+    "Malignant neoplasm of left kidney, except renal pelvis",
+    "Body mass index [BMI] 40.0-44.9, adult",
+    "Cardiomyopathy, unspecified",
+    "Other secondary pulmonary hypertension",
+    "Heart failure, unspecified",
+    "Unspecified systolic (congestive) heart failure",
+    "Chronic obstructive pulmonary disease, unspecified",
+    "Type 2 diabetes mellitus without complications",
+    "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+    "Presence of aortocoronary bypass graft",
+    "Obstructive sleep apnea (adult) (pediatric)",
+    "Obesity, unspecified",
+    "Personal history of nicotine dependence",
+    "Nonrheumatic mitral (valve) insufficiency"
+  ],
+  "evidence_scoring_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "evidence_scoring": {
+    "reasoning": "The patient has documented severe CHF, a large renal mass, and elevated creatinine, which strongly support the diagnosis of Heart Failure and Acute Kidney Injury. Obesity is also well-documented but less strongly supported by specific evidence.",
+    "scored_candidates": [
+      {
+        "disease": "Heart Failure",
+        "category": "cardiovascular",
+        "score": 85,
+        "supporting_evidence": [
+          "severe CHF",
+          "Creatinine: 2.0 mg/dL",
+          "Hematocrit: 27.3 %",
+          "Hemoglobin: 8.9 g/dL",
+          "Platelet Count: 147.0 K/uL"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Severe CHF with related laboratory findings strongly support this diagnosis."
+      },
+      {
+        "disease": "Acute Kidney Injury",
+        "category": "renal",
+        "score": 80,
+        "supporting_evidence": [
+          "8cm left renal mass",
+          "Creatinine: 2.0 mg/dL"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Large renal mass and elevated creatinine suggest potential for acute kidney injury."
+      },
+      {
+        "disease": "Obesity",
+        "category": "other",
+        "score": 30,
+        "supporting_evidence": [
+          "morbid obesity",
+          "BMI: 42.1 kg/m2",
+          "Weight: 285 Lbs"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Morbid obesity is documented but lacks specific confirmatory evidence."
+      }
+    ],
+    "type": "evidence_scoring",
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "evidence_scoring",
+    "patient_id": "13508515",
+    "admission_id": "21834271",
+    "generated_at": "2026-07-10T03:50:24.642156"
+  },
+  "n_scored": 3,
+  "top_diagnosis": "Heart Failure",
+  "top_score": 85
+}

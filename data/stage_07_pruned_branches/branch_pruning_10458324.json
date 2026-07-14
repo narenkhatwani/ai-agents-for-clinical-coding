@@ -1,0 +1,106 @@
+{
+  "patient_id": "10458324",
+  "admission_id": "21744342",
+  "subject_id": 10458324,
+  "hadm_id": 21744342,
+  "primary_icd_code": "S270XXA",
+  "primary_dx_title": "Traumatic pneumothorax, initial encounter",
+  "ground_truth_icd10": [
+    "S270XXA",
+    "J189",
+    "S2241XA",
+    "E46",
+    "F1120",
+    "Z681",
+    "I480",
+    "W1830XA",
+    "Y92002",
+    "R0902",
+    "R600",
+    "F4310"
+  ],
+  "ground_truth_dx_titles": [
+    "Traumatic pneumothorax, initial encounter",
+    "Pneumonia, unspecified organism",
+    "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+    "Unspecified protein-calorie malnutrition",
+    "Opioid dependence, uncomplicated",
+    "Body mass index [BMI] 19.9 or less, adult",
+    "Paroxysmal atrial fibrillation",
+    "Fall on same level, unspecified, initial encounter",
+    "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause",
+    "Hypoxemia",
+    "Localized edema",
+    "Post-traumatic stress disorder, unspecified"
+  ],
+  "branch_pruning": {
+    "type": "branch_pruning",
+    "score_threshold": 40,
+    "n_input_candidates": 4,
+    "n_kept": 3,
+    "n_pruned": 1,
+    "kept_candidates": [
+      {
+        "disease": "Atrial Fibrillation / Arrhythmia",
+        "category": "cardiovascular",
+        "score": 85,
+        "supporting_evidence": [
+          "atrial fibrillation",
+          "increasing O2 requirement"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has documented atrial fibrillation and increasing O2 requirement, strongly supporting this diagnosis."
+      },
+      {
+        "disease": "Pneumonia",
+        "category": "respiratory",
+        "score": 75,
+        "supporting_evidence": [
+          "pneumonia",
+          "aspiration or pneumonia",
+          "multifocal nodular parenchymal opacities"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The presence of pneumonia and multifocal nodular opacities in the imaging suggest a respiratory infection, supported by the patient's symptoms."
+      },
+      {
+        "disease": "Viral Infection",
+        "category": "infectious",
+        "score": 50,
+        "supporting_evidence": [
+          "fever",
+          "bacterial growth in sputum"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has a fever and bacterial growth in sputum, which could indicate a viral infection, though this is less strongly supported."
+      }
+    ],
+    "pruned_candidates": [
+      {
+        "disease": "Pulmonary Embolism",
+        "category": "respiratory",
+        "score": 15,
+        "supporting_evidence": [
+          "hypoxia",
+          "pneumothorax"
+        ],
+        "contradicting_evidence": [
+          "right-sided rib fractures",
+          "pneumothorax"
+        ],
+        "missing_evidence": [],
+        "rationale": "The combination of hypoxia and pneumothorax could indicate a pulmonary embolism, though this is less likely given the presence of rib fractures and pneumothorax."
+      }
+    ],
+    "_method": "threshold:40",
+    "_agent": "branch_pruning",
+    "patient_id": "10458324",
+    "admission_id": "21744342",
+    "generated_at": "2026-07-10T04:07:43.165022"
+  },
+  "n_kept": 3,
+  "n_pruned": 1
+}

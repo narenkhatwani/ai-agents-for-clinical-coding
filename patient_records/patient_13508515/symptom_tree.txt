@@ -8,55 +8,42 @@ Patient ID       : 13508515
 Admission ID     : 21834271
 
 Reasoning:
-  The patient is a 8cm left renal mass with a history of severe CHF, ischemic heart disease, and type 2 diabetes. Post-surgical recovery is ongoing with no major complications noted.
+  The patient is a gentleman with a history of severe CHF, ischemic heart disease, and type 2 diabetes, who has undergone a laparoscopic left radical nephrectomy and lymph node dissection for an 8cm left renal mass.
 
-Key symptoms     : 8cm left renal mass, severe CHF, ischemic heart disease, type 2 diabetes
+Key symptoms     : 8cm left renal mass, severe CHF
 Red flags        : hypotension, AMS
 
-OTHER → Other
--------------
-
-  • [present] 8cm left renal mass
-      evidence: "8cm left renal mass"
-      related: Laparoscopic left radical nephrectomy, Laparoscopic left retroperitoneal lymph node dissection
-
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [history] severe CHF
+  • [history, severe] CHF
       evidence: "No Known Allergies / Adverse Drug Reactions"
-      related: Systolic CHF with ejection fraction 30%, Ischemic heart disease
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
+      related: Creatinine: 2.0 mg/dL, Hematocrit: 27.3 %, Hemoglobin: 8.9 g/dL, Platelet Count: 147.0 K/uL
+      • [history] Systolic CHF
+          evidence: "No Known Allergies / Adverse Drug Reactions"
   • [history] ischemic heart disease
       evidence: "No Known Allergies / Adverse Drug Reactions"
-      related: CAD status post three-vessel CABG, Ischemic heart disease
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
+      related: Creatinine: 2.0 mg/dL, Hematocrit: 27.3 %, Hemoglobin: 8.9 g/dL, Platelet Count: 147.0 K/uL
   • [history] type 2 diabetes
       evidence: "No Known Allergies / Adverse Drug Reactions"
-      related: Hypertension, Non-insulin-dependent diabetes
+      related: Creatinine: 2.0 mg/dL, Glucose: 113.0 mg/dL, Urea Nitrogen: 25.0 mg/dL
 
 RENAL → Renal
 -------------
 
-  • [present, mild] elevated creatinine
-      evidence: "Creatinine: 2.0 mg/dL"
-      related: Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %
+  • [present, mild] renal mass
+      evidence: "8cm left renal mass"
+      related: Creatinine: 2.0 mg/dL, Glucose: 113.0 mg/dL, Urea Nitrogen: 25.0 mg/dL, Hematocrit: 27.3 %, Hemoglobin: 8.9 g/dL, Platelet Count: 147.0 K/uL, Calcium, Total: 8.2 mg/dL, MCHC: 31.1 g/dL
 
-HEMATOLOGIC → Other
--------------------
+OTHER → Other
+-------------
 
-  • [present, mild] anemia
-      evidence: "Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %"
-      related: RDW: 18.3 %, Red Blood Cells: 3.01 m/uL, RDW-SD: 60.4 fL, Platelet Count: 147.0 K/uL
-
-METABOLIC → Other
------------------
-
-  • [present, mild] hypokalemia
-      evidence: "Potassium: 3.9 mEq/L"
+  • [history, morbid] obesity
+      evidence: "No Known Allergies / Adverse Drug Reactions"
+      related: BMI: 42.1 kg/m2, Weight: 285 Lbs
+  • [history] GERD
+      evidence: "No Known Allergies / Adverse Drug Reactions"
+  • [history] obstructive sleep apnea
+      evidence: "No Known Allergies / Adverse Drug Reactions"
+  • [history] episodic atrial fibrillation
+      evidence: "No Known Allergies / Adverse Drug Reactions"

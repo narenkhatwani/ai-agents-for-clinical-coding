@@ -9,58 +9,113 @@
         {
           "term": "ICD discharge",
           "status": "present",
+          "severity": "unknown",
           "evidence": "ICD discharge",
           "related_findings": [
             "ICD shock"
           ],
-          "children": [
-            {
-              "term": "ICD shock",
-              "status": "present",
-              "evidence": "ICD shock on ___"
-            }
-          ]
+          "children": []
         },
         {
           "term": "shaking in his chest",
           "status": "present",
-          "evidence": "shaking in his chest",
-          "related_findings": [
-            "refractory VT"
-          ]
+          "severity": "unknown",
+          "evidence": "shaking",
+          "related_findings": [],
+          "children": []
         },
         {
           "term": "increased edema",
           "status": "present",
+          "severity": "mild",
           "evidence": "increased edema in the week prior to the shock",
           "related_findings": [
-            "Dilated non-ischemic cardiomyopathy"
-          ]
+            "torsemide dose adjustment"
+          ],
+          "children": []
         },
         {
           "term": "feeling at baseline",
           "status": "present",
-          "evidence": "felt at baseline"
+          "severity": "mild",
+          "evidence": "felt at baseline",
+          "related_findings": [],
+          "children": []
         }
       ]
     },
     {
-      "category": "renal",
-      "ontology_hint": "Renal",
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "increased edema",
+          "term": "lightheaded",
           "status": "present",
-          "evidence": "increased edema in the week prior to the shock",
+          "severity": "unknown",
+          "evidence": "lightheaded and then felt his ICD discharge",
           "related_findings": [
-            "Dilated non-ischemic cardiomyopathy"
-          ]
+            "hypotension"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "Dilated non-ischemic cardiomyopathy",
+          "status": "confirmed",
+          "severity": "severe",
+          "evidence": "Dilated non-ischemic cardiomyopathy with EF 10% s/p Heartmate II LVAD implant",
+          "related_findings": [
+            "LVAD in place",
+            "biventricular cavity dilation",
+            "severe global hypokinesis"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "Refractory VT",
+          "status": "confirmed",
+          "severity": "refractory",
+          "evidence": "Refractory VT s/p Heartmate II LVAD placed",
+          "related_findings": [
+            "ICD shock",
+            "stellate ganglion block"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "ICD shock",
+          "status": "confirmed",
+          "severity": "recent",
+          "evidence": "ICD shock on ___",
+          "related_findings": [
+            "ICD discharge",
+            "shaking"
+          ],
+          "children": []
         }
       ]
     }
   ],
   "key_symptoms": [
     "ICD discharge",
+    "ICD shock",
     "shaking in his chest",
     "increased edema"
   ],
@@ -72,5 +127,5 @@
   "_agent": "symptom_tree",
   "patient_id": "11607177",
   "admission_id": "23293838",
-  "generated_at": "2026-07-09T00:30:03.586906"
+  "generated_at": "2026-07-09T21:36:34.617680"
 }

@@ -8,28 +8,37 @@ Patient ID       : 18412100
 Admission ID     : 26093939
 
 Reasoning:
-  The patient is presenting with post-procedural pain and nausea following cryoablation of a desmoid tumor, with no signs of systemic infection or severe cardiovascular issues.
+  The patient is presenting with post-procedural pain and nausea following cryoablation of a residual desmoid tumor, with no fever or other systemic symptoms.
 
 Key symptoms     : post-procedural pain, nausea
-
-OTHER → Other
--------------
-
-  • [present, mild] post-procedural pain
-      evidence: "post-procedural pain in the right side of the abdomen extending to the back"
-      related: tender abdomen
-      • [present] right upper and lower quadrant pain
-          evidence: "tender in the right upper and right lower quadrant to palpation"
-  • [present, mild] nausea
-      evidence: "one brief episode of nausea that then passed"
-  • [present, stable] desmoid tumor
-      evidence: "desmoid tumor of the abdominal wall s/p partial cryoablation"
-      related: tender abdomen
-  • [present, mild] pain
-      evidence: "similar to the previous procedure she had, and is less sharp in quality compared to her tumor pain"
+Red flags        : desmoid tumor
 
 CONSTITUTIONAL → Other
 ----------------------
 
+  • [present, moderate] post-procedural pain
+      evidence: "post-procedural pain in the right side of the abdomen extending to the back"
+      related: tender abdomen
+      • [present] abdominal pain
+          evidence: "tender in the right upper and right lower quadrant to palpation"
+  • [present, mild] nausea
+      evidence: "one brief episode of nausea that then passed"
+
+NEUROLOGIC → Other
+------------------
+
+  • [present, moderate] pain
+      evidence: "similar to the previous procedure she had, and is less sharp in quality compared to her tumor pain"
+
+GI → Other
+----------
+
+  • [present, mild] tender abdomen
+      evidence: "tender in the right upper and right lower quadrant to palpation"
+      related: desmoid tumor
+
+INFECTIOUS → Other
+------------------
+
   • [absent] fever
-      evidence: "On other review of systems, she denies headache, blurry vision, fevers, chills, shortness of breath, palpitations, chest pain, urinary frequency/urgency, diarrhea/constipation"
+      evidence: "On other review of systems, she denies fever"

@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease who underwent ERCP for choledocholithiasis. He is currently stable post-procedure with no acute symptoms but has a history of nocturnal hypoxia and leg swelling.",
+  "reasoning": "The patient is a 70-year-old man with multiple comorbidities, including atrial fibrillation, heart failure with preserved ejection fraction, peripheral vascular disease, and chronic kidney disease. He recently underwent ERCP for choledocholithiasis and is being managed post-procedurally.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -12,7 +12,8 @@
           "severity": "unknown",
           "evidence": "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis",
           "related_findings": [
-            "Hemoglobin: 12.6 g/dL (low)"
+            "HFpEF",
+            "CKD"
           ],
           "children": []
         },
@@ -22,7 +23,8 @@
           "severity": "mild",
           "evidence": "Notes his ___ edema improves during the night and worsens during the day",
           "related_findings": [
-            "Creatinine: 1.4 mg/dL (high)"
+            "CKD",
+            "HFpEF"
           ],
           "children": []
         }
@@ -48,9 +50,9 @@
       "symptoms": [
         {
           "term": "ciprofloxacin",
-          "status": "started",
+          "status": "present",
           "severity": "unknown",
-          "evidence": "Ciprofloxacin was started post-ERCP",
+          "evidence": "Received ciprofloxacin",
           "related_findings": [],
           "children": []
         }
@@ -62,36 +64,22 @@
       "symptoms": [
         {
           "term": "atrial fibrillation",
-          "status": "confirmed",
+          "status": "present",
           "severity": "mild",
-          "evidence": "AFib: continued home propranolol and amiodarone",
+          "evidence": "Paroxysmal AFib, on Eliquis and amiodarone",
           "related_findings": [
-            "Hemoglobin: 12.6 g/dL (low)"
+            "Apixaban held"
           ],
           "children": []
         },
         {
-          "term": "heart failure",
-          "status": "confirmed",
+          "term": "heart failure with preserved ejection fraction",
+          "status": "present",
           "severity": "mild",
-          "evidence": "HFpEF: held home Lasix ___",
+          "evidence": "HFpEF, held home Lasix",
           "related_findings": [
-            "Creatinine: 1.4 mg/dL (high)"
+            "Leg swelling"
           ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "peripheral vascular disease",
-          "status": "confirmed",
-          "severity": "mild",
-          "evidence": "PVD: continued home aspirin 81mg, atorvastatin 20mg",
-          "related_findings": [],
           "children": []
         }
       ]
@@ -105,21 +93,63 @@
           "status": "high",
           "severity": "mild",
           "evidence": "Creatinine: 1.4 mg/dL",
+          "related_findings": [
+            "CKD"
+          ],
+          "children": []
+        },
+        {
+          "term": "potassium",
+          "status": "normal",
+          "severity": "normal",
+          "evidence": "Potassium: 4.3 mEq/L",
           "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "calcium",
+          "status": "low",
+          "severity": "mild",
+          "evidence": "Calcium, Total: 8.7 mg/dL",
+          "related_findings": [
+            "CKD"
+          ],
+          "children": []
+        },
+        {
+          "term": "magnesium",
+          "status": "low",
+          "severity": "mild",
+          "evidence": "Magnesium: 1.7 mg/dL",
+          "related_findings": [
+            "CKD"
+          ],
+          "children": []
+        },
+        {
+          "term": "phosphate",
+          "status": "low",
+          "severity": "mild",
+          "evidence": "Phosphate: 2.9 mg/dL",
+          "related_findings": [
+            "CKD"
+          ],
           "children": []
         }
       ]
     },
     {
-      "category": "other",
-      "ontology_hint": "Other",
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "choledocholithiasis",
-          "status": "confirmed",
+          "term": "peripheral vascular disease",
+          "status": "present",
           "severity": "mild",
-          "evidence": "Choledocholithiasis s/p ERCP: ERCP with multiple stones and sludge",
-          "related_findings": [],
+          "evidence": "Peripheral vascular disease s/p Aortobifemoral bypass graft",
+          "related_findings": [
+            "Apixaban held"
+          ],
           "children": []
         }
       ]
@@ -138,5 +168,5 @@
   "_agent": "symptom_tree",
   "patient_id": "11474876",
   "admission_id": "29672491",
-  "generated_at": "2026-07-09T00:29:58.655392"
+  "generated_at": "2026-07-09T21:36:04.495564"
 }

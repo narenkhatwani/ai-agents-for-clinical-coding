@@ -1,0 +1,161 @@
+{
+  "patient_id": "13196707",
+  "admission_id": "21475988",
+  "subject_id": 13196707,
+  "hadm_id": 21475988,
+  "primary_icd_code": "A419",
+  "primary_dx_title": "Sepsis, unspecified organism",
+  "ground_truth_icd10": [
+    "A419",
+    "G936",
+    "I314",
+    "J690",
+    "R6521",
+    "E870",
+    "K521",
+    "G92",
+    "E872",
+    "J189",
+    "L89153",
+    "N179",
+    "C787",
+    "C7931",
+    "C7951",
+    "I313",
+    "I319",
+    "C3490",
+    "Z515",
+    "Z66",
+    "I10",
+    "T360X5A",
+    "Y92239",
+    "R740",
+    "D638",
+    "K259",
+    "Z87891",
+    "R569",
+    "K5900",
+    "Z7902",
+    "R0902",
+    "Z86718"
+  ],
+  "ground_truth_dx_titles": [
+    "Sepsis, unspecified organism",
+    "Cerebral edema",
+    "Cardiac tamponade",
+    "Pneumonitis due to inhalation of food and vomit",
+    "Severe sepsis with septic shock",
+    "Hyperosmolality and hypernatremia",
+    "Toxic gastroenteritis and colitis",
+    "Toxic encephalopathy",
+    "Acidosis",
+    "Pneumonia, unspecified organism",
+    "Pressure ulcer of sacral region, stage 3",
+    "Acute kidney failure, unspecified",
+    "Secondary malignant neoplasm of liver and intrahepatic bile duct",
+    "Secondary malignant neoplasm of brain",
+    "Secondary malignant neoplasm of bone",
+    "Pericardial effusion (noninflammatory)",
+    "Disease of pericardium, unspecified",
+    "Malignant neoplasm of unspecified part of unspecified bronchus or lung",
+    "Encounter for palliative care",
+    "Do not resuscitate",
+    "Essential (primary) hypertension",
+    "Adverse effect of penicillins, initial encounter",
+    "Unspecified place in hospital as the place of occurrence of the external cause",
+    "Nonspecific elevation of levels of transaminase and lactic acid dehydrogenase [LDH]",
+    "Anemia in other chronic diseases classified elsewhere",
+    "Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation",
+    "Personal history of nicotine dependence",
+    "Unspecified convulsions",
+    "Constipation, unspecified",
+    "Long term (current) use of antithrombotics/antiplatelets",
+    "Hypoxemia",
+    "Personal history of other venous thrombosis and embolism"
+  ],
+  "evidence_scoring_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "evidence_scoring": {
+    "reasoning": "The patient presents with RUL PNA, bibasilar consolidations on CXR, fever, hypotension, and altered mental status, which strongly support Pneumonia and Sepsis. Hypertensive Emergency and Pulmonary Embolism have some supporting evidence but are less definitive. Back Pain and Ischemic/Hemorrhagic Stroke have minimal support.",
+    "scored_candidates": [
+      {
+        "disease": "Pneumonia",
+        "category": "infectious",
+        "score": 85,
+        "supporting_evidence": [
+          "RUL PNA",
+          "CXR shows bibasilar consolidations",
+          "new fever"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Strong evidence of RUL PNA and bibasilar consolidations on CXR, along with new fever, strongly supports Pneumonia."
+      },
+      {
+        "disease": "Sepsis",
+        "category": "infectious",
+        "score": 80,
+        "supporting_evidence": [
+          "fever",
+          "hypotension"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has a new fever and hypotension, which are classic signs of Sepsis."
+      },
+      {
+        "disease": "Hypertensive Emergency",
+        "category": "cardiovascular",
+        "score": 45,
+        "supporting_evidence": [
+          "hypotension"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Hypotension is noted, but it is not as strongly indicative of Hypertensive Emergency as Pneumonia or Sepsis."
+      },
+      {
+        "disease": "Ischemic / Hemorrhagic Stroke",
+        "category": "neurologic",
+        "score": 30,
+        "supporting_evidence": [
+          "altered mental status",
+          "EEG shows epileptiform discharges"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Altered mental status and EEG findings suggest a potential stroke, but the evidence is not as strong as for Pneumonia or Sepsis."
+      },
+      {
+        "disease": "Pulmonary Embolism",
+        "category": "respiratory",
+        "score": 20,
+        "supporting_evidence": [
+          "chest pressure"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Chest pressure could be due to a pulmonary embolism, but the evidence is not strong."
+      },
+      {
+        "disease": "Back Pain",
+        "category": "other",
+        "score": 10,
+        "supporting_evidence": [
+          "back pain"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "Back pain is a history and not currently present, making it a low-confidence candidate."
+      }
+    ],
+    "type": "evidence_scoring",
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "evidence_scoring",
+    "patient_id": "13196707",
+    "admission_id": "21475988",
+    "generated_at": "2026-07-10T03:50:16.787324"
+  },
+  "n_scored": 6,
+  "top_diagnosis": "Pneumonia",
+  "top_score": 85
+}

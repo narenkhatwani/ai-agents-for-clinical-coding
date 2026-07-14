@@ -1,0 +1,88 @@
+{
+  "patient_id": "11474876",
+  "admission_id": "29672491",
+  "subject_id": 11474876,
+  "hadm_id": 29672491,
+  "primary_icd_code": "K8030",
+  "primary_dx_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
+  "ground_truth_icd10": [
+    "K8030",
+    "I130",
+    "I5032",
+    "I480",
+    "I110",
+    "I739",
+    "I129",
+    "N183",
+    "I4510",
+    "E785",
+    "F4310",
+    "N400",
+    "Z7902",
+    "Z87891",
+    "Z85828",
+    "Z8249",
+    "Z8546"
+  ],
+  "ground_truth_dx_titles": [
+    "Calculus of bile duct with cholangitis, unspecified, without obstruction",
+    "Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+    "Chronic diastolic (congestive) heart failure",
+    "Paroxysmal atrial fibrillation",
+    "Hypertensive heart disease with heart failure",
+    "Peripheral vascular disease, unspecified",
+    "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+    "Chronic kidney disease, stage 3 (moderate)",
+    "Unspecified right bundle-branch block",
+    "Hyperlipidemia, unspecified",
+    "Post-traumatic stress disorder, unspecified",
+    "Benign prostatic hyperplasia without lower urinary tract symptoms",
+    "Long term (current) use of antithrombotics/antiplatelets",
+    "Personal history of nicotine dependence",
+    "Personal history of other malignant neoplasm of skin",
+    "Family history of ischemic heart disease and other diseases of the circulatory system",
+    "Personal history of malignant neoplasm of prostate"
+  ],
+  "evidence_scoring_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "evidence_scoring": {
+    "reasoning": "The patient has documented evidence supporting heart failure with preserved ejection fraction (HFpEF) and chronic kidney disease (CKD), with specific symptoms and lab findings that align with these diagnoses.",
+    "scored_candidates": [
+      {
+        "disease": "Chronic Kidney Disease Exacerbation",
+        "category": "renal",
+        "score": 90,
+        "supporting_evidence": [
+          "creatinine: 1.4 mg/dL",
+          "low calcium: 8.7 mg/dL",
+          "low magnesium: 1.7 mg/dL",
+          "low phosphate: 2.9 mg/dL"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient's labs show elevated creatinine and low electrolytes, which are strong indicators of CKD exacerbation. The patient also has a confirmed history of CKD."
+      },
+      {
+        "disease": "Heart Failure",
+        "category": "cardiovascular",
+        "score": 85,
+        "supporting_evidence": [
+          "nocturnal hypoxia",
+          "leg swelling",
+          "HFpEF"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient has documented nocturnal hypoxia and leg swelling, which are classic symptoms of heart failure. HFpEF is also confirmed, and the patient's labs show elevated creatinine, indicating CKD."
+      }
+    ],
+    "type": "evidence_scoring",
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "evidence_scoring",
+    "patient_id": "11474876",
+    "admission_id": "29672491",
+    "generated_at": "2026-07-10T03:49:41.100989"
+  },
+  "n_scored": 2,
+  "top_diagnosis": "Chronic Kidney Disease Exacerbation",
+  "top_score": 90
+}

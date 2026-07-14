@@ -10,7 +10,7 @@ Admission ID     : 23293838
 Reasoning:
   The patient presents with a history of heart failure and refractory VT, with recent ICD shock and increased edema.
 
-Key symptoms     : ICD discharge, shaking in his chest, increased edema
+Key symptoms     : ICD discharge, ICD shock, shaking in his chest, increased edema
 Red flags        : ICD shock
 
 CARDIOVASCULAR → Cardiovascular
@@ -19,20 +19,38 @@ CARDIOVASCULAR → Cardiovascular
   • [present] ICD discharge
       evidence: "ICD discharge"
       related: ICD shock
-      • [present] ICD shock
-          evidence: "ICD shock on ___"
   • [present] shaking in his chest
-      evidence: "shaking in his chest"
-      related: refractory VT
-  • [present] increased edema
+      evidence: "shaking"
+  • [present, mild] increased edema
       evidence: "increased edema in the week prior to the shock"
-      related: Dilated non-ischemic cardiomyopathy
-  • [present] feeling at baseline
+      related: torsemide dose adjustment
+  • [present, mild] feeling at baseline
       evidence: "felt at baseline"
 
-RENAL → Renal
--------------
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
 
-  • [present] increased edema
-      evidence: "increased edema in the week prior to the shock"
-      related: Dilated non-ischemic cardiomyopathy
+  • [present] lightheaded
+      evidence: "lightheaded and then felt his ICD discharge"
+      related: hypotension
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [confirmed, severe] Dilated non-ischemic cardiomyopathy
+      evidence: "Dilated non-ischemic cardiomyopathy with EF 10% s/p Heartmate II LVAD implant"
+      related: LVAD in place, biventricular cavity dilation, severe global hypokinesis
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [confirmed, refractory] Refractory VT
+      evidence: "Refractory VT s/p Heartmate II LVAD placed"
+      related: ICD shock, stellate ganglion block
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [confirmed, recent] ICD shock
+      evidence: "ICD shock on ___"
+      related: ICD discharge, shaking

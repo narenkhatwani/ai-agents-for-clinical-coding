@@ -1,72 +1,52 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a 8cm left renal mass with a history of severe CHF, ischemic heart disease, and type 2 diabetes. Post-surgical recovery is ongoing with no major complications noted.",
+  "reasoning": "The patient is a gentleman with a history of severe CHF, ischemic heart disease, and type 2 diabetes, who has undergone a laparoscopic left radical nephrectomy and lymph node dissection for an 8cm left renal mass.",
   "branches": [
     {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "8cm left renal mass",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "8cm left renal mass",
-          "related_findings": [
-            "Laparoscopic left radical nephrectomy",
-            "Laparoscopic left retroperitoneal lymph node dissection"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "severe CHF",
+          "term": "CHF",
           "status": "history",
-          "severity": "unknown",
+          "severity": "severe",
           "evidence": "No Known Allergies / Adverse Drug Reactions",
           "related_findings": [
-            "Systolic CHF with ejection fraction 30%",
-            "Ischemic heart disease"
+            "Creatinine: 2.0 mg/dL",
+            "Hematocrit: 27.3 %",
+            "Hemoglobin: 8.9 g/dL",
+            "Platelet Count: 147.0 K/uL"
           ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
+          "children": [
+            {
+              "term": "Systolic CHF",
+              "status": "history",
+              "evidence": "No Known Allergies / Adverse Drug Reactions"
+            }
+          ]
+        },
         {
           "term": "ischemic heart disease",
           "status": "history",
           "severity": "unknown",
           "evidence": "No Known Allergies / Adverse Drug Reactions",
           "related_findings": [
-            "CAD status post three-vessel CABG",
-            "Ischemic heart disease"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
+            "Creatinine: 2.0 mg/dL",
+            "Hematocrit: 27.3 %",
+            "Hemoglobin: 8.9 g/dL",
+            "Platelet Count: 147.0 K/uL"
+          ]
+        },
         {
           "term": "type 2 diabetes",
           "status": "history",
           "severity": "unknown",
           "evidence": "No Known Allergies / Adverse Drug Reactions",
           "related_findings": [
-            "Hypertension",
-            "Non-insulin-dependent diabetes"
-          ],
-          "children": []
+            "Creatinine: 2.0 mg/dL",
+            "Glucose: 113.0 mg/dL",
+            "Urea Nitrogen: 25.0 mg/dL"
+          ]
         }
       ]
     },
@@ -75,57 +55,61 @@
       "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "elevated creatinine",
+          "term": "renal mass",
           "status": "present",
           "severity": "mild",
-          "evidence": "Creatinine: 2.0 mg/dL",
+          "evidence": "8cm left renal mass",
           "related_findings": [
+            "Creatinine: 2.0 mg/dL",
+            "Glucose: 113.0 mg/dL",
+            "Urea Nitrogen: 25.0 mg/dL",
+            "Hematocrit: 27.3 %",
             "Hemoglobin: 8.9 g/dL",
-            "Hematocrit: 27.3 %"
-          ],
-          "children": []
+            "Platelet Count: 147.0 K/uL",
+            "Calcium, Total: 8.2 mg/dL",
+            "MCHC: 31.1 g/dL"
+          ]
         }
       ]
     },
     {
-      "category": "hematologic",
+      "category": "other",
       "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "anemia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %",
+          "term": "obesity",
+          "status": "history",
+          "severity": "morbid",
+          "evidence": "No Known Allergies / Adverse Drug Reactions",
           "related_findings": [
-            "RDW: 18.3 %",
-            "Red Blood Cells: 3.01 m/uL",
-            "RDW-SD: 60.4 fL",
-            "Platelet Count: 147.0 K/uL"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "metabolic",
-      "ontology_hint": "Other",
-      "symptoms": [
+            "BMI: 42.1 kg/m2",
+            "Weight: 285 Lbs"
+          ]
+        },
         {
-          "term": "hypokalemia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Potassium: 3.9 mEq/L",
-          "related_findings": [],
-          "children": []
+          "term": "GERD",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "No Known Allergies / Adverse Drug Reactions"
+        },
+        {
+          "term": "obstructive sleep apnea",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "No Known Allergies / Adverse Drug Reactions"
+        },
+        {
+          "term": "episodic atrial fibrillation",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "No Known Allergies / Adverse Drug Reactions"
         }
       ]
     }
   ],
   "key_symptoms": [
     "8cm left renal mass",
-    "severe CHF",
-    "ischemic heart disease",
-    "type 2 diabetes"
+    "severe CHF"
   ],
   "red_flags": [
     "hypotension",
@@ -136,5 +120,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13508515",
   "admission_id": "21834271",
-  "generated_at": "2026-07-09T00:30:27.479434"
+  "generated_at": "2026-07-09T21:37:15.505250"
 }

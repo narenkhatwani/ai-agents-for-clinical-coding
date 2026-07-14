@@ -30,20 +30,14 @@
           "related_findings": [
             "SVT"
           ]
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
-      "symptoms": [
+        },
         {
           "term": "headache",
           "status": "present",
           "severity": "mild",
           "evidence": "headache",
           "related_findings": [
-            "CT head: tiny chronic right cerebellar infarct"
+            "SVT"
           ]
         }
       ]
@@ -55,7 +49,7 @@
         {
           "term": "pain in right hip",
           "status": "present",
-          "severity": "mild",
+          "severity": "moderate",
           "evidence": "pain in her right hip",
           "related_findings": [
             "nondisplaced comminuted fracture in the right superior pubic ramus"
@@ -64,7 +58,7 @@
         {
           "term": "pain in right leg",
           "status": "present",
-          "severity": "mild",
+          "severity": "moderate",
           "evidence": "pain in her entire right leg - her foot, ankle, leg, hip",
           "related_findings": [
             "nondisplaced comminuted fracture in the right superior pubic ramus"
@@ -73,17 +67,14 @@
       ]
     },
     {
-      "category": "other",
-      "ontology_hint": "Other",
+      "category": "constitutional",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "anemia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Red Blood Cells: 3.89 m/uL [abnormal]",
-          "related_findings": [
-            "RDW-SD: 47.2 fL [abnormal]"
-          ]
+          "term": "fever",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "no fever"
         }
       ]
     }
@@ -96,13 +87,12 @@
     "pain in right leg"
   ],
   "red_flags": [
-    "SVT",
-    "nondisplaced comminuted fracture in the right superior pubic ramus"
+    "SVT"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10426859",
   "admission_id": "29908281",
-  "generated_at": "2026-07-09T00:29:37.491161"
+  "generated_at": "2026-07-09T21:35:24.086658"
 }

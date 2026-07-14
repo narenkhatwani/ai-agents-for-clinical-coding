@@ -1,0 +1,133 @@
+{
+  "patient_id": "10426859",
+  "admission_id": "29908281",
+  "subject_id": 10426859,
+  "hadm_id": 29908281,
+  "primary_icd_code": "I471",
+  "primary_dx_title": "Supraventricular tachycardia",
+  "ground_truth_icd10": [
+    "I471",
+    "I214",
+    "S32511A",
+    "E872",
+    "I959",
+    "C689",
+    "F329",
+    "I10",
+    "E785",
+    "Z66",
+    "I2510",
+    "F419",
+    "K219",
+    "I440",
+    "G4700",
+    "J310",
+    "Z9181",
+    "Z96641",
+    "Z87891",
+    "Z8673",
+    "W19XXXA",
+    "Y929"
+  ],
+  "ground_truth_dx_titles": [
+    "Supraventricular tachycardia",
+    "Non-ST elevation (NSTEMI) myocardial infarction",
+    "Fracture of superior rim of right pubis, initial encounter for closed fracture",
+    "Acidosis",
+    "Hypotension, unspecified",
+    "Malignant neoplasm of urinary organ, unspecified",
+    "Major depressive disorder, single episode, unspecified",
+    "Essential (primary) hypertension",
+    "Hyperlipidemia, unspecified",
+    "Do not resuscitate",
+    "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+    "Anxiety disorder, unspecified",
+    "Gastro-esophageal reflux disease without esophagitis",
+    "Atrioventricular block, first degree",
+    "Insomnia, unspecified",
+    "Chronic rhinitis",
+    "History of falling",
+    "Presence of right artificial hip joint",
+    "Personal history of nicotine dependence",
+    "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
+    "Unspecified fall, initial encounter",
+    "Unspecified place or not applicable"
+  ],
+  "ontology_routing_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "ontology_routing": {
+    "reasoning": "The patient presents with recurrent SVT, lightheadedness, headache, and pain in the right hip and leg, with no acute cardiovascular or respiratory findings.",
+    "routed_branches": [
+      {
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "candidates": [
+          {
+            "disease": "Atrial Fibrillation / Arrhythmia",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "palpitations",
+              "SVT",
+              "lightheadedness",
+              "headache"
+            ],
+            "rationale": "The patient has recurrent SVT and associated symptoms of lightheadedness and headache, which are consistent with atrial fibrillation or other arrhythmias."
+          }
+        ]
+      },
+      {
+        "category": "musculoskeletal",
+        "ontology_name": "Other",
+        "candidates": [
+          {
+            "disease": "Bowel Obstruction",
+            "confidence": "low",
+            "supporting_symptoms": [
+              "pain in right hip",
+              "pain in right leg"
+            ],
+            "rationale": "The patient's pain in the right hip and leg could potentially be related to a bowel obstruction, but there is no direct evidence to support this."
+          }
+        ]
+      },
+      {
+        "category": "constitutional",
+        "ontology_name": "Infectious Diseases",
+        "candidates": []
+      }
+    ],
+    "type": "ontology_routing",
+    "top_candidates": [
+      {
+        "disease": "Atrial Fibrillation / Arrhythmia",
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "palpitations",
+          "SVT",
+          "lightheadedness",
+          "headache"
+        ],
+        "rationale": "The patient has recurrent SVT and associated symptoms of lightheadedness and headache, which are consistent with atrial fibrillation or other arrhythmias."
+      },
+      {
+        "disease": "Bowel Obstruction",
+        "category": "musculoskeletal",
+        "ontology_name": "Other",
+        "confidence": "low",
+        "supporting_symptoms": [
+          "pain in right hip",
+          "pain in right leg"
+        ],
+        "rationale": "The patient's pain in the right hip and leg could potentially be related to a bowel obstruction, but there is no direct evidence to support this."
+      }
+    ],
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "ontology_routing",
+    "patient_id": "10426859",
+    "admission_id": "29908281",
+    "generated_at": "2026-07-10T03:46:19.251518"
+  },
+  "n_candidates": 2,
+  "top_candidate": "Atrial Fibrillation / Arrhythmia"
+}

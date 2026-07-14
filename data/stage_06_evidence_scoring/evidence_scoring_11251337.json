@@ -1,0 +1,58 @@
+{
+  "patient_id": "11251337",
+  "admission_id": "29568708",
+  "subject_id": 11251337,
+  "hadm_id": 29568708,
+  "primary_icd_code": "N132",
+  "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+  "ground_truth_icd10": [
+    "N132",
+    "Z936",
+    "E785",
+    "I69954",
+    "I10",
+    "N19",
+    "Z87440"
+  ],
+  "ground_truth_dx_titles": [
+    "Hydronephrosis with renal and ureteral calculous obstruction",
+    "Other artificial openings of urinary tract status",
+    "Hyperlipidemia, unspecified",
+    "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side",
+    "Essential (primary) hypertension",
+    "Unspecified kidney failure",
+    "Personal history of urinary (tract) infections"
+  ],
+  "evidence_scoring_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "evidence_scoring": {
+    "reasoning": "The patient's documented symptoms and laboratory findings strongly support the diagnosis of Acute Kidney Injury, particularly given the presence of nephrolithiasis, residual stone, pain, bleeding, anemia, and elevated creatinine and urea nitrogen levels.",
+    "scored_candidates": [
+      {
+        "disease": "Acute Kidney Injury",
+        "category": "renal",
+        "score": 85,
+        "supporting_evidence": [
+          "nephrolithiasis",
+          "residual stone",
+          "pain",
+          "bleeding",
+          "anemia",
+          "elevated Creatinine: 2.5 mg/dL",
+          "elevated Urea Nitrogen: 22 mg/dL"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient's symptoms and laboratory findings strongly indicate acute kidney injury, with multiple red flags such as anemia and elevated creatinine and urea nitrogen levels."
+      }
+    ],
+    "type": "evidence_scoring",
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "evidence_scoring",
+    "patient_id": "11251337",
+    "admission_id": "29568708",
+    "generated_at": "2026-07-10T03:49:34.631454"
+  },
+  "n_scored": 1,
+  "top_diagnosis": "Acute Kidney Injury",
+  "top_score": 85
+}

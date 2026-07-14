@@ -1,0 +1,136 @@
+{
+  "patient_id": "13508515",
+  "admission_id": "21834271",
+  "subject_id": 13508515,
+  "hadm_id": 21834271,
+  "primary_icd_code": "C642",
+  "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
+  "ground_truth_icd10": [
+    "C642",
+    "Z6841",
+    "I429",
+    "I272",
+    "I509",
+    "I5020",
+    "J449",
+    "E119",
+    "I2510",
+    "Z951",
+    "G4733",
+    "E669",
+    "Z87891",
+    "I340"
+  ],
+  "ground_truth_dx_titles": [
+    "Malignant neoplasm of left kidney, except renal pelvis",
+    "Body mass index [BMI] 40.0-44.9, adult",
+    "Cardiomyopathy, unspecified",
+    "Other secondary pulmonary hypertension",
+    "Heart failure, unspecified",
+    "Unspecified systolic (congestive) heart failure",
+    "Chronic obstructive pulmonary disease, unspecified",
+    "Type 2 diabetes mellitus without complications",
+    "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+    "Presence of aortocoronary bypass graft",
+    "Obstructive sleep apnea (adult) (pediatric)",
+    "Obesity, unspecified",
+    "Personal history of nicotine dependence",
+    "Nonrheumatic mitral (valve) insufficiency"
+  ],
+  "ontology_routing_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "ontology_routing": {
+    "reasoning": "The patient has a history of severe CHF and a large renal mass, with potential for renal failure and cardiovascular instability.",
+    "routed_branches": [
+      {
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "candidates": [
+          {
+            "disease": "Heart Failure",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "CHF",
+              "severe"
+            ],
+            "rationale": "Severe CHF with related laboratory findings."
+          }
+        ]
+      },
+      {
+        "category": "renal",
+        "ontology_name": "Renal",
+        "candidates": [
+          {
+            "disease": "Acute Kidney Injury",
+            "confidence": "medium",
+            "supporting_symptoms": [
+              "8cm left renal mass",
+              "Creatinine: 2.0 mg/dL"
+            ],
+            "rationale": "Large renal mass and elevated creatinine suggest potential for acute kidney injury."
+          }
+        ]
+      },
+      {
+        "category": "other",
+        "ontology_name": "Other",
+        "candidates": [
+          {
+            "disease": "Obesity",
+            "confidence": "low",
+            "supporting_symptoms": [
+              "morbid obesity",
+              "BMI: 42.1 kg/m2",
+              "Weight: 285 Lbs"
+            ],
+            "rationale": "Morbid obesity with related symptoms."
+          }
+        ]
+      }
+    ],
+    "type": "ontology_routing",
+    "top_candidates": [
+      {
+        "disease": "Heart Failure",
+        "category": "cardiovascular",
+        "ontology_name": "Cardiovascular",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "CHF",
+          "severe"
+        ],
+        "rationale": "Severe CHF with related laboratory findings."
+      },
+      {
+        "disease": "Acute Kidney Injury",
+        "category": "renal",
+        "ontology_name": "Renal",
+        "confidence": "medium",
+        "supporting_symptoms": [
+          "8cm left renal mass",
+          "Creatinine: 2.0 mg/dL"
+        ],
+        "rationale": "Large renal mass and elevated creatinine suggest potential for acute kidney injury."
+      },
+      {
+        "disease": "Obesity",
+        "category": "other",
+        "ontology_name": "Other",
+        "confidence": "low",
+        "supporting_symptoms": [
+          "morbid obesity",
+          "BMI: 42.1 kg/m2",
+          "Weight: 285 Lbs"
+        ],
+        "rationale": "Morbid obesity with related symptoms."
+      }
+    ],
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "ontology_routing",
+    "patient_id": "13508515",
+    "admission_id": "21834271",
+    "generated_at": "2026-07-10T03:47:04.409591"
+  },
+  "n_candidates": 3,
+  "top_candidate": "Heart Failure"
+}

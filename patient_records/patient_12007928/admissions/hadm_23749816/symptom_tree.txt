@@ -8,47 +8,43 @@ Patient ID       : 12007928
 Admission ID     : 23749816
 
 Reasoning:
-  The patient presents with dyspnea, orthopnea, and significant fatigue, along with signs of heart failure and renal dysfunction.
+  The patient presents with dyspnea, orthopnea, and fatigue, with a history of CHF and atrial fibrillation. There are also concerns about renal and hematologic dysfunction.
 
 Key symptoms     : dyspnea, orthopnea
-Red flags        : hypotension, chest pain
+Red flags        : pulmonary edema, pleural effusions
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] dyspnea
       evidence: "Dyspnea"
-      related: orthopnea, pulmonary edema, pleural effusions
+      related: orthopnea, pulmonary edema
       • [present] orthopnea
           evidence: "has quite significant orthopnea, and has to sleep on an incline"
       • [present] pulmonary edema
-          evidence: "mild to moderate pulmonary edema"
-      • [present] pleural effusions
-          evidence: "bilateral pleural effusions"
-  • [absent] chest pain
-      evidence: "She denies any chest pains today, chest pain at rest or with exertion"
-  • [present] fatigue
+          evidence: "mild to moderate pulmonary edema, bilateral pleural effusions"
+  • [present, moderate] fatigue
       evidence: "She states that all activities now are quite fatiguing"
 
 RENAL → Renal
 -------------
 
   • [present, mild] creatinine elevation
-      evidence: "Creatinine: 1.6 mg/dL [abnormal]"
+      evidence: "Creatinine: 1.6 mg/dL"
       related: urea nitrogen elevation
   • [present, mild] urea nitrogen elevation
-      evidence: "Urea Nitrogen: 32.0 mg/dL [abnormal]"
+      evidence: "Urea Nitrogen: 32.0 mg/dL"
 
 NEUROLOGIC → Neurologic
 -----------------------
 
-  • [present] tremors
+  • [present, mild] tremors
       evidence: "increased spasms in the upper extremities and in the bladder"
-  • [present] spasms
+  • [present, mild] spasms
       evidence: "increased spasms in the upper extremities and in the bladder"
 
 GI → GI
 -------
 
-  • [present] urge incontinence
+  • [present, mild] urge incontinence
       evidence: "She states that there are multiple times when she is trying to go to the bathroom and feels the urge however is unable to do so"

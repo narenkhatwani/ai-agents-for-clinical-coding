@@ -1,0 +1,76 @@
+{
+  "patient_id": "11251337",
+  "admission_id": "29568708",
+  "subject_id": 11251337,
+  "hadm_id": 29568708,
+  "primary_icd_code": "N132",
+  "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+  "ground_truth_icd10": [
+    "N132",
+    "Z936",
+    "E785",
+    "I69954",
+    "I10",
+    "N19",
+    "Z87440"
+  ],
+  "ground_truth_dx_titles": [
+    "Hydronephrosis with renal and ureteral calculous obstruction",
+    "Other artificial openings of urinary tract status",
+    "Hyperlipidemia, unspecified",
+    "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side",
+    "Essential (primary) hypertension",
+    "Unspecified kidney failure",
+    "Personal history of urinary (tract) infections"
+  ],
+  "ontology_routing_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "ontology_routing": {
+    "reasoning": "The patient presents with nephrolithiasis, post-procedural symptoms, anemia, and renal dysfunction, which are primarily related to the renal system.",
+    "routed_branches": [
+      {
+        "category": "renal",
+        "ontology_name": "Renal",
+        "candidates": [
+          {
+            "disease": "Acute Kidney Injury",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "nephrolithiasis",
+              "residual stone",
+              "pain",
+              "bleeding",
+              "anemia",
+              "renal dysfunction"
+            ],
+            "rationale": "The patient's symptoms and laboratory findings strongly suggest acute kidney injury, given the presence of nephrolithiasis, residual stone, pain, bleeding, anemia, and renal dysfunction."
+          }
+        ]
+      }
+    ],
+    "type": "ontology_routing",
+    "top_candidates": [
+      {
+        "disease": "Acute Kidney Injury",
+        "category": "renal",
+        "ontology_name": "Renal",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "nephrolithiasis",
+          "residual stone",
+          "pain",
+          "bleeding",
+          "anemia",
+          "renal dysfunction"
+        ],
+        "rationale": "The patient's symptoms and laboratory findings strongly suggest acute kidney injury, given the presence of nephrolithiasis, residual stone, pain, bleeding, anemia, and renal dysfunction."
+      }
+    ],
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "ontology_routing",
+    "patient_id": "11251337",
+    "admission_id": "29568708",
+    "generated_at": "2026-07-10T03:46:29.852722"
+  },
+  "n_candidates": 1,
+  "top_candidate": "Acute Kidney Injury"
+}

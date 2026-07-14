@@ -1,0 +1,216 @@
+{
+  "patient_id": "17774110",
+  "admission_id": "27339772",
+  "subject_id": 17774110,
+  "hadm_id": 27339772,
+  "primary_icd_code": "A4189",
+  "primary_dx_title": "Other specified sepsis",
+  "ground_truth_icd10": [
+    "A4189",
+    "R6521",
+    "N170",
+    "J9601",
+    "G92",
+    "D65",
+    "I82220",
+    "C7972",
+    "J910",
+    "D689",
+    "I4892",
+    "C220",
+    "K766",
+    "E872",
+    "K920",
+    "Z515",
+    "B1920",
+    "F319",
+    "F909",
+    "K219",
+    "J449",
+    "K2270",
+    "F1010",
+    "B961",
+    "I4891",
+    "K7290",
+    "F209",
+    "G40909",
+    "K7030"
+  ],
+  "ground_truth_dx_titles": [
+    "Other specified sepsis",
+    "Severe sepsis with septic shock",
+    "Acute kidney failure with tubular necrosis",
+    "Acute respiratory failure with hypoxia",
+    "Toxic encephalopathy",
+    "Disseminated intravascular coagulation [defibrination syndrome]",
+    "Acute embolism and thrombosis of inferior vena cava",
+    "Secondary malignant neoplasm of left adrenal gland",
+    "Malignant pleural effusion",
+    "Coagulation defect, unspecified",
+    "Unspecified atrial flutter",
+    "Liver cell carcinoma",
+    "Portal hypertension",
+    "Acidosis",
+    "Hematemesis",
+    "Encounter for palliative care",
+    "Unspecified viral hepatitis C without hepatic coma",
+    "Bipolar disorder, unspecified",
+    "Attention-deficit hyperactivity disorder, unspecified type",
+    "Gastro-esophageal reflux disease without esophagitis",
+    "Chronic obstructive pulmonary disease, unspecified",
+    "Barrett's esophagus without dysplasia",
+    "Alcohol abuse, uncomplicated",
+    "Klebsiella pneumoniae [K. pneumoniae] as the cause of diseases classified elsewhere",
+    "Unspecified atrial fibrillation",
+    "Hepatic failure, unspecified without coma",
+    "Schizophrenia, unspecified",
+    "Epilepsy, unspecified, not intractable, without status epilepticus",
+    "Alcoholic cirrhosis of liver without ascites"
+  ],
+  "ontology_routing_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "ontology_routing": {
+    "reasoning": "The patient presents with septic shock and hypoxic respiratory failure, along with multiple organ failures and severe coagulopathy, indicating a critical and complex clinical scenario.",
+    "routed_branches": [
+      {
+        "category": "infectious",
+        "ontology_name": "Infectious Diseases",
+        "candidates": [
+          {
+            "disease": "Septic shock",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "Septic shock",
+              "Klebsiella Aerogenes blood cultures grew"
+            ],
+            "rationale": "Severe septic shock with positive blood cultures strongly supports sepsis."
+          }
+        ]
+      },
+      {
+        "category": "respiratory",
+        "ontology_name": "Respiratory",
+        "candidates": [
+          {
+            "disease": "Pulmonary Embolism",
+            "confidence": "medium",
+            "supporting_symptoms": [
+              "Hypoxic respiratory failure",
+              "large pleural effusion with compressive consolidation versus atelectasis"
+            ],
+            "rationale": "Hypoxic respiratory failure and pleural effusion suggest a possible pulmonary embolism."
+          }
+        ]
+      },
+      {
+        "category": "neurologic",
+        "ontology_name": "Neurologic",
+        "candidates": [
+          {
+            "disease": "Hepatic encephalopathy",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "Hepatic encephalopathy",
+              "worsening liver failure"
+            ],
+            "rationale": "Severe hepatic encephalopathy and worsening liver failure are strong indicators of hepatic encephalopathy."
+          }
+        ]
+      },
+      {
+        "category": "gi",
+        "ontology_name": "Gastrointestinal",
+        "candidates": [
+          {
+            "disease": "GI Bleed",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "GI bleeding",
+              "black coffee-ground GI contents"
+            ],
+            "rationale": "GI bleeding with black coffee-ground GI contents strongly supports a GI bleed."
+          }
+        ]
+      },
+      {
+        "category": "renal",
+        "ontology_name": "Renal",
+        "candidates": [
+          {
+            "disease": "Acute Kidney Injury",
+            "confidence": "high",
+            "supporting_symptoms": [
+              "Renal failure",
+              "acute renal failure ___ to septic shock and ATN on dialysis"
+            ],
+            "rationale": "Acute renal failure and septic shock strongly suggest acute kidney injury."
+          }
+        ]
+      }
+    ],
+    "type": "ontology_routing",
+    "top_candidates": [
+      {
+        "disease": "Septic shock",
+        "category": "infectious",
+        "ontology_name": "Infectious Diseases",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "Septic shock",
+          "Klebsiella Aerogenes blood cultures grew"
+        ],
+        "rationale": "Severe septic shock with positive blood cultures strongly supports sepsis."
+      },
+      {
+        "disease": "Hepatic encephalopathy",
+        "category": "neurologic",
+        "ontology_name": "Neurologic",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "Hepatic encephalopathy",
+          "worsening liver failure"
+        ],
+        "rationale": "Severe hepatic encephalopathy and worsening liver failure are strong indicators of hepatic encephalopathy."
+      },
+      {
+        "disease": "GI Bleed",
+        "category": "gi",
+        "ontology_name": "Gastrointestinal",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "GI bleeding",
+          "black coffee-ground GI contents"
+        ],
+        "rationale": "GI bleeding with black coffee-ground GI contents strongly supports a GI bleed."
+      },
+      {
+        "disease": "Acute Kidney Injury",
+        "category": "renal",
+        "ontology_name": "Renal",
+        "confidence": "high",
+        "supporting_symptoms": [
+          "Renal failure",
+          "acute renal failure ___ to septic shock and ATN on dialysis"
+        ],
+        "rationale": "Acute renal failure and septic shock strongly suggest acute kidney injury."
+      },
+      {
+        "disease": "Pulmonary Embolism",
+        "category": "respiratory",
+        "ontology_name": "Respiratory",
+        "confidence": "medium",
+        "supporting_symptoms": [
+          "Hypoxic respiratory failure",
+          "large pleural effusion with compressive consolidation versus atelectasis"
+        ],
+        "rationale": "Hypoxic respiratory failure and pleural effusion suggest a possible pulmonary embolism."
+      }
+    ],
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "ontology_routing",
+    "patient_id": "17774110",
+    "admission_id": "27339772",
+    "generated_at": "2026-07-10T03:47:29.610358"
+  },
+  "n_candidates": 5,
+  "top_candidate": "Septic shock"
+}

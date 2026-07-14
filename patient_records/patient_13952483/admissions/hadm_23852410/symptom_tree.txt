@@ -8,58 +8,48 @@ Patient ID       : 13952483
 Admission ID     : 23852410
 
 Reasoning:
-  The patient presents with hypotension, weight loss, and multiple constitutional symptoms including cough, odynophagia, and chest pain, with recent neutropenia and thrombocytopenia.
+  The patient presents with hypotension, weight loss, and multiple systemic symptoms including cough, odynophagia, and chest pain, suggesting a complex clinical picture involving both infectious and non-infectious etiologies.
 
-Key symptoms     : hypotension, cough
+Key symptoms     : hypotension, cough, weight loss
 Red flags        : hypotension, neutropenia, thrombocytopenia
 
-CONSTITUTIONAL → Other
-----------------------
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
 
   • [present, mild] hypotension
       evidence: "Hypotension and Weight Loss"
-      related: BP 86/54 --> 110/70 after 1L IVF
-  • [present, moderate] weight loss
-      evidence: "weight loss"
-      related: BMI 15.8, 94.7 lbs (about 5 pounds lower than prior admission)
-  • [present, mild] neutropenia
-      evidence: "new neutropenia (ANC 750)"
-      related: WBC 2.7 K/uL, Lymphocytes 9.0 %, Bands 8.0 %
-  • [present, mild] thrombocytopenia
-      evidence: "thrombocytopenia (plts 93)"
-      related: Platelet Count 137.0 K/uL
-  • [present, moderate] anorexia
-      evidence: "overall anorexia and poor appetite"
-      related: Weight loss, Neutropenia
-  • [present, mild] nausea
-      evidence: "some nausea"
+      related: loud systolic ejection murmur, neutropenia, thrombocytopenia
+      • [present, mild] chest pain
+          evidence: "pleuritic/MSK chest pain"
 
 RESPIRATORY → Respiratory
 -------------------------
 
   • [present, mild] cough
       evidence: "coughing"
-      related: Coarse crackles at bases without rhonchi or wheezing
-  • [present, moderate] odynophagia
-      evidence: "persistent odynophagia"
-      related: Pain with swallowing
-  • [present, mild] chest pain
-      evidence: "pleuritic/MSK chest pain"
-      related: Loud systolic ejection murmur
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [present, mild] systolic ejection murmur
-      evidence: "Loud systolic ejection murmur"
-      related: Loud systolic ejection murmur
+      related: coarse crackles at bases, left basilar opacification
+      • [present, mild] pain with swallowing
+          evidence: "pain with swallowing"
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
   • [present, mild] neutropenia
       evidence: "new neutropenia (ANC 750)"
-      related: WBC 2.7 K/uL, Lymphocytes 9.0 %, Bands 8.0 %
+      related: hypotension, thrombocytopenia
   • [present, mild] thrombocytopenia
       evidence: "thrombocytopenia (plts 93)"
-      related: Platelet Count 137.0 K/uL
+      related: hypotension, neutropenia
+
+CONSTITUTIONAL → Other
+----------------------
+
+  • [present, moderate] weight loss
+      evidence: "weight loss"
+      related: hypotension, neutropenia, thrombocytopenia
+  • [present, mild] anorexia
+      evidence: "overall anorexia and poor appetite"
+      related: hypotension, neutropenia, thrombocytopenia
+  • [present, mild] nausea
+      evidence: "some nausea"
+      related: hypotension, neutropenia, thrombocytopenia

@@ -8,7 +8,7 @@ Patient ID       : 11251337
 Admission ID     : 29568708
 
 Reasoning:
-  The patient presents with nephrolithiasis and post-procedural symptoms including residual stone, pain, and bleeding. Laboratory findings indicate anemia and renal dysfunction.
+  The patient presents with nephrolithiasis and post-procedural symptoms including residual stone, pain, and bleeding. Laboratory results indicate anemia and renal dysfunction.
 
 Key symptoms     : nephrolithiasis, residual stone, pain, bleeding
 Red flags        : anemia, renal dysfunction
@@ -21,10 +21,10 @@ RENAL → Renal
       related: Creatinine: 2.5 mg/dL, Glucose: 105 mg/dL, Urea Nitrogen: 22 mg/dL
       • [present] residual stone
           evidence: "There is some residual stone that will require interval right URS"
-  • [present, moderate] pain
-      evidence: "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
   • [present, mild] bleeding
       evidence: "You can expect to see occasional blood in your urine"
+  • [present, moderate] pain
+      evidence: "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
 
 HEMATOLOGIC → Hematologic
 -------------------------
@@ -38,4 +38,3 @@ RENAL → Renal
 
   • [present, moderate] renal dysfunction
       evidence: "Creatinine: 2.5 mg/dL, Glucose: 105 mg/dL, Urea Nitrogen: 22 mg/dL"
-      related: Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL

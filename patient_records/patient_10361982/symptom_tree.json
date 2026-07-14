@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and previous surgeries.",
+  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with no signs of acute blood loss anemia but a slightly low hematocrit.",
   "branches": [
     {
       "category": "gi",
@@ -12,7 +12,7 @@
           "severity": "moderate",
           "evidence": "heavy vaginal bleeding after hysterectomy",
           "related_findings": [
-            "abnormal uterine and vaginal bleeding, unspecified"
+            "low hematocrit"
           ],
           "children": [
             {
@@ -25,33 +25,27 @@
       ]
     },
     {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
+      "category": "constitutional",
+      "ontology_hint": "Hematology",
       "symptoms": [
         {
-          "term": "hemodynamic stability",
+          "term": "low hematocrit",
           "status": "present",
           "severity": "mild",
-          "evidence": "hemodynamically stable throughout her hospitalization"
-        }
-      ]
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "abdominal bloatedness",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "abdominal bloatedness secondary to gas"
+          "evidence": "HCT-38.1",
+          "related_findings": [
+            "WBC-8.7",
+            "RBC-4.75",
+            "HGB-12.6"
+          ],
+          "children": []
         }
       ]
     }
   ],
   "key_symptoms": [
     "heavy vaginal bleeding",
-    "abdominal bloatedness"
+    "low hematocrit"
   ],
   "red_flags": [],
   "type": "symptom_tree",
@@ -59,5 +53,5 @@
   "_agent": "symptom_tree",
   "patient_id": "10361982",
   "admission_id": "24286431",
-  "generated_at": "2026-07-09T00:29:28.658417"
+  "generated_at": "2026-07-09T21:35:13.619648"
 }

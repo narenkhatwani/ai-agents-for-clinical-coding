@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with severe sepsis secondary to RUL PNA, hypotension, and altered mental status, with a history of metastatic adenocarcinoma of unknown primary.",
+  "reasoning": "The patient presents with a history of metastatic adenocarcinoma, recent diagnosis of RUL PNA, and current sepsis with hypotension. The patient also has a history of SVC syndrome and multiple metastatic lesions.",
   "branches": [
     {
       "category": "infectious",
@@ -22,7 +22,7 @@
           "severity": "moderate",
           "evidence": "RUL PNA",
           "related_findings": [
-            "CXR: persistent consolidative opacities in both lower lobes"
+            "CXR shows bibasilar consolidations"
           ],
           "children": []
         }
@@ -38,7 +38,7 @@
           "severity": "moderate",
           "evidence": "BP 90/47, hypotensive",
           "related_findings": [
-            "Levophed started, pressures came up to the 90's systolic"
+            "levophed started"
           ],
           "children": []
         }
@@ -54,17 +54,23 @@
           "severity": "moderate",
           "evidence": "altered mental status",
           "related_findings": [
-            "EEG shows epileptiform discharges left paracentrally"
+            "EEG shows epileptiform discharges"
           ],
           "children": []
-        },
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
         {
-          "term": "seizures",
-          "status": "suspected",
-          "severity": "unknown",
-          "evidence": "possibly seizures from metastases",
+          "term": "chest pressure",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "chest pressure",
           "related_findings": [
-            "EEG shows epileptiform discharges left paracentrally"
+            "RUL PNA"
           ],
           "children": []
         }
@@ -75,19 +81,13 @@
       "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "chest pressure",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "chest pressure",
-          "related_findings": [],
-          "children": []
-        },
-        {
           "term": "back pain",
           "status": "history",
           "severity": "mild",
           "evidence": "back pain",
-          "related_findings": [],
+          "related_findings": [
+            "recently diagnosed metastatic adenocarcinoma"
+          ],
           "children": []
         }
       ]
@@ -106,5 +106,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13196707",
   "admission_id": "21475988",
-  "generated_at": "2026-07-09T00:30:18.760841"
+  "generated_at": "2026-07-09T21:36:58.135322"
 }

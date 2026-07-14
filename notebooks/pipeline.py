@@ -23,6 +23,24 @@ import requests
 # Repo root (parent of this file)
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+
+def _load_dotenv(path: Path = REPO_ROOT / ".env") -> None:
+    """Load KEY=VALUE pairs from .env into os.environ (does not override existing env vars)."""
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip().strip("'\"")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
+_load_dotenv()
+
 # ---------------------------------------------------------------------------
 # Test mode — set True to run all stages on 1 patient only (fast smoke test).
 # Uses separate artifact dirs so full runs are not overwritten:
@@ -89,6 +107,10 @@ IE_MAX_NOTE_CHARS = 4000  # shorter input for faster IE; full note kept in cohor
 SYMPTOM_TREE_MAX_NOTE_CHARS = 8000
 HISTORY_NOTE_EXCERPT_CHARS = 800  # prior admission note snippet in history context
 
+# Stage 7 — prune candidates with evidence score below this cutoff (see stage 6 scoring guide:
+# 0-20 minimal, 21-40 weak, 41-60 moderate, 61-80 strong, 81-100 very strong)
+PRUNE_SCORE_THRESHOLD = 40
+
 # Backward-compatible aliases
 OLLAMA_TIMEOUT_SECONDS = LLM_TIMEOUT_SECONDS
 OLLAMA_MAX_RETRIES = LLM_MAX_RETRIES
@@ -96,8 +118,13 @@ OLLAMA_MAX_RETRIES = LLM_MAX_RETRIES
 # Pipeline artifacts (written by stage notebooks)
 DATA_DIR = REPO_ROOT / "data" / "test" if TEST_MODE else REPO_ROOT / "data"
 COHORT_DIR = DATA_DIR / "cohort"
+STAGE_01B_DIR = DATA_DIR / "stage_01b_redact_notes"
 STAGE_02_DIR = DATA_DIR / "stage_02_information_extraction"
 STAGE_03_DIR = DATA_DIR / "stage_03_symptom_tree"
+STAGE_05_DIR = DATA_DIR / "stage_05_ontology_routing"
+STAGE_06_DIR = DATA_DIR / "stage_06_evidence_scoring"
+STAGE_07_DIR = DATA_DIR / "stage_07_pruned_branches"
+STAGE_08_DIR = DATA_DIR / "stage_08_guideline_icd_retrieval"
 EXPORT_DIR = REPO_ROOT / "patient_records_test" if TEST_MODE else REPO_ROOT / "patient_records"
 
 
@@ -128,15 +155,21 @@ def _apply_settings_json() -> None:
         g["MIN_ADMISSIONS_PER_PATIENT"] = 1 if tm else 2
         g["DATA_DIR"] = g["REPO_ROOT"] / "data" / "test" if tm else g["REPO_ROOT"] / "data"
         g["COHORT_DIR"] = g["DATA_DIR"] / "cohort"
+        g["STAGE_01B_DIR"] = g["DATA_DIR"] / "stage_01b_redact_notes"
         g["STAGE_02_DIR"] = g["DATA_DIR"] / "stage_02_information_extraction"
         g["STAGE_03_DIR"] = g["DATA_DIR"] / "stage_03_symptom_tree"
+        g["STAGE_05_DIR"] = g["DATA_DIR"] / "stage_05_ontology_routing"
+        g["STAGE_06_DIR"] = g["DATA_DIR"] / "stage_06_evidence_scoring"
+        g["STAGE_07_DIR"] = g["DATA_DIR"] / "stage_07_pruned_branches"
+        g["STAGE_08_DIR"] = g["DATA_DIR"] / "stage_08_guideline_icd_retrieval"
         g["EXPORT_DIR"] = g["REPO_ROOT"] / "patient_records_test" if tm else g["REPO_ROOT"] / "patient_records"
 
 
 def _refresh_artifact_paths() -> None:
-    global COHORT_PICKLE, COHORT_INDEX_JSON, IE_RESULTS_JSON, IE_CHECKPOINT_JSON, SYMPTOM_TREE_RESULTS_JSON
+    global COHORT_PICKLE, COHORT_INDEX_JSON, IE_RESULTS_JSON, IE_CHECKPOINT_JSON, SYMPTOM_TREE_RESULTS_JSON, REDACTION_CHECKPOINT_JSON
     COHORT_PICKLE = COHORT_DIR / "cohort.pkl"
     COHORT_INDEX_JSON = COHORT_DIR / "cohort_index.json"
+    REDACTION_CHECKPOINT_JSON = STAGE_01B_DIR / "redaction_checkpoint.json"
     IE_RESULTS_JSON = STAGE_02_DIR / "information_extractions.json"
     IE_CHECKPOINT_JSON = STAGE_02_DIR / "ie_checkpoint.json"
     SYMPTOM_TREE_RESULTS_JSON = STAGE_03_DIR / "symptom_tree_results.json"
@@ -1197,6 +1230,358 @@ def load_cohort_index(index_path: Union[str, Path] = COHORT_INDEX_JSON) -> Dict[
     return json.loads(index_path.read_text(encoding="utf-8"))
 
 
+# =============================================================================
+# Stage 1.5 — Redact diagnosis information from the latest clinical note
+#
+# Prevents the diagnosis stated in the discharge note itself (e.g. a
+# "Discharge Diagnosis:" section, or "consistent with pneumonia" in the
+# narrative) from leaking into what Stage 2 (IE) and Stage 3 (symptom tree)
+# see, which would let the LLM "cheat" instead of reasoning from symptoms.
+#
+# Only the LATEST admission's clinical_note is redacted — prior-admission
+# history already exposes its diagnosis explicitly via structured fields
+# (primary_icd_code / primary_dx_title in admission_history), so redacting
+# those note excerpts too would not hide anything additional.
+#
+# Two passes:
+#   1. Deterministic section stripping (no LLM) — removes whole sections
+#      whose header names this admission's diagnosis outright.
+#   2. LLM pass over what's left — finds inline narrative diagnosis mentions
+#      regex can't reliably catch (e.g. in Brief Hospital Course). The LLM
+#      only returns verbatim spans to redact; code does the actual string
+#      replacement, so it can't rewrite or drop unrelated text.
+# =============================================================================
+
+_DIAGNOSIS_SECTION_HEADERS = {
+    "discharge diagnosis",
+    "discharge diagnoses",
+    "final diagnosis",
+    "final diagnoses",
+    "primary diagnosis",
+    "secondary diagnosis",
+    "secondary diagnoses",
+    "admission diagnosis",
+    "admission diagnoses",
+}
+
+_SECTION_HEADER_RE = re.compile(r"^[ \t]*([A-Za-z][A-Za-z0-9 /\-]{2,60}):[ \t]?", re.MULTILINE)
+
+_DIAGNOSIS_REDACTION_TOKEN = "[DIAGNOSIS REDACTED]"
+
+
+def redact_diagnosis_sections(note: str) -> Tuple[str, List[str]]:
+    """Strip content of known diagnosis-revealing section headers. Deterministic, no LLM.
+
+    Returns (redacted_note, redacted_section_names).
+    """
+    if not note:
+        return note, []
+
+    matches = list(_SECTION_HEADER_RE.finditer(note))
+    if not matches:
+        return note, []
+
+    redacted_sections: List[str] = []
+    pieces: List[str] = []
+    cursor = 0
+    for i, m in enumerate(matches):
+        header_text = m.group(1).strip()
+        section_start = m.end()
+        section_end = matches[i + 1].start() if i + 1 < len(matches) else len(note)
+
+        pieces.append(note[cursor:section_start])
+        if header_text.lower() in _DIAGNOSIS_SECTION_HEADERS:
+            pieces.append(f"\n{_DIAGNOSIS_REDACTION_TOKEN}\n")
+            redacted_sections.append(header_text)
+        else:
+            pieces.append(note[section_start:section_end])
+        cursor = section_end
+
+    pieces.append(note[cursor:])
+    return "".join(pieces), redacted_sections
+
+
+def _build_diagnosis_redaction_system_prompt() -> str:
+    return f"""You are a clinical Diagnosis Redaction Agent.
+You are given a clinical note (already stripped of explicit Discharge/Final/Primary/Admission
+Diagnosis sections) that will be used to test a DIFFERENT system's ability to infer the diagnosis
+from symptoms, vitals, labs, and clinical course alone. Find any remaining sentences or phrases
+that STATE OR STRONGLY IMPLY a named diagnosis conclusion for THIS admission (e.g. "consistent
+with pneumonia", "diagnosed with heart failure", "found to have a pulmonary embolism",
+"impression: sepsis").
+
+Do NOT flag: symptoms, vital signs, lab values, physical exam findings, imaging findings described
+objectively (e.g. "bilateral infiltrates on CXR" is fine; "CXR consistent with pneumonia" is not),
+medications, procedures, or past medical history unrelated to naming THIS admission's diagnosis.
+
+Return ONLY valid JSON (no markdown):
+{{
+  "diagnosis_mentions": [
+    {{"text": "exact verbatim substring from the note that states/implies the diagnosis", "diagnosis_hint": "the diagnosis name being revealed"}}
+  ]
+}}
+Copy "text" EXACTLY as it appears in the note (same casing, punctuation, whitespace) — it will be
+used for an exact string replacement, so paraphrasing will fail to match. If nothing else reveals
+the diagnosis, return an empty list."""
+
+
+def redact_diagnosis_mentions_llm(
+    note: str,
+    config: Optional[LLMConfig] = None,
+) -> Tuple[str, List[Dict[str, str]]]:
+    """LLM finds remaining inline diagnosis mentions; code does the exact-match replacement."""
+    config = config or LLMConfig()
+    model = config.model
+    require_llm(config)
+    warn_if_slow_model(model, config.provider)
+
+    result = call_llm_json(
+        _build_diagnosis_redaction_system_prompt(),
+        f"Clinical note:\n\n{note}",
+        config,
+        model=model,
+    )
+
+    redacted_note = note
+    applied: List[Dict[str, str]] = []
+    for mention in result.get("diagnosis_mentions") or []:
+        text = mention.get("text", "")
+        if text and text in redacted_note:
+            redacted_note = redacted_note.replace(text, _DIAGNOSIS_REDACTION_TOKEN)
+            applied.append(mention)
+    return redacted_note, applied
+
+
+def _redact_note_by_section(note: str, config: LLMConfig) -> Tuple[str, List[Dict[str, str]]]:
+    """Run the LLM mention-finder per section rather than once on the whole note.
+
+    A 7B model's recall drops sharply on long multi-section notes — verified empirically:
+    an obvious inline mention ("found to have community-acquired pneumonia") was caught
+    3/3 times when the LLM saw just that section, but 0/3 times when it saw the full note.
+    Splitting by section keeps each LLM call's context short, which fixes recall, at the
+    cost of one LLM call per section instead of one per note.
+    """
+    if not note:
+        return note, []
+
+    matches = list(_SECTION_HEADER_RE.finditer(note))
+    all_mentions: List[Dict[str, str]] = []
+
+    def _redact_chunk(text: str, header: Optional[str]) -> str:
+        stripped = text.strip()
+        if not stripped or stripped == _DIAGNOSIS_REDACTION_TOKEN:
+            return text
+        redacted_text, mentions = redact_diagnosis_mentions_llm(text, config=config)
+        for mention in mentions:
+            mention["section"] = header or "(preamble)"
+        all_mentions.extend(mentions)
+        return redacted_text
+
+    if not matches:
+        return _redact_chunk(note, None), all_mentions
+
+    pieces: List[str] = []
+    if matches[0].start() > 0:
+        pieces.append(_redact_chunk(note[: matches[0].start()], None))
+
+    for i, m in enumerate(matches):
+        header_text = m.group(1).strip()
+        section_start = m.end()
+        section_end = matches[i + 1].start() if i + 1 < len(matches) else len(note)
+        pieces.append(note[m.start():section_start])  # header line itself, unchanged
+        pieces.append(_redact_chunk(note[section_start:section_end], header_text))
+
+    return "".join(pieces), all_mentions
+
+
+_KEYWORD_STOPWORDS = {
+    "of", "the", "and", "or", "with", "without", "unspecified", "other", "due",
+    "to", "in", "a", "an", "type", "acute", "chronic", "disorder", "disease",
+    "not", "elsewhere", "classified", "specified",
+}
+_KEYWORD_STEM_LEN = 6
+
+
+def _extract_diagnosis_keywords(dx_titles: List[str]) -> List[str]:
+    """Significant word stems from the admission's own ground-truth ICD-10 title(s).
+
+    Also generates the adjective form for the Greek -sis/-tic suffix pair (sepsis→septic,
+    cirrhosis→cirrhotic, necrosis→necrotic, thrombosis→thrombotic, psychosis→psychotic,
+    ...) since prefix-stemming alone misses it — verified in practice: "septic shock"
+    mentioned three times in a note whose primary diagnosis was "sepsis" was caught only
+    once, because "sepsis" and "septic" diverge before the 6-character stem length.
+    """
+    stems: set = set()
+    for title in dx_titles or []:
+        for w in re.findall(r"[a-zA-Z]+", str(title).lower()):
+            if len(w) <= 4 or w in _KEYWORD_STOPWORDS:
+                continue
+            stems.add(w[:_KEYWORD_STEM_LEN] if len(w) > _KEYWORD_STEM_LEN else w)
+            if w.endswith("sis") and len(w) > 5:
+                stems.add(w[:-3] + "tic")
+    return sorted(stems, key=len, reverse=True)
+
+
+def redact_known_diagnosis_terms(note: str, dx_titles: List[str]) -> Tuple[str, List[str]]:
+    """Deterministic backstop pass: redact any remaining mention of a word stem drawn from
+    the admission's OWN ground-truth diagnosis title(s). Ground truth is used here only to
+    REMOVE it from the note, never to inform any prediction — this guards against the LLM
+    passes missing a paraphrased or secondary mention (verified to happen in practice: e.g.
+    "consistent with a right lower lobe pneumonic process" was missed by the LLM pass even
+    when "found to have community-acquired pneumonia" in the same sentence was caught).
+    Crude prefix-stemming means it isn't exhaustive either (e.g. "sepsis" won't catch
+    "septic") — treat this as an additional layer, not a guarantee.
+    """
+    if not note or not dx_titles:
+        return note, []
+    keywords = _extract_diagnosis_keywords(dx_titles)
+    if not keywords:
+        return note, []
+    redacted = note
+    hit_terms: List[str] = []
+    for stem in keywords:
+        pattern = re.compile(rf"\b{re.escape(stem)}\w*", re.IGNORECASE)
+        if pattern.search(redacted):
+            hit_terms.append(stem)
+            redacted = pattern.sub(_DIAGNOSIS_REDACTION_TOKEN, redacted)
+    return redacted, hit_terms
+
+
+def redact_diagnosis_agent(
+    clinical_note: str,
+    admission_id: str,
+    patient_id: Optional[str] = None,
+    config: Optional[LLMConfig] = None,
+    primary_dx_title: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Three-pass diagnosis redaction:
+    1. Deterministic section stripping (Discharge/Final/Primary/Admission Diagnosis headers).
+    2. Per-section LLM pass for inline narrative mentions the sections don't cover.
+    3. Deterministic keyword backstop using ONLY the admission's PRIMARY diagnosis title, if
+       supplied — catches mentions passes 1-2 miss. Deliberately NOT the full
+       ground_truth_dx_titles list: that list is every coded diagnosis for the admission
+       (comorbidities, complications, past conditions — often 20+ for a complex patient) and
+       using all of them as redaction keywords was verified to gut legitimate Past Medical
+       History / HPI content, not just the target diagnosis. Ground truth is used only to
+       redact, never passed to any downstream prediction stage.
+    """
+    config = config or LLMConfig()
+    model = config.model
+    require_llm(config)
+    warn_if_slow_model(model, config.provider)
+
+    section_redacted, redacted_sections = redact_diagnosis_sections(clinical_note or "")
+    llm_redacted_note, llm_mentions = _redact_note_by_section(section_redacted, config)
+    dx_titles = [primary_dx_title] if primary_dx_title else []
+    final_note, keyword_hits = redact_known_diagnosis_terms(llm_redacted_note, dx_titles)
+
+    return {
+        "type": "diagnosis_redaction",
+        "original_note": clinical_note,
+        "redacted_note": final_note,
+        "redacted_sections": redacted_sections,
+        "llm_redacted_mentions": llm_mentions,
+        "keyword_backstop_hits": keyword_hits,
+        "n_sections_redacted": len(redacted_sections),
+        "n_llm_mentions_redacted": len(llm_mentions),
+        "n_keyword_backstop_hits": len(keyword_hits),
+        "original_char_count": len(clinical_note or ""),
+        "redacted_char_count": len(final_note or ""),
+        "_method": f"sections+{config.method_prefix()}_llm+keyword_backstop:{model}",
+        "_agent": "diagnosis_redaction",
+        "patient_id": patient_id,
+        "admission_id": admission_id,
+        "generated_at": datetime.now().isoformat(),
+    }
+
+
+def load_redaction_checkpoint(
+    path: Union[str, Path] = REDACTION_CHECKPOINT_JSON,
+) -> Dict[str, Dict[str, Any]]:
+    """Return completed redactions keyed by patient_id (for resume after a network error)."""
+    path = Path(path)
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return {str(r["patient_id"]): r for r in payload.get("results", [])}
+
+
+def save_redaction_checkpoint(
+    records: List[Dict[str, Any]],
+    path: Union[str, Path] = REDACTION_CHECKPOINT_JSON,
+) -> Path:
+    """Save progress after each patient — this stage makes several LLM calls per note
+    (one per section), so a mid-run network error should not lose completed work."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "stage": "1.5",
+        "checkpoint": True,
+        "updated_at": datetime.now().isoformat(),
+        "n_completed": len(records),
+        "results": records,
+    }
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def save_redaction_results(
+    results_df: pd.DataFrame,
+    dir_path: Union[str, Path] = STAGE_01B_DIR,
+) -> Path:
+    """Write one JSON file per patient, plus an index summarizing all of them."""
+    dir_path = Path(dir_path)
+    dir_path.mkdir(parents=True, exist_ok=True)
+    for stale in dir_path.glob("redacted_note_*.json"):
+        stale.unlink()
+
+    index_records = []
+    for record in results_df.to_dict(orient="records"):
+        patient_id = str(record["patient_id"])
+        file_name = f"redacted_note_{patient_id}.json"
+        (dir_path / file_name).write_text(
+            json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+        index_records.append({
+            "patient_id": patient_id,
+            "admission_id": record.get("admission_id"),
+            "hadm_id": record.get("hadm_id"),
+            "file": file_name,
+            "n_sections_redacted": record.get("n_sections_redacted"),
+            "n_llm_mentions_redacted": record.get("n_llm_mentions_redacted"),
+        })
+
+    index_payload = {
+        "stage": "1.5",
+        "description": "Diagnosis redaction — latest clinical note only (one file per patient)",
+        "generated_at": datetime.now().isoformat(),
+        "n_patients": len(index_records),
+        "patients": index_records,
+    }
+    (dir_path / "redacted_notes_index.json").write_text(
+        json.dumps(index_payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    return dir_path
+
+
+def load_redaction_results(
+    dir_path: Union[str, Path] = STAGE_01B_DIR,
+) -> pd.DataFrame:
+    dir_path = Path(dir_path)
+    index_path = dir_path / "redacted_notes_index.json"
+    if not index_path.exists():
+        raise FileNotFoundError(
+            f"Redacted notes index not found at {index_path}. "
+            "Run notebooks/stage_01b_redact_notes.ipynb first."
+        )
+    index_payload = json.loads(index_path.read_text(encoding="utf-8"))
+    records = [
+        json.loads((dir_path / entry["file"]).read_text(encoding="utf-8"))
+        for entry in index_payload.get("patients", [])
+    ]
+    return pd.DataFrame(records)
+
+
 import json
 from datetime import datetime
 from typing import Any, Dict, List, Optional
@@ -1391,6 +1776,672 @@ Track which symptoms recurred across admissions. Return ONLY valid JSON:
     return tree
 
 
+# =============================================================================
+# Ontology Routing Agent — route symptom tree branches to candidate diseases
+# =============================================================================
+
+ONTOLOGY_TAXONOMY: Dict[str, Dict[str, Any]] = {
+    "infectious": {
+        "ontology_name": "Infectious Diseases",
+        "diseases": [
+            "Pneumonia",
+            "Sepsis",
+            "Urinary Tract Infection",
+            "Cellulitis / Skin and Soft Tissue Infection",
+            "Bacteremia",
+            "Clostridioides difficile Infection",
+            "Tuberculosis",
+            "Viral Infection (e.g. COVID-19, Influenza)",
+        ],
+    },
+    "cardiovascular": {
+        "ontology_name": "Cardiovascular",
+        "diseases": [
+            "Heart Failure",
+            "Myocardial Infarction / Acute Coronary Syndrome",
+            "Atrial Fibrillation / Arrhythmia",
+            "Hypertensive Emergency",
+            "Cardiogenic Shock",
+            "Pericarditis / Pericardial Effusion",
+        ],
+    },
+    "respiratory": {
+        "ontology_name": "Respiratory",
+        "diseases": [
+            "COPD Exacerbation",
+            "Asthma Exacerbation",
+            "Pulmonary Embolism",
+            "Acute Respiratory Failure / ARDS",
+            "Pleural Effusion",
+            "Pneumothorax",
+        ],
+    },
+    "neurologic": {
+        "ontology_name": "Neurologic",
+        "diseases": [
+            "Ischemic / Hemorrhagic Stroke",
+            "Altered Mental Status / Encephalopathy",
+            "Seizure Disorder",
+            "Delirium",
+        ],
+    },
+    "gi": {
+        "ontology_name": "Gastrointestinal",
+        "diseases": [
+            "Gastrointestinal Bleed",
+            "Acute Pancreatitis",
+            "Bowel Obstruction",
+            "Cirrhosis / Hepatic Decompensation",
+            "Cholangitis / Cholecystitis",
+        ],
+    },
+    "renal": {
+        "ontology_name": "Renal",
+        "diseases": [
+            "Acute Kidney Injury",
+            "Chronic Kidney Disease Exacerbation",
+            "Electrolyte Disturbance",
+            "Volume Overload",
+        ],
+    },
+    "constitutional": {
+        "ontology_name": "Constitutional / General",
+        "diseases": [
+            "Fever of Unknown Origin",
+            "Dehydration",
+            "Malignancy-related Symptoms",
+            "Failure to Thrive",
+        ],
+    },
+    "other": {
+        "ontology_name": "Other",
+        "diseases": [],
+    },
+}
+
+
+def format_ontology_taxonomy_text() -> str:
+    lines = [
+        "ONTOLOGY TAXONOMY (route candidates only within these categories/diseases; "
+        "return zero candidates for a branch if nothing fits):",
+        "",
+    ]
+    for category, info in ONTOLOGY_TAXONOMY.items():
+        lines.append(f"- {category} → {info['ontology_name']}")
+        for disease in info["diseases"]:
+            lines.append(f"    • {disease}")
+    return "\n".join(lines)
+
+
+def _build_ontology_routing_system_prompt() -> str:
+    return f"""You are a clinical Ontology Routing Agent.
+Given a patient's symptom tree (branches grouped by clinical category), route each branch to candidate diseases
+drawn ONLY from the fixed ontology taxonomy below. Do not invent diseases outside this taxonomy; if nothing in a
+branch's category fits well, return an empty candidates list for that branch.
+
+{format_ontology_taxonomy_text()}
+
+Return ONLY valid JSON (no markdown):
+{{
+  "reasoning": "1-2 sentence summary of overall routing rationale",
+  "routed_branches": [
+    {{
+      "category": "infectious|cardiovascular|respiratory|neurologic|gi|renal|constitutional|other",
+      "ontology_name": "exact ontology_name from the taxonomy for this category",
+      "candidates": [
+        {{
+          "disease": "exact disease name from the taxonomy list",
+          "confidence": "low|medium|high",
+          "supporting_symptoms": ["symptom terms from this branch that support this disease"],
+          "rationale": "brief reason referencing symptoms/severity/red flags"
+        }}
+      ]
+    }}
+  ]
+}}
+Base confidence on symptom severity, evidence strength, and red flags in the tree. A branch may route to zero,
+one, or multiple candidate diseases."""
+
+
+def ontology_routing_agent(
+    symptom_tree: Dict[str, Any],
+    admission_id: str,
+    patient_id: Optional[str] = None,
+    config: Optional[LLMConfig] = None,
+) -> Dict[str, Any]:
+    """LLM routes symptom tree branches to candidate diseases in the fixed ontology taxonomy."""
+    config = config or LLMConfig()
+    model = config.model
+    require_llm(config)
+    warn_if_slow_model(model, config.provider)
+
+    tree_for_prompt = {k: v for k, v in symptom_tree.items() if not str(k).startswith("_")}
+    user_prompt = (
+        f"Admission ID: {admission_id}\n"
+        f"Patient ID: {patient_id or 'unknown'}\n\n"
+        f"Symptom tree JSON:\n{json.dumps(tree_for_prompt, indent=2)}"
+    )
+
+    routing = call_llm_json(_build_ontology_routing_system_prompt(), user_prompt, config, model=model)
+    routing["type"] = "ontology_routing"
+
+    confidence_rank = {"high": 0, "medium": 1, "low": 2}
+    flattened = [
+        {
+            "disease": candidate.get("disease"),
+            "category": branch.get("category"),
+            "ontology_name": branch.get("ontology_name"),
+            "confidence": candidate.get("confidence"),
+            "supporting_symptoms": candidate.get("supporting_symptoms", []),
+            "rationale": candidate.get("rationale", ""),
+        }
+        for branch in routing.get("routed_branches", [])
+        for candidate in branch.get("candidates", [])
+    ]
+    flattened.sort(key=lambda c: confidence_rank.get(str(c.get("confidence")).lower(), 3))
+    routing["top_candidates"] = flattened
+
+    routing["_method"] = f"{config.method_prefix()}_llm:{model}"
+    routing["_agent"] = "ontology_routing"
+    routing["patient_id"] = patient_id
+    routing["admission_id"] = admission_id
+    routing["generated_at"] = datetime.now().isoformat()
+    return routing
+
+
+# =============================================================================
+# Evidence Scoring Agent — score ontology-routed candidates against evidence
+# =============================================================================
+
+def _build_evidence_scoring_system_prompt() -> str:
+    return """You are a clinical Evidence Scoring Agent.
+Given a set of candidate diagnoses (produced by an Ontology Routing Agent) plus the full symptom tree and
+information extraction for one admission, score how strongly the DOCUMENTED evidence supports each candidate.
+
+Return ONLY valid JSON (no markdown):
+{
+  "reasoning": "1-2 sentence summary of the overall evidence picture",
+  "scored_candidates": [
+    {
+      "disease": "exact disease name, copied from the candidates provided",
+      "category": "category, copied from the candidate provided",
+      "score": 0-100,
+      "supporting_evidence": ["specific symptoms/vitals/labs/findings that support this diagnosis"],
+      "contradicting_evidence": ["documented findings that argue against this diagnosis, if any"],
+      "missing_evidence": ["key confirmatory evidence that is not documented, if relevant"],
+      "rationale": "brief justification for the score"
+    }
+  ]
+}
+Score guide: 0-20 minimal support, 21-40 weak, 41-60 moderate, 61-80 strong, 81-100 very strong/near-definitive.
+Weigh objective vitals/labs more heavily than subjective complaints alone. Consider severity and red flags noted
+in the symptom tree. Score every candidate you were given — do not add new candidates or drop any."""
+
+
+def _candidate_score(candidate: Dict[str, Any]) -> float:
+    try:
+        return float(candidate.get("score", 0))
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def evidence_scoring_agent(
+    ontology_routing: Dict[str, Any],
+    symptom_tree: Dict[str, Any],
+    extracted: Dict[str, Any],
+    admission_id: str,
+    patient_id: Optional[str] = None,
+    config: Optional[LLMConfig] = None,
+) -> Dict[str, Any]:
+    """LLM scores each ontology-routed candidate diagnosis against the documented evidence."""
+    config = config or LLMConfig()
+    model = config.model
+
+    candidates_for_prompt = [
+        {k: v for k, v in c.items() if not str(k).startswith("_")}
+        for c in (ontology_routing.get("top_candidates") or [])
+    ]
+
+    if not candidates_for_prompt:
+        return {
+            "type": "evidence_scoring",
+            "reasoning": "No candidates were routed for this admission — nothing to score.",
+            "scored_candidates": [],
+            "_method": "none:no_candidates",
+            "_agent": "evidence_scoring",
+            "patient_id": patient_id,
+            "admission_id": admission_id,
+            "generated_at": datetime.now().isoformat(),
+        }
+
+    require_llm(config)
+    warn_if_slow_model(model, config.provider)
+
+    tree_for_prompt = {k: v for k, v in symptom_tree.items() if not str(k).startswith("_")}
+    extracted_for_prompt = {k: v for k, v in extracted.items() if not str(k).startswith("_")}
+
+    user_prompt = (
+        f"Admission ID: {admission_id}\n"
+        f"Patient ID: {patient_id or 'unknown'}\n\n"
+        f"Candidate diagnoses to score (from ontology routing):\n"
+        f"{json.dumps(candidates_for_prompt, indent=2)}\n\n"
+        f"Symptom tree JSON:\n{json.dumps(tree_for_prompt, indent=2)}\n\n"
+        f"Information extraction JSON:\n{json.dumps(extracted_for_prompt, indent=2)}"
+    )
+
+    scoring = call_llm_json(_build_evidence_scoring_system_prompt(), user_prompt, config, model=model)
+    scoring["type"] = "evidence_scoring"
+    scoring["scored_candidates"] = sorted(
+        scoring.get("scored_candidates") or [], key=_candidate_score, reverse=True
+    )
+
+    scoring["_method"] = f"{config.method_prefix()}_llm:{model}"
+    scoring["_agent"] = "evidence_scoring"
+    scoring["patient_id"] = patient_id
+    scoring["admission_id"] = admission_id
+    scoring["generated_at"] = datetime.now().isoformat()
+    return scoring
+
+
+# =============================================================================
+# Branch Pruning — deterministic cutoff on Stage 6 evidence scores
+# =============================================================================
+
+def prune_low_likelihood_branches(
+    evidence_scoring: Dict[str, Any],
+    admission_id: str,
+    patient_id: Optional[str] = None,
+    score_threshold: float = PRUNE_SCORE_THRESHOLD,
+) -> Dict[str, Any]:
+    """Drop candidates whose Stage 6 evidence score is below score_threshold. No LLM call."""
+    scored_candidates = evidence_scoring.get("scored_candidates") or []
+    kept = [c for c in scored_candidates if _candidate_score(c) >= score_threshold]
+    pruned = [c for c in scored_candidates if _candidate_score(c) < score_threshold]
+
+    return {
+        "type": "branch_pruning",
+        "score_threshold": score_threshold,
+        "n_input_candidates": len(scored_candidates),
+        "n_kept": len(kept),
+        "n_pruned": len(pruned),
+        "kept_candidates": kept,
+        "pruned_candidates": pruned,
+        "_method": f"threshold:{score_threshold}",
+        "_agent": "branch_pruning",
+        "patient_id": patient_id,
+        "admission_id": admission_id,
+        "generated_at": datetime.now().isoformat(),
+    }
+
+
+# =============================================================================
+# Guideline & ICD-10 Retrieval Agent
+#
+# ICD-10 codes are grounded: matched against MIMIC's real ICD-10-CM dictionary
+# (same d_icd_diagnoses.csv.gz used for ground truth in Stage 1), never invented.
+# Guideline citations are a curated static reference table, not LLM free recall —
+# curated citations are best-effort and should be spot-checked by a clinician
+# before any real use; some diseases have no single dedicated society guideline
+# and are noted as such rather than assigned a citation that overstates precision.
+# =============================================================================
+
+GUIDELINE_REFERENCE_TAXONOMY: Dict[str, Dict[str, str]] = {
+    # Infectious
+    "Pneumonia": {
+        "organization": "ATS/IDSA", "year": "2019",
+        "citation": "Metlay JP et al. Diagnosis and Treatment of Adults with Community-Acquired "
+                     "Pneumonia. Am J Respir Crit Care Med. 2019.",
+    },
+    "Sepsis": {
+        "organization": "SCCM/ESICM", "year": "2021",
+        "citation": "Evans L et al. Surviving Sepsis Campaign: International Guidelines for "
+                     "Management of Sepsis and Septic Shock 2021. Crit Care Med. 2021.",
+    },
+    "Urinary Tract Infection": {
+        "organization": "IDSA/ESCMID", "year": "2011",
+        "citation": "Gupta K et al. International Clinical Practice Guidelines for the Treatment "
+                     "of Acute Uncomplicated Cystitis and Pyelonephritis in Women. Clin Infect Dis. 2011.",
+    },
+    "Cellulitis / Skin and Soft Tissue Infection": {
+        "organization": "IDSA", "year": "2014",
+        "citation": "Stevens DL et al. Practice Guidelines for the Diagnosis and Management of "
+                     "Skin and Soft Tissue Infections. Clin Infect Dis. 2014.",
+    },
+    "Bacteremia": {
+        "organization": "SCCM/ESICM (when septic)", "year": "2021",
+        "citation": "No single dedicated bacteremia guideline; managed per Surviving Sepsis "
+                     "Campaign 2021 when associated with sepsis, or source-specific IDSA "
+                     "guidelines (e.g. catheter-related, endocarditis) depending on source.",
+    },
+    "Clostridioides difficile Infection": {
+        "organization": "IDSA/SHEA", "year": "2021",
+        "citation": "Johnson S et al. Clinical Practice Guideline by the IDSA and SHEA: 2021 "
+                     "Focused Update Guidelines on Management of Clostridioides difficile "
+                     "Infection in Adults. Clin Infect Dis. 2021.",
+    },
+    "Tuberculosis": {
+        "organization": "ATS/CDC/IDSA", "year": "2016",
+        "citation": "Nahid P et al. Official ATS/CDC/IDSA Clinical Practice Guidelines: "
+                     "Treatment of Drug-Susceptible Tuberculosis. Clin Infect Dis. 2016.",
+    },
+    "Viral Infection (e.g. COVID-19, Influenza)": {
+        "organization": "NIH / IDSA", "year": "ongoing / 2019",
+        "citation": "NIH COVID-19 Treatment Guidelines Panel (living guideline); Uyeki TM et al. "
+                     "IDSA Clinical Practice Guidelines: Seasonal Influenza. Clin Infect Dis. 2019.",
+    },
+    # Cardiovascular
+    "Heart Failure": {
+        "organization": "AHA/ACC/HFSA", "year": "2022",
+        "citation": "Heidenreich PA et al. 2022 AHA/ACC/HFSA Guideline for the Management of "
+                     "Heart Failure. Circulation. 2022.",
+    },
+    "Myocardial Infarction / Acute Coronary Syndrome": {
+        "organization": "ACC/AHA", "year": "2025",
+        "citation": "2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Patients With "
+                     "Acute Coronary Syndromes. J Am Coll Cardiol. 2025 (supersedes the separate "
+                     "2013 STEMI and 2014 NSTE-ACS guidelines).",
+    },
+    "Atrial Fibrillation / Arrhythmia": {
+        "organization": "ACC/AHA/ACCP/HRS", "year": "2023",
+        "citation": "Joglar JA et al. 2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and "
+                     "Management of Atrial Fibrillation. Circulation. 2023.",
+    },
+    "Hypertensive Emergency": {
+        "organization": "ACC/AHA", "year": "2017",
+        "citation": "Whelton PK et al. 2017 ACC/AHA Guideline for the Prevention, Detection, "
+                     "Evaluation, and Management of High Blood Pressure in Adults. Hypertension. 2018.",
+    },
+    "Cardiogenic Shock": {
+        "organization": "SCAI", "year": "2022",
+        "citation": "Naidu SS et al. SCAI SHOCK Stage Classification Expert Consensus Update. "
+                     "J Am Coll Cardiol. 2022.",
+    },
+    "Pericarditis / Pericardial Effusion": {
+        "organization": "ESC", "year": "2015",
+        "citation": "Adler Y et al. 2015 ESC Guidelines for the Diagnosis and Management of "
+                     "Pericardial Diseases. Eur Heart J. 2015.",
+    },
+    # Respiratory
+    "COPD Exacerbation": {
+        "organization": "GOLD", "year": "2024",
+        "citation": "Global Initiative for Chronic Obstructive Lung Disease (GOLD). Global "
+                     "Strategy for the Diagnosis, Management, and Prevention of COPD: 2024 Report.",
+    },
+    "Asthma Exacerbation": {
+        "organization": "GINA", "year": "2024",
+        "citation": "Global Initiative for Asthma (GINA). Global Strategy for Asthma Management "
+                     "and Prevention: 2024 Update.",
+    },
+    "Pulmonary Embolism": {
+        "organization": "ESC", "year": "2019",
+        "citation": "Konstantinides SV et al. 2019 ESC Guidelines for the Diagnosis and "
+                     "Management of Acute Pulmonary Embolism. Eur Heart J. 2019.",
+    },
+    "Acute Respiratory Failure / ARDS": {
+        "organization": "ATS/ESICM/SCCM", "year": "2017",
+        "citation": "Fan E et al. An Official ATS/ESICM/SCCM Clinical Practice Guideline: "
+                     "Mechanical Ventilation in Adult Patients with ARDS. Am J Respir Crit Care Med. 2017.",
+    },
+    "Pleural Effusion": {
+        "organization": "BTS", "year": "2023",
+        "citation": "Roberts ME et al. British Thoracic Society Guideline for Pleural Disease. Thorax. 2023.",
+    },
+    "Pneumothorax": {
+        "organization": "BTS", "year": "2023",
+        "citation": "British Thoracic Society Guideline for Pleural Disease (covers pneumothorax "
+                     "management). Thorax. 2023.",
+    },
+    # Neurologic
+    "Ischemic / Hemorrhagic Stroke": {
+        "organization": "AHA/ASA", "year": "2019 / 2022",
+        "citation": "Powers WJ et al. 2019 AHA/ASA Guideline for the Early Management of Acute "
+                     "Ischemic Stroke. Greenberg SM et al. 2022 AHA/ASA Guideline for the "
+                     "Management of Spontaneous Intracerebral Hemorrhage. Stroke.",
+    },
+    "Altered Mental Status / Encephalopathy": {
+        "organization": "SCCM", "year": "2018",
+        "citation": "Devlin JW et al. Clinical Practice Guidelines for the Prevention and "
+                     "Management of Pain, Agitation/Sedation, Delirium, Immobility, and Sleep "
+                     "Disruption in Adult ICU Patients (PADIS). Crit Care Med. 2018.",
+    },
+    "Seizure Disorder": {
+        "organization": "AES", "year": "2016",
+        "citation": "Glauser T et al. Evidence-Based Guideline: Treatment of Convulsive Status "
+                     "Epilepticus in Children and Adults. American Epilepsy Society. Epilepsy Curr. 2016.",
+    },
+    "Delirium": {
+        "organization": "SCCM", "year": "2018",
+        "citation": "Devlin JW et al. PADIS Guidelines (Pain, Agitation/Sedation, Delirium, "
+                     "Immobility, Sleep). Crit Care Med. 2018.",
+    },
+    # GI
+    "Gastrointestinal Bleed": {
+        "organization": "ACG", "year": "2021",
+        "citation": "Laine L et al. ACG Clinical Guideline: Upper Gastrointestinal and Ulcer "
+                     "Bleeding. Am J Gastroenterol. 2021. (Lower GI bleeding: Sengupta N et al. "
+                     "ACG Clinical Guideline, 2023.)",
+    },
+    "Acute Pancreatitis": {
+        "organization": "ACG", "year": "2024",
+        "citation": "ACG Clinical Guideline: Management of Acute Pancreatitis (Tenner S et al., "
+                     "updated 2024).",
+    },
+    "Bowel Obstruction": {
+        "organization": "WSES", "year": "2018",
+        "citation": "Ten Broek RPG et al. Bologna Guidelines for Diagnosis and Management of "
+                     "Adhesive Small Bowel Obstruction: 2017 Update. World Society of Emergency "
+                     "Surgery. World J Emerg Surg. 2018.",
+    },
+    "Cirrhosis / Hepatic Decompensation": {
+        "organization": "AASLD", "year": "2021",
+        "citation": "Biggins SW et al. AASLD Practice Guidance: Diagnosis, Evaluation, and "
+                     "Management of Ascites, Spontaneous Bacterial Peritonitis and Hepatorenal "
+                     "Syndrome. Hepatology. 2021.",
+    },
+    "Cholangitis / Cholecystitis": {
+        "organization": "Tokyo Guidelines", "year": "2018",
+        "citation": "Kiriyama S et al. Tokyo Guidelines 2018 (TG18): Diagnostic Criteria and "
+                     "Severity Grading of Acute Cholangitis and Cholecystitis. J Hepatobiliary "
+                     "Pancreat Sci. 2018.",
+    },
+    # Renal
+    "Acute Kidney Injury": {
+        "organization": "KDIGO", "year": "2012",
+        "citation": "KDIGO Clinical Practice Guideline for Acute Kidney Injury. Kidney Int Suppl. 2012.",
+    },
+    "Chronic Kidney Disease Exacerbation": {
+        "organization": "KDIGO", "year": "2024",
+        "citation": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of "
+                     "Chronic Kidney Disease. Kidney Int. 2024.",
+    },
+    "Electrolyte Disturbance": {
+        "organization": "ESE/ESICM/ERA-EDTA", "year": "2014",
+        "citation": "Spasovski G et al. Clinical Practice Guideline on Diagnosis and Treatment of "
+                     "Hyponatraemia. Eur J Endocrinol. 2014. (Other electrolyte disorders lack a "
+                     "single unifying guideline; managed per disorder-specific society statements.)",
+    },
+    "Volume Overload": {
+        "organization": "AHA/ACC/HFSA", "year": "2022",
+        "citation": "Managed per congestion/decongestion recommendations in the 2022 AHA/ACC/HFSA "
+                     "Heart Failure Guideline (no single dedicated volume-overload guideline).",
+    },
+    # Constitutional
+    "Fever of Unknown Origin": {
+        "organization": "General / consensus", "year": "2007",
+        "citation": "Bleeker-Rovers CP et al. A Prospective Multicenter Study on Fever of Unknown "
+                     "Origin: Diagnostic Procedures and Outcome. Medicine (Baltimore). 2007. "
+                     "(No single society guideline; systematic diagnostic protocols are used.)",
+    },
+    "Dehydration": {
+        "organization": "General supportive care", "year": "n/a",
+        "citation": "No single major society guideline for adult dehydration; managed per general "
+                     "fluid resuscitation principles (e.g. Surviving Sepsis Campaign fluid "
+                     "resuscitation recommendations if hypovolemic/septic).",
+    },
+    "Malignancy-related Symptoms": {
+        "organization": "NCCN", "year": "ongoing",
+        "citation": "National Comprehensive Cancer Network (NCCN) Guidelines for Supportive Care "
+                     "(e.g. Cancer-Related Fatigue, Palliative Care) — cancer type and symptom specific.",
+    },
+    "Failure to Thrive": {
+        "organization": "General / geriatric consensus", "year": "n/a",
+        "citation": "No single major society guideline; evaluated per general geriatric "
+                     "failure-to-thrive workup principles.",
+    },
+}
+
+
+_ICD10_DICT_CACHE: Optional[pd.DataFrame] = None
+
+_ICD10_SEARCH_STOPWORDS = {
+    "of", "the", "and", "or", "with", "without", "unspecified", "other", "due",
+    "to", "in", "a", "an", "type", "acute", "chronic", "disorder", "disease",
+}
+
+
+def load_icd10_dictionary() -> pd.DataFrame:
+    """All ICD-10-CM diagnosis codes + titles from MIMIC's d_icd_diagnoses.csv.gz (cached)."""
+    global _ICD10_DICT_CACHE
+    if _ICD10_DICT_CACHE is not None:
+        return _ICD10_DICT_CACHE
+    path = MIMIC_BASE / "hosp/d_icd_diagnoses.csv.gz"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"ICD-10 dictionary not found at {path}. Check MIMIC_BASE / PHYSIONET_ROOT in "
+            "notebooks/00_settings.ipynb — Stage 8 needs local MIMIC-IV access."
+        )
+    icd = pd.read_csv(path, usecols=["icd_code", "icd_version", "long_title"])
+    icd = icd[icd["icd_version"] == 10].drop_duplicates("icd_code").reset_index(drop=True)
+    icd["_title_lower"] = icd["long_title"].str.lower()
+    _ICD10_DICT_CACHE = icd
+    return icd
+
+
+def search_icd10_candidates(
+    disease_name: str,
+    icd_dict: pd.DataFrame,
+    top_n: int = 8,
+) -> List[Dict[str, Any]]:
+    """Keyword-overlap search over real ICD-10-CM titles. Returns up to top_n candidates."""
+    query_terms = [
+        t for t in re.findall(r"[a-z]+", disease_name.lower())
+        if t not in _ICD10_SEARCH_STOPWORDS and len(t) > 2
+    ]
+    if not query_terms:
+        return []
+    score = pd.Series(0, index=icd_dict.index)
+    for term in query_terms:
+        score = score + icd_dict["_title_lower"].str.contains(term, regex=False)
+    matched = icd_dict.assign(_match_score=score)
+    matched = matched[matched["_match_score"] > 0].sort_values("_match_score", ascending=False).head(top_n)
+    return [
+        {"icd_code": r["icd_code"], "long_title": r["long_title"], "match_score": int(r["_match_score"])}
+        for _, r in matched.iterrows()
+    ]
+
+
+def _build_guideline_icd_retrieval_system_prompt() -> str:
+    return """You are a clinical Guideline & ICD-10 Retrieval Agent.
+For each candidate diagnosis (already evidence-scored and pruned), you are given:
+- a shortlist of REAL candidate ICD-10-CM codes (from MIMIC's ICD-10 dictionary) — pick from this
+  list only, never invent a code or title
+- a curated clinical guideline citation for this diagnosis, if one exists
+- the supporting/contradicting clinical evidence for this diagnosis at this admission
+
+Return ONLY valid JSON (no markdown):
+{
+  "reasoning": "1-2 sentence summary",
+  "retrieved": [
+    {
+      "disease": "exact disease name, copied from the candidate given",
+      "icd10_codes": [
+        {"code": "exact code copied from the provided shortlist", "title": "exact title copied from the shortlist", "why": "brief reason this code fits the evidence"}
+      ],
+      "guideline_relevance_note": "1-2 sentences connecting the provided guideline citation to this patient's specific evidence, or 'No curated guideline available for this diagnosis.' if none was provided"
+    }
+  ]
+}
+Pick 1-3 ICD-10 codes per candidate from ONLY that candidate's shortlist — if none of the
+shortlisted codes fit well, return an empty icd10_codes list rather than guessing. Never invent
+codes, titles, or guideline citations beyond what was given to you."""
+
+
+def guideline_icd_retrieval_agent(
+    kept_candidates: List[Dict[str, Any]],
+    admission_id: str,
+    patient_id: Optional[str] = None,
+    config: Optional[LLMConfig] = None,
+    icd_dict: Optional[pd.DataFrame] = None,
+    icd_shortlist_size: int = 8,
+) -> Dict[str, Any]:
+    """LLM retrieves ICD-10 codes (grounded in MIMIC's dictionary) and curated guideline notes."""
+    if not kept_candidates:
+        return {
+            "type": "guideline_icd_retrieval",
+            "reasoning": "No candidates survived pruning for this admission — nothing to retrieve.",
+            "retrieved": [],
+            "_method": "none:no_candidates",
+            "_agent": "guideline_icd_retrieval",
+            "patient_id": patient_id,
+            "admission_id": admission_id,
+            "generated_at": datetime.now().isoformat(),
+        }
+
+    config = config or LLMConfig()
+    model = config.model
+    require_llm(config)
+    warn_if_slow_model(model, config.provider)
+
+    icd_dict = icd_dict if icd_dict is not None else load_icd10_dictionary()
+
+    candidates_for_prompt = []
+    shortlist_by_disease: Dict[str, List[Dict[str, Any]]] = {}
+    for candidate in kept_candidates:
+        disease = candidate.get("disease", "")
+        shortlist = search_icd10_candidates(disease, icd_dict, top_n=icd_shortlist_size)
+        shortlist_by_disease[disease] = shortlist
+        candidates_for_prompt.append({
+            "disease": disease,
+            "category": candidate.get("category"),
+            "evidence_score": candidate.get("score"),
+            "supporting_evidence": candidate.get("supporting_evidence", []),
+            "contradicting_evidence": candidate.get("contradicting_evidence", []),
+            "icd10_shortlist": shortlist,
+            "curated_guideline": GUIDELINE_REFERENCE_TAXONOMY.get(disease),
+        })
+
+    user_prompt = (
+        f"Admission ID: {admission_id}\n"
+        f"Patient ID: {patient_id or 'unknown'}\n\n"
+        f"Candidates to retrieve for:\n{json.dumps(candidates_for_prompt, indent=2)}"
+    )
+
+    retrieval = call_llm_json(
+        _build_guideline_icd_retrieval_system_prompt(), user_prompt, config, model=model
+    )
+    retrieval["type"] = "guideline_icd_retrieval"
+
+    validated = []
+    for item in retrieval.get("retrieved") or []:
+        disease = item.get("disease", "")
+        valid_codes = {c["icd_code"] for c in shortlist_by_disease.get(disease, [])}
+        raw_codes = item.get("icd10_codes") or []
+        codes = [c for c in raw_codes if c.get("code") in valid_codes]
+        dropped = len(raw_codes) - len(codes)
+        item["icd10_codes"] = codes
+        if dropped:
+            item["_n_hallucinated_codes_dropped"] = dropped
+        validated.append(item)
+    retrieval["retrieved"] = validated
+
+    retrieval["_method"] = f"{config.method_prefix()}_llm:{model}"
+    retrieval["_agent"] = "guideline_icd_retrieval"
+    retrieval["patient_id"] = patient_id
+    retrieval["admission_id"] = admission_id
+    retrieval["generated_at"] = datetime.now().isoformat()
+    return retrieval
+
+
 import json
 from datetime import datetime
 from pathlib import Path
@@ -1489,6 +2540,236 @@ def load_symptom_tree_results(
         )
     payload = json.loads(path.read_text(encoding="utf-8"))
     return pd.DataFrame(payload["results"]), payload.get("patient_symptom_trees", {})
+
+
+def save_ontology_routing_results(
+    results_df: pd.DataFrame,
+    dir_path: Union[str, Path] = STAGE_05_DIR,
+) -> Path:
+    """Write one JSON file per patient, plus an index summarizing all of them."""
+    dir_path = Path(dir_path)
+    dir_path.mkdir(parents=True, exist_ok=True)
+    for stale in dir_path.glob("ontology_routing_*.json"):
+        stale.unlink()
+
+    index_records = []
+    for record in results_df.to_dict(orient="records"):
+        patient_id = str(record["patient_id"])
+        file_name = f"ontology_routing_{patient_id}.json"
+        (dir_path / file_name).write_text(
+            json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+        index_records.append({
+            "patient_id": patient_id,
+            "admission_id": record.get("admission_id"),
+            "hadm_id": record.get("hadm_id"),
+            "file": file_name,
+            "n_candidates": record.get("n_candidates"),
+            "top_candidate": record.get("top_candidate"),
+        })
+
+    index_payload = {
+        "stage": 5,
+        "description": "Ontology routing — symptom tree branches routed to candidate diseases (one file per patient)",
+        "generated_at": datetime.now().isoformat(),
+        "n_patients": len(index_records),
+        "patients": index_records,
+    }
+    (dir_path / "ontology_routing_index.json").write_text(
+        json.dumps(index_payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    return dir_path
+
+
+def load_ontology_routing_results(
+    dir_path: Union[str, Path] = STAGE_05_DIR,
+) -> pd.DataFrame:
+    dir_path = Path(dir_path)
+    index_path = dir_path / "ontology_routing_index.json"
+    if not index_path.exists():
+        raise FileNotFoundError(
+            f"Ontology routing index not found at {index_path}. "
+            "Run notebooks/stage_05_ontology_routing.ipynb first."
+        )
+    index_payload = json.loads(index_path.read_text(encoding="utf-8"))
+    records = [
+        json.loads((dir_path / entry["file"]).read_text(encoding="utf-8"))
+        for entry in index_payload.get("patients", [])
+    ]
+    return pd.DataFrame(records)
+
+
+def save_evidence_scoring_results(
+    results_df: pd.DataFrame,
+    dir_path: Union[str, Path] = STAGE_06_DIR,
+) -> Path:
+    """Write one JSON file per patient, plus an index summarizing all of them."""
+    dir_path = Path(dir_path)
+    dir_path.mkdir(parents=True, exist_ok=True)
+    for stale in dir_path.glob("evidence_scoring_*.json"):
+        stale.unlink()
+
+    index_records = []
+    for record in results_df.to_dict(orient="records"):
+        patient_id = str(record["patient_id"])
+        file_name = f"evidence_scoring_{patient_id}.json"
+        (dir_path / file_name).write_text(
+            json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+        index_records.append({
+            "patient_id": patient_id,
+            "admission_id": record.get("admission_id"),
+            "hadm_id": record.get("hadm_id"),
+            "file": file_name,
+            "n_scored": record.get("n_scored"),
+            "top_diagnosis": record.get("top_diagnosis"),
+            "top_score": record.get("top_score"),
+        })
+
+    index_payload = {
+        "stage": 6,
+        "description": "Evidence scoring — candidate diagnoses scored against documented evidence (one file per patient)",
+        "generated_at": datetime.now().isoformat(),
+        "n_patients": len(index_records),
+        "patients": index_records,
+    }
+    (dir_path / "evidence_scoring_index.json").write_text(
+        json.dumps(index_payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    return dir_path
+
+
+def load_evidence_scoring_results(
+    dir_path: Union[str, Path] = STAGE_06_DIR,
+) -> pd.DataFrame:
+    dir_path = Path(dir_path)
+    index_path = dir_path / "evidence_scoring_index.json"
+    if not index_path.exists():
+        raise FileNotFoundError(
+            f"Evidence scoring index not found at {index_path}. "
+            "Run notebooks/stage_06_evidence_scoring.ipynb first."
+        )
+    index_payload = json.loads(index_path.read_text(encoding="utf-8"))
+    records = [
+        json.loads((dir_path / entry["file"]).read_text(encoding="utf-8"))
+        for entry in index_payload.get("patients", [])
+    ]
+    return pd.DataFrame(records)
+
+
+def save_pruning_results(
+    results_df: pd.DataFrame,
+    dir_path: Union[str, Path] = STAGE_07_DIR,
+) -> Path:
+    """Write one JSON file per patient, plus an index summarizing all of them."""
+    dir_path = Path(dir_path)
+    dir_path.mkdir(parents=True, exist_ok=True)
+    for stale in dir_path.glob("branch_pruning_*.json"):
+        stale.unlink()
+
+    index_records = []
+    for record in results_df.to_dict(orient="records"):
+        patient_id = str(record["patient_id"])
+        file_name = f"branch_pruning_{patient_id}.json"
+        (dir_path / file_name).write_text(
+            json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+        index_records.append({
+            "patient_id": patient_id,
+            "admission_id": record.get("admission_id"),
+            "hadm_id": record.get("hadm_id"),
+            "file": file_name,
+            "n_kept": record.get("n_kept"),
+            "n_pruned": record.get("n_pruned"),
+        })
+
+    index_payload = {
+        "stage": 7,
+        "description": "Branch pruning — deterministic cutoff on Stage 6 evidence scores (one file per patient)",
+        "generated_at": datetime.now().isoformat(),
+        "score_threshold": PRUNE_SCORE_THRESHOLD,
+        "n_patients": len(index_records),
+        "patients": index_records,
+    }
+    (dir_path / "branch_pruning_index.json").write_text(
+        json.dumps(index_payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    return dir_path
+
+
+def load_pruning_results(
+    dir_path: Union[str, Path] = STAGE_07_DIR,
+) -> pd.DataFrame:
+    dir_path = Path(dir_path)
+    index_path = dir_path / "branch_pruning_index.json"
+    if not index_path.exists():
+        raise FileNotFoundError(
+            f"Branch pruning index not found at {index_path}. "
+            "Run notebooks/stage_07_prune_branches.ipynb first."
+        )
+    index_payload = json.loads(index_path.read_text(encoding="utf-8"))
+    records = [
+        json.loads((dir_path / entry["file"]).read_text(encoding="utf-8"))
+        for entry in index_payload.get("patients", [])
+    ]
+    return pd.DataFrame(records)
+
+
+def save_retrieval_results(
+    results_df: pd.DataFrame,
+    dir_path: Union[str, Path] = STAGE_08_DIR,
+) -> Path:
+    """Write one JSON file per patient, plus an index summarizing all of them."""
+    dir_path = Path(dir_path)
+    dir_path.mkdir(parents=True, exist_ok=True)
+    for stale in dir_path.glob("guideline_icd_retrieval_*.json"):
+        stale.unlink()
+
+    index_records = []
+    for record in results_df.to_dict(orient="records"):
+        patient_id = str(record["patient_id"])
+        file_name = f"guideline_icd_retrieval_{patient_id}.json"
+        (dir_path / file_name).write_text(
+            json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+        index_records.append({
+            "patient_id": patient_id,
+            "admission_id": record.get("admission_id"),
+            "hadm_id": record.get("hadm_id"),
+            "file": file_name,
+            "n_retrieved": record.get("n_retrieved"),
+        })
+
+    index_payload = {
+        "stage": 8,
+        "description": "Guideline & ICD-10 retrieval — grounded ICD-10 codes + curated guideline "
+                        "relevance notes for kept candidates (one file per patient)",
+        "generated_at": datetime.now().isoformat(),
+        "n_patients": len(index_records),
+        "patients": index_records,
+    }
+    (dir_path / "guideline_icd_retrieval_index.json").write_text(
+        json.dumps(index_payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    return dir_path
+
+
+def load_retrieval_results(
+    dir_path: Union[str, Path] = STAGE_08_DIR,
+) -> pd.DataFrame:
+    dir_path = Path(dir_path)
+    index_path = dir_path / "guideline_icd_retrieval_index.json"
+    if not index_path.exists():
+        raise FileNotFoundError(
+            f"Guideline/ICD retrieval index not found at {index_path}. "
+            "Run notebooks/stage_08_guideline_icd_retrieval.ipynb first."
+        )
+    index_payload = json.loads(index_path.read_text(encoding="utf-8"))
+    records = [
+        json.loads((dir_path / entry["file"]).read_text(encoding="utf-8"))
+        for entry in index_payload.get("patients", [])
+    ]
+    return pd.DataFrame(records)
 
 
 import json

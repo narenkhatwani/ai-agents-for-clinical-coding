@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of CAD, AFib, and moderate AS.",
+  "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of CAD, A-fib, and moderate AS.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -34,21 +34,26 @@
           "severity": "moderate",
           "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue.",
           "related_findings": [
-            "Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %"
+            "Low Hemoglobin, MCV, RDW, INR, PT, PTT"
           ],
           "children": [
             {
               "term": "iron deficiency",
               "status": "present",
-              "evidence": "Iron 15* mg/dL, Ferritin 27* ng/mL"
+              "evidence": "Low iron levels despite recent IV iron infusions."
+            },
+            {
+              "term": "macrocytic anemia",
+              "status": "present",
+              "evidence": "MCV 106 fL, RDW 17.0%."
             }
           ]
         }
       ]
     },
     {
-      "category": "constitutional",
-      "ontology_hint": "Other",
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
       "symptoms": [
         {
           "term": "fatigue",
@@ -56,30 +61,8 @@
           "severity": "moderate",
           "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue.",
           "related_findings": [
-            "Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %"
+            "Low Hemoglobin, MCV, RDW, INR, PT, PTT"
           ]
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
-      "symptoms": [
-        {
-          "term": "chronic venous stasis changes",
-          "status": "present",
-          "evidence": "chronic venous stasis changes on ___ with swelling of feet/ankles, but no pitting edema."
-        }
-      ]
-    },
-    {
-      "category": "gi",
-      "ontology_hint": "GI",
-      "symptoms": [
-        {
-          "term": "esophagitis",
-          "status": "history",
-          "evidence": "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
         }
       ]
     }
@@ -97,5 +80,5 @@
   "_agent": "symptom_tree",
   "patient_id": "19632936",
   "admission_id": "26696232",
-  "generated_at": "2026-07-09T00:31:14.204340"
+  "generated_at": "2026-07-09T21:38:30.077771"
 }

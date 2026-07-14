@@ -1,0 +1,152 @@
+{
+  "patient_id": "13952483",
+  "admission_id": "23852410",
+  "subject_id": 13952483,
+  "hadm_id": 23852410,
+  "primary_icd_code": "I9589",
+  "primary_dx_title": "Other hypotension",
+  "ground_truth_icd10": [
+    "I9589",
+    "N179",
+    "R64",
+    "D6959",
+    "B3781",
+    "I272",
+    "D701",
+    "C3432",
+    "Z940",
+    "Z681",
+    "J449",
+    "E860",
+    "R627",
+    "D649",
+    "T451X5A",
+    "T66XXXA",
+    "I10",
+    "E785",
+    "R1319",
+    "Y929",
+    "R630",
+    "B349",
+    "F329",
+    "F17210",
+    "Z79899"
+  ],
+  "ground_truth_dx_titles": [
+    "Other hypotension",
+    "Acute kidney failure, unspecified",
+    "Cachexia",
+    "Other secondary thrombocytopenia",
+    "Candidal esophagitis",
+    "Other secondary pulmonary hypertension",
+    "Agranulocytosis secondary to cancer chemotherapy",
+    "Malignant neoplasm of lower lobe, left bronchus or lung",
+    "Kidney transplant status",
+    "Body mass index [BMI] 19.9 or less, adult",
+    "Chronic obstructive pulmonary disease, unspecified",
+    "Dehydration",
+    "Adult failure to thrive",
+    "Anemia, unspecified",
+    "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+    "Radiation sickness, unspecified, initial encounter",
+    "Essential (primary) hypertension",
+    "Hyperlipidemia, unspecified",
+    "Other dysphagia",
+    "Unspecified place or not applicable",
+    "Anorexia",
+    "Viral infection, unspecified",
+    "Major depressive disorder, single episode, unspecified",
+    "Nicotine dependence, cigarettes, uncomplicated",
+    "Other long term (current) drug therapy"
+  ],
+  "evidence_scoring_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "evidence_scoring": {
+    "reasoning": "The patient presents with multiple systemic symptoms and laboratory findings that are consistent with both infectious and non-infectious etiologies, making it challenging to definitively diagnose a single condition.",
+    "scored_candidates": [
+      {
+        "disease": "Sepsis",
+        "category": "infectious",
+        "score": 85,
+        "supporting_evidence": [
+          "hypotension",
+          "neutropenia",
+          "thrombocytopenia"
+        ],
+        "contradicting_evidence": [
+          "no clear source of infection"
+        ],
+        "missing_evidence": [
+          "blood cultures, cultures from other sources, and imaging to identify a source of infection"
+        ],
+        "rationale": "The combination of hypotension, neutropenia, and thrombocytopenia strongly supports sepsis, but the absence of a clear source of infection is a concern."
+      },
+      {
+        "disease": "Pneumonia",
+        "category": "respiratory",
+        "score": 65,
+        "supporting_evidence": [
+          "cough",
+          "coarse crackles at bases",
+          "left basilar opacification",
+          "pain with swallowing"
+        ],
+        "contradicting_evidence": [
+          "hypotension",
+          "neutropenia",
+          "thrombocytopenia"
+        ],
+        "missing_evidence": [
+          "sputum culture or other confirmatory tests for pneumonia"
+        ],
+        "rationale": "The presence of cough, crackles, and opacification strongly supports pneumonia, but the patient's hypotension and laboratory findings suggest a more complex condition."
+      },
+      {
+        "disease": "Fever of Unknown Origin",
+        "category": "constitutional",
+        "score": 55,
+        "supporting_evidence": [
+          "hypotension",
+          "neutropenia",
+          "thrombocytopenia",
+          "weight loss",
+          "anorexia",
+          "nausea"
+        ],
+        "contradicting_evidence": [
+          "no clear source of fever"
+        ],
+        "missing_evidence": [
+          "further investigation to identify the source of fever"
+        ],
+        "rationale": "The combination of systemic symptoms and laboratory findings suggests a fever of unknown origin, but the absence of a clear source of fever is a limitation."
+      },
+      {
+        "disease": "Hypertensive Emergency",
+        "category": "cardiovascular",
+        "score": 40,
+        "supporting_evidence": [
+          "hypotension",
+          "loud systolic ejection murmur",
+          "neutropenia",
+          "thrombocytopenia"
+        ],
+        "contradicting_evidence": [
+          "hypotension is unusual in hypertensive emergencies"
+        ],
+        "missing_evidence": [
+          "evidence of severe hypertension, such as elevated blood pressure readings"
+        ],
+        "rationale": "Hypotension and associated systemic symptoms suggest a hypertensive emergency, but the patient's hypotension is unusual and requires further investigation."
+      }
+    ],
+    "type": "evidence_scoring",
+    "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+    "_agent": "evidence_scoring",
+    "patient_id": "13952483",
+    "admission_id": "23852410",
+    "generated_at": "2026-07-10T03:50:35.220857"
+  },
+  "n_scored": 4,
+  "top_diagnosis": "Sepsis",
+  "top_score": 85
+}

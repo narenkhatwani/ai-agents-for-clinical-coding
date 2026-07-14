@@ -8,27 +8,22 @@ Patient ID       : 10361982
 Admission ID     : 24286431
 
 Reasoning:
-  The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and previous surgeries.
+  The patient presents with heavy vaginal bleeding after a hysterectomy, with no signs of acute blood loss anemia but a slightly low hematocrit.
 
-Key symptoms     : heavy vaginal bleeding, abdominal bloatedness
+Key symptoms     : heavy vaginal bleeding, low hematocrit
 
 GI → Gynecology
 ---------------
 
   • [present, moderate] heavy vaginal bleeding
       evidence: "heavy vaginal bleeding after hysterectomy"
-      related: abnormal uterine and vaginal bleeding, unspecified
+      related: low hematocrit
       • [history] vaginal spotting to light bleeding
           evidence: "vaginal spotting to light bleeding"
 
-CARDIOVASCULAR → Cardiovascular
--------------------------------
+CONSTITUTIONAL → Hematology
+---------------------------
 
-  • [present, mild] hemodynamic stability
-      evidence: "hemodynamically stable throughout her hospitalization"
-
-OTHER → Other
--------------
-
-  • [history, mild] abdominal bloatedness
-      evidence: "abdominal bloatedness secondary to gas"
+  • [present, mild] low hematocrit
+      evidence: "HCT-38.1"
+      related: WBC-8.7, RBC-4.75, HGB-12.6

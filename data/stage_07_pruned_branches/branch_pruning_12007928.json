@@ -1,0 +1,118 @@
+{
+  "patient_id": "12007928",
+  "admission_id": "23749816",
+  "subject_id": 12007928,
+  "hadm_id": 23749816,
+  "primary_icd_code": "I5033",
+  "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
+  "ground_truth_icd10": [
+    "I5033",
+    "N179",
+    "G7000",
+    "Q211",
+    "F0390",
+    "I480",
+    "G629",
+    "F329",
+    "I10",
+    "E041",
+    "G40909",
+    "E039",
+    "E785",
+    "Z7901",
+    "Z950",
+    "K219",
+    "G4730",
+    "N3941",
+    "Z66"
+  ],
+  "ground_truth_dx_titles": [
+    "Acute on chronic diastolic (congestive) heart failure",
+    "Acute kidney failure, unspecified",
+    "Myasthenia gravis without (acute) exacerbation",
+    "Atrial septal defect",
+    "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety",
+    "Paroxysmal atrial fibrillation",
+    "Polyneuropathy, unspecified",
+    "Major depressive disorder, single episode, unspecified",
+    "Essential (primary) hypertension",
+    "Nontoxic single thyroid nodule",
+    "Epilepsy, unspecified, not intractable, without status epilepticus",
+    "Hypothyroidism, unspecified",
+    "Hyperlipidemia, unspecified",
+    "Long term (current) use of anticoagulants",
+    "Presence of cardiac pacemaker",
+    "Gastro-esophageal reflux disease without esophagitis",
+    "Sleep apnea, unspecified",
+    "Urge incontinence",
+    "Do not resuscitate"
+  ],
+  "branch_pruning": {
+    "type": "branch_pruning",
+    "score_threshold": 40,
+    "n_input_candidates": 4,
+    "n_kept": 2,
+    "n_pruned": 2,
+    "kept_candidates": [
+      {
+        "disease": "Heart Failure",
+        "category": "cardiovascular",
+        "score": 85,
+        "supporting_evidence": [
+          "dyspnea",
+          "orthopnea",
+          "pulmonary edema",
+          "pleural effusions",
+          "chest x-ray showing mild to moderate pulmonary edema, bilateral pleural effusions"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The patient's primary symptoms and imaging findings strongly support heart failure."
+      },
+      {
+        "disease": "Acute Kidney Injury",
+        "category": "renal",
+        "score": 60,
+        "supporting_evidence": [
+          "creatinine elevation",
+          "urea nitrogen elevation"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The elevation in creatinine and urea nitrogen supports acute kidney injury, though less prominently compared to heart failure."
+      }
+    ],
+    "pruned_candidates": [
+      {
+        "disease": "Seizure Disorder",
+        "category": "neurologic",
+        "score": 25,
+        "supporting_evidence": [
+          "tremors",
+          "spasms"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The presence of tremors and spasms is noted but less strongly supports a seizure disorder."
+      },
+      {
+        "disease": "Gastrointestinal Bleed",
+        "category": "gi",
+        "score": 10,
+        "supporting_evidence": [
+          "urge incontinence"
+        ],
+        "contradicting_evidence": [],
+        "missing_evidence": [],
+        "rationale": "The urge incontinence is noted but not strongly linked to a gastrointestinal bleed."
+      }
+    ],
+    "_method": "threshold:40",
+    "_agent": "branch_pruning",
+    "patient_id": "12007928",
+    "admission_id": "23749816",
+    "generated_at": "2026-07-10T04:07:43.165120"
+  },
+  "n_kept": 2,
+  "n_pruned": 2
+}

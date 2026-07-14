@@ -1,10 +1,10 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a metastatic sarcoma patient with a history of recurrent disease and recent falls, presenting with weakness and minor abrasions. He has intracranial bleeding and pulmonary nodules, and is on hospice.",
+  "reasoning": "The patient is a metastatic sarcoma patient with a recent fall and intracranial bleeding, presenting with anemia, thrombocytopenia, and other lab abnormalities.",
   "branches": [
     {
-      "category": "neurologic",
-      "ontology_hint": "Neurology",
+      "category": "constitutional",
+      "ontology_hint": "Other",
       "symptoms": [
         {
           "term": "weakness",
@@ -12,25 +12,48 @@
           "severity": "moderate",
           "evidence": "He attributes it to weakness.",
           "related_findings": [
-            "intracranial bleeding"
+            "chronic inability to bear weight"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "inability to bear weight",
+              "status": "chronic",
+              "evidence": ""
+            }
+          ]
+        },
+        {
+          "term": "headache",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "He also hit his head.",
+          "related_findings": [
+            "intracranial bleeding"
+          ]
         }
       ]
     },
     {
-      "category": "respiratory",
-      "ontology_hint": "Respiratory",
+      "category": "hematologic",
+      "ontology_hint": "Hematologic",
       "symptoms": [
         {
-          "term": "pulmonary nodules",
-          "status": "suspected",
-          "severity": "unknown",
-          "evidence": "Multiple scattered, rounded opacities in the left perihilar region and right lower lobe are consistent with known pulmonary nodules representing advanced metastatic disease.",
+          "term": "anemia",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
           "related_findings": [
-            "pulmonary emboli"
-          ],
-          "children": []
+            "thigh hematoma, chronic"
+          ]
+        },
+        {
+          "term": "thrombocytopenia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Platelet Count: 63.0 K/uL",
+          "related_findings": [
+            "thigh hematoma, chronic"
+          ]
         }
       ]
     },
@@ -40,54 +63,46 @@
       "symptoms": [
         {
           "term": "pulmonary emboli",
-          "status": "confirmed",
+          "status": "history",
           "severity": "unknown",
-          "evidence": "Admitted for extensive bilateral pulmonary emboli.",
+          "evidence": "Admitted for extensive bilateral pulmonary emboli",
           "related_findings": [
             "IVC filter placement"
-          ],
-          "children": []
+          ]
         }
       ]
     },
     {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
       "symptoms": [
         {
-          "term": "hematoma",
-          "status": "chronic",
+          "term": "intracranial bleeding",
+          "status": "history",
           "severity": "unknown",
-          "evidence": "Chronic thigh hematoma with poor erythropoietic response due to XRT.",
+          "evidence": "He was evaluated by his local ED and found to have intracranial bleeding on a head CT and was then transferred.",
           "related_findings": [
-            "anemia"
-          ],
-          "children": []
+            "metastatic sarcoma to the brain"
+          ]
         }
       ]
     },
     {
-      "category": "hematologic",
-      "ontology_hint": "Hematology",
+      "category": "other",
+      "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "anemia",
-          "status": "severe",
-          "severity": "severe",
-          "evidence": "Hematocrit 23.6%, Hemoglobin 7.7 g/dL, Platelet Count 63.0 K/uL.",
-          "related_findings": [
-            "thigh hematoma"
-          ],
-          "children": []
+          "term": "minor abrasions and soreness",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "He hit his knees and elbows resulting in minor abrasions and soreness."
         }
       ]
     }
   ],
   "key_symptoms": [
     "weakness",
-    "pulmonary nodules",
-    "hematoma",
-    "anemia"
+    "headache"
   ],
   "red_flags": [
     "intracranial bleeding",
@@ -98,5 +113,5 @@
   "_agent": "symptom_tree",
   "patient_id": "16014068",
   "admission_id": "29042843",
-  "generated_at": "2026-07-09T00:30:47.475085"
+  "generated_at": "2026-07-09T21:37:41.167498"
 }
