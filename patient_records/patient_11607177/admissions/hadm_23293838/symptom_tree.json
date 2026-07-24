@@ -1,46 +1,50 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with a history of heart failure and refractory VT, with recent ICD shock and increased edema.",
+  "reasoning": "The patient presents with a history of heart failure and refractory VT, with recent ICD shock and some edema. The patient is stable but has abnormal labs and a history of multiple comorbidities.",
   "branches": [
     {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "ICD discharge",
+          "term": "ICD shock",
           "status": "present",
-          "evidence": "ICD discharge",
+          "severity": "unknown",
+          "evidence": "ICD shock on ___",
           "related_findings": [
-            "ICD shock"
+            "Refractory VT",
+            "Dilated non-ischemic cardiomyopathy",
+            "Heartmate II LVAD"
           ],
-          "children": [
-            {
-              "term": "ICD shock",
-              "status": "present",
-              "evidence": "ICD shock on ___"
-            }
-          ]
+          "children": []
         },
         {
-          "term": "shaking in his chest",
+          "term": "lightheadedness",
           "status": "present",
-          "evidence": "shaking in his chest",
+          "severity": "mild",
+          "evidence": "lightheadedness with position changes",
           "related_findings": [
-            "refractory VT"
-          ]
+            "Dilated non-ischemic cardiomyopathy",
+            "Heartmate II LVAD"
+          ],
+          "children": []
         },
         {
-          "term": "increased edema",
+          "term": "edema",
           "status": "present",
-          "evidence": "increased edema in the week prior to the shock",
+          "severity": "mild",
+          "evidence": "some increased ___ edema",
           "related_findings": [
-            "Dilated non-ischemic cardiomyopathy"
-          ]
+            "Dilated non-ischemic cardiomyopathy",
+            "Heartmate II LVAD"
+          ],
+          "children": []
         },
         {
-          "term": "feeling at baseline",
+          "term": "shaking",
           "status": "present",
-          "evidence": "felt at baseline"
+          "severity": "mild",
+          "evidence": "feeling some "
         }
       ]
     },
@@ -49,28 +53,47 @@
       "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "increased edema",
+          "term": "abnormal labs",
           "status": "present",
-          "evidence": "increased edema in the week prior to the shock",
+          "severity": "mild",
+          "evidence": "abnormal labs",
           "related_findings": [
-            "Dilated non-ischemic cardiomyopathy"
-          ]
+            "Hemoglobin: 11.6",
+            "Platelet Count: 142.0",
+            "Creatinine: 1.4",
+            "Glucose: 118",
+            "Alkaline Phosphatase: 167",
+            "Lactate Dehydrogenase (LD): 252"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "shaking",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "feeling some "
         }
       ]
     }
   ],
   "key_symptoms": [
-    "ICD discharge",
-    "shaking in his chest",
-    "increased edema"
+    "ICD shock",
+    "edema"
   ],
   "red_flags": [
-    "ICD shock"
+    "ICD shock",
+    "lightheadedness"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "11607177",
   "admission_id": "23293838",
-  "generated_at": "2026-07-09T00:30:03.586906"
+  "generated_at": "2026-07-20T01:12:12.218213"
 }

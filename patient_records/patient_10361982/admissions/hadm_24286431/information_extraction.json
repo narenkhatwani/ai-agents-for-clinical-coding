@@ -14,6 +14,36 @@
       "term": "vaginal spotting to light bleeding",
       "status": "history",
       "evidence": "vaginal spotting to light bleeding"
+    },
+    {
+      "term": "passing 'munchin' sized clots",
+      "status": "present",
+      "evidence": "started passing more clots"
+    },
+    {
+      "term": "menorrhagia",
+      "status": "history",
+      "evidence": "history of abnormal uterine bleeding"
+    },
+    {
+      "term": "dysmenorrhea",
+      "status": "history",
+      "evidence": "endorses dysmenorrhea"
+    },
+    {
+      "term": "intra-menstrual bleeding",
+      "status": "history",
+      "evidence": "endorses intra-menstrual bleeding"
+    },
+    {
+      "term": "post-coital bleeding",
+      "status": "history",
+      "evidence": "endorses post-coital bleeding"
+    },
+    {
+      "term": "shortness of breath",
+      "status": "history",
+      "evidence": "developed some shortness of breath"
     }
   ],
   "vitals": [
@@ -97,52 +127,70 @@
   ],
   "diagnoses_mentioned": [
     {
-      "term": "abnormal uterine and vaginal bleeding, unspecified",
+      "term": "abnormal uterine and vaginal bleeding",
       "certainty": "confirmed"
     }
   ],
   "medications": [
     {
-      "name": "Levothyroxine",
-      "dose": "",
-      "route": "",
+      "name": "Acetaminophen",
+      "dose": "1000 mg",
+      "route": "PO",
+      "status": "started"
+    },
+    {
+      "name": "Docusate Sodium",
+      "dose": "100 mg",
+      "route": "PO",
       "status": "continued"
     },
     {
-      "name": "Venlafaxine",
-      "dose": "",
-      "route": "",
+      "name": "Synthroid",
+      "dose": "50 mcg",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Venlafaxine ER",
+      "dose": "75 mg",
+      "route": "PO",
       "status": "continued"
     },
     {
       "name": "Adderall",
-      "dose": "",
-      "route": "",
+      "dose": "10 mg",
+      "route": "PO",
       "status": "continued"
-    },
-    {
-      "name": "Oxycodone",
-      "dose": "",
-      "route": "",
-      "status": "started"
-    },
-    {
-      "name": "Ibuprofen",
-      "dose": "",
-      "route": "",
-      "status": "started"
-    },
-    {
-      "name": "Tylenol",
-      "dose": "",
-      "route": "",
-      "status": "started"
     }
   ],
   "procedures": [
     {
-      "name": "cauterization of a small vessel",
-      "result": ""
+      "name": "total laparoscopic hysterectomy",
+      "result": "performed"
+    },
+    {
+      "name": "bilateral salpingectomy",
+      "result": "performed"
+    },
+    {
+      "name": "cystoscopy",
+      "result": "performed"
+    },
+    {
+      "name": "endometrial biopsy",
+      "result": "performed"
+    },
+    {
+      "name": "hysteroscopy",
+      "result": "performed"
+    },
+    {
+      "name": "D&C",
+      "result": "performed"
+    },
+    {
+      "name": "endometrial ablation",
+      "result": "performed"
     }
   ],
   "negations": [],

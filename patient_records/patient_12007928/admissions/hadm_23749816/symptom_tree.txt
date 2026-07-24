@@ -8,47 +8,47 @@ Patient ID       : 12007928
 Admission ID     : 23749816
 
 Reasoning:
-  The patient presents with dyspnea, orthopnea, and significant fatigue, along with signs of heart failure and renal dysfunction.
+  The patient presents with dyspnea, orthopnea, and worsening fatigue, with a history of diastolic CHF and atrial fibrillation.
 
 Key symptoms     : dyspnea, orthopnea
-Red flags        : hypotension, chest pain
+Red flags        : worsening dyspnea, tremors
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] dyspnea
-      evidence: "Dyspnea"
-      related: orthopnea, pulmonary edema, pleural effusions
+      evidence: "increased dyspnea"
+      related: orthopnea, shortness of breath
       • [present] orthopnea
-          evidence: "has quite significant orthopnea, and has to sleep on an incline"
-      • [present] pulmonary edema
-          evidence: "mild to moderate pulmonary edema"
-      • [present] pleural effusions
-          evidence: "bilateral pleural effusions"
-  • [absent] chest pain
-      evidence: "She denies any chest pains today, chest pain at rest or with exertion"
-  • [present] fatigue
-      evidence: "She states that all activities now are quite fatiguing"
+          evidence: "reports significant orthopnea"
+      • [present] shortness of breath
+          evidence: "unable to walk about 10 steps without feeling short of breath"
+  • [present, moderate] fatigue
+      evidence: "everything has been quite hard"
+      related: shortness of breath
+
+NEUROLOGIC → Neurologic
+-----------------------
+
+  • [present, moderate] tremors
+      evidence: "worsened tremors"
+  • [present, mild] bladder spasms
+      evidence: "abdominal pain in the setting of ? bladder spasms"
+      related: urge incontinence
 
 RENAL → Renal
 -------------
 
   • [present, mild] creatinine elevation
-      evidence: "Creatinine: 1.6 mg/dL [abnormal]"
+      evidence: "Creatinine: 1.6 mg/dL"
       related: urea nitrogen elevation
   • [present, mild] urea nitrogen elevation
-      evidence: "Urea Nitrogen: 32.0 mg/dL [abnormal]"
+      evidence: "Urea Nitrogen: 32.0 mg/dL"
+      related: creatinine elevation
 
-NEUROLOGIC → Neurologic
------------------------
+INFECTIOUS → Infectious Diseases
+--------------------------------
 
-  • [present] tremors
-      evidence: "increased spasms in the upper extremities and in the bladder"
-  • [present] spasms
-      evidence: "increased spasms in the upper extremities and in the bladder"
-
-GI → GI
--------
-
-  • [present] urge incontinence
-      evidence: "She states that there are multiple times when she is trying to go to the bathroom and feels the urge however is unable to do so"
+  • [present, mild] skin infection
+      evidence: "Weeping in legs, erythematous in the lower extremities"
+      related: blood cultures drawn, urine culture drawn

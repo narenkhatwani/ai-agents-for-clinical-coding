@@ -1,36 +1,41 @@
 {
   "symptoms": [
     {
-      "term": "8cm left renal mass",
+      "term": "dyspnea",
       "status": "present",
-      "evidence": "8cm left renal mass"
+      "evidence": "sudden onset dyspnea"
     },
     {
-      "term": "severe CHF",
-      "status": "history",
-      "evidence": "No Known Allergies / Adverse Drug Reactions"
+      "term": "chest pain",
+      "status": "absent",
+      "evidence": "no chest pain"
     },
     {
-      "term": "ischemic heart disease",
-      "status": "history",
-      "evidence": "No Known Allergies / Adverse Drug Reactions"
+      "term": "palpitations",
+      "status": "absent",
+      "evidence": "no palpitations"
     },
     {
-      "term": "type 2 diabetes",
-      "status": "history",
-      "evidence": "No Known Allergies / Adverse Drug Reactions"
+      "term": "hematuria",
+      "status": "absent",
+      "evidence": "no mention of hematuria"
+    },
+    {
+      "term": "pain",
+      "status": "present",
+      "evidence": "pain well controlled on PCA"
     }
   ],
   "vitals": [
     {
-      "name": "BMI",
+      "name": "BMI (kg/m2)",
       "value": "42.1",
-      "unit": "kg/m2"
+      "unit": ""
     },
     {
-      "name": "Weight",
+      "name": "Weight (Lbs)",
       "value": "285",
-      "unit": "Lbs"
+      "unit": ""
     }
   ],
   "labs": [
@@ -86,7 +91,7 @@
       "name": "Platelet Count",
       "value": "147.0",
       "unit": "K/uL",
-      "flag": "low"
+      "flag": "unknown"
     },
     {
       "name": "Calcium, Total",
@@ -99,74 +104,27 @@
       "value": "31.1",
       "unit": "g/dL",
       "flag": "low"
-    },
-    {
-      "name": "Anion Gap",
-      "value": "14.0",
-      "unit": "mEq/L"
-    },
-    {
-      "name": "Bicarbonate",
-      "value": "23.0",
-      "unit": "mEq/L"
-    },
-    {
-      "name": "Chloride",
-      "value": "103.0",
-      "unit": "mEq/L"
-    },
-    {
-      "name": "Magnesium",
-      "value": "1.8",
-      "unit": "mg/dL",
-      "flag": "low"
-    },
-    {
-      "name": "Potassium",
-      "value": "3.9",
-      "unit": "mEq/L"
-    },
-    {
-      "name": "Sodium",
-      "value": "136.0",
-      "unit": "mEq/L"
     }
   ],
   "diagnoses_mentioned": [
+    {
+      "term": "systolic CHF",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "renal cell carcinoma",
+      "certainty": "confirmed"
+    },
     {
       "term": "CAD",
       "certainty": "confirmed"
     },
     {
-      "term": "Systolic CHF",
+      "term": "type 2 diabetes",
       "certainty": "confirmed"
     },
     {
-      "term": "Hypertension",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Non-insulin-dependent diabetes",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Morbid obesity",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "GERD",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Obstructive sleep apnea",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Episodic atrial fibrillation",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Renal mass, c/f renal cell carcinoma",
+      "term": "obstructive sleep apnea",
       "certainty": "confirmed"
     }
   ],
@@ -232,15 +190,17 @@
       "result": "performed"
     },
     {
-      "name": "Laparoscopic left retroperitoneal lymph node dissection (para-aortic and hilar nodes)",
+      "name": "Laparoscopic left retroperitoneal lymph node dissection",
       "result": "performed"
     }
   ],
-  "negations": [],
+  "negations": [
+    "no concerning intraoperative events"
+  ],
   "temporal": [
     {
-      "finding": "8cm left renal mass",
-      "onset": "present"
+      "finding": "pain",
+      "onset": "on admission"
     }
   ],
   "_agent": "information_extraction",

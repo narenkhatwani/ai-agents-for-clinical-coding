@@ -1,14 +1,54 @@
 {
   "symptoms": [
     {
-      "term": "DKA",
-      "status": "present",
-      "evidence": "DKA/lactic acidosis, in the setting of running out of medications."
+      "term": "fever",
+      "status": "history",
+      "evidence": "fevers/chills/nightsweats for the past few days"
     },
     {
-      "term": "vaginal spotting",
+      "term": "abdominal pain",
+      "status": "history",
+      "evidence": "lower abdominal pain/cramping for the past week"
+    },
+    {
+      "term": "dizziness",
       "status": "present",
-      "evidence": "Vaginal spotting: No retained products of conception on the US; this is normal post-partum per the GYN consult team."
+      "evidence": "dizziness"
+    },
+    {
+      "term": "nausea",
+      "status": "present",
+      "evidence": "nausea and vomiting"
+    },
+    {
+      "term": "vaginal bleeding",
+      "status": "history",
+      "evidence": "persistent daily vaginal bleeding"
+    },
+    {
+      "term": "diarrhea",
+      "status": "history",
+      "evidence": "significant amount of foul smelling diarrhea"
+    },
+    {
+      "term": "headache",
+      "status": "history",
+      "evidence": "frontal headache"
+    },
+    {
+      "term": "hypoglycemia",
+      "status": "history",
+      "evidence": "hypoglycemia"
+    },
+    {
+      "term": "hyperglycemia",
+      "status": "present",
+      "evidence": "DKA/lactic acidosis"
+    },
+    {
+      "term": "decreased fetal movements",
+      "status": "history",
+      "evidence": "decreased fetal movements"
     }
   ],
   "vitals": [
@@ -19,22 +59,22 @@
     },
     {
       "name": "Heart Rate",
-      "value": "108.0",
+      "value": "105",
       "unit": "bpm"
     },
     {
       "name": "Respiratory Rate",
-      "value": "15.0",
+      "value": "16",
       "unit": "insp/min"
     },
     {
       "name": "SBP",
-      "value": "129.0",
+      "value": "113",
       "unit": "mmHg"
     },
     {
       "name": "SpO2",
-      "value": "100.0",
+      "value": "97",
       "unit": "%"
     }
   ],
@@ -43,7 +83,7 @@
       "name": "Glucose",
       "value": "263",
       "unit": "mg/dL",
-      "flag": "unknown"
+      "flag": "high"
     },
     {
       "name": "Hematocrit",
@@ -61,13 +101,13 @@
       "name": "Monocytes",
       "value": "4.8",
       "unit": "%",
-      "flag": "unknown"
+      "flag": "high"
     },
     {
       "name": "Red Blood Cells",
       "value": "5.06",
       "unit": "m/uL",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "Lactate",
@@ -85,7 +125,7 @@
       "name": "Bicarbonate",
       "value": "20.0",
       "unit": "mEq/L",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "Calcium, Total",
@@ -95,9 +135,9 @@
     },
     {
       "name": "pO2",
-      "value": "60.0",
+      "value": "60",
       "unit": "mm Hg",
-      "flag": "unknown"
+      "flag": "low"
     },
     {
       "name": "Potassium",
@@ -109,85 +149,13 @@
       "name": "Phosphate",
       "value": "7.1",
       "unit": "mg/dL",
-      "flag": "normal"
+      "flag": "high"
     },
     {
       "name": "Urea Nitrogen",
       "value": "26",
       "unit": "mg/dL",
-      "flag": "unknown"
-    },
-    {
-      "name": "Bacteria",
-      "value": "nan",
-      "unit": "/hpf",
-      "flag": "unknown"
-    },
-    {
-      "name": "Hyaline Casts",
-      "value": "3.0",
-      "unit": "#/lpf",
-      "flag": "unknown"
-    },
-    {
-      "name": "Leukocytes",
-      "value": "nan",
-      "unit": "",
-      "flag": "unknown"
-    },
-    {
-      "name": "Protein",
-      "value": "nan",
-      "unit": "mg/dL",
-      "flag": "unknown"
-    },
-    {
-      "name": "Urine Mucous",
-      "value": "nan",
-      "unit": "/hpf",
-      "flag": "unknown"
-    },
-    {
-      "name": "WBC",
-      "value": "17.9",
-      "unit": "#/uL",
-      "flag": "unknown"
-    },
-    {
-      "name": "Calculated Total CO2",
-      "value": "28.0",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "pCO2",
-      "value": "20.0",
-      "unit": "mm Hg",
-      "flag": "unknown"
-    },
-    {
-      "name": "pH",
-      "value": "6.96",
-      "unit": "units",
-      "flag": "unknown"
-    },
-    {
-      "name": "Granular Casts",
-      "value": "4.0",
-      "unit": "#/lpf",
-      "flag": "unknown"
-    },
-    {
-      "name": "Ketone",
-      "value": "nan",
-      "unit": "mg/dL",
-      "flag": "unknown"
-    },
-    {
-      "name": "RBC",
-      "value": "nan",
-      "unit": "#/hpf",
-      "flag": "unknown"
+      "flag": "high"
     },
     {
       "name": "Albumin",
@@ -197,152 +165,92 @@
     },
     {
       "name": "Alkaline Phosphatase",
-      "value": "204",
+      "value": "125",
       "unit": "IU/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "Potassium, Whole Blood",
-      "value": "6.8",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "Chloride",
-      "value": "91",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "Lactate Dehydrogenase (LD)",
-      "value": "53",
-      "unit": "IU/L",
-      "flag": "unknown"
+      "flag": "high"
     },
     {
       "name": "Magnesium",
       "value": "7.4",
       "unit": "mg/dL",
-      "flag": "unknown"
+      "flag": "high"
     },
     {
       "name": "Sodium",
-      "value": "130",
+      "value": "144",
       "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "Eosinophils",
-      "value": "0.0",
-      "unit": "%",
-      "flag": "unknown"
-    },
-    {
-      "name": "Lymphocytes",
-      "value": "13.6",
-      "unit": "%",
-      "flag": "unknown"
-    },
-    {
-      "name": "MCHC",
-      "value": "31.2",
-      "unit": "g/dL",
-      "flag": "unknown"
-    },
-    {
-      "name": "Neutrophils",
-      "value": "80.6",
-      "unit": "%",
-      "flag": "unknown"
-    },
-    {
-      "name": "White Blood Cells",
-      "value": "19.2",
-      "unit": "K/uL",
-      "flag": "unknown"
-    },
-    {
-      "name": "Absolute Eosinophil Count",
-      "value": "0.0",
-      "unit": "K/uL",
-      "flag": "unknown"
-    },
-    {
-      "name": "Absolute Neutrophil Count",
-      "value": "15.51",
-      "unit": "K/uL",
-      "flag": "unknown"
+      "flag": "normal"
     }
   ],
   "diagnoses_mentioned": [
     {
-      "term": "DM1",
+      "term": "Diabetes mellitus type 1",
       "certainty": "confirmed"
     },
     {
-      "term": "DKA",
+      "term": "Diabetic ketoacidosis",
       "certainty": "confirmed"
     },
     {
-      "term": "lactic acidosis",
+      "term": "Lactic acidosis",
       "certainty": "confirmed"
     },
     {
-      "term": "uncontrolled DM1",
+      "term": "Vaginal spotting",
       "certainty": "confirmed"
-    },
-    {
-      "term": "nonadherence",
-      "certainty": "suspected"
     }
   ],
   "medications": [
     {
       "name": "Detemir",
-      "dose": "8 Units Breakfast",
+      "dose": "8 Units",
       "route": "subcutaneous",
-      "status": "started"
-    },
-    {
-      "name": "Detemir",
-      "dose": "3 Units Bedtime",
-      "route": "subcutaneous",
-      "status": "started"
+      "status": "stopped"
     },
     {
       "name": "Humalog",
-      "dose": "4 Units Breakfast",
+      "dose": "4 Units",
       "route": "subcutaneous",
-      "status": "started"
+      "status": "stopped"
     },
     {
       "name": "Humalog",
-      "dose": "3 Units Lunch",
+      "dose": "3 Units",
       "route": "subcutaneous",
-      "status": "started"
+      "status": "stopped"
     },
     {
       "name": "Humalog",
-      "dose": "4 Units Dinner",
+      "dose": "4 Units",
       "route": "subcutaneous",
+      "status": "stopped"
+    },
+    {
+      "name": "Humalog",
+      "dose": "3 Units",
+      "route": "subcutaneous",
+      "status": "stopped"
+    },
+    {
+      "name": "Prenatal Vitamins",
+      "dose": "1 TAB",
+      "route": "oral",
       "status": "started"
     }
   ],
   "procedures": [
     {
-      "name": "PICC placement",
-      "result": "placed"
-    },
-    {
-      "name": "PICC removal",
-      "result": "removed"
+      "name": "PICC placement and subsequent removal",
+      "result": "successful"
     }
   ],
-  "negations": [],
+  "negations": [
+    "No edema"
+  ],
   "temporal": [
     {
-      "finding": "DM1",
-      "onset": "chronic"
+      "finding": "Hyperglycemia",
+      "onset": "running out of medications"
     }
   ],
   "_agent": "information_extraction",

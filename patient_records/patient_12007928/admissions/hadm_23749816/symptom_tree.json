@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with dyspnea, orthopnea, and significant fatigue, along with signs of heart failure and renal dysfunction.",
+  "reasoning": "The patient presents with dyspnea, orthopnea, and worsening fatigue, with a history of diastolic CHF and atrial fibrillation.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -10,39 +10,54 @@
           "term": "dyspnea",
           "status": "present",
           "severity": "moderate",
-          "evidence": "Dyspnea",
+          "evidence": "increased dyspnea",
           "related_findings": [
             "orthopnea",
-            "pulmonary edema",
-            "pleural effusions"
+            "shortness of breath"
           ],
           "children": [
             {
               "term": "orthopnea",
               "status": "present",
-              "evidence": "has quite significant orthopnea, and has to sleep on an incline"
+              "evidence": "reports significant orthopnea"
             },
             {
-              "term": "pulmonary edema",
+              "term": "shortness of breath",
               "status": "present",
-              "evidence": "mild to moderate pulmonary edema"
-            },
-            {
-              "term": "pleural effusions",
-              "status": "present",
-              "evidence": "bilateral pleural effusions"
+              "evidence": "unable to walk about 10 steps without feeling short of breath"
             }
           ]
         },
         {
-          "term": "chest pain",
-          "status": "absent",
-          "evidence": "She denies any chest pains today, chest pain at rest or with exertion"
-        },
-        {
           "term": "fatigue",
           "status": "present",
-          "evidence": "She states that all activities now are quite fatiguing"
+          "severity": "moderate",
+          "evidence": "everything has been quite hard",
+          "related_findings": [
+            "shortness of breath"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "tremors",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "worsened tremors",
+          "related_findings": []
+        },
+        {
+          "term": "bladder spasms",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "abdominal pain in the setting of ? bladder spasms",
+          "related_findings": [
+            "urge incontinence"
+          ]
         }
       ]
     },
@@ -54,7 +69,7 @@
           "term": "creatinine elevation",
           "status": "present",
           "severity": "mild",
-          "evidence": "Creatinine: 1.6 mg/dL [abnormal]",
+          "evidence": "Creatinine: 1.6 mg/dL",
           "related_findings": [
             "urea nitrogen elevation"
           ]
@@ -63,34 +78,26 @@
           "term": "urea nitrogen elevation",
           "status": "present",
           "severity": "mild",
-          "evidence": "Urea Nitrogen: 32.0 mg/dL [abnormal]"
+          "evidence": "Urea Nitrogen: 32.0 mg/dL",
+          "related_findings": [
+            "creatinine elevation"
+          ]
         }
       ]
     },
     {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "tremors",
+          "term": "skin infection",
           "status": "present",
-          "evidence": "increased spasms in the upper extremities and in the bladder"
-        },
-        {
-          "term": "spasms",
-          "status": "present",
-          "evidence": "increased spasms in the upper extremities and in the bladder"
-        }
-      ]
-    },
-    {
-      "category": "gi",
-      "ontology_hint": "GI",
-      "symptoms": [
-        {
-          "term": "urge incontinence",
-          "status": "present",
-          "evidence": "She states that there are multiple times when she is trying to go to the bathroom and feels the urge however is unable to do so"
+          "severity": "mild",
+          "evidence": "Weeping in legs, erythematous in the lower extremities",
+          "related_findings": [
+            "blood cultures drawn",
+            "urine culture drawn"
+          ]
         }
       ]
     }
@@ -100,13 +107,13 @@
     "orthopnea"
   ],
   "red_flags": [
-    "hypotension",
-    "chest pain"
+    "worsening dyspnea",
+    "tremors"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "12007928",
   "admission_id": "23749816",
-  "generated_at": "2026-07-09T00:30:12.587840"
+  "generated_at": "2026-07-20T01:12:19.067205"
 }

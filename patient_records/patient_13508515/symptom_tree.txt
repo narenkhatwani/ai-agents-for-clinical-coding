@@ -8,55 +8,37 @@ Patient ID       : 13508515
 Admission ID     : 21834271
 
 Reasoning:
-  The patient is a 8cm left renal mass with a history of severe CHF, ischemic heart disease, and type 2 diabetes. Post-surgical recovery is ongoing with no major complications noted.
+  The patient presents with a history of severe CHF, renal cell carcinoma, and recent surgery, with ongoing dyspnea and laboratory abnormalities.
 
-Key symptoms     : 8cm left renal mass, severe CHF, ischemic heart disease, type 2 diabetes
-Red flags        : hypotension, AMS
-
-OTHER → Other
--------------
-
-  • [present] 8cm left renal mass
-      evidence: "8cm left renal mass"
-      related: Laparoscopic left radical nephrectomy, Laparoscopic left retroperitoneal lymph node dissection
+Key symptoms     : dyspnea, renal mass
+Red flags        : systolic CHF with EF around 30%
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [history] severe CHF
-      evidence: "No Known Allergies / Adverse Drug Reactions"
-      related: Systolic CHF with ejection fraction 30%, Ischemic heart disease
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [history] ischemic heart disease
-      evidence: "No Known Allergies / Adverse Drug Reactions"
-      related: CAD status post three-vessel CABG, Ischemic heart disease
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [history] type 2 diabetes
-      evidence: "No Known Allergies / Adverse Drug Reactions"
-      related: Hypertension, Non-insulin-dependent diabetes
+  • [present, moderate] dyspnea
+      evidence: "sudden onset dyspnea"
+      related: systolic CHF with EF around 30%
+      • [absent] chest pain
+          evidence: "no chest pain"
+      • [absent] palpitations
+          evidence: "no palpitations"
+  • [present, mild] pain
+      evidence: "pain well controlled on PCA"
+      related: Laparoscopic left radical nephrectomy and lymph node dissection
 
 RENAL → Renal
 -------------
 
-  • [present, mild] elevated creatinine
-      evidence: "Creatinine: 2.0 mg/dL"
-      related: Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %
+  • [absent] hematuria
+      evidence: "no mention of hematuria"
+  • [present, moderate] renal mass
+      evidence: "8cm left renal mass"
+      related: renal cell carcinoma
 
-HEMATOLOGIC → Other
--------------------
+CONSTITUTIONAL → Other
+----------------------
 
-  • [present, mild] anemia
-      evidence: "Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %"
-      related: RDW: 18.3 %, Red Blood Cells: 3.01 m/uL, RDW-SD: 60.4 fL, Platelet Count: 147.0 K/uL
-
-METABOLIC → Other
------------------
-
-  • [present, mild] hypokalemia
-      evidence: "Potassium: 3.9 mEq/L"
+  • [present, moderate] obesity
+      evidence: "BMI 42.1"
+      related: morbid obesity

@@ -12,7 +12,8 @@
           "severity": "mild",
           "evidence": "new fever",
           "related_findings": [
-            "RUL PNA"
+            "RUL PNA",
+            "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis"
           ],
           "children": []
         },
@@ -20,9 +21,9 @@
           "term": "pneumonia",
           "status": "present",
           "severity": "moderate",
-          "evidence": "RUL PNA",
+          "evidence": "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis",
           "related_findings": [
-            "CXR: persistent consolidative opacities in both lower lobes"
+            "RUL PNA"
           ],
           "children": []
         }
@@ -36,9 +37,9 @@
           "term": "hypotension",
           "status": "present",
           "severity": "moderate",
-          "evidence": "BP 90/47, hypotensive",
+          "evidence": "persistently hypotensive with pressures in the 80's",
           "related_findings": [
-            "Levophed started, pressures came up to the 90's systolic"
+            "severe sepsis probably secondary to RUL PNA"
           ],
           "children": []
         }
@@ -46,7 +47,7 @@
     },
     {
       "category": "neurologic",
-      "ontology_hint": "Neurology",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
           "term": "altered mental status",
@@ -54,17 +55,24 @@
           "severity": "moderate",
           "evidence": "altered mental status",
           "related_findings": [
-            "EEG shows epileptiform discharges left paracentrally"
+            "severe sepsis probably secondary to RUL PNA"
           ],
           "children": []
-        },
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
         {
-          "term": "seizures",
-          "status": "suspected",
-          "severity": "unknown",
-          "evidence": "possibly seizures from metastases",
+          "term": "sepsis",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "severe sepsis probably secondary to RUL PNA",
           "related_findings": [
-            "EEG shows epileptiform discharges left paracentrally"
+            "RUL PNA",
+            "hypotension"
           ],
           "children": []
         }
@@ -78,7 +86,7 @@
           "term": "chest pressure",
           "status": "present",
           "severity": "mild",
-          "evidence": "chest pressure",
+          "evidence": "chest pressure that he described as a 'heaviness'",
           "related_findings": [],
           "children": []
         },
@@ -86,7 +94,23 @@
           "term": "back pain",
           "status": "history",
           "severity": "mild",
-          "evidence": "back pain",
+          "evidence": "Chief Complaint: Back pain",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "saddle anesthesia",
+          "status": "history",
+          "severity": "absent",
+          "evidence": "no saddle anesthesia or bowel/bladder changes",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "numbness",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "numbness in his right thumb that has been present for many years",
           "related_findings": [],
           "children": []
         }
@@ -106,5 +130,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13196707",
   "admission_id": "21475988",
-  "generated_at": "2026-07-09T00:30:18.760841"
+  "generated_at": "2026-07-20T01:12:29.496905"
 }

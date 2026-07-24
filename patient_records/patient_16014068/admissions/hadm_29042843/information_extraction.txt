@@ -8,16 +8,28 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [present] weakness — "He attributes it to weakness."
-  • [present] minor abrasions and soreness — "He hit his knees and elbows resulting in minor abrasions and soreness."
-  • [present] headache — "He also hit his head."
-  • [history] intracranial bleeding — "He was evaluated by his local ED and found to have intracranial bleeding on a head CT and was then transferred."
+  • [present] weakness — "weakness attributed to weakness"
+  • [absent] bruising — "no easy bruising"
+  • [present] pain — "pain in R leg, worse w/ bearing weight"
+  • [absent] fever — "no fevers/chills"
+  • [absent] cough — "no cough"
+  • [absent] shortness of breath — "no shortness of breath"
+  • [present] dyspnea — "exertional dyspnea"
+  • [absent] hemoptysis — "no hemoptysis"
+  • [absent] nausea — "no nausea"
+  • [absent] vomiting — "no vomiting"
+  • [present] diarrhea — "diarrhea following hospitalization"
+  • [absent] abdominal pain — "no abdominal pain"
+  • [absent] chest pain — "no chest pain"
+  • [absent] dizziness — "no lightheadedness"
+  • [present] fatigue — "easy fatigability"
+  • [absent] headache — "no headache"
 
 VITALS
 ------
 
 • BMI: 25.2 kg/m2
-• Blood Pressure: 114/66
+• Blood Pressure: 114/66 mmHg
 • Weight: 181 Lbs
 
 LABS
@@ -30,37 +42,480 @@ LABS
 • Red Blood Cells: 2.41 m/uL [low]
 • White Blood Cells: 16.1 K/uL [high]
 • RDW-SD: 70.2 fL [high]
-• Hyaline Casts: 4.0 #/lpf [high]
 • Calcium, Total: 8.3 mg/dL [low]
 • Glucose: 106.0 mg/dL [high]
-• MCHC: 31.1 g/dL [low]
+• MCHC: 31.1 g/dL [normal]
 • MCV: 101.0 fL [high]
-• MCH: 32.0 pg []
+• MCH: 32.0 pg [normal]
 
 DIAGNOSES MENTIONED
 -------------------
 
+  • [confirmed] sarcoma
   • [confirmed] metastatic sarcoma to the brain
-  • [confirmed] right femur x-rays showed post-surgical changes without complications
-  • [suspected] pulmonary nodules
-  • [confirmed] pulmonary emboli
+  • [planned] cyberknife radiation
+  • [confirmed] progressive metastatic disease
+  • [suspected] infectious nodules
+  • [confirmed] hematoma
+  • [confirmed] pulmonary nodules
+  • [confirmed] intra-operative femur fracture
+  • [confirmed] high-grade unclassified sarcoma
 
 MEDICATIONS
 -----------
 
-  (none)
+  • Atenolol (continued)
 
 PROCEDURES
 ----------
 
-  • cyberknife radiation to the metastatic brain lesion: planned
+  • CT C-SPINE W/O CONTRAST: No fractures identified, degenerative changes of the cervical spine
 
 NEGATIONS
 ---------
 
-  (none)
+  • no fevers/chills
+  • no cough
+  • no chest pain
+  • no lightheadedness
+  • no abdominal pain
+  • no nausea
+  • no vomiting
+  • no hemoptysis
+  • no easy bruising
+  • no epistaxis
+  • no epistaxis for the last week
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no skin rash
+  • no joint pain
+  • no muscle pain
+  • no headache
+  • no dizziness
+  • no shortness of breath
+  • no chest pain
+  • no lightheadedness
+  • no abdominal pain
+  • no nausea
+  • no vomiting
+  • no hemoptysis
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epistaxis
+  • no gum bleeding
+  • no hematuria
+  • no easy bruising
+  • no epist
 
 TEMPORAL
 --------
 
-  • inability to bear weight: chronic
+  (none)

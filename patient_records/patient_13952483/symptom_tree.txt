@@ -8,9 +8,9 @@ Patient ID       : 13952483
 Admission ID     : 23852410
 
 Reasoning:
-  The patient presents with hypotension, weight loss, and multiple constitutional symptoms including cough, odynophagia, and chest pain, with recent neutropenia and thrombocytopenia.
+  The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his ongoing lung cancer, chemotherapy, and radiation therapy.
 
-Key symptoms     : hypotension, cough
+Key symptoms     : hypotension, weight loss
 Red flags        : hypotension, neutropenia, thrombocytopenia
 
 CONSTITUTIONAL → Other
@@ -18,48 +18,45 @@ CONSTITUTIONAL → Other
 
   • [present, mild] hypotension
       evidence: "Hypotension and Weight Loss"
-      related: BP 86/54 --> 110/70 after 1L IVF
+      related: Neutropenia, Thrombocytopenia
+      • [present] neutropenia
+          evidence: "ANC 750"
+      • [present] thrombocytopenia
+          evidence: "plts 93"
   • [present, moderate] weight loss
-      evidence: "weight loss"
-      related: BMI 15.8, 94.7 lbs (about 5 pounds lower than prior admission)
-  • [present, mild] neutropenia
-      evidence: "new neutropenia (ANC 750)"
-      related: WBC 2.7 K/uL, Lymphocytes 9.0 %, Bands 8.0 %
-  • [present, mild] thrombocytopenia
-      evidence: "thrombocytopenia (plts 93)"
-      related: Platelet Count 137.0 K/uL
+      evidence: "weight loss and hypotension"
+      related: Neutropenia, Thrombocytopenia
+      • [present] neutropenia
+          evidence: "ANC 750"
+      • [present] thrombocytopenia
+          evidence: "plts 93"
   • [present, moderate] anorexia
-      evidence: "overall anorexia and poor appetite"
-      related: Weight loss, Neutropenia
+      evidence: "anorexia, fatigue, weight loss"
+      related: Neutropenia, Thrombocytopenia
+      • [present] neutropenia
+          evidence: "ANC 750"
+      • [present] thrombocytopenia
+          evidence: "plts 93"
   • [present, mild] nausea
-      evidence: "some nausea"
+      evidence: "denies any recent fevers, chills, or other localizing infectious symptoms"
+      related: Neutropenia, Thrombocytopenia
+      • [present] neutropenia
+          evidence: "ANC 750"
+      • [present] thrombocytopenia
+          evidence: "plts 93"
+  • [present, mild] pain
+      evidence: "pain with swallowing, and overall anorexia and poor appetite"
+      related: Neutropenia, Thrombocytopenia
+      • [present] neutropenia
+          evidence: "ANC 750"
+      • [present] thrombocytopenia
+          evidence: "plts 93"
 
 RESPIRATORY → Respiratory
 -------------------------
 
   • [present, mild] cough
-      evidence: "coughing"
-      related: Coarse crackles at bases without rhonchi or wheezing
-  • [present, moderate] odynophagia
-      evidence: "persistent odynophagia"
-      related: Pain with swallowing
-  • [present, mild] chest pain
-      evidence: "pleuritic/MSK chest pain"
-      related: Loud systolic ejection murmur
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [present, mild] systolic ejection murmur
-      evidence: "Loud systolic ejection murmur"
-      related: Loud systolic ejection murmur
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [present, mild] neutropenia
-      evidence: "new neutropenia (ANC 750)"
-      related: WBC 2.7 K/uL, Lymphocytes 9.0 %, Bands 8.0 %
-  • [present, mild] thrombocytopenia
-      evidence: "thrombocytopenia (plts 93)"
-      related: Platelet Count 137.0 K/uL
+      evidence: "cough, pleuritic/MSK chest pain"
+      related: Neutropenia, Thrombocytopenia
+      • [present] chest pain
+          evidence: "cough, pleuritic/MSK chest pain"

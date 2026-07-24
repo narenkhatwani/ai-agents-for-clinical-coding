@@ -8,43 +8,42 @@ Patient ID       : 10426859
 Admission ID     : 29908281
 
 Reasoning:
-  The patient presents with recurrent SVT, lightheadedness, headache, and pain in the right hip and leg, with no acute cardiovascular or respiratory findings.
+  The patient presents with recurrent SVT, lightheadedness, and falls, with recent onset of hip pain and headache.
 
-Key symptoms     : palpitations, lightheadedness, headache, pain in right hip, pain in right leg
-Red flags        : SVT, nondisplaced comminuted fracture in the right superior pubic ramus
+Key symptoms     : SVT, headache, pain in right hip
+Red flags        : nondisplaced comminuted fracture in the right superior pubic ramus
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, mild] palpitations
-      evidence: "palpitations"
-      related: SVT
-      • [present] SVT
-          evidence: "recurrence of her SVT"
-  • [present, mild] lightheadedness
-      evidence: "lightheadedness and palpitations"
-      related: SVT
+  • [present, mild] SVT
+      evidence: "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+      related: troponin 0.09 ng/mL, ST elevations in II, III, V1-V3
+      • [present] palpitations
+          evidence: "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+      • [absent] chest pain
+          evidence: "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
 
 NEUROLOGIC → Neurologic
 -----------------------
 
   • [present, mild] headache
-      evidence: "headache"
-      related: CT head: tiny chronic right cerebellar infarct
+      evidence: "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+      related: CT head showing tiny chronic right cerebellar infarct
 
 MUSCULOSKELETAL → Musculoskeletal
 ---------------------------------
 
   • [present, mild] pain in right hip
-      evidence: "pain in her right hip"
+      evidence: "When nurse tried to reposition her, patient had pain in her right hip."
       related: nondisplaced comminuted fracture in the right superior pubic ramus
   • [present, mild] pain in right leg
-      evidence: "pain in her entire right leg - her foot, ankle, leg, hip"
+      evidence: "Patient endorsed that when she stood up earlier she had felt pain in her entire right leg - her foot, ankle, leg, hip."
       related: nondisplaced comminuted fracture in the right superior pubic ramus
 
-OTHER → Other
--------------
+CONSTITUTIONAL → Infectious Diseases
+------------------------------------
 
-  • [present, mild] anemia
-      evidence: "Red Blood Cells: 3.89 m/uL [abnormal]"
-      related: RDW-SD: 47.2 fL [abnormal]
+  • [present, mild] lightheadedness
+      evidence: "Patient endorsed having had a fall when she felt lightheaded but no head strike."
+      related: low blood pressure

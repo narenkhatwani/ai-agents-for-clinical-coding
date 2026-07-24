@@ -8,47 +8,62 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [present] right sided rib fractures — "right sided ___ rib fractures"
-  • [present] right lateral chest pain — "right lateral chest against the bathtub"
-  • [present] hypoxia — "satting 96% on 4L and evaluated by trauma surgery"
+  • [present] rib fractures — "right sided ___ rib fractures"
+  • [present] fall — "mechanical fall"
+  • [present] hypoxia — "satting 96% on 4L"
+  • [present] chest pain — "tenderness on right posterior back and along the right lateral chest"
+  • [present] subcutaneous emphysema — "areas of subcutaneous emphysema along the right posterior back"
+  • [present] chest pain — "denied chest pain"
+  • [present] shortness of breath — "non-labored breathing, on MC"
+  • [present] tachypnea — "mildy tachypnic"
+  • [present] crackles — "inspiratory crackles b/l lower lobes"
+  • [present] edema — "bilateral, 2+ DP pulses"
 
 VITALS
 ------
 
-• Heart Rate: 88.0 bpm
-• Respiratory Rate: 17.0 insp/min
-• SpO2: 98.0 %
-• Weight: 125.0 Lbs
-• BMI: 17.9
+• Heart Rate: 88 bpm
+• Respiratory Rate: 17 insp/min
+• SpO2: 98 %
+• DBP: 72 mmHg
+• SBP: 121 mmHg
+• BMI: 17.9 kg/m2
+• Weight: 125 Lbs
 
 LABS
 ----
 
-• WBC: 10.5 * [high]
-• Neutrophils: 70.3 * [high]
-• Lymphocytes: 16.4 * [low]
+• WBC: 10.6 K/uL [high]
 • Hemoglobin: 10.9 g/dL [low]
 • Hematocrit: 33.3 % [low]
-• Platelets: 623.0 K/uL [high]
-• Calcium: 8.3 mg/dL [low]
-• Glucose: 127.0 mg/dL [high]
-• Potassium: 5.2 mEq/L [high]
+• Platelet Count: 623 K/uL [high]
+• Red Blood Cells: 3.72 m/uL [low]
+• Calcium, Total: 8.3 mg/dL [low]
+• Glucose: 127 mg/dL [high]
 • Albumin: 2.8 g/dL [low]
 • Thyroid Stimulating Hormone: 4.3 uIU/mL [high]
-• Creatinine Kinase (CK): 555.0 IU/L [high]
-• pO2: 258.0 mm Hg [high]
-• pCO2: 49.0 mm Hg [high]
+• Urea Nitrogen: 22 mg/dL [high]
+• Free Calcium: 1.11 mmol/L [low]
+• Phosphate: 4.7 mg/dL [high]
+• Bacteria: nan /hpf  [high]
+• Protein: 30 mg/dL [high]
+• Urobilinogen: 2.0 mg/dL [high]
+• pO2: 258 mm Hg [low]
+• Lactate: 2.7 mmol/L [normal]
+• pCO2: 49 mm Hg [high]
 • pH: 7.29 units [low]
-• Sodium: 134.0 mEq/L [low]
-• Magnesium: 3.2 mg/dL [high]
+• Sodium: 134 mEq/L [low]
+• Magnesium: 3.2 mg/dL [normal]
+• Creatine Kinase (CK): 555 IU/L [high]
 
 DIAGNOSES MENTIONED
 -------------------
 
-  • [confirmed] PTSD
-  • [confirmed] Bipolar disorder
-  • [confirmed] Polysubstance use
-  • [confirmed] Opiate dependence
+  • [confirmed] right ___ rib fractures
+  • [confirmed] post-traumatic stress disorder (PTSD)
+  • [confirmed] bipolar disorder
+  • [confirmed] polysubstance use
+  • [confirmed] opiate dependence
 
 MEDICATIONS
 -----------
@@ -65,12 +80,11 @@ PROCEDURES
 NEGATIONS
 ---------
 
-  • Denies harm to others
-  • Denies access to weapons
-  • Denies suicide attempts
-  • Denies past medical history
+  • denied chest pain
+  • denied LOC/head strike
+  • denied harm to others
 
 TEMPORAL
 --------
 
-  • right sided rib fractures: mechanical fall
+  • right ___ rib fractures: fall

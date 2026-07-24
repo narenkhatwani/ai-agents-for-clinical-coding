@@ -1,72 +1,40 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a 8cm left renal mass with a history of severe CHF, ischemic heart disease, and type 2 diabetes. Post-surgical recovery is ongoing with no major complications noted.",
+  "reasoning": "The patient presents with a history of severe CHF, renal cell carcinoma, and recent surgery, with ongoing dyspnea and laboratory abnormalities.",
   "branches": [
     {
-      "category": "other",
-      "ontology_hint": "Other",
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "8cm left renal mass",
+          "term": "dyspnea",
           "status": "present",
-          "severity": "unknown",
-          "evidence": "8cm left renal mass",
+          "severity": "moderate",
+          "evidence": "sudden onset dyspnea",
           "related_findings": [
-            "Laparoscopic left radical nephrectomy",
-            "Laparoscopic left retroperitoneal lymph node dissection"
+            "systolic CHF with EF around 30%"
           ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
+          "children": [
+            {
+              "term": "chest pain",
+              "status": "absent",
+              "evidence": "no chest pain"
+            },
+            {
+              "term": "palpitations",
+              "status": "absent",
+              "evidence": "no palpitations"
+            }
+          ]
+        },
         {
-          "term": "severe CHF",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "No Known Allergies / Adverse Drug Reactions",
+          "term": "pain",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "pain well controlled on PCA",
           "related_findings": [
-            "Systolic CHF with ejection fraction 30%",
-            "Ischemic heart disease"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "ischemic heart disease",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "No Known Allergies / Adverse Drug Reactions",
-          "related_findings": [
-            "CAD status post three-vessel CABG",
-            "Ischemic heart disease"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "type 2 diabetes",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "No Known Allergies / Adverse Drug Reactions",
-          "related_findings": [
-            "Hypertension",
-            "Non-insulin-dependent diabetes"
-          ],
-          "children": []
+            "Laparoscopic left radical nephrectomy and lymph node dissection"
+          ]
         }
       ]
     },
@@ -75,66 +43,48 @@
       "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "elevated creatinine",
+          "term": "hematuria",
+          "status": "absent",
+          "evidence": "no mention of hematuria"
+        },
+        {
+          "term": "renal mass",
           "status": "present",
-          "severity": "mild",
-          "evidence": "Creatinine: 2.0 mg/dL",
+          "severity": "moderate",
+          "evidence": "8cm left renal mass",
           "related_findings": [
-            "Hemoglobin: 8.9 g/dL",
-            "Hematocrit: 27.3 %"
-          ],
-          "children": []
+            "renal cell carcinoma"
+          ]
         }
       ]
     },
     {
-      "category": "hematologic",
+      "category": "constitutional",
       "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "anemia",
+          "term": "obesity",
           "status": "present",
-          "severity": "mild",
-          "evidence": "Hemoglobin: 8.9 g/dL, Hematocrit: 27.3 %",
+          "severity": "moderate",
+          "evidence": "BMI 42.1",
           "related_findings": [
-            "RDW: 18.3 %",
-            "Red Blood Cells: 3.01 m/uL",
-            "RDW-SD: 60.4 fL",
-            "Platelet Count: 147.0 K/uL"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "metabolic",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "hypokalemia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Potassium: 3.9 mEq/L",
-          "related_findings": [],
-          "children": []
+            "morbid obesity"
+          ]
         }
       ]
     }
   ],
   "key_symptoms": [
-    "8cm left renal mass",
-    "severe CHF",
-    "ischemic heart disease",
-    "type 2 diabetes"
+    "dyspnea",
+    "renal mass"
   ],
   "red_flags": [
-    "hypotension",
-    "AMS"
+    "systolic CHF with EF around 30%"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "13508515",
   "admission_id": "21834271",
-  "generated_at": "2026-07-09T00:30:27.479434"
+  "generated_at": "2026-07-20T01:12:40.080592"
 }

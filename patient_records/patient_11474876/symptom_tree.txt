@@ -8,57 +8,51 @@ Patient ID       : 11474876
 Admission ID     : 29672491
 
 Reasoning:
-  The patient is a 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease who underwent ERCP for choledocholithiasis. He is currently stable post-procedure with no acute symptoms but has a history of nocturnal hypoxia and leg swelling.
+  The patient is a 70-year-old male with a history of atrial fibrillation, peripheral vascular disease, chronic kidney disease, and cholangitis who underwent ERCP with stent placement. He is currently being managed post-procedurally with no acute symptoms.
 
-Key symptoms     : nocturnal hypoxia, leg swelling
+Key symptoms     : leg swelling, creatinine
 Red flags        : hypotension, AMS
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [history] nocturnal hypoxia
-      evidence: "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis"
-      related: Hemoglobin: 12.6 g/dL (low)
   • [present, mild] leg swelling
-      evidence: "Notes his ___ edema improves during the night and worsens during the day"
-      related: Creatinine: 1.4 mg/dL (high)
-
-RESPIRATORY → Respiratory
--------------------------
-
-  • [normal, normal] respiratory rate
-      evidence: "Respiratory Rate: 20 bpm"
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [started] ciprofloxacin
-      evidence: "Ciprofloxacin was started post-ERCP"
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [confirmed, mild] atrial fibrillation
-      evidence: "AFib: continued home propranolol and amiodarone"
-      related: Hemoglobin: 12.6 g/dL (low)
-  • [confirmed, mild] heart failure
-      evidence: "HFpEF: held home Lasix ___"
-      related: Creatinine: 1.4 mg/dL (high)
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [confirmed, mild] peripheral vascular disease
-      evidence: "PVD: continued home aspirin 81mg, atorvastatin 20mg"
+      evidence: "notes his edema improves during the night and worsens during the day"
+      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3%, Hemoglobin: 12.6 g/dL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
+      • [present] edema
+          evidence: "notes his edema improves during the night and worsens during the day"
 
 RENAL → Renal
 -------------
 
-  • [high, mild] creatinine
+  • [abnormal, mild] creatinine
       evidence: "Creatinine: 1.4 mg/dL"
+      related: Hematocrit: 38.3%, Hemoglobin: 12.6 g/dL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
 
-OTHER → Other
--------------
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
 
-  • [confirmed, mild] choledocholithiasis
-      evidence: "Choledocholithiasis s/p ERCP: ERCP with multiple stones and sludge"
+  • [history, mild] atrial fibrillation
+      evidence: "Paroxysmal AFib, on Eliquis and amiodarone"
+      related: Lasix: 20 mg IV, Apixaban: continued
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history, mild] hypertension
+      evidence: "Hypertension"
+      related: Lasix: 20 mg IV, Apixaban: continued
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history, mild] peripheral vascular disease
+      evidence: "Peripheral vascular disease s/p Aortobifemoral bypass graft"
+      related: Lasix: 20 mg IV, Apixaban: continued
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history, mild] chronic kidney disease
+      evidence: "Chronic kidney disease"
+      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3%, Hemoglobin: 12.6 g/dL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL

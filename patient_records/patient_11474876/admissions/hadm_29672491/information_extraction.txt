@@ -8,32 +8,32 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [history] nocturnal hypoxia — "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis"
-  • [absent] abdominal pain — "Today he underwent ERCP with extraction of stones and sphincterotomy, as well as stent removal. Per report he received 1.5 L ___ and received ciprofloxacin, although no further antibiotics or fluids were recommended after the procedure. Following the procedure, the patient reports feeling good, with no abdominal pain, dyspnea, CP, or other symptoms."
-  • [absent] dyspnea — "Following the procedure, the patient reports feeling good, with no abdominal pain, dyspnea, CP, or other symptoms."
-  • [present] leg swelling — "Notes his ___ edema improves during the night and worsens during the day."
+  • [history] nocturnal hypoxia — "prior admission with cholangitis and nocturnal hypoxia that improved with diuresis"
+  • [history] abdominal pain — "chief complaint of abdominal pain"
+  • [history] weakness — "2 weeks of weakness and difficulty with walking with cramps"
+  • [history] difficulty walking — "2 weeks of weakness and difficulty with walking with cramps"
+  • [history] shoulder blade pain — "shoulder blade pain that lasted around"
+  • [history] indigestion — "indigestion"
+  • [history] shortness of breath — "developed acute shortness of breath requiring nonrebreather briefly"
+  • [present] leg swelling — "notes his edema improves during the night and worsens during the day"
 
 VITALS
 ------
 
-• Weight: 0 Lbs
-• Temperature: 98.1 PO
-• Blood Pressure: 142 / 57 mmHg
-• Heart Rate: 68 bpm
-• Respiratory Rate: 20 bpm
-• O2 Saturation: 94 %
+• Weight: 180 Lbs
+• BMI: 29.0 kg/m2
 
 LABS
 ----
 
-• Creatinine: 1.4 mg/dL [high]
-• INR(PT): 1.3  [high]
-• PT: 13.7 sec [high]
-• Hematocrit: 38.3 % [high]
-• Hemoglobin: 12.6 g/dL [high]
-• MCH: 32.8 pg [high]
-• MCV: 100.0 fL [high]
-• Red Blood Cells: 3.84 m/uL [high]
+• Creatinine: 1.4 mg/dL [low]
+• INR(PT): 1.3  [low]
+• PT: 13.7 sec  [low]
+• Hematocrit: 38.3 % [low]
+• Hemoglobin: 12.6 g/dL [low]
+• MCH: 32.8 pg [low]
+• MCV: 100.0 fL [low]
+• Red Blood Cells: 3.84 m/uL [low]
 • RDW-SD: 54.1 fL [high]
 • Alanine Aminotransferase (ALT): 16.0 IU/L [normal]
 • Alkaline Phosphatase: 102.0 IU/L [normal]
@@ -50,6 +50,7 @@ LABS
 • Potassium: 4.3 mEq/L [normal]
 • Sodium: 143.0 mEq/L [normal]
 • Urea Nitrogen: 15.0 mg/dL [normal]
+• Lipase: 28 IU/L [normal]
 
 DIAGNOSES MENTIONED
 -------------------
@@ -60,22 +61,26 @@ DIAGNOSES MENTIONED
   • [confirmed] CKD
   • [confirmed] Cholangitis
   • [confirmed] Peripheral vascular disease
+  • [confirmed] Aortobifemoral bypass graft
   • [confirmed] Right bundle branch block
   • [confirmed] Hypertension
   • [confirmed] Hyperlipidemia
+  • [confirmed] Chronic kidney disease
   • [confirmed] PTSD
 
 MEDICATIONS
 -----------
 
   • Apixaban (continued)
-  • Lasix (continued)
-  • Ciprofloxacin (started)
+  • Lasix (stopped)
+  • Ciprofloxacin (stopped)
+  • Cefpodoxime (started)
+  • Flagyl (started)
 
 PROCEDURES
 ----------
 
-  • ERCP: extraction of stones and sphincterotomy, as well as stent removal
+  • ERCP: stent placement, extraction of stones and sphincterotomy
 
 NEGATIONS
 ---------
@@ -85,4 +90,4 @@ NEGATIONS
 TEMPORAL
 --------
 
-  • nocturnal hypoxia: improved with diuresis during prior admission
+  • leg swelling: improves during the night and worsens during the day

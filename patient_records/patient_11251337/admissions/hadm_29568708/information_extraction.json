@@ -1,11 +1,6 @@
 {
   "symptoms": [
     {
-      "term": "nephrolithiasis",
-      "status": "present",
-      "evidence": "nephrolithiasis"
-    },
-    {
       "term": "residual stone",
       "status": "present",
       "evidence": "There is some residual stone that will require interval right URS"
@@ -16,21 +11,31 @@
       "evidence": "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
     },
     {
-      "term": "bleeding",
+      "term": "fever",
+      "status": "absent",
+      "evidence": "He denies nausea, vomiting, diarrhea, dyspnea and chest pain."
+    },
+    {
+      "term": "hematuria",
       "status": "present",
-      "evidence": "You can expect to see occasional blood in your urine"
+      "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag."
+    },
+    {
+      "term": "dysuria",
+      "status": "present",
+      "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag."
     }
   ],
   "vitals": [
     {
-      "name": "Weight",
-      "value": "170",
-      "unit": "Lbs"
-    },
-    {
       "name": "BMI",
       "value": "24.4",
       "unit": "kg/m2"
+    },
+    {
+      "name": "Weight",
+      "value": "170",
+      "unit": "Lbs"
     }
   ],
   "labs": [
@@ -47,16 +52,16 @@
       "flag": "low"
     },
     {
-      "name": "MCV",
-      "value": "104.0",
-      "unit": "fL",
-      "flag": "high"
-    },
-    {
       "name": "MCHC",
       "value": "30.5",
       "unit": "g/dL",
       "flag": "low"
+    },
+    {
+      "name": "MCV",
+      "value": "104.0",
+      "unit": "fL",
+      "flag": "high"
     },
     {
       "name": "Red Blood Cells",
@@ -87,11 +92,48 @@
       "value": "22.0",
       "unit": "mg/dL",
       "flag": "high"
+    },
+    {
+      "name": "Anion Gap",
+      "value": "17.0",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Bicarbonate",
+      "value": "22.0",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Chloride",
+      "value": "98.0",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Potassium",
+      "value": "4.7",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Sodium",
+      "value": "137.0",
+      "unit": "mEq/L"
     }
   ],
   "diagnoses_mentioned": [
     {
-      "term": "NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm",
+      "term": "nephrolithiasis",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hypertension",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hemorrhagic CVA",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Bilateral staghorn renal calculi",
       "certainty": "confirmed"
     }
   ],
@@ -109,7 +151,7 @@
       "status": "started"
     },
     {
-      "name": "OxyCODONE (Immediate Release)",
+      "name": "OxyCODONE",
       "dose": "5 mg",
       "route": "PO",
       "status": "started"
@@ -124,10 +166,32 @@
   "procedures": [
     {
       "name": "Difficult right PCNL",
-      "result": "right antegrade nephrostogram, right antegrade ureteroscopy, right antegrade ureteral stent placement, right PCNL for stone greater than 2cm"
+      "result": "well tolerated"
+    },
+    {
+      "name": "Right antegrade nephrostogram",
+      "result": "performed"
+    },
+    {
+      "name": "Right antegrade ureteroscopy",
+      "result": "performed"
+    },
+    {
+      "name": "Right antegrade ureteral stent placement",
+      "result": "performed"
+    },
+    {
+      "name": "Right PCNL for stone greater than 2cm",
+      "result": "performed"
+    },
+    {
+      "name": "Removal of right nephrostomy tube",
+      "result": "performed"
     }
   ],
-  "negations": [],
+  "negations": [
+    "No Known Allergies / Adverse Drug Reactions"
+  ],
   "temporal": [
     {
       "finding": "residual stone",

@@ -1,10 +1,10 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and previous surgeries.",
+  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and menorrhagia.",
   "branches": [
     {
       "category": "gi",
-      "ontology_hint": "Gynecology",
+      "ontology_hint": "Other",
       "symptoms": [
         {
           "term": "heavy vaginal bleeding",
@@ -12,52 +12,69 @@
           "severity": "moderate",
           "evidence": "heavy vaginal bleeding after hysterectomy",
           "related_findings": [
-            "abnormal uterine and vaginal bleeding, unspecified"
+            "HCT-38.1 (low)"
           ],
           "children": [
             {
-              "term": "vaginal spotting to light bleeding",
-              "status": "history",
-              "evidence": "vaginal spotting to light bleeding"
+              "term": "passing 'munchin' sized clots",
+              "status": "present",
+              "evidence": "started passing more clots"
             }
           ]
         }
       ]
     },
     {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
+      "category": "respiratory",
+      "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "hemodynamic stability",
-          "status": "present",
+          "term": "shortness of breath",
+          "status": "history",
           "severity": "mild",
-          "evidence": "hemodynamically stable throughout her hospitalization"
+          "evidence": "developed some shortness of breath",
+          "related_findings": []
         }
       ]
     },
     {
-      "category": "other",
+      "category": "cardiovascular",
       "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "abdominal bloatedness",
-          "status": "history",
+          "term": "low hematocrit",
+          "status": "present",
           "severity": "mild",
-          "evidence": "abdominal bloatedness secondary to gas"
+          "evidence": "HCT-38.1 (low)",
+          "related_findings": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "abnormal uterine and vaginal bleeding",
+          "status": "confirmed",
+          "severity": "unknown",
+          "evidence": "history of abnormal uterine and vaginal bleeding",
+          "related_findings": []
         }
       ]
     }
   ],
   "key_symptoms": [
     "heavy vaginal bleeding",
-    "abdominal bloatedness"
+    "passing 'munchin' sized clots"
   ],
-  "red_flags": [],
+  "red_flags": [
+    "low hematocrit"
+  ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10361982",
   "admission_id": "24286431",
-  "generated_at": "2026-07-09T00:29:28.658417"
+  "generated_at": "2026-07-20T01:08:02.957333"
 }

@@ -1,66 +1,99 @@
 {
   "symptoms": [
     {
-      "term": "right sided rib fractures",
+      "term": "rib fractures",
       "status": "present",
       "evidence": "right sided ___ rib fractures"
     },
     {
-      "term": "right lateral chest pain",
+      "term": "fall",
       "status": "present",
-      "evidence": "right lateral chest against the bathtub"
+      "evidence": "mechanical fall"
     },
     {
       "term": "hypoxia",
       "status": "present",
-      "evidence": "satting 96% on 4L and evaluated by trauma surgery"
+      "evidence": "satting 96% on 4L"
+    },
+    {
+      "term": "chest pain",
+      "status": "present",
+      "evidence": "tenderness on right posterior back and along the right lateral chest"
+    },
+    {
+      "term": "subcutaneous emphysema",
+      "status": "present",
+      "evidence": "areas of subcutaneous emphysema along the right posterior back"
+    },
+    {
+      "term": "chest pain",
+      "status": "present",
+      "evidence": "denied chest pain"
+    },
+    {
+      "term": "shortness of breath",
+      "status": "present",
+      "evidence": "non-labored breathing, on MC"
+    },
+    {
+      "term": "tachypnea",
+      "status": "present",
+      "evidence": "mildy tachypnic"
+    },
+    {
+      "term": "crackles",
+      "status": "present",
+      "evidence": "inspiratory crackles b/l lower lobes"
+    },
+    {
+      "term": "edema",
+      "status": "present",
+      "evidence": "bilateral, 2+ DP pulses"
     }
   ],
   "vitals": [
     {
       "name": "Heart Rate",
-      "value": "88.0",
+      "value": "88",
       "unit": "bpm"
     },
     {
       "name": "Respiratory Rate",
-      "value": "17.0",
+      "value": "17",
       "unit": "insp/min"
     },
     {
       "name": "SpO2",
-      "value": "98.0",
+      "value": "98",
       "unit": "%"
     },
     {
-      "name": "Weight",
-      "value": "125.0",
-      "unit": "Lbs"
+      "name": "DBP",
+      "value": "72",
+      "unit": "mmHg"
+    },
+    {
+      "name": "SBP",
+      "value": "121",
+      "unit": "mmHg"
     },
     {
       "name": "BMI",
       "value": "17.9",
-      "unit": ""
+      "unit": "kg/m2"
+    },
+    {
+      "name": "Weight",
+      "value": "125",
+      "unit": "Lbs"
     }
   ],
   "labs": [
     {
       "name": "WBC",
-      "value": "10.5",
-      "unit": "*",
+      "value": "10.6",
+      "unit": "K/uL",
       "flag": "high"
-    },
-    {
-      "name": "Neutrophils",
-      "value": "70.3",
-      "unit": "*",
-      "flag": "high"
-    },
-    {
-      "name": "Lymphocytes",
-      "value": "16.4",
-      "unit": "*",
-      "flag": "low"
     },
     {
       "name": "Hemoglobin",
@@ -75,27 +108,27 @@
       "flag": "low"
     },
     {
-      "name": "Platelets",
-      "value": "623.0",
+      "name": "Platelet Count",
+      "value": "623",
       "unit": "K/uL",
       "flag": "high"
     },
     {
-      "name": "Calcium",
+      "name": "Red Blood Cells",
+      "value": "3.72",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "Calcium, Total",
       "value": "8.3",
       "unit": "mg/dL",
       "flag": "low"
     },
     {
       "name": "Glucose",
-      "value": "127.0",
+      "value": "127",
       "unit": "mg/dL",
-      "flag": "high"
-    },
-    {
-      "name": "Potassium",
-      "value": "5.2",
-      "unit": "mEq/L",
       "flag": "high"
     },
     {
@@ -111,20 +144,56 @@
       "flag": "high"
     },
     {
-      "name": "Creatinine Kinase (CK)",
-      "value": "555.0",
-      "unit": "IU/L",
+      "name": "Urea Nitrogen",
+      "value": "22",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Free Calcium",
+      "value": "1.11",
+      "unit": "mmol/L",
+      "flag": "low"
+    },
+    {
+      "name": "Phosphate",
+      "value": "4.7",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Bacteria",
+      "value": "nan /hpf",
+      "unit": "",
+      "flag": "high"
+    },
+    {
+      "name": "Protein",
+      "value": "30",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Urobilinogen",
+      "value": "2.0",
+      "unit": "mg/dL",
       "flag": "high"
     },
     {
       "name": "pO2",
-      "value": "258.0",
+      "value": "258",
       "unit": "mm Hg",
-      "flag": "high"
+      "flag": "low"
+    },
+    {
+      "name": "Lactate",
+      "value": "2.7",
+      "unit": "mmol/L",
+      "flag": "normal"
     },
     {
       "name": "pCO2",
-      "value": "49.0",
+      "value": "49",
       "unit": "mm Hg",
       "flag": "high"
     },
@@ -136,7 +205,7 @@
     },
     {
       "name": "Sodium",
-      "value": "134.0",
+      "value": "134",
       "unit": "mEq/L",
       "flag": "low"
     },
@@ -144,43 +213,53 @@
       "name": "Magnesium",
       "value": "3.2",
       "unit": "mg/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "Creatine Kinase (CK)",
+      "value": "555",
+      "unit": "IU/L",
       "flag": "high"
     }
   ],
   "diagnoses_mentioned": [
     {
-      "term": "PTSD",
+      "term": "right ___ rib fractures",
       "certainty": "confirmed"
     },
     {
-      "term": "Bipolar disorder",
+      "term": "post-traumatic stress disorder (PTSD)",
       "certainty": "confirmed"
     },
     {
-      "term": "Polysubstance use",
+      "term": "bipolar disorder",
       "certainty": "confirmed"
     },
     {
-      "term": "Opiate dependence",
+      "term": "polysubstance use",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "opiate dependence",
       "certainty": "confirmed"
     }
   ],
   "medications": [
     {
       "name": "Prozac",
-      "dose": "",
+      "dose": "stopped",
       "route": "",
       "status": "stopped"
     },
     {
       "name": "Thorazine",
-      "dose": "",
+      "dose": "stopped",
       "route": "",
       "status": "stopped"
     },
     {
       "name": "Haldol",
-      "dose": "",
+      "dose": "stopped",
       "route": "",
       "status": "stopped"
     }
@@ -192,15 +271,14 @@
     }
   ],
   "negations": [
-    "Denies harm to others",
-    "Denies access to weapons",
-    "Denies suicide attempts",
-    "Denies past medical history"
+    "denied chest pain",
+    "denied LOC/head strike",
+    "denied harm to others"
   ],
   "temporal": [
     {
-      "finding": "right sided rib fractures",
-      "onset": "mechanical fall"
+      "finding": "right ___ rib fractures",
+      "onset": "fall"
     }
   ],
   "_agent": "information_extraction",

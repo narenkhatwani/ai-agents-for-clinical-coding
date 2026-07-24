@@ -8,109 +8,94 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [present] lightheadedness — "lightheadedness and palpitations"
-  • [present] palpitations — "palpitations"
-  • [present] headache — "headache"
-  • [present] pain in right hip — "pain in her right hip"
-  • [present] pain in right leg — "pain in her entire right leg - her foot, ankle, leg, hip"
+  • [present] lightheadedness — "Patient endorsed having had a fall when she felt lightheaded but no head strike."
+  • [present] palpitations — "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+  • [present] headache — "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+  • [present] pain in right hip — "When nurse tried to reposition her, patient had pain in her right hip."
+  • [present] pain in right leg — "Patient endorsed that when she stood up earlier she had felt pain in her entire right leg - her foot, ankle, leg, hip."
+  • [absent] chest pain — "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
+  • [absent] shortness of breath — "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
 
 VITALS
 ------
 
-• BMI: 22.3 kg/m2
-• Weight: 113.98 Lbs
+• BMI (kg/m2): 22.3
+• Weight (Lbs): 113.98
 
 LABS
 ----
 
 • Red Blood Cells: 3.89 m/uL [low]
-• RDW-SD: 47.2 fL [high]
+• RDW-SD: 47.2 fL [low]
 • Hyaline Casts: 16.0 #/lpf [high]
 • RBC: 15.0 #/hpf [high]
 • WBC: 45.0 #/hpf [high]
 • Eosinophils: 0.9 % [low]
 • Neutrophils: 71.3 % [high]
 • Troponin T: 0.09 ng/mL [high]
-• Anion Gap: 15.0 mEq/L []
-• Bicarbonate: 25.0 mEq/L []
-• Calcium, Total: 9.2 mg/dL []
-• Chloride: 102.0 mEq/L []
-• Creatinine: 0.7 mg/dL []
-• Glucose: 82.0 mg/dL []
-• Magnesium: 2.1 mg/dL []
-• Phosphate: 3.1 mg/dL []
-• Potassium: 3.9 mEq/L []
-• Sodium: 138.0 mEq/L []
-• Urea Nitrogen: 13.0 mg/dL []
-• Hematocrit: 36.8 % []
-• Hemoglobin: 12.1 g/dL []
-• MCH: 31.1 pg []
-• MCHC: 32.9 g/dL []
-• MCV: 95.0 fL []
-• Platelet Count: 194.0 K/uL []
+• Anion Gap: 15.0 mEq/L [normal]
+• Bicarbonate: 25.0 mEq/L [normal]
+• Calcium, Total: 9.2 mg/dL [low]
+• Chloride: 102.0 mEq/L [normal]
+• Creatinine: 0.7 mg/dL [normal]
+• Glucose: 82.0 mg/dL [normal]
+• Hematocrit: 36.8 % [normal]
+• Hemoglobin: 12.1 g/dL [normal]
+• Magnesium: 2.1 mg/dL [low]
+• Phosphate: 3.1 mg/dL [normal]
+• Potassium: 3.9 mEq/L [normal]
+• Sodium: 138.0 mEq/L [normal]
+• Urea Nitrogen: 13.0 mg/dL [normal]
+• White Blood Cells: 6.8 K/uL [normal]
 
 DIAGNOSES MENTIONED
 -------------------
 
   • [confirmed] SVT
-  • [suspected] CAD
+  • [confirmed] Supraventricular tachycardia
+  • [suspected] COPD
+  • [suspected] Meniere's disease
   • [suspected] TIA
-  • [confirmed] HTN
-  • [confirmed] HLD
-  • [confirmed] anxiety
+  • [confirmed] CAD
+  • [suspected] MI
+  • [confirmed] Hypertension
+  • [confirmed] Hyperlipidemia
   • [confirmed] Glucose intolerance
   • [confirmed] GERD
-  • [history] COPD
-  • [history] Meniere's disease
+  • [confirmed] Depression
+  • [confirmed] Anxiety
+  • [confirmed] Rotator cuff arthropathy
+  • [confirmed] Atherosclerotic heart disease
+  • [suspected] Malignant neoplasm of bladder
+  • [confirmed] Chronic kidney disease
 
 MEDICATIONS
 -----------
 
   • Verapamil ER (started)
   • Aspirin (started)
+  • Ondansetron (started)
+  • Adenosine (started)
+  • Verapamil (started)
 
 PROCEDURES
 ----------
 
+  • IVF NS: 1000 mL ordered
   • IV Adenosine: 6 mg
   • IV Ondansetron: 4 mg
-  • IV Verapamil: 2.5 mg x 2
+  • IV Verapamil: 2.5 mg
   • PO Aspirin: 324 mg
 
 NEGATIONS
 ---------
 
-  • no chest pain
-  • no chest pressure
-  • no shortness of breath
-  • no head strike
-  • no frank pulmonary edema
-  • no heterotopic ossification
-  • no dislocation
-  • no periprosthetic lucency
-  • no osteolysis
-  • no evidence of dislocation
-  • no focal consolidation
-  • no pleural effusion
-  • no pneumothorax
-  • no acute infarction
-  • no hemorrhage
-  • no edema
-  • no mass
-  • no vascular calcifications
-  • no heterotopic ossification
-  • no dislocation
-  • no evidence of dislocation
-  • no focal consolidation
-  • no pleural effusion
-  • no pneumothorax
-  • no acute infarction
-  • no hemorrhage
-  • no edema
-  • no mass
-  • no vascular calcifications
+  • chest pain
+  • chest pressure
+  • palpitations
+  • shortness of breath
 
 TEMPORAL
 --------
 
-  • pain in right hip: when nurse tried to reposition her
+  • SVT: recent

@@ -3,37 +3,42 @@
     {
       "term": "dyspnea",
       "status": "present",
-      "evidence": "Dyspnea"
+      "evidence": "increased dyspnea"
     },
     {
       "term": "orthopnea",
       "status": "present",
-      "evidence": "has quite significant orthopnea, and has to sleep on an incline"
+      "evidence": "reports significant orthopnea"
     },
     {
       "term": "tremors",
       "status": "present",
-      "evidence": "increased spasms in the upper extremities and in the bladder"
+      "evidence": "worsened tremors"
     },
     {
       "term": "chest pain",
       "status": "absent",
-      "evidence": "She denies any chest pains today, chest pain at rest or with exertion"
+      "evidence": "denies chest pain at rest or with exertion"
     },
     {
       "term": "urge incontinence",
       "status": "present",
-      "evidence": "She states that there are multiple times when she is trying to go to the bathroom and feels the urge however is unable to do so"
+      "evidence": "urge incontinence"
+    },
+    {
+      "term": "bladder spasms",
+      "status": "present",
+      "evidence": "abdominal pain in the setting of ? bladder spasms"
     },
     {
       "term": "fatigue",
       "status": "present",
-      "evidence": "She states that all activities now are quite fatiguing"
+      "evidence": "everything has been quite hard"
     },
     {
-      "term": "spasms",
+      "term": "shortness of breath",
       "status": "present",
-      "evidence": "She reports that she has increased spasms in the upper extremities and in the bladder"
+      "evidence": "unable to walk about 10 steps without feeling short of breath"
     }
   ],
   "vitals": [
@@ -70,7 +75,7 @@
     {
       "name": "Weight",
       "value": "253.53",
-      "unit": "Lbs"
+      "unit": "lbs"
     }
   ],
   "labs": [
@@ -179,12 +184,12 @@
       "certainty": "confirmed"
     },
     {
-      "term": "myasthenia",
-      "certainty": "suspected"
+      "term": "myasthenia ___",
+      "certainty": "confirmed"
     },
     {
-      "term": "chest pain",
-      "certainty": "rule_out"
+      "term": "dementia",
+      "certainty": "suspected"
     }
   ],
   "medications": [
@@ -209,17 +214,21 @@
   ],
   "procedures": [
     {
-      "name": "chest x-ray",
-      "result": "mild to moderate pulmonary edema, bilateral pleural effusions"
+      "name": "blood cultures",
+      "result": "x 1 drawn"
+    },
+    {
+      "name": "urine culture",
+      "result": "x 1 drawn"
     }
   ],
   "negations": [
-    "She denies any prior history of stroke, TIA, deep venous thrombosis, pulmonary embolism, bleeding at the time of surgery, myalgias, joint pains, cough, hemoptysis, black stools or red stools. Denies recent fevers, chills or rigors. Denies exertional buttock or calf pain."
+    "denies any prior history of stroke, TIA, deep venous thrombosis, pulmonary embolism, bleeding at the time of surgery, myalgias, joint pains, cough, hemoptysis, black stools or red stools"
   ],
   "temporal": [
     {
-      "finding": "dyspnea",
-      "onset": "upon leaving the hospital"
+      "finding": "worsening dyspnea",
+      "onset": "discharge from prior hospital"
     }
   ],
   "_agent": "information_extraction",

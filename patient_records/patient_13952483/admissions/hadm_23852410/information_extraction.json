@@ -8,7 +8,7 @@
     {
       "term": "weight loss",
       "status": "present",
-      "evidence": "weight loss"
+      "evidence": "weight loss and hypotension"
     },
     {
       "term": "odynophagia",
@@ -18,52 +18,42 @@
     {
       "term": "cough",
       "status": "present",
-      "evidence": "coughing"
+      "evidence": "cough, pleuritic/MSK chest pain"
     },
     {
       "term": "chest pain",
       "status": "present",
-      "evidence": "pleuritic/MSK chest pain"
+      "evidence": "cough, pleuritic/MSK chest pain"
     },
     {
       "term": "malaise",
       "status": "present",
-      "evidence": "overall malaise"
-    },
-    {
-      "term": "neutropenia",
-      "status": "present",
-      "evidence": "new neutropenia (ANC 750)"
-    },
-    {
-      "term": "thrombocytopenia",
-      "status": "present",
-      "evidence": "thrombocytopenia (plts 93)"
+      "evidence": "malaise due to his chemotherapy and radiation therapy"
     },
     {
       "term": "anorexia",
       "status": "present",
-      "evidence": "overall anorexia and poor appetite"
-    },
-    {
-      "term": "poor appetite",
-      "status": "present",
-      "evidence": "overall anorexia and poor appetite"
-    },
-    {
-      "term": "coughing",
-      "status": "present",
-      "evidence": "coughing"
-    },
-    {
-      "term": "pain with swallowing",
-      "status": "present",
-      "evidence": "pain with swallowing"
+      "evidence": "anorexia, fatigue, weight loss"
     },
     {
       "term": "nausea",
       "status": "present",
-      "evidence": "some nausea"
+      "evidence": "denies any recent fevers, chills, or other localizing infectious symptoms"
+    },
+    {
+      "term": "pain",
+      "status": "present",
+      "evidence": "pain with swallowing, and overall anorexia and poor appetite"
+    },
+    {
+      "term": "neutropenia",
+      "status": "present",
+      "evidence": "ANC 750"
+    },
+    {
+      "term": "thrombocytopenia",
+      "status": "present",
+      "evidence": "plts 93"
     }
   ],
   "vitals": [
@@ -119,7 +109,7 @@
       "name": "RDW",
       "value": "16.5",
       "unit": "%",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Red Blood Cells",
@@ -131,13 +121,13 @@
       "name": "RDW-SD",
       "value": "53.1",
       "unit": "fL",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Creatinine",
       "value": "1.3",
       "unit": "mg/dL",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Absolute Lymphocyte Count",
@@ -155,7 +145,7 @@
       "name": "Metamyelocytes",
       "value": "1.0",
       "unit": "%",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Neutrophils",
@@ -167,13 +157,13 @@
       "name": "Absolute Basophil Count",
       "value": "0.0",
       "unit": "K/uL",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "Absolute Eosinophil Count",
       "value": "0.0",
       "unit": "K/uL",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "Bicarbonate",
@@ -215,19 +205,19 @@
       "name": "PT",
       "value": "13.4",
       "unit": "sec",
-      "flag": "normal"
+      "flag": "unknown"
     },
     {
       "name": "PTT",
       "value": "37.4",
       "unit": "sec",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Bands",
       "value": "8.0",
       "unit": "%",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Absolute Neutrophil Count",
@@ -263,25 +253,55 @@
       "name": "Iron Binding Capacity, Total",
       "value": "144.0",
       "unit": "ug/dL",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Transferrin",
       "value": "111.0",
       "unit": "mg/dL",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "tacroFK",
       "value": "3.3",
       "unit": "ng/mL",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Anion Gap",
       "value": "12.0",
       "unit": "mEq/L",
+      "flag": "unknown"
+    },
+    {
+      "name": "Magnesium",
+      "value": "1.7",
+      "unit": "mg/dL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Phosphate",
+      "value": "3.2",
+      "unit": "mg/dL",
+      "flag": "unknown"
+    },
+    {
+      "name": "Potassium",
+      "value": "4.4",
+      "unit": "mEq/L",
       "flag": "normal"
+    },
+    {
+      "name": "Sodium",
+      "value": "140.0",
+      "unit": "mEq/L",
+      "flag": "normal"
+    },
+    {
+      "name": "MCH",
+      "value": "27.9",
+      "unit": "pg",
+      "flag": "unknown"
     }
   ],
   "diagnoses_mentioned": [
@@ -322,9 +342,33 @@
       "certainty": "confirmed"
     }
   ],
-  "medications": [],
-  "procedures": [],
-  "negations": [],
+  "medications": [
+    {
+      "name": "dronabinol",
+      "dose": "",
+      "route": "",
+      "status": "started"
+    },
+    {
+      "name": "Ritalin",
+      "dose": "",
+      "route": "",
+      "status": "continued"
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Right Heart Catheterization",
+      "result": "confirmed Pulm HTN, unclear etiology"
+    },
+    {
+      "name": "___ guided lung biopsy",
+      "result": "Squamous Cell Cancer of the Lung"
+    }
+  ],
+  "negations": [
+    "No recent fevers, chills, or other localizing infectious symptoms"
+  ],
   "temporal": [
     {
       "finding": "hypotension",

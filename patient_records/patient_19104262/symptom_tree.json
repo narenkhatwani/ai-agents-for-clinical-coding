@@ -1,69 +1,152 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with DKA and lactic acidosis, with a history of recurrent DKA and uncontrolled diabetes mellitus type 1.",
+  "reasoning": "The patient presents with DKA and lactic acidosis, with a history of recurrent DKA and poorly controlled diabetes. The current episode is likely due to nonadherence in the setting of social stress.",
   "branches": [
     {
       "category": "infectious",
       "ontology_hint": "Infectious Diseases",
-      "symptoms": []
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "fevers/chills/nightsweats for the past few days",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L [abnormal]",
+            "Bicarbonate: 20.0 mEq/L [abnormal]"
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
-      "symptoms": []
+      "symptoms": [
+        {
+          "term": "hypertension",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "BP: 113/79 mmHg",
+          "related_findings": [
+            "pO2: 60 mm Hg [abnormal]",
+            "pCO2: 33 mm Hg [abnormal]",
+            "pH: 7.34 units [abnormal]"
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "category": "respiratory",
       "ontology_hint": "Respiratory",
-      "symptoms": []
+      "symptoms": [
+        {
+          "term": "respiratory distress",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "Breathing unlabored, CTA ___",
+          "related_findings": [],
+          "children": []
+        }
+      ]
     },
     {
       "category": "gi",
-      "ontology_hint": "Gastrointestinal",
-      "symptoms": []
-    },
-    {
-      "category": "renal",
-      "ontology_hint": "Renal",
-      "symptoms": []
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
-      "symptoms": []
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
+      "ontology_hint": "GI",
       "symptoms": [
         {
-          "term": "DKA",
+          "term": "nausea",
           "status": "present",
-          "severity": "severe",
-          "evidence": "DKA/lactic acidosis, in the setting of running out of medications.",
+          "severity": "mild",
+          "evidence": "nausea and vomiting",
           "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "pH: 6.96 units",
-            "Lactate: 3.6 mmol/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Calcium, Total: 10.2 mg/dL",
-            "Potassium: 8.8 mEq/L",
-            "Hematocrit: 46.2%",
-            "Hemoglobin: 14.4 g/dL",
-            "Albumin: 3.6 g/dL"
+            "Glucose: 263 mg/dL [abnormal]",
+            "Lactate: 3.6 mmol/L [abnormal]"
           ],
           "children": []
         },
         {
-          "term": "vaginal spotting",
-          "status": "present",
+          "term": "diarrhea",
+          "status": "history",
           "severity": "mild",
-          "evidence": "Vaginal spotting: No retained products of conception on the US; this is normal post-partum per the GYN consult team.",
+          "evidence": "significant amount of foul smelling diarrhea",
           "related_findings": [
-            "Abdominal ultrasound findings: heterogeneous material within the endometrial canal, measuring up to 8 mm in thickness, without internal vascularity, likely blood products.",
-            "Small to moderate amount of simple free fluid in the cul-de-sac.",
-            "Normal ovaries."
+            "Glucose: 263 mg/dL [abnormal]",
+            "Lactate: 3.6 mmol/L [abnormal]"
+          ],
+          "children": []
+        },
+        {
+          "term": "vaginal bleeding",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "persistent daily vaginal bleeding",
+          "related_findings": [
+            "Glucose: 263 mg/dL [abnormal]",
+            "Lactate: 3.6 mmol/L [abnormal]"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "proteinuria",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "Hemoglobin: 10.0 g/dL [abnormal]",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L [abnormal]",
+            "Bicarbonate: 20.0 mEq/L [abnormal]"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "headache",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "frontal headache",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L [abnormal]",
+            "Bicarbonate: 20.0 mEq/L [abnormal]"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "endocrine",
+      "ontology_hint": "Endocrine",
+      "symptoms": [
+        {
+          "term": "hyperglycemia",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "Glucose: 263 mg/dL [abnormal]",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L [abnormal]",
+            "Bicarbonate: 20.0 mEq/L [abnormal]"
+          ],
+          "children": []
+        },
+        {
+          "term": "hypoglycemia",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "hypoglycemia",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L [abnormal]",
+            "Bicarbonate: 20.0 mEq/L [abnormal]"
           ],
           "children": []
         }
@@ -71,17 +154,20 @@
     }
   ],
   "key_symptoms": [
-    "DKA",
-    "vaginal spotting"
+    "fever",
+    "nausea",
+    "vaginal bleeding",
+    "diarrhea",
+    "headache"
   ],
   "red_flags": [
-    "lactic acidosis",
-    "severe metabolic acidosis"
+    "hypotension",
+    "AMS"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "19104262",
   "admission_id": "24271247",
-  "generated_at": "2026-07-09T00:31:07.761482"
+  "generated_at": "2026-07-20T01:15:54.934573"
 }

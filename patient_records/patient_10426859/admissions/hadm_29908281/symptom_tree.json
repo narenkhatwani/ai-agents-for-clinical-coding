@@ -1,34 +1,31 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with recurrent SVT, lightheadedness, headache, and pain in the right hip and leg, with no acute cardiovascular or respiratory findings.",
+  "reasoning": "The patient presents with recurrent SVT, lightheadedness, and falls, with recent onset of hip pain and headache.",
   "branches": [
     {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "palpitations",
+          "term": "SVT",
           "status": "present",
           "severity": "mild",
-          "evidence": "palpitations",
+          "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home.",
           "related_findings": [
-            "SVT"
+            "troponin 0.09 ng/mL",
+            "ST elevations in II, III, V1-V3"
           ],
           "children": [
             {
-              "term": "SVT",
+              "term": "palpitations",
               "status": "present",
-              "evidence": "recurrence of her SVT"
+              "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+            },
+            {
+              "term": "chest pain",
+              "status": "absent",
+              "evidence": "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
             }
-          ]
-        },
-        {
-          "term": "lightheadedness",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "lightheadedness and palpitations",
-          "related_findings": [
-            "SVT"
           ]
         }
       ]
@@ -41,9 +38,9 @@
           "term": "headache",
           "status": "present",
           "severity": "mild",
-          "evidence": "headache",
+          "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home.",
           "related_findings": [
-            "CT head: tiny chronic right cerebellar infarct"
+            "CT head showing tiny chronic right cerebellar infarct"
           ]
         }
       ]
@@ -56,7 +53,7 @@
           "term": "pain in right hip",
           "status": "present",
           "severity": "mild",
-          "evidence": "pain in her right hip",
+          "evidence": "When nurse tried to reposition her, patient had pain in her right hip.",
           "related_findings": [
             "nondisplaced comminuted fracture in the right superior pubic ramus"
           ]
@@ -65,7 +62,7 @@
           "term": "pain in right leg",
           "status": "present",
           "severity": "mild",
-          "evidence": "pain in her entire right leg - her foot, ankle, leg, hip",
+          "evidence": "Patient endorsed that when she stood up earlier she had felt pain in her entire right leg - her foot, ankle, leg, hip.",
           "related_findings": [
             "nondisplaced comminuted fracture in the right superior pubic ramus"
           ]
@@ -73,30 +70,27 @@
       ]
     },
     {
-      "category": "other",
-      "ontology_hint": "Other",
+      "category": "constitutional",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "anemia",
+          "term": "lightheadedness",
           "status": "present",
           "severity": "mild",
-          "evidence": "Red Blood Cells: 3.89 m/uL [abnormal]",
+          "evidence": "Patient endorsed having had a fall when she felt lightheaded but no head strike.",
           "related_findings": [
-            "RDW-SD: 47.2 fL [abnormal]"
+            "low blood pressure"
           ]
         }
       ]
     }
   ],
   "key_symptoms": [
-    "palpitations",
-    "lightheadedness",
+    "SVT",
     "headache",
-    "pain in right hip",
-    "pain in right leg"
+    "pain in right hip"
   ],
   "red_flags": [
-    "SVT",
     "nondisplaced comminuted fracture in the right superior pubic ramus"
   ],
   "type": "symptom_tree",
@@ -104,5 +98,5 @@
   "_agent": "symptom_tree",
   "patient_id": "10426859",
   "admission_id": "29908281",
-  "generated_at": "2026-07-09T00:29:37.491161"
+  "generated_at": "2026-07-20T01:08:15.513335"
 }

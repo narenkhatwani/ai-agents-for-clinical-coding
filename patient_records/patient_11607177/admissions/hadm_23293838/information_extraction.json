@@ -1,29 +1,59 @@
 {
   "symptoms": [
     {
-      "term": "lightheaded",
+      "term": "ICD shock",
       "status": "present",
-      "evidence": "lightheaded and then felt his ICD discharge"
+      "evidence": "ICD shock on ___"
     },
     {
-      "term": "ICD discharge",
+      "term": "lightheadedness",
       "status": "present",
-      "evidence": "ICD discharge"
+      "evidence": "lightheadedness with position changes"
     },
     {
-      "term": "shaking in his chest",
+      "term": "edema",
       "status": "present",
-      "evidence": "shaking"
+      "evidence": "some increased ___ edema"
     },
     {
-      "term": "increased edema",
-      "status": "present",
-      "evidence": "increased edema in the week prior to the shock"
+      "term": "palpitations",
+      "status": "absent",
+      "evidence": "denies other palpitations"
     },
     {
-      "term": "feeling at baseline",
+      "term": "chest pain",
+      "status": "absent",
+      "evidence": "denies chest pain"
+    },
+    {
+      "term": "fevers",
+      "status": "absent",
+      "evidence": "denies fevers"
+    },
+    {
+      "term": "chills",
+      "status": "absent",
+      "evidence": "denies chills"
+    },
+    {
+      "term": "cough",
+      "status": "absent",
+      "evidence": "denies cough"
+    },
+    {
+      "term": "nausea",
+      "status": "absent",
+      "evidence": "denies N/V/D"
+    },
+    {
+      "term": "shaking",
       "status": "present",
-      "evidence": "felt at baseline"
+      "evidence": "feeling some "
+    },
+    {
+      "term": "abdominal pain",
+      "status": "absent",
+      "evidence": "denies abdominal pain"
     }
   ],
   "vitals": [
@@ -38,91 +68,152 @@
       "unit": "Lbs"
     },
     {
+      "name": "BP",
+      "value": "MAP ___ by Doppler",
+      "unit": ""
+    },
+    {
       "name": "HR",
       "value": "80",
-      "unit": "bpm"
-    },
-    {
-      "name": "BP",
-      "value": "140",
-      "unit": "mmHg"
-    },
-    {
-      "name": "MAP",
-      "value": "100",
-      "unit": "mmHg"
-    },
-    {
-      "name": "Respiratory Rate",
-      "value": "20",
-      "unit": "bpm"
+      "unit": ""
     },
     {
       "name": "SpO2",
-      "value": "99",
-      "unit": "%RA"
+      "value": "99%",
+      "unit": "RA"
+    },
+    {
+      "name": "JVD",
+      "value": "10cm",
+      "unit": ""
     }
   ],
   "labs": [
     {
       "name": "WBC",
       "value": "5.7",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "normal"
     },
     {
       "name": "RBC",
       "value": "4.46",
-      "unit": "m/uL",
+      "unit": "",
       "flag": "normal"
     },
     {
       "name": "Hgb",
       "value": "12.7",
-      "unit": "g/dL",
+      "unit": "",
       "flag": "normal"
     },
     {
       "name": "Hct",
       "value": "39.8",
-      "unit": "%",
+      "unit": "",
       "flag": "normal"
     },
     {
       "name": "MCV",
       "value": "89",
-      "unit": "fL",
+      "unit": "",
       "flag": "normal"
     },
     {
       "name": "MCH",
       "value": "28.5",
-      "unit": "pg",
+      "unit": "",
       "flag": "normal"
     },
     {
       "name": "MCHC",
       "value": "31.9",
-      "unit": "g/dL",
+      "unit": "",
       "flag": "low"
     },
     {
       "name": "RDW",
       "value": "16.9",
-      "unit": "%",
+      "unit": "",
       "flag": "normal"
     },
     {
       "name": "RDW-SD",
       "value": "54.9",
-      "unit": "fL",
+      "unit": "",
       "flag": "high"
     },
     {
       "name": "Plt",
-      "value": "142",
+      "value": "___",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "Creat",
+      "value": "1.4",
+      "unit": "",
+      "flag": "normal"
+    },
+    {
+      "name": "Glucose",
+      "value": "105",
+      "unit": "",
+      "flag": "normal"
+    },
+    {
+      "name": "UreaN",
+      "value": "31",
+      "unit": "",
+      "flag": "high"
+    },
+    {
+      "name": "INR(PT)",
+      "value": "3.3",
+      "unit": "",
+      "flag": "high"
+    },
+    {
+      "name": "PT",
+      "value": "36.9",
+      "unit": "sec",
+      "flag": "high"
+    },
+    {
+      "name": "PTT",
+      "value": "44.2",
+      "unit": "sec",
+      "flag": "high"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "11.6",
+      "unit": "",
+      "flag": "low"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "142.0",
       "unit": "K/uL",
       "flag": "low"
+    },
+    {
+      "name": "RDW",
+      "value": "17.0",
+      "unit": "%",
+      "flag": "high"
+    },
+    {
+      "name": "Red Blood Cells",
+      "value": "4.1",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "54.4",
+      "unit": "fL",
+      "flag": "high"
     },
     {
       "name": "Creatinine",
@@ -132,21 +223,21 @@
     },
     {
       "name": "Glucose",
-      "value": "105",
+      "value": "118",
       "unit": "mg/dL",
-      "flag": "normal"
+      "flag": "high"
     },
     {
-      "name": "Urea Nitrogen",
-      "value": "31",
-      "unit": "mg/dL",
-      "flag": "normal"
+      "name": "MCHC",
+      "value": "31.9",
+      "unit": "g/dL",
+      "flag": "low"
     },
     {
       "name": "Alkaline Phosphatase",
-      "value": "186",
+      "value": "167",
       "unit": "IU/L",
-      "flag": "normal"
+      "flag": "high"
     },
     {
       "name": "Lactate Dehydrogenase (LD)",
@@ -156,43 +247,43 @@
     },
     {
       "name": "Anion Gap",
-      "value": "15",
+      "value": "13",
       "unit": "mEq/L",
-      "flag": "normal"
+      "flag": "unknown"
     },
     {
       "name": "Bicarbonate",
-      "value": "27",
+      "value": "28",
       "unit": "mEq/L",
       "flag": "normal"
     },
     {
       "name": "Calcium, Total",
-      "value": "9.5",
+      "value": "9.1",
       "unit": "mg/dL",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "Chloride",
-      "value": "102",
+      "value": "104",
       "unit": "mEq/L",
       "flag": "normal"
     },
     {
-      "name": "Magnesium",
-      "value": "3.7",
-      "unit": "mEq/L",
-      "flag": "high"
+      "name": "Phosphate",
+      "value": "3.8",
+      "unit": "mg/dL",
+      "flag": "normal"
     },
     {
-      "name": "Phosphate",
-      "value": "4.2",
-      "unit": "mg/dL",
+      "name": "Potassium",
+      "value": "4.3",
+      "unit": "mEq/L",
       "flag": "normal"
     },
     {
       "name": "Sodium",
-      "value": "140",
+      "value": "141",
       "unit": "mEq/L",
       "flag": "normal"
     }
@@ -203,19 +294,11 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Heartmate II LVAD",
-      "certainty": "confirmed"
-    },
-    {
       "term": "Refractory VT",
       "certainty": "confirmed"
     },
     {
-      "term": "ICD shock",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "AVJ ablation",
+      "term": "Heartmate II LVAD",
       "certainty": "confirmed"
     },
     {
@@ -239,7 +322,7 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Tophaceous Gout",
+      "term": "Tophaces Gout",
       "certainty": "confirmed"
     },
     {
@@ -251,7 +334,7 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Gastritis",
+      "term": "Gastritis; +H Pylori",
       "certainty": "confirmed"
     },
     {
@@ -261,30 +344,85 @@
   ],
   "medications": [
     {
-      "name": "torsemide",
+      "name": "Torsemide",
       "dose": "20mg",
-      "route": "oral",
+      "route": "PO",
       "status": "continued"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "10mg",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Tramadol",
+      "dose": "as needed",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Metoprolol",
+      "dose": "as needed",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Sildenafil",
+      "dose": "20mg",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Dipyridamole",
+      "dose": "as needed",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Aspirin",
+      "dose": "325mg",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Coumadin",
+      "dose": "4mg TuThSatSun, 3mg ___",
+      "route": "PO",
+      "status": "started"
+    },
+    {
+      "name": "Ferrous Sulfate",
+      "dose": "325mg",
+      "route": "PO",
+      "status": "continued"
+    },
+    {
+      "name": "Magnesium",
+      "dose": "2mg IV",
+      "route": "IV",
+      "status": "given"
     }
   ],
   "procedures": [
     {
-      "name": "stellate ganglion block (L)",
+      "name": "Stellate ganglion block (L)",
       "result": "for refractory VT"
     }
   ],
   "negations": [
-    "chest pain",
-    "fevers",
-    "chills",
-    "sick contacts",
-    "cough",
-    "n/v/d"
+    "denies chest pain",
+    "denies fevers",
+    "denies chills",
+    "denies cough",
+    "denies N/V/D",
+    "denies other palpitations",
+    "denies abdominal pain"
   ],
   "temporal": [
     {
       "finding": "ICD shock",
-      "onset": "___ as DT"
+      "onset": "___ AM"
     }
   ],
   "_agent": "information_extraction",

@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with septic shock, hypoxic respiratory failure, and multiple organ failures including liver and renal failure, along with signs of severe coagulopathy and hepatic encephalopathy.",
+  "reasoning": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple organ system involvement including respiratory, cardiovascular, and renal failure.",
   "branches": [
     {
       "category": "infectious",
@@ -23,12 +23,22 @@
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
+          "term": "Hypoxia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "oxygen saturations in the ___ at his SNF",
+          "related_findings": [
+            "compressive consolidation versus atelectasis"
+          ],
+          "children": []
+        },
+        {
           "term": "Hypoxic respiratory failure",
           "status": "present",
           "severity": "severe",
           "evidence": "intubated for hypoxic respiratory failure",
           "related_findings": [
-            "large pleural effusion with compressive consolidation versus atelectasis"
+            "pleural effusion with compressive consolidation versus atelectasis"
           ],
           "children": []
         }
@@ -45,20 +55,31 @@
           "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
           "related_findings": [],
           "children": []
+        },
+        {
+          "term": "Renal failure",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "acute renal failure ___ to septic shock and ATN on dialysis",
+          "related_findings": [
+            "lactate-6.6*"
+          ],
+          "children": []
         }
       ]
     },
     {
       "category": "neurologic",
-      "ontology_hint": "Neurology",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
           "term": "Hepatic encephalopathy",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "hepatic encephalopathy",
+          "severity": "severe",
+          "evidence": "worsening liver failure and HE ___ to metastatic HCC",
           "related_findings": [
-            "worsening liver failure"
+            "lactate-13.2 mmol/L",
+            "pH-7.11 units"
           ],
           "children": []
         }
@@ -66,7 +87,7 @@
     },
     {
       "category": "gi",
-      "ontology_hint": "Gastrointestinal",
+      "ontology_hint": "GI",
       "symptoms": [
         {
           "term": "GI bleeding",
@@ -74,7 +95,8 @@
           "severity": "moderate",
           "evidence": "concern for GI bleeding (black coffee-ground GI contents)",
           "related_findings": [
-            "epistaxis"
+            "epistaxis",
+            "anasarca"
           ],
           "children": []
         }
@@ -89,89 +111,39 @@
           "status": "present",
           "severity": "severe",
           "evidence": "acute renal failure ___ to septic shock and ATN on dialysis",
+          "related_findings": [
+            "lactate-6.6*"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "Thrombocytopenia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
           "related_findings": [],
           "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
+        },
         {
-          "term": "Klebsiella Aerogenes infection",
+          "term": "Anasarca",
           "status": "present",
-          "severity": "severe",
-          "evidence": "Klebsiella Aerogenes blood cultures grew",
-          "related_findings": [
-            "broad spectrum antibiotics started"
-          ],
+          "severity": "mild",
+          "evidence": "gross anasarca",
+          "related_findings": [],
           "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
+        },
         {
-          "term": "Potential VAP or GI source",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "Klebsiella Aerogenes infection, distributive shock picture",
-          "related_findings": [
-            "large pleural effusion with compressive consolidation versus atelectasis"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "Distributive shock",
-          "status": "present",
-          "severity": "severe",
-          "evidence": "distributive shock picture",
-          "related_findings": [
-            "hypotension"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "Coagulopathy",
-          "status": "present",
-          "severity": "severe",
-          "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
-          "related_findings": [
-            "INR(PT) 3.4",
-            "PT 36.5 sec",
-            "PTT 104.2 sec"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "Metastatic HCC",
+          "term": "Atelectasis",
           "status": "present",
           "severity": "moderate",
-          "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland",
-          "related_findings": [
-            "large heterogeneous solid mass within the left upper quadrant"
-          ],
+          "evidence": "compressive consolidation versus atelectasis",
+          "related_findings": [],
           "children": []
         }
       ]
@@ -179,7 +151,8 @@
   ],
   "key_symptoms": [
     "Septic shock",
-    "Hypoxic respiratory failure"
+    "Hepatic encephalopathy",
+    "GI bleeding"
   ],
   "red_flags": [
     "Hepatic encephalopathy",
@@ -190,5 +163,5 @@
   "_agent": "symptom_tree",
   "patient_id": "17774110",
   "admission_id": "27339772",
-  "generated_at": "2026-07-09T00:30:57.676832"
+  "generated_at": "2026-07-20T01:14:20.085634"
 }

@@ -8,89 +8,113 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [present] lightheaded — "lightheaded and then felt his ICD discharge"
-  • [present] ICD discharge — "ICD discharge"
-  • [present] shaking in his chest — "shaking"
-  • [present] increased edema — "increased edema in the week prior to the shock"
-  • [present] feeling at baseline — "felt at baseline"
+  • [present] ICD shock — "ICD shock on ___"
+  • [present] lightheadedness — "lightheadedness with position changes"
+  • [present] edema — "some increased ___ edema"
+  • [absent] palpitations — "denies other palpitations"
+  • [absent] chest pain — "denies chest pain"
+  • [absent] fevers — "denies fevers"
+  • [absent] chills — "denies chills"
+  • [absent] cough — "denies cough"
+  • [absent] nausea — "denies N/V/D"
+  • [present] shaking — "feeling some "
+  • [absent] abdominal pain — "denies abdominal pain"
 
 VITALS
 ------
 
 • BMI: 36.7 kg/m2
 • Weight: 263.23 Lbs
-• HR: 80 bpm
-• BP: 140 mmHg
-• MAP: 100 mmHg
-• Respiratory Rate: 20 bpm
-• SpO2: 99 %RA
+• BP: MAP ___ by Doppler
+• HR: 80
+• SpO2: 99% RA
+• JVD: 10cm
 
 LABS
 ----
 
-• WBC: 5.7 K/uL [normal]
-• RBC: 4.46 m/uL [normal]
-• Hgb: 12.7 g/dL [normal]
-• Hct: 39.8 % [normal]
-• MCV: 89 fL [normal]
-• MCH: 28.5 pg [normal]
-• MCHC: 31.9 g/dL [low]
-• RDW: 16.9 % [normal]
-• RDW-SD: 54.9 fL [high]
-• Plt: 142 K/uL [low]
+• WBC: 5.7  [normal]
+• RBC: 4.46  [normal]
+• Hgb: 12.7  [normal]
+• Hct: 39.8  [normal]
+• MCV: 89  [normal]
+• MCH: 28.5  [normal]
+• MCHC: 31.9  [low]
+• RDW: 16.9  [normal]
+• RDW-SD: 54.9  [high]
+• Plt: ___  [unknown]
+• Creat: 1.4  [normal]
+• Glucose: 105  [normal]
+• UreaN: 31  [high]
+• INR(PT): 3.3  [high]
+• PT: 36.9 sec [high]
+• PTT: 44.2 sec [high]
+• Hemoglobin: 11.6  [low]
+• Platelet Count: 142.0 K/uL [low]
+• RDW: 17.0 % [high]
+• Red Blood Cells: 4.1 m/uL [low]
+• RDW-SD: 54.4 fL [high]
 • Creatinine: 1.4 mg/dL [normal]
-• Glucose: 105 mg/dL [normal]
-• Urea Nitrogen: 31 mg/dL [normal]
-• Alkaline Phosphatase: 186 IU/L [normal]
+• Glucose: 118 mg/dL [high]
+• MCHC: 31.9 g/dL [low]
+• Alkaline Phosphatase: 167 IU/L [high]
 • Lactate Dehydrogenase (LD): 252 IU/L [high]
-• Anion Gap: 15 mEq/L [normal]
-• Bicarbonate: 27 mEq/L [normal]
-• Calcium, Total: 9.5 mg/dL [normal]
-• Chloride: 102 mEq/L [normal]
-• Magnesium: 3.7 mEq/L [high]
-• Phosphate: 4.2 mg/dL [normal]
-• Sodium: 140 mEq/L [normal]
+• Anion Gap: 13 mEq/L [unknown]
+• Bicarbonate: 28 mEq/L [normal]
+• Calcium, Total: 9.1 mg/dL [low]
+• Chloride: 104 mEq/L [normal]
+• Phosphate: 3.8 mg/dL [normal]
+• Potassium: 4.3 mEq/L [normal]
+• Sodium: 141 mEq/L [normal]
 
 DIAGNOSES MENTIONED
 -------------------
 
   • [confirmed] Dilated non-ischemic cardiomyopathy
-  • [confirmed] Heartmate II LVAD
   • [confirmed] Refractory VT
-  • [confirmed] ICD shock
-  • [confirmed] AVJ ablation
+  • [confirmed] Heartmate II LVAD
   • [confirmed] CVA
   • [confirmed] Diabetes
   • [confirmed] Dyslipidemia
   • [confirmed] Hypertension
   • [confirmed] Sleep apnea
-  • [confirmed] Tophaceous Gout
+  • [confirmed] Tophaces Gout
   • [confirmed] TKR (left)
   • [confirmed] Schistosomiasis
-  • [confirmed] Gastritis
+  • [confirmed] Gastritis; +H Pylori
   • [confirmed] Obesity
 
 MEDICATIONS
 -----------
 
-  • torsemide (continued)
+  • Torsemide (continued)
+  • Oxycodone (continued)
+  • Tramadol (continued)
+  • Metoprolol (continued)
+  • Sildenafil (continued)
+  • Dipyridamole (continued)
+  • Aspirin (continued)
+  • Coumadin (started)
+  • Ferrous Sulfate (continued)
+  • Magnesium (given)
 
 PROCEDURES
 ----------
 
-  • stellate ganglion block (L): for refractory VT
+  • Stellate ganglion block (L): for refractory VT
 
 NEGATIONS
 ---------
 
-  • chest pain
-  • fevers
-  • chills
-  • sick contacts
-  • cough
-  • n/v/d
+  • denies chest pain
+  • denies fevers
+  • denies chills
+  • denies cough
+  • denies N/V/D
+  • denies other palpitations
+  • denies abdominal pain
 
 TEMPORAL
 --------
 
-  • ICD shock: ___ as DT
+  • ICD shock: ___ AM

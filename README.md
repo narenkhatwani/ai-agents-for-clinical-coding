@@ -25,9 +25,8 @@ export OPENROUTER_API_KEY="sk-or-..."
 
 | Artifact | Action |
 |----------|--------|
-| `data/cohort/cohort.pkl` | **Re-run Stage 1** — adds structured vitals, labs, radiology |
-| `data/stage_02/ie_checkpoint.json` | **Delete** (old format / wrong admission count) |
-| Stages 2–4 | Re-run — agents now use note + structured MIMIC data |
+| `data/cohort/cohort.pkl` | **Re-run Stage 1** — redacted latest notes + rich prior history |
+| `data/stage_02/ie_checkpoint.json` | **Delete** and re-run stages 2–4 |
 
 Stage 1 takes longer now (~2–5 min) because it loads labs/vitals/reports for each admission before collapsing to the latest stay.
 
@@ -58,14 +57,16 @@ The LLM is instructed to **prefer structured vitals/labs over note text** when t
 
 1. Samples patients with ≥2 admissions (≥1 in test mode), each with ICD-10 labels and a discharge note ≥500 chars
 2. Loads **structured vitals, labs, and radiology** for every admission
-3. Collapses to **one row per patient**: latest admission = full note + structured data; prior stays = history
+3. Collapses to **one row per patient**:
+   - **Latest admission** → discharge note with **discharge package redacted** (diagnosis, instructions, meds, disposition, condition, followup, transitional issues) + Hospital Course `# Problem:` titles scrubbed; full note in `clinical_note_full`; ICD-10 in ground truth only
+   - **Prior admissions** → detailed history (`clinical_detail`: HPI, hospital course, prior discharge diagnoses, ICD-10)
 
 **Outputs**
 
 - `data/cohort/cohort.pkl` — one row per patient
 - `data/cohort/cohort_index.json` — human-readable index
 
-**Key columns:** `clinical_note`, `clinical_context_text`, `structured_vitals`, `structured_labs`, `structured_reports`, `admission_history`
+**Key columns:** `clinical_note` (redacted, for LLM), `clinical_note_full`, `clinical_context_text`, `admission_history`, `ground_truth_icd10`
 
 ### Stage 2 — Information extraction (`stage_02_information_extraction.ipynb`)
 
@@ -100,17 +101,16 @@ The LLM is instructed to **prefer structured vitals/labs over note text** when t
 
 ```
 patient_<id>/
-  admission_history.json / .txt
+  admission_history.json / .txt   (detailed prior stays)
   symptom_tree.json / .txt
   admissions/hadm_<latest>/
-    clinical_note.txt
-    clinical_context.txt          # vitals + labs + radiology text
-    structured_vitals.json
-    structured_labs.json
-    radiology_reports.json
-    information_extraction.json
-    symptom_tree.json
-    ground_truth.txt
+    clinical_note.txt              (redacted discharge package — sent to LLM)
+    clinical_note_full.txt         (original)
+    redacted_discharge_sections.txt
+    ground_truth.json / .txt       (ICD-10 — evaluation only)
+    clinical_context.txt
+    structured_vitals.json / structured_labs.json / radiology_reports.json
+    information_extraction.json / symptom_tree.json
 ```
 
 ## Test mode

@@ -3,12 +3,12 @@
     {
       "term": "chest pressure",
       "status": "present",
-      "evidence": "chest presure"
+      "evidence": "chest pressure that he described as a 'heaviness'"
     },
     {
       "term": "back pain",
       "status": "history",
-      "evidence": "back pain"
+      "evidence": "Chief Complaint: Back pain"
     },
     {
       "term": "fever",
@@ -18,7 +18,17 @@
     {
       "term": "pneumonia",
       "status": "present",
-      "evidence": "RUL PNA"
+      "evidence": "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis"
+    },
+    {
+      "term": "hypotension",
+      "status": "present",
+      "evidence": "persistently hypotensive with pressures in the 80's"
+    },
+    {
+      "term": "sepsis",
+      "status": "present",
+      "evidence": "severe sepsis probably secondary to RUL PNA"
     },
     {
       "term": "altered mental status",
@@ -26,9 +36,14 @@
       "evidence": "altered mental status"
     },
     {
-      "term": "seizures",
-      "status": "suspected",
-      "evidence": "possibly seizures from metastases (EEG shows epileptiform discharges left paracentrally) on keppra and vimpat"
+      "term": "saddle anesthesia",
+      "status": "history",
+      "evidence": "no saddle anesthesia or bowel/bladder changes"
+    },
+    {
+      "term": "numbness",
+      "status": "history",
+      "evidence": "numbness in his right thumb that has been present for many years"
     }
   ],
   "vitals": [
@@ -117,7 +132,7 @@
       "name": "Platelet Count",
       "value": "125.0",
       "unit": "K/uL",
-      "flag": "low"
+      "flag": "normal"
     },
     {
       "name": "RDW",
@@ -204,18 +219,6 @@
       "flag": "high"
     },
     {
-      "name": "Reticulocyte Count, Absolute",
-      "value": "0.15",
-      "unit": "m/uL",
-      "flag": "low"
-    },
-    {
-      "name": "Reticulocyte Count, Automated",
-      "value": "6.9",
-      "unit": "%",
-      "flag": "low"
-    },
-    {
       "name": "Ferritin",
       "value": "2215.0",
       "unit": "ng/mL",
@@ -231,13 +234,13 @@
       "name": "Iron Binding Capacity, Total",
       "value": "108.0",
       "unit": "ug/dL",
-      "flag": "low"
+      "flag": "high"
     },
     {
       "name": "Transferrin",
       "value": "83.0",
       "unit": "mg/dL",
-      "flag": "low"
+      "flag": "high"
     },
     {
       "name": "Calculated Total CO2",
@@ -285,18 +288,12 @@
       "name": "Absolute Basophil Count",
       "value": "0.0",
       "unit": "K/uL",
-      "flag": "low"
+      "flag": "normal"
     },
     {
       "name": "Absolute Eosinophil Count",
       "value": "0.0",
       "unit": "K/uL",
-      "flag": "low"
-    },
-    {
-      "name": "Lactate",
-      "value": "2.6",
-      "unit": "mmol/L",
       "flag": "normal"
     }
   ],
@@ -318,28 +315,8 @@
       "certainty": "confirmed"
     },
     {
-      "term": "thrombi in the right IJ, left IJ, left subclavian vein, L axillary v, L cephalic vein",
+      "term": "parotitis",
       "certainty": "confirmed"
-    },
-    {
-      "term": "thrombectomy of R brachiocephalic and subclavian vein",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "SVC stent placed",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Parotitis",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "staph aureus",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "GI mass",
-      "certainty": "suspected"
     }
   ],
   "medications": [
@@ -351,32 +328,20 @@
     },
     {
       "name": "Vancomycin",
-      "dose": "23.7 ug/mL",
-      "route": "IV",
+      "dose": "250 mL/hr",
+      "route": "IVF",
       "status": "started"
     },
     {
       "name": "Ceftazidime",
       "dose": "2g",
       "route": "IV",
-      "status": "started"
+      "status": "stopped"
     },
     {
       "name": "Dexamethasone",
       "dose": "taper",
       "route": "oral",
-      "status": "stopped"
-    },
-    {
-      "name": "XRT",
-      "dose": "5 treatments",
-      "route": "external beam",
-      "status": "stopped"
-    },
-    {
-      "name": "Lovenox",
-      "dose": "80 BID",
-      "route": "subcutaneous",
       "status": "stopped"
     },
     {
@@ -390,37 +355,28 @@
       "dose": "750 mg Q12h",
       "route": "oral",
       "status": "started"
+    },
+    {
+      "name": "Levophed",
+      "dose": "250 mL/hr",
+      "route": "IV",
+      "status": "started"
     }
   ],
   "procedures": [
     {
       "name": "Pericardiocentesis",
-      "result": "performed"
+      "result": "uncomplicated"
     }
   ],
   "negations": [
-    "No Known Allergies / Adverse Drug Reactions"
+    "no saddle anesthesia or bowel/bladder changes",
+    "no numbness tingling other than numbness in his right thumb"
   ],
   "temporal": [
     {
-      "finding": "chest pressure",
-      "onset": "recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer"
-    },
-    {
       "finding": "RUL PNA",
-      "onset": "recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer"
-    },
-    {
-      "finding": "back pain",
-      "onset": "recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer"
-    },
-    {
-      "finding": "altered mental status",
-      "onset": "recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer"
-    },
-    {
-      "finding": "seizures",
-      "onset": "recently diagnosed metastatic adenocarcinoma of unknown primary vs. non-small cell lung cancer"
+      "onset": "recently diagnosed"
     }
   ],
   "_agent": "information_extraction",

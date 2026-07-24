@@ -3,75 +3,98 @@
     {
       "term": "post-procedural pain",
       "status": "present",
-      "evidence": "post-procedural pain in the right side of the abdomen extending to the back"
+      "evidence": "post-procedural pain in the right side of the abdomen"
     },
     {
       "term": "nausea",
       "status": "present",
-      "evidence": "one brief episode of nausea that then passed"
+      "evidence": "one brief episode of nausea"
     },
     {
-      "term": "fever",
-      "status": "absent",
-      "evidence": "On other review of systems, she denies headache, blurry vision, fevers, chills, shortness of breath, palpitations, chest pain, urinary frequency/urgency, diarrhea/constipation"
-    },
-    {
-      "term": "tender abdomen",
+      "term": "abdominal pain",
       "status": "present",
-      "evidence": "tender in the right upper and right lower quadrant to palpation. Otherwise soft, nondistended. No rebound tenderness or guarding"
-    },
-    {
-      "term": "desmoid tumor",
-      "status": "present",
-      "evidence": "desmoid tumor of the abdominal wall s/p partial cryoablation"
+      "evidence": "tender in the right upper and right lower quadrant to palpation"
     },
     {
       "term": "pain",
       "status": "present",
-      "evidence": "similar to the previous procedure she had, and is less sharp in quality compared to her tumor pain"
+      "evidence": "similar to the previous procedure"
+    },
+    {
+      "term": "fever",
+      "status": "absent",
+      "evidence": "denies fever, chills, night sweats"
+    },
+    {
+      "term": "shortness of breath",
+      "status": "absent",
+      "evidence": "denies shortness of breath"
+    },
+    {
+      "term": "palpitations",
+      "status": "absent",
+      "evidence": "denies palpitations"
+    },
+    {
+      "term": "chest pain",
+      "status": "absent",
+      "evidence": "denies chest pain"
+    },
+    {
+      "term": "diarrhea",
+      "status": "absent",
+      "evidence": "denies diarrhea"
+    },
+    {
+      "term": "constipation",
+      "status": "absent",
+      "evidence": "denies constipation"
     }
   ],
   "vitals": [
     {
-      "name": "Weight",
-      "value": "179",
-      "unit": "Lbs"
+      "name": "Temperature",
+      "value": "97.6",
+      "unit": "°F"
     },
     {
-      "name": "BMI",
-      "value": "31.7",
-      "unit": "kg/m2"
+      "name": "Heart Rate",
+      "value": "63",
+      "unit": "bpm"
+    },
+    {
+      "name": "Blood Pressure",
+      "value": "119/58",
+      "unit": "mmHg"
+    },
+    {
+      "name": "Respiratory Rate",
+      "value": "16",
+      "unit": "breaths/min"
+    },
+    {
+      "name": "Oxygen Saturation",
+      "value": "100",
+      "unit": "%"
     }
   ],
   "labs": [
     {
-      "name": "MCHC",
-      "value": "31.7",
-      "unit": "g/dL",
-      "flag": "low"
-    },
-    {
-      "name": "Platelet Count",
-      "value": "484.0",
-      "unit": "K/uL",
-      "flag": "high"
-    },
-    {
-      "name": "White Blood Cells",
+      "name": "WBC",
       "value": "15.2",
       "unit": "K/uL",
       "flag": "high"
     },
     {
-      "name": "Hematocrit",
-      "value": "35.3",
-      "unit": "%",
-      "flag": "low"
-    },
-    {
       "name": "Hemoglobin",
       "value": "11.2",
       "unit": "g/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Hematocrit",
+      "value": "35.3",
+      "unit": "%",
       "flag": "low"
     },
     {
@@ -90,19 +113,13 @@
       "name": "RDW",
       "value": "13.8",
       "unit": "%",
-      "flag": "low"
-    },
-    {
-      "name": "Red Blood Cells",
-      "value": "4.14",
-      "unit": "m/uL",
-      "flag": "low"
-    },
-    {
-      "name": "RDW-SD",
-      "value": "42.9",
-      "unit": "fL",
       "flag": "normal"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "484.0",
+      "unit": "K/uL",
+      "flag": "high"
     },
     {
       "name": "Anion Gap",
@@ -117,7 +134,7 @@
       "flag": "normal"
     },
     {
-      "name": "Calcium, Total",
+      "name": "Calcium",
       "value": "8.5",
       "unit": "mg/dL",
       "flag": "low"
@@ -145,47 +162,64 @@
       "value": "2.0",
       "unit": "mg/dL",
       "flag": "low"
-    },
-    {
-      "name": "Phosphate",
-      "value": "4.2",
-      "unit": "mg/dL",
-      "flag": "normal"
-    },
-    {
-      "name": "Potassium",
-      "value": "4.1",
-      "unit": "mEq/L",
-      "flag": "normal"
     }
   ],
   "diagnoses_mentioned": [
     {
       "term": "desmoid tumor",
       "certainty": "confirmed"
+    },
+    {
+      "term": "hepatitis C",
+      "certainty": "confirmed"
     }
   ],
-  "medications": [],
+  "medications": [
+    {
+      "name": "Dilaudid",
+      "dose": "PCA",
+      "route": "PCA",
+      "status": "started"
+    },
+    {
+      "name": "Toradol",
+      "dose": "IV",
+      "route": "IV",
+      "status": "started"
+    },
+    {
+      "name": "Zofran",
+      "dose": "IV",
+      "route": "IV",
+      "status": "started"
+    }
+  ],
   "procedures": [
     {
       "name": "Cryoablation of residual desmoid tumor",
-      "result": "Successful ultrasound and CT-guided cryoablation of the residual large right abdominal wall desmoid tumor."
+      "result": "unremarkable"
     }
   ],
   "negations": [
-    "fever",
-    "headache",
-    "blurry vision",
-    "shortness of breath",
-    "palpitations",
-    "chest pain",
-    "urinary frequency/urgency",
-    "diarrhea/constipation"
+    "denies headache",
+    "denies sinus tenderness",
+    "denies rhinorrhea or congestion",
+    "denies cough",
+    "denies chest pain or tightness",
+    "denies palpitations",
+    "denies nausea",
+    "denies vomiting",
+    "denies diarrhea",
+    "denies constipation",
+    "denies recent weight loss or gain",
+    "denies recent change in bowel or bladder habits",
+    "denies dysuria",
+    "denies arthralgias or myalgias"
   ],
   "temporal": [
     {
-      "finding": "tender abdomen",
-      "onset": "after cryoablation of residual desmoid tumor"
+      "finding": "pain",
+      "onset": "after cryoablation"
     }
   ],
   "_agent": "information_extraction",

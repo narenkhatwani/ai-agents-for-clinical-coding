@@ -8,34 +8,30 @@ Patient ID       : 11251337
 Admission ID     : 29568708
 
 Reasoning:
-  The patient presents with nephrolithiasis and post-procedural symptoms including residual stone, pain, and bleeding. Laboratory findings indicate anemia and renal dysfunction.
+  The patient presents with residual stones post-PCNL and is being managed for chronic kidney disease and hypertension.
 
-Key symptoms     : nephrolithiasis, residual stone, pain, bleeding
-Red flags        : anemia, renal dysfunction
+Key symptoms     : hematuria, dysuria, pain, residual stone
+Red flags        : chronic kidney disease, hypertension, hemorrhagic CVA
 
-RENAL → Renal
--------------
+RENAL|CARDIOVASCULAR|INFECTIOUS|NEUROLOGIC|GI|OTHER → Renal Diseases|Cardiovascular|Infectious|Other
+----------------------------------------------------------------------------------------------------
 
-  • [present, moderate] nephrolithiasis
-      evidence: "nephrolithiasis"
-      related: Creatinine: 2.5 mg/dL, Glucose: 105 mg/dL, Urea Nitrogen: 22 mg/dL
-      • [present] residual stone
-          evidence: "There is some residual stone that will require interval right URS"
-  • [present, moderate] pain
+  • [present, mild] hematuria
+      evidence: "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag."
+      related: Hematuria in urine culture
+  • [present, mild] dysuria
+      evidence: "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag."
+      related: Hematuria in urine culture
+  • [present, mild] pain
       evidence: "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
-  • [present, mild] bleeding
-      evidence: "You can expect to see occasional blood in your urine"
-
-HEMATOLOGIC → Hematologic
--------------------------
-
-  • [present, moderate] anemia
-      evidence: "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
-      related: MCV: 104.0 fL, RDW-SD: 59.6 fL
-
-RENAL → Renal
--------------
-
-  • [present, moderate] renal dysfunction
-      evidence: "Creatinine: 2.5 mg/dL, Glucose: 105 mg/dL, Urea Nitrogen: 22 mg/dL"
-      related: Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL
+      related: Residual stone
+  • [present, mild] residual stone
+      evidence: "There is some residual stone that will require interval right URS"
+      related: Residual stone
+  • [present, moderate] chronic kidney disease
+      evidence: "Creatinine: 2.5 mg/dL [abnormal]"
+      related: Hematocrit: 30.8 % [abnormal], Hemoglobin: 9.4 g/dL [abnormal], MCV: 104.0 fL [abnormal], RDW-SD: 59.6 fL [abnormal], Glucose: 105.0 mg/dL [abnormal], Urea Nitrogen: 22.0 mg/dL [abnormal]
+  • [present] hypertension
+      evidence: "Hypertension"
+  • [present] hemorrhagic CVA
+      evidence: "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness"

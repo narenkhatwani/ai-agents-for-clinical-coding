@@ -6,14 +6,14 @@
       "evidence": "Septic shock"
     },
     {
+      "term": "Hypoxia",
+      "status": "present",
+      "evidence": "oxygen saturations in the ___ at his SNF"
+    },
+    {
       "term": "Hypoxic respiratory failure",
       "status": "present",
       "evidence": "intubated for hypoxic respiratory failure"
-    },
-    {
-      "term": "Epistaxis",
-      "status": "present",
-      "evidence": "epistaxis"
     },
     {
       "term": "GI bleeding",
@@ -21,29 +21,14 @@
       "evidence": "concern for GI bleeding (black coffee-ground GI contents)"
     },
     {
-      "term": "Liver failure",
-      "status": "present",
-      "evidence": "worsening liver failure"
-    },
-    {
-      "term": "Renal failure",
-      "status": "present",
-      "evidence": "acute renal failure ___ to septic shock and ATN on dialysis"
-    },
-    {
       "term": "Hepatic encephalopathy",
       "status": "present",
-      "evidence": "hepatic encephalopathy"
-    },
-    {
-      "term": "Multifocal metastatic HCC",
-      "status": "present",
-      "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland s/p RFA"
+      "evidence": "worsening liver failure and HE ___ to metastatic HCC"
     },
     {
       "term": "Atelectasis",
       "status": "present",
-      "evidence": "large pleural effusion with compressive consolidation versus atelectasis"
+      "evidence": "compressive consolidation versus atelectasis"
     },
     {
       "term": "Thrombocytopenia",
@@ -54,6 +39,26 @@
       "term": "Atrial fibrillation/flutter",
       "status": "present",
       "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
+    },
+    {
+      "term": "Renal failure",
+      "status": "present",
+      "evidence": "acute renal failure ___ to septic shock and ATN on dialysis"
+    },
+    {
+      "term": "Epistaxis",
+      "status": "present",
+      "evidence": "epistaxis"
+    },
+    {
+      "term": "Anasarca",
+      "status": "present",
+      "evidence": "gross anasarca"
+    },
+    {
+      "term": "Worsening liver failure",
+      "status": "present",
+      "evidence": "worsening liver failure and HE ___ to metastatic HCC"
     }
   ],
   "vitals": [
@@ -92,19 +97,19 @@
     {
       "name": "WBC",
       "value": "8.4",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "RBC",
       "value": "2.65",
-      "unit": "m/uL",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "Hgb",
       "value": "8.9",
-      "unit": "g/dL",
+      "unit": "",
       "flag": "low"
     },
     {
@@ -123,12 +128,12 @@
       "name": "MCH",
       "value": "33.6",
       "unit": "pg",
-      "flag": "unknown"
+      "flag": "low"
     },
     {
       "name": "MCHC",
       "value": "34.0",
-      "unit": "%",
+      "unit": "",
       "flag": "unknown"
     },
     {
@@ -146,80 +151,74 @@
     {
       "name": "Plt Ct",
       "value": "36",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "low"
     },
     {
       "name": "Neuts",
       "value": "88.2",
-      "unit": "%",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "Lymphs",
       "value": "5.5",
-      "unit": "%",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "Monos",
       "value": "5.2",
-      "unit": "%",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "Eos",
       "value": "0.2",
-      "unit": "%",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "Baso",
       "value": "0.2",
-      "unit": "%",
-      "flag": "unknown"
-    },
-    {
-      "name": "NRBC",
-      "value": "0.6",
-      "unit": "%",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "AbsNeut",
       "value": "7.41",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "AbsLymp",
       "value": "0.46",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "AbsMono",
       "value": "0.44",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "AbsEos",
       "value": "0.02",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "AbsBaso",
       "value": "0.02",
-      "unit": "K/uL",
+      "unit": "",
       "flag": "unknown"
     },
     {
       "name": "PTT",
       "value": "40.7",
       "unit": "sec",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Fibrino",
@@ -231,61 +230,13 @@
       "name": "Glucose",
       "value": "141",
       "unit": "mg/dL",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
-      "name": "UreaN",
-      "value": "22",
-      "unit": "mg/dL",
-      "flag": "unknown"
-    },
-    {
-      "name": "Creat",
-      "value": "2.1",
-      "unit": "mg/dL",
-      "flag": "high"
-    },
-    {
-      "name": "Na",
-      "value": "127",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "K",
-      "value": "4.5",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "Cl",
-      "value": "94",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "HCO3",
-      "value": "19",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "AnGap",
-      "value": "22",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "Bicarbonate",
-      "value": "7.0",
-      "unit": "mEq/L",
-      "flag": "low"
-    },
-    {
-      "name": "Calcium",
-      "value": "0.94",
+      "name": "Lactate",
+      "value": "13.2",
       "unit": "mmol/L",
-      "flag": "low"
+      "flag": "high"
     },
     {
       "name": "pCO2",
@@ -300,22 +251,22 @@
       "flag": "low"
     },
     {
+      "name": "Hematocrit",
+      "value": "25.3",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
       "name": "Hemoglobin",
       "value": "8.3",
       "unit": "g/dL",
       "flag": "low"
     },
     {
-      "name": "Platelet Count",
-      "value": "36",
-      "unit": "K/uL",
-      "flag": "low"
-    },
-    {
-      "name": "RDW",
-      "value": "23.0",
-      "unit": "%",
-      "flag": "unknown"
+      "name": "MCH",
+      "value": "35.5",
+      "unit": "pg",
+      "flag": "high"
     },
     {
       "name": "MCV",
@@ -324,10 +275,34 @@
       "flag": "high"
     },
     {
-      "name": "MCH",
-      "value": "35.5",
-      "unit": "pg",
-      "flag": "unknown"
+      "name": "Platelet Count",
+      "value": "44.0",
+      "unit": "K/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW",
+      "value": "23.0",
+      "unit": "%",
+      "flag": "high"
+    },
+    {
+      "name": "Red Blood Cells",
+      "value": "2.34",
+      "unit": "m/uL",
+      "flag": "low"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "84.1",
+      "unit": "fL",
+      "flag": "high"
+    },
+    {
+      "name": "Fibrinogen, Functional",
+      "value": "77.0",
+      "unit": "mg/dL",
+      "flag": "low"
     },
     {
       "name": "INR(PT)",
@@ -348,12 +323,6 @@
       "flag": "high"
     },
     {
-      "name": "Fibrinogen, Functional",
-      "value": "77.0",
-      "unit": "mg/dL",
-      "flag": "low"
-    },
-    {
       "name": "Bicarbonate",
       "value": "7.0",
       "unit": "mEq/L",
@@ -369,7 +338,7 @@
       "name": "Phosphate",
       "value": "7.6",
       "unit": "mg/dL",
-      "flag": "unknown"
+      "flag": "high"
     },
     {
       "name": "Potassium",
@@ -381,7 +350,7 @@
       "name": "Sodium",
       "value": "129.0",
       "unit": "mEq/L",
-      "flag": "high"
+      "flag": "low"
     },
     {
       "name": "Urea Nitrogen",
@@ -429,7 +398,7 @@
       "name": "Triglycerides",
       "value": "447.0",
       "unit": "mg/dL",
-      "flag": "unknown"
+      "flag": "high"
     },
     {
       "name": "pO2",
@@ -463,12 +432,6 @@
     },
     {
       "name": "RBC",
-      "value": "2.34",
-      "unit": "m/uL",
-      "flag": "low"
-    },
-    {
-      "name": "RBC",
       "value": "nan #/hpf",
       "unit": "",
       "flag": "unknown"
@@ -494,23 +457,23 @@
   ],
   "diagnoses_mentioned": [
     {
-      "term": "Septic shock",
-      "certainty": "confirmed"
-    },
-    {
       "term": "Hepatic encephalopathy",
       "certainty": "confirmed"
     },
     {
-      "term": "Multifocal metastatic HCC",
+      "term": "Metastatic HCC",
       "certainty": "confirmed"
     },
     {
-      "term": "Liver cirrhosis",
+      "term": "Septic shock",
       "certainty": "confirmed"
     },
     {
-      "term": "Known varices s/p TIPS",
+      "term": "Cirrhosis",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Varices",
       "certainty": "confirmed"
     },
     {
@@ -526,47 +489,31 @@
       "certainty": "confirmed"
     },
     {
-      "term": "History of multifocal metastatic HCC with known metastases to the left adrenal gland s/p RFA",
+      "term": "Multifocal metastatic HCC",
       "certainty": "confirmed"
     },
     {
-      "term": "RFA on ___ to ___ lesion",
+      "term": "RFA",
       "certainty": "confirmed"
     },
     {
-      "term": "RFA on ___ to the Left adrenal met",
+      "term": "Bipolar disorder",
       "certainty": "confirmed"
-    },
-    {
-      "term": "History of bipolar disorder",
-      "certainty": "suspected"
-    },
-    {
-      "term": "History of ADHD",
-      "certainty": "suspected"
     },
     {
       "term": "GERD",
-      "certainty": "suspected"
-    },
-    {
-      "term": "Asthma/COPD",
-      "certainty": "suspected"
-    },
-    {
-      "term": "___ esophagus",
-      "certainty": "suspected"
-    },
-    {
-      "term": "Alcohol abuse",
-      "certainty": "suspected"
-    },
-    {
-      "term": "History of liver cancer",
       "certainty": "confirmed"
     },
     {
-      "term": "History of liver cirrhosis",
+      "term": "Asthma/COPD",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Esophagus",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Alcohol abuse",
       "certainty": "confirmed"
     },
     {
@@ -574,71 +521,299 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Known portal hypertension",
+      "term": "Metastatic HCC",
       "certainty": "confirmed"
     },
     {
-      "term": "Esophageal varices, status post TIPS procedure",
+      "term": "Hepatic encephalopathy",
       "certainty": "confirmed"
     },
     {
-      "term": "Chronic anemia",
+      "term": "Hepatic encephalopathy",
       "certainty": "confirmed"
     },
     {
-      "term": "Schizophrenia",
+      "term": "Hepatic encephalopathy",
       "certainty": "confirmed"
     },
     {
-      "term": "Seizure disorder",
+      "term": "Hepatic encephalopathy",
       "certainty": "confirmed"
     },
     {
-      "term": "COPD",
+      "term": "Hepatic encephalopathy",
       "certainty": "confirmed"
     },
     {
-      "term": "History of prior drug use",
-      "certainty": "suspected"
-    }
-  ],
-  "medications": [
-    {
-      "name": "ceftriaxone",
-      "dose": "c8",
-      "route": "iv",
-      "status": "started"
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
     },
     {
-      "name": "metoprolol",
-      "dose": "metoprolol",
-      "route": "iv",
-      "status": "started"
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
     },
     {
-      "name": "octreotide",
-      "dose": "octreotide",
-      "route": "iv",
-      "status": "started"
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
     },
     {
-      "name": "protonix",
-      "dose": "protonix",
-      "route": "iv",
-      "status": "started"
-    }
-  ],
-  "procedures": [
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
     {
-      "name": "arterial line",
-      "result": "placed"
-    }
-  ],
-  "negations": [],
-  "temporal": [
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
     {
-      "finding": "Septic shock",
-      "onset": "admission"
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "H"
     }
   ],
   "_agent": "information_extraction",

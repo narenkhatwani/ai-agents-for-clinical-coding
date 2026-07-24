@@ -18,32 +18,40 @@ INFECTIOUS → Infectious Diseases
 
   • [present, mild] fever
       evidence: "new fever"
-      related: RUL PNA
+      related: RUL PNA, bibasilar consolidations may represent a combination of pneumonia and/or atelectasis
   • [present, moderate] pneumonia
-      evidence: "RUL PNA"
-      related: CXR: persistent consolidative opacities in both lower lobes
+      evidence: "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis"
+      related: RUL PNA
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] hypotension
-      evidence: "BP 90/47, hypotensive"
-      related: Levophed started, pressures came up to the 90's systolic
+      evidence: "persistently hypotensive with pressures in the 80's"
+      related: severe sepsis probably secondary to RUL PNA
 
-NEUROLOGIC → Neurology
-----------------------
+NEUROLOGIC → Neurologic
+-----------------------
 
   • [present, moderate] altered mental status
       evidence: "altered mental status"
-      related: EEG shows epileptiform discharges left paracentrally
-  • [suspected] seizures
-      evidence: "possibly seizures from metastases"
-      related: EEG shows epileptiform discharges left paracentrally
+      related: severe sepsis probably secondary to RUL PNA
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, severe] sepsis
+      evidence: "severe sepsis probably secondary to RUL PNA"
+      related: RUL PNA, hypotension
 
 OTHER → Other
 -------------
 
   • [present, mild] chest pressure
-      evidence: "chest pressure"
+      evidence: "chest pressure that he described as a 'heaviness'"
   • [history, mild] back pain
-      evidence: "back pain"
+      evidence: "Chief Complaint: Back pain"
+  • [history, absent] saddle anesthesia
+      evidence: "no saddle anesthesia or bowel/bladder changes"
+  • [history, mild] numbness
+      evidence: "numbness in his right thumb that has been present for many years"

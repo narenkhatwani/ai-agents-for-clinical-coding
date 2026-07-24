@@ -8,16 +8,15 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [present] dyspnea on exertion — "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
-  • [present] fatigue — "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
-  • [present] anemia — "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
-  • [history] esophagitis — "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
-  • [history] nodular gastritis — "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
-  • [absent] abdominal pain — "He denied any recent hematemesis, hematochezia, or melena."
-  • [absent] hematemesis — "He denied any recent hematemesis, hematochezia, or melena."
-  • [absent] hematochezia — "He denied any recent hematemesis, hematochezia, or melena."
-  • [absent] melena — "He denied any recent hematemesis, hematochezia, or melena."
-  • [absent] myalgias — "He denied HA, fevers, sore throat, abdominal pain, n/v/d, dysuria, or myalgias."
+  • [present] dyspnea on exertion — "acute on chronic dyspnea on exertion"
+  • [present] fatigue — "acute on chronic fatigue"
+  • [present] anemia — "acute on chronic macrocytic anemia"
+  • [history] esophagitis — "esophagitis (___)"
+  • [history] nodular gastritis — "nodular gastritis"
+  • [suspected] pulmonary hypertension — "Presentation is more concerning for valvular disease vs pulmonary HTN vs acute anemia."
+  • [confirmed] atrial fibrillation — "A-fib on Coumadin"
+  • [confirmed] sick sinus syndrome — "SSS s/p PPM"
+  • [confirmed] moderate aortic stenosis — "Moderate AS"
 
 VITALS
 ------
@@ -31,12 +30,12 @@ VITALS
 LABS
 ----
 
-• Hematocrit: 28.1 % [low]
-• Hemoglobin: 8.7 g/dL [low]
-• MCV: 99.0 fL [low]
-• RDW: 18.2 % [high]
-• INR(PT): 1.9  [high]
-• PT: 20.5 sec [high]
+• Hemoglobin: 6.7 g/dL [low]
+• MCV: 106 fL [high]
+• Hematocrit: 26.8 % [low]
+• INR(PT): 2.4  [high]
+• PT: 37.7 sec [high]
+• Iron: 15 mcg/dL [low]
 • Calcium, Total: 8.3 mg/dL [low]
 • Absolute Lymphocyte Count: 1.0 K/uL [low]
 • Haptoglobin: 208.0 mg/dL [high]
@@ -46,41 +45,26 @@ LABS
 DIAGNOSES MENTIONED
 -------------------
 
-  • [confirmed] CAD s/p stent
-  • [confirmed] A-fib on warfarin
-  • [confirmed] Sick sinus syndrome s/p PPM
-  • [confirmed] HTN
-  • [confirmed] HLD
-  • [confirmed] Moderate AS
-  • [confirmed] Macrocytic anemia
-  • [confirmed] Colonic polyps
-  • [confirmed] Esophagitis
+  • [confirmed] coronary artery disease
+  • [confirmed] atrial fibrillation
+  • [confirmed] sick sinus syndrome
+  • [confirmed] moderate aortic stenosis
+  • [confirmed] anemia
 
 MEDICATIONS
 -----------
 
   • Coumadin (continued)
-  • PPM (continued)
 
 PROCEDURES
 ----------
 
-  • 2 stents: s/p
-  • 3 colonoscopies: s/p
-  • endoscopy: s/p
-  • pill study: s/p
-  • bone marrow biopsy: scheduled
+  • Transfusion of 1 unit PRBCs: Hgb 6.7
 
 NEGATIONS
 ---------
 
-  • HA
-  • fevers
-  • sore throat
-  • abdominal pain
-  • n/v/d
-  • dysuria
-  • myalgias
+  • no recent hematemesis, hematochezia, or melena
 
 TEMPORAL
 --------

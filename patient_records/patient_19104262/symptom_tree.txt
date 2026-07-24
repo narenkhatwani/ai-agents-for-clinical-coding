@@ -8,41 +8,64 @@ Patient ID       : 19104262
 Admission ID     : 24271247
 
 Reasoning:
-  The patient presents with DKA and lactic acidosis, with a history of recurrent DKA and uncontrolled diabetes mellitus type 1.
+  The patient presents with DKA and lactic acidosis, with a history of recurrent DKA and poorly controlled diabetes. The current episode is likely due to nonadherence in the setting of social stress.
 
-Key symptoms     : DKA, vaginal spotting
-Red flags        : lactic acidosis, severe metabolic acidosis
+Key symptoms     : fever, nausea, vaginal bleeding, diarrhea, headache
+Red flags        : hypotension, AMS
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
+  • [history] fever
+      evidence: "fevers/chills/nightsweats for the past few days"
+      related: Anion Gap: 19.0 mEq/L [abnormal], Bicarbonate: 20.0 mEq/L [abnormal]
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
+  • [history] hypertension
+      evidence: "BP: 113/79 mmHg"
+      related: pO2: 60 mm Hg [abnormal], pCO2: 33 mm Hg [abnormal], pH: 7.34 units [abnormal]
 
 RESPIRATORY → Respiratory
 -------------------------
 
+  • [absent] respiratory distress
+      evidence: "Breathing unlabored, CTA ___"
 
-GI → Gastrointestinal
----------------------
+GI → GI
+-------
 
+  • [present, mild] nausea
+      evidence: "nausea and vomiting"
+      related: Glucose: 263 mg/dL [abnormal], Lactate: 3.6 mmol/L [abnormal]
+  • [history, mild] diarrhea
+      evidence: "significant amount of foul smelling diarrhea"
+      related: Glucose: 263 mg/dL [abnormal], Lactate: 3.6 mmol/L [abnormal]
+  • [history, mild] vaginal bleeding
+      evidence: "persistent daily vaginal bleeding"
+      related: Glucose: 263 mg/dL [abnormal], Lactate: 3.6 mmol/L [abnormal]
 
 RENAL → Renal
 -------------
 
+  • [history] proteinuria
+      evidence: "Hemoglobin: 10.0 g/dL [abnormal]"
+      related: Anion Gap: 19.0 mEq/L [abnormal], Bicarbonate: 20.0 mEq/L [abnormal]
 
 NEUROLOGIC → Neurologic
 -----------------------
 
+  • [history, mild] headache
+      evidence: "frontal headache"
+      related: Anion Gap: 19.0 mEq/L [abnormal], Bicarbonate: 20.0 mEq/L [abnormal]
 
-OTHER → Other
--------------
+ENDOCRINE → Endocrine
+---------------------
 
-  • [present, severe] DKA
-      evidence: "DKA/lactic acidosis, in the setting of running out of medications."
-      related: Glucose: 263 mg/dL, Anion Gap: 19.0 mEq/L, pH: 6.96 units, Lactate: 3.6 mmol/L, Bicarbonate: 20.0 mEq/L, Calcium, Total: 10.2 mg/dL, Potassium: 8.8 mEq/L, Hematocrit: 46.2%, Hemoglobin: 14.4 g/dL, Albumin: 3.6 g/dL
-  • [present, mild] vaginal spotting
-      evidence: "Vaginal spotting: No retained products of conception on the US; this is normal post-partum per the GYN consult team."
-      related: Abdominal ultrasound findings: heterogeneous material within the endometrial canal, measuring up to 8 mm in thickness, without internal vascularity, likely blood products., Small to moderate amount of simple free fluid in the cul-de-sac., Normal ovaries.
+  • [present, severe] hyperglycemia
+      evidence: "Glucose: 263 mg/dL [abnormal]"
+      related: Anion Gap: 19.0 mEq/L [abnormal], Bicarbonate: 20.0 mEq/L [abnormal]
+  • [history] hypoglycemia
+      evidence: "hypoglycemia"
+      related: Anion Gap: 19.0 mEq/L [abnormal], Bicarbonate: 20.0 mEq/L [abnormal]

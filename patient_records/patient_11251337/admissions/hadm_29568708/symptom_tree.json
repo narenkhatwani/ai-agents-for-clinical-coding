@@ -1,90 +1,100 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with nephrolithiasis and post-procedural symptoms including residual stone, pain, and bleeding. Laboratory findings indicate anemia and renal dysfunction.",
+  "reasoning": "The patient presents with residual stones post-PCNL and is being managed for chronic kidney disease and hypertension.",
   "branches": [
     {
-      "category": "renal",
-      "ontology_hint": "Renal",
+      "category": "renal|cardiovascular|infectious|neurologic|gi|other",
+      "ontology_hint": "Renal Diseases|Cardiovascular|Infectious|Other",
       "symptoms": [
         {
-          "term": "nephrolithiasis",
+          "term": "hematuria",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "nephrolithiasis",
+          "severity": "mild",
+          "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag.",
           "related_findings": [
-            "Creatinine: 2.5 mg/dL",
-            "Glucose: 105 mg/dL",
-            "Urea Nitrogen: 22 mg/dL"
+            "Hematuria in urine culture"
           ],
-          "children": [
-            {
-              "term": "residual stone",
-              "status": "present",
-              "evidence": "There is some residual stone that will require interval right URS"
-            }
-          ]
+          "children": []
+        },
+        {
+          "term": "dysuria",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag.",
+          "related_findings": [
+            "Hematuria in urine culture"
+          ],
+          "children": []
         },
         {
           "term": "pain",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
+          "severity": "mild",
+          "evidence": "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden.",
+          "related_findings": [
+            "Residual stone"
+          ],
+          "children": []
         },
         {
-          "term": "bleeding",
+          "term": "residual stone",
           "status": "present",
           "severity": "mild",
-          "evidence": "You can expect to see occasional blood in your urine"
-        }
-      ]
-    },
-    {
-      "category": "hematologic",
-      "ontology_hint": "Hematologic",
-      "symptoms": [
+          "evidence": "There is some residual stone that will require interval right URS",
+          "related_findings": [
+            "Residual stone"
+          ],
+          "children": []
+        },
         {
-          "term": "anemia",
+          "term": "chronic kidney disease",
           "status": "present",
           "severity": "moderate",
-          "evidence": "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL",
+          "evidence": "Creatinine: 2.5 mg/dL [abnormal]",
           "related_findings": [
-            "MCV: 104.0 fL",
-            "RDW-SD: 59.6 fL"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "renal",
-      "ontology_hint": "Renal",
-      "symptoms": [
+            "Hematocrit: 30.8 % [abnormal]",
+            "Hemoglobin: 9.4 g/dL [abnormal]",
+            "MCV: 104.0 fL [abnormal]",
+            "RDW-SD: 59.6 fL [abnormal]",
+            "Glucose: 105.0 mg/dL [abnormal]",
+            "Urea Nitrogen: 22.0 mg/dL [abnormal]"
+          ],
+          "children": []
+        },
         {
-          "term": "renal dysfunction",
+          "term": "hypertension",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "Creatinine: 2.5 mg/dL, Glucose: 105 mg/dL, Urea Nitrogen: 22 mg/dL",
-          "related_findings": [
-            "Hematocrit: 30.8 %",
-            "Hemoglobin: 9.4 g/dL"
-          ]
+          "severity": "unknown",
+          "evidence": "Hypertension",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "hemorrhagic CVA",
+          "status": "present",
+          "severity": "unknown",
+          "evidence": "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness",
+          "related_findings": [],
+          "children": []
         }
       ]
     }
   ],
   "key_symptoms": [
-    "nephrolithiasis",
-    "residual stone",
+    "hematuria",
+    "dysuria",
     "pain",
-    "bleeding"
+    "residual stone"
   ],
   "red_flags": [
-    "anemia",
-    "renal dysfunction"
+    "chronic kidney disease",
+    "hypertension",
+    "hemorrhagic CVA"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "11251337",
   "admission_id": "29568708",
-  "generated_at": "2026-07-09T00:29:50.427181"
+  "generated_at": "2026-07-20T01:10:10.775516"
 }

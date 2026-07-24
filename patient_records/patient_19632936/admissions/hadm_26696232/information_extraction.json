@@ -3,52 +3,47 @@
     {
       "term": "dyspnea on exertion",
       "status": "present",
-      "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+      "evidence": "acute on chronic dyspnea on exertion"
     },
     {
       "term": "fatigue",
       "status": "present",
-      "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+      "evidence": "acute on chronic fatigue"
     },
     {
       "term": "anemia",
       "status": "present",
-      "evidence": "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
+      "evidence": "acute on chronic macrocytic anemia"
     },
     {
       "term": "esophagitis",
       "status": "history",
-      "evidence": "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
+      "evidence": "esophagitis (___)"
     },
     {
       "term": "nodular gastritis",
       "status": "history",
-      "evidence": "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
+      "evidence": "nodular gastritis"
     },
     {
-      "term": "abdominal pain",
-      "status": "absent",
-      "evidence": "He denied any recent hematemesis, hematochezia, or melena."
+      "term": "pulmonary hypertension",
+      "status": "suspected",
+      "evidence": "Presentation is more concerning for valvular disease vs pulmonary HTN vs acute anemia."
     },
     {
-      "term": "hematemesis",
-      "status": "absent",
-      "evidence": "He denied any recent hematemesis, hematochezia, or melena."
+      "term": "atrial fibrillation",
+      "status": "confirmed",
+      "evidence": "A-fib on Coumadin"
     },
     {
-      "term": "hematochezia",
-      "status": "absent",
-      "evidence": "He denied any recent hematemesis, hematochezia, or melena."
+      "term": "sick sinus syndrome",
+      "status": "confirmed",
+      "evidence": "SSS s/p PPM"
     },
     {
-      "term": "melena",
-      "status": "absent",
-      "evidence": "He denied any recent hematemesis, hematochezia, or melena."
-    },
-    {
-      "term": "myalgias",
-      "status": "absent",
-      "evidence": "He denied HA, fevers, sore throat, abdominal pain, n/v/d, dysuria, or myalgias."
+      "term": "moderate aortic stenosis",
+      "status": "confirmed",
+      "evidence": "Moderate AS"
     }
   ],
   "vitals": [
@@ -80,40 +75,40 @@
   ],
   "labs": [
     {
-      "name": "Hematocrit",
-      "value": "28.1",
-      "unit": "%",
-      "flag": "low"
-    },
-    {
       "name": "Hemoglobin",
-      "value": "8.7",
+      "value": "6.7",
       "unit": "g/dL",
       "flag": "low"
     },
     {
       "name": "MCV",
-      "value": "99.0",
+      "value": "106",
       "unit": "fL",
-      "flag": "low"
-    },
-    {
-      "name": "RDW",
-      "value": "18.2",
-      "unit": "%",
       "flag": "high"
     },
     {
+      "name": "Hematocrit",
+      "value": "26.8",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
       "name": "INR(PT)",
-      "value": "1.9",
+      "value": "2.4",
       "unit": "",
       "flag": "high"
     },
     {
       "name": "PT",
-      "value": "20.5",
+      "value": "37.7",
       "unit": "sec",
       "flag": "high"
+    },
+    {
+      "name": "Iron",
+      "value": "15",
+      "unit": "mcg/dL",
+      "flag": "low"
     },
     {
       "name": "Calcium, Total",
@@ -148,39 +143,23 @@
   ],
   "diagnoses_mentioned": [
     {
-      "term": "CAD s/p stent",
+      "term": "coronary artery disease",
       "certainty": "confirmed"
     },
     {
-      "term": "A-fib on warfarin",
+      "term": "atrial fibrillation",
       "certainty": "confirmed"
     },
     {
-      "term": "Sick sinus syndrome s/p PPM",
+      "term": "sick sinus syndrome",
       "certainty": "confirmed"
     },
     {
-      "term": "HTN",
+      "term": "moderate aortic stenosis",
       "certainty": "confirmed"
     },
     {
-      "term": "HLD",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Moderate AS",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Macrocytic anemia",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Colonic polyps",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Esophagitis",
+      "term": "anemia",
       "certainty": "confirmed"
     }
   ],
@@ -190,44 +169,16 @@
       "dose": "",
       "route": "",
       "status": "continued"
-    },
-    {
-      "name": "PPM",
-      "dose": "",
-      "route": "",
-      "status": "continued"
     }
   ],
   "procedures": [
     {
-      "name": "2 stents",
-      "result": "s/p"
-    },
-    {
-      "name": "3 colonoscopies",
-      "result": "s/p"
-    },
-    {
-      "name": "endoscopy",
-      "result": "s/p"
-    },
-    {
-      "name": "pill study",
-      "result": "s/p"
-    },
-    {
-      "name": "bone marrow biopsy",
-      "result": "scheduled"
+      "name": "Transfusion of 1 unit PRBCs",
+      "result": "Hgb 6.7"
     }
   ],
   "negations": [
-    "HA",
-    "fevers",
-    "sore throat",
-    "abdominal pain",
-    "n/v/d",
-    "dysuria",
-    "myalgias"
+    "no recent hematemesis, hematochezia, or melena"
   ],
   "temporal": [
     {

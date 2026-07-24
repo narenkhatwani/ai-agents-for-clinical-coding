@@ -8,31 +8,35 @@ Patient ID       : 11607177
 Admission ID     : 23293838
 
 Reasoning:
-  The patient presents with a history of heart failure and refractory VT, with recent ICD shock and increased edema.
+  The patient presents with a history of heart failure and refractory VT, with recent ICD shock and some edema. The patient is stable but has abnormal labs and a history of multiple comorbidities.
 
-Key symptoms     : ICD discharge, shaking in his chest, increased edema
-Red flags        : ICD shock
+Key symptoms     : ICD shock, edema
+Red flags        : ICD shock, lightheadedness
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present] ICD discharge
-      evidence: "ICD discharge"
-      related: ICD shock
-      • [present] ICD shock
-          evidence: "ICD shock on ___"
-  • [present] shaking in his chest
-      evidence: "shaking in his chest"
-      related: refractory VT
-  • [present] increased edema
-      evidence: "increased edema in the week prior to the shock"
-      related: Dilated non-ischemic cardiomyopathy
-  • [present] feeling at baseline
-      evidence: "felt at baseline"
+  • [present] ICD shock
+      evidence: "ICD shock on ___"
+      related: Refractory VT, Dilated non-ischemic cardiomyopathy, Heartmate II LVAD
+  • [present, mild] lightheadedness
+      evidence: "lightheadedness with position changes"
+      related: Dilated non-ischemic cardiomyopathy, Heartmate II LVAD
+  • [present, mild] edema
+      evidence: "some increased ___ edema"
+      related: Dilated non-ischemic cardiomyopathy, Heartmate II LVAD
+  • [present, mild] shaking
+      evidence: "feeling some "
 
 RENAL → Renal
 -------------
 
-  • [present] increased edema
-      evidence: "increased edema in the week prior to the shock"
-      related: Dilated non-ischemic cardiomyopathy
+  • [present, mild] abnormal labs
+      evidence: "abnormal labs"
+      related: Hemoglobin: 11.6, Platelet Count: 142.0, Creatinine: 1.4, Glucose: 118, Alkaline Phosphatase: 167, Lactate Dehydrogenase (LD): 252
+
+NEUROLOGIC → Neurologic
+-----------------------
+
+  • [present, mild] shaking
+      evidence: "feeling some "

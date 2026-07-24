@@ -8,45 +8,46 @@ Patient ID       : 10458324
 Admission ID     : 21744342
 
 Reasoning:
-  The patient presents with right-sided rib fractures and hypoxia following a mechanical fall, with ongoing respiratory distress and signs of volume overload.
+  The patient presents with right-sided rib fractures and hypoxia following a fall, with new-onset shortness of breath and crackles on lung auscultation.
 
-Key symptoms     : right sided rib fractures, hypoxia
-Red flags        : atrial fibrillation, pneumothorax
+Key symptoms     : chest pain, shortness of breath, crackles
+Red flags        : hypoxia, pneumonia
 
 RESPIRATORY → Respiratory
 -------------------------
 
-  • [present, moderate] right sided rib fractures
-      evidence: "right sided ___ rib fractures"
-      related: right-sided pneumothorax, subcutaneous emphysema
-      • [present] right lateral chest pain
-          evidence: "right lateral chest against the bathtub"
-  • [present, mild] hypoxia
-      evidence: "satting 96% on 4L and evaluated by trauma surgery"
-      related: right-sided pneumothorax, subcutaneous emphysema
-  • [present, moderate] respiratory distress
-      evidence: "small right PTX, bilateral pulmonary opacities"
-      related: right-sided pneumothorax, subcutaneous emphysema
-  • [present, mild] pneumothorax
-      evidence: "small right PTX, tiny right apical pneumothorax"
-      related: right-sided rib fractures, subcutaneous emphysema
-  • [present, mild] pulmonary edema
-      evidence: "bilateral pulmonary opacities, increased left lung opacity"
-      related: right-sided rib fractures, subcutaneous emphysema
+  • [present, mild] chest pain
+      evidence: "tenderness on right posterior back and along the right lateral chest"
+      related: right ___ rib fractures
+      • [present] subcutaneous emphysema
+          evidence: "areas of subcutaneous emphysema along the right posterior back"
+  • [present, mild] shortness of breath
+      evidence: "non-labored breathing, on MC"
+      related: inspiratory crackles b/l lower lobes
+  • [present, mild] crackles
+      evidence: "inspiratory crackles b/l lower lobes"
+      related: small right PTX, right lung base atelectasis versus contusion
+  • [present, mild] edema
+      evidence: "bilateral, 2+ DP pulses"
+      related: right-sided rib fractures
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, mild] atrial fibrillation
-      evidence: "paroxysmal atrial fibrillation"
-      related: hypoxia, respiratory distress
+  • [present, mild] hypoxia
+      evidence: "satting 96% on 4L"
+      related: right ___ rib fractures, small right PTX
 
-CONSTITUTIONAL → Infectious Diseases
-------------------------------------
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [present, mild] pneumonia
+      evidence: "aspiration or pneumonia suspicious for"
+      related: inspiratory crackles b/l lower lobes, right lung base atelectasis versus contusion
+
+CONSTITUTIONAL → Other
+----------------------
 
   • [history] fever
-      evidence: "spiked fever ___ the unit"
-      related: pneumonia, pneumothorax
-  • [present, mild] infection
-      evidence: "GRAM NEGATIVE ROD(S), BUDDING YEAST WITH PSEUDOHYPHAE, GRAM POSITIVE COCCI"
-      related: pneumonia, pneumothorax
+      evidence: "spiked fever"
+      related: right ___ rib fractures

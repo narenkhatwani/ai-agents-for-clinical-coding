@@ -8,44 +8,34 @@ Patient ID       : 19632936
 Admission ID     : 26696232
 
 Reasoning:
-  The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of CAD, AFib, and moderate AS.
+  The patient presents with acute on chronic dyspnea on exertion and fatigue, along with macrocytic anemia. The patient has a history of cardiovascular issues and is currently being managed for anemia.
 
-Key symptoms     : dyspnea on exertion, fatigue
-Red flags        : hypotension, AMS
+Key symptoms     : dyspnea on exertion, anemia
+Red flags        : pulmonary hypertension
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] dyspnea on exertion
-      evidence: "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
-      related: Mild to moderate AS per TTE
-      • [present] mild to moderate AS
-          evidence: "Mild to moderate AS with mild pulmonary hypertension per TTE."
+      evidence: "acute on chronic dyspnea on exertion"
+      related: moderate aortic stenosis, pulmonary hypertension
+      • [confirmed] moderate aortic stenosis
+          evidence: "Moderate AS"
+      • [suspected] pulmonary hypertension
+          evidence: "Presentation is more concerning for valvular disease vs pulmonary HTN vs acute anemia."
 
-INFECTIOUS → Infectious Diseases
---------------------------------
+HEMATOLOGIC → Hematologic
+-------------------------
 
   • [present, moderate] anemia
-      evidence: "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
-      related: Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %
+      evidence: "acute on chronic macrocytic anemia"
+      related: low hemoglobin, low MCV, low hematocrit, low iron
       • [present] iron deficiency
-          evidence: "Iron 15* mg/dL, Ferritin 27* ng/mL"
+          evidence: "Iron: 15 mcg/dL"
 
-CONSTITUTIONAL → Other
-----------------------
+RESPIRATORY → Respiratory
+-------------------------
 
-  • [present, moderate] fatigue
-      evidence: "acute on chronic macrocytic anemia, dyspnea on exertion and fatigue."
-      related: Hgb 8.7 g/dL, MCV 99.0 fL, RDW 18.2 %
-
-NEUROLOGIC → Neurologic
------------------------
-
-  • [present] chronic venous stasis changes
-      evidence: "chronic venous stasis changes on ___ with swelling of feet/ankles, but no pitting edema."
-
-GI → GI
--------
-
-  • [history] esophagitis
-      evidence: "On EGD there was esophagitis (___) and nodular gastritis, but no active bleeding."
+  • [present, moderate] dyspnea on exertion
+      evidence: "acute on chronic dyspnea on exertion"
+      related: moderate aortic stenosis, pulmonary hypertension

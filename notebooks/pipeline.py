@@ -87,7 +87,8 @@ LLM_RATE_LIMIT_RETRIES = 6  # OpenRouter 429 — wait and retry
 LLM_REQUEST_DELAY_SECONDS = 3.0  # pause between admissions (avoid rate limits)
 IE_MAX_NOTE_CHARS = 4000  # shorter input for faster IE; full note kept in cohort for stage 3
 SYMPTOM_TREE_MAX_NOTE_CHARS = 8000
-HISTORY_NOTE_EXCERPT_CHARS = 800  # prior admission note snippet in history context
+HISTORY_NOTE_EXCERPT_CHARS = 800  # legacy short excerpt
+HISTORY_CLINICAL_DETAIL_CHARS = 3500  # prior admission rich history for LLM context
 
 # Backward-compatible aliases
 OLLAMA_TIMEOUT_SECONDS = LLM_TIMEOUT_SECONDS
@@ -594,6 +595,82 @@ def _strip_json_wrappers(text: str) -> str:
     return cleaned.strip()
 
 
+def _repair_truncated_json(text: str) -> Optional[str]:
+    """Best-effort close of truncated JSON objects/arrays (common when max_tokens hits)."""
+    start = text.find("{")
+    if start == -1:
+        return None
+    s = text[start:]
+    # Drop trailing incomplete string after last quote imbalance
+    in_string = False
+    escape = False
+    stack: List[str] = []
+    last_good = 0
+    for i, ch in enumerate(s):
+        if in_string:
+            if escape:
+                escape = False
+            elif ch == "\\":
+                escape = True
+            elif ch == '"':
+                in_string = False
+            continue
+        if ch == '"':
+            in_string = True
+            continue
+        if ch in "{[":
+            stack.append("}" if ch == "{" else "]")
+            last_good = i
+        elif ch in "}]":
+            if stack and ch == stack[-1]:
+                stack.pop()
+                last_good = i
+            else:
+                break
+        elif ch in ",:" and not stack:
+            break
+        else:
+            last_good = i
+
+    if in_string:
+        # Close the open string and trim after last complete value if possible
+        s = s + '"'
+    # Remove trailing comma / incomplete key
+    s = re.sub(r",\s*$", "", s.rstrip())
+    s = re.sub(r",\s*\"[^\"]*$", "", s)  # dangling key
+    s = re.sub(r":\s*$", ": null", s)
+    while True:
+        # Recompute stack after cleanup
+        in_string = False
+        escape = False
+        stack = []
+        for ch in s:
+            if in_string:
+                if escape:
+                    escape = False
+                elif ch == "\\":
+                    escape = True
+                elif ch == '"':
+                    in_string = False
+                continue
+            if ch == '"':
+                in_string = True
+            elif ch == "{":
+                stack.append("}")
+            elif ch == "[":
+                stack.append("]")
+            elif ch in "}]" and stack and ch == stack[-1]:
+                stack.pop()
+        if in_string:
+            s += '"'
+            continue
+        if not stack:
+            break
+        s += "".join(reversed(stack))
+        break
+    return s
+
+
 def parse_json_object(text: str) -> Optional[Dict[str, Any]]:
     cleaned = _strip_json_wrappers(text)
     if not cleaned:
@@ -602,13 +679,25 @@ def parse_json_object(text: str) -> Optional[Dict[str, Any]]:
         data = json.loads(cleaned)
         return data if isinstance(data, dict) else None
     except json.JSONDecodeError:
-        start, end = cleaned.find("{"), cleaned.rfind("}")
-        if start != -1 and end > start:
-            try:
-                data = json.loads(cleaned[start : end + 1])
-                return data if isinstance(data, dict) else None
-            except json.JSONDecodeError:
-                return None
+        pass
+
+    start, end = cleaned.find("{"), cleaned.rfind("}")
+    if start != -1 and end > start:
+        try:
+            data = json.loads(cleaned[start : end + 1])
+            return data if isinstance(data, dict) else None
+        except json.JSONDecodeError:
+            pass
+
+    repaired = _repair_truncated_json(cleaned)
+    if repaired:
+        try:
+            data = json.loads(repaired)
+            if isinstance(data, dict):
+                data["_json_repaired"] = True
+                return data
+        except json.JSONDecodeError:
+            pass
     return None
 
 
@@ -763,8 +852,14 @@ def _call_api_chat(
     }
     if json_mode:
         payload["response_format"] = {"type": "json_object"}
-    if config.api_label == "openrouter" and config.openrouter_zdr:
-        payload["provider"] = {"zdr": True}
+    if config.api_label == "openrouter":
+        provider_prefs: Dict[str, Any] = {}
+        if config.openrouter_zdr:
+            provider_prefs["zdr"] = True
+        # Prefer Phala (higher completion cap) over Together (~2048) for ZDR Qwen 7B
+        provider_prefs["order"] = ["Phala", "Together"]
+        provider_prefs["allow_fallbacks"] = True
+        payload["provider"] = provider_prefs
 
     url = f"{config.api_base_url.rstrip('/')}/chat/completions"
     headers = {
@@ -823,7 +918,15 @@ def _call_api_chat(
         choices = data.get("choices") or []
         if not choices:
             raise ValueError(f"Empty API response: {json.dumps(data)[:300]}")
-        return (choices[0].get("message") or {}).get("content", "")
+        choice = choices[0]
+        content = (choice.get("message") or {}).get("content", "")
+        finish = choice.get("finish_reason") or choice.get("native_finish_reason")
+        if finish in ("length", "max_tokens"):
+            print(
+                f"  Warning: LLM output truncated (finish_reason={finish}). "
+                "Will try to repair JSON or retry."
+            )
+        return content
 
     raise last_error or TimeoutError(f"{label} request failed")
 
@@ -871,13 +974,26 @@ def call_llm_json(
     config: LLMConfig,
     model: Optional[str] = None,
 ) -> Dict[str, Any]:
-    raw = call_llm_chat(system_prompt, user_prompt, config, model=model, json_mode=True)
-    parsed = parse_json_object(raw)
-    if parsed is None:
-        raise ValueError(
-            f"Could not parse JSON from {config.provider} LLM. Preview: {raw[:300]}"
-        )
-    return parsed
+    compact_hint = (
+        "\n\nIMPORTANT: Return COMPLETE valid JSON only. "
+        "Keep evidence phrases SHORT (≤15 words). Prefer ≤12 items per list."
+    )
+    prompts = [user_prompt, user_prompt + compact_hint]
+    last_raw = ""
+    for attempt, prompt in enumerate(prompts[: max(config.max_retries, 1) + 1]):
+        raw = call_llm_chat(system_prompt, prompt, config, model=model, json_mode=True)
+        last_raw = raw or ""
+        parsed = parse_json_object(last_raw)
+        if parsed is not None:
+            if parsed.pop("_json_repaired", False):
+                print("  Note: repaired truncated JSON from LLM output")
+            return parsed
+        if attempt < max(config.max_retries, 1):
+            print(f"  JSON parse failed — retrying with compact prompt ({attempt + 1})...")
+            time.sleep(2)
+    raise ValueError(
+        f"Could not parse JSON from {config.provider} LLM. Preview: {last_raw[:300]}"
+    )
 
 
 import json
@@ -899,6 +1015,239 @@ def assert_mimic_paths(
         raise FileNotFoundError(
             "MIMIC path not found:\n" + "\n".join(f"  - {p}" for p in missing)
         )
+
+
+# =============================================================================
+# Clinical note sections — redaction (latest stay) & rich prior history
+# =============================================================================
+
+_NOTE_SECTION_HEADERS = [
+    ("chief_complaint", r"Chief Complaint\s*:"),
+    ("hpi", r"History of Present Illness\s*:"),
+    ("past_medical_history", r"Past Medical History\s*:"),
+    ("hospital_course", r"(?:Brief )?Hospital Course\s*:"),
+    ("discharge_diagnosis", r"Discharge Diagnos(?:is|es)\s*:"),
+    ("discharge_condition", r"Discharge Condition\s*:"),
+    ("discharge_instructions", r"Discharge Instructions\s*:"),
+    ("followup", r"Follow(?:\-|\s)?up Instructions\s*:"),
+    ("physical_exam", r"Physical Exam(?:ination)?\s*:"),
+    ("pertinent_results", r"Pertinent Results\s*:"),
+]
+
+
+def _header_spans(note: str) -> List[Tuple[str, int, int]]:
+    """Return (section_key, start, end) for known section headers in note."""
+    spans: List[Tuple[str, int, int]] = []
+    for key, pattern in _NOTE_SECTION_HEADERS:
+        for m in re.finditer(pattern, note, flags=re.IGNORECASE):
+            spans.append((key, m.start(), m.end()))
+    spans.sort(key=lambda x: x[1])
+    return spans
+
+
+def extract_note_sections(note: str) -> Dict[str, str]:
+    """Parse common MIMIC discharge note sections."""
+    note = note or ""
+    if not note.strip():
+        return {}
+    spans = _header_spans(note)
+    if not spans:
+        return {}
+    sections: Dict[str, str] = {}
+    for i, (key, _start, end) in enumerate(spans):
+        next_start = spans[i + 1][1] if i + 1 < len(spans) else len(note)
+        body = note[end:next_start].strip()
+        if body and key not in sections:
+            sections[key] = body
+    return sections
+
+
+def _truncate_block(text: str, max_chars: int) -> str:
+    text = (text or "").strip()
+    if len(text) <= max_chars:
+        return text
+    return text[:max_chars] + "\n[... truncated ...]"
+
+
+# Headers that start the terminal discharge package (and similar label leaks).
+# When any of these appears (typically after Hospital Course), we cut from the
+# earliest match through end-of-note for the coding input.
+_DISCHARGE_PACKAGE_HEADERS = [
+    r"Discharge Medications\s*:",
+    r"Discharge Disposition\s*:",
+    r"Discharge Diagnos(?:is|es)\s*:",
+    r"Final Diagnos(?:is|es)\s*:",
+    r"Primary Diagnos(?:is|es)\s*:",
+    r"Secondary Diagnos(?:is|es)\s*:",
+    r"Principal Diagnos(?:is|es)\s*:",
+    r"Discharge Condition\s*:",
+    r"Discharge Instructions\s*:",
+    r"Follow(?:\-|\s)?up Instructions\s*:",
+    r"Transitional Issues\s*:",
+    r"Facility\s*:",
+    r"Pending Results\s*:",
+]
+
+# Anywhere-in-note admitting labels (not only at end)
+_ADMITTING_DX_HEADERS = [
+    r"Admission Diagnos(?:is|es)\s*:",
+    r"Admitting Diagnos(?:is|es)\s*:",
+]
+
+_DISCHARGE_PACKAGE_RE = re.compile(
+    r"(?im)^\s*(?:" + "|".join(_DISCHARGE_PACKAGE_HEADERS) + r")"
+)
+_ADMITTING_DX_RE = re.compile(
+    r"(?is)(\n\s*(?:Admission Diagnos(?:is|es)|Admitting Diagnos(?:is|es))\s*:"
+    r".*?)(?=\n\s*[A-Z][A-Za-z0-9 \/\-]{2,60}\s*:|\Z)"
+)
+# Hospital Course problem-list titles: "# ASCITES." or "# SVT:"
+_HC_PROBLEM_HEADER_RE = re.compile(
+    r"(?m)^(\s*#\s+)([^:\n.]{1,80})([.:]\s*)"
+)
+
+
+def _scrub_hospital_course_problem_headers(note: str) -> Tuple[str, List[str]]:
+    """Replace '# DIAGNOSIS TITLE:' headers with '# Problem:' — keep narrative body."""
+    removed: List[str] = []
+
+    def _repl(m: re.Match) -> str:
+        title = m.group(2).strip()
+        if title.lower() in ("problem", "problems", "issue", "issues"):
+            return m.group(0)
+        removed.append(f"# {title}{m.group(3).rstrip()}")
+        return f"{m.group(1)}Problem{m.group(3)}"
+
+    return _HC_PROBLEM_HEADER_RE.sub(_repl, note), removed
+
+
+def redact_latest_note_for_coding(note: str) -> Tuple[str, str]:
+    """
+    Redact label-leaking sections from the latest admission discharge note.
+
+    Removes:
+      - Terminal discharge package (meds, disposition, diagnosis, condition,
+        instructions, followup, transitional issues, facility, pending results)
+      - Admission / Admitting Diagnosis blocks anywhere in the note
+      - Hospital Course '# PROBLEM:' style titles (body kept)
+
+    Returns (coding_note, redacted_text) for evaluation-only storage.
+    """
+    note = note or ""
+    if not note.strip():
+        return note, ""
+
+    redacted_parts: List[str] = []
+    coding = note
+
+    # 1) Admission / Admitting Diagnosis anywhere
+    def _admit_repl(match: re.Match) -> str:
+        block = match.group(1).strip()
+        if len(block) > 10:
+            redacted_parts.append(block)
+        return "\n[Admission Diagnosis REDACTED — see ground_truth.json]\n"
+
+    coding = _ADMITTING_DX_RE.sub(_admit_repl, coding)
+
+    # 2) Truncate from earliest terminal discharge-package header to EOF
+    package_match = _DISCHARGE_PACKAGE_RE.search(coding)
+    if package_match:
+        cut = package_match.start()
+        # Prefer cutting at a line boundary
+        line_start = coding.rfind("\n", 0, cut)
+        cut_at = line_start if line_start != -1 else cut
+        removed = coding[cut_at:].strip()
+        if removed:
+            redacted_parts.append(removed)
+        coding = (
+            coding[:cut_at].rstrip()
+            + "\n\n[DISCHARGE PACKAGE REDACTED — see ground_truth.json / "
+            "redacted_discharge_sections.txt]\n"
+        )
+
+    # 3) Scrub Hospital Course problem-list titles
+    coding, hc_titles = _scrub_hospital_course_problem_headers(coding)
+    if hc_titles:
+        redacted_parts.append(
+            "Hospital Course problem titles scrubbed:\n  - " + "\n  - ".join(hc_titles)
+        )
+
+    coding = re.sub(r"\n{3,}", "\n\n", coding).strip()
+    redacted_text = "\n\n---\n\n".join(redacted_parts)
+    return coding, redacted_text
+
+
+def build_prior_admission_clinical_detail(row: pd.Series) -> str:
+    """
+    Rich prior-stay context for the latest note's history block.
+
+    Includes narrative (CC, HPI, hospital course) AND prior discharge diagnoses
+    (allowed in history — only the latest stay labels are withheld).
+    """
+    note = str(row.get("text") or row.get("clinical_note") or "")
+    sections = extract_note_sections(note)
+    parts: List[str] = []
+
+    cc = sections.get("chief_complaint")
+    if cc:
+        parts.append(f"Chief Complaint:\n{_truncate_block(cc, 400)}")
+
+    hpi = sections.get("hpi")
+    if hpi:
+        parts.append(f"History of Present Illness:\n{_truncate_block(hpi, 1200)}")
+
+    pmh = sections.get("past_medical_history")
+    if pmh:
+        parts.append(f"Past Medical History:\n{_truncate_block(pmh, 600)}")
+
+    course = sections.get("hospital_course")
+    if course:
+        parts.append(f"Hospital Course:\n{_truncate_block(course, 1500)}")
+
+    dx_note = sections.get("discharge_diagnosis")
+    if dx_note:
+        parts.append(f"Discharge Diagnosis (prior stay — from note):\n{_truncate_block(dx_note, 800)}")
+    else:
+        codes = row.get("ground_truth_icd10") or []
+        titles = row.get("ground_truth_dx_titles") or []
+        if codes:
+            lines = ["Discharge Diagnosis (prior stay — from billing records):"]
+            for i, code in enumerate(codes[:12]):
+                title = titles[i] if i < len(titles) else ""
+                lines.append(f"  • {code} — {title}")
+            parts.append("\n".join(lines))
+
+    detail = "\n\n".join(parts)
+    if not detail and note:
+        detail = _truncate_block(note, HISTORY_CLINICAL_DETAIL_CHARS)
+    return _truncate_block(detail, HISTORY_CLINICAL_DETAIL_CHARS)
+
+
+def apply_latest_note_redaction(cohort: pd.DataFrame) -> pd.DataFrame:
+    """Set clinical_note (redacted) and clinical_note_full on latest-admission rows."""
+    cohort = cohort.copy()
+    full_notes: List[str] = []
+    coding_notes: List[str] = []
+    redacted_blocks: List[str] = []
+
+    for _, row in cohort.iterrows():
+        raw = str(row.get("text") or row.get("clinical_note") or "")
+        full = raw[:MAX_NOTE_CHARS]
+        coding, redacted = redact_latest_note_for_coding(raw)
+        coding = coding[:MAX_NOTE_CHARS]
+        full_notes.append(full)
+        coding_notes.append(coding)
+        redacted_blocks.append(redacted)
+
+    cohort["clinical_note_full"] = full_notes
+    cohort["clinical_note"] = coding_notes
+    cohort["redacted_diagnosis_text"] = redacted_blocks
+    n_redacted = sum(1 for r in redacted_blocks if r.strip())
+    print(
+        f"  Latest notes: {n_redacted}/{len(cohort)} had discharge-package / "
+        "label sections redacted for coding"
+    )
+    return cohort
 
 
 def load_icd10_ground_truth(hadm_ids: set) -> pd.DataFrame:
@@ -958,6 +1307,10 @@ def _admission_summary(row: pd.Series, include_note_excerpt: bool = True) -> Dic
             if len(str(note)) > HISTORY_NOTE_EXCERPT_CHARS:
                 excerpt += "\n[... excerpt truncated ...]"
             summary["note_excerpt"] = excerpt
+        summary["clinical_detail"] = build_prior_admission_clinical_detail(row)
+        sections = extract_note_sections(str(note))
+        if sections.get("discharge_diagnosis"):
+            summary["discharge_diagnosis_text"] = sections["discharge_diagnosis"][:1200]
     vitals = row.get("structured_vitals") or []
     labs = row.get("structured_labs") or []
     reports = row.get("structured_reports") or []
@@ -1003,6 +1356,7 @@ def collapse_to_latest_admission(cohort: pd.DataFrame) -> pd.DataFrame:
     latest["n_total_admissions"] = latest["n_prior_admissions"] + 1
     latest["is_latest_admission"] = True
     latest = latest.reset_index(drop=True)
+    latest = apply_latest_note_redaction(latest)
     return latest
 
 
@@ -1020,10 +1374,18 @@ def format_admission_history_text(history: List[Dict[str, Any]]) -> str:
             f"  Primary ICD-10: {adm.get('primary_icd_code')} — {adm.get('primary_dx_title')}"
         )
         codes = adm.get("ground_truth_icd10") or []
+        titles = adm.get("ground_truth_dx_titles") or []
         if codes:
-            lines.append(f"  All ICD-10 ({len(codes)}): {', '.join(codes[:8])}")
-        excerpt = adm.get("note_excerpt")
-        if excerpt:
+            lines.append(f"  Billing ICD-10 ({len(codes)}):")
+            for j, code in enumerate(codes[:10]):
+                title = titles[j] if j < len(titles) else ""
+                lines.append(f"    • {code} — {title}")
+        detail = adm.get("clinical_detail")
+        if detail:
+            lines.append("  Clinical history (prior stay — detailed):")
+            for line in str(detail).splitlines():
+                lines.append(f"    {line}")
+        elif (excerpt := adm.get("note_excerpt")):
             lines.append("  Note excerpt:")
             for line in str(excerpt).splitlines()[:12]:
                 lines.append(f"    {line}")
@@ -1187,6 +1549,9 @@ def load_cohort(
             "WARNING: cohort.pkl has no structured vitals/labs/reports — "
             "re-run stage_01_cohort_selection.ipynb"
         )
+    if "clinical_note_full" not in cohort.columns:
+        print("Migrating cohort: applying discharge-diagnosis redaction to latest notes...")
+        cohort = apply_latest_note_redaction(cohort)
     return cohort
 
 
@@ -1204,7 +1569,10 @@ from typing import Any, Dict, List, Optional
 
 IE_SYSTEM_PROMPT = """You are a clinical Information Extraction Agent (NLP).
 Read the CURRENT admission clinical note AND structured MIMIC data (vitals, labs, radiology). Prior admissions are HISTORY only.
-Prefer structured vitals/labs over note text when they conflict. Tag prior-admission findings as status "history".
+Discharge package (diagnosis, instructions, meds, disposition, condition, followup,
+transitional issues) and Hospital Course problem titles are REDACTED — do not infer
+labels from placeholders. Prefer structured vitals/labs over note text when they conflict.
+Tag prior-admission findings as status "history".
 
 Return ONLY valid JSON (no markdown) with this schema:
 {
@@ -1217,7 +1585,7 @@ Return ONLY valid JSON (no markdown) with this schema:
   "negations": [""],
   "temporal": [{"finding": "", "onset": ""}]
 }
-Use standard clinical terminology. Copy evidence verbatim from the note."""
+Use standard clinical terminology. Keep evidence SHORT (≤15 words). Return COMPLETE JSON only."""
 
 SYMPTOM_TREE_SYSTEM_PROMPT = """You are a clinical Symptom Tree Agent.
 Given a clinical note, structured MIMIC vitals/labs/reports, and information extraction, build a hierarchical symptom tree
@@ -1711,11 +2079,30 @@ def export_cohort_to_folders(
                 format_admission_history_text(admission_history),
             )
 
-        # Clinical note (latest admission)
-        _write_text(
-            adm_dir / "clinical_note.txt",
-            cohort_row.get("clinical_note", cohort_row.get("text", "")),
-        )
+        # Clinical notes (latest admission): redacted for coding; full for audit
+        coding_note = cohort_row.get("clinical_note", "")
+        full_note = cohort_row.get("clinical_note_full") or cohort_row.get("text", coding_note)
+        redacted_dx = cohort_row.get("redacted_diagnosis_text") or ""
+
+        _write_text(adm_dir / "clinical_note.txt", coding_note)
+        _write_text(adm_dir / "clinical_note_full.txt", full_note)
+        if redacted_dx.strip():
+            _write_text(adm_dir / "redacted_discharge_sections.txt", redacted_dx)
+            # Backward-compatible alias
+            _write_text(adm_dir / "redacted_diagnosis_sections.txt", redacted_dx)
+
+        gt_payload = {
+            "patient_id": patient_id,
+            "hadm_id": int(cohort_row["hadm_id"]),
+            "primary_icd_code": cohort_row.get("primary_icd_code"),
+            "primary_dx_title": cohort_row.get("primary_dx_title"),
+            "icd10_codes": cohort_row.get("ground_truth_icd10", []),
+            "dx_titles": cohort_row.get("ground_truth_dx_titles", []),
+            "n_diagnoses": int(cohort_row.get("n_diagnoses", 0)) if pd.notna(cohort_row.get("n_diagnoses")) else None,
+            "redacted_from_note": bool(redacted_dx.strip()),
+            "note": "Labels for evaluation only — not shown to LLM agents",
+        }
+        _write_json(adm_dir / "ground_truth.json", gt_payload)
 
         ctx = cohort_row.get("clinical_context_text") or ""
         if ctx:
@@ -1745,6 +2132,7 @@ def export_cohort_to_folders(
             "n_structured_vitals": len(vitals),
             "n_structured_labs": len(labs),
             "n_radiology_reports": len(reports),
+            "note_redacted_for_coding": bool(str(cohort_row.get("redacted_diagnosis_text") or "").strip()),
             "is_latest_admission": True,
             "n_prior_admissions": int(cohort_row.get("n_prior_admissions", 0)),
             "n_total_admissions": int(cohort_row.get("n_total_admissions", 1)),
@@ -1837,7 +2225,10 @@ Folder layout per patient:
     symptom_tree.txt / .json
     admissions/
       hadm_<latest_id>/
-        clinical_note.txt
+        clinical_note.txt              (redacted discharge package — LLM / coding input)
+        clinical_note_full.txt         (original discharge note)
+        redacted_discharge_sections.txt (removed discharge package + HC titles)
+        ground_truth.json / .txt       (ICD-10 labels — eval only)
         clinical_context.txt
         structured_vitals.json
         structured_labs.json

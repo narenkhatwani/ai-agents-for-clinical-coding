@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a metastatic sarcoma patient with a history of recurrent disease and recent falls, presenting with weakness and minor abrasions. He has intracranial bleeding and pulmonary nodules, and is on hospice.",
+  "reasoning": "The patient presents with weakness, exertional dyspnea, and chronic hematoma-related symptoms, with no acute infectious or cardiovascular symptoms.",
   "branches": [
     {
       "category": "neurologic",
@@ -9,10 +9,10 @@
         {
           "term": "weakness",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "He attributes it to weakness.",
+          "severity": "mild",
+          "evidence": "weakness attributed to weakness",
           "related_findings": [
-            "intracranial bleeding"
+            "degenerative changes of the cervical spine"
           ],
           "children": []
         }
@@ -23,44 +23,12 @@
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "pulmonary nodules",
-          "status": "suspected",
-          "severity": "unknown",
-          "evidence": "Multiple scattered, rounded opacities in the left perihilar region and right lower lobe are consistent with known pulmonary nodules representing advanced metastatic disease.",
+          "term": "dyspnea",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "exertional dyspnea",
           "related_findings": [
-            "pulmonary emboli"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "pulmonary emboli",
-          "status": "confirmed",
-          "severity": "unknown",
-          "evidence": "Admitted for extensive bilateral pulmonary emboli.",
-          "related_findings": [
-            "IVC filter placement"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "hematoma",
-          "status": "chronic",
-          "severity": "unknown",
-          "evidence": "Chronic thigh hematoma with poor erythropoietic response due to XRT.",
-          "related_findings": [
-            "anemia"
+            "pulmonary nodules"
           ],
           "children": []
         }
@@ -72,31 +40,71 @@
       "symptoms": [
         {
           "term": "anemia",
-          "status": "severe",
+          "status": "present",
           "severity": "severe",
-          "evidence": "Hematocrit 23.6%, Hemoglobin 7.7 g/dL, Platelet Count 63.0 K/uL.",
+          "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
           "related_findings": [
-            "thigh hematoma"
+            "chronic thigh hematoma",
+            "cytokine effects from chemotherapy"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "thrombocytopenia",
+              "status": "present",
+              "severity": "mild",
+              "evidence": "Platelet Count: 63.0 K/uL",
+              "related_findings": [
+                "IVC filter placement"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "hypotension",
+          "status": "absent",
+          "evidence": "Blood Pressure: 114/66 mmHg"
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "absent",
+          "evidence": "no fevers/chills"
+        },
+        {
+          "term": "infectious nodules",
+          "status": "suspected",
+          "evidence": "infectious nodules",
+          "related_findings": [
+            "pulmonary nodules"
+          ]
         }
       ]
     }
   ],
   "key_symptoms": [
     "weakness",
-    "pulmonary nodules",
-    "hematoma",
+    "dyspnea",
     "anemia"
   ],
   "red_flags": [
-    "intracranial bleeding",
-    "pulmonary emboli"
+    "hypotension",
+    "AMS"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "16014068",
   "admission_id": "29042843",
-  "generated_at": "2026-07-09T00:30:47.475085"
+  "generated_at": "2026-07-20T01:13:11.562010"
 }

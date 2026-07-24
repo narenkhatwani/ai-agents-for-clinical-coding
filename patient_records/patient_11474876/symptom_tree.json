@@ -1,57 +1,50 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease who underwent ERCP for choledocholithiasis. He is currently stable post-procedure with no acute symptoms but has a history of nocturnal hypoxia and leg swelling.",
+  "reasoning": "The patient is a 70-year-old male with a history of atrial fibrillation, peripheral vascular disease, chronic kidney disease, and cholangitis who underwent ERCP with stent placement. He is currently being managed post-procedurally with no acute symptoms.",
   "branches": [
     {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "nocturnal hypoxia",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "His course during the prior admission was also notable for nocturnal hypoxia that improved with diuresis",
-          "related_findings": [
-            "Hemoglobin: 12.6 g/dL (low)"
-          ],
-          "children": []
-        },
-        {
           "term": "leg swelling",
           "status": "present",
           "severity": "mild",
-          "evidence": "Notes his ___ edema improves during the night and worsens during the day",
+          "evidence": "notes his edema improves during the night and worsens during the day",
           "related_findings": [
-            "Creatinine: 1.4 mg/dL (high)"
+            "Creatinine: 1.4 mg/dL",
+            "Hematocrit: 38.3%",
+            "Hemoglobin: 12.6 g/dL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "edema",
+              "status": "present",
+              "evidence": "notes his edema improves during the night and worsens during the day"
+            }
+          ]
         }
       ]
     },
     {
-      "category": "respiratory",
-      "ontology_hint": "Respiratory",
+      "category": "renal",
+      "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "respiratory rate",
-          "status": "normal",
-          "severity": "normal",
-          "evidence": "Respiratory Rate: 20 bpm",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "ciprofloxacin",
-          "status": "started",
-          "severity": "unknown",
-          "evidence": "Ciprofloxacin was started post-ERCP",
-          "related_findings": [],
+          "term": "creatinine",
+          "status": "abnormal",
+          "severity": "mild",
+          "evidence": "Creatinine: 1.4 mg/dL",
+          "related_findings": [
+            "Hematocrit: 38.3%",
+            "Hemoglobin: 12.6 g/dL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
+          ],
           "children": []
         }
       ]
@@ -62,21 +55,29 @@
       "symptoms": [
         {
           "term": "atrial fibrillation",
-          "status": "confirmed",
+          "status": "history",
           "severity": "mild",
-          "evidence": "AFib: continued home propranolol and amiodarone",
+          "evidence": "Paroxysmal AFib, on Eliquis and amiodarone",
           "related_findings": [
-            "Hemoglobin: 12.6 g/dL (low)"
+            "Lasix: 20 mg IV",
+            "Apixaban: continued"
           ],
           "children": []
-        },
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
         {
-          "term": "heart failure",
-          "status": "confirmed",
+          "term": "hypertension",
+          "status": "history",
           "severity": "mild",
-          "evidence": "HFpEF: held home Lasix ___",
+          "evidence": "Hypertension",
           "related_findings": [
-            "Creatinine: 1.4 mg/dL (high)"
+            "Lasix: 20 mg IV",
+            "Apixaban: continued"
           ],
           "children": []
         }
@@ -88,46 +89,42 @@
       "symptoms": [
         {
           "term": "peripheral vascular disease",
-          "status": "confirmed",
+          "status": "history",
           "severity": "mild",
-          "evidence": "PVD: continued home aspirin 81mg, atorvastatin 20mg",
-          "related_findings": [],
+          "evidence": "Peripheral vascular disease s/p Aortobifemoral bypass graft",
+          "related_findings": [
+            "Lasix: 20 mg IV",
+            "Apixaban: continued"
+          ],
           "children": []
         }
       ]
     },
     {
-      "category": "renal",
-      "ontology_hint": "Renal",
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "creatinine",
-          "status": "high",
+          "term": "chronic kidney disease",
+          "status": "history",
           "severity": "mild",
-          "evidence": "Creatinine: 1.4 mg/dL",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "choledocholithiasis",
-          "status": "confirmed",
-          "severity": "mild",
-          "evidence": "Choledocholithiasis s/p ERCP: ERCP with multiple stones and sludge",
-          "related_findings": [],
+          "evidence": "Chronic kidney disease",
+          "related_findings": [
+            "Creatinine: 1.4 mg/dL",
+            "Hematocrit: 38.3%",
+            "Hemoglobin: 12.6 g/dL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
+          ],
           "children": []
         }
       ]
     }
   ],
   "key_symptoms": [
-    "nocturnal hypoxia",
-    "leg swelling"
+    "leg swelling",
+    "creatinine"
   ],
   "red_flags": [
     "hypotension",
@@ -138,5 +135,5 @@
   "_agent": "symptom_tree",
   "patient_id": "11474876",
   "admission_id": "29672491",
-  "generated_at": "2026-07-09T00:29:58.655392"
+  "generated_at": "2026-07-20T01:10:29.102518"
 }

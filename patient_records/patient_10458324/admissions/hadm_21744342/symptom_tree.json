@@ -1,66 +1,53 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a mechanical fall, with ongoing respiratory distress and signs of volume overload.",
+  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a fall, with new-onset shortness of breath and crackles on lung auscultation.",
   "branches": [
     {
       "category": "respiratory",
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "right sided rib fractures",
+          "term": "chest pain",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "right sided ___ rib fractures",
+          "severity": "mild",
+          "evidence": "tenderness on right posterior back and along the right lateral chest",
           "related_findings": [
-            "right-sided pneumothorax",
-            "subcutaneous emphysema"
+            "right ___ rib fractures"
           ],
           "children": [
             {
-              "term": "right lateral chest pain",
+              "term": "subcutaneous emphysema",
               "status": "present",
-              "evidence": "right lateral chest against the bathtub"
+              "evidence": "areas of subcutaneous emphysema along the right posterior back"
             }
           ]
         },
         {
-          "term": "hypoxia",
+          "term": "shortness of breath",
           "status": "present",
           "severity": "mild",
-          "evidence": "satting 96% on 4L and evaluated by trauma surgery",
+          "evidence": "non-labored breathing, on MC",
           "related_findings": [
-            "right-sided pneumothorax",
-            "subcutaneous emphysema"
+            "inspiratory crackles b/l lower lobes"
           ]
         },
         {
-          "term": "respiratory distress",
+          "term": "crackles",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "small right PTX, bilateral pulmonary opacities",
+          "severity": "mild",
+          "evidence": "inspiratory crackles b/l lower lobes",
           "related_findings": [
-            "right-sided pneumothorax",
-            "subcutaneous emphysema"
+            "small right PTX",
+            "right lung base atelectasis versus contusion"
           ]
         },
         {
-          "term": "pneumothorax",
+          "term": "edema",
           "status": "present",
           "severity": "mild",
-          "evidence": "small right PTX, tiny right apical pneumothorax",
+          "evidence": "bilateral, 2+ DP pulses",
           "related_findings": [
-            "right-sided rib fractures",
-            "subcutaneous emphysema"
-          ]
-        },
-        {
-          "term": "pulmonary edema",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "bilateral pulmonary opacities, increased left lung opacity",
-          "related_findings": [
-            "right-sided rib fractures",
-            "subcutaneous emphysema"
+            "right-sided rib fractures"
           ]
         }
       ]
@@ -70,56 +57,62 @@
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "atrial fibrillation",
+          "term": "hypoxia",
           "status": "present",
           "severity": "mild",
-          "evidence": "paroxysmal atrial fibrillation",
+          "evidence": "satting 96% on 4L",
           "related_findings": [
-            "hypoxia",
-            "respiratory distress"
+            "right ___ rib fractures",
+            "small right PTX"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "pneumonia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "aspiration or pneumonia suspicious for",
+          "related_findings": [
+            "inspiratory crackles b/l lower lobes",
+            "right lung base atelectasis versus contusion"
           ]
         }
       ]
     },
     {
       "category": "constitutional",
-      "ontology_hint": "Infectious Diseases",
+      "ontology_hint": "Other",
       "symptoms": [
         {
           "term": "fever",
           "status": "history",
           "severity": "unknown",
-          "evidence": "spiked fever ___ the unit",
+          "evidence": "spiked fever",
           "related_findings": [
-            "pneumonia",
-            "pneumothorax"
-          ]
-        },
-        {
-          "term": "infection",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "GRAM NEGATIVE ROD(S), BUDDING YEAST WITH PSEUDOHYPHAE, GRAM POSITIVE COCCI",
-          "related_findings": [
-            "pneumonia",
-            "pneumothorax"
+            "right ___ rib fractures"
           ]
         }
       ]
     }
   ],
   "key_symptoms": [
-    "right sided rib fractures",
-    "hypoxia"
+    "chest pain",
+    "shortness of breath",
+    "crackles"
   ],
   "red_flags": [
-    "atrial fibrillation",
-    "pneumothorax"
+    "hypoxia",
+    "pneumonia"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10458324",
   "admission_id": "21744342",
-  "generated_at": "2026-07-09T00:29:44.597572"
+  "generated_at": "2026-07-20T01:08:29.300239"
 }
