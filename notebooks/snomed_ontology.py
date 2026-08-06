@@ -338,6 +338,44 @@ def wu_palmer_with_lcs(sctid_a: str, sctid_b: str):
     return {"score": score, "lcs_sctid": lcs, "lcs_depth": depth_lcs}
 
 
+@lru_cache(maxsize=None)
+def ancestor_jaccard_with_lcs(sctid_a: str, sctid_b: str):
+    """Jaccard similarity between two concepts' full ancestor sets (|A∩B| / |A∪B|,
+    each concept's set includes itself), plus the deepest shared ancestor (LCS) for
+    display purposes -- the same "via: X" explainability wu_palmer_with_lcs() gives,
+    computed from the same ancestor data, just scored differently.
+
+    Unlike Wu-Palmer, which reduces the whole shared lineage down to a ratio based on
+    a single deepest shared ancestor, Jaccard looks at every shared ancestor across
+    the whole lineage. This is more robust to SNOMED's polyhierarchy, where two
+    concepts can share many ancestors at various depths without one obviously-correct
+    LCS capturing the whole relationship -- Wu-Palmer's ratio depends entirely on
+    which single ancestor gets picked as "the" LCS, while Jaccard doesn't need to pick
+    one at all for the score itself (the LCS here is only fetched for display).
+
+    Returns {"jaccard": float, "lcs_sctid": str or None, "lcs_depth": int or None,
+    "n_shared_ancestors": int}, or None if either SCTID is missing/unresolvable."""
+    if not sctid_a or not sctid_b:
+        return None
+
+    anc_a = ancestors_with_dist(sctid_a)
+    anc_b = ancestors_with_dist(sctid_b)
+    common = set(anc_a) & set(anc_b)
+    union = set(anc_a) | set(anc_b)
+    if not union:
+        return None
+
+    jaccard = round(len(common) / len(union), 4)
+    if not common:
+        return {"jaccard": jaccard, "lcs_sctid": None, "lcs_depth": None, "n_shared_ancestors": 0}
+
+    common_sorted = sorted(common)
+    lcs = min(common_sorted, key=lambda x: (-depth_to_root(x), anc_a[x] + anc_b[x]))
+    depth_lcs = depth_to_root(lcs)
+
+    return {"jaccard": jaccard, "lcs_sctid": lcs, "lcs_depth": depth_lcs, "n_shared_ancestors": len(common)}
+
+
 # SNOMED's defining attributes (as opposed to the is-a hierarchy) -- these
 # capture *why* a concept is what it is, independent of where it sits in the
 # is-a tree. Two concepts can be structurally distant (different is-a
