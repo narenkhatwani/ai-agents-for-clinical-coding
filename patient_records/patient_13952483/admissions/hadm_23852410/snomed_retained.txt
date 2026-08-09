@@ -1,0 +1,41 @@
+Patient: 13952483  HADM: 23852410
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 11 / 63  |  links: 13
+
+• thrombocytopenia  [symptom]  → SNOMED: Fetal thrombocytopenia (10752381000119101)
+    - [is_a] Thrombocytopenic disorder (id=302215000, sim=0.8445) [HIGH]
+
+• Right Heart Catheterization  [procedure]  → SNOMED: Catheterization of right heart (40403005)
+    - [is_a] Cardiac catheterization (id=41976001, sim=0.8584) [HIGH]
+    - [is_a] Catheterization (id=45211000, sim=0.7256)
+
+• ___ guided lung biopsy  [procedure]  → SNOMED: Biopsy of lung using computed tomography (CT) guidance (429932001)
+    - [is_a] Biopsy of lung (id=78603008, sim=0.839) [HIGH]
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• White Blood Cells  [lab]  → SNOMED: Leukocyte (52501007)
+    - [is_a] Blood cell (id=63370004, sim=0.7647)
+
+• Calcium, Total  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.721)
+
+• Iron  [lab]  → SNOMED: Iron (3829006)
+    - [is_a] Iron and/or iron compound (id=767270007, sim=0.7247)
+
+• Magnesium  [lab]  → SNOMED: Magnesium (72717003)
+    - [is_a] Magnesium and/or magnesium compound (id=767301009, sim=0.8235) [HIGH]
+
+• Phosphate  [lab]  → SNOMED: Phosphate (259296007)
+    - [is_a] Phosphorus compound (id=63793008, sim=0.7761)
+    - [is_a] Phosphorus and/or phosphorus compound (id=767361006, sim=0.7162)
+
+• Potassium  [lab]  → SNOMED: Potassium (88480006)
+    - [is_a] Potassium and/or potassium compound (id=767364003, sim=0.7922)
+
+• Sodium  [lab]  → SNOMED: Sodium (39972003)
+    - [is_a] Sodium and/or sodium compound (id=767403008, sim=0.7618)

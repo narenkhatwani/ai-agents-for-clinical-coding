@@ -99,6 +99,7 @@ DATA_DIR = REPO_ROOT / "data" / "test" if TEST_MODE else REPO_ROOT / "data"
 COHORT_DIR = DATA_DIR / "cohort"
 STAGE_02_DIR = DATA_DIR / "stage_02_information_extraction"
 STAGE_03_DIR = DATA_DIR / "stage_03_symptom_tree"
+STAGE_07_DIR = DATA_DIR / "stage_07_differential_diagnosis"
 EXPORT_DIR = REPO_ROOT / "patient_records_test" if TEST_MODE else REPO_ROOT / "patient_records"
 
 
@@ -131,16 +132,20 @@ def _apply_settings_json() -> None:
         g["COHORT_DIR"] = g["DATA_DIR"] / "cohort"
         g["STAGE_02_DIR"] = g["DATA_DIR"] / "stage_02_information_extraction"
         g["STAGE_03_DIR"] = g["DATA_DIR"] / "stage_03_symptom_tree"
+        g["STAGE_07_DIR"] = g["DATA_DIR"] / "stage_07_differential_diagnosis"
         g["EXPORT_DIR"] = g["REPO_ROOT"] / "patient_records_test" if tm else g["REPO_ROOT"] / "patient_records"
 
 
 def _refresh_artifact_paths() -> None:
-    global COHORT_PICKLE, COHORT_INDEX_JSON, IE_RESULTS_JSON, IE_CHECKPOINT_JSON, SYMPTOM_TREE_RESULTS_JSON
+    global COHORT_PICKLE, COHORT_INDEX_JSON, IE_RESULTS_JSON, IE_CHECKPOINT_JSON
+    global SYMPTOM_TREE_RESULTS_JSON, DIFF_DX_RESULTS_JSON, DIFF_DX_CHECKPOINT_JSON
     COHORT_PICKLE = COHORT_DIR / "cohort.pkl"
     COHORT_INDEX_JSON = COHORT_DIR / "cohort_index.json"
     IE_RESULTS_JSON = STAGE_02_DIR / "information_extractions.json"
     IE_CHECKPOINT_JSON = STAGE_02_DIR / "ie_checkpoint.json"
     SYMPTOM_TREE_RESULTS_JSON = STAGE_03_DIR / "symptom_tree_results.json"
+    DIFF_DX_RESULTS_JSON = STAGE_07_DIR / "differential_diagnoses.json"
+    DIFF_DX_CHECKPOINT_JSON = STAGE_07_DIR / "diff_dx_checkpoint.json"
 
 
 
@@ -1759,12 +1764,455 @@ Track which symptoms recurred across admissions. Return ONLY valid JSON:
     return tree
 
 
-import json
-from datetime import datetime
-from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+# ---------------------------------------------------------------------------
+# Stage 7 — Scored differential diagnosis
+# ---------------------------------------------------------------------------
+DIFF_DX_TEMPERATURE = 0.4
 
-import pandas as pd
+DIFF_DX_ROLE = """\
+You are an experienced hospital clinician and clinical coding specialist. You formulate \
+working differential diagnoses for the CURRENT (latest) admission to support clinical \
+coding and documentation. You routinely integrate:
+- hierarchical symptom trees for the current stay,
+- retained SNOMED CT ontology routes (Is-a parents; outbound finding site, morphology, \
+  due to / causative agent, pathological process, after, associated with, occurrence, \
+  clinical course),
+- structured vitals/labs for the current stay,
+- PRIOR admission ICD-10 lists as known past medical history / comorbidity context.
+
+You produce multiple scored differentials when the presentation is multi-factorial or uncertain."""
+
+DIFF_DX_TASK = """\
+Using only the CONTEXT below, produce a SCORED differential diagnosis for the CURRENT admission.
+
+Multiple diagnoses are expected and welcome (primary, secondary, complications, \
+and competing alternatives).
+
+For each candidate diagnosis:
+1. Assign a numeric likelihood score from 0–100 relative to the other candidates \
+   (higher = more likely given the provided evidence; scores need not sum to 100).
+2. Assign confidence: high | medium | low.
+3. Assign category: primary | secondary | complication | risk_factor | differential.
+4. Cite supporting evidence drawn from the symptom tree, retained SNOMED links, \
+   and/or prior ICDs (label which source when relevant).
+5. Note opposing evidence when the context weighs against the diagnosis.
+6. Optionally align to a retained SNOMED term when it matches the diagnosis concept.
+
+Also provide:
+- summary: 2–4 sentence synthesis of the CURRENT presentation (with PMH only as context)
+- most_likely: the top working diagnosis string for THIS admission
+- rule_outs: considered but weakly supported or contradicted
+- uncertain_areas: what missing data would change ranking
+- Aim for 3–8 differentials when evidence allows (more is fine if justified)
+
+Return COMPLETE valid JSON only (no markdown fences), matching the OUTPUT schema."""
+
+DIFF_DX_CONSTRAINTS = """\
+- Base every judgment solely on the CONTEXT provided. Do not invent symptoms, labs, \
+  imaging, or history that are not present.
+- PRIOR admission ICD-10 codes are known past diagnoses / comorbidities only. Use them \
+  to inform risk, chronic conditions, and recurrence — do NOT copy them wholesale as the \
+  only current-admission diagnoses unless the CURRENT context strongly supports them \
+  for this stay.
+- Do NOT use or guess CURRENT discharge diagnoses (they may be redacted). Current-stay \
+  ground-truth ICD is never provided.
+- Do not use private outside-case knowledge about this specific patient.
+- Prefer diagnoses that could plausibly explain the CURRENT presentation for coding support.
+- Keep evidence phrases short (≤20 words).
+- Order the differential highest score → lowest score.
+- If evidence is weak, still list candidates with lower scores and state that in reasoning.
+- Evaluate candidates independently before ranking them."""
+
+DIFF_DX_OUTPUT_SCHEMA = """\
+{
+  "summary": "2–4 sentence clinical synthesis of the current presentation",
+  "most_likely": "primary working diagnosis string",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "condition name",
+      "score": 85,
+      "confidence": "high|medium|low",
+      "category": "primary|secondary|complication|risk_factor|differential",
+      "snomed_aligned": "optional related SNOMED term from retained context, or empty string",
+      "supporting_evidence": ["short bullet from tree / SNOMED / prior ICD"],
+      "opposing_evidence": ["short bullet if any, else empty array"],
+      "reasoning": "1–2 sentences why this scores as it does"
+    }
+  ],
+  "rule_outs": [{"diagnosis": "", "why": ""}],
+  "uncertain_areas": ["what would change ranking if known"],
+  "n_candidates": 0
+}"""
+
+DIFF_DX_SYSTEM_PROMPT = (
+    "You are a differential diagnosis agent for clinical coding support. "
+    "Follow the ROLE, CONTEXT, TASK, and CONSTRAINTS in the user message exactly. "
+    "Return complete valid JSON only."
+)
+
+
+def slim_symptom_tree_for_prompt(tree: Dict[str, Any]) -> Dict[str, Any]:
+    """Drop internal metadata so the prompt stays focused."""
+    if not tree:
+        return {}
+    keep = {
+        k: v
+        for k, v in tree.items()
+        if not str(k).startswith("_") and k not in ("generated_at",)
+    }
+    return keep
+
+
+def slim_retained_for_prompt(retained_payload: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Compact retained SNOMED context for the LLM."""
+    entities = retained_payload.get("entities") or []
+    out: List[Dict[str, Any]] = []
+    for ent in entities:
+        links = []
+        for r in ent.get("retained") or []:
+            links.append(
+                {
+                    "relation": r.get("relation"),
+                    "term": r.get("term"),
+                    "concept_id": r.get("concept_id"),
+                    "similarity": r.get("cosine_similarity"),
+                    "high_confidence": r.get("high_confidence"),
+                }
+            )
+        out.append(
+            {
+                "entity": ent.get("term"),
+                "kind": ent.get("kind"),
+                "snomed": ent.get("snomed_preferred_term"),
+                "snomed_id": ent.get("snomed_concept_id"),
+                "retained_links": links,
+            }
+        )
+    return out
+
+
+def build_prior_icd_context(
+    admission_history: Optional[List[Dict[str, Any]]],
+) -> List[Dict[str, Any]]:
+    """
+    Option B: structured prior-admission package for DiffDx.
+
+    Includes ALL billed ICD-10 codes (+ titles) from every prior admission.
+    Does not include current-stay ground truth.
+    """
+    if not admission_history:
+        return []
+    out: List[Dict[str, Any]] = []
+    for adm in admission_history:
+        if not isinstance(adm, dict):
+            continue
+        codes = list(adm.get("ground_truth_icd10") or [])
+        titles = list(adm.get("ground_truth_dx_titles") or [])
+        icd_list: List[Dict[str, str]] = []
+        for j, code in enumerate(codes):
+            title = titles[j] if j < len(titles) else ""
+            icd_list.append(
+                {
+                    "code": str(code),
+                    "title": str(title) if title is not None else "",
+                }
+            )
+        # Ensure primary is listed even if missing from code list
+        primary = adm.get("primary_icd_code")
+        if primary and not any(x["code"] == str(primary) for x in icd_list):
+            icd_list.insert(
+                0,
+                {
+                    "code": str(primary),
+                    "title": str(adm.get("primary_dx_title") or ""),
+                },
+            )
+        out.append(
+            {
+                "hadm_id": adm.get("hadm_id") or adm.get("admission_id"),
+                "admittime": adm.get("admittime"),
+                "dischtime": adm.get("dischtime"),
+                "admission_type": adm.get("admission_type"),
+                "primary_icd_code": adm.get("primary_icd_code"),
+                "primary_dx_title": adm.get("primary_dx_title"),
+                "n_diagnoses": len(icd_list) or adm.get("n_diagnoses"),
+                "icd10_diagnoses": icd_list,  # ALL prior ICDs
+            }
+        )
+    return out
+
+
+def format_prior_icd_context_text(prior_blocks: List[Dict[str, Any]]) -> str:
+    """Human-readable prior ICD block for the prompt CONTEXT section."""
+    if not prior_blocks:
+        return (
+            "No prior admissions in export. "
+            "Do not invent past diagnoses."
+        )
+    lines = [
+        "PRIOR ADMISSIONS — known past ICD-10 diagnoses only "
+        "(NOT current discharge diagnoses; use as PMH / comorbidity / recurrence context).",
+        "",
+    ]
+    for i, adm in enumerate(prior_blocks, start=1):
+        lines.append(
+            f"--- Prior admission {i} | hadm_id={adm.get('hadm_id')} ---"
+        )
+        lines.append(
+            f"  Admit: {adm.get('admittime')} | Discharge: {adm.get('dischtime')}"
+        )
+        lines.append(f"  Type: {adm.get('admission_type')}")
+        lines.append(
+            f"  Primary: {adm.get('primary_icd_code')} — {adm.get('primary_dx_title')}"
+        )
+        icds = adm.get("icd10_diagnoses") or []
+        lines.append(f"  All ICD-10 ({len(icds)}):")
+        for row in icds:
+            title = row.get("title") or ""
+            if title:
+                lines.append(f"    • {row.get('code')} — {title}")
+            else:
+                lines.append(f"    • {row.get('code')}")
+        lines.append("")
+    return "\n".join(lines)
+
+
+def build_diff_dx_context_block(
+    patient_id: str,
+    hadm_id: str,
+    tree_slim: Dict[str, Any],
+    retained_slim: List[Dict[str, Any]],
+    prior_icd_blocks: Optional[List[Dict[str, Any]]] = None,
+    clinical_context_text: Optional[str] = None,
+    ie_summary: Optional[Dict[str, Any]] = None,
+) -> str:
+    """Assemble the CONTEXT section for the structured DiffDx prompt."""
+    prior_blocks = prior_icd_blocks or []
+    parts: List[str] = [
+        f"Patient ID: {patient_id}",
+        f"Current admission ID (HADM): {hadm_id}",
+        "",
+        "Materials below come from the coding pipeline for this patient.",
+        "CURRENT stay: symptom tree, retained SNOMED, optional context/IE.",
+        "PRIOR stays: all billed ICD-10 codes only (no current-stay ground truth).",
+        "",
+        "--- PRIOR ADMISSION ICD-10 CONTEXT ---",
+        format_prior_icd_context_text(prior_blocks),
+        "",
+        "--- CURRENT SYMPTOM TREE ---",
+        json.dumps(tree_slim, indent=2, ensure_ascii=False),
+        "",
+        "--- RETAINED SNOMED CT ONTOLOGY CONTEXT (current entities) ---",
+        "(MiniLM-filtered Is-a + outbound attributes for anatomic/process alignment.)",
+        json.dumps(retained_slim, indent=2, ensure_ascii=False),
+    ]
+
+    if clinical_context_text:
+        ctx = clinical_context_text.strip()
+        if len(ctx) > 2500:
+            ctx = ctx[:2500] + "\n...[truncated]"
+        parts.extend(
+            [
+                "",
+                "--- STRUCTURED CLINICAL CONTEXT (current stay vitals/labs excerpts) ---",
+                ctx,
+            ]
+        )
+
+    if ie_summary:
+        keys = (
+            "symptoms",
+            "diagnoses_mentioned",
+            "procedures",
+            "medications",
+            "labs",
+            "temporal",
+        )
+        slim_ie = {k: ie_summary.get(k) for k in keys if ie_summary.get(k)}
+        if slim_ie:
+            parts.extend(
+                [
+                    "",
+                    "--- INFORMATION EXTRACTION (current stay; may overlap symptom tree) ---",
+                    json.dumps(slim_ie, indent=2, ensure_ascii=False),
+                ]
+            )
+
+    return "\n".join(parts)
+
+
+def build_diff_dx_user_prompt(context: str) -> str:
+    """Full structured user prompt: ROLE / CONTEXT / TASK / CONSTRAINTS / OUTPUT."""
+    return (
+        f"ROLE:\n{DIFF_DX_ROLE}\n\n"
+        f"CONTEXT:\n{context}\n\n"
+        f"TASK:\n{DIFF_DX_TASK}\n\n"
+        f"CONSTRAINTS:\n{DIFF_DX_CONSTRAINTS}\n\n"
+        f"OUTPUT SCHEMA (return only this JSON object):\n{DIFF_DX_OUTPUT_SCHEMA}"
+    )
+
+
+def differential_diagnosis_agent(
+    symptom_tree: Dict[str, Any],
+    retained_snomed: Dict[str, Any],
+    patient_id: str,
+    hadm_id: str,
+    clinical_context_text: Optional[str] = None,
+    ie_summary: Optional[Dict[str, Any]] = None,
+    admission_history: Optional[List[Dict[str, Any]]] = None,
+    config: Optional[LLMConfig] = None,
+    temperature: float = DIFF_DX_TEMPERATURE,
+) -> Dict[str, Any]:
+    """
+    LLM scored differential diagnosis.
+
+    Inputs:
+      - current symptom tree + retained SNOMED
+      - optional current clinical context / IE
+      - prior admission_history with ALL ICD-10 codes (Option B)
+    Never uses current-stay ground-truth ICD / discharge package.
+    Prompt format: ROLE / CONTEXT / TASK / CONSTRAINTS; default temperature=0.4.
+    """
+    from dataclasses import replace
+
+    base = config or LLMConfig()
+    config = replace(base, temperature=float(temperature))
+    model = config.model
+    require_llm(config)
+    warn_if_slow_model(model, config.provider)
+
+    tree_slim = slim_symptom_tree_for_prompt(symptom_tree)
+    retained_slim = slim_retained_for_prompt(retained_snomed or {})
+    prior_blocks = build_prior_icd_context(admission_history)
+
+    context = build_diff_dx_context_block(
+        patient_id=str(patient_id),
+        hadm_id=str(hadm_id),
+        tree_slim=tree_slim,
+        retained_slim=retained_slim,
+        prior_icd_blocks=prior_blocks,
+        clinical_context_text=clinical_context_text,
+        ie_summary=ie_summary,
+    )
+    user_prompt = build_diff_dx_user_prompt(context)
+
+    result = call_llm_json(DIFF_DX_SYSTEM_PROMPT, user_prompt, config, model=model)
+
+    # Normalize differential ranking/scores
+    differentials = result.get("differential") or result.get("differentials") or []
+    if not isinstance(differentials, list):
+        differentials = []
+    cleaned: List[Dict[str, Any]] = []
+    for i, item in enumerate(differentials):
+        if not isinstance(item, dict):
+            continue
+        score = item.get("score", item.get("confidence_score", 0))
+        try:
+            score_f = float(score)
+        except (TypeError, ValueError):
+            score_f = 0.0
+        if 0.0 < score_f <= 1.0:
+            score_f = score_f * 100.0
+        score_f = max(0.0, min(100.0, score_f))
+        cleaned.append(
+            {
+                "rank": int(item.get("rank") or i + 1),
+                "diagnosis": str(item.get("diagnosis") or item.get("name") or "").strip(),
+                "score": round(score_f, 1),
+                "confidence": str(item.get("confidence") or "medium").lower(),
+                "category": str(item.get("category") or "differential"),
+                "snomed_aligned": item.get("snomed_aligned") or item.get("snomed") or "",
+                "supporting_evidence": item.get("supporting_evidence") or [],
+                "opposing_evidence": item.get("opposing_evidence") or [],
+                "reasoning": item.get("reasoning") or "",
+            }
+        )
+    cleaned = [c for c in cleaned if c["diagnosis"]]
+    cleaned.sort(key=lambda x: (-x["score"], x["rank"]))
+    for i, c in enumerate(cleaned, start=1):
+        c["rank"] = i
+
+    n_prior_icds = sum(len(p.get("icd10_diagnoses") or []) for p in prior_blocks)
+
+    result["differential"] = cleaned
+    result["n_candidates"] = len(cleaned)
+    if cleaned and not result.get("most_likely"):
+        result["most_likely"] = cleaned[0]["diagnosis"]
+    result["type"] = "differential_diagnosis"
+    result["_method"] = f"{config.method_prefix()}_llm:{model}"
+    result["_agent"] = "differential_diagnosis"
+    result["_temperature"] = config.temperature
+    result["patient_id"] = str(patient_id)
+    result["hadm_id"] = str(hadm_id)
+    result["generated_at"] = datetime.now().isoformat()
+    result["inputs"] = {
+        "symptom_tree": True,
+        "retained_snomed_entities": len(retained_slim),
+        "retained_links": sum(len(e.get("retained_links") or []) for e in retained_slim),
+        "clinical_context": bool(clinical_context_text),
+        "information_extraction": bool(ie_summary),
+        "prior_admissions": len(prior_blocks),
+        "prior_icd_codes": n_prior_icds,
+        "prior_icd_context": True,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": config.temperature,
+    }
+    result["prior_icd_context"] = prior_blocks
+    return result
+
+
+def format_differential_diagnosis_txt(result: Dict[str, Any]) -> str:
+    lines = [
+        _format_section("DIFFERENTIAL DIAGNOSIS (scored)"),
+        f"Patient ID       : {result.get('patient_id', 'N/A')}",
+        f"HADM ID          : {result.get('hadm_id', 'N/A')}",
+        f"Method           : {result.get('_method', 'unknown')}",
+        f"Temperature      : {result.get('_temperature', result.get('inputs', {}).get('temperature', 'N/A'))}",
+        f"Generated        : {result.get('generated_at', 'N/A')}",
+        f"Candidates       : {result.get('n_candidates', len(result.get('differential') or []))}",
+        f"Most likely      : {result.get('most_likely', 'N/A')}",
+    ]
+    inputs = result.get("inputs") or {}
+    if inputs.get("prior_admissions") is not None:
+        lines.append(
+            f"Prior admissions : {inputs.get('prior_admissions')} "
+            f"({inputs.get('prior_icd_codes', 0)} ICD codes as PMH context)"
+        )
+    if result.get("summary"):
+        lines.extend(["", "Summary:", f"  {result['summary']}"])
+    lines.append("")
+    lines.append(_format_section("RANKED DIFFERENTIAL", "-"))
+    for item in result.get("differential") or []:
+        lines.append(
+            f"  #{item.get('rank')}  [{item.get('score')}/100 | {item.get('confidence')}]  "
+            f"{item.get('diagnosis')}  ({item.get('category')})"
+        )
+        if item.get("snomed_aligned"):
+            lines.append(f"      SNOMED aligned : {item['snomed_aligned']}")
+        for e in item.get("supporting_evidence") or []:
+            lines.append(f"      + {e}")
+        for e in item.get("opposing_evidence") or []:
+            lines.append(f"      − {e}")
+        if item.get("reasoning"):
+            lines.append(f"      why: {item['reasoning']}")
+        lines.append("")
+    rule_outs = result.get("rule_outs") or []
+    if rule_outs:
+        lines.append(_format_section("RULE-OUTS", "-"))
+        for r in rule_outs:
+            if isinstance(r, dict):
+                lines.append(f"  • {r.get('diagnosis')}: {r.get('why')}")
+            else:
+                lines.append(f"  • {r}")
+        lines.append("")
+    uncertain = result.get("uncertain_areas") or []
+    if uncertain:
+        lines.append(_format_section("UNCERTAIN / NEED MORE DATA", "-"))
+        for u in uncertain:
+            lines.append(f"  • {u}")
+        lines.append("")
+    return "\n".join(lines)
 
 
 
@@ -1857,6 +2305,106 @@ def load_symptom_tree_results(
         )
     payload = json.loads(path.read_text(encoding="utf-8"))
     return pd.DataFrame(payload["results"]), payload.get("patient_symptom_trees", {})
+
+
+def list_admission_export_dirs(export_dir: Union[str, Path] = None) -> List[Dict[str, Any]]:
+    """
+    Discovery helper: patient_records/patient_*/admissions/hadm_* with required Stage 7 inputs.
+    """
+    export_dir = Path(export_dir or EXPORT_DIR)
+    rows: List[Dict[str, Any]] = []
+    for adm in sorted(export_dir.glob("patient_*/admissions/hadm_*")):
+        if not adm.is_dir():
+            continue
+        pid = ""
+        hid = ""
+        for part in adm.parts:
+            if part.startswith("patient_"):
+                pid = part.replace("patient_", "", 1)
+            if part.startswith("hadm_"):
+                hid = part.replace("hadm_", "", 1)
+        tree_path = adm / "symptom_tree.json"
+        retained_path = adm / "snomed_retained.json"
+        # fallbacks
+        if not tree_path.exists():
+            alt = export_dir / f"patient_{pid}" / "symptom_tree.json"
+            if alt.exists():
+                tree_path = alt
+        rows.append(
+            {
+                "patient_id": pid,
+                "hadm_id": hid,
+                "admission_dir": adm,
+                "symptom_tree_path": tree_path,
+                "retained_path": retained_path,
+                "has_symptom_tree": tree_path.exists(),
+                "has_retained": retained_path.exists(),
+            }
+        )
+    return rows
+
+
+def save_diff_dx_results(
+    records: List[Dict[str, Any]],
+    path: Union[str, Path] = None,
+) -> Path:
+    path = Path(path or DIFF_DX_RESULTS_JSON)
+    _ensure_parent(path)
+    payload = {
+        "stage": 7,
+        "description": "Scored differential diagnosis from symptom tree + retained SNOMED context",
+        "generated_at": datetime.now().isoformat(),
+        "n_admissions": len(records),
+        "results": records,
+    }
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def load_diff_dx_checkpoint(
+    path: Union[str, Path] = None,
+) -> Dict[str, Dict[str, Any]]:
+    path = Path(path or DIFF_DX_CHECKPOINT_JSON)
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    # key = "patient_id|hadm_id"
+    out: Dict[str, Dict[str, Any]] = {}
+    for row in data.get("results") or []:
+        key = f"{row.get('patient_id')}|{row.get('hadm_id')}"
+        out[key] = row
+    return out
+
+
+def save_diff_dx_checkpoint(
+    records: List[Dict[str, Any]],
+    path: Union[str, Path] = None,
+) -> Path:
+    path = Path(path or DIFF_DX_CHECKPOINT_JSON)
+    _ensure_parent(path)
+    payload = {
+        "stage": 7,
+        "checkpoint": True,
+        "generated_at": datetime.now().isoformat(),
+        "n_admissions": len(records),
+        "results": records,
+    }
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def export_diff_dx_to_admission(
+    result: Dict[str, Any],
+    admission_dir: Path,
+) -> None:
+    """Write differential_diagnosis.json + .txt into one admission folder."""
+    admission_dir = Path(admission_dir)
+    admission_dir.mkdir(parents=True, exist_ok=True)
+    _write_json(admission_dir / "differential_diagnosis.json", result)
+    _write_text(
+        admission_dir / "differential_diagnosis.txt",
+        format_differential_diagnosis_txt(result),
+    )
 
 
 import json

@@ -1,0 +1,124 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "11251337",
+  "hadm_id": "29568708",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 24,
+  "n_entities_with_retained": 2,
+  "n_retained_links": 3,
+  "entities": [
+    {
+      "term": "Right antegrade ureteroscopy",
+      "kind": "procedure",
+      "status": "",
+      "snomed_concept_id": "236170007",
+      "snomed_preferred_term": "Antegrade ureteroscopy",
+      "anchor_term": "Right antegrade ureteroscopy",
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "387717002",
+          "term": "Ureteroscopy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8552,
+          "cosine_distance": 0.1448,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Right antegrade ureteroscopy"
+        },
+        {
+          "concept_id": "229931005",
+          "term": "Procedure on ureter",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7107,
+          "cosine_distance": 0.2893,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Right antegrade ureteroscopy"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "387717002",
+          "term": "Ureteroscopy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8552,
+          "cosine_distance": 0.1448,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Right antegrade ureteroscopy"
+        },
+        {
+          "concept_id": "229931005",
+          "term": "Procedure on ureter",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7107,
+          "cosine_distance": 0.2893,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Right antegrade ureteroscopy"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    }
+  ]
+}

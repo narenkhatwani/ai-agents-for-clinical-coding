@@ -1,0 +1,535 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "10458324",
+  "hadm_id": "21744342",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 52,
+  "n_entities_with_retained": 10,
+  "n_retained_links": 14,
+  "entities": [
+    {
+      "term": "subcutaneous emphysema",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "3830001",
+      "snomed_preferred_term": "Subcutaneous emphysema",
+      "anchor_term": "subcutaneous emphysema",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "49158009",
+          "term": "Emphysema",
+          "relation": "has_associated_morphology",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.865,
+          "cosine_distance": 0.135,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "subcutaneous emphysema"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "49158009",
+          "term": "Emphysema",
+          "relation": "has_associated_morphology",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.865,
+          "cosine_distance": 0.135,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "subcutaneous emphysema"
+        }
+      ]
+    },
+    {
+      "term": "bipolar disorder",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "13746004",
+      "snomed_preferred_term": "Bipolar disorder",
+      "anchor_term": "bipolar disorder",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "21071000119101",
+          "term": "Mood disorder of manic type",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7418,
+          "cosine_distance": 0.2582,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "bipolar disorder"
+        },
+        {
+          "concept_id": "46206005",
+          "term": "Mood disorder",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7823,
+          "cosine_distance": 0.2177,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "bipolar disorder"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "21071000119101",
+          "term": "Mood disorder of manic type",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7418,
+          "cosine_distance": 0.2582,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "bipolar disorder"
+        },
+        {
+          "concept_id": "46206005",
+          "term": "Mood disorder",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7823,
+          "cosine_distance": 0.2177,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "bipolar disorder"
+        }
+      ]
+    },
+    {
+      "term": "opiate dependence",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "231480002",
+      "snomed_preferred_term": "Opium dependence",
+      "anchor_term": "opiate dependence",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "75544000",
+          "term": "Opioid dependence",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8606,
+          "cosine_distance": 0.1394,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "opiate dependence"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "75544000",
+          "term": "Opioid dependence",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8606,
+          "cosine_distance": 0.1394,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "opiate dependence"
+        }
+      ]
+    },
+    {
+      "term": "sore throat",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "267102003",
+      "snomed_preferred_term": "Throat soreness",
+      "anchor_term": "sore throat",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "162397003",
+          "term": "Throat pain",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8172,
+          "cosine_distance": 0.1828,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "sore throat"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "162397003",
+          "term": "Throat pain",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8172,
+          "cosine_distance": 0.1828,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "sore throat"
+        }
+      ]
+    },
+    {
+      "term": "vomiting",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "422400008",
+      "snomed_preferred_term": "Vomiting",
+      "anchor_term": "vomiting",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "300359004",
+          "term": "Finding of vomiting",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8076,
+          "cosine_distance": 0.1924,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "vomiting"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "300359004",
+          "term": "Finding of vomiting",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8076,
+          "cosine_distance": 0.1924,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "vomiting"
+        }
+      ]
+    },
+    {
+      "term": "influenza A",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "442696006",
+      "snomed_preferred_term": "Influenza A (H1N1)",
+      "anchor_term": "influenza A",
+      "n_retained": 3,
+      "n_high_confidence": 2,
+      "retained_ancestors": [
+        {
+          "concept_id": "442438000",
+          "term": "Influenza caused by Influenza A virus",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8402,
+          "cosine_distance": 0.1598,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "influenza A"
+        },
+        {
+          "concept_id": "6142004",
+          "term": "Influenza",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.9078,
+          "cosine_distance": 0.0922,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "influenza A"
+        }
+      ],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "442352004",
+          "term": "Influenza A (H1N1) virus",
+          "relation": "has_causative_agent",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7262,
+          "cosine_distance": 0.2738,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "influenza A"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "442438000",
+          "term": "Influenza caused by Influenza A virus",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8402,
+          "cosine_distance": 0.1598,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "influenza A"
+        },
+        {
+          "concept_id": "6142004",
+          "term": "Influenza",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.9078,
+          "cosine_distance": 0.0922,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "influenza A"
+        },
+        {
+          "concept_id": "442352004",
+          "term": "Influenza A (H1N1) virus",
+          "relation": "has_causative_agent",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7262,
+          "cosine_distance": 0.2738,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "influenza A"
+        }
+      ]
+    },
+    {
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "5540006",
+      "snomed_preferred_term": "Calcium",
+      "anchor_term": "Calcium, Total",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ]
+    },
+    {
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259296007",
+      "snomed_preferred_term": "Phosphate",
+      "anchor_term": "Phosphate",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ]
+    },
+    {
+      "term": "Sodium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "39972003",
+      "snomed_preferred_term": "Sodium",
+      "anchor_term": "Sodium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ]
+    },
+    {
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "72717003",
+      "snomed_preferred_term": "Magnesium",
+      "anchor_term": "Magnesium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ]
+    }
+  ]
+}

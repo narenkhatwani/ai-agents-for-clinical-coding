@@ -1,0 +1,2816 @@
+[
+  {
+    "concept_id": "31942007",
+    "preferred_term": "Transection of greater occipital nerve",
+    "fsn": "Transection of greater occipital nerve (procedure)",
+    "semantic_tag": "procedure",
+    "n_neighbors": 7,
+    "n_is_a": 7,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "54929004",
+        "term": "Transection of nerve",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7253,
+        "cosine_distance": 0.2747
+      },
+      {
+        "concept_id": "386768008",
+        "term": "Transection of peripheral nerve",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6669,
+        "cosine_distance": 0.3331
+      },
+      {
+        "concept_id": "387713003",
+        "term": "Surgical procedure",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.471,
+        "cosine_distance": 0.529
+      },
+      {
+        "concept_id": "89901005",
+        "term": "Operative procedure on head",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4439,
+        "cosine_distance": 0.5561
+      },
+      {
+        "concept_id": "386767003",
+        "term": "Division of peripheral nerve",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4112,
+        "cosine_distance": 0.5888
+      }
+    ],
+    "top1_similarity": 0.7253,
+    "top2_mean_similarity": 0.6961,
+    "mean_is_a_parent_similarity": 0.5554,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "54929004",
+        "term": "Transection of nerve",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7253,
+        "cosine_distance": 0.2747
+      },
+      {
+        "concept_id": "386768008",
+        "term": "Transection of peripheral nerve",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6669,
+        "cosine_distance": 0.3331
+      },
+      {
+        "concept_id": "387713003",
+        "term": "Surgical procedure",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.471,
+        "cosine_distance": 0.529
+      },
+      {
+        "concept_id": "89901005",
+        "term": "Operative procedure on head",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4439,
+        "cosine_distance": 0.5561
+      },
+      {
+        "concept_id": "386767003",
+        "term": "Division of peripheral nerve",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4112,
+        "cosine_distance": 0.5888
+      },
+      {
+        "concept_id": "118690002",
+        "term": "Procedure on head",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3791,
+        "cosine_distance": 0.6209
+      },
+      {
+        "concept_id": "128927009",
+        "term": "Procedure by method",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1511,
+        "cosine_distance": 0.8489
+      }
+    ]
+  },
+  {
+    "concept_id": "253600008",
+    "preferred_term": "Quadricuspid pulmonary valve",
+    "fsn": "Quadricuspid pulmonary valve (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 10,
+    "n_is_a": 3,
+    "n_attributes": 7,
+    "most_relevant": [
+      {
+        "concept_id": "448604006",
+        "term": "Congenital abnormality of pulmonary valve cusp",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5921,
+        "cosine_distance": 0.4079
+      },
+      {
+        "concept_id": "39057004",
+        "term": "Pulmonic valve",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "31689007",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5807,
+        "cosine_distance": 0.4193
+      },
+      {
+        "concept_id": "302943003",
+        "term": "Abnormal number of pulmonary valve cusps",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5517,
+        "cosine_distance": 0.4483
+      },
+      {
+        "concept_id": "6530003",
+        "term": "Cardiac valve leaflet",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "31689007",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5105,
+        "cosine_distance": 0.4895
+      },
+      {
+        "concept_id": "31689007",
+        "term": "Cusp of pulmonic valve",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4633,
+        "cosine_distance": 0.5367
+      }
+    ],
+    "top1_similarity": 0.5921,
+    "top2_mean_similarity": 0.5864,
+    "mean_is_a_parent_similarity": 0.5517,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "448604006",
+        "term": "Congenital abnormality of pulmonary valve cusp",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5921,
+        "cosine_distance": 0.4079
+      },
+      {
+        "concept_id": "39057004",
+        "term": "Pulmonic valve",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "31689007",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5807,
+        "cosine_distance": 0.4193
+      },
+      {
+        "concept_id": "302943003",
+        "term": "Abnormal number of pulmonary valve cusps",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5517,
+        "cosine_distance": 0.4483
+      },
+      {
+        "concept_id": "6530003",
+        "term": "Cardiac valve leaflet",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "31689007",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5105,
+        "cosine_distance": 0.4895
+      },
+      {
+        "concept_id": "31689007",
+        "term": "Cusp of pulmonic valve",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4633,
+        "cosine_distance": 0.5367
+      },
+      {
+        "concept_id": "29375001",
+        "term": "Abnormal number of cardiac valve cusps",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4587,
+        "cosine_distance": 0.5413
+      },
+      {
+        "concept_id": "308489006",
+        "term": "Pathological process",
+        "relation": "has_pathological_process",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "308490002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.11,
+        "cosine_distance": 0.89
+      },
+      {
+        "concept_id": "308490002",
+        "term": "Pathological developmental process",
+        "relation": "has_pathological_process",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.083,
+        "cosine_distance": 0.917
+      },
+      {
+        "concept_id": "1303291008",
+        "term": "Abnormal number",
+        "relation": "has_associated_morphology",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.0693,
+        "cosine_distance": 0.9307
+      },
+      {
+        "concept_id": "57697001",
+        "term": "Growth alteration",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "1303291008",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.0106,
+        "cosine_distance": 0.9894
+      }
+    ]
+  },
+  {
+    "concept_id": "127350007",
+    "preferred_term": "Motor vehicle accident, passenger",
+    "fsn": "Motor vehicle accident, passenger (finding)",
+    "semantic_tag": "finding",
+    "n_neighbors": 3,
+    "n_is_a": 3,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "127348004",
+        "term": "Motor vehicle accident victim",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8843,
+        "cosine_distance": 0.1157
+      },
+      {
+        "concept_id": "21107000",
+        "term": "Passenger in vehicular AND/OR traffic accident",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.829,
+        "cosine_distance": 0.171
+      },
+      {
+        "concept_id": "36198007",
+        "term": "Victim of vehicular AND/OR traffic accident",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7715,
+        "cosine_distance": 0.2285
+      }
+    ],
+    "top1_similarity": 0.8843,
+    "top2_mean_similarity": 0.8566,
+    "mean_is_a_parent_similarity": 0.8566,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "127348004",
+        "term": "Motor vehicle accident victim",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8843,
+        "cosine_distance": 0.1157
+      },
+      {
+        "concept_id": "21107000",
+        "term": "Passenger in vehicular AND/OR traffic accident",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.829,
+        "cosine_distance": 0.171
+      },
+      {
+        "concept_id": "36198007",
+        "term": "Victim of vehicular AND/OR traffic accident",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7715,
+        "cosine_distance": 0.2285
+      }
+    ]
+  },
+  {
+    "concept_id": "55131000087105",
+    "preferred_term": "At increased risk of disorientation",
+    "fsn": "At increased risk of disorientation (finding)",
+    "semantic_tag": "finding",
+    "n_neighbors": 2,
+    "n_is_a": 2,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "1255670000",
+        "term": "Finding of increased risk level",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.328,
+        "cosine_distance": 0.672
+      },
+      {
+        "concept_id": "1281820001",
+        "term": "Finding of risk level",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1909,
+        "cosine_distance": 0.8091
+      }
+    ],
+    "top1_similarity": 0.328,
+    "top2_mean_similarity": 0.2595,
+    "mean_is_a_parent_similarity": 0.328,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "1255670000",
+        "term": "Finding of increased risk level",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.328,
+        "cosine_distance": 0.672
+      },
+      {
+        "concept_id": "1281820001",
+        "term": "Finding of risk level",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1909,
+        "cosine_distance": 0.8091
+      }
+    ]
+  },
+  {
+    "concept_id": "117660006",
+    "preferred_term": "Norketamine measurement",
+    "fsn": "Norketamine measurement (procedure)",
+    "semantic_tag": "procedure",
+    "n_neighbors": 2,
+    "n_is_a": 2,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "122869004",
+        "term": "Measurement",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4374,
+        "cosine_distance": 0.5626
+      },
+      {
+        "concept_id": "430925007",
+        "term": "Measurement of substance",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4133,
+        "cosine_distance": 0.5867
+      }
+    ],
+    "top1_similarity": 0.4374,
+    "top2_mean_similarity": 0.4254,
+    "mean_is_a_parent_similarity": 0.4133,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "122869004",
+        "term": "Measurement",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4374,
+        "cosine_distance": 0.5626
+      },
+      {
+        "concept_id": "430925007",
+        "term": "Measurement of substance",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4133,
+        "cosine_distance": 0.5867
+      }
+    ]
+  },
+  {
+    "concept_id": "14386001",
+    "preferred_term": "Indeterminate leprosy",
+    "fsn": "Indeterminate leprosy (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 11,
+    "n_is_a": 4,
+    "n_attributes": 7,
+    "most_relevant": [
+      {
+        "concept_id": "81004002",
+        "term": "Leprosy",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7955,
+        "cosine_distance": 0.2045
+      },
+      {
+        "concept_id": "58242002",
+        "term": "Mycobacterium leprae",
+        "relation": "has_causative_agent",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4311,
+        "cosine_distance": 0.5689
+      },
+      {
+        "concept_id": "308489006",
+        "term": "Pathological process",
+        "relation": "has_pathological_process",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "441862004",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2472,
+        "cosine_distance": 0.7528
+      },
+      {
+        "concept_id": "441862004",
+        "term": "Infectious process",
+        "relation": "has_pathological_process",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2393,
+        "cosine_distance": 0.7607
+      },
+      {
+        "concept_id": "243368001",
+        "term": "Mycobacterium",
+        "relation": "has_causative_agent",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "58242002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2209,
+        "cosine_distance": 0.7791
+      }
+    ],
+    "top1_similarity": 0.7955,
+    "top2_mean_similarity": 0.6133,
+    "mean_is_a_parent_similarity": 0.4943,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "81004002",
+        "term": "Leprosy",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7955,
+        "cosine_distance": 0.2045
+      },
+      {
+        "concept_id": "58242002",
+        "term": "Mycobacterium leprae",
+        "relation": "has_causative_agent",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4311,
+        "cosine_distance": 0.5689
+      },
+      {
+        "concept_id": "308489006",
+        "term": "Pathological process",
+        "relation": "has_pathological_process",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "441862004",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2472,
+        "cosine_distance": 0.7528
+      },
+      {
+        "concept_id": "441862004",
+        "term": "Infectious process",
+        "relation": "has_pathological_process",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2393,
+        "cosine_distance": 0.7607
+      },
+      {
+        "concept_id": "243368001",
+        "term": "Mycobacterium",
+        "relation": "has_causative_agent",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "58242002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2209,
+        "cosine_distance": 0.7791
+      },
+      {
+        "concept_id": "88415009",
+        "term": "Mycobacteriosis",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.2128,
+        "cosine_distance": 0.7872
+      },
+      {
+        "concept_id": "128936008",
+        "term": "Bacterial infection of skin",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.2,
+        "cosine_distance": 0.8
+      },
+      {
+        "concept_id": "25626000",
+        "term": "Cutaneous mycobacterial infections",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1931,
+        "cosine_distance": 0.8069
+      },
+      {
+        "concept_id": "39937001",
+        "term": "Skin",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.0687,
+        "cosine_distance": 0.9313
+      },
+      {
+        "concept_id": "113343008",
+        "term": "Body organ",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "39937001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.0224,
+        "cosine_distance": 0.9776
+      },
+      {
+        "concept_id": "127856007",
+        "term": "Skin and/or subcutaneous tissue structure",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "39937001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.0206,
+        "cosine_distance": 0.9794
+      }
+    ]
+  },
+  {
+    "concept_id": "208636004",
+    "preferred_term": "Closed fracture distal tibia, intra-articular",
+    "fsn": "Closed fracture distal tibia, intra-articular (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 10,
+    "n_is_a": 4,
+    "n_attributes": 6,
+    "most_relevant": [
+      {
+        "concept_id": "208634001",
+        "term": "Closed fracture distal tibia",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.9347,
+        "cosine_distance": 0.0653
+      },
+      {
+        "concept_id": "278537006",
+        "term": "Fracture of distal end of tibia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.9015,
+        "cosine_distance": 0.0985
+      },
+      {
+        "concept_id": "447139008",
+        "term": "Closed fracture of tibia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8458,
+        "cosine_distance": 0.1542
+      },
+      {
+        "concept_id": "64605006",
+        "term": "Distal tibia",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.8202,
+        "cosine_distance": 0.1798
+      },
+      {
+        "concept_id": "51035001",
+        "term": "Fracture, intra-articular",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "87297000",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.7833,
+        "cosine_distance": 0.2167
+      }
+    ],
+    "top1_similarity": 0.9347,
+    "top2_mean_similarity": 0.9181,
+    "mean_is_a_parent_similarity": 0.9347,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "208634001",
+        "term": "Closed fracture distal tibia",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.9347,
+        "cosine_distance": 0.0653
+      },
+      {
+        "concept_id": "278537006",
+        "term": "Fracture of distal end of tibia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.9015,
+        "cosine_distance": 0.0985
+      },
+      {
+        "concept_id": "447139008",
+        "term": "Closed fracture of tibia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8458,
+        "cosine_distance": 0.1542
+      },
+      {
+        "concept_id": "64605006",
+        "term": "Distal tibia",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.8202,
+        "cosine_distance": 0.1798
+      },
+      {
+        "concept_id": "51035001",
+        "term": "Fracture, intra-articular",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "87297000",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.7833,
+        "cosine_distance": 0.2167
+      },
+      {
+        "concept_id": "87297000",
+        "term": "Fracture, closed, intra-articular",
+        "relation": "has_associated_morphology",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.7759,
+        "cosine_distance": 0.2241
+      },
+      {
+        "concept_id": "42188001",
+        "term": "Closed fracture of ankle",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7013,
+        "cosine_distance": 0.2987
+      },
+      {
+        "concept_id": "312715005",
+        "term": "Bone structure of distal tibia and fibula",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "64605006",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.6775,
+        "cosine_distance": 0.3225
+      },
+      {
+        "concept_id": "119191008",
+        "term": "Tibia part",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "64605006",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.6316,
+        "cosine_distance": 0.3684
+      },
+      {
+        "concept_id": "20946005",
+        "term": "Fracture, closed",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "87297000",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4512,
+        "cosine_distance": 0.5488
+      }
+    ]
+  },
+  {
+    "concept_id": "1003549007",
+    "preferred_term": "Agenesis of radius",
+    "fsn": "Agenesis of radius (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 10,
+    "n_is_a": 3,
+    "n_attributes": 7,
+    "most_relevant": [
+      {
+        "concept_id": "62413002",
+        "term": "Radius",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "181940002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.6852,
+        "cosine_distance": 0.3148
+      },
+      {
+        "concept_id": "1145466009",
+        "term": "Aplasia of radius",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6519,
+        "cosine_distance": 0.3481
+      },
+      {
+        "concept_id": "181940002",
+        "term": "Entire radius",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.6299,
+        "cosine_distance": 0.3701
+      },
+      {
+        "concept_id": "84918006",
+        "term": "Congenital absence of radius",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6044,
+        "cosine_distance": 0.3956
+      },
+      {
+        "concept_id": "782173000",
+        "term": "Agenesis",
+        "relation": "has_associated_morphology",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5139,
+        "cosine_distance": 0.4861
+      }
+    ],
+    "top1_similarity": 0.6852,
+    "top2_mean_similarity": 0.6685,
+    "mean_is_a_parent_similarity": 0.6519,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "62413002",
+        "term": "Radius",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "181940002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.6852,
+        "cosine_distance": 0.3148
+      },
+      {
+        "concept_id": "1145466009",
+        "term": "Aplasia of radius",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6519,
+        "cosine_distance": 0.3481
+      },
+      {
+        "concept_id": "181940002",
+        "term": "Entire radius",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.6299,
+        "cosine_distance": 0.3701
+      },
+      {
+        "concept_id": "84918006",
+        "term": "Congenital absence of radius",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6044,
+        "cosine_distance": 0.3956
+      },
+      {
+        "concept_id": "782173000",
+        "term": "Agenesis",
+        "relation": "has_associated_morphology",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5139,
+        "cosine_distance": 0.4861
+      },
+      {
+        "concept_id": "1145452004",
+        "term": "Aplasia of bone of radius and/or ulna",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4413,
+        "cosine_distance": 0.5587
+      },
+      {
+        "concept_id": "45486003",
+        "term": "Aplasia",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "782173000",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2211,
+        "cosine_distance": 0.7789
+      },
+      {
+        "concept_id": "308490002",
+        "term": "Pathological developmental process",
+        "relation": "has_pathological_process",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1838,
+        "cosine_distance": 0.8162
+      },
+      {
+        "concept_id": "332709000",
+        "term": "Entire long bone",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "181940002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1218,
+        "cosine_distance": 0.8782
+      },
+      {
+        "concept_id": "308489006",
+        "term": "Pathological process",
+        "relation": "has_pathological_process",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "308490002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.072,
+        "cosine_distance": 0.928
+      }
+    ]
+  },
+  {
+    "concept_id": "388722004",
+    "preferred_term": "Rf271 specific IgE antibody measurement",
+    "fsn": "Pimpinella anisum specific immunoglobulin E antibody measurement (procedure)",
+    "semantic_tag": "procedure",
+    "n_neighbors": 4,
+    "n_is_a": 4,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "104381000",
+        "term": "Allergen specific IgE antibody measurement",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7295,
+        "cosine_distance": 0.2705
+      },
+      {
+        "concept_id": "388455008",
+        "term": "Food specific IgE antibody measurement",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7063,
+        "cosine_distance": 0.2937
+      },
+      {
+        "concept_id": "166776003",
+        "term": "Serum/plasma protein test",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3562,
+        "cosine_distance": 0.6438
+      },
+      {
+        "concept_id": "68793005",
+        "term": "Serologic test",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1804,
+        "cosine_distance": 0.8196
+      }
+    ],
+    "top1_similarity": 0.7295,
+    "top2_mean_similarity": 0.7179,
+    "mean_is_a_parent_similarity": 0.7063,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "104381000",
+        "term": "Allergen specific IgE antibody measurement",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7295,
+        "cosine_distance": 0.2705
+      },
+      {
+        "concept_id": "388455008",
+        "term": "Food specific IgE antibody measurement",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7063,
+        "cosine_distance": 0.2937
+      },
+      {
+        "concept_id": "166776003",
+        "term": "Serum/plasma protein test",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3562,
+        "cosine_distance": 0.6438
+      },
+      {
+        "concept_id": "68793005",
+        "term": "Serologic test",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1804,
+        "cosine_distance": 0.8196
+      }
+    ]
+  },
+  {
+    "concept_id": "400170001",
+    "preferred_term": "Hypocalcaemia of puerperium",
+    "fsn": "Hypocalcemia of puerperium (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 7,
+    "n_is_a": 7,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "405733001",
+        "term": "Puerperal hypocalcaemia",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8517,
+        "cosine_distance": 0.1483
+      },
+      {
+        "concept_id": "362973001",
+        "term": "Disorder of puerperium",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7191,
+        "cosine_distance": 0.2809
+      },
+      {
+        "concept_id": "198609003",
+        "term": "Complication of pregnancy, childbirth and/or puerperium",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5554,
+        "cosine_distance": 0.4446
+      },
+      {
+        "concept_id": "5291005",
+        "term": "Hypocalcemia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5243,
+        "cosine_distance": 0.4757
+      },
+      {
+        "concept_id": "1300209004",
+        "term": "Maternal perinatal disorder",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1623,
+        "cosine_distance": 0.8377
+      }
+    ],
+    "top1_similarity": 0.8517,
+    "top2_mean_similarity": 0.7854,
+    "mean_is_a_parent_similarity": 0.7854,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "405733001",
+        "term": "Puerperal hypocalcaemia",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8517,
+        "cosine_distance": 0.1483
+      },
+      {
+        "concept_id": "362973001",
+        "term": "Disorder of puerperium",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7191,
+        "cosine_distance": 0.2809
+      },
+      {
+        "concept_id": "198609003",
+        "term": "Complication of pregnancy, childbirth and/or puerperium",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5554,
+        "cosine_distance": 0.4446
+      },
+      {
+        "concept_id": "5291005",
+        "term": "Hypocalcemia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5243,
+        "cosine_distance": 0.4757
+      },
+      {
+        "concept_id": "1300209004",
+        "term": "Maternal perinatal disorder",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1623,
+        "cosine_distance": 0.8377
+      },
+      {
+        "concept_id": "1269101009",
+        "term": "Maternal disorder during antenatal and/or intrapartum and/or postpartum period",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.0983,
+        "cosine_distance": 0.9017
+      },
+      {
+        "concept_id": "118213005",
+        "term": "Postpartum finding",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.0479,
+        "cosine_distance": 0.9521
+      }
+    ]
+  },
+  {
+    "concept_id": "15724121000119102",
+    "preferred_term": "Enthesopathy of bilateral knees",
+    "fsn": "Enthesopathy of bilateral knees (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 10,
+    "n_is_a": 5,
+    "n_attributes": 5,
+    "most_relevant": [
+      {
+        "concept_id": "39547005",
+        "term": "Enthesopathy of knee",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.9067,
+        "cosine_distance": 0.0933
+      },
+      {
+        "concept_id": "15724201000119102",
+        "term": "Enthesopathy of right knee",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8911,
+        "cosine_distance": 0.1089
+      },
+      {
+        "concept_id": "15724161000119107",
+        "term": "Enthesopathy of left knee",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8879,
+        "cosine_distance": 0.1121
+      },
+      {
+        "concept_id": "788019004",
+        "term": "Structure of enthesis of right knee",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5966,
+        "cosine_distance": 0.4034
+      },
+      {
+        "concept_id": "725975006",
+        "term": "Structure of enthesis of knee",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "788019004",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5927,
+        "cosine_distance": 0.4073
+      }
+    ],
+    "top1_similarity": 0.9067,
+    "top2_mean_similarity": 0.8989,
+    "mean_is_a_parent_similarity": 0.8895,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "39547005",
+        "term": "Enthesopathy of knee",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.9067,
+        "cosine_distance": 0.0933
+      },
+      {
+        "concept_id": "15724201000119102",
+        "term": "Enthesopathy of right knee",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8911,
+        "cosine_distance": 0.1089
+      },
+      {
+        "concept_id": "15724161000119107",
+        "term": "Enthesopathy of left knee",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8879,
+        "cosine_distance": 0.1121
+      },
+      {
+        "concept_id": "788019004",
+        "term": "Structure of enthesis of right knee",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5966,
+        "cosine_distance": 0.4034
+      },
+      {
+        "concept_id": "725975006",
+        "term": "Structure of enthesis of knee",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "788019004",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5927,
+        "cosine_distance": 0.4073
+      },
+      {
+        "concept_id": "788021009",
+        "term": "Structure of enthesis of left knee",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5895,
+        "cosine_distance": 0.4105
+      },
+      {
+        "concept_id": "736311000",
+        "term": "Structure of soft tissue of right knee region",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "788019004",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5147,
+        "cosine_distance": 0.4853
+      },
+      {
+        "concept_id": "736310004",
+        "term": "Structure of soft tissue of left knee region",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "788021009",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5029,
+        "cosine_distance": 0.4971
+      },
+      {
+        "concept_id": "451421000124102",
+        "term": "Disorder of right lower limb",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4301,
+        "cosine_distance": 0.5699
+      },
+      {
+        "concept_id": "451431000124104",
+        "term": "Disorder of left lower limb",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4078,
+        "cosine_distance": 0.5922
+      }
+    ]
+  },
+  {
+    "concept_id": "679101000119104",
+    "preferred_term": "Xerosis of cornea of right eye",
+    "fsn": "Xerosis of cornea of right eye (finding)",
+    "semantic_tag": "finding",
+    "n_neighbors": 5,
+    "n_is_a": 2,
+    "n_attributes": 3,
+    "most_relevant": [
+      {
+        "concept_id": "1295269002",
+        "term": "Xerosis of cornea",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8999,
+        "cosine_distance": 0.1001
+      },
+      {
+        "concept_id": "36840001",
+        "term": "Cornea of right eye",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.7646,
+        "cosine_distance": 0.2354
+      },
+      {
+        "concept_id": "28726007",
+        "term": "Cornea",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "36840001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5759,
+        "cosine_distance": 0.4241
+      },
+      {
+        "concept_id": "425512003",
+        "term": "Dry cornea",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5345,
+        "cosine_distance": 0.4655
+      },
+      {
+        "concept_id": "722049003",
+        "term": "Structure of anterior eyeball segment of right eye",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "36840001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5036,
+        "cosine_distance": 0.4964
+      }
+    ],
+    "top1_similarity": 0.8999,
+    "top2_mean_similarity": 0.8322,
+    "mean_is_a_parent_similarity": 0.8999,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "1295269002",
+        "term": "Xerosis of cornea",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8999,
+        "cosine_distance": 0.1001
+      },
+      {
+        "concept_id": "36840001",
+        "term": "Cornea of right eye",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.7646,
+        "cosine_distance": 0.2354
+      },
+      {
+        "concept_id": "28726007",
+        "term": "Cornea",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "36840001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5759,
+        "cosine_distance": 0.4241
+      },
+      {
+        "concept_id": "425512003",
+        "term": "Dry cornea",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5345,
+        "cosine_distance": 0.4655
+      },
+      {
+        "concept_id": "722049003",
+        "term": "Structure of anterior eyeball segment of right eye",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "36840001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5036,
+        "cosine_distance": 0.4964
+      }
+    ]
+  },
+  {
+    "concept_id": "27572006",
+    "preferred_term": "Intention myoclonus",
+    "fsn": "Intention myoclonus (finding)",
+    "semantic_tag": "finding",
+    "n_neighbors": 6,
+    "n_is_a": 4,
+    "n_attributes": 2,
+    "most_relevant": [
+      {
+        "concept_id": "17450006",
+        "term": "Myoclonus",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7708,
+        "cosine_distance": 0.2292
+      },
+      {
+        "concept_id": "267078001",
+        "term": "Involuntary movement",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3545,
+        "cosine_distance": 0.6455
+      },
+      {
+        "concept_id": "71616004",
+        "term": "Muscle",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2277,
+        "cosine_distance": 0.7723
+      },
+      {
+        "concept_id": "106030000",
+        "term": "Muscle observation",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1886,
+        "cosine_distance": 0.8114
+      },
+      {
+        "concept_id": "102957003",
+        "term": "Neurological finding",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1368,
+        "cosine_distance": 0.8632
+      }
+    ],
+    "top1_similarity": 0.7708,
+    "top2_mean_similarity": 0.5626,
+    "mean_is_a_parent_similarity": 0.7708,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "17450006",
+        "term": "Myoclonus",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7708,
+        "cosine_distance": 0.2292
+      },
+      {
+        "concept_id": "267078001",
+        "term": "Involuntary movement",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3545,
+        "cosine_distance": 0.6455
+      },
+      {
+        "concept_id": "71616004",
+        "term": "Muscle",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.2277,
+        "cosine_distance": 0.7723
+      },
+      {
+        "concept_id": "106030000",
+        "term": "Muscle observation",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1886,
+        "cosine_distance": 0.8114
+      },
+      {
+        "concept_id": "102957003",
+        "term": "Neurological finding",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1368,
+        "cosine_distance": 0.8632
+      },
+      {
+        "concept_id": "870434005",
+        "term": "Structure of striated muscle and/or smooth muscle",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "71616004",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.0945,
+        "cosine_distance": 0.9055
+      }
+    ]
+  },
+  {
+    "concept_id": "424728002",
+    "preferred_term": "Prepapillary vascular loop",
+    "fsn": "Prepapillary vascular loop (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 17,
+    "n_is_a": 9,
+    "n_attributes": 8,
+    "most_relevant": [
+      {
+        "concept_id": "123846009",
+        "term": "Ocular blood vessel",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "28758002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4698,
+        "cosine_distance": 0.5302
+      },
+      {
+        "concept_id": "28758002",
+        "term": "Blood vessel of retina",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4266,
+        "cosine_distance": 0.5734
+      },
+      {
+        "concept_id": "57534004",
+        "term": "Changes in retinal vascular appearance",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3686,
+        "cosine_distance": 0.6314
+      },
+      {
+        "concept_id": "247108008",
+        "term": "Retinal vessel finding",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3576,
+        "cosine_distance": 0.6424
+      },
+      {
+        "concept_id": "1303452000",
+        "term": "Disorder of ocular blood vessel",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3338,
+        "cosine_distance": 0.6662
+      }
+    ],
+    "top1_similarity": 0.4698,
+    "top2_mean_similarity": 0.4482,
+    "mean_is_a_parent_similarity": 0.182,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "123846009",
+        "term": "Ocular blood vessel",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "28758002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4698,
+        "cosine_distance": 0.5302
+      },
+      {
+        "concept_id": "28758002",
+        "term": "Blood vessel of retina",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4266,
+        "cosine_distance": 0.5734
+      },
+      {
+        "concept_id": "57534004",
+        "term": "Changes in retinal vascular appearance",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3686,
+        "cosine_distance": 0.6314
+      },
+      {
+        "concept_id": "247108008",
+        "term": "Retinal vessel finding",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3576,
+        "cosine_distance": 0.6424
+      },
+      {
+        "concept_id": "1303452000",
+        "term": "Disorder of ocular blood vessel",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3338,
+        "cosine_distance": 0.6662
+      },
+      {
+        "concept_id": "49755003",
+        "term": "Abnormal tissue appearance",
+        "relation": "has_associated_morphology",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1678,
+        "cosine_distance": 0.8322
+      },
+      {
+        "concept_id": "65784005",
+        "term": "Fundus of eye",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "81016008",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1633,
+        "cosine_distance": 0.8367
+      },
+      {
+        "concept_id": "896832004",
+        "term": "Abnormality of fundus of eye morphology",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1417,
+        "cosine_distance": 0.8583
+      },
+      {
+        "concept_id": "11131000119108",
+        "term": "Anomaly of eye",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1318,
+        "cosine_distance": 0.8682
+      },
+      {
+        "concept_id": "18234004",
+        "term": "Optic nerve",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "81016008",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1126,
+        "cosine_distance": 0.8874
+      },
+      {
+        "concept_id": "5665001",
+        "term": "Retina",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "28758002",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1106,
+        "cosine_distance": 0.8894
+      },
+      {
+        "concept_id": "118956008",
+        "term": "Morphologically altered structure",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "49755003",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1102,
+        "cosine_distance": 0.8898
+      },
+      {
+        "concept_id": "81016008",
+        "term": "Optic disc",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.1066,
+        "cosine_distance": 0.8934
+      },
+      {
+        "concept_id": "247201009",
+        "term": "Optic disc finding",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.0815,
+        "cosine_distance": 0.9185
+      },
+      {
+        "concept_id": "29555009",
+        "term": "Retinal disorder",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.0789,
+        "cosine_distance": 0.9211
+      },
+      {
+        "concept_id": "128331005",
+        "term": "Optic disk disorder",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.0357,
+        "cosine_distance": 0.9643
+      },
+      {
+        "concept_id": "77157004",
+        "term": "Disorder of optic nerve",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.0235,
+        "cosine_distance": 0.9765
+      }
+    ]
+  },
+  {
+    "concept_id": "1110121000000102",
+    "preferred_term": "Ocular hypertension due to aphakia",
+    "fsn": "Ocular hypertension due to aphakia (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 8,
+    "n_is_a": 2,
+    "n_attributes": 6,
+    "most_relevant": [
+      {
+        "concept_id": "4210003",
+        "term": "Ocular hypertension",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7838,
+        "cosine_distance": 0.2162
+      },
+      {
+        "concept_id": "1110151000000107",
+        "term": "Secondary ocular hypertension",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7106,
+        "cosine_distance": 0.2894
+      },
+      {
+        "concept_id": "24010005",
+        "term": "Aphakia",
+        "relation": "cause_of",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5627,
+        "cosine_distance": 0.4373
+      },
+      {
+        "concept_id": "11131000119108",
+        "term": "Anomaly of eye",
+        "relation": "cause_of",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "24010005",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4795,
+        "cosine_distance": 0.5205
+      },
+      {
+        "concept_id": "10810001",
+        "term": "Disorder of lens",
+        "relation": "cause_of",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "24010005",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.383,
+        "cosine_distance": 0.617
+      }
+    ],
+    "top1_similarity": 0.7838,
+    "top2_mean_similarity": 0.7472,
+    "mean_is_a_parent_similarity": 0.7106,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "4210003",
+        "term": "Ocular hypertension",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7838,
+        "cosine_distance": 0.2162
+      },
+      {
+        "concept_id": "1110151000000107",
+        "term": "Secondary ocular hypertension",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7106,
+        "cosine_distance": 0.2894
+      },
+      {
+        "concept_id": "24010005",
+        "term": "Aphakia",
+        "relation": "cause_of",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5627,
+        "cosine_distance": 0.4373
+      },
+      {
+        "concept_id": "11131000119108",
+        "term": "Anomaly of eye",
+        "relation": "cause_of",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "24010005",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.4795,
+        "cosine_distance": 0.5205
+      },
+      {
+        "concept_id": "10810001",
+        "term": "Disorder of lens",
+        "relation": "cause_of",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "24010005",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.383,
+        "cosine_distance": 0.617
+      },
+      {
+        "concept_id": "371398005",
+        "term": "Eye region structure",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "81745001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.3319,
+        "cosine_distance": 0.6681
+      },
+      {
+        "concept_id": "81745001",
+        "term": "Eye",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.3157,
+        "cosine_distance": 0.6843
+      },
+      {
+        "concept_id": "1193601008",
+        "term": "Structure of sensory organ",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "81745001",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.0682,
+        "cosine_distance": 0.9318
+      }
+    ]
+  },
+  {
+    "concept_id": "30043008",
+    "preferred_term": "Left lateral anal sphincterotomy",
+    "fsn": "Left lateral anal sphincterotomy (procedure)",
+    "semantic_tag": "procedure",
+    "n_neighbors": 2,
+    "n_is_a": 2,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "174385004",
+        "term": "Lateral sphincterotomy",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8916,
+        "cosine_distance": 0.1084
+      },
+      {
+        "concept_id": "89770003",
+        "term": "Anal sphincterotomy",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8598,
+        "cosine_distance": 0.1402
+      }
+    ],
+    "top1_similarity": 0.8916,
+    "top2_mean_similarity": 0.8757,
+    "mean_is_a_parent_similarity": 0.8916,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "174385004",
+        "term": "Lateral sphincterotomy",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8916,
+        "cosine_distance": 0.1084
+      },
+      {
+        "concept_id": "89770003",
+        "term": "Anal sphincterotomy",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8598,
+        "cosine_distance": 0.1402
+      }
+    ]
+  },
+  {
+    "concept_id": "276978009",
+    "preferred_term": "Percutaneous embolectomy of intracranial artery",
+    "fsn": "Percutaneous embolectomy of intracranial artery (procedure)",
+    "semantic_tag": "procedure",
+    "n_neighbors": 7,
+    "n_is_a": 7,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "27449007",
+        "term": "Removal of embolus from intracranial artery",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8734,
+        "cosine_distance": 0.1266
+      },
+      {
+        "concept_id": "276976008",
+        "term": "Percutaneous arterial embolectomy",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8365,
+        "cosine_distance": 0.1635
+      },
+      {
+        "concept_id": "240926008",
+        "term": "Percutaneous embolectomy",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8081,
+        "cosine_distance": 0.1919
+      },
+      {
+        "concept_id": "397045002",
+        "term": "Arterial embolectomy",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7706,
+        "cosine_distance": 0.2294
+      },
+      {
+        "concept_id": "30262001",
+        "term": "Removal of embolus of head and neck artery",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.746,
+        "cosine_distance": 0.254
+      }
+    ],
+    "top1_similarity": 0.8734,
+    "top2_mean_similarity": 0.8549,
+    "mean_is_a_parent_similarity": 0.8549,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "27449007",
+        "term": "Removal of embolus from intracranial artery",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8734,
+        "cosine_distance": 0.1266
+      },
+      {
+        "concept_id": "276976008",
+        "term": "Percutaneous arterial embolectomy",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8365,
+        "cosine_distance": 0.1635
+      },
+      {
+        "concept_id": "240926008",
+        "term": "Percutaneous embolectomy",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8081,
+        "cosine_distance": 0.1919
+      },
+      {
+        "concept_id": "397045002",
+        "term": "Arterial embolectomy",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7706,
+        "cosine_distance": 0.2294
+      },
+      {
+        "concept_id": "30262001",
+        "term": "Removal of embolus of head and neck artery",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.746,
+        "cosine_distance": 0.254
+      },
+      {
+        "concept_id": "230896003",
+        "term": "Intracranial vascular operation",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6997,
+        "cosine_distance": 0.3003
+      },
+      {
+        "concept_id": "385422002",
+        "term": "Procedure on artery of head",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5896,
+        "cosine_distance": 0.4104
+      }
+    ]
+  },
+  {
+    "concept_id": "874930000",
+    "preferred_term": "Nonvenomous insect bite of scrotum",
+    "fsn": "Nonvenomous insect bite of scrotum (disorder)",
+    "semantic_tag": "disorder",
+    "n_neighbors": 34,
+    "n_is_a": 25,
+    "n_attributes": 9,
+    "most_relevant": [
+      {
+        "concept_id": "269196004",
+        "term": "Insect bite, nonvenomous, of scrotum and testis",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.884,
+        "cosine_distance": 0.116
+      },
+      {
+        "concept_id": "771268008",
+        "term": "Bite of nonvenomous insect",
+        "relation": "cause_of",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.82,
+        "cosine_distance": 0.18
+      },
+      {
+        "concept_id": "429305003",
+        "term": "Nonvenomous insect bite",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8192,
+        "cosine_distance": 0.1808
+      },
+      {
+        "concept_id": "42601000087104",
+        "term": "Bite wound of scrotum",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7862,
+        "cosine_distance": 0.2138
+      },
+      {
+        "concept_id": "11809381000119106",
+        "term": "Nonvenomous insect bite of pelvis",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.772,
+        "cosine_distance": 0.228
+      }
+    ],
+    "top1_similarity": 0.884,
+    "top2_mean_similarity": 0.852,
+    "mean_is_a_parent_similarity": 0.7338,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "269196004",
+        "term": "Insect bite, nonvenomous, of scrotum and testis",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.884,
+        "cosine_distance": 0.116
+      },
+      {
+        "concept_id": "771268008",
+        "term": "Bite of nonvenomous insect",
+        "relation": "cause_of",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.82,
+        "cosine_distance": 0.18
+      },
+      {
+        "concept_id": "429305003",
+        "term": "Nonvenomous insect bite",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.8192,
+        "cosine_distance": 0.1808
+      },
+      {
+        "concept_id": "42601000087104",
+        "term": "Bite wound of scrotum",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7862,
+        "cosine_distance": 0.2138
+      },
+      {
+        "concept_id": "11809381000119106",
+        "term": "Nonvenomous insect bite of pelvis",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.772,
+        "cosine_distance": 0.228
+      },
+      {
+        "concept_id": "287109001",
+        "term": "Insect bite to trunk - nonvenomous",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.738,
+        "cosine_distance": 0.262
+      },
+      {
+        "concept_id": "283338006",
+        "term": "Insect bite of genitalia",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.7194,
+        "cosine_distance": 0.2806
+      },
+      {
+        "concept_id": "771191003",
+        "term": "Bite of insect",
+        "relation": "cause_of",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "771268008",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.7122,
+        "cosine_distance": 0.2878
+      },
+      {
+        "concept_id": "211112001",
+        "term": "Insect bite, nonvenomous, of perineum",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6888,
+        "cosine_distance": 0.3112
+      },
+      {
+        "concept_id": "217706007",
+        "term": "Bite of nonvenomous arthropod",
+        "relation": "cause_of",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "771268008",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.6842,
+        "cosine_distance": 0.3158
+      },
+      {
+        "concept_id": "283337001",
+        "term": "Insect bite of pelvic region",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6539,
+        "cosine_distance": 0.3461
+      },
+      {
+        "concept_id": "874829006",
+        "term": "Superficial injury of scrotum",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5906,
+        "cosine_distance": 0.4094
+      },
+      {
+        "concept_id": "81992007",
+        "term": "Skin of scrotum",
+        "relation": "has_finding_site",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5792,
+        "cosine_distance": 0.4208
+      },
+      {
+        "concept_id": "282782006",
+        "term": "Injury of scrotum",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.579,
+        "cosine_distance": 0.421
+      },
+      {
+        "concept_id": "703864002",
+        "term": "Disorder of skin of scrotum",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5787,
+        "cosine_distance": 0.4213
+      },
+      {
+        "concept_id": "42271000087106",
+        "term": "Bite wound of male external genitalia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5695,
+        "cosine_distance": 0.4305
+      },
+      {
+        "concept_id": "417501003",
+        "term": "Skin and subcutaneous tissue structure of scrotum",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "81992007",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5283,
+        "cosine_distance": 0.4717
+      },
+      {
+        "concept_id": "770951006",
+        "term": "Superficial bite wound",
+        "relation": "has_associated_morphology",
+        "hop": "direct",
+        "via_concept_id": null,
+        "role": "attribute_target",
+        "bucket": "attribute",
+        "cosine_similarity": 0.5271,
+        "cosine_distance": 0.4729
+      },
+      {
+        "concept_id": "283820003",
+        "term": "Animal bite of genitalia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.5186,
+        "cosine_distance": 0.4814
+      },
+      {
+        "concept_id": "283819009",
+        "term": "Animal bite of perineum",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4533,
+        "cosine_distance": 0.5467
+      },
+      {
+        "concept_id": "283814004",
+        "term": "Animal bite of trunk",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.412,
+        "cosine_distance": 0.588
+      },
+      {
+        "concept_id": "283038004",
+        "term": "Superficial injury of genitalia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3997,
+        "cosine_distance": 0.6003
+      },
+      {
+        "concept_id": "3404009",
+        "term": "Bite",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "770951006",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.3879,
+        "cosine_distance": 0.6121
+      },
+      {
+        "concept_id": "281680008",
+        "term": "Skin of part of male external genitalia",
+        "relation": "has_finding_site",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "81992007",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.3731,
+        "cosine_distance": 0.6269
+      },
+      {
+        "concept_id": "724861006",
+        "term": "Dermatosis of external genitalia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3547,
+        "cosine_distance": 0.6453
+      },
+      {
+        "concept_id": "286555004",
+        "term": "Injury of male perineum",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.338,
+        "cosine_distance": 0.662
+      },
+      {
+        "concept_id": "37205004",
+        "term": "Superficial wound",
+        "relation": "has_associated_morphology",
+        "hop": "ancestor_of_target",
+        "via_concept_id": "770951006",
+        "role": "attribute_target_ancestor",
+        "bucket": "attribute",
+        "cosine_similarity": 0.3311,
+        "cosine_distance": 0.6689
+      },
+      {
+        "concept_id": "274188008",
+        "term": "Superficial injury of perineum",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3119,
+        "cosine_distance": 0.6881
+      },
+      {
+        "concept_id": "283037009",
+        "term": "Superficial injury of pelvic region",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3115,
+        "cosine_distance": 0.6885
+      },
+      {
+        "concept_id": "400044004",
+        "term": "Superficial injury of skin",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.3065,
+        "cosine_distance": 0.6935
+      },
+      {
+        "concept_id": "262917005",
+        "term": "Injury of male genital organ",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.2935,
+        "cosine_distance": 0.7065
+      },
+      {
+        "concept_id": "737247007",
+        "term": "Dermatosis of perineum",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.2899,
+        "cosine_distance": 0.7101
+      },
+      {
+        "concept_id": "447259000",
+        "term": "Traumatic injury of external genitalia",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.2755,
+        "cosine_distance": 0.7245
+      },
+      {
+        "concept_id": "239990000",
+        "term": "Soft tissue lesion of pelvic region",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.1874,
+        "cosine_distance": 0.8126
+      }
+    ]
+  },
+  {
+    "concept_id": "364377005",
+    "preferred_term": "Appearance of nipple",
+    "fsn": "Appearance of nipple (observable entity)",
+    "semantic_tag": "observable entity",
+    "n_neighbors": 2,
+    "n_is_a": 2,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "364376001",
+        "term": "Nipple observable",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6246,
+        "cosine_distance": 0.3754
+      },
+      {
+        "concept_id": "364370007",
+        "term": "Breast observable",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4796,
+        "cosine_distance": 0.5204
+      }
+    ],
+    "top1_similarity": 0.6246,
+    "top2_mean_similarity": 0.5521,
+    "mean_is_a_parent_similarity": 0.6246,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "364376001",
+        "term": "Nipple observable",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.6246,
+        "cosine_distance": 0.3754
+      },
+      {
+        "concept_id": "364370007",
+        "term": "Breast observable",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4796,
+        "cosine_distance": 0.5204
+      }
+    ]
+  },
+  {
+    "concept_id": "408551003",
+    "preferred_term": "Exercise tolerance test refused",
+    "fsn": "Exercise tolerance test declined (situation)",
+    "semantic_tag": "situation",
+    "n_neighbors": 2,
+    "n_is_a": 2,
+    "n_attributes": 0,
+    "most_relevant": [
+      {
+        "concept_id": "1296859006",
+        "term": "Procedure refused",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4391,
+        "cosine_distance": 0.5609
+      },
+      {
+        "concept_id": "129125009",
+        "term": "Context-dependent procedure",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": -0.0234,
+        "cosine_distance": 1.0234
+      }
+    ],
+    "top1_similarity": 0.4391,
+    "top2_mean_similarity": 0.2079,
+    "mean_is_a_parent_similarity": 0.4391,
+    "all_neighbors_scored": [
+      {
+        "concept_id": "1296859006",
+        "term": "Procedure refused",
+        "relation": "is_a",
+        "depth": 1,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": 0.4391,
+        "cosine_distance": 0.5609
+      },
+      {
+        "concept_id": "129125009",
+        "term": "Context-dependent procedure",
+        "relation": "is_a",
+        "depth": 2,
+        "role": "ancestor",
+        "bucket": "is_a_ancestor",
+        "cosine_similarity": -0.0234,
+        "cosine_distance": 1.0234
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+Patient: 19632936  HADM: 26696232
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 14 / 33  |  links: 18
+
+• dyspnea on exertion  [symptom]  → SNOMED: Exertional dyspnea (60845006)
+    - [is_a] Dyspnea (id=267036007, sim=0.8018) [HIGH]
+
+• esophagitis  [symptom]  → SNOMED: Esophagitis (16761005)
+    - [has_finding_site] Esophagus (id=32849002, sim=0.7325)
+
+• atrial fibrillation  [symptom]  → SNOMED: Atrial fibrillation (49436004)
+    - [is_a] Atrial arrhythmia (id=17366009, sim=0.7031)
+    - [is_a] Fibrillation (id=40593004, sim=0.7274)
+
+• coronary artery disease  [symptom]  → SNOMED: Coronary arteriosclerosis (53741008)
+    - [is_a] Abnormality of coronary artery morphology (id=896818001, sim=0.7053)
+    - [is_a] Disorder of coronary artery (id=414024009, sim=0.851) [HIGH]
+    - [has_finding_site] Coronary artery (id=41801008, sim=0.8726) [HIGH]
+
+• macrocytic anemia  [diagnosis]  → SNOMED: Macrocytic anemia (83414005)
+    - [is_a] Anemia (id=271737000, sim=0.7024)
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• Iron  [lab]  → SNOMED: Iron (3829006)
+    - [is_a] Iron and/or iron compound (id=767270007, sim=0.7247)
+
+• Calcium  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.8175) [HIGH]
+
+• Magnesium  [lab]  → SNOMED: Magnesium (72717003)
+    - [is_a] Magnesium and/or magnesium compound (id=767301009, sim=0.8235) [HIGH]
+
+• Phosphate  [lab]  → SNOMED: Phosphate (259296007)
+    - [is_a] Phosphorus compound (id=63793008, sim=0.7761)
+    - [is_a] Phosphorus and/or phosphorus compound (id=767361006, sim=0.7162)
+
+• Potassium  [lab]  → SNOMED: Potassium (88480006)
+    - [is_a] Potassium and/or potassium compound (id=767364003, sim=0.7922)
+
+• Lactate Dehydrogenase  [lab]  → SNOMED: Lactate dehydrogenase (259319003)
+    - [is_a] Dehydrogenase (id=129919009, sim=0.7693)
+
+• Alanine Aminotransferase  [lab]  → SNOMED: Alanine aminotransferase (56935002)
+    - [is_a] Aminotransferase (id=130093006, sim=0.8677) [HIGH]
+
+• Bilirubin, Indirect  [lab]  → SNOMED: Indirect reacting bilirubin (37852002)
+    - [is_a] Bilirubin (id=79706000, sim=0.7431)

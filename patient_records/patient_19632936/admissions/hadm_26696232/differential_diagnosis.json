@@ -1,0 +1,182 @@
+{
+  "summary": "The patient presents with acute on chronic dyspnea on exertion and fatigue, alongside macrocytic anemia, a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
+  "most_likely": "Acute on chronic macrocytic anemia",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute on chronic macrocytic anemia",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Macrocytic anemia",
+      "supporting_evidence": [
+        "acute on chronic macrocytic anemia (CURRENT symptom tree)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary cause of current dyspnea and fatigue, supported by abnormal lab values."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Coronary artery disease",
+      "score": 75.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Coronary arteriosclerosis",
+      "supporting_evidence": [
+        "history of CAD (PRIOR ICDs), worsening dyspnea (CURRENT symptom tree)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "CAD is a known comorbidity and may contribute to current symptoms."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Atrial fibrillation",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Atrial fibrillation",
+      "supporting_evidence": [
+        "history of Afib (PRIOR ICDs), INR elevated (CURRENT labs)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Atrial fibrillation is a known risk factor and may be complicating current anemia."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Sick sinus syndrome",
+      "score": 55.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "history of sick sinus syndrome (PRIOR ICDs)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Sick sinus syndrome is a known risk factor but not currently contributing to acute symptoms."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute kidney failure",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "history of acute kidney failure (PRIOR ICDs)"
+      ],
+      "opposing_evidence": [
+        "current labs within normal range"
+      ],
+      "reasoning": "History of acute kidney failure, but current labs do not support acute renal failure."
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "Additional labs for iron, B12, and folate levels would clarify the etiology of macrocytic anemia"
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "19632936",
+  "hadm_id": "26696232",
+  "generated_at": "2026-08-09T00:47:04.566143",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 14,
+    "retained_links": 18,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 18,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 28139980,
+      "admittime": "2139-11-06 17:01:00",
+      "dischtime": "2139-11-09 13:00:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "D62",
+      "primary_dx_title": "Acute posthemorrhagic anemia",
+      "n_diagnoses": 18,
+      "icd10_diagnoses": [
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "I5032",
+          "title": "Chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "I272",
+          "title": "Other secondary pulmonary hypertension"
+        },
+        {
+          "code": "E869",
+          "title": "Volume depletion, unspecified"
+        },
+        {
+          "code": "I4891",
+          "title": "Unspecified atrial fibrillation"
+        },
+        {
+          "code": "N281",
+          "title": "Cyst of kidney, acquired"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "I25118",
+          "title": "Atherosclerotic heart disease of native coronary artery with other forms of angina pectoris"
+        },
+        {
+          "code": "I350",
+          "title": "Nonrheumatic aortic (valve) stenosis"
+        },
+        {
+          "code": "R195",
+          "title": "Other fecal abnormalities"
+        },
+        {
+          "code": "Z45018",
+          "title": "Encounter for adjustment and management of other part of cardiac pacemaker"
+        },
+        {
+          "code": "I714",
+          "title": "Abdominal aortic aneurysm, without rupture"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K8080",
+          "title": "Other cholelithiasis without obstruction"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z955",
+          "title": "Presence of coronary angioplasty implant and graft"
+        }
+      ]
+    }
+  ]
+}

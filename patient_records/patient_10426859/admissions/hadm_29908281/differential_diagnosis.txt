@@ -1,0 +1,48 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 10426859
+HADM ID          : 29908281
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:43:52.116900
+Candidates       : 5
+Most likely      : Supraventricular Tachycardia
+Prior admissions : 2 (31 ICD codes as PMH context)
+
+Summary:
+  Patient presents with recurrent SVT, lightheadedness, and fall resulting in right hip pain. History includes SVT, hypertension, hyperlipidemia, and depression.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Supraventricular Tachycardia  (primary)
+      SNOMED aligned : Supraventricular tachycardia
+      + SVT present, Supraventricular tachycardia
+      why: Primary diagnosis supported by current symptoms and past history.
+
+  #2  [70.0/100 | medium]  Hypertension  (secondary)
+      SNOMED aligned : Essential (primary) hypertension
+      + History of hypertension, elevated calcium
+      − No recent BP readings in current stay
+      why: Secondary condition given past history and elevated calcium.
+
+  #3  [60.0/100 | medium]  Anxiety  (risk_factor)
+      + History of anxiety, recurrent SVT
+      why: Risk factor given past history and current anxiety symptoms.
+
+  #4  [50.0/100 | medium]  Right Hip Fracture  (complication)
+      SNOMED aligned : Nondisplaced comminuted fracture in the right superior pubic ramus
+      + Pain in right hip, fall
+      − No recent imaging for fracture confirmation
+      why: Complication given history of trauma and pain.
+
+  #5  [40.0/100 | low]  Dehydration  (differential)
+      + Low hematocrit, low hemoglobin
+      − No history of recent fluid loss
+      why: Differential given current lab values, but no strong evidence.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Recent BP readings, imaging for fracture confirmation

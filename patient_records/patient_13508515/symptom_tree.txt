@@ -8,37 +8,37 @@ Patient ID       : 13508515
 Admission ID     : 21834271
 
 Reasoning:
-  The patient presents with a history of severe CHF, renal cell carcinoma, and recent surgery, with ongoing dyspnea and laboratory abnormalities.
+  The patient presents with a history of renal mass and renal cell carcinoma, along with ongoing cardiovascular and metabolic issues.
 
-Key symptoms     : dyspnea, renal mass
+Key symptoms     : dyspnea, pain
 Red flags        : systolic CHF with EF around 30%
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, moderate] dyspnea
+  • [present, mild] dyspnea
       evidence: "sudden onset dyspnea"
       related: systolic CHF with EF around 30%
-      • [absent] chest pain
-          evidence: "no chest pain"
-      • [absent] palpitations
-          evidence: "no palpitations"
   • [present, mild] pain
       evidence: "pain well controlled on PCA"
-      related: Laparoscopic left radical nephrectomy and lymph node dissection
+      related: left renal mass
 
 RENAL → Renal
 -------------
 
-  • [absent] hematuria
-      evidence: "no mention of hematuria"
-  • [present, moderate] renal mass
-      evidence: "8cm left renal mass"
-      related: renal cell carcinoma
+  • [high, moderate] creatinine
+      evidence: "Creatinine: 2.0 mg/dL"
+      related: left renal mass, renal cell carcinoma
+  • [low, moderate] hemoglobin
+      evidence: "Hemoglobin: 8.9 g/dL"
+      related: left renal mass, renal cell carcinoma
+  • [low, mild] platelet count
+      evidence: "Platelet Count: 147.0 K/uL"
+      related: left renal mass, renal cell carcinoma
 
-CONSTITUTIONAL → Other
-----------------------
+METABOLIC → Metabolic
+---------------------
 
-  • [present, moderate] obesity
-      evidence: "BMI 42.1"
-      related: morbid obesity
+  • [high, mild] glucose
+      evidence: "Glucose: 113.0 mg/dL"
+      related: type 2 diabetes

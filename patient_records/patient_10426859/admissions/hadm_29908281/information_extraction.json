@@ -3,49 +3,44 @@
     {
       "term": "lightheadedness",
       "status": "present",
-      "evidence": "Patient endorsed having had a fall when she felt lightheaded but no head strike."
+      "evidence": "lightheadedness and palpitations"
     },
     {
       "term": "palpitations",
       "status": "present",
-      "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+      "evidence": "palpitations"
     },
     {
       "term": "headache",
       "status": "present",
-      "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+      "evidence": "headache"
+    },
+    {
+      "term": "fall",
+      "status": "present",
+      "evidence": "fell when she felt lightheaded"
     },
     {
       "term": "pain in right hip",
       "status": "present",
-      "evidence": "When nurse tried to reposition her, patient had pain in her right hip."
+      "evidence": "pain in her right hip"
     },
     {
       "term": "pain in right leg",
       "status": "present",
-      "evidence": "Patient endorsed that when she stood up earlier she had felt pain in her entire right leg - her foot, ankle, leg, hip."
-    },
-    {
-      "term": "chest pain",
-      "status": "absent",
-      "evidence": "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
-    },
-    {
-      "term": "shortness of breath",
-      "status": "absent",
-      "evidence": "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
+      "evidence": "pain in her entire right leg - her foot, ankle, leg, hip"
     }
   ],
   "vitals": [
     {
-      "name": "BMI (kg/m2)",
+      "name": "BMI",
       "value": "22.3",
-      "unit": ""
+      "unit": "kg/m2"
     },
     {
-      "name": "Weight (Lbs)",
+      "name": "Weight",
       "value": "113.98",
-      "unit": ""
+      "unit": "Lbs"
     }
   ],
   "labs": [
@@ -59,7 +54,7 @@
       "name": "RDW-SD",
       "value": "47.2",
       "unit": "fL",
-      "flag": "low"
+      "flag": "high"
     },
     {
       "name": "Hyaline Casts",
@@ -100,115 +95,96 @@
     {
       "name": "Anion Gap",
       "value": "15.0",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Bicarbonate",
       "value": "25.0",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Calcium, Total",
       "value": "9.2",
-      "unit": "mg/dL",
-      "flag": "low"
+      "unit": "mg/dL"
     },
     {
       "name": "Chloride",
       "value": "102.0",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Creatinine",
       "value": "0.7",
-      "unit": "mg/dL",
-      "flag": "normal"
+      "unit": "mg/dL"
     },
     {
       "name": "Glucose",
       "value": "82.0",
-      "unit": "mg/dL",
-      "flag": "normal"
-    },
-    {
-      "name": "Hematocrit",
-      "value": "36.8",
-      "unit": "%",
-      "flag": "normal"
-    },
-    {
-      "name": "Hemoglobin",
-      "value": "12.1",
-      "unit": "g/dL",
-      "flag": "normal"
+      "unit": "mg/dL"
     },
     {
       "name": "Magnesium",
       "value": "2.1",
-      "unit": "mg/dL",
-      "flag": "low"
+      "unit": "mg/dL"
     },
     {
       "name": "Phosphate",
       "value": "3.1",
-      "unit": "mg/dL",
-      "flag": "normal"
+      "unit": "mg/dL"
     },
     {
       "name": "Potassium",
       "value": "3.9",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Sodium",
       "value": "138.0",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Urea Nitrogen",
       "value": "13.0",
-      "unit": "mg/dL",
-      "flag": "normal"
+      "unit": "mg/dL"
     },
     {
-      "name": "White Blood Cells",
-      "value": "6.8",
-      "unit": "K/uL",
-      "flag": "normal"
+      "name": "Hematocrit",
+      "value": "36.8",
+      "unit": "%"
+    },
+    {
+      "name": "Hemoglobin",
+      "value": "12.1",
+      "unit": "g/dL"
+    },
+    {
+      "name": "MCH",
+      "value": "31.1",
+      "unit": "pg"
+    },
+    {
+      "name": "MCHC",
+      "value": "32.9",
+      "unit": "g/dL"
+    },
+    {
+      "name": "MCV",
+      "value": "95.0",
+      "unit": "fL"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "194.0",
+      "unit": "K/uL"
     }
   ],
   "diagnoses_mentioned": [
-    {
-      "term": "SVT",
-      "certainty": "confirmed"
-    },
     {
       "term": "Supraventricular tachycardia",
       "certainty": "confirmed"
     },
     {
-      "term": "COPD",
-      "certainty": "suspected"
-    },
-    {
-      "term": "Meniere's disease",
-      "certainty": "suspected"
-    },
-    {
-      "term": "TIA",
-      "certainty": "suspected"
-    },
-    {
-      "term": "CAD",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "MI",
+      "term": "Chest pain",
       "certainty": "suspected"
     },
     {
@@ -220,35 +196,15 @@
       "certainty": "confirmed"
     },
     {
+      "term": "Depression",
+      "certainty": "confirmed"
+    },
+    {
       "term": "Glucose intolerance",
       "certainty": "confirmed"
     },
     {
       "term": "GERD",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Depression",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Anxiety",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Rotator cuff arthropathy",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Atherosclerotic heart disease",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Malignant neoplasm of bladder",
-      "certainty": "suspected"
-    },
-    {
-      "term": "Chronic kidney disease",
       "certainty": "confirmed"
     }
   ],
@@ -290,32 +246,33 @@
       "result": "1000 mL ordered"
     },
     {
-      "name": "IV Adenosine",
-      "result": "6 mg"
+      "name": "IV Adenosine 6 mg",
+      "result": "given"
     },
     {
-      "name": "IV Ondansetron",
-      "result": "4 mg"
+      "name": "IV Ondansetron 4 mg",
+      "result": "given"
     },
     {
-      "name": "IV Verapamil",
-      "result": "2.5 mg"
+      "name": "IV Verapamil 2.5 mg",
+      "result": "given"
     },
     {
-      "name": "PO Aspirin",
-      "result": "324 mg"
+      "name": "PO Aspirin 324 mg",
+      "result": "given"
     }
   ],
   "negations": [
     "chest pain",
-    "chest pressure",
-    "palpitations",
-    "shortness of breath"
+    "shortness of breath",
+    "fevers",
+    "chills",
+    "cough"
   ],
   "temporal": [
     {
-      "finding": "SVT",
-      "onset": "recent"
+      "finding": "pain in right hip",
+      "onset": "when nurse tried to reposition her"
     }
   ],
   "_agent": "information_extraction",

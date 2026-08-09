@@ -1,0 +1,46 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 11474876
+HADM ID          : 29672491
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:44:36.939082
+Candidates       : 5
+Most likely      : Heart Failure with Preserved Ejection Fraction (HFpEF)
+Prior admissions : 1 (23 ICD codes as PMH context)
+
+Summary:
+  A 70-year-old man with a history of AFib, HFpEF, PVD, CKD, and cholangitis presents post-ERCP with leg swelling and nocturnal hypoxia.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Heart Failure with Preserved Ejection Fraction (HFpEF)  (primary)
+      + HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
+      why: Primary diagnosis given the patient's history and current symptoms of leg swelling and nocturnal hypoxia.
+
+  #2  [70.0/100 | medium]  Peripheral Vascular Disease (PVD)  (secondary)
+      SNOMED aligned : Peripheral vascular disease
+      + PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
+      why: Secondary diagnosis due to the presence of PVD and associated lab abnormalities.
+
+  #3  [55.0/100 | medium]  Cholangitis  (complication)
+      + History of cholangitis, White Blood Cells: 7.2 K/uL, Anion Gap: 16.0 mEq/L
+      − No current symptoms of cholangitis
+      why: Complication given the patient's history of cholangitis and current lab abnormalities.
+
+  #4  [45.0/100 | low]  Atrial Fibrillation (AFib)  (risk_factor)
+      + AFib, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
+      − No current symptoms of AFib
+      why: Risk factor given the patient's history of AFib and current lab abnormalities.
+
+  #5  [35.0/100 | low]  Chronic Kidney Disease (CKD)  (complication)
+      SNOMED aligned : Chronic kidney disease
+      + CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
+      why: Complication given the patient's history of CKD and current lab abnormalities.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Further details on the patient's current symptoms of cholangitis and AFib would help refine the differential diagnosis.

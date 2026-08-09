@@ -23,7 +23,7 @@
     {
       "term": "chest pain",
       "status": "present",
-      "evidence": "cough, pleuritic/MSK chest pain"
+      "evidence": "pleuritic/MSK chest pain"
     },
     {
       "term": "malaise",
@@ -33,27 +33,22 @@
     {
       "term": "anorexia",
       "status": "present",
-      "evidence": "anorexia, fatigue, weight loss"
-    },
-    {
-      "term": "nausea",
-      "status": "present",
-      "evidence": "denies any recent fevers, chills, or other localizing infectious symptoms"
+      "evidence": "overall anorexia and poor appetite"
     },
     {
       "term": "pain",
       "status": "present",
-      "evidence": "pain with swallowing, and overall anorexia and poor appetite"
+      "evidence": "pain with swallowing"
     },
     {
       "term": "neutropenia",
       "status": "present",
-      "evidence": "ANC 750"
+      "evidence": "new neutropenia (ANC 750)"
     },
     {
       "term": "thrombocytopenia",
       "status": "present",
-      "evidence": "plts 93"
+      "evidence": "thrombocytopenia (plts 93)"
     }
   ],
   "vitals": [
@@ -205,13 +200,13 @@
       "name": "PT",
       "value": "13.4",
       "unit": "sec",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "PTT",
       "value": "37.4",
       "unit": "sec",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "Bands",
@@ -235,7 +230,7 @@
       "name": "Urobilinogen",
       "value": "2.0",
       "unit": "mg/dL",
-      "flag": "high"
+      "flag": "unknown"
     },
     {
       "name": "Ferritin",
@@ -340,6 +335,10 @@
     {
       "term": "Pulmonary Hypertension",
       "certainty": "confirmed"
+    },
+    {
+      "term": "Latent TB",
+      "certainty": "confirmed"
     }
   ],
   "medications": [
@@ -347,7 +346,7 @@
       "name": "dronabinol",
       "dose": "",
       "route": "",
-      "status": "started"
+      "status": "continued"
     },
     {
       "name": "Ritalin",
@@ -359,15 +358,15 @@
   "procedures": [
     {
       "name": "Right Heart Catheterization",
-      "result": "confirmed Pulm HTN, unclear etiology"
+      "result": "revealed severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
     },
     {
       "name": "___ guided lung biopsy",
-      "result": "Squamous Cell Cancer of the Lung"
+      "result": "revealed Squamous Cell Carcinoma of the Lung"
     }
   ],
   "negations": [
-    "No recent fevers, chills, or other localizing infectious symptoms"
+    "No new fevers, chills, or other localizing infectious symptoms"
   ],
   "temporal": [
     {

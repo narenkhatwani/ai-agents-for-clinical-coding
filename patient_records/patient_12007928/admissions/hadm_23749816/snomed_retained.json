@@ -1,0 +1,223 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "12007928",
+  "hadm_id": "23749816",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 33,
+  "n_entities_with_retained": 5,
+  "n_retained_links": 5,
+  "entities": [
+    {
+      "term": "abdominal pain",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed_concept_id": "21522001",
+      "snomed_preferred_term": "Abdominal pain",
+      "anchor_term": "abdominal pain",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "818983003",
+          "term": "Abdomen",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abdominal pain"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "818983003",
+          "term": "Abdomen",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abdominal pain"
+        }
+      ]
+    },
+    {
+      "term": "paroxysmal atrial fibrillation",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "282825002",
+      "snomed_preferred_term": "AF - Paroxysmal atrial fibrillation",
+      "anchor_term": "paroxysmal atrial fibrillation",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "49436004",
+          "term": "Atrial fibrillation",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8351,
+          "cosine_distance": 0.1649,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "paroxysmal atrial fibrillation"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "49436004",
+          "term": "Atrial fibrillation",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8351,
+          "cosine_distance": 0.1649,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "paroxysmal atrial fibrillation"
+        }
+      ]
+    },
+    {
+      "term": "Acetaminophen",
+      "kind": "medication",
+      "status": "started",
+      "snomed_concept_id": "387517004",
+      "snomed_preferred_term": "Acetaminophen",
+      "anchor_term": "Acetaminophen",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "417551008",
+          "term": "Acetamide",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.833,
+          "cosine_distance": 0.167,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Acetaminophen"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "417551008",
+          "term": "Acetamide",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.833,
+          "cosine_distance": 0.167,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Acetaminophen"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    },
+    {
+      "term": "White Blood Cells",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "52501007",
+      "snomed_preferred_term": "Leukocyte",
+      "anchor_term": "White Blood Cells",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63370004",
+          "term": "Blood cell",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7647,
+          "cosine_distance": 0.2353,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "White Blood Cells"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63370004",
+          "term": "Blood cell",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7647,
+          "cosine_distance": 0.2353,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "White Blood Cells"
+        }
+      ]
+    }
+  ]
+}

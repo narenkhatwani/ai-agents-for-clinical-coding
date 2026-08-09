@@ -1,6 +1,11 @@
 {
   "symptoms": [
     {
+      "term": "DKA",
+      "status": "present",
+      "evidence": "admission with DKA/lactic acidosis"
+    },
+    {
       "term": "fever",
       "status": "history",
       "evidence": "fevers/chills/nightsweats for the past few days"
@@ -11,9 +16,9 @@
       "evidence": "lower abdominal pain/cramping for the past week"
     },
     {
-      "term": "dizziness",
-      "status": "present",
-      "evidence": "dizziness"
+      "term": "headache",
+      "status": "history",
+      "evidence": "pressure-like frontal headache"
     },
     {
       "term": "nausea",
@@ -23,38 +28,23 @@
     {
       "term": "vaginal bleeding",
       "status": "history",
-      "evidence": "persistent daily vaginal bleeding"
+      "evidence": "vaginal spotting"
     },
     {
-      "term": "diarrhea",
+      "term": "decreased fetal movement",
       "status": "history",
-      "evidence": "significant amount of foul smelling diarrhea"
-    },
-    {
-      "term": "headache",
-      "status": "history",
-      "evidence": "frontal headache"
-    },
-    {
-      "term": "hypoglycemia",
-      "status": "history",
-      "evidence": "hypoglycemia"
-    },
-    {
-      "term": "hyperglycemia",
-      "status": "present",
-      "evidence": "DKA/lactic acidosis"
-    },
-    {
-      "term": "decreased fetal movements",
-      "status": "history",
-      "evidence": "decreased fetal movements"
+      "evidence": "decreased fetal movement"
     }
   ],
   "vitals": [
     {
       "name": "DBP",
       "value": "82.0",
+      "unit": "mmHg"
+    },
+    {
+      "name": "SBP",
+      "value": "129.0",
       "unit": "mmHg"
     },
     {
@@ -68,13 +58,8 @@
       "unit": "insp/min"
     },
     {
-      "name": "SBP",
-      "value": "113",
-      "unit": "mmHg"
-    },
-    {
       "name": "SpO2",
-      "value": "97",
+      "value": "97.0",
       "unit": "%"
     }
   ],
@@ -135,13 +120,13 @@
     },
     {
       "name": "pO2",
-      "value": "60",
+      "value": "60.0",
       "unit": "mm Hg",
       "flag": "low"
     },
     {
       "name": "Potassium",
-      "value": "8.8",
+      "value": "6.8",
       "unit": "mEq/L",
       "flag": "high"
     },
@@ -165,7 +150,7 @@
     },
     {
       "name": "Alkaline Phosphatase",
-      "value": "125",
+      "value": "125.0",
       "unit": "IU/L",
       "flag": "high"
     },
@@ -177,9 +162,39 @@
     },
     {
       "name": "Sodium",
-      "value": "144",
+      "value": "130",
       "unit": "mEq/L",
       "flag": "normal"
+    },
+    {
+      "name": "Lactate Dehydrogenase (LD)",
+      "value": "276.0",
+      "unit": "IU/L",
+      "flag": "high"
+    },
+    {
+      "name": "Magnesium",
+      "value": "7.4",
+      "unit": "mg/dL",
+      "flag": "high"
+    },
+    {
+      "name": "Calcium, Total",
+      "value": "8.6",
+      "unit": "mg/dL",
+      "flag": "low"
+    },
+    {
+      "name": "pCO2",
+      "value": "33.0",
+      "unit": "mm Hg",
+      "flag": "normal"
+    },
+    {
+      "name": "pH",
+      "value": "7.34",
+      "unit": "units",
+      "flag": "low"
     }
   ],
   "diagnoses_mentioned": [
@@ -196,7 +211,11 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Vaginal spotting",
+      "term": "C difficile colitis",
+      "certainty": "suspected"
+    },
+    {
+      "term": "Missed abortion",
       "certainty": "confirmed"
     }
   ],
@@ -204,52 +223,82 @@
     {
       "name": "Detemir",
       "dose": "8 Units",
-      "route": "subcutaneous",
+      "route": "Breakfast",
+      "status": "stopped"
+    },
+    {
+      "name": "Detemir",
+      "dose": "3 Units",
+      "route": "Bedtime",
       "status": "stopped"
     },
     {
       "name": "Humalog",
       "dose": "4 Units",
-      "route": "subcutaneous",
+      "route": "Breakfast",
       "status": "stopped"
     },
     {
       "name": "Humalog",
       "dose": "3 Units",
-      "route": "subcutaneous",
+      "route": "Lunch",
       "status": "stopped"
     },
     {
       "name": "Humalog",
       "dose": "4 Units",
-      "route": "subcutaneous",
+      "route": "Dinner",
       "status": "stopped"
     },
     {
-      "name": "Humalog",
-      "dose": "3 Units",
-      "route": "subcutaneous",
-      "status": "stopped"
-    },
-    {
-      "name": "Prenatal Vitamins",
-      "dose": "1 TAB",
-      "route": "oral",
+      "name": "Lantus",
+      "dose": "20 Units",
+      "route": "HS",
       "status": "started"
+    },
+    {
+      "name": "Humalog",
+      "dose": "17 Units",
+      "route": "Breakfast",
+      "status": "started"
+    },
+    {
+      "name": "Humalog",
+      "dose": "14 Units",
+      "route": "Lunch",
+      "status": "started"
+    },
+    {
+      "name": "Humalog",
+      "dose": "17 Units",
+      "route": "Dinner",
+      "status": "started"
+    },
+    {
+      "name": "Lantus",
+      "dose": "14 Units",
+      "route": "HS",
+      "status": "continued"
+    },
+    {
+      "name": "Humalog",
+      "dose": "10 Units",
+      "route": "with meals",
+      "status": "continued"
     }
   ],
   "procedures": [
     {
-      "name": "PICC placement and subsequent removal",
-      "result": "successful"
+      "name": "PICC placement",
+      "result": "placed and subsequently removed"
     }
   ],
   "negations": [
-    "No edema"
+    "No retained products of conception on the US"
   ],
   "temporal": [
     {
-      "finding": "Hyperglycemia",
+      "finding": "Lactate",
       "onset": "running out of medications"
     }
   ],

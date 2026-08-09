@@ -8,14 +8,10 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [history] nocturnal hypoxia — "prior admission with cholangitis and nocturnal hypoxia that improved with diuresis"
-  • [history] abdominal pain — "chief complaint of abdominal pain"
-  • [history] weakness — "2 weeks of weakness and difficulty with walking with cramps"
-  • [history] difficulty walking — "2 weeks of weakness and difficulty with walking with cramps"
-  • [history] shoulder blade pain — "shoulder blade pain that lasted around"
-  • [history] indigestion — "indigestion"
-  • [history] shortness of breath — "developed acute shortness of breath requiring nonrebreather briefly"
+  • [absent] abdominal pain — "no abdominal pain"
+  • [history] dyspnea — "developed acute shortness of breath requiring nonrebreather briefly"
   • [present] leg swelling — "notes his edema improves during the night and worsens during the day"
+  • [history] nocturnal hypoxia — "nocturnal hypoxia that improved with diuresis"
 
 VITALS
 ------
@@ -43,14 +39,17 @@ LABS
 • Bilirubin, Total: 1.0 mg/dL [normal]
 • Calcium, Total: 8.7 mg/dL [low]
 • Chloride: 101.0 mEq/L [normal]
-• Estimated GFR (MDRD equation): nan  [unknown]
+• Estimated GFR (MDRD equation): unknown  [unknown]
 • Glucose: 83.0 mg/dL [normal]
 • Magnesium: 1.7 mg/dL [low]
 • Phosphate: 2.9 mg/dL [low]
 • Potassium: 4.3 mEq/L [normal]
 • Sodium: 143.0 mEq/L [normal]
 • Urea Nitrogen: 15.0 mg/dL [normal]
-• Lipase: 28 IU/L [normal]
+• PTT: 31.6 sec  [normal]
+• MCHC: 32.9 g/dL [normal]
+• Platelet Count: 157.0 K/uL [normal]
+• White Blood Cells: 7.2 K/uL [normal]
 
 DIAGNOSES MENTIONED
 -------------------
@@ -65,7 +64,6 @@ DIAGNOSES MENTIONED
   • [confirmed] Right bundle branch block
   • [confirmed] Hypertension
   • [confirmed] Hyperlipidemia
-  • [confirmed] Chronic kidney disease
   • [confirmed] PTSD
 
 MEDICATIONS
@@ -74,20 +72,27 @@ MEDICATIONS
   • Apixaban (continued)
   • Lasix (stopped)
   • Ciprofloxacin (stopped)
-  • Cefpodoxime (started)
-  • Flagyl (started)
+  • Cefpodoxime (continued)
+  • Flagyl (continued)
 
 PROCEDURES
 ----------
 
-  • ERCP: stent placement, extraction of stones and sphincterotomy
+  • ERCP: stones extraction, sphincterotomy, stent removal
 
 NEGATIONS
 ---------
 
-  (none)
+  • no abdominal pain
+  • no CP
+  • no dyspnea
+  • no CP
+  • no suprapubic tenderness
+  • no swollen or erythematous joints
+  • no rashes or ulcerations noted
+  • no TTP
 
 TEMPORAL
 --------
 
-  • leg swelling: improves during the night and worsens during the day
+  • edema: improves during the night and worsens during the day

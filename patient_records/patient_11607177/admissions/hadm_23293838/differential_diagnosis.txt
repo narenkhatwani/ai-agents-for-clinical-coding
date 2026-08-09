@@ -1,0 +1,60 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 11607177
+HADM ID          : 23293838
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:44:51.206956
+Candidates       : 6
+Most likely      : Refractory Ventricular Tachycardia
+Prior admissions : 4 (78 ICD codes as PMH context)
+
+Summary:
+  The patient is a 65-year-old with a history of dilated cardiomyopathy, refractory VT, and LVAD, presenting with ICD shock, mild edema, and ongoing arrhythmias despite multiple medications.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Refractory Ventricular Tachycardia  (primary)
+      + Refractory VT requiring ganglionic block
+      + ICD shock
+      why: Primary diagnosis given the patient's history and current presentation.
+
+  #2  [75.0/100 | high]  Heart Failure  (secondary)
+      + edema
+      + LVAD in place
+      why: Secondary to the patient's dilated cardiomyopathy and LVAD.
+
+  #3  [60.0/100 | medium]  Hyperkalemia  (differential)
+      + Lactate Dehydrogenase (LD) high
+      − No evidence of hyperkalemia symptoms
+      why: High LD could indicate hyperkalemia, but no other evidence.
+
+  #4  [50.0/100 | medium]  Sleep Apnea  (risk_factor)
+      SNOMED aligned : Sleep apnea
+      + Sleep apnea confirmed
+      − No current respiratory symptoms
+      why: Risk factor given the patient's history and current medications.
+
+  #5  [45.0/100 | medium]  Anemia  (secondary)
+      + Hematocrit low
+      + Hemoglobin low
+      − No other symptoms of anemia
+      why: Possible secondary to underlying heart failure.
+
+  #6  [40.0/100 | low]  Obstructive Sleep Apnea  (differential)
+      SNOMED aligned : Obstructive sleep apnea (adult)
+      + Sleep apnea confirmed
+      − No current respiratory symptoms
+      why: Differential given the patient's history and current medications.
+
+RULE-OUTS
+---------
+
+  • Heart Transplantation: No current symptoms or evidence of transplant complications.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Further labs or imaging to confirm LVAD function and arrhythmia management

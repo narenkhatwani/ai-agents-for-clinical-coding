@@ -1,0 +1,507 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "11607177",
+  "hadm_id": "23293838",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 53,
+  "n_entities_with_retained": 10,
+  "n_retained_links": 13,
+  "entities": [
+    {
+      "term": "Heart transplantation",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "32413006",
+      "snomed_preferred_term": "Transplantation of heart",
+      "anchor_term": "Heart transplantation",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "77465005",
+          "term": "Transplantation",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7775,
+          "cosine_distance": 0.2225,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Heart transplantation"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "77465005",
+          "term": "Transplantation",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7775,
+          "cosine_distance": 0.2225,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Heart transplantation"
+        }
+      ]
+    },
+    {
+      "term": "Sleep apnea",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "73430006",
+      "snomed_preferred_term": "Sleep apnea",
+      "anchor_term": "Sleep apnea",
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "1023001",
+          "term": "Apnea",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8414,
+          "cosine_distance": 0.1586,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Sleep apnea"
+        },
+        {
+          "concept_id": "111489007",
+          "term": "Breathing-related sleep disorder",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7256,
+          "cosine_distance": 0.2744,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sleep apnea"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "1023001",
+          "term": "Apnea",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8414,
+          "cosine_distance": 0.1586,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Sleep apnea"
+        },
+        {
+          "concept_id": "111489007",
+          "term": "Breathing-related sleep disorder",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7256,
+          "cosine_distance": 0.2744,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sleep apnea"
+        }
+      ]
+    },
+    {
+      "term": "Schistosomiasis",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "10087007",
+      "snomed_preferred_term": "Infection by Schistosoma",
+      "anchor_term": "Schistosomiasis",
+      "n_retained": 2,
+      "n_high_confidence": 2,
+      "retained_ancestors": [
+        {
+          "concept_id": "105661001",
+          "term": "Disease caused by Schistosomatidae",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8169,
+          "cosine_distance": 0.1831,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Schistosomiasis"
+        }
+      ],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "53583001",
+          "term": "Schistosoma",
+          "relation": "has_causative_agent",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.8772,
+          "cosine_distance": 0.1228,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Schistosomiasis"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "105661001",
+          "term": "Disease caused by Schistosomatidae",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8169,
+          "cosine_distance": 0.1831,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Schistosomiasis"
+        },
+        {
+          "concept_id": "53583001",
+          "term": "Schistosoma",
+          "relation": "has_causative_agent",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.8772,
+          "cosine_distance": 0.1228,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Schistosomiasis"
+        }
+      ]
+    },
+    {
+      "term": "Gastritis",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "4556007",
+      "snomed_preferred_term": "Gastritis",
+      "anchor_term": "Gastritis",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "29384001",
+          "term": "Gastropathy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7013,
+          "cosine_distance": 0.2987,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Gastritis"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "29384001",
+          "term": "Gastropathy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7013,
+          "cosine_distance": 0.2987,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Gastritis"
+        }
+      ]
+    },
+    {
+      "term": "Obesity",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "414916001",
+      "snomed_preferred_term": "Obesity",
+      "anchor_term": "Obesity",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "414915002",
+          "term": "Obese",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8305,
+          "cosine_distance": 0.1695,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Obesity"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "414915002",
+          "term": "Obese",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8305,
+          "cosine_distance": 0.1695,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Obesity"
+        }
+      ]
+    },
+    {
+      "term": "Stellate ganglion block (L)",
+      "kind": "procedure",
+      "status": "",
+      "snomed_concept_id": "21879001",
+      "snomed_preferred_term": "Injection of anesthetic agent into stellate ganglion",
+      "anchor_term": "Stellate ganglion block (L)",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "306999003",
+          "term": "Sympathetic ganglion block",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7286,
+          "cosine_distance": 0.2714,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Stellate ganglion block (L)"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "306999003",
+          "term": "Sympathetic ganglion block",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7286,
+          "cosine_distance": 0.2714,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Stellate ganglion block (L)"
+        }
+      ]
+    },
+    {
+      "term": "Ferrous Sulfate",
+      "kind": "medication",
+      "status": "continued",
+      "snomed_concept_id": "387402000",
+      "snomed_preferred_term": "Ferrous sulphate",
+      "anchor_term": "Ferrous Sulfate",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "373742002",
+          "term": "Ferrous salt",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7834,
+          "cosine_distance": 0.2166,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Ferrous Sulfate"
+        },
+        {
+          "concept_id": "6808006",
+          "term": "Ferrous iron compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.793,
+          "cosine_distance": 0.207,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Ferrous Sulfate"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "373742002",
+          "term": "Ferrous salt",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7834,
+          "cosine_distance": 0.2166,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Ferrous Sulfate"
+        },
+        {
+          "concept_id": "6808006",
+          "term": "Ferrous iron compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.793,
+          "cosine_distance": 0.207,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Ferrous Sulfate"
+        }
+      ]
+    },
+    {
+      "term": "Magnesium",
+      "kind": "medication",
+      "status": "continued",
+      "snomed_concept_id": "72717003",
+      "snomed_preferred_term": "Magnesium",
+      "anchor_term": "Magnesium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    },
+    {
+      "term": "Lactate Dehydrogenase (LD)",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259319003",
+      "snomed_preferred_term": "Lactate dehydrogenase",
+      "anchor_term": "Lactate Dehydrogenase (LD)",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "129919009",
+          "term": "Dehydrogenase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7301,
+          "cosine_distance": 0.2699,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Lactate Dehydrogenase (LD)"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "129919009",
+          "term": "Dehydrogenase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7301,
+          "cosine_distance": 0.2699,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Lactate Dehydrogenase (LD)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "summary": "A 40-year-old man with a history of bipolar disorder, polysubstance use, and opiate dependence presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a recent diagnosis of influenza A.",
+  "most_likely": "Acute respiratory failure",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute respiratory failure",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "right PTX, hypoxia, respiratory symptoms"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary cause of hypoxia and respiratory symptoms, supported by right PTX and hypoxia."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Influenza A",
+      "score": 75.0,
+      "confidence": "medium",
+      "category": "primary",
+      "snomed_aligned": "Influenza A (H1N1)",
+      "supporting_evidence": [
+        "influenza A PCR +"
+      ],
+      "opposing_evidence": [
+        "recent history of rib fractures, no other signs of severe influenza"
+      ],
+      "reasoning": "Supports current respiratory symptoms, but other factors suggest acute respiratory failure as primary."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Bipolar disorder",
+      "score": 60.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Bipolar disorder",
+      "supporting_evidence": [
+        "bipolar disorder"
+      ],
+      "opposing_evidence": [
+        "no current acute symptoms directly related to bipolar disorder"
+      ],
+      "reasoning": "Historical risk factor, but no current acute symptoms."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Opiate dependence",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Opium dependence",
+      "supporting_evidence": [
+        "opiate dependence"
+      ],
+      "opposing_evidence": [
+        "no current acute symptoms directly related to opiate dependence"
+      ],
+      "reasoning": "Historical risk factor, but no current acute symptoms."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Rib fractures",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "right sided rib fractures"
+      ],
+      "opposing_evidence": [
+        "hypoxia and respiratory symptoms suggest more acute process"
+      ],
+      "reasoning": "Complication from trauma, but less likely primary cause of current symptoms."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "PTSD",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "denies neck stiffness or headache"
+      ],
+      "opposing_evidence": [
+        "no current acute symptoms directly related to PTSD"
+      ],
+      "reasoning": "Historical risk factor, but no current acute symptoms."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Infection",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "cough, fever, nasal congestion"
+      ],
+      "opposing_evidence": [
+        "influenza A PCR +, no other signs of severe infection"
+      ],
+      "reasoning": "Differential diagnosis, but influenza A is more likely."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Pneumonia",
+      "why": "Influenza A PCR + and right PTX suggest acute respiratory failure rather than pneumonia."
+    }
+  ],
+  "uncertain_areas": [
+    "Additional information on the patient's recent trauma and respiratory status would help refine the differential diagnosis."
+  ],
+  "n_candidates": 7,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "10458324",
+  "hadm_id": "21744342",
+  "generated_at": "2026-08-09T00:44:09.485613",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 10,
+    "retained_links": 14,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 8,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21719653,
+      "admittime": "2176-11-17 01:31:00",
+      "dischtime": "2176-11-18 13:21:00",
+      "admission_type": "EU OBSERVATION",
+      "primary_icd_code": "J09X2",
+      "primary_dx_title": "Influenza due to identified novel influenza A virus with other respiratory manifestations",
+      "n_diagnoses": 8,
+      "icd10_diagnoses": [
+        {
+          "code": "J09X2",
+          "title": "Influenza due to identified novel influenza A virus with other respiratory manifestations"
+        },
+        {
+          "code": "F1120",
+          "title": "Opioid dependence, uncomplicated"
+        },
+        {
+          "code": "R000",
+          "title": "Tachycardia, unspecified"
+        },
+        {
+          "code": "S62309A",
+          "title": "Unspecified fracture of unspecified metacarpal bone, initial encounter for closed fracture"
+        },
+        {
+          "code": "X58XXXA",
+          "title": "Exposure to other specified factors, initial encounter"
+        },
+        {
+          "code": "Y929",
+          "title": "Unspecified place or not applicable"
+        },
+        {
+          "code": "F1210",
+          "title": "Cannabis abuse, uncomplicated"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        }
+      ]
+    }
+  ]
+}

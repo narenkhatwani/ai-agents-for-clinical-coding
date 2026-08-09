@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with DKA and lactic acidosis, with a history of recurrent DKA and poorly controlled diabetes. The current episode is likely due to nonadherence in the setting of social stress.",
+  "reasoning": "The patient is a 30-year-old female with a history of Type 1 Diabetes Mellitus (T1DM) and recurrent Diabetic Ketoacidosis (DKA). She is currently admitted with DKA and lactic acidosis, with no infectious precipitants identified. She has a history of complications including missed abortion and C. difficile colitis.",
   "branches": [
     {
       "category": "infectious",
@@ -11,9 +11,33 @@
           "status": "history",
           "severity": "unknown",
           "evidence": "fevers/chills/nightsweats for the past few days",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis along with diarrhea",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L [abnormal]",
-            "Bicarbonate: 20.0 mEq/L [abnormal]"
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         }
@@ -24,14 +48,32 @@
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "hypertension",
+          "term": "abdominal pain",
           "status": "history",
           "severity": "unknown",
-          "evidence": "BP: 113/79 mmHg",
+          "evidence": "lower abdominal pain/cramping for the past week",
           "related_findings": [
-            "pO2: 60 mm Hg [abnormal]",
-            "pCO2: 33 mm Hg [abnormal]",
-            "pH: 7.34 units [abnormal]"
+            "Hematocrit: 46.2%",
+            "Hemoglobin: 14.4 g/dL",
+            "Monocytes: 4.8%",
+            "Red Blood Cells: 5.06 m/uL",
+            "Lactate: 3.6 mmol/L",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         }
@@ -42,10 +84,10 @@
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "respiratory distress",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "Breathing unlabored, CTA ___",
+          "term": "respiratory rate",
+          "status": "normal",
+          "severity": "normal",
+          "evidence": "Respiratory Rate: 16 insp/min",
           "related_findings": [],
           "children": []
         }
@@ -58,50 +100,114 @@
         {
           "term": "nausea",
           "status": "present",
-          "severity": "mild",
+          "severity": "unknown",
           "evidence": "nausea and vomiting",
           "related_findings": [
-            "Glucose: 263 mg/dL [abnormal]",
-            "Lactate: 3.6 mmol/L [abnormal]"
-          ],
-          "children": []
-        },
-        {
-          "term": "diarrhea",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "significant amount of foul smelling diarrhea",
-          "related_findings": [
-            "Glucose: 263 mg/dL [abnormal]",
-            "Lactate: 3.6 mmol/L [abnormal]"
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         },
         {
           "term": "vaginal bleeding",
           "status": "history",
-          "severity": "mild",
-          "evidence": "persistent daily vaginal bleeding",
+          "severity": "unknown",
+          "evidence": "vaginal spotting",
           "related_findings": [
-            "Glucose: 263 mg/dL [abnormal]",
-            "Lactate: 3.6 mmol/L [abnormal]"
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        },
+        {
+          "term": "decreased fetal movement",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "decreased fetal movement",
+          "related_findings": [
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         }
       ]
     },
     {
-      "category": "renal",
-      "ontology_hint": "Renal",
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "proteinuria",
+          "term": "fever",
           "status": "history",
           "severity": "unknown",
-          "evidence": "Hemoglobin: 10.0 g/dL [abnormal]",
+          "evidence": "fevers/chills/nightsweats for the past few days",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L [abnormal]",
-            "Bicarbonate: 20.0 mEq/L [abnormal]"
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         }
@@ -114,11 +220,27 @@
         {
           "term": "headache",
           "status": "history",
-          "severity": "mild",
-          "evidence": "frontal headache",
+          "severity": "unknown",
+          "evidence": "pressure-like frontal headache",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L [abnormal]",
-            "Bicarbonate: 20.0 mEq/L [abnormal]"
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         }
@@ -129,24 +251,56 @@
       "ontology_hint": "Endocrine",
       "symptoms": [
         {
-          "term": "hyperglycemia",
+          "term": "DKA",
           "status": "present",
           "severity": "severe",
-          "evidence": "Glucose: 263 mg/dL [abnormal]",
+          "evidence": "admission with DKA/lactic acidosis",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L [abnormal]",
-            "Bicarbonate: 20.0 mEq/L [abnormal]"
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         },
         {
-          "term": "hypoglycemia",
-          "status": "history",
+          "term": "missed abortion",
+          "status": "confirmed",
           "severity": "unknown",
-          "evidence": "hypoglycemia",
+          "evidence": "Missed abortion requiring D&C",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L [abnormal]",
-            "Bicarbonate: 20.0 mEq/L [abnormal]"
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 10.2 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Sodium: 130 mEq/L",
+            "Lactate Dehydrogenase (LD): 276.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
           ],
           "children": []
         }
@@ -154,20 +308,23 @@
     }
   ],
   "key_symptoms": [
+    "DKA",
     "fever",
+    "abdominal pain",
+    "headache",
     "nausea",
     "vaginal bleeding",
-    "diarrhea",
-    "headache"
+    "decreased fetal movement"
   ],
   "red_flags": [
-    "hypotension",
-    "AMS"
+    "fever",
+    "abdominal pain",
+    "decreased fetal movement"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "19104262",
   "admission_id": "24271247",
-  "generated_at": "2026-07-20T01:15:54.934573"
+  "generated_at": "2026-08-08T16:22:03.483616"
 }

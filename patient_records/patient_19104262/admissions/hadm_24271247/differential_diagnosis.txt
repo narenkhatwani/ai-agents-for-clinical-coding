@@ -1,0 +1,67 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 19104262
+HADM ID          : 24271247
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:46:51.752694
+Candidates       : 8
+Most likely      : Diabetic Ketoacidosis
+Prior admissions : 5 (46 ICD codes as PMH context)
+
+Summary:
+  A 30-year-old female with a history of Type 1 Diabetes Mellitus (T1DM) and recurrent DKA presents with DKA, lactic acidosis, and signs of potential complications including missed abortion and C. difficile colitis.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Diabetic Ketoacidosis  (primary)
+      SNOMED aligned : Diabetic ketoacidosis
+      + admission with DKA/lactic acidosis
+      why: Primary presentation and confirmed diagnosis.
+
+  #2  [70.0/100 | high]  Missed Abortion  (complication)
+      SNOMED aligned : Missed abortion
+      + Missed abortion requiring D&C
+      − No current signs of active bleeding
+      why: History of missed abortion and current symptoms may indicate recurrence.
+
+  #3  [65.0/100 | medium]  C difficile Colitis  (differential)
+      SNOMED aligned : C difficile colitis
+      + C difficile colitis along with diarrhea
+      − No infectious precipitants identified
+      why: Clinical suspicion based on symptoms and labs, but no clear evidence.
+
+  #4  [60.0/100 | medium]  Lactic Acidosis  (complication)
+      + Lactate: 3.6 mmol/L
+      − No clear cause identified
+      why: Secondary to DKA but could be an independent issue.
+
+  #5  [55.0/100 | low]  Vaginal Bleeding  (complication)
+      SNOMED aligned : Bleeding from vagina
+      + vaginal spotting
+      − No active bleeding
+      why: Historical symptom with no current signs of active bleeding.
+
+  #6  [50.0/100 | low]  Decreased Fetal Movement  (complication)
+      SNOMED aligned : Low fetal movement
+      + decreased fetal movement
+      − No signs of active fetal distress
+      why: Historical symptom with no current signs of fetal compromise.
+
+  #7  [45.0/100 | medium]  Abdominal Pain  (differential)
+      SNOMED aligned : Abdominal pain
+      + lower abdominal pain/cramping for the past week
+      − No signs of acute abdomen
+      why: Historical symptom with no current signs of acute abdomen.
+
+  #8  [40.0/100 | low]  Headache  (differential)
+      + pressure-like frontal headache
+      − No signs of neurological compromise
+      why: Historical symptom with no current signs of neurological compromise.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Need more information on infectious causes and specific lab results to refine differential

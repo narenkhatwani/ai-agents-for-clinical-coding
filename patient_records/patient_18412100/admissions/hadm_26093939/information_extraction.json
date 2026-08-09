@@ -70,7 +70,7 @@
     {
       "name": "Respiratory Rate",
       "value": "16",
-      "unit": "breaths/min"
+      "unit": "bpm"
     },
     {
       "name": "Oxygen Saturation",
@@ -88,8 +88,7 @@
     {
       "name": "Hemoglobin",
       "value": "11.2",
-      "unit": "g/dL",
-      "flag": "low"
+      "unit": "g/dL"
     },
     {
       "name": "Hematocrit",
@@ -98,22 +97,15 @@
       "flag": "low"
     },
     {
-      "name": "MCH",
-      "value": "27.1",
-      "unit": "pg",
-      "flag": "normal"
-    },
-    {
       "name": "MCV",
       "value": "85.0",
-      "unit": "fL",
-      "flag": "normal"
+      "unit": "fL"
     },
     {
       "name": "RDW",
       "value": "13.8",
       "unit": "%",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "Platelet Count",
@@ -124,14 +116,12 @@
     {
       "name": "Anion Gap",
       "value": "18.0",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Bicarbonate",
       "value": "22.0",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Calcium",
@@ -142,26 +132,38 @@
     {
       "name": "Chloride",
       "value": "104.0",
-      "unit": "mEq/L",
-      "flag": "normal"
+      "unit": "mEq/L"
     },
     {
       "name": "Creatinine",
       "value": "0.5",
-      "unit": "mg/dL",
-      "flag": "normal"
+      "unit": "mg/dL"
     },
     {
       "name": "Glucose",
       "value": "95.0",
-      "unit": "mg/dL",
-      "flag": "normal"
+      "unit": "mg/dL"
     },
     {
       "name": "Magnesium",
       "value": "2.0",
       "unit": "mg/dL",
       "flag": "low"
+    },
+    {
+      "name": "Phosphate",
+      "value": "4.2",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Potassium",
+      "value": "4.1",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Sodium",
+      "value": "140.0",
+      "unit": "mEq/L"
     }
   ],
   "diagnoses_mentioned": [
@@ -176,27 +178,27 @@
   ],
   "medications": [
     {
-      "name": "Dilaudid",
-      "dose": "PCA",
-      "route": "PCA",
-      "status": "started"
-    },
-    {
-      "name": "Toradol",
-      "dose": "IV",
-      "route": "IV",
-      "status": "started"
-    },
-    {
       "name": "Zofran",
-      "dose": "IV",
-      "route": "IV",
+      "dose": "not specified",
+      "route": "not specified",
+      "status": "started"
+    },
+    {
+      "name": "dilaudid PCA",
+      "dose": "not specified",
+      "route": "not specified",
+      "status": "started"
+    },
+    {
+      "name": "toradol",
+      "dose": "not specified",
+      "route": "not specified",
       "status": "started"
     }
   ],
   "procedures": [
     {
-      "name": "Cryoablation of residual desmoid tumor",
+      "name": "cryoablation of residual desmoid tumor",
       "result": "unremarkable"
     }
   ],
@@ -218,7 +220,7 @@
   ],
   "temporal": [
     {
-      "finding": "pain",
+      "finding": "abdominal pain",
       "onset": "after cryoablation"
     }
   ],

@@ -1,0 +1,329 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "13508515",
+  "hadm_id": "21834271",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 35,
+  "n_entities_with_retained": 7,
+  "n_retained_links": 8,
+  "entities": [
+    {
+      "term": "urine output",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "364202003",
+      "snomed_preferred_term": "Measure of urine output",
+      "anchor_term": "urine output",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "364201005",
+          "term": "Urine output observable",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.819,
+          "cosine_distance": 0.181,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "urine output"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "364201005",
+          "term": "Urine output observable",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.819,
+          "cosine_distance": 0.181,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "urine output"
+        }
+      ]
+    },
+    {
+      "term": "calf pain",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed_concept_id": "300954003",
+      "snomed_preferred_term": "Calf pain",
+      "anchor_term": "calf pain",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "10601006",
+          "term": "Leg pain",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7409,
+          "cosine_distance": 0.2591,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "calf pain"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "10601006",
+          "term": "Leg pain",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7409,
+          "cosine_distance": 0.2591,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "calf pain"
+        }
+      ]
+    },
+    {
+      "term": "obstructive sleep apnea",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "78275009",
+      "snomed_preferred_term": "Obstructive sleep apnea syndrome",
+      "anchor_term": "obstructive sleep apnea",
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "73430006",
+          "term": "Sleep apnea",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8812,
+          "cosine_distance": 0.1188,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "obstructive sleep apnea"
+        },
+        {
+          "concept_id": "1023001",
+          "term": "Apnea",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7536,
+          "cosine_distance": 0.2464,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "obstructive sleep apnea"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "73430006",
+          "term": "Sleep apnea",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8812,
+          "cosine_distance": 0.1188,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "obstructive sleep apnea"
+        },
+        {
+          "concept_id": "1023001",
+          "term": "Apnea",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7536,
+          "cosine_distance": 0.2464,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "obstructive sleep apnea"
+        }
+      ]
+    },
+    {
+      "term": "Laparoscopic left radical nephrectomy",
+      "kind": "procedure",
+      "status": "",
+      "snomed_concept_id": "439235001",
+      "snomed_preferred_term": "Laparoscopic radical nephrectomy",
+      "anchor_term": "Laparoscopic left radical nephrectomy",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "116033007",
+          "term": "Radical nephrectomy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8022,
+          "cosine_distance": 0.1978,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Laparoscopic left radical nephrectomy"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "116033007",
+          "term": "Radical nephrectomy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8022,
+          "cosine_distance": 0.1978,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Laparoscopic left radical nephrectomy"
+        }
+      ]
+    },
+    {
+      "term": "HydrALAZINE",
+      "kind": "medication",
+      "status": "continued",
+      "snomed_concept_id": "387125005",
+      "snomed_preferred_term": "Hydralazine",
+      "anchor_term": "HydrALAZINE",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "769166001",
+          "term": "Hydrazine and/or hydrazine derivative",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7578,
+          "cosine_distance": 0.2422,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "HydrALAZINE"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "769166001",
+          "term": "Hydrazine and/or hydrazine derivative",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7578,
+          "cosine_distance": 0.2422,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "HydrALAZINE"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    },
+    {
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "5540006",
+      "snomed_preferred_term": "Calcium",
+      "anchor_term": "Calcium, Total",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ]
+    }
+  ]
+}

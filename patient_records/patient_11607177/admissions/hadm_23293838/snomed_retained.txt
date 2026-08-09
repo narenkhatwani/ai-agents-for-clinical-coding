@@ -1,0 +1,39 @@
+Patient: 11607177  HADM: 23293838
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 10 / 53  |  links: 13
+
+• Heart transplantation  [diagnosis]  → SNOMED: Transplantation of heart (32413006)
+    - [is_a] Transplantation (id=77465005, sim=0.7775)
+
+• Sleep apnea  [diagnosis]  → SNOMED: Sleep apnea (73430006)
+    - [is_a] Apnea (id=1023001, sim=0.8414) [HIGH]
+    - [is_a] Breathing-related sleep disorder (id=111489007, sim=0.7256)
+
+• Schistosomiasis  [diagnosis]  → SNOMED: Infection by Schistosoma (10087007)
+    - [is_a] Disease caused by Schistosomatidae (id=105661001, sim=0.8169) [HIGH]
+    - [has_causative_agent] Schistosoma (id=53583001, sim=0.8772) [HIGH]
+
+• Gastritis  [diagnosis]  → SNOMED: Gastritis (4556007)
+    - [is_a] Gastropathy (id=29384001, sim=0.7013)
+
+• Obesity  [diagnosis]  → SNOMED: Obesity (414916001)
+    - [is_a] Obese (id=414915002, sim=0.8305) [HIGH]
+
+• Stellate ganglion block (L)  [procedure]  → SNOMED: Injection of anesthetic agent into stellate ganglion (21879001)
+    - [is_a] Sympathetic ganglion block (id=306999003, sim=0.7286)
+
+• Ferrous Sulfate  [medication]  → SNOMED: Ferrous sulphate (387402000)
+    - [is_a] Ferrous salt (id=373742002, sim=0.7834)
+    - [is_a] Ferrous iron compound (id=6808006, sim=0.793)
+
+• Magnesium  [medication]  → SNOMED: Magnesium (72717003)
+    - [is_a] Magnesium and/or magnesium compound (id=767301009, sim=0.8235) [HIGH]
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• Lactate Dehydrogenase (LD)  [lab]  → SNOMED: Lactate dehydrogenase (259319003)
+    - [is_a] Dehydrogenase (id=129919009, sim=0.7301)

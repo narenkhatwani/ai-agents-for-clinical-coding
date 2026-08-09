@@ -1,0 +1,18 @@
+Patient: 10361982  HADM: 24286431
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 4 / 26  |  links: 4
+
+• heavy vaginal bleeding  [symptom]  → SNOMED: Heavy episode of vaginal bleeding (315224006)
+    - [is_a] Bleeding from vagina (id=289530006, sim=0.8446) [HIGH]
+
+• abnormal uterine and vaginal bleeding  [diagnosis]  → SNOMED: Abnormal vaginal bleeding (301822002)
+    - [is_a] Bleeding from vagina (id=289530006, sim=0.7429)
+
+• total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy  [procedure]  → SNOMED: Laparoscopic total hysterectomy (236888001)
+    - [is_a] Laparoscopic hysterectomy (id=236887006, sim=0.7697)
+
+• Acetaminophen  [medication]  → SNOMED: Acetaminophen (387517004)
+    - [is_a] Acetamide (id=417551008, sim=0.833) [HIGH]

@@ -1,0 +1,75 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 17774110
+HADM ID          : 27339772
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:46:20.823473
+Candidates       : 8
+Most likely      : Severe sepsis with septic shock
+Prior admissions : 2 (34 ICD codes as PMH context)
+
+Summary:
+  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease, hepatitis C, and alcohol abuse.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Severe sepsis with septic shock  (primary)
+      + Admission for septic shock
+      + Klebsiella Aerogenes blood cultures grew
+      why: Severe sepsis with septic shock is the primary driver of the patient's critical condition and multiple organ dysfunction.
+
+  #2  [75.0/100 | high]  Acute liver failure  (primary)
+      SNOMED aligned : Acute liver failure (197270009)
+      + Worsening liver failure
+      + Bilirubin, Total 13.3 mg/dL
+      + ALT 439 IU/L
+      + AST 2481 IU/L
+      why: Acute liver failure is consistent with the patient's liver function test results and clinical presentation.
+
+  #3  [70.0/100 | high]  Hepatic encephalopathy  (complication)
+      SNOMED aligned : Hepatic encephalopathy (13920009)
+      + concerning for hepatic encephalopathy
+      + RASS-5
+      + sluggish pupil response
+      why: Hepatic encephalopathy is a complication of severe liver failure and sepsis.
+
+  #4  [65.0/100 | high]  GI bleeding  (complication)
+      + black coffee-ground GI contents
+      + Platelet Count 44.0 K/uL
+      + Bleeding from esophagus
+      why: GI bleeding is a complication of esophageal varices and liver failure.
+
+  #5  [55.0/100 | medium]  Pancytopenia  (complication)
+      + Platelet Count 44.0 K/uL
+      + Hematocrit 25.3 %
+      + Hemoglobin 8.3 g/dL
+      why: Pancytopenia is a complication of liver failure and sepsis, but the evidence is less robust.
+
+  #6  [50.0/100 | high]  Atrial fibrillation/flutter  (risk_factor)
+      + a.fib/a.flutter s/p amiodarone bolus now on metoprolol
+      + INR(PT) 3.4
+      + PT 36.5 sec
+      + PTT 104.2 sec
+      why: Atrial fibrillation/flutter is a known risk factor for stroke and thromboembolic events.
+
+  #7  [45.0/100 | medium]  Pleural effusion  (complication)
+      SNOMED aligned : Pleural effusion (60046008)
+      + large pleural effusion with compressive consolidation versus atelectasis
+      + Bilateral effusions right greater than left
+      why: Pleural effusion is a complication of liver failure and sepsis, but the evidence is less robust.
+
+  #8  [40.0/100 | high]  Worsening liver failure  (complication)
+      SNOMED aligned : Acute liver failure (197270009)
+      + worsening liver failure
+      + Bilirubin, Total 13.3 mg/dL
+      + ALT 439 IU/L
+      + AST 2481 IU/L
+      why: Worsening liver failure is a complication of the patient's chronic liver disease and current sepsis.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • More detailed information on the source of sepsis and specific causative organisms would refine the differential diagnosis

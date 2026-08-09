@@ -26,24 +26,24 @@
       "evidence": "nodular gastritis"
     },
     {
-      "term": "pulmonary hypertension",
-      "status": "suspected",
-      "evidence": "Presentation is more concerning for valvular disease vs pulmonary HTN vs acute anemia."
-    },
-    {
-      "term": "atrial fibrillation",
-      "status": "confirmed",
-      "evidence": "A-fib on Coumadin"
+      "term": "moderate AS",
+      "status": "history",
+      "evidence": "moderate AS"
     },
     {
       "term": "sick sinus syndrome",
-      "status": "confirmed",
-      "evidence": "SSS s/p PPM"
+      "status": "history",
+      "evidence": "Sick sinus s/p PPM"
     },
     {
-      "term": "moderate aortic stenosis",
-      "status": "confirmed",
-      "evidence": "Moderate AS"
+      "term": "atrial fibrillation",
+      "status": "history",
+      "evidence": "Afib on warfarin"
+    },
+    {
+      "term": "coronary artery disease",
+      "status": "history",
+      "evidence": "CAD s/p stent ___"
     }
   ],
   "vitals": [
@@ -58,8 +58,13 @@
       "unit": "bpm"
     },
     {
-      "name": "Blood Pressure",
-      "value": "154/68",
+      "name": "Systolic BP",
+      "value": "154",
+      "unit": "mmHg"
+    },
+    {
+      "name": "Diastolic BP",
+      "value": "68",
       "unit": "mmHg"
     },
     {
@@ -68,8 +73,8 @@
       "unit": "breaths/min"
     },
     {
-      "name": "Oxygen Saturation",
-      "value": "100%",
+      "name": "O2 Saturation",
+      "value": "100",
       "unit": "%"
     }
   ],
@@ -93,15 +98,15 @@
       "flag": "low"
     },
     {
-      "name": "INR(PT)",
-      "value": "2.4",
-      "unit": "",
+      "name": "PTT",
+      "value": "37.7",
+      "unit": "sec",
       "flag": "high"
     },
     {
-      "name": "PT",
-      "value": "37.7",
-      "unit": "sec",
+      "name": "INR",
+      "value": "2.4",
+      "unit": "",
       "flag": "high"
     },
     {
@@ -111,28 +116,82 @@
       "flag": "low"
     },
     {
-      "name": "Calcium, Total",
+      "name": "Creatinine",
+      "value": "1.2",
+      "unit": "mg/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "Calcium",
       "value": "8.3",
       "unit": "mg/dL",
       "flag": "low"
     },
     {
-      "name": "Absolute Lymphocyte Count",
-      "value": "1.0",
-      "unit": "K/uL",
-      "flag": "low"
-    },
-    {
-      "name": "Haptoglobin",
-      "value": "208.0",
+      "name": "Urea Nitrogen",
+      "value": "22.0",
       "unit": "mg/dL",
       "flag": "high"
     },
     {
-      "name": "PTT",
-      "value": "37.7",
-      "unit": "sec",
-      "flag": "high"
+      "name": "Bicarbonate",
+      "value": "25.0",
+      "unit": "mEq/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Chloride",
+      "value": "107.0",
+      "unit": "mEq/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Magnesium",
+      "value": "2.1",
+      "unit": "mg/dL",
+      "flag": "low"
+    },
+    {
+      "name": "Phosphate",
+      "value": "3.9",
+      "unit": "mg/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "Potassium",
+      "value": "3.8",
+      "unit": "mEq/L",
+      "flag": "low"
+    },
+    {
+      "name": "Lactate Dehydrogenase",
+      "value": "141.0",
+      "unit": "IU/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Alanine Aminotransferase",
+      "value": "15.0",
+      "unit": "IU/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Alkaline Phosphatase",
+      "value": "43.0",
+      "unit": "IU/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Asparate Aminotransferase",
+      "value": "20.0",
+      "unit": "IU/L",
+      "flag": "normal"
+    },
+    {
+      "name": "Bilirubin, Indirect",
+      "value": "0.4",
+      "unit": "mg/dL",
+      "flag": "normal"
     },
     {
       "name": "Reticulocyte Count, Automated",
@@ -143,6 +202,10 @@
   ],
   "diagnoses_mentioned": [
     {
+      "term": "macrocytic anemia",
+      "certainty": "confirmed"
+    },
+    {
       "term": "coronary artery disease",
       "certainty": "confirmed"
     },
@@ -152,14 +215,6 @@
     },
     {
       "term": "sick sinus syndrome",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "moderate aortic stenosis",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "anemia",
       "certainty": "confirmed"
     }
   ],
@@ -178,7 +233,8 @@
     }
   ],
   "negations": [
-    "no recent hematemesis, hematochezia, or melena"
+    "no hematemesis, hematochezia, or melena",
+    "no increase in ___ edema"
   ],
   "temporal": [
     {

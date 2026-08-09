@@ -1,0 +1,620 @@
+{
+  "stage": 5,
+  "generated_at": "2026-08-08T16:33:47.422735",
+  "patient_id": "19632936",
+  "hadm_id": "26696232",
+  "n_entities": 33,
+  "entities": [
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "dyspnea on exertion",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "dyspnea on exertion",
+        "mapped": true,
+        "concept_id": "60845006",
+        "preferred_term": "Exertional dyspnea",
+        "fsn": "Dyspnea on exertion (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "fatigue",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "fatigue",
+        "mapped": true,
+        "concept_id": "84229001",
+        "preferred_term": "Fatigue",
+        "fsn": "Fatigue (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "anemia",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "anemia",
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "esophagitis",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "esophagitis",
+        "mapped": true,
+        "concept_id": "16761005",
+        "preferred_term": "Esophagitis",
+        "fsn": "Esophagitis (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "nodular gastritis",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "nodular gastritis",
+        "mapped": true,
+        "concept_id": "4556007",
+        "preferred_term": "Gastritis",
+        "fsn": "Gastritis (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6551837813099495,
+        "candidates": [
+          {
+            "concept_id": "255288007",
+            "term": "Nodular",
+            "score": 0.49792892135586136
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "moderate AS",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "moderate AS",
+        "mapped": true,
+        "concept_id": "6736007",
+        "preferred_term": "Midgrade",
+        "fsn": "Moderate (severity modifier) (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.614041575982343,
+        "candidates": [
+          {
+            "concept_id": "1255665007",
+            "term": "Moderate",
+            "score": 0.614041575982343
+          },
+          {
+            "concept_id": "370219009",
+            "term": "Moderate asthma",
+            "score": 0.6081744192888378
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "sick sinus syndrome",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "sick sinus syndrome",
+        "mapped": true,
+        "concept_id": "36083008",
+        "preferred_term": "Sick sinus syndrome",
+        "fsn": "Sick sinus syndrome (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "atrial fibrillation",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "atrial fibrillation",
+        "mapped": true,
+        "concept_id": "49436004",
+        "preferred_term": "Atrial fibrillation",
+        "fsn": "Atrial fibrillation (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "coronary artery disease",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "coronary artery disease",
+        "mapped": true,
+        "concept_id": "53741008",
+        "preferred_term": "Coronary arteriosclerosis",
+        "fsn": "Coronary arteriosclerosis (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "macrocytic anemia",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "macrocytic anemia",
+        "mapped": true,
+        "concept_id": "83414005",
+        "preferred_term": "Macrocytic anemia",
+        "fsn": "Macrocytic anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Transfusion of 1 unit PRBCs",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Transfusion of 1 unit PRBCs",
+        "mapped": true,
+        "concept_id": "71493000",
+        "preferred_term": "Transfusion of packed red blood cells",
+        "fsn": "Transfusion of packed red blood cells (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.5928125846186053,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Coumadin",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Coumadin",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Hemoglobin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hemoglobin",
+        "mapped": true,
+        "concept_id": "38082009",
+        "preferred_term": "Hemoglobin",
+        "fsn": "Hemoglobin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "MCV",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCV",
+        "mapped": true,
+        "concept_id": "426342006",
+        "preferred_term": "Microvolt",
+        "fsn": "Microvolt (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hematocrit",
+        "mapped": true,
+        "concept_id": "28317006",
+        "preferred_term": "Hematocrit determination",
+        "fsn": "Hematocrit determination (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "PTT",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "PTT",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "INR",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "INR(PT)",
+        "mapped": true,
+        "concept_id": "1951000175101",
+        "preferred_term": "International normalized ratio",
+        "fsn": "International normalized ratio (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Iron",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Iron",
+        "mapped": true,
+        "concept_id": "3829006",
+        "preferred_term": "Iron",
+        "fsn": "Iron (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Creatinine",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Creatinine",
+        "mapped": true,
+        "concept_id": "15373003",
+        "preferred_term": "Creatinine",
+        "fsn": "Creatinine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Calcium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Calcium",
+        "mapped": true,
+        "concept_id": "5540006",
+        "preferred_term": "Calcium",
+        "fsn": "Calcium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Urea Nitrogen",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Urea Nitrogen",
+        "mapped": true,
+        "concept_id": "95971004",
+        "preferred_term": "Urea nitrogen",
+        "fsn": "Urea nitrogen (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Bicarbonate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Bicarbonate",
+        "mapped": true,
+        "concept_id": "68615006",
+        "preferred_term": "Bicarbonate",
+        "fsn": "Bicarbonate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Chloride",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Chloride",
+        "mapped": true,
+        "concept_id": "50213009",
+        "preferred_term": "Chloride salt",
+        "fsn": "Chloride salt (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Magnesium",
+        "mapped": true,
+        "concept_id": "72717003",
+        "preferred_term": "Magnesium",
+        "fsn": "Magnesium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Phosphate",
+        "mapped": true,
+        "concept_id": "259296007",
+        "preferred_term": "Phosphate",
+        "fsn": "Phosphate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Potassium",
+        "mapped": true,
+        "concept_id": "88480006",
+        "preferred_term": "Potassium",
+        "fsn": "Potassium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Lactate Dehydrogenase",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Lactate Dehydrogenase (LD)",
+        "mapped": true,
+        "concept_id": "259319003",
+        "preferred_term": "Lactate dehydrogenase",
+        "fsn": "Lactate dehydrogenase (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Alanine Aminotransferase",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Alanine Aminotransferase (ALT)",
+        "mapped": true,
+        "concept_id": "56935002",
+        "preferred_term": "Alanine aminotransferase",
+        "fsn": "Alanine aminotransferase (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Alkaline Phosphatase",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Alkaline Phosphatase",
+        "mapped": true,
+        "concept_id": "57056007",
+        "preferred_term": "Alkaline phosphatase",
+        "fsn": "Alkaline phosphatase (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Asparate Aminotransferase",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Asparate Aminotransferase (AST)",
+        "mapped": true,
+        "concept_id": "130093006",
+        "preferred_term": "Aminotransferase",
+        "fsn": "Substance with aminotransferase mechanism of action (substance)",
+        "match_method": "fuzzy",
+        "score": 0.6950000000000001,
+        "candidates": [
+          {
+            "concept_id": "26091008",
+            "term": "Aspartate aminotransferase",
+            "score": 0.6761738218996056
+          },
+          {
+            "concept_id": "736212005",
+            "term": "Aminotransferase",
+            "score": 0.665
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Bilirubin, Indirect",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Bilirubin, Indirect",
+        "mapped": true,
+        "concept_id": "37852002",
+        "preferred_term": "Indirect reacting bilirubin",
+        "fsn": "Indirect reacting bilirubin (substance)",
+        "match_method": "fuzzy",
+        "score": 0.9994444444444446,
+        "candidates": [
+          {
+            "concept_id": "79706000",
+            "term": "Bilirubin",
+            "score": 0.6439087296526013
+          },
+          {
+            "concept_id": "54462003",
+            "term": "Direct reacting bilirubin",
+            "score": 0.6337268512613681
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "Reticulocyte Count, Automated",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Reticulocyte Count, Automated",
+        "mapped": true,
+        "concept_id": "45995003",
+        "preferred_term": "Reticulocyte count",
+        "fsn": "Reticulocyte count (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.7709810491555003,
+        "candidates": [
+          {
+            "concept_id": "165685003",
+            "term": "Reticulocyte count abnormal",
+            "score": 0.6350628254943534
+          },
+          {
+            "concept_id": "104152009",
+            "term": "Reticulocyte count, manual",
+            "score": 0.629184828279135
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "term": "worsening dyspnea and fatigue",
+      "kind": "temporal",
+      "status": "",
+      "snomed": {
+        "query_term": "worsening dyspnea and fatigue",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    }
+  ]
+}

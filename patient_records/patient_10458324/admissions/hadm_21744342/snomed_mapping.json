@@ -1,0 +1,922 @@
+{
+  "stage": 5,
+  "generated_at": "2026-08-08T16:33:47.422735",
+  "patient_id": "10458324",
+  "hadm_id": "21744342",
+  "n_entities": 52,
+  "entities": [
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "right sided rib fractures",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "right sided rib fractures",
+        "mapped": true,
+        "concept_id": "264180000",
+        "preferred_term": "Right sided",
+        "fsn": "Right sided (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.5279708431025354,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "fall",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "fall",
+        "mapped": true,
+        "concept_id": "1912002",
+        "preferred_term": "Fall",
+        "fsn": "Fall (event)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "right lateral chest pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "right lateral chest pain",
+        "mapped": true,
+        "concept_id": "29857009",
+        "preferred_term": "Chest pain",
+        "fsn": "Chest pain (finding)",
+        "match_method": "fuzzy",
+        "score": 0.6100234734023466,
+        "candidates": [
+          {
+            "concept_id": "24028007",
+            "term": "Right",
+            "score": 0.5497890397066931
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "hypoxia",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "hypoxia",
+        "mapped": true,
+        "concept_id": "389086002",
+        "preferred_term": "Hypoxia",
+        "fsn": "Hypoxia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "right posterior back tenderness",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "right posterior back tenderness",
+        "mapped": true,
+        "concept_id": "277593009",
+        "preferred_term": "Right posterior",
+        "fsn": "Right posterior (qualifier value)",
+        "match_method": "prefix_exact",
+        "score": 0.9,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "subcutaneous emphysema",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "subcutaneous emphysema",
+        "mapped": true,
+        "concept_id": "3830001",
+        "preferred_term": "Subcutaneous emphysema",
+        "fsn": "Subcutaneous emphysema (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "right PTX",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "right PTX",
+        "mapped": true,
+        "concept_id": "24028007",
+        "preferred_term": "Right",
+        "fsn": "Right (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.5549457958749615,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "insomnia",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "insomnia",
+        "mapped": true,
+        "concept_id": "193462001",
+        "preferred_term": "Sleeplessness",
+        "fsn": "Insomnia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "bipolar disorder",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "bipolar disorder",
+        "mapped": true,
+        "concept_id": "13746004",
+        "preferred_term": "Bipolar disorder",
+        "fsn": "Bipolar disorder (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "polysubstance use",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "polysubstance use",
+        "mapped": true,
+        "concept_id": "445273005",
+        "preferred_term": "Polysubstance abuse",
+        "fsn": "Harmful pattern of use of multiple substances (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6390422793615922,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "opiate dependence",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "opiate dependence",
+        "mapped": true,
+        "concept_id": "231480002",
+        "preferred_term": "Opium dependence",
+        "fsn": "Opium dependence (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.5801837813099494,
+        "candidates": [
+          {
+            "concept_id": "255338002",
+            "term": "Dependence",
+            "score": 0.5668307438660538
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "headache",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "headache",
+        "mapped": true,
+        "concept_id": "25064002",
+        "preferred_term": "Headache",
+        "fsn": "Headache (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "myalgias",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "myalgias",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "cough",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "cough",
+        "mapped": true,
+        "concept_id": "49727002",
+        "preferred_term": "Cough",
+        "fsn": "Cough (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "fever",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "fever",
+        "mapped": true,
+        "concept_id": "386661006",
+        "preferred_term": "Fever",
+        "fsn": "Fever (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "nasal congestion",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "nasal congestion",
+        "mapped": true,
+        "concept_id": "68235000",
+        "preferred_term": "Nasal congestion",
+        "fsn": "Nasal congestion (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "sore throat",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "sore throat",
+        "mapped": true,
+        "concept_id": "267102003",
+        "preferred_term": "Throat soreness",
+        "fsn": "Sore throat (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "vomiting",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "vomiting",
+        "mapped": true,
+        "concept_id": "422400008",
+        "preferred_term": "Vomiting",
+        "fsn": "Vomiting (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "diarrhea",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "diarrhea",
+        "mapped": true,
+        "concept_id": "62315008",
+        "preferred_term": "Diarrhea",
+        "fsn": "Diarrhea (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "right rib fractures",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "right rib fractures",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "PTSD",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "PTSD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "influenza A",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "influenza A",
+        "mapped": true,
+        "concept_id": "442696006",
+        "preferred_term": "Influenza A (H1N1)",
+        "fsn": "Influenza caused by Influenza A virus subtype H1N1 (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Pigtail placement",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Pigtail placement",
+        "mapped": true,
+        "concept_id": "782902008",
+        "preferred_term": "Implantation procedure",
+        "fsn": "Implantation procedure (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.6551837813099495,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Prozac",
+      "kind": "medication",
+      "status": "stopped",
+      "snomed": {
+        "query_term": "Prozac",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Thorazine",
+      "kind": "medication",
+      "status": "stopped",
+      "snomed": {
+        "query_term": "Thorazine",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Haldol",
+      "kind": "medication",
+      "status": "stopped",
+      "snomed": {
+        "query_term": "Haldol",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "WBC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "WBC",
+        "mapped": true,
+        "concept_id": "726572009",
+        "preferred_term": "Leukocyte cast",
+        "fsn": "Leukocyte cast (morphologic abnormality)",
+        "match_method": "fuzzy",
+        "score": 0.591804839632687,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Hgb",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "HGB",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Hct",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "HCT",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Platelet Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Platelet Count",
+        "mapped": true,
+        "concept_id": "61928009",
+        "preferred_term": "Platelet count",
+        "fsn": "Platelet count (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "RBC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RBC",
+        "mapped": true,
+        "concept_id": "41898006",
+        "preferred_term": "Erythrocyte",
+        "fsn": "Erythrocyte (cell)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Calcium, Total",
+        "mapped": true,
+        "concept_id": "5540006",
+        "preferred_term": "Calcium",
+        "fsn": "Calcium (substance)",
+        "match_method": "fuzzy",
+        "score": 0.6585896621379387,
+        "candidates": [
+          {
+            "concept_id": "103399004",
+            "term": "Total (all fractions of)",
+            "score": 0.48609552012032325
+          },
+          {
+            "concept_id": "255619001",
+            "term": "In toto",
+            "score": 0.48609552012032325
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Glucose",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Glucose",
+        "mapped": true,
+        "concept_id": "67079006",
+        "preferred_term": "Glucose",
+        "fsn": "Glucose (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Albumin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Albumin",
+        "mapped": true,
+        "concept_id": "52454007",
+        "preferred_term": "Albumin",
+        "fsn": "Albumin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Thyroid Stimulating Hormone",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Thyroid Stimulating Hormone",
+        "mapped": true,
+        "concept_id": "65428006",
+        "preferred_term": "Thyroid stimulating hormone",
+        "fsn": "Thyrotrophin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Urea Nitrogen",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Urea Nitrogen",
+        "mapped": true,
+        "concept_id": "95971004",
+        "preferred_term": "Urea nitrogen",
+        "fsn": "Urea nitrogen (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Free Calcium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Free Calcium",
+        "mapped": true,
+        "concept_id": "5540006",
+        "preferred_term": "Calcium",
+        "fsn": "Calcium (substance)",
+        "match_method": "fuzzy",
+        "score": 0.6750694387042854,
+        "candidates": [
+          {
+            "concept_id": "38150009",
+            "term": "Intracellular free calcium assay",
+            "score": 0.591804839632687
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Phosphate",
+        "mapped": true,
+        "concept_id": "259296007",
+        "preferred_term": "Phosphate",
+        "fsn": "Phosphate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Bacteria",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Bacteria",
+        "mapped": true,
+        "concept_id": "409822003",
+        "preferred_term": "Domain Bacteria",
+        "fsn": "Domain Bacteria (organism)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Protein",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Protein",
+        "mapped": true,
+        "concept_id": "88878007",
+        "preferred_term": "Protein",
+        "fsn": "Protein (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Urobilinogen",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Urobilinogen",
+        "mapped": true,
+        "concept_id": "44079009",
+        "preferred_term": "Urobilinogen",
+        "fsn": "Urobilinogen (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "pO2",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "pO2",
+        "mapped": true,
+        "concept_id": "456021000124104",
+        "preferred_term": "US Military enlisted E5",
+        "fsn": "United States Military enlisted E5 (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Lactate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Lactate",
+        "mapped": true,
+        "concept_id": "83036002",
+        "preferred_term": "Lactate",
+        "fsn": "Lactate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "pCO2",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "pCO2",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "pH",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "pH",
+        "mapped": true,
+        "concept_id": "27327002",
+        "preferred_term": "Hydrogen ion concentration",
+        "fsn": "Hydrogen ion concentration (observable entity)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Sodium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Sodium",
+        "mapped": true,
+        "concept_id": "39972003",
+        "preferred_term": "Sodium",
+        "fsn": "Sodium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Magnesium",
+        "mapped": true,
+        "concept_id": "72717003",
+        "preferred_term": "Magnesium",
+        "fsn": "Magnesium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Creatine Kinase (CK)",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Creatine Kinase (CK)",
+        "mapped": true,
+        "concept_id": "75828004",
+        "preferred_term": "Creatine kinase",
+        "fsn": "Creatine kinase (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Anion Gap",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Anion Gap",
+        "mapped": true,
+        "concept_id": "102637000",
+        "preferred_term": "Anion gap",
+        "fsn": "Anion gap, function (observable entity)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Bicarbonate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Bicarbonate",
+        "mapped": true,
+        "concept_id": "68615006",
+        "preferred_term": "Bicarbonate",
+        "fsn": "Bicarbonate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Chloride",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Chloride",
+        "mapped": true,
+        "concept_id": "50213009",
+        "preferred_term": "Chloride salt",
+        "fsn": "Chloride salt (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "term": "Creatinine",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Creatinine",
+        "mapped": true,
+        "concept_id": "15373003",
+        "preferred_term": "Creatinine",
+        "fsn": "Creatinine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    }
+  ]
+}

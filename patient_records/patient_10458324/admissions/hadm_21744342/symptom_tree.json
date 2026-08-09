@@ -1,54 +1,64 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a fall, with new-onset shortness of breath and crackles on lung auscultation.",
+  "reasoning": "The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and psychiatric conditions.",
   "branches": [
     {
       "category": "respiratory",
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "chest pain",
+          "term": "right sided rib fractures",
           "status": "present",
-          "severity": "mild",
-          "evidence": "tenderness on right posterior back and along the right lateral chest",
+          "severity": "moderate",
+          "evidence": "right sided rib fractures",
           "related_findings": [
-            "right ___ rib fractures"
+            "right posterior back tenderness",
+            "subcutaneous emphysema"
           ],
           "children": [
             {
-              "term": "subcutaneous emphysema",
+              "term": "right PTX",
               "status": "present",
-              "evidence": "areas of subcutaneous emphysema along the right posterior back"
+              "severity": "mild",
+              "evidence": "small right PTX"
             }
           ]
         },
         {
-          "term": "shortness of breath",
+          "term": "cough",
           "status": "present",
           "severity": "mild",
-          "evidence": "non-labored breathing, on MC",
-          "related_findings": [
-            "inspiratory crackles b/l lower lobes"
-          ]
+          "evidence": "5 days of mild cough that worsened over the past two days"
         },
         {
-          "term": "crackles",
+          "term": "fever",
           "status": "present",
           "severity": "mild",
-          "evidence": "inspiratory crackles b/l lower lobes",
-          "related_findings": [
-            "small right PTX",
-            "right lung base atelectasis versus contusion"
-          ]
+          "evidence": "fever"
         },
         {
-          "term": "edema",
+          "term": "nasal congestion",
           "status": "present",
           "severity": "mild",
-          "evidence": "bilateral, 2+ DP pulses",
-          "related_findings": [
-            "right-sided rib fractures"
-          ]
+          "evidence": "nasal congestion"
+        },
+        {
+          "term": "sore throat",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "sore throat"
+        },
+        {
+          "term": "vomiting",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "one episode of vomiting"
+        },
+        {
+          "term": "diarrhea",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "diarrhea"
         }
       ]
     },
@@ -62,8 +72,7 @@
           "severity": "mild",
           "evidence": "satting 96% on 4L",
           "related_findings": [
-            "right ___ rib fractures",
-            "small right PTX"
+            "right PTX"
           ]
         }
       ]
@@ -73,46 +82,57 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "pneumonia",
+          "term": "influenza A",
           "status": "present",
           "severity": "mild",
-          "evidence": "aspiration or pneumonia suspicious for",
-          "related_findings": [
-            "inspiratory crackles b/l lower lobes",
-            "right lung base atelectasis versus contusion"
-          ]
+          "evidence": "influenza A PCR +"
         }
       ]
     },
     {
-      "category": "constitutional",
-      "ontology_hint": "Other",
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
-          "term": "fever",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "spiked fever",
-          "related_findings": [
-            "right ___ rib fractures"
-          ]
+          "term": "insomnia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "nightmares of being left alone and mistreated"
+        }
+      ]
+    },
+    {
+      "category": "gi",
+      "ontology_hint": "Gastrointestinal",
+      "symptoms": [
+        {
+          "term": "vomiting",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "one episode of vomiting"
+        },
+        {
+          "term": "diarrhea",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "diarrhea"
         }
       ]
     }
   ],
   "key_symptoms": [
-    "chest pain",
-    "shortness of breath",
-    "crackles"
+    "right sided rib fractures",
+    "hypoxia",
+    "cough"
   ],
   "red_flags": [
     "hypoxia",
-    "pneumonia"
+    "insomnia"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10458324",
   "admission_id": "21744342",
-  "generated_at": "2026-07-20T01:08:29.300239"
+  "generated_at": "2026-08-08T16:18:51.903113"
 }

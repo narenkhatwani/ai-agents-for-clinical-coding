@@ -1,0 +1,27 @@
+Patient: 16014068  HADM: 29042843
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 7 / 29  |  links: 7
+
+• abdominal pain  [symptom]  → SNOMED: Abdominal pain (21522001)
+    - [has_finding_site] Abdomen (id=818983003, sim=0.7045)
+
+• vomiting  [symptom]  → SNOMED: Vomiting (422400008)
+    - [is_a] Finding of vomiting (id=300359004, sim=0.8076) [HIGH]
+
+• flank pain  [symptom]  → SNOMED: Flank pain (247355005)
+    - [has_finding_site] Flank (id=58602004, sim=0.7501)
+
+• metastatic sarcoma to the brain  [diagnosis]  → SNOMED: Metastatic sarcoma (443144000)
+    - [has_associated_morphology] Sarcoma, metastatic (id=372152003, sim=0.8402) [HIGH]
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• White Blood Cells  [lab]  → SNOMED: Leukocyte (52501007)
+    - [is_a] Blood cell (id=63370004, sim=0.7647)
+
+• Calcium, Total  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.721)

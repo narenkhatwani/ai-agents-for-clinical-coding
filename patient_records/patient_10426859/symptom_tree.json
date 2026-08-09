@@ -1,31 +1,43 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with recurrent SVT, lightheadedness, and falls, with recent onset of hip pain and headache.",
+  "reasoning": "The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. The clinical picture is dominated by cardiovascular issues and musculoskeletal pain.",
   "branches": [
     {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "SVT",
+          "term": "palpitations",
           "status": "present",
           "severity": "mild",
-          "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home.",
+          "evidence": "palpitations",
           "related_findings": [
-            "troponin 0.09 ng/mL",
-            "ST elevations in II, III, V1-V3"
+            "Supraventricular tachycardia"
           ],
           "children": [
             {
-              "term": "palpitations",
+              "term": "SVT",
               "status": "present",
-              "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
-            },
-            {
-              "term": "chest pain",
-              "status": "absent",
-              "evidence": "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
+              "evidence": "Supraventricular tachycardia"
             }
+          ]
+        },
+        {
+          "term": "lightheadedness",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "lightheadedness and palpitations",
+          "related_findings": [
+            "Supraventricular tachycardia"
+          ]
+        },
+        {
+          "term": "chest pain",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "chest pain",
+          "related_findings": [
+            "Supraventricular tachycardia"
           ]
         }
       ]
@@ -38,9 +50,9 @@
           "term": "headache",
           "status": "present",
           "severity": "mild",
-          "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home.",
+          "evidence": "headache",
           "related_findings": [
-            "CT head showing tiny chronic right cerebellar infarct"
+            "Supraventricular tachycardia"
           ]
         }
       ]
@@ -53,50 +65,51 @@
           "term": "pain in right hip",
           "status": "present",
           "severity": "mild",
-          "evidence": "When nurse tried to reposition her, patient had pain in her right hip.",
+          "evidence": "pain in her right hip",
           "related_findings": [
-            "nondisplaced comminuted fracture in the right superior pubic ramus"
+            "Nondisplaced comminuted fracture in the right superior pubic ramus"
           ]
         },
         {
           "term": "pain in right leg",
           "status": "present",
           "severity": "mild",
-          "evidence": "Patient endorsed that when she stood up earlier she had felt pain in her entire right leg - her foot, ankle, leg, hip.",
+          "evidence": "pain in her entire right leg - her foot, ankle, leg, hip",
           "related_findings": [
-            "nondisplaced comminuted fracture in the right superior pubic ramus"
+            "Nondisplaced comminuted fracture in the right superior pubic ramus"
           ]
         }
       ]
     },
     {
-      "category": "constitutional",
-      "ontology_hint": "Infectious Diseases",
+      "category": "other",
+      "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "lightheadedness",
+          "term": "fall",
           "status": "present",
           "severity": "mild",
-          "evidence": "Patient endorsed having had a fall when she felt lightheaded but no head strike.",
+          "evidence": "fell when she felt lightheaded",
           "related_findings": [
-            "low blood pressure"
+            "Nondisplaced comminuted fracture in the right superior pubic ramus"
           ]
         }
       ]
     }
   ],
   "key_symptoms": [
-    "SVT",
-    "headache",
+    "palpitations",
+    "lightheadedness",
     "pain in right hip"
   ],
   "red_flags": [
-    "nondisplaced comminuted fracture in the right superior pubic ramus"
+    "Supraventricular tachycardia",
+    "Nondisplaced comminuted fracture in the right superior pubic ramus"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10426859",
   "admission_id": "29908281",
-  "generated_at": "2026-07-20T01:08:15.513335"
+  "generated_at": "2026-08-08T16:18:38.373796"
 }

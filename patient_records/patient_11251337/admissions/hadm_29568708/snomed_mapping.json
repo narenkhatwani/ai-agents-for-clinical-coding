@@ -1,0 +1,439 @@
+{
+  "stage": 5,
+  "generated_at": "2026-08-08T16:33:47.422735",
+  "patient_id": "11251337",
+  "hadm_id": "29568708",
+  "n_entities": 24,
+  "entities": [
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "hematuria",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "hematuria",
+        "mapped": true,
+        "concept_id": "34436003",
+        "preferred_term": "Hematuria",
+        "fsn": "Blood in urine (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "pain",
+        "mapped": true,
+        "concept_id": "22253000",
+        "preferred_term": "Pain",
+        "fsn": "Pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "dysuria",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "dysuria",
+        "mapped": true,
+        "concept_id": "49650001",
+        "preferred_term": "Dysuria",
+        "fsn": "Dysuria (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "fever",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "fever",
+        "mapped": true,
+        "concept_id": "386661006",
+        "preferred_term": "Fever",
+        "fsn": "Fever (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "nephrolithiasis",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "nephrolithiasis",
+        "mapped": true,
+        "concept_id": "95570007",
+        "preferred_term": "Kidney stone",
+        "fsn": "Kidney stone (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Hypertension",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Hypertension",
+        "mapped": true,
+        "concept_id": "38341003",
+        "preferred_term": "High blood pressure",
+        "fsn": "Hypertensive disorder, systemic arterial (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Hemorrhagic CVA",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Hemorrhagic CVA",
+        "mapped": true,
+        "concept_id": "255345002",
+        "preferred_term": "Hemorrhagic",
+        "fsn": "Hemorrhagic (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.6159918612177215,
+        "candidates": [
+          {
+            "concept_id": "52321009",
+            "term": "Hemorrhagic cyst",
+            "score": 0.6060281680828159
+          },
+          {
+            "concept_id": "93478000",
+            "term": "Intraocular hemorrhage",
+            "score": 0.5833333333333334
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Bilateral staghorn renal calculi",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Bilateral staghorn renal calculi",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Difficult right PCNL",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Difficult right PCNL",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Right antegrade nephrostogram",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Right antegrade nephrostogram",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Right antegrade ureteroscopy",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Right antegrade ureteroscopy",
+        "mapped": true,
+        "concept_id": "236170007",
+        "preferred_term": "Antegrade ureteroscopy",
+        "fsn": "Antegrade ureteroscopy (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.8175228932353551,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Right antegrade ureteral stent placement",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Right antegrade ureteral stent placement",
+        "mapped": true,
+        "concept_id": "428316003",
+        "preferred_term": "History of ureteral stent placement",
+        "fsn": "History of insertion of stent into ureter (situation)",
+        "match_method": "fuzzy",
+        "score": 0.5946166460377988,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Right PCNL",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Right PCNL",
+        "mapped": true,
+        "concept_id": "24028007",
+        "preferred_term": "Right",
+        "fsn": "Right (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.5339087296526012,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "pain medications",
+      "kind": "medication",
+      "status": "started",
+      "snomed": {
+        "query_term": "pain medications",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hematocrit",
+        "mapped": true,
+        "concept_id": "28317006",
+        "preferred_term": "Hematocrit determination",
+        "fsn": "Hematocrit determination (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Hemoglobin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hemoglobin",
+        "mapped": true,
+        "concept_id": "38082009",
+        "preferred_term": "Hemoglobin",
+        "fsn": "Hemoglobin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "MCHC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCHC",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "MCV",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCV",
+        "mapped": true,
+        "concept_id": "426342006",
+        "preferred_term": "Microvolt",
+        "fsn": "Microvolt (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Red Blood Cells",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Red Blood Cells",
+        "mapped": true,
+        "concept_id": "126242007",
+        "preferred_term": "Red blood cells, blood product",
+        "fsn": "Red blood cells, blood product (product)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "RDW-SD",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDW-SD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Creatinine",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Creatinine",
+        "mapped": true,
+        "concept_id": "15373003",
+        "preferred_term": "Creatinine",
+        "fsn": "Creatinine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Glucose",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Glucose",
+        "mapped": true,
+        "concept_id": "67079006",
+        "preferred_term": "Glucose",
+        "fsn": "Glucose (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "Urea Nitrogen",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Urea Nitrogen",
+        "mapped": true,
+        "concept_id": "95971004",
+        "preferred_term": "Urea nitrogen",
+        "fsn": "Urea nitrogen (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "term": "residual stone",
+      "kind": "temporal",
+      "status": "",
+      "snomed": {
+        "query_term": "residual stone",
+        "mapped": true,
+        "concept_id": "56381008",
+        "preferred_term": "Calculus",
+        "fsn": "Calculus (morphologic abnormality)",
+        "match_method": "fuzzy",
+        "score": 0.5836878675669583,
+        "candidates": [
+          {
+            "concept_id": "384600008",
+            "term": "Stone - body material",
+            "score": 0.5836878675669583
+          },
+          {
+            "concept_id": "65320000",
+            "term": "Residual",
+            "score": 0.56076092031015
+          }
+        ]
+      }
+    }
+  ]
+}

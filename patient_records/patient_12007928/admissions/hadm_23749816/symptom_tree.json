@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with dyspnea, orthopnea, and worsening fatigue, with a history of diastolic CHF and atrial fibrillation.",
+  "reasoning": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF and atrial fibrillation. She also has signs of renal and hematologic dysfunction.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -13,7 +13,8 @@
           "evidence": "increased dyspnea",
           "related_findings": [
             "orthopnea",
-            "shortness of breath"
+            "crackles in lungs",
+            "pitting edema"
           ],
           "children": [
             {
@@ -22,9 +23,9 @@
               "evidence": "reports significant orthopnea"
             },
             {
-              "term": "shortness of breath",
+              "term": "pitting edema",
               "status": "present",
-              "evidence": "unable to walk about 10 steps without feeling short of breath"
+              "evidence": "2+ pitting lower extremity edema"
             }
           ]
         },
@@ -32,31 +33,10 @@
           "term": "fatigue",
           "status": "present",
           "severity": "moderate",
-          "evidence": "everything has been quite hard",
+          "evidence": "all activities now are quite fatiguing",
           "related_findings": [
-            "shortness of breath"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
-      "symptoms": [
-        {
-          "term": "tremors",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "worsened tremors",
-          "related_findings": []
-        },
-        {
-          "term": "bladder spasms",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "abdominal pain in the setting of ? bladder spasms",
-          "related_findings": [
-            "urge incontinence"
+            "crackles in lungs",
+            "pitting edema"
           ]
         }
       ]
@@ -71,32 +51,96 @@
           "severity": "mild",
           "evidence": "Creatinine: 1.6 mg/dL",
           "related_findings": [
-            "urea nitrogen elevation"
-          ]
-        },
-        {
-          "term": "urea nitrogen elevation",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Urea Nitrogen: 32.0 mg/dL",
-          "related_findings": [
-            "creatinine elevation"
+            "orthopnea",
+            "pitting edema"
           ]
         }
       ]
     },
     {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
+      "category": "hematologic",
+      "ontology_hint": "Hematologic",
       "symptoms": [
         {
-          "term": "skin infection",
+          "term": "anemia",
           "status": "present",
           "severity": "mild",
-          "evidence": "Weeping in legs, erythematous in the lower extremities",
+          "evidence": "Hemoglobin: 10.2 g/dL",
           "related_findings": [
-            "blood cultures drawn",
-            "urine culture drawn"
+            "orthopnea",
+            "pitting edema"
+          ]
+        },
+        {
+          "term": "low MCHC",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "MCHC: 30.0 g/dL",
+          "related_findings": [
+            "orthopnea",
+            "pitting edema"
+          ]
+        },
+        {
+          "term": "low MCV",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "MCV: 81.0 fL",
+          "related_findings": [
+            "orthopnea",
+            "pitting edema"
+          ]
+        },
+        {
+          "term": "low RDW",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "RDW: 18.2 %",
+          "related_findings": [
+            "orthopnea",
+            "pitting edema"
+          ]
+        },
+        {
+          "term": "low RDW-SD",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "RDW-SD: 53.5 fL",
+          "related_findings": [
+            "orthopnea",
+            "pitting edema"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "tremors",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "increased spasms in the upper extremities",
+          "related_findings": [
+            "orthopnea",
+            "pitting edema"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "gi",
+      "ontology_hint": "GI",
+      "symptoms": [
+        {
+          "term": "incontinence",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "urine incontinence",
+          "related_findings": [
+            "orthopnea",
+            "pitting edema"
           ]
         }
       ]
@@ -107,13 +151,13 @@
     "orthopnea"
   ],
   "red_flags": [
-    "worsening dyspnea",
-    "tremors"
+    "hypotension",
+    "AMS"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "12007928",
   "admission_id": "23749816",
-  "generated_at": "2026-07-20T01:12:19.067205"
+  "generated_at": "2026-08-08T16:19:42.096211"
 }

@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with a history of heart failure and refractory VT, with recent ICD shock and some edema. The patient is stable but has abnormal labs and a history of multiple comorbidities.",
+  "reasoning": "The patient presents with a history of dilated cardiomyopathy and refractory VT, with recent ICD shock and ongoing edema. The patient is currently on multiple medications for his heart failure and arrhythmias.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -13,19 +13,18 @@
           "evidence": "ICD shock on ___",
           "related_findings": [
             "Refractory VT",
-            "Dilated non-ischemic cardiomyopathy",
-            "Heartmate II LVAD"
+            "LVAD in place"
           ],
           "children": []
         },
         {
-          "term": "lightheadedness",
+          "term": "refractory VT",
           "status": "present",
-          "severity": "mild",
-          "evidence": "lightheadedness with position changes",
+          "severity": "unknown",
+          "evidence": "Refractory VT requiring ganglionic block",
           "related_findings": [
-            "Dilated non-ischemic cardiomyopathy",
-            "Heartmate II LVAD"
+            "ICD shock",
+            "LVAD in place"
           ],
           "children": []
         },
@@ -33,51 +32,78 @@
           "term": "edema",
           "status": "present",
           "severity": "mild",
-          "evidence": "some increased ___ edema",
+          "evidence": "some increased ___ edema over the last several days",
           "related_findings": [
-            "Dilated non-ischemic cardiomyopathy",
-            "Heartmate II LVAD"
+            "LVAD in place"
+          ],
+          "children": []
+        },
+        {
+          "term": "lightheadedness",
+          "status": "present",
+          "severity": "unknown",
+          "evidence": "lightheadedness with position changes",
+          "related_findings": [
+            "ICD shock",
+            "LVAD in place"
           ],
           "children": []
         },
         {
           "term": "shaking",
           "status": "present",
-          "severity": "mild",
-          "evidence": "feeling some "
-        }
-      ]
-    },
-    {
-      "category": "renal",
-      "ontology_hint": "Renal",
-      "symptoms": [
-        {
-          "term": "abnormal labs",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "abnormal labs",
+          "severity": "unknown",
+          "evidence": "feels some 'shaking' in his chest in the morning for the last 4 months",
           "related_findings": [
-            "Hemoglobin: 11.6",
-            "Platelet Count: 142.0",
-            "Creatinine: 1.4",
-            "Glucose: 118",
-            "Alkaline Phosphatase: 167",
-            "Lactate Dehydrogenase (LD): 252"
+            "LVAD in place"
           ],
           "children": []
         }
       ]
     },
     {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
+      "category": "constitutional",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "shaking",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "feeling some "
+          "term": "fevers",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "denies fevers",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "chills",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "denies chills",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "cough",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "denies cough",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "nausea",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "denies N/V/D",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "palpitations",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "denies other palpitations",
+          "related_findings": [],
+          "children": []
         }
       ]
     }
@@ -95,5 +121,5 @@
   "_agent": "symptom_tree",
   "patient_id": "11607177",
   "admission_id": "23293838",
-  "generated_at": "2026-07-20T01:12:12.218213"
+  "generated_at": "2026-08-08T16:19:27.394653"
 }

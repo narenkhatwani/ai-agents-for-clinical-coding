@@ -1,0 +1,204 @@
+{
+  "summary": "A 70-year-old man with a history of AFib, HFpEF, PVD, CKD, and cholangitis presents post-ERCP with leg swelling and nocturnal hypoxia.",
+  "most_likely": "Heart Failure with Preserved Ejection Fraction (HFpEF)",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Heart Failure with Preserved Ejection Fraction (HFpEF)",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary diagnosis given the patient's history and current symptoms of leg swelling and nocturnal hypoxia."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Peripheral Vascular Disease (PVD)",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Peripheral vascular disease",
+      "supporting_evidence": [
+        "PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Secondary diagnosis due to the presence of PVD and associated lab abnormalities."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Cholangitis",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "History of cholangitis, White Blood Cells: 7.2 K/uL, Anion Gap: 16.0 mEq/L"
+      ],
+      "opposing_evidence": [
+        "No current symptoms of cholangitis"
+      ],
+      "reasoning": "Complication given the patient's history of cholangitis and current lab abnormalities."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Atrial Fibrillation (AFib)",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "AFib, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+      ],
+      "opposing_evidence": [
+        "No current symptoms of AFib"
+      ],
+      "reasoning": "Risk factor given the patient's history of AFib and current lab abnormalities."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Chronic Kidney Disease (CKD)",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "Chronic kidney disease",
+      "supporting_evidence": [
+        "CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Complication given the patient's history of CKD and current lab abnormalities."
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "Further details on the patient's current symptoms of cholangitis and AFib would help refine the differential diagnosis."
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "11474876",
+  "hadm_id": "29672491",
+  "generated_at": "2026-08-09T00:44:36.939082",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 13,
+    "retained_links": 17,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 23,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 24776937,
+      "admittime": "2132-08-13 14:46:00",
+      "dischtime": "2132-08-15 15:45:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "K830",
+      "primary_dx_title": "Cholangitis",
+      "n_diagnoses": 23,
+      "icd10_diagnoses": [
+        {
+          "code": "K830",
+          "title": "Cholangitis"
+        },
+        {
+          "code": "I739",
+          "title": "Peripheral vascular disease, unspecified"
+        },
+        {
+          "code": "I4891",
+          "title": "Unspecified atrial fibrillation"
+        },
+        {
+          "code": "Z8546",
+          "title": "Personal history of malignant neoplasm of prostate"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "I480",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z96642",
+          "title": "Presence of left artificial hip joint"
+        },
+        {
+          "code": "T462X5A",
+          "title": "Adverse effect of other antidysrhythmic drugs, initial encounter"
+        },
+        {
+          "code": "Y92019",
+          "title": "Unspecified place in single-family (private) house as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F4312",
+          "title": "Post-traumatic stress disorder, chronic"
+        },
+        {
+          "code": "I4510",
+          "title": "Unspecified right bundle-branch block"
+        },
+        {
+          "code": "R0603",
+          "title": "Acute respiratory distress"
+        },
+        {
+          "code": "R001",
+          "title": "Bradycardia, unspecified"
+        },
+        {
+          "code": "I4581",
+          "title": "Long QT syndrome"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "N400",
+          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
+        },
+        {
+          "code": "D1803",
+          "title": "Hemangioma of intra-abdominal structures"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "I110",
+          "title": "Hypertensive heart disease with heart failure"
+        },
+        {
+          "code": "I509",
+          "title": "Heart failure, unspecified"
+        },
+        {
+          "code": "R0902",
+          "title": "Hypoxemia"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        }
+      ]
+    }
+  ]
+}

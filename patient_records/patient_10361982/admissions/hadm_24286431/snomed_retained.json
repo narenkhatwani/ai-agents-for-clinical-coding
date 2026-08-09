@@ -1,0 +1,180 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "10361982",
+  "hadm_id": "24286431",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 26,
+  "n_entities_with_retained": 4,
+  "n_retained_links": 4,
+  "entities": [
+    {
+      "term": "heavy vaginal bleeding",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "315224006",
+      "snomed_preferred_term": "Heavy episode of vaginal bleeding",
+      "anchor_term": "heavy vaginal bleeding",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "289530006",
+          "term": "Bleeding from vagina",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8446,
+          "cosine_distance": 0.1554,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "heavy vaginal bleeding"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "289530006",
+          "term": "Bleeding from vagina",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8446,
+          "cosine_distance": 0.1554,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "heavy vaginal bleeding"
+        }
+      ]
+    },
+    {
+      "term": "abnormal uterine and vaginal bleeding",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "301822002",
+      "snomed_preferred_term": "Abnormal vaginal bleeding",
+      "anchor_term": "abnormal uterine and vaginal bleeding",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "289530006",
+          "term": "Bleeding from vagina",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7429,
+          "cosine_distance": 0.2571,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abnormal uterine and vaginal bleeding"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "289530006",
+          "term": "Bleeding from vagina",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7429,
+          "cosine_distance": 0.2571,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abnormal uterine and vaginal bleeding"
+        }
+      ]
+    },
+    {
+      "term": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy",
+      "kind": "procedure",
+      "status": "",
+      "snomed_concept_id": "236888001",
+      "snomed_preferred_term": "Laparoscopic total hysterectomy",
+      "anchor_term": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "236887006",
+          "term": "Laparoscopic hysterectomy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7697,
+          "cosine_distance": 0.2303,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "236887006",
+          "term": "Laparoscopic hysterectomy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7697,
+          "cosine_distance": 0.2303,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy"
+        }
+      ]
+    },
+    {
+      "term": "Acetaminophen",
+      "kind": "medication",
+      "status": "started",
+      "snomed_concept_id": "387517004",
+      "snomed_preferred_term": "Acetaminophen",
+      "anchor_term": "Acetaminophen",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "417551008",
+          "term": "Acetamide",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.833,
+          "cosine_distance": 0.167,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Acetaminophen"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "417551008",
+          "term": "Acetamide",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.833,
+          "cosine_distance": 0.167,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Acetaminophen"
+        }
+      ]
+    }
+  ]
+}

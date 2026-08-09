@@ -1,0 +1,48 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 12007928
+HADM ID          : 23749816
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:45:06.323910
+Candidates       : 6
+Most likely      : Acute decompensated heart failure
+Prior admissions : 2 (45 ICD codes as PMH context)
+
+Summary:
+  The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF, atrial fibrillation, and renal dysfunction. She also has signs of hematologic and neurologic abnormalities.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Acute decompensated heart failure  (primary)
+      + dyspnea, orthopnea, pitting edema, history of CHF
+      why: The patient's dyspnea, orthopnea, and pitting edema strongly suggest acute decompensation of her chronic heart failure.
+
+  #2  [70.0/100 | medium]  Anemia  (complication)
+      + low hemoglobin, MCH, MCHC, MCV, RDW, RDW-SD
+      why: The patient's anemia, as evidenced by low hemoglobin and hematocrit levels, is a significant complication.
+
+  #3  [65.0/100 | high]  Atrial fibrillation  (complication)
+      SNOMED aligned : AF - Paroxysmal atrial fibrillation
+      + confirmed diagnosis, history of atrial fibrillation
+      why: The patient has a confirmed diagnosis of atrial fibrillation, which is a known risk factor for heart failure.
+
+  #4  [60.0/100 | medium]  Renal insufficiency  (complication)
+      + creatinine elevation, urea nitrogen elevation
+      why: The patient's elevated creatinine and urea nitrogen levels suggest renal insufficiency.
+
+  #5  [45.0/100 | low]  Hypothyroidism  (risk_factor)
+      + Hypothyroidism in prior ICD-10
+      why: Hypothyroidism is a known risk factor for heart failure, but there is no current evidence of thyroid dysfunction.
+
+  #6  [40.0/100 | low]  Obstructive sleep apnea  (complication)
+      SNOMED aligned : Obstructive sleep apnea (adult) (pediatric)
+      + Obstructive sleep apnea in prior ICD-10
+      why: Obstructive sleep apnea is a known risk factor for heart failure and was documented in prior admissions.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Further details on thyroid function tests, sleep study results, and pulmonary function tests would help refine the differential diagnosis.

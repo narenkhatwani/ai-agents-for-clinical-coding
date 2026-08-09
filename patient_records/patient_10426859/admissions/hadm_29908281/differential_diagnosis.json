@@ -1,0 +1,249 @@
+{
+  "summary": "Patient presents with recurrent SVT, lightheadedness, and fall resulting in right hip pain. History includes SVT, hypertension, hyperlipidemia, and depression.",
+  "most_likely": "Supraventricular Tachycardia",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Supraventricular Tachycardia",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Supraventricular tachycardia",
+      "supporting_evidence": [
+        "SVT present, Supraventricular tachycardia"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary diagnosis supported by current symptoms and past history."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Hypertension",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Essential (primary) hypertension",
+      "supporting_evidence": [
+        "History of hypertension, elevated calcium"
+      ],
+      "opposing_evidence": [
+        "No recent BP readings in current stay"
+      ],
+      "reasoning": "Secondary condition given past history and elevated calcium."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anxiety",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "History of anxiety, recurrent SVT"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Risk factor given past history and current anxiety symptoms."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Right Hip Fracture",
+      "score": 50.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Nondisplaced comminuted fracture in the right superior pubic ramus",
+      "supporting_evidence": [
+        "Pain in right hip, fall"
+      ],
+      "opposing_evidence": [
+        "No recent imaging for fracture confirmation"
+      ],
+      "reasoning": "Complication given history of trauma and pain."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Dehydration",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Low hematocrit, low hemoglobin"
+      ],
+      "opposing_evidence": [
+        "No history of recent fluid loss"
+      ],
+      "reasoning": "Differential given current lab values, but no strong evidence."
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "Recent BP readings, imaging for fracture confirmation"
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "10426859",
+  "hadm_id": "29908281",
+  "generated_at": "2026-08-09T00:43:52.116900",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 10,
+    "retained_links": 13,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 31,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 25245894,
+      "admittime": "2193-12-20 17:16:00",
+      "dischtime": "2193-12-21 20:00:00",
+      "admission_type": "DIRECT OBSERVATION",
+      "primary_icd_code": "R0789",
+      "primary_dx_title": "Other chest pain",
+      "n_diagnoses": 10,
+      "icd10_diagnoses": [
+        {
+          "code": "R0789",
+          "title": "Other chest pain"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "I2510",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "M545",
+          "title": "Low back pain"
+        },
+        {
+          "code": "C679",
+          "title": "Malignant neoplasm of bladder, unspecified"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        }
+      ]
+    },
+    {
+      "hadm_id": 21013288,
+      "admittime": "2194-04-30 16:41:00",
+      "dischtime": "2194-05-02 17:19:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "I471",
+      "primary_dx_title": "Supraventricular tachycardia",
+      "n_diagnoses": 21,
+      "icd10_diagnoses": [
+        {
+          "code": "I471",
+          "title": "Supraventricular tachycardia"
+        },
+        {
+          "code": "I214",
+          "title": "Non-ST elevation (NSTEMI) myocardial infarction"
+        },
+        {
+          "code": "C801",
+          "title": "Malignant (primary) neoplasm, unspecified"
+        },
+        {
+          "code": "Z5329",
+          "title": "Procedure and treatment not carried out because of patient's decision for other reasons"
+        },
+        {
+          "code": "I2510",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "I252",
+          "title": "Old myocardial infarction"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "S8001XA",
+          "title": "Contusion of right knee, initial encounter"
+        },
+        {
+          "code": "W19XXXA",
+          "title": "Unspecified fall, initial encounter"
+        },
+        {
+          "code": "Y929",
+          "title": "Unspecified place or not applicable"
+        },
+        {
+          "code": "G4700",
+          "title": "Insomnia, unspecified"
+        },
+        {
+          "code": "J309",
+          "title": "Allergic rhinitis, unspecified"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "I441",
+          "title": "Atrioventricular block, second degree"
+        },
+        {
+          "code": "E559",
+          "title": "Vitamin D deficiency, unspecified"
+        }
+      ]
+    }
+  ]
+}

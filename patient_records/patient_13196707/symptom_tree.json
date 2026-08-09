@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with severe sepsis secondary to RUL PNA, hypotension, and altered mental status, with a history of metastatic adenocarcinoma of unknown primary.",
+  "reasoning": "The patient is a male with metastatic adenocarcinoma of unknown primary presenting with severe sepsis and hypotension, likely secondary to RUL PNA.",
   "branches": [
     {
       "category": "infectious",
@@ -8,22 +8,23 @@
       "symptoms": [
         {
           "term": "fever",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "new fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "feverish at rehab, but currently doesn't feel like he's having a fever",
           "related_findings": [
             "RUL PNA",
-            "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis"
+            "severe sepsis"
           ],
           "children": []
         },
         {
-          "term": "pneumonia",
-          "status": "present",
+          "term": "RUL PNA",
+          "status": "suspected",
           "severity": "moderate",
-          "evidence": "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis",
+          "evidence": "recently diagnosed, CT read described 'ground glass opacities' in the RUL",
           "related_findings": [
-            "RUL PNA"
+            "hypotension",
+            "severe sepsis"
           ],
           "children": []
         }
@@ -36,10 +37,27 @@
         {
           "term": "hypotension",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "persistently hypotensive with pressures in the 80's",
+          "severity": "severe",
+          "evidence": "BP 82-90/45-60 mmHg, required levophed to maintain pressures",
           "related_findings": [
-            "severe sepsis probably secondary to RUL PNA"
+            "severe sepsis",
+            "SVC syndrome"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "RUL consolidation",
+          "status": "suspected",
+          "severity": "moderate",
+          "evidence": "persistent consolidative opacities in both lower lobes, that could represent atelectasis, however pneumonia cannot be excluded",
+          "related_findings": [
+            "RUL PNA"
           ],
           "children": []
         }
@@ -53,26 +71,10 @@
           "term": "altered mental status",
           "status": "present",
           "severity": "moderate",
-          "evidence": "altered mental status",
+          "evidence": "GCS 3, not following commands",
           "related_findings": [
-            "severe sepsis probably secondary to RUL PNA"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "sepsis",
-          "status": "present",
-          "severity": "severe",
-          "evidence": "severe sepsis probably secondary to RUL PNA",
-          "related_findings": [
-            "RUL PNA",
-            "hypotension"
+            "SVC syndrome",
+            "metastatic adenocarcinoma"
           ],
           "children": []
         }
@@ -83,35 +85,13 @@
       "ontology_hint": "Other",
       "symptoms": [
         {
-          "term": "chest pressure",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "chest pressure that he described as a 'heaviness'",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "back pain",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "Chief Complaint: Back pain",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "saddle anesthesia",
-          "status": "history",
-          "severity": "absent",
-          "evidence": "no saddle anesthesia or bowel/bladder changes",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "numbness",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "numbness in his right thumb that has been present for many years",
-          "related_findings": [],
+          "term": "SVC syndrome",
+          "status": "confirmed",
+          "severity": "moderate",
+          "evidence": "SVC stent placed, multiple venous thromboses",
+          "related_findings": [
+            "metastatic adenocarcinoma"
+          ],
           "children": []
         }
       ]
@@ -119,7 +99,7 @@
   ],
   "key_symptoms": [
     "fever",
-    "pneumonia"
+    "RUL PNA"
   ],
   "red_flags": [
     "hypotension",
@@ -130,5 +110,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13196707",
   "admission_id": "21475988",
-  "generated_at": "2026-07-20T01:12:29.496905"
+  "generated_at": "2026-08-08T16:19:54.148835"
 }

@@ -1,0 +1,4328 @@
+{
+  "stage": 7,
+  "description": "Scored differential diagnosis from symptom tree + retained SNOMED context",
+  "generated_at": "2026-08-09T00:47:04.573304",
+  "n_admissions": 15,
+  "results": [
+    {
+      "summary": "The patient presents with heavy vaginal bleeding post hysterectomy, a history of abnormal uterine bleeding, and other gynecological issues. She has a known history of endometriosis and benign neoplasms.",
+      "most_likely": "Postoperative hemorrhage",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Postoperative hemorrhage",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Heavy episode of vaginal bleeding",
+          "supporting_evidence": [
+            "heavy vaginal bleeding after hysterectomy",
+            "hematocrit decreased from 40.1 to 38.1"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "High likelihood due to recent hysterectomy and significant blood loss."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Uterine atony",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "heavy vaginal bleeding after hysterectomy"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Possible cause of heavy bleeding post hysterectomy."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Infection",
+          "score": 60.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "heavy vaginal bleeding after hysterectomy"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Risk of infection post hysterectomy, though no signs of infection noted."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Adhesions",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "heavy vaginal bleeding after hysterectomy"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Possible source of bleeding, but imaging did not show hematoma."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Hemodynamic instability",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "hematocrit decreased from 40.1 to 38.1"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Decreased hematocrit suggests potential hemodynamic instability."
+        }
+      ],
+      "rule_outs": [
+        {
+          "diagnosis": "Endometriosis",
+          "why": "No active symptoms or signs of endometriosis, and imaging did not show hematoma."
+        }
+      ],
+      "uncertain_areas": [
+        "Need to know if there are any signs of infection or adhesions on imaging"
+      ],
+      "n_candidates": 5,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "generated_at": "2026-08-09T00:43:39.045142",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 4,
+        "retained_links": 4,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 1,
+        "prior_icd_codes": 11,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 28540049,
+          "admittime": "2162-05-08 09:30:00",
+          "dischtime": "2162-05-10 15:30:00",
+          "admission_type": "DIRECT OBSERVATION",
+          "primary_icd_code": "N939",
+          "primary_dx_title": "Abnormal uterine and vaginal bleeding, unspecified",
+          "n_diagnoses": 11,
+          "icd10_diagnoses": [
+            {
+              "code": "N939",
+              "title": "Abnormal uterine and vaginal bleeding, unspecified"
+            },
+            {
+              "code": "N800",
+              "title": "Endometriosis of uterus"
+            },
+            {
+              "code": "D261",
+              "title": "Other benign neoplasm of corpus uteri"
+            },
+            {
+              "code": "N838",
+              "title": "Other noninflammatory disorders of ovary, fallopian tube and broad ligament"
+            },
+            {
+              "code": "Z23",
+              "title": "Encounter for immunization"
+            },
+            {
+              "code": "R0602",
+              "title": "Shortness of breath"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "E039",
+              "title": "Hypothyroidism, unspecified"
+            },
+            {
+              "code": "F909",
+              "title": "Attention-deficit hyperactivity disorder, unspecified type"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "F419",
+              "title": "Anxiety disorder, unspecified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "Patient presents with recurrent SVT, lightheadedness, and fall resulting in right hip pain. History includes SVT, hypertension, hyperlipidemia, and depression.",
+      "most_likely": "Supraventricular Tachycardia",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Supraventricular Tachycardia",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Supraventricular tachycardia",
+          "supporting_evidence": [
+            "SVT present, Supraventricular tachycardia"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary diagnosis supported by current symptoms and past history."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Hypertension",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "Essential (primary) hypertension",
+          "supporting_evidence": [
+            "History of hypertension, elevated calcium"
+          ],
+          "opposing_evidence": [
+            "No recent BP readings in current stay"
+          ],
+          "reasoning": "Secondary condition given past history and elevated calcium."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Anxiety",
+          "score": 60.0,
+          "confidence": "medium",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "History of anxiety, recurrent SVT"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Risk factor given past history and current anxiety symptoms."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Right Hip Fracture",
+          "score": 50.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "Nondisplaced comminuted fracture in the right superior pubic ramus",
+          "supporting_evidence": [
+            "Pain in right hip, fall"
+          ],
+          "opposing_evidence": [
+            "No recent imaging for fracture confirmation"
+          ],
+          "reasoning": "Complication given history of trauma and pain."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Dehydration",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Low hematocrit, low hemoglobin"
+          ],
+          "opposing_evidence": [
+            "No history of recent fluid loss"
+          ],
+          "reasoning": "Differential given current lab values, but no strong evidence."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "Recent BP readings, imaging for fracture confirmation"
+      ],
+      "n_candidates": 5,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "10426859",
+      "hadm_id": "29908281",
+      "generated_at": "2026-08-09T00:43:52.116900",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 10,
+        "retained_links": 13,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 2,
+        "prior_icd_codes": 31,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 25245894,
+          "admittime": "2193-12-20 17:16:00",
+          "dischtime": "2193-12-21 20:00:00",
+          "admission_type": "DIRECT OBSERVATION",
+          "primary_icd_code": "R0789",
+          "primary_dx_title": "Other chest pain",
+          "n_diagnoses": 10,
+          "icd10_diagnoses": [
+            {
+              "code": "R0789",
+              "title": "Other chest pain"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "I2510",
+              "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+            },
+            {
+              "code": "Z66",
+              "title": "Do not resuscitate"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "M545",
+              "title": "Low back pain"
+            },
+            {
+              "code": "C679",
+              "title": "Malignant neoplasm of bladder, unspecified"
+            },
+            {
+              "code": "Z8673",
+              "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+            }
+          ]
+        },
+        {
+          "hadm_id": 21013288,
+          "admittime": "2194-04-30 16:41:00",
+          "dischtime": "2194-05-02 17:19:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "I471",
+          "primary_dx_title": "Supraventricular tachycardia",
+          "n_diagnoses": 21,
+          "icd10_diagnoses": [
+            {
+              "code": "I471",
+              "title": "Supraventricular tachycardia"
+            },
+            {
+              "code": "I214",
+              "title": "Non-ST elevation (NSTEMI) myocardial infarction"
+            },
+            {
+              "code": "C801",
+              "title": "Malignant (primary) neoplasm, unspecified"
+            },
+            {
+              "code": "Z5329",
+              "title": "Procedure and treatment not carried out because of patient's decision for other reasons"
+            },
+            {
+              "code": "I2510",
+              "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "I252",
+              "title": "Old myocardial infarction"
+            },
+            {
+              "code": "Z8673",
+              "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "F419",
+              "title": "Anxiety disorder, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "S8001XA",
+              "title": "Contusion of right knee, initial encounter"
+            },
+            {
+              "code": "W19XXXA",
+              "title": "Unspecified fall, initial encounter"
+            },
+            {
+              "code": "Y929",
+              "title": "Unspecified place or not applicable"
+            },
+            {
+              "code": "G4700",
+              "title": "Insomnia, unspecified"
+            },
+            {
+              "code": "J309",
+              "title": "Allergic rhinitis, unspecified"
+            },
+            {
+              "code": "Z66",
+              "title": "Do not resuscitate"
+            },
+            {
+              "code": "I441",
+              "title": "Atrioventricular block, second degree"
+            },
+            {
+              "code": "E559",
+              "title": "Vitamin D deficiency, unspecified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "A 40-year-old man with a history of bipolar disorder, polysubstance use, and opiate dependence presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a recent diagnosis of influenza A.",
+      "most_likely": "Acute respiratory failure",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Acute respiratory failure",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "right PTX, hypoxia, respiratory symptoms"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary cause of hypoxia and respiratory symptoms, supported by right PTX and hypoxia."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Influenza A",
+          "score": 75.0,
+          "confidence": "medium",
+          "category": "primary",
+          "snomed_aligned": "Influenza A (H1N1)",
+          "supporting_evidence": [
+            "influenza A PCR +"
+          ],
+          "opposing_evidence": [
+            "recent history of rib fractures, no other signs of severe influenza"
+          ],
+          "reasoning": "Supports current respiratory symptoms, but other factors suggest acute respiratory failure as primary."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Bipolar disorder",
+          "score": 60.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "Bipolar disorder",
+          "supporting_evidence": [
+            "bipolar disorder"
+          ],
+          "opposing_evidence": [
+            "no current acute symptoms directly related to bipolar disorder"
+          ],
+          "reasoning": "Historical risk factor, but no current acute symptoms."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Opiate dependence",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "Opium dependence",
+          "supporting_evidence": [
+            "opiate dependence"
+          ],
+          "opposing_evidence": [
+            "no current acute symptoms directly related to opiate dependence"
+          ],
+          "reasoning": "Historical risk factor, but no current acute symptoms."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Rib fractures",
+          "score": 45.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "right sided rib fractures"
+          ],
+          "opposing_evidence": [
+            "hypoxia and respiratory symptoms suggest more acute process"
+          ],
+          "reasoning": "Complication from trauma, but less likely primary cause of current symptoms."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "PTSD",
+          "score": 35.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "denies neck stiffness or headache"
+          ],
+          "opposing_evidence": [
+            "no current acute symptoms directly related to PTSD"
+          ],
+          "reasoning": "Historical risk factor, but no current acute symptoms."
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Infection",
+          "score": 30.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "cough, fever, nasal congestion"
+          ],
+          "opposing_evidence": [
+            "influenza A PCR +, no other signs of severe infection"
+          ],
+          "reasoning": "Differential diagnosis, but influenza A is more likely."
+        }
+      ],
+      "rule_outs": [
+        {
+          "diagnosis": "Pneumonia",
+          "why": "Influenza A PCR + and right PTX suggest acute respiratory failure rather than pneumonia."
+        }
+      ],
+      "uncertain_areas": [
+        "Additional information on the patient's recent trauma and respiratory status would help refine the differential diagnosis."
+      ],
+      "n_candidates": 7,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "10458324",
+      "hadm_id": "21744342",
+      "generated_at": "2026-08-09T00:44:09.485613",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 10,
+        "retained_links": 14,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 1,
+        "prior_icd_codes": 8,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 21719653,
+          "admittime": "2176-11-17 01:31:00",
+          "dischtime": "2176-11-18 13:21:00",
+          "admission_type": "EU OBSERVATION",
+          "primary_icd_code": "J09X2",
+          "primary_dx_title": "Influenza due to identified novel influenza A virus with other respiratory manifestations",
+          "n_diagnoses": 8,
+          "icd10_diagnoses": [
+            {
+              "code": "J09X2",
+              "title": "Influenza due to identified novel influenza A virus with other respiratory manifestations"
+            },
+            {
+              "code": "F1120",
+              "title": "Opioid dependence, uncomplicated"
+            },
+            {
+              "code": "R000",
+              "title": "Tachycardia, unspecified"
+            },
+            {
+              "code": "S62309A",
+              "title": "Unspecified fracture of unspecified metacarpal bone, initial encounter for closed fracture"
+            },
+            {
+              "code": "X58XXXA",
+              "title": "Exposure to other specified factors, initial encounter"
+            },
+            {
+              "code": "Y929",
+              "title": "Unspecified place or not applicable"
+            },
+            {
+              "code": "F1210",
+              "title": "Cannabis abuse, uncomplicated"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient presents with nephrolithiasis, bilateral staghorn renal calculi, post-PCNL complications, and a history of hypertension and hemorrhagic CVA.",
+      "most_likely": "Nephrolithiasis",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Nephrolithiasis",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "hematuria, pain, dysuria, fever, bilateral staghorn renal calculi"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary presentation with nephrolithiasis and post-PCNL complications."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Acute kidney injury",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Creatinine: 2.5 mg/dL, Fever"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Fever and elevated creatinine suggest potential acute kidney injury."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Chronic kidney disease",
+          "score": 65.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Hypertension, Bilateral staghorn renal calculi"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "History of hypertension and renal calculi suggest chronic kidney disease."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Hemorrhagic CVA",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Previous history of hemorrhagic CVA, but no current clinical evidence."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Anemia",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Low hematocrit and hemoglobin levels suggest anemia."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "More information on the patient's current kidney function and signs of neurological deficits would help refine the differential."
+      ],
+      "n_candidates": 5,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "11251337",
+      "hadm_id": "29568708",
+      "generated_at": "2026-08-09T00:44:22.470952",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 2,
+        "retained_links": 3,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 2,
+        "prior_icd_codes": 12,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 27937520,
+          "admittime": "2164-10-11 23:35:00",
+          "dischtime": "2164-10-17 18:03:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "N132",
+          "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+          "n_diagnoses": 4,
+          "icd10_diagnoses": [
+            {
+              "code": "N132",
+              "title": "Hydronephrosis with renal and ureteral calculous obstruction"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "I69834",
+              "title": "Monoplegia of upper limb following other cerebrovascular disease affecting left non-dominant side"
+            },
+            {
+              "code": "Z841",
+              "title": "Family history of disorders of kidney and ureter"
+            }
+          ]
+        },
+        {
+          "hadm_id": 21161726,
+          "admittime": "2164-11-29 13:57:00",
+          "dischtime": "2164-11-30 20:00:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "N136",
+          "primary_dx_title": "Pyonephrosis",
+          "n_diagnoses": 8,
+          "icd10_diagnoses": [
+            {
+              "code": "N136",
+              "title": "Pyonephrosis"
+            },
+            {
+              "code": "D631",
+              "title": "Anemia in chronic kidney disease"
+            },
+            {
+              "code": "B9689",
+              "title": "Other specified bacterial agents as the cause of diseases classified elsewhere"
+            },
+            {
+              "code": "Z23",
+              "title": "Encounter for immunization"
+            },
+            {
+              "code": "Z936",
+              "title": "Other artificial openings of urinary tract status"
+            },
+            {
+              "code": "I129",
+              "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+            },
+            {
+              "code": "N189",
+              "title": "Chronic kidney disease, unspecified"
+            },
+            {
+              "code": "I69154",
+              "title": "Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "A 70-year-old man with a history of AFib, HFpEF, PVD, CKD, and cholangitis presents post-ERCP with leg swelling and nocturnal hypoxia.",
+      "most_likely": "Heart Failure with Preserved Ejection Fraction (HFpEF)",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Heart Failure with Preserved Ejection Fraction (HFpEF)",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary diagnosis given the patient's history and current symptoms of leg swelling and nocturnal hypoxia."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Peripheral Vascular Disease (PVD)",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "Peripheral vascular disease",
+          "supporting_evidence": [
+            "PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Secondary diagnosis due to the presence of PVD and associated lab abnormalities."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Cholangitis",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "History of cholangitis, White Blood Cells: 7.2 K/uL, Anion Gap: 16.0 mEq/L"
+          ],
+          "opposing_evidence": [
+            "No current symptoms of cholangitis"
+          ],
+          "reasoning": "Complication given the patient's history of cholangitis and current lab abnormalities."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Atrial Fibrillation (AFib)",
+          "score": 45.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "AFib, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+          ],
+          "opposing_evidence": [
+            "No current symptoms of AFib"
+          ],
+          "reasoning": "Risk factor given the patient's history of AFib and current lab abnormalities."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Chronic Kidney Disease (CKD)",
+          "score": 35.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "Chronic kidney disease",
+          "supporting_evidence": [
+            "CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Complication given the patient's history of CKD and current lab abnormalities."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "Further details on the patient's current symptoms of cholangitis and AFib would help refine the differential diagnosis."
+      ],
+      "n_candidates": 5,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "11474876",
+      "hadm_id": "29672491",
+      "generated_at": "2026-08-09T00:44:36.939082",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 13,
+        "retained_links": 17,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 1,
+        "prior_icd_codes": 23,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 24776937,
+          "admittime": "2132-08-13 14:46:00",
+          "dischtime": "2132-08-15 15:45:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "K830",
+          "primary_dx_title": "Cholangitis",
+          "n_diagnoses": 23,
+          "icd10_diagnoses": [
+            {
+              "code": "K830",
+              "title": "Cholangitis"
+            },
+            {
+              "code": "I739",
+              "title": "Peripheral vascular disease, unspecified"
+            },
+            {
+              "code": "I4891",
+              "title": "Unspecified atrial fibrillation"
+            },
+            {
+              "code": "Z8546",
+              "title": "Personal history of malignant neoplasm of prostate"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "I480",
+              "title": "Paroxysmal atrial fibrillation"
+            },
+            {
+              "code": "Z7901",
+              "title": "Long term (current) use of anticoagulants"
+            },
+            {
+              "code": "Z96642",
+              "title": "Presence of left artificial hip joint"
+            },
+            {
+              "code": "T462X5A",
+              "title": "Adverse effect of other antidysrhythmic drugs, initial encounter"
+            },
+            {
+              "code": "Y92019",
+              "title": "Unspecified place in single-family (private) house as the place of occurrence of the external cause"
+            },
+            {
+              "code": "F4312",
+              "title": "Post-traumatic stress disorder, chronic"
+            },
+            {
+              "code": "I4510",
+              "title": "Unspecified right bundle-branch block"
+            },
+            {
+              "code": "R0603",
+              "title": "Acute respiratory distress"
+            },
+            {
+              "code": "R001",
+              "title": "Bradycardia, unspecified"
+            },
+            {
+              "code": "I4581",
+              "title": "Long QT syndrome"
+            },
+            {
+              "code": "N183",
+              "title": "Chronic kidney disease, stage 3 (moderate)"
+            },
+            {
+              "code": "N400",
+              "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
+            },
+            {
+              "code": "D1803",
+              "title": "Hemangioma of intra-abdominal structures"
+            },
+            {
+              "code": "E119",
+              "title": "Type 2 diabetes mellitus without complications"
+            },
+            {
+              "code": "I110",
+              "title": "Hypertensive heart disease with heart failure"
+            },
+            {
+              "code": "I509",
+              "title": "Heart failure, unspecified"
+            },
+            {
+              "code": "R0902",
+              "title": "Hypoxemia"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient is a 65-year-old with a history of dilated cardiomyopathy, refractory VT, and LVAD, presenting with ICD shock, mild edema, and ongoing arrhythmias despite multiple medications.",
+      "most_likely": "Refractory Ventricular Tachycardia",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Refractory Ventricular Tachycardia",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Refractory VT requiring ganglionic block",
+            "ICD shock"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary diagnosis given the patient's history and current presentation."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Heart Failure",
+          "score": 75.0,
+          "confidence": "high",
+          "category": "secondary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "edema",
+            "LVAD in place"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Secondary to the patient's dilated cardiomyopathy and LVAD."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Hyperkalemia",
+          "score": 60.0,
+          "confidence": "medium",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Lactate Dehydrogenase (LD) high"
+          ],
+          "opposing_evidence": [
+            "No evidence of hyperkalemia symptoms"
+          ],
+          "reasoning": "High LD could indicate hyperkalemia, but no other evidence."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Sleep Apnea",
+          "score": 50.0,
+          "confidence": "medium",
+          "category": "risk_factor",
+          "snomed_aligned": "Sleep apnea",
+          "supporting_evidence": [
+            "Sleep apnea confirmed"
+          ],
+          "opposing_evidence": [
+            "No current respiratory symptoms"
+          ],
+          "reasoning": "Risk factor given the patient's history and current medications."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Anemia",
+          "score": 45.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Hematocrit low",
+            "Hemoglobin low"
+          ],
+          "opposing_evidence": [
+            "No other symptoms of anemia"
+          ],
+          "reasoning": "Possible secondary to underlying heart failure."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Obstructive Sleep Apnea",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "Obstructive sleep apnea (adult)",
+          "supporting_evidence": [
+            "Sleep apnea confirmed"
+          ],
+          "opposing_evidence": [
+            "No current respiratory symptoms"
+          ],
+          "reasoning": "Differential given the patient's history and current medications."
+        }
+      ],
+      "rule_outs": [
+        {
+          "diagnosis": "Heart Transplantation",
+          "why": "No current symptoms or evidence of transplant complications."
+        }
+      ],
+      "uncertain_areas": [
+        "Further labs or imaging to confirm LVAD function and arrhythmia management"
+      ],
+      "n_candidates": 6,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "11607177",
+      "hadm_id": "23293838",
+      "generated_at": "2026-08-09T00:44:51.206956",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 10,
+        "retained_links": 13,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 4,
+        "prior_icd_codes": 78,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 22465519,
+          "admittime": "2150-02-21 14:45:00",
+          "dischtime": "2150-02-27 15:13:00",
+          "admission_type": "EW EMER.",
+          "primary_icd_code": "K420",
+          "primary_dx_title": "Umbilical hernia with obstruction, without gangrene",
+          "n_diagnoses": 18,
+          "icd10_diagnoses": [
+            {
+              "code": "K420",
+              "title": "Umbilical hernia with obstruction, without gangrene"
+            },
+            {
+              "code": "I5022",
+              "title": "Chronic systolic (congestive) heart failure"
+            },
+            {
+              "code": "I472",
+              "title": "Ventricular tachycardia"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "I420",
+              "title": "Dilated cardiomyopathy"
+            },
+            {
+              "code": "E119",
+              "title": "Type 2 diabetes mellitus without complications"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "G4733",
+              "title": "Obstructive sleep apnea (adult) (pediatric)"
+            },
+            {
+              "code": "Z96652",
+              "title": "Presence of left artificial knee joint"
+            },
+            {
+              "code": "I272",
+              "title": "Other secondary pulmonary hypertension"
+            },
+            {
+              "code": "M25569",
+              "title": "Pain in unspecified knee"
+            },
+            {
+              "code": "M109",
+              "title": "Gout, unspecified"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "Z95810",
+              "title": "Presence of automatic (implantable) cardiac defibrillator"
+            },
+            {
+              "code": "Z8673",
+              "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+            },
+            {
+              "code": "Z7682",
+              "title": "Awaiting organ transplant status"
+            },
+            {
+              "code": "Z6837",
+              "title": "Body mass index [BMI] 37.0-37.9, adult"
+            }
+          ]
+        },
+        {
+          "hadm_id": 22999634,
+          "admittime": "2150-03-03 14:21:00",
+          "dischtime": "2150-03-12 17:53:00",
+          "admission_type": "ELECTIVE",
+          "primary_icd_code": "K429",
+          "primary_dx_title": "Umbilical hernia without obstruction or gangrene",
+          "n_diagnoses": 24,
+          "icd10_diagnoses": [
+            {
+              "code": "K429",
+              "title": "Umbilical hernia without obstruction or gangrene"
+            },
+            {
+              "code": "Z95811",
+              "title": "Presence of heart assist device"
+            },
+            {
+              "code": "I472",
+              "title": "Ventricular tachycardia"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "I420",
+              "title": "Dilated cardiomyopathy"
+            },
+            {
+              "code": "I5022",
+              "title": "Chronic systolic (congestive) heart failure"
+            },
+            {
+              "code": "D696",
+              "title": "Thrombocytopenia, unspecified"
+            },
+            {
+              "code": "L7621",
+              "title": "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure"
+            },
+            {
+              "code": "R710",
+              "title": "Precipitous drop in hematocrit"
+            },
+            {
+              "code": "Z4502",
+              "title": "Encounter for adjustment and management of automatic implantable cardiac defibrillator"
+            },
+            {
+              "code": "E119",
+              "title": "Type 2 diabetes mellitus without complications"
+            },
+            {
+              "code": "Z8673",
+              "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "L539",
+              "title": "Erythematous condition, unspecified"
+            },
+            {
+              "code": "Z6838",
+              "title": "Body mass index [BMI] 38.0-38.9, adult"
+            },
+            {
+              "code": "Z7901",
+              "title": "Long term (current) use of anticoagulants"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "I129",
+              "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+            },
+            {
+              "code": "N189",
+              "title": "Chronic kidney disease, unspecified"
+            },
+            {
+              "code": "I272",
+              "title": "Other secondary pulmonary hypertension"
+            },
+            {
+              "code": "M109",
+              "title": "Gout, unspecified"
+            },
+            {
+              "code": "Y838",
+              "title": "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+            },
+            {
+              "code": "Y92239",
+              "title": "Unspecified place in hospital as the place of occurrence of the external cause"
+            }
+          ]
+        },
+        {
+          "hadm_id": 25619597,
+          "admittime": "2150-03-15 01:12:00",
+          "dischtime": "2150-03-15 18:34:00",
+          "admission_type": "EU OBSERVATION",
+          "primary_icd_code": "L7621",
+          "primary_dx_title": "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure",
+          "n_diagnoses": 20,
+          "icd10_diagnoses": [
+            {
+              "code": "L7621",
+              "title": "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure"
+            },
+            {
+              "code": "Y838",
+              "title": "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+            },
+            {
+              "code": "I5022",
+              "title": "Chronic systolic (congestive) heart failure"
+            },
+            {
+              "code": "I420",
+              "title": "Dilated cardiomyopathy"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "E875",
+              "title": "Hyperkalemia"
+            },
+            {
+              "code": "I4891",
+              "title": "Unspecified atrial fibrillation"
+            },
+            {
+              "code": "I272",
+              "title": "Other secondary pulmonary hypertension"
+            },
+            {
+              "code": "E119",
+              "title": "Type 2 diabetes mellitus without complications"
+            },
+            {
+              "code": "M1A9XX1",
+              "title": "Chronic gout, unspecified, with tophus (tophi)"
+            },
+            {
+              "code": "Z95810",
+              "title": "Presence of automatic (implantable) cardiac defibrillator"
+            },
+            {
+              "code": "Z7682",
+              "title": "Awaiting organ transplant status"
+            },
+            {
+              "code": "Z7901",
+              "title": "Long term (current) use of anticoagulants"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "Z6838",
+              "title": "Body mass index [BMI] 38.0-38.9, adult"
+            },
+            {
+              "code": "G4730",
+              "title": "Sleep apnea, unspecified"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "Z8673",
+              "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+            }
+          ]
+        },
+        {
+          "hadm_id": 24756239,
+          "admittime": "2150-06-02 10:48:00",
+          "dischtime": "2150-06-05 17:21:00",
+          "admission_type": "EU OBSERVATION",
+          "primary_icd_code": "I472",
+          "primary_dx_title": "Ventricular tachycardia",
+          "n_diagnoses": 16,
+          "icd10_diagnoses": [
+            {
+              "code": "I472",
+              "title": "Ventricular tachycardia"
+            },
+            {
+              "code": "I420",
+              "title": "Dilated cardiomyopathy"
+            },
+            {
+              "code": "I4891",
+              "title": "Unspecified atrial fibrillation"
+            },
+            {
+              "code": "Z7901",
+              "title": "Long term (current) use of anticoagulants"
+            },
+            {
+              "code": "Z95810",
+              "title": "Presence of automatic (implantable) cardiac defibrillator"
+            },
+            {
+              "code": "G8929",
+              "title": "Other chronic pain"
+            },
+            {
+              "code": "M179",
+              "title": "Osteoarthritis of knee, unspecified"
+            },
+            {
+              "code": "M109",
+              "title": "Gout, unspecified"
+            },
+            {
+              "code": "E780",
+              "title": "Pure hypercholesterolemia"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "G4730",
+              "title": "Sleep apnea, unspecified"
+            },
+            {
+              "code": "E119",
+              "title": "Type 2 diabetes mellitus without complications"
+            },
+            {
+              "code": "Z7682",
+              "title": "Awaiting organ transplant status"
+            },
+            {
+              "code": "Z8673",
+              "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF, atrial fibrillation, and renal dysfunction. She also has signs of hematologic and neurologic abnormalities.",
+      "most_likely": "Acute decompensated heart failure",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Acute decompensated heart failure",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "dyspnea, orthopnea, pitting edema, history of CHF"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "The patient's dyspnea, orthopnea, and pitting edema strongly suggest acute decompensation of her chronic heart failure."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Anemia",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "low hemoglobin, MCH, MCHC, MCV, RDW, RDW-SD"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "The patient's anemia, as evidenced by low hemoglobin and hematocrit levels, is a significant complication."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Atrial fibrillation",
+          "score": 65.0,
+          "confidence": "high",
+          "category": "complication",
+          "snomed_aligned": "AF - Paroxysmal atrial fibrillation",
+          "supporting_evidence": [
+            "confirmed diagnosis, history of atrial fibrillation"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "The patient has a confirmed diagnosis of atrial fibrillation, which is a known risk factor for heart failure."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Renal insufficiency",
+          "score": 60.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "creatinine elevation, urea nitrogen elevation"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "The patient's elevated creatinine and urea nitrogen levels suggest renal insufficiency."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Hypothyroidism",
+          "score": 45.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Hypothyroidism in prior ICD-10"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Hypothyroidism is a known risk factor for heart failure, but there is no current evidence of thyroid dysfunction."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Obstructive sleep apnea",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "Obstructive sleep apnea (adult) (pediatric)",
+          "supporting_evidence": [
+            "Obstructive sleep apnea in prior ICD-10"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Obstructive sleep apnea is a known risk factor for heart failure and was documented in prior admissions."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "Further details on thyroid function tests, sleep study results, and pulmonary function tests would help refine the differential diagnosis."
+      ],
+      "n_candidates": 6,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "12007928",
+      "hadm_id": "23749816",
+      "generated_at": "2026-08-09T00:45:06.323910",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 5,
+        "retained_links": 5,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 2,
+        "prior_icd_codes": 45,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 27713859,
+          "admittime": "2192-05-02 21:14:00",
+          "dischtime": "2192-05-04 16:50:00",
+          "admission_type": "EW EMER.",
+          "primary_icd_code": "R55",
+          "primary_dx_title": "Syncope and collapse",
+          "n_diagnoses": 22,
+          "icd10_diagnoses": [
+            {
+              "code": "R55",
+              "title": "Syncope and collapse"
+            },
+            {
+              "code": "I5033",
+              "title": "Acute on chronic diastolic (congestive) heart failure"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "G7000",
+              "title": "Myasthenia gravis without (acute) exacerbation"
+            },
+            {
+              "code": "I480",
+              "title": "Paroxysmal atrial fibrillation"
+            },
+            {
+              "code": "F0390",
+              "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+            },
+            {
+              "code": "G40909",
+              "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+            },
+            {
+              "code": "Z6841",
+              "title": "Body mass index [BMI] 40.0-44.9, adult"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "E039",
+              "title": "Hypothyroidism, unspecified"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "G4733",
+              "title": "Obstructive sleep apnea (adult) (pediatric)"
+            },
+            {
+              "code": "Z45018",
+              "title": "Encounter for adjustment and management of other part of cardiac pacemaker"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "Z7901",
+              "title": "Long term (current) use of anticoagulants"
+            },
+            {
+              "code": "Z66",
+              "title": "Do not resuscitate"
+            },
+            {
+              "code": "Z86711",
+              "title": "Personal history of pulmonary embolism"
+            },
+            {
+              "code": "W19XXXA",
+              "title": "Unspecified fall, initial encounter"
+            },
+            {
+              "code": "Y92009",
+              "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "R7989",
+              "title": "Other specified abnormal findings of blood chemistry"
+            }
+          ]
+        },
+        {
+          "hadm_id": 20918106,
+          "admittime": "2192-08-30 20:37:00",
+          "dischtime": "2192-09-04 17:37:00",
+          "admission_type": "EW EMER.",
+          "primary_icd_code": "I5033",
+          "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
+          "n_diagnoses": 23,
+          "icd10_diagnoses": [
+            {
+              "code": "I5033",
+              "title": "Acute on chronic diastolic (congestive) heart failure"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "D689",
+              "title": "Coagulation defect, unspecified"
+            },
+            {
+              "code": "I480",
+              "title": "Paroxysmal atrial fibrillation"
+            },
+            {
+              "code": "G7000",
+              "title": "Myasthenia gravis without (acute) exacerbation"
+            },
+            {
+              "code": "G40909",
+              "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+            },
+            {
+              "code": "F0390",
+              "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+            },
+            {
+              "code": "I129",
+              "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+            },
+            {
+              "code": "Z6841",
+              "title": "Body mass index [BMI] 40.0-44.9, adult"
+            },
+            {
+              "code": "E039",
+              "title": "Hypothyroidism, unspecified"
+            },
+            {
+              "code": "I8312",
+              "title": "Varicose veins of left lower extremity with inflammation"
+            },
+            {
+              "code": "M79661",
+              "title": "Pain in right lower leg"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "Z950",
+              "title": "Presence of cardiac pacemaker"
+            },
+            {
+              "code": "W19XXXA",
+              "title": "Unspecified fall, initial encounter"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "G4733",
+              "title": "Obstructive sleep apnea (adult) (pediatric)"
+            },
+            {
+              "code": "Z7902",
+              "title": "Long term (current) use of antithrombotics/antiplatelets"
+            },
+            {
+              "code": "Z66",
+              "title": "Do not resuscitate"
+            },
+            {
+              "code": "M25511",
+              "title": "Pain in right shoulder"
+            },
+            {
+              "code": "I8311",
+              "title": "Varicose veins of right lower extremity with inflammation"
+            },
+            {
+              "code": "Y92009",
+              "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+            },
+            {
+              "code": "N189",
+              "title": "Chronic kidney disease, unspecified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, and altered mental status. Recent RUL PNA and SVC syndrome are noted.",
+      "most_likely": "Severe sepsis secondary to RUL PNA",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Severe sepsis secondary to RUL PNA",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "fever, RUL PNA, hypotension"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary diagnosis given the severe clinical presentation and evidence of RUL PNA and hypotension."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Metastatic adenocarcinoma of unknown primary",
+          "score": 70.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
+          "supporting_evidence": [
+            "metastatic adenocarcinoma, RUL PNA, hypotension"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Given the confirmed metastatic adenocarcinoma and its impact on the patient's current condition."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Acute kidney injury",
+          "score": 50.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "N179 — Acute kidney failure, unspecified"
+          ],
+          "opposing_evidence": [
+            "no current evidence of acute kidney injury"
+          ],
+          "reasoning": "A complication given the patient's history of acute kidney failure and current hypotension."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "SVC syndrome",
+          "score": 40.0,
+          "confidence": "high",
+          "category": "complication",
+          "snomed_aligned": "SVC stent placed, multiple venous thromboses",
+          "supporting_evidence": [
+            "confirmed SVC syndrome"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Confirmed complication with ongoing management."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Hypovolemic shock",
+          "score": 30.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "hypotension, low blood pressure"
+          ],
+          "opposing_evidence": [
+            "no clear evidence of hypovolemia"
+          ],
+          "reasoning": "A possible secondary diagnosis given the hypotension."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Pneumonia",
+          "score": 25.0,
+          "confidence": "medium",
+          "category": "differential",
+          "snomed_aligned": "Infectious Diseases",
+          "supporting_evidence": [
+            "RUL PNA"
+          ],
+          "opposing_evidence": [
+            "recent diagnosis, no new imaging findings"
+          ],
+          "reasoning": "Differential diagnosis given the recent diagnosis of RUL PNA."
+        }
+      ],
+      "rule_outs": [
+        {
+          "diagnosis": "Cancer recurrence",
+          "why": "Current evidence does not strongly support cancer recurrence as the primary cause."
+        }
+      ],
+      "uncertain_areas": [
+        "Further imaging and lab results to confirm RUL PNA and assess for new complications"
+      ],
+      "n_candidates": 6,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "13196707",
+      "hadm_id": "21475988",
+      "generated_at": "2026-08-09T00:45:20.765143",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 11,
+        "retained_links": 15,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 1,
+        "prior_icd_codes": 33,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 21516900,
+          "admittime": "2155-12-09 23:47:00",
+          "dischtime": "2156-01-08 17:15:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "C801",
+          "primary_dx_title": "Malignant (primary) neoplasm, unspecified",
+          "n_diagnoses": 33,
+          "icd10_diagnoses": [
+            {
+              "code": "C801",
+              "title": "Malignant (primary) neoplasm, unspecified"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "L89152",
+              "title": "Pressure ulcer of sacral region, stage 2"
+            },
+            {
+              "code": "I82A12",
+              "title": "Acute embolism and thrombosis of left axillary vein"
+            },
+            {
+              "code": "I82290",
+              "title": "Acute embolism and thrombosis of other thoracic veins"
+            },
+            {
+              "code": "I82B13",
+              "title": "Acute embolism and thrombosis of subclavian vein, bilateral"
+            },
+            {
+              "code": "M8448XA",
+              "title": "Pathological fracture, other site, initial encounter for fracture"
+            },
+            {
+              "code": "E871",
+              "title": "Hypo-osmolality and hyponatremia"
+            },
+            {
+              "code": "N134",
+              "title": "Hydroureter"
+            },
+            {
+              "code": "G8191",
+              "title": "Hemiplegia, unspecified affecting right dominant side"
+            },
+            {
+              "code": "I871",
+              "title": "Compression of vein"
+            },
+            {
+              "code": "I82612",
+              "title": "Acute embolism and thrombosis of superficial veins of left upper extremity"
+            },
+            {
+              "code": "C7951",
+              "title": "Secondary malignant neoplasm of bone"
+            },
+            {
+              "code": "C7931",
+              "title": "Secondary malignant neoplasm of brain"
+            },
+            {
+              "code": "C7802",
+              "title": "Secondary malignant neoplasm of left lung"
+            },
+            {
+              "code": "G893",
+              "title": "Neoplasm related pain (acute) (chronic)"
+            },
+            {
+              "code": "C7801",
+              "title": "Secondary malignant neoplasm of right lung"
+            },
+            {
+              "code": "C7989",
+              "title": "Secondary malignant neoplasm of other specified sites"
+            },
+            {
+              "code": "C7949",
+              "title": "Secondary malignant neoplasm of other parts of nervous system"
+            },
+            {
+              "code": "C7972",
+              "title": "Secondary malignant neoplasm of left adrenal gland"
+            },
+            {
+              "code": "C7971",
+              "title": "Secondary malignant neoplasm of right adrenal gland"
+            },
+            {
+              "code": "K1120",
+              "title": "Sialoadenitis, unspecified"
+            },
+            {
+              "code": "B9561",
+              "title": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere"
+            },
+            {
+              "code": "Z515",
+              "title": "Encounter for palliative care"
+            },
+            {
+              "code": "K259",
+              "title": "Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation"
+            },
+            {
+              "code": "M1990",
+              "title": "Unspecified osteoarthritis, unspecified site"
+            },
+            {
+              "code": "H409",
+              "title": "Unspecified glaucoma"
+            },
+            {
+              "code": "Z7902",
+              "title": "Long term (current) use of antithrombotics/antiplatelets"
+            },
+            {
+              "code": "R634",
+              "title": "Abnormal weight loss"
+            },
+            {
+              "code": "Z6821",
+              "title": "Body mass index [BMI] 21.0-21.9, adult"
+            },
+            {
+              "code": "K5900",
+              "title": "Constipation, unspecified"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient presents with dyspnea and pain, along with a history of renal cell carcinoma and chronic systolic heart failure. Current labs show elevated creatinine and low hemoglobin, consistent with renal and anemia issues.",
+      "most_likely": "Acute on chronic systolic heart failure",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Acute on chronic systolic heart failure",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "42322001",
+          "supporting_evidence": [
+            "sudden onset dyspnea, systolic CHF with EF around 30%"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Strong clinical presentation and supporting symptoms."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Renal cell carcinoma",
+          "score": 75.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "19386008",
+          "supporting_evidence": [
+            "left renal mass, renal cell carcinoma"
+          ],
+          "opposing_evidence": [
+            "Focused on cardiac symptoms"
+          ],
+          "reasoning": "Confirmed diagnosis, but less acute focus."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Anemia",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "73585002",
+          "supporting_evidence": [
+            "low hemoglobin, low hematocrit"
+          ],
+          "opposing_evidence": [
+            "Not the primary focus of admission"
+          ],
+          "reasoning": "Low hemoglobin and hematocrit suggest anemia, but not primary concern."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Type 2 diabetes",
+          "score": 65.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "25169004",
+          "supporting_evidence": [
+            "high glucose"
+          ],
+          "opposing_evidence": [
+            "Not the primary focus of admission"
+          ],
+          "reasoning": "Type 2 diabetes is a known risk factor but not the primary concern."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "Further cardiac imaging and renal function tests would refine the ranking"
+      ],
+      "n_candidates": 4,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "generated_at": "2026-08-09T00:45:31.186480",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 7,
+        "retained_links": 8,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 1,
+        "prior_icd_codes": 16,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 21011434,
+          "admittime": "2188-11-08 22:21:00",
+          "dischtime": "2188-11-18 16:19:00",
+          "admission_type": "EW EMER.",
+          "primary_icd_code": "I5023",
+          "primary_dx_title": "Acute on chronic systolic (congestive) heart failure",
+          "n_diagnoses": 16,
+          "icd10_diagnoses": [
+            {
+              "code": "I5023",
+              "title": "Acute on chronic systolic (congestive) heart failure"
+            },
+            {
+              "code": "R570",
+              "title": "Cardiogenic shock"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "C649",
+              "title": "Malignant neoplasm of unspecified kidney, except renal pelvis"
+            },
+            {
+              "code": "Z6841",
+              "title": "Body mass index [BMI] 40.0-44.9, adult"
+            },
+            {
+              "code": "E1122",
+              "title": "Type 2 diabetes mellitus with diabetic chronic kidney disease"
+            },
+            {
+              "code": "I129",
+              "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+            },
+            {
+              "code": "N189",
+              "title": "Chronic kidney disease, unspecified"
+            },
+            {
+              "code": "Z951",
+              "title": "Presence of aortocoronary bypass graft"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "N400",
+              "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "G4733",
+              "title": "Obstructive sleep apnea (adult) (pediatric)"
+            },
+            {
+              "code": "Z7982",
+              "title": "Long term (current) use of aspirin"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "R197",
+              "title": "Diarrhea, unspecified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression. He has a history of malignancy, chronic kidney disease, and pulmonary hypertension.",
+      "most_likely": "Severe Pulmonary Hypertension",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Severe Pulmonary Hypertension",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Pulmonary hypertension",
+          "supporting_evidence": [
+            "Right Heart Catheterization revealed severe Pulmonary HTN with Cor Pulmonale"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Strong evidence from Right Heart Catheterization and symptoms of dyspnea and chest pain."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Neutropenia",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "Neutropenia",
+          "supporting_evidence": [
+            "New neutropenia (ANC 750)"
+          ],
+          "opposing_evidence": [
+            "ANC 750 is low but not critically so"
+          ],
+          "reasoning": "ANC 750 is significantly low, indicating a risk of infection."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Anemia",
+          "score": 65.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "Anemia",
+          "supporting_evidence": [
+            "Hematocrit: 26.4 % [abnormal], Hemoglobin: 8.2 g/dL [abnormal]"
+          ],
+          "opposing_evidence": [
+            "No severe bleeding or acute blood loss noted"
+          ],
+          "reasoning": "Hematocrit and Hemoglobin are significantly low, indicating anemia."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Malnutrition",
+          "score": 60.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Overall anorexia and poor appetite"
+          ],
+          "opposing_evidence": [
+            "No specific evidence of recent weight loss or malnutrition"
+          ],
+          "reasoning": "Anorexia and poor appetite suggest a risk of malnutrition."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Thrombocytopenia",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "Thrombocytopenia",
+          "supporting_evidence": [
+            "Thrombocytopenia (plts 93)"
+          ],
+          "opposing_evidence": [
+            "Platelet count is not critically low"
+          ],
+          "reasoning": "Thrombocytopenia is present but not severe."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "COPD",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "Chronic obstructive pulmonary disease",
+          "supporting_evidence": [
+            "COPD, unspecified"
+          ],
+          "opposing_evidence": [
+            "Current presentation more consistent with pulmonary hypertension"
+          ],
+          "reasoning": "History of COPD but current presentation more consistent with pulmonary hypertension."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "Further clarification of the exact etiology of pulmonary hypertension and the underlying cause of neutropenia"
+      ],
+      "n_candidates": 6,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "generated_at": "2026-08-09T00:45:46.331684",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 11,
+        "retained_links": 13,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 2,
+        "prior_icd_codes": 51,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 23557636,
+          "admittime": "2192-09-17 18:30:00",
+          "dischtime": "2192-09-29 16:57:00",
+          "admission_type": "EW EMER.",
+          "primary_icd_code": "C3432",
+          "primary_dx_title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+          "n_diagnoses": 15,
+          "icd10_diagnoses": [
+            {
+              "code": "C3432",
+              "title": "Malignant neoplasm of lower lobe, left bronchus or lung"
+            },
+            {
+              "code": "B190",
+              "title": "Unspecified viral hepatitis with hepatic coma"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "T8611",
+              "title": "Kidney transplant rejection"
+            },
+            {
+              "code": "K5090",
+              "title": "Crohn's disease, unspecified, without complications"
+            },
+            {
+              "code": "I5030",
+              "title": "Unspecified diastolic (congestive) heart failure"
+            },
+            {
+              "code": "I272",
+              "title": "Other secondary pulmonary hypertension"
+            },
+            {
+              "code": "Z940",
+              "title": "Kidney transplant status"
+            },
+            {
+              "code": "D509",
+              "title": "Iron deficiency anemia, unspecified"
+            },
+            {
+              "code": "E119",
+              "title": "Type 2 diabetes mellitus without complications"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "Y830",
+              "title": "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "F17210",
+              "title": "Nicotine dependence, cigarettes, uncomplicated"
+            },
+            {
+              "code": "Z7982",
+              "title": "Long term (current) use of aspirin"
+            }
+          ]
+        },
+        {
+          "hadm_id": 28970521,
+          "admittime": "2192-12-15 16:01:00",
+          "dischtime": "2193-01-01 16:15:00",
+          "admission_type": "DIRECT EMER.",
+          "primary_icd_code": "J156",
+          "primary_dx_title": "Pneumonia due to other Gram-negative bacteria",
+          "n_diagnoses": 36,
+          "icd10_diagnoses": [
+            {
+              "code": "J156",
+              "title": "Pneumonia due to other Gram-negative bacteria"
+            },
+            {
+              "code": "D61810",
+              "title": "Antineoplastic chemotherapy induced pancytopenia"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "R64",
+              "title": "Cachexia"
+            },
+            {
+              "code": "I959",
+              "title": "Hypotension, unspecified"
+            },
+            {
+              "code": "E872",
+              "title": "Acidosis"
+            },
+            {
+              "code": "E873",
+              "title": "Alkalosis"
+            },
+            {
+              "code": "T8612",
+              "title": "Kidney transplant failure"
+            },
+            {
+              "code": "T8613",
+              "title": "Kidney transplant infection"
+            },
+            {
+              "code": "C3432",
+              "title": "Malignant neoplasm of lower lobe, left bronchus or lung"
+            },
+            {
+              "code": "I270",
+              "title": "Primary pulmonary hypertension"
+            },
+            {
+              "code": "Z681",
+              "title": "Body mass index [BMI] 19.9 or less, adult"
+            },
+            {
+              "code": "E222",
+              "title": "Syndrome of inappropriate secretion of antidiuretic hormone"
+            },
+            {
+              "code": "K521",
+              "title": "Toxic gastroenteritis and colitis"
+            },
+            {
+              "code": "T8619",
+              "title": "Other complication of kidney transplant"
+            },
+            {
+              "code": "E46",
+              "title": "Unspecified protein-calorie malnutrition"
+            },
+            {
+              "code": "J449",
+              "title": "Chronic obstructive pulmonary disease, unspecified"
+            },
+            {
+              "code": "F17210",
+              "title": "Nicotine dependence, cigarettes, uncomplicated"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "R627",
+              "title": "Adult failure to thrive"
+            },
+            {
+              "code": "Y842",
+              "title": "Radiological procedure and radiotherapy as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+            },
+            {
+              "code": "K208",
+              "title": "Other esophagitis"
+            },
+            {
+              "code": "T66XXXA",
+              "title": "Radiation sickness, unspecified, initial encounter"
+            },
+            {
+              "code": "Y92238",
+              "title": "Other place in hospital as the place of occurrence of the external cause"
+            },
+            {
+              "code": "B9789",
+              "title": "Other viral agents as the cause of diseases classified elsewhere"
+            },
+            {
+              "code": "Y830",
+              "title": "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+            },
+            {
+              "code": "T451X5A",
+              "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter"
+            },
+            {
+              "code": "T3695XA",
+              "title": "Adverse effect of unspecified systemic antibiotic, initial encounter"
+            },
+            {
+              "code": "Y92230",
+              "title": "Patient room in hospital as the place of occurrence of the external cause"
+            },
+            {
+              "code": "Z7982",
+              "title": "Long term (current) use of aspirin"
+            },
+            {
+              "code": "R000",
+              "title": "Tachycardia, unspecified"
+            },
+            {
+              "code": "R1310",
+              "title": "Dysphagia, unspecified"
+            },
+            {
+              "code": "R112",
+              "title": "Nausea with vomiting, unspecified"
+            },
+            {
+              "code": "E861",
+              "title": "Hypovolemia"
+            },
+            {
+              "code": "I129",
+              "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+            },
+            {
+              "code": "N183",
+              "title": "Chronic kidney disease, stage 3 (moderate)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient, a metastatic sarcoma patient with a history of chemotherapy and hematological issues, presents with weakness, anemia, thrombocytopenia, and a fall resulting in minor abrasions and soreness. The patient also has a history of hypotension and headache.",
+      "most_likely": "Anemia due to antineoplastic chemotherapy",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Anemia due to antineoplastic chemotherapy",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "D6959",
+          "supporting_evidence": [
+            "Anemia due to antineoplastic chemotherapy, D6959"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Anemia is severe and directly related to prior chemotherapy, supported by lab results."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Thrombocytopenia due to antineoplastic chemotherapy",
+          "score": 75.0,
+          "confidence": "high",
+          "category": "complication",
+          "snomed_aligned": "D6481",
+          "supporting_evidence": [
+            "Thrombocytopenia, D6481"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Thrombocytopenia is mild but related to prior chemotherapy, supported by lab results."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Hypotension due to cytokine effects or chemotherapy side effects",
+          "score": 65.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Hypotension, I129, E8342"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Hypotension is historical and may be due to cytokine effects or chemotherapy side effects."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Metastatic sarcoma to the brain",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "443144000",
+          "supporting_evidence": [
+            "Metastatic sarcoma, 443144000"
+          ],
+          "opposing_evidence": [
+            "No recent symptoms or imaging findings"
+          ],
+          "reasoning": "Metastatic sarcoma is a known comorbidity but not currently presenting acutely."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Headache",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "symptom",
+          "snomed_aligned": "21522001",
+          "supporting_evidence": [
+            "Headache, 21522001"
+          ],
+          "opposing_evidence": [
+            "No recent imaging findings"
+          ],
+          "reasoning": "Headache is present but not associated with acute findings."
+        }
+      ],
+      "rule_outs": [
+        {
+          "diagnosis": "Pulmonary embolism",
+          "why": "No current symptoms or imaging findings."
+        }
+      ],
+      "uncertain_areas": [
+        "Further imaging or clinical follow-up to confirm anemia and thrombocytopenia etiology"
+      ],
+      "n_candidates": 5,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "16014068",
+      "hadm_id": "29042843",
+      "generated_at": "2026-08-09T00:46:00.047231",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 7,
+        "retained_links": 7,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 9,
+        "prior_icd_codes": 138,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 21573999,
+          "admittime": "2186-09-10 11:29:00",
+          "dischtime": "2186-09-13 13:30:00",
+          "admission_type": "ELECTIVE",
+          "primary_icd_code": "Z5111",
+          "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+          "n_diagnoses": 6,
+          "icd10_diagnoses": [
+            {
+              "code": "Z5111",
+              "title": "Encounter for antineoplastic chemotherapy"
+            },
+            {
+              "code": "C4021",
+              "title": "Malignant neoplasm of long bones of right lower limb"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "K449",
+              "title": "Diaphragmatic hernia without obstruction or gangrene"
+            }
+          ]
+        },
+        {
+          "hadm_id": 25360978,
+          "admittime": "2186-10-08 11:25:00",
+          "dischtime": "2186-10-11 12:38:00",
+          "admission_type": "ELECTIVE",
+          "primary_icd_code": "Z5111",
+          "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+          "n_diagnoses": 12,
+          "icd10_diagnoses": [
+            {
+              "code": "Z5111",
+              "title": "Encounter for antineoplastic chemotherapy"
+            },
+            {
+              "code": "C4021",
+              "title": "Malignant neoplasm of long bones of right lower limb"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "K521",
+              "title": "Toxic gastroenteritis and colitis"
+            },
+            {
+              "code": "T451X5A",
+              "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter"
+            },
+            {
+              "code": "R040",
+              "title": "Epistaxis"
+            },
+            {
+              "code": "D6959",
+              "title": "Other secondary thrombocytopenia"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "K449",
+              "title": "Diaphragmatic hernia without obstruction or gangrene"
+            }
+          ]
+        },
+        {
+          "hadm_id": 23909475,
+          "admittime": "2186-10-29 11:18:00",
+          "dischtime": "2186-11-01 12:45:00",
+          "admission_type": "ELECTIVE",
+          "primary_icd_code": "Z5111",
+          "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+          "n_diagnoses": 12,
+          "icd10_diagnoses": [
+            {
+              "code": "Z5111",
+              "title": "Encounter for antineoplastic chemotherapy"
+            },
+            {
+              "code": "C4021",
+              "title": "Malignant neoplasm of long bones of right lower limb"
+            },
+            {
+              "code": "K521",
+              "title": "Toxic gastroenteritis and colitis"
+            },
+            {
+              "code": "D6481",
+              "title": "Anemia due to antineoplastic chemotherapy"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "K449",
+              "title": "Diaphragmatic hernia without obstruction or gangrene"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "R2231",
+              "title": "Localized swelling, mass and lump, right upper limb"
+            },
+            {
+              "code": "T451X5D",
+              "title": "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter"
+            }
+          ]
+        },
+        {
+          "hadm_id": 22582376,
+          "admittime": "2186-11-19 11:31:00",
+          "dischtime": "2186-11-23 18:00:00",
+          "admission_type": "ELECTIVE",
+          "primary_icd_code": "Z5111",
+          "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+          "n_diagnoses": 14,
+          "icd10_diagnoses": [
+            {
+              "code": "Z5111",
+              "title": "Encounter for antineoplastic chemotherapy"
+            },
+            {
+              "code": "C4021",
+              "title": "Malignant neoplasm of long bones of right lower limb"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "E8351",
+              "title": "Hypocalcemia"
+            },
+            {
+              "code": "E8342",
+              "title": "Hypomagnesemia"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "D638",
+              "title": "Anemia in other chronic diseases classified elsewhere"
+            },
+            {
+              "code": "T451X5S",
+              "title": "Adverse effect of antineoplastic and immunosuppressive drugs, sequela"
+            },
+            {
+              "code": "R197",
+              "title": "Diarrhea, unspecified"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "K449",
+              "title": "Diaphragmatic hernia without obstruction or gangrene"
+            }
+          ]
+        },
+        {
+          "hadm_id": 25483652,
+          "admittime": "2186-11-29 12:54:00",
+          "dischtime": "2186-12-03 13:10:00",
+          "admission_type": "DIRECT EMER.",
+          "primary_icd_code": "N179",
+          "primary_dx_title": "Acute kidney failure, unspecified",
+          "n_diagnoses": 14,
+          "icd10_diagnoses": [
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "D61810",
+              "title": "Antineoplastic chemotherapy induced pancytopenia"
+            },
+            {
+              "code": "C4021",
+              "title": "Malignant neoplasm of long bones of right lower limb"
+            },
+            {
+              "code": "D6959",
+              "title": "Other secondary thrombocytopenia"
+            },
+            {
+              "code": "D6481",
+              "title": "Anemia due to antineoplastic chemotherapy"
+            },
+            {
+              "code": "T451X5D",
+              "title": "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "E8342",
+              "title": "Hypomagnesemia"
+            },
+            {
+              "code": "E876",
+              "title": "Hypokalemia"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "K449",
+              "title": "Diaphragmatic hernia without obstruction or gangrene"
+            },
+            {
+              "code": "Z515",
+              "title": "Encounter for palliative care"
+            }
+          ]
+        },
+        {
+          "hadm_id": 25305597,
+          "admittime": "2187-03-22 18:32:00",
+          "dischtime": "2187-04-13 13:18:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "I2699",
+          "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+          "n_diagnoses": 20,
+          "icd10_diagnoses": [
+            {
+              "code": "I2699",
+              "title": "Other pulmonary embolism without acute cor pulmonale"
+            },
+            {
+              "code": "C4921",
+              "title": "Malignant neoplasm of connective and soft tissue of right lower limb, including hip"
+            },
+            {
+              "code": "C775",
+              "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+            },
+            {
+              "code": "I82431",
+              "title": "Acute embolism and thrombosis of right popliteal vein"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "D696",
+              "title": "Thrombocytopenia, unspecified"
+            },
+            {
+              "code": "N183",
+              "title": "Chronic kidney disease, stage 3 (moderate)"
+            },
+            {
+              "code": "E871",
+              "title": "Hypo-osmolality and hyponatremia"
+            },
+            {
+              "code": "D62",
+              "title": "Acute posthemorrhagic anemia"
+            },
+            {
+              "code": "I82491",
+              "title": "Acute embolism and thrombosis of other specified deep vein of right lower extremity"
+            },
+            {
+              "code": "Z9221",
+              "title": "Personal history of antineoplastic chemotherapy"
+            },
+            {
+              "code": "Z96641",
+              "title": "Presence of right artificial hip joint"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "Y92239",
+              "title": "Unspecified place in hospital as the place of occurrence of the external cause"
+            },
+            {
+              "code": "F419",
+              "title": "Anxiety disorder, unspecified"
+            },
+            {
+              "code": "K5730",
+              "title": "Diverticulosis of large intestine without perforation or abscess without bleeding"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "R509",
+              "title": "Fever, unspecified"
+            },
+            {
+              "code": "K649",
+              "title": "Unspecified hemorrhoids"
+            },
+            {
+              "code": "Y838",
+              "title": "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+            }
+          ]
+        },
+        {
+          "hadm_id": 27129757,
+          "admittime": "2187-06-14 21:13:00",
+          "dischtime": "2187-06-18 16:30:00",
+          "admission_type": "URGENT",
+          "primary_icd_code": "D62",
+          "primary_dx_title": "Acute posthemorrhagic anemia",
+          "n_diagnoses": 15,
+          "icd10_diagnoses": [
+            {
+              "code": "D62",
+              "title": "Acute posthemorrhagic anemia"
+            },
+            {
+              "code": "D684",
+              "title": "Acquired coagulation factor deficiency"
+            },
+            {
+              "code": "N183",
+              "title": "Chronic kidney disease, stage 3 (moderate)"
+            },
+            {
+              "code": "C4921",
+              "title": "Malignant neoplasm of connective and soft tissue of right lower limb, including hip"
+            },
+            {
+              "code": "C775",
+              "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+            },
+            {
+              "code": "I2782",
+              "title": "Chronic pulmonary embolism"
+            },
+            {
+              "code": "M96830",
+              "title": "Postprocedural hemorrhage of a musculoskeletal structure following a musculoskeletal system procedure"
+            },
+            {
+              "code": "I129",
+              "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "K449",
+              "title": "Diaphragmatic hernia without obstruction or gangrene"
+            },
+            {
+              "code": "F419",
+              "title": "Anxiety disorder, unspecified"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "M79606",
+              "title": "Pain in leg, unspecified"
+            },
+            {
+              "code": "Z9221",
+              "title": "Personal history of antineoplastic chemotherapy"
+            }
+          ]
+        },
+        {
+          "hadm_id": 26538856,
+          "admittime": "2187-07-05 17:45:00",
+          "dischtime": "2187-07-12 15:49:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "C4021",
+          "primary_dx_title": "Malignant neoplasm of long bones of right lower limb",
+          "n_diagnoses": 18,
+          "icd10_diagnoses": [
+            {
+              "code": "C4021",
+              "title": "Malignant neoplasm of long bones of right lower limb"
+            },
+            {
+              "code": "D6189",
+              "title": "Other specified aplastic anemias and other bone marrow failure syndromes"
+            },
+            {
+              "code": "L89322",
+              "title": "Pressure ulcer of left buttock, stage 2"
+            },
+            {
+              "code": "C775",
+              "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+            },
+            {
+              "code": "N183",
+              "title": "Chronic kidney disease, stage 3 (moderate)"
+            },
+            {
+              "code": "D696",
+              "title": "Thrombocytopenia, unspecified"
+            },
+            {
+              "code": "E538",
+              "title": "Deficiency of other specified B group vitamins"
+            },
+            {
+              "code": "E871",
+              "title": "Hypo-osmolality and hyponatremia"
+            },
+            {
+              "code": "I129",
+              "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+            },
+            {
+              "code": "R918",
+              "title": "Other nonspecific abnormal finding of lung field"
+            },
+            {
+              "code": "Z86711",
+              "title": "Personal history of pulmonary embolism"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "Z87891",
+              "title": "Personal history of nicotine dependence"
+            },
+            {
+              "code": "M7981",
+              "title": "Nontraumatic hematoma of soft tissue"
+            },
+            {
+              "code": "E8342",
+              "title": "Hypomagnesemia"
+            },
+            {
+              "code": "E8809",
+              "title": "Other disorders of plasma-protein metabolism, not elsewhere classified"
+            },
+            {
+              "code": "R791",
+              "title": "Abnormal coagulation profile"
+            }
+          ]
+        },
+        {
+          "hadm_id": 21400037,
+          "admittime": "2187-08-05 22:33:00",
+          "dischtime": "2187-08-15 16:45:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "I2699",
+          "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+          "n_diagnoses": 27,
+          "icd10_diagnoses": [
+            {
+              "code": "I2699",
+              "title": "Other pulmonary embolism without acute cor pulmonale"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "C775",
+              "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+            },
+            {
+              "code": "C7801",
+              "title": "Secondary malignant neoplasm of right lung"
+            },
+            {
+              "code": "C7802",
+              "title": "Secondary malignant neoplasm of left lung"
+            },
+            {
+              "code": "I959",
+              "title": "Hypotension, unspecified"
+            },
+            {
+              "code": "D696",
+              "title": "Thrombocytopenia, unspecified"
+            },
+            {
+              "code": "L03312",
+              "title": "Cellulitis of back [any part except buttock]"
+            },
+            {
+              "code": "C7931",
+              "title": "Secondary malignant neoplasm of brain"
+            },
+            {
+              "code": "Z85830",
+              "title": "Personal history of malignant neoplasm of bone"
+            },
+            {
+              "code": "M7981",
+              "title": "Nontraumatic hematoma of soft tissue"
+            },
+            {
+              "code": "T45515A",
+              "title": "Adverse effect of anticoagulants, initial encounter"
+            },
+            {
+              "code": "F419",
+              "title": "Anxiety disorder, unspecified"
+            },
+            {
+              "code": "Y929",
+              "title": "Unspecified place or not applicable"
+            },
+            {
+              "code": "G893",
+              "title": "Neoplasm related pain (acute) (chronic)"
+            },
+            {
+              "code": "Z515",
+              "title": "Encounter for palliative care"
+            },
+            {
+              "code": "Z66",
+              "title": "Do not resuscitate"
+            },
+            {
+              "code": "E861",
+              "title": "Hypovolemia"
+            },
+            {
+              "code": "Z86711",
+              "title": "Personal history of pulmonary embolism"
+            },
+            {
+              "code": "Z86718",
+              "title": "Personal history of other venous thrombosis and embolism"
+            },
+            {
+              "code": "G629",
+              "title": "Polyneuropathy, unspecified"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "R509",
+              "title": "Fever, unspecified"
+            },
+            {
+              "code": "F329",
+              "title": "Major depressive disorder, single episode, unspecified"
+            },
+            {
+              "code": "R5383",
+              "title": "Other fatigue"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "D500",
+              "title": "Iron deficiency anemia secondary to blood loss (chronic)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease, hepatitis C, and alcohol abuse.",
+      "most_likely": "Severe sepsis with septic shock",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Severe sepsis with septic shock",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Admission for septic shock",
+            "Klebsiella Aerogenes blood cultures grew"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition and multiple organ dysfunction."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Acute liver failure",
+          "score": 75.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Acute liver failure (197270009)",
+          "supporting_evidence": [
+            "Worsening liver failure",
+            "Bilirubin, Total 13.3 mg/dL",
+            "ALT 439 IU/L",
+            "AST 2481 IU/L"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Acute liver failure is consistent with the patient's liver function test results and clinical presentation."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Hepatic encephalopathy",
+          "score": 70.0,
+          "confidence": "high",
+          "category": "complication",
+          "snomed_aligned": "Hepatic encephalopathy (13920009)",
+          "supporting_evidence": [
+            "concerning for hepatic encephalopathy",
+            "RASS-5",
+            "sluggish pupil response"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Hepatic encephalopathy is a complication of severe liver failure and sepsis."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "GI bleeding",
+          "score": 65.0,
+          "confidence": "high",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "black coffee-ground GI contents",
+            "Platelet Count 44.0 K/uL",
+            "Bleeding from esophagus"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "GI bleeding is a complication of esophageal varices and liver failure."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Pancytopenia",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Platelet Count 44.0 K/uL",
+            "Hematocrit 25.3 %",
+            "Hemoglobin 8.3 g/dL"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Pancytopenia is a complication of liver failure and sepsis, but the evidence is less robust."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Atrial fibrillation/flutter",
+          "score": 50.0,
+          "confidence": "high",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
+            "INR(PT) 3.4",
+            "PT 36.5 sec",
+            "PTT 104.2 sec"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Atrial fibrillation/flutter is a known risk factor for stroke and thromboembolic events."
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Pleural effusion",
+          "score": 45.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "Pleural effusion (60046008)",
+          "supporting_evidence": [
+            "large pleural effusion with compressive consolidation versus atelectasis",
+            "Bilateral effusions right greater than left"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Pleural effusion is a complication of liver failure and sepsis, but the evidence is less robust."
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Worsening liver failure",
+          "score": 40.0,
+          "confidence": "high",
+          "category": "complication",
+          "snomed_aligned": "Acute liver failure (197270009)",
+          "supporting_evidence": [
+            "worsening liver failure",
+            "Bilirubin, Total 13.3 mg/dL",
+            "ALT 439 IU/L",
+            "AST 2481 IU/L"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Worsening liver failure is a complication of the patient's chronic liver disease and current sepsis."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "More detailed information on the source of sepsis and specific causative organisms would refine the differential diagnosis"
+      ],
+      "n_candidates": 8,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "17774110",
+      "hadm_id": "27339772",
+      "generated_at": "2026-08-09T00:46:20.823473",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 15,
+        "retained_links": 20,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 2,
+        "prior_icd_codes": 34,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 20726415,
+          "admittime": "2158-03-08 18:27:00",
+          "dischtime": "2158-03-15 21:20:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "E279",
+          "primary_dx_title": "Disorder of adrenal gland, unspecified",
+          "n_diagnoses": 16,
+          "icd10_diagnoses": [
+            {
+              "code": "E279",
+              "title": "Disorder of adrenal gland, unspecified"
+            },
+            {
+              "code": "I8510",
+              "title": "Secondary esophageal varices without bleeding"
+            },
+            {
+              "code": "C220",
+              "title": "Liver cell carcinoma"
+            },
+            {
+              "code": "K7469",
+              "title": "Other cirrhosis of liver"
+            },
+            {
+              "code": "K7210",
+              "title": "Chronic hepatic failure without coma"
+            },
+            {
+              "code": "J449",
+              "title": "Chronic obstructive pulmonary disease, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "B182",
+              "title": "Chronic viral hepatitis C"
+            },
+            {
+              "code": "R410",
+              "title": "Disorientation, unspecified"
+            },
+            {
+              "code": "F319",
+              "title": "Bipolar disorder, unspecified"
+            },
+            {
+              "code": "F909",
+              "title": "Attention-deficit hyperactivity disorder, unspecified type"
+            },
+            {
+              "code": "G4700",
+              "title": "Insomnia, unspecified"
+            },
+            {
+              "code": "F17210",
+              "title": "Nicotine dependence, cigarettes, uncomplicated"
+            },
+            {
+              "code": "K2270",
+              "title": "Barrett's esophagus without dysplasia"
+            },
+            {
+              "code": "Z590",
+              "title": "Homelessness"
+            },
+            {
+              "code": "Z98890",
+              "title": "Other specified postprocedural states"
+            }
+          ]
+        },
+        {
+          "hadm_id": 27309668,
+          "admittime": "2159-01-19 17:18:00",
+          "dischtime": "2159-01-21 15:00:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "K7200",
+          "primary_dx_title": "Acute and subacute hepatic failure without coma",
+          "n_diagnoses": 18,
+          "icd10_diagnoses": [
+            {
+              "code": "K7200",
+              "title": "Acute and subacute hepatic failure without coma"
+            },
+            {
+              "code": "C7970",
+              "title": "Secondary malignant neoplasm of unspecified adrenal gland"
+            },
+            {
+              "code": "E871",
+              "title": "Hypo-osmolality and hyponatremia"
+            },
+            {
+              "code": "D684",
+              "title": "Acquired coagulation factor deficiency"
+            },
+            {
+              "code": "K7210",
+              "title": "Chronic hepatic failure without coma"
+            },
+            {
+              "code": "K7460",
+              "title": "Unspecified cirrhosis of liver"
+            },
+            {
+              "code": "B1920",
+              "title": "Unspecified viral hepatitis C without hepatic coma"
+            },
+            {
+              "code": "F901",
+              "title": "Attention-deficit hyperactivity disorder, predominantly hyperactive type"
+            },
+            {
+              "code": "F319",
+              "title": "Bipolar disorder, unspecified"
+            },
+            {
+              "code": "J449",
+              "title": "Chronic obstructive pulmonary disease, unspecified"
+            },
+            {
+              "code": "R040",
+              "title": "Epistaxis"
+            },
+            {
+              "code": "G4700",
+              "title": "Insomnia, unspecified"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "K2270",
+              "title": "Barrett's esophagus without dysplasia"
+            },
+            {
+              "code": "F17210",
+              "title": "Nicotine dependence, cigarettes, uncomplicated"
+            },
+            {
+              "code": "Z9221",
+              "title": "Personal history of antineoplastic chemotherapy"
+            },
+            {
+              "code": "Z79899",
+              "title": "Other long term (current) drug therapy"
+            },
+            {
+              "code": "Z7982",
+              "title": "Long term (current) use of aspirin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "Patient presents with post-procedural pain and tenderness in the abdomen following a cryoablation for a desmoid tumor. History includes a previous neoplasm of uncertain behavior of connective and other soft tissue and chronic viral hepatitis C.",
+      "most_likely": "Post-procedural pain",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Post-procedural pain",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Abdominal pain",
+          "supporting_evidence": [
+            "post-procedural pain in the right side of the abdomen"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary diagnosis given the patient's recent cryoablation procedure and current symptoms."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Desmoid tumor",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "abdominal pain tender in the right upper and right lower quadrant to palpation"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Secondary to the ongoing desmoid tumor and post-procedural pain."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Hepatitis C",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "risk_factor",
+          "snomed_aligned": "Viral hepatitis C",
+          "supporting_evidence": [
+            "history of chronic viral hepatitis C"
+          ],
+          "opposing_evidence": [
+            "no current symptoms or signs of acute hepatitis"
+          ],
+          "reasoning": "Chronic condition, but not currently manifesting acute symptoms."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Anemia",
+          "score": 40.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "low Hemoglobin and Hematocrit values"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Low Hemoglobin and Hematocrit suggest anemia, but no specific cause identified."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Electrolyte imbalance",
+          "score": 30.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "low Calcium and Magnesium levels"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Low Calcium and Magnesium levels, but no acute symptoms."
+        }
+      ],
+      "rule_outs": [
+        {
+          "diagnosis": "Acute infection",
+          "why": "No fever, chills, or other signs of acute infection."
+        }
+      ],
+      "uncertain_areas": [
+        "Further details on the nature of post-procedural pain and any signs of acute infection would help refine the differential."
+      ],
+      "n_candidates": 5,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "generated_at": "2026-08-09T00:46:34.909514",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 8,
+        "retained_links": 9,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 1,
+        "prior_icd_codes": 9,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 23635816,
+          "admittime": "2181-09-05 21:21:00",
+          "dischtime": "2181-09-06 21:15:00",
+          "admission_type": "DIRECT OBSERVATION",
+          "primary_icd_code": "D481",
+          "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+          "n_diagnoses": 9,
+          "icd10_diagnoses": [
+            {
+              "code": "D481",
+              "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+            },
+            {
+              "code": "G8918",
+              "title": "Other acute postprocedural pain"
+            },
+            {
+              "code": "R112",
+              "title": "Nausea with vomiting, unspecified"
+            },
+            {
+              "code": "E669",
+              "title": "Obesity, unspecified"
+            },
+            {
+              "code": "Z6832",
+              "title": "Body mass index [BMI] 32.0-32.9, adult"
+            },
+            {
+              "code": "B182",
+              "title": "Chronic viral hepatitis C"
+            },
+            {
+              "code": "G8929",
+              "title": "Other chronic pain"
+            },
+            {
+              "code": "R109",
+              "title": "Unspecified abdominal pain"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "A 30-year-old female with a history of Type 1 Diabetes Mellitus (T1DM) and recurrent DKA presents with DKA, lactic acidosis, and signs of potential complications including missed abortion and C. difficile colitis.",
+      "most_likely": "Diabetic Ketoacidosis",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Diabetic Ketoacidosis",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Diabetic ketoacidosis",
+          "supporting_evidence": [
+            "admission with DKA/lactic acidosis"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary presentation and confirmed diagnosis."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Missed Abortion",
+          "score": 70.0,
+          "confidence": "high",
+          "category": "complication",
+          "snomed_aligned": "Missed abortion",
+          "supporting_evidence": [
+            "Missed abortion requiring D&C"
+          ],
+          "opposing_evidence": [
+            "No current signs of active bleeding"
+          ],
+          "reasoning": "History of missed abortion and current symptoms may indicate recurrence."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "C difficile Colitis",
+          "score": 65.0,
+          "confidence": "medium",
+          "category": "differential",
+          "snomed_aligned": "C difficile colitis",
+          "supporting_evidence": [
+            "C difficile colitis along with diarrhea"
+          ],
+          "opposing_evidence": [
+            "No infectious precipitants identified"
+          ],
+          "reasoning": "Clinical suspicion based on symptoms and labs, but no clear evidence."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Lactic Acidosis",
+          "score": 60.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Lactate: 3.6 mmol/L"
+          ],
+          "opposing_evidence": [
+            "No clear cause identified"
+          ],
+          "reasoning": "Secondary to DKA but could be an independent issue."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Vaginal Bleeding",
+          "score": 55.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "Bleeding from vagina",
+          "supporting_evidence": [
+            "vaginal spotting"
+          ],
+          "opposing_evidence": [
+            "No active bleeding"
+          ],
+          "reasoning": "Historical symptom with no current signs of active bleeding."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Decreased Fetal Movement",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "Low fetal movement",
+          "supporting_evidence": [
+            "decreased fetal movement"
+          ],
+          "opposing_evidence": [
+            "No signs of active fetal distress"
+          ],
+          "reasoning": "Historical symptom with no current signs of fetal compromise."
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Abdominal Pain",
+          "score": 45.0,
+          "confidence": "medium",
+          "category": "differential",
+          "snomed_aligned": "Abdominal pain",
+          "supporting_evidence": [
+            "lower abdominal pain/cramping for the past week"
+          ],
+          "opposing_evidence": [
+            "No signs of acute abdomen"
+          ],
+          "reasoning": "Historical symptom with no current signs of acute abdomen."
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Headache",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "pressure-like frontal headache"
+          ],
+          "opposing_evidence": [
+            "No signs of neurological compromise"
+          ],
+          "reasoning": "Historical symptom with no current signs of neurological compromise."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "Need more information on infectious causes and specific lab results to refine differential"
+      ],
+      "n_candidates": 8,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "19104262",
+      "hadm_id": "24271247",
+      "generated_at": "2026-08-09T00:46:51.752694",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 13,
+        "retained_links": 15,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 5,
+        "prior_icd_codes": 46,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 28850223,
+          "admittime": "2118-07-28 18:08:00",
+          "dischtime": "2118-07-31 15:06:00",
+          "admission_type": "EW EMER.",
+          "primary_icd_code": "O99281",
+          "primary_dx_title": "Endocrine, nutritional and metabolic diseases complicating pregnancy, first trimester",
+          "n_diagnoses": 11,
+          "icd10_diagnoses": [
+            {
+              "code": "O99281",
+              "title": "Endocrine, nutritional and metabolic diseases complicating pregnancy, first trimester"
+            },
+            {
+              "code": "O98811",
+              "title": "Other maternal infectious and parasitic diseases complicating pregnancy, first trimester"
+            },
+            {
+              "code": "E1010",
+              "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
+            },
+            {
+              "code": "A047",
+              "title": "Enterocolitis due to Clostridium difficile"
+            },
+            {
+              "code": "E10649",
+              "title": "Type 1 diabetes mellitus with hypoglycemia without coma"
+            },
+            {
+              "code": "O021",
+              "title": "Missed abortion"
+            },
+            {
+              "code": "Z794",
+              "title": "Long term (current) use of insulin"
+            },
+            {
+              "code": "O468X1",
+              "title": "Other antepartum hemorrhage, first trimester"
+            },
+            {
+              "code": "Z3A01",
+              "title": "Less than 8 weeks gestation of pregnancy"
+            },
+            {
+              "code": "R300",
+              "title": "Dysuria"
+            },
+            {
+              "code": "O9989",
+              "title": "Other specified diseases and conditions complicating pregnancy, childbirth and the puerperium"
+            }
+          ]
+        },
+        {
+          "hadm_id": 21002595,
+          "admittime": "2119-12-18 18:18:00",
+          "dischtime": "2119-12-24 13:58:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "O24011",
+          "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester",
+          "n_diagnoses": 15,
+          "icd10_diagnoses": [
+            {
+              "code": "O24011",
+              "title": "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester"
+            },
+            {
+              "code": "E1065",
+              "title": "Type 1 diabetes mellitus with hyperglycemia"
+            },
+            {
+              "code": "O2341",
+              "title": "Unspecified infection of urinary tract in pregnancy, first trimester"
+            },
+            {
+              "code": "O98811",
+              "title": "Other maternal infectious and parasitic diseases complicating pregnancy, first trimester"
+            },
+            {
+              "code": "O98511",
+              "title": "Other viral diseases complicating pregnancy, first trimester"
+            },
+            {
+              "code": "K047",
+              "title": "Periapical abscess without sinus"
+            },
+            {
+              "code": "E109",
+              "title": "Type 1 diabetes mellitus without complications"
+            },
+            {
+              "code": "X58XXXA",
+              "title": "Exposure to other specified factors, initial encounter"
+            },
+            {
+              "code": "K029",
+              "title": "Dental caries, unspecified"
+            },
+            {
+              "code": "A6000",
+              "title": "Herpesviral infection of urogenital system, unspecified"
+            },
+            {
+              "code": "S025XXA",
+              "title": "Fracture of tooth (traumatic), initial encounter for closed fracture"
+            },
+            {
+              "code": "Z794",
+              "title": "Long term (current) use of insulin"
+            },
+            {
+              "code": "Z3A09",
+              "title": "9 weeks gestation of pregnancy"
+            },
+            {
+              "code": "Y929",
+              "title": "Unspecified place or not applicable"
+            },
+            {
+              "code": "Z8759",
+              "title": "Personal history of other complications of pregnancy, childbirth and the puerperium"
+            }
+          ]
+        },
+        {
+          "hadm_id": 29808351,
+          "admittime": "2120-01-20 23:07:00",
+          "dischtime": "2120-01-22 11:00:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "O24011",
+          "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester",
+          "n_diagnoses": 4,
+          "icd10_diagnoses": [
+            {
+              "code": "O24011",
+              "title": "Pre-existing type 1 diabetes mellitus, in pregnancy, first trimester"
+            },
+            {
+              "code": "E1010",
+              "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
+            },
+            {
+              "code": "Z3A13",
+              "title": "13 weeks gestation of pregnancy"
+            },
+            {
+              "code": "Z794",
+              "title": "Long term (current) use of insulin"
+            }
+          ]
+        },
+        {
+          "hadm_id": 26440534,
+          "admittime": "2120-03-29 20:20:00",
+          "dischtime": "2120-03-30 19:30:00",
+          "admission_type": "URGENT",
+          "primary_icd_code": "O24012",
+          "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in pregnancy, second trimester",
+          "n_diagnoses": 6,
+          "icd10_diagnoses": [
+            {
+              "code": "O24012",
+              "title": "Pre-existing type 1 diabetes mellitus, in pregnancy, second trimester"
+            },
+            {
+              "code": "E1010",
+              "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
+            },
+            {
+              "code": "O9989",
+              "title": "Other specified diseases and conditions complicating pregnancy, childbirth and the puerperium"
+            },
+            {
+              "code": "Z3A23",
+              "title": "23 weeks gestation of pregnancy"
+            },
+            {
+              "code": "Z794",
+              "title": "Long term (current) use of insulin"
+            },
+            {
+              "code": "R109",
+              "title": "Unspecified abdominal pain"
+            }
+          ]
+        },
+        {
+          "hadm_id": 26217333,
+          "admittime": "2120-05-14 07:32:00",
+          "dischtime": "2120-05-18 16:29:00",
+          "admission_type": "DIRECT EMER.",
+          "primary_icd_code": "O1493",
+          "primary_dx_title": "Unspecified pre-eclampsia, third trimester",
+          "n_diagnoses": 10,
+          "icd10_diagnoses": [
+            {
+              "code": "O1493",
+              "title": "Unspecified pre-eclampsia, third trimester"
+            },
+            {
+              "code": "O24013",
+              "title": "Pre-existing type 1 diabetes mellitus, in pregnancy, third trimester"
+            },
+            {
+              "code": "O4703",
+              "title": "False labor before 37 completed weeks of gestation, third trimester"
+            },
+            {
+              "code": "E1065",
+              "title": "Type 1 diabetes mellitus with hyperglycemia"
+            },
+            {
+              "code": "O365130",
+              "title": "Maternal care for known or suspected placental insufficiency, third trimester, not applicable or unspecified"
+            },
+            {
+              "code": "O365930",
+              "title": "Maternal care for other known or suspected poor fetal growth, third trimester, not applicable or unspecified"
+            },
+            {
+              "code": "O368130",
+              "title": "Decreased fetal movements, third trimester, not applicable or unspecified"
+            },
+            {
+              "code": "O358XX0",
+              "title": "Maternal care for other (suspected) fetal abnormality and damage, not applicable or unspecified"
+            },
+            {
+              "code": "Z3A30",
+              "title": "30 weeks gestation of pregnancy"
+            },
+            {
+              "code": "Z794",
+              "title": "Long term (current) use of insulin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "The patient presents with acute on chronic dyspnea on exertion and fatigue, alongside macrocytic anemia, a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
+      "most_likely": "Acute on chronic macrocytic anemia",
+      "differential": [
+        {
+          "rank": 1,
+          "diagnosis": "Acute on chronic macrocytic anemia",
+          "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Macrocytic anemia",
+          "supporting_evidence": [
+            "acute on chronic macrocytic anemia (CURRENT symptom tree)"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Primary cause of current dyspnea and fatigue, supported by abnormal lab values."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Coronary artery disease",
+          "score": 75.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "Coronary arteriosclerosis",
+          "supporting_evidence": [
+            "history of CAD (PRIOR ICDs), worsening dyspnea (CURRENT symptom tree)"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "CAD is a known comorbidity and may contribute to current symptoms."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Atrial fibrillation",
+          "score": 65.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "Atrial fibrillation",
+          "supporting_evidence": [
+            "history of Afib (PRIOR ICDs), INR elevated (CURRENT labs)"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Atrial fibrillation is a known risk factor and may be complicating current anemia."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Sick sinus syndrome",
+          "score": 55.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "history of sick sinus syndrome (PRIOR ICDs)"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Sick sinus syndrome is a known risk factor but not currently contributing to acute symptoms."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Acute kidney failure",
+          "score": 45.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "history of acute kidney failure (PRIOR ICDs)"
+          ],
+          "opposing_evidence": [
+            "current labs within normal range"
+          ],
+          "reasoning": "History of acute kidney failure, but current labs do not support acute renal failure."
+        }
+      ],
+      "rule_outs": [],
+      "uncertain_areas": [
+        "Additional labs for iron, B12, and folate levels would clarify the etiology of macrocytic anemia"
+      ],
+      "n_candidates": 5,
+      "type": "differential_diagnosis",
+      "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+      "_agent": "differential_diagnosis",
+      "_temperature": 0.4,
+      "patient_id": "19632936",
+      "hadm_id": "26696232",
+      "generated_at": "2026-08-09T00:47:04.566143",
+      "inputs": {
+        "symptom_tree": true,
+        "retained_snomed_entities": 14,
+        "retained_links": 18,
+        "clinical_context": true,
+        "information_extraction": true,
+        "prior_admissions": 1,
+        "prior_icd_codes": 18,
+        "prior_icd_context": true,
+        "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+        "temperature": 0.4
+      },
+      "prior_icd_context": [
+        {
+          "hadm_id": 28139980,
+          "admittime": "2139-11-06 17:01:00",
+          "dischtime": "2139-11-09 13:00:00",
+          "admission_type": "OBSERVATION ADMIT",
+          "primary_icd_code": "D62",
+          "primary_dx_title": "Acute posthemorrhagic anemia",
+          "n_diagnoses": 18,
+          "icd10_diagnoses": [
+            {
+              "code": "D62",
+              "title": "Acute posthemorrhagic anemia"
+            },
+            {
+              "code": "N179",
+              "title": "Acute kidney failure, unspecified"
+            },
+            {
+              "code": "I5032",
+              "title": "Chronic diastolic (congestive) heart failure"
+            },
+            {
+              "code": "I272",
+              "title": "Other secondary pulmonary hypertension"
+            },
+            {
+              "code": "E869",
+              "title": "Volume depletion, unspecified"
+            },
+            {
+              "code": "I4891",
+              "title": "Unspecified atrial fibrillation"
+            },
+            {
+              "code": "N281",
+              "title": "Cyst of kidney, acquired"
+            },
+            {
+              "code": "I10",
+              "title": "Essential (primary) hypertension"
+            },
+            {
+              "code": "E785",
+              "title": "Hyperlipidemia, unspecified"
+            },
+            {
+              "code": "I25118",
+              "title": "Atherosclerotic heart disease of native coronary artery with other forms of angina pectoris"
+            },
+            {
+              "code": "I350",
+              "title": "Nonrheumatic aortic (valve) stenosis"
+            },
+            {
+              "code": "R195",
+              "title": "Other fecal abnormalities"
+            },
+            {
+              "code": "Z45018",
+              "title": "Encounter for adjustment and management of other part of cardiac pacemaker"
+            },
+            {
+              "code": "I714",
+              "title": "Abdominal aortic aneurysm, without rupture"
+            },
+            {
+              "code": "K219",
+              "title": "Gastro-esophageal reflux disease without esophagitis"
+            },
+            {
+              "code": "K8080",
+              "title": "Other cholelithiasis without obstruction"
+            },
+            {
+              "code": "Z7901",
+              "title": "Long term (current) use of anticoagulants"
+            },
+            {
+              "code": "Z955",
+              "title": "Presence of coronary angioplasty implant and graft"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

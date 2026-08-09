@@ -8,34 +8,28 @@ Patient ID       : 10361982
 Admission ID     : 24286431
 
 Reasoning:
-  The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and menorrhagia.
+  The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.
 
-Key symptoms     : heavy vaginal bleeding, passing 'munchin' sized clots
-Red flags        : low hematocrit
+Key symptoms     : heavy vaginal bleeding, abdominal bloatedness
+Red flags        : hematocrit decreased
 
-GI → Other
-----------
+GYNECOLOGIC → Obstetrics/Gynecology
+-----------------------------------
 
-  • [present, moderate] heavy vaginal bleeding
+  • [present, severe] heavy vaginal bleeding
       evidence: "heavy vaginal bleeding after hysterectomy"
-      related: HCT-38.1 (low)
-      • [present] passing 'munchin' sized clots
-          evidence: "started passing more clots"
-
-RESPIRATORY → Other
--------------------
-
-  • [history, mild] shortness of breath
-      evidence: "developed some shortness of breath"
-
-CARDIOVASCULAR → Other
-----------------------
-
-  • [present, mild] low hematocrit
-      evidence: "HCT-38.1 (low)"
-
-INFECTIOUS → Other
-------------------
-
-  • [confirmed] abnormal uterine and vaginal bleeding
-      evidence: "history of abnormal uterine and vaginal bleeding"
+      related: hematocrit decreased from 40.1 to 38.1
+      • [present] passing clots
+          evidence: "passing 'munchin' sized clots"
+  • [history, mild] abdominal bloatedness
+      evidence: "abdominal bloatedness secondary to gas"
+  • [history, mild] vaginal spotting to light bleeding
+      evidence: "vaginal spotting to light bleeding"
+  • [history, moderate] menorrhagia
+      evidence: "history of abnormal uterine bleeding"
+  • [history, moderate] dysmenorrhea
+      evidence: "dysmenorrhea"
+  • [history, moderate] intra-menstrual bleeding
+      evidence: "intra-menstrual bleeding"
+  • [history, mild] post-coital bleeding
+      evidence: "post-coital bleeding"

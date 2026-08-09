@@ -1,0 +1,28 @@
+Patient: 13508515  HADM: 21834271
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 7 / 35  |  links: 8
+
+• urine output  [symptom]  → SNOMED: Measure of urine output (364202003)
+    - [is_a] Urine output observable (id=364201005, sim=0.819) [HIGH]
+
+• calf pain  [symptom]  → SNOMED: Calf pain (300954003)
+    - [is_a] Leg pain (id=10601006, sim=0.7409)
+
+• obstructive sleep apnea  [diagnosis]  → SNOMED: Obstructive sleep apnea syndrome (78275009)
+    - [is_a] Sleep apnea (id=73430006, sim=0.8812) [HIGH]
+    - [is_a] Apnea (id=1023001, sim=0.7536)
+
+• Laparoscopic left radical nephrectomy  [procedure]  → SNOMED: Laparoscopic radical nephrectomy (439235001)
+    - [is_a] Radical nephrectomy (id=116033007, sim=0.8022) [HIGH]
+
+• HydrALAZINE  [medication]  → SNOMED: Hydralazine (387125005)
+    - [is_a] Hydrazine and/or hydrazine derivative (id=769166001, sim=0.7578)
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• Calcium, Total  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.721)

@@ -1,7 +1,7 @@
 {
   "stage": 2,
   "checkpoint": true,
-  "updated_at": "2026-07-19T23:13:33.223584",
+  "updated_at": "2026-08-08T15:27:40.495838",
   "n_completed": 15,
   "results": [
     {
@@ -138,11 +138,6 @@
             "evidence": "vaginal spotting to light bleeding"
           },
           {
-            "term": "passing 'munchin' sized clots",
-            "status": "present",
-            "evidence": "started passing more clots"
-          },
-          {
             "term": "menorrhagia",
             "status": "history",
             "evidence": "history of abnormal uterine bleeding"
@@ -150,22 +145,27 @@
           {
             "term": "dysmenorrhea",
             "status": "history",
-            "evidence": "endorses dysmenorrhea"
+            "evidence": "dysmenorrhea"
           },
           {
             "term": "intra-menstrual bleeding",
             "status": "history",
-            "evidence": "endorses intra-menstrual bleeding"
+            "evidence": "intra-menstrual bleeding"
           },
           {
             "term": "post-coital bleeding",
             "status": "history",
-            "evidence": "endorses post-coital bleeding"
+            "evidence": "post-coital bleeding"
           },
           {
             "term": "shortness of breath",
             "status": "history",
-            "evidence": "developed some shortness of breath"
+            "evidence": "shortness of breath"
+          },
+          {
+            "term": "dyspareunia",
+            "status": "history",
+            "evidence": "denies dyspareunia"
           }
         ],
         "vitals": [
@@ -190,19 +190,19 @@
             "name": "WBC",
             "value": "8.7",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "RBC",
             "value": "4.75",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "HGB",
             "value": "12.6",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "HCT",
@@ -214,37 +214,37 @@
             "name": "MCV",
             "value": "80*",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "MCH",
             "value": "26.5",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "MCHC",
             "value": "33.1",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "RDW",
             "value": "13.3",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "RDWSD",
             "value": "38.2",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "PLT COUNT",
             "value": "434*",
             "unit": "",
-            "flag": "unknown"
+            "flag": "normal"
           }
         ],
         "diagnoses_mentioned": [
@@ -255,63 +255,39 @@
         ],
         "medications": [
           {
-            "name": "Acetaminophen",
-            "dose": "1000 mg",
-            "route": "PO",
-            "status": "started"
-          },
-          {
-            "name": "Docusate Sodium",
-            "dose": "100 mg",
-            "route": "PO",
-            "status": "continued"
-          },
-          {
-            "name": "Synthroid",
-            "dose": "50 mcg",
-            "route": "PO",
+            "name": "Levothyroxine",
+            "dose": "50 mcg/day",
+            "route": "oral",
             "status": "continued"
           },
           {
             "name": "Venlafaxine ER",
-            "dose": "75 mg",
-            "route": "PO",
+            "dose": "75 mg daily",
+            "route": "oral",
             "status": "continued"
           },
           {
             "name": "Adderall",
-            "dose": "10 mg",
-            "route": "PO",
+            "dose": "10 mg twice daily",
+            "route": "oral",
             "status": "continued"
+          },
+          {
+            "name": "Acetaminophen",
+            "dose": "1000 mg PO",
+            "route": "oral",
+            "status": "started"
+          },
+          {
+            "name": "Docusate Sodium",
+            "dose": "100 mg PO BID:PRN constipation",
+            "route": "oral",
+            "status": "started"
           }
         ],
         "procedures": [
           {
-            "name": "total laparoscopic hysterectomy",
-            "result": "performed"
-          },
-          {
-            "name": "bilateral salpingectomy",
-            "result": "performed"
-          },
-          {
-            "name": "cystoscopy",
-            "result": "performed"
-          },
-          {
-            "name": "endometrial biopsy",
-            "result": "performed"
-          },
-          {
-            "name": "hysteroscopy",
-            "result": "performed"
-          },
-          {
-            "name": "D&C",
-            "result": "performed"
-          },
-          {
-            "name": "endometrial ablation",
+            "name": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy",
             "result": "performed"
           }
         ],
@@ -1068,56 +1044,51 @@
       ],
       "n_diagnoses": 22,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 7,
-      "diagnosis_count": 17,
+      "symptom_count": 6,
+      "diagnosis_count": 7,
       "extracted": {
         "symptoms": [
           {
             "term": "lightheadedness",
             "status": "present",
-            "evidence": "Patient endorsed having had a fall when she felt lightheaded but no head strike."
+            "evidence": "lightheadedness and palpitations"
           },
           {
             "term": "palpitations",
             "status": "present",
-            "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+            "evidence": "palpitations"
           },
           {
             "term": "headache",
             "status": "present",
-            "evidence": "Patient called EMS for the symptoms earlier of lightheadedness and palpitations at home."
+            "evidence": "headache"
+          },
+          {
+            "term": "fall",
+            "status": "present",
+            "evidence": "fell when she felt lightheaded"
           },
           {
             "term": "pain in right hip",
             "status": "present",
-            "evidence": "When nurse tried to reposition her, patient had pain in her right hip."
+            "evidence": "pain in her right hip"
           },
           {
             "term": "pain in right leg",
             "status": "present",
-            "evidence": "Patient endorsed that when she stood up earlier she had felt pain in her entire right leg - her foot, ankle, leg, hip."
-          },
-          {
-            "term": "chest pain",
-            "status": "absent",
-            "evidence": "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
-          },
-          {
-            "term": "shortness of breath",
-            "status": "absent",
-            "evidence": "Patient denied chest pain, no chest pressure, no palpitations, no shortness of breath."
+            "evidence": "pain in her entire right leg - her foot, ankle, leg, hip"
           }
         ],
         "vitals": [
           {
-            "name": "BMI (kg/m2)",
+            "name": "BMI",
             "value": "22.3",
-            "unit": ""
+            "unit": "kg/m2"
           },
           {
-            "name": "Weight (Lbs)",
+            "name": "Weight",
             "value": "113.98",
-            "unit": ""
+            "unit": "Lbs"
           }
         ],
         "labs": [
@@ -1131,7 +1102,7 @@
             "name": "RDW-SD",
             "value": "47.2",
             "unit": "fL",
-            "flag": "low"
+            "flag": "high"
           },
           {
             "name": "Hyaline Casts",
@@ -1172,115 +1143,96 @@
           {
             "name": "Anion Gap",
             "value": "15.0",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Bicarbonate",
             "value": "25.0",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Calcium, Total",
             "value": "9.2",
-            "unit": "mg/dL",
-            "flag": "low"
+            "unit": "mg/dL"
           },
           {
             "name": "Chloride",
             "value": "102.0",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Creatinine",
             "value": "0.7",
-            "unit": "mg/dL",
-            "flag": "normal"
+            "unit": "mg/dL"
           },
           {
             "name": "Glucose",
             "value": "82.0",
-            "unit": "mg/dL",
-            "flag": "normal"
-          },
-          {
-            "name": "Hematocrit",
-            "value": "36.8",
-            "unit": "%",
-            "flag": "normal"
-          },
-          {
-            "name": "Hemoglobin",
-            "value": "12.1",
-            "unit": "g/dL",
-            "flag": "normal"
+            "unit": "mg/dL"
           },
           {
             "name": "Magnesium",
             "value": "2.1",
-            "unit": "mg/dL",
-            "flag": "low"
+            "unit": "mg/dL"
           },
           {
             "name": "Phosphate",
             "value": "3.1",
-            "unit": "mg/dL",
-            "flag": "normal"
+            "unit": "mg/dL"
           },
           {
             "name": "Potassium",
             "value": "3.9",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Sodium",
             "value": "138.0",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Urea Nitrogen",
             "value": "13.0",
-            "unit": "mg/dL",
-            "flag": "normal"
+            "unit": "mg/dL"
           },
           {
-            "name": "White Blood Cells",
-            "value": "6.8",
-            "unit": "K/uL",
-            "flag": "normal"
+            "name": "Hematocrit",
+            "value": "36.8",
+            "unit": "%"
+          },
+          {
+            "name": "Hemoglobin",
+            "value": "12.1",
+            "unit": "g/dL"
+          },
+          {
+            "name": "MCH",
+            "value": "31.1",
+            "unit": "pg"
+          },
+          {
+            "name": "MCHC",
+            "value": "32.9",
+            "unit": "g/dL"
+          },
+          {
+            "name": "MCV",
+            "value": "95.0",
+            "unit": "fL"
+          },
+          {
+            "name": "Platelet Count",
+            "value": "194.0",
+            "unit": "K/uL"
           }
         ],
         "diagnoses_mentioned": [
-          {
-            "term": "SVT",
-            "certainty": "confirmed"
-          },
           {
             "term": "Supraventricular tachycardia",
             "certainty": "confirmed"
           },
           {
-            "term": "COPD",
-            "certainty": "suspected"
-          },
-          {
-            "term": "Meniere's disease",
-            "certainty": "suspected"
-          },
-          {
-            "term": "TIA",
-            "certainty": "suspected"
-          },
-          {
-            "term": "CAD",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "MI",
+            "term": "Chest pain",
             "certainty": "suspected"
           },
           {
@@ -1292,35 +1244,15 @@
             "certainty": "confirmed"
           },
           {
+            "term": "Depression",
+            "certainty": "confirmed"
+          },
+          {
             "term": "Glucose intolerance",
             "certainty": "confirmed"
           },
           {
             "term": "GERD",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Depression",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Anxiety",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Rotator cuff arthropathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Atherosclerotic heart disease",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Malignant neoplasm of bladder",
-            "certainty": "suspected"
-          },
-          {
-            "term": "Chronic kidney disease",
             "certainty": "confirmed"
           }
         ],
@@ -1362,32 +1294,33 @@
             "result": "1000 mL ordered"
           },
           {
-            "name": "IV Adenosine",
-            "result": "6 mg"
+            "name": "IV Adenosine 6 mg",
+            "result": "given"
           },
           {
-            "name": "IV Ondansetron",
-            "result": "4 mg"
+            "name": "IV Ondansetron 4 mg",
+            "result": "given"
           },
           {
-            "name": "IV Verapamil",
-            "result": "2.5 mg"
+            "name": "IV Verapamil 2.5 mg",
+            "result": "given"
           },
           {
-            "name": "PO Aspirin",
-            "result": "324 mg"
+            "name": "PO Aspirin 324 mg",
+            "result": "given"
           }
         ],
         "negations": [
           "chest pain",
-          "chest pressure",
-          "palpitations",
-          "shortness of breath"
+          "shortness of breath",
+          "fevers",
+          "chills",
+          "cough"
         ],
         "temporal": [
           {
-            "finding": "SVT",
-            "onset": "recent"
+            "finding": "pain in right hip",
+            "onset": "when nurse tried to reposition her"
           }
         ],
         "_agent": "information_extraction",
@@ -2001,14 +1934,14 @@
       ],
       "n_diagnoses": 12,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 10,
-      "diagnosis_count": 5,
+      "symptom_count": 19,
+      "diagnosis_count": 6,
       "extracted": {
         "symptoms": [
           {
-            "term": "rib fractures",
+            "term": "right sided rib fractures",
             "status": "present",
-            "evidence": "right sided ___ rib fractures"
+            "evidence": "right sided rib fractures"
           },
           {
             "term": "fall",
@@ -2016,56 +1949,101 @@
             "evidence": "mechanical fall"
           },
           {
+            "term": "right lateral chest pain",
+            "status": "present",
+            "evidence": "right lateral chest against the bathtub"
+          },
+          {
             "term": "hypoxia",
             "status": "present",
             "evidence": "satting 96% on 4L"
           },
           {
-            "term": "chest pain",
+            "term": "right posterior back tenderness",
             "status": "present",
-            "evidence": "tenderness on right posterior back and along the right lateral chest"
+            "evidence": "tenderness on right posterior back"
           },
           {
             "term": "subcutaneous emphysema",
             "status": "present",
-            "evidence": "areas of subcutaneous emphysema along the right posterior back"
+            "evidence": "subcutaneous emphysema along the right posterior back"
           },
           {
-            "term": "chest pain",
+            "term": "right PTX",
             "status": "present",
-            "evidence": "denied chest pain"
+            "evidence": "small right PTX"
           },
           {
-            "term": "shortness of breath",
+            "term": "insomnia",
             "status": "present",
-            "evidence": "non-labored breathing, on MC"
+            "evidence": "nightmares of being left alone and mistreated"
           },
           {
-            "term": "tachypnea",
+            "term": "bipolar disorder",
             "status": "present",
-            "evidence": "mildy tachypnic"
+            "evidence": "Bipolar disorder"
           },
           {
-            "term": "crackles",
+            "term": "polysubstance use",
             "status": "present",
-            "evidence": "inspiratory crackles b/l lower lobes"
+            "evidence": "Polysubstance use"
           },
           {
-            "term": "edema",
+            "term": "opiate dependence",
             "status": "present",
-            "evidence": "bilateral, 2+ DP pulses"
+            "evidence": "Opiate dependence"
+          },
+          {
+            "term": "headache",
+            "status": "absent",
+            "evidence": "denies neck stiffness or headache"
+          },
+          {
+            "term": "myalgias",
+            "status": "present",
+            "evidence": "myalgias"
+          },
+          {
+            "term": "cough",
+            "status": "present",
+            "evidence": "5 days of mild cough that worsened over the past two days"
+          },
+          {
+            "term": "fever",
+            "status": "present",
+            "evidence": "fever"
+          },
+          {
+            "term": "nasal congestion",
+            "status": "present",
+            "evidence": "nasal congestion"
+          },
+          {
+            "term": "sore throat",
+            "status": "present",
+            "evidence": "sore throat"
+          },
+          {
+            "term": "vomiting",
+            "status": "present",
+            "evidence": "one episode of vomiting"
+          },
+          {
+            "term": "diarrhea",
+            "status": "present",
+            "evidence": "diarrhea"
           }
         ],
         "vitals": [
           {
-            "name": "Heart Rate",
+            "name": "HR",
             "value": "88",
             "unit": "bpm"
           },
           {
-            "name": "Respiratory Rate",
-            "value": "17",
-            "unit": "insp/min"
+            "name": "BP",
+            "value": "121/72",
+            "unit": "mmHg"
           },
           {
             "name": "SpO2",
@@ -2073,14 +2051,9 @@
             "unit": "%"
           },
           {
-            "name": "DBP",
-            "value": "72",
-            "unit": "mmHg"
-          },
-          {
-            "name": "SBP",
-            "value": "121",
-            "unit": "mmHg"
+            "name": "RR",
+            "value": "17",
+            "unit": "insp/min"
           },
           {
             "name": "BMI",
@@ -2090,7 +2063,7 @@
           {
             "name": "Weight",
             "value": "125",
-            "unit": "Lbs"
+            "unit": "lbs"
           }
         ],
         "labs": [
@@ -2101,13 +2074,13 @@
             "flag": "high"
           },
           {
-            "name": "Hemoglobin",
+            "name": "Hgb",
             "value": "10.9",
             "unit": "g/dL",
             "flag": "low"
           },
           {
-            "name": "Hematocrit",
+            "name": "Hct",
             "value": "33.3",
             "unit": "%",
             "flag": "low"
@@ -2119,7 +2092,7 @@
             "flag": "high"
           },
           {
-            "name": "Red Blood Cells",
+            "name": "RBC",
             "value": "3.72",
             "unit": "m/uL",
             "flag": "low"
@@ -2168,8 +2141,8 @@
           },
           {
             "name": "Bacteria",
-            "value": "nan /hpf",
-            "unit": "",
+            "value": "nan",
+            "unit": "/hpf",
             "flag": "high"
           },
           {
@@ -2218,22 +2191,46 @@
             "name": "Magnesium",
             "value": "3.2",
             "unit": "mg/dL",
-            "flag": "normal"
+            "flag": "high"
           },
           {
             "name": "Creatine Kinase (CK)",
             "value": "555",
             "unit": "IU/L",
             "flag": "high"
+          },
+          {
+            "name": "Anion Gap",
+            "value": "11",
+            "unit": "mEq/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Bicarbonate",
+            "value": "26",
+            "unit": "mEq/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Chloride",
+            "value": "100",
+            "unit": "mEq/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Creatinine",
+            "value": "0.8",
+            "unit": "mg/dL",
+            "flag": "normal"
           }
         ],
         "diagnoses_mentioned": [
           {
-            "term": "right ___ rib fractures",
+            "term": "right rib fractures",
             "certainty": "confirmed"
           },
           {
-            "term": "post-traumatic stress disorder (PTSD)",
+            "term": "PTSD",
             "certainty": "confirmed"
           },
           {
@@ -2247,24 +2244,28 @@
           {
             "term": "opiate dependence",
             "certainty": "confirmed"
+          },
+          {
+            "term": "influenza A",
+            "certainty": "confirmed"
           }
         ],
         "medications": [
           {
             "name": "Prozac",
-            "dose": "stopped",
+            "dose": "",
             "route": "",
             "status": "stopped"
           },
           {
             "name": "Thorazine",
-            "dose": "stopped",
+            "dose": "",
             "route": "",
             "status": "stopped"
           },
           {
             "name": "Haldol",
-            "dose": "stopped",
+            "dose": "",
             "route": "",
             "status": "stopped"
           }
@@ -2276,15 +2277,351 @@
           }
         ],
         "negations": [
-          "denied chest pain",
-          "denied LOC/head strike",
-          "denied harm to others"
-        ],
-        "temporal": [
-          {
-            "finding": "right ___ rib fractures",
-            "onset": "fall"
-          }
+          "denies LOC/head strike",
+          "denies harm to others",
+          "denies access to weapons",
+          "denies suicide attempts",
+          "denies PNA",
+          "denies acute changes",
+          "denies interval change",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          "denies acute changes",
+          ""
         ],
         "_agent": "information_extraction",
         "_n_prior_admissions": 1
@@ -2814,46 +3151,41 @@
       ],
       "n_diagnoses": 7,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 5,
+      "symptom_count": 4,
       "diagnosis_count": 4,
       "extracted": {
         "symptoms": [
           {
-            "term": "residual stone",
+            "term": "hematuria",
             "status": "present",
-            "evidence": "There is some residual stone that will require interval right URS"
+            "evidence": "1x episode of hematuria"
           },
           {
             "term": "pain",
             "status": "present",
-            "evidence": "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden."
-          },
-          {
-            "term": "fever",
-            "status": "absent",
-            "evidence": "He denies nausea, vomiting, diarrhea, dyspnea and chest pain."
-          },
-          {
-            "term": "hematuria",
-            "status": "present",
-            "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag."
+            "evidence": "pain around the nephrostomy tubes"
           },
           {
             "term": "dysuria",
             "status": "present",
-            "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag."
+            "evidence": "pain around the nephrostomy tubes and fevers"
+          },
+          {
+            "term": "fever",
+            "status": "present",
+            "evidence": "temperature of 102 at ___ prior to transfer"
           }
         ],
         "vitals": [
           {
-            "name": "BMI",
+            "name": "BMI (kg/m2)",
             "value": "24.4",
-            "unit": "kg/m2"
+            "unit": ""
           },
           {
-            "name": "Weight",
+            "name": "Weight (Lbs)",
             "value": "170",
-            "unit": "Lbs"
+            "unit": ""
           }
         ],
         "labs": [
@@ -2910,31 +3242,6 @@
             "value": "22.0",
             "unit": "mg/dL",
             "flag": "high"
-          },
-          {
-            "name": "Anion Gap",
-            "value": "17.0",
-            "unit": "mEq/L"
-          },
-          {
-            "name": "Bicarbonate",
-            "value": "22.0",
-            "unit": "mEq/L"
-          },
-          {
-            "name": "Chloride",
-            "value": "98.0",
-            "unit": "mEq/L"
-          },
-          {
-            "name": "Potassium",
-            "value": "4.7",
-            "unit": "mEq/L"
-          },
-          {
-            "name": "Sodium",
-            "value": "137.0",
-            "unit": "mEq/L"
           }
         ],
         "diagnoses_mentioned": [
@@ -2957,59 +3264,35 @@
         ],
         "medications": [
           {
-            "name": "Acetaminophen",
-            "dose": "650 mg",
-            "route": "PO",
-            "status": "started"
-          },
-          {
-            "name": "Oxybutynin",
-            "dose": "5 mg",
-            "route": "PO",
-            "status": "started"
-          },
-          {
-            "name": "OxyCODONE",
-            "dose": "5 mg",
-            "route": "PO",
-            "status": "started"
-          },
-          {
-            "name": "Tamsulosin",
-            "dose": "0.4 mg",
-            "route": "PO",
+            "name": "pain medications",
+            "dose": "",
+            "route": "",
             "status": "started"
           }
         ],
         "procedures": [
           {
             "name": "Difficult right PCNL",
-            "result": "well tolerated"
+            "result": "stone greater than 2cm removed"
           },
           {
             "name": "Right antegrade nephrostogram",
-            "result": "performed"
+            "result": ""
           },
           {
             "name": "Right antegrade ureteroscopy",
-            "result": "performed"
+            "result": ""
           },
           {
             "name": "Right antegrade ureteral stent placement",
-            "result": "performed"
+            "result": ""
           },
           {
-            "name": "Right PCNL for stone greater than 2cm",
-            "result": "performed"
-          },
-          {
-            "name": "Removal of right nephrostomy tube",
-            "result": "performed"
+            "name": "Right PCNL",
+            "result": ""
           }
         ],
-        "negations": [
-          "No Known Allergies / Adverse Drug Reactions"
-        ],
+        "negations": [],
         "temporal": [
           {
             "finding": "residual stone",
@@ -3523,42 +3806,17 @@
       ],
       "n_diagnoses": 17,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 8,
-      "diagnosis_count": 12,
+      "symptom_count": 4,
+      "diagnosis_count": 11,
       "extracted": {
         "symptoms": [
           {
-            "term": "nocturnal hypoxia",
-            "status": "history",
-            "evidence": "prior admission with cholangitis and nocturnal hypoxia that improved with diuresis"
-          },
-          {
             "term": "abdominal pain",
-            "status": "history",
-            "evidence": "chief complaint of abdominal pain"
+            "status": "absent",
+            "evidence": "no abdominal pain"
           },
           {
-            "term": "weakness",
-            "status": "history",
-            "evidence": "2 weeks of weakness and difficulty with walking with cramps"
-          },
-          {
-            "term": "difficulty walking",
-            "status": "history",
-            "evidence": "2 weeks of weakness and difficulty with walking with cramps"
-          },
-          {
-            "term": "shoulder blade pain",
-            "status": "history",
-            "evidence": "shoulder blade pain that lasted around"
-          },
-          {
-            "term": "indigestion",
-            "status": "history",
-            "evidence": "indigestion"
-          },
-          {
-            "term": "shortness of breath",
+            "term": "dyspnea",
             "status": "history",
             "evidence": "developed acute shortness of breath requiring nonrebreather briefly"
           },
@@ -3566,6 +3824,11 @@
             "term": "leg swelling",
             "status": "present",
             "evidence": "notes his edema improves during the night and worsens during the day"
+          },
+          {
+            "term": "nocturnal hypoxia",
+            "status": "history",
+            "evidence": "nocturnal hypoxia that improved with diuresis"
           }
         ],
         "vitals": [
@@ -3685,7 +3948,7 @@
           },
           {
             "name": "Estimated GFR (MDRD equation)",
-            "value": "nan",
+            "value": "unknown",
             "unit": "",
             "flag": "unknown"
           },
@@ -3726,9 +3989,27 @@
             "flag": "normal"
           },
           {
-            "name": "Lipase",
-            "value": "28",
-            "unit": "IU/L",
+            "name": "PTT",
+            "value": "31.6 sec",
+            "unit": "",
+            "flag": "normal"
+          },
+          {
+            "name": "MCHC",
+            "value": "32.9",
+            "unit": "g/dL",
+            "flag": "normal"
+          },
+          {
+            "name": "Platelet Count",
+            "value": "157.0",
+            "unit": "K/uL",
+            "flag": "normal"
+          },
+          {
+            "name": "White Blood Cells",
+            "value": "7.2",
+            "unit": "K/uL",
             "flag": "normal"
           }
         ],
@@ -3774,10 +4055,6 @@
             "certainty": "confirmed"
           },
           {
-            "term": "Chronic kidney disease",
-            "certainty": "confirmed"
-          },
-          {
             "term": "PTSD",
             "certainty": "confirmed"
           }
@@ -3785,45 +4062,54 @@
         "medications": [
           {
             "name": "Apixaban",
-            "dose": "",
-            "route": "",
+            "dose": "started",
+            "route": "oral",
             "status": "continued"
           },
           {
             "name": "Lasix",
-            "dose": "20 mg IV",
+            "dose": "20 mg",
             "route": "IV",
             "status": "stopped"
           },
           {
             "name": "Ciprofloxacin",
-            "dose": "",
-            "route": "",
+            "dose": "started",
+            "route": "oral",
             "status": "stopped"
           },
           {
             "name": "Cefpodoxime",
-            "dose": "",
-            "route": "",
-            "status": "started"
+            "dose": "started",
+            "route": "oral",
+            "status": "continued"
           },
           {
             "name": "Flagyl",
-            "dose": "",
-            "route": "",
-            "status": "started"
+            "dose": "started",
+            "route": "oral",
+            "status": "continued"
           }
         ],
         "procedures": [
           {
             "name": "ERCP",
-            "result": "stent placement, extraction of stones and sphincterotomy"
+            "result": "stones extraction, sphincterotomy, stent removal"
           }
         ],
-        "negations": [],
+        "negations": [
+          "no abdominal pain",
+          "no CP",
+          "no dyspnea",
+          "no CP",
+          "no suprapubic tenderness",
+          "no swollen or erythematous joints",
+          "no rashes or ulcerations noted",
+          "no TTP"
+        ],
         "temporal": [
           {
-            "finding": "leg swelling",
+            "finding": "edema",
             "onset": "improves during the night and worsens during the day"
           }
         ],
@@ -4874,8 +5160,8 @@
       ],
       "n_diagnoses": 13,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 11,
-      "diagnosis_count": 13,
+      "symptom_count": 10,
+      "diagnosis_count": 15,
       "extracted": {
         "symptoms": [
           {
@@ -4891,12 +5177,12 @@
           {
             "term": "edema",
             "status": "present",
-            "evidence": "some increased ___ edema"
+            "evidence": "some increased ___ edema over the last several days"
           },
           {
-            "term": "palpitations",
-            "status": "absent",
-            "evidence": "denies other palpitations"
+            "term": "shaking",
+            "status": "present",
+            "evidence": "feels some 'shaking' in his chest in the morning for the last 4 months"
           },
           {
             "term": "chest pain",
@@ -4924,14 +5210,9 @@
             "evidence": "denies N/V/D"
           },
           {
-            "term": "shaking",
-            "status": "present",
-            "evidence": "feeling some "
-          },
-          {
-            "term": "abdominal pain",
+            "term": "palpitations",
             "status": "absent",
-            "evidence": "denies abdominal pain"
+            "evidence": "denies other palpitations"
           }
         ],
         "vitals": [
@@ -4946,105 +5227,132 @@
             "unit": "Lbs"
           },
           {
-            "name": "BP",
-            "value": "MAP ___ by Doppler",
-            "unit": ""
-          },
-          {
             "name": "HR",
             "value": "80",
-            "unit": ""
+            "unit": "bpm"
           },
           {
-            "name": "SpO2",
-            "value": "99%",
-            "unit": "RA"
+            "name": "BP",
+            "value": "120.4",
+            "unit": "Lbs"
           },
           {
-            "name": "JVD",
-            "value": "10cm",
-            "unit": ""
-          }
-        ],
-        "labs": [
+            "name": "MAP",
+            "value": "___",
+            "unit": "mmHg"
+          },
           {
             "name": "WBC",
             "value": "5.7",
-            "unit": "",
-            "flag": "normal"
-          },
-          {
-            "name": "RBC",
-            "value": "4.46",
-            "unit": "",
-            "flag": "normal"
+            "unit": "K/uL"
           },
           {
             "name": "Hgb",
-            "value": "12.7",
-            "unit": "",
-            "flag": "normal"
+            "value": "11.6",
+            "unit": "g/dL"
           },
           {
             "name": "Hct",
-            "value": "39.8",
-            "unit": "",
-            "flag": "normal"
+            "value": "36.2",
+            "unit": "%"
           },
           {
-            "name": "MCV",
-            "value": "89",
-            "unit": "",
-            "flag": "normal"
+            "name": "Plt",
+            "value": "142.0",
+            "unit": "K/uL"
           },
           {
-            "name": "MCH",
-            "value": "28.5",
-            "unit": "",
-            "flag": "normal"
+            "name": "RDW",
+            "value": "17.0",
+            "unit": "%"
+          },
+          {
+            "name": "PTT",
+            "value": "44.2",
+            "unit": "sec"
+          },
+          {
+            "name": "PT",
+            "value": "36.9",
+            "unit": "sec"
+          },
+          {
+            "name": "INR",
+            "value": "3.3",
+            "unit": ""
+          },
+          {
+            "name": "Urea Nitrogen",
+            "value": "25.0",
+            "unit": "mg/dL"
+          },
+          {
+            "name": "Creatinine",
+            "value": "1.4",
+            "unit": "mg/dL"
+          },
+          {
+            "name": "Glucose",
+            "value": "118.0",
+            "unit": "mg/dL"
           },
           {
             "name": "MCHC",
             "value": "31.9",
-            "unit": "",
-            "flag": "low"
+            "unit": "g/dL"
           },
           {
-            "name": "RDW",
-            "value": "16.9",
-            "unit": "",
-            "flag": "normal"
+            "name": "Alkaline Phosphatase",
+            "value": "167.0",
+            "unit": "IU/L"
           },
           {
-            "name": "RDW-SD",
-            "value": "54.9",
-            "unit": "",
-            "flag": "high"
+            "name": "Lactate Dehydrogenase (LD)",
+            "value": "252.0",
+            "unit": "IU/L"
           },
           {
-            "name": "Plt",
-            "value": "___",
-            "unit": "",
-            "flag": "unknown"
+            "name": "Anion Gap",
+            "value": "13.0",
+            "unit": "mEq/L"
           },
           {
-            "name": "Creat",
-            "value": "1.4",
-            "unit": "",
-            "flag": "normal"
+            "name": "Bicarbonate",
+            "value": "28.0",
+            "unit": "mEq/L"
           },
           {
-            "name": "Glucose",
-            "value": "105",
-            "unit": "",
-            "flag": "normal"
+            "name": "Calcium",
+            "value": "9.1",
+            "unit": "mg/dL"
           },
           {
-            "name": "UreaN",
-            "value": "31",
-            "unit": "",
-            "flag": "high"
+            "name": "Chloride",
+            "value": "104.0",
+            "unit": "mEq/L"
           },
+          {
+            "name": "Magnesium",
+            "value": "2.2",
+            "unit": "mg/dL"
+          },
+          {
+            "name": "Phosphate",
+            "value": "3.8",
+            "unit": "mg/dL"
+          },
+          {
+            "name": "Potassium",
+            "value": "4.3",
+            "unit": "mEq/L"
+          },
+          {
+            "name": "Sodium",
+            "value": "141.0",
+            "unit": "mEq/L"
+          }
+        ],
+        "labs": [
           {
             "name": "INR(PT)",
             "value": "3.3",
@@ -5064,16 +5372,22 @@
             "flag": "high"
           },
           {
+            "name": "Hematocrit",
+            "value": "36.2",
+            "unit": "%",
+            "flag": "low"
+          },
+          {
             "name": "Hemoglobin",
             "value": "11.6",
-            "unit": "",
+            "unit": "g/dL",
             "flag": "low"
           },
           {
             "name": "Platelet Count",
             "value": "142.0",
             "unit": "K/uL",
-            "flag": "low"
+            "flag": "normal"
           },
           {
             "name": "RDW",
@@ -5101,7 +5415,7 @@
           },
           {
             "name": "Glucose",
-            "value": "118",
+            "value": "118.0",
             "unit": "mg/dL",
             "flag": "high"
           },
@@ -5113,55 +5427,19 @@
           },
           {
             "name": "Alkaline Phosphatase",
-            "value": "167",
+            "value": "167.0",
             "unit": "IU/L",
             "flag": "high"
           },
           {
             "name": "Lactate Dehydrogenase (LD)",
-            "value": "252",
+            "value": "252.0",
             "unit": "IU/L",
             "flag": "high"
           },
           {
             "name": "Anion Gap",
-            "value": "13",
-            "unit": "mEq/L",
-            "flag": "unknown"
-          },
-          {
-            "name": "Bicarbonate",
-            "value": "28",
-            "unit": "mEq/L",
-            "flag": "normal"
-          },
-          {
-            "name": "Calcium, Total",
-            "value": "9.1",
-            "unit": "mg/dL",
-            "flag": "low"
-          },
-          {
-            "name": "Chloride",
-            "value": "104",
-            "unit": "mEq/L",
-            "flag": "normal"
-          },
-          {
-            "name": "Phosphate",
-            "value": "3.8",
-            "unit": "mg/dL",
-            "flag": "normal"
-          },
-          {
-            "name": "Potassium",
-            "value": "4.3",
-            "unit": "mEq/L",
-            "flag": "normal"
-          },
-          {
-            "name": "Sodium",
-            "value": "141",
+            "value": "13.0",
             "unit": "mEq/L",
             "flag": "normal"
           }
@@ -5176,7 +5454,15 @@
             "certainty": "confirmed"
           },
           {
-            "term": "Heartmate II LVAD",
+            "term": "ICD",
+            "certainty": "confirmed"
+          },
+          {
+            "term": "LVAD",
+            "certainty": "confirmed"
+          },
+          {
+            "term": "Heart transplantation",
             "certainty": "confirmed"
           },
           {
@@ -5200,7 +5486,7 @@
             "certainty": "confirmed"
           },
           {
-            "term": "Tophaces Gout",
+            "term": "Gout",
             "certainty": "confirmed"
           },
           {
@@ -5212,7 +5498,7 @@
             "certainty": "confirmed"
           },
           {
-            "term": "Gastritis; +H Pylori",
+            "term": "Gastritis",
             "certainty": "confirmed"
           },
           {
@@ -5235,26 +5521,26 @@
           },
           {
             "name": "Tramadol",
-            "dose": "as needed",
-            "route": "PO",
+            "dose": "___",
+            "route": "___",
             "status": "continued"
           },
           {
             "name": "Metoprolol",
-            "dose": "as needed",
-            "route": "PO",
+            "dose": "___",
+            "route": "___",
             "status": "continued"
           },
           {
             "name": "Sildenafil",
             "dose": "20mg",
-            "route": "PO",
+            "route": "PO TID",
             "status": "continued"
           },
           {
             "name": "Dipyridamole",
-            "dose": "as needed",
-            "route": "PO",
+            "dose": "___",
+            "route": "___",
             "status": "continued"
           },
           {
@@ -5265,9 +5551,9 @@
           },
           {
             "name": "Coumadin",
-            "dose": "4mg TuThSatSun, 3mg ___",
+            "dose": "4mg TuThSatSun, 3mg ___ daily",
             "route": "PO",
-            "status": "started"
+            "status": "continued"
           },
           {
             "name": "Ferrous Sulfate",
@@ -5279,7 +5565,19 @@
             "name": "Magnesium",
             "dose": "2mg IV",
             "route": "IV",
-            "status": "given"
+            "status": "continued"
+          },
+          {
+            "name": "Colchicine",
+            "dose": "___",
+            "route": "___",
+            "status": "continued"
+          },
+          {
+            "name": "Febuxostat",
+            "dose": "___",
+            "route": "___",
+            "status": "continued"
           }
         ],
         "procedures": [
@@ -5294,8 +5592,7 @@
           "denies chills",
           "denies cough",
           "denies N/V/D",
-          "denies other palpitations",
-          "denies abdominal pain"
+          "denies other palpitations"
         ],
         "temporal": [
           {
@@ -6136,7 +6433,12 @@
           {
             "term": "tremors",
             "status": "present",
-            "evidence": "worsened tremors"
+            "evidence": "increased spasms in the upper extremities"
+          },
+          {
+            "term": "incontinence",
+            "status": "present",
+            "evidence": "urine incontinence"
           },
           {
             "term": "chest pain",
@@ -6144,19 +6446,14 @@
             "evidence": "denies chest pain at rest or with exertion"
           },
           {
-            "term": "urge incontinence",
-            "status": "present",
-            "evidence": "urge incontinence"
-          },
-          {
-            "term": "bladder spasms",
-            "status": "present",
-            "evidence": "abdominal pain in the setting of ? bladder spasms"
+            "term": "abdominal pain",
+            "status": "absent",
+            "evidence": "denies abdominal pain"
           },
           {
             "term": "fatigue",
             "status": "present",
-            "evidence": "everything has been quite hard"
+            "evidence": "all activities now are quite fatiguing"
           },
           {
             "term": "shortness of breath",
@@ -6198,7 +6495,7 @@
           {
             "name": "Weight",
             "value": "253.53",
-            "unit": "lbs"
+            "unit": "Lbs"
           }
         ],
         "labs": [
@@ -6307,7 +6604,7 @@
             "certainty": "confirmed"
           },
           {
-            "term": "myasthenia ___",
+            "term": "myasthenia gravis",
             "certainty": "confirmed"
           },
           {
@@ -6338,11 +6635,11 @@
         "procedures": [
           {
             "name": "blood cultures",
-            "result": "x 1 drawn"
+            "result": "drawn"
           },
           {
             "name": "urine culture",
-            "result": "x 1 drawn"
+            "result": "drawn"
           }
         ],
         "negations": [
@@ -6350,8 +6647,8 @@
         ],
         "temporal": [
           {
-            "finding": "worsening dyspnea",
-            "onset": "discharge from prior hospital"
+            "finding": "orthopnea",
+            "onset": "discharge from previous hospital"
           }
         ],
         "_agent": "information_extraction",
@@ -7044,60 +7341,60 @@
       ],
       "n_diagnoses": 32,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 9,
+      "symptom_count": 8,
       "diagnosis_count": 5,
       "extracted": {
         "symptoms": [
           {
             "term": "chest pressure",
             "status": "present",
-            "evidence": "chest pressure that he described as a 'heaviness'"
+            "evidence": "chest pressure"
           },
           {
             "term": "back pain",
             "status": "history",
-            "evidence": "Chief Complaint: Back pain"
+            "evidence": "back pain"
           },
           {
-            "term": "fever",
-            "status": "present",
-            "evidence": "new fever"
-          },
-          {
-            "term": "pneumonia",
-            "status": "present",
-            "evidence": "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis"
-          },
-          {
-            "term": "hypotension",
-            "status": "present",
-            "evidence": "persistently hypotensive with pressures in the 80's"
-          },
-          {
-            "term": "sepsis",
-            "status": "present",
-            "evidence": "severe sepsis probably secondary to RUL PNA"
-          },
-          {
-            "term": "altered mental status",
-            "status": "present",
-            "evidence": "altered mental status"
+            "term": "radicular pain",
+            "status": "history",
+            "evidence": "radicular pain to his right leg"
           },
           {
             "term": "saddle anesthesia",
-            "status": "history",
-            "evidence": "no saddle anesthesia or bowel/bladder changes"
+            "status": "absent",
+            "evidence": "no saddle anesthesia"
           },
           {
-            "term": "numbness",
+            "term": "numbness tingling",
             "status": "history",
-            "evidence": "numbness in his right thumb that has been present for many years"
+            "evidence": "numbness in his right thumb"
+          },
+          {
+            "term": "chest pain",
+            "status": "absent",
+            "evidence": "no chest pain"
+          },
+          {
+            "term": "sob",
+            "status": "absent",
+            "evidence": "no sob"
+          },
+          {
+            "term": "n/v",
+            "status": "absent",
+            "evidence": "no n/v"
           }
         ],
         "vitals": [
           {
             "name": "DBP",
             "value": "71.0",
+            "unit": "mmHg"
+          },
+          {
+            "name": "SBP",
+            "value": "138.0",
             "unit": "mmHg"
           },
           {
@@ -7109,11 +7406,6 @@
             "name": "Respiratory Rate",
             "value": "14.0",
             "unit": "insp/min"
-          },
-          {
-            "name": "SBP",
-            "value": "138.0",
-            "unit": "mmHg"
           },
           {
             "name": "SpO2",
@@ -7282,13 +7574,13 @@
             "name": "Iron Binding Capacity, Total",
             "value": "108.0",
             "unit": "ug/dL",
-            "flag": "high"
+            "flag": "normal"
           },
           {
             "name": "Transferrin",
             "value": "83.0",
             "unit": "mg/dL",
-            "flag": "high"
+            "flag": "normal"
           },
           {
             "name": "Calculated Total CO2",
@@ -7306,7 +7598,7 @@
             "name": "pO2",
             "value": "108.0",
             "unit": "mm Hg",
-            "flag": "high"
+            "flag": "normal"
           },
           {
             "name": "Absolute Lymphocyte Count",
@@ -7330,7 +7622,7 @@
             "name": "Neutrophils",
             "value": "79.0",
             "unit": "%",
-            "flag": "high"
+            "flag": "normal"
           },
           {
             "name": "Absolute Basophil Count",
@@ -7356,7 +7648,7 @@
           },
           {
             "term": "RUL PNA",
-            "certainty": "confirmed"
+            "certainty": "suspected"
           },
           {
             "term": "SVC syndrome",
@@ -7376,21 +7668,21 @@
           },
           {
             "name": "Vancomycin",
-            "dose": "250 mL/hr",
-            "route": "IVF",
+            "dose": "23.7 ug/mL",
+            "route": "IV",
             "status": "started"
           },
           {
             "name": "Ceftazidime",
             "dose": "2g",
             "route": "IV",
-            "status": "stopped"
+            "status": "started"
           },
           {
             "name": "Dexamethasone",
             "dose": "taper",
             "route": "oral",
-            "status": "stopped"
+            "status": "continued"
           },
           {
             "name": "Clindamycin",
@@ -7403,23 +7695,20 @@
             "dose": "750 mg Q12h",
             "route": "oral",
             "status": "started"
-          },
-          {
-            "name": "Levophed",
-            "dose": "250 mL/hr",
-            "route": "IV",
-            "status": "started"
           }
         ],
         "procedures": [
           {
-            "name": "Pericardiocentesis",
+            "name": "pericardiocentesis",
             "result": "uncomplicated"
           }
         ],
         "negations": [
-          "no saddle anesthesia or bowel/bladder changes",
-          "no numbness tingling other than numbness in his right thumb"
+          "no saddle anesthesia",
+          "no numbness tingling other than numbness in his right thumb",
+          "no chest pain",
+          "no sob",
+          "no n/v"
         ],
         "temporal": [
           {
@@ -7857,8 +8146,8 @@
       ],
       "n_diagnoses": 14,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 5,
-      "diagnosis_count": 5,
+      "symptom_count": 6,
+      "diagnosis_count": 7,
       "extracted": {
         "symptoms": [
           {
@@ -7877,14 +8166,19 @@
             "evidence": "no palpitations"
           },
           {
-            "term": "hematuria",
-            "status": "absent",
-            "evidence": "no mention of hematuria"
+            "term": "urine output",
+            "status": "present",
+            "evidence": "urine output >30cc/hour"
           },
           {
             "term": "pain",
             "status": "present",
             "evidence": "pain well controlled on PCA"
+          },
+          {
+            "term": "calf pain",
+            "status": "absent",
+            "evidence": "no reported calf pain to deep palpation"
           }
         ],
         "vitals": [
@@ -7952,7 +8246,7 @@
             "name": "Platelet Count",
             "value": "147.0",
             "unit": "K/uL",
-            "flag": "unknown"
+            "flag": "low"
           },
           {
             "name": "Calcium, Total",
@@ -7969,11 +8263,15 @@
         ],
         "diagnoses_mentioned": [
           {
-            "term": "systolic CHF",
+            "term": "left renal mass",
             "certainty": "confirmed"
           },
           {
             "term": "renal cell carcinoma",
+            "certainty": "confirmed"
+          },
+          {
+            "term": "systolic CHF",
             "certainty": "confirmed"
           },
           {
@@ -7986,6 +8284,10 @@
           },
           {
             "term": "obstructive sleep apnea",
+            "certainty": "confirmed"
+          },
+          {
+            "term": "episodic atrial fibrillation",
             "certainty": "confirmed"
           }
         ],
@@ -8055,13 +8357,11 @@
             "result": "performed"
           }
         ],
-        "negations": [
-          "no concerning intraoperative events"
-        ],
+        "negations": [],
         "temporal": [
           {
-            "finding": "pain",
-            "onset": "on admission"
+            "finding": "left renal mass",
+            "onset": "history"
           }
         ],
         "_agent": "information_extraction",
@@ -8874,8 +9174,8 @@
       ],
       "n_diagnoses": 25,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 11,
-      "diagnosis_count": 9,
+      "symptom_count": 10,
+      "diagnosis_count": 10,
       "extracted": {
         "symptoms": [
           {
@@ -8901,7 +9201,7 @@
           {
             "term": "chest pain",
             "status": "present",
-            "evidence": "cough, pleuritic/MSK chest pain"
+            "evidence": "pleuritic/MSK chest pain"
           },
           {
             "term": "malaise",
@@ -8911,27 +9211,22 @@
           {
             "term": "anorexia",
             "status": "present",
-            "evidence": "anorexia, fatigue, weight loss"
-          },
-          {
-            "term": "nausea",
-            "status": "present",
-            "evidence": "denies any recent fevers, chills, or other localizing infectious symptoms"
+            "evidence": "overall anorexia and poor appetite"
           },
           {
             "term": "pain",
             "status": "present",
-            "evidence": "pain with swallowing, and overall anorexia and poor appetite"
+            "evidence": "pain with swallowing"
           },
           {
             "term": "neutropenia",
             "status": "present",
-            "evidence": "ANC 750"
+            "evidence": "new neutropenia (ANC 750)"
           },
           {
             "term": "thrombocytopenia",
             "status": "present",
-            "evidence": "plts 93"
+            "evidence": "thrombocytopenia (plts 93)"
           }
         ],
         "vitals": [
@@ -9083,13 +9378,13 @@
             "name": "PT",
             "value": "13.4",
             "unit": "sec",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "PTT",
             "value": "37.4",
             "unit": "sec",
-            "flag": "unknown"
+            "flag": "normal"
           },
           {
             "name": "Bands",
@@ -9113,7 +9408,7 @@
             "name": "Urobilinogen",
             "value": "2.0",
             "unit": "mg/dL",
-            "flag": "high"
+            "flag": "unknown"
           },
           {
             "name": "Ferritin",
@@ -9218,6 +9513,10 @@
           {
             "term": "Pulmonary Hypertension",
             "certainty": "confirmed"
+          },
+          {
+            "term": "Latent TB",
+            "certainty": "confirmed"
           }
         ],
         "medications": [
@@ -9225,7 +9524,7 @@
             "name": "dronabinol",
             "dose": "",
             "route": "",
-            "status": "started"
+            "status": "continued"
           },
           {
             "name": "Ritalin",
@@ -9237,15 +9536,15 @@
         "procedures": [
           {
             "name": "Right Heart Catheterization",
-            "result": "confirmed Pulm HTN, unclear etiology"
+            "result": "revealed severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
           },
           {
             "name": "___ guided lung biopsy",
-            "result": "Squamous Cell Cancer of the Lung"
+            "result": "revealed Squamous Cell Carcinoma of the Lung"
           }
         ],
         "negations": [
-          "No recent fevers, chills, or other localizing infectious symptoms"
+          "No new fevers, chills, or other localizing infectious symptoms"
         ],
         "temporal": [
           {
@@ -11214,89 +11513,69 @@
       ],
       "n_diagnoses": 19,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 16,
-      "diagnosis_count": 9,
+      "symptom_count": 12,
+      "diagnosis_count": 3,
       "extracted": {
         "symptoms": [
           {
+            "term": "fall",
+            "status": "present",
+            "evidence": "got up to use the bathroom and fell over"
+          },
+          {
             "term": "weakness",
             "status": "present",
-            "evidence": "weakness attributed to weakness"
+            "evidence": "attributes it to weakness"
           },
           {
             "term": "bruising",
-            "status": "absent",
-            "evidence": "no easy bruising"
-          },
-          {
-            "term": "pain",
             "status": "present",
-            "evidence": "pain in R leg, worse w/ bearing weight"
-          },
-          {
-            "term": "fever",
-            "status": "absent",
-            "evidence": "no fevers/chills"
-          },
-          {
-            "term": "cough",
-            "status": "absent",
-            "evidence": "no cough"
-          },
-          {
-            "term": "shortness of breath",
-            "status": "absent",
-            "evidence": "no shortness of breath"
-          },
-          {
-            "term": "dyspnea",
-            "status": "present",
-            "evidence": "exertional dyspnea"
-          },
-          {
-            "term": "hemoptysis",
-            "status": "absent",
-            "evidence": "no hemoptysis"
-          },
-          {
-            "term": "nausea",
-            "status": "absent",
-            "evidence": "no nausea"
-          },
-          {
-            "term": "vomiting",
-            "status": "absent",
-            "evidence": "no vomiting"
-          },
-          {
-            "term": "diarrhea",
-            "status": "present",
-            "evidence": "diarrhea following hospitalization"
-          },
-          {
-            "term": "abdominal pain",
-            "status": "absent",
-            "evidence": "no abdominal pain"
-          },
-          {
-            "term": "chest pain",
-            "status": "absent",
-            "evidence": "no chest pain"
-          },
-          {
-            "term": "dizziness",
-            "status": "absent",
-            "evidence": "no lightheadedness"
-          },
-          {
-            "term": "fatigue",
-            "status": "present",
-            "evidence": "easy fatigability"
+            "evidence": "hit his knees and elbows resulting in minor abrasions and soreness"
           },
           {
             "term": "headache",
-            "status": "absent",
-            "evidence": "no headache"
+            "status": "present",
+            "evidence": "hit his head"
+          },
+          {
+            "term": "abdominal pain",
+            "status": "history",
+            "evidence": "denies easy bruising"
+          },
+          {
+            "term": "chest pain",
+            "status": "history",
+            "evidence": "denies chest pain"
+          },
+          {
+            "term": "shortness of breath",
+            "status": "history",
+            "evidence": "denies shortness of breath"
+          },
+          {
+            "term": "fever",
+            "status": "history",
+            "evidence": "denies fevers/chills"
+          },
+          {
+            "term": "nausea",
+            "status": "history",
+            "evidence": "denies nausea or vomiting"
+          },
+          {
+            "term": "vomiting",
+            "status": "history",
+            "evidence": "denies nausea or vomiting"
+          },
+          {
+            "term": "dysuria",
+            "status": "history",
+            "evidence": "denies dysuria"
+          },
+          {
+            "term": "flank pain",
+            "status": "history",
+            "evidence": "denies flank pain"
           }
         ],
         "vitals": [
@@ -11308,7 +11587,7 @@
           {
             "name": "Blood Pressure",
             "value": "114/66",
-            "unit": "mmHg"
+            "unit": ""
           },
           {
             "name": "Weight",
@@ -11375,7 +11654,7 @@
             "name": "MCHC",
             "value": "31.1",
             "unit": "g/dL",
-            "flag": "normal"
+            "flag": "low"
           },
           {
             "name": "MCV",
@@ -11392,10 +11671,6 @@
         ],
         "diagnoses_mentioned": [
           {
-            "term": "sarcoma",
-            "certainty": "confirmed"
-          },
-          {
             "term": "metastatic sarcoma to the brain",
             "certainty": "confirmed"
           },
@@ -11404,485 +11679,31 @@
             "certainty": "planned"
           },
           {
-            "term": "progressive metastatic disease",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "infectious nodules",
-            "certainty": "suspected"
-          },
-          {
-            "term": "hematoma",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "pulmonary nodules",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "intra-operative femur fracture",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "high-grade unclassified sarcoma",
-            "certainty": "confirmed"
+            "term": "hospice",
+            "certainty": "planned"
           }
         ],
-        "medications": [
-          {
-            "name": "Atenolol",
-            "dose": "",
-            "route": "",
-            "status": "continued"
-          }
-        ],
+        "medications": [],
         "procedures": [
           {
             "name": "CT C-SPINE W/O CONTRAST",
-            "result": "No fractures identified, degenerative changes of the cervical spine"
+            "result": "No fractures identified, degenerative changes of the cervical spine are moderate in severity"
           }
         ],
         "negations": [
-          "no fevers/chills",
-          "no cough",
-          "no chest pain",
-          "no lightheadedness",
-          "no abdominal pain",
-          "no nausea",
-          "no vomiting",
-          "no hemoptysis",
-          "no easy bruising",
-          "no epistaxis",
-          "no epistaxis for the last week",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no skin rash",
-          "no joint pain",
-          "no muscle pain",
-          "no headache",
-          "no dizziness",
-          "no shortness of breath",
-          "no chest pain",
-          "no lightheadedness",
-          "no abdominal pain",
-          "no nausea",
-          "no vomiting",
-          "no hemoptysis",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epistaxis",
-          "no gum bleeding",
-          "no hematuria",
-          "no easy bruising",
-          "no epist"
+          "denies easy bruising",
+          "denies chest pain",
+          "denies shortness of breath",
+          "denies fevers/chills",
+          "denies nausea or vomiting",
+          "denies dysuria",
+          "denies flank pain"
+        ],
+        "temporal": [
+          {
+            "finding": "bleeding",
+            "onset": "after fall"
+          }
         ],
         "_agent": "information_extraction",
         "_n_prior_admissions": 9
@@ -12708,13 +12529,13 @@
       "n_diagnoses": 29,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
       "symptom_count": 12,
-      "diagnosis_count": 90,
+      "diagnosis_count": 15,
       "extracted": {
         "symptoms": [
           {
             "term": "Septic shock",
             "status": "present",
-            "evidence": "Septic shock"
+            "evidence": "Admission for septic shock"
           },
           {
             "term": "Hypoxia",
@@ -12727,22 +12548,42 @@
             "evidence": "intubated for hypoxic respiratory failure"
           },
           {
+            "term": "Epistaxis",
+            "status": "present",
+            "evidence": "epistaxis from the left nare"
+          },
+          {
             "term": "GI bleeding",
             "status": "present",
-            "evidence": "concern for GI bleeding (black coffee-ground GI contents)"
+            "evidence": "black coffee-ground GI contents"
           },
           {
             "term": "Hepatic encephalopathy",
             "status": "present",
-            "evidence": "worsening liver failure and HE ___ to metastatic HCC"
+            "evidence": "concerning for hepatic encephalopathy"
+          },
+          {
+            "term": "Altered mental status",
+            "status": "present",
+            "evidence": "RASS-5, sluggish pupil response"
+          },
+          {
+            "term": "Worsening liver failure",
+            "status": "present",
+            "evidence": "worsening liver failure"
           },
           {
             "term": "Atelectasis",
             "status": "present",
-            "evidence": "compressive consolidation versus atelectasis"
+            "evidence": "Bilateral effusions right greater than left are unchanged"
           },
           {
-            "term": "Thrombocytopenia",
+            "term": "Pleural effusion",
+            "status": "present",
+            "evidence": "large pleural effusion with compressive consolidation versus atelectasis"
+          },
+          {
+            "term": "IVC thrombus",
             "status": "present",
             "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
           },
@@ -12750,33 +12591,13 @@
             "term": "Atrial fibrillation/flutter",
             "status": "present",
             "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
-          },
-          {
-            "term": "Renal failure",
-            "status": "present",
-            "evidence": "acute renal failure ___ to septic shock and ATN on dialysis"
-          },
-          {
-            "term": "Epistaxis",
-            "status": "present",
-            "evidence": "epistaxis"
-          },
-          {
-            "term": "Anasarca",
-            "status": "present",
-            "evidence": "gross anasarca"
-          },
-          {
-            "term": "Worsening liver failure",
-            "status": "present",
-            "evidence": "worsening liver failure and HE ___ to metastatic HCC"
           }
         ],
         "vitals": [
           {
-            "name": "DBP",
-            "value": "51.0",
-            "unit": "mmHg"
+            "name": "Temperature",
+            "value": "38.0",
+            "unit": "°C"
           },
           {
             "name": "Heart Rate",
@@ -12794,14 +12615,14 @@
             "unit": "mmHg"
           },
           {
+            "name": "DBP",
+            "value": "51.0",
+            "unit": "mmHg"
+          },
+          {
             "name": "SpO2",
             "value": "94.0",
             "unit": "%"
-          },
-          {
-            "name": "Temperature",
-            "value": "38.0",
-            "unit": "°C"
           }
         ],
         "labs": [
@@ -12812,15 +12633,9 @@
             "flag": "unknown"
           },
           {
-            "name": "RBC",
-            "value": "2.65",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
             "name": "Hgb",
             "value": "8.9",
-            "unit": "",
+            "unit": "g/dL",
             "flag": "low"
           },
           {
@@ -12842,94 +12657,16 @@
             "flag": "low"
           },
           {
-            "name": "MCHC",
-            "value": "34.0",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
             "name": "RDW",
             "value": "20.9",
             "unit": "%",
             "flag": "unknown"
           },
           {
-            "name": "RDW-SD",
-            "value": "71.4",
-            "unit": "fL",
-            "flag": "unknown"
-          },
-          {
             "name": "Plt Ct",
             "value": "36",
-            "unit": "",
+            "unit": "K/uL",
             "flag": "low"
-          },
-          {
-            "name": "Neuts",
-            "value": "88.2",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Lymphs",
-            "value": "5.5",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Monos",
-            "value": "5.2",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Eos",
-            "value": "0.2",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Baso",
-            "value": "0.2",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "AbsNeut",
-            "value": "7.41",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "AbsLymp",
-            "value": "0.46",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "AbsMono",
-            "value": "0.44",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "AbsEos",
-            "value": "0.02",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "AbsBaso",
-            "value": "0.02",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "PTT",
-            "value": "40.7",
-            "unit": "sec",
-            "flag": "unknown"
           },
           {
             "name": "Fibrino",
@@ -12941,18 +12678,30 @@
             "name": "Glucose",
             "value": "141",
             "unit": "mg/dL",
-            "flag": "normal"
+            "flag": "unknown"
           },
           {
-            "name": "Lactate",
-            "value": "13.2",
-            "unit": "mmol/L",
-            "flag": "high"
+            "name": "Creat",
+            "value": "2.1",
+            "unit": "mg/dL",
+            "flag": "unknown"
           },
           {
-            "name": "pCO2",
-            "value": "33.0",
-            "unit": "mm Hg",
+            "name": "Na",
+            "value": "127",
+            "unit": "mEq/L",
+            "flag": "unknown"
+          },
+          {
+            "name": "K",
+            "value": "4.5",
+            "unit": "mEq/L",
+            "flag": "unknown"
+          },
+          {
+            "name": "Bicarbonate",
+            "value": "19",
+            "unit": "mEq/L",
             "flag": "unknown"
           },
           {
@@ -12962,58 +12711,22 @@
             "flag": "low"
           },
           {
-            "name": "Hematocrit",
-            "value": "25.3",
-            "unit": "%",
-            "flag": "low"
-          },
-          {
-            "name": "Hemoglobin",
-            "value": "8.3",
-            "unit": "g/dL",
-            "flag": "low"
-          },
-          {
-            "name": "MCH",
-            "value": "35.5",
-            "unit": "pg",
-            "flag": "high"
-          },
-          {
-            "name": "MCV",
-            "value": "108.0",
-            "unit": "fL",
-            "flag": "high"
-          },
-          {
-            "name": "Platelet Count",
-            "value": "44.0",
-            "unit": "K/uL",
-            "flag": "low"
-          },
-          {
-            "name": "RDW",
-            "value": "23.0",
-            "unit": "%",
-            "flag": "high"
-          },
-          {
-            "name": "Red Blood Cells",
-            "value": "2.34",
-            "unit": "m/uL",
-            "flag": "low"
-          },
-          {
-            "name": "RDW-SD",
-            "value": "84.1",
-            "unit": "fL",
-            "flag": "high"
-          },
-          {
-            "name": "Fibrinogen, Functional",
-            "value": "77.0",
+            "name": "Bilirubin, Total",
+            "value": "13.3",
             "unit": "mg/dL",
-            "flag": "low"
+            "flag": "unknown"
+          },
+          {
+            "name": "Alanine Aminotransferase (ALT)",
+            "value": "439",
+            "unit": "IU/L",
+            "flag": "unknown"
+          },
+          {
+            "name": "Asparate Aminotransferase (AST)",
+            "value": "2481",
+            "unit": "IU/L",
+            "flag": "unknown"
           },
           {
             "name": "INR(PT)",
@@ -13034,15 +12747,15 @@
             "flag": "high"
           },
           {
-            "name": "Bicarbonate",
-            "value": "7.0",
-            "unit": "mEq/L",
+            "name": "Calcium",
+            "value": "0.94",
+            "unit": "mmol/L",
             "flag": "low"
           },
           {
-            "name": "Creatinine",
-            "value": "2.2",
-            "unit": "mg/dL",
+            "name": "Lactate",
+            "value": "13.2",
+            "unit": "mmol/L",
             "flag": "high"
           },
           {
@@ -13058,125 +12771,29 @@
             "flag": "high"
           },
           {
-            "name": "Sodium",
-            "value": "129.0",
-            "unit": "mEq/L",
-            "flag": "low"
-          },
-          {
-            "name": "Urea Nitrogen",
-            "value": "21.0",
-            "unit": "mg/dL",
-            "flag": "high"
-          },
-          {
-            "name": "Potassium, Whole Blood",
-            "value": "5.9",
-            "unit": "mEq/L",
-            "flag": "high"
-          },
-          {
-            "name": "White Blood Cells",
-            "value": "10.3",
-            "unit": "K/uL",
-            "flag": "unknown"
-          },
-          {
-            "name": "Alanine Aminotransferase (ALT)",
-            "value": "439.0",
-            "unit": "IU/L",
-            "flag": "high"
-          },
-          {
-            "name": "Alkaline Phosphatase",
-            "value": "158.0",
-            "unit": "IU/L",
-            "flag": "unknown"
-          },
-          {
-            "name": "Asparate Aminotransferase (AST)",
-            "value": "2481.0",
-            "unit": "IU/L",
-            "flag": "high"
-          },
-          {
-            "name": "Bilirubin, Total",
-            "value": "13.3",
-            "unit": "mg/dL",
-            "flag": "high"
-          },
-          {
             "name": "Triglycerides",
-            "value": "447.0",
+            "value": "447",
             "unit": "mg/dL",
             "flag": "high"
-          },
-          {
-            "name": "pO2",
-            "value": "82.0",
-            "unit": "mm Hg",
-            "flag": "unknown"
           },
           {
             "name": "Bacteria",
             "value": "nan /hpf",
             "unit": "",
             "flag": "unknown"
-          },
-          {
-            "name": "Bilirubin",
-            "value": "nan",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Blood",
-            "value": "nan",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Protein",
-            "value": "nan mg/dL",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "RBC",
-            "value": "nan #/hpf",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Urine Appearance",
-            "value": "nan",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "Urine Color",
-            "value": "nan",
-            "unit": "",
-            "flag": "unknown"
-          },
-          {
-            "name": "WBC",
-            "value": "6.0",
-            "unit": "#/hpf",
-            "flag": "unknown"
           }
         ],
         "diagnoses_mentioned": [
+          {
+            "term": "Septic shock",
+            "certainty": "confirmed"
+          },
           {
             "term": "Hepatic encephalopathy",
             "certainty": "confirmed"
           },
           {
-            "term": "Metastatic HCC",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Septic shock",
+            "term": "Hepatocellular carcinoma",
             "certainty": "confirmed"
           },
           {
@@ -13184,7 +12801,7 @@
             "certainty": "confirmed"
           },
           {
-            "term": "Varices",
+            "term": "Esophageal varices",
             "certainty": "confirmed"
           },
           {
@@ -13193,18 +12810,6 @@
           },
           {
             "term": "Pancytopenia",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Multifocal metastatic HCC",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "RFA",
             "certainty": "confirmed"
           },
           {
@@ -13220,311 +12825,77 @@
             "certainty": "confirmed"
           },
           {
-            "term": "Esophagus",
-            "certainty": "confirmed"
-          },
-          {
             "term": "Alcohol abuse",
             "certainty": "confirmed"
           },
           {
-            "term": "Hepatic encephalopathy",
+            "term": "Hepatitis C",
             "certainty": "confirmed"
           },
           {
-            "term": "Metastatic HCC",
+            "term": "Multifocal metastatic HCC",
             "certainty": "confirmed"
           },
           {
-            "term": "Hepatic encephalopathy",
+            "term": "IVC thrombus",
             "certainty": "confirmed"
           },
           {
-            "term": "Hepatic encephalopathy",
+            "term": "Atrial fibrillation/flutter",
             "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
+          }
+        ],
+        "medications": [
           {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
+            "name": "ceftriaxone",
+            "dose": "",
+            "route": "",
+            "status": "started"
           },
           {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
+            "name": "metoprolol",
+            "dose": "",
+            "route": "",
+            "status": "started"
           },
           {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
+            "name": "octreotide",
+            "dose": "",
+            "route": "",
+            "status": "started"
           },
           {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
+            "name": "protonix",
+            "dose": "",
+            "route": "",
+            "status": "started"
           },
           {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
+            "name": "rifaximin",
+            "dose": "",
+            "route": "",
+            "status": "stopped"
           },
           {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
+            "name": "lactulose",
+            "dose": "",
+            "route": "",
+            "status": "stopped"
+          }
+        ],
+        "procedures": [
           {
-            "term": "Hepatic encephalopathy",
-            "certainty": "confirmed"
-          },
+            "name": "Arterial line",
+            "result": ""
+          }
+        ],
+        "negations": [
+          "No Known Allergies / Adverse Drug Reactions"
+        ],
+        "temporal": [
           {
-            "term": "H"
+            "finding": "Septic shock",
+            "onset": "since ___"
           }
         ],
         "_agent": "information_extraction",
@@ -14020,7 +13391,7 @@
           {
             "name": "Respiratory Rate",
             "value": "16",
-            "unit": "breaths/min"
+            "unit": "bpm"
           },
           {
             "name": "Oxygen Saturation",
@@ -14038,8 +13409,7 @@
           {
             "name": "Hemoglobin",
             "value": "11.2",
-            "unit": "g/dL",
-            "flag": "low"
+            "unit": "g/dL"
           },
           {
             "name": "Hematocrit",
@@ -14048,22 +13418,15 @@
             "flag": "low"
           },
           {
-            "name": "MCH",
-            "value": "27.1",
-            "unit": "pg",
-            "flag": "normal"
-          },
-          {
             "name": "MCV",
             "value": "85.0",
-            "unit": "fL",
-            "flag": "normal"
+            "unit": "fL"
           },
           {
             "name": "RDW",
             "value": "13.8",
             "unit": "%",
-            "flag": "normal"
+            "flag": "low"
           },
           {
             "name": "Platelet Count",
@@ -14074,14 +13437,12 @@
           {
             "name": "Anion Gap",
             "value": "18.0",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Bicarbonate",
             "value": "22.0",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Calcium",
@@ -14092,26 +13453,38 @@
           {
             "name": "Chloride",
             "value": "104.0",
-            "unit": "mEq/L",
-            "flag": "normal"
+            "unit": "mEq/L"
           },
           {
             "name": "Creatinine",
             "value": "0.5",
-            "unit": "mg/dL",
-            "flag": "normal"
+            "unit": "mg/dL"
           },
           {
             "name": "Glucose",
             "value": "95.0",
-            "unit": "mg/dL",
-            "flag": "normal"
+            "unit": "mg/dL"
           },
           {
             "name": "Magnesium",
             "value": "2.0",
             "unit": "mg/dL",
             "flag": "low"
+          },
+          {
+            "name": "Phosphate",
+            "value": "4.2",
+            "unit": "mg/dL"
+          },
+          {
+            "name": "Potassium",
+            "value": "4.1",
+            "unit": "mEq/L"
+          },
+          {
+            "name": "Sodium",
+            "value": "140.0",
+            "unit": "mEq/L"
           }
         ],
         "diagnoses_mentioned": [
@@ -14126,27 +13499,27 @@
         ],
         "medications": [
           {
-            "name": "Dilaudid",
-            "dose": "PCA",
-            "route": "PCA",
-            "status": "started"
-          },
-          {
-            "name": "Toradol",
-            "dose": "IV",
-            "route": "IV",
-            "status": "started"
-          },
-          {
             "name": "Zofran",
-            "dose": "IV",
-            "route": "IV",
+            "dose": "not specified",
+            "route": "not specified",
+            "status": "started"
+          },
+          {
+            "name": "dilaudid PCA",
+            "dose": "not specified",
+            "route": "not specified",
+            "status": "started"
+          },
+          {
+            "name": "toradol",
+            "dose": "not specified",
+            "route": "not specified",
             "status": "started"
           }
         ],
         "procedures": [
           {
-            "name": "Cryoablation of residual desmoid tumor",
+            "name": "cryoablation of residual desmoid tumor",
             "result": "unremarkable"
           }
         ],
@@ -14168,7 +13541,7 @@
         ],
         "temporal": [
           {
-            "finding": "pain",
+            "finding": "abdominal pain",
             "onset": "after cryoablation"
           }
         ],
@@ -15277,10 +14650,15 @@
       ],
       "n_diagnoses": 10,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
-      "symptom_count": 10,
-      "diagnosis_count": 4,
+      "symptom_count": 7,
+      "diagnosis_count": 5,
       "extracted": {
         "symptoms": [
+          {
+            "term": "DKA",
+            "status": "present",
+            "evidence": "admission with DKA/lactic acidosis"
+          },
           {
             "term": "fever",
             "status": "history",
@@ -15292,9 +14670,9 @@
             "evidence": "lower abdominal pain/cramping for the past week"
           },
           {
-            "term": "dizziness",
-            "status": "present",
-            "evidence": "dizziness"
+            "term": "headache",
+            "status": "history",
+            "evidence": "pressure-like frontal headache"
           },
           {
             "term": "nausea",
@@ -15304,38 +14682,23 @@
           {
             "term": "vaginal bleeding",
             "status": "history",
-            "evidence": "persistent daily vaginal bleeding"
+            "evidence": "vaginal spotting"
           },
           {
-            "term": "diarrhea",
+            "term": "decreased fetal movement",
             "status": "history",
-            "evidence": "significant amount of foul smelling diarrhea"
-          },
-          {
-            "term": "headache",
-            "status": "history",
-            "evidence": "frontal headache"
-          },
-          {
-            "term": "hypoglycemia",
-            "status": "history",
-            "evidence": "hypoglycemia"
-          },
-          {
-            "term": "hyperglycemia",
-            "status": "present",
-            "evidence": "DKA/lactic acidosis"
-          },
-          {
-            "term": "decreased fetal movements",
-            "status": "history",
-            "evidence": "decreased fetal movements"
+            "evidence": "decreased fetal movement"
           }
         ],
         "vitals": [
           {
             "name": "DBP",
             "value": "82.0",
+            "unit": "mmHg"
+          },
+          {
+            "name": "SBP",
+            "value": "129.0",
             "unit": "mmHg"
           },
           {
@@ -15349,13 +14712,8 @@
             "unit": "insp/min"
           },
           {
-            "name": "SBP",
-            "value": "113",
-            "unit": "mmHg"
-          },
-          {
             "name": "SpO2",
-            "value": "97",
+            "value": "97.0",
             "unit": "%"
           }
         ],
@@ -15416,13 +14774,13 @@
           },
           {
             "name": "pO2",
-            "value": "60",
+            "value": "60.0",
             "unit": "mm Hg",
             "flag": "low"
           },
           {
             "name": "Potassium",
-            "value": "8.8",
+            "value": "6.8",
             "unit": "mEq/L",
             "flag": "high"
           },
@@ -15446,7 +14804,7 @@
           },
           {
             "name": "Alkaline Phosphatase",
-            "value": "125",
+            "value": "125.0",
             "unit": "IU/L",
             "flag": "high"
           },
@@ -15458,9 +14816,39 @@
           },
           {
             "name": "Sodium",
-            "value": "144",
+            "value": "130",
             "unit": "mEq/L",
             "flag": "normal"
+          },
+          {
+            "name": "Lactate Dehydrogenase (LD)",
+            "value": "276.0",
+            "unit": "IU/L",
+            "flag": "high"
+          },
+          {
+            "name": "Magnesium",
+            "value": "7.4",
+            "unit": "mg/dL",
+            "flag": "high"
+          },
+          {
+            "name": "Calcium, Total",
+            "value": "8.6",
+            "unit": "mg/dL",
+            "flag": "low"
+          },
+          {
+            "name": "pCO2",
+            "value": "33.0",
+            "unit": "mm Hg",
+            "flag": "normal"
+          },
+          {
+            "name": "pH",
+            "value": "7.34",
+            "unit": "units",
+            "flag": "low"
           }
         ],
         "diagnoses_mentioned": [
@@ -15477,7 +14865,11 @@
             "certainty": "confirmed"
           },
           {
-            "term": "Vaginal spotting",
+            "term": "C difficile colitis",
+            "certainty": "suspected"
+          },
+          {
+            "term": "Missed abortion",
             "certainty": "confirmed"
           }
         ],
@@ -15485,52 +14877,82 @@
           {
             "name": "Detemir",
             "dose": "8 Units",
-            "route": "subcutaneous",
+            "route": "Breakfast",
+            "status": "stopped"
+          },
+          {
+            "name": "Detemir",
+            "dose": "3 Units",
+            "route": "Bedtime",
             "status": "stopped"
           },
           {
             "name": "Humalog",
             "dose": "4 Units",
-            "route": "subcutaneous",
+            "route": "Breakfast",
             "status": "stopped"
           },
           {
             "name": "Humalog",
             "dose": "3 Units",
-            "route": "subcutaneous",
+            "route": "Lunch",
             "status": "stopped"
           },
           {
             "name": "Humalog",
             "dose": "4 Units",
-            "route": "subcutaneous",
+            "route": "Dinner",
             "status": "stopped"
           },
           {
-            "name": "Humalog",
-            "dose": "3 Units",
-            "route": "subcutaneous",
-            "status": "stopped"
-          },
-          {
-            "name": "Prenatal Vitamins",
-            "dose": "1 TAB",
-            "route": "oral",
+            "name": "Lantus",
+            "dose": "20 Units",
+            "route": "HS",
             "status": "started"
+          },
+          {
+            "name": "Humalog",
+            "dose": "17 Units",
+            "route": "Breakfast",
+            "status": "started"
+          },
+          {
+            "name": "Humalog",
+            "dose": "14 Units",
+            "route": "Lunch",
+            "status": "started"
+          },
+          {
+            "name": "Humalog",
+            "dose": "17 Units",
+            "route": "Dinner",
+            "status": "started"
+          },
+          {
+            "name": "Lantus",
+            "dose": "14 Units",
+            "route": "HS",
+            "status": "continued"
+          },
+          {
+            "name": "Humalog",
+            "dose": "10 Units",
+            "route": "with meals",
+            "status": "continued"
           }
         ],
         "procedures": [
           {
-            "name": "PICC placement and subsequent removal",
-            "result": "successful"
+            "name": "PICC placement",
+            "result": "placed and subsequently removed"
           }
         ],
         "negations": [
-          "No edema"
+          "No retained products of conception on the US"
         ],
         "temporal": [
           {
-            "finding": "Hyperglycemia",
+            "finding": "Lactate",
             "onset": "running out of medications"
           }
         ],
@@ -16111,7 +15533,7 @@
       "n_diagnoses": 15,
       "extraction_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
       "symptom_count": 9,
-      "diagnosis_count": 5,
+      "diagnosis_count": 4,
       "extracted": {
         "symptoms": [
           {
@@ -16140,24 +15562,24 @@
             "evidence": "nodular gastritis"
           },
           {
-            "term": "pulmonary hypertension",
-            "status": "suspected",
-            "evidence": "Presentation is more concerning for valvular disease vs pulmonary HTN vs acute anemia."
-          },
-          {
-            "term": "atrial fibrillation",
-            "status": "confirmed",
-            "evidence": "A-fib on Coumadin"
+            "term": "moderate AS",
+            "status": "history",
+            "evidence": "moderate AS"
           },
           {
             "term": "sick sinus syndrome",
-            "status": "confirmed",
-            "evidence": "SSS s/p PPM"
+            "status": "history",
+            "evidence": "Sick sinus s/p PPM"
           },
           {
-            "term": "moderate aortic stenosis",
-            "status": "confirmed",
-            "evidence": "Moderate AS"
+            "term": "atrial fibrillation",
+            "status": "history",
+            "evidence": "Afib on warfarin"
+          },
+          {
+            "term": "coronary artery disease",
+            "status": "history",
+            "evidence": "CAD s/p stent ___"
           }
         ],
         "vitals": [
@@ -16172,8 +15594,13 @@
             "unit": "bpm"
           },
           {
-            "name": "Blood Pressure",
-            "value": "154/68",
+            "name": "Systolic BP",
+            "value": "154",
+            "unit": "mmHg"
+          },
+          {
+            "name": "Diastolic BP",
+            "value": "68",
             "unit": "mmHg"
           },
           {
@@ -16182,8 +15609,8 @@
             "unit": "breaths/min"
           },
           {
-            "name": "Oxygen Saturation",
-            "value": "100%",
+            "name": "O2 Saturation",
+            "value": "100",
             "unit": "%"
           }
         ],
@@ -16207,15 +15634,15 @@
             "flag": "low"
           },
           {
-            "name": "INR(PT)",
-            "value": "2.4",
-            "unit": "",
+            "name": "PTT",
+            "value": "37.7",
+            "unit": "sec",
             "flag": "high"
           },
           {
-            "name": "PT",
-            "value": "37.7",
-            "unit": "sec",
+            "name": "INR",
+            "value": "2.4",
+            "unit": "",
             "flag": "high"
           },
           {
@@ -16225,28 +15652,82 @@
             "flag": "low"
           },
           {
-            "name": "Calcium, Total",
+            "name": "Creatinine",
+            "value": "1.2",
+            "unit": "mg/dL",
+            "flag": "normal"
+          },
+          {
+            "name": "Calcium",
             "value": "8.3",
             "unit": "mg/dL",
             "flag": "low"
           },
           {
-            "name": "Absolute Lymphocyte Count",
-            "value": "1.0",
-            "unit": "K/uL",
-            "flag": "low"
-          },
-          {
-            "name": "Haptoglobin",
-            "value": "208.0",
+            "name": "Urea Nitrogen",
+            "value": "22.0",
             "unit": "mg/dL",
             "flag": "high"
           },
           {
-            "name": "PTT",
-            "value": "37.7",
-            "unit": "sec",
-            "flag": "high"
+            "name": "Bicarbonate",
+            "value": "25.0",
+            "unit": "mEq/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Chloride",
+            "value": "107.0",
+            "unit": "mEq/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Magnesium",
+            "value": "2.1",
+            "unit": "mg/dL",
+            "flag": "low"
+          },
+          {
+            "name": "Phosphate",
+            "value": "3.9",
+            "unit": "mg/dL",
+            "flag": "normal"
+          },
+          {
+            "name": "Potassium",
+            "value": "3.8",
+            "unit": "mEq/L",
+            "flag": "low"
+          },
+          {
+            "name": "Lactate Dehydrogenase",
+            "value": "141.0",
+            "unit": "IU/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Alanine Aminotransferase",
+            "value": "15.0",
+            "unit": "IU/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Alkaline Phosphatase",
+            "value": "43.0",
+            "unit": "IU/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Asparate Aminotransferase",
+            "value": "20.0",
+            "unit": "IU/L",
+            "flag": "normal"
+          },
+          {
+            "name": "Bilirubin, Indirect",
+            "value": "0.4",
+            "unit": "mg/dL",
+            "flag": "normal"
           },
           {
             "name": "Reticulocyte Count, Automated",
@@ -16257,6 +15738,10 @@
         ],
         "diagnoses_mentioned": [
           {
+            "term": "macrocytic anemia",
+            "certainty": "confirmed"
+          },
+          {
             "term": "coronary artery disease",
             "certainty": "confirmed"
           },
@@ -16266,14 +15751,6 @@
           },
           {
             "term": "sick sinus syndrome",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "moderate aortic stenosis",
-            "certainty": "confirmed"
-          },
-          {
-            "term": "anemia",
             "certainty": "confirmed"
           }
         ],
@@ -16292,7 +15769,8 @@
           }
         ],
         "negations": [
-          "no recent hematemesis, hematochezia, or melena"
+          "no hematemesis, hematochezia, or melena",
+          "no increase in ___ edema"
         ],
         "temporal": [
           {

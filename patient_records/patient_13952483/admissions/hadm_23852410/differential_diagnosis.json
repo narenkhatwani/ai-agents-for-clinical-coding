@@ -1,0 +1,346 @@
+{
+  "summary": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression. He has a history of malignancy, chronic kidney disease, and pulmonary hypertension.",
+  "most_likely": "Severe Pulmonary Hypertension",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Severe Pulmonary Hypertension",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Pulmonary hypertension",
+      "supporting_evidence": [
+        "Right Heart Catheterization revealed severe Pulmonary HTN with Cor Pulmonale"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Strong evidence from Right Heart Catheterization and symptoms of dyspnea and chest pain."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Neutropenia",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Neutropenia",
+      "supporting_evidence": [
+        "New neutropenia (ANC 750)"
+      ],
+      "opposing_evidence": [
+        "ANC 750 is low but not critically so"
+      ],
+      "reasoning": "ANC 750 is significantly low, indicating a risk of infection."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anemia",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Anemia",
+      "supporting_evidence": [
+        "Hematocrit: 26.4 % [abnormal], Hemoglobin: 8.2 g/dL [abnormal]"
+      ],
+      "opposing_evidence": [
+        "No severe bleeding or acute blood loss noted"
+      ],
+      "reasoning": "Hematocrit and Hemoglobin are significantly low, indicating anemia."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Malnutrition",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Overall anorexia and poor appetite"
+      ],
+      "opposing_evidence": [
+        "No specific evidence of recent weight loss or malnutrition"
+      ],
+      "reasoning": "Anorexia and poor appetite suggest a risk of malnutrition."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Thrombocytopenia",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Thrombocytopenia",
+      "supporting_evidence": [
+        "Thrombocytopenia (plts 93)"
+      ],
+      "opposing_evidence": [
+        "Platelet count is not critically low"
+      ],
+      "reasoning": "Thrombocytopenia is present but not severe."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "COPD",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "Chronic obstructive pulmonary disease",
+      "supporting_evidence": [
+        "COPD, unspecified"
+      ],
+      "opposing_evidence": [
+        "Current presentation more consistent with pulmonary hypertension"
+      ],
+      "reasoning": "History of COPD but current presentation more consistent with pulmonary hypertension."
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "Further clarification of the exact etiology of pulmonary hypertension and the underlying cause of neutropenia"
+  ],
+  "n_candidates": 6,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "13952483",
+  "hadm_id": "23852410",
+  "generated_at": "2026-08-09T00:45:46.331684",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 11,
+    "retained_links": 13,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 51,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 23557636,
+      "admittime": "2192-09-17 18:30:00",
+      "dischtime": "2192-09-29 16:57:00",
+      "admission_type": "EW EMER.",
+      "primary_icd_code": "C3432",
+      "primary_dx_title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+      "n_diagnoses": 15,
+      "icd10_diagnoses": [
+        {
+          "code": "C3432",
+          "title": "Malignant neoplasm of lower lobe, left bronchus or lung"
+        },
+        {
+          "code": "B190",
+          "title": "Unspecified viral hepatitis with hepatic coma"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "T8611",
+          "title": "Kidney transplant rejection"
+        },
+        {
+          "code": "K5090",
+          "title": "Crohn's disease, unspecified, without complications"
+        },
+        {
+          "code": "I5030",
+          "title": "Unspecified diastolic (congestive) heart failure"
+        },
+        {
+          "code": "I272",
+          "title": "Other secondary pulmonary hypertension"
+        },
+        {
+          "code": "Z940",
+          "title": "Kidney transplant status"
+        },
+        {
+          "code": "D509",
+          "title": "Iron deficiency anemia, unspecified"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Y830",
+          "title": "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        }
+      ]
+    },
+    {
+      "hadm_id": 28970521,
+      "admittime": "2192-12-15 16:01:00",
+      "dischtime": "2193-01-01 16:15:00",
+      "admission_type": "DIRECT EMER.",
+      "primary_icd_code": "J156",
+      "primary_dx_title": "Pneumonia due to other Gram-negative bacteria",
+      "n_diagnoses": 36,
+      "icd10_diagnoses": [
+        {
+          "code": "J156",
+          "title": "Pneumonia due to other Gram-negative bacteria"
+        },
+        {
+          "code": "D61810",
+          "title": "Antineoplastic chemotherapy induced pancytopenia"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "R64",
+          "title": "Cachexia"
+        },
+        {
+          "code": "I959",
+          "title": "Hypotension, unspecified"
+        },
+        {
+          "code": "E872",
+          "title": "Acidosis"
+        },
+        {
+          "code": "E873",
+          "title": "Alkalosis"
+        },
+        {
+          "code": "T8612",
+          "title": "Kidney transplant failure"
+        },
+        {
+          "code": "T8613",
+          "title": "Kidney transplant infection"
+        },
+        {
+          "code": "C3432",
+          "title": "Malignant neoplasm of lower lobe, left bronchus or lung"
+        },
+        {
+          "code": "I270",
+          "title": "Primary pulmonary hypertension"
+        },
+        {
+          "code": "Z681",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "E222",
+          "title": "Syndrome of inappropriate secretion of antidiuretic hormone"
+        },
+        {
+          "code": "K521",
+          "title": "Toxic gastroenteritis and colitis"
+        },
+        {
+          "code": "T8619",
+          "title": "Other complication of kidney transplant"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "J449",
+          "title": "Chronic obstructive pulmonary disease, unspecified"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "R627",
+          "title": "Adult failure to thrive"
+        },
+        {
+          "code": "Y842",
+          "title": "Radiological procedure and radiotherapy as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "K208",
+          "title": "Other esophagitis"
+        },
+        {
+          "code": "T66XXXA",
+          "title": "Radiation sickness, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92238",
+          "title": "Other place in hospital as the place of occurrence of the external cause"
+        },
+        {
+          "code": "B9789",
+          "title": "Other viral agents as the cause of diseases classified elsewhere"
+        },
+        {
+          "code": "Y830",
+          "title": "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "T451X5A",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter"
+        },
+        {
+          "code": "T3695XA",
+          "title": "Adverse effect of unspecified systemic antibiotic, initial encounter"
+        },
+        {
+          "code": "Y92230",
+          "title": "Patient room in hospital as the place of occurrence of the external cause"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        },
+        {
+          "code": "R000",
+          "title": "Tachycardia, unspecified"
+        },
+        {
+          "code": "R1310",
+          "title": "Dysphagia, unspecified"
+        },
+        {
+          "code": "R112",
+          "title": "Nausea with vomiting, unspecified"
+        },
+        {
+          "code": "E861",
+          "title": "Hypovolemia"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        }
+      ]
+    }
+  ]
+}

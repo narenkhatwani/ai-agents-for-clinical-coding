@@ -143,17 +143,60 @@ Restart the Jupyter kernel after changing provider or ZDR settings.
 | Path | Purpose |
 |------|---------|
 | `notebooks/00_settings.ipynb` | User-editable settings |
-| `notebooks/settings.json` | Saved settings (gitignored optional) |
-| `notebooks/pipeline.py` | **Single shared module** — cohort, LLM, agents, I/O, export |
-| `notebooks/stage_01_*.ipynb` … `stage_04_*.ipynb` | Run in order |
-| `data/` | Intermediate artifacts |
-| `patient_records/` | Final export |
+| `notebooks/settings.json` | Saved settings |
+| `notebooks/pipeline.py` | Cohort, LLM, agents, I/O, export |
+| `notebooks/snomed_ct.py` | Offline SNOMED CT mapping + ancestor context |
+| `notebooks/stage_01_*.ipynb` … `stage_07_*.ipynb` | Run in order |
+| `data/SnomedCT_*` | Offline RF2 SNOMED CT package (not committed) |
+| `data/snomed_index/` | Cached SNOMED index pickle |
+| `data/stage_05_snomed_mapping/` | Entity → SNOMED mappings |
+| `data/stage_06_snomed_ancestors/` | Ancestors + attribute context (filtered) |
+| `patient_records/` | Per-patient export |
 | `MISC/` | Previous Streamlit prototype |
+
+### Stage 5 — SNOMED CT mapping (`stage_05_snomed_mapping.ipynb`)
+
+- Reads IE entities from `patient_records/`
+- Maps each term to offline SNOMED CT (exact + fuzzy lexical match)
+- Writes `data/stage_05_snomed_mapping/snomed_mappings.json` and per-admission `snomed_mapping.json`
+
+### Stage 6 — Ancestors & relations (`stage_06_snomed_ancestors.ipynb`)
+
+For each mapped concept:
+
+1. **2 Is-a ancestors** (parent + grandparent)
+2. **Outbound** attribute destinations only (no inverses — avoids drug→poisoning noise):
+   - `cause_of` (Due to), `has_causative_agent`, `has_finding_site`, `has_associated_morphology`, `has_pathological_process`
+   - plus `after`, `associated_with`, `occurrence`, `clinical_course`
+   - plus Is-a parent of each attribute target
+3. **Score** with local **MiniLM** (`all-MiniLM-L6-v2`) vs the **patient IE entity term**
+4. **Retain** if similarity ≥ **0.70**; mark **high_confidence** if ≥ **0.80**
+5. Full unfiltered lists stay in `ancestors_depth2_all` / `attribute_relations_all`
+6. Per-admission: `snomed_ancestors.json` (full) + `snomed_retained.json` / `.txt` (retained only)
+7. Relationship **weights deferred** (`weights: null`)
+
+Requires: `pip install sentence-transformers` (model downloads once, then runs offline).
+
+After changing attribute typeIds, rebuild the SNOMED index with `force_rebuild=True` once.
+
+### Stage 7 — Scored differential diagnosis (`stage_07_differential_diagnosis.ipynb`)
+
+For each latest admission under `patient_records/`:
+
+1. Loads **symptom tree** + **retained SNOMED** (`snomed_retained.json`)
+2. Loads **all prior ICD-10 codes** from `admission_history.json` (PMH/comorbidity only — not current GT)
+3. Optionally includes structured clinical context + IE (current stay)
+4. Structured prompt: **ROLE / CONTEXT / TASK / CONSTRAINTS**, temperature **0.4**
+5. LLM produces a **ranked multi-diagnosis differential** with scores **0–100**
+6. Checkpoint resume via `diff_dx_checkpoint.json`
+7. Writes:
+   - `data/stage_07_differential_diagnosis/differential_diagnoses.json`
+   - per admission: `differential_diagnosis.json` + `differential_diagnosis.txt`
+
+Re-run: delete `diff_dx_checkpoint.json` if you want all patients regenerated under this prompt.
 
 ## Planned future stages
 
-5. Ontology routing (Infectious / Cardiovascular / Respiratory)  
-6. Evidence scoring  
-7. Prune low-likelihood branches  
-8. Retrieve guidelines / ICD codes  
-9. Final diagnosis + confidence + reasoning trace
+8. ICD / guideline retrieval over scored differentials  
+9. Final coding package + reasoning trace  
+10. Evaluation vs ground-truth ICD-10

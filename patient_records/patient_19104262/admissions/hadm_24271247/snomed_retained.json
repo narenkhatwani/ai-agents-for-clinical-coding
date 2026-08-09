@@ -1,0 +1,603 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "19104262",
+  "hadm_id": "24271247",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 36,
+  "n_entities_with_retained": 13,
+  "n_retained_links": 15,
+  "entities": [
+    {
+      "term": "abdominal pain",
+      "kind": "symptom",
+      "status": "history",
+      "snomed_concept_id": "21522001",
+      "snomed_preferred_term": "Abdominal pain",
+      "anchor_term": "abdominal pain",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "818983003",
+          "term": "Abdomen",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abdominal pain"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "818983003",
+          "term": "Abdomen",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abdominal pain"
+        }
+      ]
+    },
+    {
+      "term": "vaginal bleeding",
+      "kind": "symptom",
+      "status": "history",
+      "snomed_concept_id": "289530006",
+      "snomed_preferred_term": "Bleeding from vagina",
+      "anchor_term": "vaginal bleeding",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "131148009",
+          "term": "Bleeding",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.706,
+          "cosine_distance": 0.294,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "vaginal bleeding"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "131148009",
+          "term": "Bleeding",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.706,
+          "cosine_distance": 0.294,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "vaginal bleeding"
+        }
+      ]
+    },
+    {
+      "term": "decreased fetal movement",
+      "kind": "symptom",
+      "status": "history",
+      "snomed_concept_id": "276369006",
+      "snomed_preferred_term": "Low fetal movement",
+      "anchor_term": "decreased fetal movement",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "364755008",
+          "term": "Fetal movement activity - finding",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7348,
+          "cosine_distance": 0.2652,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "decreased fetal movement"
+        },
+        {
+          "concept_id": "289434000",
+          "term": "Finding of pattern of fetal movement",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7184,
+          "cosine_distance": 0.2816,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "decreased fetal movement"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "364755008",
+          "term": "Fetal movement activity - finding",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7348,
+          "cosine_distance": 0.2652,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "decreased fetal movement"
+        },
+        {
+          "concept_id": "289434000",
+          "term": "Finding of pattern of fetal movement",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7184,
+          "cosine_distance": 0.2816,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "decreased fetal movement"
+        }
+      ]
+    },
+    {
+      "term": "Diabetes mellitus type 1",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "46635009",
+      "snomed_preferred_term": "Diabetes mellitus type I",
+      "anchor_term": "Diabetes mellitus type 1",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "73211009",
+          "term": "Diabetes mellitus",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7481,
+          "cosine_distance": 0.2519,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Diabetes mellitus type 1"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "73211009",
+          "term": "Diabetes mellitus",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7481,
+          "cosine_distance": 0.2519,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Diabetes mellitus type 1"
+        }
+      ]
+    },
+    {
+      "term": "Diabetic ketoacidosis",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "420422005",
+      "snomed_preferred_term": "Diabetic ketoacidosis",
+      "anchor_term": "Diabetic ketoacidosis",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "56051008",
+          "term": "Ketoacidosis",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8194,
+          "cosine_distance": 0.1806,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Diabetic ketoacidosis"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "56051008",
+          "term": "Ketoacidosis",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8194,
+          "cosine_distance": 0.1806,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Diabetic ketoacidosis"
+        }
+      ]
+    },
+    {
+      "term": "Missed abortion",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "16607004",
+      "snomed_preferred_term": "Missed abortion",
+      "anchor_term": "Missed abortion",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "17369002",
+          "term": "Spontaneous abortion",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.713,
+          "cosine_distance": 0.287,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Missed abortion"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "17369002",
+          "term": "Spontaneous abortion",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.713,
+          "cosine_distance": 0.287,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Missed abortion"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    },
+    {
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "5540006",
+      "snomed_preferred_term": "Calcium",
+      "anchor_term": "Calcium, Total",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ]
+    },
+    {
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "88480006",
+      "snomed_preferred_term": "Potassium",
+      "anchor_term": "Potassium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ]
+    },
+    {
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259296007",
+      "snomed_preferred_term": "Phosphate",
+      "anchor_term": "Phosphate",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ]
+    },
+    {
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "72717003",
+      "snomed_preferred_term": "Magnesium",
+      "anchor_term": "Magnesium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ]
+    },
+    {
+      "term": "Sodium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "39972003",
+      "snomed_preferred_term": "Sodium",
+      "anchor_term": "Sodium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ]
+    },
+    {
+      "term": "Lactate Dehydrogenase (LD)",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259319003",
+      "snomed_preferred_term": "Lactate dehydrogenase",
+      "anchor_term": "Lactate Dehydrogenase (LD)",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "129919009",
+          "term": "Dehydrogenase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7301,
+          "cosine_distance": 0.2699,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Lactate Dehydrogenase (LD)"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "129919009",
+          "term": "Dehydrogenase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7301,
+          "cosine_distance": 0.2699,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Lactate Dehydrogenase (LD)"
+        }
+      ]
+    }
+  ]
+}

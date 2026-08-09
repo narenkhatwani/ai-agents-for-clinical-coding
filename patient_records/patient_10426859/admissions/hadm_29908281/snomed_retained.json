@@ -1,0 +1,504 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "10426859",
+  "hadm_id": "29908281",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 48,
+  "n_entities_with_retained": 10,
+  "n_retained_links": 13,
+  "entities": [
+    {
+      "term": "pain in right leg",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "287048003",
+      "snomed_preferred_term": "Pain in right leg",
+      "anchor_term": "pain in right leg",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "10601006",
+          "term": "Leg pain",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8249,
+          "cosine_distance": 0.1751,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "pain in right leg"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "10601006",
+          "term": "Leg pain",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8249,
+          "cosine_distance": 0.1751,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "pain in right leg"
+        }
+      ]
+    },
+    {
+      "term": "Supraventricular tachycardia",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "6456007",
+      "snomed_preferred_term": "Supraventricular tachycardia",
+      "anchor_term": "Supraventricular tachycardia",
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "72654001",
+          "term": "Supraventricular arrhythmia",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7624,
+          "cosine_distance": 0.2376,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Supraventricular tachycardia"
+        },
+        {
+          "concept_id": "3424008",
+          "term": "Tachycardia",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.8335,
+          "cosine_distance": 0.1665,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Supraventricular tachycardia"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "72654001",
+          "term": "Supraventricular arrhythmia",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7624,
+          "cosine_distance": 0.2376,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Supraventricular tachycardia"
+        },
+        {
+          "concept_id": "3424008",
+          "term": "Tachycardia",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.8335,
+          "cosine_distance": 0.1665,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Supraventricular tachycardia"
+        }
+      ]
+    },
+    {
+      "term": "IV Ondansetron 4 mg",
+      "kind": "procedure",
+      "status": "",
+      "snomed_concept_id": "322173001",
+      "snomed_preferred_term": "Ondansetron (as ondansetron hydrochloride) 4 mg oral tablet",
+      "anchor_term": "IV Ondansetron 4 mg",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "780068003",
+          "term": "Ondansetron only product in oral dose form",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7167,
+          "cosine_distance": 0.2833,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "IV Ondansetron 4 mg"
+        },
+        {
+          "concept_id": "713991008",
+          "term": "Ondansetron-containing product in oral dose form",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7261,
+          "cosine_distance": 0.2739,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "IV Ondansetron 4 mg"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "780068003",
+          "term": "Ondansetron only product in oral dose form",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7167,
+          "cosine_distance": 0.2833,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "IV Ondansetron 4 mg"
+        },
+        {
+          "concept_id": "713991008",
+          "term": "Ondansetron-containing product in oral dose form",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7261,
+          "cosine_distance": 0.2739,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "IV Ondansetron 4 mg"
+        }
+      ]
+    },
+    {
+      "term": "Troponin T",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "102682001",
+      "snomed_preferred_term": "Troponin T",
+      "anchor_term": "Troponin T",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "102680009",
+          "term": "Troponin",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.9369,
+          "cosine_distance": 0.0631,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Troponin T"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "102680009",
+          "term": "Troponin",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.9369,
+          "cosine_distance": 0.0631,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Troponin T"
+        }
+      ]
+    },
+    {
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "5540006",
+      "snomed_preferred_term": "Calcium",
+      "anchor_term": "Calcium, Total",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ]
+    },
+    {
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "72717003",
+      "snomed_preferred_term": "Magnesium",
+      "anchor_term": "Magnesium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ]
+    },
+    {
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259296007",
+      "snomed_preferred_term": "Phosphate",
+      "anchor_term": "Phosphate",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ]
+    },
+    {
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "88480006",
+      "snomed_preferred_term": "Potassium",
+      "anchor_term": "Potassium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ]
+    },
+    {
+      "term": "Sodium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "39972003",
+      "snomed_preferred_term": "Sodium",
+      "anchor_term": "Sodium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    }
+  ]
+}

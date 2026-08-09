@@ -1,10 +1,10 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his ongoing lung cancer, chemotherapy, and radiation therapy.",
+  "reasoning": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression.",
   "branches": [
     {
       "category": "constitutional",
-      "ontology_hint": "Other",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
           "term": "hypotension",
@@ -12,21 +12,10 @@
           "severity": "mild",
           "evidence": "Hypotension and Weight Loss",
           "related_findings": [
-            "Neutropenia",
-            "Thrombocytopenia"
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
           ],
-          "children": [
-            {
-              "term": "neutropenia",
-              "status": "present",
-              "evidence": "ANC 750"
-            },
-            {
-              "term": "thrombocytopenia",
-              "status": "present",
-              "evidence": "plts 93"
-            }
-          ]
+          "children": []
         },
         {
           "term": "weight loss",
@@ -34,110 +23,76 @@
           "severity": "moderate",
           "evidence": "weight loss and hypotension",
           "related_findings": [
-            "Neutropenia",
-            "Thrombocytopenia"
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
           ],
-          "children": [
-            {
-              "term": "neutropenia",
-              "status": "present",
-              "evidence": "ANC 750"
-            },
-            {
-              "term": "thrombocytopenia",
-              "status": "present",
-              "evidence": "plts 93"
-            }
-          ]
+          "children": []
         },
         {
           "term": "anorexia",
           "status": "present",
           "severity": "moderate",
-          "evidence": "anorexia, fatigue, weight loss",
+          "evidence": "overall anorexia and poor appetite",
           "related_findings": [
-            "Neutropenia",
-            "Thrombocytopenia"
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
           ],
-          "children": [
-            {
-              "term": "neutropenia",
-              "status": "present",
-              "evidence": "ANC 750"
-            },
-            {
-              "term": "thrombocytopenia",
-              "status": "present",
-              "evidence": "plts 93"
-            }
-          ]
+          "children": []
         },
         {
-          "term": "nausea",
+          "term": "malaise",
           "status": "present",
-          "severity": "mild",
-          "evidence": "denies any recent fevers, chills, or other localizing infectious symptoms",
+          "severity": "moderate",
+          "evidence": "malaise due to his chemotherapy and radiation therapy",
           "related_findings": [
-            "Neutropenia",
-            "Thrombocytopenia"
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
           ],
-          "children": [
-            {
-              "term": "neutropenia",
-              "status": "present",
-              "evidence": "ANC 750"
-            },
-            {
-              "term": "thrombocytopenia",
-              "status": "present",
-              "evidence": "plts 93"
-            }
-          ]
+          "children": []
         },
-        {
-          "term": "pain",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "pain with swallowing, and overall anorexia and poor appetite",
-          "related_findings": [
-            "Neutropenia",
-            "Thrombocytopenia"
-          ],
-          "children": [
-            {
-              "term": "neutropenia",
-              "status": "present",
-              "evidence": "ANC 750"
-            },
-            {
-              "term": "thrombocytopenia",
-              "status": "present",
-              "evidence": "plts 93"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "category": "respiratory",
-      "ontology_hint": "Respiratory",
-      "symptoms": [
         {
           "term": "cough",
           "status": "present",
           "severity": "mild",
           "evidence": "cough, pleuritic/MSK chest pain",
           "related_findings": [
-            "Neutropenia",
-            "Thrombocytopenia"
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
           ],
-          "children": [
-            {
-              "term": "chest pain",
-              "status": "present",
-              "evidence": "cough, pleuritic/MSK chest pain"
-            }
-          ]
+          "children": []
+        },
+        {
+          "term": "chest pain",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "pleuritic/MSK chest pain",
+          "related_findings": [
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
+          ],
+          "children": []
+        },
+        {
+          "term": "odynophagia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "persistent odynophagia",
+          "related_findings": [
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
+          ],
+          "children": []
+        },
+        {
+          "term": "pain",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "pain with swallowing",
+          "related_findings": [
+            "new neutropenia (ANC 750)",
+            "thrombocytopenia (plts 93)"
+          ],
+          "children": []
         }
       ]
     }
@@ -147,14 +102,12 @@
     "weight loss"
   ],
   "red_flags": [
-    "hypotension",
-    "neutropenia",
-    "thrombocytopenia"
+    "hypotension"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "13952483",
   "admission_id": "23852410",
-  "generated_at": "2026-07-20T01:12:58.073005"
+  "generated_at": "2026-08-08T16:20:19.782594"
 }

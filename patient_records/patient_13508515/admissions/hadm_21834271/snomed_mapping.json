@@ -1,0 +1,665 @@
+{
+  "stage": 5,
+  "generated_at": "2026-08-08T16:33:47.422735",
+  "patient_id": "13508515",
+  "hadm_id": "21834271",
+  "n_entities": 35,
+  "entities": [
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "dyspnea",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "dyspnea",
+        "mapped": true,
+        "concept_id": "267036007",
+        "preferred_term": "Dyspnea",
+        "fsn": "Dyspnea (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "chest pain",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "Chest pain",
+        "mapped": true,
+        "concept_id": "29857009",
+        "preferred_term": "Chest pain",
+        "fsn": "Chest pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "palpitations",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "palpitations",
+        "mapped": true,
+        "concept_id": "80313002",
+        "preferred_term": "Palpitations",
+        "fsn": "Palpitations (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "urine output",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "urine output",
+        "mapped": true,
+        "concept_id": "364202003",
+        "preferred_term": "Measure of urine output",
+        "fsn": "Measure of urine output (observable entity)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "pain",
+        "mapped": true,
+        "concept_id": "22253000",
+        "preferred_term": "Pain",
+        "fsn": "Pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "calf pain",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "calf pain",
+        "mapped": true,
+        "concept_id": "300954003",
+        "preferred_term": "Calf pain",
+        "fsn": "Pain in calf (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "left renal mass",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "left renal mass",
+        "mapped": true,
+        "concept_id": "309088003",
+        "preferred_term": "Kidney mass",
+        "fsn": "Renal mass (finding)",
+        "match_method": "fuzzy",
+        "score": 0.7790731195102494,
+        "candidates": [
+          {
+            "concept_id": "38594006",
+            "term": "Left renal pelvis",
+            "score": 0.5994233600968323
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "renal cell carcinoma",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "renal cell carcinoma",
+        "mapped": true,
+        "concept_id": "41607009",
+        "preferred_term": "Renal cell carcinoma",
+        "fsn": "Renal cell carcinoma (morphologic abnormality)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "systolic CHF",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "systolic CHF",
+        "mapped": true,
+        "concept_id": "111973004",
+        "preferred_term": "Systole",
+        "fsn": "Systole, function (observable entity)",
+        "match_method": "fuzzy",
+        "score": 0.7040731195102493,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "CAD",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "CAD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "type 2 diabetes",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "type 2 diabetes",
+        "mapped": true,
+        "concept_id": "405751000",
+        "preferred_term": "Diabetes type",
+        "fsn": "Diabetes type (observable entity)",
+        "match_method": "fuzzy",
+        "score": 0.8026358168660257,
+        "candidates": [
+          {
+            "concept_id": "44054006",
+            "term": "Diabetes mellitus type II",
+            "score": 0.8023131782731522
+          },
+          {
+            "concept_id": "190389009",
+            "term": "Type 2 diabetes mellitus with ulcer",
+            "score": 0.6150595188893875
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "obstructive sleep apnea",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "obstructive sleep apnea",
+        "mapped": true,
+        "concept_id": "78275009",
+        "preferred_term": "Obstructive sleep apnea syndrome",
+        "fsn": "Obstructive sleep apnea syndrome (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "episodic atrial fibrillation",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "episodic atrial fibrillation",
+        "mapped": true,
+        "concept_id": "49436004",
+        "preferred_term": "Atrial fibrillation",
+        "fsn": "Atrial fibrillation (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.7830649590763527,
+        "candidates": [
+          {
+            "concept_id": "426749004",
+            "term": "Chronic atrial fibrillation",
+            "score": 0.6750694387042854
+          },
+          {
+            "concept_id": "164889003",
+            "term": "ECG: atrial fibrillation",
+            "score": 0.6667876872599301
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Laparoscopic left radical nephrectomy",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Laparoscopic left radical nephrectomy",
+        "mapped": true,
+        "concept_id": "439235001",
+        "preferred_term": "Laparoscopic radical nephrectomy",
+        "fsn": "Laparoscopic radical nephrectomy (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.8630055601455298,
+        "candidates": [
+          {
+            "concept_id": "712998006",
+            "term": "Laparoscopic radical nephrectomy using robotic assistance",
+            "score": 0.6638599698987712
+          },
+          {
+            "concept_id": "116033007",
+            "term": "Radical nephrectomy",
+            "score": 0.6491292146464632
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Laparoscopic left retroperitoneal lymph node dissection",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Laparoscopic left retroperitoneal lymph node dissection",
+        "mapped": true,
+        "concept_id": "445917006",
+        "preferred_term": "Laparoscopic excision of retroperitoneal lymph node",
+        "fsn": "Laparoscopic excision of retroperitoneal lymph node (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.9189163356033743,
+        "candidates": [
+          {
+            "concept_id": "935441000168106",
+            "term": "Excision of retroperitoneal lymph node group",
+            "score": 0.7811097427455984
+          },
+          {
+            "concept_id": "447347001",
+            "term": "Laparoscopic D1 lymph node dissection",
+            "score": 0.6894839790510936
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Losartan Potassium",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Losartan Potassium",
+        "mapped": true,
+        "concept_id": "108582002",
+        "preferred_term": "Losartan potassium",
+        "fsn": "Losartan potassium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Carvedilol",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Carvedilol",
+        "mapped": true,
+        "concept_id": "386870007",
+        "preferred_term": "Carvedilol",
+        "fsn": "Carvedilol (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "HydrALAZINE",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "HydrALAZINE",
+        "mapped": true,
+        "concept_id": "387125005",
+        "preferred_term": "Hydralazine",
+        "fsn": "Hydralazine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Atorvastatin",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Atorvastatin",
+        "mapped": true,
+        "concept_id": "373444002",
+        "preferred_term": "Atorvastatin",
+        "fsn": "Atorvastatin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Torsemide",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Torsemide",
+        "mapped": true,
+        "concept_id": "108476002",
+        "preferred_term": "Torsemide",
+        "fsn": "Torasemide (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Spironolactone",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Spironolactone",
+        "mapped": true,
+        "concept_id": "387078006",
+        "preferred_term": "Spironolactone",
+        "fsn": "Spironolactone (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Isosorbide Mononitrate (Extended Release)",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Isosorbide Mononitrate (Extended Release)",
+        "mapped": true,
+        "concept_id": "386854005",
+        "preferred_term": "Isosorbide mononitrate",
+        "fsn": "Isosorbide mononitrate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Omeprazole",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Omeprazole",
+        "mapped": true,
+        "concept_id": "387137007",
+        "preferred_term": "Omeprazole",
+        "fsn": "Omeprazole (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Aspirin",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Aspirin",
+        "mapped": true,
+        "concept_id": "387458008",
+        "preferred_term": "Aspirin",
+        "fsn": "Aspirin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Creatinine",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Creatinine",
+        "mapped": true,
+        "concept_id": "15373003",
+        "preferred_term": "Creatinine",
+        "fsn": "Creatinine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Glucose",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Glucose",
+        "mapped": true,
+        "concept_id": "67079006",
+        "preferred_term": "Glucose",
+        "fsn": "Glucose (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Urea Nitrogen",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Urea Nitrogen",
+        "mapped": true,
+        "concept_id": "95971004",
+        "preferred_term": "Urea nitrogen",
+        "fsn": "Urea nitrogen (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hematocrit",
+        "mapped": true,
+        "concept_id": "28317006",
+        "preferred_term": "Hematocrit determination",
+        "fsn": "Hematocrit determination (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Hemoglobin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hemoglobin",
+        "mapped": true,
+        "concept_id": "38082009",
+        "preferred_term": "Hemoglobin",
+        "fsn": "Hemoglobin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "RDW",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDW",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Red Blood Cells",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Red Blood Cells",
+        "mapped": true,
+        "concept_id": "126242007",
+        "preferred_term": "Red blood cells, blood product",
+        "fsn": "Red blood cells, blood product (product)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "RDW-SD",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDW-SD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Platelet Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Platelet Count",
+        "mapped": true,
+        "concept_id": "61928009",
+        "preferred_term": "Platelet count",
+        "fsn": "Platelet count (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Calcium, Total",
+        "mapped": true,
+        "concept_id": "5540006",
+        "preferred_term": "Calcium",
+        "fsn": "Calcium (substance)",
+        "match_method": "fuzzy",
+        "score": 0.6585896621379387,
+        "candidates": [
+          {
+            "concept_id": "103399004",
+            "term": "Total (all fractions of)",
+            "score": 0.48609552012032325
+          },
+          {
+            "concept_id": "255619001",
+            "term": "In toto",
+            "score": 0.48609552012032325
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13508515",
+      "hadm_id": "21834271",
+      "term": "MCHC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCHC",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    }
+  ]
+}

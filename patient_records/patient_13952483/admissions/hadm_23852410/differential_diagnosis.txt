@@ -1,0 +1,56 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 13952483
+HADM ID          : 23852410
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:45:46.331684
+Candidates       : 6
+Most likely      : Severe Pulmonary Hypertension
+Prior admissions : 2 (51 ICD codes as PMH context)
+
+Summary:
+  The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression. He has a history of malignancy, chronic kidney disease, and pulmonary hypertension.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Severe Pulmonary Hypertension  (primary)
+      SNOMED aligned : Pulmonary hypertension
+      + Right Heart Catheterization revealed severe Pulmonary HTN with Cor Pulmonale
+      why: Strong evidence from Right Heart Catheterization and symptoms of dyspnea and chest pain.
+
+  #2  [70.0/100 | medium]  Neutropenia  (complication)
+      SNOMED aligned : Neutropenia
+      + New neutropenia (ANC 750)
+      − ANC 750 is low but not critically so
+      why: ANC 750 is significantly low, indicating a risk of infection.
+
+  #3  [65.0/100 | medium]  Anemia  (complication)
+      SNOMED aligned : Anemia
+      + Hematocrit: 26.4 % [abnormal], Hemoglobin: 8.2 g/dL [abnormal]
+      − No severe bleeding or acute blood loss noted
+      why: Hematocrit and Hemoglobin are significantly low, indicating anemia.
+
+  #4  [60.0/100 | medium]  Malnutrition  (complication)
+      + Overall anorexia and poor appetite
+      − No specific evidence of recent weight loss or malnutrition
+      why: Anorexia and poor appetite suggest a risk of malnutrition.
+
+  #5  [55.0/100 | medium]  Thrombocytopenia  (complication)
+      SNOMED aligned : Thrombocytopenia
+      + Thrombocytopenia (plts 93)
+      − Platelet count is not critically low
+      why: Thrombocytopenia is present but not severe.
+
+  #6  [50.0/100 | low]  COPD  (differential)
+      SNOMED aligned : Chronic obstructive pulmonary disease
+      + COPD, unspecified
+      − Current presentation more consistent with pulmonary hypertension
+      why: History of COPD but current presentation more consistent with pulmonary hypertension.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Further clarification of the exact etiology of pulmonary hypertension and the underlying cause of neutropenia

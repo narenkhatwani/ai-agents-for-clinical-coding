@@ -1,0 +1,699 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "19632936",
+  "hadm_id": "26696232",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 33,
+  "n_entities_with_retained": 14,
+  "n_retained_links": 18,
+  "entities": [
+    {
+      "term": "dyspnea on exertion",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "60845006",
+      "snomed_preferred_term": "Exertional dyspnea",
+      "anchor_term": "dyspnea on exertion",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "267036007",
+          "term": "Dyspnea",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8018,
+          "cosine_distance": 0.1982,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "dyspnea on exertion"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "267036007",
+          "term": "Dyspnea",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8018,
+          "cosine_distance": 0.1982,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "dyspnea on exertion"
+        }
+      ]
+    },
+    {
+      "term": "esophagitis",
+      "kind": "symptom",
+      "status": "history",
+      "snomed_concept_id": "16761005",
+      "snomed_preferred_term": "Esophagitis",
+      "anchor_term": "esophagitis",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "32849002",
+          "term": "Esophagus",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7325,
+          "cosine_distance": 0.2675,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "esophagitis"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "32849002",
+          "term": "Esophagus",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7325,
+          "cosine_distance": 0.2675,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "esophagitis"
+        }
+      ]
+    },
+    {
+      "term": "atrial fibrillation",
+      "kind": "symptom",
+      "status": "history",
+      "snomed_concept_id": "49436004",
+      "snomed_preferred_term": "Atrial fibrillation",
+      "anchor_term": "atrial fibrillation",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "17366009",
+          "term": "Atrial arrhythmia",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7031,
+          "cosine_distance": 0.2969,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "atrial fibrillation"
+        },
+        {
+          "concept_id": "40593004",
+          "term": "Fibrillation",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7274,
+          "cosine_distance": 0.2726,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "atrial fibrillation"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "17366009",
+          "term": "Atrial arrhythmia",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7031,
+          "cosine_distance": 0.2969,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "atrial fibrillation"
+        },
+        {
+          "concept_id": "40593004",
+          "term": "Fibrillation",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7274,
+          "cosine_distance": 0.2726,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "atrial fibrillation"
+        }
+      ]
+    },
+    {
+      "term": "coronary artery disease",
+      "kind": "symptom",
+      "status": "history",
+      "snomed_concept_id": "53741008",
+      "snomed_preferred_term": "Coronary arteriosclerosis",
+      "anchor_term": "coronary artery disease",
+      "n_retained": 3,
+      "n_high_confidence": 2,
+      "retained_ancestors": [
+        {
+          "concept_id": "896818001",
+          "term": "Abnormality of coronary artery morphology",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7053,
+          "cosine_distance": 0.2947,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "coronary artery disease"
+        },
+        {
+          "concept_id": "414024009",
+          "term": "Disorder of coronary artery",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.851,
+          "cosine_distance": 0.149,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "coronary artery disease"
+        }
+      ],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "41801008",
+          "term": "Coronary artery",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.8726,
+          "cosine_distance": 0.1274,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "coronary artery disease"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "896818001",
+          "term": "Abnormality of coronary artery morphology",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7053,
+          "cosine_distance": 0.2947,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "coronary artery disease"
+        },
+        {
+          "concept_id": "414024009",
+          "term": "Disorder of coronary artery",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.851,
+          "cosine_distance": 0.149,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "coronary artery disease"
+        },
+        {
+          "concept_id": "41801008",
+          "term": "Coronary artery",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.8726,
+          "cosine_distance": 0.1274,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "coronary artery disease"
+        }
+      ]
+    },
+    {
+      "term": "macrocytic anemia",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "83414005",
+      "snomed_preferred_term": "Macrocytic anemia",
+      "anchor_term": "macrocytic anemia",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "271737000",
+          "term": "Anemia",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7024,
+          "cosine_distance": 0.2976,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "macrocytic anemia"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "271737000",
+          "term": "Anemia",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7024,
+          "cosine_distance": 0.2976,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "macrocytic anemia"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    },
+    {
+      "term": "Iron",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "3829006",
+      "snomed_preferred_term": "Iron",
+      "anchor_term": "Iron",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767270007",
+          "term": "Iron and/or iron compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7247,
+          "cosine_distance": 0.2753,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Iron"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767270007",
+          "term": "Iron and/or iron compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7247,
+          "cosine_distance": 0.2753,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Iron"
+        }
+      ]
+    },
+    {
+      "term": "Calcium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "5540006",
+      "snomed_preferred_term": "Calcium",
+      "anchor_term": "Calcium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8175,
+          "cosine_distance": 0.1825,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8175,
+          "cosine_distance": 0.1825,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium"
+        }
+      ]
+    },
+    {
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "72717003",
+      "snomed_preferred_term": "Magnesium",
+      "anchor_term": "Magnesium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ]
+    },
+    {
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259296007",
+      "snomed_preferred_term": "Phosphate",
+      "anchor_term": "Phosphate",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ]
+    },
+    {
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "88480006",
+      "snomed_preferred_term": "Potassium",
+      "anchor_term": "Potassium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ]
+    },
+    {
+      "term": "Lactate Dehydrogenase",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259319003",
+      "snomed_preferred_term": "Lactate dehydrogenase",
+      "anchor_term": "Lactate Dehydrogenase",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "129919009",
+          "term": "Dehydrogenase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7693,
+          "cosine_distance": 0.2307,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Lactate Dehydrogenase"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "129919009",
+          "term": "Dehydrogenase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7693,
+          "cosine_distance": 0.2307,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Lactate Dehydrogenase"
+        }
+      ]
+    },
+    {
+      "term": "Alanine Aminotransferase",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "56935002",
+      "snomed_preferred_term": "Alanine aminotransferase",
+      "anchor_term": "Alanine Aminotransferase",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "130093006",
+          "term": "Aminotransferase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8677,
+          "cosine_distance": 0.1323,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Alanine Aminotransferase"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "130093006",
+          "term": "Aminotransferase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8677,
+          "cosine_distance": 0.1323,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Alanine Aminotransferase"
+        }
+      ]
+    },
+    {
+      "term": "Bilirubin, Indirect",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "37852002",
+      "snomed_preferred_term": "Indirect reacting bilirubin",
+      "anchor_term": "Bilirubin, Indirect",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "79706000",
+          "term": "Bilirubin",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7431,
+          "cosine_distance": 0.2569,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bilirubin, Indirect"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "79706000",
+          "term": "Bilirubin",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7431,
+          "cosine_distance": 0.2569,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bilirubin, Indirect"
+        }
+      ]
+    }
+  ]
+}

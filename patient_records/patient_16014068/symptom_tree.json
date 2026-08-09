@@ -1,61 +1,79 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with weakness, exertional dyspnea, and chronic hematoma-related symptoms, with no acute infectious or cardiovascular symptoms.",
+  "reasoning": "The patient presents with a fall and subsequent minor abrasions and soreness, along with a history of metastatic sarcoma and recurrent hematoma. The patient's anemia and thrombocytopenia are significant, with ongoing issues related to his malignancy and prior treatments.",
   "branches": [
     {
-      "category": "neurologic",
-      "ontology_hint": "Neurology",
+      "category": "constitutional",
+      "ontology_hint": "Other",
       "symptoms": [
         {
           "term": "weakness",
           "status": "present",
-          "severity": "mild",
-          "evidence": "weakness attributed to weakness",
+          "evidence": "attributes it to weakness",
           "related_findings": [
-            "degenerative changes of the cervical spine"
+            "anemia",
+            "thrombocytopenia"
           ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "respiratory",
-      "ontology_hint": "Respiratory",
-      "symptoms": [
-        {
-          "term": "dyspnea",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "exertional dyspnea",
-          "related_findings": [
-            "pulmonary nodules"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "hematologic",
-      "ontology_hint": "Hematology",
-      "symptoms": [
+          "children": [
+            {
+              "term": "fatigue",
+              "status": "present",
+              "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+            }
+          ]
+        },
         {
           "term": "anemia",
           "status": "present",
           "severity": "severe",
           "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
           "related_findings": [
-            "chronic thigh hematoma",
-            "cytokine effects from chemotherapy"
+            "thrombocytopenia",
+            "cytokine effects"
           ],
           "children": [
             {
-              "term": "thrombocytopenia",
+              "term": "fatigue",
               "status": "present",
-              "severity": "mild",
-              "evidence": "Platelet Count: 63.0 K/uL",
-              "related_findings": [
-                "IVC filter placement"
-              ]
+              "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+            }
+          ]
+        },
+        {
+          "term": "thrombocytopenia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Platelet Count: 63.0 K/uL",
+          "related_findings": [
+            "cytokine effects",
+            "chemotherapy side effects"
+          ],
+          "children": [
+            {
+              "term": "easy bruising",
+              "status": "history",
+              "evidence": "denies easy bruising"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
+      "symptoms": [
+        {
+          "term": "headache",
+          "status": "present",
+          "evidence": "hit his head",
+          "related_findings": [
+            "intracranial bleeding"
+          ],
+          "children": [
+            {
+              "term": "dizziness",
+              "status": "history",
+              "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
             }
           ]
         }
@@ -67,8 +85,19 @@
       "symptoms": [
         {
           "term": "hypotension",
-          "status": "absent",
-          "evidence": "Blood Pressure: 114/66 mmHg"
+          "status": "history",
+          "evidence": "Blood Pressure: 114/66",
+          "related_findings": [
+            "cytokine effects",
+            "chemotherapy side effects"
+          ],
+          "children": [
+            {
+              "term": "dizziness",
+              "status": "history",
+              "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+            }
+          ]
         }
       ]
     },
@@ -78,33 +107,25 @@
       "symptoms": [
         {
           "term": "fever",
-          "status": "absent",
-          "evidence": "no fevers/chills"
-        },
-        {
-          "term": "infectious nodules",
-          "status": "suspected",
-          "evidence": "infectious nodules",
-          "related_findings": [
-            "pulmonary nodules"
-          ]
+          "status": "history",
+          "evidence": "denies fevers/chills"
         }
       ]
     }
   ],
   "key_symptoms": [
     "weakness",
-    "dyspnea",
-    "anemia"
+    "anemia",
+    "thrombocytopenia"
   ],
   "red_flags": [
     "hypotension",
-    "AMS"
+    "headache"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "16014068",
   "admission_id": "29042843",
-  "generated_at": "2026-07-20T01:13:11.562010"
+  "generated_at": "2026-08-08T16:20:36.434081"
 }

@@ -1,0 +1,53 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 16014068
+HADM ID          : 29042843
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:46:00.047231
+Candidates       : 5
+Most likely      : Anemia due to antineoplastic chemotherapy
+Prior admissions : 9 (138 ICD codes as PMH context)
+
+Summary:
+  The patient, a metastatic sarcoma patient with a history of chemotherapy and hematological issues, presents with weakness, anemia, thrombocytopenia, and a fall resulting in minor abrasions and soreness. The patient also has a history of hypotension and headache.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Anemia due to antineoplastic chemotherapy  (primary)
+      SNOMED aligned : D6959
+      + Anemia due to antineoplastic chemotherapy, D6959
+      why: Anemia is severe and directly related to prior chemotherapy, supported by lab results.
+
+  #2  [75.0/100 | high]  Thrombocytopenia due to antineoplastic chemotherapy  (complication)
+      SNOMED aligned : D6481
+      + Thrombocytopenia, D6481
+      why: Thrombocytopenia is mild but related to prior chemotherapy, supported by lab results.
+
+  #3  [65.0/100 | medium]  Hypotension due to cytokine effects or chemotherapy side effects  (complication)
+      + Hypotension, I129, E8342
+      why: Hypotension is historical and may be due to cytokine effects or chemotherapy side effects.
+
+  #4  [50.0/100 | low]  Metastatic sarcoma to the brain  (differential)
+      SNOMED aligned : 443144000
+      + Metastatic sarcoma, 443144000
+      − No recent symptoms or imaging findings
+      why: Metastatic sarcoma is a known comorbidity but not currently presenting acutely.
+
+  #5  [40.0/100 | low]  Headache  (symptom)
+      SNOMED aligned : 21522001
+      + Headache, 21522001
+      − No recent imaging findings
+      why: Headache is present but not associated with acute findings.
+
+RULE-OUTS
+---------
+
+  • Pulmonary embolism: No current symptoms or imaging findings.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Further imaging or clinical follow-up to confirm anemia and thrombocytopenia etiology

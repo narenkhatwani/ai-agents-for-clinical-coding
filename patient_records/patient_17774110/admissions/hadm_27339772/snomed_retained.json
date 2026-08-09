@@ -1,0 +1,769 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "17774110",
+  "hadm_id": "27339772",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 56,
+  "n_entities_with_retained": 15,
+  "n_retained_links": 20,
+  "entities": [
+    {
+      "term": "Hypoxic respiratory failure",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "39871006",
+      "snomed_preferred_term": "Chronic respiratory failure",
+      "anchor_term": "Hypoxic respiratory failure",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "409622000",
+          "term": "Respiratory failure",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8149,
+          "cosine_distance": 0.1851,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Hypoxic respiratory failure"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "409622000",
+          "term": "Respiratory failure",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8149,
+          "cosine_distance": 0.1851,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Hypoxic respiratory failure"
+        }
+      ]
+    },
+    {
+      "term": "GI bleeding",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "74474003",
+      "snomed_preferred_term": "Gastrointestinal hemorrhage",
+      "anchor_term": "GI bleeding",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "131148009",
+          "term": "Bleeding",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7205,
+          "cosine_distance": 0.2795,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "GI bleeding"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "131148009",
+          "term": "Bleeding",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7205,
+          "cosine_distance": 0.2795,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "GI bleeding"
+        }
+      ]
+    },
+    {
+      "term": "Hepatic encephalopathy",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "13920009",
+      "snomed_preferred_term": "Hepatic encephalopathy",
+      "anchor_term": "Hepatic encephalopathy",
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "50122000",
+          "term": "Metabolic encephalopathy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7065,
+          "cosine_distance": 0.2935,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hepatic encephalopathy"
+        },
+        {
+          "concept_id": "81308009",
+          "term": "Encephalopathy",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.807,
+          "cosine_distance": 0.193,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Hepatic encephalopathy"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "50122000",
+          "term": "Metabolic encephalopathy",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7065,
+          "cosine_distance": 0.2935,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hepatic encephalopathy"
+        },
+        {
+          "concept_id": "81308009",
+          "term": "Encephalopathy",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.807,
+          "cosine_distance": 0.193,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Hepatic encephalopathy"
+        }
+      ]
+    },
+    {
+      "term": "Worsening liver failure",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "197270009",
+      "snomed_preferred_term": "Acute liver failure",
+      "anchor_term": "Worsening liver failure",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "59927004",
+          "term": "Hepatic failure",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.763,
+          "cosine_distance": 0.237,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Worsening liver failure"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "59927004",
+          "term": "Hepatic failure",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.763,
+          "cosine_distance": 0.237,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Worsening liver failure"
+        }
+      ]
+    },
+    {
+      "term": "Pleural effusion",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "60046008",
+      "snomed_preferred_term": "Pleural effusion",
+      "anchor_term": "Pleural effusion",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "233635001",
+          "term": "Disorder of pleura and pleural cavity",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7055,
+          "cosine_distance": 0.2945,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Pleural effusion"
+        }
+      ],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "91381003",
+          "term": "Pleural cavity",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7079,
+          "cosine_distance": 0.2921,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Pleural effusion"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "233635001",
+          "term": "Disorder of pleura and pleural cavity",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7055,
+          "cosine_distance": 0.2945,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Pleural effusion"
+        },
+        {
+          "concept_id": "91381003",
+          "term": "Pleural cavity",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7079,
+          "cosine_distance": 0.2921,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Pleural effusion"
+        }
+      ]
+    },
+    {
+      "term": "Cirrhosis",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "371139006",
+      "snomed_preferred_term": "Early cirrhosis",
+      "anchor_term": "Cirrhosis",
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "19943007",
+          "term": "Cirrhosis of liver",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8925,
+          "cosine_distance": 0.1075,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Cirrhosis"
+        }
+      ],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "10200004",
+          "term": "Liver",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Cirrhosis"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "19943007",
+          "term": "Cirrhosis of liver",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8925,
+          "cosine_distance": 0.1075,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Cirrhosis"
+        },
+        {
+          "concept_id": "10200004",
+          "term": "Liver",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Cirrhosis"
+        }
+      ]
+    },
+    {
+      "term": "Pancytopenia",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "127034005",
+      "snomed_preferred_term": "Pancytopenia",
+      "anchor_term": "Pancytopenia",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "50820005",
+          "term": "Cytopenia",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7283,
+          "cosine_distance": 0.2717,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Pancytopenia"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "50820005",
+          "term": "Cytopenia",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7283,
+          "cosine_distance": 0.2717,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Pancytopenia"
+        }
+      ]
+    },
+    {
+      "term": "Bipolar disorder",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "13746004",
+      "snomed_preferred_term": "Bipolar disorder",
+      "anchor_term": "Bipolar disorder",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "21071000119101",
+          "term": "Mood disorder of manic type",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7418,
+          "cosine_distance": 0.2582,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bipolar disorder"
+        },
+        {
+          "concept_id": "46206005",
+          "term": "Mood disorder",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7823,
+          "cosine_distance": 0.2177,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bipolar disorder"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "21071000119101",
+          "term": "Mood disorder of manic type",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7418,
+          "cosine_distance": 0.2582,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bipolar disorder"
+        },
+        {
+          "concept_id": "46206005",
+          "term": "Mood disorder",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7823,
+          "cosine_distance": 0.2177,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bipolar disorder"
+        }
+      ]
+    },
+    {
+      "term": "Alcohol abuse",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "15167005",
+      "snomed_preferred_term": "Alcohol abuse",
+      "anchor_term": "Alcohol abuse",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "1336085007",
+          "term": "Alcohol use disorder",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7763,
+          "cosine_distance": 0.2237,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Alcohol abuse"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "1336085007",
+          "term": "Alcohol use disorder",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7763,
+          "cosine_distance": 0.2237,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Alcohol abuse"
+        }
+      ]
+    },
+    {
+      "term": "Hepatitis C",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "50711007",
+      "snomed_preferred_term": "Viral hepatitis C",
+      "anchor_term": "Hepatitis C",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "62944002",
+          "term": "Hepatitis C virus",
+          "relation": "has_causative_agent",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.9474,
+          "cosine_distance": 0.0526,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Hepatitis C"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "62944002",
+          "term": "Hepatitis C virus",
+          "relation": "has_causative_agent",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.9474,
+          "cosine_distance": 0.0526,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Hepatitis C"
+        }
+      ]
+    },
+    {
+      "term": "Bilirubin, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "359986008",
+      "snomed_preferred_term": "Total bilirubin",
+      "anchor_term": "Bilirubin, Total",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "302787001",
+          "term": "Bilirubin level",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7339,
+          "cosine_distance": 0.2661,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bilirubin, Total"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "302787001",
+          "term": "Bilirubin level",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7339,
+          "cosine_distance": 0.2661,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bilirubin, Total"
+        }
+      ]
+    },
+    {
+      "term": "Alanine Aminotransferase (ALT)",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "56935002",
+      "snomed_preferred_term": "Alanine aminotransferase",
+      "anchor_term": "Alanine Aminotransferase (ALT)",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "130093006",
+          "term": "Aminotransferase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7936,
+          "cosine_distance": 0.2064,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Alanine Aminotransferase (ALT)"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "130093006",
+          "term": "Aminotransferase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7936,
+          "cosine_distance": 0.2064,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Alanine Aminotransferase (ALT)"
+        }
+      ]
+    },
+    {
+      "term": "Calcium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "5540006",
+      "snomed_preferred_term": "Calcium",
+      "anchor_term": "Calcium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8175,
+          "cosine_distance": 0.1825,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8175,
+          "cosine_distance": 0.1825,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium"
+        }
+      ]
+    },
+    {
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259296007",
+      "snomed_preferred_term": "Phosphate",
+      "anchor_term": "Phosphate",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ]
+    },
+    {
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "88480006",
+      "snomed_preferred_term": "Potassium",
+      "anchor_term": "Potassium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ]
+    }
+  ]
+}

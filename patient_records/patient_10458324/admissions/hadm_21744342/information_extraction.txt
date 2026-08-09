@@ -8,36 +8,44 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [present] rib fractures — "right sided ___ rib fractures"
+  • [present] right sided rib fractures — "right sided rib fractures"
   • [present] fall — "mechanical fall"
+  • [present] right lateral chest pain — "right lateral chest against the bathtub"
   • [present] hypoxia — "satting 96% on 4L"
-  • [present] chest pain — "tenderness on right posterior back and along the right lateral chest"
-  • [present] subcutaneous emphysema — "areas of subcutaneous emphysema along the right posterior back"
-  • [present] chest pain — "denied chest pain"
-  • [present] shortness of breath — "non-labored breathing, on MC"
-  • [present] tachypnea — "mildy tachypnic"
-  • [present] crackles — "inspiratory crackles b/l lower lobes"
-  • [present] edema — "bilateral, 2+ DP pulses"
+  • [present] right posterior back tenderness — "tenderness on right posterior back"
+  • [present] subcutaneous emphysema — "subcutaneous emphysema along the right posterior back"
+  • [present] right PTX — "small right PTX"
+  • [present] insomnia — "nightmares of being left alone and mistreated"
+  • [present] bipolar disorder — "Bipolar disorder"
+  • [present] polysubstance use — "Polysubstance use"
+  • [present] opiate dependence — "Opiate dependence"
+  • [absent] headache — "denies neck stiffness or headache"
+  • [present] myalgias — "myalgias"
+  • [present] cough — "5 days of mild cough that worsened over the past two days"
+  • [present] fever — "fever"
+  • [present] nasal congestion — "nasal congestion"
+  • [present] sore throat — "sore throat"
+  • [present] vomiting — "one episode of vomiting"
+  • [present] diarrhea — "diarrhea"
 
 VITALS
 ------
 
-• Heart Rate: 88 bpm
-• Respiratory Rate: 17 insp/min
+• HR: 88 bpm
+• BP: 121/72 mmHg
 • SpO2: 98 %
-• DBP: 72 mmHg
-• SBP: 121 mmHg
+• RR: 17 insp/min
 • BMI: 17.9 kg/m2
-• Weight: 125 Lbs
+• Weight: 125 lbs
 
 LABS
 ----
 
 • WBC: 10.6 K/uL [high]
-• Hemoglobin: 10.9 g/dL [low]
-• Hematocrit: 33.3 % [low]
+• Hgb: 10.9 g/dL [low]
+• Hct: 33.3 % [low]
 • Platelet Count: 623 K/uL [high]
-• Red Blood Cells: 3.72 m/uL [low]
+• RBC: 3.72 m/uL [low]
 • Calcium, Total: 8.3 mg/dL [low]
 • Glucose: 127 mg/dL [high]
 • Albumin: 2.8 g/dL [low]
@@ -45,7 +53,7 @@ LABS
 • Urea Nitrogen: 22 mg/dL [high]
 • Free Calcium: 1.11 mmol/L [low]
 • Phosphate: 4.7 mg/dL [high]
-• Bacteria: nan /hpf  [high]
+• Bacteria: nan /hpf [high]
 • Protein: 30 mg/dL [high]
 • Urobilinogen: 2.0 mg/dL [high]
 • pO2: 258 mm Hg [low]
@@ -53,17 +61,22 @@ LABS
 • pCO2: 49 mm Hg [high]
 • pH: 7.29 units [low]
 • Sodium: 134 mEq/L [low]
-• Magnesium: 3.2 mg/dL [normal]
+• Magnesium: 3.2 mg/dL [high]
 • Creatine Kinase (CK): 555 IU/L [high]
+• Anion Gap: 11 mEq/L [normal]
+• Bicarbonate: 26 mEq/L [normal]
+• Chloride: 100 mEq/L [normal]
+• Creatinine: 0.8 mg/dL [normal]
 
 DIAGNOSES MENTIONED
 -------------------
 
-  • [confirmed] right ___ rib fractures
-  • [confirmed] post-traumatic stress disorder (PTSD)
+  • [confirmed] right rib fractures
+  • [confirmed] PTSD
   • [confirmed] bipolar disorder
   • [confirmed] polysubstance use
   • [confirmed] opiate dependence
+  • [confirmed] influenza A
 
 MEDICATIONS
 -----------
@@ -80,11 +93,353 @@ PROCEDURES
 NEGATIONS
 ---------
 
-  • denied chest pain
-  • denied LOC/head strike
-  • denied harm to others
+  • denies LOC/head strike
+  • denies harm to others
+  • denies access to weapons
+  • denies suicide attempts
+  • denies PNA
+  • denies acute changes
+  • denies interval change
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • denies acute changes
+  • 
 
 TEMPORAL
 --------
 
-  • right ___ rib fractures: fall
+  (none)

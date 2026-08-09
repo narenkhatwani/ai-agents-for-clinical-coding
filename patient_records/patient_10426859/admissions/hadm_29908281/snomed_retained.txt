@@ -1,0 +1,39 @@
+Patient: 10426859  HADM: 29908281
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 10 / 48  |  links: 13
+
+• pain in right leg  [symptom]  → SNOMED: Pain in right leg (287048003)
+    - [is_a] Leg pain (id=10601006, sim=0.8249) [HIGH]
+
+• Supraventricular tachycardia  [diagnosis]  → SNOMED: Supraventricular tachycardia (6456007)
+    - [is_a] Supraventricular arrhythmia (id=72654001, sim=0.7624)
+    - [is_a] Tachycardia (id=3424008, sim=0.8335) [HIGH]
+
+• IV Ondansetron 4 mg  [procedure]  → SNOMED: Ondansetron (as ondansetron hydrochloride) 4 mg oral tablet (322173001)
+    - [is_a] Ondansetron only product in oral dose form (id=780068003, sim=0.7167)
+    - [is_a] Ondansetron-containing product in oral dose form (id=713991008, sim=0.7261)
+
+• Troponin T  [lab]  → SNOMED: Troponin T (102682001)
+    - [is_a] Troponin (id=102680009, sim=0.9369) [HIGH]
+
+• Calcium, Total  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.721)
+
+• Magnesium  [lab]  → SNOMED: Magnesium (72717003)
+    - [is_a] Magnesium and/or magnesium compound (id=767301009, sim=0.8235) [HIGH]
+
+• Phosphate  [lab]  → SNOMED: Phosphate (259296007)
+    - [is_a] Phosphorus compound (id=63793008, sim=0.7761)
+    - [is_a] Phosphorus and/or phosphorus compound (id=767361006, sim=0.7162)
+
+• Potassium  [lab]  → SNOMED: Potassium (88480006)
+    - [is_a] Potassium and/or potassium compound (id=767364003, sim=0.7922)
+
+• Sodium  [lab]  → SNOMED: Sodium (39972003)
+    - [is_a] Sodium and/or sodium compound (id=767403008, sim=0.7618)
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)

@@ -8,47 +8,61 @@ Patient ID       : 12007928
 Admission ID     : 23749816
 
 Reasoning:
-  The patient presents with dyspnea, orthopnea, and worsening fatigue, with a history of diastolic CHF and atrial fibrillation.
+  The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF and atrial fibrillation. She also has signs of renal and hematologic dysfunction.
 
 Key symptoms     : dyspnea, orthopnea
-Red flags        : worsening dyspnea, tremors
+Red flags        : hypotension, AMS
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] dyspnea
       evidence: "increased dyspnea"
-      related: orthopnea, shortness of breath
+      related: orthopnea, crackles in lungs, pitting edema
       • [present] orthopnea
           evidence: "reports significant orthopnea"
-      • [present] shortness of breath
-          evidence: "unable to walk about 10 steps without feeling short of breath"
+      • [present] pitting edema
+          evidence: "2+ pitting lower extremity edema"
   • [present, moderate] fatigue
-      evidence: "everything has been quite hard"
-      related: shortness of breath
-
-NEUROLOGIC → Neurologic
------------------------
-
-  • [present, moderate] tremors
-      evidence: "worsened tremors"
-  • [present, mild] bladder spasms
-      evidence: "abdominal pain in the setting of ? bladder spasms"
-      related: urge incontinence
+      evidence: "all activities now are quite fatiguing"
+      related: crackles in lungs, pitting edema
 
 RENAL → Renal
 -------------
 
   • [present, mild] creatinine elevation
       evidence: "Creatinine: 1.6 mg/dL"
-      related: urea nitrogen elevation
-  • [present, mild] urea nitrogen elevation
-      evidence: "Urea Nitrogen: 32.0 mg/dL"
-      related: creatinine elevation
+      related: orthopnea, pitting edema
 
-INFECTIOUS → Infectious Diseases
---------------------------------
+HEMATOLOGIC → Hematologic
+-------------------------
 
-  • [present, mild] skin infection
-      evidence: "Weeping in legs, erythematous in the lower extremities"
-      related: blood cultures drawn, urine culture drawn
+  • [present, mild] anemia
+      evidence: "Hemoglobin: 10.2 g/dL"
+      related: orthopnea, pitting edema
+  • [present, mild] low MCHC
+      evidence: "MCHC: 30.0 g/dL"
+      related: orthopnea, pitting edema
+  • [present, mild] low MCV
+      evidence: "MCV: 81.0 fL"
+      related: orthopnea, pitting edema
+  • [present, mild] low RDW
+      evidence: "RDW: 18.2 %"
+      related: orthopnea, pitting edema
+  • [present, mild] low RDW-SD
+      evidence: "RDW-SD: 53.5 fL"
+      related: orthopnea, pitting edema
+
+NEUROLOGIC → Neurologic
+-----------------------
+
+  • [present, mild] tremors
+      evidence: "increased spasms in the upper extremities"
+      related: orthopnea, pitting edema
+
+GI → GI
+-------
+
+  • [present, mild] incontinence
+      evidence: "urine incontinence"
+      related: orthopnea, pitting edema

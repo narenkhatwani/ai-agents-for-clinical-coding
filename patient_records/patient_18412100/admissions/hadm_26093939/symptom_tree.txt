@@ -8,42 +8,52 @@ Patient ID       : 18412100
 Admission ID     : 26093939
 
 Reasoning:
-  The patient is presenting with post-procedural pain and nausea following a cryoablation procedure for a desmoid tumor.
+  The patient is presenting with post-procedural pain and tenderness in the abdomen following a cryoablation procedure for a desmoid tumor.
 
 Key symptoms     : post-procedural pain, nausea
-Red flags        : denies recent weight loss or gain, denies recent change in bowel or bladder habits
 
-CONSTITUTIONAL|RESPIRATORY|CARDIOVASCULAR|INFECTIOUS|NEUROLOGIC|GI|RENAL|OTHER → Other
---------------------------------------------------------------------------------------
+OTHER → Other
+-------------
 
   • [present, mild] post-procedural pain
       evidence: "post-procedural pain in the right side of the abdomen"
       related: abdominal pain
-      • [present] abdominal pain
+      • [present, mild] abdominal pain
           evidence: "tender in the right upper and right lower quadrant to palpation"
   • [present, mild] nausea
       evidence: "one brief episode of nausea"
       related: abdominal pain
 
-CONSTITUTIONAL|RESPIRATORY|CARDIOVASCULAR|INFECTIOUS|NEUROLOGIC|GI|RENAL|OTHER → GI
------------------------------------------------------------------------------------
+NEUROLOGIC → Neurologic
+-----------------------
+
+  • [present, mild] pain
+      evidence: "similar to the previous procedure"
+      related: abdominal pain
+
+GI → Gastrointestinal
+---------------------
 
   • [present, mild] abdominal pain
       evidence: "tender in the right upper and right lower quadrant to palpation"
-      related: post-procedural pain
+      related: desmoid tumor
 
-CONSTITUTIONAL|RESPIRATORY|CARDIOVASCULAR|INFECTIOUS|NEUROLOGIC|GI|RENAL|OTHER → Other
---------------------------------------------------------------------------------------
+INFECTIOUS → Infectious Diseases
+--------------------------------
 
   • [absent] fever
       evidence: "denies fever, chills, night sweats"
-  • [absent] shortness of breath
-      evidence: "denies shortness of breath"
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
   • [absent] palpitations
       evidence: "denies palpitations"
   • [absent] chest pain
       evidence: "denies chest pain"
-  • [absent] diarrhea
-      evidence: "denies diarrhea"
-  • [absent] constipation
-      evidence: "denies constipation"
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [absent] shortness of breath
+      evidence: "denies shortness of breath"

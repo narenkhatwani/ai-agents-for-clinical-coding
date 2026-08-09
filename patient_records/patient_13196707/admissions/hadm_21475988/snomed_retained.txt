@@ -1,0 +1,43 @@
+Patient: 13196707  HADM: 21475988
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 11 / 56  |  links: 15
+
+• metastatic adenocarcinoma of unknown primary  [diagnosis]  → SNOMED: Metastatic adenocarcinoma of unknown origin (307226002)
+    - [is_a] Secondary adenocarcinoma (id=354081000119101, sim=0.714)
+    - [has_associated_morphology] Adenocarcinoma, metastatic (id=4590003, sim=0.7651)
+
+• non-small cell lung cancer  [diagnosis]  → SNOMED: Non-small cell lung cancer (254637007)
+    - [is_a] Carcinoma of lung (id=448993007, sim=0.7032)
+    - [has_associated_morphology] Non-small cell carcinoma (id=128632008, sim=0.7773)
+
+• pericardiocentesis  [procedure]  → SNOMED: Pericardiocentesis (309849004)
+    - [is_a] Puncture of pericardium (id=229372001, sim=0.7033)
+    - [is_a] Procedure on pericardium (id=118802002, sim=0.7102)
+
+• Acetaminophen  [medication]  → SNOMED: Acetaminophen (387517004)
+    - [is_a] Acetamide (id=417551008, sim=0.833) [HIGH]
+
+• Calcium, Total  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.721)
+
+• Phosphate  [lab]  → SNOMED: Phosphate (259296007)
+    - [is_a] Phosphorus compound (id=63793008, sim=0.7761)
+    - [is_a] Phosphorus and/or phosphorus compound (id=767361006, sim=0.7162)
+
+• Sodium  [lab]  → SNOMED: Sodium (39972003)
+    - [is_a] Sodium and/or sodium compound (id=767403008, sim=0.7618)
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• White Blood Cells  [lab]  → SNOMED: Leukocyte (52501007)
+    - [is_a] Blood cell (id=63370004, sim=0.7647)
+
+• Lactate Dehydrogenase (LD)  [lab]  → SNOMED: Lactate dehydrogenase (259319003)
+    - [is_a] Dehydrogenase (id=129919009, sim=0.7301)
+
+• Iron  [lab]  → SNOMED: Iron (3829006)
+    - [is_a] Iron and/or iron compound (id=767270007, sim=0.7247)

@@ -8,64 +8,68 @@ Patient ID       : 17774110
 Admission ID     : 27339772
 
 Reasoning:
-  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple organ system involvement including respiratory, cardiovascular, and renal failure.
+  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.
 
 Key symptoms     : Septic shock, Hepatic encephalopathy, GI bleeding
-Red flags        : Hepatic encephalopathy, Renal failure
+Red flags        : Septic shock, Hepatic encephalopathy, Acute renal failure
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
   • [present, severe] Septic shock
-      evidence: "Septic shock"
+      evidence: "Admission for septic shock"
       related: Klebsiella Aerogenes blood cultures grew
-
-RESPIRATORY → Respiratory
--------------------------
-
-  • [present, moderate] Hypoxia
-      evidence: "oxygen saturations in the ___ at his SNF"
-      related: compressive consolidation versus atelectasis
-  • [present, severe] Hypoxic respiratory failure
-      evidence: "intubated for hypoxic respiratory failure"
-      related: pleural effusion with compressive consolidation versus atelectasis
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, mild] Atrial fibrillation/flutter
       evidence: "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
-  • [present, severe] Renal failure
-      evidence: "acute renal failure ___ to septic shock and ATN on dialysis"
-      related: lactate-6.6*
+      related: INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
 
-NEUROLOGIC → Neurologic
------------------------
+RESPIRATORY → Respiratory
+-------------------------
 
-  • [present, severe] Hepatic encephalopathy
-      evidence: "worsening liver failure and HE ___ to metastatic HCC"
-      related: lactate-13.2 mmol/L, pH-7.11 units
+  • [present, mild] Hypoxia
+      evidence: "oxygen saturations in the ___ at his SNF"
+      related: SpO2 94.0%, pH 7.11 units
+  • [present, severe] Hypoxic respiratory failure
+      evidence: "intubated for hypoxic respiratory failure"
+      related: Respiratory Rate 0.0 insp/min, SpO2 94.0%
 
-GI → GI
--------
+NEUROLOGIC → Neurology
+----------------------
+
+  • [present, moderate] Hepatic encephalopathy
+      evidence: "concerning for hepatic encephalopathy"
+      related: RASS-5, sluggish pupil response
+
+GI → Gastrointestinal
+---------------------
 
   • [present, moderate] GI bleeding
-      evidence: "concern for GI bleeding (black coffee-ground GI contents)"
-      related: epistaxis, anasarca
+      evidence: "black coffee-ground GI contents"
+      related: Platelet Count 44.0 K/uL, Bleeding from esophagus
 
 RENAL → Renal
 -------------
 
-  • [present, severe] Renal failure
-      evidence: "acute renal failure ___ to septic shock and ATN on dialysis"
-      related: lactate-6.6*
+  • [present, severe] Acute renal failure
+      evidence: "Acute renal failure ___ to septic shock and ATN on dialysis"
+      related: Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units
 
 OTHER → Other
 -------------
 
-  • [present, mild] Thrombocytopenia
+  • [present, moderate] IVC thrombus
       evidence: "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
-  • [present, mild] Anasarca
-      evidence: "gross anasarca"
+      related: INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
+  • [present, moderate] Pleural effusion
+      evidence: "large pleural effusion with compressive consolidation versus atelectasis"
+      related: Bilateral effusions right greater than left
   • [present, moderate] Atelectasis
-      evidence: "compressive consolidation versus atelectasis"
+      evidence: "Bilateral effusions right greater than left are unchanged"
+      related: Bilateral effusions right greater than left
+  • [present, severe] Worsening liver failure
+      evidence: "worsening liver failure"
+      related: Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L

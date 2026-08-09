@@ -1,18 +1,28 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with residual stones post-PCNL and is being managed for chronic kidney disease and hypertension.",
+  "reasoning": "The patient presents with symptoms of nephrolithiasis, including hematuria, dysuria, and fever, following a difficult right PCNL procedure.",
   "branches": [
     {
-      "category": "renal|cardiovascular|infectious|neurologic|gi|other",
-      "ontology_hint": "Renal Diseases|Cardiovascular|Infectious|Other",
+      "category": "renal|urologic",
+      "ontology_hint": "Renal Diseases",
       "symptoms": [
         {
           "term": "hematuria",
           "status": "present",
           "severity": "mild",
-          "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag.",
+          "evidence": "1x episode of hematuria",
           "related_findings": [
-            "Hematuria in urine culture"
+            "Bilateral staghorn renal calculi"
+          ],
+          "children": []
+        },
+        {
+          "term": "pain",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "pain around the nephrostomy tubes",
+          "related_findings": [
+            "Bilateral staghorn renal calculi"
           ],
           "children": []
         },
@@ -20,47 +30,28 @@
           "term": "dysuria",
           "status": "present",
           "severity": "mild",
-          "evidence": "He reports that when he attempts to urinate he has pain at the tip of his penis, and also has noticed dark red urine from his left nephrostomy bag.",
+          "evidence": "pain around the nephrostomy tubes and fevers",
           "related_findings": [
-            "Hematuria in urine culture"
+            "Bilateral staghorn renal calculi"
           ],
           "children": []
         },
         {
-          "term": "pain",
+          "term": "fever",
           "status": "present",
           "severity": "mild",
-          "evidence": "Mr. ___ was explicitly advised to follow up as directed as the indwelling ureteral stent must be removed and or exchanged and additional procedures necessary to address residual stone burden.",
+          "evidence": "temperature of 102 at ___ prior to transfer",
           "related_findings": [
-            "Residual stone"
+            "Complicated urinary tract infection"
           ],
           "children": []
-        },
-        {
-          "term": "residual stone",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "There is some residual stone that will require interval right URS",
-          "related_findings": [
-            "Residual stone"
-          ],
-          "children": []
-        },
-        {
-          "term": "chronic kidney disease",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "Creatinine: 2.5 mg/dL [abnormal]",
-          "related_findings": [
-            "Hematocrit: 30.8 % [abnormal]",
-            "Hemoglobin: 9.4 g/dL [abnormal]",
-            "MCV: 104.0 fL [abnormal]",
-            "RDW-SD: 59.6 fL [abnormal]",
-            "Glucose: 105.0 mg/dL [abnormal]",
-            "Urea Nitrogen: 22.0 mg/dL [abnormal]"
-          ],
-          "children": []
-        },
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular Diseases",
+      "symptoms": [
         {
           "term": "hypertension",
           "status": "present",
@@ -68,9 +59,15 @@
           "evidence": "Hypertension",
           "related_findings": [],
           "children": []
-        },
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurological Diseases",
+      "symptoms": [
         {
-          "term": "hemorrhagic CVA",
+          "term": "Hemorrhagic CVA",
           "status": "present",
           "severity": "unknown",
           "evidence": "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness",
@@ -78,23 +75,39 @@
           "children": []
         }
       ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal Diseases",
+      "symptoms": [
+        {
+          "term": "renal calculi",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "Bilateral staghorn renal calculi",
+          "related_findings": [
+            "Hypertension",
+            "Hemorrhagic CVA"
+          ],
+          "children": []
+        }
+      ]
     }
   ],
   "key_symptoms": [
     "hematuria",
-    "dysuria",
     "pain",
-    "residual stone"
+    "dysuria",
+    "fever"
   ],
   "red_flags": [
-    "chronic kidney disease",
-    "hypertension",
-    "hemorrhagic CVA"
+    "Hemorrhagic CVA",
+    "hypertension"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "11251337",
   "admission_id": "29568708",
-  "generated_at": "2026-07-20T01:10:10.775516"
+  "generated_at": "2026-08-08T16:19:01.757313"
 }

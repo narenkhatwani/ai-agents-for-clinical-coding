@@ -1,0 +1,42 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 11251337
+HADM ID          : 29568708
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:44:22.470952
+Candidates       : 5
+Most likely      : Nephrolithiasis
+Prior admissions : 2 (12 ICD codes as PMH context)
+
+Summary:
+  The patient presents with nephrolithiasis, bilateral staghorn renal calculi, post-PCNL complications, and a history of hypertension and hemorrhagic CVA.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Nephrolithiasis  (primary)
+      + hematuria, pain, dysuria, fever, bilateral staghorn renal calculi
+      why: Primary presentation with nephrolithiasis and post-PCNL complications.
+
+  #2  [70.0/100 | medium]  Acute kidney injury  (complication)
+      + Creatinine: 2.5 mg/dL, Fever
+      why: Fever and elevated creatinine suggest potential acute kidney injury.
+
+  #3  [65.0/100 | medium]  Chronic kidney disease  (complication)
+      + Hypertension, Bilateral staghorn renal calculi
+      why: History of hypertension and renal calculi suggest chronic kidney disease.
+
+  #4  [50.0/100 | low]  Hemorrhagic CVA  (risk_factor)
+      + Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness
+      why: Previous history of hemorrhagic CVA, but no current clinical evidence.
+
+  #5  [40.0/100 | low]  Anemia  (complication)
+      + Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL
+      why: Low hematocrit and hemoglobin levels suggest anemia.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • More information on the patient's current kidney function and signs of neurological deficits would help refine the differential.

@@ -1,0 +1,311 @@
+{
+  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease, hepatitis C, and alcohol abuse.",
+  "most_likely": "Severe sepsis with septic shock",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Severe sepsis with septic shock",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Admission for septic shock",
+        "Klebsiella Aerogenes blood cultures grew"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition and multiple organ dysfunction."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute liver failure",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Acute liver failure (197270009)",
+      "supporting_evidence": [
+        "Worsening liver failure",
+        "Bilirubin, Total 13.3 mg/dL",
+        "ALT 439 IU/L",
+        "AST 2481 IU/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Acute liver failure is consistent with the patient's liver function test results and clinical presentation."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hepatic encephalopathy",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Hepatic encephalopathy (13920009)",
+      "supporting_evidence": [
+        "concerning for hepatic encephalopathy",
+        "RASS-5",
+        "sluggish pupil response"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hepatic encephalopathy is a complication of severe liver failure and sepsis."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "GI bleeding",
+      "score": 65.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "black coffee-ground GI contents",
+        "Platelet Count 44.0 K/uL",
+        "Bleeding from esophagus"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "GI bleeding is a complication of esophageal varices and liver failure."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Pancytopenia",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Platelet Count 44.0 K/uL",
+        "Hematocrit 25.3 %",
+        "Hemoglobin 8.3 g/dL"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Pancytopenia is a complication of liver failure and sepsis, but the evidence is less robust."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Atrial fibrillation/flutter",
+      "score": 50.0,
+      "confidence": "high",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
+        "INR(PT) 3.4",
+        "PT 36.5 sec",
+        "PTT 104.2 sec"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Atrial fibrillation/flutter is a known risk factor for stroke and thromboembolic events."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Pleural effusion",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Pleural effusion (60046008)",
+      "supporting_evidence": [
+        "large pleural effusion with compressive consolidation versus atelectasis",
+        "Bilateral effusions right greater than left"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Pleural effusion is a complication of liver failure and sepsis, but the evidence is less robust."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Worsening liver failure",
+      "score": 40.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Acute liver failure (197270009)",
+      "supporting_evidence": [
+        "worsening liver failure",
+        "Bilirubin, Total 13.3 mg/dL",
+        "ALT 439 IU/L",
+        "AST 2481 IU/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Worsening liver failure is a complication of the patient's chronic liver disease and current sepsis."
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "More detailed information on the source of sepsis and specific causative organisms would refine the differential diagnosis"
+  ],
+  "n_candidates": 8,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "17774110",
+  "hadm_id": "27339772",
+  "generated_at": "2026-08-09T00:46:20.823473",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 15,
+    "retained_links": 20,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 34,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 20726415,
+      "admittime": "2158-03-08 18:27:00",
+      "dischtime": "2158-03-15 21:20:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "E279",
+      "primary_dx_title": "Disorder of adrenal gland, unspecified",
+      "n_diagnoses": 16,
+      "icd10_diagnoses": [
+        {
+          "code": "E279",
+          "title": "Disorder of adrenal gland, unspecified"
+        },
+        {
+          "code": "I8510",
+          "title": "Secondary esophageal varices without bleeding"
+        },
+        {
+          "code": "C220",
+          "title": "Liver cell carcinoma"
+        },
+        {
+          "code": "K7469",
+          "title": "Other cirrhosis of liver"
+        },
+        {
+          "code": "K7210",
+          "title": "Chronic hepatic failure without coma"
+        },
+        {
+          "code": "J449",
+          "title": "Chronic obstructive pulmonary disease, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "B182",
+          "title": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "R410",
+          "title": "Disorientation, unspecified"
+        },
+        {
+          "code": "F319",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "F909",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        },
+        {
+          "code": "G4700",
+          "title": "Insomnia, unspecified"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "K2270",
+          "title": "Barrett's esophagus without dysplasia"
+        },
+        {
+          "code": "Z590",
+          "title": "Homelessness"
+        },
+        {
+          "code": "Z98890",
+          "title": "Other specified postprocedural states"
+        }
+      ]
+    },
+    {
+      "hadm_id": 27309668,
+      "admittime": "2159-01-19 17:18:00",
+      "dischtime": "2159-01-21 15:00:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "K7200",
+      "primary_dx_title": "Acute and subacute hepatic failure without coma",
+      "n_diagnoses": 18,
+      "icd10_diagnoses": [
+        {
+          "code": "K7200",
+          "title": "Acute and subacute hepatic failure without coma"
+        },
+        {
+          "code": "C7970",
+          "title": "Secondary malignant neoplasm of unspecified adrenal gland"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "D684",
+          "title": "Acquired coagulation factor deficiency"
+        },
+        {
+          "code": "K7210",
+          "title": "Chronic hepatic failure without coma"
+        },
+        {
+          "code": "K7460",
+          "title": "Unspecified cirrhosis of liver"
+        },
+        {
+          "code": "B1920",
+          "title": "Unspecified viral hepatitis C without hepatic coma"
+        },
+        {
+          "code": "F901",
+          "title": "Attention-deficit hyperactivity disorder, predominantly hyperactive type"
+        },
+        {
+          "code": "F319",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "J449",
+          "title": "Chronic obstructive pulmonary disease, unspecified"
+        },
+        {
+          "code": "R040",
+          "title": "Epistaxis"
+        },
+        {
+          "code": "G4700",
+          "title": "Insomnia, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K2270",
+          "title": "Barrett's esophagus without dysplasia"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "Z9221",
+          "title": "Personal history of antineoplastic chemotherapy"
+        },
+        {
+          "code": "Z79899",
+          "title": "Other long term (current) drug therapy"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        }
+      ]
+    }
+  ]
+}

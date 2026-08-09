@@ -1,0 +1,31 @@
+Patient: 18412100  HADM: 26093939
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 8 / 32  |  links: 9
+
+• abdominal pain  [symptom]  → SNOMED: Abdominal pain (21522001)
+    - [has_finding_site] Abdomen (id=818983003, sim=0.7045)
+
+• hepatitis C  [diagnosis]  → SNOMED: Viral hepatitis C (50711007)
+    - [has_causative_agent] Hepatitis C virus (id=62944002, sim=0.9474) [HIGH]
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• Calcium  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.8175) [HIGH]
+
+• Magnesium  [lab]  → SNOMED: Magnesium (72717003)
+    - [is_a] Magnesium and/or magnesium compound (id=767301009, sim=0.8235) [HIGH]
+
+• Phosphate  [lab]  → SNOMED: Phosphate (259296007)
+    - [is_a] Phosphorus compound (id=63793008, sim=0.7761)
+    - [is_a] Phosphorus and/or phosphorus compound (id=767361006, sim=0.7162)
+
+• Potassium  [lab]  → SNOMED: Potassium (88480006)
+    - [is_a] Potassium and/or potassium compound (id=767364003, sim=0.7922)
+
+• Sodium  [lab]  → SNOMED: Sodium (39972003)
+    - [is_a] Sodium and/or sodium compound (id=767403008, sim=0.7618)

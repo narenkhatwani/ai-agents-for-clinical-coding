@@ -1,0 +1,167 @@
+{
+  "summary": "The patient presents with nephrolithiasis, bilateral staghorn renal calculi, post-PCNL complications, and a history of hypertension and hemorrhagic CVA.",
+  "most_likely": "Nephrolithiasis",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Nephrolithiasis",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "hematuria, pain, dysuria, fever, bilateral staghorn renal calculi"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary presentation with nephrolithiasis and post-PCNL complications."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute kidney injury",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Creatinine: 2.5 mg/dL, Fever"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Fever and elevated creatinine suggest potential acute kidney injury."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Chronic kidney disease",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hypertension, Bilateral staghorn renal calculi"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "History of hypertension and renal calculi suggest chronic kidney disease."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Hemorrhagic CVA",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Previous history of hemorrhagic CVA, but no current clinical evidence."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Anemia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low hematocrit and hemoglobin levels suggest anemia."
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "More information on the patient's current kidney function and signs of neurological deficits would help refine the differential."
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "11251337",
+  "hadm_id": "29568708",
+  "generated_at": "2026-08-09T00:44:22.470952",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 2,
+    "retained_links": 3,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 12,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 27937520,
+      "admittime": "2164-10-11 23:35:00",
+      "dischtime": "2164-10-17 18:03:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "N132",
+      "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+      "n_diagnoses": 4,
+      "icd10_diagnoses": [
+        {
+          "code": "N132",
+          "title": "Hydronephrosis with renal and ureteral calculous obstruction"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "I69834",
+          "title": "Monoplegia of upper limb following other cerebrovascular disease affecting left non-dominant side"
+        },
+        {
+          "code": "Z841",
+          "title": "Family history of disorders of kidney and ureter"
+        }
+      ]
+    },
+    {
+      "hadm_id": 21161726,
+      "admittime": "2164-11-29 13:57:00",
+      "dischtime": "2164-11-30 20:00:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "N136",
+      "primary_dx_title": "Pyonephrosis",
+      "n_diagnoses": 8,
+      "icd10_diagnoses": [
+        {
+          "code": "N136",
+          "title": "Pyonephrosis"
+        },
+        {
+          "code": "D631",
+          "title": "Anemia in chronic kidney disease"
+        },
+        {
+          "code": "B9689",
+          "title": "Other specified bacterial agents as the cause of diseases classified elsewhere"
+        },
+        {
+          "code": "Z23",
+          "title": "Encounter for immunization"
+        },
+        {
+          "code": "Z936",
+          "title": "Other artificial openings of urinary tract status"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "N189",
+          "title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "code": "I69154",
+          "title": "Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side"
+        }
+      ]
+    }
+  ]
+}

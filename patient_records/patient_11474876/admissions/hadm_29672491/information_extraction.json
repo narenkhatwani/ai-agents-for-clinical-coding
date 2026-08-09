@@ -1,37 +1,12 @@
 {
   "symptoms": [
     {
-      "term": "nocturnal hypoxia",
-      "status": "history",
-      "evidence": "prior admission with cholangitis and nocturnal hypoxia that improved with diuresis"
-    },
-    {
       "term": "abdominal pain",
-      "status": "history",
-      "evidence": "chief complaint of abdominal pain"
+      "status": "absent",
+      "evidence": "no abdominal pain"
     },
     {
-      "term": "weakness",
-      "status": "history",
-      "evidence": "2 weeks of weakness and difficulty with walking with cramps"
-    },
-    {
-      "term": "difficulty walking",
-      "status": "history",
-      "evidence": "2 weeks of weakness and difficulty with walking with cramps"
-    },
-    {
-      "term": "shoulder blade pain",
-      "status": "history",
-      "evidence": "shoulder blade pain that lasted around"
-    },
-    {
-      "term": "indigestion",
-      "status": "history",
-      "evidence": "indigestion"
-    },
-    {
-      "term": "shortness of breath",
+      "term": "dyspnea",
       "status": "history",
       "evidence": "developed acute shortness of breath requiring nonrebreather briefly"
     },
@@ -39,6 +14,11 @@
       "term": "leg swelling",
       "status": "present",
       "evidence": "notes his edema improves during the night and worsens during the day"
+    },
+    {
+      "term": "nocturnal hypoxia",
+      "status": "history",
+      "evidence": "nocturnal hypoxia that improved with diuresis"
     }
   ],
   "vitals": [
@@ -158,7 +138,7 @@
     },
     {
       "name": "Estimated GFR (MDRD equation)",
-      "value": "nan",
+      "value": "unknown",
       "unit": "",
       "flag": "unknown"
     },
@@ -199,9 +179,27 @@
       "flag": "normal"
     },
     {
-      "name": "Lipase",
-      "value": "28",
-      "unit": "IU/L",
+      "name": "PTT",
+      "value": "31.6 sec",
+      "unit": "",
+      "flag": "normal"
+    },
+    {
+      "name": "MCHC",
+      "value": "32.9",
+      "unit": "g/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "Platelet Count",
+      "value": "157.0",
+      "unit": "K/uL",
+      "flag": "normal"
+    },
+    {
+      "name": "White Blood Cells",
+      "value": "7.2",
+      "unit": "K/uL",
       "flag": "normal"
     }
   ],
@@ -247,10 +245,6 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Chronic kidney disease",
-      "certainty": "confirmed"
-    },
-    {
       "term": "PTSD",
       "certainty": "confirmed"
     }
@@ -258,45 +252,54 @@
   "medications": [
     {
       "name": "Apixaban",
-      "dose": "",
-      "route": "",
+      "dose": "started",
+      "route": "oral",
       "status": "continued"
     },
     {
       "name": "Lasix",
-      "dose": "20 mg IV",
+      "dose": "20 mg",
       "route": "IV",
       "status": "stopped"
     },
     {
       "name": "Ciprofloxacin",
-      "dose": "",
-      "route": "",
+      "dose": "started",
+      "route": "oral",
       "status": "stopped"
     },
     {
       "name": "Cefpodoxime",
-      "dose": "",
-      "route": "",
-      "status": "started"
+      "dose": "started",
+      "route": "oral",
+      "status": "continued"
     },
     {
       "name": "Flagyl",
-      "dose": "",
-      "route": "",
-      "status": "started"
+      "dose": "started",
+      "route": "oral",
+      "status": "continued"
     }
   ],
   "procedures": [
     {
       "name": "ERCP",
-      "result": "stent placement, extraction of stones and sphincterotomy"
+      "result": "stones extraction, sphincterotomy, stent removal"
     }
   ],
-  "negations": [],
+  "negations": [
+    "no abdominal pain",
+    "no CP",
+    "no dyspnea",
+    "no CP",
+    "no suprapubic tenderness",
+    "no swollen or erythematous joints",
+    "no rashes or ulcerations noted",
+    "no TTP"
+  ],
   "temporal": [
     {
-      "finding": "leg swelling",
+      "finding": "edema",
       "onset": "improves during the night and worsens during the day"
     }
   ],

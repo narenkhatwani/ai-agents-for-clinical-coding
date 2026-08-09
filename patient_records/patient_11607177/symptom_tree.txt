@@ -8,7 +8,7 @@ Patient ID       : 11607177
 Admission ID     : 23293838
 
 Reasoning:
-  The patient presents with a history of heart failure and refractory VT, with recent ICD shock and some edema. The patient is stable but has abnormal labs and a history of multiple comorbidities.
+  The patient presents with a history of dilated cardiomyopathy and refractory VT, with recent ICD shock and ongoing edema. The patient is currently on multiple medications for his heart failure and arrhythmias.
 
 Key symptoms     : ICD shock, edema
 Red flags        : ICD shock, lightheadedness
@@ -18,25 +18,30 @@ CARDIOVASCULAR → Cardiovascular
 
   • [present] ICD shock
       evidence: "ICD shock on ___"
-      related: Refractory VT, Dilated non-ischemic cardiomyopathy, Heartmate II LVAD
-  • [present, mild] lightheadedness
-      evidence: "lightheadedness with position changes"
-      related: Dilated non-ischemic cardiomyopathy, Heartmate II LVAD
+      related: Refractory VT, LVAD in place
+  • [present] refractory VT
+      evidence: "Refractory VT requiring ganglionic block"
+      related: ICD shock, LVAD in place
   • [present, mild] edema
-      evidence: "some increased ___ edema"
-      related: Dilated non-ischemic cardiomyopathy, Heartmate II LVAD
-  • [present, mild] shaking
-      evidence: "feeling some "
+      evidence: "some increased ___ edema over the last several days"
+      related: LVAD in place
+  • [present] lightheadedness
+      evidence: "lightheadedness with position changes"
+      related: ICD shock, LVAD in place
+  • [present] shaking
+      evidence: "feels some 'shaking' in his chest in the morning for the last 4 months"
+      related: LVAD in place
 
-RENAL → Renal
--------------
+CONSTITUTIONAL → Infectious Diseases
+------------------------------------
 
-  • [present, mild] abnormal labs
-      evidence: "abnormal labs"
-      related: Hemoglobin: 11.6, Platelet Count: 142.0, Creatinine: 1.4, Glucose: 118, Alkaline Phosphatase: 167, Lactate Dehydrogenase (LD): 252
-
-NEUROLOGIC → Neurologic
------------------------
-
-  • [present, mild] shaking
-      evidence: "feeling some "
+  • [absent] fevers
+      evidence: "denies fevers"
+  • [absent] chills
+      evidence: "denies chills"
+  • [absent] cough
+      evidence: "denies cough"
+  • [absent] nausea
+      evidence: "denies N/V/D"
+  • [absent] palpitations
+      evidence: "denies other palpitations"

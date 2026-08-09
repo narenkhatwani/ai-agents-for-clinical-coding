@@ -8,55 +8,35 @@ Patient ID       : 13952483
 Admission ID     : 23852410
 
 Reasoning:
-  The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his ongoing lung cancer, chemotherapy, and radiation therapy.
+  The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression.
 
 Key symptoms     : hypotension, weight loss
-Red flags        : hypotension, neutropenia, thrombocytopenia
+Red flags        : hypotension
 
-CONSTITUTIONAL → Other
-----------------------
+CONSTITUTIONAL → Infectious Diseases
+------------------------------------
 
   • [present, mild] hypotension
       evidence: "Hypotension and Weight Loss"
-      related: Neutropenia, Thrombocytopenia
-      • [present] neutropenia
-          evidence: "ANC 750"
-      • [present] thrombocytopenia
-          evidence: "plts 93"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
   • [present, moderate] weight loss
       evidence: "weight loss and hypotension"
-      related: Neutropenia, Thrombocytopenia
-      • [present] neutropenia
-          evidence: "ANC 750"
-      • [present] thrombocytopenia
-          evidence: "plts 93"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
   • [present, moderate] anorexia
-      evidence: "anorexia, fatigue, weight loss"
-      related: Neutropenia, Thrombocytopenia
-      • [present] neutropenia
-          evidence: "ANC 750"
-      • [present] thrombocytopenia
-          evidence: "plts 93"
-  • [present, mild] nausea
-      evidence: "denies any recent fevers, chills, or other localizing infectious symptoms"
-      related: Neutropenia, Thrombocytopenia
-      • [present] neutropenia
-          evidence: "ANC 750"
-      • [present] thrombocytopenia
-          evidence: "plts 93"
-  • [present, mild] pain
-      evidence: "pain with swallowing, and overall anorexia and poor appetite"
-      related: Neutropenia, Thrombocytopenia
-      • [present] neutropenia
-          evidence: "ANC 750"
-      • [present] thrombocytopenia
-          evidence: "plts 93"
-
-RESPIRATORY → Respiratory
--------------------------
-
+      evidence: "overall anorexia and poor appetite"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
+  • [present, moderate] malaise
+      evidence: "malaise due to his chemotherapy and radiation therapy"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
   • [present, mild] cough
       evidence: "cough, pleuritic/MSK chest pain"
-      related: Neutropenia, Thrombocytopenia
-      • [present] chest pain
-          evidence: "cough, pleuritic/MSK chest pain"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
+  • [present, mild] chest pain
+      evidence: "pleuritic/MSK chest pain"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
+  • [present, mild] odynophagia
+      evidence: "persistent odynophagia"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
+  • [present, mild] pain
+      evidence: "pain with swallowing"
+      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)

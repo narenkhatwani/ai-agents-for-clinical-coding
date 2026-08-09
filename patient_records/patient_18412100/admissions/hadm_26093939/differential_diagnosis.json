@@ -1,0 +1,151 @@
+{
+  "summary": "Patient presents with post-procedural pain and tenderness in the abdomen following a cryoablation for a desmoid tumor. History includes a previous neoplasm of uncertain behavior of connective and other soft tissue and chronic viral hepatitis C.",
+  "most_likely": "Post-procedural pain",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Post-procedural pain",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Abdominal pain",
+      "supporting_evidence": [
+        "post-procedural pain in the right side of the abdomen"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary diagnosis given the patient's recent cryoablation procedure and current symptoms."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Desmoid tumor",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "abdominal pain tender in the right upper and right lower quadrant to palpation"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Secondary to the ongoing desmoid tumor and post-procedural pain."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hepatitis C",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Viral hepatitis C",
+      "supporting_evidence": [
+        "history of chronic viral hepatitis C"
+      ],
+      "opposing_evidence": [
+        "no current symptoms or signs of acute hepatitis"
+      ],
+      "reasoning": "Chronic condition, but not currently manifesting acute symptoms."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Anemia",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low Hemoglobin and Hematocrit values"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low Hemoglobin and Hematocrit suggest anemia, but no specific cause identified."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Electrolyte imbalance",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low Calcium and Magnesium levels"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low Calcium and Magnesium levels, but no acute symptoms."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Acute infection",
+      "why": "No fever, chills, or other signs of acute infection."
+    }
+  ],
+  "uncertain_areas": [
+    "Further details on the nature of post-procedural pain and any signs of acute infection would help refine the differential."
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "18412100",
+  "hadm_id": "26093939",
+  "generated_at": "2026-08-09T00:46:34.909514",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 8,
+    "retained_links": 9,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 9,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 23635816,
+      "admittime": "2181-09-05 21:21:00",
+      "dischtime": "2181-09-06 21:15:00",
+      "admission_type": "DIRECT OBSERVATION",
+      "primary_icd_code": "D481",
+      "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+      "n_diagnoses": 9,
+      "icd10_diagnoses": [
+        {
+          "code": "D481",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "G8918",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "R112",
+          "title": "Nausea with vomiting, unspecified"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z6832",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        },
+        {
+          "code": "B182",
+          "title": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "G8929",
+          "title": "Other chronic pain"
+        },
+        {
+          "code": "R109",
+          "title": "Unspecified abdominal pain"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        }
+      ]
+    }
+  ]
+}

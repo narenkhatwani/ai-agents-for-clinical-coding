@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with acute on chronic dyspnea on exertion and fatigue, along with macrocytic anemia. The patient has a history of cardiovascular issues and is currently being managed for anemia.",
+  "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -12,77 +12,74 @@
           "severity": "moderate",
           "evidence": "acute on chronic dyspnea on exertion",
           "related_findings": [
-            "moderate aortic stenosis",
-            "pulmonary hypertension"
+            "moderate AS",
+            "sick sinus syndrome"
           ],
           "children": [
             {
-              "term": "moderate aortic stenosis",
-              "status": "confirmed",
-              "evidence": "Moderate AS"
-            },
-            {
-              "term": "pulmonary hypertension",
-              "status": "suspected",
-              "evidence": "Presentation is more concerning for valvular disease vs pulmonary HTN vs acute anemia."
+              "term": "worsening dyspnea",
+              "status": "present",
+              "evidence": "worsening dyspnea over the past year"
             }
+          ]
+        },
+        {
+          "term": "fatigue",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "acute on chronic fatigue",
+          "related_findings": [
+            "anemia"
           ]
         }
       ]
     },
     {
-      "category": "hematologic",
-      "ontology_hint": "Hematologic",
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
           "term": "anemia",
           "status": "present",
-          "severity": "moderate",
+          "severity": "mild",
           "evidence": "acute on chronic macrocytic anemia",
           "related_findings": [
-            "low hemoglobin",
+            "iron deficiency",
             "low MCV",
-            "low hematocrit",
-            "low iron"
-          ],
-          "children": [
-            {
-              "term": "iron deficiency",
-              "status": "present",
-              "evidence": "Iron: 15 mcg/dL"
-            }
+            "low MCHC"
           ]
         }
       ]
     },
     {
-      "category": "respiratory",
-      "ontology_hint": "Respiratory",
+      "category": "gi",
+      "ontology_hint": "Gastrointestinal",
       "symptoms": [
         {
-          "term": "dyspnea on exertion",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "acute on chronic dyspnea on exertion",
-          "related_findings": [
-            "moderate aortic stenosis",
-            "pulmonary hypertension"
-          ]
+          "term": "esophagitis",
+          "status": "history",
+          "evidence": "esophagitis (___)"
+        },
+        {
+          "term": "nodular gastritis",
+          "status": "history",
+          "evidence": "nodular gastritis"
         }
       ]
     }
   ],
   "key_symptoms": [
     "dyspnea on exertion",
-    "anemia"
+    "fatigue"
   ],
   "red_flags": [
-    "pulmonary hypertension"
+    "hypotension",
+    "AMS"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "19632936",
   "admission_id": "26696232",
-  "generated_at": "2026-07-20T01:16:22.754231"
+  "generated_at": "2026-08-08T16:22:12.245664"
 }

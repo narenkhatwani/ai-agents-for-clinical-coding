@@ -1,0 +1,45 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 13508515
+HADM ID          : 21834271
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:45:31.186480
+Candidates       : 4
+Most likely      : Acute on chronic systolic heart failure
+Prior admissions : 1 (16 ICD codes as PMH context)
+
+Summary:
+  The patient presents with dyspnea and pain, along with a history of renal cell carcinoma and chronic systolic heart failure. Current labs show elevated creatinine and low hemoglobin, consistent with renal and anemia issues.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Acute on chronic systolic heart failure  (primary)
+      SNOMED aligned : 42322001
+      + sudden onset dyspnea, systolic CHF with EF around 30%
+      why: Strong clinical presentation and supporting symptoms.
+
+  #2  [75.0/100 | medium]  Renal cell carcinoma  (secondary)
+      SNOMED aligned : 19386008
+      + left renal mass, renal cell carcinoma
+      − Focused on cardiac symptoms
+      why: Confirmed diagnosis, but less acute focus.
+
+  #3  [70.0/100 | medium]  Anemia  (complication)
+      SNOMED aligned : 73585002
+      + low hemoglobin, low hematocrit
+      − Not the primary focus of admission
+      why: Low hemoglobin and hematocrit suggest anemia, but not primary concern.
+
+  #4  [65.0/100 | low]  Type 2 diabetes  (risk_factor)
+      SNOMED aligned : 25169004
+      + high glucose
+      − Not the primary focus of admission
+      why: Type 2 diabetes is a known risk factor but not the primary concern.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Further cardiac imaging and renal function tests would refine the ranking

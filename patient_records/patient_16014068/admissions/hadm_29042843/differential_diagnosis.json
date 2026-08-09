@@ -1,0 +1,757 @@
+{
+  "summary": "The patient, a metastatic sarcoma patient with a history of chemotherapy and hematological issues, presents with weakness, anemia, thrombocytopenia, and a fall resulting in minor abrasions and soreness. The patient also has a history of hypotension and headache.",
+  "most_likely": "Anemia due to antineoplastic chemotherapy",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Anemia due to antineoplastic chemotherapy",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "D6959",
+      "supporting_evidence": [
+        "Anemia due to antineoplastic chemotherapy, D6959"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Anemia is severe and directly related to prior chemotherapy, supported by lab results."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Thrombocytopenia due to antineoplastic chemotherapy",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "D6481",
+      "supporting_evidence": [
+        "Thrombocytopenia, D6481"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Thrombocytopenia is mild but related to prior chemotherapy, supported by lab results."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hypotension due to cytokine effects or chemotherapy side effects",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hypotension, I129, E8342"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hypotension is historical and may be due to cytokine effects or chemotherapy side effects."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Metastatic sarcoma to the brain",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "443144000",
+      "supporting_evidence": [
+        "Metastatic sarcoma, 443144000"
+      ],
+      "opposing_evidence": [
+        "No recent symptoms or imaging findings"
+      ],
+      "reasoning": "Metastatic sarcoma is a known comorbidity but not currently presenting acutely."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Headache",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "symptom",
+      "snomed_aligned": "21522001",
+      "supporting_evidence": [
+        "Headache, 21522001"
+      ],
+      "opposing_evidence": [
+        "No recent imaging findings"
+      ],
+      "reasoning": "Headache is present but not associated with acute findings."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Pulmonary embolism",
+      "why": "No current symptoms or imaging findings."
+    }
+  ],
+  "uncertain_areas": [
+    "Further imaging or clinical follow-up to confirm anemia and thrombocytopenia etiology"
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "16014068",
+  "hadm_id": "29042843",
+  "generated_at": "2026-08-09T00:46:00.047231",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 7,
+    "retained_links": 7,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 9,
+    "prior_icd_codes": 138,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21573999,
+      "admittime": "2186-09-10 11:29:00",
+      "dischtime": "2186-09-13 13:30:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 6,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        }
+      ]
+    },
+    {
+      "hadm_id": 25360978,
+      "admittime": "2186-10-08 11:25:00",
+      "dischtime": "2186-10-11 12:38:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 12,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "K521",
+          "title": "Toxic gastroenteritis and colitis"
+        },
+        {
+          "code": "T451X5A",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter"
+        },
+        {
+          "code": "R040",
+          "title": "Epistaxis"
+        },
+        {
+          "code": "D6959",
+          "title": "Other secondary thrombocytopenia"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        }
+      ]
+    },
+    {
+      "hadm_id": 23909475,
+      "admittime": "2186-10-29 11:18:00",
+      "dischtime": "2186-11-01 12:45:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 12,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "K521",
+          "title": "Toxic gastroenteritis and colitis"
+        },
+        {
+          "code": "D6481",
+          "title": "Anemia due to antineoplastic chemotherapy"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "R2231",
+          "title": "Localized swelling, mass and lump, right upper limb"
+        },
+        {
+          "code": "T451X5D",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter"
+        }
+      ]
+    },
+    {
+      "hadm_id": 22582376,
+      "admittime": "2186-11-19 11:31:00",
+      "dischtime": "2186-11-23 18:00:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 14,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "E8351",
+          "title": "Hypocalcemia"
+        },
+        {
+          "code": "E8342",
+          "title": "Hypomagnesemia"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "D638",
+          "title": "Anemia in other chronic diseases classified elsewhere"
+        },
+        {
+          "code": "T451X5S",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, sequela"
+        },
+        {
+          "code": "R197",
+          "title": "Diarrhea, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        }
+      ]
+    },
+    {
+      "hadm_id": 25483652,
+      "admittime": "2186-11-29 12:54:00",
+      "dischtime": "2186-12-03 13:10:00",
+      "admission_type": "DIRECT EMER.",
+      "primary_icd_code": "N179",
+      "primary_dx_title": "Acute kidney failure, unspecified",
+      "n_diagnoses": 14,
+      "icd10_diagnoses": [
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "D61810",
+          "title": "Antineoplastic chemotherapy induced pancytopenia"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "D6959",
+          "title": "Other secondary thrombocytopenia"
+        },
+        {
+          "code": "D6481",
+          "title": "Anemia due to antineoplastic chemotherapy"
+        },
+        {
+          "code": "T451X5D",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "E8342",
+          "title": "Hypomagnesemia"
+        },
+        {
+          "code": "E876",
+          "title": "Hypokalemia"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        },
+        {
+          "code": "Z515",
+          "title": "Encounter for palliative care"
+        }
+      ]
+    },
+    {
+      "hadm_id": 25305597,
+      "admittime": "2187-03-22 18:32:00",
+      "dischtime": "2187-04-13 13:18:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "I2699",
+      "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+      "n_diagnoses": 20,
+      "icd10_diagnoses": [
+        {
+          "code": "I2699",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "C4921",
+          "title": "Malignant neoplasm of connective and soft tissue of right lower limb, including hip"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "I82431",
+          "title": "Acute embolism and thrombosis of right popliteal vein"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "D696",
+          "title": "Thrombocytopenia, unspecified"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia"
+        },
+        {
+          "code": "I82491",
+          "title": "Acute embolism and thrombosis of other specified deep vein of right lower extremity"
+        },
+        {
+          "code": "Z9221",
+          "title": "Personal history of antineoplastic chemotherapy"
+        },
+        {
+          "code": "Z96641",
+          "title": "Presence of right artificial hip joint"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "Y92239",
+          "title": "Unspecified place in hospital as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "K5730",
+          "title": "Diverticulosis of large intestine without perforation or abscess without bleeding"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "R509",
+          "title": "Fever, unspecified"
+        },
+        {
+          "code": "K649",
+          "title": "Unspecified hemorrhoids"
+        },
+        {
+          "code": "Y838",
+          "title": "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        }
+      ]
+    },
+    {
+      "hadm_id": 27129757,
+      "admittime": "2187-06-14 21:13:00",
+      "dischtime": "2187-06-18 16:30:00",
+      "admission_type": "URGENT",
+      "primary_icd_code": "D62",
+      "primary_dx_title": "Acute posthemorrhagic anemia",
+      "n_diagnoses": 15,
+      "icd10_diagnoses": [
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia"
+        },
+        {
+          "code": "D684",
+          "title": "Acquired coagulation factor deficiency"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "C4921",
+          "title": "Malignant neoplasm of connective and soft tissue of right lower limb, including hip"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "I2782",
+          "title": "Chronic pulmonary embolism"
+        },
+        {
+          "code": "M96830",
+          "title": "Postprocedural hemorrhage of a musculoskeletal structure following a musculoskeletal system procedure"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "M79606",
+          "title": "Pain in leg, unspecified"
+        },
+        {
+          "code": "Z9221",
+          "title": "Personal history of antineoplastic chemotherapy"
+        }
+      ]
+    },
+    {
+      "hadm_id": 26538856,
+      "admittime": "2187-07-05 17:45:00",
+      "dischtime": "2187-07-12 15:49:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "C4021",
+      "primary_dx_title": "Malignant neoplasm of long bones of right lower limb",
+      "n_diagnoses": 18,
+      "icd10_diagnoses": [
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "D6189",
+          "title": "Other specified aplastic anemias and other bone marrow failure syndromes"
+        },
+        {
+          "code": "L89322",
+          "title": "Pressure ulcer of left buttock, stage 2"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "D696",
+          "title": "Thrombocytopenia, unspecified"
+        },
+        {
+          "code": "E538",
+          "title": "Deficiency of other specified B group vitamins"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "R918",
+          "title": "Other nonspecific abnormal finding of lung field"
+        },
+        {
+          "code": "Z86711",
+          "title": "Personal history of pulmonary embolism"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "M7981",
+          "title": "Nontraumatic hematoma of soft tissue"
+        },
+        {
+          "code": "E8342",
+          "title": "Hypomagnesemia"
+        },
+        {
+          "code": "E8809",
+          "title": "Other disorders of plasma-protein metabolism, not elsewhere classified"
+        },
+        {
+          "code": "R791",
+          "title": "Abnormal coagulation profile"
+        }
+      ]
+    },
+    {
+      "hadm_id": 21400037,
+      "admittime": "2187-08-05 22:33:00",
+      "dischtime": "2187-08-15 16:45:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "I2699",
+      "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+      "n_diagnoses": 27,
+      "icd10_diagnoses": [
+        {
+          "code": "I2699",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "C7801",
+          "title": "Secondary malignant neoplasm of right lung"
+        },
+        {
+          "code": "C7802",
+          "title": "Secondary malignant neoplasm of left lung"
+        },
+        {
+          "code": "I959",
+          "title": "Hypotension, unspecified"
+        },
+        {
+          "code": "D696",
+          "title": "Thrombocytopenia, unspecified"
+        },
+        {
+          "code": "L03312",
+          "title": "Cellulitis of back [any part except buttock]"
+        },
+        {
+          "code": "C7931",
+          "title": "Secondary malignant neoplasm of brain"
+        },
+        {
+          "code": "Z85830",
+          "title": "Personal history of malignant neoplasm of bone"
+        },
+        {
+          "code": "M7981",
+          "title": "Nontraumatic hematoma of soft tissue"
+        },
+        {
+          "code": "T45515A",
+          "title": "Adverse effect of anticoagulants, initial encounter"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "Y929",
+          "title": "Unspecified place or not applicable"
+        },
+        {
+          "code": "G893",
+          "title": "Neoplasm related pain (acute) (chronic)"
+        },
+        {
+          "code": "Z515",
+          "title": "Encounter for palliative care"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "E861",
+          "title": "Hypovolemia"
+        },
+        {
+          "code": "Z86711",
+          "title": "Personal history of pulmonary embolism"
+        },
+        {
+          "code": "Z86718",
+          "title": "Personal history of other venous thrombosis and embolism"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "R509",
+          "title": "Fever, unspecified"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "R5383",
+          "title": "Other fatigue"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "D500",
+          "title": "Iron deficiency anemia secondary to blood loss (chronic)"
+        }
+      ]
+    }
+  ]
+}

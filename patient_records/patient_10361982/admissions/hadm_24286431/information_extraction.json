@@ -16,11 +16,6 @@
       "evidence": "vaginal spotting to light bleeding"
     },
     {
-      "term": "passing 'munchin' sized clots",
-      "status": "present",
-      "evidence": "started passing more clots"
-    },
-    {
       "term": "menorrhagia",
       "status": "history",
       "evidence": "history of abnormal uterine bleeding"
@@ -28,22 +23,27 @@
     {
       "term": "dysmenorrhea",
       "status": "history",
-      "evidence": "endorses dysmenorrhea"
+      "evidence": "dysmenorrhea"
     },
     {
       "term": "intra-menstrual bleeding",
       "status": "history",
-      "evidence": "endorses intra-menstrual bleeding"
+      "evidence": "intra-menstrual bleeding"
     },
     {
       "term": "post-coital bleeding",
       "status": "history",
-      "evidence": "endorses post-coital bleeding"
+      "evidence": "post-coital bleeding"
     },
     {
       "term": "shortness of breath",
       "status": "history",
-      "evidence": "developed some shortness of breath"
+      "evidence": "shortness of breath"
+    },
+    {
+      "term": "dyspareunia",
+      "status": "history",
+      "evidence": "denies dyspareunia"
     }
   ],
   "vitals": [
@@ -68,19 +68,19 @@
       "name": "WBC",
       "value": "8.7",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "RBC",
       "value": "4.75",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "HGB",
       "value": "12.6",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "HCT",
@@ -92,37 +92,37 @@
       "name": "MCV",
       "value": "80*",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "MCH",
       "value": "26.5",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "MCHC",
       "value": "33.1",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "RDW",
       "value": "13.3",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "RDWSD",
       "value": "38.2",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     },
     {
       "name": "PLT COUNT",
       "value": "434*",
       "unit": "",
-      "flag": "unknown"
+      "flag": "normal"
     }
   ],
   "diagnoses_mentioned": [
@@ -133,63 +133,39 @@
   ],
   "medications": [
     {
-      "name": "Acetaminophen",
-      "dose": "1000 mg",
-      "route": "PO",
-      "status": "started"
-    },
-    {
-      "name": "Docusate Sodium",
-      "dose": "100 mg",
-      "route": "PO",
-      "status": "continued"
-    },
-    {
-      "name": "Synthroid",
-      "dose": "50 mcg",
-      "route": "PO",
+      "name": "Levothyroxine",
+      "dose": "50 mcg/day",
+      "route": "oral",
       "status": "continued"
     },
     {
       "name": "Venlafaxine ER",
-      "dose": "75 mg",
-      "route": "PO",
+      "dose": "75 mg daily",
+      "route": "oral",
       "status": "continued"
     },
     {
       "name": "Adderall",
-      "dose": "10 mg",
-      "route": "PO",
+      "dose": "10 mg twice daily",
+      "route": "oral",
       "status": "continued"
+    },
+    {
+      "name": "Acetaminophen",
+      "dose": "1000 mg PO",
+      "route": "oral",
+      "status": "started"
+    },
+    {
+      "name": "Docusate Sodium",
+      "dose": "100 mg PO BID:PRN constipation",
+      "route": "oral",
+      "status": "started"
     }
   ],
   "procedures": [
     {
-      "name": "total laparoscopic hysterectomy",
-      "result": "performed"
-    },
-    {
-      "name": "bilateral salpingectomy",
-      "result": "performed"
-    },
-    {
-      "name": "cystoscopy",
-      "result": "performed"
-    },
-    {
-      "name": "endometrial biopsy",
-      "result": "performed"
-    },
-    {
-      "name": "hysteroscopy",
-      "result": "performed"
-    },
-    {
-      "name": "D&C",
-      "result": "performed"
-    },
-    {
-      "name": "endometrial ablation",
+      "name": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy",
       "result": "performed"
     }
   ],

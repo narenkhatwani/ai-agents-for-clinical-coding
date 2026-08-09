@@ -1,0 +1,490 @@
+{
+  "stage": 5,
+  "generated_at": "2026-08-08T16:33:47.422735",
+  "patient_id": "10361982",
+  "hadm_id": "24286431",
+  "n_entities": 26,
+  "entities": [
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "heavy vaginal bleeding",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "heavy vaginal bleeding",
+        "mapped": true,
+        "concept_id": "315224006",
+        "preferred_term": "Heavy episode of vaginal bleeding",
+        "fsn": "Heavy episode of vaginal bleeding (finding)",
+        "match_method": "fuzzy",
+        "score": 0.7286607049870562,
+        "candidates": [
+          {
+            "concept_id": "289538004",
+            "term": "Scanty vaginal bleeding",
+            "score": 0.670658199883552
+          },
+          {
+            "concept_id": "301822002",
+            "term": "Abnormal vaginal bleeding",
+            "score": 0.6386351468855871
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "abdominal bloatedness",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "abdominal bloatedness",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "vaginal spotting to light bleeding",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "vaginal spotting to light bleeding",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "menorrhagia",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "menorrhagia",
+        "mapped": true,
+        "concept_id": "386692008",
+        "preferred_term": "Menorrhagia",
+        "fsn": "Menorrhagia (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "dysmenorrhea",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "dysmenorrhea",
+        "mapped": true,
+        "concept_id": "266599000",
+        "preferred_term": "Period pain",
+        "fsn": "Dysmenorrhea (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "intra-menstrual bleeding",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "intra-menstrual bleeding",
+        "mapped": true,
+        "concept_id": "237130006",
+        "preferred_term": "Intermenstrual bleeding",
+        "fsn": "Bleeding between periods (finding)",
+        "match_method": "fuzzy",
+        "score": 0.6247815373214463,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "post-coital bleeding",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "post-coital bleeding",
+        "mapped": true,
+        "concept_id": "48880000",
+        "preferred_term": "Postcoital bleeding",
+        "fsn": "Postcoital bleeding (finding)",
+        "match_method": "fuzzy",
+        "score": 0.6596448795998096,
+        "candidates": [
+          {
+            "concept_id": "50960005",
+            "term": "Hemorrhage",
+            "score": 0.6028505426185218
+          },
+          {
+            "concept_id": "131148009",
+            "term": "Bleeding",
+            "score": 0.6028505426185218
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "shortness of breath",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "shortness of breath",
+        "mapped": true,
+        "concept_id": "267036007",
+        "preferred_term": "Dyspnea",
+        "fsn": "Dyspnea (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "dyspareunia",
+      "kind": "symptom",
+      "status": "history",
+      "snomed": {
+        "query_term": "dyspareunia",
+        "mapped": true,
+        "concept_id": "71315007",
+        "preferred_term": "Dyspareunia",
+        "fsn": "Dyspareunia (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "abnormal uterine and vaginal bleeding",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "abnormal uterine and vaginal bleeding",
+        "mapped": true,
+        "concept_id": "301822002",
+        "preferred_term": "Abnormal vaginal bleeding",
+        "fsn": "Abnormal vaginal bleeding (finding)",
+        "match_method": "fuzzy",
+        "score": 0.7406784892233765,
+        "candidates": [
+          {
+            "concept_id": "267016006",
+            "term": "H/O: abnormal uterine bleeding",
+            "score": 0.6638569604969112
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy",
+        "mapped": true,
+        "concept_id": "236888001",
+        "preferred_term": "Laparoscopic total hysterectomy",
+        "fsn": "Laparoscopic total hysterectomy (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.676211769587116,
+        "candidates": [
+          {
+            "concept_id": "414575003",
+            "term": "Laparoscopic total abdominal hysterectomy and bilateral salpingo-oophorectomy",
+            "score": 0.6526626143474371
+          },
+          {
+            "concept_id": "25811000",
+            "term": "Bilateral complete salpingectomy",
+            "score": 0.6340905926284045
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "Levothyroxine",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Levothyroxine",
+        "mapped": true,
+        "concept_id": "710809001",
+        "preferred_term": "Levothyroxine",
+        "fsn": "Levothyroxine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "Venlafaxine ER",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Venlafaxine ER",
+        "mapped": true,
+        "concept_id": "372490001",
+        "preferred_term": "Venlafaxine",
+        "fsn": "Venlafaxine (substance)",
+        "match_method": "fuzzy",
+        "score": 0.7425228932353551,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "Adderall",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Adderall",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "Acetaminophen",
+      "kind": "medication",
+      "status": "started",
+      "snomed": {
+        "query_term": "Acetaminophen",
+        "mapped": true,
+        "concept_id": "387517004",
+        "preferred_term": "Acetaminophen",
+        "fsn": "Paracetamol (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "Docusate Sodium",
+      "kind": "medication",
+      "status": "started",
+      "snomed": {
+        "query_term": "Docusate Sodium",
+        "mapped": true,
+        "concept_id": "387088007",
+        "preferred_term": "Docusate sodium",
+        "fsn": "Docusate sodium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "WBC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "WBC",
+        "mapped": true,
+        "concept_id": "726572009",
+        "preferred_term": "Leukocyte cast",
+        "fsn": "Leukocyte cast (morphologic abnormality)",
+        "match_method": "fuzzy",
+        "score": 0.591804839632687,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "RBC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RBC",
+        "mapped": true,
+        "concept_id": "41898006",
+        "preferred_term": "Erythrocyte",
+        "fsn": "Erythrocyte (cell)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "HGB",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "HGB",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "HCT",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "HCT",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "MCV",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCV",
+        "mapped": true,
+        "concept_id": "426342006",
+        "preferred_term": "Microvolt",
+        "fsn": "Microvolt (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "MCH",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCH",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "MCHC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCHC",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "RDW",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDW",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "RDWSD",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDWSD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "10361982",
+      "hadm_id": "24286431",
+      "term": "PLT COUNT",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "PLT COUNT",
+        "mapped": true,
+        "concept_id": "61928009",
+        "preferred_term": "Platelet count",
+        "fsn": "Platelet count (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.6458679799852859,
+        "candidates": []
+      }
+    }
+  ]
+}

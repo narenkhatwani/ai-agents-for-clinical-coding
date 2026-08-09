@@ -1,0 +1,49 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 10361982
+HADM ID          : 24286431
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:43:39.045142
+Candidates       : 5
+Most likely      : Postoperative hemorrhage
+Prior admissions : 1 (11 ICD codes as PMH context)
+
+Summary:
+  The patient presents with heavy vaginal bleeding post hysterectomy, a history of abnormal uterine bleeding, and other gynecological issues. She has a known history of endometriosis and benign neoplasms.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Postoperative hemorrhage  (primary)
+      SNOMED aligned : Heavy episode of vaginal bleeding
+      + heavy vaginal bleeding after hysterectomy
+      + hematocrit decreased from 40.1 to 38.1
+      why: High likelihood due to recent hysterectomy and significant blood loss.
+
+  #2  [70.0/100 | medium]  Uterine atony  (complication)
+      + heavy vaginal bleeding after hysterectomy
+      why: Possible cause of heavy bleeding post hysterectomy.
+
+  #3  [60.0/100 | medium]  Infection  (complication)
+      + heavy vaginal bleeding after hysterectomy
+      why: Risk of infection post hysterectomy, though no signs of infection noted.
+
+  #4  [50.0/100 | low]  Adhesions  (complication)
+      + heavy vaginal bleeding after hysterectomy
+      why: Possible source of bleeding, but imaging did not show hematoma.
+
+  #5  [40.0/100 | low]  Hemodynamic instability  (risk_factor)
+      + hematocrit decreased from 40.1 to 38.1
+      why: Decreased hematocrit suggests potential hemodynamic instability.
+
+RULE-OUTS
+---------
+
+  • Endometriosis: No active symptoms or signs of endometriosis, and imaging did not show hematoma.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Need to know if there are any signs of infection or adhesions on imaging

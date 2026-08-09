@@ -1,0 +1,50 @@
+DIFFERENTIAL DIAGNOSIS (scored)
+===============================
+
+Patient ID       : 18412100
+HADM ID          : 26093939
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.4
+Generated        : 2026-08-09T00:46:34.909514
+Candidates       : 5
+Most likely      : Post-procedural pain
+Prior admissions : 1 (9 ICD codes as PMH context)
+
+Summary:
+  Patient presents with post-procedural pain and tenderness in the abdomen following a cryoablation for a desmoid tumor. History includes a previous neoplasm of uncertain behavior of connective and other soft tissue and chronic viral hepatitis C.
+
+RANKED DIFFERENTIAL
+-------------------
+
+  #1  [85.0/100 | high]  Post-procedural pain  (primary)
+      SNOMED aligned : Abdominal pain
+      + post-procedural pain in the right side of the abdomen
+      why: Primary diagnosis given the patient's recent cryoablation procedure and current symptoms.
+
+  #2  [70.0/100 | medium]  Desmoid tumor  (secondary)
+      + abdominal pain tender in the right upper and right lower quadrant to palpation
+      why: Secondary to the ongoing desmoid tumor and post-procedural pain.
+
+  #3  [55.0/100 | medium]  Hepatitis C  (risk_factor)
+      SNOMED aligned : Viral hepatitis C
+      + history of chronic viral hepatitis C
+      − no current symptoms or signs of acute hepatitis
+      why: Chronic condition, but not currently manifesting acute symptoms.
+
+  #4  [40.0/100 | medium]  Anemia  (secondary)
+      + low Hemoglobin and Hematocrit values
+      why: Low Hemoglobin and Hematocrit suggest anemia, but no specific cause identified.
+
+  #5  [30.0/100 | low]  Electrolyte imbalance  (differential)
+      + low Calcium and Magnesium levels
+      why: Low Calcium and Magnesium levels, but no acute symptoms.
+
+RULE-OUTS
+---------
+
+  • Acute infection: No fever, chills, or other signs of acute infection.
+
+UNCERTAIN / NEED MORE DATA
+--------------------------
+
+  • Further details on the nature of post-procedural pain and any signs of acute infection would help refine the differential.

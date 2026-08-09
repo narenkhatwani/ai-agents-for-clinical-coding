@@ -1,0 +1,264 @@
+{
+  "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, and altered mental status. Recent RUL PNA and SVC syndrome are noted.",
+  "most_likely": "Severe sepsis secondary to RUL PNA",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Severe sepsis secondary to RUL PNA",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "fever, RUL PNA, hypotension"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary diagnosis given the severe clinical presentation and evidence of RUL PNA and hypotension."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Metastatic adenocarcinoma of unknown primary",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
+      "supporting_evidence": [
+        "metastatic adenocarcinoma, RUL PNA, hypotension"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Given the confirmed metastatic adenocarcinoma and its impact on the patient's current condition."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Acute kidney injury",
+      "score": 50.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "N179 — Acute kidney failure, unspecified"
+      ],
+      "opposing_evidence": [
+        "no current evidence of acute kidney injury"
+      ],
+      "reasoning": "A complication given the patient's history of acute kidney failure and current hypotension."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "SVC syndrome",
+      "score": 40.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "SVC stent placed, multiple venous thromboses",
+      "supporting_evidence": [
+        "confirmed SVC syndrome"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Confirmed complication with ongoing management."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hypovolemic shock",
+      "score": 30.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "hypotension, low blood pressure"
+      ],
+      "opposing_evidence": [
+        "no clear evidence of hypovolemia"
+      ],
+      "reasoning": "A possible secondary diagnosis given the hypotension."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Pneumonia",
+      "score": 25.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "Infectious Diseases",
+      "supporting_evidence": [
+        "RUL PNA"
+      ],
+      "opposing_evidence": [
+        "recent diagnosis, no new imaging findings"
+      ],
+      "reasoning": "Differential diagnosis given the recent diagnosis of RUL PNA."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Cancer recurrence",
+      "why": "Current evidence does not strongly support cancer recurrence as the primary cause."
+    }
+  ],
+  "uncertain_areas": [
+    "Further imaging and lab results to confirm RUL PNA and assess for new complications"
+  ],
+  "n_candidates": 6,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "13196707",
+  "hadm_id": "21475988",
+  "generated_at": "2026-08-09T00:45:20.765143",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 11,
+    "retained_links": 15,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 33,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21516900,
+      "admittime": "2155-12-09 23:47:00",
+      "dischtime": "2156-01-08 17:15:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "C801",
+      "primary_dx_title": "Malignant (primary) neoplasm, unspecified",
+      "n_diagnoses": 33,
+      "icd10_diagnoses": [
+        {
+          "code": "C801",
+          "title": "Malignant (primary) neoplasm, unspecified"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "L89152",
+          "title": "Pressure ulcer of sacral region, stage 2"
+        },
+        {
+          "code": "I82A12",
+          "title": "Acute embolism and thrombosis of left axillary vein"
+        },
+        {
+          "code": "I82290",
+          "title": "Acute embolism and thrombosis of other thoracic veins"
+        },
+        {
+          "code": "I82B13",
+          "title": "Acute embolism and thrombosis of subclavian vein, bilateral"
+        },
+        {
+          "code": "M8448XA",
+          "title": "Pathological fracture, other site, initial encounter for fracture"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "N134",
+          "title": "Hydroureter"
+        },
+        {
+          "code": "G8191",
+          "title": "Hemiplegia, unspecified affecting right dominant side"
+        },
+        {
+          "code": "I871",
+          "title": "Compression of vein"
+        },
+        {
+          "code": "I82612",
+          "title": "Acute embolism and thrombosis of superficial veins of left upper extremity"
+        },
+        {
+          "code": "C7951",
+          "title": "Secondary malignant neoplasm of bone"
+        },
+        {
+          "code": "C7931",
+          "title": "Secondary malignant neoplasm of brain"
+        },
+        {
+          "code": "C7802",
+          "title": "Secondary malignant neoplasm of left lung"
+        },
+        {
+          "code": "G893",
+          "title": "Neoplasm related pain (acute) (chronic)"
+        },
+        {
+          "code": "C7801",
+          "title": "Secondary malignant neoplasm of right lung"
+        },
+        {
+          "code": "C7989",
+          "title": "Secondary malignant neoplasm of other specified sites"
+        },
+        {
+          "code": "C7949",
+          "title": "Secondary malignant neoplasm of other parts of nervous system"
+        },
+        {
+          "code": "C7972",
+          "title": "Secondary malignant neoplasm of left adrenal gland"
+        },
+        {
+          "code": "C7971",
+          "title": "Secondary malignant neoplasm of right adrenal gland"
+        },
+        {
+          "code": "K1120",
+          "title": "Sialoadenitis, unspecified"
+        },
+        {
+          "code": "B9561",
+          "title": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere"
+        },
+        {
+          "code": "Z515",
+          "title": "Encounter for palliative care"
+        },
+        {
+          "code": "K259",
+          "title": "Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation"
+        },
+        {
+          "code": "M1990",
+          "title": "Unspecified osteoarthritis, unspecified site"
+        },
+        {
+          "code": "H409",
+          "title": "Unspecified glaucoma"
+        },
+        {
+          "code": "Z7902",
+          "title": "Long term (current) use of antithrombotics/antiplatelets"
+        },
+        {
+          "code": "R634",
+          "title": "Abnormal weight loss"
+        },
+        {
+          "code": "Z6821",
+          "title": "Body mass index [BMI] 21.0-21.9, adult"
+        },
+        {
+          "code": "K5900",
+          "title": "Constipation, unspecified"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        }
+      ]
+    }
+  ]
+}

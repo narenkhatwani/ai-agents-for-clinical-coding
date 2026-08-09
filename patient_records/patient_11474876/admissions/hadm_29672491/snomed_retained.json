@@ -1,0 +1,663 @@
+{
+  "stage": 6,
+  "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
+  "generated_at": "2026-08-08T17:51:07.960703",
+  "patient_id": "11474876",
+  "hadm_id": "29672491",
+  "min_cosine_similarity": 0.7,
+  "high_conf_similarity": 0.8,
+  "similarity_method": "minilm",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_entities": 50,
+  "n_entities_with_retained": 13,
+  "n_retained_links": 17,
+  "entities": [
+    {
+      "term": "abdominal pain",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed_concept_id": "21522001",
+      "snomed_preferred_term": "Abdominal pain",
+      "anchor_term": "abdominal pain",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "818983003",
+          "term": "Abdomen",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abdominal pain"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "818983003",
+          "term": "Abdomen",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7045,
+          "cosine_distance": 0.2955,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "abdominal pain"
+        }
+      ]
+    },
+    {
+      "term": "leg swelling",
+      "kind": "symptom",
+      "status": "present",
+      "snomed_concept_id": "248480008",
+      "snomed_preferred_term": "Leg swelling symptom",
+      "anchor_term": "leg swelling",
+      "n_retained": 3,
+      "n_high_confidence": 2,
+      "retained_ancestors": [
+        {
+          "concept_id": "449614009",
+          "term": "Swelling of lower limb",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8011,
+          "cosine_distance": 0.1989,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "leg swelling"
+        },
+        {
+          "concept_id": "80068009",
+          "term": "Swelling of limb",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.8298,
+          "cosine_distance": 0.1702,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "leg swelling"
+        }
+      ],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "442672001",
+          "term": "Swelling",
+          "relation": "has_associated_morphology",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7557,
+          "cosine_distance": 0.2443,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "leg swelling"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "449614009",
+          "term": "Swelling of lower limb",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8011,
+          "cosine_distance": 0.1989,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "leg swelling"
+        },
+        {
+          "concept_id": "80068009",
+          "term": "Swelling of limb",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.8298,
+          "cosine_distance": 0.1702,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "leg swelling"
+        },
+        {
+          "concept_id": "442672001",
+          "term": "Swelling",
+          "relation": "has_associated_morphology",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7557,
+          "cosine_distance": 0.2443,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "leg swelling"
+        }
+      ]
+    },
+    {
+      "term": "Peripheral vascular disease",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "400047006",
+      "snomed_preferred_term": "Peripheral vascular disease",
+      "anchor_term": "Peripheral vascular disease",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "51833009",
+          "term": "Peripheral vascular system",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7694,
+          "cosine_distance": 0.2306,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Peripheral vascular disease"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "51833009",
+          "term": "Peripheral vascular system",
+          "relation": "has_finding_site",
+          "hop": "direct",
+          "via_concept_id": null,
+          "role": "attribute_target",
+          "cosine_similarity": 0.7694,
+          "cosine_distance": 0.2306,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Peripheral vascular disease"
+        }
+      ]
+    },
+    {
+      "term": "Right bundle branch block",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed_concept_id": "59118001",
+      "snomed_preferred_term": "Right bundle branch block",
+      "anchor_term": "Right bundle branch block",
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "6374002",
+          "term": "Bundle branch block",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.9184,
+          "cosine_distance": 0.0816,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Right bundle branch block"
+        }
+      ],
+      "retained_attribute_relations": [
+        {
+          "concept_id": "59521009",
+          "term": "Bundle branches",
+          "relation": "has_finding_site",
+          "hop": "ancestor_of_target",
+          "via_concept_id": "57383004",
+          "role": "attribute_target_ancestor",
+          "cosine_similarity": 0.7888,
+          "cosine_distance": 0.2112,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Right bundle branch block"
+        }
+      ],
+      "retained": [
+        {
+          "concept_id": "6374002",
+          "term": "Bundle branch block",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.9184,
+          "cosine_distance": 0.0816,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Right bundle branch block"
+        },
+        {
+          "concept_id": "59521009",
+          "term": "Bundle branches",
+          "relation": "has_finding_site",
+          "hop": "ancestor_of_target",
+          "via_concept_id": "57383004",
+          "role": "attribute_target_ancestor",
+          "cosine_similarity": 0.7888,
+          "cosine_distance": 0.2112,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Right bundle branch block"
+        }
+      ]
+    },
+    {
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "28317006",
+      "snomed_preferred_term": "Hematocrit determination",
+      "anchor_term": "Hematocrit",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "33468001",
+          "term": "Hematology procedure",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7153,
+          "cosine_distance": 0.2847,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Hematocrit"
+        }
+      ]
+    },
+    {
+      "term": "Alanine Aminotransferase (ALT)",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "56935002",
+      "snomed_preferred_term": "Alanine aminotransferase",
+      "anchor_term": "Alanine Aminotransferase (ALT)",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "130093006",
+          "term": "Aminotransferase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7936,
+          "cosine_distance": 0.2064,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Alanine Aminotransferase (ALT)"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "130093006",
+          "term": "Aminotransferase",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7936,
+          "cosine_distance": 0.2064,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Alanine Aminotransferase (ALT)"
+        }
+      ]
+    },
+    {
+      "term": "Bilirubin, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "359986008",
+      "snomed_preferred_term": "Total bilirubin",
+      "anchor_term": "Bilirubin, Total",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "302787001",
+          "term": "Bilirubin level",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7339,
+          "cosine_distance": 0.2661,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bilirubin, Total"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "302787001",
+          "term": "Bilirubin level",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7339,
+          "cosine_distance": 0.2661,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Bilirubin, Total"
+        }
+      ]
+    },
+    {
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "5540006",
+      "snomed_preferred_term": "Calcium",
+      "anchor_term": "Calcium, Total",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767178007",
+          "term": "Calcium and/or calcium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.721,
+          "cosine_distance": 0.279,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Calcium, Total"
+        }
+      ]
+    },
+    {
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "72717003",
+      "snomed_preferred_term": "Magnesium",
+      "anchor_term": "Magnesium",
+      "n_retained": 1,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767301009",
+          "term": "Magnesium and/or magnesium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8235,
+          "cosine_distance": 0.1765,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Magnesium"
+        }
+      ]
+    },
+    {
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "259296007",
+      "snomed_preferred_term": "Phosphate",
+      "anchor_term": "Phosphate",
+      "n_retained": 2,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63793008",
+          "term": "Phosphorus compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7761,
+          "cosine_distance": 0.2239,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        },
+        {
+          "concept_id": "767361006",
+          "term": "Phosphorus and/or phosphorus compound",
+          "relation": "is_a",
+          "depth": 2,
+          "role": "ancestor",
+          "cosine_similarity": 0.7162,
+          "cosine_distance": 0.2838,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Phosphate"
+        }
+      ]
+    },
+    {
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "88480006",
+      "snomed_preferred_term": "Potassium",
+      "anchor_term": "Potassium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767364003",
+          "term": "Potassium and/or potassium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7922,
+          "cosine_distance": 0.2078,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Potassium"
+        }
+      ]
+    },
+    {
+      "term": "Sodium",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "39972003",
+      "snomed_preferred_term": "Sodium",
+      "anchor_term": "Sodium",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "767403008",
+          "term": "Sodium and/or sodium compound",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7618,
+          "cosine_distance": 0.2382,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "Sodium"
+        }
+      ]
+    },
+    {
+      "term": "White Blood Cells",
+      "kind": "lab",
+      "status": "",
+      "snomed_concept_id": "52501007",
+      "snomed_preferred_term": "Leukocyte",
+      "anchor_term": "White Blood Cells",
+      "n_retained": 1,
+      "n_high_confidence": 0,
+      "retained_ancestors": [
+        {
+          "concept_id": "63370004",
+          "term": "Blood cell",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7647,
+          "cosine_distance": 0.2353,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "White Blood Cells"
+        }
+      ],
+      "retained_attribute_relations": [],
+      "retained": [
+        {
+          "concept_id": "63370004",
+          "term": "Blood cell",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.7647,
+          "cosine_distance": 0.2353,
+          "retained": true,
+          "high_confidence": false,
+          "similarity_method": "minilm",
+          "anchor_term": "White Blood Cells"
+        }
+      ]
+    }
+  ]
+}

@@ -8,50 +8,45 @@ Patient ID       : 13196707
 Admission ID     : 21475988
 
 Reasoning:
-  The patient presents with severe sepsis secondary to RUL PNA, hypotension, and altered mental status, with a history of metastatic adenocarcinoma of unknown primary.
+  The patient is a male with metastatic adenocarcinoma of unknown primary presenting with severe sepsis and hypotension, likely secondary to RUL PNA.
 
-Key symptoms     : fever, pneumonia
+Key symptoms     : fever, RUL PNA
 Red flags        : hypotension, altered mental status
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [present, mild] fever
-      evidence: "new fever"
-      related: RUL PNA, bibasilar consolidations may represent a combination of pneumonia and/or atelectasis
-  • [present, moderate] pneumonia
-      evidence: "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis"
-      related: RUL PNA
+  • [history] fever
+      evidence: "feverish at rehab, but currently doesn't feel like he's having a fever"
+      related: RUL PNA, severe sepsis
+  • [suspected, moderate] RUL PNA
+      evidence: "recently diagnosed, CT read described 'ground glass opacities' in the RUL"
+      related: hypotension, severe sepsis
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, moderate] hypotension
-      evidence: "persistently hypotensive with pressures in the 80's"
-      related: severe sepsis probably secondary to RUL PNA
+  • [present, severe] hypotension
+      evidence: "BP 82-90/45-60 mmHg, required levophed to maintain pressures"
+      related: severe sepsis, SVC syndrome
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [suspected, moderate] RUL consolidation
+      evidence: "persistent consolidative opacities in both lower lobes, that could represent atelectasis, however pneumonia cannot be excluded"
+      related: RUL PNA
 
 NEUROLOGIC → Neurologic
 -----------------------
 
   • [present, moderate] altered mental status
-      evidence: "altered mental status"
-      related: severe sepsis probably secondary to RUL PNA
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [present, severe] sepsis
-      evidence: "severe sepsis probably secondary to RUL PNA"
-      related: RUL PNA, hypotension
+      evidence: "GCS 3, not following commands"
+      related: SVC syndrome, metastatic adenocarcinoma
 
 OTHER → Other
 -------------
 
-  • [present, mild] chest pressure
-      evidence: "chest pressure that he described as a 'heaviness'"
-  • [history, mild] back pain
-      evidence: "Chief Complaint: Back pain"
-  • [history, absent] saddle anesthesia
-      evidence: "no saddle anesthesia or bowel/bladder changes"
-  • [history, mild] numbness
-      evidence: "numbness in his right thumb that has been present for many years"
+  • [confirmed, moderate] SVC syndrome
+      evidence: "SVC stent placed, multiple venous thromboses"
+      related: metastatic adenocarcinoma

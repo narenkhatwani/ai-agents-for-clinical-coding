@@ -1,0 +1,553 @@
+{
+  "stage": 5,
+  "generated_at": "2026-08-08T16:33:47.422735",
+  "patient_id": "18412100",
+  "hadm_id": "26093939",
+  "n_entities": 32,
+  "entities": [
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "post-procedural pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "post-procedural pain",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "nausea",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "nausea",
+        "mapped": true,
+        "concept_id": "422587007",
+        "preferred_term": "Nausea",
+        "fsn": "Nausea (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "abdominal pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "abdominal pain",
+        "mapped": true,
+        "concept_id": "21522001",
+        "preferred_term": "Abdominal pain",
+        "fsn": "Abdominal pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "pain",
+        "mapped": true,
+        "concept_id": "22253000",
+        "preferred_term": "Pain",
+        "fsn": "Pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "fever",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "fever",
+        "mapped": true,
+        "concept_id": "386661006",
+        "preferred_term": "Fever",
+        "fsn": "Fever (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "shortness of breath",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "shortness of breath",
+        "mapped": true,
+        "concept_id": "267036007",
+        "preferred_term": "Dyspnea",
+        "fsn": "Dyspnea (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "palpitations",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "palpitations",
+        "mapped": true,
+        "concept_id": "80313002",
+        "preferred_term": "Palpitations",
+        "fsn": "Palpitations (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "chest pain",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "Chest pain",
+        "mapped": true,
+        "concept_id": "29857009",
+        "preferred_term": "Chest pain",
+        "fsn": "Chest pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "diarrhea",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "diarrhea",
+        "mapped": true,
+        "concept_id": "62315008",
+        "preferred_term": "Diarrhea",
+        "fsn": "Diarrhea (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "constipation",
+      "kind": "symptom",
+      "status": "absent",
+      "snomed": {
+        "query_term": "constipation",
+        "mapped": true,
+        "concept_id": "14760008",
+        "preferred_term": "Constipation",
+        "fsn": "Constipation (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "desmoid tumor",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "desmoid tumor",
+        "mapped": true,
+        "concept_id": "47284001",
+        "preferred_term": "Aggressive fibromatosis",
+        "fsn": "Aggressive fibromatosis (morphologic abnormality)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "hepatitis C",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Hepatitis C",
+        "mapped": true,
+        "concept_id": "50711007",
+        "preferred_term": "Viral hepatitis C",
+        "fsn": "Viral hepatitis type C (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "cryoablation of residual desmoid tumor",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "cryoablation of residual desmoid tumor",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Zofran",
+      "kind": "medication",
+      "status": "started",
+      "snomed": {
+        "query_term": "Zofran",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "dilaudid PCA",
+      "kind": "medication",
+      "status": "started",
+      "snomed": {
+        "query_term": "dilaudid PCA",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "toradol",
+      "kind": "medication",
+      "status": "started",
+      "snomed": {
+        "query_term": "toradol",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "WBC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "WBC",
+        "mapped": true,
+        "concept_id": "726572009",
+        "preferred_term": "Leukocyte cast",
+        "fsn": "Leukocyte cast (morphologic abnormality)",
+        "match_method": "fuzzy",
+        "score": 0.591804839632687,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Hemoglobin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hemoglobin",
+        "mapped": true,
+        "concept_id": "38082009",
+        "preferred_term": "Hemoglobin",
+        "fsn": "Hemoglobin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hematocrit",
+        "mapped": true,
+        "concept_id": "28317006",
+        "preferred_term": "Hematocrit determination",
+        "fsn": "Hematocrit determination (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "MCV",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCV",
+        "mapped": true,
+        "concept_id": "426342006",
+        "preferred_term": "Microvolt",
+        "fsn": "Microvolt (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "RDW",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDW",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Platelet Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Platelet Count",
+        "mapped": true,
+        "concept_id": "61928009",
+        "preferred_term": "Platelet count",
+        "fsn": "Platelet count (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Anion Gap",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Anion Gap",
+        "mapped": true,
+        "concept_id": "102637000",
+        "preferred_term": "Anion gap",
+        "fsn": "Anion gap, function (observable entity)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Bicarbonate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Bicarbonate",
+        "mapped": true,
+        "concept_id": "68615006",
+        "preferred_term": "Bicarbonate",
+        "fsn": "Bicarbonate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Calcium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Calcium",
+        "mapped": true,
+        "concept_id": "5540006",
+        "preferred_term": "Calcium",
+        "fsn": "Calcium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Chloride",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Chloride",
+        "mapped": true,
+        "concept_id": "50213009",
+        "preferred_term": "Chloride salt",
+        "fsn": "Chloride salt (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Creatinine",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Creatinine",
+        "mapped": true,
+        "concept_id": "15373003",
+        "preferred_term": "Creatinine",
+        "fsn": "Creatinine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Glucose",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Glucose",
+        "mapped": true,
+        "concept_id": "67079006",
+        "preferred_term": "Glucose",
+        "fsn": "Glucose (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Magnesium",
+        "mapped": true,
+        "concept_id": "72717003",
+        "preferred_term": "Magnesium",
+        "fsn": "Magnesium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Phosphate",
+        "mapped": true,
+        "concept_id": "259296007",
+        "preferred_term": "Phosphate",
+        "fsn": "Phosphate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Potassium",
+        "mapped": true,
+        "concept_id": "88480006",
+        "preferred_term": "Potassium",
+        "fsn": "Potassium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "18412100",
+      "hadm_id": "26093939",
+      "term": "Sodium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Sodium",
+        "mapped": true,
+        "concept_id": "39972003",
+        "preferred_term": "Sodium",
+        "fsn": "Sodium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    }
+  ]
+}

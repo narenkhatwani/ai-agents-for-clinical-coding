@@ -1,0 +1,165 @@
+{
+  "summary": "The patient presents with dyspnea and pain, along with a history of renal cell carcinoma and chronic systolic heart failure. Current labs show elevated creatinine and low hemoglobin, consistent with renal and anemia issues.",
+  "most_likely": "Acute on chronic systolic heart failure",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute on chronic systolic heart failure",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "42322001",
+      "supporting_evidence": [
+        "sudden onset dyspnea, systolic CHF with EF around 30%"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Strong clinical presentation and supporting symptoms."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Renal cell carcinoma",
+      "score": 75.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "19386008",
+      "supporting_evidence": [
+        "left renal mass, renal cell carcinoma"
+      ],
+      "opposing_evidence": [
+        "Focused on cardiac symptoms"
+      ],
+      "reasoning": "Confirmed diagnosis, but less acute focus."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anemia",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "73585002",
+      "supporting_evidence": [
+        "low hemoglobin, low hematocrit"
+      ],
+      "opposing_evidence": [
+        "Not the primary focus of admission"
+      ],
+      "reasoning": "Low hemoglobin and hematocrit suggest anemia, but not primary concern."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Type 2 diabetes",
+      "score": 65.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "25169004",
+      "supporting_evidence": [
+        "high glucose"
+      ],
+      "opposing_evidence": [
+        "Not the primary focus of admission"
+      ],
+      "reasoning": "Type 2 diabetes is a known risk factor but not the primary concern."
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "Further cardiac imaging and renal function tests would refine the ranking"
+  ],
+  "n_candidates": 4,
+  "type": "differential_diagnosis",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "13508515",
+  "hadm_id": "21834271",
+  "generated_at": "2026-08-09T00:45:31.186480",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 7,
+    "retained_links": 8,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 16,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21011434,
+      "admittime": "2188-11-08 22:21:00",
+      "dischtime": "2188-11-18 16:19:00",
+      "admission_type": "EW EMER.",
+      "primary_icd_code": "I5023",
+      "primary_dx_title": "Acute on chronic systolic (congestive) heart failure",
+      "n_diagnoses": 16,
+      "icd10_diagnoses": [
+        {
+          "code": "I5023",
+          "title": "Acute on chronic systolic (congestive) heart failure"
+        },
+        {
+          "code": "R570",
+          "title": "Cardiogenic shock"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "C649",
+          "title": "Malignant neoplasm of unspecified kidney, except renal pelvis"
+        },
+        {
+          "code": "Z6841",
+          "title": "Body mass index [BMI] 40.0-44.9, adult"
+        },
+        {
+          "code": "E1122",
+          "title": "Type 2 diabetes mellitus with diabetic chronic kidney disease"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "N189",
+          "title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "code": "Z951",
+          "title": "Presence of aortocoronary bypass graft"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "N400",
+          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "G4733",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "R197",
+          "title": "Diarrhea, unspecified"
+        }
+      ]
+    }
+  ]
+}

@@ -16,14 +16,19 @@
       "evidence": "no palpitations"
     },
     {
-      "term": "hematuria",
-      "status": "absent",
-      "evidence": "no mention of hematuria"
+      "term": "urine output",
+      "status": "present",
+      "evidence": "urine output >30cc/hour"
     },
     {
       "term": "pain",
       "status": "present",
       "evidence": "pain well controlled on PCA"
+    },
+    {
+      "term": "calf pain",
+      "status": "absent",
+      "evidence": "no reported calf pain to deep palpation"
     }
   ],
   "vitals": [
@@ -91,7 +96,7 @@
       "name": "Platelet Count",
       "value": "147.0",
       "unit": "K/uL",
-      "flag": "unknown"
+      "flag": "low"
     },
     {
       "name": "Calcium, Total",
@@ -108,11 +113,15 @@
   ],
   "diagnoses_mentioned": [
     {
-      "term": "systolic CHF",
+      "term": "left renal mass",
       "certainty": "confirmed"
     },
     {
       "term": "renal cell carcinoma",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "systolic CHF",
       "certainty": "confirmed"
     },
     {
@@ -125,6 +134,10 @@
     },
     {
       "term": "obstructive sleep apnea",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "episodic atrial fibrillation",
       "certainty": "confirmed"
     }
   ],
@@ -194,13 +207,11 @@
       "result": "performed"
     }
   ],
-  "negations": [
-    "no concerning intraoperative events"
-  ],
+  "negations": [],
   "temporal": [
     {
-      "finding": "pain",
-      "onset": "on admission"
+      "finding": "left renal mass",
+      "onset": "history"
     }
   ],
   "_agent": "information_extraction",

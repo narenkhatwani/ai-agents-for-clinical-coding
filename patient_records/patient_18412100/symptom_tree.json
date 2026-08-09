@@ -1,9 +1,9 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is presenting with post-procedural pain and nausea following a cryoablation procedure for a desmoid tumor.",
+  "reasoning": "The patient is presenting with post-procedural pain and tenderness in the abdomen following a cryoablation procedure for a desmoid tumor.",
   "branches": [
     {
-      "category": "constitutional|respiratory|cardiovascular|infectious|neurologic|gi|renal|other",
+      "category": "other",
       "ontology_hint": "Other",
       "symptoms": [
         {
@@ -18,6 +18,7 @@
             {
               "term": "abdominal pain",
               "status": "present",
+              "severity": "mild",
               "evidence": "tender in the right upper and right lower quadrant to palpation"
             }
           ]
@@ -34,8 +35,23 @@
       ]
     },
     {
-      "category": "constitutional|respiratory|cardiovascular|infectious|neurologic|gi|renal|other",
-      "ontology_hint": "GI",
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
+      "symptoms": [
+        {
+          "term": "pain",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "similar to the previous procedure",
+          "related_findings": [
+            "abdominal pain"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "gi",
+      "ontology_hint": "Gastrointestinal",
       "symptoms": [
         {
           "term": "abdominal pain",
@@ -43,44 +59,50 @@
           "severity": "mild",
           "evidence": "tender in the right upper and right lower quadrant to palpation",
           "related_findings": [
-            "post-procedural pain"
+            "desmoid tumor"
           ]
         }
       ]
     },
     {
-      "category": "constitutional|respiratory|cardiovascular|infectious|neurologic|gi|renal|other",
-      "ontology_hint": "Other",
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
           "term": "fever",
           "status": "absent",
+          "severity": "unknown",
           "evidence": "denies fever, chills, night sweats"
-        },
-        {
-          "term": "shortness of breath",
-          "status": "absent",
-          "evidence": "denies shortness of breath"
-        },
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
         {
           "term": "palpitations",
           "status": "absent",
+          "severity": "unknown",
           "evidence": "denies palpitations"
         },
         {
           "term": "chest pain",
           "status": "absent",
+          "severity": "unknown",
           "evidence": "denies chest pain"
-        },
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
         {
-          "term": "diarrhea",
+          "term": "shortness of breath",
           "status": "absent",
-          "evidence": "denies diarrhea"
-        },
-        {
-          "term": "constipation",
-          "status": "absent",
-          "evidence": "denies constipation"
+          "severity": "unknown",
+          "evidence": "denies shortness of breath"
         }
       ]
     }
@@ -89,14 +111,11 @@
     "post-procedural pain",
     "nausea"
   ],
-  "red_flags": [
-    "denies recent weight loss or gain",
-    "denies recent change in bowel or bladder habits"
-  ],
+  "red_flags": [],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "18412100",
   "admission_id": "26093939",
-  "generated_at": "2026-07-20T01:15:14.154673"
+  "generated_at": "2026-08-08T16:21:12.086174"
 }

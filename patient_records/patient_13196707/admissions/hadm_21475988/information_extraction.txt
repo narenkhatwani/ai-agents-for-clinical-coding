@@ -8,23 +8,22 @@ Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 SYMPTOMS
 --------
 
-  • [present] chest pressure — "chest pressure that he described as a 'heaviness'"
-  • [history] back pain — "Chief Complaint: Back pain"
-  • [present] fever — "new fever"
-  • [present] pneumonia — "bibasilar consolidations may represent a combination of pneumonia and/or atelectasis"
-  • [present] hypotension — "persistently hypotensive with pressures in the 80's"
-  • [present] sepsis — "severe sepsis probably secondary to RUL PNA"
-  • [present] altered mental status — "altered mental status"
-  • [history] saddle anesthesia — "no saddle anesthesia or bowel/bladder changes"
-  • [history] numbness — "numbness in his right thumb that has been present for many years"
+  • [present] chest pressure — "chest pressure"
+  • [history] back pain — "back pain"
+  • [history] radicular pain — "radicular pain to his right leg"
+  • [absent] saddle anesthesia — "no saddle anesthesia"
+  • [history] numbness tingling — "numbness in his right thumb"
+  • [absent] chest pain — "no chest pain"
+  • [absent] sob — "no sob"
+  • [absent] n/v — "no n/v"
 
 VITALS
 ------
 
 • DBP: 71.0 mmHg
+• SBP: 138.0 mmHg
 • Heart Rate: 93.0 bpm
 • Respiratory Rate: 14.0 insp/min
-• SBP: 138.0 mmHg
 • SpO2: 99.0 %
 
 LABS
@@ -56,15 +55,15 @@ LABS
 • Urea Nitrogen: 21.0 mg/dL [high]
 • Ferritin: 2215.0 ng/mL [high]
 • Iron: 33.0 ug/dL [low]
-• Iron Binding Capacity, Total: 108.0 ug/dL [high]
-• Transferrin: 83.0 mg/dL [high]
+• Iron Binding Capacity, Total: 108.0 ug/dL [normal]
+• Transferrin: 83.0 mg/dL [normal]
 • Calculated Total CO2: 20.0 mEq/L [low]
 • pCO2: 33.0 mm Hg [normal]
-• pO2: 108.0 mm Hg [high]
+• pO2: 108.0 mm Hg [normal]
 • Absolute Lymphocyte Count: 0.59 K/uL [low]
 • Lymphocytes: 9.0 % [low]
 • Myelocytes: 1.0 % [normal]
-• Neutrophils: 79.0 % [high]
+• Neutrophils: 79.0 % [normal]
 • Absolute Basophil Count: 0.0 K/uL [normal]
 • Absolute Eosinophil Count: 0.0 K/uL [normal]
 
@@ -73,7 +72,7 @@ DIAGNOSES MENTIONED
 
   • [confirmed] metastatic adenocarcinoma of unknown primary
   • [suspected] non-small cell lung cancer
-  • [confirmed] RUL PNA
+  • [suspected] RUL PNA
   • [confirmed] SVC syndrome
   • [confirmed] parotitis
 
@@ -82,22 +81,24 @@ MEDICATIONS
 
   • Acetaminophen (started)
   • Vancomycin (started)
-  • Ceftazidime (stopped)
-  • Dexamethasone (stopped)
+  • Ceftazidime (started)
+  • Dexamethasone (continued)
   • Clindamycin (started)
   • Ciprofloxacin (started)
-  • Levophed (started)
 
 PROCEDURES
 ----------
 
-  • Pericardiocentesis: uncomplicated
+  • pericardiocentesis: uncomplicated
 
 NEGATIONS
 ---------
 
-  • no saddle anesthesia or bowel/bladder changes
+  • no saddle anesthesia
   • no numbness tingling other than numbness in his right thumb
+  • no chest pain
+  • no sob
+  • no n/v
 
 TEMPORAL
 --------

@@ -1,5 +1,5 @@
 Clinical Coding Pipeline — Patient Records Export
-Generated: 2026-07-20T01:20:07.588909
+Generated: 2026-08-08T16:22:26.498979
 
 15 patients | latest admission note + prior history
 Agents: LLM information extraction + symptom tree
@@ -11,9 +11,9 @@ Folder layout per patient:
     symptom_tree.txt / .json
     admissions/
       hadm_<latest_id>/
-        clinical_note.txt              (redacted — LLM / coding input)
+        clinical_note.txt              (redacted discharge package — LLM / coding input)
         clinical_note_full.txt         (original discharge note)
-        redacted_diagnosis_sections.txt (removed dx text — eval only)
+        redacted_discharge_sections.txt (removed discharge package + HC titles)
         ground_truth.json / .txt       (ICD-10 labels — eval only)
         clinical_context.txt
         structured_vitals.json

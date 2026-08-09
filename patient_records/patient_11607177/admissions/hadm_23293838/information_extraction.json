@@ -13,12 +13,12 @@
     {
       "term": "edema",
       "status": "present",
-      "evidence": "some increased ___ edema"
+      "evidence": "some increased ___ edema over the last several days"
     },
     {
-      "term": "palpitations",
-      "status": "absent",
-      "evidence": "denies other palpitations"
+      "term": "shaking",
+      "status": "present",
+      "evidence": "feels some 'shaking' in his chest in the morning for the last 4 months"
     },
     {
       "term": "chest pain",
@@ -46,14 +46,9 @@
       "evidence": "denies N/V/D"
     },
     {
-      "term": "shaking",
-      "status": "present",
-      "evidence": "feeling some "
-    },
-    {
-      "term": "abdominal pain",
+      "term": "palpitations",
       "status": "absent",
-      "evidence": "denies abdominal pain"
+      "evidence": "denies other palpitations"
     }
   ],
   "vitals": [
@@ -68,105 +63,132 @@
       "unit": "Lbs"
     },
     {
-      "name": "BP",
-      "value": "MAP ___ by Doppler",
-      "unit": ""
-    },
-    {
       "name": "HR",
       "value": "80",
-      "unit": ""
+      "unit": "bpm"
     },
     {
-      "name": "SpO2",
-      "value": "99%",
-      "unit": "RA"
+      "name": "BP",
+      "value": "120.4",
+      "unit": "Lbs"
     },
     {
-      "name": "JVD",
-      "value": "10cm",
-      "unit": ""
-    }
-  ],
-  "labs": [
+      "name": "MAP",
+      "value": "___",
+      "unit": "mmHg"
+    },
     {
       "name": "WBC",
       "value": "5.7",
-      "unit": "",
-      "flag": "normal"
-    },
-    {
-      "name": "RBC",
-      "value": "4.46",
-      "unit": "",
-      "flag": "normal"
+      "unit": "K/uL"
     },
     {
       "name": "Hgb",
-      "value": "12.7",
-      "unit": "",
-      "flag": "normal"
+      "value": "11.6",
+      "unit": "g/dL"
     },
     {
       "name": "Hct",
-      "value": "39.8",
-      "unit": "",
-      "flag": "normal"
+      "value": "36.2",
+      "unit": "%"
     },
     {
-      "name": "MCV",
-      "value": "89",
-      "unit": "",
-      "flag": "normal"
+      "name": "Plt",
+      "value": "142.0",
+      "unit": "K/uL"
     },
     {
-      "name": "MCH",
-      "value": "28.5",
-      "unit": "",
-      "flag": "normal"
+      "name": "RDW",
+      "value": "17.0",
+      "unit": "%"
+    },
+    {
+      "name": "PTT",
+      "value": "44.2",
+      "unit": "sec"
+    },
+    {
+      "name": "PT",
+      "value": "36.9",
+      "unit": "sec"
+    },
+    {
+      "name": "INR",
+      "value": "3.3",
+      "unit": ""
+    },
+    {
+      "name": "Urea Nitrogen",
+      "value": "25.0",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Creatinine",
+      "value": "1.4",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Glucose",
+      "value": "118.0",
+      "unit": "mg/dL"
     },
     {
       "name": "MCHC",
       "value": "31.9",
-      "unit": "",
-      "flag": "low"
+      "unit": "g/dL"
     },
     {
-      "name": "RDW",
-      "value": "16.9",
-      "unit": "",
-      "flag": "normal"
+      "name": "Alkaline Phosphatase",
+      "value": "167.0",
+      "unit": "IU/L"
     },
     {
-      "name": "RDW-SD",
-      "value": "54.9",
-      "unit": "",
-      "flag": "high"
+      "name": "Lactate Dehydrogenase (LD)",
+      "value": "252.0",
+      "unit": "IU/L"
     },
     {
-      "name": "Plt",
-      "value": "___",
-      "unit": "",
-      "flag": "unknown"
+      "name": "Anion Gap",
+      "value": "13.0",
+      "unit": "mEq/L"
     },
     {
-      "name": "Creat",
-      "value": "1.4",
-      "unit": "",
-      "flag": "normal"
+      "name": "Bicarbonate",
+      "value": "28.0",
+      "unit": "mEq/L"
     },
     {
-      "name": "Glucose",
-      "value": "105",
-      "unit": "",
-      "flag": "normal"
+      "name": "Calcium",
+      "value": "9.1",
+      "unit": "mg/dL"
     },
     {
-      "name": "UreaN",
-      "value": "31",
-      "unit": "",
-      "flag": "high"
+      "name": "Chloride",
+      "value": "104.0",
+      "unit": "mEq/L"
     },
+    {
+      "name": "Magnesium",
+      "value": "2.2",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Phosphate",
+      "value": "3.8",
+      "unit": "mg/dL"
+    },
+    {
+      "name": "Potassium",
+      "value": "4.3",
+      "unit": "mEq/L"
+    },
+    {
+      "name": "Sodium",
+      "value": "141.0",
+      "unit": "mEq/L"
+    }
+  ],
+  "labs": [
     {
       "name": "INR(PT)",
       "value": "3.3",
@@ -186,16 +208,22 @@
       "flag": "high"
     },
     {
+      "name": "Hematocrit",
+      "value": "36.2",
+      "unit": "%",
+      "flag": "low"
+    },
+    {
       "name": "Hemoglobin",
       "value": "11.6",
-      "unit": "",
+      "unit": "g/dL",
       "flag": "low"
     },
     {
       "name": "Platelet Count",
       "value": "142.0",
       "unit": "K/uL",
-      "flag": "low"
+      "flag": "normal"
     },
     {
       "name": "RDW",
@@ -223,7 +251,7 @@
     },
     {
       "name": "Glucose",
-      "value": "118",
+      "value": "118.0",
       "unit": "mg/dL",
       "flag": "high"
     },
@@ -235,55 +263,19 @@
     },
     {
       "name": "Alkaline Phosphatase",
-      "value": "167",
+      "value": "167.0",
       "unit": "IU/L",
       "flag": "high"
     },
     {
       "name": "Lactate Dehydrogenase (LD)",
-      "value": "252",
+      "value": "252.0",
       "unit": "IU/L",
       "flag": "high"
     },
     {
       "name": "Anion Gap",
-      "value": "13",
-      "unit": "mEq/L",
-      "flag": "unknown"
-    },
-    {
-      "name": "Bicarbonate",
-      "value": "28",
-      "unit": "mEq/L",
-      "flag": "normal"
-    },
-    {
-      "name": "Calcium, Total",
-      "value": "9.1",
-      "unit": "mg/dL",
-      "flag": "low"
-    },
-    {
-      "name": "Chloride",
-      "value": "104",
-      "unit": "mEq/L",
-      "flag": "normal"
-    },
-    {
-      "name": "Phosphate",
-      "value": "3.8",
-      "unit": "mg/dL",
-      "flag": "normal"
-    },
-    {
-      "name": "Potassium",
-      "value": "4.3",
-      "unit": "mEq/L",
-      "flag": "normal"
-    },
-    {
-      "name": "Sodium",
-      "value": "141",
+      "value": "13.0",
       "unit": "mEq/L",
       "flag": "normal"
     }
@@ -298,7 +290,15 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Heartmate II LVAD",
+      "term": "ICD",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "LVAD",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Heart transplantation",
       "certainty": "confirmed"
     },
     {
@@ -322,7 +322,7 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Tophaces Gout",
+      "term": "Gout",
       "certainty": "confirmed"
     },
     {
@@ -334,7 +334,7 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Gastritis; +H Pylori",
+      "term": "Gastritis",
       "certainty": "confirmed"
     },
     {
@@ -357,26 +357,26 @@
     },
     {
       "name": "Tramadol",
-      "dose": "as needed",
-      "route": "PO",
+      "dose": "___",
+      "route": "___",
       "status": "continued"
     },
     {
       "name": "Metoprolol",
-      "dose": "as needed",
-      "route": "PO",
+      "dose": "___",
+      "route": "___",
       "status": "continued"
     },
     {
       "name": "Sildenafil",
       "dose": "20mg",
-      "route": "PO",
+      "route": "PO TID",
       "status": "continued"
     },
     {
       "name": "Dipyridamole",
-      "dose": "as needed",
-      "route": "PO",
+      "dose": "___",
+      "route": "___",
       "status": "continued"
     },
     {
@@ -387,9 +387,9 @@
     },
     {
       "name": "Coumadin",
-      "dose": "4mg TuThSatSun, 3mg ___",
+      "dose": "4mg TuThSatSun, 3mg ___ daily",
       "route": "PO",
-      "status": "started"
+      "status": "continued"
     },
     {
       "name": "Ferrous Sulfate",
@@ -401,7 +401,19 @@
       "name": "Magnesium",
       "dose": "2mg IV",
       "route": "IV",
-      "status": "given"
+      "status": "continued"
+    },
+    {
+      "name": "Colchicine",
+      "dose": "___",
+      "route": "___",
+      "status": "continued"
+    },
+    {
+      "name": "Febuxostat",
+      "dose": "___",
+      "route": "___",
+      "status": "continued"
     }
   ],
   "procedures": [
@@ -416,8 +428,7 @@
     "denies chills",
     "denies cough",
     "denies N/V/D",
-    "denies other palpitations",
-    "denies abdominal pain"
+    "denies other palpitations"
   ],
   "temporal": [
     {

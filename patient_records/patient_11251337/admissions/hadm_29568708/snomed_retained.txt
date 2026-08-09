@@ -1,0 +1,13 @@
+Patient: 11251337  HADM: 29568708
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 2 / 24  |  links: 3
+
+• Right antegrade ureteroscopy  [procedure]  → SNOMED: Antegrade ureteroscopy (236170007)
+    - [is_a] Ureteroscopy (id=387717002, sim=0.8552) [HIGH]
+    - [is_a] Procedure on ureter (id=229931005, sim=0.7107)
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)

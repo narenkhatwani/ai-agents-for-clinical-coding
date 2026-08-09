@@ -1,0 +1,238 @@
+{
+  "experiment": "snomed_minilm_threshold_calibration",
+  "generated_at": "2026-08-08T17:28:57.273581",
+  "source": {
+    "type": "local_SNOMED_CT_RF2",
+    "note": "Random sample from local US SNOMED CT Snapshot (RF2). Same concept/description model as SNOMED Terminology API.",
+    "snomed_root": "/Users/narenkhatwani/GitHub/ai-agents-for-clinical-coding/data/SnomedCT_ManagedServiceUS_PRODUCTION_US1000124_20250901T120000Z",
+    "n_sampled": 20,
+    "seed": 42,
+    "semantic_tag_filter": [
+      "finding",
+      "disorder",
+      "procedure",
+      "observable entity",
+      "situation"
+    ]
+  },
+  "embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "method": "minilm",
+    "anchor": "snomed_preferred_term",
+    "neighbors": "is_a depth\u22642 + Stage-6 attribute targets (no inverse)"
+  },
+  "similarity_distributions": {
+    "all_neighbors": {
+      "n": 159,
+      "mean": 0.4677,
+      "median": 0.4698,
+      "stdev": 0.2608,
+      "p10": 0.105,
+      "p25": 0.2335,
+      "p75": 0.6943,
+      "p90": 0.82,
+      "min": -0.0234,
+      "max": 0.9347
+    },
+    "is_a_ancestors_only": {
+      "n": 99,
+      "mean": 0.5152,
+      "median": 0.5243,
+      "stdev": 0.2618,
+      "p10": 0.1492,
+      "p25": 0.32,
+      "p75": 0.742,
+      "p90": 0.8625,
+      "min": -0.0234,
+      "max": 0.9347
+    },
+    "is_a_parents_depth1": {
+      "n": 32,
+      "mean": 0.6565,
+      "median": 0.7148,
+      "stdev": 0.2397,
+      "p10": 0.3321,
+      "p25": 0.5247,
+      "p75": 0.8572,
+      "p90": 0.8907,
+      "min": 0.0357,
+      "max": 0.9347
+    },
+    "most_relevant_top1_per_term": {
+      "n": 20,
+      "mean": 0.7254,
+      "median": 0.7773,
+      "stdev": 0.1804,
+      "p10": 0.4389,
+      "p25": 0.6165,
+      "p75": 0.8841,
+      "p90": 0.9006,
+      "min": 0.328,
+      "max": 0.9347
+    },
+    "most_relevant_top2_mean_per_term": {
+      "n": 20,
+      "mean": 0.6679,
+      "median": 0.707,
+      "stdev": 0.2042,
+      "p10": 0.4088,
+      "p25": 0.56,
+      "p75": 0.8527,
+      "p90": 0.878,
+      "min": 0.2079,
+      "max": 0.9181
+    }
+  },
+  "threshold_recommendation": {
+    "mean_most_relevant_top1": 0.7254,
+    "mean_most_relevant_top2": 0.6679,
+    "mean_is_a_parent": 0.6565,
+    "median_most_relevant_top1": 0.7773,
+    "empirical_band_center": 0.6833,
+    "recommended_min_similarity": 0.7,
+    "recommended_high_confidence": 0.8,
+    "policy_floor": 0.7,
+    "current_pipeline_min": 0.7,
+    "current_pipeline_high_conf": 0.8,
+    "justification": "Across n=20 sampled SNOMED terms, the average MiniLM cosine of the single most-relevant ontology neighbor (top-1) is 0.725; mean over top-2 is 0.668; mean direct is-a parent is 0.657. Band center \u2248 0.683. Recommended retain threshold is 0.70 (\u2265 0.70 policy floor); high-confidence tier \u2265 0.80."
+  },
+  "pass_rates_at_thresholds": {
+    "0.7": {
+      "fraction_top1_pass": 0.65,
+      "fraction_parent_pass": 0.5625,
+      "fraction_all_neighbor_pass": 0.2453
+    },
+    "0.75": {
+      "fraction_top1_pass": 0.55,
+      "fraction_parent_pass": 0.4375,
+      "fraction_all_neighbor_pass": 0.1824
+    },
+    "0.8": {
+      "fraction_top1_pass": 0.4,
+      "fraction_parent_pass": 0.3438,
+      "fraction_all_neighbor_pass": 0.1195
+    }
+  },
+  "sample_concepts": [
+    {
+      "concept_id": "31942007",
+      "preferred_term": "Transection of greater occipital nerve",
+      "top1_similarity": 0.7253,
+      "top1_neighbor": "Transection of nerve"
+    },
+    {
+      "concept_id": "253600008",
+      "preferred_term": "Quadricuspid pulmonary valve",
+      "top1_similarity": 0.5921,
+      "top1_neighbor": "Congenital abnormality of pulmonary valve cusp"
+    },
+    {
+      "concept_id": "127350007",
+      "preferred_term": "Motor vehicle accident, passenger",
+      "top1_similarity": 0.8843,
+      "top1_neighbor": "Motor vehicle accident victim"
+    },
+    {
+      "concept_id": "55131000087105",
+      "preferred_term": "At increased risk of disorientation",
+      "top1_similarity": 0.328,
+      "top1_neighbor": "Finding of increased risk level"
+    },
+    {
+      "concept_id": "117660006",
+      "preferred_term": "Norketamine measurement",
+      "top1_similarity": 0.4374,
+      "top1_neighbor": "Measurement"
+    },
+    {
+      "concept_id": "14386001",
+      "preferred_term": "Indeterminate leprosy",
+      "top1_similarity": 0.7955,
+      "top1_neighbor": "Leprosy"
+    },
+    {
+      "concept_id": "208636004",
+      "preferred_term": "Closed fracture distal tibia, intra-articular",
+      "top1_similarity": 0.9347,
+      "top1_neighbor": "Closed fracture distal tibia"
+    },
+    {
+      "concept_id": "1003549007",
+      "preferred_term": "Agenesis of radius",
+      "top1_similarity": 0.6852,
+      "top1_neighbor": "Radius"
+    },
+    {
+      "concept_id": "388722004",
+      "preferred_term": "Rf271 specific IgE antibody measurement",
+      "top1_similarity": 0.7295,
+      "top1_neighbor": "Allergen specific IgE antibody measurement"
+    },
+    {
+      "concept_id": "400170001",
+      "preferred_term": "Hypocalcaemia of puerperium",
+      "top1_similarity": 0.8517,
+      "top1_neighbor": "Puerperal hypocalcaemia"
+    },
+    {
+      "concept_id": "15724121000119102",
+      "preferred_term": "Enthesopathy of bilateral knees",
+      "top1_similarity": 0.9067,
+      "top1_neighbor": "Enthesopathy of knee"
+    },
+    {
+      "concept_id": "679101000119104",
+      "preferred_term": "Xerosis of cornea of right eye",
+      "top1_similarity": 0.8999,
+      "top1_neighbor": "Xerosis of cornea"
+    },
+    {
+      "concept_id": "27572006",
+      "preferred_term": "Intention myoclonus",
+      "top1_similarity": 0.7708,
+      "top1_neighbor": "Myoclonus"
+    },
+    {
+      "concept_id": "424728002",
+      "preferred_term": "Prepapillary vascular loop",
+      "top1_similarity": 0.4698,
+      "top1_neighbor": "Ocular blood vessel"
+    },
+    {
+      "concept_id": "1110121000000102",
+      "preferred_term": "Ocular hypertension due to aphakia",
+      "top1_similarity": 0.7838,
+      "top1_neighbor": "Ocular hypertension"
+    },
+    {
+      "concept_id": "30043008",
+      "preferred_term": "Left lateral anal sphincterotomy",
+      "top1_similarity": 0.8916,
+      "top1_neighbor": "Lateral sphincterotomy"
+    },
+    {
+      "concept_id": "276978009",
+      "preferred_term": "Percutaneous embolectomy of intracranial artery",
+      "top1_similarity": 0.8734,
+      "top1_neighbor": "Removal of embolus from intracranial artery"
+    },
+    {
+      "concept_id": "874930000",
+      "preferred_term": "Nonvenomous insect bite of scrotum",
+      "top1_similarity": 0.884,
+      "top1_neighbor": "Insect bite, nonvenomous, of scrotum and testis"
+    },
+    {
+      "concept_id": "364377005",
+      "preferred_term": "Appearance of nipple",
+      "top1_similarity": 0.6246,
+      "top1_neighbor": "Nipple observable"
+    },
+    {
+      "concept_id": "408551003",
+      "preferred_term": "Exercise tolerance test refused",
+      "top1_similarity": 0.4391,
+      "top1_neighbor": "Procedure refused"
+    }
+  ]
+}

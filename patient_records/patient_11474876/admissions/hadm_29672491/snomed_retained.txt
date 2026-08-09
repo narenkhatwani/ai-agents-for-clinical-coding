@@ -1,0 +1,49 @@
+Patient: 11474876  HADM: 29672491
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 13 / 50  |  links: 17
+
+• abdominal pain  [symptom]  → SNOMED: Abdominal pain (21522001)
+    - [has_finding_site] Abdomen (id=818983003, sim=0.7045)
+
+• leg swelling  [symptom]  → SNOMED: Leg swelling symptom (248480008)
+    - [is_a] Swelling of lower limb (id=449614009, sim=0.8011) [HIGH]
+    - [is_a] Swelling of limb (id=80068009, sim=0.8298) [HIGH]
+    - [has_associated_morphology] Swelling (id=442672001, sim=0.7557)
+
+• Peripheral vascular disease  [diagnosis]  → SNOMED: Peripheral vascular disease (400047006)
+    - [has_finding_site] Peripheral vascular system (id=51833009, sim=0.7694)
+
+• Right bundle branch block  [diagnosis]  → SNOMED: Right bundle branch block (59118001)
+    - [is_a] Bundle branch block (id=6374002, sim=0.9184) [HIGH]
+    - [has_finding_site] Bundle branches (id=59521009, sim=0.7888)
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• Alanine Aminotransferase (ALT)  [lab]  → SNOMED: Alanine aminotransferase (56935002)
+    - [is_a] Aminotransferase (id=130093006, sim=0.7936)
+
+• Bilirubin, Total  [lab]  → SNOMED: Total bilirubin (359986008)
+    - [is_a] Bilirubin level (id=302787001, sim=0.7339)
+
+• Calcium, Total  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.721)
+
+• Magnesium  [lab]  → SNOMED: Magnesium (72717003)
+    - [is_a] Magnesium and/or magnesium compound (id=767301009, sim=0.8235) [HIGH]
+
+• Phosphate  [lab]  → SNOMED: Phosphate (259296007)
+    - [is_a] Phosphorus compound (id=63793008, sim=0.7761)
+    - [is_a] Phosphorus and/or phosphorus compound (id=767361006, sim=0.7162)
+
+• Potassium  [lab]  → SNOMED: Potassium (88480006)
+    - [is_a] Potassium and/or potassium compound (id=767364003, sim=0.7922)
+
+• Sodium  [lab]  → SNOMED: Sodium (39972003)
+    - [is_a] Sodium and/or sodium compound (id=767403008, sim=0.7618)
+
+• White Blood Cells  [lab]  → SNOMED: Leukocyte (52501007)
+    - [is_a] Blood cell (id=63370004, sim=0.7647)

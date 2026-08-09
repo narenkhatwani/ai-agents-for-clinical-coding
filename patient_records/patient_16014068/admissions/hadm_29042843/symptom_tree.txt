@@ -8,46 +8,50 @@ Patient ID       : 16014068
 Admission ID     : 29042843
 
 Reasoning:
-  The patient presents with weakness, exertional dyspnea, and chronic hematoma-related symptoms, with no acute infectious or cardiovascular symptoms.
+  The patient presents with a fall and subsequent minor abrasions and soreness, along with a history of metastatic sarcoma and recurrent hematoma. The patient's anemia and thrombocytopenia are significant, with ongoing issues related to his malignancy and prior treatments.
 
-Key symptoms     : weakness, dyspnea, anemia
-Red flags        : hypotension, AMS
+Key symptoms     : weakness, anemia, thrombocytopenia
+Red flags        : hypotension, headache
+
+CONSTITUTIONAL → Other
+----------------------
+
+  • [present] weakness
+      evidence: "attributes it to weakness"
+      related: anemia, thrombocytopenia
+      • [present] fatigue
+          evidence: "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+  • [present, severe] anemia
+      evidence: "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
+      related: thrombocytopenia, cytokine effects
+      • [present] fatigue
+          evidence: "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+  • [present, mild] thrombocytopenia
+      evidence: "Platelet Count: 63.0 K/uL"
+      related: cytokine effects, chemotherapy side effects
+      • [history] easy bruising
+          evidence: "denies easy bruising"
 
 NEUROLOGIC → Neurology
 ----------------------
 
-  • [present, mild] weakness
-      evidence: "weakness attributed to weakness"
-      related: degenerative changes of the cervical spine
-
-RESPIRATORY → Respiratory
--------------------------
-
-  • [present, mild] dyspnea
-      evidence: "exertional dyspnea"
-      related: pulmonary nodules
-
-HEMATOLOGIC → Hematology
-------------------------
-
-  • [present, severe] anemia
-      evidence: "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
-      related: chronic thigh hematoma, cytokine effects from chemotherapy
-      • [present, mild] thrombocytopenia
-          evidence: "Platelet Count: 63.0 K/uL"
-          related: IVC filter placement
+  • [present] headache
+      evidence: "hit his head"
+      related: intracranial bleeding
+      • [history] dizziness
+          evidence: "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [absent] hypotension
-      evidence: "Blood Pressure: 114/66 mmHg"
+  • [history] hypotension
+      evidence: "Blood Pressure: 114/66"
+      related: cytokine effects, chemotherapy side effects
+      • [history] dizziness
+          evidence: "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [absent] fever
-      evidence: "no fevers/chills"
-  • [suspected] infectious nodules
-      evidence: "infectious nodules"
-      related: pulmonary nodules
+  • [history] fever
+      evidence: "denies fevers/chills"

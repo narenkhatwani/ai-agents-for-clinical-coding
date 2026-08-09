@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with a history of severe CHF, renal cell carcinoma, and recent surgery, with ongoing dyspnea and laboratory abnormalities.",
+  "reasoning": "The patient presents with a history of renal mass and renal cell carcinoma, along with ongoing cardiovascular and metabolic issues.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -9,23 +9,12 @@
         {
           "term": "dyspnea",
           "status": "present",
-          "severity": "moderate",
+          "severity": "mild",
           "evidence": "sudden onset dyspnea",
           "related_findings": [
             "systolic CHF with EF around 30%"
           ],
-          "children": [
-            {
-              "term": "chest pain",
-              "status": "absent",
-              "evidence": "no chest pain"
-            },
-            {
-              "term": "palpitations",
-              "status": "absent",
-              "evidence": "no palpitations"
-            }
-          ]
+          "children": []
         },
         {
           "term": "pain",
@@ -33,8 +22,9 @@
           "severity": "mild",
           "evidence": "pain well controlled on PCA",
           "related_findings": [
-            "Laparoscopic left radical nephrectomy and lymph node dissection"
-          ]
+            "left renal mass"
+          ],
+          "children": []
         }
       ]
     },
@@ -43,40 +33,60 @@
       "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "hematuria",
-          "status": "absent",
-          "evidence": "no mention of hematuria"
+          "term": "creatinine",
+          "status": "high",
+          "severity": "moderate",
+          "evidence": "Creatinine: 2.0 mg/dL",
+          "related_findings": [
+            "left renal mass",
+            "renal cell carcinoma"
+          ],
+          "children": []
         },
         {
-          "term": "renal mass",
-          "status": "present",
+          "term": "hemoglobin",
+          "status": "low",
           "severity": "moderate",
-          "evidence": "8cm left renal mass",
+          "evidence": "Hemoglobin: 8.9 g/dL",
           "related_findings": [
+            "left renal mass",
             "renal cell carcinoma"
-          ]
+          ],
+          "children": []
+        },
+        {
+          "term": "platelet count",
+          "status": "low",
+          "severity": "mild",
+          "evidence": "Platelet Count: 147.0 K/uL",
+          "related_findings": [
+            "left renal mass",
+            "renal cell carcinoma"
+          ],
+          "children": []
         }
       ]
     },
     {
-      "category": "constitutional",
-      "ontology_hint": "Other",
+      "category": "metabolic",
+      "ontology_hint": "Metabolic",
       "symptoms": [
         {
-          "term": "obesity",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "BMI 42.1",
+          "term": "glucose",
+          "status": "high",
+          "severity": "mild",
+          "evidence": "Glucose: 113.0 mg/dL",
           "related_findings": [
-            "morbid obesity"
-          ]
+            "type 2 diabetes"
+          ],
+          "children": []
         }
       ]
     }
   ],
   "key_symptoms": [
     "dyspnea",
-    "renal mass"
+    "pain"
   ],
   "red_flags": [
     "systolic CHF with EF around 30%"
@@ -86,5 +96,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13508515",
   "admission_id": "21834271",
-  "generated_at": "2026-07-20T01:12:40.080592"
+  "generated_at": "2026-08-08T16:20:04.772717"
 }

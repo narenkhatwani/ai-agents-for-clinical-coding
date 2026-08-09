@@ -1,0 +1,1185 @@
+{
+  "stage": 5,
+  "generated_at": "2026-08-08T16:33:47.422735",
+  "patient_id": "13952483",
+  "hadm_id": "23852410",
+  "n_entities": 63,
+  "entities": [
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "hypotension",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "hypotension",
+        "mapped": true,
+        "concept_id": "45007003",
+        "preferred_term": "Hypotension",
+        "fsn": "Low blood pressure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "weight loss",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "weight loss",
+        "mapped": true,
+        "concept_id": "363806002",
+        "preferred_term": "Weight loss (amount)",
+        "fsn": "Weight loss (amount) (observable entity)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "odynophagia",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "odynophagia",
+        "mapped": true,
+        "concept_id": "30233002",
+        "preferred_term": "Odynophagia",
+        "fsn": "Swallowing painful (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "cough",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "cough",
+        "mapped": true,
+        "concept_id": "49727002",
+        "preferred_term": "Cough",
+        "fsn": "Cough (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "chest pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "Chest pain",
+        "mapped": true,
+        "concept_id": "29857009",
+        "preferred_term": "Chest pain",
+        "fsn": "Chest pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "malaise",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "malaise",
+        "mapped": true,
+        "concept_id": "367391008",
+        "preferred_term": "Feels off-colour",
+        "fsn": "Malaise (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "anorexia",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "anorexia",
+        "mapped": true,
+        "concept_id": "79890006",
+        "preferred_term": "Loss of appetite",
+        "fsn": "Loss of appetite (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "pain",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "pain",
+        "mapped": true,
+        "concept_id": "22253000",
+        "preferred_term": "Pain",
+        "fsn": "Pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "neutropenia",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "neutropenia",
+        "mapped": true,
+        "concept_id": "165517008",
+        "preferred_term": "Neutropenia",
+        "fsn": "Neutropenia (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "thrombocytopenia",
+      "kind": "symptom",
+      "status": "present",
+      "snomed": {
+        "query_term": "thrombocytopenia",
+        "mapped": true,
+        "concept_id": "10752381000119101",
+        "preferred_term": "Fetal thrombocytopenia",
+        "fsn": "Fetal thrombocytopenia (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.724041575982343,
+        "candidates": [
+          {
+            "concept_id": "48788004",
+            "term": "Cyclic thrombocytopenia",
+            "score": 0.7137317109255645
+          },
+          {
+            "concept_id": "2897005",
+            "term": "Thrombocytopenia due to immune destruction",
+            "score": 0.7137317109255645
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Squamous Cell Lung CA",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Squamous Cell Lung CA",
+        "mapped": true,
+        "concept_id": "80554009",
+        "preferred_term": "Squamous epithelial cell",
+        "fsn": "Squamous epithelial cell (cell)",
+        "match_method": "fuzzy",
+        "score": 0.6577376858581938,
+        "candidates": [
+          {
+            "concept_id": "254634000",
+            "term": "Squamous cell carcinoma of lung",
+            "score": 0.6430115918264623
+          },
+          {
+            "concept_id": "4360006",
+            "term": "Stratum spinosum",
+            "score": 0.5954821542277544
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "ESRD",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "ESRD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "idiopathic pHTN",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "idiopathic pHTN",
+        "mapped": true,
+        "concept_id": "54690008",
+        "preferred_term": "Unknown (origin)",
+        "fsn": "Unknown (origin) (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.5940731195102493,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "BK viruria",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "BK viruria",
+        "mapped": true,
+        "concept_id": "123729002",
+        "preferred_term": "Viruria",
+        "fsn": "Viruria (finding)",
+        "match_method": "fuzzy",
+        "score": 0.7151630145937417,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Allograft nephropathy",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Allograft nephropathy",
+        "mapped": true,
+        "concept_id": "90708001",
+        "preferred_term": "Kidney disease",
+        "fsn": "Kidney disease (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6530607754506603,
+        "candidates": [
+          {
+            "concept_id": "7970006",
+            "term": "Allograft",
+            "score": 0.6150595188893875
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "COPD",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "COPD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "HLD",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "HLD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Depression",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Depression",
+        "mapped": true,
+        "concept_id": "255339005",
+        "preferred_term": "Depression - motion",
+        "fsn": "Depression - motion (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Pulmonary Hypertension",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Pulmonary Hypertension",
+        "mapped": true,
+        "concept_id": "70995007",
+        "preferred_term": "Pulmonary hypertension",
+        "fsn": "Pulmonary hypertension (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Latent TB",
+      "kind": "diagnosis",
+      "status": "confirmed",
+      "snomed": {
+        "query_term": "Latent TB",
+        "mapped": true,
+        "concept_id": "44104002",
+        "preferred_term": "Latent",
+        "fsn": "Latent (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.5940731195102494,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Right Heart Catheterization",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "Right Heart Catheterization",
+        "mapped": true,
+        "concept_id": "40403005",
+        "preferred_term": "Catheterization of right heart",
+        "fsn": "Catheterization of right heart (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "___ guided lung biopsy",
+      "kind": "procedure",
+      "status": "",
+      "snomed": {
+        "query_term": "___ guided lung biopsy",
+        "mapped": true,
+        "concept_id": "429932001",
+        "preferred_term": "Biopsy of lung using computed tomography (CT) guidance",
+        "fsn": "Biopsy of lung using computed tomography guidance (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.7233901974057257,
+        "candidates": [
+          {
+            "concept_id": "277591006",
+            "term": "Computed tomography guided biopsy",
+            "score": 0.6439087296526013
+          },
+          {
+            "concept_id": "277592004",
+            "term": "Magnetic resonance imaging guided biopsy",
+            "score": 0.6322968873135195
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "dronabinol",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "dronabinol",
+        "mapped": true,
+        "concept_id": "386846008",
+        "preferred_term": "Dronabinol",
+        "fsn": "Dronabinol (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Ritalin",
+      "kind": "medication",
+      "status": "continued",
+      "snomed": {
+        "query_term": "Ritalin",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Chloride",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Chloride",
+        "mapped": true,
+        "concept_id": "50213009",
+        "preferred_term": "Chloride salt",
+        "fsn": "Chloride salt (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Glucose",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Glucose",
+        "mapped": true,
+        "concept_id": "67079006",
+        "preferred_term": "Glucose",
+        "fsn": "Glucose (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Urea Nitrogen",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Urea Nitrogen",
+        "mapped": true,
+        "concept_id": "95971004",
+        "preferred_term": "Urea nitrogen",
+        "fsn": "Urea nitrogen (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Hematocrit",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hematocrit",
+        "mapped": true,
+        "concept_id": "28317006",
+        "preferred_term": "Hematocrit determination",
+        "fsn": "Hematocrit determination (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Hemoglobin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Hemoglobin",
+        "mapped": true,
+        "concept_id": "38082009",
+        "preferred_term": "Hemoglobin",
+        "fsn": "Hemoglobin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "MCHC",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCHC",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "RDW",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDW",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Red Blood Cells",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Red Blood Cells",
+        "mapped": true,
+        "concept_id": "126242007",
+        "preferred_term": "Red blood cells, blood product",
+        "fsn": "Red blood cells, blood product (product)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "RDW-SD",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "RDW-SD",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Creatinine",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Creatinine",
+        "mapped": true,
+        "concept_id": "15373003",
+        "preferred_term": "Creatinine",
+        "fsn": "Creatinine (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Absolute Lymphocyte Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Absolute Lymphocyte Count",
+        "mapped": true,
+        "concept_id": "74765001",
+        "preferred_term": "Lymphocyte count",
+        "fsn": "Lymphocyte count (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.7798520847435835,
+        "candidates": [
+          {
+            "concept_id": "118135005",
+            "term": "B lymphocyte count",
+            "score": 0.6791246128707911
+          },
+          {
+            "concept_id": "118136006",
+            "term": "T lymphocyte count",
+            "score": 0.6791246128707911
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Lymphocytes",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Lymphocytes",
+        "mapped": true,
+        "concept_id": "709252005",
+        "preferred_term": "Lymphocyte component of blood",
+        "fsn": "Lymphocyte component of blood (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Metamyelocytes",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Metamyelocytes",
+        "mapped": true,
+        "concept_id": "165546001",
+        "preferred_term": "Metamyelocytes present",
+        "fsn": "Metamyelocytes present (finding)",
+        "match_method": "fuzzy",
+        "score": 0.6937482193696062,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Neutrophils",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Neutrophils",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Absolute Basophil Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Absolute Basophil Count",
+        "mapped": true,
+        "concept_id": "42351005",
+        "preferred_term": "Basophil count",
+        "fsn": "Basophil count (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.7591042236830218,
+        "candidates": [
+          {
+            "concept_id": "165528007",
+            "term": "Basophil count abnormal",
+            "score": 0.6136956521739132
+          },
+          {
+            "concept_id": "313447006",
+            "term": "Absolute CD3 count",
+            "score": 0.6064033288358383
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Absolute Eosinophil Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Absolute Eosinophil Count",
+        "mapped": true,
+        "concept_id": "71960002",
+        "preferred_term": "Eosinophil count",
+        "fsn": "Eosinophil count (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.77,
+        "candidates": [
+          {
+            "concept_id": "365601007",
+            "term": "Eosinophil count - finding",
+            "score": 0.77
+          },
+          {
+            "concept_id": "10967009",
+            "term": "Eosinophil count, nasal",
+            "score": 0.6302332607858744
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Bicarbonate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Bicarbonate",
+        "mapped": true,
+        "concept_id": "68615006",
+        "preferred_term": "Bicarbonate",
+        "fsn": "Bicarbonate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Eosinophils",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Eosinophils",
+        "mapped": true,
+        "concept_id": "264832001",
+        "preferred_term": "Urinary eosinophils",
+        "fsn": "Urinary eosinophils (finding)",
+        "match_method": "fuzzy",
+        "score": 0.6734872506389752,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Monocytes",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Monocytes",
+        "mapped": true,
+        "concept_id": "165540007",
+        "preferred_term": "Abnormal monocytes",
+        "fsn": "Abnormal monocytes (finding)",
+        "match_method": "fuzzy",
+        "score": 0.6439087296526013,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Platelet Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Platelet Count",
+        "mapped": true,
+        "concept_id": "61928009",
+        "preferred_term": "Platelet count",
+        "fsn": "Platelet count (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "White Blood Cells",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "White Blood Cells",
+        "mapped": true,
+        "concept_id": "52501007",
+        "preferred_term": "Leukocyte",
+        "fsn": "Leukocyte (cell)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "INR(PT)",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "INR(PT)",
+        "mapped": true,
+        "concept_id": "1951000175101",
+        "preferred_term": "International normalized ratio",
+        "fsn": "International normalized ratio (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "PT",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "PT",
+        "mapped": true,
+        "concept_id": "282119004",
+        "preferred_term": "pt",
+        "fsn": "pint (qualifier value)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "PTT",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "PTT",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Bands",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Bands",
+        "mapped": true,
+        "concept_id": "51404004",
+        "preferred_term": "Fibrous bands",
+        "fsn": "Fibrous bands (morphologic abnormality)",
+        "match_method": "fuzzy",
+        "score": 0.5960955201203233,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Absolute Neutrophil Count",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Absolute Neutrophil Count",
+        "mapped": true,
+        "concept_id": "30630007",
+        "preferred_term": "Neutrophil count",
+        "fsn": "Neutrophil count (procedure)",
+        "match_method": "fuzzy",
+        "score": 0.77,
+        "candidates": [
+          {
+            "concept_id": "165519006",
+            "term": "Neutrophil count abnormal",
+            "score": 0.6290000000000001
+          },
+          {
+            "concept_id": "165516004",
+            "term": "Neutrophil count normal",
+            "score": 0.6219853687404516
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Calcium, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Calcium, Total",
+        "mapped": true,
+        "concept_id": "5540006",
+        "preferred_term": "Calcium",
+        "fsn": "Calcium (substance)",
+        "match_method": "fuzzy",
+        "score": 0.6585896621379387,
+        "candidates": [
+          {
+            "concept_id": "103399004",
+            "term": "Total (all fractions of)",
+            "score": 0.48609552012032325
+          },
+          {
+            "concept_id": "255619001",
+            "term": "In toto",
+            "score": 0.48609552012032325
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Urobilinogen",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Urobilinogen",
+        "mapped": true,
+        "concept_id": "44079009",
+        "preferred_term": "Urobilinogen",
+        "fsn": "Urobilinogen (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Ferritin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Ferritin",
+        "mapped": true,
+        "concept_id": "32789000",
+        "preferred_term": "Ferritin",
+        "fsn": "Ferritin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Iron",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Iron",
+        "mapped": true,
+        "concept_id": "3829006",
+        "preferred_term": "Iron",
+        "fsn": "Iron (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Iron Binding Capacity, Total",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Iron Binding Capacity, Total",
+        "mapped": true,
+        "concept_id": "117173006",
+        "preferred_term": "Total iron binding capacity",
+        "fsn": "Total iron binding capacity (observable entity)",
+        "match_method": "fuzzy",
+        "score": 1.0096296296296297,
+        "candidates": [
+          {
+            "concept_id": "165630002",
+            "term": "TIBC - Total iron binding capacity low",
+            "score": 0.8842803078215028
+          },
+          {
+            "concept_id": "165629007",
+            "term": "Total iron binding capacity normal",
+            "score": 0.8663139720814413
+          }
+        ]
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Transferrin",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Transferrin",
+        "mapped": true,
+        "concept_id": "59570008",
+        "preferred_term": "Transferrin",
+        "fsn": "Transferrin (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "tacroFK",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "tacroFK",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Anion Gap",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Anion Gap",
+        "mapped": true,
+        "concept_id": "102637000",
+        "preferred_term": "Anion gap",
+        "fsn": "Anion gap, function (observable entity)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Magnesium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Magnesium",
+        "mapped": true,
+        "concept_id": "72717003",
+        "preferred_term": "Magnesium",
+        "fsn": "Magnesium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Phosphate",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Phosphate",
+        "mapped": true,
+        "concept_id": "259296007",
+        "preferred_term": "Phosphate",
+        "fsn": "Phosphate (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Potassium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Potassium",
+        "mapped": true,
+        "concept_id": "88480006",
+        "preferred_term": "Potassium",
+        "fsn": "Potassium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "Sodium",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "Sodium",
+        "mapped": true,
+        "concept_id": "39972003",
+        "preferred_term": "Sodium",
+        "fsn": "Sodium (substance)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
+      }
+    },
+    {
+      "patient_id": "13952483",
+      "hadm_id": "23852410",
+      "term": "MCH",
+      "kind": "lab",
+      "status": "",
+      "snomed": {
+        "query_term": "MCH",
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "fsn": null,
+        "match_method": null,
+        "score": 0.0,
+        "candidates": []
+      }
+    }
+  ]
+}

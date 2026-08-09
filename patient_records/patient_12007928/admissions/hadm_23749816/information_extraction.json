@@ -13,7 +13,12 @@
     {
       "term": "tremors",
       "status": "present",
-      "evidence": "worsened tremors"
+      "evidence": "increased spasms in the upper extremities"
+    },
+    {
+      "term": "incontinence",
+      "status": "present",
+      "evidence": "urine incontinence"
     },
     {
       "term": "chest pain",
@@ -21,19 +26,14 @@
       "evidence": "denies chest pain at rest or with exertion"
     },
     {
-      "term": "urge incontinence",
-      "status": "present",
-      "evidence": "urge incontinence"
-    },
-    {
-      "term": "bladder spasms",
-      "status": "present",
-      "evidence": "abdominal pain in the setting of ? bladder spasms"
+      "term": "abdominal pain",
+      "status": "absent",
+      "evidence": "denies abdominal pain"
     },
     {
       "term": "fatigue",
       "status": "present",
-      "evidence": "everything has been quite hard"
+      "evidence": "all activities now are quite fatiguing"
     },
     {
       "term": "shortness of breath",
@@ -75,7 +75,7 @@
     {
       "name": "Weight",
       "value": "253.53",
-      "unit": "lbs"
+      "unit": "Lbs"
     }
   ],
   "labs": [
@@ -184,7 +184,7 @@
       "certainty": "confirmed"
     },
     {
-      "term": "myasthenia ___",
+      "term": "myasthenia gravis",
       "certainty": "confirmed"
     },
     {
@@ -215,11 +215,11 @@
   "procedures": [
     {
       "name": "blood cultures",
-      "result": "x 1 drawn"
+      "result": "drawn"
     },
     {
       "name": "urine culture",
-      "result": "x 1 drawn"
+      "result": "drawn"
     }
   ],
   "negations": [
@@ -227,8 +227,8 @@
   ],
   "temporal": [
     {
-      "finding": "worsening dyspnea",
-      "onset": "discharge from prior hospital"
+      "finding": "orthopnea",
+      "onset": "discharge from previous hospital"
     }
   ],
   "_agent": "information_extraction",

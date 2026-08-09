@@ -1,0 +1,47 @@
+Patient: 19104262  HADM: 24271247
+Generated: 2026-08-08T17:51:07.960703
+Min cosine similarity: 0.7
+High-confidence: 0.8
+Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
+Entities with retained: 13 / 36  |  links: 15
+
+• abdominal pain  [symptom]  → SNOMED: Abdominal pain (21522001)
+    - [has_finding_site] Abdomen (id=818983003, sim=0.7045)
+
+• vaginal bleeding  [symptom]  → SNOMED: Bleeding from vagina (289530006)
+    - [is_a] Bleeding (id=131148009, sim=0.706)
+
+• decreased fetal movement  [symptom]  → SNOMED: Low fetal movement (276369006)
+    - [is_a] Fetal movement activity - finding (id=364755008, sim=0.7348)
+    - [is_a] Finding of pattern of fetal movement (id=289434000, sim=0.7184)
+
+• Diabetes mellitus type 1  [diagnosis]  → SNOMED: Diabetes mellitus type I (46635009)
+    - [is_a] Diabetes mellitus (id=73211009, sim=0.7481)
+
+• Diabetic ketoacidosis  [diagnosis]  → SNOMED: Diabetic ketoacidosis (420422005)
+    - [is_a] Ketoacidosis (id=56051008, sim=0.8194) [HIGH]
+
+• Missed abortion  [diagnosis]  → SNOMED: Missed abortion (16607004)
+    - [is_a] Spontaneous abortion (id=17369002, sim=0.713)
+
+• Hematocrit  [lab]  → SNOMED: Hematocrit determination (28317006)
+    - [is_a] Hematology procedure (id=33468001, sim=0.7153)
+
+• Calcium, Total  [lab]  → SNOMED: Calcium (5540006)
+    - [is_a] Calcium and/or calcium compound (id=767178007, sim=0.721)
+
+• Potassium  [lab]  → SNOMED: Potassium (88480006)
+    - [is_a] Potassium and/or potassium compound (id=767364003, sim=0.7922)
+
+• Phosphate  [lab]  → SNOMED: Phosphate (259296007)
+    - [is_a] Phosphorus compound (id=63793008, sim=0.7761)
+    - [is_a] Phosphorus and/or phosphorus compound (id=767361006, sim=0.7162)
+
+• Magnesium  [lab]  → SNOMED: Magnesium (72717003)
+    - [is_a] Magnesium and/or magnesium compound (id=767301009, sim=0.8235) [HIGH]
+
+• Sodium  [lab]  → SNOMED: Sodium (39972003)
+    - [is_a] Sodium and/or sodium compound (id=767403008, sim=0.7618)
+
+• Lactate Dehydrogenase (LD)  [lab]  → SNOMED: Lactate dehydrogenase (259319003)
+    - [is_a] Dehydrogenase (id=129919009, sim=0.7301)

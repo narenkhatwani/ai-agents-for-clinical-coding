@@ -1,64 +1,67 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and menorrhagia.",
+  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.",
   "branches": [
     {
-      "category": "gi",
-      "ontology_hint": "Other",
+      "category": "gynecologic",
+      "ontology_hint": "Obstetrics/Gynecology",
       "symptoms": [
         {
           "term": "heavy vaginal bleeding",
           "status": "present",
-          "severity": "moderate",
+          "severity": "severe",
           "evidence": "heavy vaginal bleeding after hysterectomy",
           "related_findings": [
-            "HCT-38.1 (low)"
+            "hematocrit decreased from 40.1 to 38.1"
           ],
           "children": [
             {
-              "term": "passing 'munchin' sized clots",
+              "term": "passing clots",
               "status": "present",
-              "evidence": "started passing more clots"
+              "evidence": "passing 'munchin' sized clots"
             }
           ]
-        }
-      ]
-    },
-    {
-      "category": "respiratory",
-      "ontology_hint": "Other",
-      "symptoms": [
+        },
         {
-          "term": "shortness of breath",
+          "term": "abdominal bloatedness",
           "status": "history",
           "severity": "mild",
-          "evidence": "developed some shortness of breath",
+          "evidence": "abdominal bloatedness secondary to gas",
           "related_findings": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Other",
-      "symptoms": [
+        },
         {
-          "term": "low hematocrit",
-          "status": "present",
+          "term": "vaginal spotting to light bleeding",
+          "status": "history",
           "severity": "mild",
-          "evidence": "HCT-38.1 (low)",
+          "evidence": "vaginal spotting to light bleeding",
           "related_findings": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Other",
-      "symptoms": [
+        },
         {
-          "term": "abnormal uterine and vaginal bleeding",
-          "status": "confirmed",
-          "severity": "unknown",
-          "evidence": "history of abnormal uterine and vaginal bleeding",
+          "term": "menorrhagia",
+          "status": "history",
+          "severity": "moderate",
+          "evidence": "history of abnormal uterine bleeding",
+          "related_findings": []
+        },
+        {
+          "term": "dysmenorrhea",
+          "status": "history",
+          "severity": "moderate",
+          "evidence": "dysmenorrhea",
+          "related_findings": []
+        },
+        {
+          "term": "intra-menstrual bleeding",
+          "status": "history",
+          "severity": "moderate",
+          "evidence": "intra-menstrual bleeding",
+          "related_findings": []
+        },
+        {
+          "term": "post-coital bleeding",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "post-coital bleeding",
           "related_findings": []
         }
       ]
@@ -66,15 +69,15 @@
   ],
   "key_symptoms": [
     "heavy vaginal bleeding",
-    "passing 'munchin' sized clots"
+    "abdominal bloatedness"
   ],
   "red_flags": [
-    "low hematocrit"
+    "hematocrit decreased"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10361982",
   "admission_id": "24286431",
-  "generated_at": "2026-07-20T01:08:02.957333"
+  "generated_at": "2026-08-08T16:18:27.672426"
 }

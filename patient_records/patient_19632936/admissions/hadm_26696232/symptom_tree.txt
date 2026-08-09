@@ -8,34 +8,34 @@ Patient ID       : 19632936
 Admission ID     : 26696232
 
 Reasoning:
-  The patient presents with acute on chronic dyspnea on exertion and fatigue, along with macrocytic anemia. The patient has a history of cardiovascular issues and is currently being managed for anemia.
+  The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.
 
-Key symptoms     : dyspnea on exertion, anemia
-Red flags        : pulmonary hypertension
+Key symptoms     : dyspnea on exertion, fatigue
+Red flags        : hypotension, AMS
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] dyspnea on exertion
       evidence: "acute on chronic dyspnea on exertion"
-      related: moderate aortic stenosis, pulmonary hypertension
-      • [confirmed] moderate aortic stenosis
-          evidence: "Moderate AS"
-      • [suspected] pulmonary hypertension
-          evidence: "Presentation is more concerning for valvular disease vs pulmonary HTN vs acute anemia."
+      related: moderate AS, sick sinus syndrome
+      • [present] worsening dyspnea
+          evidence: "worsening dyspnea over the past year"
+  • [present, moderate] fatigue
+      evidence: "acute on chronic fatigue"
+      related: anemia
 
-HEMATOLOGIC → Hematologic
--------------------------
+INFECTIOUS → Infectious Diseases
+--------------------------------
 
-  • [present, moderate] anemia
+  • [present, mild] anemia
       evidence: "acute on chronic macrocytic anemia"
-      related: low hemoglobin, low MCV, low hematocrit, low iron
-      • [present] iron deficiency
-          evidence: "Iron: 15 mcg/dL"
+      related: iron deficiency, low MCV, low MCHC
 
-RESPIRATORY → Respiratory
--------------------------
+GI → Gastrointestinal
+---------------------
 
-  • [present, moderate] dyspnea on exertion
-      evidence: "acute on chronic dyspnea on exertion"
-      related: moderate aortic stenosis, pulmonary hypertension
+  • [history] esophagitis
+      evidence: "esophagitis (___)"
+  • [history] nodular gastritis
+      evidence: "nodular gastritis"
