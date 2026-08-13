@@ -38,6 +38,38 @@ GAP_OUTLIER_Z_THRESHOLD = 2.5  # modified z-score required to call a gap a genui
 UMLS_API_KEY = ""  # set via configure()
 BIOPORTAL_API_KEY = ""  # set via configure_bioportal()
 
+HTTP_MAX_RETRIES = 3
+HTTP_BACKOFF_SECONDS = 2.0  # doubled each retry
+
+
+def _get_with_retry(url, params=None, timeout=15):
+    """GET with retry/backoff on transient network failures.
+
+    A single DNS hiccup or dropped connection should not abort a batch run that has
+    already spent expensive LLM calls upstream -- observed in practice as
+    `getaddrinfo failed` partway through Stage 6d. Retries connection/timeout errors
+    and 429/5xx responses; other statuses (404 especially, which several callers treat
+    as "no data") are returned immediately so existing status_code checks still work.
+
+    Raises the last exception only after HTTP_MAX_RETRIES genuine failures, so a
+    sustained outage still surfaces rather than silently returning nothing.
+    """
+    last_exc = None
+    for attempt in range(HTTP_MAX_RETRIES):
+        try:
+            r = requests.get(url, params=params, timeout=timeout)
+            if r.status_code in (429, 500, 502, 503, 504) and attempt < HTTP_MAX_RETRIES - 1:
+                time.sleep(HTTP_BACKOFF_SECONDS * (2 ** attempt))
+                continue
+            return r
+        except (requests.exceptions.ConnectionError,
+                requests.exceptions.Timeout,
+                requests.exceptions.ChunkedEncodingError) as e:
+            last_exc = e
+            if attempt < HTTP_MAX_RETRIES - 1:
+                time.sleep(HTTP_BACKOFF_SECONDS * (2 ** attempt))
+    raise last_exc
+
 
 def _load_env_file(path: Path) -> dict:
     env = {}
@@ -88,7 +120,7 @@ def search_snomed_bioportal(term: str, n: int = 8):
     UMLS regardless of which search backend is used here."""
     if not BIOPORTAL_API_KEY:
         return []
-    r = requests.get(
+    r = _get_with_retry(
         f"{BIOPORTAL_BASE}/search",
         params={"q": term, "ontologies": "SNOMEDCT", "apikey": BIOPORTAL_API_KEY, "pagesize": n},
         timeout=15,
@@ -105,7 +137,7 @@ def search_snomed_bioportal(term: str, n: int = 8):
 
 # ── UMLS / SNOMED CT lookup ───────────────────────────────────────────────────
 def _umls_search(term: str, search_type: str, n: int):
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/search/{UMLS_VERSION}",
         params={
             "string": term,
@@ -148,7 +180,7 @@ def get_sctid(cui: str):
     """Best-effort fetch of the real SNOMED CT concept ID (SCTID) for a CUI."""
     if not UMLS_API_KEY or not cui:
         return None
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/content/{UMLS_VERSION}/CUI/{cui}/atoms",
         params={"sabs": "SNOMEDCT_US", "apiKey": UMLS_API_KEY, "pageSize": 5},
         timeout=15,
@@ -164,7 +196,7 @@ def get_sctid(cui: str):
 
 
 def _source_edges(sctid: str, relation: str):
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/content/{UMLS_VERSION}/source/SNOMEDCT_US/{sctid}/{relation}",
         params={"apiKey": UMLS_API_KEY, "pageSize": 50},
         timeout=15,
@@ -194,7 +226,7 @@ def get_children(sctid: str):
 
 @lru_cache(maxsize=None)
 def get_concept_name(sctid: str):
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/content/{UMLS_VERSION}/source/SNOMEDCT_US/{sctid}",
         params={"apiKey": UMLS_API_KEY},
         timeout=15,
@@ -209,7 +241,7 @@ def get_concept_name(sctid: str):
 def get_cui_for_sctid(sctid: str):
     """Reverse-lookup: CUI for a SCTID discovered via graph traversal (which
     only ever gives us source-asserted SCTIDs, not CUIs)."""
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/search/{UMLS_VERSION}",
         params={
             "string": sctid,
@@ -416,7 +448,7 @@ def get_defining_attributes(sctid: str):
     result = {name: set() for name in DEFINING_ATTRIBUTES.values()}
     if not sctid:
         return result
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/content/{UMLS_VERSION}/source/SNOMEDCT_US/{sctid}/relations",
         params={"apiKey": UMLS_API_KEY, "pageSize": 50},
         timeout=15,
@@ -462,7 +494,7 @@ def get_causal_targets(sctid: str):
     directions."""
     if not sctid:
         return set()
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/content/{UMLS_VERSION}/source/SNOMEDCT_US/{sctid}/relations",
         params={"apiKey": UMLS_API_KEY, "pageSize": 50},
         timeout=15,
@@ -508,7 +540,7 @@ def get_semantic_tag(sctid: str):
     if no FSN is found."""
     if not sctid:
         return None
-    r = requests.get(
+    r = _get_with_retry(
         f"{UMLS_BASE}/content/{UMLS_VERSION}/source/SNOMEDCT_US/{sctid}/atoms",
         params={"apiKey": UMLS_API_KEY, "pageSize": 20, "ttys": "FN"},
         timeout=15,
