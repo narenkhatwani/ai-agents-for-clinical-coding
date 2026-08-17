@@ -1,0 +1,41 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 19632936
+HADM ID          : 26696232
+Most likely      : Acute on chronic macrocytic anemia
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:15.571022
+
+Summary:
+  The patient presents with acute on chronic dyspnea on exertion, fatigue, and macrocytic anemia. The patient has a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.
+
+#1  [85.0/100 | high]  Acute on chronic macrocytic anemia  (primary)
+    SNOMED: Macrocytic anemia (83414005) [exact score=1.0]
+    ICD status: mapped | primary: D53.9
+      1. [principal] D53.9 — Nutritional anemia, unspecified
+      2. [supporting] D64.9 — Anemia, unspecified  ← anemia (tree_symptom)
+
+#2  [70.0/100 | medium]  Heart failure  (complication)
+    SNOMED: Congestive heart failure (42343007) [exact score=1.0]
+    ICD status: mapped | primary: I50.9
+      1. [principal] I50.9 — Heart failure, unspecified
+      2. [principal] P29.0 — Neonatal cardiac failure
+      3. [supporting] R06.09 — Other forms of dyspnea  ← dyspnea on exertion (symptom)
+
+#3  [65.0/100 | medium]  Atrial fibrillation  (secondary)
+    SNOMED: Atrial fibrillation (49436004) [exact score=1.0]
+    ICD status: mapped | primary: I48.91
+      1. [principal] I48.91 — Unspecified atrial fibrillation
+
+#4  [55.0/100 | low]  Anemia of chronic disease  (differential)
+    SNOMED: Anaemia of chronic disease (234347009) [exact score=1.0]
+    ICD status: mapped | primary: D63.8
+      1. [principal] D63.8 — Anemia in other chronic diseases classified elsewhere
+      2. [supporting] D64.9 — Anemia, unspecified  ← anemia (tree_symptom)
+      3. [supporting] D53.9 — Nutritional anemia, unspecified  ← macrocytic anemia (diagnosis)
+
+#5  [40.0/100 | low]  Infectious cause of anemia  (differential)
+    SNOMED: (unmapped)
+    ICD status: supporting_only | primary: None
+      1. [supporting] D64.9 — Anemia, unspecified  ← anemia (tree_symptom)
+      2. [supporting] D53.9 — Nutritional anemia, unspecified  ← macrocytic anemia (diagnosis)

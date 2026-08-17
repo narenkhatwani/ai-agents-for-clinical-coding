@@ -1,10 +1,10 @@
 {
-  "summary": "A 70-year-old man with a history of AFib, HFpEF, PVD, CKD, and cholangitis presents post-ERCP with leg swelling and nocturnal hypoxia.",
-  "most_likely": "Heart Failure with Preserved Ejection Fraction (HFpEF)",
+  "summary": "A 70-year-old man with a history of atrial fibrillation (AFib), heart failure with preserved ejection fraction (HFpEF), peripheral vascular disease (PVD), and chronic kidney disease (CKD) presents post-ERCP for cholangitis, with symptoms including nocturnal hypoxia and leg swelling.",
+  "most_likely": "Heart failure with preserved ejection fraction (HFpEF)",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Heart Failure with Preserved Ejection Fraction (HFpEF)",
+      "diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
@@ -13,11 +13,11 @@
         "HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the patient's history and current symptoms of leg swelling and nocturnal hypoxia."
+      "reasoning": "HFpEF is the most likely primary diagnosis given the patient's history and current symptoms."
     },
     {
       "rank": 2,
-      "diagnosis": "Peripheral Vascular Disease (PVD)",
+      "diagnosis": "Peripheral vascular disease (PVD)",
       "score": 70.0,
       "confidence": "medium",
       "category": "secondary",
@@ -26,55 +26,58 @@
         "PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
       ],
       "opposing_evidence": [],
-      "reasoning": "Secondary diagnosis due to the presence of PVD and associated lab abnormalities."
+      "reasoning": "PVD is a significant comorbidity but less likely to be the primary cause of current symptoms."
     },
     {
       "rank": 3,
-      "diagnosis": "Cholangitis",
-      "score": 55.0,
+      "diagnosis": "Atrial fibrillation (AFib)",
+      "score": 65.0,
       "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "Atrial fibrillation",
       "supporting_evidence": [
-        "History of cholangitis, White Blood Cells: 7.2 K/uL, Anion Gap: 16.0 mEq/L"
+        "AFib on apixaban, Creatinine: 1.4 mg/dL, Hemoglobin: 12.6 g/dL"
       ],
-      "opposing_evidence": [
-        "No current symptoms of cholangitis"
-      ],
-      "reasoning": "Complication given the patient's history of cholangitis and current lab abnormalities."
+      "opposing_evidence": [],
+      "reasoning": "AFib is a known complication but less likely to be the primary cause of current symptoms."
     },
     {
       "rank": 4,
-      "diagnosis": "Atrial Fibrillation (AFib)",
-      "score": 45.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "AFib, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
-      ],
-      "opposing_evidence": [
-        "No current symptoms of AFib"
-      ],
-      "reasoning": "Risk factor given the patient's history of AFib and current lab abnormalities."
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Chronic Kidney Disease (CKD)",
-      "score": 35.0,
-      "confidence": "low",
-      "category": "complication",
+      "diagnosis": "Chronic kidney disease (CKD)",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "secondary",
       "snomed_aligned": "Chronic kidney disease",
       "supporting_evidence": [
         "CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
       ],
       "opposing_evidence": [],
-      "reasoning": "Complication given the patient's history of CKD and current lab abnormalities."
+      "reasoning": "CKD is a significant comorbidity but less likely to be the primary cause of current symptoms."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Nocturnal hypoxia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "nocturnal hypoxia that improved with diuresis"
+      ],
+      "opposing_evidence": [
+        "resolved with diuresis, no current symptoms"
+      ],
+      "reasoning": "Nocturnal hypoxia is a historical finding and not currently causing symptoms."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Cholangitis",
+      "why": "Symptoms have improved post-ERCP, and current labs are within normal range."
+    }
+  ],
   "uncertain_areas": [
-    "Further details on the patient's current symptoms of cholangitis and AFib would help refine the differential diagnosis."
+    "Further clarification on the patient's current respiratory status and fluid management would help refine the differential diagnosis."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -83,7 +86,7 @@
   "_temperature": 0.4,
   "patient_id": "11474876",
   "hadm_id": "29672491",
-  "generated_at": "2026-08-09T00:44:36.939082",
+  "generated_at": "2026-08-15T17:31:28.467580",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 13,

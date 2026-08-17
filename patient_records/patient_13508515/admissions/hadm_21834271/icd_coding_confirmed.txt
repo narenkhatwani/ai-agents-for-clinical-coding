@@ -1,0 +1,36 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 13508515
+HADM ID          : 21834271
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:36:03.414706
+Primary condition: Acute on chronic systolic heart failure
+Primary ICD      : I50.23 — Acute on chronic systolic (congestive) heart failure
+Final codes      : 3
+Dropped / added  : 5 / 2
+
+Review:
+  Confirmed acute on chronic systolic heart failure as primary, dropped renal cell carcinoma and anemia, added essential hypertension and chronic kidney disease as comorbidities.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] I50.23 — Acute on chronic systolic (congestive) heart failure
+      (Acute on chronic systolic heart failure | stage8_confirmed | keep)
+   2. [secondary] I10 — Essential (primary) hypertension
+      (essential hypertension | added_mapped | add)
+      why: patient on multiple antihypertensive medications
+   3. [secondary] N18.9 — Chronic kidney disease, unspecified
+      (chronic kidney disease | added_mapped | add)
+      why: elevated creatinine and estimated GFR
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • I50.43 — Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure  (Combined systolic and diastolic heart failure not supported.)
+  • E87.6 — Hypokalemia  (Hypokalemia not supported by labs.)
+  • D64.9 — Anemia, unspecified  (Specific to prior admission, not current.)
+  • E11.9 — Type 2 diabetes mellitus without complications  (Specific to prior admission, not current.)
+  • G47.33 — Obstructive sleep apnea (adult) (pediatric)  (Specific to prior admission, not current.)

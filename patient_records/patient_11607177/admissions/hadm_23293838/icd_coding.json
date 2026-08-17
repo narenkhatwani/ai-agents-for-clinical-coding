@@ -1,0 +1,651 @@
+{
+  "summary": "The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.",
+  "most_likely": "Refractory VT",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Refractory VT",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Refractory VT requiring ganglionic block"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary concern given current ICD shock and ongoing VT.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "20646008",
+        "preferred_term": "Intractable",
+        "fsn": "Intractable (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.6273819106188662,
+        "query": "Refractory VT",
+        "aligned_hint": null
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [],
+      "icd10_principal": [],
+      "icd10_supporting": [],
+      "icd_status": "unmapped",
+      "n_icd_codes": 0
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Heart transplantation",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Transplantation of heart",
+      "supporting_evidence": [
+        "Heart transplantation in retained SNOMED context"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Recent ICD shock and LVAD suggest potential complications from heart transplantation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "32413006",
+        "preferred_term": "Transplantation of heart",
+        "fsn": "Transplantation of heart (procedure)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Heart transplantation",
+        "aligned_hint": "Transplantation of heart"
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [],
+      "icd10_principal": [],
+      "icd10_supporting": [],
+      "icd_status": "unmapped",
+      "n_icd_codes": 0
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Chronic heart failure",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "History of dilated cardiomyopathy and LVAD"
+      ],
+      "opposing_evidence": [
+        "No acute symptoms of heart failure"
+      ],
+      "reasoning": "History of chronic heart failure but no acute symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "48447003",
+        "preferred_term": "Chronic heart failure",
+        "fsn": "Chronic heart failure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Chronic heart failure",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I50.9",
+      "icd10_primary_title": "Heart failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | THIS IS A MANIFESTATION CODE FOR USE IN A SECONDARY POSITION",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | THIS IS A MANIFESTATION CODE FOR USE IN A SECONDARY POSITION",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Sleep apnea",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Sleep apnea",
+      "supporting_evidence": [
+        "Sleep apnea in retained SNOMED context"
+      ],
+      "opposing_evidence": [
+        "No current symptoms of sleep apnea"
+      ],
+      "reasoning": "Previous history of sleep apnea but no current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "73430006",
+        "preferred_term": "Sleep apnea",
+        "fsn": "Sleep apnea (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Sleep apnea",
+        "aligned_hint": "Sleep apnea"
+      },
+      "icd10_primary": "G47.30",
+      "icd10_primary_title": "Sleep apnea, unspecified",
+      "icd10_package": [
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G47.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P28.30",
+          "title": "Primary sleep apnea of newborn, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G47.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P28.30",
+          "title": "Primary sleep apnea of newborn, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Obesity",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Obesity",
+      "supporting_evidence": [
+        "BMI 36.7 and obesity in retained SNOMED context"
+      ],
+      "opposing_evidence": [
+        "No current symptoms of obesity"
+      ],
+      "reasoning": "History of obesity but no current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "414916001",
+        "preferred_term": "Obesity",
+        "fsn": "Obesity (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Obesity",
+        "aligned_hint": "Obesity"
+      },
+      "icd10_primary": "E66.9",
+      "icd10_primary_title": "Obesity, unspecified",
+      "icd10_package": [
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E66.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E66.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "More detailed information on current symptoms and labs would improve ranking"
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "11607177",
+  "hadm_id": "23293838",
+  "generated_at": "2026-08-15T17:31:40.840602",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 10,
+    "retained_links": 13,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 4,
+    "prior_icd_codes": 78,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 22465519,
+      "admittime": "2150-02-21 14:45:00",
+      "dischtime": "2150-02-27 15:13:00",
+      "admission_type": "EW EMER.",
+      "primary_icd_code": "K420",
+      "primary_dx_title": "Umbilical hernia with obstruction, without gangrene",
+      "n_diagnoses": 18,
+      "icd10_diagnoses": [
+        {
+          "code": "K420",
+          "title": "Umbilical hernia with obstruction, without gangrene"
+        },
+        {
+          "code": "I5022",
+          "title": "Chronic systolic (congestive) heart failure"
+        },
+        {
+          "code": "I472",
+          "title": "Ventricular tachycardia"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "I420",
+          "title": "Dilated cardiomyopathy"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "G4733",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "Z96652",
+          "title": "Presence of left artificial knee joint"
+        },
+        {
+          "code": "I272",
+          "title": "Other secondary pulmonary hypertension"
+        },
+        {
+          "code": "M25569",
+          "title": "Pain in unspecified knee"
+        },
+        {
+          "code": "M109",
+          "title": "Gout, unspecified"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z95810",
+          "title": "Presence of automatic (implantable) cardiac defibrillator"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        },
+        {
+          "code": "Z7682",
+          "title": "Awaiting organ transplant status"
+        },
+        {
+          "code": "Z6837",
+          "title": "Body mass index [BMI] 37.0-37.9, adult"
+        }
+      ]
+    },
+    {
+      "hadm_id": 22999634,
+      "admittime": "2150-03-03 14:21:00",
+      "dischtime": "2150-03-12 17:53:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "K429",
+      "primary_dx_title": "Umbilical hernia without obstruction or gangrene",
+      "n_diagnoses": 24,
+      "icd10_diagnoses": [
+        {
+          "code": "K429",
+          "title": "Umbilical hernia without obstruction or gangrene"
+        },
+        {
+          "code": "Z95811",
+          "title": "Presence of heart assist device"
+        },
+        {
+          "code": "I472",
+          "title": "Ventricular tachycardia"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "I420",
+          "title": "Dilated cardiomyopathy"
+        },
+        {
+          "code": "I5022",
+          "title": "Chronic systolic (congestive) heart failure"
+        },
+        {
+          "code": "D696",
+          "title": "Thrombocytopenia, unspecified"
+        },
+        {
+          "code": "L7621",
+          "title": "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure"
+        },
+        {
+          "code": "R710",
+          "title": "Precipitous drop in hematocrit"
+        },
+        {
+          "code": "Z4502",
+          "title": "Encounter for adjustment and management of automatic implantable cardiac defibrillator"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "L539",
+          "title": "Erythematous condition, unspecified"
+        },
+        {
+          "code": "Z6838",
+          "title": "Body mass index [BMI] 38.0-38.9, adult"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "N189",
+          "title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "code": "I272",
+          "title": "Other secondary pulmonary hypertension"
+        },
+        {
+          "code": "M109",
+          "title": "Gout, unspecified"
+        },
+        {
+          "code": "Y838",
+          "title": "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92239",
+          "title": "Unspecified place in hospital as the place of occurrence of the external cause"
+        }
+      ]
+    },
+    {
+      "hadm_id": 25619597,
+      "admittime": "2150-03-15 01:12:00",
+      "dischtime": "2150-03-15 18:34:00",
+      "admission_type": "EU OBSERVATION",
+      "primary_icd_code": "L7621",
+      "primary_dx_title": "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure",
+      "n_diagnoses": 20,
+      "icd10_diagnoses": [
+        {
+          "code": "L7621",
+          "title": "Postprocedural hemorrhage of skin and subcutaneous tissue following a dermatologic procedure"
+        },
+        {
+          "code": "Y838",
+          "title": "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "I5022",
+          "title": "Chronic systolic (congestive) heart failure"
+        },
+        {
+          "code": "I420",
+          "title": "Dilated cardiomyopathy"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "E875",
+          "title": "Hyperkalemia"
+        },
+        {
+          "code": "I4891",
+          "title": "Unspecified atrial fibrillation"
+        },
+        {
+          "code": "I272",
+          "title": "Other secondary pulmonary hypertension"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "M1A9XX1",
+          "title": "Chronic gout, unspecified, with tophus (tophi)"
+        },
+        {
+          "code": "Z95810",
+          "title": "Presence of automatic (implantable) cardiac defibrillator"
+        },
+        {
+          "code": "Z7682",
+          "title": "Awaiting organ transplant status"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z6838",
+          "title": "Body mass index [BMI] 38.0-38.9, adult"
+        },
+        {
+          "code": "G4730",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        }
+      ]
+    },
+    {
+      "hadm_id": 24756239,
+      "admittime": "2150-06-02 10:48:00",
+      "dischtime": "2150-06-05 17:21:00",
+      "admission_type": "EU OBSERVATION",
+      "primary_icd_code": "I472",
+      "primary_dx_title": "Ventricular tachycardia",
+      "n_diagnoses": 16,
+      "icd10_diagnoses": [
+        {
+          "code": "I472",
+          "title": "Ventricular tachycardia"
+        },
+        {
+          "code": "I420",
+          "title": "Dilated cardiomyopathy"
+        },
+        {
+          "code": "I4891",
+          "title": "Unspecified atrial fibrillation"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95810",
+          "title": "Presence of automatic (implantable) cardiac defibrillator"
+        },
+        {
+          "code": "G8929",
+          "title": "Other chronic pain"
+        },
+        {
+          "code": "M179",
+          "title": "Osteoarthritis of knee, unspecified"
+        },
+        {
+          "code": "M109",
+          "title": "Gout, unspecified"
+        },
+        {
+          "code": "E780",
+          "title": "Pure hypercholesterolemia"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "G4730",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "Z7682",
+          "title": "Awaiting organ transplant status"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 5,
+    "n_with_principal": 3,
+    "n_unmapped": 2
+  },
+  "generated_at_stage8": "2026-08-15T17:34:07.307897"
+}

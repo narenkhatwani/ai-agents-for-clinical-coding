@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with dyspnea and pain, along with a history of renal cell carcinoma and chronic systolic heart failure. Current labs show elevated creatinine and low hemoglobin, consistent with renal and anemia issues.",
+  "summary": "The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.",
   "most_likely": "Acute on chronic systolic heart failure",
   "differential": [
     {
@@ -8,71 +8,98 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "42322001",
+      "snomed_aligned": "426720004",
       "supporting_evidence": [
-        "sudden onset dyspnea, systolic CHF with EF around 30%"
+        "systolic CHF with EF around 30%"
       ],
       "opposing_evidence": [],
-      "reasoning": "Strong clinical presentation and supporting symptoms."
+      "reasoning": "Strong clinical evidence of systolic heart failure, supported by low EF."
     },
     {
       "rank": 2,
       "diagnosis": "Renal cell carcinoma",
       "score": 75.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "19386008",
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "77882004",
       "supporting_evidence": [
-        "left renal mass, renal cell carcinoma"
+        "left renal mass",
+        "renal cell carcinoma"
       ],
-      "opposing_evidence": [
-        "Focused on cardiac symptoms"
-      ],
-      "reasoning": "Confirmed diagnosis, but less acute focus."
+      "opposing_evidence": [],
+      "reasoning": "Confirmed diagnosis with significant clinical findings."
     },
     {
       "rank": 3,
       "diagnosis": "Anemia",
       "score": 70.0,
       "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "73585002",
+      "category": "secondary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "low hemoglobin, low hematocrit"
+        "low hemoglobin, hematocrit"
       ],
-      "opposing_evidence": [
-        "Not the primary focus of admission"
-      ],
-      "reasoning": "Low hemoglobin and hematocrit suggest anemia, but not primary concern."
+      "opposing_evidence": [],
+      "reasoning": "Low hemoglobin and hematocrit levels suggest anemia."
     },
     {
       "rank": 4,
-      "diagnosis": "Type 2 diabetes",
+      "diagnosis": "Hypokalemia",
       "score": 65.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "25169004",
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "high glucose"
+        "low potassium"
       ],
-      "opposing_evidence": [
-        "Not the primary focus of admission"
+      "opposing_evidence": [],
+      "reasoning": "Low potassium levels suggest hypokalemia."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Obstructive sleep apnea",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "78275009",
+      "supporting_evidence": [
+        "confirmed diagnosis"
       ],
-      "reasoning": "Type 2 diabetes is a known risk factor but not the primary concern."
+      "opposing_evidence": [],
+      "reasoning": "Confirmed diagnosis with potential impact on overall health."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Diabetes mellitus",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "confirmed diagnosis",
+        "mild hyperglycemia"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Confirmed diagnosis with mild hyperglycemia."
     }
   ],
-  "rule_outs": [],
-  "uncertain_areas": [
-    "Further cardiac imaging and renal function tests would refine the ranking"
+  "rule_outs": [
+    {
+      "diagnosis": "Acute kidney injury",
+      "why": "Creatinine levels are moderately elevated but not critically so."
+    }
   ],
-  "n_candidates": 4,
+  "uncertain_areas": [
+    "Further imaging or lab results could clarify the extent of renal involvement and heart failure status"
+  ],
+  "n_candidates": 6,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "13508515",
   "hadm_id": "21834271",
-  "generated_at": "2026-08-09T00:45:31.186480",
+  "generated_at": "2026-08-15T17:32:23.633611",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,

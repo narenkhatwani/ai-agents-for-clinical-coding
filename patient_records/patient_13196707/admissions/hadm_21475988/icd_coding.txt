@@ -1,0 +1,44 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 13196707
+HADM ID          : 21475988
+Most likely      : Severe sepsis due to RUL PNA
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:09.101451
+
+Summary:
+  A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.
+
+#1  [85.0/100 | high]  Severe sepsis due to RUL PNA  (primary)
+    SNOMED: (unmapped)
+    ICD status: supporting_only | primary: None
+      1. [supporting] R50.9 — Fever, unspecified  ← fever (key_symptom)
+      2. [supporting] I95.9 — Hypotension, unspecified  ← hypotension (red_flag)
+
+#2  [75.0/100 | high]  Metastatic adenocarcinoma of unknown primary  (primary)
+    SNOMED: Metastatic adenocarcinoma of unknown origin (307226002) [exact score=1.0]
+    ICD status: mapped | primary: C79.9
+      1. [principal] C79.9 — Secondary malignant neoplasm of unspecified site
+
+#3  [65.0/100 | medium]  Hypovolemic shock  (complication)
+    SNOMED: Hypovolemic shock (39419009) [exact score=1.0]
+    ICD status: mapped | primary: R57.1
+      1. [principal] R57.1 — Hypovolemic shock
+      2. [principal] T81.19X? — 
+      3. [supporting] I95.9 — Hypotension, unspecified  ← hypotension (red_flag)
+
+#4  [55.0/100 | medium]  Acute kidney injury  (complication)
+    SNOMED: Acute renal failure syndrome (14669001) [exact score=1.0]
+    ICD status: mapped | primary: N17.9
+      1. [principal] N17.9 — Acute kidney failure, unspecified
+      2. [supporting] I95.9 — Hypotension, unspecified  ← hypotension (red_flag)
+
+#5  [45.0/100 | high]  SVC syndrome  (complication)
+    SNOMED: (unmapped)
+    ICD status: unmapped | primary: None
+
+#6  [35.0/100 | medium]  Neurological deterioration  (complication)
+    SNOMED: Neurologic (1199008) [fuzzy score=0.5186514212677167]
+    ICD status: supporting_only | primary: None
+      1. [supporting] R41.82 — Altered mental status, unspecified  ← altered mental status (red_flag)
+      2. [supporting] I95.9 — Hypotension, unspecified  ← hypotension (red_flag)

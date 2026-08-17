@@ -1,10 +1,10 @@
 {
-  "summary": "A 30-year-old female with a history of Type 1 Diabetes Mellitus (T1DM) and recurrent DKA presents with DKA, lactic acidosis, and signs of potential complications including missed abortion and C. difficile colitis.",
-  "most_likely": "Diabetic Ketoacidosis",
+  "summary": "A 30-year-old female with a history of Type 1 Diabetes Mellitus and recurrent diabetic ketoacidosis (DKA) presents with DKA and lactic acidosis, along with abdominal pain, vaginal bleeding, and decreased fetal movement.",
+  "most_likely": "Diabetic ketoacidosis",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Diabetic Ketoacidosis",
+      "diagnosis": "Diabetic ketoacidosis",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
@@ -13,117 +13,120 @@
         "admission with DKA/lactic acidosis"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary presentation and confirmed diagnosis."
+      "reasoning": "Primary diagnosis given the presenting symptoms and known history of Type 1 Diabetes Mellitus."
     },
     {
       "rank": 2,
-      "diagnosis": "Missed Abortion",
-      "score": 70.0,
+      "diagnosis": "C difficile colitis",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "Clostridium difficile colitis",
+      "supporting_evidence": [
+        "C difficile colitis along with diarrhea"
+      ],
+      "opposing_evidence": [
+        "no infectious precipitants identified"
+      ],
+      "reasoning": "Suspected given the presence of C difficile colitis and diarrhea, but no infectious precipitants."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Missed abortion",
+      "score": 55.0,
       "confidence": "high",
       "category": "complication",
       "snomed_aligned": "Missed abortion",
       "supporting_evidence": [
         "Missed abortion requiring D&C"
       ],
-      "opposing_evidence": [
-        "No current signs of active bleeding"
-      ],
-      "reasoning": "History of missed abortion and current symptoms may indicate recurrence."
-    },
-    {
-      "rank": 3,
-      "diagnosis": "C difficile Colitis",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "differential",
-      "snomed_aligned": "C difficile colitis",
-      "supporting_evidence": [
-        "C difficile colitis along with diarrhea"
-      ],
-      "opposing_evidence": [
-        "No infectious precipitants identified"
-      ],
-      "reasoning": "Clinical suspicion based on symptoms and labs, but no clear evidence."
+      "opposing_evidence": [],
+      "reasoning": "Confirmed complication given the history and current presentation."
     },
     {
       "rank": 4,
-      "diagnosis": "Lactic Acidosis",
-      "score": 60.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Lactate: 3.6 mmol/L"
-      ],
-      "opposing_evidence": [
-        "No clear cause identified"
-      ],
-      "reasoning": "Secondary to DKA but could be an independent issue."
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Vaginal Bleeding",
-      "score": 55.0,
-      "confidence": "low",
-      "category": "complication",
-      "snomed_aligned": "Bleeding from vagina",
-      "supporting_evidence": [
-        "vaginal spotting"
-      ],
-      "opposing_evidence": [
-        "No active bleeding"
-      ],
-      "reasoning": "Historical symptom with no current signs of active bleeding."
-    },
-    {
-      "rank": 6,
-      "diagnosis": "Decreased Fetal Movement",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "complication",
-      "snomed_aligned": "Low fetal movement",
-      "supporting_evidence": [
-        "decreased fetal movement"
-      ],
-      "opposing_evidence": [
-        "No signs of active fetal distress"
-      ],
-      "reasoning": "Historical symptom with no current signs of fetal compromise."
-    },
-    {
-      "rank": 7,
-      "diagnosis": "Abdominal Pain",
+      "diagnosis": "Abdominal pain",
       "score": 45.0,
       "confidence": "medium",
-      "category": "differential",
+      "category": "secondary",
       "snomed_aligned": "Abdominal pain",
       "supporting_evidence": [
         "lower abdominal pain/cramping for the past week"
       ],
       "opposing_evidence": [
-        "No signs of acute abdomen"
+        "no specific cause identified"
       ],
-      "reasoning": "Historical symptom with no current signs of acute abdomen."
+      "reasoning": "Secondary to DKA and potential gastrointestinal issues."
     },
     {
-      "rank": 8,
-      "diagnosis": "Headache",
+      "rank": 5,
+      "diagnosis": "Vaginal bleeding",
       "score": 40.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Bleeding from vagina",
+      "supporting_evidence": [
+        "vaginal spotting"
+      ],
+      "opposing_evidence": [
+        "no specific cause identified"
+      ],
+      "reasoning": "Secondary to DKA and potential obstetric issues."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Decreased fetal movement",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Low fetal movement",
+      "supporting_evidence": [
+        "decreased fetal movement"
+      ],
+      "opposing_evidence": [
+        "no specific cause identified"
+      ],
+      "reasoning": "Secondary to DKA and potential obstetric issues."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Headache",
+      "score": 30.0,
       "confidence": "low",
-      "category": "differential",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
         "pressure-like frontal headache"
       ],
       "opposing_evidence": [
-        "No signs of neurological compromise"
+        "no specific cause identified"
       ],
-      "reasoning": "Historical symptom with no current signs of neurological compromise."
+      "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Nausea",
+      "score": 25.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "nausea and vomiting"
+      ],
+      "opposing_evidence": [
+        "no specific cause identified"
+      ],
+      "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Infectious diseases",
+      "why": "No specific infectious precipitants identified."
+    }
+  ],
   "uncertain_areas": [
-    "Need more information on infectious causes and specific lab results to refine differential"
+    "Further imaging or cultures may clarify the cause of abdominal pain and vaginal bleeding."
   ],
   "n_candidates": 8,
   "type": "differential_diagnosis",
@@ -132,7 +135,7 @@
   "_temperature": 0.4,
   "patient_id": "19104262",
   "hadm_id": "24271247",
-  "generated_at": "2026-08-09T00:46:51.752694",
+  "generated_at": "2026-08-15T17:33:42.688414",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 13,

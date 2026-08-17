@@ -1,0 +1,655 @@
+{
+  "stage": 10,
+  "type": "accuracy_vs_ground_truth",
+  "patient_id": "10361982",
+  "hadm_id": "24286431",
+  "generated_at": "2026-08-15T23:57:14.708711",
+  "ground_truth": {
+    "primary_icd_code": "N99820",
+    "primary_dx_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+    "icd10_codes": [
+      "N99820",
+      "Y836",
+      "Y92009",
+      "E039",
+      "F909"
+    ],
+    "dx_titles": [
+      "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure",
+      "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause",
+      "Hypothyroidism, unspecified",
+      "Attention-deficit hyperactivity disorder, unspecified type"
+    ],
+    "n_diagnoses": 5
+  },
+  "stage8": {
+    "diagnosis": {
+      "predicted": "Hemorrhage following hysterectomy",
+      "ground_truth": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "matched_predicted": "Hemorrhage following hysterectomy",
+      "matched_ground_truth": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "match_scope": "rank1_vs_primary",
+      "match_pred_rank": 1,
+      "match_gt_index": 0,
+      "exact": false,
+      "semantic_similarity": 0.4871,
+      "semantic_match": true,
+      "match_reason": "same_condition",
+      "clinical_reason": "same_condition",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Hemorrhage following hysterectomy",
+        "Postoperative bleeding",
+        "Endometriosis",
+        "Hypothyroidism"
+      ],
+      "n_diffdx": 4,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Hemorrhage following hysterectomy",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Postoperative bleeding",
+          "rank": 2,
+          "score": 75.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Endometriosis",
+          "rank": 3,
+          "score": 60.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Hypothyroidism",
+          "rank": 4,
+          "score": 40.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 85.0,
+      "matched_confidence": "high"
+    },
+    "primary_icd": {
+      "predicted": "N93.9",
+      "ground_truth": "N99.820",
+      "predicted_title": "Abnormal uterine and vaginal bleeding, unspecified",
+      "ground_truth_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "exact": false,
+      "family": false,
+      "semantic_similarity": 0.3597,
+      "semantic_match": false,
+      "match_reason": "no_match",
+      "clinical_reason": "no_match",
+      "match_type": "no_match",
+      "threshold": 0.7,
+      "predicted_family": "N93",
+      "ground_truth_family": "N99",
+      "match_scope": "rank1_vs_primary"
+    },
+    "code_set": {
+      "n_predicted": 7,
+      "n_ground_truth": 5,
+      "n_hits": 1,
+      "precision": 0.1429,
+      "recall": 0.2,
+      "f1": 0.1667,
+      "hits": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        }
+      ],
+      "misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "N92.0",
+          "title": "Excessive and frequent menstruation with regular cycle"
+        },
+        {
+          "code": "N93.0",
+          "title": "Postcoital and contact bleeding"
+        },
+        {
+          "code": "N92.1",
+          "title": "Excessive and frequent menstruation with irregular cycle"
+        },
+        {
+          "code": "N80.00",
+          "title": "Endometriosis of the uterus, unspecified"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 1,
+      "semantic_precision": 0.1429,
+      "semantic_recall": 0.2,
+      "semantic_f1": 0.1667,
+      "semantic_pairs": [],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "N92.0",
+          "title": "Excessive and frequent menstruation with regular cycle"
+        },
+        {
+          "code": "N93.0",
+          "title": "Postcoital and contact bleeding"
+        },
+        {
+          "code": "N92.1",
+          "title": "Excessive and frequent menstruation with irregular cycle"
+        },
+        {
+          "code": "N80.00",
+          "title": "Endometriosis of the uterus, unspecified"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 7,
+      "n_ground_truth": 5,
+      "n_hits": 1,
+      "precision": 0.1429,
+      "recall": 0.2,
+      "f1": 0.1667,
+      "hits": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        }
+      ],
+      "misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "N92.0",
+          "title": "Excessive and frequent menstruation with regular cycle"
+        },
+        {
+          "code": "N93.0",
+          "title": "Postcoital and contact bleeding"
+        },
+        {
+          "code": "N92.1",
+          "title": "Excessive and frequent menstruation with irregular cycle"
+        },
+        {
+          "code": "N80.00",
+          "title": "Endometriosis of the uterus, unspecified"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 1,
+      "semantic_precision": 0.1429,
+      "semantic_recall": 0.2,
+      "semantic_f1": 0.1667,
+      "semantic_pairs": [],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "N92.0",
+          "title": "Excessive and frequent menstruation with regular cycle"
+        },
+        {
+          "code": "N93.0",
+          "title": "Postcoital and contact bleeding"
+        },
+        {
+          "code": "N92.1",
+          "title": "Excessive and frequent menstruation with irregular cycle"
+        },
+        {
+          "code": "N80.00",
+          "title": "Endometriosis of the uterus, unspecified"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ]
+    },
+    "principal_set": {
+      "n_predicted": 4,
+      "n_ground_truth": 5,
+      "n_hits": 1,
+      "precision": 0.25,
+      "recall": 0.2,
+      "f1": 0.2222,
+      "hits": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        }
+      ],
+      "misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "N80.00",
+          "title": "Endometriosis of the uterus, unspecified"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 1,
+      "semantic_precision": 0.25,
+      "semantic_recall": 0.2,
+      "semantic_f1": 0.2222,
+      "semantic_pairs": [],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "N80.00",
+          "title": "Endometriosis of the uterus, unspecified"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ]
+    }
+  },
+  "stage9": {
+    "diagnosis": {
+      "predicted": "Hemorrhage following hysterectomy",
+      "ground_truth": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "matched_predicted": "Hemorrhage following hysterectomy",
+      "matched_ground_truth": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "match_scope": "rank1_vs_primary",
+      "match_pred_rank": 1,
+      "match_gt_index": 0,
+      "exact": false,
+      "semantic_similarity": 0.4871,
+      "semantic_match": true,
+      "match_reason": "same_condition",
+      "clinical_reason": "same_condition",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Hemorrhage following hysterectomy",
+        "essential hypertension",
+        "anxiety disorder"
+      ],
+      "n_diffdx": 3,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Hemorrhage following hysterectomy",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Postoperative bleeding",
+          "rank": 2,
+          "score": 75.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Endometriosis",
+          "rank": 3,
+          "score": 60.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Hypothyroidism",
+          "rank": 4,
+          "score": 40.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 85.0,
+      "matched_confidence": "high"
+    },
+    "primary_icd": {
+      "predicted": "N93.9",
+      "ground_truth": "N99.820",
+      "predicted_title": "Abnormal uterine and vaginal bleeding, unspecified",
+      "ground_truth_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "exact": false,
+      "family": false,
+      "semantic_similarity": 0.3597,
+      "semantic_match": false,
+      "match_reason": "no_match",
+      "clinical_reason": "no_match",
+      "match_type": "no_match",
+      "threshold": 0.7,
+      "predicted_family": "N93",
+      "ground_truth_family": "N99",
+      "match_scope": "rank1_vs_primary"
+    },
+    "code_set": {
+      "n_predicted": 3,
+      "n_ground_truth": 5,
+      "n_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "hits": [],
+      "misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "F41.9",
+          "title": "Anxiety disorder, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 0,
+      "semantic_precision": 0.0,
+      "semantic_recall": 0.0,
+      "semantic_f1": 0.0,
+      "semantic_pairs": [],
+      "related_pairs": [
+        {
+          "predicted_code": "F41.9",
+          "predicted_title": "Anxiety disorder, unspecified",
+          "predicted_diagnosis": "anxiety disorder",
+          "ground_truth_code": "F90.9",
+          "ground_truth_title": "Attention-deficit hyperactivity disorder, unspecified type",
+          "similarity": 0.503,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 3,
+      "n_ground_truth": 5,
+      "n_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "hits": [],
+      "misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        }
+      ],
+      "extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "F41.9",
+          "title": "Anxiety disorder, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 0,
+      "semantic_precision": 0.0,
+      "semantic_recall": 0.0,
+      "semantic_f1": 0.0,
+      "semantic_pairs": [],
+      "related_pairs": [
+        {
+          "predicted_code": "F41.9",
+          "predicted_title": "Anxiety disorder, unspecified",
+          "predicted_diagnosis": "anxiety disorder",
+          "ground_truth_code": "F90.9",
+          "ground_truth_title": "Attention-deficit hyperactivity disorder, unspecified type",
+          "similarity": 0.503,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure"
+        },
+        {
+          "code": "Y83.6",
+          "title": "Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "Y92.009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        }
+      ]
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

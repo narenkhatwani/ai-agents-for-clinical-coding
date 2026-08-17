@@ -1,0 +1,35 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 10361982
+HADM ID          : 24286431
+Most likely      : Hemorrhage following hysterectomy
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:02.835898
+
+Summary:
+  The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.
+
+#1  [85.0/100 | high]  Hemorrhage following hysterectomy  (primary)
+    SNOMED: Heavy episode of vaginal bleeding (315224006) [exact score=1.0]
+    ICD status: mapped | primary: N93.9
+      1. [principal] N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+      2. [supporting] N92.0 — Excessive and frequent menstruation with regular cycle  ← menorrhagia (tree_symptom)
+
+#2  [75.0/100 | high]  Postoperative bleeding  (secondary)
+    SNOMED: Heavy episode of vaginal bleeding (315224006) [exact score=1.0]
+    ICD status: mapped | primary: N93.9
+      1. [principal] N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+      2. [supporting] N93.0 — Postcoital and contact bleeding  ← post-coital bleeding (tree_symptom)
+      3. [supporting] N92.1 — Excessive and frequent menstruation with irregular cycle  ← intra-menstrual bleeding (tree_symptom)
+
+#3  [60.0/100 | medium]  Endometriosis  (risk_factor)
+    SNOMED: Endometriosis of uterus (76376003) [exact score=1.0]
+    ICD status: mapped | primary: N80.00
+      1. [principal] N80.00 — Endometriosis of the uterus, unspecified
+      2. [supporting] N93.9 — Abnormal uterine and vaginal bleeding, unspecified  ← abnormal uterine and vaginal bleeding (diagnosis)
+
+#4  [40.0/100 | low]  Hypothyroidism  (risk_factor)
+    SNOMED: Hypothyroidism (40930008) [exact score=1.0]
+    ICD status: mapped | primary: E03.9
+      1. [principal] E03.9 — Hypothyroidism, unspecified
+      2. [principal] P72.2 — Other transitory neonatal disorders of thyroid function, not elsewhere classified

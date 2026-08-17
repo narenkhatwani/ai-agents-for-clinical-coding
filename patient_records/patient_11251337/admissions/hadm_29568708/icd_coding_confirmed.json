@@ -1,0 +1,158 @@
+{
+  "review_summary": "Kept nephrolithiasis and hypertension, dropped hemorrhagic CVA, confirmed chronic kidney disease, and added anemia.",
+  "primary_condition": "Nephrolithiasis",
+  "primary_icd_code": "N20.0",
+  "primary_icd_title": "Calculus of kidney",
+  "final_codes": [
+    {
+      "code": "N20.0",
+      "title": "Calculus of kidney",
+      "role": "primary",
+      "source": "stage8_confirmed",
+      "condition": "Nephrolithiasis",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "N18.9",
+      "title": "Chronic kidney disease, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Chronic kidney disease",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "D64.9",
+      "title": "Anemia, unspecified",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Anemia",
+      "action": "add",
+      "reason": "Low hemoglobin and hematocrit levels",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "N17.9",
+      "title": "Acute kidney failure, unspecified",
+      "reason": "No evidence of acute kidney injury"
+    },
+    {
+      "code": "I10",
+      "title": "Essential (primary) hypertension",
+      "reason": "No evidence of hemorrhagic CVA"
+    }
+  ],
+  "added_conditions": [
+    {
+      "code": "D64.9",
+      "title": "Anemia, unspecified",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Anemia",
+      "role": "complication",
+      "action": "add",
+      "reason": "Low hemoglobin and hematocrit levels",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Nephrolithiasis",
+        "action": "keep",
+        "selected_code": "N20.0",
+        "replace_with_condition": "",
+        "reason": "Primary diagnosis confirmed"
+      },
+      {
+        "rank": 2,
+        "diagnosis": "Chronic kidney disease",
+        "action": "keep",
+        "selected_code": "N18.9",
+        "replace_with_condition": "",
+        "reason": "Confirmed by labs and prior history"
+      },
+      {
+        "rank": 3,
+        "diagnosis": "Hypertension",
+        "action": "keep",
+        "selected_code": "I10",
+        "replace_with_condition": "",
+        "reason": "Confirmed by prior history and labs"
+      },
+      {
+        "rank": 4,
+        "diagnosis": "Acute kidney injury",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "No evidence of acute kidney injury"
+      },
+      {
+        "rank": 5,
+        "diagnosis": "Hemorrhagic CVA",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "No evidence of hemorrhagic CVA"
+      }
+    ],
+    "n_confirmed": 2,
+    "n_missing_named": 1
+  },
+  "fallback": null,
+  "patient_id": "11251337",
+  "hadm_id": "29568708",
+  "most_likely": "Nephrolithiasis",
+  "stage8_most_likely": "Nephrolithiasis",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:34:56.161886",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 12,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 3,
+  "n_dropped": 2,
+  "n_added": 1
+}

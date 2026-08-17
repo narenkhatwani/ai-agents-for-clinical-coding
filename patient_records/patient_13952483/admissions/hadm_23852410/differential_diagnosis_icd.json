@@ -1,0 +1,918 @@
+{
+  "summary": "The patient presents with hypotension, weight loss, anorexia, and multiple constitutional symptoms likely related to lung cancer and immunosuppression. Prior comorbidities include lung cancer, chronic kidney disease, and pulmonary hypertension.",
+  "most_likely": "Severe Pulmonary Hypertension with Cor Pulmonale",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "T8611 — Kidney transplant rejection",
+      "supporting_evidence": [
+        "Severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg on Right Heart Catheterization"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Strong evidence from Right Heart Catheterization and symptoms of dyspnea and fatigue.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "213148006",
+        "preferred_term": "Transplant rejection",
+        "fsn": "Transplanted organ rejection (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6831744192888377,
+        "query": "Severe Pulmonary Hypertension with Cor Pulmonale",
+        "aligned_hint": "T8611 — Kidney transplant rejection"
+      },
+      "icd10_primary": "T86.91",
+      "icd10_primary_title": "Unspecified transplanted organ and tissue rejection",
+      "icd10_package": [
+        {
+          "code": "T86.91",
+          "title": "Unspecified transplanted organ and tissue rejection",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS T86.91 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "T86.91",
+          "title": "Unspecified transplanted organ and tissue rejection",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS T86.91 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Neutropenia",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "new neutropenia (ANC 750)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Recent onset of neutropenia, likely related to chemotherapy and radiation therapy.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "165517008",
+        "preferred_term": "Neutropenia",
+        "fsn": "Neutropenia (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Neutropenia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D70.9",
+      "icd10_primary_title": "Neutropenia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D70.9",
+          "title": "Neutropenia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS D70.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P61.5",
+          "title": "Transient neonatal neutropenia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.5 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087,
+          "package_order": 3
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087,
+          "package_order": 4
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D70.9",
+          "title": "Neutropenia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS D70.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P61.5",
+          "title": "Transient neonatal neutropenia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.5 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 4
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anemia",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hematocrit: 26.4 %, Hemoglobin: 8.2 g/dL"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Severe anemia with low hematocrit and hemoglobin levels.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Malnutrition",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Overall anorexia and poor appetite"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Persistent anorexia and malaise contributing to weight loss.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "272588001",
+        "preferred_term": "Malnutrition (calorie)",
+        "fsn": "Malnutrition (calorie) (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Malnutrition",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E46",
+      "icd10_primary_title": "Unspecified protein-calorie malnutrition",
+      "icd10_package": [
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition",
+          "source": "snomed_extended_map",
+          "map_priority": 10,
+          "map_group": 1,
+          "map_advice": "ALWAYS E46",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "O25.2",
+          "title": "Malnutrition in childbirth",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF MALNUTRITION IN MOTHER COMPLICATING CHILDBIRTH CHOOSE O25.2 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "K91.2",
+          "title": "Postsurgical malabsorption, not elsewhere classified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF MALNUTRITION FOLLOWING GASTROINTESTINAL SURGERY CHOOSE K91.2 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3,
+          "package_order": 3
+        },
+        {
+          "code": "E44.0",
+          "title": "Moderate protein-calorie malnutrition",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF MODERATE PROTEIN-CALORIE MALNUTRITION CHOOSE E44.0 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4,
+          "package_order": 4
+        },
+        {
+          "code": "E44.1",
+          "title": "Mild protein-calorie malnutrition",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF MILD PROTEIN-CALORIE MALNUTRITION CHOOSE E44.1 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5,
+          "package_order": 5
+        },
+        {
+          "code": "R63.0",
+          "title": "Anorexia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R63.0",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anorexia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "79890006",
+          "from_snomed_term": "Loss of appetite",
+          "relevance_to_diagnosis": 0.4,
+          "package_order": 6
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition",
+          "source": "snomed_extended_map",
+          "map_priority": 10,
+          "map_group": 1,
+          "map_advice": "ALWAYS E46",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "O25.2",
+          "title": "Malnutrition in childbirth",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF MALNUTRITION IN MOTHER COMPLICATING CHILDBIRTH CHOOSE O25.2 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        },
+        {
+          "code": "K91.2",
+          "title": "Postsurgical malabsorption, not elsewhere classified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF MALNUTRITION FOLLOWING GASTROINTESTINAL SURGERY CHOOSE K91.2 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3
+        },
+        {
+          "code": "E44.0",
+          "title": "Moderate protein-calorie malnutrition",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF MODERATE PROTEIN-CALORIE MALNUTRITION CHOOSE E44.0 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4
+        },
+        {
+          "code": "E44.1",
+          "title": "Mild protein-calorie malnutrition",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF MILD PROTEIN-CALORIE MALNUTRITION CHOOSE E44.1 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R63.0",
+          "title": "Anorexia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R63.0",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anorexia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "79890006",
+          "from_snomed_term": "Loss of appetite",
+          "relevance_to_diagnosis": 0.4
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 6
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Chronic Kidney Disease",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Creatinine: 1.3 mg/dL, Urea Nitrogen: 28.0 mg/dL"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Abnormal renal function tests, but no recent acute kidney injury.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "709044004",
+        "preferred_term": "Chronic kidney disease",
+        "fsn": "Chronic kidney disease (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Chronic Kidney Disease",
+        "aligned_hint": null
+      },
+      "icd10_primary": "N18.9",
+      "icd10_primary_title": "Chronic kidney disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Pneumonia",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Cough, pleuritic/MSK chest pain"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Mild cough and chest pain, but no recent respiratory symptoms or imaging.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "233604007",
+        "preferred_term": "Pneumonia",
+        "fsn": "Pneumonia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Pneumonia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "J18.9",
+      "icd10_primary_title": "Pneumonia, unspecified organism",
+      "icd10_package": [
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS J18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "R07.9",
+          "title": "Chest pain, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R07.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "chest pain",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "29857009",
+          "from_snomed_term": "Chest pain",
+          "relevance_to_diagnosis": 0.3949,
+          "package_order": 2
+        },
+        {
+          "code": "R05.9",
+          "title": "Cough, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R05.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "cough",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "49727002",
+          "from_snomed_term": "Cough",
+          "relevance_to_diagnosis": 0.3601,
+          "package_order": 3
+        },
+        {
+          "code": "R52",
+          "title": "Pain, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R52 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "pain",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "22253000",
+          "from_snomed_term": "Pain",
+          "relevance_to_diagnosis": 0.2376,
+          "package_order": 4
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS J18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R07.9",
+          "title": "Chest pain, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R07.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "chest pain",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "29857009",
+          "from_snomed_term": "Chest pain",
+          "relevance_to_diagnosis": 0.3949
+        },
+        {
+          "code": "R05.9",
+          "title": "Cough, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R05.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "cough",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "49727002",
+          "from_snomed_term": "Cough",
+          "relevance_to_diagnosis": 0.3601
+        },
+        {
+          "code": "R52",
+          "title": "Pain, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R52 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "pain",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "22253000",
+          "from_snomed_term": "Pain",
+          "relevance_to_diagnosis": 0.2376
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 4
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Lung Cancer",
+      "why": "Confirmed diagnosis, but not the primary current presentation."
+    }
+  ],
+  "uncertain_areas": [
+    "Further imaging or biopsy results would clarify the extent of pulmonary hypertension and any new infections or malignancies"
+  ],
+  "n_candidates": 6,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "13952483",
+  "hadm_id": "23852410",
+  "generated_at": "2026-08-15T17:32:38.712958",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 11,
+    "retained_links": 13,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 51,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 23557636,
+      "admittime": "2192-09-17 18:30:00",
+      "dischtime": "2192-09-29 16:57:00",
+      "admission_type": "EW EMER.",
+      "primary_icd_code": "C3432",
+      "primary_dx_title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+      "n_diagnoses": 15,
+      "icd10_diagnoses": [
+        {
+          "code": "C3432",
+          "title": "Malignant neoplasm of lower lobe, left bronchus or lung"
+        },
+        {
+          "code": "B190",
+          "title": "Unspecified viral hepatitis with hepatic coma"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "T8611",
+          "title": "Kidney transplant rejection"
+        },
+        {
+          "code": "K5090",
+          "title": "Crohn's disease, unspecified, without complications"
+        },
+        {
+          "code": "I5030",
+          "title": "Unspecified diastolic (congestive) heart failure"
+        },
+        {
+          "code": "I272",
+          "title": "Other secondary pulmonary hypertension"
+        },
+        {
+          "code": "Z940",
+          "title": "Kidney transplant status"
+        },
+        {
+          "code": "D509",
+          "title": "Iron deficiency anemia, unspecified"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Y830",
+          "title": "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        }
+      ]
+    },
+    {
+      "hadm_id": 28970521,
+      "admittime": "2192-12-15 16:01:00",
+      "dischtime": "2193-01-01 16:15:00",
+      "admission_type": "DIRECT EMER.",
+      "primary_icd_code": "J156",
+      "primary_dx_title": "Pneumonia due to other Gram-negative bacteria",
+      "n_diagnoses": 36,
+      "icd10_diagnoses": [
+        {
+          "code": "J156",
+          "title": "Pneumonia due to other Gram-negative bacteria"
+        },
+        {
+          "code": "D61810",
+          "title": "Antineoplastic chemotherapy induced pancytopenia"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "R64",
+          "title": "Cachexia"
+        },
+        {
+          "code": "I959",
+          "title": "Hypotension, unspecified"
+        },
+        {
+          "code": "E872",
+          "title": "Acidosis"
+        },
+        {
+          "code": "E873",
+          "title": "Alkalosis"
+        },
+        {
+          "code": "T8612",
+          "title": "Kidney transplant failure"
+        },
+        {
+          "code": "T8613",
+          "title": "Kidney transplant infection"
+        },
+        {
+          "code": "C3432",
+          "title": "Malignant neoplasm of lower lobe, left bronchus or lung"
+        },
+        {
+          "code": "I270",
+          "title": "Primary pulmonary hypertension"
+        },
+        {
+          "code": "Z681",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "E222",
+          "title": "Syndrome of inappropriate secretion of antidiuretic hormone"
+        },
+        {
+          "code": "K521",
+          "title": "Toxic gastroenteritis and colitis"
+        },
+        {
+          "code": "T8619",
+          "title": "Other complication of kidney transplant"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "J449",
+          "title": "Chronic obstructive pulmonary disease, unspecified"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "R627",
+          "title": "Adult failure to thrive"
+        },
+        {
+          "code": "Y842",
+          "title": "Radiological procedure and radiotherapy as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "K208",
+          "title": "Other esophagitis"
+        },
+        {
+          "code": "T66XXXA",
+          "title": "Radiation sickness, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92238",
+          "title": "Other place in hospital as the place of occurrence of the external cause"
+        },
+        {
+          "code": "B9789",
+          "title": "Other viral agents as the cause of diseases classified elsewhere"
+        },
+        {
+          "code": "Y830",
+          "title": "Surgical operation with transplant of whole organ as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        },
+        {
+          "code": "T451X5A",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter"
+        },
+        {
+          "code": "T3695XA",
+          "title": "Adverse effect of unspecified systemic antibiotic, initial encounter"
+        },
+        {
+          "code": "Y92230",
+          "title": "Patient room in hospital as the place of occurrence of the external cause"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        },
+        {
+          "code": "R000",
+          "title": "Tachycardia, unspecified"
+        },
+        {
+          "code": "R1310",
+          "title": "Dysphagia, unspecified"
+        },
+        {
+          "code": "R112",
+          "title": "Nausea with vomiting, unspecified"
+        },
+        {
+          "code": "E861",
+          "title": "Hypovolemia"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 6,
+    "n_with_principal": 6,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:11.039605"
+}

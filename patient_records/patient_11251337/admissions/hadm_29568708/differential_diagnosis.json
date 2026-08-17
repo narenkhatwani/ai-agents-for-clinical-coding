@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with nephrolithiasis, bilateral staghorn renal calculi, post-PCNL complications, and a history of hypertension and hemorrhagic CVA.",
+  "summary": "The patient presents with nephrolithiasis following a right PCNL procedure, with symptoms of hematuria, dysuria, pain, and fever. Past medical history includes hydronephrosis, pyonephrosis, hypertension, and hemorrhagic CVA.",
   "most_likely": "Nephrolithiasis",
   "differential": [
     {
@@ -10,67 +10,75 @@
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hematuria, pain, dysuria, fever, bilateral staghorn renal calculi"
+        "hematuria, dysuria, pain, fever following PCNL procedure"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary presentation with nephrolithiasis and post-PCNL complications."
+      "reasoning": "Primary diagnosis supported by current symptoms and procedure."
     },
     {
       "rank": 2,
-      "diagnosis": "Acute kidney injury",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Creatinine: 2.5 mg/dL, Fever"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Fever and elevated creatinine suggest potential acute kidney injury."
-    },
-    {
-      "rank": 3,
       "diagnosis": "Chronic kidney disease",
       "score": 65.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Hypertension, Bilateral staghorn renal calculi"
+        "Bilateral staghorn renal calculi, hypertension, past pyonephrosis"
       ],
-      "opposing_evidence": [],
-      "reasoning": "History of hypertension and renal calculi suggest chronic kidney disease."
+      "opposing_evidence": [
+        "recent acute presentation"
+      ],
+      "reasoning": "Chronic condition with risk factors, but recent acute presentation."
     },
     {
-      "rank": 4,
-      "diagnosis": "Hemorrhagic CVA",
-      "score": 50.0,
-      "confidence": "low",
+      "rank": 3,
+      "diagnosis": "Hypertension",
+      "score": 55.0,
+      "confidence": "medium",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness"
+        "Hypertension listed in PMH"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Previous history of hemorrhagic CVA, but no current clinical evidence."
+      "opposing_evidence": [
+        "recent acute presentation"
+      ],
+      "reasoning": "Risk factor for kidney disease, but not primary acute presentation."
     },
     {
-      "rank": 5,
-      "diagnosis": "Anemia",
-      "score": 40.0,
+      "rank": 4,
+      "diagnosis": "Acute kidney injury",
+      "score": 45.0,
       "confidence": "low",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
+        "Fever, hematuria, dysuria, and recent PCNL procedure"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Low hematocrit and hemoglobin levels suggest anemia."
+      "opposing_evidence": [
+        "Creatinine levels not extremely elevated"
+      ],
+      "reasoning": "Possible complication, but less likely given current lab values."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hemorrhagic CVA",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "History of hemorrhagic CVA"
+      ],
+      "opposing_evidence": [
+        "No current neurological symptoms"
+      ],
+      "reasoning": "Risk factor with past history, but no current neurological symptoms."
     }
   ],
   "rule_outs": [],
   "uncertain_areas": [
-    "More information on the patient's current kidney function and signs of neurological deficits would help refine the differential."
+    "Further imaging to confirm residual stone and kidney function"
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -79,7 +87,7 @@
   "_temperature": 0.4,
   "patient_id": "11251337",
   "hadm_id": "29568708",
-  "generated_at": "2026-08-09T00:44:22.470952",
+  "generated_at": "2026-08-15T17:31:12.707927",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 2,

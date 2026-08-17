@@ -1,0 +1,54 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 19104262
+HADM ID          : 24271247
+Most likely      : Diabetic ketoacidosis
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:14.608656
+
+Summary:
+  A 30-year-old female with a history of Type 1 Diabetes Mellitus and recurrent diabetic ketoacidosis (DKA) presents with DKA and lactic acidosis, along with abdominal pain, vaginal bleeding, and decreased fetal movement.
+
+#1  [85.0/100 | high]  Diabetic ketoacidosis  (primary)
+    SNOMED: Diabetic ketoacidosis (420422005) [exact score=1.0]
+    ICD status: mapped | primary: E13.10
+      1. [principal] E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
+      2. [principal] E11.10 — Type 2 diabetes mellitus with ketoacidosis without coma
+      3. [principal] E46 — Unspecified protein-calorie malnutrition
+      4. [principal] E11.01 — Type 2 diabetes mellitus with hyperosmolarity with coma
+      5. [principal] E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma
+
+#2  [60.0/100 | medium]  C difficile colitis  (differential)
+    SNOMED: Clostridium difficile colitis (423590009) [exact score=1.0]
+    ICD status: mapped | primary: A04.72
+      1. [principal] A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
+      2. [principal] A04.71 — Enterocolitis due to Clostridium difficile, recurrent
+
+#3  [55.0/100 | high]  Missed abortion  (complication)
+    SNOMED: Missed abortion (16607004) [exact score=1.0]
+    ICD status: mapped | primary: O02.1
+      1. [principal] O02.1 — Missed abortion
+
+#4  [45.0/100 | medium]  Abdominal pain  (secondary)
+    SNOMED: Abdominal pain (21522001) [exact score=1.0]
+    ICD status: mapped | primary: R10.9
+      1. [principal] R10.9 — Unspecified abdominal pain
+
+#5  [40.0/100 | medium]  Vaginal bleeding  (secondary)
+    SNOMED: Bleeding from vagina (289530006) [exact score=1.0]
+    ICD status: unmapped | primary: None
+
+#6  [35.0/100 | medium]  Decreased fetal movement  (secondary)
+    SNOMED: Low fetal movement (276369006) [exact score=1.0]
+    ICD status: mapped | primary: O36.8190
+      1. [principal] O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified
+
+#7  [30.0/100 | low]  Headache  (risk_factor)
+    SNOMED: Headache (25064002) [exact score=1.0]
+    ICD status: mapped | primary: R51.9
+      1. [principal] R51.9 — Headache, unspecified
+
+#8  [25.0/100 | low]  Nausea  (risk_factor)
+    SNOMED: Nausea (422587007) [exact score=1.0]
+    ICD status: mapped | primary: R11.0
+      1. [principal] R11.0 — Nausea

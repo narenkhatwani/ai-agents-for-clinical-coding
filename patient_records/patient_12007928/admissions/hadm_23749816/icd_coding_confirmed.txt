@@ -1,0 +1,42 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 12007928
+HADM ID          : 23749816
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:35:35.493010
+Primary condition: Acute decompensated heart failure
+Primary ICD      : I50.9 — Heart failure, unspecified
+Final codes      : 5
+Dropped / added  : 7 / 2
+
+Review:
+  Confirmed acute decompensated heart failure and chronic kidney disease. Dropped unspecified codes and added obesity and hypertension. Primary condition is acute decompensated heart failure.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] I50.9 — Heart failure, unspecified
+      (Acute decompensated heart failure | stage8_confirmed | keep)
+   2. [secondary] R06.00 — Dyspnea, unspecified
+      (Acute decompensated heart failure | stage8_confirmed | keep)
+   3. [secondary] R06.01 — Orthopnea
+      (Acute decompensated heart failure | stage8_confirmed | keep)
+   4. [secondary] E66.9 — Obesity, unspecified
+      (Obesity | added_mapped | add)
+      why: BMI 40.9
+   5. [secondary] I10 — Essential (primary) hypertension
+      (Essential hypertension | added_mapped | add)
+      why: Essential hypertension in prior admission
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • P29.0 — Neonatal cardiac failure  (Neonatal cardiac failure not relevant)
+  • D64.9 — Anemia, unspecified  (Anemia not supported by labs)
+  • I48.0 — Paroxysmal atrial fibrillation  (Paroxysmal atrial fibrillation already confirmed)
+  • G70.00 — Myasthenia gravis without (acute) exacerbation  (Myasthenia gravis not relevant)
+  • I26.99 — Other pulmonary embolism without acute cor pulmonale  (Pulmonary embolism not supported)
+  • G47.33 — Obstructive sleep apnea (adult) (pediatric)  (Obstructive sleep apnea not relevant)
+  • E03.9 — Hypothyroidism, unspecified  (Hypothyroidism not supported)

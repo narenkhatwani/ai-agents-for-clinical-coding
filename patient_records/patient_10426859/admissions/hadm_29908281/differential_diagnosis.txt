@@ -5,44 +5,48 @@ Patient ID       : 10426859
 HADM ID          : 29908281
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:43:52.116900
+Generated        : 2026-08-15T17:30:44.353634
 Candidates       : 5
-Most likely      : Supraventricular Tachycardia
+Most likely      : Supraventricular tachycardia
 Prior admissions : 2 (31 ICD codes as PMH context)
 
 Summary:
-  Patient presents with recurrent SVT, lightheadedness, and fall resulting in right hip pain. History includes SVT, hypertension, hyperlipidemia, and depression.
+  The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. She has a history of cardiovascular issues including SVT, hypertension, and hyperlipidemia.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Supraventricular Tachycardia  (primary)
+  #1  [85.0/100 | high]  Supraventricular tachycardia  (primary)
       SNOMED aligned : Supraventricular tachycardia
-      + SVT present, Supraventricular tachycardia
-      why: Primary diagnosis supported by current symptoms and past history.
+      + Supraventricular tachycardia (SVT) in symptom tree, current stay
+      why: Primary diagnosis supported by symptom tree and retained SNOMED context.
 
-  #2  [70.0/100 | medium]  Hypertension  (secondary)
-      SNOMED aligned : Essential (primary) hypertension
-      + History of hypertension, elevated calcium
-      − No recent BP readings in current stay
-      why: Secondary condition given past history and elevated calcium.
+  #2  [70.0/100 | medium]  Hip fracture  (complication)
+      + Nondisplaced comminuted fracture in the right superior pubic ramus in symptom tree, current stay
+      − No imaging evidence of fracture in current stay
+      why: Hip fracture is a potential complication of the fall, but imaging is inconclusive.
 
-  #3  [60.0/100 | medium]  Anxiety  (risk_factor)
-      + History of anxiety, recurrent SVT
-      why: Risk factor given past history and current anxiety symptoms.
+  #3  [65.0/100 | medium]  Anemia  (differential)
+      + Red Blood Cells: 3.89 m/uL [abnormal] in labs, current stay
+      − No other symptoms or findings strongly supporting anemia
+      why: Low RBC count suggests anemia, but other findings are not strongly indicative.
 
-  #4  [50.0/100 | medium]  Right Hip Fracture  (complication)
-      SNOMED aligned : Nondisplaced comminuted fracture in the right superior pubic ramus
-      + Pain in right hip, fall
-      − No recent imaging for fracture confirmation
-      why: Complication given history of trauma and pain.
+  #4  [55.0/100 | low]  Dehydration  (differential)
+      + Hematocrit: 36.8 % in labs, current stay
+      − Normal serum electrolytes, no other signs of dehydration
+      why: Hematocrit is slightly elevated, but no other evidence strongly supports dehydration.
 
-  #5  [40.0/100 | low]  Dehydration  (differential)
-      + Low hematocrit, low hemoglobin
-      − No history of recent fluid loss
-      why: Differential given current lab values, but no strong evidence.
+  #5  [40.0/100 | low]  Hypokalemia  (differential)
+      + Potassium: 3.9 mEq/L in labs, current stay
+      − No other symptoms or findings strongly supporting hypokalemia
+      why: Low potassium level is present, but other findings do not strongly support this diagnosis.
+
+RULE-OUTS
+---------
+
+  • Cardiac ischemia: No evidence of acute infarction or elevated troponin in imaging or labs.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Recent BP readings, imaging for fracture confirmation
+  • Need more imaging evidence to confirm hip fracture. More lab results to confirm or rule out anemia and hypokalemia.

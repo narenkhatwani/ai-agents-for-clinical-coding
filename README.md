@@ -146,13 +146,15 @@ Restart the Jupyter kernel after changing provider or ZDR settings.
 | `notebooks/settings.json` | Saved settings |
 | `notebooks/pipeline.py` | Cohort, LLM, agents, I/O, export |
 | `notebooks/snomed_ct.py` | Offline SNOMED CT mapping + ancestor context |
-| `notebooks/stage_01_*.ipynb` … `stage_07_*.ipynb` | Run in order |
+| `notebooks/stage_01_*.ipynb` … `stage_10_*.ipynb` | Run in order |
 | `data/SnomedCT_*` | Offline RF2 SNOMED CT package (not committed) |
-| `data/snomed_index/` | Cached SNOMED index pickle |
+| `data/snomed_index/` | Cached SNOMED index + ICD-10-CM ExtendedMap pickle |
 | `data/stage_05_snomed_mapping/` | Entity → SNOMED mappings |
 | `data/stage_06_snomed_ancestors/` | Ancestors + attribute context (filtered) |
-| `patient_records/` | Per-patient export |
-| `MISC/` | Previous Streamlit prototype |
+| `data/stage_07_differential_diagnosis/` | Scored differentials |
+| `data/stage_08_icd_coding/` | ICD-10-CM packages per DiffDx |
+| `data/stage_09_icd_confirmation/` | LLM-confirmed ICD lists (map-backed adds) |
+| `data/stage_10_evaluation/` | Accuracy vs current-stay ground truth |
 
 ### Stage 5 — SNOMED CT mapping (`stage_05_snomed_mapping.ipynb`)
 
@@ -195,8 +197,49 @@ For each latest admission under `patient_records/`:
 
 Re-run: delete `diff_dx_checkpoint.json` if you want all patients regenerated under this prompt.
 
+### Stage 8 — ICD-10-CM packages (`stage_08_icd_coding.ipynb`)
+
+For each Stage 7 DiffDx diagnosis:
+
+1. **Principal ICD(s)** — diagnosis → SNOMED → US ExtendedMap ICD-10-CM (`6011000124106`)
+2. **Supporting ICD(s)** — related symptom-tree / retained entities mapped to ICD (relevance-filtered to that diagnosis)
+3. Ordered **code package** under each differential (principal first, then supporting)
+4. Does **not** use current-stay ground-truth ICD; map is authoritative (no free-form LLM codes)
+
+Outputs:
+
+- `data/stage_08_icd_coding/icd_coding_results.json`
+- per admission: `icd_coding.json` / `.txt` (+ `differential_diagnosis_icd.*`)
+- map cache: `data/snomed_index/icd10cm_extended_map.pkl`
+
+### Stage 9 — LLM ICD confirmation (`stage_09_icd_confirmation.ipynb`)
+
+Reviews Stage 8 packages **without** current-stay ground truth:
+
+1. LLM **keeps / drops / replaces** principal codes (replace = English condition name, not a guessed code)
+2. Confirms supporting codes that belong on a billing-style list
+3. Names **missing conditions**; pipeline maps them SNOMED → ExtendedMap (ALWAYS preferred)
+4. LLM cannot invent ICD-10 strings — only select Stage 8 codes or name conditions
+
+Outputs:
+
+- `data/stage_09_icd_confirmation/icd_confirmation_results.json`
+- per admission: `icd_coding_confirmed.json` / `.txt`
+
+### Stage 10 — Accuracy vs ground truth (`stage_10_evaluation.ipynb`)
+
+First use of current-stay `ground_truth.json`. Scores Stage 8 and Stage 9 side by side:
+
+1. **Top DiffDx** vs GT primary title (exact + MiniLM ≥ 0.70)
+2. **Primary ICD** — exact, 3-character family, and MiniLM title match ≥ 0.70
+3. **Code-set** exact P/R/F1 **and** semantic P/R/F1 (greedy 1-1 title match when codes differ but mean the same)
+4. Related near-misses (sim 0.50–0.70) listed but not counted as hits
+
+Outputs:
+
+- per admission: `accuracy/comparison.txt` + `accuracy/accuracy.json`
+- cohort: `data/stage_10_evaluation/accuracy_summary.json` + `cohort_metrics.txt`
+
 ## Planned future stages
 
-8. ICD / guideline retrieval over scored differentials  
-9. Final coding package + reasoning trace  
-10. Evaluation vs ground-truth ICD-10
+11. Final coding package + reasoning trace

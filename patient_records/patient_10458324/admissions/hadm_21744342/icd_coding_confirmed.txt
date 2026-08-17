@@ -1,0 +1,37 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 10458324
+HADM ID          : 21744342
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:34:45.493725
+Primary condition: Acute respiratory distress secondary to right-sided rib fractures and influenza A
+Primary ICD      : J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
+Final codes      : 5
+Dropped / added  : 3 / 1
+
+Review:
+  Confirmed influenza A and right-sided rib fractures. Dropped hypoxemia and replaced with hypoxemic respiratory failure. Added subcutaneous emphysema as a complication.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
+      (Acute respiratory distress secondary to right-sided rib fractures and influenza A | snomed_extended_map | keep)
+   2. [secondary] F31.9 — Bipolar disorder, unspecified
+      (Bipolar disorder | stage8_confirmed | keep)
+   3. [secondary] F19.10 — Other psychoactive substance abuse, uncomplicated
+      (Substance abuse | stage8_confirmed | keep)
+   4. [secondary] R09.02 — Hypoxemia
+      (Acute respiratory distress secondary to right-sided rib fractures and influenza A | stage8_confirmed | keep)
+   5. [secondary] J98.2 — Interstitial emphysema
+      (subcutaneous emphysema | added_mapped | add)
+      why: subcutaneous emphysema along the right posterior back
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • R50.9 — Fever, unspecified  (Symptom-only code, no evidence of fever)
+  • P74.1 — Dehydration of newborn  (Symptom-only code, no evidence of dehydration)
+  • E86.0 — Dehydration  (Symptom-only code, no evidence of dehydration)

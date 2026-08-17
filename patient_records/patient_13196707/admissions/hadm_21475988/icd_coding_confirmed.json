@@ -1,0 +1,168 @@
+{
+  "review_summary": "Kept severe sepsis and metastatic adenocarcinoma, dropped hypovolemic shock and SVC syndrome, added acute kidney injury and hyperlipidemia as comorbidities, and confirmed RUL PNA as the primary condition.",
+  "primary_condition": "Severe sepsis due to RUL PNA",
+  "primary_icd_code": "R50.9",
+  "primary_icd_title": "Fever, unspecified",
+  "final_codes": [
+    {
+      "code": "R50.9",
+      "title": "Fever, unspecified",
+      "role": "primary",
+      "source": "snomed_extended_map",
+      "condition": "Severe sepsis due to RUL PNA",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "C79.9",
+      "title": "Secondary malignant neoplasm of unspecified site",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Metastatic adenocarcinoma of unknown primary",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "N17.9",
+      "title": "Acute kidney failure, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Acute kidney injury",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "E78.5",
+      "title": "Hyperlipidemia, unspecified",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Hyperlipidemia",
+      "action": "add",
+      "reason": "Abnormal lipid levels.",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "R57.1",
+      "title": "Hypovolemic shock",
+      "reason": "No evidence of hypovolemic shock."
+    },
+    {
+      "code": "T81.19X?",
+      "title": "",
+      "reason": "No evidence of hypovolemic shock."
+    }
+  ],
+  "added_conditions": [
+    {
+      "code": "E78.5",
+      "title": "Hyperlipidemia, unspecified",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "55822004",
+        "preferred_term": "Hyperlipidemia",
+        "fsn": "Hyperlipidemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hyperlipidemia",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E78.5 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Hyperlipidemia",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "Abnormal lipid levels.",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Severe sepsis due to RUL PNA",
+        "action": "keep",
+        "selected_code": "R50.9",
+        "replace_with_condition": "",
+        "reason": "Fever and hypotension are present."
+      },
+      {
+        "rank": 2,
+        "diagnosis": "Metastatic adenocarcinoma of unknown primary",
+        "action": "keep",
+        "selected_code": "C79.9",
+        "replace_with_condition": "",
+        "reason": "Confirmed diagnosis mentioned in notes."
+      },
+      {
+        "rank": 3,
+        "diagnosis": "Hypovolemic shock",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "No evidence of hypovolemia."
+      },
+      {
+        "rank": 4,
+        "diagnosis": "SVC syndrome",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "No evidence of SVC syndrome."
+      },
+      {
+        "rank": 5,
+        "diagnosis": "Acute kidney injury",
+        "action": "keep",
+        "selected_code": "N17.9",
+        "replace_with_condition": "",
+        "reason": "Abnormal creatinine and electrolytes."
+      }
+    ],
+    "n_confirmed": 3,
+    "n_missing_named": 2
+  },
+  "fallback": null,
+  "patient_id": "13196707",
+  "hadm_id": "21475988",
+  "most_likely": "Severe sepsis due to RUL PNA",
+  "stage8_most_likely": "Severe sepsis due to RUL PNA",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:35:48.860530",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 33,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 4,
+  "n_dropped": 2,
+  "n_added": 1
+}

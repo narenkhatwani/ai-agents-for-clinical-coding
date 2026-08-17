@@ -1,0 +1,531 @@
+{
+  "summary": "The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.",
+  "most_likely": "Acute on chronic systolic heart failure",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute on chronic systolic heart failure",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "426720004",
+      "supporting_evidence": [
+        "systolic CHF with EF around 30%"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Strong clinical evidence of systolic heart failure, supported by low EF.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "443253003",
+        "preferred_term": "Acute on chronic systolic heart failure",
+        "fsn": "Acute on chronic systolic heart failure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Acute on chronic systolic heart failure",
+        "aligned_hint": "426720004"
+      },
+      "icd10_primary": "I50.23",
+      "icd10_primary_title": "Acute on chronic systolic (congestive) heart failure",
+      "icd10_package": [
+        {
+          "code": "I50.23",
+          "title": "Acute on chronic systolic (congestive) heart failure",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.23 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "I50.43",
+          "title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE ON CHRONIC COMBINED SYSTOLIC AND DIASTOLIC HEART FAILURE CHOOSE I50.43 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I50.23",
+          "title": "Acute on chronic systolic (congestive) heart failure",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.23 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "I50.43",
+          "title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE ON CHRONIC COMBINED SYSTOLIC AND DIASTOLIC HEART FAILURE CHOOSE I50.43 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Renal cell carcinoma",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "77882004",
+      "supporting_evidence": [
+        "left renal mass",
+        "renal cell carcinoma"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Confirmed diagnosis with significant clinical findings.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "41607009",
+        "preferred_term": "Renal cell carcinoma",
+        "fsn": "Renal cell carcinoma (morphologic abnormality)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Renal cell carcinoma",
+        "aligned_hint": "77882004"
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [],
+      "icd10_principal": [],
+      "icd10_supporting": [],
+      "icd_status": "unmapped",
+      "n_icd_codes": 0
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anemia",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low hemoglobin, hematocrit"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low hemoglobin and hematocrit levels suggest anemia.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Hypokalemia",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low potassium"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low potassium levels suggest hypokalemia.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "43339004",
+        "preferred_term": "Hypokalemia",
+        "fsn": "Hypokalemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypokalemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E87.6",
+      "icd10_primary_title": "Hypokalemia",
+      "icd10_package": [
+        {
+          "code": "E87.6",
+          "title": "Hypokalemia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E87.6",
+          "title": "Hypokalemia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Obstructive sleep apnea",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "78275009",
+      "supporting_evidence": [
+        "confirmed diagnosis"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Confirmed diagnosis with potential impact on overall health.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "78275009",
+        "preferred_term": "Obstructive sleep apnea syndrome",
+        "fsn": "Obstructive sleep apnea syndrome (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Obstructive sleep apnea",
+        "aligned_hint": "78275009"
+      },
+      "icd10_primary": "G47.33",
+      "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)",
+      "icd10_package": [
+        {
+          "code": "G47.33",
+          "title": "Obstructive sleep apnea (adult) (pediatric)",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G47.33 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.32 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "267036007",
+          "from_snomed_term": "Dyspnea",
+          "relevance_to_diagnosis": 0.5488,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "G47.33",
+          "title": "Obstructive sleep apnea (adult) (pediatric)",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G47.33 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.32 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "267036007",
+          "from_snomed_term": "Dyspnea",
+          "relevance_to_diagnosis": 0.5488
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Diabetes mellitus",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "confirmed diagnosis",
+        "mild hyperglycemia"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Confirmed diagnosis with mild hyperglycemia.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "73211009",
+        "preferred_term": "Diabetes mellitus",
+        "fsn": "Diabetes mellitus (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Diabetes mellitus",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E11.9",
+      "icd10_primary_title": "Type 2 diabetes mellitus without complications",
+      "icd10_package": [
+        {
+          "code": "E11.9",
+          "title": "Type 2 diabetes mellitus without complications",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E11.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "E10.9",
+          "title": "Type 1 diabetes mellitus without complications",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING ON OR AFTER 1.0 YEAR AND IF AGE AT ONSET OF CLINICAL FINDING BEFORE 18.0 YEARS CHOOSE E10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E11.9",
+          "title": "Type 2 diabetes mellitus without complications",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E11.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "E10.9",
+          "title": "Type 1 diabetes mellitus without complications",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING ON OR AFTER 1.0 YEAR AND IF AGE AT ONSET OF CLINICAL FINDING BEFORE 18.0 YEARS CHOOSE E10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Acute kidney injury",
+      "why": "Creatinine levels are moderately elevated but not critically so."
+    }
+  ],
+  "uncertain_areas": [
+    "Further imaging or lab results could clarify the extent of renal involvement and heart failure status"
+  ],
+  "n_candidates": 6,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "13508515",
+  "hadm_id": "21834271",
+  "generated_at": "2026-08-15T17:32:23.633611",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 7,
+    "retained_links": 8,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 16,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21011434,
+      "admittime": "2188-11-08 22:21:00",
+      "dischtime": "2188-11-18 16:19:00",
+      "admission_type": "EW EMER.",
+      "primary_icd_code": "I5023",
+      "primary_dx_title": "Acute on chronic systolic (congestive) heart failure",
+      "n_diagnoses": 16,
+      "icd10_diagnoses": [
+        {
+          "code": "I5023",
+          "title": "Acute on chronic systolic (congestive) heart failure"
+        },
+        {
+          "code": "R570",
+          "title": "Cardiogenic shock"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "C649",
+          "title": "Malignant neoplasm of unspecified kidney, except renal pelvis"
+        },
+        {
+          "code": "Z6841",
+          "title": "Body mass index [BMI] 40.0-44.9, adult"
+        },
+        {
+          "code": "E1122",
+          "title": "Type 2 diabetes mellitus with diabetic chronic kidney disease"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "N189",
+          "title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "code": "Z951",
+          "title": "Presence of aortocoronary bypass graft"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "N400",
+          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "G4733",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "R197",
+          "title": "Diarrhea, unspecified"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 6,
+    "n_with_principal": 5,
+    "n_unmapped": 1
+  },
+  "generated_at_stage8": "2026-08-15T17:34:10.037393"
+}

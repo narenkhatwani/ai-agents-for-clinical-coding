@@ -1,0 +1,1430 @@
+{
+  "stage": 10,
+  "type": "accuracy_vs_ground_truth",
+  "patient_id": "12007928",
+  "hadm_id": "23749816",
+  "generated_at": "2026-08-15T23:57:14.952378",
+  "ground_truth": {
+    "primary_icd_code": "I5033",
+    "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
+    "icd10_codes": [
+      "I5033",
+      "N179",
+      "G7000",
+      "Q211",
+      "F0390",
+      "I480",
+      "G629",
+      "F329",
+      "I10",
+      "E041",
+      "G40909",
+      "E039",
+      "E785",
+      "Z7901",
+      "Z950",
+      "K219",
+      "G4730",
+      "N3941",
+      "Z66"
+    ],
+    "dx_titles": [
+      "Acute on chronic diastolic (congestive) heart failure",
+      "Acute kidney failure, unspecified",
+      "Myasthenia gravis without (acute) exacerbation",
+      "Atrial septal defect",
+      "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety",
+      "Paroxysmal atrial fibrillation",
+      "Polyneuropathy, unspecified",
+      "Major depressive disorder, single episode, unspecified",
+      "Essential (primary) hypertension",
+      "Nontoxic single thyroid nodule",
+      "Epilepsy, unspecified, not intractable, without status epilepticus",
+      "Hypothyroidism, unspecified",
+      "Hyperlipidemia, unspecified",
+      "Long term (current) use of anticoagulants",
+      "Presence of cardiac pacemaker",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Sleep apnea, unspecified",
+      "Urge incontinence",
+      "Do not resuscitate"
+    ],
+    "n_diagnoses": 19
+  },
+  "stage8": {
+    "diagnosis": {
+      "predicted": "Acute decompensated heart failure",
+      "ground_truth": "Acute on chronic diastolic (congestive) heart failure",
+      "matched_predicted": "Acute decompensated heart failure",
+      "matched_ground_truth": "Acute on chronic diastolic (congestive) heart failure",
+      "match_scope": "rank1_vs_primary",
+      "match_pred_rank": 1,
+      "match_gt_index": 0,
+      "exact": false,
+      "semantic_similarity": 0.6906,
+      "semantic_match": true,
+      "match_reason": "same_condition",
+      "clinical_reason": "same_condition",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Acute decompensated heart failure",
+        "Chronic kidney disease",
+        "Anemia",
+        "Atrial fibrillation",
+        "Myasthenia gravis",
+        "Pulmonary embolism",
+        "Obstructive sleep apnea",
+        "Hypothyroidism"
+      ],
+      "n_diffdx": 8,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Acute decompensated heart failure",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Chronic kidney disease",
+          "rank": 2,
+          "score": 70.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Anemia",
+          "rank": 3,
+          "score": 65.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Atrial fibrillation",
+          "rank": 4,
+          "score": 55.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Myasthenia gravis",
+          "rank": 5,
+          "score": 45.0,
+          "confidence": "low"
+        },
+        {
+          "diagnosis": "Pulmonary embolism",
+          "rank": 6,
+          "score": 35.0,
+          "confidence": "low"
+        },
+        {
+          "diagnosis": "Obstructive sleep apnea",
+          "rank": 7,
+          "score": 30.0,
+          "confidence": "low"
+        },
+        {
+          "diagnosis": "Hypothyroidism",
+          "rank": 8,
+          "score": 25.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 85.0,
+      "matched_confidence": "high"
+    },
+    "primary_icd": {
+      "predicted": "I50.9",
+      "ground_truth": "I50.33",
+      "predicted_title": "Heart failure, unspecified",
+      "ground_truth_title": "Acute on chronic diastolic (congestive) heart failure",
+      "exact": false,
+      "family": true,
+      "semantic_similarity": 0.7059,
+      "semantic_match": true,
+      "match_reason": "contained",
+      "clinical_reason": "contained",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "predicted_family": "I50",
+      "ground_truth_family": "I50",
+      "match_scope": "rank1_vs_primary"
+    },
+    "code_set": {
+      "n_predicted": 16,
+      "n_ground_truth": 19,
+      "n_hits": 3,
+      "precision": 0.1875,
+      "recall": 0.1579,
+      "f1": 0.1714,
+      "hits": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        }
+      ],
+      "misses": [
+        {
+          "code": "I50.33",
+          "title": "Acute on chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "extras": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified"
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure"
+        },
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified"
+        },
+        {
+          "code": "R06.01",
+          "title": "Orthopnea"
+        },
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        },
+        {
+          "code": "R71.8",
+          "title": "Other abnormality of red blood cells"
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified"
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis"
+        },
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "G47.33",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 5,
+      "semantic_precision": 0.3125,
+      "semantic_recall": 0.2632,
+      "semantic_f1": 0.2857,
+      "semantic_pairs": [
+        {
+          "predicted_code": "G47.33",
+          "predicted_title": "Obstructive sleep apnea (adult) (pediatric)",
+          "predicted_diagnosis": "Obstructive sleep apnea",
+          "ground_truth_code": "G47.30",
+          "ground_truth_title": "Sleep apnea, unspecified",
+          "similarity": 0.8812,
+          "match": "semantic"
+        },
+        {
+          "predicted_code": "I50.9",
+          "predicted_title": "Heart failure, unspecified",
+          "predicted_diagnosis": "Acute decompensated heart failure",
+          "ground_truth_code": "I50.33",
+          "ground_truth_title": "Acute on chronic diastolic (congestive) heart failure",
+          "similarity": 0.7059,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [
+        {
+          "predicted_code": "N18.9",
+          "predicted_title": "Chronic kidney disease, unspecified",
+          "predicted_diagnosis": "Chronic kidney disease",
+          "ground_truth_code": "N17.9",
+          "ground_truth_title": "Acute kidney failure, unspecified",
+          "similarity": 0.6672,
+          "match": "related"
+        },
+        {
+          "predicted_code": "P72.2",
+          "predicted_title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified",
+          "predicted_diagnosis": "Hypothyroidism",
+          "ground_truth_code": "E04.1",
+          "ground_truth_title": "Nontoxic single thyroid nodule",
+          "similarity": 0.5284,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure"
+        },
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified"
+        },
+        {
+          "code": "R06.01",
+          "title": "Orthopnea"
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        },
+        {
+          "code": "R71.8",
+          "title": "Other abnormality of red blood cells"
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified"
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis"
+        },
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 13,
+      "n_ground_truth": 19,
+      "n_hits": 3,
+      "precision": 0.2308,
+      "recall": 0.1579,
+      "f1": 0.1875,
+      "hits": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        }
+      ],
+      "misses": [
+        {
+          "code": "I50.33",
+          "title": "Acute on chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "extras": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified"
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure"
+        },
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified"
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis"
+        },
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "G47.33",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 5,
+      "semantic_precision": 0.3846,
+      "semantic_recall": 0.2632,
+      "semantic_f1": 0.3125,
+      "semantic_pairs": [
+        {
+          "predicted_code": "G47.33",
+          "predicted_title": "Obstructive sleep apnea (adult) (pediatric)",
+          "predicted_diagnosis": "Obstructive sleep apnea",
+          "ground_truth_code": "G47.30",
+          "ground_truth_title": "Sleep apnea, unspecified",
+          "similarity": 0.8812,
+          "match": "semantic"
+        },
+        {
+          "predicted_code": "I50.9",
+          "predicted_title": "Heart failure, unspecified",
+          "predicted_diagnosis": "Acute decompensated heart failure",
+          "ground_truth_code": "I50.33",
+          "ground_truth_title": "Acute on chronic diastolic (congestive) heart failure",
+          "similarity": 0.7059,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [
+        {
+          "predicted_code": "N18.9",
+          "predicted_title": "Chronic kidney disease, unspecified",
+          "predicted_diagnosis": "Chronic kidney disease",
+          "ground_truth_code": "N17.9",
+          "ground_truth_title": "Acute kidney failure, unspecified",
+          "similarity": 0.6672,
+          "match": "related"
+        },
+        {
+          "predicted_code": "P72.2",
+          "predicted_title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified",
+          "predicted_diagnosis": "Hypothyroidism",
+          "ground_truth_code": "E04.1",
+          "ground_truth_title": "Nontoxic single thyroid nodule",
+          "similarity": 0.5284,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure"
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified"
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis"
+        },
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn"
+        }
+      ]
+    },
+    "principal_set": {
+      "n_predicted": 13,
+      "n_ground_truth": 19,
+      "n_hits": 3,
+      "precision": 0.2308,
+      "recall": 0.1579,
+      "f1": 0.1875,
+      "hits": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        }
+      ],
+      "misses": [
+        {
+          "code": "I50.33",
+          "title": "Acute on chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "extras": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified"
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure"
+        },
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified"
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis"
+        },
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "G47.33",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn"
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 5,
+      "semantic_precision": 0.3846,
+      "semantic_recall": 0.2632,
+      "semantic_f1": 0.3125,
+      "semantic_pairs": [
+        {
+          "predicted_code": "G47.33",
+          "predicted_title": "Obstructive sleep apnea (adult) (pediatric)",
+          "predicted_diagnosis": "Obstructive sleep apnea",
+          "ground_truth_code": "G47.30",
+          "ground_truth_title": "Sleep apnea, unspecified",
+          "similarity": 0.8812,
+          "match": "semantic"
+        },
+        {
+          "predicted_code": "I50.9",
+          "predicted_title": "Heart failure, unspecified",
+          "predicted_diagnosis": "Acute decompensated heart failure",
+          "ground_truth_code": "I50.33",
+          "ground_truth_title": "Acute on chronic diastolic (congestive) heart failure",
+          "similarity": 0.7059,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [
+        {
+          "predicted_code": "N18.9",
+          "predicted_title": "Chronic kidney disease, unspecified",
+          "predicted_diagnosis": "Chronic kidney disease",
+          "ground_truth_code": "N17.9",
+          "ground_truth_title": "Acute kidney failure, unspecified",
+          "similarity": 0.6672,
+          "match": "related"
+        },
+        {
+          "predicted_code": "P72.2",
+          "predicted_title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified",
+          "predicted_diagnosis": "Hypothyroidism",
+          "ground_truth_code": "E04.1",
+          "ground_truth_title": "Nontoxic single thyroid nodule",
+          "similarity": 0.5284,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure"
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified"
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis"
+        },
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn"
+        }
+      ]
+    }
+  },
+  "stage9": {
+    "diagnosis": {
+      "predicted": "Acute decompensated heart failure",
+      "ground_truth": "Acute on chronic diastolic (congestive) heart failure",
+      "matched_predicted": "Acute decompensated heart failure",
+      "matched_ground_truth": "Acute on chronic diastolic (congestive) heart failure",
+      "match_scope": "rank1_vs_primary",
+      "match_pred_rank": 1,
+      "match_gt_index": 0,
+      "exact": false,
+      "semantic_similarity": 0.6906,
+      "semantic_match": true,
+      "match_reason": "same_condition",
+      "clinical_reason": "same_condition",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Acute decompensated heart failure",
+        "Obesity",
+        "Essential hypertension"
+      ],
+      "n_diffdx": 3,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Acute decompensated heart failure",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Chronic kidney disease",
+          "rank": 2,
+          "score": 70.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Anemia",
+          "rank": 3,
+          "score": 65.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Atrial fibrillation",
+          "rank": 4,
+          "score": 55.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Myasthenia gravis",
+          "rank": 5,
+          "score": 45.0,
+          "confidence": "low"
+        },
+        {
+          "diagnosis": "Pulmonary embolism",
+          "rank": 6,
+          "score": 35.0,
+          "confidence": "low"
+        },
+        {
+          "diagnosis": "Obstructive sleep apnea",
+          "rank": 7,
+          "score": 30.0,
+          "confidence": "low"
+        },
+        {
+          "diagnosis": "Hypothyroidism",
+          "rank": 8,
+          "score": 25.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 85.0,
+      "matched_confidence": "high"
+    },
+    "primary_icd": {
+      "predicted": "I50.9",
+      "ground_truth": "I50.33",
+      "predicted_title": "Heart failure, unspecified",
+      "ground_truth_title": "Acute on chronic diastolic (congestive) heart failure",
+      "exact": false,
+      "family": true,
+      "semantic_similarity": 0.7059,
+      "semantic_match": true,
+      "match_reason": "contained",
+      "clinical_reason": "contained",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "predicted_family": "I50",
+      "ground_truth_family": "I50",
+      "match_scope": "rank1_vs_primary"
+    },
+    "code_set": {
+      "n_predicted": 5,
+      "n_ground_truth": 19,
+      "n_hits": 1,
+      "precision": 0.2,
+      "recall": 0.0526,
+      "f1": 0.0833,
+      "hits": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        }
+      ],
+      "misses": [
+        {
+          "code": "I50.33",
+          "title": "Acute on chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "extras": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified"
+        },
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified"
+        },
+        {
+          "code": "R06.01",
+          "title": "Orthopnea"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 3,
+      "semantic_precision": 0.6,
+      "semantic_recall": 0.1579,
+      "semantic_f1": 0.25,
+      "semantic_pairs": [
+        {
+          "predicted_code": "R06.00",
+          "predicted_title": "Dyspnea, unspecified",
+          "predicted_diagnosis": "Acute decompensated heart failure",
+          "ground_truth_code": "G47.30",
+          "ground_truth_title": "Sleep apnea, unspecified",
+          "similarity": 0.7387,
+          "match": "semantic"
+        },
+        {
+          "predicted_code": "I50.9",
+          "predicted_title": "Heart failure, unspecified",
+          "predicted_diagnosis": "Acute decompensated heart failure",
+          "ground_truth_code": "I50.33",
+          "ground_truth_title": "Acute on chronic diastolic (congestive) heart failure",
+          "similarity": 0.7059,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [
+        {
+          "predicted_code": "R06.01",
+          "predicted_title": "Orthopnea",
+          "predicted_diagnosis": "Acute decompensated heart failure",
+          "ground_truth_code": "N17.9",
+          "ground_truth_title": "Acute kidney failure, unspecified",
+          "similarity": 0.6015,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 3,
+      "n_ground_truth": 19,
+      "n_hits": 1,
+      "precision": 0.3333,
+      "recall": 0.0526,
+      "f1": 0.0909,
+      "hits": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        }
+      ],
+      "misses": [
+        {
+          "code": "I50.33",
+          "title": "Acute on chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "extras": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 2,
+      "semantic_precision": 0.6667,
+      "semantic_recall": 0.1053,
+      "semantic_f1": 0.1818,
+      "semantic_pairs": [
+        {
+          "predicted_code": "I50.9",
+          "predicted_title": "Heart failure, unspecified",
+          "predicted_diagnosis": "Acute decompensated heart failure",
+          "ground_truth_code": "I50.33",
+          "ground_truth_title": "Acute on chronic diastolic (congestive) heart failure",
+          "similarity": 0.7059,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "Q21.1",
+          "title": "Atrial septal defect"
+        },
+        {
+          "code": "F03.90",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "G62.9",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule"
+        },
+        {
+          "code": "G40.909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z95.0",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G47.30",
+          "title": "Sleep apnea, unspecified"
+        },
+        {
+          "code": "N39.41",
+          "title": "Urge incontinence"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        }
+      ]
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

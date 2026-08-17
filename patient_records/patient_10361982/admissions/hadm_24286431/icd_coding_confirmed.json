@@ -1,0 +1,189 @@
+{
+  "review_summary": "Kept hemorrhage following hysterectomy and postoperative bleeding. Dropped menorrhagia and intra-menstrual bleeding as symptoms. Added essential hypertension and anxiety disorder as comorbidities.",
+  "primary_condition": "Hemorrhage following hysterectomy",
+  "primary_icd_code": "N93.9",
+  "primary_icd_title": "Abnormal uterine and vaginal bleeding, unspecified",
+  "final_codes": [
+    {
+      "code": "N93.9",
+      "title": "Abnormal uterine and vaginal bleeding, unspecified",
+      "role": "primary",
+      "source": "snomed_extended_map",
+      "condition": "Hemorrhage following hysterectomy",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "I10",
+      "title": "Essential (primary) hypertension",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "essential hypertension",
+      "action": "add",
+      "reason": "history of hypothyroidism",
+      "always": true
+    },
+    {
+      "code": "F41.9",
+      "title": "Anxiety disorder, unspecified",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "anxiety disorder",
+      "action": "add",
+      "reason": "history of anxiety disorder",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "N92.0",
+      "title": "Excessive and frequent menstruation with regular cycle",
+      "reason": "Symptom-only code, not a current diagnosis"
+    },
+    {
+      "code": "N93.0",
+      "title": "Postcoital and contact bleeding",
+      "reason": "Symptom-only code, not a current diagnosis"
+    },
+    {
+      "code": "N92.1",
+      "title": "Excessive and frequent menstruation with irregular cycle",
+      "reason": "Symptom-only code, not a current diagnosis"
+    }
+  ],
+  "added_conditions": [
+    {
+      "code": "I10",
+      "title": "Essential (primary) hypertension",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "59621000",
+        "preferred_term": "Essential hypertension",
+        "fsn": "Essential hypertension (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "essential hypertension",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "essential hypertension",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "history of hypothyroidism",
+      "as_primary": false
+    },
+    {
+      "code": "F41.9",
+      "title": "Anxiety disorder, unspecified",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "197480006",
+        "preferred_term": "Anxiety disorder",
+        "fsn": "Anxiety disorder (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "anxiety disorder",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "F41.9",
+          "title": "Anxiety disorder, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F41.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "anxiety disorder",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "history of anxiety disorder",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Hemorrhage following hysterectomy",
+        "action": "keep",
+        "selected_code": "N93.9",
+        "replace_with_condition": "",
+        "reason": "Primary diagnosis based on current symptoms"
+      },
+      {
+        "rank": 2,
+        "diagnosis": "Postoperative bleeding",
+        "action": "keep",
+        "selected_code": "N93.9",
+        "replace_with_condition": "",
+        "reason": "Secondary diagnosis based on hysterectomy and bleeding"
+      },
+      {
+        "rank": 3,
+        "diagnosis": "Endometriosis",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "Not supported by current imaging findings"
+      },
+      {
+        "rank": 4,
+        "diagnosis": "Hypothyroidism",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "Not supported by current labs or symptoms"
+      }
+    ],
+    "n_confirmed": 2,
+    "n_missing_named": 2
+  },
+  "fallback": null,
+  "patient_id": "10361982",
+  "hadm_id": "24286431",
+  "most_likely": "Hemorrhage following hysterectomy",
+  "stage8_most_likely": "Hemorrhage following hysterectomy",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:34:23.686292",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 11,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 3,
+  "n_dropped": 3,
+  "n_added": 2
+}

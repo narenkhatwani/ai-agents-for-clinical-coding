@@ -1,0 +1,35 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 19104262
+HADM ID          : 24271247
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:36:58.794363
+Primary condition: Diabetic ketoacidosis
+Primary ICD      : E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
+Final codes      : 5
+Dropped / added  : 1 / 1
+
+Review:
+  Confirmed primary diabetic ketoacidosis and dropped missed abortion as a current diagnosis. Added lactic acidosis as a secondary condition.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
+      (Diabetic ketoacidosis | stage8_confirmed | keep)
+   2. [secondary] A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
+      (C difficile colitis | stage8_confirmed | keep)
+   3. [secondary] R10.9 — Unspecified abdominal pain
+      (Abdominal pain | stage8_confirmed | keep)
+   4. [secondary] O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified
+      (Decreased fetal movement | stage8_confirmed | keep)
+   5. [secondary] E87.20 — Acidosis, unspecified
+      (Lactic acidosis | added_mapped | add)
+      why: Abnormal lactate levels
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • O02.1 — Missed abortion  (Not a current diagnosis)

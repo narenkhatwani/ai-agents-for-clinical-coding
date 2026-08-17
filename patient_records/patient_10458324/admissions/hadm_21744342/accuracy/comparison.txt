@@ -1,0 +1,120 @@
+ACCURACY vs GROUND TRUTH
+========================
+
+Patient ID       : 10458324
+HADM ID          : 21744342
+Generated        : 2026-08-15T23:57:14.785872
+
+PRIMARY DIFFDx — MATCH OR NO
+----------------------------
+
+  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+
+               Predicted                                        Ground truth
+  S8 DiffDx    Acute respiratory distress secondary to rig...   Traumatic pneumothorax, initial encounter
+  S9 DiffDx    Acute respiratory distress secondary to rig...   Traumatic pneumothorax, initial encounter
+
+  Full predicted (S8): Acute respiratory distress secondary to right-sided rib fractures and influenza A
+  Full predicted (S9): Acute respiratory distress secondary to right-sided rib fractures and influenza A
+  Full GT primary    : Traumatic pneumothorax, initial encounter
+
+  MATCH (S8): YES    reason=diffdx_vs_primary  sim=0.87
+    matched: Pneumothorax  vs  Traumatic pneumothorax, initial encou...
+  MATCH (S9): NO    reason=no_match  sim=0.39
+    matched: Acute respiratory distress secondary ...  vs  Traumatic pneumothorax, initial encou...
+
+PRIMARY ICD — MATCH OR NO
+-------------------------
+
+  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+  or rank-1 ICD matches another billed GT code
+
+               Predicted                                        Ground truth
+  S8 ICD       J93.9 Pneumothorax, unspecified                  S27.0XXA Traumatic pneumothorax, initial en...
+  S9 ICD       J10.1 Influenza due to other identified inf...   S27.0XXA Traumatic pneumothorax, initial en...
+
+  Full predicted (S8): J93.9 — Pneumothorax, unspecified
+  Full predicted (S9): J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
+  Full ground truth  : S27.0XXA — Traumatic pneumothorax, initial encounter
+
+  MATCH (S8): YES    reason=package_vs_primary  family=NO  sim=0.87
+  MATCH (S9): NO    reason=no_match  family=NO  sim=0.18
+
+ICD CODE SET — Stage 8 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.154 / 0.167 / 0.160
+Semantic  P / R / F1 : 0.308 / 0.333 / 0.320  (title MiniLM ≥ 0.7)
+Exact hits 2  |  semantic hits 4  |  predicted 13  |  GT 12
+Exact code hits:
+  ✓ F11.20 — Opioid dependence, uncomplicated
+  ✓ R09.02 — Hypoxemia
+Semantic hits (same meaning, different code):
+  ≈ J93.9 — Pneumothorax, unspecified  [Pneumothorax]
+      ↔ S27.0XXA — Traumatic pneumothorax, initial encounter  (sim=0.87)
+  ≈ J10.00 — Influenza due to other identified influenza virus with unspecified type of pneumonia  [Influenza A]
+      ↔ J18.9 — Pneumonia, unspecified organism  (sim=0.71)
+Related (not counted; sim 0.50–0.70):
+  ~ J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations  [Acute respiratory distress secondary to right-sided rib fractures and influenza A]
+      ↔ S22.41XA — Multiple fractures of ribs, right side, initial encounter for closed fracture  (sim=0.57)
+  ~ F31.9 — Bipolar disorder, unspecified  [Bipolar disorder]
+      ↔ F43.10 — Post-traumatic stress disorder, unspecified  (sim=0.54)
+Still missing after semantic match:
+  ✗ E46 — Unspecified protein-calorie malnutrition
+  ✗ Z68.1 — Body mass index [BMI] 19.9 or less, adult
+  ✗ I48.0 — Paroxysmal atrial fibrillation
+  ✗ W18.30XA — Fall on same level, unspecified, initial encounter
+  ✗ Y92.002 — Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause
+  ✗ R60.0 — Localized edema
+Still extra after semantic match:
+  + R50.9 — Fever, unspecified
+  + P25.1 — Pneumothorax originating in the perinatal period
+  + F19.10 — Other psychoactive substance abuse, uncomplicated
+  + E86.0 — Dehydration
+  + P74.1 — Dehydration of newborn
+  + R11.10 — Vomiting, unspecified
+  + R19.7 — Diarrhea, unspecified
+
+ICD CODE SET — Stage 9 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.200 / 0.083 / 0.118
+Semantic  P / R / F1 : 0.200 / 0.083 / 0.118  (title MiniLM ≥ 0.7)
+Exact hits 1  |  semantic hits 1  |  predicted 5  |  GT 12
+Exact code hits:
+  ✓ R09.02 — Hypoxemia
+Related (not counted; sim 0.50–0.70):
+  ~ F19.10 — Other psychoactive substance abuse, uncomplicated  [Substance abuse]
+      ↔ F11.20 — Opioid dependence, uncomplicated  (sim=0.58)
+  ~ J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations  [Acute respiratory distress secondary to right-sided rib fractures and influenza A]
+      ↔ S22.41XA — Multiple fractures of ribs, right side, initial encounter for closed fracture  (sim=0.57)
+  ~ F31.9 — Bipolar disorder, unspecified  [Bipolar disorder]
+      ↔ F43.10 — Post-traumatic stress disorder, unspecified  (sim=0.54)
+Still missing after semantic match:
+  ✗ S27.0XXA — Traumatic pneumothorax, initial encounter
+  ✗ J18.9 — Pneumonia, unspecified organism
+  ✗ E46 — Unspecified protein-calorie malnutrition
+  ✗ Z68.1 — Body mass index [BMI] 19.9 or less, adult
+  ✗ I48.0 — Paroxysmal atrial fibrillation
+  ✗ W18.30XA — Fall on same level, unspecified, initial encounter
+  ✗ Y92.002 — Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause
+  ✗ R60.0 — Localized edema
+Still extra after semantic match:
+  + J98.2 — Interstitial emphysema
+
+GROUND TRUTH LIST
+-----------------
+
+   1. S27.0XXA — Traumatic pneumothorax, initial encounter (primary)
+   2. J18.9 — Pneumonia, unspecified organism
+   3. S22.41XA — Multiple fractures of ribs, right side, initial encounter for closed fracture
+   4. E46 — Unspecified protein-calorie malnutrition
+   5. F11.20 — Opioid dependence, uncomplicated
+   6. Z68.1 — Body mass index [BMI] 19.9 or less, adult
+   7. I48.0 — Paroxysmal atrial fibrillation
+   8. W18.30XA — Fall on same level, unspecified, initial encounter
+   9. Y92.002 — Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause
+  10. R09.02 — Hypoxemia
+  11. R60.0 — Localized edema
+  12. F43.10 — Post-traumatic stress disorder, unspecified

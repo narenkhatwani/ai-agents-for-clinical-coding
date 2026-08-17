@@ -1,0 +1,607 @@
+{
+  "summary": "The patient presents with acute on chronic dyspnea on exertion, fatigue, and macrocytic anemia. The patient has a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
+  "most_likely": "Acute on chronic macrocytic anemia",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute on chronic macrocytic anemia",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Macrocytic anemia",
+      "supporting_evidence": [
+        "acute on chronic macrocytic anemia (current symptom tree)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary diagnosis given the patient's history of chronic anemia and current presentation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "83414005",
+        "preferred_term": "Macrocytic anemia",
+        "fsn": "Macrocytic anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Acute on chronic macrocytic anemia",
+        "aligned_hint": "Macrocytic anemia"
+      },
+      "icd10_primary": "D53.9",
+      "icd10_primary_title": "Nutritional anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D53.9",
+          "title": "Nutritional anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D53.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.6007,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D53.9",
+          "title": "Nutritional anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D53.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.6007
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Heart failure",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Congestive heart failure",
+      "supporting_evidence": [
+        "acute on chronic dyspnea on exertion (current symptom tree)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Secondary to chronic coronary artery disease and atrial fibrillation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "42343007",
+        "preferred_term": "Congestive heart failure",
+        "fsn": "Congestive heart failure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Heart failure",
+        "aligned_hint": "Congestive heart failure"
+      },
+      "icd10_primary": "I50.9",
+      "icd10_primary_title": "Heart failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "R06.09",
+          "title": "Other forms of dyspnea",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.09",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea on exertion",
+          "from_kind": "symptom",
+          "from_snomed_id": "60845006",
+          "from_snomed_term": "Exertional dyspnea",
+          "relevance_to_diagnosis": 0.3874,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R06.09",
+          "title": "Other forms of dyspnea",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.09",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea on exertion",
+          "from_kind": "symptom",
+          "from_snomed_id": "60845006",
+          "from_snomed_term": "Exertional dyspnea",
+          "relevance_to_diagnosis": 0.3874
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Atrial fibrillation",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Atrial fibrillation",
+      "supporting_evidence": [
+        "history of atrial fibrillation (current symptom tree)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Given the patient's history and current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "49436004",
+        "preferred_term": "Atrial fibrillation",
+        "fsn": "Atrial fibrillation (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Atrial fibrillation",
+        "aligned_hint": "Atrial fibrillation"
+      },
+      "icd10_primary": "I48.91",
+      "icd10_primary_title": "Unspecified atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.91",
+          "title": "Unspecified atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I48.91",
+          "title": "Unspecified atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Anemia of chronic disease",
+      "score": 55.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "chronic conditions (prior ICD-10)"
+      ],
+      "opposing_evidence": [
+        "acute presentation (current symptom tree)"
+      ],
+      "reasoning": "Possible given the patient's chronic conditions, but not primary given acute presentation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "234347009",
+        "preferred_term": "Anaemia of chronic disease",
+        "fsn": "Anemia of chronic disorder (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia of chronic disease",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D63.8",
+      "icd10_primary_title": "Anemia in other chronic diseases classified elsewhere",
+      "icd10_package": [
+        {
+          "code": "D63.8",
+          "title": "Anemia in other chronic diseases classified elsewhere",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D63.8 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.7976,
+          "package_order": 2
+        },
+        {
+          "code": "D53.9",
+          "title": "Nutritional anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D53.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "macrocytic anemia",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "83414005",
+          "from_snomed_term": "Macrocytic anemia",
+          "relevance_to_diagnosis": 0.666,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D63.8",
+          "title": "Anemia in other chronic diseases classified elsewhere",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D63.8 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.7976
+        },
+        {
+          "code": "D53.9",
+          "title": "Nutritional anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D53.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "macrocytic anemia",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "83414005",
+          "from_snomed_term": "Macrocytic anemia",
+          "relevance_to_diagnosis": 0.666
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Infectious cause of anemia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "acute on chronic macrocytic anemia (current symptom tree)"
+      ],
+      "opposing_evidence": [
+        "no clear infectious symptoms (current symptom tree)"
+      ],
+      "reasoning": "Possible given the patient's chronic conditions, but no clear evidence of infection.",
+      "snomed_resolution": {
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "match_method": null,
+        "score": 0.0,
+        "query": "Infectious cause of anemia"
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.7283,
+          "package_order": 1
+        },
+        {
+          "code": "D53.9",
+          "title": "Nutritional anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D53.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "macrocytic anemia",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "83414005",
+          "from_snomed_term": "Macrocytic anemia",
+          "relevance_to_diagnosis": 0.6175,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [],
+      "icd10_supporting": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.7283
+        },
+        {
+          "code": "D53.9",
+          "title": "Nutritional anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D53.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "macrocytic anemia",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "83414005",
+          "from_snomed_term": "Macrocytic anemia",
+          "relevance_to_diagnosis": 0.6175
+        }
+      ],
+      "icd_status": "supporting_only",
+      "n_icd_codes": 2
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Acute coronary syndrome",
+      "why": "No evidence of acute chest pain or ischemic changes in labs."
+    }
+  ],
+  "uncertain_areas": [
+    "Further labs to confirm iron deficiency or other causes of macrocytic anemia"
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "19632936",
+  "hadm_id": "26696232",
+  "generated_at": "2026-08-15T17:33:57.532824",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 14,
+    "retained_links": 18,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 18,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 28139980,
+      "admittime": "2139-11-06 17:01:00",
+      "dischtime": "2139-11-09 13:00:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "D62",
+      "primary_dx_title": "Acute posthemorrhagic anemia",
+      "n_diagnoses": 18,
+      "icd10_diagnoses": [
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "I5032",
+          "title": "Chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "I272",
+          "title": "Other secondary pulmonary hypertension"
+        },
+        {
+          "code": "E869",
+          "title": "Volume depletion, unspecified"
+        },
+        {
+          "code": "I4891",
+          "title": "Unspecified atrial fibrillation"
+        },
+        {
+          "code": "N281",
+          "title": "Cyst of kidney, acquired"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "I25118",
+          "title": "Atherosclerotic heart disease of native coronary artery with other forms of angina pectoris"
+        },
+        {
+          "code": "I350",
+          "title": "Nonrheumatic aortic (valve) stenosis"
+        },
+        {
+          "code": "R195",
+          "title": "Other fecal abnormalities"
+        },
+        {
+          "code": "Z45018",
+          "title": "Encounter for adjustment and management of other part of cardiac pacemaker"
+        },
+        {
+          "code": "I714",
+          "title": "Abdominal aortic aneurysm, without rupture"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K8080",
+          "title": "Other cholelithiasis without obstruction"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z955",
+          "title": "Presence of coronary angioplasty implant and graft"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 5,
+    "n_with_principal": 4,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:15.571022"
+}

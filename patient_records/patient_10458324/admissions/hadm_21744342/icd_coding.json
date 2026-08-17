@@ -1,0 +1,670 @@
+{
+  "summary": "The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and bipolar disorder. Recent influenza A infection is also noted.",
+  "most_likely": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "right sided rib fractures, hypoxia, influenza A PCR +"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Right-sided rib fractures and influenza A infection are present, leading to respiratory distress.",
+      "snomed_resolution": {
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "match_method": null,
+        "score": 0.0,
+        "query": "Acute respiratory distress secondary to right-sided rib fractures and influenza A"
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J10.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "influenza A",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "442696006",
+          "from_snomed_term": "Influenza A (H1N1)",
+          "relevance_to_diagnosis": 0.5616,
+          "package_order": 1
+        },
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypoxia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "389086002",
+          "from_snomed_term": "Hypoxia",
+          "relevance_to_diagnosis": 0.0825,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [],
+      "icd10_supporting": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J10.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "influenza A",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "442696006",
+          "from_snomed_term": "Influenza A (H1N1)",
+          "relevance_to_diagnosis": 0.5616
+        },
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypoxia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "389086002",
+          "from_snomed_term": "Hypoxia",
+          "relevance_to_diagnosis": 0.0825
+        }
+      ],
+      "icd_status": "supporting_only",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Influenza A",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Influenza A (H1N1)",
+      "supporting_evidence": [
+        "influenza A PCR +"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Confirmed influenza A infection with symptoms of cough and fever.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "442696006",
+        "preferred_term": "Influenza A (H1N1)",
+        "fsn": "Influenza caused by Influenza A virus subtype H1N1 (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Influenza A",
+        "aligned_hint": "Influenza A (H1N1)"
+      },
+      "icd10_primary": "J10.1",
+      "icd10_primary_title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+      "icd10_package": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J10.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "J10.00",
+          "title": "Influenza due to other identified influenza virus with unspecified type of pneumonia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF PNEUMONIA CAUSED BY INFLUENZA A VIRUS SUBTYPE H1N1 CHOOSE J10.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "fever",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "386661006",
+          "from_snomed_term": "Fever",
+          "relevance_to_diagnosis": 0.5555,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J10.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "J10.00",
+          "title": "Influenza due to other identified influenza virus with unspecified type of pneumonia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF PNEUMONIA CAUSED BY INFLUENZA A VIRUS SUBTYPE H1N1 CHOOSE J10.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "fever",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "386661006",
+          "from_snomed_term": "Fever",
+          "relevance_to_diagnosis": 0.5555
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Pneumothorax",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "right PTX"
+      ],
+      "opposing_evidence": [
+        "no evidence of infection or other cause"
+      ],
+      "reasoning": "Small right pneumothorax noted, which could be related to rib fractures.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "36118008",
+        "preferred_term": "Pneumothorax",
+        "fsn": "Pneumothorax (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Pneumothorax",
+        "aligned_hint": null
+      },
+      "icd10_primary": "J93.9",
+      "icd10_primary_title": "Pneumothorax, unspecified",
+      "icd10_package": [
+        {
+          "code": "J93.9",
+          "title": "Pneumothorax, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J93.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P25.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "J93.9",
+          "title": "Pneumothorax, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J93.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P25.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Bipolar disorder",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Bipolar disorder",
+      "supporting_evidence": [
+        "bipolar disorder"
+      ],
+      "opposing_evidence": [
+        "no acute psychiatric symptoms"
+      ],
+      "reasoning": "History of bipolar disorder, but no acute psychiatric symptoms noted.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "13746004",
+        "preferred_term": "Bipolar disorder",
+        "fsn": "Bipolar disorder (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Bipolar disorder",
+        "aligned_hint": "Bipolar disorder"
+      },
+      "icd10_primary": "F31.9",
+      "icd10_primary_title": "Bipolar disorder, unspecified",
+      "icd10_package": [
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Substance abuse",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Opiate dependence",
+      "supporting_evidence": [
+        "opiate dependence"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "History of opiate dependence, but no acute substance abuse symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "1306692000",
+        "preferred_term": "Harmful pattern of substance use",
+        "fsn": "Harmful pattern of substance use (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Substance abuse",
+        "aligned_hint": "Opiate dependence"
+      },
+      "icd10_primary": "F19.10",
+      "icd10_primary_title": "Other psychoactive substance abuse, uncomplicated",
+      "icd10_package": [
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F19.10 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F11.20",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "opiate dependence",
+          "from_kind": "symptom",
+          "from_snomed_id": "231480002",
+          "from_snomed_term": "Opium dependence",
+          "relevance_to_diagnosis": 0.5012,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F19.10 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F11.20",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "opiate dependence",
+          "from_kind": "symptom",
+          "from_snomed_id": "231480002",
+          "from_snomed_term": "Opium dependence",
+          "relevance_to_diagnosis": 0.5012
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Dehydration",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "vomiting, diarrhea"
+      ],
+      "opposing_evidence": [
+        "normal electrolyte levels"
+      ],
+      "reasoning": "Vomiting and diarrhea present, but electrolytes are within normal range.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "34095006",
+        "preferred_term": "Dehydration",
+        "fsn": "Dehydration (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Dehydration",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E86.0",
+      "icd10_primary_title": "Dehydration",
+      "icd10_package": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E86.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P74.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "R11.10",
+          "title": "Vomiting, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R11.10 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "vomiting",
+          "from_kind": "symptom",
+          "from_snomed_id": "422400008",
+          "from_snomed_term": "Vomiting",
+          "relevance_to_diagnosis": 0.3948,
+          "package_order": 3
+        },
+        {
+          "code": "R19.7",
+          "title": "Diarrhea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R19.7 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "diarrhea",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "62315008",
+          "from_snomed_term": "Diarrhea",
+          "relevance_to_diagnosis": 0.3745,
+          "package_order": 4
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E86.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P74.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R11.10",
+          "title": "Vomiting, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R11.10 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "vomiting",
+          "from_kind": "symptom",
+          "from_snomed_id": "422400008",
+          "from_snomed_term": "Vomiting",
+          "relevance_to_diagnosis": 0.3948
+        },
+        {
+          "code": "R19.7",
+          "title": "Diarrhea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R19.7 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "diarrhea",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "62315008",
+          "from_snomed_term": "Diarrhea",
+          "relevance_to_diagnosis": 0.3745
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 4
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Pneumonia",
+      "why": "No signs of consolidation or infection in the lungs."
+    }
+  ],
+  "uncertain_areas": [
+    "Further imaging to confirm the extent of pneumothorax and rib fractures"
+  ],
+  "n_candidates": 6,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "10458324",
+  "hadm_id": "21744342",
+  "generated_at": "2026-08-15T17:30:59.620619",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 10,
+    "retained_links": 14,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 8,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21719653,
+      "admittime": "2176-11-17 01:31:00",
+      "dischtime": "2176-11-18 13:21:00",
+      "admission_type": "EU OBSERVATION",
+      "primary_icd_code": "J09X2",
+      "primary_dx_title": "Influenza due to identified novel influenza A virus with other respiratory manifestations",
+      "n_diagnoses": 8,
+      "icd10_diagnoses": [
+        {
+          "code": "J09X2",
+          "title": "Influenza due to identified novel influenza A virus with other respiratory manifestations"
+        },
+        {
+          "code": "F1120",
+          "title": "Opioid dependence, uncomplicated"
+        },
+        {
+          "code": "R000",
+          "title": "Tachycardia, unspecified"
+        },
+        {
+          "code": "S62309A",
+          "title": "Unspecified fracture of unspecified metacarpal bone, initial encounter for closed fracture"
+        },
+        {
+          "code": "X58XXXA",
+          "title": "Exposure to other specified factors, initial encounter"
+        },
+        {
+          "code": "Y929",
+          "title": "Unspecified place or not applicable"
+        },
+        {
+          "code": "F1210",
+          "title": "Cannabis abuse, uncomplicated"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 6,
+    "n_with_principal": 5,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:04.714703"
+}

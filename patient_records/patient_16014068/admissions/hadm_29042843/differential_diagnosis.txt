@@ -5,49 +5,41 @@ Patient ID       : 16014068
 HADM ID          : 29042843
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:46:00.047231
+Generated        : 2026-08-15T17:32:52.278033
 Candidates       : 5
-Most likely      : Anemia due to antineoplastic chemotherapy
+Most likely      : Anemia due to malignancy
 Prior admissions : 9 (138 ICD codes as PMH context)
 
 Summary:
-  The patient, a metastatic sarcoma patient with a history of chemotherapy and hematological issues, presents with weakness, anemia, thrombocytopenia, and a fall resulting in minor abrasions and soreness. The patient also has a history of hypotension and headache.
+  The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Anemia due to antineoplastic chemotherapy  (primary)
-      SNOMED aligned : D6959
-      + Anemia due to antineoplastic chemotherapy, D6959
-      why: Anemia is severe and directly related to prior chemotherapy, supported by lab results.
+  #1  [85.0/100 | high]  Anemia due to malignancy  (primary)
+      + anemia, thrombocytopenia, history of metastatic sarcoma
+      why: Anemia is severe and aligns with the patient's history of metastatic sarcoma and prior chemotherapy.
 
-  #2  [75.0/100 | high]  Thrombocytopenia due to antineoplastic chemotherapy  (complication)
-      SNOMED aligned : D6481
-      + Thrombocytopenia, D6481
-      why: Thrombocytopenia is mild but related to prior chemotherapy, supported by lab results.
+  #2  [75.0/100 | high]  Thrombocytopenia due to malignancy  (complication)
+      + thrombocytopenia, history of metastatic sarcoma
+      why: Thrombocytopenia is mild but significant and related to the patient's malignancy.
 
-  #3  [65.0/100 | medium]  Hypotension due to cytokine effects or chemotherapy side effects  (complication)
-      + Hypotension, I129, E8342
-      why: Hypotension is historical and may be due to cytokine effects or chemotherapy side effects.
+  #3  [60.0/100 | medium]  Hypotension  (secondary)
+      + hypotension, history of malignancy and chemotherapy side effects
+      − no evidence of acute cardiovascular issues
+      why: Hypotension is noted but may be secondary to malignancy and chemotherapy effects.
 
-  #4  [50.0/100 | low]  Metastatic sarcoma to the brain  (differential)
-      SNOMED aligned : 443144000
-      + Metastatic sarcoma, 443144000
-      − No recent symptoms or imaging findings
-      why: Metastatic sarcoma is a known comorbidity but not currently presenting acutely.
+  #4  [50.0/100 | medium]  Headache  (differential)
+      + headache after fall, history of cerebellar hemorrhage
+      − no evidence of acute intracranial bleeding
+      why: Headache is present but may be related to the fall rather than acute intracranial issues.
 
-  #5  [40.0/100 | low]  Headache  (symptom)
-      SNOMED aligned : 21522001
-      + Headache, 21522001
-      − No recent imaging findings
-      why: Headache is present but not associated with acute findings.
-
-RULE-OUTS
----------
-
-  • Pulmonary embolism: No current symptoms or imaging findings.
+  #5  [45.0/100 | low]  Metastatic sarcoma to the brain  (differential)
+      + history of metastatic sarcoma, recent fall and headache
+      − no recent evidence of new neurological deficits
+      why: Metastasis to the brain is a risk but not strongly supported by current evidence.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging or clinical follow-up to confirm anemia and thrombocytopenia etiology
+  • need for further imaging or clinical follow-up to confirm intracranial bleeding or metastasis

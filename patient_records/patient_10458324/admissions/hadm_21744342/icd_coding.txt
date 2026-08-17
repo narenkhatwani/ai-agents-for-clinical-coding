@@ -1,0 +1,48 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 10458324
+HADM ID          : 21744342
+Most likely      : Acute respiratory distress secondary to right-sided rib fractures and influenza A
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:04.714703
+
+Summary:
+  The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and bipolar disorder. Recent influenza A infection is also noted.
+
+#1  [85.0/100 | high]  Acute respiratory distress secondary to right-sided rib fractures and influenza A  (primary)
+    SNOMED: (unmapped)
+    ICD status: supporting_only | primary: None
+      1. [supporting] J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations  ← influenza A (diagnosis)
+      2. [supporting] R09.02 — Hypoxemia  ← hypoxia (key_symptom)
+
+#2  [75.0/100 | high]  Influenza A  (primary)
+    SNOMED: Influenza A (H1N1) (442696006) [exact score=1.0]
+    ICD status: mapped | primary: J10.1
+      1. [principal] J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
+      2. [principal] J10.00 — Influenza due to other identified influenza virus with unspecified type of pneumonia
+      3. [supporting] R50.9 — Fever, unspecified  ← fever (tree_symptom)
+
+#3  [70.0/100 | medium]  Pneumothorax  (complication)
+    SNOMED: Pneumothorax (36118008) [exact score=1.0]
+    ICD status: mapped | primary: J93.9
+      1. [principal] J93.9 — Pneumothorax, unspecified
+      2. [principal] P25.1 — Pneumothorax originating in the perinatal period
+
+#4  [60.0/100 | medium]  Bipolar disorder  (risk_factor)
+    SNOMED: Bipolar disorder (13746004) [exact score=1.0]
+    ICD status: mapped | primary: F31.9
+      1. [principal] F31.9 — Bipolar disorder, unspecified
+
+#5  [55.0/100 | medium]  Substance abuse  (risk_factor)
+    SNOMED: Harmful pattern of substance use (1306692000) [exact score=1.0]
+    ICD status: mapped | primary: F19.10
+      1. [principal] F19.10 — Other psychoactive substance abuse, uncomplicated
+      2. [supporting] F11.20 — Opioid dependence, uncomplicated  ← opiate dependence (symptom)
+
+#6  [40.0/100 | low]  Dehydration  (differential)
+    SNOMED: Dehydration (34095006) [exact score=1.0]
+    ICD status: mapped | primary: E86.0
+      1. [principal] E86.0 — Dehydration
+      2. [principal] P74.1 — Dehydration of newborn
+      3. [supporting] R11.10 — Vomiting, unspecified  ← vomiting (symptom)
+      4. [supporting] R19.7 — Diarrhea, unspecified  ← diarrhea (tree_symptom)

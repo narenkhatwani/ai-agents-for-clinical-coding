@@ -1,0 +1,120 @@
+ACCURACY vs GROUND TRUTH
+========================
+
+Patient ID       : 13508515
+HADM ID          : 21834271
+Generated        : 2026-08-15T23:57:15.034167
+
+PRIMARY DIFFDx — MATCH OR NO
+----------------------------
+
+  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+
+               Predicted                                        Ground truth
+  S8 DiffDx    Acute on chronic systolic heart failure          Malignant neoplasm of left kidney, except r...
+  S9 DiffDx    Acute on chronic systolic heart failure          Malignant neoplasm of left kidney, except r...
+
+  Full predicted (S8): Acute on chronic systolic heart failure
+  Full predicted (S9): Acute on chronic systolic heart failure
+  Full GT primary    : Malignant neoplasm of left kidney, except renal pelvis
+
+  MATCH (S8): YES    reason=diffdx_vs_primary  sim=0.91
+    matched: Renal cell carcinoma  vs  Malignant neoplasm of left kidney, ex...
+  MATCH (S9): YES    reason=rank1_vs_gt_list  sim=0.78
+    matched: Acute on chronic systolic heart failure  vs  Unspecified systolic (congestive) hea...
+
+PRIMARY ICD — MATCH OR NO
+-------------------------
+
+  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+  or rank-1 ICD matches another billed GT code
+
+               Predicted                                        Ground truth
+  S8 ICD       I50.23 Acute on chronic systolic (congestiv...   I50.9 Malignant neoplasm of left kidney, ex...
+  S9 ICD       I50.23 Acute on chronic systolic (congestiv...   I50.9 Malignant neoplasm of left kidney, ex...
+
+  Full predicted (S8): I50.23 — Acute on chronic systolic (congestive) heart failure
+  Full predicted (S9): I50.23 — Acute on chronic systolic (congestive) heart failure
+  Full ground truth  : I50.9 — Malignant neoplasm of left kidney, except renal pelvis
+
+  MATCH (S8): YES    reason=rank1_vs_gt_list  family=YES  sim=0.72
+  MATCH (S9): YES    reason=rank1_vs_gt_list  family=YES  sim=0.72
+
+ICD CODE SET — Stage 8 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.222 / 0.143 / 0.174
+Semantic  P / R / F1 : 0.333 / 0.214 / 0.261  (title MiniLM ≥ 0.7)
+Exact hits 2  |  semantic hits 3  |  predicted 9  |  GT 14
+Exact code hits:
+  ✓ E11.9 — Type 2 diabetes mellitus without complications
+  ✓ G47.33 — Obstructive sleep apnea (adult) (pediatric)
+Semantic hits (same meaning, different code):
+  ≈ I50.23 — Acute on chronic systolic (congestive) heart failure  [Acute on chronic systolic heart failure]
+      ↔ I50.20 — Unspecified systolic (congestive) heart failure  (sim=0.91)
+Related (not counted; sim 0.50–0.70):
+  ~ I50.43 — Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure  [Acute on chronic systolic heart failure]
+      ↔ I50.9 — Heart failure, unspecified  (sim=0.70)
+  ~ R06.00 — Dyspnea, unspecified  [Obstructive sleep apnea]
+      ↔ J44.9 — Chronic obstructive pulmonary disease, unspecified  (sim=0.55)
+Still missing after semantic match:
+  ✗ C64.2 — Malignant neoplasm of left kidney, except renal pelvis
+  ✗ Z68.41 — Body mass index [BMI] 40.0-44.9, adult
+  ✗ I42.9 — Cardiomyopathy, unspecified
+  ✗ I27.2 — Other secondary pulmonary hypertension
+  ✗ I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+  ✗ Z95.1 — Presence of aortocoronary bypass graft
+  ✗ E66.9 — Obesity, unspecified
+  ✗ Z87.891 — Personal history of nicotine dependence
+  ✗ I34.0 — Nonrheumatic mitral (valve) insufficiency
+Still extra after semantic match:
+  + D64.9 — Anemia, unspecified
+  + E87.6 — Hypokalemia
+  + P28.32 — Primary obstructive sleep apnea of newborn
+  + E10.9 — Type 1 diabetes mellitus without complications
+
+ICD CODE SET — Stage 9 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.000 / 0.000 / 0.000
+Semantic  P / R / F1 : 0.333 / 0.071 / 0.118  (title MiniLM ≥ 0.7)
+Exact hits 0  |  semantic hits 1  |  predicted 3  |  GT 14
+Semantic hits (same meaning, different code):
+  ≈ I50.23 — Acute on chronic systolic (congestive) heart failure  [Acute on chronic systolic heart failure]
+      ↔ I50.20 — Unspecified systolic (congestive) heart failure  (sim=0.91)
+Related (not counted; sim 0.50–0.70):
+  ~ I10 — Essential (primary) hypertension  [essential hypertension]
+      ↔ I27.2 — Other secondary pulmonary hypertension  (sim=0.61)
+  ~ N18.9 — Chronic kidney disease, unspecified  [chronic kidney disease]
+      ↔ J44.9 — Chronic obstructive pulmonary disease, unspecified  (sim=0.54)
+Still missing after semantic match:
+  ✗ C64.2 — Malignant neoplasm of left kidney, except renal pelvis
+  ✗ Z68.41 — Body mass index [BMI] 40.0-44.9, adult
+  ✗ I42.9 — Cardiomyopathy, unspecified
+  ✗ I50.9 — Heart failure, unspecified
+  ✗ E11.9 — Type 2 diabetes mellitus without complications
+  ✗ I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+  ✗ Z95.1 — Presence of aortocoronary bypass graft
+  ✗ G47.33 — Obstructive sleep apnea (adult) (pediatric)
+  ✗ E66.9 — Obesity, unspecified
+  ✗ Z87.891 — Personal history of nicotine dependence
+  ✗ I34.0 — Nonrheumatic mitral (valve) insufficiency
+
+GROUND TRUTH LIST
+-----------------
+
+   1. C64.2 — Malignant neoplasm of left kidney, except renal pelvis (primary)
+   2. Z68.41 — Body mass index [BMI] 40.0-44.9, adult
+   3. I42.9 — Cardiomyopathy, unspecified
+   4. I27.2 — Other secondary pulmonary hypertension
+   5. I50.9 — Heart failure, unspecified
+   6. I50.20 — Unspecified systolic (congestive) heart failure
+   7. J44.9 — Chronic obstructive pulmonary disease, unspecified
+   8. E11.9 — Type 2 diabetes mellitus without complications
+   9. I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+  10. Z95.1 — Presence of aortocoronary bypass graft
+  11. G47.33 — Obstructive sleep apnea (adult) (pediatric)
+  12. E66.9 — Obesity, unspecified
+  13. Z87.891 — Personal history of nicotine dependence
+  14. I34.0 — Nonrheumatic mitral (valve) insufficiency

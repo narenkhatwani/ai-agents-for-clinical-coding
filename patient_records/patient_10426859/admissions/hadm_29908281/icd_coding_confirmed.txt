@@ -1,0 +1,33 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 10426859
+HADM ID          : 29908281
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:34:32.746079
+Primary condition: Supraventricular tachycardia
+Primary ICD      : I47.10 — 
+Final codes      : 3
+Dropped / added  : 2 / 2
+
+Review:
+  Confirmed Supraventricular tachycardia as primary, added anemia and hip fracture as secondary conditions. Dropped dehydration and hypokalemia as they were not supported by the current context.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] I47.10 — 
+      (Supraventricular tachycardia | stage8_confirmed | keep)
+   2. [secondary] D64.9 — Anemia, unspecified
+      (Anemia | added_mapped | add)
+      why: Abnormal red blood cells and RDW-SD in labs
+   3. [secondary] S72.009? — 
+      (Hip fracture | added_mapped | add)
+      why: Pain in right hip and fall
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • E86.0 — Dehydration  (Not supported by current context)
+  • E87.6 — Hypokalemia  (Not supported by current context)

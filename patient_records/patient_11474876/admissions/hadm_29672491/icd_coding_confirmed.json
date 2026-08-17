@@ -1,0 +1,187 @@
+{
+  "review_summary": "Confirmed heart failure with preserved ejection fraction, peripheral vascular disease, and chronic kidney disease. Dropped unspecified codes and added essential hypertension and atrial fibrillation.",
+  "primary_condition": "Heart failure with preserved ejection fraction (HFpEF)",
+  "primary_icd_code": "I50.30",
+  "primary_icd_title": "Unspecified diastolic (congestive) heart failure",
+  "final_codes": [
+    {
+      "code": "I50.30",
+      "title": "Unspecified diastolic (congestive) heart failure",
+      "role": "primary",
+      "source": "stage8_confirmed",
+      "condition": "Heart failure with preserved ejection fraction (HFpEF)",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "I73.9",
+      "title": "Peripheral vascular disease, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Peripheral vascular disease (PVD)",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "N18.9",
+      "title": "Chronic kidney disease, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Chronic kidney disease (CKD)",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "I48.91",
+      "title": "Unspecified atrial fibrillation",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Atrial fibrillation (AFib)",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "I50.9",
+      "title": "Heart failure, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Heart failure with preserved ejection fraction (HFpEF)",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "I10",
+      "title": "Essential (primary) hypertension",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Essential hypertension",
+      "action": "add",
+      "reason": "Hypertensive heart disease with heart failure mentioned",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "I38",
+      "title": "Endocarditis, valve unspecified",
+      "reason": "Unspecific and not supported by context"
+    },
+    {
+      "code": "I25.10",
+      "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "reason": "Unspecific and not supported by context"
+    },
+    {
+      "code": "I51.4",
+      "title": "Myocarditis, unspecified",
+      "reason": "Unspecific and not supported by context"
+    },
+    {
+      "code": "I42.9",
+      "title": "Cardiomyopathy, unspecified",
+      "reason": "Unspecific and not supported by context"
+    },
+    {
+      "code": "R09.02",
+      "title": "Hypoxemia",
+      "reason": "Unspecific and not supported by context"
+    }
+  ],
+  "added_conditions": [
+    {
+      "code": "I10",
+      "title": "Essential (primary) hypertension",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "59621000",
+        "preferred_term": "Essential hypertension",
+        "fsn": "Essential hypertension (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Essential hypertension",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Essential hypertension",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "Hypertensive heart disease with heart failure mentioned",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+        "action": "keep",
+        "selected_code": "I50.30",
+        "replace_with_condition": "",
+        "reason": "Primary diagnosis supported by clinical context"
+      },
+      {
+        "rank": 2,
+        "diagnosis": "Peripheral vascular disease (PVD)",
+        "action": "keep",
+        "selected_code": "I73.9",
+        "replace_with_condition": "",
+        "reason": "Confirmed by clinical context"
+      },
+      {
+        "rank": 3,
+        "diagnosis": "Chronic kidney disease (CKD)",
+        "action": "keep",
+        "selected_code": "N18.9",
+        "replace_with_condition": "",
+        "reason": "Confirmed by clinical context"
+      }
+    ],
+    "n_confirmed": 4,
+    "n_missing_named": 2
+  },
+  "fallback": null,
+  "patient_id": "11474876",
+  "hadm_id": "29672491",
+  "most_likely": "Heart failure with preserved ejection fraction (HFpEF)",
+  "stage8_most_likely": "Heart failure with preserved ejection fraction (HFpEF)",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:35:07.423602",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 23,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 6,
+  "n_dropped": 5,
+  "n_added": 1
+}

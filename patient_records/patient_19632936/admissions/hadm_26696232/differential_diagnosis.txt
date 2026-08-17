@@ -5,42 +5,48 @@ Patient ID       : 19632936
 HADM ID          : 26696232
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:47:04.566143
+Generated        : 2026-08-15T17:33:57.532824
 Candidates       : 5
 Most likely      : Acute on chronic macrocytic anemia
 Prior admissions : 1 (18 ICD codes as PMH context)
 
 Summary:
-  The patient presents with acute on chronic dyspnea on exertion and fatigue, alongside macrocytic anemia, a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.
+  The patient presents with acute on chronic dyspnea on exertion, fatigue, and macrocytic anemia. The patient has a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Acute on chronic macrocytic anemia  (primary)
       SNOMED aligned : Macrocytic anemia
-      + acute on chronic macrocytic anemia (CURRENT symptom tree)
-      why: Primary cause of current dyspnea and fatigue, supported by abnormal lab values.
+      + acute on chronic macrocytic anemia (current symptom tree)
+      why: Primary diagnosis given the patient's history of chronic anemia and current presentation.
 
-  #2  [75.0/100 | medium]  Coronary artery disease  (secondary)
-      SNOMED aligned : Coronary arteriosclerosis
-      + history of CAD (PRIOR ICDs), worsening dyspnea (CURRENT symptom tree)
-      why: CAD is a known comorbidity and may contribute to current symptoms.
+  #2  [70.0/100 | medium]  Heart failure  (complication)
+      SNOMED aligned : Congestive heart failure
+      + acute on chronic dyspnea on exertion (current symptom tree)
+      why: Secondary to chronic coronary artery disease and atrial fibrillation.
 
-  #3  [65.0/100 | medium]  Atrial fibrillation  (complication)
+  #3  [65.0/100 | medium]  Atrial fibrillation  (secondary)
       SNOMED aligned : Atrial fibrillation
-      + history of Afib (PRIOR ICDs), INR elevated (CURRENT labs)
-      why: Atrial fibrillation is a known risk factor and may be complicating current anemia.
+      + history of atrial fibrillation (current symptom tree)
+      why: Given the patient's history and current symptoms.
 
-  #4  [55.0/100 | low]  Sick sinus syndrome  (risk_factor)
-      + history of sick sinus syndrome (PRIOR ICDs)
-      why: Sick sinus syndrome is a known risk factor but not currently contributing to acute symptoms.
+  #4  [55.0/100 | low]  Anemia of chronic disease  (differential)
+      + chronic conditions (prior ICD-10)
+      − acute presentation (current symptom tree)
+      why: Possible given the patient's chronic conditions, but not primary given acute presentation.
 
-  #5  [45.0/100 | low]  Acute kidney failure  (differential)
-      + history of acute kidney failure (PRIOR ICDs)
-      − current labs within normal range
-      why: History of acute kidney failure, but current labs do not support acute renal failure.
+  #5  [40.0/100 | low]  Infectious cause of anemia  (differential)
+      + acute on chronic macrocytic anemia (current symptom tree)
+      − no clear infectious symptoms (current symptom tree)
+      why: Possible given the patient's chronic conditions, but no clear evidence of infection.
+
+RULE-OUTS
+---------
+
+  • Acute coronary syndrome: No evidence of acute chest pain or ischemic changes in labs.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Additional labs for iron, B12, and folate levels would clarify the etiology of macrocytic anemia
+  • Further labs to confirm iron deficiency or other causes of macrocytic anemia

@@ -1,0 +1,176 @@
+ACCURACY vs GROUND TRUTH
+========================
+
+Patient ID       : 17774110
+HADM ID          : 27339772
+Generated        : 2026-08-15T23:57:15.309515
+
+PRIMARY DIFFDx — MATCH OR NO
+----------------------------
+
+  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+
+               Predicted                                        Ground truth
+  S8 DiffDx    Severe sepsis with septic shock                  Other specified sepsis
+  S9 DiffDx    Severe sepsis with septic shock                  Other specified sepsis
+
+  Full predicted (S8): Severe sepsis with septic shock
+  Full predicted (S9): Severe sepsis with septic shock
+  Full GT primary    : Other specified sepsis
+
+  MATCH (S8): YES    reason=same_condition  sim=0.79
+    matched: Severe sepsis with septic shock  vs  Other specified sepsis
+  MATCH (S9): YES    reason=same_condition  sim=0.79
+    matched: Severe sepsis with septic shock  vs  Other specified sepsis
+
+PRIMARY ICD — MATCH OR NO
+-------------------------
+
+  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+  or rank-1 ICD matches another billed GT code
+
+               Predicted                                        Ground truth
+  S8 ICD       R65.21 Severe sepsis with septic shock           A41.89 Other specified sepsis
+  S9 ICD       R65.21 Severe sepsis with septic shock           A41.89 Other specified sepsis
+
+  Full predicted (S8): R65.21 — Severe sepsis with septic shock
+  Full predicted (S9): R65.21 — Severe sepsis with septic shock
+  Full ground truth  : A41.89 — Other specified sepsis
+
+  MATCH (S8): YES    reason=same_condition  family=NO  sim=0.79
+  MATCH (S9): YES    reason=same_condition  family=NO  sim=0.79
+
+ICD CODE SET — Stage 8 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.158 / 0.103 / 0.125
+Semantic  P / R / F1 : 0.474 / 0.310 / 0.375  (title MiniLM ≥ 0.7)
+Exact hits 3  |  semantic hits 9  |  predicted 19  |  GT 29
+Exact code hits:
+  ✓ D68.9 — Coagulation defect, unspecified
+  ✓ I48.91 — Unspecified atrial fibrillation
+  ✓ R65.21 — Severe sepsis with septic shock
+Semantic hits (same meaning, different code):
+  ≈ K72.00 — Acute and subacute hepatic failure without coma  [Hepatic encephalopathy]
+      ↔ K72.90 — Hepatic failure, unspecified without coma  (sim=0.95)
+  ≈ J90 — Pleural effusion, not elsewhere classified  [Pleural effusion]
+      ↔ J91.0 — Malignant pleural effusion  (sim=0.88)
+  ≈ N17.9 — Acute kidney failure, unspecified  [Acute liver failure]
+      ↔ N17.0 — Acute kidney failure with tubular necrosis  (sim=0.82)
+  ≈ K76.82 — Hepatic encephalopathy  [Hepatic encephalopathy]
+      ↔ G92 — Toxic encephalopathy  (sim=0.77)
+  ≈ K74.69 — Other cirrhosis of liver  [Acute liver failure]
+      ↔ K70.30 — Alcoholic cirrhosis of liver without ascites  (sim=0.74)
+  ≈ B17.9 — Acute viral hepatitis, unspecified  [Acute liver failure]
+      ↔ B19.20 — Unspecified viral hepatitis C without hepatic coma  (sim=0.73)
+Related (not counted; sim 0.50–0.70):
+  ~ P61.6 — Other transient neonatal disorders of coagulation  [Coagulopathy]
+      ↔ D65 — Disseminated intravascular coagulation [defibrination syndrome]  (sim=0.61)
+Still missing after semantic match:
+  ✗ A41.89 — Other specified sepsis
+  ✗ J96.01 — Acute respiratory failure with hypoxia
+  ✗ I82.220 — Acute embolism and thrombosis of inferior vena cava
+  ✗ C79.72 — Secondary malignant neoplasm of left adrenal gland
+  ✗ I48.92 — Unspecified atrial flutter
+  ✗ C22.0 — Liver cell carcinoma
+  ✗ K76.6 — Portal hypertension
+  ✗ E87.2 — Acidosis
+  ✗ K92.0 — Hematemesis
+  ✗ Z51.5 — Encounter for palliative care
+  ✗ F31.9 — Bipolar disorder, unspecified
+  ✗ F90.9 — Attention-deficit hyperactivity disorder, unspecified type
+  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
+  ✗ J44.9 — Chronic obstructive pulmonary disease, unspecified
+  ✗ K22.70 — Barrett's esophagus without dysplasia
+  ✗ F10.10 — Alcohol abuse, uncomplicated
+  ✗ B96.1 — Klebsiella pneumoniae [K. pneumoniae] as the cause of diseases classified elsewhere
+  ✗ F20.9 — Schizophrenia, unspecified
+  ✗ G40.909 — Epilepsy, unspecified, not intractable, without status epilepticus
+Still extra after semantic match:
+  + K76.7 — Hepatorenal syndrome
+  + T50.905? — 
+  + E88.49 — Other mitochondrial metabolism disorders
+  + K92.2 — Gastrointestinal hemorrhage, unspecified
+  + P54.3 — Other neonatal gastrointestinal hemorrhage
+  + P28.89 — Other specified respiratory conditions of newborn
+  + J98.11 — Atelectasis
+  + N19 — Unspecified kidney failure
+  + P96.0 — Congenital renal failure
+
+ICD CODE SET — Stage 9 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.333 / 0.069 / 0.114
+Semantic  P / R / F1 : 0.833 / 0.172 / 0.286  (title MiniLM ≥ 0.7)
+Exact hits 2  |  semantic hits 5  |  predicted 6  |  GT 29
+Exact code hits:
+  ✓ F10.10 — Alcohol abuse, uncomplicated
+  ✓ R65.21 — Severe sepsis with septic shock
+Semantic hits (same meaning, different code):
+  ≈ K72.00 — Acute and subacute hepatic failure without coma  [Acute liver failure]
+      ↔ K72.90 — Hepatic failure, unspecified without coma  (sim=0.95)
+  ≈ K76.82 — Hepatic encephalopathy  [Hepatic encephalopathy]
+      ↔ G92 — Toxic encephalopathy  (sim=0.77)
+  ≈ K74.69 — Other cirrhosis of liver  [Acute liver failure]
+      ↔ K70.30 — Alcoholic cirrhosis of liver without ascites  (sim=0.74)
+Still missing after semantic match:
+  ✗ A41.89 — Other specified sepsis
+  ✗ N17.0 — Acute kidney failure with tubular necrosis
+  ✗ J96.01 — Acute respiratory failure with hypoxia
+  ✗ D65 — Disseminated intravascular coagulation [defibrination syndrome]
+  ✗ I82.220 — Acute embolism and thrombosis of inferior vena cava
+  ✗ C79.72 — Secondary malignant neoplasm of left adrenal gland
+  ✗ J91.0 — Malignant pleural effusion
+  ✗ D68.9 — Coagulation defect, unspecified
+  ✗ I48.92 — Unspecified atrial flutter
+  ✗ C22.0 — Liver cell carcinoma
+  ✗ K76.6 — Portal hypertension
+  ✗ E87.2 — Acidosis
+  ✗ K92.0 — Hematemesis
+  ✗ Z51.5 — Encounter for palliative care
+  ✗ B19.20 — Unspecified viral hepatitis C without hepatic coma
+  ✗ F31.9 — Bipolar disorder, unspecified
+  ✗ F90.9 — Attention-deficit hyperactivity disorder, unspecified type
+  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
+  ✗ J44.9 — Chronic obstructive pulmonary disease, unspecified
+  ✗ K22.70 — Barrett's esophagus without dysplasia
+  ✗ B96.1 — Klebsiella pneumoniae [K. pneumoniae] as the cause of diseases classified elsewhere
+  ✗ I48.91 — Unspecified atrial fibrillation
+  ✗ F20.9 — Schizophrenia, unspecified
+  ✗ G40.909 — Epilepsy, unspecified, not intractable, without status epilepticus
+Still extra after semantic match:
+  + D61.818 — Other pancytopenia
+
+GROUND TRUTH LIST
+-----------------
+
+   1. A41.89 — Other specified sepsis (primary)
+   2. R65.21 — Severe sepsis with septic shock
+   3. N17.0 — Acute kidney failure with tubular necrosis
+   4. J96.01 — Acute respiratory failure with hypoxia
+   5. G92 — Toxic encephalopathy
+   6. D65 — Disseminated intravascular coagulation [defibrination syndrome]
+   7. I82.220 — Acute embolism and thrombosis of inferior vena cava
+   8. C79.72 — Secondary malignant neoplasm of left adrenal gland
+   9. J91.0 — Malignant pleural effusion
+  10. D68.9 — Coagulation defect, unspecified
+  11. I48.92 — Unspecified atrial flutter
+  12. C22.0 — Liver cell carcinoma
+  13. K76.6 — Portal hypertension
+  14. E87.2 — Acidosis
+  15. K92.0 — Hematemesis
+  16. Z51.5 — Encounter for palliative care
+  17. B19.20 — Unspecified viral hepatitis C without hepatic coma
+  18. F31.9 — Bipolar disorder, unspecified
+  19. F90.9 — Attention-deficit hyperactivity disorder, unspecified type
+  20. K21.9 — Gastro-esophageal reflux disease without esophagitis
+  21. J44.9 — Chronic obstructive pulmonary disease, unspecified
+  22. K22.70 — Barrett's esophagus without dysplasia
+  23. F10.10 — Alcohol abuse, uncomplicated
+  24. B96.1 — Klebsiella pneumoniae [K. pneumoniae] as the cause of diseases classified elsewhere
+  25. I48.91 — Unspecified atrial fibrillation
+  26. K72.90 — Hepatic failure, unspecified without coma
+  27. F20.9 — Schizophrenia, unspecified
+  28. G40.909 — Epilepsy, unspecified, not intractable, without status epilepticus
+  29. K70.30 — Alcoholic cirrhosis of liver without ascites

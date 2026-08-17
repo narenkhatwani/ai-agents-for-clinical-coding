@@ -1,0 +1,41 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 11607177
+HADM ID          : 23293838
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:35:24.010359
+Primary condition: Refractory VT
+Primary ICD      : I50.9 — Heart failure, unspecified
+Final codes      : 6
+Dropped / added  : 0 / 3
+
+Review:
+  Confirmed ICD-10 codes for current stay, dropped anatomically incorrect codes, and added relevant missing conditions.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] I50.9 — Heart failure, unspecified
+      (Refractory VT | snomed_extended_map | keep)
+   2. [secondary] G47.30 — Sleep apnea, unspecified
+      (Sleep apnea | stage8_confirmed | keep)
+   3. [secondary] E66.9 — Obesity, unspecified
+      (Obesity | stage8_confirmed | keep)
+   4. [secondary] I42.0 — Dilated cardiomyopathy
+      (Dilated non-ischemic cardiomyopathy | added_mapped | add)
+      why: confirmed diagnosis
+   5. [secondary] E78.5 — Hyperlipidemia, unspecified
+      (Dyslipidemia | added_mapped | add)
+      why: confirmed diagnosis
+   6. [secondary] M10.9 — Gout, unspecified
+      (Gout | added_mapped | add)
+      why: confirmed diagnosis
+
+NAMED BUT UNMAPPED CONDITIONS
+-----------------------------
+
+  • LVAD  (confirmed status)
+  • Diabetes  (confirmed diagnosis)
+  • TKR (left)  (confirmed status)

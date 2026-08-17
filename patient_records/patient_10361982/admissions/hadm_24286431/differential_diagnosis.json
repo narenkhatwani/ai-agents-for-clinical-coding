@@ -1,91 +1,76 @@
 {
-  "summary": "The patient presents with heavy vaginal bleeding post hysterectomy, a history of abnormal uterine bleeding, and other gynecological issues. She has a known history of endometriosis and benign neoplasms.",
-  "most_likely": "Postoperative hemorrhage",
+  "summary": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.",
+  "most_likely": "Hemorrhage following hysterectomy",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Postoperative hemorrhage",
+      "diagnosis": "Hemorrhage following hysterectomy",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "Heavy episode of vaginal bleeding",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy",
-        "hematocrit decreased from 40.1 to 38.1"
+        "heavy vaginal bleeding after hysterectomy; hematocrit decreased"
       ],
       "opposing_evidence": [],
-      "reasoning": "High likelihood due to recent hysterectomy and significant blood loss."
+      "reasoning": "Heavy bleeding and decreased hematocrit strongly suggest hemorrhage post-hysterectomy."
     },
     {
       "rank": 2,
-      "diagnosis": "Uterine atony",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "diagnosis": "Postoperative bleeding",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "secondary",
+      "snomed_aligned": "Heavy episode of vaginal bleeding",
       "supporting_evidence": [
         "heavy vaginal bleeding after hysterectomy"
       ],
       "opposing_evidence": [],
-      "reasoning": "Possible cause of heavy bleeding post hysterectomy."
+      "reasoning": "Postoperative bleeding is a common complication following hysterectomy."
     },
     {
       "rank": 3,
-      "diagnosis": "Infection",
+      "diagnosis": "Endometriosis",
       "score": 60.0,
       "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "category": "risk_factor",
+      "snomed_aligned": "Endometriosis of uterus",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy"
+        "history of endometriosis"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Risk of infection post hysterectomy, though no signs of infection noted."
+      "opposing_evidence": [
+        "no current evidence of active endometriosis"
+      ],
+      "reasoning": "Endometriosis is a known risk factor for abnormal uterine bleeding, but current evidence is not strong."
     },
     {
       "rank": 4,
-      "diagnosis": "Adhesions",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Possible source of bleeding, but imaging did not show hematoma."
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Hemodynamic instability",
+      "diagnosis": "Hypothyroidism",
       "score": 40.0,
       "confidence": "low",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hematocrit decreased from 40.1 to 38.1"
+        "history of hypothyroidism"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Decreased hematocrit suggests potential hemodynamic instability."
+      "opposing_evidence": [
+        "no current thyroid function tests or symptoms"
+      ],
+      "reasoning": "Hypothyroidism can contribute to menstrual irregularities, but current evidence is weak."
     }
   ],
-  "rule_outs": [
-    {
-      "diagnosis": "Endometriosis",
-      "why": "No active symptoms or signs of endometriosis, and imaging did not show hematoma."
-    }
-  ],
+  "rule_outs": [],
   "uncertain_areas": [
-    "Need to know if there are any signs of infection or adhesions on imaging"
+    "more specific etiology of bleeding, thyroid function tests"
   ],
-  "n_candidates": 5,
+  "n_candidates": 4,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "10361982",
   "hadm_id": "24286431",
-  "generated_at": "2026-08-09T00:43:39.045142",
+  "generated_at": "2026-08-15T17:30:31.325786",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 4,

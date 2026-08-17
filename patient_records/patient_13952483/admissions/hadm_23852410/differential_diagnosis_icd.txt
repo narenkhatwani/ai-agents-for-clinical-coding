@@ -1,0 +1,51 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 13952483
+HADM ID          : 23852410
+Most likely      : Severe Pulmonary Hypertension with Cor Pulmonale
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:11.039605
+
+Summary:
+  The patient presents with hypotension, weight loss, anorexia, and multiple constitutional symptoms likely related to lung cancer and immunosuppression. Prior comorbidities include lung cancer, chronic kidney disease, and pulmonary hypertension.
+
+#1  [85.0/100 | high]  Severe Pulmonary Hypertension with Cor Pulmonale  (complication)
+    SNOMED: Transplant rejection (213148006) [fuzzy score=0.6831744192888377]
+    ICD status: mapped | primary: T86.91
+      1. [principal] T86.91 — Unspecified transplanted organ and tissue rejection
+
+#2  [70.0/100 | medium]  Neutropenia  (complication)
+    SNOMED: Neutropenia (165517008) [exact score=1.0]
+    ICD status: mapped | primary: D70.9
+      1. [principal] D70.9 — Neutropenia, unspecified
+      2. [principal] P61.5 — Transient neonatal neutropenia
+      3. [supporting] O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified  ← thrombocytopenia (symptom)
+      4. [supporting] Z3A.00 — Weeks of gestation of pregnancy not specified  ← thrombocytopenia (symptom)
+
+#3  [65.0/100 | medium]  Anemia  (complication)
+    SNOMED: Anemia (271737000) [exact score=1.0]
+    ICD status: mapped | primary: D64.9
+      1. [principal] D64.9 — Anemia, unspecified
+
+#4  [55.0/100 | medium]  Malnutrition  (risk_factor)
+    SNOMED: Malnutrition (calorie) (272588001) [exact score=1.0]
+    ICD status: mapped | primary: E46
+      1. [principal] E46 — Unspecified protein-calorie malnutrition
+      2. [principal] O25.2 — Malnutrition in childbirth
+      3. [principal] K91.2 — Postsurgical malabsorption, not elsewhere classified
+      4. [principal] E44.0 — Moderate protein-calorie malnutrition
+      5. [principal] E44.1 — Mild protein-calorie malnutrition
+      6. [supporting] R63.0 — Anorexia  ← anorexia (tree_symptom)
+
+#5  [45.0/100 | low]  Chronic Kidney Disease  (complication)
+    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
+    ICD status: mapped | primary: N18.9
+      1. [principal] N18.9 — Chronic kidney disease, unspecified
+
+#6  [30.0/100 | low]  Pneumonia  (differential)
+    SNOMED: Pneumonia (233604007) [exact score=1.0]
+    ICD status: mapped | primary: J18.9
+      1. [principal] J18.9 — Pneumonia, unspecified organism
+      2. [supporting] R07.9 — Chest pain, unspecified  ← chest pain (tree_symptom)
+      3. [supporting] R05.9 — Cough, unspecified  ← cough (tree_symptom)
+      4. [supporting] R52 — Pain, unspecified  ← pain (tree_symptom)

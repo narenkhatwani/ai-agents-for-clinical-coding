@@ -1,0 +1,937 @@
+{
+  "summary": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of chronic heart failure, atrial fibrillation, and renal dysfunction.",
+  "most_likely": "Acute decompensated heart failure",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute decompensated heart failure",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "dyspnea, orthopnea, pitting edema"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary presentation with dyspnea, orthopnea, and pitting edema, consistent with acute decompensated heart failure.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "56675007",
+        "preferred_term": "Acute heart failure",
+        "fsn": "Acute heart failure (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.7628679165962815,
+        "query": "Acute decompensated heart failure",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I50.9",
+      "icd10_primary_title": "Heart failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "267036007",
+          "from_snomed_term": "Dyspnea",
+          "relevance_to_diagnosis": 0.3154,
+          "package_order": 3
+        },
+        {
+          "code": "R06.01",
+          "title": "Orthopnea",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.01",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "orthopnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "62744007",
+          "from_snomed_term": "Orthopnea",
+          "relevance_to_diagnosis": 0.1387,
+          "package_order": 4
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "267036007",
+          "from_snomed_term": "Dyspnea",
+          "relevance_to_diagnosis": 0.3154
+        },
+        {
+          "code": "R06.01",
+          "title": "Orthopnea",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.01",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "orthopnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "62744007",
+          "from_snomed_term": "Orthopnea",
+          "relevance_to_diagnosis": 0.1387
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 4
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Chronic kidney disease",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "creatinine elevation, urea nitrogen elevation"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Persistent elevation of creatinine and urea nitrogen, consistent with chronic kidney disease.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "709044004",
+        "preferred_term": "Chronic kidney disease",
+        "fsn": "Chronic kidney disease (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Chronic kidney disease",
+        "aligned_hint": null
+      },
+      "icd10_primary": "N18.9",
+      "icd10_primary_title": "Chronic kidney disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anemia",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low hemoglobin, low MCH, low MCV, low RDW, low RDW-SD"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low hemoglobin, MCH, MCV, RDW, and RDW-SD, consistent with anemia.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "R71.8",
+          "title": "Other abnormality of red blood cells",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R71.8",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "low MCV",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "165455001",
+          "from_snomed_term": "MCV - low",
+          "relevance_to_diagnosis": 0.1303,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R71.8",
+          "title": "Other abnormality of red blood cells",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R71.8",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "low MCV",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "165455001",
+          "from_snomed_term": "MCV - low",
+          "relevance_to_diagnosis": 0.1303
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Atrial fibrillation",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "AF - Paroxysmal atrial fibrillation",
+      "supporting_evidence": [
+        "paroxysmal atrial fibrillation confirmed"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Confirmed paroxysmal atrial fibrillation, a known risk factor for heart failure exacerbation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "282825002",
+        "preferred_term": "AF - Paroxysmal atrial fibrillation",
+        "fsn": "Paroxysmal atrial fibrillation (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Atrial fibrillation",
+        "aligned_hint": "AF - Paroxysmal atrial fibrillation"
+      },
+      "icd10_primary": "I48.0",
+      "icd10_primary_title": "Paroxysmal atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.0",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF PAROXYSMAL ATRIAL FIBRILLATION DUE TO HEART VALVE DISORDER CHOOSE I38 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.0",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF PAROXYSMAL ATRIAL FIBRILLATION DUE TO HEART VALVE DISORDER CHOOSE I38 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Myasthenia gravis",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "myasthenia gravis confirmed"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Myasthenia gravis, a known risk factor for respiratory muscle weakness and exacerbation of heart failure.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "91637004",
+        "preferred_term": "Myasthenia gravis",
+        "fsn": "Myasthenia gravis (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Myasthenia gravis",
+        "aligned_hint": null
+      },
+      "icd10_primary": "G70.00",
+      "icd10_primary_title": "Myasthenia gravis without (acute) exacerbation",
+      "icd10_package": [
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G70.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P94.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G70.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P94.0",
+          "title": "Transient neonatal myasthenia gravis",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P94.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Pulmonary embolism",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "personal history of pulmonary embolism"
+      ],
+      "opposing_evidence": [
+        "no current evidence of acute pulmonary embolism"
+      ],
+      "reasoning": "Prior history of pulmonary embolism, but no current evidence of acute event.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "59282003",
+        "preferred_term": "Pulmonary embolism",
+        "fsn": "Pulmonary embolism (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Pulmonary embolism",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I26.99",
+      "icd10_primary_title": "Other pulmonary embolism without acute cor pulmonale",
+      "icd10_package": [
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I26.99 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I26.99",
+          "title": "Other pulmonary embolism without acute cor pulmonale",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I26.99 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Obstructive sleep apnea",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "obstructive sleep apnea confirmed"
+      ],
+      "opposing_evidence": [
+        "no current evidence of acute exacerbation"
+      ],
+      "reasoning": "Obstructive sleep apnea, a known risk factor for heart failure exacerbation, but no current evidence of acute exacerbation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "78275009",
+        "preferred_term": "Obstructive sleep apnea syndrome",
+        "fsn": "Obstructive sleep apnea syndrome (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Obstructive sleep apnea",
+        "aligned_hint": null
+      },
+      "icd10_primary": "G47.33",
+      "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)",
+      "icd10_package": [
+        {
+          "code": "G47.33",
+          "title": "Obstructive sleep apnea (adult) (pediatric)",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G47.33 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.32 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "267036007",
+          "from_snomed_term": "Dyspnea",
+          "relevance_to_diagnosis": 0.5488,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "G47.33",
+          "title": "Obstructive sleep apnea (adult) (pediatric)",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS G47.33 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P28.32",
+          "title": "Primary obstructive sleep apnea of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.32 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R06.00",
+          "title": "Dyspnea, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dyspnea",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "267036007",
+          "from_snomed_term": "Dyspnea",
+          "relevance_to_diagnosis": 0.5488
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Hypothyroidism",
+      "score": 25.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "hypothyroidism confirmed"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hypothyroidism, a known risk factor for heart failure, but no current evidence of acute exacerbation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "40930008",
+        "preferred_term": "Hypothyroidism",
+        "fsn": "Hypothyroidism (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypothyroidism",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E03.9",
+      "icd10_primary_title": "Hypothyroidism, unspecified",
+      "icd10_package": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E03.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P72.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E03.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P72.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "more detailed imaging to confirm pulmonary edema and pleural effusions"
+  ],
+  "n_candidates": 8,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "12007928",
+  "hadm_id": "23749816",
+  "generated_at": "2026-08-15T17:31:57.828573",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 5,
+    "retained_links": 5,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 45,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 27713859,
+      "admittime": "2192-05-02 21:14:00",
+      "dischtime": "2192-05-04 16:50:00",
+      "admission_type": "EW EMER.",
+      "primary_icd_code": "R55",
+      "primary_dx_title": "Syncope and collapse",
+      "n_diagnoses": 22,
+      "icd10_diagnoses": [
+        {
+          "code": "R55",
+          "title": "Syncope and collapse"
+        },
+        {
+          "code": "I5033",
+          "title": "Acute on chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "G7000",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "I480",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "F0390",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "G40909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "Z6841",
+          "title": "Body mass index [BMI] 40.0-44.9, adult"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "E039",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "G4733",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "Z45018",
+          "title": "Encounter for adjustment and management of other part of cardiac pacemaker"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "Z86711",
+          "title": "Personal history of pulmonary embolism"
+        },
+        {
+          "code": "W19XXXA",
+          "title": "Unspecified fall, initial encounter"
+        },
+        {
+          "code": "Y92009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "R7989",
+          "title": "Other specified abnormal findings of blood chemistry"
+        }
+      ]
+    },
+    {
+      "hadm_id": 20918106,
+      "admittime": "2192-08-30 20:37:00",
+      "dischtime": "2192-09-04 17:37:00",
+      "admission_type": "EW EMER.",
+      "primary_icd_code": "I5033",
+      "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
+      "n_diagnoses": 23,
+      "icd10_diagnoses": [
+        {
+          "code": "I5033",
+          "title": "Acute on chronic diastolic (congestive) heart failure"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "D689",
+          "title": "Coagulation defect, unspecified"
+        },
+        {
+          "code": "I480",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "G7000",
+          "title": "Myasthenia gravis without (acute) exacerbation"
+        },
+        {
+          "code": "G40909",
+          "title": "Epilepsy, unspecified, not intractable, without status epilepticus"
+        },
+        {
+          "code": "F0390",
+          "title": "Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "Z6841",
+          "title": "Body mass index [BMI] 40.0-44.9, adult"
+        },
+        {
+          "code": "E039",
+          "title": "Hypothyroidism, unspecified"
+        },
+        {
+          "code": "I8312",
+          "title": "Varicose veins of left lower extremity with inflammation"
+        },
+        {
+          "code": "M79661",
+          "title": "Pain in right lower leg"
+        },
+        {
+          "code": "E669",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z950",
+          "title": "Presence of cardiac pacemaker"
+        },
+        {
+          "code": "W19XXXA",
+          "title": "Unspecified fall, initial encounter"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "G4733",
+          "title": "Obstructive sleep apnea (adult) (pediatric)"
+        },
+        {
+          "code": "Z7902",
+          "title": "Long term (current) use of antithrombotics/antiplatelets"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "M25511",
+          "title": "Pain in right shoulder"
+        },
+        {
+          "code": "I8311",
+          "title": "Varicose veins of right lower extremity with inflammation"
+        },
+        {
+          "code": "Y92009",
+          "title": "Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "N189",
+          "title": "Chronic kidney disease, unspecified"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 8,
+    "n_with_principal": 8,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:08.196631"
+}

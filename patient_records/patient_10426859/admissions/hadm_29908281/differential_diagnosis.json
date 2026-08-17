@@ -1,82 +1,89 @@
 {
-  "summary": "Patient presents with recurrent SVT, lightheadedness, and fall resulting in right hip pain. History includes SVT, hypertension, hyperlipidemia, and depression.",
-  "most_likely": "Supraventricular Tachycardia",
+  "summary": "The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. She has a history of cardiovascular issues including SVT, hypertension, and hyperlipidemia.",
+  "most_likely": "Supraventricular tachycardia",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Supraventricular Tachycardia",
+      "diagnosis": "Supraventricular tachycardia",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "Supraventricular tachycardia",
       "supporting_evidence": [
-        "SVT present, Supraventricular tachycardia"
+        "Supraventricular tachycardia (SVT) in symptom tree, current stay"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis supported by current symptoms and past history."
+      "reasoning": "Primary diagnosis supported by symptom tree and retained SNOMED context."
     },
     {
       "rank": 2,
-      "diagnosis": "Hypertension",
+      "diagnosis": "Hip fracture",
       "score": 70.0,
       "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Essential (primary) hypertension",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "History of hypertension, elevated calcium"
+        "Nondisplaced comminuted fracture in the right superior pubic ramus in symptom tree, current stay"
       ],
       "opposing_evidence": [
-        "No recent BP readings in current stay"
+        "No imaging evidence of fracture in current stay"
       ],
-      "reasoning": "Secondary condition given past history and elevated calcium."
+      "reasoning": "Hip fracture is a potential complication of the fall, but imaging is inconclusive."
     },
     {
       "rank": 3,
-      "diagnosis": "Anxiety",
-      "score": 60.0,
+      "diagnosis": "Anemia",
+      "score": 65.0,
       "confidence": "medium",
-      "category": "risk_factor",
+      "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "History of anxiety, recurrent SVT"
+        "Red Blood Cells: 3.89 m/uL [abnormal] in labs, current stay"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Risk factor given past history and current anxiety symptoms."
+      "opposing_evidence": [
+        "No other symptoms or findings strongly supporting anemia"
+      ],
+      "reasoning": "Low RBC count suggests anemia, but other findings are not strongly indicative."
     },
     {
       "rank": 4,
-      "diagnosis": "Right Hip Fracture",
-      "score": 50.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "Nondisplaced comminuted fracture in the right superior pubic ramus",
+      "diagnosis": "Dehydration",
+      "score": 55.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Pain in right hip, fall"
+        "Hematocrit: 36.8 % in labs, current stay"
       ],
       "opposing_evidence": [
-        "No recent imaging for fracture confirmation"
+        "Normal serum electrolytes, no other signs of dehydration"
       ],
-      "reasoning": "Complication given history of trauma and pain."
+      "reasoning": "Hematocrit is slightly elevated, but no other evidence strongly supports dehydration."
     },
     {
       "rank": 5,
-      "diagnosis": "Dehydration",
+      "diagnosis": "Hypokalemia",
       "score": 40.0,
       "confidence": "low",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Low hematocrit, low hemoglobin"
+        "Potassium: 3.9 mEq/L in labs, current stay"
       ],
       "opposing_evidence": [
-        "No history of recent fluid loss"
+        "No other symptoms or findings strongly supporting hypokalemia"
       ],
-      "reasoning": "Differential given current lab values, but no strong evidence."
+      "reasoning": "Low potassium level is present, but other findings do not strongly support this diagnosis."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Cardiac ischemia",
+      "why": "No evidence of acute infarction or elevated troponin in imaging or labs."
+    }
+  ],
   "uncertain_areas": [
-    "Recent BP readings, imaging for fracture confirmation"
+    "Need more imaging evidence to confirm hip fracture. More lab results to confirm or rule out anemia and hypokalemia."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -85,7 +92,7 @@
   "_temperature": 0.4,
   "patient_id": "10426859",
   "hadm_id": "29908281",
-  "generated_at": "2026-08-09T00:43:52.116900",
+  "generated_at": "2026-08-15T17:30:44.353634",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,

@@ -1,0 +1,34 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 18412100
+HADM ID          : 26093939
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:36:46.883271
+Primary condition: Post-procedural pain
+Primary ICD      : R10.9 — Unspecified abdominal pain
+Final codes      : 4
+Dropped / added  : 1 / 2
+
+Review:
+  Confirmed post-procedural pain and desmoid tumor. Dropped anemia. Added obesity and chronic viral hepatitis C.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] R10.9 — Unspecified abdominal pain
+      (Post-procedural pain | snomed_extended_map | keep)
+   2. [secondary] B19.20 — Unspecified viral hepatitis C without hepatic coma
+      (Hepatitis C | stage8_confirmed | keep)
+   3. [secondary] E66.9 — Obesity, unspecified
+      (obesity | added_mapped | add)
+      why: BMI 31.7
+   4. [secondary] B18.9 — Chronic viral hepatitis, unspecified
+      (chronic viral hepatitis C | added_mapped | add)
+      why: History of hepatitis C
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • D64.9 — Anemia, unspecified  (Unspecified anemia not supported by labs)

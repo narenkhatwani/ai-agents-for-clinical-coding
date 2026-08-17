@@ -1,85 +1,82 @@
 {
-  "summary": "The patient, a metastatic sarcoma patient with a history of chemotherapy and hematological issues, presents with weakness, anemia, thrombocytopenia, and a fall resulting in minor abrasions and soreness. The patient also has a history of hypotension and headache.",
-  "most_likely": "Anemia due to antineoplastic chemotherapy",
+  "summary": "The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.",
+  "most_likely": "Anemia due to malignancy",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Anemia due to antineoplastic chemotherapy",
+      "diagnosis": "Anemia due to malignancy",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "D6959",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Anemia due to antineoplastic chemotherapy, D6959"
+        "anemia, thrombocytopenia, history of metastatic sarcoma"
       ],
       "opposing_evidence": [],
-      "reasoning": "Anemia is severe and directly related to prior chemotherapy, supported by lab results."
+      "reasoning": "Anemia is severe and aligns with the patient's history of metastatic sarcoma and prior chemotherapy."
     },
     {
       "rank": 2,
-      "diagnosis": "Thrombocytopenia due to antineoplastic chemotherapy",
+      "diagnosis": "Thrombocytopenia due to malignancy",
       "score": 75.0,
       "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "D6481",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Thrombocytopenia, D6481"
+        "thrombocytopenia, history of metastatic sarcoma"
       ],
       "opposing_evidence": [],
-      "reasoning": "Thrombocytopenia is mild but related to prior chemotherapy, supported by lab results."
+      "reasoning": "Thrombocytopenia is mild but significant and related to the patient's malignancy."
     },
     {
       "rank": 3,
-      "diagnosis": "Hypotension due to cytokine effects or chemotherapy side effects",
-      "score": 65.0,
+      "diagnosis": "Hypotension",
+      "score": 60.0,
       "confidence": "medium",
-      "category": "complication",
+      "category": "secondary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Hypotension, I129, E8342"
+        "hypotension, history of malignancy and chemotherapy side effects"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Hypotension is historical and may be due to cytokine effects or chemotherapy side effects."
+      "opposing_evidence": [
+        "no evidence of acute cardiovascular issues"
+      ],
+      "reasoning": "Hypotension is noted but may be secondary to malignancy and chemotherapy effects."
     },
     {
       "rank": 4,
-      "diagnosis": "Metastatic sarcoma to the brain",
+      "diagnosis": "Headache",
       "score": 50.0,
-      "confidence": "low",
+      "confidence": "medium",
       "category": "differential",
-      "snomed_aligned": "443144000",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Metastatic sarcoma, 443144000"
+        "headache after fall, history of cerebellar hemorrhage"
       ],
       "opposing_evidence": [
-        "No recent symptoms or imaging findings"
+        "no evidence of acute intracranial bleeding"
       ],
-      "reasoning": "Metastatic sarcoma is a known comorbidity but not currently presenting acutely."
+      "reasoning": "Headache is present but may be related to the fall rather than acute intracranial issues."
     },
     {
       "rank": 5,
-      "diagnosis": "Headache",
-      "score": 40.0,
+      "diagnosis": "Metastatic sarcoma to the brain",
+      "score": 45.0,
       "confidence": "low",
-      "category": "symptom",
-      "snomed_aligned": "21522001",
+      "category": "differential",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Headache, 21522001"
+        "history of metastatic sarcoma, recent fall and headache"
       ],
       "opposing_evidence": [
-        "No recent imaging findings"
+        "no recent evidence of new neurological deficits"
       ],
-      "reasoning": "Headache is present but not associated with acute findings."
+      "reasoning": "Metastasis to the brain is a risk but not strongly supported by current evidence."
     }
   ],
-  "rule_outs": [
-    {
-      "diagnosis": "Pulmonary embolism",
-      "why": "No current symptoms or imaging findings."
-    }
-  ],
+  "rule_outs": [],
   "uncertain_areas": [
-    "Further imaging or clinical follow-up to confirm anemia and thrombocytopenia etiology"
+    "need for further imaging or clinical follow-up to confirm intracranial bleeding or metastasis"
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -88,7 +85,7 @@
   "_temperature": 0.4,
   "patient_id": "16014068",
   "hadm_id": "29042843",
-  "generated_at": "2026-08-09T00:46:00.047231",
+  "generated_at": "2026-08-15T17:32:52.278033",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,

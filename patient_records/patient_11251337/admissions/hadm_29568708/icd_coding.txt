@@ -1,0 +1,43 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 11251337
+HADM ID          : 29568708
+Most likely      : Nephrolithiasis
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:05.590695
+
+Summary:
+  The patient presents with nephrolithiasis following a right PCNL procedure, with symptoms of hematuria, dysuria, pain, and fever. Past medical history includes hydronephrosis, pyonephrosis, hypertension, and hemorrhagic CVA.
+
+#1  [85.0/100 | high]  Nephrolithiasis  (primary)
+    SNOMED: Kidney stone (95570007) [exact score=1.0]
+    ICD status: mapped | primary: N20.0
+      1. [principal] N20.0 — Calculus of kidney
+      2. [supporting] R30.0 — Dysuria  ← dysuria (key_symptom)
+      3. [supporting] R31.9 — Hematuria, unspecified  ← hematuria (key_symptom)
+      4. [supporting] R50.9 — Fever, unspecified  ← fever (key_symptom)
+      5. [supporting] R52 — Pain, unspecified  ← pain (key_symptom)
+
+#2  [65.0/100 | medium]  Chronic kidney disease  (complication)
+    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
+    ICD status: mapped | primary: N18.9
+      1. [principal] N18.9 — Chronic kidney disease, unspecified
+      2. [supporting] I10 — Essential (primary) hypertension  ← hypertension (red_flag)
+
+#3  [55.0/100 | medium]  Hypertension  (risk_factor)
+    SNOMED: High blood pressure (38341003) [exact score=1.0]
+    ICD status: mapped | primary: I10
+      1. [principal] I10 — Essential (primary) hypertension
+      2. [principal] P29.2 — Neonatal hypertension
+
+#4  [45.0/100 | low]  Acute kidney injury  (complication)
+    SNOMED: Acute renal failure syndrome (14669001) [exact score=1.0]
+    ICD status: mapped | primary: N17.9
+      1. [principal] N17.9 — Acute kidney failure, unspecified
+      2. [supporting] R31.9 — Hematuria, unspecified  ← hematuria (key_symptom)
+      3. [supporting] R30.0 — Dysuria  ← dysuria (key_symptom)
+      4. [supporting] R50.9 — Fever, unspecified  ← fever (key_symptom)
+
+#5  [30.0/100 | low]  Hemorrhagic CVA  (risk_factor)
+    SNOMED: Hemorrhagic (255345002) [fuzzy score=0.6159918612177215]
+    ICD status: unmapped | primary: None

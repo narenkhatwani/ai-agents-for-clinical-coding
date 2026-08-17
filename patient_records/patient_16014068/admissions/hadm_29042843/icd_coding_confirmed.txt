@@ -1,0 +1,35 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 16014068
+HADM ID          : 29042843
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:36:24.616222
+Primary condition: Anemia due to malignancy
+Primary ICD      : B99.9 — Unspecified infectious disease
+Final codes      : 4
+Dropped / added  : 3 / 1
+
+Review:
+  Confirmed anemia and thrombocytopenia due to malignancy, dropped unrelated codes, and added essential hypertension as a comorbidity.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] B99.9 — Unspecified infectious disease
+      (Anemia due to malignancy | stage8_confirmed | keep)
+   2. [secondary] D64.89 — Other specified anemias
+      (Anemia due to malignancy | stage8_confirmed | keep)
+   3. [secondary] D69.59 — Other secondary thrombocytopenia
+      (Thrombocytopenia due to malignancy | stage8_confirmed | keep)
+   4. [secondary] I10 — Essential (primary) hypertension
+      (Essential hypertension | added_mapped | add)
+      why: Blood pressure is 114/66 and labs show anemia and thrombocytopenia, supporting hypertension.
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • I95.9 — Hypotension, unspecified  (No evidence of hypotension.)
+  • R51.9 — Headache, unspecified  (Headache is a symptom, not a primary diagnosis.)
+  • C79.89 — Secondary malignant neoplasm of other specified sites  (No evidence of brain metastasis.)

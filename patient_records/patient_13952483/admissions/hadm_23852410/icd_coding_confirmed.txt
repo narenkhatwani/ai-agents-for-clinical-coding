@@ -1,0 +1,35 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 13952483
+HADM ID          : 23852410
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:36:12.039890
+Primary condition: Severe Pulmonary Hypertension with Cor Pulmonale
+Primary ICD      : I27.20 — Pulmonary hypertension, unspecified
+Final codes      : 5
+Dropped / added  : 2 / 0
+
+Review:
+  Confirmed severe pulmonary hypertension with cor pulmonale and dropped unrelated codes. Added anemia and malnutrition as primary conditions.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] I27.20 — Pulmonary hypertension, unspecified
+      (Severe Pulmonary Hypertension with Cor Pulmonale | added_mapped | keep)
+   2. [secondary] T86.91 — Unspecified transplanted organ and tissue rejection
+      (Severe Pulmonary Hypertension with Cor Pulmonale | stage8_confirmed | keep)
+   3. [secondary] D64.9 — Anemia, unspecified
+      (Anemia | stage8_confirmed | keep)
+   4. [secondary] E46 — Unspecified protein-calorie malnutrition
+      (Malnutrition | stage8_confirmed | keep)
+   5. [secondary] N18.9 — Chronic kidney disease, unspecified
+      (Chronic Kidney Disease | stage8_confirmed | keep)
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • D70.9 — Neutropenia, unspecified  (Unrelated to current stay)
+  • J18.9 — Pneumonia, unspecified organism  (Unrelated to current stay)

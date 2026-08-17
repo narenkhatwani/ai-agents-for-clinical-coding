@@ -5,52 +5,48 @@ Patient ID       : 13952483
 HADM ID          : 23852410
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:45:46.331684
+Generated        : 2026-08-15T17:32:38.712958
 Candidates       : 6
-Most likely      : Severe Pulmonary Hypertension
+Most likely      : Severe Pulmonary Hypertension with Cor Pulmonale
 Prior admissions : 2 (51 ICD codes as PMH context)
 
 Summary:
-  The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression. He has a history of malignancy, chronic kidney disease, and pulmonary hypertension.
+  The patient presents with hypotension, weight loss, anorexia, and multiple constitutional symptoms likely related to lung cancer and immunosuppression. Prior comorbidities include lung cancer, chronic kidney disease, and pulmonary hypertension.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Severe Pulmonary Hypertension  (primary)
-      SNOMED aligned : Pulmonary hypertension
-      + Right Heart Catheterization revealed severe Pulmonary HTN with Cor Pulmonale
-      why: Strong evidence from Right Heart Catheterization and symptoms of dyspnea and chest pain.
+  #1  [85.0/100 | high]  Severe Pulmonary Hypertension with Cor Pulmonale  (complication)
+      SNOMED aligned : T8611 — Kidney transplant rejection
+      + Severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg on Right Heart Catheterization
+      why: Strong evidence from Right Heart Catheterization and symptoms of dyspnea and fatigue.
 
   #2  [70.0/100 | medium]  Neutropenia  (complication)
-      SNOMED aligned : Neutropenia
-      + New neutropenia (ANC 750)
-      − ANC 750 is low but not critically so
-      why: ANC 750 is significantly low, indicating a risk of infection.
+      + new neutropenia (ANC 750)
+      why: Recent onset of neutropenia, likely related to chemotherapy and radiation therapy.
 
   #3  [65.0/100 | medium]  Anemia  (complication)
-      SNOMED aligned : Anemia
-      + Hematocrit: 26.4 % [abnormal], Hemoglobin: 8.2 g/dL [abnormal]
-      − No severe bleeding or acute blood loss noted
-      why: Hematocrit and Hemoglobin are significantly low, indicating anemia.
+      + Hematocrit: 26.4 %, Hemoglobin: 8.2 g/dL
+      why: Severe anemia with low hematocrit and hemoglobin levels.
 
-  #4  [60.0/100 | medium]  Malnutrition  (complication)
+  #4  [55.0/100 | medium]  Malnutrition  (risk_factor)
       + Overall anorexia and poor appetite
-      − No specific evidence of recent weight loss or malnutrition
-      why: Anorexia and poor appetite suggest a risk of malnutrition.
+      why: Persistent anorexia and malaise contributing to weight loss.
 
-  #5  [55.0/100 | medium]  Thrombocytopenia  (complication)
-      SNOMED aligned : Thrombocytopenia
-      + Thrombocytopenia (plts 93)
-      − Platelet count is not critically low
-      why: Thrombocytopenia is present but not severe.
+  #5  [45.0/100 | low]  Chronic Kidney Disease  (complication)
+      + Creatinine: 1.3 mg/dL, Urea Nitrogen: 28.0 mg/dL
+      why: Abnormal renal function tests, but no recent acute kidney injury.
 
-  #6  [50.0/100 | low]  COPD  (differential)
-      SNOMED aligned : Chronic obstructive pulmonary disease
-      + COPD, unspecified
-      − Current presentation more consistent with pulmonary hypertension
-      why: History of COPD but current presentation more consistent with pulmonary hypertension.
+  #6  [30.0/100 | low]  Pneumonia  (differential)
+      + Cough, pleuritic/MSK chest pain
+      why: Mild cough and chest pain, but no recent respiratory symptoms or imaging.
+
+RULE-OUTS
+---------
+
+  • Lung Cancer: Confirmed diagnosis, but not the primary current presentation.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further clarification of the exact etiology of pulmonary hypertension and the underlying cause of neutropenia
+  • Further imaging or biopsy results would clarify the extent of pulmonary hypertension and any new infections or malignancies

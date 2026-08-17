@@ -1,0 +1,226 @@
+{
+  "review_summary": "Confirmed septic shock, hepatic encephalopathy, and worsening liver failure. Dropped some symptom-only codes. Added pancytopenia and alcohol abuse as relevant PMH.",
+  "primary_condition": "Severe sepsis with septic shock",
+  "primary_icd_code": "R65.21",
+  "primary_icd_title": "Severe sepsis with septic shock",
+  "final_codes": [
+    {
+      "code": "R65.21",
+      "title": "Severe sepsis with septic shock",
+      "role": "primary",
+      "source": "stage8_confirmed",
+      "condition": "Severe sepsis with septic shock",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "K76.82",
+      "title": "Hepatic encephalopathy",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Hepatic encephalopathy",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "K72.00",
+      "title": "Acute and subacute hepatic failure without coma",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Acute liver failure",
+      "action": "keep",
+      "reason": "",
+      "always": false
+    },
+    {
+      "code": "K74.69",
+      "title": "Other cirrhosis of liver",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Acute liver failure",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "D61.818",
+      "title": "Other pancytopenia",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Pancytopenia",
+      "action": "add",
+      "reason": "Low hematocrit, hemoglobin, and platelet count",
+      "always": true
+    },
+    {
+      "code": "F10.10",
+      "title": "Alcohol abuse, uncomplicated",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Alcohol abuse",
+      "action": "add",
+      "reason": "Confirmed by clinical context",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "K76.7",
+      "title": "Hepatorenal syndrome",
+      "reason": "Not supported by current context"
+    },
+    {
+      "code": "N17.9",
+      "title": "Acute kidney failure, unspecified",
+      "reason": "Not supported by current context"
+    },
+    {
+      "code": "P54.3",
+      "title": "Other neonatal gastrointestinal hemorrhage",
+      "reason": "Not supported by current context"
+    },
+    {
+      "code": "I48.91",
+      "title": "Unspecified atrial fibrillation",
+      "reason": "Not supported by current context"
+    },
+    {
+      "code": "J90",
+      "title": "Pleural effusion, not elsewhere classified",
+      "reason": "Not supported by current context"
+    },
+    {
+      "code": "D68.9",
+      "title": "Coagulation defect, unspecified",
+      "reason": "Not supported by current context"
+    }
+  ],
+  "added_conditions": [
+    {
+      "code": "D61.818",
+      "title": "Other pancytopenia",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "127034005",
+        "preferred_term": "Pancytopenia",
+        "fsn": "Pancytopenia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Pancytopenia",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "D61.818",
+          "title": "Other pancytopenia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D61.818 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Pancytopenia",
+      "role": "complication",
+      "action": "add",
+      "reason": "Low hematocrit, hemoglobin, and platelet count",
+      "as_primary": false
+    },
+    {
+      "code": "F10.10",
+      "title": "Alcohol abuse, uncomplicated",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "15167005",
+        "preferred_term": "Alcohol abuse",
+        "fsn": "Harmful pattern of use of alcohol (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Alcohol abuse",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "F10.10",
+          "title": "Alcohol abuse, uncomplicated",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS F10.10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Alcohol abuse",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "Confirmed by clinical context",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Severe sepsis with septic shock",
+        "action": "keep",
+        "selected_code": "R65.21",
+        "replace_with_condition": "",
+        "reason": "Primary diagnosis confirmed"
+      },
+      {
+        "rank": 2,
+        "diagnosis": "Hepatic encephalopathy",
+        "action": "keep",
+        "selected_code": "K76.82",
+        "replace_with_condition": "",
+        "reason": "Confirmed by clinical context"
+      },
+      {
+        "rank": 3,
+        "diagnosis": "Acute liver failure",
+        "action": "keep",
+        "selected_code": "K72.00",
+        "replace_with_condition": "",
+        "reason": "Worsening liver failure confirmed"
+      }
+    ],
+    "n_confirmed": 7,
+    "n_missing_named": 2
+  },
+  "fallback": null,
+  "patient_id": "17774110",
+  "hadm_id": "27339772",
+  "most_likely": "Severe sepsis with septic shock",
+  "stage8_most_likely": "Severe sepsis with septic shock",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:36:36.915619",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 34,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 6,
+  "n_dropped": 6,
+  "n_added": 2
+}

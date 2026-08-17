@@ -5,42 +5,47 @@ Patient ID       : 11474876
 HADM ID          : 29672491
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:44:36.939082
+Generated        : 2026-08-15T17:31:28.467580
 Candidates       : 5
-Most likely      : Heart Failure with Preserved Ejection Fraction (HFpEF)
+Most likely      : Heart failure with preserved ejection fraction (HFpEF)
 Prior admissions : 1 (23 ICD codes as PMH context)
 
 Summary:
-  A 70-year-old man with a history of AFib, HFpEF, PVD, CKD, and cholangitis presents post-ERCP with leg swelling and nocturnal hypoxia.
+  A 70-year-old man with a history of atrial fibrillation (AFib), heart failure with preserved ejection fraction (HFpEF), peripheral vascular disease (PVD), and chronic kidney disease (CKD) presents post-ERCP for cholangitis, with symptoms including nocturnal hypoxia and leg swelling.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Heart Failure with Preserved Ejection Fraction (HFpEF)  (primary)
+  #1  [85.0/100 | high]  Heart failure with preserved ejection fraction (HFpEF)  (primary)
       + HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
-      why: Primary diagnosis given the patient's history and current symptoms of leg swelling and nocturnal hypoxia.
+      why: HFpEF is the most likely primary diagnosis given the patient's history and current symptoms.
 
-  #2  [70.0/100 | medium]  Peripheral Vascular Disease (PVD)  (secondary)
+  #2  [70.0/100 | medium]  Peripheral vascular disease (PVD)  (secondary)
       SNOMED aligned : Peripheral vascular disease
       + PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
-      why: Secondary diagnosis due to the presence of PVD and associated lab abnormalities.
+      why: PVD is a significant comorbidity but less likely to be the primary cause of current symptoms.
 
-  #3  [55.0/100 | medium]  Cholangitis  (complication)
-      + History of cholangitis, White Blood Cells: 7.2 K/uL, Anion Gap: 16.0 mEq/L
-      − No current symptoms of cholangitis
-      why: Complication given the patient's history of cholangitis and current lab abnormalities.
+  #3  [65.0/100 | medium]  Atrial fibrillation (AFib)  (complication)
+      SNOMED aligned : Atrial fibrillation
+      + AFib on apixaban, Creatinine: 1.4 mg/dL, Hemoglobin: 12.6 g/dL
+      why: AFib is a known complication but less likely to be the primary cause of current symptoms.
 
-  #4  [45.0/100 | low]  Atrial Fibrillation (AFib)  (risk_factor)
-      + AFib, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
-      − No current symptoms of AFib
-      why: Risk factor given the patient's history of AFib and current lab abnormalities.
-
-  #5  [35.0/100 | low]  Chronic Kidney Disease (CKD)  (complication)
+  #4  [55.0/100 | medium]  Chronic kidney disease (CKD)  (secondary)
       SNOMED aligned : Chronic kidney disease
       + CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L
-      why: Complication given the patient's history of CKD and current lab abnormalities.
+      why: CKD is a significant comorbidity but less likely to be the primary cause of current symptoms.
+
+  #5  [40.0/100 | low]  Nocturnal hypoxia  (differential)
+      + nocturnal hypoxia that improved with diuresis
+      − resolved with diuresis, no current symptoms
+      why: Nocturnal hypoxia is a historical finding and not currently causing symptoms.
+
+RULE-OUTS
+---------
+
+  • Cholangitis: Symptoms have improved post-ERCP, and current labs are within normal range.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further details on the patient's current symptoms of cholangitis and AFib would help refine the differential diagnosis.
+  • Further clarification on the patient's current respiratory status and fluid management would help refine the differential diagnosis.

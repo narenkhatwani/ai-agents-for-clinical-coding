@@ -1,0 +1,29 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 19632936
+HADM ID          : 26696232
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:37:07.603444
+Primary condition: Acute on chronic macrocytic anemia
+Primary ICD      : D53.9 — Nutritional anemia, unspecified
+Final codes      : 4
+Dropped / added  : 0 / 2
+
+Review:
+  Kept acute on chronic macrocytic anemia and heart failure. Dropped unspecified atrial fibrillation. Added essential hypertension and chronic kidney disease.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] D53.9 — Nutritional anemia, unspecified
+      (Acute on chronic macrocytic anemia | stage8_confirmed | keep)
+   2. [secondary] I50.9 — Heart failure, unspecified
+      (Heart failure | stage8_confirmed | keep)
+   3. [secondary] I10 — Essential (primary) hypertension
+      (Essential hypertension | added_mapped | add)
+      why: History of hypertension
+   4. [secondary] N18.9 — Chronic kidney disease, unspecified
+      (Chronic kidney disease | added_mapped | add)
+      why: Anemia and abnormal labs

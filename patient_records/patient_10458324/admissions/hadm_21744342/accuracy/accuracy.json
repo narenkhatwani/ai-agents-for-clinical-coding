@@ -1,0 +1,1066 @@
+{
+  "stage": 10,
+  "type": "accuracy_vs_ground_truth",
+  "patient_id": "10458324",
+  "hadm_id": "21744342",
+  "generated_at": "2026-08-15T23:57:14.785872",
+  "ground_truth": {
+    "primary_icd_code": "S270XXA",
+    "primary_dx_title": "Traumatic pneumothorax, initial encounter",
+    "icd10_codes": [
+      "S270XXA",
+      "J189",
+      "S2241XA",
+      "E46",
+      "F1120",
+      "Z681",
+      "I480",
+      "W1830XA",
+      "Y92002",
+      "R0902",
+      "R600",
+      "F4310"
+    ],
+    "dx_titles": [
+      "Traumatic pneumothorax, initial encounter",
+      "Pneumonia, unspecified organism",
+      "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+      "Unspecified protein-calorie malnutrition",
+      "Opioid dependence, uncomplicated",
+      "Body mass index [BMI] 19.9 or less, adult",
+      "Paroxysmal atrial fibrillation",
+      "Fall on same level, unspecified, initial encounter",
+      "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause",
+      "Hypoxemia",
+      "Localized edema",
+      "Post-traumatic stress disorder, unspecified"
+    ],
+    "n_diagnoses": 12
+  },
+  "stage8": {
+    "diagnosis": {
+      "predicted": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+      "ground_truth": "Traumatic pneumothorax, initial encounter",
+      "matched_predicted": "Pneumothorax",
+      "matched_ground_truth": "Traumatic pneumothorax, initial encounter",
+      "match_scope": "diffdx_vs_primary",
+      "match_pred_rank": 3,
+      "match_gt_index": 0,
+      "exact": false,
+      "semantic_similarity": 0.8697,
+      "semantic_match": true,
+      "match_reason": "diffdx_vs_primary",
+      "clinical_reason": "contained",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+        "Influenza A",
+        "Pneumothorax",
+        "Bipolar disorder",
+        "Substance abuse",
+        "Dehydration"
+      ],
+      "n_diffdx": 6,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Influenza A",
+          "rank": 2,
+          "score": 75.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Pneumothorax",
+          "rank": 3,
+          "score": 70.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Bipolar disorder",
+          "rank": 4,
+          "score": 60.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Substance abuse",
+          "rank": 5,
+          "score": 55.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Dehydration",
+          "rank": 6,
+          "score": 40.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 70.0,
+      "matched_confidence": "medium"
+    },
+    "primary_icd": {
+      "predicted": "J93.9",
+      "ground_truth": "S27.0XXA",
+      "predicted_title": "Pneumothorax, unspecified",
+      "ground_truth_title": "Traumatic pneumothorax, initial encounter",
+      "exact": false,
+      "family": false,
+      "semantic_similarity": 0.8697,
+      "semantic_match": true,
+      "match_reason": "package_vs_primary",
+      "clinical_reason": "contained",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "predicted_family": "J93",
+      "ground_truth_family": "S27",
+      "match_scope": "package_vs_primary"
+    },
+    "code_set": {
+      "n_predicted": 13,
+      "n_ground_truth": 12,
+      "n_hits": 2,
+      "precision": 0.1538,
+      "recall": 0.1667,
+      "f1": 0.16,
+      "hits": [
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated"
+        },
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia"
+        }
+      ],
+      "misses": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism"
+        },
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema"
+        },
+        {
+          "code": "F43.10",
+          "title": "Post-traumatic stress disorder, unspecified"
+        }
+      ],
+      "extras": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations"
+        },
+        {
+          "code": "J10.00",
+          "title": "Influenza due to other identified influenza virus with unspecified type of pneumonia"
+        },
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified"
+        },
+        {
+          "code": "J93.9",
+          "title": "Pneumothorax, unspecified"
+        },
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period"
+        },
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration"
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn"
+        },
+        {
+          "code": "R11.10",
+          "title": "Vomiting, unspecified"
+        },
+        {
+          "code": "R19.7",
+          "title": "Diarrhea, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 4,
+      "semantic_precision": 0.3077,
+      "semantic_recall": 0.3333,
+      "semantic_f1": 0.32,
+      "semantic_pairs": [
+        {
+          "predicted_code": "J93.9",
+          "predicted_title": "Pneumothorax, unspecified",
+          "predicted_diagnosis": "Pneumothorax",
+          "ground_truth_code": "S27.0XXA",
+          "ground_truth_title": "Traumatic pneumothorax, initial encounter",
+          "similarity": 0.8697,
+          "match": "semantic"
+        },
+        {
+          "predicted_code": "J10.00",
+          "predicted_title": "Influenza due to other identified influenza virus with unspecified type of pneumonia",
+          "predicted_diagnosis": "Influenza A",
+          "ground_truth_code": "J18.9",
+          "ground_truth_title": "Pneumonia, unspecified organism",
+          "similarity": 0.7126,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [
+        {
+          "predicted_code": "J10.1",
+          "predicted_title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "predicted_diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "ground_truth_code": "S22.41XA",
+          "ground_truth_title": "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+          "similarity": 0.5728,
+          "match": "related"
+        },
+        {
+          "predicted_code": "F31.9",
+          "predicted_title": "Bipolar disorder, unspecified",
+          "predicted_diagnosis": "Bipolar disorder",
+          "ground_truth_code": "F43.10",
+          "ground_truth_title": "Post-traumatic stress disorder, unspecified",
+          "similarity": 0.5358,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified"
+        },
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration"
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn"
+        },
+        {
+          "code": "R11.10",
+          "title": "Vomiting, unspecified"
+        },
+        {
+          "code": "R19.7",
+          "title": "Diarrhea, unspecified"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 9,
+      "n_ground_truth": 10,
+      "n_hits": 1,
+      "precision": 0.1111,
+      "recall": 0.1,
+      "f1": 0.1053,
+      "hits": [
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated"
+        }
+      ],
+      "misses": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism"
+        },
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F43.10",
+          "title": "Post-traumatic stress disorder, unspecified"
+        }
+      ],
+      "extras": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations"
+        },
+        {
+          "code": "J10.00",
+          "title": "Influenza due to other identified influenza virus with unspecified type of pneumonia"
+        },
+        {
+          "code": "J93.9",
+          "title": "Pneumothorax, unspecified"
+        },
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period"
+        },
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration"
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 3,
+      "semantic_precision": 0.3333,
+      "semantic_recall": 0.3,
+      "semantic_f1": 0.3158,
+      "semantic_pairs": [
+        {
+          "predicted_code": "J93.9",
+          "predicted_title": "Pneumothorax, unspecified",
+          "predicted_diagnosis": "Pneumothorax",
+          "ground_truth_code": "S27.0XXA",
+          "ground_truth_title": "Traumatic pneumothorax, initial encounter",
+          "similarity": 0.8697,
+          "match": "semantic"
+        },
+        {
+          "predicted_code": "J10.00",
+          "predicted_title": "Influenza due to other identified influenza virus with unspecified type of pneumonia",
+          "predicted_diagnosis": "Influenza A",
+          "ground_truth_code": "J18.9",
+          "ground_truth_title": "Pneumonia, unspecified organism",
+          "similarity": 0.7126,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [
+        {
+          "predicted_code": "J10.1",
+          "predicted_title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "predicted_diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "ground_truth_code": "S22.41XA",
+          "ground_truth_title": "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+          "similarity": 0.5728,
+          "match": "related"
+        },
+        {
+          "predicted_code": "F31.9",
+          "predicted_title": "Bipolar disorder, unspecified",
+          "predicted_diagnosis": "Bipolar disorder",
+          "ground_truth_code": "F43.10",
+          "ground_truth_title": "Post-traumatic stress disorder, unspecified",
+          "similarity": 0.5358,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration"
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn"
+        }
+      ]
+    },
+    "principal_set": {
+      "n_predicted": 7,
+      "n_ground_truth": 12,
+      "n_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "hits": [],
+      "misses": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism"
+        },
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema"
+        },
+        {
+          "code": "F43.10",
+          "title": "Post-traumatic stress disorder, unspecified"
+        }
+      ],
+      "extras": [
+        {
+          "code": "J10.00",
+          "title": "Influenza due to other identified influenza virus with unspecified type of pneumonia"
+        },
+        {
+          "code": "J93.9",
+          "title": "Pneumothorax, unspecified"
+        },
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period"
+        },
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration"
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 2,
+      "semantic_precision": 0.2857,
+      "semantic_recall": 0.1667,
+      "semantic_f1": 0.2105,
+      "semantic_pairs": [
+        {
+          "predicted_code": "J93.9",
+          "predicted_title": "Pneumothorax, unspecified",
+          "predicted_diagnosis": "Pneumothorax",
+          "ground_truth_code": "S27.0XXA",
+          "ground_truth_title": "Traumatic pneumothorax, initial encounter",
+          "similarity": 0.8697,
+          "match": "semantic"
+        },
+        {
+          "predicted_code": "J10.00",
+          "predicted_title": "Influenza due to other identified influenza virus with unspecified type of pneumonia",
+          "predicted_diagnosis": "Influenza A",
+          "ground_truth_code": "J18.9",
+          "ground_truth_title": "Pneumonia, unspecified organism",
+          "similarity": 0.7126,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [
+        {
+          "predicted_code": "F19.10",
+          "predicted_title": "Other psychoactive substance abuse, uncomplicated",
+          "predicted_diagnosis": "Substance abuse",
+          "ground_truth_code": "F11.20",
+          "ground_truth_title": "Opioid dependence, uncomplicated",
+          "similarity": 0.584,
+          "match": "related"
+        },
+        {
+          "predicted_code": "F31.9",
+          "predicted_title": "Bipolar disorder, unspecified",
+          "predicted_diagnosis": "Bipolar disorder",
+          "ground_truth_code": "F43.10",
+          "ground_truth_title": "Post-traumatic stress disorder, unspecified",
+          "similarity": 0.5358,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "P25.1",
+          "title": "Pneumothorax originating in the perinatal period"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration"
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn"
+        }
+      ]
+    }
+  },
+  "stage9": {
+    "diagnosis": {
+      "predicted": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+      "ground_truth": "Traumatic pneumothorax, initial encounter",
+      "matched_predicted": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+      "matched_ground_truth": "Traumatic pneumothorax, initial encounter",
+      "match_scope": "rank1_vs_primary",
+      "match_pred_rank": 1,
+      "match_gt_index": 0,
+      "exact": false,
+      "semantic_similarity": 0.3902,
+      "semantic_match": false,
+      "match_reason": "no_match",
+      "clinical_reason": "no_match",
+      "match_type": "no_match",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+        "Bipolar disorder",
+        "Substance abuse",
+        "subcutaneous emphysema"
+      ],
+      "n_diffdx": 4,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Influenza A",
+          "rank": 2,
+          "score": 75.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Pneumothorax",
+          "rank": 3,
+          "score": 70.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Bipolar disorder",
+          "rank": 4,
+          "score": 60.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Substance abuse",
+          "rank": 5,
+          "score": 55.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Dehydration",
+          "rank": 6,
+          "score": 40.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 85.0,
+      "matched_confidence": "high"
+    },
+    "primary_icd": {
+      "predicted": "J10.1",
+      "ground_truth": "S27.0XXA",
+      "predicted_title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+      "ground_truth_title": "Traumatic pneumothorax, initial encounter",
+      "exact": false,
+      "family": false,
+      "semantic_similarity": 0.1807,
+      "semantic_match": false,
+      "match_reason": "no_match",
+      "clinical_reason": "no_match",
+      "match_type": "no_match",
+      "threshold": 0.7,
+      "predicted_family": "J10",
+      "ground_truth_family": "S27",
+      "match_scope": "rank1_vs_primary"
+    },
+    "code_set": {
+      "n_predicted": 5,
+      "n_ground_truth": 12,
+      "n_hits": 1,
+      "precision": 0.2,
+      "recall": 0.0833,
+      "f1": 0.1176,
+      "hits": [
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia"
+        }
+      ],
+      "misses": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism"
+        },
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema"
+        },
+        {
+          "code": "F43.10",
+          "title": "Post-traumatic stress disorder, unspecified"
+        }
+      ],
+      "extras": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations"
+        },
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated"
+        },
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 1,
+      "semantic_precision": 0.2,
+      "semantic_recall": 0.0833,
+      "semantic_f1": 0.1176,
+      "semantic_pairs": [],
+      "related_pairs": [
+        {
+          "predicted_code": "F19.10",
+          "predicted_title": "Other psychoactive substance abuse, uncomplicated",
+          "predicted_diagnosis": "Substance abuse",
+          "ground_truth_code": "F11.20",
+          "ground_truth_title": "Opioid dependence, uncomplicated",
+          "similarity": 0.584,
+          "match": "related"
+        },
+        {
+          "predicted_code": "J10.1",
+          "predicted_title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "predicted_diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "ground_truth_code": "S22.41XA",
+          "ground_truth_title": "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+          "similarity": 0.5728,
+          "match": "related"
+        },
+        {
+          "predicted_code": "F31.9",
+          "predicted_title": "Bipolar disorder, unspecified",
+          "predicted_diagnosis": "Bipolar disorder",
+          "ground_truth_code": "F43.10",
+          "ground_truth_title": "Post-traumatic stress disorder, unspecified",
+          "similarity": 0.5358,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 4,
+      "n_ground_truth": 10,
+      "n_hits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "hits": [],
+      "misses": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism"
+        },
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F43.10",
+          "title": "Post-traumatic stress disorder, unspecified"
+        }
+      ],
+      "extras": [
+        {
+          "code": "J10.1",
+          "title": "Influenza due to other identified influenza virus with other respiratory manifestations"
+        },
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated"
+        },
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 0,
+      "semantic_precision": 0.0,
+      "semantic_recall": 0.0,
+      "semantic_f1": 0.0,
+      "semantic_pairs": [],
+      "related_pairs": [
+        {
+          "predicted_code": "F19.10",
+          "predicted_title": "Other psychoactive substance abuse, uncomplicated",
+          "predicted_diagnosis": "Substance abuse",
+          "ground_truth_code": "F11.20",
+          "ground_truth_title": "Opioid dependence, uncomplicated",
+          "similarity": 0.584,
+          "match": "related"
+        },
+        {
+          "predicted_code": "J10.1",
+          "predicted_title": "Influenza due to other identified influenza virus with other respiratory manifestations",
+          "predicted_diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "ground_truth_code": "S22.41XA",
+          "ground_truth_title": "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+          "similarity": 0.5728,
+          "match": "related"
+        },
+        {
+          "predicted_code": "F31.9",
+          "predicted_title": "Bipolar disorder, unspecified",
+          "predicted_diagnosis": "Bipolar disorder",
+          "ground_truth_code": "F43.10",
+          "ground_truth_title": "Post-traumatic stress disorder, unspecified",
+          "similarity": 0.5358,
+          "match": "related"
+        }
+      ],
+      "semantic_misses": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism"
+        },
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index [BMI] 19.9 or less, adult"
+        },
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "W18.30XA",
+          "title": "Fall on same level, unspecified, initial encounter"
+        },
+        {
+          "code": "Y92.002",
+          "title": "Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema"
+        }
+      ]
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

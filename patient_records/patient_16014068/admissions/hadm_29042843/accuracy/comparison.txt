@@ -1,0 +1,139 @@
+ACCURACY vs GROUND TRUTH
+========================
+
+Patient ID       : 16014068
+HADM ID          : 29042843
+Generated        : 2026-08-15T23:57:15.203228
+
+PRIMARY DIFFDx — MATCH OR NO
+----------------------------
+
+  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+
+               Predicted                                        Ground truth
+  S8 DiffDx    Anemia due to malignancy                         Secondary malignant neoplasm of brain
+  S9 DiffDx    Anemia due to malignancy                         Secondary malignant neoplasm of brain
+
+  Full predicted (S8): Anemia due to malignancy
+  Full predicted (S9): Anemia due to malignancy
+  Full GT primary    : Secondary malignant neoplasm of brain
+
+  MATCH (S8): NO    reason=no_match  sim=0.26
+    matched: Anemia due to malignancy  vs  Secondary malignant neoplasm of brain
+  MATCH (S9): NO    reason=no_match  sim=0.26
+    matched: Anemia due to malignancy  vs  Secondary malignant neoplasm of brain
+
+PRIMARY ICD — MATCH OR NO
+-------------------------
+
+  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+  or rank-1 ICD matches another billed GT code
+
+               Predicted                                        Ground truth
+  S8 ICD       C79.89 Secondary malignant neoplasm of othe...   C79.31 Secondary malignant neoplasm of brain
+  S9 ICD       B99.9 Unspecified infectious disease             C79.31 Secondary malignant neoplasm of brain
+
+  Full predicted (S8): C79.89 — Secondary malignant neoplasm of other specified sites
+  Full predicted (S9): B99.9 — Unspecified infectious disease
+  Full ground truth  : C79.31 — Secondary malignant neoplasm of brain
+
+  MATCH (S8): YES    reason=package_vs_primary  family=YES  sim=0.76
+  MATCH (S9): NO    reason=no_match  family=NO  sim=0.18
+
+ICD CODE SET — Stage 8 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.000 / 0.000 / 0.000
+Semantic  P / R / F1 : 0.300 / 0.158 / 0.207  (title MiniLM ≥ 0.7)
+Exact hits 0  |  semantic hits 3  |  predicted 10  |  GT 19
+Semantic hits (same meaning, different code):
+  ≈ U07.1 — COVID-19  [Thrombocytopenia due to malignancy]
+      ↔ D69.6 — Thrombocytopenia, unspecified  (sim=0.90)
+  ≈ D64.9 — Anemia, unspecified  [Anemia due to malignancy]
+      ↔ D61.9 — Aplastic anemia, unspecified  (sim=0.76)
+  ≈ C79.89 — Secondary malignant neoplasm of other specified sites  [Anemia due to malignancy]
+      ↔ C79.31 — Secondary malignant neoplasm of brain  (sim=0.76)
+Related (not counted; sim 0.50–0.70):
+  ~ D64.89 — Other specified anemias  [Anemia due to malignancy]
+      ↔ E53.8 — Deficiency of other specified B group vitamins  (sim=0.55)
+Still missing after semantic match:
+  ✗ G93.6 — Cerebral edema
+  ✗ C78.01 — Secondary malignant neoplasm of right lung
+  ✗ C78.02 — Secondary malignant neoplasm of left lung
+  ✗ C77.5 — Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes
+  ✗ M79.81 — Nontraumatic hematoma of soft tissue
+  ✗ Z86.711 — Personal history of pulmonary embolism
+  ✗ Z86.718 — Personal history of other venous thrombosis and embolism
+  ✗ L89.92 — Pressure ulcer of unspecified site, stage 2
+  ✗ R79.1 — Abnormal coagulation profile
+  ✗ G62.9 — Polyneuropathy, unspecified
+  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
+  ✗ I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
+  ✗ N18.3 — Chronic kidney disease, stage 3 (moderate)
+  ✗ Z85.830 — Personal history of malignant neoplasm of bone
+  ✗ Z87.891 — Personal history of nicotine dependence
+Still extra after semantic match:
+  + B99.9 — Unspecified infectious disease
+  + O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified
+  + Z3A.00 — Weeks of gestation of pregnancy not specified
+  + D69.59 — Other secondary thrombocytopenia
+  + I95.9 — Hypotension, unspecified
+  + R51.9 — Headache, unspecified
+
+ICD CODE SET — Stage 9 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.000 / 0.000 / 0.000
+Semantic  P / R / F1 : 0.250 / 0.053 / 0.087  (title MiniLM ≥ 0.7)
+Exact hits 0  |  semantic hits 1  |  predicted 4  |  GT 19
+Semantic hits (same meaning, different code):
+  ≈ D69.59 — Other secondary thrombocytopenia  [Thrombocytopenia due to malignancy]
+      ↔ D69.6 — Thrombocytopenia, unspecified  (sim=0.90)
+Related (not counted; sim 0.50–0.70):
+  ~ D64.89 — Other specified anemias  [Anemia due to malignancy]
+      ↔ D61.9 — Aplastic anemia, unspecified  (sim=0.66)
+Still missing after semantic match:
+  ✗ C79.31 — Secondary malignant neoplasm of brain
+  ✗ G93.6 — Cerebral edema
+  ✗ C78.01 — Secondary malignant neoplasm of right lung
+  ✗ C78.02 — Secondary malignant neoplasm of left lung
+  ✗ C77.5 — Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes
+  ✗ M79.81 — Nontraumatic hematoma of soft tissue
+  ✗ Z86.711 — Personal history of pulmonary embolism
+  ✗ Z86.718 — Personal history of other venous thrombosis and embolism
+  ✗ E53.8 — Deficiency of other specified B group vitamins
+  ✗ L89.92 — Pressure ulcer of unspecified site, stage 2
+  ✗ R79.1 — Abnormal coagulation profile
+  ✗ G62.9 — Polyneuropathy, unspecified
+  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
+  ✗ I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
+  ✗ N18.3 — Chronic kidney disease, stage 3 (moderate)
+  ✗ Z85.830 — Personal history of malignant neoplasm of bone
+  ✗ Z87.891 — Personal history of nicotine dependence
+Still extra after semantic match:
+  + B99.9 — Unspecified infectious disease
+  + I10 — Essential (primary) hypertension
+
+GROUND TRUTH LIST
+-----------------
+
+   1. C79.31 — Secondary malignant neoplasm of brain (primary)
+   2. G93.6 — Cerebral edema
+   3. C78.01 — Secondary malignant neoplasm of right lung
+   4. D61.9 — Aplastic anemia, unspecified
+   5. C78.02 — Secondary malignant neoplasm of left lung
+   6. C77.5 — Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes
+   7. D69.6 — Thrombocytopenia, unspecified
+   8. M79.81 — Nontraumatic hematoma of soft tissue
+   9. Z86.711 — Personal history of pulmonary embolism
+  10. Z86.718 — Personal history of other venous thrombosis and embolism
+  11. E53.8 — Deficiency of other specified B group vitamins
+  12. L89.92 — Pressure ulcer of unspecified site, stage 2
+  13. R79.1 — Abnormal coagulation profile
+  14. G62.9 — Polyneuropathy, unspecified
+  15. K21.9 — Gastro-esophageal reflux disease without esophagitis
+  16. I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
+  17. N18.3 — Chronic kidney disease, stage 3 (moderate)
+  18. Z85.830 — Personal history of malignant neoplasm of bone
+  19. Z87.891 — Personal history of nicotine dependence

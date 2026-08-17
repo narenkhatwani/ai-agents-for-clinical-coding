@@ -1,0 +1,34 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 11607177
+HADM ID          : 23293838
+Most likely      : Refractory VT
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:07.307897
+
+Summary:
+  The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.
+
+#1  [85.0/100 | high]  Refractory VT  (primary)
+    SNOMED: Intractable (20646008) [fuzzy score=0.6273819106188662]
+    ICD status: unmapped | primary: None
+
+#2  [70.0/100 | medium]  Heart transplantation  (secondary)
+    SNOMED: Transplantation of heart (32413006) [exact score=1.0]
+    ICD status: unmapped | primary: None
+
+#3  [65.0/100 | medium]  Chronic heart failure  (secondary)
+    SNOMED: Chronic heart failure (48447003) [exact score=1.0]
+    ICD status: mapped | primary: I50.9
+      1. [principal] I50.9 — Heart failure, unspecified
+
+#4  [50.0/100 | low]  Sleep apnea  (risk_factor)
+    SNOMED: Sleep apnea (73430006) [exact score=1.0]
+    ICD status: mapped | primary: G47.30
+      1. [principal] G47.30 — Sleep apnea, unspecified
+      2. [principal] P28.30 — Primary sleep apnea of newborn, unspecified
+
+#5  [45.0/100 | low]  Obesity  (risk_factor)
+    SNOMED: Obesity (414916001) [exact score=1.0]
+    ICD status: mapped | primary: E66.9
+      1. [principal] E66.9 — Obesity, unspecified

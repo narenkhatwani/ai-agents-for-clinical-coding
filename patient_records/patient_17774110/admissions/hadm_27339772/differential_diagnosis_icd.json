@@ -1,0 +1,1133 @@
+{
+  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease and hepatitis C.",
+  "most_likely": "Severe sepsis with septic shock",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Severe sepsis with septic shock",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Septic shock, Klebsiella Aerogenes blood cultures grew"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition, evidenced by septic shock and elevated inflammatory markers.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "76571007",
+        "preferred_term": "Septic shock",
+        "fsn": "Septic shock (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.5913563849048451,
+        "query": "Severe sepsis with septic shock",
+        "aligned_hint": null
+      },
+      "icd10_primary": "R65.21",
+      "icd10_primary_title": "Severe sepsis with septic shock",
+      "icd10_package": [
+        {
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R65.21 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R65.21 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Hepatic encephalopathy",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Hepatic encephalopathy",
+      "supporting_evidence": [
+        "Hepatic encephalopathy, RASS-5, sluggish pupil response"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hepatic encephalopathy is a well-known complication of severe liver failure, supported by the patient's altered mental status and elevated liver enzymes.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "13920009",
+        "preferred_term": "Hepatic encephalopathy",
+        "fsn": "Hepatic encephalopathy (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hepatic encephalopathy",
+        "aligned_hint": "Hepatic encephalopathy"
+      },
+      "icd10_primary": "K76.82",
+      "icd10_primary_title": "Hepatic encephalopathy",
+      "icd10_package": [
+        {
+          "code": "K76.82",
+          "title": "Hepatic encephalopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541,
+          "package_order": 2
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "K76.82",
+          "title": "Hepatic encephalopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Acute liver failure",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "primary",
+      "snomed_aligned": "Acute liver failure",
+      "supporting_evidence": [
+        "Worsening liver failure, Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Acute liver failure is a severe form of liver failure, evidenced by the patient's elevated liver enzymes and worsening liver function.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "197270009",
+        "preferred_term": "Acute liver failure",
+        "fsn": "Acute hepatic failure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Acute liver failure",
+        "aligned_hint": "Acute liver failure"
+      },
+      "icd10_primary": "K72.00",
+      "icd10_primary_title": "Acute and subacute hepatic failure without coma",
+      "icd10_package": [
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "T50.905?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 5,
+          "map_group": 1,
+          "map_advice": "IF ACUTE HEPATIC FAILURE DUE TO DRUGS CHOOSE T50.905? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3,
+          "package_order": 3
+        },
+        {
+          "code": "E88.49",
+          "title": "Other mitochondrial metabolism disorders",
+          "source": "snomed_extended_map",
+          "map_priority": 6,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE DUE TO SYNTHESIS DEFECT OF MITOCHONDRIAL DEOXYRIBONUCLEIC ACID ENCODED PROTEIN CHOOSE E88.49 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4,
+          "package_order": 4
+        },
+        {
+          "code": "B17.9",
+          "title": "Acute viral hepatitis, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 7,
+          "map_group": 1,
+          "map_advice": "IF ACUTE HEPATIC FAILURE CAUSED BY HEPATITIS VIRUS CHOOSE B17.9 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5,
+          "package_order": 5
+        },
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute renal failure",
+          "from_kind": "red_flag",
+          "from_snomed_id": "14669001",
+          "from_snomed_term": "Acute renal failure syndrome",
+          "relevance_to_diagnosis": 0.666,
+          "package_order": 6
+        },
+        {
+          "code": "K76.82",
+          "title": "Hepatic encephalopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Hepatic encephalopathy",
+          "from_kind": "symptom",
+          "from_snomed_id": "13920009",
+          "from_snomed_term": "Hepatic encephalopathy",
+          "relevance_to_diagnosis": 0.5761,
+          "package_order": 7
+        },
+        {
+          "code": "K74.69",
+          "title": "Other cirrhosis of liver",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K74.69 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Cirrhosis",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "371139006",
+          "from_snomed_term": "Early cirrhosis",
+          "relevance_to_diagnosis": 0.5466,
+          "package_order": 8
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        },
+        {
+          "code": "T50.905?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 5,
+          "map_group": 1,
+          "map_advice": "IF ACUTE HEPATIC FAILURE DUE TO DRUGS CHOOSE T50.905? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3
+        },
+        {
+          "code": "E88.49",
+          "title": "Other mitochondrial metabolism disorders",
+          "source": "snomed_extended_map",
+          "map_priority": 6,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE DUE TO SYNTHESIS DEFECT OF MITOCHONDRIAL DEOXYRIBONUCLEIC ACID ENCODED PROTEIN CHOOSE E88.49 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4
+        },
+        {
+          "code": "B17.9",
+          "title": "Acute viral hepatitis, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 7,
+          "map_group": 1,
+          "map_advice": "IF ACUTE HEPATIC FAILURE CAUSED BY HEPATITIS VIRUS CHOOSE B17.9 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute renal failure",
+          "from_kind": "red_flag",
+          "from_snomed_id": "14669001",
+          "from_snomed_term": "Acute renal failure syndrome",
+          "relevance_to_diagnosis": 0.666
+        },
+        {
+          "code": "K76.82",
+          "title": "Hepatic encephalopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Hepatic encephalopathy",
+          "from_kind": "symptom",
+          "from_snomed_id": "13920009",
+          "from_snomed_term": "Hepatic encephalopathy",
+          "relevance_to_diagnosis": 0.5761
+        },
+        {
+          "code": "K74.69",
+          "title": "Other cirrhosis of liver",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K74.69 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Cirrhosis",
+          "from_kind": "diagnosis",
+          "from_snomed_id": "371139006",
+          "from_snomed_term": "Early cirrhosis",
+          "relevance_to_diagnosis": 0.5466
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 8
+    },
+    {
+      "rank": 4,
+      "diagnosis": "GI bleeding",
+      "score": 65.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Gastrointestinal hemorrhage",
+      "supporting_evidence": [
+        "GI bleeding, black coffee-ground GI contents"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "GI bleeding is a critical complication, evidenced by the patient's black coffee-ground GI contents and low platelet count.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "74474003",
+        "preferred_term": "Gastrointestinal hemorrhage",
+        "fsn": "Gastrointestinal hemorrhage (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "GI bleeding",
+        "aligned_hint": "Gastrointestinal hemorrhage"
+      },
+      "icd10_primary": "K92.2",
+      "icd10_primary_title": "Gastrointestinal hemorrhage, unspecified",
+      "icd10_package": [
+        {
+          "code": "K92.2",
+          "title": "Gastrointestinal hemorrhage, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS K92.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P54.3",
+          "title": "Other neonatal gastrointestinal hemorrhage",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P54.3 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "K92.2",
+          "title": "Gastrointestinal hemorrhage, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS K92.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P54.3",
+          "title": "Other neonatal gastrointestinal hemorrhage",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P54.3 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Atrial fibrillation/flutter",
+      "score": 50.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Atrial fibrillation/flutter, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Atrial fibrillation/flutter is a known complication, evidenced by the patient's elevated INR and prolonged coagulation times.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "49436004",
+        "preferred_term": "Atrial fibrillation",
+        "fsn": "Atrial fibrillation (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6170956778314645,
+        "query": "Atrial fibrillation/flutter",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I48.91",
+      "icd10_primary_title": "Unspecified atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.91",
+          "title": "Unspecified atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I48.91",
+          "title": "Unspecified atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Pleural effusion",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Pleural effusion",
+      "supporting_evidence": [
+        "Pleural effusion, large pleural effusion with compressive consolidation versus atelectasis"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Pleural effusion is a common complication, evidenced by the patient's bilateral pleural effusions.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "60046008",
+        "preferred_term": "Pleural effusion",
+        "fsn": "Pleural effusion (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Pleural effusion",
+        "aligned_hint": "Pleural effusion"
+      },
+      "icd10_primary": "J90",
+      "icd10_primary_title": "Pleural effusion, not elsewhere classified",
+      "icd10_package": [
+        {
+          "code": "J90",
+          "title": "Pleural effusion, not elsewhere classified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J90 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P28.89",
+          "title": "Other specified respiratory conditions of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.89 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "J98.11",
+          "title": "Atelectasis",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J98.11 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Atelectasis",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "46621007",
+          "from_snomed_term": "Atelectasis",
+          "relevance_to_diagnosis": 0.2581,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "J90",
+          "title": "Pleural effusion, not elsewhere classified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J90 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P28.89",
+          "title": "Other specified respiratory conditions of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.89 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "J98.11",
+          "title": "Atelectasis",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J98.11 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Atelectasis",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "46621007",
+          "from_snomed_term": "Atelectasis",
+          "relevance_to_diagnosis": 0.2581
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Renal failure",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Renal failure is a significant complication, evidenced by the patient's elevated creatinine and bicarbonate levels.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "42399005",
+        "preferred_term": "Renal failure syndrome",
+        "fsn": "Renal failure syndrome (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Renal failure",
+        "aligned_hint": null
+      },
+      "icd10_primary": "N19",
+      "icd10_primary_title": "Unspecified kidney failure",
+      "icd10_package": [
+        {
+          "code": "N19",
+          "title": "Unspecified kidney failure",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS N19 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P96.0",
+          "title": "Congenital renal failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P96.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute renal failure",
+          "from_kind": "red_flag",
+          "from_snomed_id": "14669001",
+          "from_snomed_term": "Acute renal failure syndrome",
+          "relevance_to_diagnosis": 0.8511,
+          "package_order": 3
+        },
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5045,
+          "package_order": 4
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5045,
+          "package_order": 5
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N19",
+          "title": "Unspecified kidney failure",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS N19 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P96.0",
+          "title": "Congenital renal failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P96.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute renal failure",
+          "from_kind": "red_flag",
+          "from_snomed_id": "14669001",
+          "from_snomed_term": "Acute renal failure syndrome",
+          "relevance_to_diagnosis": 0.8511
+        },
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5045
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5045
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 5
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Coagulopathy",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Coagulopathy, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Coagulopathy is a critical complication, evidenced by the patient's prolonged coagulation times.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "64779008",
+        "preferred_term": "Blood coagulation disorder",
+        "fsn": "Blood coagulation disorder (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Coagulopathy",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D68.9",
+      "icd10_primary_title": "Coagulation defect, unspecified",
+      "icd10_package": [
+        {
+          "code": "D68.9",
+          "title": "Coagulation defect, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS D68.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P61.6",
+          "title": "Other transient neonatal disorders of coagulation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D68.9",
+          "title": "Coagulation defect, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS D68.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P61.6",
+          "title": "Other transient neonatal disorders of coagulation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Cirrhosis",
+      "why": "Cirrhosis is a chronic condition and not the primary driver of the current presentation."
+    },
+    {
+      "diagnosis": "Hepatocellular carcinoma",
+      "why": "While present, the primary focus is on the acute complications and sepsis."
+    }
+  ],
+  "uncertain_areas": [
+    "Further details on the source of sepsis and the exact nature of the liver failure would refine the differential diagnosis."
+  ],
+  "n_candidates": 8,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "17774110",
+  "hadm_id": "27339772",
+  "generated_at": "2026-08-15T17:33:14.305981",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 15,
+    "retained_links": 20,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 34,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 20726415,
+      "admittime": "2158-03-08 18:27:00",
+      "dischtime": "2158-03-15 21:20:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "E279",
+      "primary_dx_title": "Disorder of adrenal gland, unspecified",
+      "n_diagnoses": 16,
+      "icd10_diagnoses": [
+        {
+          "code": "E279",
+          "title": "Disorder of adrenal gland, unspecified"
+        },
+        {
+          "code": "I8510",
+          "title": "Secondary esophageal varices without bleeding"
+        },
+        {
+          "code": "C220",
+          "title": "Liver cell carcinoma"
+        },
+        {
+          "code": "K7469",
+          "title": "Other cirrhosis of liver"
+        },
+        {
+          "code": "K7210",
+          "title": "Chronic hepatic failure without coma"
+        },
+        {
+          "code": "J449",
+          "title": "Chronic obstructive pulmonary disease, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "B182",
+          "title": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "R410",
+          "title": "Disorientation, unspecified"
+        },
+        {
+          "code": "F319",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "F909",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type"
+        },
+        {
+          "code": "G4700",
+          "title": "Insomnia, unspecified"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "K2270",
+          "title": "Barrett's esophagus without dysplasia"
+        },
+        {
+          "code": "Z590",
+          "title": "Homelessness"
+        },
+        {
+          "code": "Z98890",
+          "title": "Other specified postprocedural states"
+        }
+      ]
+    },
+    {
+      "hadm_id": 27309668,
+      "admittime": "2159-01-19 17:18:00",
+      "dischtime": "2159-01-21 15:00:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "K7200",
+      "primary_dx_title": "Acute and subacute hepatic failure without coma",
+      "n_diagnoses": 18,
+      "icd10_diagnoses": [
+        {
+          "code": "K7200",
+          "title": "Acute and subacute hepatic failure without coma"
+        },
+        {
+          "code": "C7970",
+          "title": "Secondary malignant neoplasm of unspecified adrenal gland"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "D684",
+          "title": "Acquired coagulation factor deficiency"
+        },
+        {
+          "code": "K7210",
+          "title": "Chronic hepatic failure without coma"
+        },
+        {
+          "code": "K7460",
+          "title": "Unspecified cirrhosis of liver"
+        },
+        {
+          "code": "B1920",
+          "title": "Unspecified viral hepatitis C without hepatic coma"
+        },
+        {
+          "code": "F901",
+          "title": "Attention-deficit hyperactivity disorder, predominantly hyperactive type"
+        },
+        {
+          "code": "F319",
+          "title": "Bipolar disorder, unspecified"
+        },
+        {
+          "code": "J449",
+          "title": "Chronic obstructive pulmonary disease, unspecified"
+        },
+        {
+          "code": "R040",
+          "title": "Epistaxis"
+        },
+        {
+          "code": "G4700",
+          "title": "Insomnia, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K2270",
+          "title": "Barrett's esophagus without dysplasia"
+        },
+        {
+          "code": "F17210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated"
+        },
+        {
+          "code": "Z9221",
+          "title": "Personal history of antineoplastic chemotherapy"
+        },
+        {
+          "code": "Z79899",
+          "title": "Other long term (current) drug therapy"
+        },
+        {
+          "code": "Z7982",
+          "title": "Long term (current) use of aspirin"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 8,
+    "n_with_principal": 8,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:12.816441"
+}

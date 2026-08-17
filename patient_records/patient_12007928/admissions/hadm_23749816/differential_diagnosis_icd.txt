@@ -1,0 +1,59 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 12007928
+HADM ID          : 23749816
+Most likely      : Acute decompensated heart failure
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:08.196631
+
+Summary:
+  The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of chronic heart failure, atrial fibrillation, and renal dysfunction.
+
+#1  [85.0/100 | high]  Acute decompensated heart failure  (primary)
+    SNOMED: Acute heart failure (56675007) [fuzzy score=0.7628679165962815]
+    ICD status: mapped | primary: I50.9
+      1. [principal] I50.9 — Heart failure, unspecified
+      2. [principal] P29.0 — Neonatal cardiac failure
+      3. [supporting] R06.00 — Dyspnea, unspecified  ← dyspnea (key_symptom)
+      4. [supporting] R06.01 — Orthopnea  ← orthopnea (key_symptom)
+
+#2  [70.0/100 | medium]  Chronic kidney disease  (complication)
+    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
+    ICD status: mapped | primary: N18.9
+      1. [principal] N18.9 — Chronic kidney disease, unspecified
+
+#3  [65.0/100 | medium]  Anemia  (complication)
+    SNOMED: Anemia (271737000) [exact score=1.0]
+    ICD status: mapped | primary: D64.9
+      1. [principal] D64.9 — Anemia, unspecified
+      2. [supporting] R71.8 — Other abnormality of red blood cells  ← low MCV (tree_symptom)
+
+#4  [55.0/100 | medium]  Atrial fibrillation  (differential)
+    SNOMED: AF - Paroxysmal atrial fibrillation (282825002) [exact score=1.0]
+    ICD status: mapped | primary: I48.0
+      1. [principal] I48.0 — Paroxysmal atrial fibrillation
+      2. [principal] I38 — Endocarditis, valve unspecified
+
+#5  [45.0/100 | low]  Myasthenia gravis  (risk_factor)
+    SNOMED: Myasthenia gravis (91637004) [exact score=1.0]
+    ICD status: mapped | primary: G70.00
+      1. [principal] G70.00 — Myasthenia gravis without (acute) exacerbation
+      2. [principal] P94.0 — Transient neonatal myasthenia gravis
+
+#6  [35.0/100 | low]  Pulmonary embolism  (differential)
+    SNOMED: Pulmonary embolism (59282003) [exact score=1.0]
+    ICD status: mapped | primary: I26.99
+      1. [principal] I26.99 — Other pulmonary embolism without acute cor pulmonale
+
+#7  [30.0/100 | low]  Obstructive sleep apnea  (differential)
+    SNOMED: Obstructive sleep apnea syndrome (78275009) [exact score=1.0]
+    ICD status: mapped | primary: G47.33
+      1. [principal] G47.33 — Obstructive sleep apnea (adult) (pediatric)
+      2. [principal] P28.32 — Primary obstructive sleep apnea of newborn
+      3. [supporting] R06.00 — Dyspnea, unspecified  ← dyspnea (key_symptom)
+
+#8  [25.0/100 | low]  Hypothyroidism  (differential)
+    SNOMED: Hypothyroidism (40930008) [exact score=1.0]
+    ICD status: mapped | primary: E03.9
+      1. [principal] E03.9 — Hypothyroidism, unspecified
+      2. [principal] P72.2 — Other transitory neonatal disorders of thyroid function, not elsewhere classified

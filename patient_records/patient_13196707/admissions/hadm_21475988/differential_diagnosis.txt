@@ -5,53 +5,44 @@ Patient ID       : 13196707
 HADM ID          : 21475988
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:45:20.765143
+Generated        : 2026-08-15T17:32:11.234822
 Candidates       : 6
-Most likely      : Severe sepsis secondary to RUL PNA
+Most likely      : Severe sepsis due to RUL PNA
 Prior admissions : 1 (33 ICD codes as PMH context)
 
 Summary:
-  A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, and altered mental status. Recent RUL PNA and SVC syndrome are noted.
+  A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Severe sepsis secondary to RUL PNA  (primary)
-      + fever, RUL PNA, hypotension
-      why: Primary diagnosis given the severe clinical presentation and evidence of RUL PNA and hypotension.
+  #1  [85.0/100 | high]  Severe sepsis due to RUL PNA  (primary)
+      + RUL PNA, hypotension, fever
+      why: Primary diagnosis given the recent onset of RUL PNA and clinical signs of sepsis.
 
-  #2  [70.0/100 | high]  Metastatic adenocarcinoma of unknown primary  (primary)
+  #2  [75.0/100 | high]  Metastatic adenocarcinoma of unknown primary  (primary)
       SNOMED aligned : Metastatic adenocarcinoma of unknown origin
-      + metastatic adenocarcinoma, RUL PNA, hypotension
-      why: Given the confirmed metastatic adenocarcinoma and its impact on the patient's current condition.
+      + confirmed diagnosis, recent RUL PNA
+      why: Underlying cancer is a known risk factor for sepsis and RUL PNA.
 
-  #3  [50.0/100 | medium]  Acute kidney injury  (complication)
-      + N179 — Acute kidney failure, unspecified
-      − no current evidence of acute kidney injury
-      why: A complication given the patient's history of acute kidney failure and current hypotension.
+  #3  [65.0/100 | medium]  Hypovolemic shock  (complication)
+      + severe hypotension, low hematocrit
+      why: Hypotension and low hematocrit suggest potential hypovolemic state.
 
-  #4  [40.0/100 | high]  SVC syndrome  (complication)
+  #4  [55.0/100 | medium]  Acute kidney injury  (complication)
+      + hypotension, abnormal labs
+      why: Hypotension and abnormal labs suggest potential kidney injury.
+
+  #5  [45.0/100 | high]  SVC syndrome  (complication)
       SNOMED aligned : SVC stent placed, multiple venous thromboses
-      + confirmed SVC syndrome
-      why: Confirmed complication with ongoing management.
+      + confirmed SVC syndrome, recent labs
+      why: SVC syndrome is a known complication and is confirmed.
 
-  #5  [30.0/100 | medium]  Hypovolemic shock  (complication)
-      + hypotension, low blood pressure
-      − no clear evidence of hypovolemia
-      why: A possible secondary diagnosis given the hypotension.
-
-  #6  [25.0/100 | medium]  Pneumonia  (differential)
-      SNOMED aligned : Infectious Diseases
-      + RUL PNA
-      − recent diagnosis, no new imaging findings
-      why: Differential diagnosis given the recent diagnosis of RUL PNA.
-
-RULE-OUTS
----------
-
-  • Cancer recurrence: Current evidence does not strongly support cancer recurrence as the primary cause.
+  #6  [35.0/100 | medium]  Neurological deterioration  (complication)
+      + altered mental status, hypotension
+      why: Altered mental status and hypotension suggest neurological involvement.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging and lab results to confirm RUL PNA and assess for new complications
+  • Further imaging of RUL PNA, more detailed neurological assessment

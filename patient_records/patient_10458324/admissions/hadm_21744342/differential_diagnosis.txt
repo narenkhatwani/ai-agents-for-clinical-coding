@@ -5,60 +5,53 @@ Patient ID       : 10458324
 HADM ID          : 21744342
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:44:09.485613
-Candidates       : 7
-Most likely      : Acute respiratory failure
+Generated        : 2026-08-15T17:30:59.620619
+Candidates       : 6
+Most likely      : Acute respiratory distress secondary to right-sided rib fractures and influenza A
 Prior admissions : 1 (8 ICD codes as PMH context)
 
 Summary:
-  A 40-year-old man with a history of bipolar disorder, polysubstance use, and opiate dependence presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a recent diagnosis of influenza A.
+  The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and bipolar disorder. Recent influenza A infection is also noted.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Acute respiratory failure  (primary)
-      + right PTX, hypoxia, respiratory symptoms
-      why: Primary cause of hypoxia and respiratory symptoms, supported by right PTX and hypoxia.
+  #1  [85.0/100 | high]  Acute respiratory distress secondary to right-sided rib fractures and influenza A  (primary)
+      + right sided rib fractures, hypoxia, influenza A PCR +
+      why: Right-sided rib fractures and influenza A infection are present, leading to respiratory distress.
 
-  #2  [75.0/100 | medium]  Influenza A  (primary)
+  #2  [75.0/100 | high]  Influenza A  (primary)
       SNOMED aligned : Influenza A (H1N1)
       + influenza A PCR +
-      − recent history of rib fractures, no other signs of severe influenza
-      why: Supports current respiratory symptoms, but other factors suggest acute respiratory failure as primary.
+      why: Confirmed influenza A infection with symptoms of cough and fever.
 
-  #3  [60.0/100 | low]  Bipolar disorder  (risk_factor)
+  #3  [70.0/100 | medium]  Pneumothorax  (complication)
+      + right PTX
+      − no evidence of infection or other cause
+      why: Small right pneumothorax noted, which could be related to rib fractures.
+
+  #4  [60.0/100 | medium]  Bipolar disorder  (risk_factor)
       SNOMED aligned : Bipolar disorder
       + bipolar disorder
-      − no current acute symptoms directly related to bipolar disorder
-      why: Historical risk factor, but no current acute symptoms.
+      − no acute psychiatric symptoms
+      why: History of bipolar disorder, but no acute psychiatric symptoms noted.
 
-  #4  [50.0/100 | low]  Opiate dependence  (risk_factor)
-      SNOMED aligned : Opium dependence
+  #5  [55.0/100 | medium]  Substance abuse  (risk_factor)
+      SNOMED aligned : Opiate dependence
       + opiate dependence
-      − no current acute symptoms directly related to opiate dependence
-      why: Historical risk factor, but no current acute symptoms.
+      why: History of opiate dependence, but no acute substance abuse symptoms.
 
-  #5  [45.0/100 | low]  Rib fractures  (complication)
-      + right sided rib fractures
-      − hypoxia and respiratory symptoms suggest more acute process
-      why: Complication from trauma, but less likely primary cause of current symptoms.
-
-  #6  [35.0/100 | low]  PTSD  (risk_factor)
-      + denies neck stiffness or headache
-      − no current acute symptoms directly related to PTSD
-      why: Historical risk factor, but no current acute symptoms.
-
-  #7  [30.0/100 | low]  Infection  (differential)
-      + cough, fever, nasal congestion
-      − influenza A PCR +, no other signs of severe infection
-      why: Differential diagnosis, but influenza A is more likely.
+  #6  [40.0/100 | low]  Dehydration  (differential)
+      + vomiting, diarrhea
+      − normal electrolyte levels
+      why: Vomiting and diarrhea present, but electrolytes are within normal range.
 
 RULE-OUTS
 ---------
 
-  • Pneumonia: Influenza A PCR + and right PTX suggest acute respiratory failure rather than pneumonia.
+  • Pneumonia: No signs of consolidation or infection in the lungs.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Additional information on the patient's recent trauma and respiratory status would help refine the differential diagnosis.
+  • Further imaging to confirm the extent of pneumothorax and rib fractures

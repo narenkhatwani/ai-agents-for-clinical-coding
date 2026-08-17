@@ -1,0 +1,34 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 10361982
+HADM ID          : 24286431
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:34:23.686292
+Primary condition: Hemorrhage following hysterectomy
+Primary ICD      : N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+Final codes      : 3
+Dropped / added  : 3 / 2
+
+Review:
+  Kept hemorrhage following hysterectomy and postoperative bleeding. Dropped menorrhagia and intra-menstrual bleeding as symptoms. Added essential hypertension and anxiety disorder as comorbidities.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+      (Hemorrhage following hysterectomy | snomed_extended_map | keep)
+   2. [secondary] I10 — Essential (primary) hypertension
+      (essential hypertension | added_mapped | add)
+      why: history of hypothyroidism
+   3. [secondary] F41.9 — Anxiety disorder, unspecified
+      (anxiety disorder | added_mapped | add)
+      why: history of anxiety disorder
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • N92.0 — Excessive and frequent menstruation with regular cycle  (Symptom-only code, not a current diagnosis)
+  • N93.0 — Postcoital and contact bleeding  (Symptom-only code, not a current diagnosis)
+  • N92.1 — Excessive and frequent menstruation with irregular cycle  (Symptom-only code, not a current diagnosis)

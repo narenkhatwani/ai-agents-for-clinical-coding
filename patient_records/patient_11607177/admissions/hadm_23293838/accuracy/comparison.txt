@@ -1,0 +1,113 @@
+ACCURACY vs GROUND TRUTH
+========================
+
+Patient ID       : 11607177
+HADM ID          : 23293838
+Generated        : 2026-08-15T23:57:14.897313
+
+PRIMARY DIFFDx — MATCH OR NO
+----------------------------
+
+  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+
+               Predicted                                        Ground truth
+  S8 DiffDx    Refractory VT                                    Ventricular tachycardia
+  S9 DiffDx    Refractory VT                                    Ventricular tachycardia
+
+  Full predicted (S8): Refractory VT
+  Full predicted (S9): Refractory VT
+  Full GT primary    : Ventricular tachycardia
+
+  MATCH (S8): YES    reason=contained  sim=0.87
+    matched: Refractory VT  vs  Ventricular tachycardia
+  MATCH (S9): YES    reason=contained  sim=0.87
+    matched: Refractory VT  vs  Ventricular tachycardia
+
+PRIMARY ICD — MATCH OR NO
+-------------------------
+
+  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+  or rank-1 ICD matches another billed GT code
+
+               Predicted                                        Ground truth
+  S8 ICD                                                        I47.2 Ventricular tachycardia
+  S9 ICD       I50.9 Heart failure, unspecified                 I47.2 Ventricular tachycardia
+
+  Full predicted (S8): (none) — 
+  Full predicted (S9): I50.9 — Heart failure, unspecified
+  Full ground truth  : I47.2 — Ventricular tachycardia
+
+  MATCH (S8): NO    reason=no_match  family=NO  sim=0.00
+  MATCH (S9): NO    reason=no_match  family=NO  sim=0.50
+
+ICD CODE SET — Stage 8 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.250 / 0.077 / 0.118
+Semantic  P / R / F1 : 0.500 / 0.154 / 0.235  (title MiniLM ≥ 0.7)
+Exact hits 1  |  semantic hits 2  |  predicted 4  |  GT 13
+Exact code hits:
+  ✓ E66.9 — Obesity, unspecified
+Semantic hits (same meaning, different code):
+  ≈ I50.9 — Heart failure, unspecified  [Chronic heart failure]
+      ↔ I42.9 — Cardiomyopathy, unspecified  (sim=0.75)
+Still missing after semantic match:
+  ✗ I47.2 — Ventricular tachycardia
+  ✗ Z95.811 — Presence of heart assist device
+  ✗ N17.9 — Acute kidney failure, unspecified
+  ✗ Z86.73 — Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
+  ✗ E11.9 — Type 2 diabetes mellitus without complications
+  ✗ E78.5 — Hyperlipidemia, unspecified
+  ✗ I10 — Essential (primary) hypertension
+  ✗ M10.9 — Gout, unspecified
+  ✗ Z96.652 — Presence of left artificial knee joint
+  ✗ I27.2 — Other secondary pulmonary hypertension
+  ✗ Z68.37 — Body mass index [BMI] 37.0-37.9, adult
+Still extra after semantic match:
+  + G47.30 — Sleep apnea, unspecified
+  + P28.30 — Primary sleep apnea of newborn, unspecified
+
+ICD CODE SET — Stage 9 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.500 / 0.231 / 0.316
+Semantic  P / R / F1 : 0.833 / 0.385 / 0.526  (title MiniLM ≥ 0.7)
+Exact hits 3  |  semantic hits 5  |  predicted 6  |  GT 13
+Exact code hits:
+  ✓ E66.9 — Obesity, unspecified
+  ✓ E78.5 — Hyperlipidemia, unspecified
+  ✓ M10.9 — Gout, unspecified
+Semantic hits (same meaning, different code):
+  ≈ I50.9 — Heart failure, unspecified  [Refractory VT]
+      ↔ I47.2 — Ventricular tachycardia  (sim=0.87)
+  ≈ I42.0 — Dilated cardiomyopathy  [Dilated non-ischemic cardiomyopathy]
+      ↔ I42.9 — Cardiomyopathy, unspecified  (sim=0.78)
+Still missing after semantic match:
+  ✗ Z95.811 — Presence of heart assist device
+  ✗ N17.9 — Acute kidney failure, unspecified
+  ✗ Z86.73 — Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
+  ✗ E11.9 — Type 2 diabetes mellitus without complications
+  ✗ I10 — Essential (primary) hypertension
+  ✗ Z96.652 — Presence of left artificial knee joint
+  ✗ I27.2 — Other secondary pulmonary hypertension
+  ✗ Z68.37 — Body mass index [BMI] 37.0-37.9, adult
+Still extra after semantic match:
+  + G47.30 — Sleep apnea, unspecified
+
+GROUND TRUTH LIST
+-----------------
+
+   1. I47.2 — Ventricular tachycardia (primary)
+   2. Z95.811 — Presence of heart assist device
+   3. N17.9 — Acute kidney failure, unspecified
+   4. I42.9 — Cardiomyopathy, unspecified
+   5. Z86.73 — Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
+   6. E11.9 — Type 2 diabetes mellitus without complications
+   7. E78.5 — Hyperlipidemia, unspecified
+   8. I10 — Essential (primary) hypertension
+   9. M10.9 — Gout, unspecified
+  10. Z96.652 — Presence of left artificial knee joint
+  11. I27.2 — Other secondary pulmonary hypertension
+  12. Z68.37 — Body mass index [BMI] 37.0-37.9, adult
+  13. E66.9 — Obesity, unspecified

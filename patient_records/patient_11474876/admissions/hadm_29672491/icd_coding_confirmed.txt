@@ -1,0 +1,41 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 11474876
+HADM ID          : 29672491
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:35:07.423602
+Primary condition: Heart failure with preserved ejection fraction (HFpEF)
+Primary ICD      : I50.30 — Unspecified diastolic (congestive) heart failure
+Final codes      : 6
+Dropped / added  : 5 / 1
+
+Review:
+  Confirmed heart failure with preserved ejection fraction, peripheral vascular disease, and chronic kidney disease. Dropped unspecified codes and added essential hypertension and atrial fibrillation.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] I50.30 — Unspecified diastolic (congestive) heart failure
+      (Heart failure with preserved ejection fraction (HFpEF) | stage8_confirmed | keep)
+   2. [secondary] I73.9 — Peripheral vascular disease, unspecified
+      (Peripheral vascular disease (PVD) | stage8_confirmed | keep)
+   3. [secondary] N18.9 — Chronic kidney disease, unspecified
+      (Chronic kidney disease (CKD) | stage8_confirmed | keep)
+   4. [secondary] I48.91 — Unspecified atrial fibrillation
+      (Atrial fibrillation (AFib) | stage8_confirmed | keep)
+   5. [secondary] I50.9 — Heart failure, unspecified
+      (Heart failure with preserved ejection fraction (HFpEF) | stage8_confirmed | keep)
+   6. [secondary] I10 — Essential (primary) hypertension
+      (Essential hypertension | added_mapped | add)
+      why: Hypertensive heart disease with heart failure mentioned
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • I38 — Endocarditis, valve unspecified  (Unspecific and not supported by context)
+  • I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris  (Unspecific and not supported by context)
+  • I51.4 — Myocarditis, unspecified  (Unspecific and not supported by context)
+  • I42.9 — Cardiomyopathy, unspecified  (Unspecific and not supported by context)
+  • R09.02 — Hypoxemia  (Unspecific and not supported by context)

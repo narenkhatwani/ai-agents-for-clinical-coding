@@ -1,0 +1,258 @@
+{
+  "review_summary": "Confirmed ICD-10 codes for current stay, dropped anatomically incorrect codes, and added relevant missing conditions.",
+  "primary_condition": "Refractory VT",
+  "primary_icd_code": "I50.9",
+  "primary_icd_title": "Heart failure, unspecified",
+  "final_codes": [
+    {
+      "code": "I50.9",
+      "title": "Heart failure, unspecified",
+      "role": "primary",
+      "source": "snomed_extended_map",
+      "condition": "Refractory VT",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "G47.30",
+      "title": "Sleep apnea, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Sleep apnea",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "E66.9",
+      "title": "Obesity, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Obesity",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "I42.0",
+      "title": "Dilated cardiomyopathy",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Dilated non-ischemic cardiomyopathy",
+      "action": "add",
+      "reason": "confirmed diagnosis",
+      "always": true
+    },
+    {
+      "code": "E78.5",
+      "title": "Hyperlipidemia, unspecified",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Dyslipidemia",
+      "action": "add",
+      "reason": "confirmed diagnosis",
+      "always": true
+    },
+    {
+      "code": "M10.9",
+      "title": "Gout, unspecified",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Gout",
+      "action": "add",
+      "reason": "confirmed diagnosis",
+      "always": true
+    }
+  ],
+  "dropped_codes": [],
+  "added_conditions": [
+    {
+      "code": "I42.0",
+      "title": "Dilated cardiomyopathy",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "399020009",
+        "preferred_term": "Congestive cardiomyopathy",
+        "fsn": "Congestive cardiomyopathy (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.7462331077653483,
+        "query": "Dilated non-ischemic cardiomyopathy",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "I42.0",
+          "title": "Dilated cardiomyopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I42.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Dilated non-ischemic cardiomyopathy",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "confirmed diagnosis",
+      "as_primary": false
+    },
+    {
+      "code": "E78.5",
+      "title": "Hyperlipidemia, unspecified",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "370992007",
+        "preferred_term": "Dyslipidemia",
+        "fsn": "Dyslipidemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Dyslipidemia",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 5,
+          "map_group": 1,
+          "map_advice": "ALWAYS E78.5",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Dyslipidemia",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "confirmed diagnosis",
+      "as_primary": false
+    },
+    {
+      "code": "M10.9",
+      "title": "Gout, unspecified",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "90560007",
+        "preferred_term": "Gout",
+        "fsn": "Gout (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Gout",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "M10.9",
+          "title": "Gout, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS M10.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Gout",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "confirmed diagnosis",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [
+    {
+      "condition": "LVAD",
+      "reason": "confirmed status"
+    },
+    {
+      "condition": "Diabetes",
+      "reason": "confirmed diagnosis"
+    },
+    {
+      "condition": "TKR (left)",
+      "reason": "confirmed status"
+    }
+  ],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Refractory VT",
+        "action": "keep",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "Primary diagnosis confirmed"
+      },
+      {
+        "rank": 2,
+        "diagnosis": "Heart transplantation",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "No evidence of heart transplantation"
+      },
+      {
+        "rank": 3,
+        "diagnosis": "Chronic heart failure",
+        "action": "keep",
+        "selected_code": "I50.9",
+        "replace_with_condition": "",
+        "reason": "Chronic heart failure confirmed"
+      },
+      {
+        "rank": 4,
+        "diagnosis": "Sleep apnea",
+        "action": "keep",
+        "selected_code": "G47.30",
+        "replace_with_condition": "",
+        "reason": "Sleep apnea confirmed"
+      },
+      {
+        "rank": 5,
+        "diagnosis": "Obesity",
+        "action": "keep",
+        "selected_code": "E66.9",
+        "replace_with_condition": "",
+        "reason": "Obesity confirmed"
+      }
+    ],
+    "n_confirmed": 15,
+    "n_missing_named": 6
+  },
+  "fallback": null,
+  "patient_id": "11607177",
+  "hadm_id": "23293838",
+  "most_likely": "Refractory VT",
+  "stage8_most_likely": "Refractory VT",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:35:24.010359",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 4,
+    "prior_icd_codes": 78,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 6,
+  "n_dropped": 0,
+  "n_added": 3
+}

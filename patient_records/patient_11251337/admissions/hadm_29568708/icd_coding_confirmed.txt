@@ -1,0 +1,32 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 11251337
+HADM ID          : 29568708
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:34:56.161886
+Primary condition: Nephrolithiasis
+Primary ICD      : N20.0 — Calculus of kidney
+Final codes      : 3
+Dropped / added  : 2 / 1
+
+Review:
+  Kept nephrolithiasis and hypertension, dropped hemorrhagic CVA, confirmed chronic kidney disease, and added anemia.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] N20.0 — Calculus of kidney
+      (Nephrolithiasis | stage8_confirmed | keep)
+   2. [secondary] N18.9 — Chronic kidney disease, unspecified
+      (Chronic kidney disease | stage8_confirmed | keep)
+   3. [secondary] D64.9 — Anemia, unspecified
+      (Anemia | added_mapped | add)
+      why: Low hemoglobin and hematocrit levels
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • N17.9 — Acute kidney failure, unspecified  (No evidence of acute kidney injury)
+  • I10 — Essential (primary) hypertension  (No evidence of hemorrhagic CVA)

@@ -5,41 +5,52 @@ Patient ID       : 13508515
 HADM ID          : 21834271
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:45:31.186480
-Candidates       : 4
+Generated        : 2026-08-15T17:32:23.633611
+Candidates       : 6
 Most likely      : Acute on chronic systolic heart failure
 Prior admissions : 1 (16 ICD codes as PMH context)
 
 Summary:
-  The patient presents with dyspnea and pain, along with a history of renal cell carcinoma and chronic systolic heart failure. Current labs show elevated creatinine and low hemoglobin, consistent with renal and anemia issues.
+  The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Acute on chronic systolic heart failure  (primary)
-      SNOMED aligned : 42322001
-      + sudden onset dyspnea, systolic CHF with EF around 30%
-      why: Strong clinical presentation and supporting symptoms.
+      SNOMED aligned : 426720004
+      + systolic CHF with EF around 30%
+      why: Strong clinical evidence of systolic heart failure, supported by low EF.
 
-  #2  [75.0/100 | medium]  Renal cell carcinoma  (secondary)
-      SNOMED aligned : 19386008
-      + left renal mass, renal cell carcinoma
-      − Focused on cardiac symptoms
-      why: Confirmed diagnosis, but less acute focus.
+  #2  [75.0/100 | high]  Renal cell carcinoma  (primary)
+      SNOMED aligned : 77882004
+      + left renal mass
+      + renal cell carcinoma
+      why: Confirmed diagnosis with significant clinical findings.
 
-  #3  [70.0/100 | medium]  Anemia  (complication)
-      SNOMED aligned : 73585002
-      + low hemoglobin, low hematocrit
-      − Not the primary focus of admission
-      why: Low hemoglobin and hematocrit suggest anemia, but not primary concern.
+  #3  [70.0/100 | medium]  Anemia  (secondary)
+      + low hemoglobin, hematocrit
+      why: Low hemoglobin and hematocrit levels suggest anemia.
 
-  #4  [65.0/100 | low]  Type 2 diabetes  (risk_factor)
-      SNOMED aligned : 25169004
-      + high glucose
-      − Not the primary focus of admission
-      why: Type 2 diabetes is a known risk factor but not the primary concern.
+  #4  [65.0/100 | medium]  Hypokalemia  (secondary)
+      + low potassium
+      why: Low potassium levels suggest hypokalemia.
+
+  #5  [60.0/100 | medium]  Obstructive sleep apnea  (risk_factor)
+      SNOMED aligned : 78275009
+      + confirmed diagnosis
+      why: Confirmed diagnosis with potential impact on overall health.
+
+  #6  [55.0/100 | medium]  Diabetes mellitus  (secondary)
+      + confirmed diagnosis
+      + mild hyperglycemia
+      why: Confirmed diagnosis with mild hyperglycemia.
+
+RULE-OUTS
+---------
+
+  • Acute kidney injury: Creatinine levels are moderately elevated but not critically so.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further cardiac imaging and renal function tests would refine the ranking
+  • Further imaging or lab results could clarify the extent of renal involvement and heart failure status

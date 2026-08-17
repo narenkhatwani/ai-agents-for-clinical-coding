@@ -1,100 +1,89 @@
 {
-  "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, and altered mental status. Recent RUL PNA and SVC syndrome are noted.",
-  "most_likely": "Severe sepsis secondary to RUL PNA",
+  "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.",
+  "most_likely": "Severe sepsis due to RUL PNA",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Severe sepsis secondary to RUL PNA",
+      "diagnosis": "Severe sepsis due to RUL PNA",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "fever, RUL PNA, hypotension"
+        "RUL PNA, hypotension, fever"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the severe clinical presentation and evidence of RUL PNA and hypotension."
+      "reasoning": "Primary diagnosis given the recent onset of RUL PNA and clinical signs of sepsis."
     },
     {
       "rank": 2,
       "diagnosis": "Metastatic adenocarcinoma of unknown primary",
-      "score": 70.0,
+      "score": 75.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
       "supporting_evidence": [
-        "metastatic adenocarcinoma, RUL PNA, hypotension"
+        "confirmed diagnosis, recent RUL PNA"
       ],
       "opposing_evidence": [],
-      "reasoning": "Given the confirmed metastatic adenocarcinoma and its impact on the patient's current condition."
+      "reasoning": "Underlying cancer is a known risk factor for sepsis and RUL PNA."
     },
     {
       "rank": 3,
-      "diagnosis": "Acute kidney injury",
-      "score": 50.0,
+      "diagnosis": "Hypovolemic shock",
+      "score": 65.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "N179 — Acute kidney failure, unspecified"
+        "severe hypotension, low hematocrit"
       ],
-      "opposing_evidence": [
-        "no current evidence of acute kidney injury"
-      ],
-      "reasoning": "A complication given the patient's history of acute kidney failure and current hypotension."
+      "opposing_evidence": [],
+      "reasoning": "Hypotension and low hematocrit suggest potential hypovolemic state."
     },
     {
       "rank": 4,
+      "diagnosis": "Acute kidney injury",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "hypotension, abnormal labs"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hypotension and abnormal labs suggest potential kidney injury."
+    },
+    {
+      "rank": 5,
       "diagnosis": "SVC syndrome",
-      "score": 40.0,
+      "score": 45.0,
       "confidence": "high",
       "category": "complication",
       "snomed_aligned": "SVC stent placed, multiple venous thromboses",
       "supporting_evidence": [
-        "confirmed SVC syndrome"
+        "confirmed SVC syndrome, recent labs"
       ],
       "opposing_evidence": [],
-      "reasoning": "Confirmed complication with ongoing management."
+      "reasoning": "SVC syndrome is a known complication and is confirmed."
     },
     {
-      "rank": 5,
-      "diagnosis": "Hypovolemic shock",
-      "score": 30.0,
+      "rank": 6,
+      "diagnosis": "Neurological deterioration",
+      "score": 35.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hypotension, low blood pressure"
+        "altered mental status, hypotension"
       ],
-      "opposing_evidence": [
-        "no clear evidence of hypovolemia"
-      ],
-      "reasoning": "A possible secondary diagnosis given the hypotension."
-    },
-    {
-      "rank": 6,
-      "diagnosis": "Pneumonia",
-      "score": 25.0,
-      "confidence": "medium",
-      "category": "differential",
-      "snomed_aligned": "Infectious Diseases",
-      "supporting_evidence": [
-        "RUL PNA"
-      ],
-      "opposing_evidence": [
-        "recent diagnosis, no new imaging findings"
-      ],
-      "reasoning": "Differential diagnosis given the recent diagnosis of RUL PNA."
+      "opposing_evidence": [],
+      "reasoning": "Altered mental status and hypotension suggest neurological involvement."
     }
   ],
-  "rule_outs": [
-    {
-      "diagnosis": "Cancer recurrence",
-      "why": "Current evidence does not strongly support cancer recurrence as the primary cause."
-    }
-  ],
+  "rule_outs": [],
   "uncertain_areas": [
-    "Further imaging and lab results to confirm RUL PNA and assess for new complications"
+    "Further imaging of RUL PNA, more detailed neurological assessment"
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis",
@@ -103,7 +92,7 @@
   "_temperature": 0.4,
   "patient_id": "13196707",
   "hadm_id": "21475988",
-  "generated_at": "2026-08-09T00:45:20.765143",
+  "generated_at": "2026-08-15T17:32:11.234822",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,

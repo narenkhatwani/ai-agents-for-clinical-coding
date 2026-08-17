@@ -1,0 +1,90 @@
+ACCURACY vs GROUND TRUTH
+========================
+
+Patient ID       : 10361982
+HADM ID          : 24286431
+Generated        : 2026-08-15T23:57:14.708711
+
+PRIMARY DIFFDx — MATCH OR NO
+----------------------------
+
+  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+
+               Predicted                                        Ground truth
+  S8 DiffDx    Hemorrhage following hysterectomy                Postprocedural hemorrhage of a genitourinar...
+  S9 DiffDx    Hemorrhage following hysterectomy                Postprocedural hemorrhage of a genitourinar...
+
+  Full predicted (S8): Hemorrhage following hysterectomy
+  Full predicted (S9): Hemorrhage following hysterectomy
+  Full GT primary    : Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+
+  MATCH (S8): YES    reason=same_condition  sim=0.49
+    matched: Hemorrhage following hysterectomy  vs  Postprocedural hemorrhage of a genito...
+  MATCH (S9): YES    reason=same_condition  sim=0.49
+    matched: Hemorrhage following hysterectomy  vs  Postprocedural hemorrhage of a genito...
+
+PRIMARY ICD — MATCH OR NO
+-------------------------
+
+  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+  or rank-1 ICD matches another billed GT code
+
+               Predicted                                        Ground truth
+  S8 ICD       N93.9 Abnormal uterine and vaginal bleeding...   N99.820 Postprocedural hemorrhage of a geni...
+  S9 ICD       N93.9 Abnormal uterine and vaginal bleeding...   N99.820 Postprocedural hemorrhage of a geni...
+
+  Full predicted (S8): N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+  Full predicted (S9): N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+  Full ground truth  : N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+
+  MATCH (S8): NO    reason=no_match  family=NO  sim=0.36
+  MATCH (S9): NO    reason=no_match  family=NO  sim=0.36
+
+ICD CODE SET — Stage 8 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.143 / 0.200 / 0.167
+Semantic  P / R / F1 : 0.143 / 0.200 / 0.167  (title MiniLM ≥ 0.7)
+Exact hits 1  |  semantic hits 1  |  predicted 7  |  GT 5
+Exact code hits:
+  ✓ E03.9 — Hypothyroidism, unspecified
+Still missing after semantic match:
+  ✗ N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+  ✗ Y83.6 — Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure
+  ✗ Y92.009 — Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause
+  ✗ F90.9 — Attention-deficit hyperactivity disorder, unspecified type
+Still extra after semantic match:
+  + N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+  + N92.0 — Excessive and frequent menstruation with regular cycle
+  + N93.0 — Postcoital and contact bleeding
+  + N92.1 — Excessive and frequent menstruation with irregular cycle
+  + N80.00 — Endometriosis of the uterus, unspecified
+  + P72.2 — Other transitory neonatal disorders of thyroid function, not elsewhere classified
+
+ICD CODE SET — Stage 9 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.000 / 0.000 / 0.000
+Semantic  P / R / F1 : 0.000 / 0.000 / 0.000  (title MiniLM ≥ 0.7)
+Exact hits 0  |  semantic hits 0  |  predicted 3  |  GT 5
+Related (not counted; sim 0.50–0.70):
+  ~ F41.9 — Anxiety disorder, unspecified  [anxiety disorder]
+      ↔ F90.9 — Attention-deficit hyperactivity disorder, unspecified type  (sim=0.50)
+Still missing after semantic match:
+  ✗ N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+  ✗ Y83.6 — Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure
+  ✗ Y92.009 — Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause
+  ✗ E03.9 — Hypothyroidism, unspecified
+Still extra after semantic match:
+  + N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+  + I10 — Essential (primary) hypertension
+
+GROUND TRUTH LIST
+-----------------
+
+   1. N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure (primary)
+   2. Y83.6 — Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure
+   3. Y92.009 — Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause
+   4. E03.9 — Hypothyroidism, unspecified
+   5. F90.9 — Attention-deficit hyperactivity disorder, unspecified type

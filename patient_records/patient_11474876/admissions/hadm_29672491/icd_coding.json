@@ -1,0 +1,575 @@
+{
+  "summary": "A 70-year-old man with a history of atrial fibrillation (AFib), heart failure with preserved ejection fraction (HFpEF), peripheral vascular disease (PVD), and chronic kidney disease (CKD) presents post-ERCP for cholangitis, with symptoms including nocturnal hypoxia and leg swelling.",
+  "most_likely": "Heart failure with preserved ejection fraction (HFpEF)",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "HFpEF is the most likely primary diagnosis given the patient's history and current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "446221000",
+        "preferred_term": "Heart failure with normal ejection fraction",
+        "fsn": "Heart failure with normal ejection fraction (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Heart failure with preserved ejection fraction (HFpEF)",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I50.30",
+      "icd10_primary_title": "Unspecified diastolic (congestive) heart failure",
+      "icd10_package": [
+        {
+          "code": "I50.30",
+          "title": "Unspecified diastolic (congestive) heart failure",
+          "source": "snomed_extended_map",
+          "map_priority": 9,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO VALVULAR HEART DISEASE CHOOSE I38 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "I25.10",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO CORONARY ARTERY DISEASE CHOOSE I25.10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3,
+          "package_order": 3
+        },
+        {
+          "code": "I51.4",
+          "title": "Myocarditis, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO MYOCARDITIS CHOOSE I51.4 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4,
+          "package_order": 4
+        },
+        {
+          "code": "I42.9",
+          "title": "Cardiomyopathy, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO CARDIOMYOPATHY CHOOSE I42.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5,
+          "package_order": 5
+        },
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "heart failure",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "84114007",
+          "from_snomed_term": "Heart failure",
+          "relevance_to_diagnosis": 0.5868,
+          "package_order": 6
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I50.30",
+          "title": "Unspecified diastolic (congestive) heart failure",
+          "source": "snomed_extended_map",
+          "map_priority": 9,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO VALVULAR HEART DISEASE CHOOSE I38 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        },
+        {
+          "code": "I25.10",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO CORONARY ARTERY DISEASE CHOOSE I25.10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3
+        },
+        {
+          "code": "I51.4",
+          "title": "Myocarditis, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO MYOCARDITIS CHOOSE I51.4 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4
+        },
+        {
+          "code": "I42.9",
+          "title": "Cardiomyopathy, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF LEFT VENTRICULAR FAILURE WITH NORMAL EJECTION FRACTION DUE TO CARDIOMYOPATHY CHOOSE I42.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "heart failure",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "84114007",
+          "from_snomed_term": "Heart failure",
+          "relevance_to_diagnosis": 0.5868
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 6
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Peripheral vascular disease (PVD)",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Peripheral vascular disease",
+      "supporting_evidence": [
+        "PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "PVD is a significant comorbidity but less likely to be the primary cause of current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "400047006",
+        "preferred_term": "Peripheral vascular disease",
+        "fsn": "Peripheral vascular disease (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Peripheral vascular disease (PVD)",
+        "aligned_hint": "Peripheral vascular disease"
+      },
+      "icd10_primary": "I73.9",
+      "icd10_primary_title": "Peripheral vascular disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "I73.9",
+          "title": "Peripheral vascular disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I73.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I73.9",
+          "title": "Peripheral vascular disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I73.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Atrial fibrillation (AFib)",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Atrial fibrillation",
+      "supporting_evidence": [
+        "AFib on apixaban, Creatinine: 1.4 mg/dL, Hemoglobin: 12.6 g/dL"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "AFib is a known complication but less likely to be the primary cause of current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "49436004",
+        "preferred_term": "Atrial fibrillation",
+        "fsn": "Atrial fibrillation (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Atrial fibrillation (AFib)",
+        "aligned_hint": "Atrial fibrillation"
+      },
+      "icd10_primary": "I48.91",
+      "icd10_primary_title": "Unspecified atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.91",
+          "title": "Unspecified atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I48.91",
+          "title": "Unspecified atrial fibrillation",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Chronic kidney disease (CKD)",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "Chronic kidney disease",
+      "supporting_evidence": [
+        "CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "CKD is a significant comorbidity but less likely to be the primary cause of current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "709044004",
+        "preferred_term": "Chronic kidney disease",
+        "fsn": "Chronic kidney disease (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Chronic kidney disease (CKD)",
+        "aligned_hint": "Chronic kidney disease"
+      },
+      "icd10_primary": "N18.9",
+      "icd10_primary_title": "Chronic kidney disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Nocturnal hypoxia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "nocturnal hypoxia that improved with diuresis"
+      ],
+      "opposing_evidence": [
+        "resolved with diuresis, no current symptoms"
+      ],
+      "reasoning": "Nocturnal hypoxia is a historical finding and not currently causing symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "389086002",
+        "preferred_term": "Hypoxia",
+        "fsn": "Hypoxia (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6079289213558614,
+        "query": "Nocturnal hypoxia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "R09.02",
+      "icd10_primary_title": "Hypoxemia",
+      "icd10_package": [
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P84",
+          "title": "Other problems with newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P84 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P84",
+          "title": "Other problems with newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P84 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Cholangitis",
+      "why": "Symptoms have improved post-ERCP, and current labs are within normal range."
+    }
+  ],
+  "uncertain_areas": [
+    "Further clarification on the patient's current respiratory status and fluid management would help refine the differential diagnosis."
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "11474876",
+  "hadm_id": "29672491",
+  "generated_at": "2026-08-15T17:31:28.467580",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 13,
+    "retained_links": 17,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 23,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 24776937,
+      "admittime": "2132-08-13 14:46:00",
+      "dischtime": "2132-08-15 15:45:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "K830",
+      "primary_dx_title": "Cholangitis",
+      "n_diagnoses": 23,
+      "icd10_diagnoses": [
+        {
+          "code": "K830",
+          "title": "Cholangitis"
+        },
+        {
+          "code": "I739",
+          "title": "Peripheral vascular disease, unspecified"
+        },
+        {
+          "code": "I4891",
+          "title": "Unspecified atrial fibrillation"
+        },
+        {
+          "code": "Z8546",
+          "title": "Personal history of malignant neoplasm of prostate"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "I480",
+          "title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "Z7901",
+          "title": "Long term (current) use of anticoagulants"
+        },
+        {
+          "code": "Z96642",
+          "title": "Presence of left artificial hip joint"
+        },
+        {
+          "code": "T462X5A",
+          "title": "Adverse effect of other antidysrhythmic drugs, initial encounter"
+        },
+        {
+          "code": "Y92019",
+          "title": "Unspecified place in single-family (private) house as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F4312",
+          "title": "Post-traumatic stress disorder, chronic"
+        },
+        {
+          "code": "I4510",
+          "title": "Unspecified right bundle-branch block"
+        },
+        {
+          "code": "R0603",
+          "title": "Acute respiratory distress"
+        },
+        {
+          "code": "R001",
+          "title": "Bradycardia, unspecified"
+        },
+        {
+          "code": "I4581",
+          "title": "Long QT syndrome"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "N400",
+          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
+        },
+        {
+          "code": "D1803",
+          "title": "Hemangioma of intra-abdominal structures"
+        },
+        {
+          "code": "E119",
+          "title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "code": "I110",
+          "title": "Hypertensive heart disease with heart failure"
+        },
+        {
+          "code": "I509",
+          "title": "Heart failure, unspecified"
+        },
+        {
+          "code": "R0902",
+          "title": "Hypoxemia"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 5,
+    "n_with_principal": 5,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:06.420714"
+}

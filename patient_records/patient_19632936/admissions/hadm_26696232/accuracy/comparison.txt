@@ -1,0 +1,122 @@
+ACCURACY vs GROUND TRUTH
+========================
+
+Patient ID       : 19632936
+HADM ID          : 26696232
+Generated        : 2026-08-15T23:57:15.403673
+
+PRIMARY DIFFDx — MATCH OR NO
+----------------------------
+
+  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+
+               Predicted                                        Ground truth
+  S8 DiffDx    Acute on chronic macrocytic anemia               Iron deficiency anemia, unspecified
+  S9 DiffDx    Acute on chronic macrocytic anemia               Iron deficiency anemia, unspecified
+
+  Full predicted (S8): Acute on chronic macrocytic anemia
+  Full predicted (S9): Acute on chronic macrocytic anemia
+  Full GT primary    : Iron deficiency anemia, unspecified
+
+  MATCH (S8): NO    reason=no_match  sim=0.52
+    matched: Acute on chronic macrocytic anemia  vs  Iron deficiency anemia, unspecified
+  MATCH (S9): NO    reason=no_match  sim=0.52
+    matched: Acute on chronic macrocytic anemia  vs  Iron deficiency anemia, unspecified
+
+PRIMARY ICD — MATCH OR NO
+-------------------------
+
+  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+  or rank-1 ICD matches another billed GT code
+
+               Predicted                                        Ground truth
+  S8 ICD       D53.9 Nutritional anemia, unspecified            D50.9 Iron deficiency anemia, unspecified
+  S9 ICD       D53.9 Nutritional anemia, unspecified            D50.9 Iron deficiency anemia, unspecified
+
+  Full predicted (S8): D53.9 — Nutritional anemia, unspecified
+  Full predicted (S9): D53.9 — Nutritional anemia, unspecified
+  Full ground truth  : D50.9 — Iron deficiency anemia, unspecified
+
+  MATCH (S8): YES    reason=semantic  family=NO  sim=0.81
+  MATCH (S9): YES    reason=semantic  family=NO  sim=0.81
+
+ICD CODE SET — Stage 8 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.143 / 0.067 / 0.091
+Semantic  P / R / F1 : 0.286 / 0.133 / 0.182  (title MiniLM ≥ 0.7)
+Exact hits 1  |  semantic hits 2  |  predicted 7  |  GT 15
+Exact code hits:
+  ✓ I48.91 — Unspecified atrial fibrillation
+Semantic hits (same meaning, different code):
+  ≈ D64.9 — Anemia, unspecified  [Acute on chronic macrocytic anemia]
+      ↔ D50.9 — Iron deficiency anemia, unspecified  (sim=0.84)
+Still missing after semantic match:
+  ✗ I27.2 — Other secondary pulmonary hypertension
+  ✗ I49.5 — Sick sinus syndrome
+  ✗ I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+  ✗ I10 — Essential (primary) hypertension
+  ✗ E78.5 — Hyperlipidemia, unspecified
+  ✗ I35.0 — Nonrheumatic aortic (valve) stenosis
+  ✗ Z95.5 — Presence of coronary angioplasty implant and graft
+  ✗ Z79.01 — Long term (current) use of anticoagulants
+  ✗ Z95.0 — Presence of cardiac pacemaker
+  ✗ Z87.891 — Personal history of nicotine dependence
+  ✗ N40.0 — Benign prostatic hyperplasia without lower urinary tract symptoms
+  ✗ K22.70 — Barrett's esophagus without dysplasia
+  ✗ I87.8 — Other specified disorders of veins
+Still extra after semantic match:
+  + D53.9 — Nutritional anemia, unspecified
+  + I50.9 — Heart failure, unspecified
+  + P29.0 — Neonatal cardiac failure
+  + R06.09 — Other forms of dyspnea
+  + D63.8 — Anemia in other chronic diseases classified elsewhere
+
+ICD CODE SET — Stage 9 vs GT
+----------------------------
+
+Exact     P / R / F1 : 0.250 / 0.067 / 0.105
+Semantic  P / R / F1 : 0.500 / 0.133 / 0.210  (title MiniLM ≥ 0.7)
+Exact hits 1  |  semantic hits 2  |  predicted 4  |  GT 15
+Exact code hits:
+  ✓ I10 — Essential (primary) hypertension
+Semantic hits (same meaning, different code):
+  ≈ D53.9 — Nutritional anemia, unspecified  [Acute on chronic macrocytic anemia]
+      ↔ D50.9 — Iron deficiency anemia, unspecified  (sim=0.81)
+Still missing after semantic match:
+  ✗ I27.2 — Other secondary pulmonary hypertension
+  ✗ I49.5 — Sick sinus syndrome
+  ✗ I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+  ✗ I48.91 — Unspecified atrial fibrillation
+  ✗ E78.5 — Hyperlipidemia, unspecified
+  ✗ I35.0 — Nonrheumatic aortic (valve) stenosis
+  ✗ Z95.5 — Presence of coronary angioplasty implant and graft
+  ✗ Z79.01 — Long term (current) use of anticoagulants
+  ✗ Z95.0 — Presence of cardiac pacemaker
+  ✗ Z87.891 — Personal history of nicotine dependence
+  ✗ N40.0 — Benign prostatic hyperplasia without lower urinary tract symptoms
+  ✗ K22.70 — Barrett's esophagus without dysplasia
+  ✗ I87.8 — Other specified disorders of veins
+Still extra after semantic match:
+  + I50.9 — Heart failure, unspecified
+  + N18.9 — Chronic kidney disease, unspecified
+
+GROUND TRUTH LIST
+-----------------
+
+   1. D50.9 — Iron deficiency anemia, unspecified (primary)
+   2. I27.2 — Other secondary pulmonary hypertension
+   3. I49.5 — Sick sinus syndrome
+   4. I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+   5. I48.91 — Unspecified atrial fibrillation
+   6. I10 — Essential (primary) hypertension
+   7. E78.5 — Hyperlipidemia, unspecified
+   8. I35.0 — Nonrheumatic aortic (valve) stenosis
+   9. Z95.5 — Presence of coronary angioplasty implant and graft
+  10. Z79.01 — Long term (current) use of anticoagulants
+  11. Z95.0 — Presence of cardiac pacemaker
+  12. Z87.891 — Personal history of nicotine dependence
+  13. N40.0 — Benign prostatic hyperplasia without lower urinary tract symptoms
+  14. K22.70 — Barrett's esophagus without dysplasia
+  15. I87.8 — Other specified disorders of veins

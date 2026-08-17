@@ -1,0 +1,43 @@
+ICD-10-CM CONFIRMATION (Stage 9)
+================================
+
+Patient ID       : 17774110
+HADM ID          : 27339772
+Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
+Temperature      : 0.3
+Generated        : 2026-08-15T17:36:36.915619
+Primary condition: Severe sepsis with septic shock
+Primary ICD      : R65.21 — Severe sepsis with septic shock
+Final codes      : 6
+Dropped / added  : 6 / 2
+
+Review:
+  Confirmed septic shock, hepatic encephalopathy, and worsening liver failure. Dropped some symptom-only codes. Added pancytopenia and alcohol abuse as relevant PMH.
+
+FINAL CODE LIST
+---------------
+
+   1. [primary] R65.21 — Severe sepsis with septic shock
+      (Severe sepsis with septic shock | stage8_confirmed | keep)
+   2. [secondary] K76.82 — Hepatic encephalopathy
+      (Hepatic encephalopathy | stage8_confirmed | keep)
+   3. [secondary] K72.00 — Acute and subacute hepatic failure without coma
+      (Acute liver failure | stage8_confirmed | keep)
+   4. [secondary] K74.69 — Other cirrhosis of liver
+      (Acute liver failure | stage8_confirmed | keep)
+   5. [secondary] D61.818 — Other pancytopenia
+      (Pancytopenia | added_mapped | add)
+      why: Low hematocrit, hemoglobin, and platelet count
+   6. [secondary] F10.10 — Alcohol abuse, uncomplicated
+      (Alcohol abuse | added_mapped | add)
+      why: Confirmed by clinical context
+
+DROPPED STAGE-8 CODES
+---------------------
+
+  • K76.7 — Hepatorenal syndrome  (Not supported by current context)
+  • N17.9 — Acute kidney failure, unspecified  (Not supported by current context)
+  • P54.3 — Other neonatal gastrointestinal hemorrhage  (Not supported by current context)
+  • I48.91 — Unspecified atrial fibrillation  (Not supported by current context)
+  • J90 — Pleural effusion, not elsewhere classified  (Not supported by current context)
+  • D68.9 — Coagulation defect, unspecified  (Not supported by current context)

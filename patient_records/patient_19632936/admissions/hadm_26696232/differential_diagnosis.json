@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with acute on chronic dyspnea on exertion and fatigue, alongside macrocytic anemia, a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
+  "summary": "The patient presents with acute on chronic dyspnea on exertion, fatigue, and macrocytic anemia. The patient has a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
   "most_likely": "Acute on chronic macrocytic anemia",
   "differential": [
     {
@@ -10,69 +10,76 @@
       "category": "primary",
       "snomed_aligned": "Macrocytic anemia",
       "supporting_evidence": [
-        "acute on chronic macrocytic anemia (CURRENT symptom tree)"
+        "acute on chronic macrocytic anemia (current symptom tree)"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary cause of current dyspnea and fatigue, supported by abnormal lab values."
+      "reasoning": "Primary diagnosis given the patient's history of chronic anemia and current presentation."
     },
     {
       "rank": 2,
-      "diagnosis": "Coronary artery disease",
-      "score": 75.0,
+      "diagnosis": "Heart failure",
+      "score": 70.0,
       "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Coronary arteriosclerosis",
+      "category": "complication",
+      "snomed_aligned": "Congestive heart failure",
       "supporting_evidence": [
-        "history of CAD (PRIOR ICDs), worsening dyspnea (CURRENT symptom tree)"
+        "acute on chronic dyspnea on exertion (current symptom tree)"
       ],
       "opposing_evidence": [],
-      "reasoning": "CAD is a known comorbidity and may contribute to current symptoms."
+      "reasoning": "Secondary to chronic coronary artery disease and atrial fibrillation."
     },
     {
       "rank": 3,
       "diagnosis": "Atrial fibrillation",
       "score": 65.0,
       "confidence": "medium",
-      "category": "complication",
+      "category": "secondary",
       "snomed_aligned": "Atrial fibrillation",
       "supporting_evidence": [
-        "history of Afib (PRIOR ICDs), INR elevated (CURRENT labs)"
+        "history of atrial fibrillation (current symptom tree)"
       ],
       "opposing_evidence": [],
-      "reasoning": "Atrial fibrillation is a known risk factor and may be complicating current anemia."
+      "reasoning": "Given the patient's history and current symptoms."
     },
     {
       "rank": 4,
-      "diagnosis": "Sick sinus syndrome",
+      "diagnosis": "Anemia of chronic disease",
       "score": 55.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "history of sick sinus syndrome (PRIOR ICDs)"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Sick sinus syndrome is a known risk factor but not currently contributing to acute symptoms."
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Acute kidney failure",
-      "score": 45.0,
       "confidence": "low",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "history of acute kidney failure (PRIOR ICDs)"
+        "chronic conditions (prior ICD-10)"
       ],
       "opposing_evidence": [
-        "current labs within normal range"
+        "acute presentation (current symptom tree)"
       ],
-      "reasoning": "History of acute kidney failure, but current labs do not support acute renal failure."
+      "reasoning": "Possible given the patient's chronic conditions, but not primary given acute presentation."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Infectious cause of anemia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "acute on chronic macrocytic anemia (current symptom tree)"
+      ],
+      "opposing_evidence": [
+        "no clear infectious symptoms (current symptom tree)"
+      ],
+      "reasoning": "Possible given the patient's chronic conditions, but no clear evidence of infection."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Acute coronary syndrome",
+      "why": "No evidence of acute chest pain or ischemic changes in labs."
+    }
+  ],
   "uncertain_areas": [
-    "Additional labs for iron, B12, and folate levels would clarify the etiology of macrocytic anemia"
+    "Further labs to confirm iron deficiency or other causes of macrocytic anemia"
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -81,7 +88,7 @@
   "_temperature": 0.4,
   "patient_id": "19632936",
   "hadm_id": "26696232",
-  "generated_at": "2026-08-09T00:47:04.566143",
+  "generated_at": "2026-08-15T17:33:57.532824",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 14,

@@ -5,56 +5,44 @@ Patient ID       : 11607177
 HADM ID          : 23293838
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-09T00:44:51.206956
-Candidates       : 6
-Most likely      : Refractory Ventricular Tachycardia
+Generated        : 2026-08-15T17:31:40.840602
+Candidates       : 5
+Most likely      : Refractory VT
 Prior admissions : 4 (78 ICD codes as PMH context)
 
 Summary:
-  The patient is a 65-year-old with a history of dilated cardiomyopathy, refractory VT, and LVAD, presenting with ICD shock, mild edema, and ongoing arrhythmias despite multiple medications.
+  The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Refractory Ventricular Tachycardia  (primary)
+  #1  [85.0/100 | high]  Refractory VT  (primary)
       + Refractory VT requiring ganglionic block
-      + ICD shock
-      why: Primary diagnosis given the patient's history and current presentation.
+      why: Primary concern given current ICD shock and ongoing VT.
 
-  #2  [75.0/100 | high]  Heart Failure  (secondary)
-      + edema
-      + LVAD in place
-      why: Secondary to the patient's dilated cardiomyopathy and LVAD.
+  #2  [70.0/100 | medium]  Heart transplantation  (secondary)
+      SNOMED aligned : Transplantation of heart
+      + Heart transplantation in retained SNOMED context
+      why: Recent ICD shock and LVAD suggest potential complications from heart transplantation.
 
-  #3  [60.0/100 | medium]  Hyperkalemia  (differential)
-      + Lactate Dehydrogenase (LD) high
-      − No evidence of hyperkalemia symptoms
-      why: High LD could indicate hyperkalemia, but no other evidence.
+  #3  [65.0/100 | medium]  Chronic heart failure  (secondary)
+      + History of dilated cardiomyopathy and LVAD
+      − No acute symptoms of heart failure
+      why: History of chronic heart failure but no acute symptoms.
 
-  #4  [50.0/100 | medium]  Sleep Apnea  (risk_factor)
+  #4  [50.0/100 | low]  Sleep apnea  (risk_factor)
       SNOMED aligned : Sleep apnea
-      + Sleep apnea confirmed
-      − No current respiratory symptoms
-      why: Risk factor given the patient's history and current medications.
+      + Sleep apnea in retained SNOMED context
+      − No current symptoms of sleep apnea
+      why: Previous history of sleep apnea but no current symptoms.
 
-  #5  [45.0/100 | medium]  Anemia  (secondary)
-      + Hematocrit low
-      + Hemoglobin low
-      − No other symptoms of anemia
-      why: Possible secondary to underlying heart failure.
-
-  #6  [40.0/100 | low]  Obstructive Sleep Apnea  (differential)
-      SNOMED aligned : Obstructive sleep apnea (adult)
-      + Sleep apnea confirmed
-      − No current respiratory symptoms
-      why: Differential given the patient's history and current medications.
-
-RULE-OUTS
----------
-
-  • Heart Transplantation: No current symptoms or evidence of transplant complications.
+  #5  [45.0/100 | low]  Obesity  (risk_factor)
+      SNOMED aligned : Obesity
+      + BMI 36.7 and obesity in retained SNOMED context
+      − No current symptoms of obesity
+      why: History of obesity but no current symptoms.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further labs or imaging to confirm LVAD function and arrhythmia management
+  • More detailed information on current symptoms and labs would improve ranking

@@ -1,114 +1,91 @@
 {
-  "summary": "The patient is a 65-year-old with a history of dilated cardiomyopathy, refractory VT, and LVAD, presenting with ICD shock, mild edema, and ongoing arrhythmias despite multiple medications.",
-  "most_likely": "Refractory Ventricular Tachycardia",
+  "summary": "The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.",
+  "most_likely": "Refractory VT",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Refractory Ventricular Tachycardia",
+      "diagnosis": "Refractory VT",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Refractory VT requiring ganglionic block",
-        "ICD shock"
+        "Refractory VT requiring ganglionic block"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the patient's history and current presentation."
+      "reasoning": "Primary concern given current ICD shock and ongoing VT."
     },
     {
       "rank": 2,
-      "diagnosis": "Heart Failure",
-      "score": 75.0,
-      "confidence": "high",
+      "diagnosis": "Heart transplantation",
+      "score": 70.0,
+      "confidence": "medium",
       "category": "secondary",
-      "snomed_aligned": "",
+      "snomed_aligned": "Transplantation of heart",
       "supporting_evidence": [
-        "edema",
-        "LVAD in place"
+        "Heart transplantation in retained SNOMED context"
       ],
       "opposing_evidence": [],
-      "reasoning": "Secondary to the patient's dilated cardiomyopathy and LVAD."
+      "reasoning": "Recent ICD shock and LVAD suggest potential complications from heart transplantation."
     },
     {
       "rank": 3,
-      "diagnosis": "Hyperkalemia",
-      "score": 60.0,
-      "confidence": "medium",
-      "category": "differential",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Lactate Dehydrogenase (LD) high"
-      ],
-      "opposing_evidence": [
-        "No evidence of hyperkalemia symptoms"
-      ],
-      "reasoning": "High LD could indicate hyperkalemia, but no other evidence."
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Sleep Apnea",
-      "score": 50.0,
-      "confidence": "medium",
-      "category": "risk_factor",
-      "snomed_aligned": "Sleep apnea",
-      "supporting_evidence": [
-        "Sleep apnea confirmed"
-      ],
-      "opposing_evidence": [
-        "No current respiratory symptoms"
-      ],
-      "reasoning": "Risk factor given the patient's history and current medications."
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Anemia",
-      "score": 45.0,
+      "diagnosis": "Chronic heart failure",
+      "score": 65.0,
       "confidence": "medium",
       "category": "secondary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Hematocrit low",
-        "Hemoglobin low"
+        "History of dilated cardiomyopathy and LVAD"
       ],
       "opposing_evidence": [
-        "No other symptoms of anemia"
+        "No acute symptoms of heart failure"
       ],
-      "reasoning": "Possible secondary to underlying heart failure."
+      "reasoning": "History of chronic heart failure but no acute symptoms."
     },
     {
-      "rank": 6,
-      "diagnosis": "Obstructive Sleep Apnea",
-      "score": 40.0,
+      "rank": 4,
+      "diagnosis": "Sleep apnea",
+      "score": 50.0,
       "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "Obstructive sleep apnea (adult)",
+      "category": "risk_factor",
+      "snomed_aligned": "Sleep apnea",
       "supporting_evidence": [
-        "Sleep apnea confirmed"
+        "Sleep apnea in retained SNOMED context"
       ],
       "opposing_evidence": [
-        "No current respiratory symptoms"
+        "No current symptoms of sleep apnea"
       ],
-      "reasoning": "Differential given the patient's history and current medications."
-    }
-  ],
-  "rule_outs": [
+      "reasoning": "Previous history of sleep apnea but no current symptoms."
+    },
     {
-      "diagnosis": "Heart Transplantation",
-      "why": "No current symptoms or evidence of transplant complications."
+      "rank": 5,
+      "diagnosis": "Obesity",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Obesity",
+      "supporting_evidence": [
+        "BMI 36.7 and obesity in retained SNOMED context"
+      ],
+      "opposing_evidence": [
+        "No current symptoms of obesity"
+      ],
+      "reasoning": "History of obesity but no current symptoms."
     }
   ],
+  "rule_outs": [],
   "uncertain_areas": [
-    "Further labs or imaging to confirm LVAD function and arrhythmia management"
+    "More detailed information on current symptoms and labs would improve ranking"
   ],
-  "n_candidates": 6,
+  "n_candidates": 5,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-09T00:44:51.206956",
+  "generated_at": "2026-08-15T17:31:40.840602",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,

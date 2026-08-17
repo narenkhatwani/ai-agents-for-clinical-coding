@@ -1,0 +1,45 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 16014068
+HADM ID          : 29042843
+Most likely      : Anemia due to malignancy
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:11.955638
+
+Summary:
+  The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.
+
+#1  [85.0/100 | high]  Anemia due to malignancy  (primary)
+    SNOMED: Anemia due to infection (111570005) [fuzzy score=0.6043242097462528]
+    ICD status: mapped | primary: B99.9
+      1. [principal] B99.9 — Unspecified infectious disease
+      2. [principal] D64.89 — Other specified anemias
+      3. [supporting] D64.9 — Anemia, unspecified  ← anemia (key_symptom)
+      4. [supporting] O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified  ← thrombocytopenia (key_symptom)
+      5. [supporting] Z3A.00 — Weeks of gestation of pregnancy not specified  ← thrombocytopenia (key_symptom)
+      6. [supporting] C79.89 — Secondary malignant neoplasm of other specified sites  ← Metastatic sarcoma (retained_snomed)
+
+#2  [75.0/100 | high]  Thrombocytopenia due to malignancy  (complication)
+    SNOMED: Thrombocytopenia due to SARS-CoV-2 (866152006) [fuzzy score=0.6835094570887016]
+    ICD status: mapped | primary: U07.1
+      1. [principal] U07.1 — COVID-19
+      2. [principal] D69.59 — Other secondary thrombocytopenia
+      3. [supporting] O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified  ← thrombocytopenia (key_symptom)
+      4. [supporting] Z3A.00 — Weeks of gestation of pregnancy not specified  ← thrombocytopenia (key_symptom)
+      5. [supporting] C79.89 — Secondary malignant neoplasm of other specified sites  ← Metastatic sarcoma (retained_snomed)
+
+#3  [60.0/100 | medium]  Hypotension  (secondary)
+    SNOMED: Hypotension (45007003) [exact score=1.0]
+    ICD status: mapped | primary: I95.9
+      1. [principal] I95.9 — Hypotension, unspecified
+
+#4  [50.0/100 | medium]  Headache  (differential)
+    SNOMED: Headache (25064002) [exact score=1.0]
+    ICD status: mapped | primary: R51.9
+      1. [principal] R51.9 — Headache, unspecified
+
+#5  [45.0/100 | low]  Metastatic sarcoma to the brain  (differential)
+    SNOMED: Metastatic sarcoma (443144000) [fuzzy score=0.6291004191006289]
+    ICD status: mapped | primary: C79.89
+      1. [principal] C79.89 — Secondary malignant neoplasm of other specified sites
+      2. [supporting] R51.9 — Headache, unspecified  ← headache (red_flag)

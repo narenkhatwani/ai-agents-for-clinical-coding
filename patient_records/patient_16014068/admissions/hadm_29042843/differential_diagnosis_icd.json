@@ -1,0 +1,1286 @@
+{
+  "summary": "The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.",
+  "most_likely": "Anemia due to malignancy",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Anemia due to malignancy",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "anemia, thrombocytopenia, history of metastatic sarcoma"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Anemia is severe and aligns with the patient's history of metastatic sarcoma and prior chemotherapy.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "111570005",
+        "preferred_term": "Anemia due to infection",
+        "fsn": "Anemia due to infection (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6043242097462528,
+        "query": "Anemia due to malignancy",
+        "aligned_hint": null
+      },
+      "icd10_primary": "B99.9",
+      "icd10_primary_title": "Unspecified infectious disease",
+      "icd10_package": [
+        {
+          "code": "B99.9",
+          "title": "Unspecified infectious disease",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "D64.89",
+          "title": "Other specified anemias",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS D64.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.7618,
+          "package_order": 3
+        },
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.3501,
+          "package_order": 4
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.3501,
+          "package_order": 5
+        },
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Metastatic sarcoma",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "443144000",
+          "from_snomed_term": "Metastatic sarcoma",
+          "relevance_to_diagnosis": 0.2875,
+          "package_order": 6
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "B99.9",
+          "title": "Unspecified infectious disease",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "D64.89",
+          "title": "Other specified anemias",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS D64.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.7618
+        },
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.3501
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.3501
+        },
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Metastatic sarcoma",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "443144000",
+          "from_snomed_term": "Metastatic sarcoma",
+          "relevance_to_diagnosis": 0.2875
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 6
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Thrombocytopenia due to malignancy",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "thrombocytopenia, history of metastatic sarcoma"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Thrombocytopenia is mild but significant and related to the patient's malignancy.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "866152006",
+        "preferred_term": "Thrombocytopenia due to SARS-CoV-2",
+        "fsn": "Thrombocytopenia due to severe acute respiratory syndrome coronavirus 2 (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6835094570887016,
+        "query": "Thrombocytopenia due to malignancy",
+        "aligned_hint": null
+      },
+      "icd10_primary": "U07.1",
+      "icd10_primary_title": "COVID-19",
+      "icd10_package": [
+        {
+          "code": "U07.1",
+          "title": "COVID-19",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS U07.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "D69.59",
+          "title": "Other secondary thrombocytopenia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS D69.59",
+          "always": true,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.9003,
+          "package_order": 3
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.9003,
+          "package_order": 4
+        },
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Metastatic sarcoma",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "443144000",
+          "from_snomed_term": "Metastatic sarcoma",
+          "relevance_to_diagnosis": 0.2593,
+          "package_order": 5
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "U07.1",
+          "title": "COVID-19",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS U07.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "D69.59",
+          "title": "Other secondary thrombocytopenia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS D69.59",
+          "always": true,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.9003
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.9003
+        },
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Metastatic sarcoma",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "443144000",
+          "from_snomed_term": "Metastatic sarcoma",
+          "relevance_to_diagnosis": 0.2593
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 5
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hypotension",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "hypotension, history of malignancy and chemotherapy side effects"
+      ],
+      "opposing_evidence": [
+        "no evidence of acute cardiovascular issues"
+      ],
+      "reasoning": "Hypotension is noted but may be secondary to malignancy and chemotherapy effects.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "45007003",
+        "preferred_term": "Hypotension",
+        "fsn": "Low blood pressure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypotension",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I95.9",
+      "icd10_primary_title": "Hypotension, unspecified",
+      "icd10_package": [
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Headache",
+      "score": 50.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "headache after fall, history of cerebellar hemorrhage"
+      ],
+      "opposing_evidence": [
+        "no evidence of acute intracranial bleeding"
+      ],
+      "reasoning": "Headache is present but may be related to the fall rather than acute intracranial issues.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "25064002",
+        "preferred_term": "Headache",
+        "fsn": "Headache (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Headache",
+        "aligned_hint": null
+      },
+      "icd10_primary": "R51.9",
+      "icd10_primary_title": "Headache, unspecified",
+      "icd10_package": [
+        {
+          "code": "R51.9",
+          "title": "Headache, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "R51.9",
+          "title": "Headache, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Metastatic sarcoma to the brain",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "history of metastatic sarcoma, recent fall and headache"
+      ],
+      "opposing_evidence": [
+        "no recent evidence of new neurological deficits"
+      ],
+      "reasoning": "Metastasis to the brain is a risk but not strongly supported by current evidence.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "443144000",
+        "preferred_term": "Metastatic sarcoma",
+        "fsn": "Metastatic sarcoma (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.6291004191006289,
+        "query": "Metastatic sarcoma to the brain",
+        "aligned_hint": null
+      },
+      "icd10_primary": "C79.89",
+      "icd10_primary_title": "Secondary malignant neoplasm of other specified sites",
+      "icd10_package": [
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "R51.9",
+          "title": "Headache, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "headache",
+          "from_kind": "red_flag",
+          "from_snomed_id": "25064002",
+          "from_snomed_term": "Headache",
+          "relevance_to_diagnosis": 0.2345,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R51.9",
+          "title": "Headache, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "headache",
+          "from_kind": "red_flag",
+          "from_snomed_id": "25064002",
+          "from_snomed_term": "Headache",
+          "relevance_to_diagnosis": 0.2345
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "need for further imaging or clinical follow-up to confirm intracranial bleeding or metastasis"
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "16014068",
+  "hadm_id": "29042843",
+  "generated_at": "2026-08-15T17:32:52.278033",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 7,
+    "retained_links": 7,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 9,
+    "prior_icd_codes": 138,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21573999,
+      "admittime": "2186-09-10 11:29:00",
+      "dischtime": "2186-09-13 13:30:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 6,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        }
+      ]
+    },
+    {
+      "hadm_id": 25360978,
+      "admittime": "2186-10-08 11:25:00",
+      "dischtime": "2186-10-11 12:38:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 12,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "K521",
+          "title": "Toxic gastroenteritis and colitis"
+        },
+        {
+          "code": "T451X5A",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter"
+        },
+        {
+          "code": "R040",
+          "title": "Epistaxis"
+        },
+        {
+          "code": "D6959",
+          "title": "Other secondary thrombocytopenia"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        }
+      ]
+    },
+    {
+      "hadm_id": 23909475,
+      "admittime": "2186-10-29 11:18:00",
+      "dischtime": "2186-11-01 12:45:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 12,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "K521",
+          "title": "Toxic gastroenteritis and colitis"
+        },
+        {
+          "code": "D6481",
+          "title": "Anemia due to antineoplastic chemotherapy"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "R2231",
+          "title": "Localized swelling, mass and lump, right upper limb"
+        },
+        {
+          "code": "T451X5D",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter"
+        }
+      ]
+    },
+    {
+      "hadm_id": 22582376,
+      "admittime": "2186-11-19 11:31:00",
+      "dischtime": "2186-11-23 18:00:00",
+      "admission_type": "ELECTIVE",
+      "primary_icd_code": "Z5111",
+      "primary_dx_title": "Encounter for antineoplastic chemotherapy",
+      "n_diagnoses": 14,
+      "icd10_diagnoses": [
+        {
+          "code": "Z5111",
+          "title": "Encounter for antineoplastic chemotherapy"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "E8351",
+          "title": "Hypocalcemia"
+        },
+        {
+          "code": "E8342",
+          "title": "Hypomagnesemia"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "D638",
+          "title": "Anemia in other chronic diseases classified elsewhere"
+        },
+        {
+          "code": "T451X5S",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, sequela"
+        },
+        {
+          "code": "R197",
+          "title": "Diarrhea, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        }
+      ]
+    },
+    {
+      "hadm_id": 25483652,
+      "admittime": "2186-11-29 12:54:00",
+      "dischtime": "2186-12-03 13:10:00",
+      "admission_type": "DIRECT EMER.",
+      "primary_icd_code": "N179",
+      "primary_dx_title": "Acute kidney failure, unspecified",
+      "n_diagnoses": 14,
+      "icd10_diagnoses": [
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "D61810",
+          "title": "Antineoplastic chemotherapy induced pancytopenia"
+        },
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "D6959",
+          "title": "Other secondary thrombocytopenia"
+        },
+        {
+          "code": "D6481",
+          "title": "Anemia due to antineoplastic chemotherapy"
+        },
+        {
+          "code": "T451X5D",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, subsequent encounter"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "E8342",
+          "title": "Hypomagnesemia"
+        },
+        {
+          "code": "E876",
+          "title": "Hypokalemia"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        },
+        {
+          "code": "Z515",
+          "title": "Encounter for palliative care"
+        }
+      ]
+    },
+    {
+      "hadm_id": 25305597,
+      "admittime": "2187-03-22 18:32:00",
+      "dischtime": "2187-04-13 13:18:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "I2699",
+      "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+      "n_diagnoses": 20,
+      "icd10_diagnoses": [
+        {
+          "code": "I2699",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "C4921",
+          "title": "Malignant neoplasm of connective and soft tissue of right lower limb, including hip"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "I82431",
+          "title": "Acute embolism and thrombosis of right popliteal vein"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "D696",
+          "title": "Thrombocytopenia, unspecified"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia"
+        },
+        {
+          "code": "I82491",
+          "title": "Acute embolism and thrombosis of other specified deep vein of right lower extremity"
+        },
+        {
+          "code": "Z9221",
+          "title": "Personal history of antineoplastic chemotherapy"
+        },
+        {
+          "code": "Z96641",
+          "title": "Presence of right artificial hip joint"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "Y92239",
+          "title": "Unspecified place in hospital as the place of occurrence of the external cause"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "K5730",
+          "title": "Diverticulosis of large intestine without perforation or abscess without bleeding"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "R509",
+          "title": "Fever, unspecified"
+        },
+        {
+          "code": "K649",
+          "title": "Unspecified hemorrhoids"
+        },
+        {
+          "code": "Y838",
+          "title": "Other surgical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure"
+        }
+      ]
+    },
+    {
+      "hadm_id": 27129757,
+      "admittime": "2187-06-14 21:13:00",
+      "dischtime": "2187-06-18 16:30:00",
+      "admission_type": "URGENT",
+      "primary_icd_code": "D62",
+      "primary_dx_title": "Acute posthemorrhagic anemia",
+      "n_diagnoses": 15,
+      "icd10_diagnoses": [
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia"
+        },
+        {
+          "code": "D684",
+          "title": "Acquired coagulation factor deficiency"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "C4921",
+          "title": "Malignant neoplasm of connective and soft tissue of right lower limb, including hip"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "I2782",
+          "title": "Chronic pulmonary embolism"
+        },
+        {
+          "code": "M96830",
+          "title": "Postprocedural hemorrhage of a musculoskeletal structure following a musculoskeletal system procedure"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "K449",
+          "title": "Diaphragmatic hernia without obstruction or gangrene"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "M79606",
+          "title": "Pain in leg, unspecified"
+        },
+        {
+          "code": "Z9221",
+          "title": "Personal history of antineoplastic chemotherapy"
+        }
+      ]
+    },
+    {
+      "hadm_id": 26538856,
+      "admittime": "2187-07-05 17:45:00",
+      "dischtime": "2187-07-12 15:49:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "C4021",
+      "primary_dx_title": "Malignant neoplasm of long bones of right lower limb",
+      "n_diagnoses": 18,
+      "icd10_diagnoses": [
+        {
+          "code": "C4021",
+          "title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "code": "D6189",
+          "title": "Other specified aplastic anemias and other bone marrow failure syndromes"
+        },
+        {
+          "code": "L89322",
+          "title": "Pressure ulcer of left buttock, stage 2"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "N183",
+          "title": "Chronic kidney disease, stage 3 (moderate)"
+        },
+        {
+          "code": "D696",
+          "title": "Thrombocytopenia, unspecified"
+        },
+        {
+          "code": "E538",
+          "title": "Deficiency of other specified B group vitamins"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "I129",
+          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease"
+        },
+        {
+          "code": "R918",
+          "title": "Other nonspecific abnormal finding of lung field"
+        },
+        {
+          "code": "Z86711",
+          "title": "Personal history of pulmonary embolism"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "M7981",
+          "title": "Nontraumatic hematoma of soft tissue"
+        },
+        {
+          "code": "E8342",
+          "title": "Hypomagnesemia"
+        },
+        {
+          "code": "E8809",
+          "title": "Other disorders of plasma-protein metabolism, not elsewhere classified"
+        },
+        {
+          "code": "R791",
+          "title": "Abnormal coagulation profile"
+        }
+      ]
+    },
+    {
+      "hadm_id": 21400037,
+      "admittime": "2187-08-05 22:33:00",
+      "dischtime": "2187-08-15 16:45:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "I2699",
+      "primary_dx_title": "Other pulmonary embolism without acute cor pulmonale",
+      "n_diagnoses": 27,
+      "icd10_diagnoses": [
+        {
+          "code": "I2699",
+          "title": "Other pulmonary embolism without acute cor pulmonale"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "C775",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
+        },
+        {
+          "code": "C7801",
+          "title": "Secondary malignant neoplasm of right lung"
+        },
+        {
+          "code": "C7802",
+          "title": "Secondary malignant neoplasm of left lung"
+        },
+        {
+          "code": "I959",
+          "title": "Hypotension, unspecified"
+        },
+        {
+          "code": "D696",
+          "title": "Thrombocytopenia, unspecified"
+        },
+        {
+          "code": "L03312",
+          "title": "Cellulitis of back [any part except buttock]"
+        },
+        {
+          "code": "C7931",
+          "title": "Secondary malignant neoplasm of brain"
+        },
+        {
+          "code": "Z85830",
+          "title": "Personal history of malignant neoplasm of bone"
+        },
+        {
+          "code": "M7981",
+          "title": "Nontraumatic hematoma of soft tissue"
+        },
+        {
+          "code": "T45515A",
+          "title": "Adverse effect of anticoagulants, initial encounter"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "Y929",
+          "title": "Unspecified place or not applicable"
+        },
+        {
+          "code": "G893",
+          "title": "Neoplasm related pain (acute) (chronic)"
+        },
+        {
+          "code": "Z515",
+          "title": "Encounter for palliative care"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "E861",
+          "title": "Hypovolemia"
+        },
+        {
+          "code": "Z86711",
+          "title": "Personal history of pulmonary embolism"
+        },
+        {
+          "code": "Z86718",
+          "title": "Personal history of other venous thrombosis and embolism"
+        },
+        {
+          "code": "G629",
+          "title": "Polyneuropathy, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "R509",
+          "title": "Fever, unspecified"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "R5383",
+          "title": "Other fatigue"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "D500",
+          "title": "Iron deficiency anemia secondary to blood loss (chronic)"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 5,
+    "n_with_principal": 5,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:11.955638"
+}

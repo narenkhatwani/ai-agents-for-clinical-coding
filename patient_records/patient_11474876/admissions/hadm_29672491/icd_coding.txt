@@ -1,0 +1,41 @@
+DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
+==========================================
+Patient ID       : 11474876
+HADM ID          : 29672491
+Most likely      : Heart failure with preserved ejection fraction (HFpEF)
+Map refset       : 6011000124106
+Generated (S8)   : 2026-08-15T17:34:06.420714
+
+Summary:
+  A 70-year-old man with a history of atrial fibrillation (AFib), heart failure with preserved ejection fraction (HFpEF), peripheral vascular disease (PVD), and chronic kidney disease (CKD) presents post-ERCP for cholangitis, with symptoms including nocturnal hypoxia and leg swelling.
+
+#1  [85.0/100 | high]  Heart failure with preserved ejection fraction (HFpEF)  (primary)
+    SNOMED: Heart failure with normal ejection fraction (446221000) [exact score=1.0]
+    ICD status: mapped | primary: I50.30
+      1. [principal] I50.30 — Unspecified diastolic (congestive) heart failure
+      2. [principal] I38 — Endocarditis, valve unspecified
+      3. [principal] I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+      4. [principal] I51.4 — Myocarditis, unspecified
+      5. [principal] I42.9 — Cardiomyopathy, unspecified
+      6. [supporting] I50.9 — Heart failure, unspecified  ← heart failure (tree_symptom)
+
+#2  [70.0/100 | medium]  Peripheral vascular disease (PVD)  (secondary)
+    SNOMED: Peripheral vascular disease (400047006) [exact score=1.0]
+    ICD status: mapped | primary: I73.9
+      1. [principal] I73.9 — Peripheral vascular disease, unspecified
+
+#3  [65.0/100 | medium]  Atrial fibrillation (AFib)  (complication)
+    SNOMED: Atrial fibrillation (49436004) [exact score=1.0]
+    ICD status: mapped | primary: I48.91
+      1. [principal] I48.91 — Unspecified atrial fibrillation
+
+#4  [55.0/100 | medium]  Chronic kidney disease (CKD)  (secondary)
+    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
+    ICD status: mapped | primary: N18.9
+      1. [principal] N18.9 — Chronic kidney disease, unspecified
+
+#5  [40.0/100 | low]  Nocturnal hypoxia  (differential)
+    SNOMED: Hypoxia (389086002) [fuzzy score=0.6079289213558614]
+    ICD status: mapped | primary: R09.02
+      1. [principal] R09.02 — Hypoxemia
+      2. [principal] P84 — Other problems with newborn

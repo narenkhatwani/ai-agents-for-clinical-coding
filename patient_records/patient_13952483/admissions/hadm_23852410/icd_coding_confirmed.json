@@ -1,0 +1,111 @@
+{
+  "review_summary": "Confirmed severe pulmonary hypertension with cor pulmonale and dropped unrelated codes. Added anemia and malnutrition as primary conditions.",
+  "primary_condition": "Severe Pulmonary Hypertension with Cor Pulmonale",
+  "primary_icd_code": "I27.20",
+  "primary_icd_title": "Pulmonary hypertension, unspecified",
+  "final_codes": [
+    {
+      "code": "I27.20",
+      "title": "Pulmonary hypertension, unspecified",
+      "role": "primary",
+      "source": "added_mapped",
+      "condition": "Severe Pulmonary Hypertension with Cor Pulmonale",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "T86.91",
+      "title": "Unspecified transplanted organ and tissue rejection",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Severe Pulmonary Hypertension with Cor Pulmonale",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "D64.9",
+      "title": "Anemia, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Anemia",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "E46",
+      "title": "Unspecified protein-calorie malnutrition",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Malnutrition",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "N18.9",
+      "title": "Chronic kidney disease, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Chronic Kidney Disease",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "D70.9",
+      "title": "Neutropenia, unspecified",
+      "reason": "Unrelated to current stay"
+    },
+    {
+      "code": "J18.9",
+      "title": "Pneumonia, unspecified organism",
+      "reason": "Unrelated to current stay"
+    }
+  ],
+  "added_conditions": [],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+        "action": "keep",
+        "selected_code": "T86.91",
+        "replace_with_condition": "",
+        "reason": "Confirmed by right heart catheterization"
+      }
+    ],
+    "n_confirmed": 5,
+    "n_missing_named": 2
+  },
+  "fallback": null,
+  "patient_id": "13952483",
+  "hadm_id": "23852410",
+  "most_likely": "Severe Pulmonary Hypertension with Cor Pulmonale",
+  "stage8_most_likely": "Severe Pulmonary Hypertension with Cor Pulmonale",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:36:12.039890",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 51,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 5,
+  "n_dropped": 2,
+  "n_added": 0
+}

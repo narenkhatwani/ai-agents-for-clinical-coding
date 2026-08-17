@@ -1,0 +1,662 @@
+{
+  "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.",
+  "most_likely": "Severe sepsis due to RUL PNA",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Severe sepsis due to RUL PNA",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "RUL PNA, hypotension, fever"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary diagnosis given the recent onset of RUL PNA and clinical signs of sepsis.",
+      "snomed_resolution": {
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "match_method": null,
+        "score": 0.0,
+        "query": "Severe sepsis due to RUL PNA"
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "fever",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "386661006",
+          "from_snomed_term": "Fever",
+          "relevance_to_diagnosis": 0.2365,
+          "package_order": 1
+        },
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.0419,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [],
+      "icd10_supporting": [
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "fever",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "386661006",
+          "from_snomed_term": "Fever",
+          "relevance_to_diagnosis": 0.2365
+        },
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.0419
+        }
+      ],
+      "icd_status": "supporting_only",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Metastatic adenocarcinoma of unknown primary",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
+      "supporting_evidence": [
+        "confirmed diagnosis, recent RUL PNA"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Underlying cancer is a known risk factor for sepsis and RUL PNA.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "307226002",
+        "preferred_term": "Metastatic adenocarcinoma of unknown origin",
+        "fsn": "Metastatic adenocarcinoma of unknown origin (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Metastatic adenocarcinoma of unknown primary",
+        "aligned_hint": "Metastatic adenocarcinoma of unknown origin"
+      },
+      "icd10_primary": "C79.9",
+      "icd10_primary_title": "Secondary malignant neoplasm of unspecified site",
+      "icd10_package": [
+        {
+          "code": "C79.9",
+          "title": "Secondary malignant neoplasm of unspecified site",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.9",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "C79.9",
+          "title": "Secondary malignant neoplasm of unspecified site",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.9",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hypovolemic shock",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "severe hypotension, low hematocrit"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hypotension and low hematocrit suggest potential hypovolemic state.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "39419009",
+        "preferred_term": "Hypovolemic shock",
+        "fsn": "Hypovolemic shock (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypovolemic shock",
+        "aligned_hint": null
+      },
+      "icd10_primary": "R57.1",
+      "icd10_primary_title": "Hypovolemic shock",
+      "icd10_package": [
+        {
+          "code": "R57.1",
+          "title": "Hypovolemic shock",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R57.1",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "T81.19X?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF POSTOPERATIVE HYPOVOLEMIC SHOCK CHOOSE T81.19X? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.5508,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "R57.1",
+          "title": "Hypovolemic shock",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R57.1",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "T81.19X?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF POSTOPERATIVE HYPOVOLEMIC SHOCK CHOOSE T81.19X? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.5508
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Acute kidney injury",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "hypotension, abnormal labs"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hypotension and abnormal labs suggest potential kidney injury.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "14669001",
+        "preferred_term": "Acute renal failure syndrome",
+        "fsn": "Acute kidney injury (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Acute kidney injury",
+        "aligned_hint": null
+      },
+      "icd10_primary": "N17.9",
+      "icd10_primary_title": "Acute kidney failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.1908,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.1908
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 5,
+      "diagnosis": "SVC syndrome",
+      "score": 45.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "SVC stent placed, multiple venous thromboses",
+      "supporting_evidence": [
+        "confirmed SVC syndrome, recent labs"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "SVC syndrome is a known complication and is confirmed.",
+      "snomed_resolution": {
+        "mapped": false,
+        "concept_id": null,
+        "preferred_term": null,
+        "match_method": null,
+        "score": 0.0,
+        "query": "SVC syndrome"
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [],
+      "icd10_principal": [],
+      "icd10_supporting": [],
+      "icd_status": "unmapped",
+      "n_icd_codes": 0
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Neurological deterioration",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "altered mental status, hypotension"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Altered mental status and hypotension suggest neurological involvement.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "1199008",
+        "preferred_term": "Neurologic",
+        "fsn": "Neurologic (qualifier value)",
+        "match_method": "fuzzy",
+        "score": 0.5186514212677167,
+        "query": "Neurological deterioration",
+        "aligned_hint": null
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [
+        {
+          "code": "R41.82",
+          "title": "Altered mental status, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R41.82",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "altered mental status",
+          "from_kind": "red_flag",
+          "from_snomed_id": "419284004",
+          "from_snomed_term": "Altered mental status",
+          "relevance_to_diagnosis": 0.397,
+          "package_order": 1
+        },
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.1913,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [],
+      "icd10_supporting": [
+        {
+          "code": "R41.82",
+          "title": "Altered mental status, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R41.82",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "altered mental status",
+          "from_kind": "red_flag",
+          "from_snomed_id": "419284004",
+          "from_snomed_term": "Altered mental status",
+          "relevance_to_diagnosis": 0.397
+        },
+        {
+          "code": "I95.9",
+          "title": "Hypotension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypotension",
+          "from_kind": "red_flag",
+          "from_snomed_id": "45007003",
+          "from_snomed_term": "Hypotension",
+          "relevance_to_diagnosis": 0.1913
+        }
+      ],
+      "icd_status": "supporting_only",
+      "n_icd_codes": 2
+    }
+  ],
+  "rule_outs": [],
+  "uncertain_areas": [
+    "Further imaging of RUL PNA, more detailed neurological assessment"
+  ],
+  "n_candidates": 6,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "13196707",
+  "hadm_id": "21475988",
+  "generated_at": "2026-08-15T17:32:11.234822",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 11,
+    "retained_links": 15,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 1,
+    "prior_icd_codes": 33,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 21516900,
+      "admittime": "2155-12-09 23:47:00",
+      "dischtime": "2156-01-08 17:15:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "C801",
+      "primary_dx_title": "Malignant (primary) neoplasm, unspecified",
+      "n_diagnoses": 33,
+      "icd10_diagnoses": [
+        {
+          "code": "C801",
+          "title": "Malignant (primary) neoplasm, unspecified"
+        },
+        {
+          "code": "N179",
+          "title": "Acute kidney failure, unspecified"
+        },
+        {
+          "code": "L89152",
+          "title": "Pressure ulcer of sacral region, stage 2"
+        },
+        {
+          "code": "I82A12",
+          "title": "Acute embolism and thrombosis of left axillary vein"
+        },
+        {
+          "code": "I82290",
+          "title": "Acute embolism and thrombosis of other thoracic veins"
+        },
+        {
+          "code": "I82B13",
+          "title": "Acute embolism and thrombosis of subclavian vein, bilateral"
+        },
+        {
+          "code": "M8448XA",
+          "title": "Pathological fracture, other site, initial encounter for fracture"
+        },
+        {
+          "code": "E871",
+          "title": "Hypo-osmolality and hyponatremia"
+        },
+        {
+          "code": "N134",
+          "title": "Hydroureter"
+        },
+        {
+          "code": "G8191",
+          "title": "Hemiplegia, unspecified affecting right dominant side"
+        },
+        {
+          "code": "I871",
+          "title": "Compression of vein"
+        },
+        {
+          "code": "I82612",
+          "title": "Acute embolism and thrombosis of superficial veins of left upper extremity"
+        },
+        {
+          "code": "C7951",
+          "title": "Secondary malignant neoplasm of bone"
+        },
+        {
+          "code": "C7931",
+          "title": "Secondary malignant neoplasm of brain"
+        },
+        {
+          "code": "C7802",
+          "title": "Secondary malignant neoplasm of left lung"
+        },
+        {
+          "code": "G893",
+          "title": "Neoplasm related pain (acute) (chronic)"
+        },
+        {
+          "code": "C7801",
+          "title": "Secondary malignant neoplasm of right lung"
+        },
+        {
+          "code": "C7989",
+          "title": "Secondary malignant neoplasm of other specified sites"
+        },
+        {
+          "code": "C7949",
+          "title": "Secondary malignant neoplasm of other parts of nervous system"
+        },
+        {
+          "code": "C7972",
+          "title": "Secondary malignant neoplasm of left adrenal gland"
+        },
+        {
+          "code": "C7971",
+          "title": "Secondary malignant neoplasm of right adrenal gland"
+        },
+        {
+          "code": "K1120",
+          "title": "Sialoadenitis, unspecified"
+        },
+        {
+          "code": "B9561",
+          "title": "Methicillin susceptible Staphylococcus aureus infection as the cause of diseases classified elsewhere"
+        },
+        {
+          "code": "Z515",
+          "title": "Encounter for palliative care"
+        },
+        {
+          "code": "K259",
+          "title": "Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation"
+        },
+        {
+          "code": "M1990",
+          "title": "Unspecified osteoarthritis, unspecified site"
+        },
+        {
+          "code": "H409",
+          "title": "Unspecified glaucoma"
+        },
+        {
+          "code": "Z7902",
+          "title": "Long term (current) use of antithrombotics/antiplatelets"
+        },
+        {
+          "code": "R634",
+          "title": "Abnormal weight loss"
+        },
+        {
+          "code": "Z6821",
+          "title": "Body mass index [BMI] 21.0-21.9, adult"
+        },
+        {
+          "code": "K5900",
+          "title": "Constipation, unspecified"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 6,
+    "n_with_principal": 3,
+    "n_unmapped": 1
+  },
+  "generated_at_stage8": "2026-08-15T17:34:09.101451"
+}

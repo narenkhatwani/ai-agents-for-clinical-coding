@@ -1,0 +1,181 @@
+{
+  "review_summary": "Confirmed primary diabetic ketoacidosis and dropped missed abortion as a current diagnosis. Added lactic acidosis as a secondary condition.",
+  "primary_condition": "Diabetic ketoacidosis",
+  "primary_icd_code": "E13.10",
+  "primary_icd_title": "Other specified diabetes mellitus with ketoacidosis without coma",
+  "final_codes": [
+    {
+      "code": "E13.10",
+      "title": "Other specified diabetes mellitus with ketoacidosis without coma",
+      "role": "primary",
+      "source": "stage8_confirmed",
+      "condition": "Diabetic ketoacidosis",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "A04.72",
+      "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "C difficile colitis",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "R10.9",
+      "title": "Unspecified abdominal pain",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Abdominal pain",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "O36.8190",
+      "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Decreased fetal movement",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "E87.20",
+      "title": "Acidosis, unspecified",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Lactic acidosis",
+      "action": "add",
+      "reason": "Abnormal lactate levels",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "O02.1",
+      "title": "Missed abortion",
+      "reason": "Not a current diagnosis"
+    }
+  ],
+  "added_conditions": [
+    {
+      "code": "E87.20",
+      "title": "Acidosis, unspecified",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "91273001",
+        "preferred_term": "Lactic acidosis",
+        "fsn": "Lactic acidosis (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Lactic acidosis",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "E87.20",
+          "title": "Acidosis, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Lactic acidosis",
+      "role": "secondary",
+      "action": "add",
+      "reason": "Abnormal lactate levels",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Diabetic ketoacidosis",
+        "action": "keep",
+        "selected_code": "E13.10",
+        "replace_with_condition": "",
+        "reason": "Primary diagnosis supported by labs and symptoms"
+      },
+      {
+        "rank": 2,
+        "diagnosis": "C difficile colitis",
+        "action": "keep",
+        "selected_code": "A04.72",
+        "replace_with_condition": "",
+        "reason": "Supporting diagnosis with abnormal labs"
+      },
+      {
+        "rank": 3,
+        "diagnosis": "Missed abortion",
+        "action": "drop",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "Not a current diagnosis"
+      },
+      {
+        "rank": 4,
+        "diagnosis": "Abdominal pain",
+        "action": "keep",
+        "selected_code": "R10.9",
+        "replace_with_condition": "",
+        "reason": "Supporting diagnosis with history"
+      },
+      {
+        "rank": 5,
+        "diagnosis": "Vaginal bleeding",
+        "action": "keep",
+        "selected_code": "",
+        "replace_with_condition": "",
+        "reason": "Supporting diagnosis with history"
+      },
+      {
+        "rank": 6,
+        "diagnosis": "Decreased fetal movement",
+        "action": "keep",
+        "selected_code": "O36.8190",
+        "replace_with_condition": "",
+        "reason": "Supporting diagnosis with history"
+      }
+    ],
+    "n_confirmed": 4,
+    "n_missing_named": 1
+  },
+  "fallback": null,
+  "patient_id": "19104262",
+  "hadm_id": "24271247",
+  "most_likely": "Diabetic ketoacidosis",
+  "stage8_most_likely": "Diabetic ketoacidosis",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:36:58.794363",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 5,
+    "prior_icd_codes": 46,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 5,
+  "n_dropped": 1,
+  "n_added": 1
+}

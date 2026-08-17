@@ -1,0 +1,205 @@
+{
+  "review_summary": "Confirmed acute decompensated heart failure and chronic kidney disease. Dropped unspecified codes and added obesity and hypertension. Primary condition is acute decompensated heart failure.",
+  "primary_condition": "Acute decompensated heart failure",
+  "primary_icd_code": "I50.9",
+  "primary_icd_title": "Heart failure, unspecified",
+  "final_codes": [
+    {
+      "code": "I50.9",
+      "title": "Heart failure, unspecified",
+      "role": "primary",
+      "source": "stage8_confirmed",
+      "condition": "Acute decompensated heart failure",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "R06.00",
+      "title": "Dyspnea, unspecified",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Acute decompensated heart failure",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "R06.01",
+      "title": "Orthopnea",
+      "role": "secondary",
+      "source": "stage8_confirmed",
+      "condition": "Acute decompensated heart failure",
+      "action": "keep",
+      "reason": "",
+      "always": true
+    },
+    {
+      "code": "E66.9",
+      "title": "Obesity, unspecified",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Obesity",
+      "action": "add",
+      "reason": "BMI 40.9",
+      "always": true
+    },
+    {
+      "code": "I10",
+      "title": "Essential (primary) hypertension",
+      "role": "secondary",
+      "source": "added_mapped",
+      "condition": "Essential hypertension",
+      "action": "add",
+      "reason": "Essential hypertension in prior admission",
+      "always": true
+    }
+  ],
+  "dropped_codes": [
+    {
+      "code": "P29.0",
+      "title": "Neonatal cardiac failure",
+      "reason": "Neonatal cardiac failure not relevant"
+    },
+    {
+      "code": "D64.9",
+      "title": "Anemia, unspecified",
+      "reason": "Anemia not supported by labs"
+    },
+    {
+      "code": "I48.0",
+      "title": "Paroxysmal atrial fibrillation",
+      "reason": "Paroxysmal atrial fibrillation already confirmed"
+    },
+    {
+      "code": "G70.00",
+      "title": "Myasthenia gravis without (acute) exacerbation",
+      "reason": "Myasthenia gravis not relevant"
+    },
+    {
+      "code": "I26.99",
+      "title": "Other pulmonary embolism without acute cor pulmonale",
+      "reason": "Pulmonary embolism not supported"
+    },
+    {
+      "code": "G47.33",
+      "title": "Obstructive sleep apnea (adult) (pediatric)",
+      "reason": "Obstructive sleep apnea not relevant"
+    },
+    {
+      "code": "E03.9",
+      "title": "Hypothyroidism, unspecified",
+      "reason": "Hypothyroidism not supported"
+    }
+  ],
+  "added_conditions": [
+    {
+      "code": "E66.9",
+      "title": "Obesity, unspecified",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "414916001",
+        "preferred_term": "Obesity",
+        "fsn": "Obesity (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Obesity",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E66.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Obesity",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "BMI 40.9",
+      "as_primary": false
+    },
+    {
+      "code": "I10",
+      "title": "Essential (primary) hypertension",
+      "always": true,
+      "source": "added_mapped",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "59621000",
+        "preferred_term": "Essential hypertension",
+        "fsn": "Essential hypertension (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Essential hypertension",
+        "aligned_hint": null
+      },
+      "icd_candidates": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal_candidate",
+          "order": 1
+        }
+      ],
+      "condition": "Essential hypertension",
+      "role": "comorbidity",
+      "action": "add",
+      "reason": "Essential hypertension in prior admission",
+      "as_primary": false
+    }
+  ],
+  "unmapped_additions": [],
+  "llm_raw": {
+    "principal_selections": [
+      {
+        "rank": 1,
+        "diagnosis": "Acute decompensated heart failure",
+        "action": "keep",
+        "selected_code": "I50.9",
+        "replace_with_condition": "",
+        "reason": "Primary diagnosis with dyspnea and orthopnea"
+      }
+    ],
+    "n_confirmed": 9,
+    "n_missing_named": 2
+  },
+  "fallback": null,
+  "patient_id": "12007928",
+  "hadm_id": "23749816",
+  "most_likely": "Acute decompensated heart failure",
+  "stage8_most_likely": "Acute decompensated heart failure",
+  "stage": 9,
+  "type": "icd_confirmation",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "icd_confirmation",
+  "_temperature": 0.3,
+  "generated_at": "2026-08-15T17:35:35.493010",
+  "error": null,
+  "inputs": {
+    "stage8_packages": true,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 45,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.3,
+    "map_backed_additions": true
+  },
+  "n_final_codes": 5,
+  "n_dropped": 7,
+  "n_added": 2
+}

@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease, hepatitis C, and alcohol abuse.",
+  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease and hepatitis C.",
   "most_likely": "Severe sepsis with septic shock",
   "differential": [
     {
@@ -10,42 +10,36 @@
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Admission for septic shock",
-        "Klebsiella Aerogenes blood cultures grew"
+        "Septic shock, Klebsiella Aerogenes blood cultures grew"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition and multiple organ dysfunction."
+      "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition, evidenced by septic shock and elevated inflammatory markers."
     },
     {
       "rank": 2,
-      "diagnosis": "Acute liver failure",
+      "diagnosis": "Hepatic encephalopathy",
       "score": 75.0,
       "confidence": "high",
-      "category": "primary",
-      "snomed_aligned": "Acute liver failure (197270009)",
+      "category": "complication",
+      "snomed_aligned": "Hepatic encephalopathy",
       "supporting_evidence": [
-        "Worsening liver failure",
-        "Bilirubin, Total 13.3 mg/dL",
-        "ALT 439 IU/L",
-        "AST 2481 IU/L"
+        "Hepatic encephalopathy, RASS-5, sluggish pupil response"
       ],
       "opposing_evidence": [],
-      "reasoning": "Acute liver failure is consistent with the patient's liver function test results and clinical presentation."
+      "reasoning": "Hepatic encephalopathy is a well-known complication of severe liver failure, supported by the patient's altered mental status and elevated liver enzymes."
     },
     {
       "rank": 3,
-      "diagnosis": "Hepatic encephalopathy",
+      "diagnosis": "Acute liver failure",
       "score": 70.0,
-      "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "Hepatic encephalopathy (13920009)",
+      "confidence": "medium",
+      "category": "primary",
+      "snomed_aligned": "Acute liver failure",
       "supporting_evidence": [
-        "concerning for hepatic encephalopathy",
-        "RASS-5",
-        "sluggish pupil response"
+        "Worsening liver failure, Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
       ],
       "opposing_evidence": [],
-      "reasoning": "Hepatic encephalopathy is a complication of severe liver failure and sepsis."
+      "reasoning": "Acute liver failure is a severe form of liver failure, evidenced by the patient's elevated liver enzymes and worsening liver function."
     },
     {
       "rank": 4,
@@ -53,80 +47,78 @@
       "score": 65.0,
       "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "Gastrointestinal hemorrhage",
       "supporting_evidence": [
-        "black coffee-ground GI contents",
-        "Platelet Count 44.0 K/uL",
-        "Bleeding from esophagus"
+        "GI bleeding, black coffee-ground GI contents"
       ],
       "opposing_evidence": [],
-      "reasoning": "GI bleeding is a complication of esophageal varices and liver failure."
+      "reasoning": "GI bleeding is a critical complication, evidenced by the patient's black coffee-ground GI contents and low platelet count."
     },
     {
       "rank": 5,
-      "diagnosis": "Pancytopenia",
-      "score": 55.0,
+      "diagnosis": "Atrial fibrillation/flutter",
+      "score": 50.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Platelet Count 44.0 K/uL",
-        "Hematocrit 25.3 %",
-        "Hemoglobin 8.3 g/dL"
+        "Atrial fibrillation/flutter, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
       ],
       "opposing_evidence": [],
-      "reasoning": "Pancytopenia is a complication of liver failure and sepsis, but the evidence is less robust."
+      "reasoning": "Atrial fibrillation/flutter is a known complication, evidenced by the patient's elevated INR and prolonged coagulation times."
     },
     {
       "rank": 6,
-      "diagnosis": "Atrial fibrillation/flutter",
-      "score": 50.0,
-      "confidence": "high",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
-        "INR(PT) 3.4",
-        "PT 36.5 sec",
-        "PTT 104.2 sec"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Atrial fibrillation/flutter is a known risk factor for stroke and thromboembolic events."
-    },
-    {
-      "rank": 7,
       "diagnosis": "Pleural effusion",
       "score": 45.0,
       "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "Pleural effusion (60046008)",
+      "snomed_aligned": "Pleural effusion",
       "supporting_evidence": [
-        "large pleural effusion with compressive consolidation versus atelectasis",
-        "Bilateral effusions right greater than left"
+        "Pleural effusion, large pleural effusion with compressive consolidation versus atelectasis"
       ],
       "opposing_evidence": [],
-      "reasoning": "Pleural effusion is a complication of liver failure and sepsis, but the evidence is less robust."
+      "reasoning": "Pleural effusion is a common complication, evidenced by the patient's bilateral pleural effusions."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Renal failure",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Renal failure is a significant complication, evidenced by the patient's elevated creatinine and bicarbonate levels."
     },
     {
       "rank": 8,
-      "diagnosis": "Worsening liver failure",
-      "score": 40.0,
-      "confidence": "high",
+      "diagnosis": "Coagulopathy",
+      "score": 35.0,
+      "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "Acute liver failure (197270009)",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "worsening liver failure",
-        "Bilirubin, Total 13.3 mg/dL",
-        "ALT 439 IU/L",
-        "AST 2481 IU/L"
+        "Coagulopathy, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
       ],
       "opposing_evidence": [],
-      "reasoning": "Worsening liver failure is a complication of the patient's chronic liver disease and current sepsis."
+      "reasoning": "Coagulopathy is a critical complication, evidenced by the patient's prolonged coagulation times."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Cirrhosis",
+      "why": "Cirrhosis is a chronic condition and not the primary driver of the current presentation."
+    },
+    {
+      "diagnosis": "Hepatocellular carcinoma",
+      "why": "While present, the primary focus is on the acute complications and sepsis."
+    }
+  ],
   "uncertain_areas": [
-    "More detailed information on the source of sepsis and specific causative organisms would refine the differential diagnosis"
+    "Further details on the source of sepsis and the exact nature of the liver failure would refine the differential diagnosis."
   ],
   "n_candidates": 8,
   "type": "differential_diagnosis",
@@ -135,7 +127,7 @@
   "_temperature": 0.4,
   "patient_id": "17774110",
   "hadm_id": "27339772",
-  "generated_at": "2026-08-09T00:46:20.823473",
+  "generated_at": "2026-08-15T17:33:14.305981",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 15,

@@ -1156,3 +1156,631 @@ def export_retained_to_patient_folders(
         (adm / txt_name).write_text(format_retained_txt(out), encoding="utf-8")
         n += 1
     return n
+
+
+# ---------------------------------------------------------------------------
+# Stage 8 — SNOMED → ICD-10-CM ExtendedMap + clinical code packages
+# ---------------------------------------------------------------------------
+# US ICD-10-CM complex map (NLM / SNOMED US Edition)
+ICD10CM_EXTENDED_MAP_REFSET = "6011000124106"
+# International ICD-10 (fallback only)
+ICD10_WHO_MAP_REFSET = "447562003"
+
+
+@dataclass
+class Icd10CmMapIndex:
+    """conceptId -> ordered list of ICD-10-CM map rows."""
+
+    snomed_root: Path
+    refset_id: str = ICD10CM_EXTENDED_MAP_REFSET
+    # concept_id -> list of map dicts sorted by mapGroup, mapPriority
+    concept_to_maps: Dict[str, List[Dict[str, Any]]] = field(default_factory=dict)
+    # optional ICD code -> long title (from MIMIC d_icd_diagnoses if available)
+    icd_titles: Dict[str, str] = field(default_factory=dict)
+
+
+def _find_extended_map_file(snomed_root: Path) -> Path:
+    snap = Path(snomed_root) / "Snapshot" / "Refset" / "Map"
+    matches = list(snap.glob("der2_iisssccRefset_ExtendedMapSnapshot*.txt"))
+    if not matches:
+        raise FileNotFoundError(
+            f"No ExtendedMap Snapshot under {snap}. "
+            "SNOMED→ICD-10-CM map is required for Stage 8."
+        )
+    return matches[0]
+
+
+def load_icd_titles_from_mimic(mimic_base: Optional[Path] = None) -> Dict[str, str]:
+    """Optional ICD-10 long titles from MIMIC d_icd_diagnoses."""
+    base: Optional[Path] = Path(mimic_base) if mimic_base else None
+    if base is None:
+        # try settings.json without importing pipeline (avoid circular import)
+        settings = Path(__file__).resolve().parent / "settings.json"
+        if settings.exists():
+            try:
+                data = json.loads(settings.read_text(encoding="utf-8"))
+                pr = data.get("PHYSIONET_ROOT")
+                if pr:
+                    base = Path(pr) / "mimiciv" / "3.1"
+            except json.JSONDecodeError:
+                pass
+        if base is None:
+            guess = Path("/Users/narenkhatwani/Desktop/physionet.org/files/mimiciv/3.1")
+            if guess.exists():
+                base = guess
+    if base is None:
+        return {}
+    path = base / "hosp" / "d_icd_diagnoses.csv.gz"
+    if not path.exists():
+        return {}
+    df = pd.read_csv(
+        path,
+        dtype=str,
+        usecols=["icd_code", "icd_version", "long_title"],
+    )
+    df = df[df["icd_version"] == "10"]
+    out: Dict[str, str] = {}
+    for _, row in df.iterrows():
+        code = str(row["icd_code"]).strip().upper()
+        title = str(row["long_title"] or "").strip()
+        if not code:
+            continue
+        out[code] = title
+        dotted = _dot_icd10(code)
+        if dotted != code:
+            out[dotted] = title
+    return out
+
+
+def _dot_icd10(code: str) -> str:
+    """Insert standard ICD-10-CM decimal if missing (e.g. N939 → N93.9)."""
+    c = (code or "").strip().upper().replace(" ", "")
+    if not c or "." in c:
+        return c
+    # letter + digits; place decimal after 3rd character when length > 3
+    if len(c) > 3 and c[0].isalpha():
+        return c[:3] + "." + c[3:]
+    return c
+
+
+def _undot_icd10(code: str) -> str:
+    return (code or "").strip().upper().replace(".", "").replace(" ", "")
+
+
+def build_icd10cm_map_index(
+    snomed_root: Optional[Path] = None,
+    cache_path: Optional[Path] = None,
+    force_rebuild: bool = False,
+    prefer_refset: str = ICD10CM_EXTENDED_MAP_REFSET,
+    load_titles: bool = True,
+) -> Icd10CmMapIndex:
+    """
+    Load SNOMED US ExtendedMap for ICD-10-CM into memory (cached pickle).
+    """
+    root = Path(snomed_root) if snomed_root else find_snomed_root()
+    cache_path = Path(cache_path) if cache_path else (
+        REPO_ROOT / "data" / "snomed_index" / "icd10cm_extended_map.pkl"
+    )
+    if cache_path.exists() and not force_rebuild:
+        print(f"Loading ICD-10-CM ExtendedMap cache → {cache_path}")
+        with cache_path.open("rb") as f:
+            idx: Icd10CmMapIndex = pickle.load(f)
+        idx.snomed_root = root
+        return idx
+
+    map_path = _find_extended_map_file(root)
+    print(f"Building ICD-10-CM ExtendedMap index from {map_path.name}...")
+    idx = Icd10CmMapIndex(snomed_root=root, refset_id=prefer_refset)
+    concept_maps: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+    n_rows = 0
+    usecols = [
+        "active",
+        "refsetId",
+        "referencedComponentId",
+        "mapGroup",
+        "mapPriority",
+        "mapRule",
+        "mapAdvice",
+        "mapTarget",
+        "correlationId",
+        "mapCategoryId",
+    ]
+    for chunk in pd.read_csv(map_path, sep="\t", dtype=str, usecols=usecols, chunksize=250_000):
+        chunk = chunk[chunk["active"] == "1"]
+        chunk = chunk[chunk["refsetId"] == prefer_refset]
+        chunk = chunk[chunk["mapTarget"].notna() & (chunk["mapTarget"].str.strip() != "")]
+        for _, row in chunk.iterrows():
+            cid = row["referencedComponentId"]
+            target = _dot_icd10(str(row["mapTarget"]))
+            try:
+                group = int(row.get("mapGroup") or 1)
+            except ValueError:
+                group = 1
+            try:
+                priority = int(row.get("mapPriority") or 1)
+            except ValueError:
+                priority = 1
+            advice = str(row.get("mapAdvice") or "")
+            concept_maps[cid].append(
+                {
+                    "code": target,
+                    "code_nodot": _undot_icd10(target),
+                    "map_group": group,
+                    "map_priority": priority,
+                    "map_rule": str(row.get("mapRule") or ""),
+                    "map_advice": advice,
+                    "always": "ALWAYS" in advice.upper(),
+                    "correlation_id": row.get("correlationId"),
+                    "map_category_id": row.get("mapCategoryId"),
+                }
+            )
+            n_rows += 1
+
+    # sort each concept's maps
+    for cid, rows in concept_maps.items():
+        rows.sort(key=lambda r: (r["map_group"], r["map_priority"], r["code"]))
+        # dedupe identical codes keeping best priority
+        seen: Set[str] = set()
+        deduped = []
+        for r in rows:
+            key = r["code_nodot"]
+            if key in seen:
+                continue
+            seen.add(key)
+            deduped.append(r)
+        concept_maps[cid] = deduped
+
+    idx.concept_to_maps = dict(concept_maps)
+    if load_titles:
+        print("  Loading ICD titles from MIMIC (if available)...")
+        idx.icd_titles = load_icd_titles_from_mimic()
+        print(f"  ICD titles loaded: {len(idx.icd_titles):,}")
+
+    print(
+        f"  Mapped concepts: {len(idx.concept_to_maps):,} | map rows kept: {n_rows:,}"
+    )
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    with cache_path.open("wb") as f:
+        pickle.dump(idx, f, protocol=pickle.HIGHEST_PROTOCOL)
+    print(f"  Cached → {cache_path}")
+    return idx
+
+
+def lookup_icd10cm_for_concept(
+    map_index: Icd10CmMapIndex,
+    concept_id: str,
+    max_codes: int = 8,
+    prefer_always: bool = True,
+) -> List[Dict[str, Any]]:
+    """Return ordered ICD-10-CM candidates for a SNOMED concept id.
+
+    When prefer_always=True, ALWAYS / default map rows are listed before
+    context-dependent rule maps (age, episode, etc.) within each mapGroup.
+    """
+    rows = list(map_index.concept_to_maps.get(str(concept_id), []))
+    if prefer_always:
+        rows = sorted(
+            rows,
+            key=lambda r: (
+                r["map_group"],
+                0 if r.get("always") else 1,
+                r["map_priority"],
+                r["code"],
+            ),
+        )
+    out = []
+    for i, r in enumerate(rows[:max_codes]):
+        code = r["code"]
+        title = (
+            map_index.icd_titles.get(code)
+            or map_index.icd_titles.get(r["code_nodot"])
+            or ""
+        )
+        out.append(
+            {
+                "code": code,
+                "title": title,
+                "source": "snomed_extended_map",
+                "map_priority": r["map_priority"],
+                "map_group": r["map_group"],
+                "map_advice": r["map_advice"],
+                "always": r["always"],
+                "role": "principal_candidate",
+                "order": i + 1,
+            }
+        )
+    return out
+
+
+def map_condition_name_to_icd(
+    condition: str,
+    snomed_index: SnomedIndex,
+    map_index: Icd10CmMapIndex,
+    max_codes: int = 3,
+) -> Dict[str, Any]:
+    """Map a free-text condition name → SNOMED → ExtendedMap ICD-10-CM (ALWAYS preferred)."""
+    resolved = resolve_diagnosis_to_snomed(condition, snomed_index)
+    icds: List[Dict[str, Any]] = []
+    if resolved.get("mapped") and resolved.get("concept_id"):
+        icds = lookup_icd10cm_for_concept(
+            map_index, resolved["concept_id"], max_codes=max_codes, prefer_always=True
+        )
+        always = [x for x in icds if x.get("always")]
+        icds = always or icds
+    return {
+        "condition": condition,
+        "snomed_resolution": resolved,
+        "icd_candidates": icds,
+        "icd_primary": (icds[0] if icds else None),
+    }
+
+
+def resolve_diagnosis_to_snomed(
+    diagnosis: str,
+    snomed_index: SnomedIndex,
+    snomed_aligned: str = "",
+) -> Dict[str, Any]:
+    """Map DiffDx diagnosis (and optional snomed_aligned hint) to a SNOMED concept."""
+    # Prefer explicit aligned term if it maps exactly / well
+    candidates = []
+    if snomed_aligned:
+        candidates.append(map_term_to_snomed(snomed_aligned, snomed_index))
+    if diagnosis:
+        candidates.append(map_term_to_snomed(diagnosis, snomed_index))
+    best = None
+    for c in candidates:
+        if not c.get("mapped"):
+            continue
+        if best is None or float(c.get("score") or 0) > float(best.get("score") or 0):
+            best = c
+    if best is None:
+        return {
+            "mapped": False,
+            "concept_id": None,
+            "preferred_term": None,
+            "match_method": None,
+            "score": 0.0,
+            "query": diagnosis,
+        }
+    return {
+        "mapped": True,
+        "concept_id": best.get("concept_id"),
+        "preferred_term": best.get("preferred_term"),
+        "fsn": best.get("fsn"),
+        "match_method": best.get("match_method"),
+        "score": best.get("score"),
+        "query": diagnosis,
+        "aligned_hint": snomed_aligned or None,
+    }
+
+
+def _collect_supporting_terms(
+    symptom_tree: Optional[Dict[str, Any]],
+    retained_snomed: Optional[Dict[str, Any]],
+) -> List[Dict[str, str]]:
+    """Flatten candidate supporting clinical terms from tree + retained entities."""
+    out: List[Dict[str, str]] = []
+    seen: Set[str] = set()
+
+    def add(term: str, kind: str, concept_id: str = "") -> None:
+        term = (term or "").strip()
+        if not term:
+            return
+        key = normalize_term(term)
+        if not key or key in seen:
+            return
+        seen.add(key)
+        out.append({"term": term, "kind": kind, "concept_id": concept_id or ""})
+
+    if retained_snomed:
+        for ent in retained_snomed.get("entities") or []:
+            add(
+                ent.get("term") or ent.get("snomed_preferred_term") or "",
+                str(ent.get("kind") or "retained"),
+                str(ent.get("snomed_concept_id") or ""),
+            )
+            # also map preferred term if different
+            add(
+                ent.get("snomed_preferred_term") or "",
+                "retained_snomed",
+                str(ent.get("snomed_concept_id") or ""),
+            )
+
+    if symptom_tree:
+        for t in symptom_tree.get("key_symptoms") or []:
+            add(str(t), "key_symptom")
+        for t in symptom_tree.get("red_flags") or []:
+            add(str(t), "red_flag")
+
+        def walk(node: Any) -> None:
+            if isinstance(node, dict):
+                if node.get("term"):
+                    add(str(node["term"]), "tree_symptom")
+                for child in node.get("children") or []:
+                    walk(child)
+                for s in node.get("symptoms") or []:
+                    walk(s)
+            elif isinstance(node, list):
+                for x in node:
+                    walk(x)
+
+        for branch in symptom_tree.get("branches") or []:
+            walk(branch)
+
+    return out
+
+
+def build_icd_package_for_diagnosis(
+    diagnosis_row: Dict[str, Any],
+    snomed_index: SnomedIndex,
+    map_index: Icd10CmMapIndex,
+    symptom_tree: Optional[Dict[str, Any]] = None,
+    retained_snomed: Optional[Dict[str, Any]] = None,
+    max_principal: int = 5,
+    max_supporting: int = 8,
+    support_sim_threshold: float = 0.50,
+    embedder: Optional[TextEmbedder] = None,
+) -> Dict[str, Any]:
+    """
+    Clinical ICD package for one DiffDx diagnosis:
+      - principal: ExtendedMap codes for the diagnosis SNOMED concept
+      - supporting: mapped codes from related symptoms/retained entities
+    """
+    diagnosis = str(diagnosis_row.get("diagnosis") or "")
+    aligned = str(diagnosis_row.get("snomed_aligned") or "")
+    resolved = resolve_diagnosis_to_snomed(diagnosis, snomed_index, aligned)
+
+    principal: List[Dict[str, Any]] = []
+    if resolved.get("mapped") and resolved.get("concept_id"):
+        principal = lookup_icd10cm_for_concept(
+            map_index, resolved["concept_id"], max_codes=max_principal
+        )
+        for p in principal:
+            p["role"] = "principal"
+
+    # Supporting: related patient findings
+    supporting: List[Dict[str, Any]] = []
+    principal_codes = {_undot_icd10(p["code"]) for p in principal}
+    support_terms = _collect_supporting_terms(symptom_tree, retained_snomed)
+
+    # relevance filter vs diagnosis text
+    sim_fn = (embedder.similarity if embedder else cosine_similarity_text)
+    for st in support_terms:
+        term = st["term"]
+        # skip near-identical to diagnosis string
+        if normalize_term(term) == normalize_term(diagnosis):
+            continue
+        rel = float(sim_fn(diagnosis, term))
+        if rel < support_sim_threshold - 1e-9:
+            # also allow if term appears in supporting_evidence strings
+            evidence = " ".join(
+                str(x) for x in (diagnosis_row.get("supporting_evidence") or [])
+            ).lower()
+            if normalize_term(term) not in normalize_term(evidence):
+                continue
+
+        cid = st.get("concept_id") or ""
+        if not cid:
+            mapped = map_term_to_snomed(term, snomed_index)
+            if not mapped.get("mapped"):
+                continue
+            cid = mapped["concept_id"]
+            pref = mapped.get("preferred_term")
+        else:
+            pref = snomed_index.display_term(cid)
+
+        icds = lookup_icd10cm_for_concept(map_index, cid, max_codes=5)
+        # Prefer ALWAYS maps for supporting (skip age/episode rule targets)
+        always_icds = [x for x in icds if x.get("always")]
+        icds = (always_icds or icds)[:2]
+        for icd in icds:
+            code_key = _undot_icd10(icd["code"])
+            if code_key in principal_codes:
+                continue
+            if any(_undot_icd10(s["code"]) == code_key for s in supporting):
+                continue
+            supporting.append(
+                {
+                    **icd,
+                    "role": "supporting",
+                    "from_term": term,
+                    "from_kind": st.get("kind"),
+                    "from_snomed_id": cid,
+                    "from_snomed_term": pref,
+                    "relevance_to_diagnosis": round(rel, 4),
+                }
+            )
+            if len(supporting) >= max_supporting:
+                break
+        if len(supporting) >= max_supporting:
+            break
+
+    # order package: principal first (map order), then supporting by relevance
+    supporting.sort(
+        key=lambda x: (-float(x.get("relevance_to_diagnosis") or 0), x.get("map_priority") or 99)
+    )
+    package = []
+    for i, row in enumerate(principal + supporting, start=1):
+        package.append({**row, "package_order": i})
+
+    status = "mapped" if principal else ("supporting_only" if supporting else "unmapped")
+    return {
+        **diagnosis_row,
+        "snomed_resolution": resolved,
+        "icd10_primary": (principal[0]["code"] if principal else None),
+        "icd10_primary_title": (principal[0].get("title") if principal else None),
+        "icd10_package": package,
+        "icd10_principal": principal,
+        "icd10_supporting": supporting,
+        "icd_status": status,
+        "n_icd_codes": len(package),
+    }
+
+
+def enrich_diffdx_with_icd_packages(
+    diffdx_result: Dict[str, Any],
+    snomed_index: SnomedIndex,
+    map_index: Icd10CmMapIndex,
+    symptom_tree: Optional[Dict[str, Any]] = None,
+    retained_snomed: Optional[Dict[str, Any]] = None,
+    use_embeddings: bool = True,
+) -> Dict[str, Any]:
+    """Attach ICD packages to every DiffDx differential row."""
+    embedder = None
+    if use_embeddings:
+        embedder = TextEmbedder(prefer_embeddings=True)
+        texts: List[str] = []
+        for d in diffdx_result.get("differential") or []:
+            if d.get("diagnosis"):
+                texts.append(d["diagnosis"])
+        for st in _collect_supporting_terms(symptom_tree, retained_snomed):
+            texts.append(st["term"])
+        embedder.encode_many(texts, show_progress=False)
+
+    enriched = []
+    for row in diffdx_result.get("differential") or []:
+        enriched.append(
+            build_icd_package_for_diagnosis(
+                row,
+                snomed_index,
+                map_index,
+                symptom_tree=symptom_tree,
+                retained_snomed=retained_snomed,
+                embedder=embedder,
+            )
+        )
+
+    out = {
+        **diffdx_result,
+        "stage": 8,
+        "type": "differential_diagnosis_with_icd",
+        "differential": enriched,
+        "icd_map_refset": map_index.refset_id,
+        "icd_enrichment": {
+            "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+            "n_diagnoses": len(enriched),
+            "n_with_principal": sum(1 for e in enriched if e.get("icd10_principal")),
+            "n_unmapped": sum(1 for e in enriched if e.get("icd_status") == "unmapped"),
+        },
+        "generated_at_stage8": datetime.now().isoformat(),
+    }
+    return out
+
+
+def format_icd_package_txt(result: Dict[str, Any]) -> str:
+    """Human-readable DiffDx + ICD packages."""
+    lines = [
+        "DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES",
+        "==========================================",
+        f"Patient ID       : {result.get('patient_id', 'N/A')}",
+        f"HADM ID          : {result.get('hadm_id', 'N/A')}",
+        f"Most likely      : {result.get('most_likely', 'N/A')}",
+        f"Map refset       : {result.get('icd_map_refset', 'N/A')}",
+        f"Generated (S8)   : {result.get('generated_at_stage8', result.get('generated_at', 'N/A'))}",
+        "",
+    ]
+    if result.get("summary"):
+        lines.extend(["Summary:", f"  {result['summary']}", ""])
+    for item in result.get("differential") or []:
+        lines.append(
+            f"#{item.get('rank')}  [{item.get('score')}/100 | {item.get('confidence')}]  "
+            f"{item.get('diagnosis')}  ({item.get('category')})"
+        )
+        res = item.get("snomed_resolution") or {}
+        if res.get("mapped"):
+            lines.append(
+                f"    SNOMED: {res.get('preferred_term')} ({res.get('concept_id')}) "
+                f"[{res.get('match_method')} score={res.get('score')}]"
+            )
+        else:
+            lines.append("    SNOMED: (unmapped)")
+        lines.append(f"    ICD status: {item.get('icd_status')} | primary: {item.get('icd10_primary')}")
+        for code_row in item.get("icd10_package") or []:
+            role = code_row.get("role")
+            title = code_row.get("title") or ""
+            extra = ""
+            if role == "supporting":
+                extra = f"  ← {code_row.get('from_term')} ({code_row.get('from_kind')})"
+            lines.append(
+                f"      {code_row.get('package_order')}. [{role}] "
+                f"{code_row.get('code')} — {title}{extra}"
+            )
+        lines.append("")
+    return "\n".join(lines)
+
+
+def run_stage08_icd_packages(
+    stage07_payload: Dict[str, Any],
+    snomed_index: SnomedIndex,
+    map_index: Icd10CmMapIndex,
+    export_dir: Path,
+    use_embeddings: bool = True,
+) -> Dict[str, Any]:
+    """
+    Enrich all Stage-7 DiffDx results with ICD packages; read tree/retained from export_dir.
+    """
+    export_dir = Path(export_dir)
+    results = []
+    for row in stage07_payload.get("results") or []:
+        if row.get("error") and not (row.get("differential") or []):
+            results.append(row)
+            continue
+        pid, hid = str(row.get("patient_id")), str(row.get("hadm_id"))
+        adm = export_dir / f"patient_{pid}" / "admissions" / f"hadm_{hid}"
+        tree = None
+        retained = None
+        tree_path = adm / "symptom_tree.json"
+        if not tree_path.exists():
+            alt = export_dir / f"patient_{pid}" / "symptom_tree.json"
+            if alt.exists():
+                tree_path = alt
+        if tree_path.exists():
+            tree = json.loads(tree_path.read_text(encoding="utf-8"))
+        ret_path = adm / "snomed_retained.json"
+        if ret_path.exists():
+            retained = json.loads(ret_path.read_text(encoding="utf-8"))
+
+        enriched = enrich_diffdx_with_icd_packages(
+            row,
+            snomed_index,
+            map_index,
+            symptom_tree=tree,
+            retained_snomed=retained,
+            use_embeddings=use_embeddings,
+        )
+        results.append(enriched)
+
+    return {
+        "stage": 8,
+        "description": (
+            "ICD-10-CM packages per DiffDx diagnosis "
+            "(principal via SNOMED ExtendedMap + supporting from tree/retained)"
+        ),
+        "generated_at": datetime.now().isoformat(),
+        "icd_map_refset": map_index.refset_id,
+        "n_admissions": len(results),
+        "results": results,
+    }
+
+
+def export_stage08_to_patient_folders(
+    payload: Dict[str, Any],
+    export_dir: Path,
+) -> int:
+    """Write icd_coding.json / .txt (and update differential display) per admission."""
+    export_dir = Path(export_dir)
+    n = 0
+    for row in payload.get("results") or []:
+        pid, hid = str(row.get("patient_id")), str(row.get("hadm_id"))
+        adm = export_dir / f"patient_{pid}" / "admissions" / f"hadm_{hid}"
+        if not adm.is_dir():
+            continue
+        write_json(adm / "icd_coding.json", row)
+        (adm / "icd_coding.txt").write_text(format_icd_package_txt(row), encoding="utf-8")
+        # also refresh differential_diagnosis.* with ICD fields for convenience
+        write_json(adm / "differential_diagnosis_icd.json", row)
+        (adm / "differential_diagnosis_icd.txt").write_text(
+            format_icd_package_txt(row), encoding="utf-8"
+        )
+        n += 1
+    return n

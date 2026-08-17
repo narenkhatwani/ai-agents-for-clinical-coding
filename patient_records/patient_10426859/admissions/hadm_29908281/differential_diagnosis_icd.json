@@ -1,0 +1,555 @@
+{
+  "summary": "The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. She has a history of cardiovascular issues including SVT, hypertension, and hyperlipidemia.",
+  "most_likely": "Supraventricular tachycardia",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Supraventricular tachycardia",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Supraventricular tachycardia",
+      "supporting_evidence": [
+        "Supraventricular tachycardia (SVT) in symptom tree, current stay"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Primary diagnosis supported by symptom tree and retained SNOMED context.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "6456007",
+        "preferred_term": "Supraventricular tachycardia",
+        "fsn": "Supraventricular tachycardia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Supraventricular tachycardia",
+        "aligned_hint": "Supraventricular tachycardia"
+      },
+      "icd10_primary": "I47.10",
+      "icd10_primary_title": "",
+      "icd10_package": [
+        {
+          "code": "I47.10",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I47.10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P29.11",
+          "title": "Neonatal tachycardia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.11 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I47.10",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I47.10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P29.11",
+          "title": "Neonatal tachycardia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.11 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Hip fracture",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Nondisplaced comminuted fracture in the right superior pubic ramus in symptom tree, current stay"
+      ],
+      "opposing_evidence": [
+        "No imaging evidence of fracture in current stay"
+      ],
+      "reasoning": "Hip fracture is a potential complication of the fall, but imaging is inconclusive.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "263225007",
+        "preferred_term": "Fracture of proximal end of femur",
+        "fsn": "Fracture of proximal end of femur (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hip fracture",
+        "aligned_hint": null
+      },
+      "icd10_primary": "S72.009?",
+      "icd10_primary_title": "",
+      "icd10_package": [
+        {
+          "code": "S72.009?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS S72.009? | CONSIDER LATERALITY SPECIFICATION | DESCENDANTS NOT EXHAUSTIVELY MAPPED | EPISODE OF CARE INFORMATION NEEDED | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "R10.31",
+          "title": "Right lower quadrant pain",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R10.31",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "pain in right hip",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "162051008",
+          "from_snomed_term": "Right iliac fossa pain",
+          "relevance_to_diagnosis": 0.6309,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "S72.009?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS S72.009? | CONSIDER LATERALITY SPECIFICATION | DESCENDANTS NOT EXHAUSTIVELY MAPPED | EPISODE OF CARE INFORMATION NEEDED | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R10.31",
+          "title": "Right lower quadrant pain",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R10.31",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "pain in right hip",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "162051008",
+          "from_snomed_term": "Right iliac fossa pain",
+          "relevance_to_diagnosis": 0.6309
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anemia",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Red Blood Cells: 3.89 m/uL [abnormal] in labs, current stay"
+      ],
+      "opposing_evidence": [
+        "No other symptoms or findings strongly supporting anemia"
+      ],
+      "reasoning": "Low RBC count suggests anemia, but other findings are not strongly indicative.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Dehydration",
+      "score": 55.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hematocrit: 36.8 % in labs, current stay"
+      ],
+      "opposing_evidence": [
+        "Normal serum electrolytes, no other signs of dehydration"
+      ],
+      "reasoning": "Hematocrit is slightly elevated, but no other evidence strongly supports dehydration.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "34095006",
+        "preferred_term": "Dehydration",
+        "fsn": "Dehydration (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Dehydration",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E86.0",
+      "icd10_primary_title": "Dehydration",
+      "icd10_package": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E86.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P74.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS E86.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P74.1",
+          "title": "Dehydration of newborn",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P74.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hypokalemia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Potassium: 3.9 mEq/L in labs, current stay"
+      ],
+      "opposing_evidence": [
+        "No other symptoms or findings strongly supporting hypokalemia"
+      ],
+      "reasoning": "Low potassium level is present, but other findings do not strongly support this diagnosis.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "43339004",
+        "preferred_term": "Hypokalemia",
+        "fsn": "Hypokalemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypokalemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E87.6",
+      "icd10_primary_title": "Hypokalemia",
+      "icd10_package": [
+        {
+          "code": "E87.6",
+          "title": "Hypokalemia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E87.6",
+          "title": "Hypokalemia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Cardiac ischemia",
+      "why": "No evidence of acute infarction or elevated troponin in imaging or labs."
+    }
+  ],
+  "uncertain_areas": [
+    "Need more imaging evidence to confirm hip fracture. More lab results to confirm or rule out anemia and hypokalemia."
+  ],
+  "n_candidates": 5,
+  "type": "differential_diagnosis_with_icd",
+  "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
+  "_agent": "differential_diagnosis",
+  "_temperature": 0.4,
+  "patient_id": "10426859",
+  "hadm_id": "29908281",
+  "generated_at": "2026-08-15T17:30:44.353634",
+  "inputs": {
+    "symptom_tree": true,
+    "retained_snomed_entities": 10,
+    "retained_links": 13,
+    "clinical_context": true,
+    "information_extraction": true,
+    "prior_admissions": 2,
+    "prior_icd_codes": 31,
+    "prior_icd_context": true,
+    "prompt_format": "ROLE/CONTEXT/TASK/CONSTRAINTS",
+    "temperature": 0.4
+  },
+  "prior_icd_context": [
+    {
+      "hadm_id": 25245894,
+      "admittime": "2193-12-20 17:16:00",
+      "dischtime": "2193-12-21 20:00:00",
+      "admission_type": "DIRECT OBSERVATION",
+      "primary_icd_code": "R0789",
+      "primary_dx_title": "Other chest pain",
+      "n_diagnoses": 10,
+      "icd10_diagnoses": [
+        {
+          "code": "R0789",
+          "title": "Other chest pain"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "I2510",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "M545",
+          "title": "Low back pain"
+        },
+        {
+          "code": "C679",
+          "title": "Malignant neoplasm of bladder, unspecified"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        }
+      ]
+    },
+    {
+      "hadm_id": 21013288,
+      "admittime": "2194-04-30 16:41:00",
+      "dischtime": "2194-05-02 17:19:00",
+      "admission_type": "OBSERVATION ADMIT",
+      "primary_icd_code": "I471",
+      "primary_dx_title": "Supraventricular tachycardia",
+      "n_diagnoses": 21,
+      "icd10_diagnoses": [
+        {
+          "code": "I471",
+          "title": "Supraventricular tachycardia"
+        },
+        {
+          "code": "I214",
+          "title": "Non-ST elevation (NSTEMI) myocardial infarction"
+        },
+        {
+          "code": "C801",
+          "title": "Malignant (primary) neoplasm, unspecified"
+        },
+        {
+          "code": "Z5329",
+          "title": "Procedure and treatment not carried out because of patient's decision for other reasons"
+        },
+        {
+          "code": "I2510",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+        },
+        {
+          "code": "Z87891",
+          "title": "Personal history of nicotine dependence"
+        },
+        {
+          "code": "I252",
+          "title": "Old myocardial infarction"
+        },
+        {
+          "code": "Z8673",
+          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+        },
+        {
+          "code": "F329",
+          "title": "Major depressive disorder, single episode, unspecified"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension"
+        },
+        {
+          "code": "E785",
+          "title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "code": "F419",
+          "title": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "K219",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "S8001XA",
+          "title": "Contusion of right knee, initial encounter"
+        },
+        {
+          "code": "W19XXXA",
+          "title": "Unspecified fall, initial encounter"
+        },
+        {
+          "code": "Y929",
+          "title": "Unspecified place or not applicable"
+        },
+        {
+          "code": "G4700",
+          "title": "Insomnia, unspecified"
+        },
+        {
+          "code": "J309",
+          "title": "Allergic rhinitis, unspecified"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate"
+        },
+        {
+          "code": "I441",
+          "title": "Atrioventricular block, second degree"
+        },
+        {
+          "code": "E559",
+          "title": "Vitamin D deficiency, unspecified"
+        }
+      ]
+    }
+  ],
+  "stage": 8,
+  "icd_map_refset": "6011000124106",
+  "icd_enrichment": {
+    "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
+    "n_diagnoses": 5,
+    "n_with_principal": 5,
+    "n_unmapped": 0
+  },
+  "generated_at_stage8": "2026-08-15T17:34:03.875812"
+}

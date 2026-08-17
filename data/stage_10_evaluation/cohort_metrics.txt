@@ -1,0 +1,136 @@
+COHORT ACCURACY (Stage 10)
+==========================
+
+Admissions scored : 15
+With Stage 9      : 15
+MATCH rule        : YES if rank-1 vs GT primary, GT primary elsewhere in DiffDx, or rank-1 vs any billed GT dx (clinical match / MiniLM ≥ 0.7)
+
+PRIMARY DIAGNOSIS ACCURACY (rank-1, other DiffDx, or other billed GT dx)
+  Stage 8:  12 / 15  =  80.0%
+  Stage 9:  11 / 15  =  73.3%
+
+PRIMARY ICD ACCURACY (rank-1, other package code vs GT primary, or rank-1 vs any billed GT code)
+  Stage 8:  11 / 15  =  73.3%
+  Stage 9:  10 / 15  =  66.7%
+
+metric                                  Stage 8    Stage 9
+----------------------------------------------------------
+Top dx exact rate                         0.067      0.067
+Top dx MATCH rate (accuracy)              0.800      0.733
+Top dx mean similarity                    0.675      0.634
+Primary ICD exact rate                    0.067      0.067
+Primary ICD family rate                   0.333      0.333
+Primary ICD MATCH rate (accuracy)         0.733      0.667
+Primary ICD mean similarity               0.622      0.651
+Mean ICD precision (exact)                0.153      0.190
+Mean ICD recall (exact)                   0.105      0.067
+Mean ICD F1 (exact)                       0.118      0.096
+Mean ICD precision (semantic)             0.313      0.460
+Mean ICD recall (semantic)                0.201      0.144
+Mean ICD F1 (semantic)                    0.233      0.212
+Mean F1 excl. R (exact)                   0.111      0.083
+Mean F1 excl. R (semantic)                0.225      0.197
+
+PRIMARY DIFFDx TABLE (stage8 vs ground truth)
+=============================================
+
+MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+or rank-1 matches another billed GT diagnosis.
+
+MATCH  why                  sim  patient    predicted                            ground truth
+----------------------------------------------------------------------------------------------------------------------------
+YES    same_condition      0.49  10361982   Hemorrhage following hysterectomy    Postprocedural hemorrhage of a genitour...
+YES    exact               1.00  10426859   Supraventricular tachycardia         Supraventricular tachycardia
+YES    diffdx_vs_primary   0.87  10458324   Pneumothorax                         Traumatic pneumothorax, initial encounter
+YES    term_subset         0.63  11251337   Nephrolithiasis                      Hydronephrosis with renal and ureteral ...
+YES    rank1_vs_gt_list    0.55  11474876   Heart failure with preserved ej...   Chronic diastolic (congestive) heart fa...
+YES    contained           0.87  11607177   Refractory VT                        Ventricular tachycardia
+YES    same_condition      0.69  12007928   Acute decompensated heart failure    Acute on chronic diastolic (congestive)...
+YES    same_condition      0.57  13196707   Severe sepsis due to RUL PNA         Sepsis, unspecified organism
+YES    diffdx_vs_primary   0.91  13508515   Renal cell carcinoma                 Malignant neoplasm of left kidney, exce...
+NO     no_match            0.20  13952483   Severe Pulmonary Hypertension w...   Other hypotension
+NO     no_match            0.26  16014068   Anemia due to malignancy             Secondary malignant neoplasm of brain
+YES    same_condition      0.79  17774110   Severe sepsis with septic shock      Other specified sepsis
+YES    rank1_vs_gt_list    0.90  18412100   Post-procedural pain                 Other acute postprocedural pain
+YES    rank1_vs_gt_list    0.87  19104262   Diabetic ketoacidosis                Type 1 diabetes mellitus with ketoacido...
+NO     no_match            0.52  19632936   Acute on chronic macrocytic anemia   Iron deficiency anemia, unspecified
+------------------------------------------------------------------------------------------------------------------------
+ACCURACY: 12 YES / 15 = 80.0%
+
+PRIMARY ICD TABLE (stage8 vs ground truth)
+==========================================
+
+MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+or rank-1 ICD matches another billed GT code.
+
+MATCH    sim  patient    pred ICD     GT ICD       predicted title              GT title
+------------------------------------------------------------------------------------------------------------------------
+NO      0.36  10361982   N93.9        N99.820      Abnormal uterine and va...   Postprocedural hemorrhage of a ge...
+YES     1.00  10426859   I47.10       I47.1                                     Supraventricular tachycardia
+YES     0.87  10458324   J93.9        S27.0XXA     Pneumothorax, unspecified    Traumatic pneumothorax, initial e...
+YES     0.59  11251337   N20.0        N13.2        Calculus of kidney           Hydronephrosis with renal and ure...
+YES     0.55  11474876   I50.30       I13.0        Unspecified diastolic (...   Hypertensive heart and chronic ki...
+NO      0.00  11607177   -            I47.2                                     Ventricular tachycardia
+YES     0.71  12007928   I50.9        I50.33       Heart failure, unspecified   Acute on chronic diastolic (conge...
+NO      0.00  13196707   -            A41.9                                     Sepsis, unspecified organism
+YES     0.72  13508515   I50.23       I50.9        Acute on chronic systol...   Heart failure, unspecified
+NO      0.19  13952483   T86.91       I95.89       Unspecified transplante...   Other hypotension
+YES     0.76  16014068   C79.89       C79.31       Secondary malignant neo...   Secondary malignant neoplasm of b...
+YES     0.79  17774110   R65.21       A41.89       Severe sepsis with sept...   Other specified sepsis
+YES     1.00  18412100   R10.9        R10.9        Unspecified abdominal pain   Unspecified abdominal pain
+YES     0.99  19104262   E13.10       E10.10       Other specified diabete...   Type 1 diabetes mellitus with ket...
+YES     0.81  19632936   D53.9        D50.9        Nutritional anemia, uns...   Iron deficiency anemia, unspecified
+------------------------------------------------------------------------------------------------------------------------
+ACCURACY: 11 YES / 15 = 73.3%
+
+PRIMARY DIFFDx TABLE (stage9 vs ground truth)
+=============================================
+
+MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
+or rank-1 matches another billed GT diagnosis.
+
+MATCH  why                  sim  patient    predicted                            ground truth
+----------------------------------------------------------------------------------------------------------------------------
+YES    same_condition      0.49  10361982   Hemorrhage following hysterectomy    Postprocedural hemorrhage of a genitour...
+YES    exact               1.00  10426859   Supraventricular tachycardia         Supraventricular tachycardia
+NO     no_match            0.39  10458324   Acute respiratory distress seco...   Traumatic pneumothorax, initial encounter
+YES    term_subset         0.63  11251337   Nephrolithiasis                      Hydronephrosis with renal and ureteral ...
+YES    rank1_vs_gt_list    0.55  11474876   Heart failure with preserved ej...   Chronic diastolic (congestive) heart fa...
+YES    contained           0.87  11607177   Refractory VT                        Ventricular tachycardia
+YES    same_condition      0.69  12007928   Acute decompensated heart failure    Acute on chronic diastolic (congestive)...
+YES    same_condition      0.57  13196707   Severe sepsis due to RUL PNA         Sepsis, unspecified organism
+YES    rank1_vs_gt_list    0.78  13508515   Acute on chronic systolic heart...   Unspecified systolic (congestive) heart...
+NO     no_match            0.20  13952483   Severe Pulmonary Hypertension w...   Other hypotension
+NO     no_match            0.26  16014068   Anemia due to malignancy             Secondary malignant neoplasm of brain
+YES    same_condition      0.79  17774110   Severe sepsis with septic shock      Other specified sepsis
+YES    rank1_vs_gt_list    0.90  18412100   Post-procedural pain                 Other acute postprocedural pain
+YES    rank1_vs_gt_list    0.87  19104262   Diabetic ketoacidosis                Type 1 diabetes mellitus with ketoacido...
+NO     no_match            0.52  19632936   Acute on chronic macrocytic anemia   Iron deficiency anemia, unspecified
+------------------------------------------------------------------------------------------------------------------------
+ACCURACY: 11 YES / 15 = 73.3%
+
+PRIMARY ICD TABLE (stage9 vs ground truth)
+==========================================
+
+MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
+or rank-1 ICD matches another billed GT code.
+
+MATCH    sim  patient    pred ICD     GT ICD       predicted title              GT title
+------------------------------------------------------------------------------------------------------------------------
+NO      0.36  10361982   N93.9        N99.820      Abnormal uterine and va...   Postprocedural hemorrhage of a ge...
+YES     1.00  10426859   I47.10       I47.1                                     Supraventricular tachycardia
+NO      0.18  10458324   J10.1        S27.0XXA     Influenza due to other ...   Traumatic pneumothorax, initial e...
+YES     0.59  11251337   N20.0        N13.2        Calculus of kidney           Hydronephrosis with renal and ure...
+YES     0.55  11474876   I50.30       I13.0        Unspecified diastolic (...   Hypertensive heart and chronic ki...
+NO      0.50  11607177   I50.9        I47.2        Heart failure, unspecified   Ventricular tachycardia
+YES     0.71  12007928   I50.9        I50.33       Heart failure, unspecified   Acute on chronic diastolic (conge...
+NO      0.55  13196707   R50.9        A41.9        Fever, unspecified           Sepsis, unspecified organism
+YES     0.72  13508515   I50.23       I50.9        Acute on chronic systol...   Heart failure, unspecified
+YES     0.84  13952483   I27.20       I27.2        Pulmonary hypertension,...   Other secondary pulmonary hyperte...
+NO      0.18  16014068   B99.9        C79.31       Unspecified infectious ...   Secondary malignant neoplasm of b...
+YES     0.79  17774110   R65.21       A41.89       Severe sepsis with sept...   Other specified sepsis
+YES     1.00  18412100   R10.9        R10.9        Unspecified abdominal pain   Unspecified abdominal pain
+YES     0.99  19104262   E13.10       E10.10       Other specified diabete...   Type 1 diabetes mellitus with ket...
+YES     0.81  19632936   D53.9        D50.9        Nutritional anemia, uns...   Iron deficiency anemia, unspecified
+------------------------------------------------------------------------------------------------------------------------
+ACCURACY: 10 YES / 15 = 66.7%

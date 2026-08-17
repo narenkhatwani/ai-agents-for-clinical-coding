@@ -1,0 +1,606 @@
+{
+  "stage": 10,
+  "type": "accuracy_vs_ground_truth",
+  "patient_id": "18412100",
+  "hadm_id": "26093939",
+  "generated_at": "2026-08-15T23:57:15.322291",
+  "ground_truth": {
+    "primary_icd_code": "D481",
+    "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+    "icd10_codes": [
+      "D481",
+      "B1920",
+      "K219",
+      "G8918",
+      "R109",
+      "R110",
+      "E669",
+      "Z6832"
+    ],
+    "dx_titles": [
+      "Neoplasm of uncertain behavior of connective and other soft tissue",
+      "Unspecified viral hepatitis C without hepatic coma",
+      "Gastro-esophageal reflux disease without esophagitis",
+      "Other acute postprocedural pain",
+      "Unspecified abdominal pain",
+      "Nausea",
+      "Obesity, unspecified",
+      "Body mass index [BMI] 32.0-32.9, adult"
+    ],
+    "n_diagnoses": 8
+  },
+  "stage8": {
+    "diagnosis": {
+      "predicted": "Post-procedural pain",
+      "ground_truth": "Neoplasm of uncertain behavior of connective and other soft tissue",
+      "matched_predicted": "Post-procedural pain",
+      "matched_ground_truth": "Other acute postprocedural pain",
+      "match_scope": "rank1_vs_gt_list",
+      "match_pred_rank": 1,
+      "match_gt_index": 3,
+      "exact": false,
+      "semantic_similarity": 0.9018,
+      "semantic_match": true,
+      "match_reason": "rank1_vs_gt_list",
+      "clinical_reason": "contained",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Post-procedural pain",
+        "Desmoid tumor",
+        "Hepatitis C",
+        "Anemia"
+      ],
+      "n_diffdx": 4,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Post-procedural pain",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Desmoid tumor",
+          "rank": 2,
+          "score": 75.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Hepatitis C",
+          "rank": 3,
+          "score": 60.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Anemia",
+          "rank": 4,
+          "score": 50.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 85.0,
+      "matched_confidence": "high"
+    },
+    "primary_icd": {
+      "predicted": "R10.9",
+      "ground_truth": "R10.9",
+      "predicted_title": "Unspecified abdominal pain",
+      "ground_truth_title": "Unspecified abdominal pain",
+      "exact": true,
+      "family": true,
+      "semantic_similarity": 1.0,
+      "semantic_match": true,
+      "match_reason": "rank1_vs_gt_list",
+      "clinical_reason": "exact_code",
+      "match_type": "exact",
+      "threshold": 0.7,
+      "predicted_family": "R10",
+      "ground_truth_family": "R10",
+      "match_scope": "rank1_vs_gt_list",
+      "ground_truth_primary": "D48.1",
+      "ground_truth_primary_title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+    },
+    "code_set": {
+      "n_predicted": 4,
+      "n_ground_truth": 8,
+      "n_hits": 2,
+      "precision": 0.5,
+      "recall": 0.25,
+      "f1": 0.3333,
+      "hits": [
+        {
+          "code": "B19.20",
+          "title": "Unspecified viral hepatitis C without hepatic coma"
+        },
+        {
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain"
+        }
+      ],
+      "misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "R11.0",
+          "title": "Nausea"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "extras": [
+        {
+          "code": "R52",
+          "title": "Pain, unspecified"
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 3,
+      "semantic_precision": 0.75,
+      "semantic_recall": 0.375,
+      "semantic_f1": 0.5,
+      "semantic_pairs": [
+        {
+          "predicted_code": "R52",
+          "predicted_title": "Pain, unspecified",
+          "predicted_diagnosis": "Post-procedural pain",
+          "ground_truth_code": "G89.18",
+          "ground_truth_title": "Other acute postprocedural pain",
+          "similarity": 0.9018,
+          "match": "semantic"
+        }
+      ],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "R11.0",
+          "title": "Nausea"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 2,
+      "n_ground_truth": 6,
+      "n_hits": 1,
+      "precision": 0.5,
+      "recall": 0.1667,
+      "f1": 0.25,
+      "hits": [
+        {
+          "code": "B19.20",
+          "title": "Unspecified viral hepatitis C without hepatic coma"
+        }
+      ],
+      "misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "extras": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 1,
+      "semantic_precision": 0.5,
+      "semantic_recall": 0.1667,
+      "semantic_f1": 0.25,
+      "semantic_pairs": [],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        }
+      ]
+    },
+    "principal_set": {
+      "n_predicted": 3,
+      "n_ground_truth": 8,
+      "n_hits": 2,
+      "precision": 0.6667,
+      "recall": 0.25,
+      "f1": 0.3636,
+      "hits": [
+        {
+          "code": "B19.20",
+          "title": "Unspecified viral hepatitis C without hepatic coma"
+        },
+        {
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain"
+        }
+      ],
+      "misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "R11.0",
+          "title": "Nausea"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "extras": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 2,
+      "semantic_precision": 0.6667,
+      "semantic_recall": 0.25,
+      "semantic_f1": 0.3636,
+      "semantic_pairs": [],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "R11.0",
+          "title": "Nausea"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified"
+        }
+      ]
+    }
+  },
+  "stage9": {
+    "diagnosis": {
+      "predicted": "Post-procedural pain",
+      "ground_truth": "Neoplasm of uncertain behavior of connective and other soft tissue",
+      "matched_predicted": "Post-procedural pain",
+      "matched_ground_truth": "Other acute postprocedural pain",
+      "match_scope": "rank1_vs_gt_list",
+      "match_pred_rank": 1,
+      "match_gt_index": 3,
+      "exact": false,
+      "semantic_similarity": 0.9018,
+      "semantic_match": true,
+      "match_reason": "rank1_vs_gt_list",
+      "clinical_reason": "contained",
+      "match_type": "clinical_rule",
+      "threshold": 0.7,
+      "diagnoses": [
+        "Post-procedural pain",
+        "Hepatitis C",
+        "obesity",
+        "chronic viral hepatitis C"
+      ],
+      "n_diffdx": 4,
+      "diagnosis_items": [
+        {
+          "diagnosis": "Post-procedural pain",
+          "rank": 1,
+          "score": 85.0,
+          "confidence": "high"
+        },
+        {
+          "diagnosis": "Desmoid tumor",
+          "rank": 2,
+          "score": 75.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Hepatitis C",
+          "rank": 3,
+          "score": 60.0,
+          "confidence": "medium"
+        },
+        {
+          "diagnosis": "Anemia",
+          "rank": 4,
+          "score": 50.0,
+          "confidence": "low"
+        }
+      ],
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "matched_score": 85.0,
+      "matched_confidence": "high"
+    },
+    "primary_icd": {
+      "predicted": "R10.9",
+      "ground_truth": "R10.9",
+      "predicted_title": "Unspecified abdominal pain",
+      "ground_truth_title": "Unspecified abdominal pain",
+      "exact": true,
+      "family": true,
+      "semantic_similarity": 1.0,
+      "semantic_match": true,
+      "match_reason": "rank1_vs_gt_list",
+      "clinical_reason": "exact_code",
+      "match_type": "exact",
+      "threshold": 0.7,
+      "predicted_family": "R10",
+      "ground_truth_family": "R10",
+      "match_scope": "rank1_vs_gt_list",
+      "ground_truth_primary": "D48.1",
+      "ground_truth_primary_title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+    },
+    "code_set": {
+      "n_predicted": 4,
+      "n_ground_truth": 8,
+      "n_hits": 3,
+      "precision": 0.75,
+      "recall": 0.375,
+      "f1": 0.5,
+      "hits": [
+        {
+          "code": "B19.20",
+          "title": "Unspecified viral hepatitis C without hepatic coma"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        },
+        {
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain"
+        }
+      ],
+      "misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "R11.0",
+          "title": "Nausea"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "extras": [
+        {
+          "code": "B18.9",
+          "title": "Chronic viral hepatitis, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 3,
+      "semantic_precision": 0.75,
+      "semantic_recall": 0.375,
+      "semantic_f1": 0.5,
+      "semantic_pairs": [],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "R11.0",
+          "title": "Nausea"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "B18.9",
+          "title": "Chronic viral hepatitis, unspecified"
+        }
+      ]
+    },
+    "code_set_excluding_r": {
+      "n_predicted": 3,
+      "n_ground_truth": 6,
+      "n_hits": 2,
+      "precision": 0.6667,
+      "recall": 0.3333,
+      "f1": 0.4444,
+      "hits": [
+        {
+          "code": "B19.20",
+          "title": "Unspecified viral hepatitis C without hepatic coma"
+        },
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified"
+        }
+      ],
+      "misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "extras": [
+        {
+          "code": "B18.9",
+          "title": "Chronic viral hepatitis, unspecified"
+        }
+      ],
+      "semantic_threshold": 0.7,
+      "n_semantic_hits": 2,
+      "semantic_precision": 0.6667,
+      "semantic_recall": 0.3333,
+      "semantic_f1": 0.4444,
+      "semantic_pairs": [],
+      "related_pairs": [],
+      "semantic_misses": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue"
+        },
+        {
+          "code": "K21.9",
+          "title": "Gastro-esophageal reflux disease without esophagitis"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain"
+        },
+        {
+          "code": "Z68.32",
+          "title": "Body mass index [BMI] 32.0-32.9, adult"
+        }
+      ],
+      "semantic_extras": [
+        {
+          "code": "B18.9",
+          "title": "Chronic viral hepatitis, unspecified"
+        }
+      ]
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}
