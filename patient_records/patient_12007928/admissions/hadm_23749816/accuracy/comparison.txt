@@ -1,144 +1,45 @@
-ACCURACY vs GROUND TRUTH
-========================
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
 
 Patient ID       : 12007928
 HADM ID          : 23749816
-Generated        : 2026-08-15T23:57:14.952378
+Generated        : 2026-08-19T22:37:31.061946
 
-PRIMARY DIFFDx — MATCH OR NO
-----------------------------
+DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
+------------------------------------
 
-  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
-  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+  Ground truth primary : Acute on chronic diastolic (congestive) heart failure
+  Rank-1 predicted     : Acute decompensated heart failure
+    score=85.0  confidence=high
+  Diagnosis match      : NO
+  Is rank-1 match      : N/A
+  Matched DiffDx rank  : -
+  Matched diagnosis    : -
+    score=None  confidence=-
+  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis 'Acute on chronic diastolic (congestive) heart failure'.
 
-               Predicted                                        Ground truth
-  S8 DiffDx    Acute decompensated heart failure                Acute on chronic diastolic (congestive) hea...
-  S9 DiffDx    Acute decompensated heart failure                Acute on chronic diastolic (congestive) hea...
+LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
+---------------------------------------------------
 
-  Full predicted (S8): Acute decompensated heart failure
-  Full predicted (S9): Acute decompensated heart failure
-  Full GT primary    : Acute on chronic diastolic (congestive) heart failure
+  Ground truth ICD     : I50.33 — Acute on chronic diastolic (congestive) heart failure
+  Rank-1 mapped ICD    : I50.9 — Heart failure, unspecified
+  Matched mapped ICD   : - — 
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code 'I50.33 — Acute on chronic diastolic (congestive) heart failure'.
+  Stage 9 final ICD    : I50.9 (debug)
 
-  MATCH (S8): YES    reason=same_condition  sim=0.69
-    matched: Acute decompensated heart failure  vs  Acute on chronic diastolic (congestiv...
-  MATCH (S9): YES    reason=same_condition  sim=0.69
-    matched: Acute decompensated heart failure  vs  Acute on chronic diastolic (congestiv...
+FULL DIFFERENTIAL LIST
+----------------------
 
-PRIMARY ICD — MATCH OR NO
--------------------------
-
-  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
-  or rank-1 ICD matches another billed GT code
-
-               Predicted                                        Ground truth
-  S8 ICD       I50.9 Heart failure, unspecified                 I50.33 Acute on chronic diastolic (congesti...
-  S9 ICD       I50.9 Heart failure, unspecified                 I50.33 Acute on chronic diastolic (congesti...
-
-  Full predicted (S8): I50.9 — Heart failure, unspecified
-  Full predicted (S9): I50.9 — Heart failure, unspecified
-  Full ground truth  : I50.33 — Acute on chronic diastolic (congestive) heart failure
-
-  MATCH (S8): YES    reason=contained  family=YES  sim=0.71
-  MATCH (S9): YES    reason=contained  family=YES  sim=0.71
-
-ICD CODE SET — Stage 8 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.188 / 0.158 / 0.171
-Semantic  P / R / F1 : 0.312 / 0.263 / 0.286  (title MiniLM ≥ 0.7)
-Exact hits 3  |  semantic hits 5  |  predicted 16  |  GT 19
-Exact code hits:
-  ✓ E03.9 — Hypothyroidism, unspecified
-  ✓ G70.00 — Myasthenia gravis without (acute) exacerbation
-  ✓ I48.0 — Paroxysmal atrial fibrillation
-Semantic hits (same meaning, different code):
-  ≈ G47.33 — Obstructive sleep apnea (adult) (pediatric)  [Obstructive sleep apnea]
-      ↔ G47.30 — Sleep apnea, unspecified  (sim=0.88)
-  ≈ I50.9 — Heart failure, unspecified  [Acute decompensated heart failure]
-      ↔ I50.33 — Acute on chronic diastolic (congestive) heart failure  (sim=0.71)
-Related (not counted; sim 0.50–0.70):
-  ~ N18.9 — Chronic kidney disease, unspecified  [Chronic kidney disease]
-      ↔ N17.9 — Acute kidney failure, unspecified  (sim=0.67)
-  ~ P72.2 — Other transitory neonatal disorders of thyroid function, not elsewhere classified  [Hypothyroidism]
-      ↔ E04.1 — Nontoxic single thyroid nodule  (sim=0.53)
-Still missing after semantic match:
-  ✗ Q21.1 — Atrial septal defect
-  ✗ F03.90 — Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety
-  ✗ G62.9 — Polyneuropathy, unspecified
-  ✗ F32.9 — Major depressive disorder, single episode, unspecified
-  ✗ I10 — Essential (primary) hypertension
-  ✗ G40.909 — Epilepsy, unspecified, not intractable, without status epilepticus
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ Z79.01 — Long term (current) use of anticoagulants
-  ✗ Z95.0 — Presence of cardiac pacemaker
-  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
-  ✗ N39.41 — Urge incontinence
-  ✗ Z66 — Do not resuscitate
-Still extra after semantic match:
-  + P29.0 — Neonatal cardiac failure
-  + R06.00 — Dyspnea, unspecified
-  + R06.01 — Orthopnea
-  + D64.9 — Anemia, unspecified
-  + R71.8 — Other abnormality of red blood cells
-  + I38 — Endocarditis, valve unspecified
-  + P94.0 — Transient neonatal myasthenia gravis
-  + I26.99 — Other pulmonary embolism without acute cor pulmonale
-  + P28.32 — Primary obstructive sleep apnea of newborn
-
-ICD CODE SET — Stage 9 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.200 / 0.053 / 0.083
-Semantic  P / R / F1 : 0.600 / 0.158 / 0.250  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 3  |  predicted 5  |  GT 19
-Exact code hits:
-  ✓ I10 — Essential (primary) hypertension
-Semantic hits (same meaning, different code):
-  ≈ R06.00 — Dyspnea, unspecified  [Acute decompensated heart failure]
-      ↔ G47.30 — Sleep apnea, unspecified  (sim=0.74)
-  ≈ I50.9 — Heart failure, unspecified  [Acute decompensated heart failure]
-      ↔ I50.33 — Acute on chronic diastolic (congestive) heart failure  (sim=0.71)
-Related (not counted; sim 0.50–0.70):
-  ~ R06.01 — Orthopnea  [Acute decompensated heart failure]
-      ↔ N17.9 — Acute kidney failure, unspecified  (sim=0.60)
-Still missing after semantic match:
-  ✗ G70.00 — Myasthenia gravis without (acute) exacerbation
-  ✗ Q21.1 — Atrial septal defect
-  ✗ F03.90 — Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety
-  ✗ I48.0 — Paroxysmal atrial fibrillation
-  ✗ G62.9 — Polyneuropathy, unspecified
-  ✗ F32.9 — Major depressive disorder, single episode, unspecified
-  ✗ E04.1 — Nontoxic single thyroid nodule
-  ✗ G40.909 — Epilepsy, unspecified, not intractable, without status epilepticus
-  ✗ E03.9 — Hypothyroidism, unspecified
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ Z79.01 — Long term (current) use of anticoagulants
-  ✗ Z95.0 — Presence of cardiac pacemaker
-  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
-  ✗ N39.41 — Urge incontinence
-  ✗ Z66 — Do not resuscitate
-Still extra after semantic match:
-  + E66.9 — Obesity, unspecified
-
-GROUND TRUTH LIST
------------------
-
-   1. I50.33 — Acute on chronic diastolic (congestive) heart failure (primary)
-   2. N17.9 — Acute kidney failure, unspecified
-   3. G70.00 — Myasthenia gravis without (acute) exacerbation
-   4. Q21.1 — Atrial septal defect
-   5. F03.90 — Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety
-   6. I48.0 — Paroxysmal atrial fibrillation
-   7. G62.9 — Polyneuropathy, unspecified
-   8. F32.9 — Major depressive disorder, single episode, unspecified
-   9. I10 — Essential (primary) hypertension
-  10. E04.1 — Nontoxic single thyroid nodule
-  11. G40.909 — Epilepsy, unspecified, not intractable, without status epilepticus
-  12. E03.9 — Hypothyroidism, unspecified
-  13. E78.5 — Hyperlipidemia, unspecified
-  14. Z79.01 — Long term (current) use of anticoagulants
-  15. Z95.0 — Presence of cardiac pacemaker
-  16. K21.9 — Gastro-esophageal reflux disease without esophagitis
-  17. G47.30 — Sleep apnea, unspecified
-  18. N39.41 — Urge incontinence
-  19. Z66 — Do not resuscitate
+   1. Acute decompensated heart failure  [score=85.0, high]  ICD=I50.9 — Heart failure, unspecified
+   2. Chronic kidney disease  [score=70.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
+   3. Anemia  [score=65.0, medium]  ICD=D64.9 — Anemia, unspecified
+   4. Atrial fibrillation  [score=55.0, medium]  ICD=I48.0 — Paroxysmal atrial fibrillation
+   5. Myasthenia gravis  [score=45.0, low]  ICD=G70.00 — Myasthenia gravis without (acute) exacerbation
+   6. Pulmonary embolism  [score=35.0, low]  ICD=I26.99 — Other pulmonary embolism without acute cor pulmonale
+   7. Obstructive sleep apnea  [score=30.0, low]  ICD=G47.33 — Obstructive sleep apnea (adult) (pediatric)
+   8. Hypothyroidism  [score=25.0, low]  ICD=E03.9 — Hypothyroidism, unspecified

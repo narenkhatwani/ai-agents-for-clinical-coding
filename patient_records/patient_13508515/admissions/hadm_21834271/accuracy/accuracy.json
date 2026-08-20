@@ -1,1097 +1,120 @@
 {
   "stage": 10,
   "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
   "patient_id": "13508515",
   "hadm_id": "21834271",
-  "generated_at": "2026-08-15T23:57:15.034167",
+  "generated_at": "2026-08-19T22:37:31.063536",
   "ground_truth": {
     "primary_icd_code": "C642",
     "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
-    "icd10_codes": [
-      "C642",
-      "Z6841",
-      "I429",
-      "I272",
-      "I509",
-      "I5020",
-      "J449",
-      "E119",
-      "I2510",
-      "Z951",
-      "G4733",
-      "E669",
-      "Z87891",
-      "I340"
-    ],
-    "dx_titles": [
-      "Malignant neoplasm of left kidney, except renal pelvis",
-      "Body mass index [BMI] 40.0-44.9, adult",
-      "Cardiomyopathy, unspecified",
-      "Other secondary pulmonary hypertension",
-      "Heart failure, unspecified",
-      "Unspecified systolic (congestive) heart failure",
-      "Chronic obstructive pulmonary disease, unspecified",
-      "Type 2 diabetes mellitus without complications",
-      "Atherosclerotic heart disease of native coronary artery without angina pectoris",
-      "Presence of aortocoronary bypass graft",
-      "Obstructive sleep apnea (adult) (pediatric)",
-      "Obesity, unspecified",
-      "Personal history of nicotine dependence",
-      "Nonrheumatic mitral (valve) insufficiency"
-    ],
+    "primary_icd_title": "Malignant neoplasm of left kidney, except renal pelvis",
     "n_diagnoses": 14
   },
-  "stage8": {
+  "evaluation": {
     "diagnosis": {
-      "predicted": "Acute on chronic systolic heart failure",
-      "ground_truth": "Malignant neoplasm of left kidney, except renal pelvis",
-      "matched_predicted": "Renal cell carcinoma",
-      "matched_ground_truth": "Malignant neoplasm of left kidney, except renal pelvis",
-      "match_scope": "diffdx_vs_primary",
-      "match_pred_rank": 2,
-      "match_gt_index": 0,
-      "exact": false,
-      "semantic_similarity": 0.913,
-      "semantic_match": true,
-      "match_reason": "diffdx_vs_primary",
-      "clinical_reason": "term_subset",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Acute on chronic systolic heart failure",
-        "Renal cell carcinoma",
-        "Anemia",
-        "Hypokalemia",
-        "Obstructive sleep apnea",
-        "Diabetes mellitus"
-      ],
-      "n_diffdx": 6,
+      "ground_truth_primary": "Malignant neoplasm of left kidney, except renal pelvis",
+      "rank1_diagnosis": "Acute on chronic systolic heart failure",
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "match": false,
+      "is_rank1_match": null,
+      "matched_diffdx_rank": null,
+      "matched_diagnosis": "",
+      "matched_score": null,
+      "matched_confidence": "",
+      "llm_relationship": "different",
+      "llm_confidence": "low",
+      "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.",
+      "llm_expanded_ground_truth": "",
+      "llm_expanded_matched": "",
       "diagnosis_items": [
         {
           "diagnosis": "Acute on chronic systolic heart failure",
           "rank": 1,
           "score": 85.0,
-          "confidence": "high"
+          "confidence": "high",
+          "icd10_primary": "I50.23",
+          "icd10_primary_title": "Acute on chronic systolic (congestive) heart failure"
         },
         {
           "diagnosis": "Renal cell carcinoma",
           "rank": 2,
           "score": 75.0,
-          "confidence": "high"
+          "confidence": "high",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
           "diagnosis": "Anemia",
           "rank": 3,
           "score": 70.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "D64.9",
+          "icd10_primary_title": "Anemia, unspecified"
         },
         {
           "diagnosis": "Hypokalemia",
           "rank": 4,
           "score": 65.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "E87.6",
+          "icd10_primary_title": "Hypokalemia"
         },
         {
           "diagnosis": "Obstructive sleep apnea",
           "rank": 5,
           "score": 60.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "G47.33",
+          "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)"
         },
         {
           "diagnosis": "Diabetes mellitus",
           "rank": 6,
           "score": 55.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "E11.9",
+          "icd10_primary_title": "Type 2 diabetes mellitus without complications"
         }
       ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 75.0,
-      "matched_confidence": "high"
+      "n_diffdx": 6
     },
-    "primary_icd": {
-      "predicted": "I50.23",
-      "ground_truth": "I50.9",
-      "predicted_title": "Acute on chronic systolic (congestive) heart failure",
-      "ground_truth_title": "Heart failure, unspecified",
-      "exact": false,
-      "family": true,
-      "semantic_similarity": 0.7171,
-      "semantic_match": true,
-      "match_reason": "rank1_vs_gt_list",
-      "clinical_reason": "contained",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "predicted_family": "I50",
-      "ground_truth_family": "I50",
-      "match_scope": "rank1_vs_gt_list",
-      "ground_truth_primary": "C64.2",
-      "ground_truth_primary_title": "Malignant neoplasm of left kidney, except renal pelvis"
+    "icd_linked": {
+      "ground_truth_icd": "C64.2",
+      "ground_truth_icd_title": "Malignant neoplasm of left kidney, except renal pelvis",
+      "rank1_predicted_icd": "I50.23",
+      "rank1_predicted_icd_title": "Acute on chronic systolic (congestive) heart failure",
+      "matched_predicted_icd": "",
+      "matched_predicted_icd_title": "",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.",
+      "llm_expanded_ground_truth_icd": "",
+      "llm_expanded_matched_icd": "",
+      "stage9_final_primary_icd": "I50.23",
+      "diagnosis_match": false,
+      "is_rank1_diagnosis_match": null,
+      "matched_diffdx_rank": null
     },
-    "code_set": {
-      "n_predicted": 9,
-      "n_ground_truth": 14,
-      "n_hits": 2,
-      "precision": 0.2222,
-      "recall": 0.1429,
-      "f1": 0.1739,
-      "hits": [
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "G47.33",
-          "title": "Obstructive sleep apnea (adult) (pediatric)"
-        }
-      ],
-      "misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "I50.20",
-          "title": "Unspecified systolic (congestive) heart failure"
-        },
-        {
-          "code": "J44.9",
-          "title": "Chronic obstructive pulmonary disease, unspecified"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.23",
-          "title": "Acute on chronic systolic (congestive) heart failure"
-        },
-        {
-          "code": "I50.43",
-          "title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure"
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia"
-        },
-        {
-          "code": "P28.32",
-          "title": "Primary obstructive sleep apnea of newborn"
-        },
-        {
-          "code": "R06.00",
-          "title": "Dyspnea, unspecified"
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 3,
-      "semantic_precision": 0.3333,
-      "semantic_recall": 0.2143,
-      "semantic_f1": 0.2609,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.23",
-          "predicted_title": "Acute on chronic systolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.20",
-          "ground_truth_title": "Unspecified systolic (congestive) heart failure",
-          "similarity": 0.9114,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "I50.43",
-          "predicted_title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.9",
-          "ground_truth_title": "Heart failure, unspecified",
-          "similarity": 0.6967,
-          "match": "related"
-        },
-        {
-          "predicted_code": "R06.00",
-          "predicted_title": "Dyspnea, unspecified",
-          "predicted_diagnosis": "Obstructive sleep apnea",
-          "ground_truth_code": "J44.9",
-          "ground_truth_title": "Chronic obstructive pulmonary disease, unspecified",
-          "similarity": 0.55,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia"
-        },
-        {
-          "code": "P28.32",
-          "title": "Primary obstructive sleep apnea of newborn"
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 8,
-      "n_ground_truth": 14,
-      "n_hits": 2,
-      "precision": 0.25,
-      "recall": 0.1429,
-      "f1": 0.1818,
-      "hits": [
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "G47.33",
-          "title": "Obstructive sleep apnea (adult) (pediatric)"
-        }
-      ],
-      "misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "I50.20",
-          "title": "Unspecified systolic (congestive) heart failure"
-        },
-        {
-          "code": "J44.9",
-          "title": "Chronic obstructive pulmonary disease, unspecified"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.23",
-          "title": "Acute on chronic systolic (congestive) heart failure"
-        },
-        {
-          "code": "I50.43",
-          "title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure"
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia"
-        },
-        {
-          "code": "P28.32",
-          "title": "Primary obstructive sleep apnea of newborn"
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 3,
-      "semantic_precision": 0.375,
-      "semantic_recall": 0.2143,
-      "semantic_f1": 0.2727,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.23",
-          "predicted_title": "Acute on chronic systolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.20",
-          "ground_truth_title": "Unspecified systolic (congestive) heart failure",
-          "similarity": 0.9114,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "I50.43",
-          "predicted_title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.9",
-          "ground_truth_title": "Heart failure, unspecified",
-          "similarity": 0.6967,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "J44.9",
-          "title": "Chronic obstructive pulmonary disease, unspecified"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia"
-        },
-        {
-          "code": "P28.32",
-          "title": "Primary obstructive sleep apnea of newborn"
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications"
-        }
-      ]
-    },
-    "principal_set": {
-      "n_predicted": 8,
-      "n_ground_truth": 14,
-      "n_hits": 2,
-      "precision": 0.25,
-      "recall": 0.1429,
-      "f1": 0.1818,
-      "hits": [
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "G47.33",
-          "title": "Obstructive sleep apnea (adult) (pediatric)"
-        }
-      ],
-      "misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "I50.20",
-          "title": "Unspecified systolic (congestive) heart failure"
-        },
-        {
-          "code": "J44.9",
-          "title": "Chronic obstructive pulmonary disease, unspecified"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.23",
-          "title": "Acute on chronic systolic (congestive) heart failure"
-        },
-        {
-          "code": "I50.43",
-          "title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure"
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia"
-        },
-        {
-          "code": "P28.32",
-          "title": "Primary obstructive sleep apnea of newborn"
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 3,
-      "semantic_precision": 0.375,
-      "semantic_recall": 0.2143,
-      "semantic_f1": 0.2727,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.23",
-          "predicted_title": "Acute on chronic systolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.20",
-          "ground_truth_title": "Unspecified systolic (congestive) heart failure",
-          "similarity": 0.9114,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "I50.43",
-          "predicted_title": "Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.9",
-          "ground_truth_title": "Heart failure, unspecified",
-          "similarity": 0.6967,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "J44.9",
-          "title": "Chronic obstructive pulmonary disease, unspecified"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia"
-        },
-        {
-          "code": "P28.32",
-          "title": "Primary obstructive sleep apnea of newborn"
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications"
-        }
-      ]
-    }
-  },
-  "stage9": {
-    "diagnosis": {
-      "predicted": "Acute on chronic systolic heart failure",
-      "ground_truth": "Malignant neoplasm of left kidney, except renal pelvis",
-      "matched_predicted": "Acute on chronic systolic heart failure",
-      "matched_ground_truth": "Unspecified systolic (congestive) heart failure",
-      "match_scope": "rank1_vs_gt_list",
-      "match_pred_rank": 1,
-      "match_gt_index": 5,
-      "exact": false,
-      "semantic_similarity": 0.7763,
-      "semantic_match": true,
-      "match_reason": "rank1_vs_gt_list",
-      "clinical_reason": "same_condition",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Acute on chronic systolic heart failure",
-        "essential hypertension",
-        "chronic kidney disease"
-      ],
-      "n_diffdx": 3,
-      "diagnosis_items": [
-        {
-          "diagnosis": "Acute on chronic systolic heart failure",
-          "rank": 1,
-          "score": 85.0,
-          "confidence": "high"
-        },
-        {
-          "diagnosis": "Renal cell carcinoma",
-          "rank": 2,
-          "score": 75.0,
-          "confidence": "high"
-        },
-        {
-          "diagnosis": "Anemia",
-          "rank": 3,
-          "score": 70.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Hypokalemia",
-          "rank": 4,
-          "score": 65.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Obstructive sleep apnea",
-          "rank": 5,
-          "score": 60.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Diabetes mellitus",
-          "rank": 6,
-          "score": 55.0,
-          "confidence": "medium"
-        }
-      ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
-    },
-    "primary_icd": {
-      "predicted": "I50.23",
-      "ground_truth": "I50.9",
-      "predicted_title": "Acute on chronic systolic (congestive) heart failure",
-      "ground_truth_title": "Heart failure, unspecified",
-      "exact": false,
-      "family": true,
-      "semantic_similarity": 0.7171,
-      "semantic_match": true,
-      "match_reason": "rank1_vs_gt_list",
-      "clinical_reason": "contained",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "predicted_family": "I50",
-      "ground_truth_family": "I50",
-      "match_scope": "rank1_vs_gt_list",
-      "ground_truth_primary": "C64.2",
-      "ground_truth_primary_title": "Malignant neoplasm of left kidney, except renal pelvis"
-    },
-    "code_set": {
-      "n_predicted": 3,
-      "n_ground_truth": 14,
-      "n_hits": 0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "hits": [],
-      "misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "I50.20",
-          "title": "Unspecified systolic (congestive) heart failure"
-        },
-        {
-          "code": "J44.9",
-          "title": "Chronic obstructive pulmonary disease, unspecified"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "G47.33",
-          "title": "Obstructive sleep apnea (adult) (pediatric)"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.23",
-          "title": "Acute on chronic systolic (congestive) heart failure"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.3333,
-      "semantic_recall": 0.0714,
-      "semantic_f1": 0.1176,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.23",
-          "predicted_title": "Acute on chronic systolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.20",
-          "ground_truth_title": "Unspecified systolic (congestive) heart failure",
-          "similarity": 0.9114,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "I10",
-          "predicted_title": "Essential (primary) hypertension",
-          "predicted_diagnosis": "essential hypertension",
-          "ground_truth_code": "I27.2",
-          "ground_truth_title": "Other secondary pulmonary hypertension",
-          "similarity": 0.6061,
-          "match": "related"
-        },
-        {
-          "predicted_code": "N18.9",
-          "predicted_title": "Chronic kidney disease, unspecified",
-          "predicted_diagnosis": "chronic kidney disease",
-          "ground_truth_code": "J44.9",
-          "ground_truth_title": "Chronic obstructive pulmonary disease, unspecified",
-          "similarity": 0.5438,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "G47.33",
-          "title": "Obstructive sleep apnea (adult) (pediatric)"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "semantic_extras": []
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 3,
-      "n_ground_truth": 14,
-      "n_hits": 0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "hits": [],
-      "misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "I50.20",
-          "title": "Unspecified systolic (congestive) heart failure"
-        },
-        {
-          "code": "J44.9",
-          "title": "Chronic obstructive pulmonary disease, unspecified"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "G47.33",
-          "title": "Obstructive sleep apnea (adult) (pediatric)"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.23",
-          "title": "Acute on chronic systolic (congestive) heart failure"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.3333,
-      "semantic_recall": 0.0714,
-      "semantic_f1": 0.1176,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.23",
-          "predicted_title": "Acute on chronic systolic (congestive) heart failure",
-          "predicted_diagnosis": "Acute on chronic systolic heart failure",
-          "ground_truth_code": "I50.20",
-          "ground_truth_title": "Unspecified systolic (congestive) heart failure",
-          "similarity": 0.9114,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "I10",
-          "predicted_title": "Essential (primary) hypertension",
-          "predicted_diagnosis": "essential hypertension",
-          "ground_truth_code": "I27.2",
-          "ground_truth_title": "Other secondary pulmonary hypertension",
-          "similarity": 0.6061,
-          "match": "related"
-        },
-        {
-          "predicted_code": "N18.9",
-          "predicted_title": "Chronic kidney disease, unspecified",
-          "predicted_diagnosis": "chronic kidney disease",
-          "ground_truth_code": "J44.9",
-          "ground_truth_title": "Chronic obstructive pulmonary disease, unspecified",
-          "similarity": 0.5438,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "C64.2",
-          "title": "Malignant neoplasm of left kidney, except renal pelvis"
-        },
-        {
-          "code": "Z68.41",
-          "title": "Body mass index [BMI] 40.0-44.9, adult"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "Z95.1",
-          "title": "Presence of aortocoronary bypass graft"
-        },
-        {
-          "code": "G47.33",
-          "title": "Obstructive sleep apnea (adult) (pediatric)"
-        },
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "I34.0",
-          "title": "Nonrheumatic mitral (valve) insufficiency"
-        }
-      ],
-      "semantic_extras": []
+    "llm_qe_raw": {
+      "matched_rank": null,
+      "diagnosis_equivalent": false,
+      "diagnosis_relationship": "different",
+      "diagnosis_confidence": "low",
+      "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.",
+      "ground_truth_expansions": [],
+      "matched_diagnosis_expansions": [],
+      "icd_equivalent": false,
+      "icd_confidence": "low",
+      "icd_reason": "None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.",
+      "ground_truth_icd_expansions": [],
+      "matched_icd_expansions": [],
+      "_cache_hit": true
     }
   },
   "has_stage8": true,

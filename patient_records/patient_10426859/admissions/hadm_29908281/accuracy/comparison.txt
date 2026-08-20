@@ -1,145 +1,42 @@
-ACCURACY vs GROUND TRUTH
-========================
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
 
 Patient ID       : 10426859
 HADM ID          : 29908281
-Generated        : 2026-08-15T23:57:14.743942
+Generated        : 2026-08-19T22:37:31.055904
 
-PRIMARY DIFFDx — MATCH OR NO
-----------------------------
+DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
+------------------------------------
 
-  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
-  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+  Ground truth primary : Supraventricular tachycardia
+  Rank-1 predicted     : Supraventricular tachycardia
+    score=85.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Supraventricular tachycardia
+    score=85.0  confidence=high
+  LLM reason           : Rank 1 diagnosis 'Supraventricular tachycardia' matches the ground truth diagnosis.
 
-               Predicted                                        Ground truth
-  S8 DiffDx    Supraventricular tachycardia                     Supraventricular tachycardia
-  S9 DiffDx    Supraventricular tachycardia                     Supraventricular tachycardia
+LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
+---------------------------------------------------
 
-  Full predicted (S8): Supraventricular tachycardia
-  Full predicted (S9): Supraventricular tachycardia
-  Full GT primary    : Supraventricular tachycardia
+  Ground truth ICD     : I47.1 — Supraventricular tachycardia
+  Rank-1 mapped ICD    : I47.10 — 
+  Matched mapped ICD   : I47.10 — 
+  ICD match            : YES
+  ICD exact            : NO
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Rank 1 mapped ICD 'I47.10' matches the ground truth ICD 'I47.1'.
+  Stage 9 final ICD    : I47.10 (debug)
 
-  MATCH (S8): YES    reason=exact  sim=1.00
-    matched: Supraventricular tachycardia  vs  Supraventricular tachycardia
-  MATCH (S9): YES    reason=exact  sim=1.00
-    matched: Supraventricular tachycardia  vs  Supraventricular tachycardia
+FULL DIFFERENTIAL LIST
+----------------------
 
-PRIMARY ICD — MATCH OR NO
--------------------------
-
-  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
-  or rank-1 ICD matches another billed GT code
-
-               Predicted                                        Ground truth
-  S8 ICD       I47.10                                           I47.1 Supraventricular tachycardia
-  S9 ICD       I47.10                                           I47.1 Supraventricular tachycardia
-
-  Full predicted (S8): I47.10 — 
-  Full predicted (S9): I47.10 — 
-  Full ground truth  : I47.1 — Supraventricular tachycardia
-
-  MATCH (S8): YES    reason=exact  family=YES  sim=1.00
-  MATCH (S9): YES    reason=exact  family=YES  sim=1.00
-
-ICD CODE SET — Stage 8 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.000 / 0.000 / 0.000
-Semantic  P / R / F1 : 0.125 / 0.045 / 0.067  (title MiniLM ≥ 0.7)
-Exact hits 0  |  semantic hits 1  |  predicted 8  |  GT 22
-Semantic hits (same meaning, different code):
-  ≈ I47.10 —   [Supraventricular tachycardia]
-      ↔ I47.1 — Supraventricular tachycardia  (sim=1.00)
-Related (not counted; sim 0.50–0.70):
-  ~ S72.009? —   [Hip fracture]
-      ↔ Z96.641 — Presence of right artificial hip joint  (sim=0.53)
-  ~ P29.11 — Neonatal tachycardia  [Supraventricular tachycardia]
-      ↔ I44.0 — Atrioventricular block, first degree  (sim=0.53)
-  ~ E87.6 — Hypokalemia  [Hypokalemia]
-      ↔ I95.9 — Hypotension, unspecified  (sim=0.53)
-  ~ R10.31 — Right lower quadrant pain  [Hip fracture]
-      ↔ S32.511A — Fracture of superior rim of right pubis, initial encounter for closed fracture  (sim=0.50)
-Still missing after semantic match:
-  ✗ I21.4 — Non-ST elevation (NSTEMI) myocardial infarction
-  ✗ E87.2 — Acidosis
-  ✗ C68.9 — Malignant neoplasm of urinary organ, unspecified
-  ✗ F32.9 — Major depressive disorder, single episode, unspecified
-  ✗ I10 — Essential (primary) hypertension
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ Z66 — Do not resuscitate
-  ✗ I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
-  ✗ F41.9 — Anxiety disorder, unspecified
-  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
-  ✗ G47.00 — Insomnia, unspecified
-  ✗ J31.0 — Chronic rhinitis
-  ✗ Z91.81 — History of falling
-  ✗ Z87.891 — Personal history of nicotine dependence
-  ✗ Z86.73 — Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
-  ✗ W19.XXXA — Unspecified fall, initial encounter
-  ✗ Y92.9 — Unspecified place or not applicable
-Still extra after semantic match:
-  + D64.9 — Anemia, unspecified
-  + E86.0 — Dehydration
-  + P74.1 — Dehydration of newborn
-
-ICD CODE SET — Stage 9 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.000 / 0.000 / 0.000
-Semantic  P / R / F1 : 0.333 / 0.045 / 0.080  (title MiniLM ≥ 0.7)
-Exact hits 0  |  semantic hits 1  |  predicted 3  |  GT 22
-Semantic hits (same meaning, different code):
-  ≈ I47.10 —   [Supraventricular tachycardia]
-      ↔ I47.1 — Supraventricular tachycardia  (sim=1.00)
-Related (not counted; sim 0.50–0.70):
-  ~ S72.009? —   [Hip fracture]
-      ↔ Z96.641 — Presence of right artificial hip joint  (sim=0.53)
-Still missing after semantic match:
-  ✗ I21.4 — Non-ST elevation (NSTEMI) myocardial infarction
-  ✗ S32.511A — Fracture of superior rim of right pubis, initial encounter for closed fracture
-  ✗ E87.2 — Acidosis
-  ✗ I95.9 — Hypotension, unspecified
-  ✗ C68.9 — Malignant neoplasm of urinary organ, unspecified
-  ✗ F32.9 — Major depressive disorder, single episode, unspecified
-  ✗ I10 — Essential (primary) hypertension
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ Z66 — Do not resuscitate
-  ✗ I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
-  ✗ F41.9 — Anxiety disorder, unspecified
-  ✗ K21.9 — Gastro-esophageal reflux disease without esophagitis
-  ✗ I44.0 — Atrioventricular block, first degree
-  ✗ G47.00 — Insomnia, unspecified
-  ✗ J31.0 — Chronic rhinitis
-  ✗ Z91.81 — History of falling
-  ✗ Z87.891 — Personal history of nicotine dependence
-  ✗ Z86.73 — Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
-  ✗ W19.XXXA — Unspecified fall, initial encounter
-  ✗ Y92.9 — Unspecified place or not applicable
-Still extra after semantic match:
-  + D64.9 — Anemia, unspecified
-
-GROUND TRUTH LIST
------------------
-
-   1. I47.1 — Supraventricular tachycardia (primary)
-   2. I21.4 — Non-ST elevation (NSTEMI) myocardial infarction
-   3. S32.511A — Fracture of superior rim of right pubis, initial encounter for closed fracture
-   4. E87.2 — Acidosis
-   5. I95.9 — Hypotension, unspecified
-   6. C68.9 — Malignant neoplasm of urinary organ, unspecified
-   7. F32.9 — Major depressive disorder, single episode, unspecified
-   8. I10 — Essential (primary) hypertension
-   9. E78.5 — Hyperlipidemia, unspecified
-  10. Z66 — Do not resuscitate
-  11. I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
-  12. F41.9 — Anxiety disorder, unspecified
-  13. K21.9 — Gastro-esophageal reflux disease without esophagitis
-  14. I44.0 — Atrioventricular block, first degree
-  15. G47.00 — Insomnia, unspecified
-  16. J31.0 — Chronic rhinitis
-  17. Z91.81 — History of falling
-  18. Z96.641 — Presence of right artificial hip joint
-  19. Z87.891 — Personal history of nicotine dependence
-  20. Z86.73 — Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
-  21. W19.XXXA — Unspecified fall, initial encounter
-  22. Y92.9 — Unspecified place or not applicable
+   1. Supraventricular tachycardia  [score=85.0, high]  ICD=I47.10 — 
+   2. Hip fracture  [score=70.0, medium]  ICD=S72.009? — 
+   3. Anemia  [score=65.0, medium]  ICD=D64.9 — Anemia, unspecified
+   4. Dehydration  [score=55.0, low]  ICD=E86.0 — Dehydration
+   5. Hypokalemia  [score=40.0, low]  ICD=E87.6 — Hypokalemia

@@ -1,1068 +1,140 @@
 {
   "stage": 10,
   "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
   "patient_id": "19104262",
   "hadm_id": "24271247",
-  "generated_at": "2026-08-15T23:57:15.366918",
+  "generated_at": "2026-08-19T22:37:31.068746",
   "ground_truth": {
     "primary_icd_code": "O2403",
     "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
-    "icd10_codes": [
-      "O2403",
-      "O904",
-      "G9340",
-      "E1010",
-      "E875",
-      "E860",
-      "O99355",
-      "O99285",
-      "Z794",
-      "Z9114"
-    ],
-    "dx_titles": [
-      "Pre-existing type 1 diabetes mellitus, in the puerperium",
-      "Postpartum acute kidney failure",
-      "Encephalopathy, unspecified",
-      "Type 1 diabetes mellitus with ketoacidosis without coma",
-      "Hyperkalemia",
-      "Dehydration",
-      "Diseases of the nervous system complicating the puerperium",
-      "Endocrine, nutritional and metabolic diseases complicating the puerperium",
-      "Long term (current) use of insulin",
-      "Patient's other noncompliance with medication regimen"
-    ],
+    "primary_icd_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
     "n_diagnoses": 10
   },
-  "stage8": {
+  "evaluation": {
     "diagnosis": {
-      "predicted": "Diabetic ketoacidosis",
-      "ground_truth": "Pre-existing type 1 diabetes mellitus, in the puerperium",
-      "matched_predicted": "Diabetic ketoacidosis",
-      "matched_ground_truth": "Type 1 diabetes mellitus with ketoacidosis without coma",
-      "match_scope": "rank1_vs_gt_list",
-      "match_pred_rank": 1,
-      "match_gt_index": 3,
-      "exact": false,
-      "semantic_similarity": 0.8657,
-      "semantic_match": true,
-      "match_reason": "rank1_vs_gt_list",
-      "clinical_reason": "term_subset",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Diabetic ketoacidosis",
-        "C difficile colitis",
-        "Missed abortion",
-        "Abdominal pain",
-        "Vaginal bleeding",
-        "Decreased fetal movement",
-        "Headache",
-        "Nausea"
-      ],
-      "n_diffdx": 8,
+      "ground_truth_primary": "Pre-existing type 1 diabetes mellitus, in the puerperium",
+      "rank1_diagnosis": "Diabetic ketoacidosis",
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "match": false,
+      "is_rank1_match": null,
+      "matched_diffdx_rank": null,
+      "matched_diagnosis": "",
+      "matched_score": null,
+      "matched_confidence": "",
+      "llm_relationship": "different",
+      "llm_confidence": "low",
+      "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.",
+      "llm_expanded_ground_truth": "Pre-existing type 1 diabetes mellitus, in the puerperium",
+      "llm_expanded_matched": "",
       "diagnosis_items": [
         {
           "diagnosis": "Diabetic ketoacidosis",
           "rank": 1,
           "score": 85.0,
-          "confidence": "high"
+          "confidence": "high",
+          "icd10_primary": "E13.10",
+          "icd10_primary_title": "Other specified diabetes mellitus with ketoacidosis without coma"
         },
         {
           "diagnosis": "C difficile colitis",
           "rank": 2,
           "score": 60.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "A04.72",
+          "icd10_primary_title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
         },
         {
           "diagnosis": "Missed abortion",
           "rank": 3,
           "score": 55.0,
-          "confidence": "high"
+          "confidence": "high",
+          "icd10_primary": "O02.1",
+          "icd10_primary_title": "Missed abortion"
         },
         {
           "diagnosis": "Abdominal pain",
           "rank": 4,
           "score": 45.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "R10.9",
+          "icd10_primary_title": "Unspecified abdominal pain"
         },
         {
           "diagnosis": "Vaginal bleeding",
           "rank": 5,
           "score": 40.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
           "diagnosis": "Decreased fetal movement",
           "rank": 6,
           "score": 35.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "O36.8190",
+          "icd10_primary_title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
         },
         {
           "diagnosis": "Headache",
           "rank": 7,
           "score": 30.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": "R51.9",
+          "icd10_primary_title": "Headache, unspecified"
         },
         {
           "diagnosis": "Nausea",
           "rank": 8,
           "score": 25.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": "R11.0",
+          "icd10_primary_title": "Nausea"
         }
       ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
+      "n_diffdx": 8
     },
-    "primary_icd": {
-      "predicted": "E13.10",
-      "ground_truth": "E10.10",
-      "predicted_title": "Other specified diabetes mellitus with ketoacidosis without coma",
-      "ground_truth_title": "Type 1 diabetes mellitus with ketoacidosis without coma",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.9876,
-      "semantic_match": true,
-      "match_reason": "rank1_vs_gt_list",
-      "clinical_reason": "contained",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "predicted_family": "E13",
-      "ground_truth_family": "E10",
-      "match_scope": "rank1_vs_gt_list",
-      "ground_truth_primary": "O24.03",
-      "ground_truth_primary_title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
+    "icd_linked": {
+      "ground_truth_icd": "O24.03",
+      "ground_truth_icd_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
+      "rank1_predicted_icd": "E13.10",
+      "rank1_predicted_icd_title": "Other specified diabetes mellitus with ketoacidosis without coma",
+      "matched_predicted_icd": "",
+      "matched_predicted_icd_title": "",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.",
+      "llm_expanded_ground_truth_icd": "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium",
+      "llm_expanded_matched_icd": "",
+      "stage9_final_primary_icd": "E13.10",
+      "diagnosis_match": false,
+      "is_rank1_diagnosis_match": null,
+      "matched_diffdx_rank": null
     },
-    "code_set": {
-      "n_predicted": 12,
-      "n_ground_truth": 10,
-      "n_hits": 1,
-      "precision": 0.0833,
-      "recall": 0.1,
-      "f1": 0.0909,
-      "hits": [
-        {
-          "code": "E10.10",
-          "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
-        }
+    "llm_qe_raw": {
+      "matched_rank": null,
+      "diagnosis_equivalent": false,
+      "diagnosis_relationship": "different",
+      "diagnosis_confidence": "low",
+      "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.",
+      "ground_truth_expansions": [
+        "Pre-existing type 1 diabetes mellitus, in the puerperium"
       ],
-      "misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
+      "matched_diagnosis_expansions": [],
+      "icd_equivalent": false,
+      "icd_confidence": "low",
+      "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.",
+      "ground_truth_icd_expansions": [
+        "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium"
       ],
-      "extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E11.10",
-          "title": "Type 2 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E46",
-          "title": "Unspecified protein-calorie malnutrition"
-        },
-        {
-          "code": "E11.01",
-          "title": "Type 2 diabetes mellitus with hyperosmolarity with coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent"
-        },
-        {
-          "code": "O02.1",
-          "title": "Missed abortion"
-        },
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified"
-        },
-        {
-          "code": "R11.0",
-          "title": "Nausea"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.0833,
-      "semantic_recall": 0.1,
-      "semantic_f1": 0.0909,
-      "semantic_pairs": [],
-      "related_pairs": [
-        {
-          "predicted_code": "R51.9",
-          "predicted_title": "Headache, unspecified",
-          "predicted_diagnosis": "Headache",
-          "ground_truth_code": "G93.40",
-          "ground_truth_title": "Encephalopathy, unspecified",
-          "similarity": 0.5088,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E11.10",
-          "title": "Type 2 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E46",
-          "title": "Unspecified protein-calorie malnutrition"
-        },
-        {
-          "code": "E11.01",
-          "title": "Type 2 diabetes mellitus with hyperosmolarity with coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent"
-        },
-        {
-          "code": "O02.1",
-          "title": "Missed abortion"
-        },
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "R11.0",
-          "title": "Nausea"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 9,
-      "n_ground_truth": 10,
-      "n_hits": 1,
-      "precision": 0.1111,
-      "recall": 0.1,
-      "f1": 0.1053,
-      "hits": [
-        {
-          "code": "E10.10",
-          "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
-        }
-      ],
-      "misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E11.10",
-          "title": "Type 2 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E46",
-          "title": "Unspecified protein-calorie malnutrition"
-        },
-        {
-          "code": "E11.01",
-          "title": "Type 2 diabetes mellitus with hyperosmolarity with coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent"
-        },
-        {
-          "code": "O02.1",
-          "title": "Missed abortion"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.1111,
-      "semantic_recall": 0.1,
-      "semantic_f1": 0.1053,
-      "semantic_pairs": [],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E11.10",
-          "title": "Type 2 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E46",
-          "title": "Unspecified protein-calorie malnutrition"
-        },
-        {
-          "code": "E11.01",
-          "title": "Type 2 diabetes mellitus with hyperosmolarity with coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent"
-        },
-        {
-          "code": "O02.1",
-          "title": "Missed abortion"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        }
-      ]
-    },
-    "principal_set": {
-      "n_predicted": 12,
-      "n_ground_truth": 10,
-      "n_hits": 1,
-      "precision": 0.0833,
-      "recall": 0.1,
-      "f1": 0.0909,
-      "hits": [
-        {
-          "code": "E10.10",
-          "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
-        }
-      ],
-      "misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E11.10",
-          "title": "Type 2 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E46",
-          "title": "Unspecified protein-calorie malnutrition"
-        },
-        {
-          "code": "E11.01",
-          "title": "Type 2 diabetes mellitus with hyperosmolarity with coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent"
-        },
-        {
-          "code": "O02.1",
-          "title": "Missed abortion"
-        },
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified"
-        },
-        {
-          "code": "R11.0",
-          "title": "Nausea"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.0833,
-      "semantic_recall": 0.1,
-      "semantic_f1": 0.0909,
-      "semantic_pairs": [],
-      "related_pairs": [
-        {
-          "predicted_code": "R51.9",
-          "predicted_title": "Headache, unspecified",
-          "predicted_diagnosis": "Headache",
-          "ground_truth_code": "G93.40",
-          "ground_truth_title": "Encephalopathy, unspecified",
-          "similarity": 0.5088,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E11.10",
-          "title": "Type 2 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E46",
-          "title": "Unspecified protein-calorie malnutrition"
-        },
-        {
-          "code": "E11.01",
-          "title": "Type 2 diabetes mellitus with hyperosmolarity with coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent"
-        },
-        {
-          "code": "O02.1",
-          "title": "Missed abortion"
-        },
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "R11.0",
-          "title": "Nausea"
-        }
-      ]
-    }
-  },
-  "stage9": {
-    "diagnosis": {
-      "predicted": "Diabetic ketoacidosis",
-      "ground_truth": "Pre-existing type 1 diabetes mellitus, in the puerperium",
-      "matched_predicted": "Diabetic ketoacidosis",
-      "matched_ground_truth": "Type 1 diabetes mellitus with ketoacidosis without coma",
-      "match_scope": "rank1_vs_gt_list",
-      "match_pred_rank": 1,
-      "match_gt_index": 3,
-      "exact": false,
-      "semantic_similarity": 0.8657,
-      "semantic_match": true,
-      "match_reason": "rank1_vs_gt_list",
-      "clinical_reason": "term_subset",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Diabetic ketoacidosis",
-        "C difficile colitis",
-        "Abdominal pain",
-        "Decreased fetal movement",
-        "Lactic acidosis"
-      ],
-      "n_diffdx": 5,
-      "diagnosis_items": [
-        {
-          "diagnosis": "Diabetic ketoacidosis",
-          "rank": 1,
-          "score": 85.0,
-          "confidence": "high"
-        },
-        {
-          "diagnosis": "C difficile colitis",
-          "rank": 2,
-          "score": 60.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Missed abortion",
-          "rank": 3,
-          "score": 55.0,
-          "confidence": "high"
-        },
-        {
-          "diagnosis": "Abdominal pain",
-          "rank": 4,
-          "score": 45.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Vaginal bleeding",
-          "rank": 5,
-          "score": 40.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Decreased fetal movement",
-          "rank": 6,
-          "score": 35.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Headache",
-          "rank": 7,
-          "score": 30.0,
-          "confidence": "low"
-        },
-        {
-          "diagnosis": "Nausea",
-          "rank": 8,
-          "score": 25.0,
-          "confidence": "low"
-        }
-      ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
-    },
-    "primary_icd": {
-      "predicted": "E13.10",
-      "ground_truth": "E10.10",
-      "predicted_title": "Other specified diabetes mellitus with ketoacidosis without coma",
-      "ground_truth_title": "Type 1 diabetes mellitus with ketoacidosis without coma",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.9876,
-      "semantic_match": true,
-      "match_reason": "rank1_vs_gt_list",
-      "clinical_reason": "contained",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "predicted_family": "E13",
-      "ground_truth_family": "E10",
-      "match_scope": "rank1_vs_gt_list",
-      "ground_truth_primary": "O24.03",
-      "ground_truth_primary_title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-    },
-    "code_set": {
-      "n_predicted": 5,
-      "n_ground_truth": 10,
-      "n_hits": 0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "hits": [],
-      "misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E10.10",
-          "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "E87.20",
-          "title": "Acidosis, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.2,
-      "semantic_recall": 0.1,
-      "semantic_f1": 0.1333,
-      "semantic_pairs": [
-        {
-          "predicted_code": "E13.10",
-          "predicted_title": "Other specified diabetes mellitus with ketoacidosis without coma",
-          "predicted_diagnosis": "Diabetic ketoacidosis",
-          "ground_truth_code": "E10.10",
-          "ground_truth_title": "Type 1 diabetes mellitus with ketoacidosis without coma",
-          "similarity": 0.9876,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "E87.20",
-          "title": "Acidosis, unspecified"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 4,
-      "n_ground_truth": 10,
-      "n_hits": 0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "hits": [],
-      "misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E10.10",
-          "title": "Type 1 diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "extras": [
-        {
-          "code": "E13.10",
-          "title": "Other specified diabetes mellitus with ketoacidosis without coma"
-        },
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "E87.20",
-          "title": "Acidosis, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.25,
-      "semantic_recall": 0.1,
-      "semantic_f1": 0.1429,
-      "semantic_pairs": [
-        {
-          "predicted_code": "E13.10",
-          "predicted_title": "Other specified diabetes mellitus with ketoacidosis without coma",
-          "predicted_diagnosis": "Diabetic ketoacidosis",
-          "ground_truth_code": "E10.10",
-          "ground_truth_title": "Type 1 diabetes mellitus with ketoacidosis without coma",
-          "similarity": 0.9876,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "O24.03",
-          "title": "Pre-existing type 1 diabetes mellitus, in the puerperium"
-        },
-        {
-          "code": "O90.4",
-          "title": "Postpartum acute kidney failure"
-        },
-        {
-          "code": "G93.40",
-          "title": "Encephalopathy, unspecified"
-        },
-        {
-          "code": "E87.5",
-          "title": "Hyperkalemia"
-        },
-        {
-          "code": "E86.0",
-          "title": "Dehydration"
-        },
-        {
-          "code": "O99.355",
-          "title": "Diseases of the nervous system complicating the puerperium"
-        },
-        {
-          "code": "O99.285",
-          "title": "Endocrine, nutritional and metabolic diseases complicating the puerperium"
-        },
-        {
-          "code": "Z79.4",
-          "title": "Long term (current) use of insulin"
-        },
-        {
-          "code": "Z91.14",
-          "title": "Patient's other noncompliance with medication regimen"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "A04.72",
-          "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "code": "O36.8190",
-          "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "code": "E87.20",
-          "title": "Acidosis, unspecified"
-        }
-      ]
+      "matched_icd_expansions": [],
+      "_cache_hit": true
     }
   },
   "has_stage8": true,

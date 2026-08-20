@@ -1,163 +1,43 @@
-ACCURACY vs GROUND TRUTH
-========================
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
 
 Patient ID       : 13952483
 HADM ID          : 23852410
-Generated        : 2026-08-15T23:57:15.135395
+Generated        : 2026-08-19T22:37:31.064393
 
-PRIMARY DIFFDx — MATCH OR NO
-----------------------------
+DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
+------------------------------------
 
-  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
-  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+  Ground truth primary : Other hypotension
+  Rank-1 predicted     : Severe Pulmonary Hypertension with Cor Pulmonale
+    score=85.0  confidence=high
+  Diagnosis match      : NO
+  Is rank-1 match      : N/A
+  Matched DiffDx rank  : -
+  Matched diagnosis    : -
+    score=None  confidence=-
+  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis of Other hypotension.
 
-               Predicted                                        Ground truth
-  S8 DiffDx    Severe Pulmonary Hypertension with Cor Pulm...   Other hypotension
-  S9 DiffDx    Severe Pulmonary Hypertension with Cor Pulm...   Other hypotension
+LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
+---------------------------------------------------
 
-  Full predicted (S8): Severe Pulmonary Hypertension with Cor Pulmonale
-  Full predicted (S9): Severe Pulmonary Hypertension with Cor Pulmonale
-  Full GT primary    : Other hypotension
+  Ground truth ICD     : I95.89 — Other hypotension
+  Rank-1 mapped ICD    : T86.91 — Unspecified transplanted organ and tissue rejection
+  Matched mapped ICD   : - — 
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : None of the mapped ICD codes match or are clinically equivalent to the ground truth ICD code I95.89.
+  Stage 9 final ICD    : I27.20 (debug)
 
-  MATCH (S8): NO    reason=no_match  sim=0.20
-    matched: Severe Pulmonary Hypertension with Co...  vs  Other hypotension
-  MATCH (S9): NO    reason=no_match  sim=0.20
-    matched: Severe Pulmonary Hypertension with Co...  vs  Other hypotension
+FULL DIFFERENTIAL LIST
+----------------------
 
-PRIMARY ICD — MATCH OR NO
--------------------------
-
-  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
-  or rank-1 ICD matches another billed GT code
-
-               Predicted                                        Ground truth
-  S8 ICD       T86.91 Unspecified transplanted organ and t...   I95.89 Other hypotension
-  S9 ICD       I27.20 Pulmonary hypertension, unspecified       I95.89 Other hypotension
-
-  Full predicted (S8): T86.91 — Unspecified transplanted organ and tissue rejection
-  Full predicted (S9): I27.20 — Pulmonary hypertension, unspecified
-  Full ground truth  : I95.89 — Other hypotension
-
-  MATCH (S8): NO    reason=no_match  family=NO  sim=0.19
-  MATCH (S9): YES    reason=rank1_vs_gt_list  family=YES  sim=0.84
-
-ICD CODE SET — Stage 8 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.118 / 0.080 / 0.095
-Semantic  P / R / F1 : 0.118 / 0.080 / 0.095  (title MiniLM ≥ 0.7)
-Exact hits 2  |  semantic hits 2  |  predicted 17  |  GT 25
-Exact code hits:
-  ✓ D64.9 — Anemia, unspecified
-  ✓ R63.0 — Anorexia
-Related (not counted; sim 0.50–0.70):
-  ~ N18.9 — Chronic kidney disease, unspecified  [Chronic Kidney Disease]
-      ↔ N17.9 — Acute kidney failure, unspecified  (sim=0.67)
-  ~ T86.91 — Unspecified transplanted organ and tissue rejection  [Severe Pulmonary Hypertension with Cor Pulmonale]
-      ↔ I27.2 — Other secondary pulmonary hypertension  (sim=0.67)
-  ~ J18.9 — Pneumonia, unspecified organism  [Pneumonia]
-      ↔ B34.9 — Viral infection, unspecified  (sim=0.59)
-  ~ O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified  [Neutropenia]
-      ↔ D69.59 — Other secondary thrombocytopenia  (sim=0.54)
-Still missing after semantic match:
-  ✗ I95.89 — Other hypotension
-  ✗ R64 — Cachexia
-  ✗ B37.81 — Candidal esophagitis
-  ✗ D70.1 — Agranulocytosis secondary to cancer chemotherapy
-  ✗ C34.32 — Malignant neoplasm of lower lobe, left bronchus or lung
-  ✗ Z94.0 — Kidney transplant status
-  ✗ Z68.1 — Body mass index [BMI] 19.9 or less, adult
-  ✗ J44.9 — Chronic obstructive pulmonary disease, unspecified
-  ✗ E86.0 — Dehydration
-  ✗ R62.7 — Adult failure to thrive
-  ✗ T45.1X5A — Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter
-  ✗ T66.XXXA — Radiation sickness, unspecified, initial encounter
-  ✗ I10 — Essential (primary) hypertension
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ R13.19 — Other dysphagia
-  ✗ Y92.9 — Unspecified place or not applicable
-  ✗ F32.9 — Major depressive disorder, single episode, unspecified
-  ✗ F17.210 — Nicotine dependence, cigarettes, uncomplicated
-  ✗ Z79.899 — Other long term (current) drug therapy
-Still extra after semantic match:
-  + D70.9 — Neutropenia, unspecified
-  + P61.5 — Transient neonatal neutropenia
-  + Z3A.00 — Weeks of gestation of pregnancy not specified
-  + E46 — Unspecified protein-calorie malnutrition
-  + O25.2 — Malnutrition in childbirth
-  + K91.2 — Postsurgical malabsorption, not elsewhere classified
-  + E44.0 — Moderate protein-calorie malnutrition
-  + E44.1 — Mild protein-calorie malnutrition
-  + R07.9 — Chest pain, unspecified
-  + R05.9 — Cough, unspecified
-  + R52 — Pain, unspecified
-
-ICD CODE SET — Stage 9 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.200 / 0.040 / 0.067
-Semantic  P / R / F1 : 0.400 / 0.080 / 0.133  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 2  |  predicted 5  |  GT 25
-Exact code hits:
-  ✓ D64.9 — Anemia, unspecified
-Semantic hits (same meaning, different code):
-  ≈ I27.20 — Pulmonary hypertension, unspecified  [Severe Pulmonary Hypertension with Cor Pulmonale]
-      ↔ I27.2 — Other secondary pulmonary hypertension  (sim=0.84)
-Related (not counted; sim 0.50–0.70):
-  ~ N18.9 — Chronic kidney disease, unspecified  [Chronic Kidney Disease]
-      ↔ N17.9 — Acute kidney failure, unspecified  (sim=0.67)
-  ~ T86.91 — Unspecified transplanted organ and tissue rejection  [Severe Pulmonary Hypertension with Cor Pulmonale]
-      ↔ Z94.0 — Kidney transplant status  (sim=0.59)
-Still missing after semantic match:
-  ✗ I95.89 — Other hypotension
-  ✗ R64 — Cachexia
-  ✗ D69.59 — Other secondary thrombocytopenia
-  ✗ B37.81 — Candidal esophagitis
-  ✗ D70.1 — Agranulocytosis secondary to cancer chemotherapy
-  ✗ C34.32 — Malignant neoplasm of lower lobe, left bronchus or lung
-  ✗ Z68.1 — Body mass index [BMI] 19.9 or less, adult
-  ✗ J44.9 — Chronic obstructive pulmonary disease, unspecified
-  ✗ E86.0 — Dehydration
-  ✗ R62.7 — Adult failure to thrive
-  ✗ T45.1X5A — Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter
-  ✗ T66.XXXA — Radiation sickness, unspecified, initial encounter
-  ✗ I10 — Essential (primary) hypertension
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ R13.19 — Other dysphagia
-  ✗ Y92.9 — Unspecified place or not applicable
-  ✗ R63.0 — Anorexia
-  ✗ B34.9 — Viral infection, unspecified
-  ✗ F32.9 — Major depressive disorder, single episode, unspecified
-  ✗ F17.210 — Nicotine dependence, cigarettes, uncomplicated
-  ✗ Z79.899 — Other long term (current) drug therapy
-Still extra after semantic match:
-  + E46 — Unspecified protein-calorie malnutrition
-
-GROUND TRUTH LIST
------------------
-
-   1. I95.89 — Other hypotension (primary)
-   2. N17.9 — Acute kidney failure, unspecified
-   3. R64 — Cachexia
-   4. D69.59 — Other secondary thrombocytopenia
-   5. B37.81 — Candidal esophagitis
-   6. I27.2 — Other secondary pulmonary hypertension
-   7. D70.1 — Agranulocytosis secondary to cancer chemotherapy
-   8. C34.32 — Malignant neoplasm of lower lobe, left bronchus or lung
-   9. Z94.0 — Kidney transplant status
-  10. Z68.1 — Body mass index [BMI] 19.9 or less, adult
-  11. J44.9 — Chronic obstructive pulmonary disease, unspecified
-  12. E86.0 — Dehydration
-  13. R62.7 — Adult failure to thrive
-  14. D64.9 — Anemia, unspecified
-  15. T45.1X5A — Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter
-  16. T66.XXXA — Radiation sickness, unspecified, initial encounter
-  17. I10 — Essential (primary) hypertension
-  18. E78.5 — Hyperlipidemia, unspecified
-  19. R13.19 — Other dysphagia
-  20. Y92.9 — Unspecified place or not applicable
-  21. R63.0 — Anorexia
-  22. B34.9 — Viral infection, unspecified
-  23. F32.9 — Major depressive disorder, single episode, unspecified
-  24. F17.210 — Nicotine dependence, cigarettes, uncomplicated
-  25. Z79.899 — Other long term (current) drug therapy
+   1. Severe Pulmonary Hypertension with Cor Pulmonale  [score=85.0, high]  ICD=T86.91 — Unspecified transplanted organ and tissue rejection
+   2. Neutropenia  [score=70.0, medium]  ICD=D70.9 — Neutropenia, unspecified
+   3. Anemia  [score=65.0, medium]  ICD=D64.9 — Anemia, unspecified
+   4. Malnutrition  [score=55.0, medium]  ICD=E46 — Unspecified protein-calorie malnutrition
+   5. Chronic Kidney Disease  [score=45.0, low]  ICD=N18.9 — Chronic kidney disease, unspecified
+   6. Pneumonia  [score=30.0, low]  ICD=J18.9 — Pneumonia, unspecified organism

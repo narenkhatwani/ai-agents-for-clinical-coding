@@ -148,7 +148,7 @@ def _refresh_artifact_paths() -> None:
     global SYMPTOM_TREE_RESULTS_JSON, DIFF_DX_RESULTS_JSON, DIFF_DX_CHECKPOINT_JSON
     global ICD_CODING_RESULTS_JSON
     global ICD_CONFIRM_RESULTS_JSON, ICD_CONFIRM_CHECKPOINT_JSON
-    global EVAL_SUMMARY_JSON, EVAL_COHORT_TXT, EVAL_PRIMARY_CSV, EVAL_DIFFDX_CSV, EVAL_ICD_CSV
+    global EVAL_SUMMARY_JSON, EVAL_COHORT_TXT, EVAL_DIFFDX_CSV, EVAL_ICD_CSV, EVAL_LLM_QE_CACHE_JSON
     COHORT_PICKLE = COHORT_DIR / "cohort.pkl"
     COHORT_INDEX_JSON = COHORT_DIR / "cohort_index.json"
     IE_RESULTS_JSON = STAGE_02_DIR / "information_extractions.json"
@@ -160,10 +160,10 @@ def _refresh_artifact_paths() -> None:
     ICD_CONFIRM_RESULTS_JSON = STAGE_09_DIR / "icd_confirmation_results.json"
     ICD_CONFIRM_CHECKPOINT_JSON = STAGE_09_DIR / "icd_confirmation_checkpoint.json"
     EVAL_SUMMARY_JSON = STAGE_10_DIR / "accuracy_summary.json"
-    EVAL_COHORT_TXT = STAGE_10_DIR / "cohort_metrics.txt"
-    EVAL_DIFFDX_CSV = STAGE_10_DIR / "primary_diffdx_match.csv"
-    EVAL_ICD_CSV = STAGE_10_DIR / "primary_icd_match.csv"
-    EVAL_PRIMARY_CSV = EVAL_DIFFDX_CSV
+    EVAL_COHORT_TXT = STAGE_10_DIR / "cohort_accuracy.txt"
+    EVAL_DIFFDX_CSV = STAGE_10_DIR / "diffdx_match.csv"
+    EVAL_ICD_CSV = STAGE_10_DIR / "icd_match.csv"
+    EVAL_LLM_QE_CACHE_JSON = STAGE_10_DIR / "llm_qe_cache.json"
 
 
 
@@ -290,9 +290,12 @@ D_LABITEMS_PATH = MIMIC_BASE / "hosp/d_labitems.csv.gz"
 OMR_PATH = MIMIC_BASE / "hosp/omr.csv.gz"
 RADIOLOGY_NOTES_PATH = PHYSIONET_ROOT / "mimic-iv-note/2.2/note/radiology.csv.gz"
 
-MAX_LABS_PER_ADMISSION = 40
-MAX_RAD_REPORTS_PER_ADMISSION = 5
-RADIOLOGY_REPORT_EXCERPT_CHARS = 1500
+MAX_LABS_PER_ADMISSION = 80
+MAX_RAD_REPORTS_PER_ADMISSION = 10
+RADIOLOGY_REPORT_EXCERPT_CHARS = 8000
+# Prompt cap for Stage 7/9. Large enough to keep current-stay vitals/labs/reports.
+# Set to 0 to disable truncation.
+CLINICAL_CONTEXT_MAX_CHARS = 20000
 OMR_VITAL_NAMES = {
     "Blood Pressure", "Pulse", "Temperature", "Respiratory Rate",
     "O2 saturation", "SpO2", "Weight (Lbs)", "BMI (kg/m2)",
@@ -493,6 +496,16 @@ def format_structured_clinical_context(
             else:
                 lines.append(f"  • {v['name']}: {v.get('value')} {v.get('unit', '')} ({v.get('source', '')})")
     lines.append("")
+    lines.append("RADIOLOGY REPORTS:")
+    if not reports:
+        lines.append("  (none recorded)")
+    else:
+        for i, rep in enumerate(reports, 1):
+            lines.append(f"  --- Report {i} ({rep.get('charttime', '')}) ---")
+            excerpt = str(rep.get("text_excerpt") or rep.get("text") or "")
+            for ln in excerpt.splitlines():
+                lines.append(f"    {ln}")
+    lines.append("")
     lines.append("LABS (abnormal prioritized):")
     if not labs:
         lines.append("  (none recorded)")
@@ -501,16 +514,43 @@ def format_structured_clinical_context(
             flag = f" [{lab['flag']}]" if lab.get("flag") else ""
             lines.append(f"  • {lab['name']}: {lab.get('value')} {lab.get('unit', '')}{flag}")
     lines.append("")
-    lines.append("RADIOLOGY REPORTS:")
-    if not reports:
-        lines.append("  (none recorded)")
-    else:
-        for i, rep in enumerate(reports, 1):
-            lines.append(f"  --- Report {i} ({rep.get('charttime', '')}) ---")
-            for ln in str(rep.get("text_excerpt", "")).splitlines()[:20]:
-                lines.append(f"    {ln}")
-    lines.append("")
     return "\n".join(lines)
+
+
+def _clip_clinical_context(text: Optional[str]) -> str:
+    """Keep structured vitals/labs/radiology in LLM prompts. 0 = no cap."""
+    ctx = (text or "").strip()
+    limit = int(CLINICAL_CONTEXT_MAX_CHARS or 0)
+    if not ctx or limit <= 0 or len(ctx) <= limit:
+        return ctx
+    return ctx[:limit] + "\n...[truncated]"
+
+
+def rebuild_clinical_context_files(export_dir: Union[str, Path] = None) -> int:
+    """Rewrite clinical_context.txt from saved vitals/labs/radiology JSON (no 20-line cut)."""
+    export_dir = Path(export_dir or EXPORT_DIR)
+    n = 0
+    for ctx_path in sorted(export_dir.glob("patient_*/admissions/hadm_*/clinical_context.txt")):
+        adm_dir = ctx_path.parent
+
+        def _load(name: str) -> List[Dict[str, Any]]:
+            p = adm_dir / name
+            if not p.exists():
+                return []
+            data = json.loads(p.read_text(encoding="utf-8"))
+            return data if isinstance(data, list) else []
+
+        vitals = _load("structured_vitals.json")
+        labs = _load("structured_labs.json")
+        reports = _load("radiology_reports.json")
+        if not (vitals or labs or reports):
+            continue
+        ctx_path.write_text(
+            format_structured_clinical_context(vitals, labs, reports),
+            encoding="utf-8",
+        )
+        n += 1
+    return n
 
 
 def enrich_cohort_structured_data(cohort: pd.DataFrame) -> pd.DataFrame:
@@ -2027,13 +2067,11 @@ def build_diff_dx_context_block(
     ]
 
     if clinical_context_text:
-        ctx = clinical_context_text.strip()
-        if len(ctx) > 2500:
-            ctx = ctx[:2500] + "\n...[truncated]"
+        ctx = _clip_clinical_context(clinical_context_text)
         parts.extend(
             [
                 "",
-                "--- STRUCTURED CLINICAL CONTEXT (current stay vitals/labs excerpts) ---",
+                "--- STRUCTURED CLINICAL CONTEXT (current stay vitals/labs/radiology) ---",
                 ctx,
             ]
         )
@@ -2903,6 +2941,71 @@ DX_SEMANTIC_MATCH_THRESHOLD = 0.70  # MiniLM vs GT primary title (Stage 10)
 ICD_TITLE_SEMANTIC_THRESHOLD = 0.70  # MiniLM ICD/dx title vs GT title
 ICD_TITLE_NEAR_THRESHOLD = 0.50  # related but not counted as a hit
 
+# ---------------------------------------------------------------------------
+# Stage 10 — LLM query expansion (clinical synonym matching for evaluation)
+# ---------------------------------------------------------------------------
+LLM_QE_TEMPERATURE = 0.0
+
+LLM_QE_SYSTEM_PROMPT = (
+    "You are a clinical coding evaluation assistant. "
+    "Use LLM-based query expansion to judge diagnosis and ICD equivalence. "
+    "Return complete valid JSON only."
+)
+
+LLM_QE_OUTPUT_SCHEMA = """\
+{
+  "matched_rank": null,
+  "diagnosis_equivalent": false,
+  "diagnosis_relationship": "different",
+  "diagnosis_confidence": "low",
+  "diagnosis_reason": "",
+  "ground_truth_expansions": [],
+  "matched_diagnosis_expansions": [],
+  "icd_equivalent": false,
+  "icd_confidence": "low",
+  "icd_reason": "",
+  "ground_truth_icd_expansions": [],
+  "matched_icd_expansions": []
+}"""
+
+LLM_QE_USER_TEMPLATE = """\
+Evaluate whether any ranked differential diagnosis matches the ground-truth PRIMARY diagnosis,
+and whether the ICD-10 code mapped to that rank matches the ground-truth PRIMARY ICD code.
+
+Use query expansion: expand abbreviations and synonyms (e.g. VT → ventricular tachycardia).
+
+RULES:
+- Scan EVERY rank in the differential list below. Do not evaluate rank 1 only.
+- Match a DiffDx rank if it is the same PRINCIPAL diagnosis as ground truth (expand synonyms/abbreviations).
+- A generic diagnosis name matches a more specific ground-truth name when they name the same principal condition (e.g. "Pneumothorax" matches "Traumatic pneumothorax, initial encounter").
+- If multiple ranks match, set matched_rank to the LOWEST matching rank number.
+- When a rank matches, set diagnosis_equivalent=true, diagnosis_relationship="same_principal", and diagnosis_confidence high or medium.
+- For icd_equivalent: use the mapped ICD at matched_rank (shown per rank) vs ground-truth ICD.
+  Set icd_equivalent=true for exact code match OR when a coder would accept the mapped code as clinically equivalent for the same principal condition (e.g. J93.9 vs S27.0XXA both code pneumothorax).
+- Do not invent clinical facts not in the inputs.
+
+EXAMPLES (same_principal — diagnosis_equivalent=true):
+- GT "Traumatic pneumothorax, initial encounter" ↔ Rank 3 "Pneumothorax"
+- GT "Ventricular tachycardia" ↔ Rank 1 "Refractory VT"
+- GT "Supraventricular tachycardia" ↔ Rank 1 "Supraventricular tachycardia"
+
+EXAMPLES (NOT same_principal — diagnosis_equivalent=false):
+- GT "Calculus of bile duct with cholangitis" ↔ Rank 1 "Heart failure with preserved ejection fraction"
+- GT "Hydronephrosis with renal calculi" ↔ Rank 1 "Nephrolithiasis" (related but not the same principal diagnosis)
+
+GROUND TRUTH PRIMARY DIAGNOSIS:
+{gt_diagnosis}
+
+GROUND TRUTH PRIMARY ICD:
+{gt_icd_code} — {gt_icd_title}
+
+RANKED DIFFERENTIAL (Stage 7/8):
+{diffdx_block}
+
+Return JSON matching this schema (no markdown):
+{schema}
+"""
+
 ICD_CONFIRM_ROLE = """\
 You are a hospital clinical coding specialist reviewing a draft ICD-10-CM package \
 produced by SNOMED CT ExtendedMap. You confirm, drop, or replace mapped codes and \
@@ -3083,10 +3186,8 @@ def build_icd_confirm_context(
         json.dumps(stage08_slim, indent=2, ensure_ascii=False),
     ]
     if clinical_context_text:
-        ctx = clinical_context_text.strip()
-        if len(ctx) > 2200:
-            ctx = ctx[:2200] + "\n...[truncated]"
-        parts.extend(["", "--- STRUCTURED CLINICAL CONTEXT (current stay) ---", ctx])
+        ctx = _clip_clinical_context(clinical_context_text)
+        parts.extend(["", "--- STRUCTURED CLINICAL CONTEXT (current stay vitals/labs/radiology) ---", ctx])
     slim_ie = slim_ie_for_confirm(ie_summary)
     if slim_ie:
         parts.extend(
@@ -3694,6 +3795,8 @@ def _stage8_predicted_codes(stage08_row: Dict[str, Any]) -> Dict[str, Any]:
                     "rank": int(d.get("rank") or (i + 1)),
                     "score": score,
                     "confidence": str(d.get("confidence") or "").strip(),
+                    "icd10_primary": d.get("icd10_primary"),
+                    "icd10_primary_title": d.get("icd10_primary_title") or "",
                 }
             )
     if primary_dx and primary_dx.strip().lower() not in seen_dx:
@@ -3705,6 +3808,8 @@ def _stage8_predicted_codes(stage08_row: Dict[str, Any]) -> Dict[str, Any]:
                 "rank": 1,
                 "score": None,
                 "confidence": "",
+                "icd10_primary": top.get("icd10_primary"),
+                "icd10_primary_title": top.get("icd10_primary_title") or "",
             },
         )
     return {
@@ -3961,7 +4066,7 @@ def _score_primary_icd(
     family = bool(p and g and _icd_family(p) == _icd_family(g))
     # Score the mapped ICD title, not the DiffDx name (wrong code + right name is not an ICD hit).
     title_for_match = (pred_title or "").strip() or ((pred_dx or "").strip() if p else "")
-    hit = _clinical_match(title_for_match, gt_title, embedder, threshold)
+    hit = _clinical_match_legacy(title_for_match, gt_title, embedder, threshold)
     return {
         "predicted": _dot_icd_code(pred_code or "") if pred_code else None,
         "ground_truth": _dot_icd_code(gt_code or "") if gt_code else None,
@@ -4072,253 +4177,336 @@ def _score_primary_icd_multi(
     return base
 
 
-# Clinical abbreviations / synonyms so "Refractory VT" matches "Ventricular tachycardia"
-_CLINICAL_ABBREV = (
-    ("hfpef", "heart failure with preserved ejection fraction"),
-    ("hfref", "heart failure with reduced ejection fraction"),
-    ("nstemi", "non st elevation myocardial infarction"),
-    ("stemi", "st elevation myocardial infarction"),
-    ("adhf", "acute decompensated heart failure"),
-    ("svt", "supraventricular tachycardia"),
-    ("dka", "diabetic ketoacidosis"),
-    ("aki", "acute kidney injury"),
-    ("ckd", "chronic kidney disease"),
-    ("chf", "congestive heart failure"),
-    ("copd", "chronic obstructive pulmonary disease"),
-    ("esrd", "end stage renal disease"),
-    ("uti", "urinary tract infection"),
-    ("pna", "pneumonia"),
-    ("rul", "right upper lobe"),
-    ("rml", "right middle lobe"),
-    ("rll", "right lower lobe"),
-    ("lul", "left upper lobe"),
-    ("lll", "left lower lobe"),
-    ("cva", "cerebrovascular accident"),
-    ("dvt", "deep vein thrombosis"),
-    ("cad", "coronary artery disease"),
-    ("htn", "hypertension"),
-    ("vt", "ventricular tachycardia"),
-    ("vf", "ventricular fibrillation"),
-    ("hf", "heart failure"),
-    ("mi", "myocardial infarction"),
-    ("pe", "pulmonary embolism"),
-)
-_DX_FILLER_RE = re.compile(
-    r"\b(unspecified|organism|initial encounter|subsequent encounter|"
-    r"other specified|except renal pelvis|except|type)\b",
-    re.I,
-)
-_DX_STOP = {
-    "a", "an", "the", "of", "with", "due", "to", "and", "or", "in", "on", "for",
-    "from", "by", "as", "at", "into", "over", "after", "before", "without",
-    "unspecified", "organism", "initial", "encounter", "other", "specified",
-    "except", "type", "left", "right", "upper", "middle", "lower", "lobe",
-}
-
-
 def _expand_clinical_text(text: str) -> str:
+    """Basic normalize for display only — not used for match decisions."""
     s = (text or "").lower().replace("-", " ").replace("/", " ")
     s = re.sub(r"[^a-z0-9\s]", " ", s)
-    for abbr, full in _CLINICAL_ABBREV:
-        s = re.sub(rf"\b{re.escape(abbr)}\b", full, s)
-    s = s.replace("diabetic ketoacidosis", "diabetes ketoacidosis")
-    s = s.replace("diabetic", "diabetes")
-    s = s.replace("nephrolithiasis", "renal calculus")
-    s = s.replace("kidney stones", "renal calculus")
-    s = s.replace("kidney stone", "renal calculus")
-    s = s.replace("renal cell carcinoma", "malignant neoplasm kidney")
-    s = s.replace("kidney cancer", "malignant neoplasm kidney")
-    s = s.replace("renal cancer", "malignant neoplasm kidney")
-    s = s.replace("calculous", "calculus")
-    s = s.replace("haemorrhage", "hemorrhage")
-    s = s.replace("post operative", "postprocedural")
-    s = s.replace("postoperative", "postprocedural")
-    s = s.replace("post procedural", "postprocedural")
-    s = _DX_FILLER_RE.sub(" ", s)
     return re.sub(r"\s+", " ", s).strip()
 
 
-def _dx_tokens(text: str) -> set:
-    return {t for t in _expand_clinical_text(text).split() if t not in _DX_STOP and len(t) > 1}
+def _llm_qe_cache_key(
+    patient_id: str,
+    hadm_id: str,
+    gt_diagnosis: str,
+    gt_icd_code: str,
+    items: List[Dict[str, Any]],
+) -> str:
+    import hashlib
+
+    payload = json.dumps(
+        {
+            "patient_id": patient_id,
+            "hadm_id": hadm_id,
+            "gt_diagnosis": gt_diagnosis,
+            "gt_icd_code": gt_icd_code,
+            "items": items,
+        },
+        sort_keys=True,
+        ensure_ascii=False,
+    )
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
-def _clinical_match(predicted: str, ground_truth: str, embedder: Any, threshold: float) -> Dict[str, Any]:
+def load_llm_qe_cache(path: Union[str, Path] = None) -> Dict[str, Any]:
+    path = Path(path or EVAL_LLM_QE_CACHE_JSON)
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def save_llm_qe_cache(cache: Dict[str, Any], path: Union[str, Path] = None) -> Path:
+    path = Path(path or EVAL_LLM_QE_CACHE_JSON)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(path, cache)
+    return path
+
+
+def _format_diffdx_block_for_llm(items: List[Dict[str, Any]]) -> str:
+    lines = []
+    for it in sorted(items, key=lambda x: int(x.get("rank") or 999)):
+        rank = int(it.get("rank") or 0)
+        dx = str(it.get("diagnosis") or "").strip()
+        score = it.get("score")
+        conf = it.get("confidence") or ""
+        icd = it.get("icd10_primary") or "(none)"
+        icd_title = it.get("icd10_primary_title") or ""
+        score_s = f"{score}" if score is not None else "-"
+        lines.append(
+            f"Rank {rank}: {dx}\n"
+            f"  score={score_s}  confidence={conf or '-'}\n"
+            f"  mapped ICD: {icd} — {icd_title}"
+        )
+    return "\n".join(lines) if lines else "(empty differential)"
+
+
+def _llm_qe_confidence_ok(conf: str) -> bool:
+    return str(conf or "").strip().lower() in {"high", "medium"}
+
+
+def _item_at_rank(items: List[Dict[str, Any]], rank: Optional[int]) -> Dict[str, Any]:
+    if rank is None:
+        return {}
+    for it in items:
+        if int(it.get("rank") or 0) == int(rank):
+            return it
+    return {}
+
+
+def llm_clinical_query_expansion(
+    ground_truth_primary: str,
+    ground_truth_icd_code: str,
+    ground_truth_icd_title: str,
+    diffdx_items: List[Dict[str, Any]],
+    config: Optional[LLMConfig] = None,
+    cache: Optional[Dict[str, Any]] = None,
+    patient_id: str = "",
+    hadm_id: str = "",
+) -> Dict[str, Any]:
     """
-    YES if same diagnosis despite abbreviations, extra ICD wording, or combination titles.
-    Does not count unrelated diseases that merely share a generic word (e.g. anemia).
+    LLM query expansion: expand GT + DiffDx candidates; return matched rank,
+    diagnosis equivalence, and linked ICD equivalence for that rank.
     """
+    from dataclasses import replace
+
+    gt_dx = " ".join(str(ground_truth_primary or "").split())
+    gt_icd = _dot_icd_code(str(ground_truth_icd_code or ""))
+    gt_icd_title = str(ground_truth_icd_title or "").strip()
+    items = list(diffdx_items or [])
+
+    if not gt_dx or not items:
+        return {
+            "matched_rank": None,
+            "diagnosis_equivalent": False,
+            "diagnosis_relationship": "different",
+            "diagnosis_confidence": "low",
+            "diagnosis_reason": "missing inputs",
+            "ground_truth_expansions": [],
+            "matched_diagnosis_expansions": [],
+            "icd_equivalent": False,
+            "icd_confidence": "low",
+            "icd_reason": "",
+            "ground_truth_icd_expansions": [],
+            "matched_icd_expansions": [],
+            "error": "missing inputs",
+        }
+
+    cache = cache if cache is not None else {}
+    key = _llm_qe_cache_key(patient_id, hadm_id, gt_dx, gt_icd, items)
+    if key in cache:
+        cached = dict(cache[key])
+        cached["_cache_hit"] = True
+        return cached
+
+    base = config or get_llm_config()
+    cfg = replace(base, temperature=float(LLM_QE_TEMPERATURE))
+    require_llm(cfg)
+
+    user_prompt = LLM_QE_USER_TEMPLATE.format(
+        gt_diagnosis=gt_dx,
+        gt_icd_code=gt_icd or "(none)",
+        gt_icd_title=gt_icd_title or "(none)",
+        diffdx_block=_format_diffdx_block_for_llm(items),
+        schema=LLM_QE_OUTPUT_SCHEMA,
+    )
+    raw = call_llm_json(LLM_QE_SYSTEM_PROMPT, user_prompt, cfg, model=cfg.model)
+
+    matched_rank = raw.get("matched_rank")
+    if matched_rank is not None and matched_rank != "":
+        try:
+            matched_rank = int(matched_rank)
+        except (TypeError, ValueError):
+            matched_rank = None
+    else:
+        matched_rank = None
+
+    result = {
+        "matched_rank": matched_rank,
+        "diagnosis_equivalent": bool(raw.get("diagnosis_equivalent")),
+        "diagnosis_relationship": str(raw.get("diagnosis_relationship") or "different"),
+        "diagnosis_confidence": str(raw.get("diagnosis_confidence") or "low"),
+        "diagnosis_reason": str(raw.get("diagnosis_reason") or ""),
+        "ground_truth_expansions": list(raw.get("ground_truth_expansions") or []),
+        "matched_diagnosis_expansions": list(raw.get("matched_diagnosis_expansions") or []),
+        "icd_equivalent": bool(raw.get("icd_equivalent")),
+        "icd_confidence": str(raw.get("icd_confidence") or "low"),
+        "icd_reason": str(raw.get("icd_reason") or ""),
+        "ground_truth_icd_expansions": list(raw.get("ground_truth_icd_expansions") or []),
+        "matched_icd_expansions": list(raw.get("matched_icd_expansions") or []),
+        "_cache_hit": False,
+    }
+    cache[key] = result
+    return result
+
+
+def _normalize_diagnosis_relationship(rel: str) -> str:
+    r = str(rel or "").strip().lower().replace("-", "_")
+    if r in {"same", "same_principal", "equivalent", "identical"}:
+        return "same_principal"
+    if r in {"related", "related_condition", "comorbidity"}:
+        return "related"
+    return r or "different"
+
+
+def _diagnosis_match_from_llm(qe: Dict[str, Any]) -> bool:
+    rel = _normalize_diagnosis_relationship(qe.get("diagnosis_relationship"))
+    return bool(
+        qe.get("diagnosis_equivalent")
+        and rel == "same_principal"
+        and _llm_qe_confidence_ok(qe.get("diagnosis_confidence"))
+        and qe.get("matched_rank") is not None
+    )
+
+
+def _icd_exact_match(pred_code: Optional[str], gt_code: Optional[str]) -> bool:
+    p = _undot_icd_code(str(pred_code or ""))
+    g = _undot_icd_code(str(gt_code or ""))
+    return bool(p and g and p == g)
+
+
+def _icd_family_match(pred_code: Optional[str], gt_code: Optional[str]) -> bool:
+    p = _undot_icd_code(str(pred_code or ""))
+    g = _undot_icd_code(str(gt_code or ""))
+    return bool(p and g and _icd_family(p) == _icd_family(g))
+
+
+def _icd_llm_match_from_qe(qe: Dict[str, Any], diagnosis_matched: bool) -> bool:
+    if not diagnosis_matched:
+        return False
+    return bool(qe.get("icd_equivalent") and _llm_qe_confidence_ok(qe.get("icd_confidence")))
+
+
+def _score_linked_icd(
+    matched_item: Dict[str, Any],
+    rank1_item: Dict[str, Any],
+    gt_icd_code: Optional[str],
+    gt_icd_title: str,
+    qe: Dict[str, Any],
+    diagnosis_matched: bool,
+    stage9_primary_icd: Optional[str] = None,
+) -> Dict[str, Any]:
+    pred_icd = matched_item.get("icd10_primary") if diagnosis_matched else None
+    pred_title = matched_item.get("icd10_primary_title") or "" if diagnosis_matched else ""
+    rank1_icd = rank1_item.get("icd10_primary")
+    rank1_title = rank1_item.get("icd10_primary_title") or ""
+    gt_icd = _dot_icd_code(str(gt_icd_code or ""))
+
+    exact = _icd_exact_match(pred_icd, gt_icd_code) if diagnosis_matched else False
+    family = _icd_family_match(pred_icd, gt_icd_code) if diagnosis_matched else False
+    llm_icd = _icd_llm_match_from_qe(qe, diagnosis_matched)
+    icd_match = bool(diagnosis_matched and (exact or llm_icd))
+
+    rank1_exact = _icd_exact_match(rank1_icd, gt_icd_code)
+    rank1_family = _icd_family_match(rank1_icd, gt_icd_code)
+    rank1_llm = bool(
+        diagnosis_matched
+        and int(qe.get("matched_rank") or 0) == 1
+        and llm_icd
+    )
+
+    return {
+        "ground_truth_icd": gt_icd,
+        "ground_truth_icd_title": gt_icd_title,
+        "rank1_predicted_icd": _dot_icd_code(str(rank1_icd or "")) if rank1_icd else "",
+        "rank1_predicted_icd_title": rank1_title,
+        "matched_predicted_icd": _dot_icd_code(str(pred_icd or "")) if pred_icd else "",
+        "matched_predicted_icd_title": pred_title,
+        "icd_match": icd_match,
+        "icd_exact_match": exact,
+        "icd_family_match": family,
+        "icd_llm_match": llm_icd,
+        "is_rank1_icd_match": rank1_exact or rank1_llm,
+        "is_rank1_icd_family_match": rank1_family,
+        "llm_icd_reason": qe.get("icd_reason") or "",
+        "llm_expanded_ground_truth_icd": " | ".join(qe.get("ground_truth_icd_expansions") or []),
+        "llm_expanded_matched_icd": " | ".join(qe.get("matched_icd_expansions") or []),
+        "stage9_final_primary_icd": _dot_icd_code(str(stage9_primary_icd or "")) if stage9_primary_icd else "",
+    }
+
+
+def _score_llm_qe_evaluation(
+    gt_primary_title: str,
+    gt_primary_code: Optional[str],
+    gt_icd_title: str,
+    diagnosis_items: List[Dict[str, Any]],
+    config: Optional[LLMConfig] = None,
+    cache: Optional[Dict[str, Any]] = None,
+    patient_id: str = "",
+    hadm_id: str = "",
+    stage9_primary_icd: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Full Stage 10 LLM QE result: diagnosis match (any rank) + linked ICD."""
+    items = list(diagnosis_items or [])
+    rank1 = _item_at_rank(items, 1) or (items[0] if items else {})
+
+    qe = llm_clinical_query_expansion(
+        ground_truth_primary=gt_primary_title,
+        ground_truth_icd_code=str(gt_primary_code or ""),
+        ground_truth_icd_title=gt_icd_title,
+        diffdx_items=items,
+        config=config,
+        cache=cache,
+        patient_id=patient_id,
+        hadm_id=hadm_id,
+    )
+
+    dx_match = _diagnosis_match_from_llm(qe)
+    matched_rank = qe.get("matched_rank") if dx_match else None
+    matched_item = _item_at_rank(items, matched_rank) if matched_rank else {}
+
+    is_rank1 = bool(dx_match and matched_rank == 1)
+
+    diagnosis = {
+        "ground_truth_primary": gt_primary_title,
+        "rank1_diagnosis": rank1.get("diagnosis") or "",
+        "rank1_score": rank1.get("score"),
+        "rank1_confidence": rank1.get("confidence") or "",
+        "match": dx_match,
+        "is_rank1_match": is_rank1 if dx_match else None,
+        "matched_diffdx_rank": matched_rank,
+        "matched_diagnosis": matched_item.get("diagnosis") or "" if dx_match else "",
+        "matched_score": matched_item.get("score") if dx_match else None,
+        "matched_confidence": matched_item.get("confidence") or "" if dx_match else "",
+        "llm_relationship": qe.get("diagnosis_relationship") or "",
+        "llm_confidence": qe.get("diagnosis_confidence") or "",
+        "llm_reason": qe.get("diagnosis_reason") or "",
+        "llm_expanded_ground_truth": " | ".join(qe.get("ground_truth_expansions") or []),
+        "llm_expanded_matched": " | ".join(qe.get("matched_diagnosis_expansions") or []),
+        "diagnosis_items": items,
+        "n_diffdx": len(items),
+    }
+
+    icd_linked = _score_linked_icd(
+        matched_item,
+        rank1,
+        gt_primary_code,
+        gt_icd_title,
+        qe,
+        dx_match,
+        stage9_primary_icd=stage9_primary_icd,
+    )
+    icd_linked["diagnosis_match"] = dx_match
+    icd_linked["is_rank1_diagnosis_match"] = is_rank1 if dx_match else None
+    icd_linked["matched_diffdx_rank"] = matched_rank
+
+    return {"diagnosis": diagnosis, "icd_linked": icd_linked, "llm_qe_raw": qe}
+
+
+def _clinical_match_legacy(predicted: str, ground_truth: str, embedder: Any, threshold: float) -> Dict[str, Any]:
+    """Legacy exact + MiniLM only (debug). Not used for cohort match decisions."""
     pred = (predicted or "").strip()
     gt = (ground_truth or "").strip()
     if not pred or not gt:
         return {"match": False, "reason": "missing", "similarity": 0.0}
     if pred.lower() == gt.lower():
         return {"match": True, "reason": "exact", "similarity": 1.0}
-
     sim = _text_sim(embedder, pred, gt)
-    pe, ge = _expand_clinical_text(pred), _expand_clinical_text(gt)
-    sim_e = _text_sim(embedder, pe, ge) if pe and ge else 0.0
-    best = max(sim, sim_e)
-
-    if len(pe) >= 10 and pe in ge:
-        return {"match": True, "reason": "contained", "similarity": best}
-    if len(ge) >= 10 and ge in pe:
-        return {"match": True, "reason": "contained", "similarity": best}
-
-    tp, tg = _dx_tokens(pred), _dx_tokens(gt)
-    if tp and tg:
-        shorter, longer = (tp, tg) if len(tp) <= len(tg) else (tg, tp)
-        strong = any(len(t) >= 8 for t in shorter)
-        if shorter <= longer and (len(shorter) >= 2 or strong):
-            return {"match": True, "reason": "term_subset", "similarity": best}
-
-    def both(phrases: List[str]) -> bool:
-        return any(p in pe for p in phrases) and any(p in ge for p in phrases)
-
-    if both(["sepsis", "septic"]):
-        return {"match": True, "reason": "same_condition", "similarity": best}
-    if both(["heart failure", "congestive heart"]):
-        return {"match": True, "reason": "same_condition", "similarity": best}
-    if both(["ventricular tachycardia"]):
-        return {"match": True, "reason": "same_condition", "similarity": best}
-    if both(["cholangitis"]):
-        return {"match": True, "reason": "same_condition", "similarity": best}
-    if both(["calculus", "renal calculus"]) and (
-        any(x in pe for x in ("renal", "kidney", "ureter", "hydronephrosis", "nephro"))
-        and any(x in ge for x in ("renal", "kidney", "ureter", "hydronephrosis", "nephro"))
-    ):
-        return {"match": True, "reason": "same_condition", "similarity": best}
-    if both(["hemorrhage"]) and (
-        any(x in pe for x in ("postprocedural", "hysterectomy", "procedur"))
-        and any(x in ge for x in ("postprocedural", "hysterectomy", "procedur"))
-    ):
-        return {"match": True, "reason": "same_condition", "similarity": best}
-    if both(["ketoacidosis"]):
-        return {"match": True, "reason": "same_condition", "similarity": best}
-
-    if best >= threshold - 1e-9:
-        return {"match": True, "reason": "semantic", "similarity": best}
-    return {"match": False, "reason": "no_match", "similarity": best}
-
-
-def _best_clinical_against(
-    predicted_list: List[str],
-    gt_list: List[str],
-    embedder: Any,
-    threshold: float,
-) -> Dict[str, Any]:
-    """Best clinical match of any predicted string vs any ground-truth string."""
-    best: Optional[Dict[str, Any]] = None
-
-    def sort_key(row: Dict[str, Any]) -> Tuple:
-        return (
-            int(bool(row.get("match"))),
-            float(row.get("similarity") or 0),
-            -int(row.get("pred_rank") or 99),
-            -int(row.get("gt_index") or 99),
-        )
-
-    for i, pred in enumerate(predicted_list or []):
-        pred_s = " ".join(str(pred or "").split())
-        if not pred_s:
-            continue
-        for j, gt in enumerate(gt_list or []):
-            gt_s = " ".join(str(gt or "").split())
-            if not gt_s:
-                continue
-            hit = _clinical_match(pred_s, gt_s, embedder, threshold)
-            rec = {
-                **hit,
-                "predicted": pred_s,
-                "ground_truth": gt_s,
-                "pred_rank": i + 1,
-                "gt_index": j,
-            }
-            if best is None or sort_key(rec) > sort_key(best):
-                best = rec
-    return best or {
-        "match": False,
-        "reason": "missing",
-        "similarity": 0.0,
-        "predicted": "",
-        "ground_truth": "",
-        "pred_rank": None,
-        "gt_index": None,
-    }
-
-
-def _alt_clinical_ok(hit: Dict[str, Any]) -> bool:
-    """Alternate-list hits need a structured clinical match; MiniLM-only 0.70 is too loose."""
-    if not hit.get("match"):
-        return False
-    reason = str(hit.get("reason") or "")
-    if reason in {"exact", "contained", "term_subset", "same_condition"}:
-        return True
-    return float(hit.get("similarity") or 0) >= 0.85
-
-
-def _score_diagnosis(
-    predicted_dx: str,
-    gt_title: str,
-    embedder: Any,
-    threshold: float = DX_SEMANTIC_MATCH_THRESHOLD,
-    other_predicted: Optional[List[str]] = None,
-    other_gt: Optional[List[str]] = None,
-) -> Dict[str, Any]:
-    pred = (predicted_dx or "").strip()
-    gt = (gt_title or "").strip()
-    hit = _clinical_match(pred, gt, embedder, threshold)
-    scope = "rank1_vs_primary"
-    matched_pred, matched_gt = pred, gt
-    pred_rank, gt_index = 1, 0
-
-    if not hit.get("match"):
-        alt = _best_clinical_against(other_predicted or [], [gt], embedder, threshold)
-        if _alt_clinical_ok(alt):
-            hit = alt
-            scope = "diffdx_vs_primary"
-            matched_pred = alt.get("predicted") or pred
-            matched_gt = gt
-            pred_rank = int(alt.get("pred_rank") or 0)
-            gt_index = 0
-
-    if not hit.get("match"):
-        alt = _best_clinical_against([pred], other_gt or [], embedder, threshold)
-        if _alt_clinical_ok(alt):
-            hit = alt
-            scope = "rank1_vs_gt_list"
-            matched_pred = pred
-            matched_gt = alt.get("ground_truth") or gt
-            pred_rank = 1
-            gt_index = int(alt.get("gt_index") or 0)
-
-    clinical_reason = str(hit.get("reason") or "no_match")
-    reason = clinical_reason
-    if hit.get("match") and scope != "rank1_vs_primary":
-        reason = scope
-    if clinical_reason == "exact":
-        match_type = "exact"
-    elif clinical_reason == "semantic":
-        match_type = "similarity"
-    elif hit.get("match"):
-        match_type = "clinical_rule"
-    else:
-        match_type = "no_match"
-    return {
-        "predicted": pred,
-        "ground_truth": gt,
-        "matched_predicted": matched_pred,
-        "matched_ground_truth": matched_gt,
-        "match_scope": scope,
-        "match_pred_rank": pred_rank,
-        "match_gt_index": gt_index,
-        "exact": clinical_reason == "exact",
-        "semantic_similarity": round(float(hit.get("similarity") or 0), 4),
-        "semantic_match": bool(hit.get("match")),
-        "match_reason": reason,
-        "clinical_reason": clinical_reason,
-        "match_type": match_type,
-        "threshold": threshold,
-    }
+    if sim >= threshold - 1e-9:
+        return {"match": True, "reason": "semantic", "similarity": sim}
+    return {"match": False, "reason": "no_match", "similarity": sim}
 
 
 def cosine_similarity_text_local(a: str, b: str) -> float:
@@ -4348,7 +4536,11 @@ def cosine_similarity_text_local(a: str, b: str) -> float:
 def evaluate_admission_accuracy(
     admission_dir: Path,
     embedder: Any = None,
+    llm_config: Optional[LLMConfig] = None,
+    llm_qe_cache: Optional[Dict[str, Any]] = None,
+    use_llm_qe: bool = True,
 ) -> Dict[str, Any]:
+    """Score Stage 9 DiffDx + linked ICD vs GT primary using LLM query expansion."""
     admission_dir = Path(admission_dir)
     gt = _load_gt(admission_dir)
     s8_path = admission_dir / "icd_coding.json"
@@ -4358,153 +4550,47 @@ def evaluate_admission_accuracy(
 
     pid = str(gt.get("patient_id") or stage08.get("patient_id") or stage09.get("patient_id") or "")
     hid = str(gt.get("hadm_id") or stage08.get("hadm_id") or stage09.get("hadm_id") or "")
-    gt_codes = list(gt.get("icd10_codes") or [])
-    gt_titles = list(gt.get("dx_titles") or [])
     gt_primary_code = gt.get("primary_icd_code")
     gt_primary_title = gt.get("primary_dx_title") or ""
+    gt_icd_title = ""
+    if gt_primary_code and gt.get("dx_titles"):
+        gt_icd_title = (gt.get("dx_titles") or [""])[0] or gt_primary_title
 
     pred8 = _stage8_predicted_codes(stage08) if stage08 else {}
-    pred9 = _stage9_predicted_codes(stage09) if stage09 else {}
-    items8 = list(pred8.get("diagnosis_items") or [])
+    items = list(pred8.get("diagnosis_items") or [])
+    stage9_icd = stage09.get("primary_icd_code") if stage09 else None
 
-    def _attach_diffdx_meta(block: Dict[str, Any], diagnoses: List[str], items: List[Dict[str, Any]]) -> None:
-        block["diagnoses"] = list(diagnoses or [])
-        block["n_diffdx"] = len(block["diagnoses"])
-        block["diagnosis_items"] = items
-        rank1 = items[0] if items else {}
-        block["rank1_score"] = rank1.get("score")
-        block["rank1_confidence"] = rank1.get("confidence") or ""
-        matched_name = (block.get("matched_predicted") or block.get("predicted") or "").strip().lower()
-        matched_rank = block.get("match_pred_rank") if block.get("semantic_match") else 1
-        found: Dict[str, Any] = {}
-        if matched_rank:
-            for it in items:
-                if int(it.get("rank") or 0) == int(matched_rank):
-                    found = it
-                    break
-        if not found and matched_name:
-            for it in items:
-                if str(it.get("diagnosis") or "").strip().lower() == matched_name:
-                    found = it
-                    break
-        if not found:
-            found = rank1
-        block["matched_score"] = found.get("score")
-        block["matched_confidence"] = found.get("confidence") or ""
-
-    dx8 = _score_diagnosis(
-        pred8.get("primary_dx") or "",
-        gt_primary_title,
-        embedder,
-        other_predicted=pred8.get("diagnoses") or [],
-        other_gt=gt_titles,
-    )
-    _attach_diffdx_meta(dx8, pred8.get("diagnoses") or [], items8)
-    dx9 = (
-        _score_diagnosis(
-            pred9.get("primary_dx") or "",
-            gt_primary_title,
-            embedder,
-            other_predicted=pred9.get("diagnoses") or [],
-            other_gt=gt_titles,
+    evaluation: Optional[Dict[str, Any]] = None
+    if use_llm_qe and stage09:
+        evaluation = _score_llm_qe_evaluation(
+            gt_primary_title=gt_primary_title,
+            gt_primary_code=gt_primary_code,
+            gt_icd_title=gt_icd_title or gt_primary_title,
+            diagnosis_items=items,
+            config=llm_config,
+            cache=llm_qe_cache,
+            patient_id=pid,
+            hadm_id=hid,
+            stage9_primary_icd=stage9_icd,
         )
-        if pred9
-        else None
-    )
-    if dx9 is not None:
-        # Stage 9 names; scores still come from Stage 7/8 DiffDx items when the name matches.
-        _attach_diffdx_meta(dx9, pred9.get("diagnoses") or [], items8)
-
-    icd8_primary = _score_primary_icd_multi(
-        pred8.get("primary_code"),
-        gt_primary_code,
-        pred8.get("primary_title") or "",
-        gt_primary_title,
-        pred8.get("primary_dx") or "",
-        pred8.get("all_codes") or [],
-        gt_codes,
-        gt_titles,
-        embedder=embedder,
-    )
-    icd9_primary = (
-        _score_primary_icd_multi(
-            pred9.get("primary_code"),
-            gt_primary_code,
-            pred9.get("primary_title") or "",
-            gt_primary_title,
-            pred9.get("primary_dx") or "",
-            pred9.get("all_codes") or [],
-            gt_codes,
-            gt_titles,
-            embedder=embedder,
-        )
-        if pred9
-        else None
-    )
-
-    set8 = _code_set_metrics(
-        pred8.get("all_codes") or [], gt_codes, gt_titles, embedder=embedder
-    )
-    set8_nr = _code_set_metrics(
-        pred8.get("all_codes") or [],
-        gt_codes,
-        gt_titles,
-        exclude_r_codes=True,
-        embedder=embedder,
-    )
-    set8_p = _code_set_metrics(
-        pred8.get("principal_codes") or [], gt_codes, gt_titles, embedder=embedder
-    )
-    set9 = (
-        _code_set_metrics(
-            pred9.get("all_codes") or [], gt_codes, gt_titles, embedder=embedder
-        )
-        if pred9
-        else None
-    )
-    set9_nr = (
-        _code_set_metrics(
-            pred9.get("all_codes") or [],
-            gt_codes,
-            gt_titles,
-            exclude_r_codes=True,
-            embedder=embedder,
-        )
-        if pred9
-        else None
-    )
 
     return {
         "stage": 10,
         "type": "accuracy_vs_ground_truth",
+        "method": "llm_query_expansion",
         "patient_id": pid,
         "hadm_id": hid,
         "generated_at": datetime.now().isoformat(),
         "ground_truth": {
             "primary_icd_code": gt_primary_code,
             "primary_dx_title": gt_primary_title,
-            "icd10_codes": gt_codes,
-            "dx_titles": gt_titles,
-            "n_diagnoses": gt.get("n_diagnoses") or len(gt_codes),
+            "primary_icd_title": gt_icd_title or gt_primary_title,
+            "n_diagnoses": gt.get("n_diagnoses") or len(gt.get("icd10_codes") or []),
         },
-        "stage8": {
-            "diagnosis": dx8,
-            "primary_icd": icd8_primary,
-            "code_set": set8,
-            "code_set_excluding_r": set8_nr,
-            "principal_set": set8_p,
-        },
-        "stage9": {
-            "diagnosis": dx9,
-            "primary_icd": icd9_primary,
-            "code_set": set9,
-            "code_set_excluding_r": set9_nr,
-        }
-        if pred9
-        else None,
+        "evaluation": evaluation,
         "has_stage8": bool(stage08),
         "has_stage9": bool(stage09),
-        "has_ground_truth": bool(gt_codes or gt_primary_code),
+        "has_ground_truth": bool(gt_primary_title or gt_primary_code),
     }
 
 
@@ -4519,141 +4605,76 @@ def _yes_no(flag: Any) -> str:
     return "YES" if flag else "NO"
 
 
+def _format_diffdx_list_for_export(items: List[Dict[str, Any]]) -> str:
+    parts = []
+    for it in sorted(items or [], key=lambda x: int(x.get("rank") or 999)):
+        rank = int(it.get("rank") or 0)
+        dx = str(it.get("diagnosis") or "").strip()
+        if not dx:
+            continue
+        score = it.get("score")
+        conf = it.get("confidence") or ""
+        score_s = score if score is not None else "-"
+        parts.append(f"{rank}: {dx} (score={score_s}, {conf or '-'})")
+    return " | ".join(parts)
+
+
+def _yn_export(flag: Any) -> str:
+    if flag is None:
+        return ""
+    return "YES" if flag else "NO"
+
+
 def format_accuracy_comparison_txt(result: Dict[str, Any]) -> str:
     gt = result.get("ground_truth") or {}
-    s8 = result.get("stage8") or {}
-    s9 = result.get("stage9") or {}
-    dx8 = s8.get("diagnosis") or {}
-    dx9 = (s9 or {}).get("diagnosis") or {}
-    p8 = s8.get("primary_icd") or {}
-    p9 = (s9 or {}).get("primary_icd") or {}
-    c8 = s8.get("code_set") or {}
-    c9 = (s9 or {}).get("code_set") or {}
-    gt_dx = dx8.get("ground_truth") or gt.get("primary_dx_title") or "(none)"
-    gt_icd = p8.get("ground_truth") or _dot_icd_code(str(gt.get("primary_icd_code") or "")) or "(none)"
+    ev = result.get("evaluation") or {}
+    dx = ev.get("diagnosis") or {}
+    icd = ev.get("icd_linked") or {}
 
     def yn(v: Any) -> str:
         return "YES" if v else "NO"
 
+    rank1_flag = dx.get("is_rank1_match")
+    is_rank1_str = yn(rank1_flag) if dx.get("match") else "N/A"
+
     lines = [
-        _format_section("ACCURACY vs GROUND TRUTH"),
+        _format_section("ACCURACY vs GROUND TRUTH (LLM query expansion)"),
         f"Patient ID       : {result.get('patient_id', 'N/A')}",
         f"HADM ID          : {result.get('hadm_id', 'N/A')}",
         f"Generated        : {result.get('generated_at', 'N/A')}",
         "",
-        _format_section("PRIMARY DIFFDx — MATCH OR NO", "-"),
-        "  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,",
-        "  or rank-1 matches another billed GT diagnosis (same-condition rules apply)",
+        _format_section("DIFFERENTIAL DIAGNOSIS vs GT PRIMARY", "-"),
+        f"  Ground truth primary : {gt.get('primary_dx_title') or '(none)'}",
+        f"  Rank-1 predicted     : {dx.get('rank1_diagnosis') or '(none)'}",
+        f"    score={dx.get('rank1_score', '-')}  confidence={dx.get('rank1_confidence') or '-'}",
+        f"  Diagnosis match      : {yn(dx.get('match'))}",
+        f"  Is rank-1 match      : {is_rank1_str}",
+        f"  Matched DiffDx rank  : {dx.get('matched_diffdx_rank') or '-'}",
+        f"  Matched diagnosis    : {dx.get('matched_diagnosis') or '-'}",
+        f"    score={dx.get('matched_score', '-')}  confidence={dx.get('matched_confidence') or '-'}",
+        f"  LLM reason           : {dx.get('llm_reason') or '-'}",
         "",
-        f"  {'':<12} {'Predicted':<48} {'Ground truth'}",
-        f"  {'S8 DiffDx':<12} {_clip(dx8.get('predicted'), 46):<48} {_clip(gt_dx, 46)}",
-        f"  {'S9 DiffDx':<12} {_clip(dx9.get('predicted') or '(none)', 46):<48} {_clip(gt_dx, 46)}",
+        _format_section("LINKED ICD vs GT PRIMARY (from matched DiffDx rank)", "-"),
+        f"  Ground truth ICD     : {icd.get('ground_truth_icd') or '-'} — {icd.get('ground_truth_icd_title') or ''}",
+        f"  Rank-1 mapped ICD    : {icd.get('rank1_predicted_icd') or '-'} — {icd.get('rank1_predicted_icd_title') or ''}",
+        f"  Matched mapped ICD   : {icd.get('matched_predicted_icd') or '-'} — {icd.get('matched_predicted_icd_title') or ''}",
+        f"  ICD match            : {yn(icd.get('icd_match'))}",
+        f"  ICD exact            : {yn(icd.get('icd_exact_match'))}",
+        f"  ICD 3-char family    : {yn(icd.get('icd_family_match'))}",
+        f"  ICD LLM match        : {yn(icd.get('icd_llm_match'))}",
+        f"  Is rank-1 ICD match  : {yn(icd.get('is_rank1_icd_match'))}",
+        f"  LLM ICD reason       : {icd.get('llm_icd_reason') or '-'}",
+        f"  Stage 9 final ICD    : {icd.get('stage9_final_primary_icd') or '-'} (debug)",
         "",
-        f"  Full predicted (S8): {dx8.get('predicted') or '(none)'}",
-        f"  Full predicted (S9): {dx9.get('predicted') or '(none)'}",
-        f"  Full GT primary    : {gt_dx}",
-        "",
-        f"  MATCH (S8): {yn(dx8.get('semantic_match'))}"
-        f"    reason={dx8.get('match_reason') or '-'}  sim={dx8.get('semantic_similarity', 0):.2f}",
-        f"    matched: {_clip(dx8.get('matched_predicted'), 40)}  vs  "
-        f"{_clip(dx8.get('matched_ground_truth'), 40)}",
-        f"  MATCH (S9): {yn(dx9.get('semantic_match')) if dx9 else 'NO'}"
-        f"    reason={(dx9.get('match_reason') if dx9 else '-') or '-'}  "
-        f"sim={(dx9.get('semantic_similarity') if dx9 else 0) or 0:.2f}",
-        f"    matched: {_clip((dx9 or {}).get('matched_predicted'), 40)}  vs  "
-        f"{_clip((dx9 or {}).get('matched_ground_truth'), 40)}",
-        "",
-        _format_section("PRIMARY ICD — MATCH OR NO", "-"),
-        "  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,",
-        "  or rank-1 ICD matches another billed GT code",
-        "",
-        f"  {'':<12} {'Predicted':<48} {'Ground truth'}",
-        f"  {'S8 ICD':<12} {_clip((p8.get('predicted') or '') + ' ' + (p8.get('predicted_title') or ''), 46):<48} "
-        f"{_clip(gt_icd + ' ' + (gt.get('primary_dx_title') or ''), 46)}",
-        f"  {'S9 ICD':<12} {_clip(((p9 or {}).get('predicted') or '') + ' ' + ((p9 or {}).get('predicted_title') or ''), 46):<48} "
-        f"{_clip(gt_icd + ' ' + (gt.get('primary_dx_title') or ''), 46)}",
-        "",
-        f"  Full predicted (S8): {p8.get('predicted') or '(none)'} — {p8.get('predicted_title') or ''}",
-        f"  Full predicted (S9): {(p9 or {}).get('predicted') or '(none)'} — {(p9 or {}).get('predicted_title') or ''}",
-        f"  Full ground truth  : {gt_icd} — {gt.get('primary_dx_title') or ''}",
-        "",
-        f"  MATCH (S8): {yn(p8.get('semantic_match'))}"
-        f"    reason={p8.get('match_reason') or '-'}  family={yn(p8.get('family'))}  "
-        f"sim={p8.get('semantic_similarity', 0):.2f}",
-        f"  MATCH (S9): {yn((p9 or {}).get('semantic_match')) if p9 else 'NO'}"
-        f"    reason={((p9 or {}).get('match_reason') if p9 else '-') or '-'}  "
-        f"family={yn((p9 or {}).get('family')) if p9 else 'NO'}  "
-        f"sim={((p9 or {}).get('semantic_similarity') if p9 else 0) or 0:.2f}",
+        _format_section("FULL DIFFERENTIAL LIST", "-"),
     ]
-
-    def dump_set(title: str, metrics: Dict[str, Any]) -> None:
-        if not metrics:
-            return
-        lines.extend(
-            [
-                "",
-                _format_section(title, "-"),
-                f"Exact     P / R / F1 : "
-                f"{metrics.get('precision', 0):.3f} / {metrics.get('recall', 0):.3f} / {metrics.get('f1', 0):.3f}",
-                f"Semantic  P / R / F1 : "
-                f"{metrics.get('semantic_precision', 0):.3f} / {metrics.get('semantic_recall', 0):.3f} / "
-                f"{metrics.get('semantic_f1', 0):.3f}  (title MiniLM ≥ {metrics.get('semantic_threshold', 0.70)})",
-                f"Exact hits {metrics.get('n_hits', 0)}  |  semantic hits {metrics.get('n_semantic_hits', 0)}  |  "
-                f"predicted {metrics.get('n_predicted', 0)}  |  GT {metrics.get('n_ground_truth', 0)}",
-            ]
+    for it in sorted(dx.get("diagnosis_items") or [], key=lambda x: int(x.get("rank") or 999)):
+        rank = int(it.get("rank") or 0)
+        lines.append(
+            f"  {rank:2d}. {it.get('diagnosis') or ''}  "
+            f"[score={it.get('score', '-')}, {it.get('confidence') or '-'}]  "
+            f"ICD={it.get('icd10_primary') or '-'} — {it.get('icd10_primary_title') or ''}"
         )
-        if metrics.get("hits"):
-            lines.append("Exact code hits:")
-            for row in metrics["hits"]:
-                lines.append(f"  ✓ {row.get('code')} — {row.get('title') or ''}")
-        if metrics.get("semantic_pairs"):
-            lines.append("Semantic hits (same meaning, different code):")
-            for row in metrics["semantic_pairs"]:
-                pred_dx = row.get("predicted_diagnosis") or ""
-                extra = f"  [{pred_dx}]" if pred_dx else ""
-                lines.append(
-                    f"  ≈ {row.get('predicted_code')} — {row.get('predicted_title') or ''}{extra}"
-                )
-                lines.append(
-                    f"      ↔ {row.get('ground_truth_code')} — {row.get('ground_truth_title') or ''}  "
-                    f"(sim={row.get('similarity', 0):.2f})"
-                )
-        if metrics.get("related_pairs"):
-            lines.append("Related (not counted; sim 0.50–0.70):")
-            for row in metrics["related_pairs"]:
-                pred_dx = row.get("predicted_diagnosis") or ""
-                extra = f"  [{pred_dx}]" if pred_dx else ""
-                lines.append(
-                    f"  ~ {row.get('predicted_code')} — {row.get('predicted_title') or ''}{extra}"
-                )
-                lines.append(
-                    f"      ↔ {row.get('ground_truth_code')} — {row.get('ground_truth_title') or ''}  "
-                    f"(sim={row.get('similarity', 0):.2f})"
-                )
-        still_miss = metrics.get("semantic_misses")
-        still_extra = metrics.get("semantic_extras")
-        if still_miss:
-            lines.append("Still missing after semantic match:")
-            for row in still_miss:
-                lines.append(f"  ✗ {row.get('code')} — {row.get('title') or ''}")
-        if still_extra:
-            lines.append("Still extra after semantic match:")
-            for row in still_extra:
-                lines.append(f"  + {row.get('code')} — {row.get('title') or ''}")
-
-    dump_set("ICD CODE SET — Stage 8 vs GT", c8)
-    dump_set("ICD CODE SET — Stage 9 vs GT", c9)
-
-    lines.extend(
-        [
-            "",
-            _format_section("GROUND TRUTH LIST", "-"),
-        ]
-    )
-    for i, code in enumerate(gt.get("icd10_codes") or []):
-        title = (gt.get("dx_titles") or [None])[i] if i < len(gt.get("dx_titles") or []) else ""
-        mark = " (primary)" if i == 0 else ""
-        lines.append(f"  {i+1:2d}. {_dot_icd_code(str(code))} — {title}{mark}")
     lines.append("")
     return "\n".join(lines)
 
@@ -4666,427 +4687,297 @@ def export_accuracy_to_admission(result: Dict[str, Any], admission_dir: Path) ->
     return acc_dir
 
 
-def _mean(vals: List[float]) -> float:
-    return round(sum(vals) / len(vals), 4) if vals else 0.0
-
-
 def _rate(flags: List[bool]) -> float:
     return round(sum(1 for x in flags if x) / len(flags), 4) if flags else 0.0
 
 
 def summarize_stage10(results: List[Dict[str, Any]]) -> Dict[str, Any]:
-    def collect(path_stage: str, metric_group: str, field: str) -> List[float]:
-        out = []
-        for r in results:
-            block = r.get(path_stage) or {}
-            grp = block.get(metric_group) or {}
-            if grp.get(field) is not None:
-                out.append(float(grp[field]))
-        return out
+    dx_flags = []
+    rank1_flags = []
+    icd_flags = []
+    icd_exact_flags = []
+    icd_family_flags = []
+    dx_yes_icd_no = 0
 
-    def flags(path_stage: str, metric_group: str, field: str) -> List[bool]:
-        out = []
-        for r in results:
-            block = r.get(path_stage) or {}
-            grp = block.get(metric_group) or {}
-            if field in grp:
-                out.append(bool(grp.get(field)))
-        return out
+    for r in results:
+        ev = r.get("evaluation") or {}
+        dx = ev.get("diagnosis") or {}
+        icd = ev.get("icd_linked") or {}
+        if not ev:
+            continue
+        dm = bool(dx.get("match"))
+        dx_flags.append(dm)
+        if dm:
+            rank1_flags.append(bool(dx.get("is_rank1_match")))
+        im = bool(icd.get("icd_match"))
+        icd_flags.append(im)
+        icd_exact_flags.append(bool(icd.get("icd_exact_match")))
+        icd_family_flags.append(bool(icd.get("icd_family_match")))
+        if dm and not im:
+            dx_yes_icd_no += 1
 
-    def pack(stage_key: str) -> Dict[str, Any]:
-        cs = "code_set"
-        return {
-            "dx_exact_rate": _rate(flags(stage_key, "diagnosis", "exact")),
-            "dx_semantic_match_rate": _rate(flags(stage_key, "diagnosis", "semantic_match")),
-            "dx_mean_similarity": _mean(collect(stage_key, "diagnosis", "semantic_similarity")),
-            "primary_icd_exact_rate": _rate(flags(stage_key, "primary_icd", "exact")),
-            "primary_icd_family_rate": _rate(flags(stage_key, "primary_icd", "family")),
-            "primary_icd_semantic_rate": _rate(flags(stage_key, "primary_icd", "semantic_match")),
-            "primary_icd_mean_similarity": _mean(collect(stage_key, "primary_icd", "semantic_similarity")),
-            "mean_precision": _mean(collect(stage_key, cs, "precision")),
-            "mean_recall": _mean(collect(stage_key, cs, "recall")),
-            "mean_f1": _mean(collect(stage_key, cs, "f1")),
-            "mean_semantic_precision": _mean(collect(stage_key, cs, "semantic_precision")),
-            "mean_semantic_recall": _mean(collect(stage_key, cs, "semantic_recall")),
-            "mean_semantic_f1": _mean(collect(stage_key, cs, "semantic_f1")),
-            "mean_f1_excluding_r": _mean(collect(stage_key, "code_set_excluding_r", "f1")),
-            "mean_semantic_f1_excluding_r": _mean(
-                collect(stage_key, "code_set_excluding_r", "semantic_f1")
-            ),
-            "n_scored": sum(1 for r in results if r.get(stage_key)),
-            "dx_match_n": sum(1 for x in flags(stage_key, "diagnosis", "semantic_match") if x),
-            "dx_exact_n": sum(1 for x in flags(stage_key, "diagnosis", "exact") if x),
-            "icd_match_n": sum(1 for x in flags(stage_key, "primary_icd", "semantic_match") if x),
-            "icd_exact_n": sum(1 for x in flags(stage_key, "primary_icd", "exact") if x),
-        }
-
+    n = len(dx_flags)
     return {
         "n_admissions": len(results),
+        "n_scored": n,
         "n_with_stage9": sum(1 for r in results if r.get("has_stage9")),
-        "stage8": pack("stage8"),
-        "stage9": pack("stage9"),
-        "dx_semantic_threshold": DX_SEMANTIC_MATCH_THRESHOLD,
-        "icd_title_semantic_threshold": ICD_TITLE_SEMANTIC_THRESHOLD,
+        "method": "llm_query_expansion",
+        "diagnosis": {
+            "match_n": sum(1 for x in dx_flags if x),
+            "match_rate": _rate(dx_flags),
+            "rank1_match_n": sum(1 for x in rank1_flags if x),
+            "rank1_match_rate": _rate(rank1_flags) if rank1_flags else 0.0,
+            "lower_rank_match_n": sum(1 for x in dx_flags if x) - sum(1 for x in rank1_flags if x),
+        },
+        "icd_linked": {
+            "match_n": sum(1 for x in icd_flags if x),
+            "match_rate": _rate(icd_flags),
+            "exact_match_n": sum(1 for x in icd_exact_flags if x),
+            "exact_match_rate": _rate(icd_exact_flags),
+            "family_match_n": sum(1 for x in icd_family_flags if x),
+            "family_match_rate": _rate(icd_family_flags),
+            "diagnosis_yes_icd_no_n": dx_yes_icd_no,
+        },
     }
 
 
-def format_primary_match_table(results: List[Dict[str, Any]], stage_key: str = "stage9") -> str:
-    """Side-by-side predicted vs GT primary DiffDx + ICD with YES/NO match."""
-    lines = [
-        _format_section(f"PRIMARY DIFFDx TABLE ({stage_key} vs ground truth)"),
-        "MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,",
-        "or rank-1 matches another billed GT diagnosis.",
-        "",
-        f"{'MATCH':<6} {'why':<18} {'sim':>5}  {'patient':<10} {'predicted':<36} {'ground truth'}",
-        "-" * 124,
-    ]
-    n_yes = 0
-    n = 0
-    for r in results:
-        block = ((r.get(stage_key) or {}) or {}).get("diagnosis") or {}
-        if not block and stage_key == "stage9":
-            block = (r.get("stage8") or {}).get("diagnosis") or {}
-        pred = block.get("matched_predicted") or block.get("predicted") or "(none)"
-        gt = block.get("matched_ground_truth") or block.get("ground_truth") or "(none)"
-        sim = float(block.get("semantic_similarity") or 0)
-        match = bool(block.get("semantic_match"))
-        why = str(block.get("match_reason") or ("semantic" if match else "no_match"))
-        n += 1
-        if match:
-            n_yes += 1
-        lines.append(
-            f"{'YES' if match else 'NO':<6} {why:<18} {sim:>5.2f}  {str(r.get('patient_id') or ''):<10} "
-            f"{_clip(pred, 34):<36} {_clip(gt, 42)}"
-        )
-    pct = (100.0 * n_yes / n) if n else 0.0
-    lines.extend(
-        [
-            "-" * 120,
-            f"ACCURACY: {n_yes} YES / {n} = {pct:.1f}%",
-            "",
-            _format_section(f"PRIMARY ICD TABLE ({stage_key} vs ground truth)"),
-            "MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,",
-            "or rank-1 ICD matches another billed GT code.",
-            "",
-            f"{'MATCH':<6} {'sim':>5}  {'patient':<10} {'pred ICD':<12} {'GT ICD':<12} {'predicted title':<28} {'GT title'}",
-            "-" * 120,
-        ]
-    )
-    n_yes_icd = 0
-    for r in results:
-        block = ((r.get(stage_key) or {}) or {}).get("primary_icd") or {}
-        if not block and stage_key == "stage9":
-            block = (r.get("stage8") or {}).get("primary_icd") or {}
-        pred = block.get("predicted") or "-"
-        gt = block.get("ground_truth") or "-"
-        sim = float(block.get("semantic_similarity") or 0)
-        match = bool(block.get("semantic_match"))
-        if match:
-            n_yes_icd += 1
-        lines.append(
-            f"{'YES' if match else 'NO':<6} {sim:>5.2f}  {str(r.get('patient_id') or ''):<10} "
-            f"{_clip(pred, 10):<12} {_clip(gt, 10):<12} "
-            f"{_clip(block.get('predicted_title'), 26):<28} {_clip(block.get('ground_truth_title'), 36)}"
-        )
-    pct_i = (100.0 * n_yes_icd / n) if n else 0.0
-    lines.extend(
-        [
-            "-" * 120,
-            f"ACCURACY: {n_yes_icd} YES / {n} = {pct_i:.1f}%",
-            "",
-        ]
-    )
-    return "\n".join(lines)
-
-
-def write_primary_match_csv(results: List[Dict[str, Any]], path: Union[str, Path] = None) -> Path:
-    """Write two CSVs: diagnosis match, then ICD match for that same stay (no stacked table column)."""
-    out_dir = Path(path).parent if path else Path(STAGE_10_DIR)
+def write_eval_csvs(results: List[Dict[str, Any]], out_dir: Union[str, Path] = None) -> Tuple[Path, Path]:
+    """Write diffdx_match.csv and icd_match.csv with clear headers."""
+    out_dir = Path(out_dir or STAGE_10_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)
-    dx_path = Path(EVAL_DIFFDX_CSV) if "EVAL_DIFFDX_CSV" in globals() else out_dir / "primary_diffdx_match.csv"
-    icd_path = Path(EVAL_ICD_CSV) if "EVAL_ICD_CSV" in globals() else out_dir / "primary_icd_match.csv"
+    dx_path = Path(EVAL_DIFFDX_CSV)
+    icd_path = Path(EVAL_ICD_CSV)
 
-    def numbered(items: List[str], meta: Optional[List[Dict[str, Any]]] = None) -> str:
-        parts = []
-        by_name = {
-            str(m.get("diagnosis") or "").strip().lower(): m for m in (meta or [])
-        }
-        for i, name in enumerate(items):
-            text = str(name or "").strip()
-            if not text:
-                continue
-            info = by_name.get(text.lower()) or {}
-            score = info.get("score")
-            conf = info.get("confidence") or ""
-            extra = ""
-            if score is not None or conf:
-                extra = f" (score={score if score is not None else '-'}, {conf or '-'})"
-            parts.append(f"{i + 1}: {text}{extra}")
-        return " | ".join(parts)
+    dx_header_map = [
+        ("patient_id", "Patient ID"),
+        ("hadm_id", "Admission ID"),
+        ("ground_truth_primary", "Ground truth primary diagnosis"),
+        ("rank1_diagnosis", "Rank-1 predicted diagnosis"),
+        ("rank1_score", "Rank-1 score"),
+        ("rank1_confidence", "Rank-1 confidence"),
+        ("match", "Diagnosis match"),
+        ("is_rank1_match", "Is rank-1 match"),
+        ("matched_diffdx_rank", "Matched DiffDx rank"),
+        ("matched_diagnosis", "Matched predicted diagnosis"),
+        ("matched_score", "Matched score"),
+        ("matched_confidence", "Matched confidence"),
+        ("llm_relationship", "LLM relationship"),
+        ("llm_confidence", "LLM confidence"),
+        ("llm_reason", "LLM match reason"),
+        ("llm_expanded_ground_truth", "LLM expanded ground truth terms"),
+        ("llm_expanded_matched", "LLM expanded matched diagnosis terms"),
+        ("full_diffdx_list", "Full DiffDx list"),
+    ]
+    icd_header_map = [
+        ("patient_id", "Patient ID"),
+        ("hadm_id", "Admission ID"),
+        ("diagnosis_match", "Diagnosis match"),
+        ("is_rank1_diagnosis_match", "Is rank-1 diagnosis match"),
+        ("matched_diffdx_rank", "Matched DiffDx rank"),
+        ("ground_truth_icd", "Ground truth primary ICD"),
+        ("ground_truth_icd_title", "Ground truth primary ICD title"),
+        ("rank1_predicted_icd", "Rank-1 predicted ICD"),
+        ("rank1_predicted_icd_title", "Rank-1 predicted ICD title"),
+        ("matched_predicted_icd", "Matched predicted ICD"),
+        ("matched_predicted_icd_title", "Matched predicted ICD title"),
+        ("icd_match", "ICD match"),
+        ("icd_exact_match", "ICD exact match"),
+        ("icd_family_match", "ICD family match"),
+        ("is_rank1_icd_match", "Is rank-1 ICD match"),
+        ("llm_icd_reason", "LLM ICD reason"),
+        ("llm_expanded_ground_truth_icd", "LLM expanded ground truth ICD terms"),
+        ("llm_expanded_matched_icd", "LLM expanded matched ICD terms"),
+        ("stage9_final_primary_icd", "Stage 9 final primary ICD"),
+    ]
 
-    dx_fields = [
-        "stage",
-        "match",
-        "match_type",
-        "clinical_reason",
-        "match_scope",
-        "sim",
-        "patient_id",
-        "hadm_id",
-        "n_diffdx",
-        "matched_diffdx_rank",
-        "rank1_diagnosis",
-        "rank1_score",
-        "rank1_confidence",
-        "matched_diagnosis",
-        "matched_score",
-        "matched_confidence",
-        "diffdx_list",
-        "n_gt",
-        "matched_gt_seq",
-        "gt_primary",
-        "matched_gt",
-        "gt_list",
-    ]
-    icd_fields = [
-        "stage",
-        "diagnosis_match",
-        "matched_diagnosis",
-        "matched_diffdx_rank",
-        "matched_score",
-        "matched_confidence",
-        "icd_match",
-        "match_type",
-        "clinical_reason",
-        "match_scope",
-        "sim",
-        "patient_id",
-        "hadm_id",
-        "pred_icd",
-        "pred_icd_title",
-        "gt_icd",
-        "gt_icd_title",
-        "gt_primary",
-    ]
     dx_rows: List[Dict[str, Any]] = []
     icd_rows: List[Dict[str, Any]] = []
-    for stage_key in ("stage8", "stage9"):
-        for r in results:
-            dx = ((r.get(stage_key) or {}) or {}).get("diagnosis") or {}
-            icd = ((r.get(stage_key) or {}) or {}).get("primary_icd") or {}
-            if not dx and not icd:
-                continue
-            gt = r.get("ground_truth") or {}
-            dx_match = bool(dx.get("semantic_match"))
-            gt_index = dx.get("match_gt_index")
-            pred_rank = dx.get("match_pred_rank")
-            diagnoses = list(dx.get("diagnoses") or [])
-            items = list(dx.get("diagnosis_items") or [])
-            gt_titles = list(gt.get("dx_titles") or [])
-            dx_list = numbered(diagnoses, items)
-            matched_dx = dx.get("matched_predicted") or dx.get("predicted") or ""
-            dx_rows.append(
-                {
-                    "stage": stage_key,
-                    "match": "YES" if dx_match else "NO",
-                    "match_type": dx.get("match_type") or ("no_match" if not dx_match else ""),
-                    "clinical_reason": dx.get("clinical_reason") or dx.get("match_reason") or "",
-                    "match_scope": dx.get("match_scope") or "",
-                    "sim": round(float(dx.get("semantic_similarity") or 0), 4),
-                    "patient_id": r.get("patient_id") or "",
-                    "hadm_id": r.get("hadm_id") or "",
-                    "n_diffdx": dx.get("n_diffdx") if dx.get("n_diffdx") is not None else len(diagnoses),
-                    "matched_diffdx_rank": pred_rank if dx_match else "",
-                    "rank1_diagnosis": dx.get("predicted") or "",
-                    "rank1_score": dx.get("rank1_score") if dx.get("rank1_score") is not None else "",
-                    "rank1_confidence": dx.get("rank1_confidence") or "",
-                    "matched_diagnosis": matched_dx,
-                    "matched_score": dx.get("matched_score") if dx.get("matched_score") is not None else "",
-                    "matched_confidence": dx.get("matched_confidence") or "",
-                    "diffdx_list": dx_list,
-                    "n_gt": gt.get("n_diagnoses") or len(gt_titles),
-                    "matched_gt_seq": (int(gt_index) + 1) if dx_match and gt_index is not None else "",
-                    "gt_primary": dx.get("ground_truth") or gt.get("primary_dx_title") or "",
-                    "matched_gt": dx.get("matched_ground_truth") or dx.get("ground_truth") or "",
-                    "gt_list": numbered(gt_titles),
-                }
-            )
-            icd_match = bool(icd.get("semantic_match"))
-            icd_rows.append(
-                {
-                    "stage": stage_key,
-                    "diagnosis_match": "YES" if dx_match else "NO",
-                    "matched_diagnosis": matched_dx,
-                    "matched_diffdx_rank": pred_rank if dx_match else "",
-                    "matched_score": dx.get("matched_score") if dx.get("matched_score") is not None else "",
-                    "matched_confidence": dx.get("matched_confidence") or "",
-                    "icd_match": "YES" if icd_match else "NO",
-                    "match_type": icd.get("match_type") or ("no_match" if not icd_match else ""),
-                    "clinical_reason": icd.get("clinical_reason") or icd.get("match_reason") or "",
-                    "match_scope": icd.get("match_scope") or "",
-                    "sim": round(float(icd.get("semantic_similarity") or 0), 4),
-                    "patient_id": r.get("patient_id") or "",
-                    "hadm_id": r.get("hadm_id") or "",
-                    "pred_icd": icd.get("predicted") or "",
-                    "pred_icd_title": icd.get("predicted_title") or "",
-                    "gt_icd": icd.get("ground_truth") or "",
-                    "gt_icd_title": icd.get("ground_truth_title") or "",
-                    "gt_primary": gt.get("primary_dx_title") or "",
-                }
-            )
-    with dx_path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=dx_fields)
-        writer.writeheader()
-        writer.writerows(dx_rows)
-    with icd_path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=icd_fields)
-        writer.writeheader()
-        writer.writerows(icd_rows)
-    old = out_dir / "primary_match_table.csv"
-    if old.exists() and old.resolve() not in {dx_path.resolve(), icd_path.resolve()}:
+
+    for r in results:
+        ev = r.get("evaluation") or {}
+        if not ev:
+            continue
+        dx = ev.get("diagnosis") or {}
+        icd = ev.get("icd_linked") or {}
+        items = dx.get("diagnosis_items") or []
+
+        dx_rows.append(
+            {
+                "patient_id": r.get("patient_id") or "",
+                "hadm_id": r.get("hadm_id") or "",
+                "ground_truth_primary": dx.get("ground_truth_primary") or "",
+                "rank1_diagnosis": dx.get("rank1_diagnosis") or "",
+                "rank1_score": dx.get("rank1_score") if dx.get("rank1_score") is not None else "",
+                "rank1_confidence": dx.get("rank1_confidence") or "",
+                "match": _yn_export(dx.get("match")),
+                "is_rank1_match": _yn_export(dx.get("is_rank1_match")) if dx.get("match") else "",
+                "matched_diffdx_rank": dx.get("matched_diffdx_rank") if dx.get("match") else "",
+                "matched_diagnosis": dx.get("matched_diagnosis") or "",
+                "matched_score": dx.get("matched_score") if dx.get("matched_score") is not None else "",
+                "matched_confidence": dx.get("matched_confidence") or "",
+                "llm_relationship": dx.get("llm_relationship") or "",
+                "llm_confidence": dx.get("llm_confidence") or "",
+                "llm_reason": dx.get("llm_reason") or "",
+                "llm_expanded_ground_truth": dx.get("llm_expanded_ground_truth") or "",
+                "llm_expanded_matched": dx.get("llm_expanded_matched") or "",
+                "full_diffdx_list": _format_diffdx_list_for_export(items),
+            }
+        )
+        icd_rows.append(
+            {
+                "patient_id": r.get("patient_id") or "",
+                "hadm_id": r.get("hadm_id") or "",
+                "diagnosis_match": _yn_export(icd.get("diagnosis_match")),
+                "is_rank1_diagnosis_match": _yn_export(icd.get("is_rank1_diagnosis_match"))
+                if icd.get("diagnosis_match")
+                else "",
+                "matched_diffdx_rank": icd.get("matched_diffdx_rank") if icd.get("diagnosis_match") else "",
+                "ground_truth_icd": icd.get("ground_truth_icd") or "",
+                "ground_truth_icd_title": icd.get("ground_truth_icd_title") or "",
+                "rank1_predicted_icd": icd.get("rank1_predicted_icd") or "",
+                "rank1_predicted_icd_title": icd.get("rank1_predicted_icd_title") or "",
+                "matched_predicted_icd": icd.get("matched_predicted_icd") or "",
+                "matched_predicted_icd_title": icd.get("matched_predicted_icd_title") or "",
+                "icd_match": _yn_export(icd.get("icd_match")),
+                "icd_exact_match": _yn_export(icd.get("icd_exact_match")),
+                "icd_family_match": _yn_export(icd.get("icd_family_match")),
+                "is_rank1_icd_match": _yn_export(icd.get("is_rank1_icd_match")),
+                "llm_icd_reason": icd.get("llm_icd_reason") or "",
+                "llm_expanded_ground_truth_icd": icd.get("llm_expanded_ground_truth_icd") or "",
+                "llm_expanded_matched_icd": icd.get("llm_expanded_matched_icd") or "",
+                "stage9_final_primary_icd": icd.get("stage9_final_primary_icd") or "",
+            }
+        )
+
+    def _write_csv(path: Path, header_map: List[Tuple[str, str]], rows: List[Dict[str, Any]]) -> None:
+        with path.open("w", encoding="utf-8", newline="") as fh:
+            writer = csv.writer(fh)
+            writer.writerow([label for _, label in header_map])
+            for row in rows:
+                writer.writerow([row.get(key, "") for key, _ in header_map])
+
+    _write_csv(dx_path, dx_header_map, dx_rows)
+    _write_csv(icd_path, icd_header_map, icd_rows)
+    for legacy in (
+        out_dir / "primary_diffdx_match.csv",
+        out_dir / "primary_icd_match.csv",
+        out_dir / "primary_match_table.txt",
+        out_dir / "cohort_metrics.txt",
+    ):
         try:
-            old.unlink()
+            if legacy.exists():
+                legacy.unlink()
         except OSError:
             pass
-    return dx_path
+    return dx_path, icd_path
 
 
 def format_cohort_metrics_txt(summary: Dict[str, Any], results: List[Dict[str, Any]]) -> str:
-    s8 = summary.get("stage8") or {}
-    s9 = summary.get("stage9") or {}
-    n = int(summary.get("n_admissions") or 0)
+    n = int(summary.get("n_scored") or 0)
+    dx = summary.get("diagnosis") or {}
+    icd = summary.get("icd_linked") or {}
 
-    def acc_line(block: Dict[str, Any], n_key: str, rate_key: str) -> str:
-        k = int(block.get(n_key) or 0)
-        pct = 100.0 * float(block.get(rate_key) or 0)
-        return f"{k} / {n}  =  {pct:.1f}%"
+    def line(label: str, count: int) -> str:
+        pct = 100.0 * count / n if n else 0.0
+        return f"  {label:<28} {count} / {n}  ({pct:.1f}%)"
 
     lines = [
-        _format_section("COHORT ACCURACY (Stage 10)"),
+        _format_section("STAGE 10 — ACCURACY (LLM query expansion)"),
         f"Admissions scored : {n}",
-        f"With Stage 9      : {summary.get('n_with_stage9')}",
-        f"MATCH rule        : YES if rank-1 vs GT primary, GT primary elsewhere in DiffDx, "
-        f"or rank-1 vs any billed GT dx (clinical match / MiniLM ≥ {summary.get('dx_semantic_threshold')})",
+        f"With Stage 9      : {summary.get('n_with_stage9', 0)}",
         "",
-        "PRIMARY DIAGNOSIS ACCURACY (rank-1, other DiffDx, or other billed GT dx)",
-        f"  Stage 8:  {acc_line(s8, 'dx_match_n', 'dx_semantic_match_rate')}",
-        f"  Stage 9:  {acc_line(s9, 'dx_match_n', 'dx_semantic_match_rate')}",
+        "DIFFERENTIAL DIAGNOSIS vs GT primary",
+        line("Any-rank match", int(dx.get("match_n") or 0)),
+        line("Rank-1 only", int(dx.get("rank1_match_n") or 0)),
+        f"  {'Lower-rank only':<28} {int(dx.get('lower_rank_match_n') or 0)} / {n}",
         "",
-        "PRIMARY ICD ACCURACY (rank-1, other package code vs GT primary, or rank-1 vs any billed GT code)",
-        f"  Stage 8:  {acc_line(s8, 'icd_match_n', 'primary_icd_semantic_rate')}",
-        f"  Stage 9:  {acc_line(s9, 'icd_match_n', 'primary_icd_semantic_rate')}",
+        "LINKED ICD vs GT primary (ICD from matched DiffDx rank)",
+        line("ICD match (exact or LLM)", int(icd.get("match_n") or 0)),
+        line("ICD exact code", int(icd.get("exact_match_n") or 0)),
+        line("ICD 3-char family", int(icd.get("family_match_n") or 0)),
+        f"  {'Diagnosis YES, ICD NO':<28} {int(icd.get('diagnosis_yes_icd_no_n') or 0)}",
         "",
-        f"{'metric':<36} {'Stage 8':>10} {'Stage 9':>10}",
-        "-" * 58,
+        f"→ {EVAL_DIFFDX_CSV.name}, {EVAL_ICD_CSV.name}",
+        "",
     ]
-    rows = [
-        ("Top dx exact rate", "dx_exact_rate"),
-        ("Top dx MATCH rate (accuracy)", "dx_semantic_match_rate"),
-        ("Top dx mean similarity", "dx_mean_similarity"),
-        ("Primary ICD exact rate", "primary_icd_exact_rate"),
-        ("Primary ICD family rate", "primary_icd_family_rate"),
-        ("Primary ICD MATCH rate (accuracy)", "primary_icd_semantic_rate"),
-        ("Primary ICD mean similarity", "primary_icd_mean_similarity"),
-        ("Mean ICD precision (exact)", "mean_precision"),
-        ("Mean ICD recall (exact)", "mean_recall"),
-        ("Mean ICD F1 (exact)", "mean_f1"),
-        ("Mean ICD precision (semantic)", "mean_semantic_precision"),
-        ("Mean ICD recall (semantic)", "mean_semantic_recall"),
-        ("Mean ICD F1 (semantic)", "mean_semantic_f1"),
-        ("Mean F1 excl. R (exact)", "mean_f1_excluding_r"),
-        ("Mean F1 excl. R (semantic)", "mean_semantic_f1_excluding_r"),
-    ]
-    for label, key in rows:
-        lines.append(f"{label:<36} {s8.get(key, 0):>10.3f} {s9.get(key, 0):>10.3f}")
+    lines.append(_format_section("PER-ADMISSION SUMMARY", "-"))
+    lines.append(
+        f"{'Dx':<4} {'R1':<4} {'ICD':<4} {'Rank':<5} {'Patient':<12} {'Matched diagnosis':<36} {'GT primary'}"
+    )
+    lines.append("-" * 110)
+    for r in results:
+        ev = r.get("evaluation") or {}
+        dxr = ev.get("diagnosis") or {}
+        icdr = ev.get("icd_linked") or {}
+        lines.append(
+            f"{'YES' if dxr.get('match') else 'NO':<4} "
+            f"{_yn_export(dxr.get('is_rank1_match')) if dxr.get('match') else '':<4} "
+            f"{'YES' if icdr.get('icd_match') else 'NO':<4} "
+            f"{str(dxr.get('matched_diffdx_rank') or ''):<5} "
+            f"{str(r.get('patient_id') or ''):<12} "
+            f"{_clip(dxr.get('matched_diagnosis') or dxr.get('rank1_diagnosis'), 34):<36} "
+            f"{_clip(dxr.get('ground_truth_primary'), 42)}"
+        )
     lines.append("")
-    lines.append(format_primary_match_table(results, "stage8"))
-    lines.append(format_primary_match_table(results, "stage9"))
-    return "\n".join(lines).rstrip() + "\n"
+    return "\n".join(lines)
 
 
 def run_stage10_evaluation(
     export_dir: Union[str, Path] = None,
-    use_embeddings: bool = True,
+    use_llm_qe: bool = True,
+    llm_config: Optional[LLMConfig] = None,
+    force_llm_qe_refresh: bool = False,
+    use_embeddings: bool = False,
 ) -> Dict[str, Any]:
-    """Score Stage 8 (and Stage 9 if present) against current-stay ground truth."""
+    """Score Stage 9 DiffDx + linked ICD vs GT primary using LLM query expansion."""
     export_dir = Path(export_dir or EXPORT_DIR)
     STAGE_10_DIR.mkdir(parents=True, exist_ok=True)
 
-    embedder = None
-    if use_embeddings:
-        try:
-            from snomed_ct import TextEmbedder
+    llm_cfg = llm_config or get_llm_config()
+    cache = {} if force_llm_qe_refresh else load_llm_qe_cache()
 
-            embedder = TextEmbedder(prefer_embeddings=True)
-        except Exception as exc:  # noqa: BLE001
-            print(f"MiniLM unavailable ({exc}); using char-ngram similarity.")
-            embedder = None
-
-    admissions = list_admission_export_dirs(export_dir)
     results: List[Dict[str, Any]] = []
     n_exported = 0
-    texts: List[str] = []
-    # Pre-encode diagnosis strings if embedder is available
-    pending_pairs = []
-    for adm in admissions:
+    pending: List[Path] = []
+    for adm in list_admission_export_dirs(export_dir):
         adm_dir = Path(adm["admission_dir"])
         if not (adm_dir / "ground_truth.json").exists():
             continue
         if not (adm_dir / "icd_coding.json").exists():
             continue
-        pending_pairs.append(adm_dir)
+        if not (adm_dir / "icd_coding_confirmed.json").exists():
+            continue
+        pending.append(adm_dir)
 
-    if embedder is not None:
-        for adm_dir in pending_pairs:
-            gt = _load_gt(adm_dir)
-            texts.extend([t for t in (gt.get("dx_titles") or []) if t])
-            if gt.get("primary_dx_title"):
-                texts.append(gt["primary_dx_title"])
-            s8 = json.loads((adm_dir / "icd_coding.json").read_text(encoding="utf-8"))
-            pred8 = _stage8_predicted_codes(s8)
-            if pred8.get("primary_dx"):
-                texts.append(pred8["primary_dx"])
-            texts.extend(pred8.get("diagnoses") or [])
-            if pred8.get("primary_title"):
-                texts.append(pred8["primary_title"])
-            for row in pred8.get("all_codes") or []:
-                texts.extend(_match_texts(row))
-            s9p = adm_dir / "icd_coding_confirmed.json"
-            if s9p.exists():
-                s9 = json.loads(s9p.read_text(encoding="utf-8"))
-                pred9 = _stage9_predicted_codes(s9)
-                if pred9.get("primary_dx"):
-                    texts.append(pred9["primary_dx"])
-                texts.extend(pred9.get("diagnoses") or [])
-                if pred9.get("primary_title"):
-                    texts.append(pred9["primary_title"])
-                for row in pred9.get("all_codes") or []:
-                    texts.extend(_match_texts(row))
-        expanded = [_expand_clinical_text(t) for t in texts if t]
-        texts.extend(t for t in expanded if t)
-        try:
-            embedder.encode_many(texts, show_progress=False)
-        except Exception:
-            pass
-
-    for adm_dir in pending_pairs:
-        row = evaluate_admission_accuracy(adm_dir, embedder=embedder)
+    for adm_dir in pending:
+        row = evaluate_admission_accuracy(
+            adm_dir,
+            llm_config=llm_cfg,
+            llm_qe_cache=cache,
+            use_llm_qe=use_llm_qe,
+        )
         export_accuracy_to_admission(row, adm_dir)
         results.append(row)
         n_exported += 1
-        c8 = (row.get("stage8") or {}).get("code_set") or {}
+        ev = row.get("evaluation") or {}
+        dx = ev.get("diagnosis") or {}
+        icd = ev.get("icd_linked") or {}
         print(
             f"  {row.get('patient_id')} / {row.get('hadm_id')}: "
-            f"S8 F1 exact/sem={c8.get('f1', 0):.2f}/{c8.get('semantic_f1', 0):.2f}  "
-            f"dx_sim={(row.get('stage8') or {}).get('diagnosis', {}).get('semantic_similarity', 0):.2f}"
+            f"dx={'YES' if dx.get('match') else 'NO'}"
+            f" rank={dx.get('matched_diffdx_rank') or '-'}"
+            f" r1={_yn_export(dx.get('is_rank1_match')) if dx.get('match') else ''}"
+            f" icd={'YES' if icd.get('icd_match') else 'NO'}"
         )
+
+    if use_llm_qe:
+        save_llm_qe_cache(cache)
 
     summary = summarize_stage10(results)
     payload = {
         "stage": 10,
         "description": (
-            "Accuracy of top DiffDx + ICD packages vs current-stay ground truth "
-            "(Stage 8 map-only and Stage 9 LLM-confirmed)"
+            "LLM query expansion: DiffDx match (any rank) + linked ICD from matched rank vs GT primary"
         ),
         "generated_at": datetime.now().isoformat(),
         "summary": summary,
@@ -5094,18 +4985,11 @@ def run_stage10_evaluation(
     }
     _write_json(Path(EVAL_SUMMARY_JSON), payload)
     _write_text(Path(EVAL_COHORT_TXT), format_cohort_metrics_txt(summary, results))
-    table_path = Path(STAGE_10_DIR) / "primary_match_table.txt"
-    _write_text(
-        table_path,
-        format_primary_match_table(results, "stage8")
-        + "\n"
-        + format_primary_match_table(results, "stage9"),
-    )
-    csv_path = write_primary_match_csv(results, Path(EVAL_PRIMARY_CSV))
+    dx_csv, icd_csv = write_eval_csvs(results)
     print(f"Saved Stage 10 → {EVAL_SUMMARY_JSON}")
-    print(f"Cohort metrics → {EVAL_COHORT_TXT}")
-    print(f"Primary match table → {table_path}")
-    print(f"DiffDx CSV → {EVAL_DIFFDX_CSV}")
-    print(f"ICD CSV → {EVAL_ICD_CSV}")
+    print(f"Cohort accuracy → {EVAL_COHORT_TXT}")
+    print(f"DiffDx CSV → {dx_csv}")
+    print(f"ICD CSV → {icd_csv}")
+    print(f"LLM QE cache → {EVAL_LLM_QE_CACHE_JSON}")
     print(f"Per-admission accuracy folders: {n_exported}")
     return payload

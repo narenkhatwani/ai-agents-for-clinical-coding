@@ -1,1086 +1,116 @@
 {
   "stage": 10,
   "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
   "patient_id": "19632936",
   "hadm_id": "26696232",
-  "generated_at": "2026-08-15T23:57:15.403673",
+  "generated_at": "2026-08-19T22:37:31.069920",
   "ground_truth": {
     "primary_icd_code": "D509",
     "primary_dx_title": "Iron deficiency anemia, unspecified",
-    "icd10_codes": [
-      "D509",
-      "I272",
-      "I495",
-      "I2510",
-      "I4891",
-      "I10",
-      "E785",
-      "I350",
-      "Z955",
-      "Z7901",
-      "Z950",
-      "Z87891",
-      "N400",
-      "K2270",
-      "I878"
-    ],
-    "dx_titles": [
-      "Iron deficiency anemia, unspecified",
-      "Other secondary pulmonary hypertension",
-      "Sick sinus syndrome",
-      "Atherosclerotic heart disease of native coronary artery without angina pectoris",
-      "Unspecified atrial fibrillation",
-      "Essential (primary) hypertension",
-      "Hyperlipidemia, unspecified",
-      "Nonrheumatic aortic (valve) stenosis",
-      "Presence of coronary angioplasty implant and graft",
-      "Long term (current) use of anticoagulants",
-      "Presence of cardiac pacemaker",
-      "Personal history of nicotine dependence",
-      "Benign prostatic hyperplasia without lower urinary tract symptoms",
-      "Barrett's esophagus without dysplasia",
-      "Other specified disorders of veins"
-    ],
+    "primary_icd_title": "Iron deficiency anemia, unspecified",
     "n_diagnoses": 15
   },
-  "stage8": {
+  "evaluation": {
     "diagnosis": {
-      "predicted": "Acute on chronic macrocytic anemia",
-      "ground_truth": "Iron deficiency anemia, unspecified",
-      "matched_predicted": "Acute on chronic macrocytic anemia",
-      "matched_ground_truth": "Iron deficiency anemia, unspecified",
-      "match_scope": "rank1_vs_primary",
-      "match_pred_rank": 1,
-      "match_gt_index": 0,
-      "exact": false,
-      "semantic_similarity": 0.5233,
-      "semantic_match": false,
-      "match_reason": "no_match",
-      "clinical_reason": "no_match",
-      "match_type": "no_match",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Acute on chronic macrocytic anemia",
-        "Heart failure",
-        "Atrial fibrillation",
-        "Anemia of chronic disease",
-        "Infectious cause of anemia"
-      ],
-      "n_diffdx": 5,
+      "ground_truth_primary": "Iron deficiency anemia, unspecified",
+      "rank1_diagnosis": "Acute on chronic macrocytic anemia",
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "match": false,
+      "is_rank1_match": null,
+      "matched_diffdx_rank": null,
+      "matched_diagnosis": "",
+      "matched_score": null,
+      "matched_confidence": "",
+      "llm_relationship": "different",
+      "llm_confidence": "low",
+      "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of Iron deficiency anemia, unspecified.",
+      "llm_expanded_ground_truth": "Iron deficiency anemia",
+      "llm_expanded_matched": "",
       "diagnosis_items": [
         {
           "diagnosis": "Acute on chronic macrocytic anemia",
           "rank": 1,
           "score": 85.0,
-          "confidence": "high"
+          "confidence": "high",
+          "icd10_primary": "D53.9",
+          "icd10_primary_title": "Nutritional anemia, unspecified"
         },
         {
           "diagnosis": "Heart failure",
           "rank": 2,
           "score": 70.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "I50.9",
+          "icd10_primary_title": "Heart failure, unspecified"
         },
         {
           "diagnosis": "Atrial fibrillation",
           "rank": 3,
           "score": 65.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "I48.91",
+          "icd10_primary_title": "Unspecified atrial fibrillation"
         },
         {
           "diagnosis": "Anemia of chronic disease",
           "rank": 4,
           "score": 55.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": "D63.8",
+          "icd10_primary_title": "Anemia in other chronic diseases classified elsewhere"
         },
         {
           "diagnosis": "Infectious cause of anemia",
           "rank": 5,
           "score": 40.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         }
       ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
+      "n_diffdx": 5
     },
-    "primary_icd": {
-      "predicted": "D53.9",
-      "ground_truth": "D50.9",
-      "predicted_title": "Nutritional anemia, unspecified",
-      "ground_truth_title": "Iron deficiency anemia, unspecified",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.8106,
-      "semantic_match": true,
-      "match_reason": "semantic",
-      "clinical_reason": "semantic",
-      "match_type": "similarity",
-      "threshold": 0.7,
-      "predicted_family": "D53",
-      "ground_truth_family": "D50",
-      "match_scope": "rank1_vs_primary"
+    "icd_linked": {
+      "ground_truth_icd": "D50.9",
+      "ground_truth_icd_title": "Iron deficiency anemia, unspecified",
+      "rank1_predicted_icd": "D53.9",
+      "rank1_predicted_icd_title": "Nutritional anemia, unspecified",
+      "matched_predicted_icd": "",
+      "matched_predicted_icd_title": "",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code D50.9.",
+      "llm_expanded_ground_truth_icd": "Iron deficiency anemia, unspecified",
+      "llm_expanded_matched_icd": "",
+      "stage9_final_primary_icd": "D53.9",
+      "diagnosis_match": false,
+      "is_rank1_diagnosis_match": null,
+      "matched_diffdx_rank": null
     },
-    "code_set": {
-      "n_predicted": 7,
-      "n_ground_truth": 15,
-      "n_hits": 1,
-      "precision": 0.1429,
-      "recall": 0.0667,
-      "f1": 0.0909,
-      "hits": [
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation"
-        }
+    "llm_qe_raw": {
+      "matched_rank": null,
+      "diagnosis_equivalent": false,
+      "diagnosis_relationship": "different",
+      "diagnosis_confidence": "low",
+      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of Iron deficiency anemia, unspecified.",
+      "ground_truth_expansions": [
+        "Iron deficiency anemia"
       ],
-      "misses": [
-        {
-          "code": "D50.9",
-          "title": "Iron deficiency anemia, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
+      "matched_diagnosis_expansions": [],
+      "icd_equivalent": false,
+      "icd_confidence": "low",
+      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code D50.9.",
+      "ground_truth_icd_expansions": [
+        "Iron deficiency anemia, unspecified"
       ],
-      "extras": [
-        {
-          "code": "D53.9",
-          "title": "Nutritional anemia, unspecified"
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "P29.0",
-          "title": "Neonatal cardiac failure"
-        },
-        {
-          "code": "R06.09",
-          "title": "Other forms of dyspnea"
-        },
-        {
-          "code": "D63.8",
-          "title": "Anemia in other chronic diseases classified elsewhere"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.2857,
-      "semantic_recall": 0.1333,
-      "semantic_f1": 0.1818,
-      "semantic_pairs": [
-        {
-          "predicted_code": "D64.9",
-          "predicted_title": "Anemia, unspecified",
-          "predicted_diagnosis": "Acute on chronic macrocytic anemia",
-          "ground_truth_code": "D50.9",
-          "ground_truth_title": "Iron deficiency anemia, unspecified",
-          "similarity": 0.8402,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "D53.9",
-          "title": "Nutritional anemia, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "P29.0",
-          "title": "Neonatal cardiac failure"
-        },
-        {
-          "code": "R06.09",
-          "title": "Other forms of dyspnea"
-        },
-        {
-          "code": "D63.8",
-          "title": "Anemia in other chronic diseases classified elsewhere"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 6,
-      "n_ground_truth": 15,
-      "n_hits": 1,
-      "precision": 0.1667,
-      "recall": 0.0667,
-      "f1": 0.0952,
-      "hits": [
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation"
-        }
-      ],
-      "misses": [
-        {
-          "code": "D50.9",
-          "title": "Iron deficiency anemia, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "extras": [
-        {
-          "code": "D53.9",
-          "title": "Nutritional anemia, unspecified"
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "P29.0",
-          "title": "Neonatal cardiac failure"
-        },
-        {
-          "code": "D63.8",
-          "title": "Anemia in other chronic diseases classified elsewhere"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.3333,
-      "semantic_recall": 0.1333,
-      "semantic_f1": 0.1905,
-      "semantic_pairs": [
-        {
-          "predicted_code": "D64.9",
-          "predicted_title": "Anemia, unspecified",
-          "predicted_diagnosis": "Acute on chronic macrocytic anemia",
-          "ground_truth_code": "D50.9",
-          "ground_truth_title": "Iron deficiency anemia, unspecified",
-          "similarity": 0.8402,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "D53.9",
-          "title": "Nutritional anemia, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "P29.0",
-          "title": "Neonatal cardiac failure"
-        },
-        {
-          "code": "D63.8",
-          "title": "Anemia in other chronic diseases classified elsewhere"
-        }
-      ]
-    },
-    "principal_set": {
-      "n_predicted": 5,
-      "n_ground_truth": 15,
-      "n_hits": 1,
-      "precision": 0.2,
-      "recall": 0.0667,
-      "f1": 0.1,
-      "hits": [
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation"
-        }
-      ],
-      "misses": [
-        {
-          "code": "D50.9",
-          "title": "Iron deficiency anemia, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "extras": [
-        {
-          "code": "D53.9",
-          "title": "Nutritional anemia, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "P29.0",
-          "title": "Neonatal cardiac failure"
-        },
-        {
-          "code": "D63.8",
-          "title": "Anemia in other chronic diseases classified elsewhere"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.4,
-      "semantic_recall": 0.1333,
-      "semantic_f1": 0.2,
-      "semantic_pairs": [
-        {
-          "predicted_code": "D53.9",
-          "predicted_title": "Nutritional anemia, unspecified",
-          "predicted_diagnosis": "Acute on chronic macrocytic anemia",
-          "ground_truth_code": "D50.9",
-          "ground_truth_title": "Iron deficiency anemia, unspecified",
-          "similarity": 0.8106,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "P29.0",
-          "title": "Neonatal cardiac failure"
-        },
-        {
-          "code": "D63.8",
-          "title": "Anemia in other chronic diseases classified elsewhere"
-        }
-      ]
-    }
-  },
-  "stage9": {
-    "diagnosis": {
-      "predicted": "Acute on chronic macrocytic anemia",
-      "ground_truth": "Iron deficiency anemia, unspecified",
-      "matched_predicted": "Acute on chronic macrocytic anemia",
-      "matched_ground_truth": "Iron deficiency anemia, unspecified",
-      "match_scope": "rank1_vs_primary",
-      "match_pred_rank": 1,
-      "match_gt_index": 0,
-      "exact": false,
-      "semantic_similarity": 0.5233,
-      "semantic_match": false,
-      "match_reason": "no_match",
-      "clinical_reason": "no_match",
-      "match_type": "no_match",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Acute on chronic macrocytic anemia",
-        "Heart failure",
-        "Essential hypertension",
-        "Chronic kidney disease"
-      ],
-      "n_diffdx": 4,
-      "diagnosis_items": [
-        {
-          "diagnosis": "Acute on chronic macrocytic anemia",
-          "rank": 1,
-          "score": 85.0,
-          "confidence": "high"
-        },
-        {
-          "diagnosis": "Heart failure",
-          "rank": 2,
-          "score": 70.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Atrial fibrillation",
-          "rank": 3,
-          "score": 65.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Anemia of chronic disease",
-          "rank": 4,
-          "score": 55.0,
-          "confidence": "low"
-        },
-        {
-          "diagnosis": "Infectious cause of anemia",
-          "rank": 5,
-          "score": 40.0,
-          "confidence": "low"
-        }
-      ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
-    },
-    "primary_icd": {
-      "predicted": "D53.9",
-      "ground_truth": "D50.9",
-      "predicted_title": "Nutritional anemia, unspecified",
-      "ground_truth_title": "Iron deficiency anemia, unspecified",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.8106,
-      "semantic_match": true,
-      "match_reason": "semantic",
-      "clinical_reason": "semantic",
-      "match_type": "similarity",
-      "threshold": 0.7,
-      "predicted_family": "D53",
-      "ground_truth_family": "D50",
-      "match_scope": "rank1_vs_primary"
-    },
-    "code_set": {
-      "n_predicted": 4,
-      "n_ground_truth": 15,
-      "n_hits": 1,
-      "precision": 0.25,
-      "recall": 0.0667,
-      "f1": 0.1053,
-      "hits": [
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        }
-      ],
-      "misses": [
-        {
-          "code": "D50.9",
-          "title": "Iron deficiency anemia, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "extras": [
-        {
-          "code": "D53.9",
-          "title": "Nutritional anemia, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.5,
-      "semantic_recall": 0.1333,
-      "semantic_f1": 0.2105,
-      "semantic_pairs": [
-        {
-          "predicted_code": "D53.9",
-          "predicted_title": "Nutritional anemia, unspecified",
-          "predicted_diagnosis": "Acute on chronic macrocytic anemia",
-          "ground_truth_code": "D50.9",
-          "ground_truth_title": "Iron deficiency anemia, unspecified",
-          "similarity": 0.8106,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 4,
-      "n_ground_truth": 15,
-      "n_hits": 1,
-      "precision": 0.25,
-      "recall": 0.0667,
-      "f1": 0.1053,
-      "hits": [
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        }
-      ],
-      "misses": [
-        {
-          "code": "D50.9",
-          "title": "Iron deficiency anemia, unspecified"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "extras": [
-        {
-          "code": "D53.9",
-          "title": "Nutritional anemia, unspecified"
-        },
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.5,
-      "semantic_recall": 0.1333,
-      "semantic_f1": 0.2105,
-      "semantic_pairs": [
-        {
-          "predicted_code": "D53.9",
-          "predicted_title": "Nutritional anemia, unspecified",
-          "predicted_diagnosis": "Acute on chronic macrocytic anemia",
-          "ground_truth_code": "D50.9",
-          "ground_truth_title": "Iron deficiency anemia, unspecified",
-          "similarity": 0.8106,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "I49.5",
-          "title": "Sick sinus syndrome"
-        },
-        {
-          "code": "I25.10",
-          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
-        },
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I35.0",
-          "title": "Nonrheumatic aortic (valve) stenosis"
-        },
-        {
-          "code": "Z95.5",
-          "title": "Presence of coronary angioplasty implant and graft"
-        },
-        {
-          "code": "Z79.01",
-          "title": "Long term (current) use of anticoagulants"
-        },
-        {
-          "code": "Z95.0",
-          "title": "Presence of cardiac pacemaker"
-        },
-        {
-          "code": "Z87.891",
-          "title": "Personal history of nicotine dependence"
-        },
-        {
-          "code": "N40.0",
-          "title": "Benign prostatic hyperplasia without lower urinary tract symptoms"
-        },
-        {
-          "code": "K22.70",
-          "title": "Barrett's esophagus without dysplasia"
-        },
-        {
-          "code": "I87.8",
-          "title": "Other specified disorders of veins"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        }
-      ]
+      "matched_icd_expansions": [],
+      "_cache_hit": true
     }
   },
   "has_stage8": true,

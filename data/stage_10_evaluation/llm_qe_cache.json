@@ -1,0 +1,286 @@
+{
+  "2e3ead3ad51df6c9877ff5074c95182f0bd7344366ff1f4f6aeb10a446429783": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis.",
+    "ground_truth_expansions": [],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
+    "ground_truth_icd_expansions": [],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "1b38ec100c1f692762e514a7c1a269a3bde2204506fa6b32fb26363664802519": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 diagnosis 'Supraventricular tachycardia' matches the ground truth diagnosis.",
+    "ground_truth_expansions": [
+      "Supraventricular tachycardia"
+    ],
+    "matched_diagnosis_expansions": [
+      "Supraventricular tachycardia"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Rank 1 mapped ICD 'I47.10' matches the ground truth ICD 'I47.1'.",
+    "ground_truth_icd_expansions": [
+      "I47.1 — Supraventricular tachycardia"
+    ],
+    "matched_icd_expansions": [
+      "I47.10 —"
+    ],
+    "_cache_hit": false
+  },
+  "03ca84d13dc6157898bac951bca8780bf7774409990fe82babc5b21601fb77bf": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.",
+    "ground_truth_expansions": [
+      "Hydronephrosis",
+      "Renal and ureteral calculous obstruction"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.",
+    "ground_truth_icd_expansions": [
+      "N13.2 — Hydronephrosis with renal and ureteral calculous obstruction"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "9f680a25ba736e894d75f9185f762ad6a89f2ba6184db33e6cbb0e38162f8a1a": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis.",
+    "ground_truth_expansions": [],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
+    "ground_truth_icd_expansions": [],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "f3fce89356103e3aec72180783294f63d7bcd8033e022d231715b4d67a35b9d6": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.",
+    "ground_truth_expansions": [
+      "Ventricular tachycardia",
+      "VT"
+    ],
+    "matched_diagnosis_expansions": [
+      "Refractory VT",
+      "VT"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.",
+    "ground_truth_icd_expansions": [
+      "I47.2 — Ventricular tachycardia"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "8561baba70b774ecfc2de7d73187b7c06587a331f2112f284b93aec222d79e53": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Acute on chronic diastolic (congestive) heart failure'.",
+    "ground_truth_expansions": [
+      "Acute on chronic diastolic heart failure",
+      "Acute on chronic congestive heart failure"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code 'I50.33 — Acute on chronic diastolic (congestive) heart failure'.",
+    "ground_truth_icd_expansions": [
+      "I50.33 — Acute on chronic diastolic heart failure",
+      "I50.33 — Acute on chronic congestive heart failure"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "638d341c8d50d723a5150cfd4c6004de9a536cf3b902a7720b4be1bdb9a12a75": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of 'Sepsis, unspecified organism'.",
+    "ground_truth_expansions": [
+      "Sepsis, unspecified organism"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the ranked differential diagnoses have an ICD-10 code that matches or is clinically equivalent to the ground truth ICD-10 code A41.9.",
+    "ground_truth_icd_expansions": [
+      "A41.9 — Sepsis, unspecified organism"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "f8bad070b95f6c40c7cf8b5d577f88f62f5de0a62851bf5758126936c843fcc8": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.",
+    "ground_truth_expansions": [],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.",
+    "ground_truth_icd_expansions": [],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "56e5dd6e4d84a3c355e87097f486c8d5f33f88ef187defedfc8a177fd2b2a52d": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis of Other hypotension.",
+    "ground_truth_expansions": [
+      "Other hypotension"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the mapped ICD codes match or are clinically equivalent to the ground truth ICD code I95.89.",
+    "ground_truth_icd_expansions": [
+      "I95.89 — Other hypotension"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "16f24f36af958ecc35c5eb0c92793957bafedc2b05d5945d763b0b427976490f": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Secondary malignant neoplasm of brain'.",
+    "ground_truth_expansions": [
+      "Secondary malignant neoplasm of brain"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code C79.31.",
+    "ground_truth_icd_expansions": [
+      "C79.31 — Secondary malignant neoplasm of brain"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "5ddfb662fc877e26eb439c866db9590fd667015fc26ebffdfa3f56404cf15869": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+    "ground_truth_expansions": [
+      "Other specified sepsis"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+    "ground_truth_icd_expansions": [
+      "A41.89 — Other specified sepsis"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "e3d36b1520fabd13d8af9c38b19a088d4e7a192a8a92c1289a700b521a30ebda": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Neoplasm of uncertain behavior of connective and other soft tissue'.",
+    "ground_truth_expansions": [],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue'.",
+    "ground_truth_icd_expansions": [],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "f7513254016e87fa1391c2e39277e0b911e9238fbd64eda5ce81d3a32fe0d9f5": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.",
+    "ground_truth_expansions": [
+      "Pre-existing type 1 diabetes mellitus, in the puerperium"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.",
+    "ground_truth_icd_expansions": [
+      "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "41b0ddbbabdb1fd6ae65b9219533ddbb0c559d8cc3dbf6fcabdebec377ac65cc": {
+    "matched_rank": null,
+    "diagnosis_equivalent": false,
+    "diagnosis_relationship": "different",
+    "diagnosis_confidence": "low",
+    "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of Iron deficiency anemia, unspecified.",
+    "ground_truth_expansions": [
+      "Iron deficiency anemia"
+    ],
+    "matched_diagnosis_expansions": [],
+    "icd_equivalent": false,
+    "icd_confidence": "low",
+    "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code D50.9.",
+    "ground_truth_icd_expansions": [
+      "Iron deficiency anemia, unspecified"
+    ],
+    "matched_icd_expansions": [],
+    "_cache_hit": false
+  },
+  "26d8cbd0de5ea37a4adc3db510c871e975921c8432b8d10a4d038aaa58692c6c": {
+    "matched_rank": 3,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "medium",
+    "diagnosis_reason": "Pneumothorax matches Traumatic pneumothorax, initial encounter",
+    "ground_truth_expansions": [
+      "Traumatic pneumothorax, initial encounter"
+    ],
+    "matched_diagnosis_expansions": [
+      "Pneumothorax"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "medium",
+    "icd_reason": "J93.9 matches S27.0XXA for pneumothorax, unspecified",
+    "ground_truth_icd_expansions": [
+      "S27.0XXA — Traumatic pneumothorax, initial encounter"
+    ],
+    "matched_icd_expansions": [
+      "J93.9 — Pneumothorax, unspecified"
+    ],
+    "_cache_hit": false
+  }
+}

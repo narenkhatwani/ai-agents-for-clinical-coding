@@ -1,101 +1,42 @@
-ACCURACY vs GROUND TRUTH
-========================
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
 
 Patient ID       : 11251337
 HADM ID          : 29568708
-Generated        : 2026-08-15T23:57:14.799557
+Generated        : 2026-08-19T22:37:31.057737
 
-PRIMARY DIFFDx — MATCH OR NO
-----------------------------
+DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
+------------------------------------
 
-  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
-  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+  Ground truth primary : Hydronephrosis with renal and ureteral calculous obstruction
+  Rank-1 predicted     : Nephrolithiasis
+    score=85.0  confidence=high
+  Diagnosis match      : NO
+  Is rank-1 match      : N/A
+  Matched DiffDx rank  : -
+  Matched diagnosis    : -
+    score=None  confidence=-
+  LLM reason           : None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.
 
-               Predicted                                        Ground truth
-  S8 DiffDx    Nephrolithiasis                                  Hydronephrosis with renal and ureteral calc...
-  S9 DiffDx    Nephrolithiasis                                  Hydronephrosis with renal and ureteral calc...
+LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
+---------------------------------------------------
 
-  Full predicted (S8): Nephrolithiasis
-  Full predicted (S9): Nephrolithiasis
-  Full GT primary    : Hydronephrosis with renal and ureteral calculous obstruction
+  Ground truth ICD     : N13.2 — Hydronephrosis with renal and ureteral calculous obstruction
+  Rank-1 mapped ICD    : N20.0 — Calculus of kidney
+  Matched mapped ICD   : - — 
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.
+  Stage 9 final ICD    : N20.0 (debug)
 
-  MATCH (S8): YES    reason=term_subset  sim=0.63
-    matched: Nephrolithiasis  vs  Hydronephrosis with renal and uretera...
-  MATCH (S9): YES    reason=term_subset  sim=0.63
-    matched: Nephrolithiasis  vs  Hydronephrosis with renal and uretera...
+FULL DIFFERENTIAL LIST
+----------------------
 
-PRIMARY ICD — MATCH OR NO
--------------------------
-
-  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
-  or rank-1 ICD matches another billed GT code
-
-               Predicted                                        Ground truth
-  S8 ICD       N20.0 Calculus of kidney                         N13.2 Hydronephrosis with renal and uretera...
-  S9 ICD       N20.0 Calculus of kidney                         N13.2 Hydronephrosis with renal and uretera...
-
-  Full predicted (S8): N20.0 — Calculus of kidney
-  Full predicted (S9): N20.0 — Calculus of kidney
-  Full ground truth  : N13.2 — Hydronephrosis with renal and ureteral calculous obstruction
-
-  MATCH (S8): YES    reason=same_condition  family=NO  sim=0.59
-  MATCH (S9): YES    reason=same_condition  family=NO  sim=0.59
-
-ICD CODE SET — Stage 8 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.111 / 0.143 / 0.125
-Semantic  P / R / F1 : 0.222 / 0.286 / 0.250  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 2  |  predicted 9  |  GT 7
-Exact code hits:
-  ✓ I10 — Essential (primary) hypertension
-Semantic hits (same meaning, different code):
-  ≈ N17.9 — Acute kidney failure, unspecified  [Acute kidney injury]
-      ↔ N19 — Unspecified kidney failure  (sim=0.91)
-Related (not counted; sim 0.50–0.70):
-  ~ N20.0 — Calculus of kidney  [Nephrolithiasis]
-      ↔ N13.2 — Hydronephrosis with renal and ureteral calculous obstruction  (sim=0.63)
-Still missing after semantic match:
-  ✗ Z93.6 — Other artificial openings of urinary tract status
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ I69.954 — Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side
-  ✗ Z87.440 — Personal history of urinary (tract) infections
-Still extra after semantic match:
-  + R30.0 — Dysuria
-  + R31.9 — Hematuria, unspecified
-  + R50.9 — Fever, unspecified
-  + R52 — Pain, unspecified
-  + N18.9 — Chronic kidney disease, unspecified
-  + P29.2 — Neonatal hypertension
-
-ICD CODE SET — Stage 9 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.000 / 0.000 / 0.000
-Semantic  P / R / F1 : 0.333 / 0.143 / 0.200  (title MiniLM ≥ 0.7)
-Exact hits 0  |  semantic hits 1  |  predicted 3  |  GT 7
-Semantic hits (same meaning, different code):
-  ≈ N18.9 — Chronic kidney disease, unspecified  [Chronic kidney disease]
-      ↔ N19 — Unspecified kidney failure  (sim=0.73)
-Related (not counted; sim 0.50–0.70):
-  ~ N20.0 — Calculus of kidney  [Nephrolithiasis]
-      ↔ N13.2 — Hydronephrosis with renal and ureteral calculous obstruction  (sim=0.63)
-Still missing after semantic match:
-  ✗ Z93.6 — Other artificial openings of urinary tract status
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ I69.954 — Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side
-  ✗ I10 — Essential (primary) hypertension
-  ✗ Z87.440 — Personal history of urinary (tract) infections
-Still extra after semantic match:
-  + D64.9 — Anemia, unspecified
-
-GROUND TRUTH LIST
------------------
-
-   1. N13.2 — Hydronephrosis with renal and ureteral calculous obstruction (primary)
-   2. Z93.6 — Other artificial openings of urinary tract status
-   3. E78.5 — Hyperlipidemia, unspecified
-   4. I69.954 — Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side
-   5. I10 — Essential (primary) hypertension
-   6. N19 — Unspecified kidney failure
-   7. Z87.440 — Personal history of urinary (tract) infections
+   1. Nephrolithiasis  [score=85.0, high]  ICD=N20.0 — Calculus of kidney
+   2. Chronic kidney disease  [score=65.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
+   3. Hypertension  [score=55.0, medium]  ICD=I10 — Essential (primary) hypertension
+   4. Acute kidney injury  [score=45.0, low]  ICD=N17.9 — Acute kidney failure, unspecified
+   5. Hemorrhagic CVA  [score=30.0, low]  ICD=- — 

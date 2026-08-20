@@ -1,942 +1,120 @@
 {
   "stage": 10,
   "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-15T23:57:14.897313",
+  "generated_at": "2026-08-19T22:37:31.059840",
   "ground_truth": {
     "primary_icd_code": "I472",
     "primary_dx_title": "Ventricular tachycardia",
-    "icd10_codes": [
-      "I472",
-      "Z95811",
-      "N179",
-      "I429",
-      "Z8673",
-      "E119",
-      "E785",
-      "I10",
-      "M109",
-      "Z96652",
-      "I272",
-      "Z6837",
-      "E669"
-    ],
-    "dx_titles": [
-      "Ventricular tachycardia",
-      "Presence of heart assist device",
-      "Acute kidney failure, unspecified",
-      "Cardiomyopathy, unspecified",
-      "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits",
-      "Type 2 diabetes mellitus without complications",
-      "Hyperlipidemia, unspecified",
-      "Essential (primary) hypertension",
-      "Gout, unspecified",
-      "Presence of left artificial knee joint",
-      "Other secondary pulmonary hypertension",
-      "Body mass index [BMI] 37.0-37.9, adult",
-      "Obesity, unspecified"
-    ],
+    "primary_icd_title": "Ventricular tachycardia",
     "n_diagnoses": 13
   },
-  "stage8": {
+  "evaluation": {
     "diagnosis": {
-      "predicted": "Refractory VT",
-      "ground_truth": "Ventricular tachycardia",
-      "matched_predicted": "Refractory VT",
-      "matched_ground_truth": "Ventricular tachycardia",
-      "match_scope": "rank1_vs_primary",
-      "match_pred_rank": 1,
-      "match_gt_index": 0,
-      "exact": false,
-      "semantic_similarity": 0.8705,
-      "semantic_match": true,
-      "match_reason": "contained",
-      "clinical_reason": "contained",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Refractory VT",
-        "Heart transplantation",
-        "Chronic heart failure",
-        "Sleep apnea",
-        "Obesity"
-      ],
-      "n_diffdx": 5,
+      "ground_truth_primary": "Ventricular tachycardia",
+      "rank1_diagnosis": "Refractory VT",
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Refractory VT",
+      "matched_score": 85.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.",
+      "llm_expanded_ground_truth": "Ventricular tachycardia | VT",
+      "llm_expanded_matched": "Refractory VT | VT",
       "diagnosis_items": [
         {
           "diagnosis": "Refractory VT",
           "rank": 1,
           "score": 85.0,
-          "confidence": "high"
+          "confidence": "high",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
           "diagnosis": "Heart transplantation",
           "rank": 2,
           "score": 70.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
           "diagnosis": "Chronic heart failure",
           "rank": 3,
           "score": 65.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "I50.9",
+          "icd10_primary_title": "Heart failure, unspecified"
         },
         {
           "diagnosis": "Sleep apnea",
           "rank": 4,
           "score": 50.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": "G47.30",
+          "icd10_primary_title": "Sleep apnea, unspecified"
         },
         {
           "diagnosis": "Obesity",
           "rank": 5,
           "score": 45.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": "E66.9",
+          "icd10_primary_title": "Obesity, unspecified"
         }
       ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
+      "n_diffdx": 5
     },
-    "primary_icd": {
-      "predicted": null,
-      "ground_truth": "I47.2",
-      "predicted_title": "",
-      "ground_truth_title": "Ventricular tachycardia",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.0,
-      "semantic_match": false,
-      "match_reason": "no_match",
-      "clinical_reason": "no_match",
-      "match_type": "no_match",
-      "threshold": 0.7,
-      "predicted_family": null,
-      "ground_truth_family": "I47",
-      "match_scope": "rank1_vs_primary"
+    "icd_linked": {
+      "ground_truth_icd": "I47.2",
+      "ground_truth_icd_title": "Ventricular tachycardia",
+      "rank1_predicted_icd": "",
+      "rank1_predicted_icd_title": "",
+      "matched_predicted_icd": "",
+      "matched_predicted_icd_title": "",
+      "icd_match": true,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.",
+      "llm_expanded_ground_truth_icd": "I47.2 — Ventricular tachycardia",
+      "llm_expanded_matched_icd": "",
+      "stage9_final_primary_icd": "I50.9",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
     },
-    "code_set": {
-      "n_predicted": 4,
-      "n_ground_truth": 13,
-      "n_hits": 1,
-      "precision": 0.25,
-      "recall": 0.0769,
-      "f1": 0.1176,
-      "hits": [
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        }
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.",
+      "ground_truth_expansions": [
+        "Ventricular tachycardia",
+        "VT"
       ],
-      "misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.5,
-      "semantic_recall": 0.1538,
-      "semantic_f1": 0.2353,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.9",
-          "predicted_title": "Heart failure, unspecified",
-          "predicted_diagnosis": "Chronic heart failure",
-          "ground_truth_code": "I42.9",
-          "ground_truth_title": "Cardiomyopathy, unspecified",
-          "similarity": 0.7502,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 4,
-      "n_ground_truth": 13,
-      "n_hits": 1,
-      "precision": 0.25,
-      "recall": 0.0769,
-      "f1": 0.1176,
-      "hits": [
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        }
-      ],
-      "misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.5,
-      "semantic_recall": 0.1538,
-      "semantic_f1": 0.2353,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.9",
-          "predicted_title": "Heart failure, unspecified",
-          "predicted_diagnosis": "Chronic heart failure",
-          "ground_truth_code": "I42.9",
-          "ground_truth_title": "Cardiomyopathy, unspecified",
-          "similarity": 0.7502,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified"
-        }
-      ]
-    },
-    "principal_set": {
-      "n_predicted": 4,
-      "n_ground_truth": 13,
-      "n_hits": 1,
-      "precision": 0.25,
-      "recall": 0.0769,
-      "f1": 0.1176,
-      "hits": [
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        }
-      ],
-      "misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.5,
-      "semantic_recall": 0.1538,
-      "semantic_f1": 0.2353,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.9",
-          "predicted_title": "Heart failure, unspecified",
-          "predicted_diagnosis": "Chronic heart failure",
-          "ground_truth_code": "I42.9",
-          "ground_truth_title": "Cardiomyopathy, unspecified",
-          "similarity": 0.7502,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified"
-        }
-      ]
-    }
-  },
-  "stage9": {
-    "diagnosis": {
-      "predicted": "Refractory VT",
-      "ground_truth": "Ventricular tachycardia",
-      "matched_predicted": "Refractory VT",
-      "matched_ground_truth": "Ventricular tachycardia",
-      "match_scope": "rank1_vs_primary",
-      "match_pred_rank": 1,
-      "match_gt_index": 0,
-      "exact": false,
-      "semantic_similarity": 0.8705,
-      "semantic_match": true,
-      "match_reason": "contained",
-      "clinical_reason": "contained",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
+      "matched_diagnosis_expansions": [
         "Refractory VT",
-        "Sleep apnea",
-        "Obesity",
-        "Dilated non-ischemic cardiomyopathy",
-        "Dyslipidemia",
-        "Gout"
+        "VT"
       ],
-      "n_diffdx": 6,
-      "diagnosis_items": [
-        {
-          "diagnosis": "Refractory VT",
-          "rank": 1,
-          "score": 85.0,
-          "confidence": "high"
-        },
-        {
-          "diagnosis": "Heart transplantation",
-          "rank": 2,
-          "score": 70.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Chronic heart failure",
-          "rank": 3,
-          "score": 65.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Sleep apnea",
-          "rank": 4,
-          "score": 50.0,
-          "confidence": "low"
-        },
-        {
-          "diagnosis": "Obesity",
-          "rank": 5,
-          "score": 45.0,
-          "confidence": "low"
-        }
+      "icd_equivalent": true,
+      "icd_confidence": "high",
+      "icd_reason": "The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.",
+      "ground_truth_icd_expansions": [
+        "I47.2 — Ventricular tachycardia"
       ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
-    },
-    "primary_icd": {
-      "predicted": "I50.9",
-      "ground_truth": "I47.2",
-      "predicted_title": "Heart failure, unspecified",
-      "ground_truth_title": "Ventricular tachycardia",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.5025,
-      "semantic_match": false,
-      "match_reason": "no_match",
-      "clinical_reason": "no_match",
-      "match_type": "no_match",
-      "threshold": 0.7,
-      "predicted_family": "I50",
-      "ground_truth_family": "I47",
-      "match_scope": "rank1_vs_primary"
-    },
-    "code_set": {
-      "n_predicted": 6,
-      "n_ground_truth": 13,
-      "n_hits": 3,
-      "precision": 0.5,
-      "recall": 0.2308,
-      "f1": 0.3158,
-      "hits": [
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        }
-      ],
-      "misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "I42.0",
-          "title": "Dilated cardiomyopathy"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 5,
-      "semantic_precision": 0.8333,
-      "semantic_recall": 0.3846,
-      "semantic_f1": 0.5263,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.9",
-          "predicted_title": "Heart failure, unspecified",
-          "predicted_diagnosis": "Refractory VT",
-          "ground_truth_code": "I47.2",
-          "ground_truth_title": "Ventricular tachycardia",
-          "similarity": 0.8705,
-          "match": "semantic"
-        },
-        {
-          "predicted_code": "I42.0",
-          "predicted_title": "Dilated cardiomyopathy",
-          "predicted_diagnosis": "Dilated non-ischemic cardiomyopathy",
-          "ground_truth_code": "I42.9",
-          "ground_truth_title": "Cardiomyopathy, unspecified",
-          "similarity": 0.7843,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 6,
-      "n_ground_truth": 13,
-      "n_hits": 3,
-      "precision": 0.5,
-      "recall": 0.2308,
-      "f1": 0.3158,
-      "hits": [
-        {
-          "code": "E66.9",
-          "title": "Obesity, unspecified"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "M10.9",
-          "title": "Gout, unspecified"
-        }
-      ],
-      "misses": [
-        {
-          "code": "I47.2",
-          "title": "Ventricular tachycardia"
-        },
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "I42.9",
-          "title": "Cardiomyopathy, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "extras": [
-        {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified"
-        },
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        },
-        {
-          "code": "I42.0",
-          "title": "Dilated cardiomyopathy"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 5,
-      "semantic_precision": 0.8333,
-      "semantic_recall": 0.3846,
-      "semantic_f1": 0.5263,
-      "semantic_pairs": [
-        {
-          "predicted_code": "I50.9",
-          "predicted_title": "Heart failure, unspecified",
-          "predicted_diagnosis": "Refractory VT",
-          "ground_truth_code": "I47.2",
-          "ground_truth_title": "Ventricular tachycardia",
-          "similarity": 0.8705,
-          "match": "semantic"
-        },
-        {
-          "predicted_code": "I42.0",
-          "predicted_title": "Dilated cardiomyopathy",
-          "predicted_diagnosis": "Dilated non-ischemic cardiomyopathy",
-          "ground_truth_code": "I42.9",
-          "ground_truth_title": "Cardiomyopathy, unspecified",
-          "similarity": 0.7843,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [],
-      "semantic_misses": [
-        {
-          "code": "Z95.811",
-          "title": "Presence of heart assist device"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        },
-        {
-          "code": "Z86.73",
-          "title": "Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
-        },
-        {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "Z96.652",
-          "title": "Presence of left artificial knee joint"
-        },
-        {
-          "code": "I27.2",
-          "title": "Other secondary pulmonary hypertension"
-        },
-        {
-          "code": "Z68.37",
-          "title": "Body mass index [BMI] 37.0-37.9, adult"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified"
-        }
-      ]
+      "matched_icd_expansions": [],
+      "_cache_hit": true
     }
   },
   "has_stage8": true,

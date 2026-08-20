@@ -1,134 +1,42 @@
-ACCURACY vs GROUND TRUTH
-========================
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
 
 Patient ID       : 11474876
 HADM ID          : 29672491
-Generated        : 2026-08-15T23:57:14.878334
+Generated        : 2026-08-19T22:37:31.058626
 
-PRIMARY DIFFDx — MATCH OR NO
-----------------------------
+DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
+------------------------------------
 
-  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
-  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+  Ground truth primary : Calculus of bile duct with cholangitis, unspecified, without obstruction
+  Rank-1 predicted     : Heart failure with preserved ejection fraction (HFpEF)
+    score=85.0  confidence=high
+  Diagnosis match      : NO
+  Is rank-1 match      : N/A
+  Matched DiffDx rank  : -
+  Matched diagnosis    : -
+    score=None  confidence=-
+  LLM reason           : None of the ranked differential diagnoses match the ground truth primary diagnosis.
 
-               Predicted                                        Ground truth
-  S8 DiffDx    Heart failure with preserved ejection fract...   Calculus of bile duct with cholangitis, uns...
-  S9 DiffDx    Heart failure with preserved ejection fract...   Calculus of bile duct with cholangitis, uns...
+LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
+---------------------------------------------------
 
-  Full predicted (S8): Heart failure with preserved ejection fraction (HFpEF)
-  Full predicted (S9): Heart failure with preserved ejection fraction (HFpEF)
-  Full GT primary    : Calculus of bile duct with cholangitis, unspecified, without obstruction
+  Ground truth ICD     : K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction
+  Rank-1 mapped ICD    : I50.30 — Unspecified diastolic (congestive) heart failure
+  Matched mapped ICD   : - — 
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.
+  Stage 9 final ICD    : I50.30 (debug)
 
-  MATCH (S8): YES    reason=rank1_vs_gt_list  sim=0.55
-    matched: Heart failure with preserved ejection...  vs  Chronic diastolic (congestive) heart ...
-  MATCH (S9): YES    reason=rank1_vs_gt_list  sim=0.55
-    matched: Heart failure with preserved ejection...  vs  Chronic diastolic (congestive) heart ...
+FULL DIFFERENTIAL LIST
+----------------------
 
-PRIMARY ICD — MATCH OR NO
--------------------------
-
-  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
-  or rank-1 ICD matches another billed GT code
-
-               Predicted                                        Ground truth
-  S8 ICD       I50.30 Unspecified diastolic (congestive) h...   I13.0 Calculus of bile duct with cholangiti...
-  S9 ICD       I50.30 Unspecified diastolic (congestive) h...   I13.0 Calculus of bile duct with cholangiti...
-
-  Full predicted (S8): I50.30 — Unspecified diastolic (congestive) heart failure
-  Full predicted (S9): I50.30 — Unspecified diastolic (congestive) heart failure
-  Full ground truth  : I13.0 — Calculus of bile duct with cholangitis, unspecified, without obstruction
-
-  MATCH (S8): YES    reason=rank1_vs_gt_list  family=NO  sim=0.55
-  MATCH (S9): YES    reason=rank1_vs_gt_list  family=NO  sim=0.55
-
-ICD CODE SET — Stage 8 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.091 / 0.059 / 0.071
-Semantic  P / R / F1 : 0.455 / 0.294 / 0.357  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 5  |  predicted 11  |  GT 17
-Exact code hits:
-  ✓ I73.9 — Peripheral vascular disease, unspecified
-Semantic hits (same meaning, different code):
-  ≈ I50.30 — Unspecified diastolic (congestive) heart failure  [Heart failure with preserved ejection fraction (HFpEF)]
-      ↔ I50.32 — Chronic diastolic (congestive) heart failure  (sim=0.97)
-  ≈ I48.91 — Unspecified atrial fibrillation  [Atrial fibrillation (AFib)]
-      ↔ I48.0 — Paroxysmal atrial fibrillation  (sim=0.84)
-  ≈ N18.9 — Chronic kidney disease, unspecified  [Chronic kidney disease (CKD)]
-      ↔ N18.3 — Chronic kidney disease, stage 3 (moderate)  (sim=0.81)
-  ≈ I50.9 — Heart failure, unspecified  [Heart failure with preserved ejection fraction (HFpEF)]
-      ↔ I11.0 — Hypertensive heart disease with heart failure  (sim=0.75)
-Still missing after semantic match:
-  ✗ K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction
-  ✗ I13.0 — Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
-  ✗ I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
-  ✗ I45.10 — Unspecified right bundle-branch block
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ F43.10 — Post-traumatic stress disorder, unspecified
-  ✗ N40.0 — Benign prostatic hyperplasia without lower urinary tract symptoms
-  ✗ Z79.02 — Long term (current) use of antithrombotics/antiplatelets
-  ✗ Z87.891 — Personal history of nicotine dependence
-  ✗ Z85.828 — Personal history of other malignant neoplasm of skin
-  ✗ Z82.49 — Family history of ischemic heart disease and other diseases of the circulatory system
-  ✗ Z85.46 — Personal history of malignant neoplasm of prostate
-Still extra after semantic match:
-  + I38 — Endocarditis, valve unspecified
-  + I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
-  + I51.4 — Myocarditis, unspecified
-  + I42.9 — Cardiomyopathy, unspecified
-  + R09.02 — Hypoxemia
-  + P84 — Other problems with newborn
-
-ICD CODE SET — Stage 9 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.167 / 0.059 / 0.087
-Semantic  P / R / F1 : 0.833 / 0.294 / 0.435  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 5  |  predicted 6  |  GT 17
-Exact code hits:
-  ✓ I73.9 — Peripheral vascular disease, unspecified
-Semantic hits (same meaning, different code):
-  ≈ I50.30 — Unspecified diastolic (congestive) heart failure  [Heart failure with preserved ejection fraction (HFpEF)]
-      ↔ I50.32 — Chronic diastolic (congestive) heart failure  (sim=0.97)
-  ≈ I48.91 — Unspecified atrial fibrillation  [Atrial fibrillation (AFib)]
-      ↔ I48.0 — Paroxysmal atrial fibrillation  (sim=0.84)
-  ≈ N18.9 — Chronic kidney disease, unspecified  [Chronic kidney disease (CKD)]
-      ↔ N18.3 — Chronic kidney disease, stage 3 (moderate)  (sim=0.81)
-  ≈ I50.9 — Heart failure, unspecified  [Heart failure with preserved ejection fraction (HFpEF)]
-      ↔ I11.0 — Hypertensive heart disease with heart failure  (sim=0.75)
-Still missing after semantic match:
-  ✗ K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction
-  ✗ I13.0 — Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
-  ✗ I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
-  ✗ I45.10 — Unspecified right bundle-branch block
-  ✗ E78.5 — Hyperlipidemia, unspecified
-  ✗ F43.10 — Post-traumatic stress disorder, unspecified
-  ✗ N40.0 — Benign prostatic hyperplasia without lower urinary tract symptoms
-  ✗ Z79.02 — Long term (current) use of antithrombotics/antiplatelets
-  ✗ Z87.891 — Personal history of nicotine dependence
-  ✗ Z85.828 — Personal history of other malignant neoplasm of skin
-  ✗ Z82.49 — Family history of ischemic heart disease and other diseases of the circulatory system
-  ✗ Z85.46 — Personal history of malignant neoplasm of prostate
-Still extra after semantic match:
-  + I10 — Essential (primary) hypertension
-
-GROUND TRUTH LIST
------------------
-
-   1. K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction (primary)
-   2. I13.0 — Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
-   3. I50.32 — Chronic diastolic (congestive) heart failure
-   4. I48.0 — Paroxysmal atrial fibrillation
-   5. I11.0 — Hypertensive heart disease with heart failure
-   6. I73.9 — Peripheral vascular disease, unspecified
-   7. I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
-   8. N18.3 — Chronic kidney disease, stage 3 (moderate)
-   9. I45.10 — Unspecified right bundle-branch block
-  10. E78.5 — Hyperlipidemia, unspecified
-  11. F43.10 — Post-traumatic stress disorder, unspecified
-  12. N40.0 — Benign prostatic hyperplasia without lower urinary tract symptoms
-  13. Z79.02 — Long term (current) use of antithrombotics/antiplatelets
-  14. Z87.891 — Personal history of nicotine dependence
-  15. Z85.828 — Personal history of other malignant neoplasm of skin
-  16. Z82.49 — Family history of ischemic heart disease and other diseases of the circulatory system
-  17. Z85.46 — Personal history of malignant neoplasm of prostate
+   1. Heart failure with preserved ejection fraction (HFpEF)  [score=85.0, high]  ICD=I50.30 — Unspecified diastolic (congestive) heart failure
+   2. Peripheral vascular disease (PVD)  [score=70.0, medium]  ICD=I73.9 — Peripheral vascular disease, unspecified
+   3. Atrial fibrillation (AFib)  [score=65.0, medium]  ICD=I48.91 — Unspecified atrial fibrillation
+   4. Chronic kidney disease (CKD)  [score=55.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
+   5. Nocturnal hypoxia  [score=40.0, low]  ICD=R09.02 — Hypoxemia

@@ -1,777 +1,117 @@
 {
   "stage": 10,
   "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
   "patient_id": "11251337",
   "hadm_id": "29568708",
-  "generated_at": "2026-08-15T23:57:14.799557",
+  "generated_at": "2026-08-19T22:37:31.057737",
   "ground_truth": {
     "primary_icd_code": "N132",
     "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-    "icd10_codes": [
-      "N132",
-      "Z936",
-      "E785",
-      "I69954",
-      "I10",
-      "N19",
-      "Z87440"
-    ],
-    "dx_titles": [
-      "Hydronephrosis with renal and ureteral calculous obstruction",
-      "Other artificial openings of urinary tract status",
-      "Hyperlipidemia, unspecified",
-      "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side",
-      "Essential (primary) hypertension",
-      "Unspecified kidney failure",
-      "Personal history of urinary (tract) infections"
-    ],
+    "primary_icd_title": "Hydronephrosis with renal and ureteral calculous obstruction",
     "n_diagnoses": 7
   },
-  "stage8": {
+  "evaluation": {
     "diagnosis": {
-      "predicted": "Nephrolithiasis",
-      "ground_truth": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "matched_predicted": "Nephrolithiasis",
-      "matched_ground_truth": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "match_scope": "rank1_vs_primary",
-      "match_pred_rank": 1,
-      "match_gt_index": 0,
-      "exact": false,
-      "semantic_similarity": 0.6278,
-      "semantic_match": true,
-      "match_reason": "term_subset",
-      "clinical_reason": "term_subset",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Nephrolithiasis",
-        "Chronic kidney disease",
-        "Hypertension",
-        "Acute kidney injury",
-        "Hemorrhagic CVA"
-      ],
-      "n_diffdx": 5,
+      "ground_truth_primary": "Hydronephrosis with renal and ureteral calculous obstruction",
+      "rank1_diagnosis": "Nephrolithiasis",
+      "rank1_score": 85.0,
+      "rank1_confidence": "high",
+      "match": false,
+      "is_rank1_match": null,
+      "matched_diffdx_rank": null,
+      "matched_diagnosis": "",
+      "matched_score": null,
+      "matched_confidence": "",
+      "llm_relationship": "different",
+      "llm_confidence": "low",
+      "llm_reason": "None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.",
+      "llm_expanded_ground_truth": "Hydronephrosis | Renal and ureteral calculous obstruction",
+      "llm_expanded_matched": "",
       "diagnosis_items": [
         {
           "diagnosis": "Nephrolithiasis",
           "rank": 1,
           "score": 85.0,
-          "confidence": "high"
+          "confidence": "high",
+          "icd10_primary": "N20.0",
+          "icd10_primary_title": "Calculus of kidney"
         },
         {
           "diagnosis": "Chronic kidney disease",
           "rank": 2,
           "score": 65.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "N18.9",
+          "icd10_primary_title": "Chronic kidney disease, unspecified"
         },
         {
           "diagnosis": "Hypertension",
           "rank": 3,
           "score": 55.0,
-          "confidence": "medium"
+          "confidence": "medium",
+          "icd10_primary": "I10",
+          "icd10_primary_title": "Essential (primary) hypertension"
         },
         {
           "diagnosis": "Acute kidney injury",
           "rank": 4,
           "score": 45.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": "N17.9",
+          "icd10_primary_title": "Acute kidney failure, unspecified"
         },
         {
           "diagnosis": "Hemorrhagic CVA",
           "rank": 5,
           "score": 30.0,
-          "confidence": "low"
+          "confidence": "low",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         }
       ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
+      "n_diffdx": 5
     },
-    "primary_icd": {
-      "predicted": "N20.0",
-      "ground_truth": "N13.2",
-      "predicted_title": "Calculus of kidney",
-      "ground_truth_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.5859,
-      "semantic_match": true,
-      "match_reason": "same_condition",
-      "clinical_reason": "same_condition",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "predicted_family": "N20",
-      "ground_truth_family": "N13",
-      "match_scope": "rank1_vs_primary"
+    "icd_linked": {
+      "ground_truth_icd": "N13.2",
+      "ground_truth_icd_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+      "rank1_predicted_icd": "N20.0",
+      "rank1_predicted_icd_title": "Calculus of kidney",
+      "matched_predicted_icd": "",
+      "matched_predicted_icd_title": "",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.",
+      "llm_expanded_ground_truth_icd": "N13.2 — Hydronephrosis with renal and ureteral calculous obstruction",
+      "llm_expanded_matched_icd": "",
+      "stage9_final_primary_icd": "N20.0",
+      "diagnosis_match": false,
+      "is_rank1_diagnosis_match": null,
+      "matched_diffdx_rank": null
     },
-    "code_set": {
-      "n_predicted": 9,
-      "n_ground_truth": 7,
-      "n_hits": 1,
-      "precision": 0.1111,
-      "recall": 0.1429,
-      "f1": 0.125,
-      "hits": [
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        }
+    "llm_qe_raw": {
+      "matched_rank": null,
+      "diagnosis_equivalent": false,
+      "diagnosis_relationship": "different",
+      "diagnosis_confidence": "low",
+      "diagnosis_reason": "None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.",
+      "ground_truth_expansions": [
+        "Hydronephrosis",
+        "Renal and ureteral calculous obstruction"
       ],
-      "misses": [
-        {
-          "code": "N13.2",
-          "title": "Hydronephrosis with renal and ureteral calculous obstruction"
-        },
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "N19",
-          "title": "Unspecified kidney failure"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
+      "matched_diagnosis_expansions": [],
+      "icd_equivalent": false,
+      "icd_confidence": "low",
+      "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.",
+      "ground_truth_icd_expansions": [
+        "N13.2 — Hydronephrosis with renal and ureteral calculous obstruction"
       ],
-      "extras": [
-        {
-          "code": "N20.0",
-          "title": "Calculus of kidney"
-        },
-        {
-          "code": "R30.0",
-          "title": "Dysuria"
-        },
-        {
-          "code": "R31.9",
-          "title": "Hematuria, unspecified"
-        },
-        {
-          "code": "R50.9",
-          "title": "Fever, unspecified"
-        },
-        {
-          "code": "R52",
-          "title": "Pain, unspecified"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        },
-        {
-          "code": "P29.2",
-          "title": "Neonatal hypertension"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.2222,
-      "semantic_recall": 0.2857,
-      "semantic_f1": 0.25,
-      "semantic_pairs": [
-        {
-          "predicted_code": "N17.9",
-          "predicted_title": "Acute kidney failure, unspecified",
-          "predicted_diagnosis": "Acute kidney injury",
-          "ground_truth_code": "N19",
-          "ground_truth_title": "Unspecified kidney failure",
-          "similarity": 0.9081,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "N20.0",
-          "predicted_title": "Calculus of kidney",
-          "predicted_diagnosis": "Nephrolithiasis",
-          "ground_truth_code": "N13.2",
-          "ground_truth_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-          "similarity": 0.6278,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "R30.0",
-          "title": "Dysuria"
-        },
-        {
-          "code": "R31.9",
-          "title": "Hematuria, unspecified"
-        },
-        {
-          "code": "R50.9",
-          "title": "Fever, unspecified"
-        },
-        {
-          "code": "R52",
-          "title": "Pain, unspecified"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        },
-        {
-          "code": "P29.2",
-          "title": "Neonatal hypertension"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 5,
-      "n_ground_truth": 7,
-      "n_hits": 1,
-      "precision": 0.2,
-      "recall": 0.1429,
-      "f1": 0.1667,
-      "hits": [
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        }
-      ],
-      "misses": [
-        {
-          "code": "N13.2",
-          "title": "Hydronephrosis with renal and ureteral calculous obstruction"
-        },
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "N19",
-          "title": "Unspecified kidney failure"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "extras": [
-        {
-          "code": "N20.0",
-          "title": "Calculus of kidney"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        },
-        {
-          "code": "P29.2",
-          "title": "Neonatal hypertension"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.4,
-      "semantic_recall": 0.2857,
-      "semantic_f1": 0.3333,
-      "semantic_pairs": [
-        {
-          "predicted_code": "N17.9",
-          "predicted_title": "Acute kidney failure, unspecified",
-          "predicted_diagnosis": "Acute kidney injury",
-          "ground_truth_code": "N19",
-          "ground_truth_title": "Unspecified kidney failure",
-          "similarity": 0.9081,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "N20.0",
-          "predicted_title": "Calculus of kidney",
-          "predicted_diagnosis": "Nephrolithiasis",
-          "ground_truth_code": "N13.2",
-          "ground_truth_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-          "similarity": 0.6278,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        },
-        {
-          "code": "P29.2",
-          "title": "Neonatal hypertension"
-        }
-      ]
-    },
-    "principal_set": {
-      "n_predicted": 4,
-      "n_ground_truth": 7,
-      "n_hits": 0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "hits": [],
-      "misses": [
-        {
-          "code": "N13.2",
-          "title": "Hydronephrosis with renal and ureteral calculous obstruction"
-        },
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "N19",
-          "title": "Unspecified kidney failure"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "extras": [
-        {
-          "code": "N20.0",
-          "title": "Calculus of kidney"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        },
-        {
-          "code": "P29.2",
-          "title": "Neonatal hypertension"
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 2,
-      "semantic_precision": 0.5,
-      "semantic_recall": 0.2857,
-      "semantic_f1": 0.3636,
-      "semantic_pairs": [
-        {
-          "predicted_code": "N17.9",
-          "predicted_title": "Acute kidney failure, unspecified",
-          "predicted_diagnosis": "Acute kidney injury",
-          "ground_truth_code": "N19",
-          "ground_truth_title": "Unspecified kidney failure",
-          "similarity": 0.9081,
-          "match": "semantic"
-        },
-        {
-          "predicted_code": "P29.2",
-          "predicted_title": "Neonatal hypertension",
-          "predicted_diagnosis": "Hypertension",
-          "ground_truth_code": "I10",
-          "ground_truth_title": "Essential (primary) hypertension",
-          "similarity": 0.7348,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "N20.0",
-          "predicted_title": "Calculus of kidney",
-          "predicted_diagnosis": "Nephrolithiasis",
-          "ground_truth_code": "N13.2",
-          "ground_truth_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-          "similarity": 0.6278,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        }
-      ]
-    }
-  },
-  "stage9": {
-    "diagnosis": {
-      "predicted": "Nephrolithiasis",
-      "ground_truth": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "matched_predicted": "Nephrolithiasis",
-      "matched_ground_truth": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "match_scope": "rank1_vs_primary",
-      "match_pred_rank": 1,
-      "match_gt_index": 0,
-      "exact": false,
-      "semantic_similarity": 0.6278,
-      "semantic_match": true,
-      "match_reason": "term_subset",
-      "clinical_reason": "term_subset",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "diagnoses": [
-        "Nephrolithiasis",
-        "Chronic kidney disease",
-        "Anemia"
-      ],
-      "n_diffdx": 3,
-      "diagnosis_items": [
-        {
-          "diagnosis": "Nephrolithiasis",
-          "rank": 1,
-          "score": 85.0,
-          "confidence": "high"
-        },
-        {
-          "diagnosis": "Chronic kidney disease",
-          "rank": 2,
-          "score": 65.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Hypertension",
-          "rank": 3,
-          "score": 55.0,
-          "confidence": "medium"
-        },
-        {
-          "diagnosis": "Acute kidney injury",
-          "rank": 4,
-          "score": 45.0,
-          "confidence": "low"
-        },
-        {
-          "diagnosis": "Hemorrhagic CVA",
-          "rank": 5,
-          "score": 30.0,
-          "confidence": "low"
-        }
-      ],
-      "rank1_score": 85.0,
-      "rank1_confidence": "high",
-      "matched_score": 85.0,
-      "matched_confidence": "high"
-    },
-    "primary_icd": {
-      "predicted": "N20.0",
-      "ground_truth": "N13.2",
-      "predicted_title": "Calculus of kidney",
-      "ground_truth_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "exact": false,
-      "family": false,
-      "semantic_similarity": 0.5859,
-      "semantic_match": true,
-      "match_reason": "same_condition",
-      "clinical_reason": "same_condition",
-      "match_type": "clinical_rule",
-      "threshold": 0.7,
-      "predicted_family": "N20",
-      "ground_truth_family": "N13",
-      "match_scope": "rank1_vs_primary"
-    },
-    "code_set": {
-      "n_predicted": 3,
-      "n_ground_truth": 7,
-      "n_hits": 0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "hits": [],
-      "misses": [
-        {
-          "code": "N13.2",
-          "title": "Hydronephrosis with renal and ureteral calculous obstruction"
-        },
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "N19",
-          "title": "Unspecified kidney failure"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "extras": [
-        {
-          "code": "N20.0",
-          "title": "Calculus of kidney"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.3333,
-      "semantic_recall": 0.1429,
-      "semantic_f1": 0.2,
-      "semantic_pairs": [
-        {
-          "predicted_code": "N18.9",
-          "predicted_title": "Chronic kidney disease, unspecified",
-          "predicted_diagnosis": "Chronic kidney disease",
-          "ground_truth_code": "N19",
-          "ground_truth_title": "Unspecified kidney failure",
-          "similarity": 0.7328,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "N20.0",
-          "predicted_title": "Calculus of kidney",
-          "predicted_diagnosis": "Nephrolithiasis",
-          "ground_truth_code": "N13.2",
-          "ground_truth_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-          "similarity": 0.6278,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        }
-      ]
-    },
-    "code_set_excluding_r": {
-      "n_predicted": 3,
-      "n_ground_truth": 7,
-      "n_hits": 0,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "hits": [],
-      "misses": [
-        {
-          "code": "N13.2",
-          "title": "Hydronephrosis with renal and ureteral calculous obstruction"
-        },
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "N19",
-          "title": "Unspecified kidney failure"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "extras": [
-        {
-          "code": "N20.0",
-          "title": "Calculus of kidney"
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified"
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        }
-      ],
-      "semantic_threshold": 0.7,
-      "n_semantic_hits": 1,
-      "semantic_precision": 0.3333,
-      "semantic_recall": 0.1429,
-      "semantic_f1": 0.2,
-      "semantic_pairs": [
-        {
-          "predicted_code": "N18.9",
-          "predicted_title": "Chronic kidney disease, unspecified",
-          "predicted_diagnosis": "Chronic kidney disease",
-          "ground_truth_code": "N19",
-          "ground_truth_title": "Unspecified kidney failure",
-          "similarity": 0.7328,
-          "match": "semantic"
-        }
-      ],
-      "related_pairs": [
-        {
-          "predicted_code": "N20.0",
-          "predicted_title": "Calculus of kidney",
-          "predicted_diagnosis": "Nephrolithiasis",
-          "ground_truth_code": "N13.2",
-          "ground_truth_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-          "similarity": 0.6278,
-          "match": "related"
-        }
-      ],
-      "semantic_misses": [
-        {
-          "code": "Z93.6",
-          "title": "Other artificial openings of urinary tract status"
-        },
-        {
-          "code": "E78.5",
-          "title": "Hyperlipidemia, unspecified"
-        },
-        {
-          "code": "I69.954",
-          "title": "Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side"
-        },
-        {
-          "code": "I10",
-          "title": "Essential (primary) hypertension"
-        },
-        {
-          "code": "Z87.440",
-          "title": "Personal history of urinary (tract) infections"
-        }
-      ],
-      "semantic_extras": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified"
-        }
-      ]
+      "matched_icd_expansions": [],
+      "_cache_hit": true
     }
   },
   "has_stage8": true,

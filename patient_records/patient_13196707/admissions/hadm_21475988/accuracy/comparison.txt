@@ -1,175 +1,43 @@
-ACCURACY vs GROUND TRUTH
-========================
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
 
 Patient ID       : 13196707
 HADM ID          : 21475988
-Generated        : 2026-08-15T23:57:14.997944
+Generated        : 2026-08-19T22:37:31.062842
 
-PRIMARY DIFFDx — MATCH OR NO
-----------------------------
+DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
+------------------------------------
 
-  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
-  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+  Ground truth primary : Sepsis, unspecified organism
+  Rank-1 predicted     : Severe sepsis due to RUL PNA
+    score=85.0  confidence=high
+  Diagnosis match      : NO
+  Is rank-1 match      : N/A
+  Matched DiffDx rank  : -
+  Matched diagnosis    : -
+    score=None  confidence=-
+  LLM reason           : None of the ranked differential diagnoses match the ground truth primary diagnosis of 'Sepsis, unspecified organism'.
 
-               Predicted                                        Ground truth
-  S8 DiffDx    Severe sepsis due to RUL PNA                     Sepsis, unspecified organism
-  S9 DiffDx    Severe sepsis due to RUL PNA                     Sepsis, unspecified organism
+LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
+---------------------------------------------------
 
-  Full predicted (S8): Severe sepsis due to RUL PNA
-  Full predicted (S9): Severe sepsis due to RUL PNA
-  Full GT primary    : Sepsis, unspecified organism
+  Ground truth ICD     : A41.9 — Sepsis, unspecified organism
+  Rank-1 mapped ICD    : - — 
+  Matched mapped ICD   : - — 
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : None of the ranked differential diagnoses have an ICD-10 code that matches or is clinically equivalent to the ground truth ICD-10 code A41.9.
+  Stage 9 final ICD    : R50.9 (debug)
 
-  MATCH (S8): YES    reason=same_condition  sim=0.57
-    matched: Severe sepsis due to RUL PNA  vs  Sepsis, unspecified organism
-  MATCH (S9): YES    reason=same_condition  sim=0.57
-    matched: Severe sepsis due to RUL PNA  vs  Sepsis, unspecified organism
+FULL DIFFERENTIAL LIST
+----------------------
 
-PRIMARY ICD — MATCH OR NO
--------------------------
-
-  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
-  or rank-1 ICD matches another billed GT code
-
-               Predicted                                        Ground truth
-  S8 ICD                                                        A41.9 Sepsis, unspecified organism
-  S9 ICD       R50.9 Fever, unspecified                         A41.9 Sepsis, unspecified organism
-
-  Full predicted (S8): (none) — 
-  Full predicted (S9): R50.9 — Fever, unspecified
-  Full ground truth  : A41.9 — Sepsis, unspecified organism
-
-  MATCH (S8): NO    reason=no_match  family=NO  sim=0.00
-  MATCH (S9): NO    reason=no_match  family=NO  sim=0.55
-
-ICD CODE SET — Stage 8 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.143 / 0.031 / 0.051
-Semantic  P / R / F1 : 0.286 / 0.062 / 0.103  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 2  |  predicted 7  |  GT 32
-Exact code hits:
-  ✓ N17.9 — Acute kidney failure, unspecified
-Semantic hits (same meaning, different code):
-  ≈ C79.9 — Secondary malignant neoplasm of unspecified site  [Metastatic adenocarcinoma of unknown primary]
-      ↔ C79.51 — Secondary malignant neoplasm of bone  (sim=0.76)
-Related (not counted; sim 0.50–0.70):
-  ~ R50.9 — Fever, unspecified  [Severe sepsis due to RUL PNA]
-      ↔ J18.9 — Pneumonia, unspecified organism  (sim=0.65)
-  ~ I95.9 — Hypotension, unspecified  [Severe sepsis due to RUL PNA]
-      ↔ R65.21 — Severe sepsis with septic shock  (sim=0.60)
-  ~ R57.1 — Hypovolemic shock  [Hypovolemic shock]
-      ↔ R09.02 — Hypoxemia  (sim=0.53)
-Still missing after semantic match:
-  ✗ A41.9 — Sepsis, unspecified organism
-  ✗ G93.6 — Cerebral edema
-  ✗ I31.4 — Cardiac tamponade
-  ✗ J69.0 — Pneumonitis due to inhalation of food and vomit
-  ✗ E87.0 — Hyperosmolality and hypernatremia
-  ✗ K52.1 — Toxic gastroenteritis and colitis
-  ✗ G92 — Toxic encephalopathy
-  ✗ E87.2 — Acidosis
-  ✗ L89.153 — Pressure ulcer of sacral region, stage 3
-  ✗ C78.7 — Secondary malignant neoplasm of liver and intrahepatic bile duct
-  ✗ C79.31 — Secondary malignant neoplasm of brain
-  ✗ I31.3 — Pericardial effusion (noninflammatory)
-  ✗ I31.9 — Disease of pericardium, unspecified
-  ✗ C34.90 — Malignant neoplasm of unspecified part of unspecified bronchus or lung
-  ✗ Z51.5 — Encounter for palliative care
-  ✗ Z66 — Do not resuscitate
-  ✗ I10 — Essential (primary) hypertension
-  ✗ T36.0X5A — Adverse effect of penicillins, initial encounter
-  ✗ Y92.239 — Unspecified place in hospital as the place of occurrence of the external cause
-  ✗ R74.0 — Nonspecific elevation of levels of transaminase and lactic acid dehydrogenase [LDH]
-  ✗ D63.8 — Anemia in other chronic diseases classified elsewhere
-  ✗ K25.9 — Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation
-  ✗ Z87.891 — Personal history of nicotine dependence
-  ✗ R56.9 — Unspecified convulsions
-  ✗ K59.00 — Constipation, unspecified
-  ✗ Z79.02 — Long term (current) use of antithrombotics/antiplatelets
-  ✗ Z86.718 — Personal history of other venous thrombosis and embolism
-Still extra after semantic match:
-  + T81.19X? — 
-  + R41.82 — Altered mental status, unspecified
-
-ICD CODE SET — Stage 9 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.250 / 0.031 / 0.056
-Semantic  P / R / F1 : 0.500 / 0.062 / 0.111  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 2  |  predicted 4  |  GT 32
-Exact code hits:
-  ✓ N17.9 — Acute kidney failure, unspecified
-Semantic hits (same meaning, different code):
-  ≈ C79.9 — Secondary malignant neoplasm of unspecified site  [Metastatic adenocarcinoma of unknown primary]
-      ↔ C79.51 — Secondary malignant neoplasm of bone  (sim=0.76)
-Related (not counted; sim 0.50–0.70):
-  ~ R50.9 — Fever, unspecified  [Severe sepsis due to RUL PNA]
-      ↔ J18.9 — Pneumonia, unspecified organism  (sim=0.65)
-Still missing after semantic match:
-  ✗ A41.9 — Sepsis, unspecified organism
-  ✗ G93.6 — Cerebral edema
-  ✗ I31.4 — Cardiac tamponade
-  ✗ J69.0 — Pneumonitis due to inhalation of food and vomit
-  ✗ R65.21 — Severe sepsis with septic shock
-  ✗ E87.0 — Hyperosmolality and hypernatremia
-  ✗ K52.1 — Toxic gastroenteritis and colitis
-  ✗ G92 — Toxic encephalopathy
-  ✗ E87.2 — Acidosis
-  ✗ L89.153 — Pressure ulcer of sacral region, stage 3
-  ✗ C78.7 — Secondary malignant neoplasm of liver and intrahepatic bile duct
-  ✗ C79.31 — Secondary malignant neoplasm of brain
-  ✗ I31.3 — Pericardial effusion (noninflammatory)
-  ✗ I31.9 — Disease of pericardium, unspecified
-  ✗ C34.90 — Malignant neoplasm of unspecified part of unspecified bronchus or lung
-  ✗ Z51.5 — Encounter for palliative care
-  ✗ Z66 — Do not resuscitate
-  ✗ I10 — Essential (primary) hypertension
-  ✗ T36.0X5A — Adverse effect of penicillins, initial encounter
-  ✗ Y92.239 — Unspecified place in hospital as the place of occurrence of the external cause
-  ✗ R74.0 — Nonspecific elevation of levels of transaminase and lactic acid dehydrogenase [LDH]
-  ✗ D63.8 — Anemia in other chronic diseases classified elsewhere
-  ✗ K25.9 — Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation
-  ✗ Z87.891 — Personal history of nicotine dependence
-  ✗ R56.9 — Unspecified convulsions
-  ✗ K59.00 — Constipation, unspecified
-  ✗ Z79.02 — Long term (current) use of antithrombotics/antiplatelets
-  ✗ R09.02 — Hypoxemia
-  ✗ Z86.718 — Personal history of other venous thrombosis and embolism
-Still extra after semantic match:
-  + E78.5 — Hyperlipidemia, unspecified
-
-GROUND TRUTH LIST
------------------
-
-   1. A41.9 — Sepsis, unspecified organism (primary)
-   2. G93.6 — Cerebral edema
-   3. I31.4 — Cardiac tamponade
-   4. J69.0 — Pneumonitis due to inhalation of food and vomit
-   5. R65.21 — Severe sepsis with septic shock
-   6. E87.0 — Hyperosmolality and hypernatremia
-   7. K52.1 — Toxic gastroenteritis and colitis
-   8. G92 — Toxic encephalopathy
-   9. E87.2 — Acidosis
-  10. J18.9 — Pneumonia, unspecified organism
-  11. L89.153 — Pressure ulcer of sacral region, stage 3
-  12. N17.9 — Acute kidney failure, unspecified
-  13. C78.7 — Secondary malignant neoplasm of liver and intrahepatic bile duct
-  14. C79.31 — Secondary malignant neoplasm of brain
-  15. C79.51 — Secondary malignant neoplasm of bone
-  16. I31.3 — Pericardial effusion (noninflammatory)
-  17. I31.9 — Disease of pericardium, unspecified
-  18. C34.90 — Malignant neoplasm of unspecified part of unspecified bronchus or lung
-  19. Z51.5 — Encounter for palliative care
-  20. Z66 — Do not resuscitate
-  21. I10 — Essential (primary) hypertension
-  22. T36.0X5A — Adverse effect of penicillins, initial encounter
-  23. Y92.239 — Unspecified place in hospital as the place of occurrence of the external cause
-  24. R74.0 — Nonspecific elevation of levels of transaminase and lactic acid dehydrogenase [LDH]
-  25. D63.8 — Anemia in other chronic diseases classified elsewhere
-  26. K25.9 — Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation
-  27. Z87.891 — Personal history of nicotine dependence
-  28. R56.9 — Unspecified convulsions
-  29. K59.00 — Constipation, unspecified
-  30. Z79.02 — Long term (current) use of antithrombotics/antiplatelets
-  31. R09.02 — Hypoxemia
-  32. Z86.718 — Personal history of other venous thrombosis and embolism
+   1. Severe sepsis due to RUL PNA  [score=85.0, high]  ICD=- — 
+   2. Metastatic adenocarcinoma of unknown primary  [score=75.0, high]  ICD=C79.9 — Secondary malignant neoplasm of unspecified site
+   3. Hypovolemic shock  [score=65.0, medium]  ICD=R57.1 — Hypovolemic shock
+   4. Acute kidney injury  [score=55.0, medium]  ICD=N17.9 — Acute kidney failure, unspecified
+   5. SVC syndrome  [score=45.0, high]  ICD=- — 
+   6. Neurological deterioration  [score=35.0, medium]  ICD=- — 

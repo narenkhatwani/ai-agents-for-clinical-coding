@@ -1,113 +1,45 @@
-ACCURACY vs GROUND TRUTH
-========================
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
 
 Patient ID       : 19104262
 HADM ID          : 24271247
-Generated        : 2026-08-15T23:57:15.366918
+Generated        : 2026-08-19T22:37:31.068746
 
-PRIMARY DIFFDx — MATCH OR NO
-----------------------------
+DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
+------------------------------------
 
-  MATCH = YES if rank-1 matches GT primary, GT primary is elsewhere in the DiffDx,
-  or rank-1 matches another billed GT diagnosis (same-condition rules apply)
+  Ground truth primary : Pre-existing type 1 diabetes mellitus, in the puerperium
+  Rank-1 predicted     : Diabetic ketoacidosis
+    score=85.0  confidence=high
+  Diagnosis match      : NO
+  Is rank-1 match      : N/A
+  Matched DiffDx rank  : -
+  Matched diagnosis    : -
+    score=None  confidence=-
+  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.
 
-               Predicted                                        Ground truth
-  S8 DiffDx    Diabetic ketoacidosis                            Pre-existing type 1 diabetes mellitus, in t...
-  S9 DiffDx    Diabetic ketoacidosis                            Pre-existing type 1 diabetes mellitus, in t...
+LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
+---------------------------------------------------
 
-  Full predicted (S8): Diabetic ketoacidosis
-  Full predicted (S9): Diabetic ketoacidosis
-  Full GT primary    : Pre-existing type 1 diabetes mellitus, in the puerperium
+  Ground truth ICD     : O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium
+  Rank-1 mapped ICD    : E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
+  Matched mapped ICD   : - — 
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.
+  Stage 9 final ICD    : E13.10 (debug)
 
-  MATCH (S8): YES    reason=rank1_vs_gt_list  sim=0.87
-    matched: Diabetic ketoacidosis  vs  Type 1 diabetes mellitus with ketoaci...
-  MATCH (S9): YES    reason=rank1_vs_gt_list  sim=0.87
-    matched: Diabetic ketoacidosis  vs  Type 1 diabetes mellitus with ketoaci...
+FULL DIFFERENTIAL LIST
+----------------------
 
-PRIMARY ICD — MATCH OR NO
--------------------------
-
-  MATCH = YES if rank-1 ICD matches GT primary, another package code matches GT primary,
-  or rank-1 ICD matches another billed GT code
-
-               Predicted                                        Ground truth
-  S8 ICD       E13.10 Other specified diabetes mellitus wi...   E10.10 Pre-existing type 1 diabetes mellitu...
-  S9 ICD       E13.10 Other specified diabetes mellitus wi...   E10.10 Pre-existing type 1 diabetes mellitu...
-
-  Full predicted (S8): E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
-  Full predicted (S9): E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
-  Full ground truth  : E10.10 — Pre-existing type 1 diabetes mellitus, in the puerperium
-
-  MATCH (S8): YES    reason=rank1_vs_gt_list  family=NO  sim=0.99
-  MATCH (S9): YES    reason=rank1_vs_gt_list  family=NO  sim=0.99
-
-ICD CODE SET — Stage 8 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.083 / 0.100 / 0.091
-Semantic  P / R / F1 : 0.083 / 0.100 / 0.091  (title MiniLM ≥ 0.7)
-Exact hits 1  |  semantic hits 1  |  predicted 12  |  GT 10
-Exact code hits:
-  ✓ E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma
-Related (not counted; sim 0.50–0.70):
-  ~ R51.9 — Headache, unspecified  [Headache]
-      ↔ G93.40 — Encephalopathy, unspecified  (sim=0.51)
-Still missing after semantic match:
-  ✗ O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium
-  ✗ O90.4 — Postpartum acute kidney failure
-  ✗ E87.5 — Hyperkalemia
-  ✗ E86.0 — Dehydration
-  ✗ O99.355 — Diseases of the nervous system complicating the puerperium
-  ✗ O99.285 — Endocrine, nutritional and metabolic diseases complicating the puerperium
-  ✗ Z79.4 — Long term (current) use of insulin
-  ✗ Z91.14 — Patient's other noncompliance with medication regimen
-Still extra after semantic match:
-  + E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
-  + E11.10 — Type 2 diabetes mellitus with ketoacidosis without coma
-  + E46 — Unspecified protein-calorie malnutrition
-  + E11.01 — Type 2 diabetes mellitus with hyperosmolarity with coma
-  + A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
-  + A04.71 — Enterocolitis due to Clostridium difficile, recurrent
-  + O02.1 — Missed abortion
-  + R10.9 — Unspecified abdominal pain
-  + O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified
-  + R11.0 — Nausea
-
-ICD CODE SET — Stage 9 vs GT
-----------------------------
-
-Exact     P / R / F1 : 0.000 / 0.000 / 0.000
-Semantic  P / R / F1 : 0.200 / 0.100 / 0.133  (title MiniLM ≥ 0.7)
-Exact hits 0  |  semantic hits 1  |  predicted 5  |  GT 10
-Semantic hits (same meaning, different code):
-  ≈ E13.10 — Other specified diabetes mellitus with ketoacidosis without coma  [Diabetic ketoacidosis]
-      ↔ E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma  (sim=0.99)
-Still missing after semantic match:
-  ✗ O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium
-  ✗ O90.4 — Postpartum acute kidney failure
-  ✗ G93.40 — Encephalopathy, unspecified
-  ✗ E87.5 — Hyperkalemia
-  ✗ E86.0 — Dehydration
-  ✗ O99.355 — Diseases of the nervous system complicating the puerperium
-  ✗ O99.285 — Endocrine, nutritional and metabolic diseases complicating the puerperium
-  ✗ Z79.4 — Long term (current) use of insulin
-  ✗ Z91.14 — Patient's other noncompliance with medication regimen
-Still extra after semantic match:
-  + A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
-  + R10.9 — Unspecified abdominal pain
-  + O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified
-  + E87.20 — Acidosis, unspecified
-
-GROUND TRUTH LIST
------------------
-
-   1. O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium (primary)
-   2. O90.4 — Postpartum acute kidney failure
-   3. G93.40 — Encephalopathy, unspecified
-   4. E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma
-   5. E87.5 — Hyperkalemia
-   6. E86.0 — Dehydration
-   7. O99.355 — Diseases of the nervous system complicating the puerperium
-   8. O99.285 — Endocrine, nutritional and metabolic diseases complicating the puerperium
-   9. Z79.4 — Long term (current) use of insulin
-  10. Z91.14 — Patient's other noncompliance with medication regimen
+   1. Diabetic ketoacidosis  [score=85.0, high]  ICD=E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
+   2. C difficile colitis  [score=60.0, medium]  ICD=A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
+   3. Missed abortion  [score=55.0, high]  ICD=O02.1 — Missed abortion
+   4. Abdominal pain  [score=45.0, medium]  ICD=R10.9 — Unspecified abdominal pain
+   5. Vaginal bleeding  [score=40.0, medium]  ICD=- — 
+   6. Decreased fetal movement  [score=35.0, medium]  ICD=O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified
+   7. Headache  [score=30.0, low]  ICD=R51.9 — Headache, unspecified
+   8. Nausea  [score=25.0, low]  ICD=R11.0 — Nausea
