@@ -5,44 +5,56 @@ Patient ID       : 13196707
 HADM ID          : 21475988
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:32:11.234822
+Generated        : 2026-08-20T00:10:10.757498
 Candidates       : 6
-Most likely      : Severe sepsis due to RUL PNA
+Most likely      : Severe sepsis secondary to RUL PNA
 Prior admissions : 1 (33 ICD codes as PMH context)
 
 Summary:
-  A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.
+  The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Severe sepsis due to RUL PNA  (primary)
-      + RUL PNA, hypotension, fever
-      why: Primary diagnosis given the recent onset of RUL PNA and clinical signs of sepsis.
+  #1  [85.0/100 | high]  Severe sepsis secondary to RUL PNA  (primary)
+      + RUL PNA, persistent consolidative opacities in both lower lobes
+      why: Severe sepsis is the most likely diagnosis given the RUL PNA and hypotension.
 
-  #2  [75.0/100 | high]  Metastatic adenocarcinoma of unknown primary  (primary)
+  #2  [75.0/100 | medium]  Metastatic adenocarcinoma of unknown primary  (primary)
       SNOMED aligned : Metastatic adenocarcinoma of unknown origin
-      + confirmed diagnosis, recent RUL PNA
-      why: Underlying cancer is a known risk factor for sepsis and RUL PNA.
+      + confirmed metastatic adenocarcinoma of unknown primary
+      − no new metastatic lesions noted
+      why: Given the patient’s history of metastatic adenocarcinoma, this is a significant risk factor.
 
-  #3  [65.0/100 | medium]  Hypovolemic shock  (complication)
-      + severe hypotension, low hematocrit
-      why: Hypotension and low hematocrit suggest potential hypovolemic state.
+  #3  [65.0/100 | medium]  Hypotension secondary to pericardiocentesis  (complication)
+      + recent pericardiocentesis, hypotension
+      − hypotension is moderate and managed
+      why: Hypotension is a complication of pericardiocentesis and is present.
 
-  #4  [55.0/100 | medium]  Acute kidney injury  (complication)
-      + hypotension, abnormal labs
-      why: Hypotension and abnormal labs suggest potential kidney injury.
+  #4  [55.0/100 | low]  Acute kidney failure  (secondary)
+      SNOMED aligned : Acute kidney failure, unspecified
+      + abnormal labs, low creatinine
+      − no acute kidney injury symptoms
+      why: Acute kidney failure is a potential secondary condition given the abnormal labs.
 
-  #5  [45.0/100 | high]  SVC syndrome  (complication)
-      SNOMED aligned : SVC stent placed, multiple venous thromboses
-      + confirmed SVC syndrome, recent labs
-      why: SVC syndrome is a known complication and is confirmed.
+  #5  [45.0/100 | low]  Anemia  (secondary)
+      + low hematocrit, hemoglobin
+      − no acute blood loss
+      why: Anemia could explain the low hematocrit and hemoglobin.
 
-  #6  [35.0/100 | medium]  Neurological deterioration  (complication)
-      + altered mental status, hypotension
-      why: Altered mental status and hypotension suggest neurological involvement.
+  #6  [35.0/100 | low]  Sodium imbalance  (risk_factor)
+      SNOMED aligned : Hypo-osmolality and hyponatremia
+      + low sodium
+      − no clinical signs of sodium imbalance
+      why: Sodium imbalance is a risk factor given the low sodium levels.
+
+RULE-OUTS
+---------
+
+  • Non-small cell lung cancer: Not currently supported by evidence.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging of RUL PNA, more detailed neurological assessment
+  • Further imaging to confirm new metastatic lesions
+  • More detailed clinical history to confirm the exact nature of the PNA

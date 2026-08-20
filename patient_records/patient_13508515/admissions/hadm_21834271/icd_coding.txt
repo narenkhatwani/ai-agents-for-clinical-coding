@@ -4,10 +4,10 @@ Patient ID       : 13508515
 HADM ID          : 21834271
 Most likely      : Acute on chronic systolic heart failure
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-19T22:36:59.922717
+Generated (S8)   : 2026-08-20T00:12:21.167614
 
 Summary:
-  The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.
+  The patient is a man with a history of systolic chronic heart failure, renal cell carcinoma, and multiple chronic conditions, admitted for laparoscopic left radical nephrectomy and lymph node dissection. Current symptoms include dyspnea and mild pain, with laboratory findings indicating renal and hematological abnormalities.
 
 #1  [85.0/100 | high]  Acute on chronic systolic heart failure  (primary)
     SNOMED: Acute on chronic systolic heart failure (443253003) [exact score=1.0]
@@ -15,29 +15,29 @@ Summary:
       1. [principal] I50.23 — Acute on chronic systolic (congestive) heart failure
       2. [principal] I50.43 — Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure
 
-#2  [75.0/100 | high]  Renal cell carcinoma  (primary)
+#2  [70.0/100 | medium]  Renal cell carcinoma  (differential)
     SNOMED: Renal cell carcinoma (41607009) [exact score=1.0]
-    ICD status: unmapped | primary: None
+    ICD status: supporting_only | primary: None
+      1. [supporting] N28.89 — Other specified disorders of kidney and ureter  ← left renal mass (tree_symptom)
 
-#3  [70.0/100 | medium]  Anemia  (secondary)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
-
-#4  [65.0/100 | medium]  Hypokalemia  (secondary)
-    SNOMED: Hypokalemia (43339004) [exact score=1.0]
-    ICD status: mapped | primary: E87.6
-      1. [principal] E87.6 — Hypokalemia
-
-#5  [60.0/100 | medium]  Obstructive sleep apnea  (risk_factor)
+#3  [60.0/100 | medium]  Obstructive sleep apnea  (secondary)
     SNOMED: Obstructive sleep apnea syndrome (78275009) [exact score=1.0]
     ICD status: mapped | primary: G47.33
       1. [principal] G47.33 — Obstructive sleep apnea (adult) (pediatric)
       2. [principal] P28.32 — Primary obstructive sleep apnea of newborn
       3. [supporting] R06.00 — Dyspnea, unspecified  ← dyspnea (key_symptom)
 
-#6  [55.0/100 | medium]  Diabetes mellitus  (secondary)
-    SNOMED: Diabetes mellitus (73211009) [exact score=1.0]
-    ICD status: mapped | primary: E11.9
-      1. [principal] E11.9 — Type 2 diabetes mellitus without complications
-      2. [principal] E10.9 — Type 1 diabetes mellitus without complications
+#4  [55.0/100 | medium]  Anemia  (complication)
+    SNOMED: Anemia (271737000) [exact score=1.0]
+    ICD status: mapped | primary: D64.9
+      1. [principal] D64.9 — Anemia, unspecified
+
+#5  [50.0/100 | low]  Hypokalemia  (differential)
+    SNOMED: Hypokalemia (43339004) [exact score=1.0]
+    ICD status: mapped | primary: E87.6
+      1. [principal] E87.6 — Hypokalemia
+
+#6  [45.0/100 | low]  Chronic kidney disease  (complication)
+    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
+    ICD status: mapped | primary: N18.9
+      1. [principal] N18.9 — Chronic kidney disease, unspecified

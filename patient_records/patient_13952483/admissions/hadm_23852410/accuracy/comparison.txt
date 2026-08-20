@@ -3,41 +3,41 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13952483
 HADM ID          : 23852410
-Generated        : 2026-08-19T22:37:31.064393
+Generated        : 2026-08-20T00:13:28.322996
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Other hypotension
-  Rank-1 predicted     : Severe Pulmonary Hypertension with Cor Pulmonale
+  Rank-1 predicted     : Squamous Cell Lung CA
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis of Other hypotension.
+  LLM reason           : None of the ranked differential diagnoses match 'Other hypotension'.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
 
   Ground truth ICD     : I95.89 — Other hypotension
-  Rank-1 mapped ICD    : T86.91 — Unspecified transplanted organ and tissue rejection
+  Rank-1 mapped ICD    : - — 
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the mapped ICD codes match or are clinically equivalent to the ground truth ICD code I95.89.
+  LLM ICD reason       : None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.
   Stage 9 final ICD    : I27.20 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Severe Pulmonary Hypertension with Cor Pulmonale  [score=85.0, high]  ICD=T86.91 — Unspecified transplanted organ and tissue rejection
-   2. Neutropenia  [score=70.0, medium]  ICD=D70.9 — Neutropenia, unspecified
+   1. Squamous Cell Lung CA  [score=85.0, high]  ICD=- — 
+   2. Pulmonary Hypertension  [score=75.0, high]  ICD=- — 
    3. Anemia  [score=65.0, medium]  ICD=D64.9 — Anemia, unspecified
    4. Malnutrition  [score=55.0, medium]  ICD=E46 — Unspecified protein-calorie malnutrition
    5. Chronic Kidney Disease  [score=45.0, low]  ICD=N18.9 — Chronic kidney disease, unspecified
-   6. Pneumonia  [score=30.0, low]  ICD=J18.9 — Pneumonia, unspecified organism
+   6. Cachexia  [score=35.0, low]  ICD=R64 — Cachexia

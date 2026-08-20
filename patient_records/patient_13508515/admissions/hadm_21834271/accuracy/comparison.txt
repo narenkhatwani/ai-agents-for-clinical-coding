@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13508515
 HADM ID          : 21834271
-Generated        : 2026-08-19T22:37:31.063536
+Generated        : 2026-08-20T00:13:25.599643
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
@@ -16,7 +16,7 @@ DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.
+  LLM reason           : The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
@@ -29,15 +29,15 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.
+  LLM ICD reason       : The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.
   Stage 9 final ICD    : I50.23 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
    1. Acute on chronic systolic heart failure  [score=85.0, high]  ICD=I50.23 — Acute on chronic systolic (congestive) heart failure
-   2. Renal cell carcinoma  [score=75.0, high]  ICD=- — 
-   3. Anemia  [score=70.0, medium]  ICD=D64.9 — Anemia, unspecified
-   4. Hypokalemia  [score=65.0, medium]  ICD=E87.6 — Hypokalemia
-   5. Obstructive sleep apnea  [score=60.0, medium]  ICD=G47.33 — Obstructive sleep apnea (adult) (pediatric)
-   6. Diabetes mellitus  [score=55.0, medium]  ICD=E11.9 — Type 2 diabetes mellitus without complications
+   2. Renal cell carcinoma  [score=70.0, medium]  ICD=- — 
+   3. Obstructive sleep apnea  [score=60.0, medium]  ICD=G47.33 — Obstructive sleep apnea (adult) (pediatric)
+   4. Anemia  [score=55.0, medium]  ICD=D64.9 — Anemia, unspecified
+   5. Hypokalemia  [score=50.0, low]  ICD=E87.6 — Hypokalemia
+   6. Chronic kidney disease  [score=45.0, low]  ICD=N18.9 — Chronic kidney disease, unspecified

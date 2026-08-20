@@ -5,44 +5,48 @@ Patient ID       : 11607177
 HADM ID          : 23293838
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:31:40.840602
+Generated        : 2026-08-20T00:09:36.317014
 Candidates       : 5
-Most likely      : Refractory VT
+Most likely      : Refractory ventricular tachycardia
 Prior admissions : 4 (78 ICD codes as PMH context)
 
 Summary:
-  The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.
+  The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Refractory VT  (primary)
-      + Refractory VT requiring ganglionic block
-      why: Primary concern given current ICD shock and ongoing VT.
+  #1  [85.0/100 | high]  Refractory ventricular tachycardia  (primary)
+      SNOMED aligned : I472
+      + ICD shock on ___
+      + Refractory VT in symptom tree
+      why: ICD shock and refractory VT are present, strongly supporting this diagnosis.
 
-  #2  [70.0/100 | medium]  Heart transplantation  (secondary)
-      SNOMED aligned : Transplantation of heart
-      + Heart transplantation in retained SNOMED context
-      why: Recent ICD shock and LVAD suggest potential complications from heart transplantation.
+  #2  [75.0/100 | high]  Dilated non-ischemic cardiomyopathy  (primary)
+      SNOMED aligned : I420
+      + Dilated non-ischemic cardiomyopathy in symptom tree
+      + Dilated cardiomyopathy in prior ICDs
+      why: Dilated cardiomyopathy is a chronic condition and a known cause of ICD shock.
 
-  #3  [65.0/100 | medium]  Chronic heart failure  (secondary)
-      + History of dilated cardiomyopathy and LVAD
-      − No acute symptoms of heart failure
-      why: History of chronic heart failure but no acute symptoms.
+  #3  [65.0/100 | medium]  Congestive heart failure  (complication)
+      + edema in symptom tree
+      + Dilated cardiomyopathy in prior ICDs
+      why: Edema and dilated cardiomyopathy suggest heart failure exacerbation.
 
-  #4  [50.0/100 | low]  Sleep apnea  (risk_factor)
-      SNOMED aligned : Sleep apnea
-      + Sleep apnea in retained SNOMED context
-      − No current symptoms of sleep apnea
-      why: Previous history of sleep apnea but no current symptoms.
+  #4  [50.0/100 | low]  Hypokalemia  (differential)
+      + low potassium in labs
+      why: Low potassium could explain some symptoms but is not the primary focus.
 
-  #5  [45.0/100 | low]  Obesity  (risk_factor)
-      SNOMED aligned : Obesity
-      + BMI 36.7 and obesity in retained SNOMED context
-      − No current symptoms of obesity
-      why: History of obesity but no current symptoms.
+  #5  [40.0/100 | low]  Anemia  (complication)
+      + low hematocrit and hemoglobin in labs
+      why: Low hematocrit and hemoglobin suggest anemia but are secondary to heart failure.
+
+RULE-OUTS
+---------
+
+  • Sleep apnea: While present, it is not the primary focus of the current admission.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • More detailed information on current symptoms and labs would improve ranking
+  • Further imaging or detailed cardiac function tests would clarify the exact nature of the cardiomyopathy and ICD shock

@@ -5,39 +5,54 @@ Patient ID       : 10361982
 HADM ID          : 24286431
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:30:31.325786
-Candidates       : 4
-Most likely      : Hemorrhage following hysterectomy
+Generated        : 2026-08-20T00:08:23.377128
+Candidates       : 5
+Most likely      : Post-hysterectomy uterine atony
 Prior admissions : 1 (11 ICD codes as PMH context)
 
 Summary:
-  The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.
+  Patient presents with heavy vaginal bleeding post hysterectomy, with no free fluid or hematoma noted on ultrasound. Chronic conditions include endometriosis and other uterine neoplasms.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Hemorrhage following hysterectomy  (primary)
-      SNOMED aligned : Heavy episode of vaginal bleeding
-      + heavy vaginal bleeding after hysterectomy; hematocrit decreased
-      why: Heavy bleeding and decreased hematocrit strongly suggest hemorrhage post-hysterectomy.
-
-  #2  [75.0/100 | high]  Postoperative bleeding  (secondary)
-      SNOMED aligned : Heavy episode of vaginal bleeding
+  #1  [85.0/100 | high]  Post-hysterectomy uterine atony  (primary)
+      SNOMED aligned : 315224006
       + heavy vaginal bleeding after hysterectomy
-      why: Postoperative bleeding is a common complication following hysterectomy.
+      + normal postoperative changes and a normal appearing vaginal cuff are noted
+      + no free fluid or hematoma seen on ultrasound
+      why: Heavy vaginal bleeding post hysterectomy strongly supports uterine atony as the primary cause.
 
-  #3  [60.0/100 | medium]  Endometriosis  (risk_factor)
-      SNOMED aligned : Endometriosis of uterus
-      + history of endometriosis
-      − no current evidence of active endometriosis
-      why: Endometriosis is a known risk factor for abnormal uterine bleeding, but current evidence is not strong.
+  #2  [65.0/100 | medium]  Post-hysterectomy uterine inversion  (complication)
+      + heavy vaginal bleeding after hysterectomy
+      + normal postoperative changes and a normal appearing vaginal cuff are noted
+      − no free fluid or hematoma seen on ultrasound
+      why: While less likely, uterine inversion is a known complication of hysterectomy and could explain the bleeding.
 
-  #4  [40.0/100 | low]  Hypothyroidism  (risk_factor)
-      + history of hypothyroidism
-      − no current thyroid function tests or symptoms
-      why: Hypothyroidism can contribute to menstrual irregularities, but current evidence is weak.
+  #3  [40.0/100 | medium]  Endometriosis  (risk_factor)
+      SNOMED aligned : N800
+      + endometriosis of uterus listed as chronic condition
+      − no current evidence of endometriosis causing bleeding
+      why: Endometriosis is a chronic condition and a risk factor for heavy bleeding, but no current evidence supports it as the primary cause.
+
+  #4  [30.0/100 | low]  Hemorrhagic shock  (differential)
+      + heavy vaginal bleeding after hysterectomy
+      − normal hemoglobin and hematocrit levels
+      − no free fluid or hematoma seen on ultrasound
+      why: While possible, hemorrhagic shock is less likely given normal hemoglobin levels and no signs of free fluid.
+
+  #5  [25.0/100 | low]  Infection  (differential)
+      + heavy vaginal bleeding after hysterectomy
+      − normal hemoglobin and hematocrit levels
+      − no free fluid or hematoma seen on ultrasound
+      why: Infection could be a factor, but no current evidence supports it as the primary cause.
+
+RULE-OUTS
+---------
+
+  • Uterine rupture: No evidence of free fluid or signs of rupture on imaging
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • more specific etiology of bleeding, thyroid function tests
+  • Need to know if patient has a history of uterine inversion or if there are signs of infection

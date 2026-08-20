@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF and atrial fibrillation. She also has signs of renal and hematologic dysfunction.",
+  "reasoning": "The patient presents with dyspnea, orthopnea, and worsening CHF, with significant fatigue and incontinence, following a fall and discharge from a previous hospital.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -25,18 +25,36 @@
             {
               "term": "pitting edema",
               "status": "present",
-              "evidence": "2+ pitting lower extremity edema"
+              "evidence": "4+ pitting lower extremity edema"
             }
+          ]
+        },
+        {
+          "term": "crackles",
+          "status": "present",
+          "evidence": "mild bibasilar crackles L > R",
+          "related_findings": [
+            "pulmonary edema"
           ]
         },
         {
           "term": "fatigue",
           "status": "present",
+          "evidence": "all activities now are quite fatiguing"
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
+      "symptoms": [
+        {
+          "term": "tremors",
+          "status": "present",
           "severity": "moderate",
-          "evidence": "all activities now are quite fatiguing",
+          "evidence": "increased spasms in the upper extremities",
           "related_findings": [
-            "crackles in lungs",
-            "pitting edema"
+            "myasthenia gravis"
           ]
         }
       ]
@@ -48,82 +66,10 @@
         {
           "term": "creatinine elevation",
           "status": "present",
-          "severity": "mild",
+          "severity": "moderate",
           "evidence": "Creatinine: 1.6 mg/dL",
           "related_findings": [
-            "orthopnea",
-            "pitting edema"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "hematologic",
-      "ontology_hint": "Hematologic",
-      "symptoms": [
-        {
-          "term": "anemia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Hemoglobin: 10.2 g/dL",
-          "related_findings": [
-            "orthopnea",
-            "pitting edema"
-          ]
-        },
-        {
-          "term": "low MCHC",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "MCHC: 30.0 g/dL",
-          "related_findings": [
-            "orthopnea",
-            "pitting edema"
-          ]
-        },
-        {
-          "term": "low MCV",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "MCV: 81.0 fL",
-          "related_findings": [
-            "orthopnea",
-            "pitting edema"
-          ]
-        },
-        {
-          "term": "low RDW",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "RDW: 18.2 %",
-          "related_findings": [
-            "orthopnea",
-            "pitting edema"
-          ]
-        },
-        {
-          "term": "low RDW-SD",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "RDW-SD: 53.5 fL",
-          "related_findings": [
-            "orthopnea",
-            "pitting edema"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
-      "symptoms": [
-        {
-          "term": "tremors",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "increased spasms in the upper extremities",
-          "related_findings": [
-            "orthopnea",
+            "dyspnea",
             "pitting edema"
           ]
         }
@@ -136,11 +82,10 @@
         {
           "term": "incontinence",
           "status": "present",
-          "severity": "mild",
+          "severity": "moderate",
           "evidence": "urine incontinence",
           "related_findings": [
-            "orthopnea",
-            "pitting edema"
+            "stress incontinence"
           ]
         }
       ]
@@ -148,16 +93,17 @@
   ],
   "key_symptoms": [
     "dyspnea",
-    "orthopnea"
+    "orthopnea",
+    "tremors"
   ],
   "red_flags": [
-    "hypotension",
-    "AMS"
+    "pitting edema",
+    "crackles in lungs"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "12007928",
   "admission_id": "23749816",
-  "generated_at": "2026-08-08T16:19:42.096211"
+  "generated_at": "2026-08-19T23:20:18.096250"
 }

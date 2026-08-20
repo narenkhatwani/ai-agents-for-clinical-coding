@@ -8,50 +8,44 @@ Patient ID       : 16014068
 Admission ID     : 29042843
 
 Reasoning:
-  The patient presents with a fall and subsequent minor abrasions and soreness, along with a history of metastatic sarcoma and recurrent hematoma. The patient's anemia and thrombocytopenia are significant, with ongoing issues related to his malignancy and prior treatments.
+  The patient fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He is on hospice for metastatic sarcoma and has a history of recurrent hematoma and thrombocytopenia.
 
-Key symptoms     : weakness, anemia, thrombocytopenia
+Key symptoms     : weakness, bruising, headache
 Red flags        : hypotension, headache
 
-CONSTITUTIONAL → Other
-----------------------
+CONSTITUTIONAL → Infectious Diseases
+------------------------------------
 
   • [present] weakness
       evidence: "attributes it to weakness"
-      related: anemia, thrombocytopenia
-      • [present] fatigue
-          evidence: "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-  • [present, severe] anemia
+      related: metastatic sarcoma
+  • [present] bruising
+      evidence: "hit his knees and elbows resulting in minor abrasions and soreness"
+      related: metastatic sarcoma
+  • [present] headache
+      evidence: "hit his head"
+      related: metastatic sarcoma
+
+HEMATOLOGIC → Hematologic
+-------------------------
+
+  • [present] anemia
       evidence: "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
-      related: thrombocytopenia, cytokine effects
-      • [present] fatigue
-          evidence: "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-  • [present, mild] thrombocytopenia
-      evidence: "Platelet Count: 63.0 K/uL"
-      related: cytokine effects, chemotherapy side effects
-      • [history] easy bruising
-          evidence: "denies easy bruising"
+      related: thigh hematoma, cytokine-induced thrombocytopenia
+      • [present] thrombocytopenia
+          evidence: "Platelet Count: 63.0 K/uL"
+          related: cytokine-induced thrombocytopenia
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history] hypotension
+      evidence: "BP 114/66"
+      related: metastatic sarcoma
 
 NEUROLOGIC → Neurology
 ----------------------
 
   • [present] headache
       evidence: "hit his head"
-      related: intracranial bleeding
-      • [history] dizziness
-          evidence: "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [history] hypotension
-      evidence: "Blood Pressure: 114/66"
-      related: cytokine effects, chemotherapy side effects
-      • [history] dizziness
-          evidence: "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [history] fever
-      evidence: "denies fevers/chills"
+      related: metastatic sarcoma

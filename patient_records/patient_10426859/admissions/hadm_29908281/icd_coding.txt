@@ -4,35 +4,37 @@ Patient ID       : 10426859
 HADM ID          : 29908281
 Most likely      : Supraventricular tachycardia
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-19T22:36:54.530895
+Generated (S8)   : 2026-08-20T00:12:15.264418
 
 Summary:
-  The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. She has a history of cardiovascular issues including SVT, hypertension, and hyperlipidemia.
+  The patient presents with recurrent supraventricular tachycardia (SVT) causing falls and headache, with new findings of right hip fracture and hypocalcemia. The patient has a history of cardiovascular and neurologic conditions.
 
 #1  [85.0/100 | high]  Supraventricular tachycardia  (primary)
     SNOMED: Supraventricular tachycardia (6456007) [exact score=1.0]
     ICD status: mapped | primary: I47.10
       1. [principal] I47.10 — 
       2. [principal] P29.11 — Neonatal tachycardia
+      3. [supporting] R51.9 — Headache, unspecified  ← headache (key_symptom)
 
-#2  [70.0/100 | medium]  Hip fracture  (complication)
-    SNOMED: Fracture of proximal end of femur (263225007) [exact score=1.0]
+#2  [70.0/100 | high]  Right hip fracture  (complication)
+    SNOMED: Fracture of neck of femur (5913000) [fuzzy score=0.6231912747673617]
     ICD status: mapped | primary: S72.009?
       1. [principal] S72.009? — 
-      2. [supporting] R10.31 — Right lower quadrant pain  ← pain in right hip (key_symptom)
+      2. [supporting] R10.31 — Right lower quadrant pain  ← pain in right hip (tree_symptom)
+      3. [supporting] M79.604 — Pain in right leg  ← pain in right leg (symptom)
 
-#3  [65.0/100 | medium]  Anemia  (differential)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
+#3  [65.0/100 | medium]  Hypocalcemia  (differential)
+    SNOMED: Hypocalcemia (5291005) [exact score=1.0]
+    ICD status: mapped | primary: E83.51
+      1. [principal] E83.51 — Hypocalcemia
+      2. [principal] P71.1 — Other neonatal hypocalcemia
 
-#4  [55.0/100 | low]  Dehydration  (differential)
-    SNOMED: Dehydration (34095006) [exact score=1.0]
-    ICD status: mapped | primary: E86.0
-      1. [principal] E86.0 — Dehydration
-      2. [principal] P74.1 — Dehydration of newborn
+#4  [50.0/100 | low]  Cerebral infarct  (complication)
+    SNOMED: Silent cerebral infarct (723082006) [fuzzy score=0.7887317109255645]
+    ICD status: mapped | primary: I63.9
+      1. [principal] I63.9 — Cerebral infarction, unspecified
 
-#5  [40.0/100 | low]  Hypokalemia  (differential)
-    SNOMED: Hypokalemia (43339004) [exact score=1.0]
-    ICD status: mapped | primary: E87.6
-      1. [principal] E87.6 — Hypokalemia
+#5  [40.0/100 | low]  Anxiety disorder  (risk_factor)
+    SNOMED: Anxiety disorder (197480006) [exact score=1.0]
+    ICD status: mapped | primary: F41.9
+      1. [principal] F41.9 — Anxiety disorder, unspecified

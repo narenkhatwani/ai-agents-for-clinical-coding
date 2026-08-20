@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "18412100",
   "hadm_id": "26093939",
-  "generated_at": "2026-08-19T22:37:31.067339",
+  "generated_at": "2026-08-20T00:13:37.548129",
   "ground_truth": {
     "primary_icd_code": "D481",
     "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Neoplasm of uncertain behavior of connective and other soft tissue",
-      "rank1_diagnosis": "Post-procedural pain",
+      "rank1_diagnosis": "Post-procedural pain and tenderness",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -30,7 +30,7 @@
       "llm_expanded_matched": "",
       "diagnosis_items": [
         {
-          "diagnosis": "Post-procedural pain",
+          "diagnosis": "Post-procedural pain and tenderness",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
@@ -38,31 +38,47 @@
           "icd10_primary_title": "Unspecified abdominal pain"
         },
         {
-          "diagnosis": "Desmoid tumor",
-          "rank": 2,
-          "score": 75.0,
-          "confidence": "medium",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
-        },
-        {
           "diagnosis": "Hepatitis C",
-          "rank": 3,
-          "score": 60.0,
+          "rank": 2,
+          "score": 70.0,
           "confidence": "medium",
           "icd10_primary": "B19.20",
           "icd10_primary_title": "Unspecified viral hepatitis C without hepatic coma"
         },
         {
+          "diagnosis": "Desmoid tumor",
+          "rank": 3,
+          "score": 65.0,
+          "confidence": "medium",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
+        },
+        {
           "diagnosis": "Anemia",
           "rank": 4,
-          "score": 50.0,
-          "confidence": "low",
+          "score": 55.0,
+          "confidence": "medium",
           "icd10_primary": "D64.9",
           "icd10_primary_title": "Anemia, unspecified"
+        },
+        {
+          "diagnosis": "Hypokalemia",
+          "rank": 5,
+          "score": 45.0,
+          "confidence": "low",
+          "icd10_primary": "E87.6",
+          "icd10_primary_title": "Hypokalemia"
+        },
+        {
+          "diagnosis": "Hypomagnesemia",
+          "rank": 6,
+          "score": 40.0,
+          "confidence": "low",
+          "icd10_primary": "E83.42",
+          "icd10_primary_title": "Hypomagnesemia"
         }
       ],
-      "n_diffdx": 4
+      "n_diffdx": 6
     },
     "icd_linked": {
       "ground_truth_icd": "D48.1",
@@ -77,7 +93,7 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue'.",
+      "llm_icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1'.",
       "llm_expanded_ground_truth_icd": "",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "R10.9",
@@ -95,10 +111,10 @@
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue'.",
+      "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1'.",
       "ground_truth_icd_expansions": [],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

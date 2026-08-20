@@ -5,48 +5,54 @@ Patient ID       : 19632936
 HADM ID          : 26696232
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:33:57.532824
+Generated        : 2026-08-20T00:12:06.360079
 Candidates       : 5
-Most likely      : Acute on chronic macrocytic anemia
+Most likely      : Acute macrocytic anemia
 Prior admissions : 1 (18 ICD codes as PMH context)
 
 Summary:
-  The patient presents with acute on chronic dyspnea on exertion, fatigue, and macrocytic anemia. The patient has a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.
+  The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome. The patient has a recent history of macrocytic anemia and is on anticoagulation therapy.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Acute on chronic macrocytic anemia  (primary)
+  #1  [85.0/100 | high]  Acute macrocytic anemia  (primary)
       SNOMED aligned : Macrocytic anemia
-      + acute on chronic macrocytic anemia (current symptom tree)
-      why: Primary diagnosis given the patient's history of chronic anemia and current presentation.
+      + acute on chronic macrocytic anemia
+      + Hgb 6.7, MCV 106, RDW 18.2, Reticulocyte Count, Automated: 3.6 %
+      why: Acute macrocytic anemia is strongly supported by the lab findings and is the primary presenting issue.
 
-  #2  [70.0/100 | medium]  Heart failure  (complication)
-      SNOMED aligned : Congestive heart failure
-      + acute on chronic dyspnea on exertion (current symptom tree)
-      why: Secondary to chronic coronary artery disease and atrial fibrillation.
+  #2  [75.0/100 | medium]  Acute heart failure  (primary)
+      SNOMED aligned : Heart failure
+      + moderate AS, mild pulmonary hypertension
+      + worsening dyspnea over the past year
+      − no recent radiology findings
+      why: Acute heart failure is supported by the history of chronic heart failure and worsening dyspnea, but lacks recent radiology evidence.
 
-  #3  [65.0/100 | medium]  Atrial fibrillation  (secondary)
+  #3  [65.0/100 | medium]  Atrial fibrillation  (complication)
       SNOMED aligned : Atrial fibrillation
-      + history of atrial fibrillation (current symptom tree)
-      why: Given the patient's history and current symptoms.
+      + Afib on warfarin
+      + recent history of atrial fibrillation
+      − INR elevated to 2.4
+      why: Atrial fibrillation is a known chronic condition, but the INR is elevated, suggesting good control.
 
-  #4  [55.0/100 | low]  Anemia of chronic disease  (differential)
-      + chronic conditions (prior ICD-10)
-      − acute presentation (current symptom tree)
-      why: Possible given the patient's chronic conditions, but not primary given acute presentation.
+  #4  [60.0/100 | medium]  Anemia  (primary)
+      + acute on chronic macrocytic anemia
+      + Hgb 6.7, MCV 106, RDW 18.2
+      why: Anemia is a broad term that encompasses macrocytic anemia but lacks specific supporting evidence.
 
-  #5  [40.0/100 | low]  Infectious cause of anemia  (differential)
-      + acute on chronic macrocytic anemia (current symptom tree)
-      − no clear infectious symptoms (current symptom tree)
-      why: Possible given the patient's chronic conditions, but no clear evidence of infection.
+  #5  [55.0/100 | low]  Renal insufficiency  (complication)
+      SNOMED aligned : Renal failure
+      + low calcium, mild anemia
+      − no recent renal function tests indicating acute decline
+      why: Renal insufficiency is a possible complication given the low calcium and mild anemia, but lacks strong evidence.
 
 RULE-OUTS
 ---------
 
-  • Acute coronary syndrome: No evidence of acute chest pain or ischemic changes in labs.
+  • Coronary artery disease: While a known chronic condition, the current presentation is more aligned with acute anemia and heart failure.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further labs to confirm iron deficiency or other causes of macrocytic anemia
+  • More recent radiology findings, specific etiology of macrocytic anemia

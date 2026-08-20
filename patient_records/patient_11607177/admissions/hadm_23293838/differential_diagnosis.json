@@ -1,82 +1,84 @@
 {
-  "summary": "The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.",
-  "most_likely": "Refractory VT",
+  "summary": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.",
+  "most_likely": "Refractory ventricular tachycardia",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Refractory VT",
+      "diagnosis": "Refractory ventricular tachycardia",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "I472",
       "supporting_evidence": [
-        "Refractory VT requiring ganglionic block"
+        "ICD shock on ___",
+        "Refractory VT in symptom tree"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary concern given current ICD shock and ongoing VT."
+      "reasoning": "ICD shock and refractory VT are present, strongly supporting this diagnosis."
     },
     {
       "rank": 2,
-      "diagnosis": "Heart transplantation",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Transplantation of heart",
+      "diagnosis": "Dilated non-ischemic cardiomyopathy",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "I420",
       "supporting_evidence": [
-        "Heart transplantation in retained SNOMED context"
+        "Dilated non-ischemic cardiomyopathy in symptom tree",
+        "Dilated cardiomyopathy in prior ICDs"
       ],
       "opposing_evidence": [],
-      "reasoning": "Recent ICD shock and LVAD suggest potential complications from heart transplantation."
+      "reasoning": "Dilated cardiomyopathy is a chronic condition and a known cause of ICD shock."
     },
     {
       "rank": 3,
-      "diagnosis": "Chronic heart failure",
+      "diagnosis": "Congestive heart failure",
       "score": 65.0,
       "confidence": "medium",
-      "category": "secondary",
+      "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "History of dilated cardiomyopathy and LVAD"
+        "edema in symptom tree",
+        "Dilated cardiomyopathy in prior ICDs"
       ],
-      "opposing_evidence": [
-        "No acute symptoms of heart failure"
-      ],
-      "reasoning": "History of chronic heart failure but no acute symptoms."
+      "opposing_evidence": [],
+      "reasoning": "Edema and dilated cardiomyopathy suggest heart failure exacerbation."
     },
     {
       "rank": 4,
-      "diagnosis": "Sleep apnea",
+      "diagnosis": "Hypokalemia",
       "score": 50.0,
       "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "Sleep apnea",
+      "category": "differential",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Sleep apnea in retained SNOMED context"
+        "low potassium in labs"
       ],
-      "opposing_evidence": [
-        "No current symptoms of sleep apnea"
-      ],
-      "reasoning": "Previous history of sleep apnea but no current symptoms."
+      "opposing_evidence": [],
+      "reasoning": "Low potassium could explain some symptoms but is not the primary focus."
     },
     {
       "rank": 5,
-      "diagnosis": "Obesity",
-      "score": 45.0,
+      "diagnosis": "Anemia",
+      "score": 40.0,
       "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "Obesity",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "BMI 36.7 and obesity in retained SNOMED context"
+        "low hematocrit and hemoglobin in labs"
       ],
-      "opposing_evidence": [
-        "No current symptoms of obesity"
-      ],
-      "reasoning": "History of obesity but no current symptoms."
+      "opposing_evidence": [],
+      "reasoning": "Low hematocrit and hemoglobin suggest anemia but are secondary to heart failure."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Sleep apnea",
+      "why": "While present, it is not the primary focus of the current admission."
+    }
+  ],
   "uncertain_areas": [
-    "More detailed information on current symptoms and labs would improve ranking"
+    "Further imaging or detailed cardiac function tests would clarify the exact nature of the cardiomyopathy and ICD shock"
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -85,7 +87,7 @@
   "_temperature": 0.4,
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-15T17:31:40.840602",
+  "generated_at": "2026-08-20T00:09:36.317014",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,

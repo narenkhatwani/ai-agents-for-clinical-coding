@@ -5,53 +5,57 @@ Patient ID       : 12007928
 HADM ID          : 23749816
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:31:57.828573
-Candidates       : 8
+Generated        : 2026-08-20T00:09:53.056804
+Candidates       : 5
 Most likely      : Acute decompensated heart failure
 Prior admissions : 2 (45 ICD codes as PMH context)
 
 Summary:
-  The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of chronic heart failure, atrial fibrillation, and renal dysfunction.
+  The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Acute decompensated heart failure  (primary)
+      SNOMED aligned : I50.9
       + dyspnea, orthopnea, pitting edema
-      why: Primary presentation with dyspnea, orthopnea, and pitting edema, consistent with acute decompensated heart failure.
+      + mild pulmonary edema
+      + mild pleural effusions
+      + mild atrial fibrillation
+      + creatinine elevation
+      why: Symptoms and findings strongly support acute decompensation of chronic heart failure.
 
-  #2  [70.0/100 | medium]  Chronic kidney disease  (complication)
-      + creatinine elevation, urea nitrogen elevation
-      why: Persistent elevation of creatinine and urea nitrogen, consistent with chronic kidney disease.
+  #2  [70.0/100 | medium]  Atrial fibrillation  (complication)
+      SNOMED aligned : 42717001
+      + paroxysmal atrial fibrillation
+      + mild atrial fibrillation
+      why: Paroxysmal atrial fibrillation is present and may contribute to symptoms.
 
-  #3  [65.0/100 | medium]  Anemia  (complication)
-      + low hemoglobin, low MCH, low MCV, low RDW, low RDW-SD
-      why: Low hemoglobin, MCH, MCV, RDW, and RDW-SD, consistent with anemia.
+  #3  [65.0/100 | medium]  Renal insufficiency  (complication)
+      SNOMED aligned : N17.9
+      + creatinine elevation
+      + urea nitrogen elevation
+      + anemia
+      why: Renal function tests indicate worsening renal insufficiency.
 
-  #4  [55.0/100 | medium]  Atrial fibrillation  (differential)
-      SNOMED aligned : AF - Paroxysmal atrial fibrillation
-      + paroxysmal atrial fibrillation confirmed
-      why: Confirmed paroxysmal atrial fibrillation, a known risk factor for heart failure exacerbation.
+  #4  [50.0/100 | low]  Myasthenia gravis  (differential)
+      SNOMED aligned : G70.0
+      + tremors
+      + increased spasms in the upper extremities
+      − no specific myasthenia gravis findings on chest X-ray
+      why: Tremors and increased spasms suggest myasthenia gravis, but no specific findings support this.
 
-  #5  [45.0/100 | low]  Myasthenia gravis  (risk_factor)
-      + myasthenia gravis confirmed
-      why: Myasthenia gravis, a known risk factor for respiratory muscle weakness and exacerbation of heart failure.
+  #5  [40.0/100 | low]  Anemia  (risk_factor)
+      + low hemoglobin and hematocrit
+      why: Anemia is present but does not fully explain the current presentation.
 
-  #6  [35.0/100 | low]  Pulmonary embolism  (differential)
-      + personal history of pulmonary embolism
-      − no current evidence of acute pulmonary embolism
-      why: Prior history of pulmonary embolism, but no current evidence of acute event.
+RULE-OUTS
+---------
 
-  #7  [30.0/100 | low]  Obstructive sleep apnea  (differential)
-      + obstructive sleep apnea confirmed
-      − no current evidence of acute exacerbation
-      why: Obstructive sleep apnea, a known risk factor for heart failure exacerbation, but no current evidence of acute exacerbation.
-
-  #8  [25.0/100 | low]  Hypothyroidism  (differential)
-      + hypothyroidism confirmed
-      why: Hypothyroidism, a known risk factor for heart failure, but no current evidence of acute exacerbation.
+  • Pneumonia: No evidence of respiratory infection.
+  • Acute coronary syndrome: No chest pain or ECG changes.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • more detailed imaging to confirm pulmonary edema and pleural effusions
+  • Further imaging to confirm presence of pleural effusions and pulmonary edema

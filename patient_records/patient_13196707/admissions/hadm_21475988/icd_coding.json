@@ -1,115 +1,49 @@
 {
-  "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.",
-  "most_likely": "Severe sepsis due to RUL PNA",
+  "summary": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
+  "most_likely": "Severe sepsis secondary to RUL PNA",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Severe sepsis due to RUL PNA",
+      "diagnosis": "Severe sepsis secondary to RUL PNA",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "RUL PNA, hypotension, fever"
+        "RUL PNA, persistent consolidative opacities in both lower lobes"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the recent onset of RUL PNA and clinical signs of sepsis.",
+      "reasoning": "Severe sepsis is the most likely diagnosis given the RUL PNA and hypotension.",
       "snomed_resolution": {
         "mapped": false,
         "concept_id": null,
         "preferred_term": null,
         "match_method": null,
         "score": 0.0,
-        "query": "Severe sepsis due to RUL PNA"
+        "query": "Severe sepsis secondary to RUL PNA"
       },
       "icd10_primary": null,
       "icd10_primary_title": null,
-      "icd10_package": [
-        {
-          "code": "R50.9",
-          "title": "Fever, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "fever",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "386661006",
-          "from_snomed_term": "Fever",
-          "relevance_to_diagnosis": 0.2365,
-          "package_order": 1
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.0419,
-          "package_order": 2
-        }
-      ],
+      "icd10_package": [],
       "icd10_principal": [],
-      "icd10_supporting": [
-        {
-          "code": "R50.9",
-          "title": "Fever, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "fever",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "386661006",
-          "from_snomed_term": "Fever",
-          "relevance_to_diagnosis": 0.2365
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.0419
-        }
-      ],
-      "icd_status": "supporting_only",
-      "n_icd_codes": 2
+      "icd10_supporting": [],
+      "icd_status": "unmapped",
+      "n_icd_codes": 0
     },
     {
       "rank": 2,
       "diagnosis": "Metastatic adenocarcinoma of unknown primary",
       "score": 75.0,
-      "confidence": "high",
+      "confidence": "medium",
       "category": "primary",
       "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
       "supporting_evidence": [
-        "confirmed diagnosis, recent RUL PNA"
+        "confirmed metastatic adenocarcinoma of unknown primary"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Underlying cancer is a known risk factor for sepsis and RUL PNA.",
+      "opposing_evidence": [
+        "no new metastatic lesions noted"
+      ],
+      "reasoning": "Given the patient’s history of metastatic adenocarcinoma, this is a significant risk factor.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "307226002",
@@ -155,276 +89,30 @@
     },
     {
       "rank": 3,
-      "diagnosis": "Hypovolemic shock",
+      "diagnosis": "Hypotension secondary to pericardiocentesis",
       "score": 65.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "severe hypotension, low hematocrit"
+        "recent pericardiocentesis, hypotension"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Hypotension and low hematocrit suggest potential hypovolemic state.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "39419009",
-        "preferred_term": "Hypovolemic shock",
-        "fsn": "Hypovolemic shock (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Hypovolemic shock",
-        "aligned_hint": null
-      },
-      "icd10_primary": "R57.1",
-      "icd10_primary_title": "Hypovolemic shock",
-      "icd10_package": [
-        {
-          "code": "R57.1",
-          "title": "Hypovolemic shock",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R57.1",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "T81.19X?",
-          "title": "",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF POSTOPERATIVE HYPOVOLEMIC SHOCK CHOOSE T81.19X? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.5508,
-          "package_order": 3
-        }
+      "opposing_evidence": [
+        "hypotension is moderate and managed"
       ],
-      "icd10_principal": [
-        {
-          "code": "R57.1",
-          "title": "Hypovolemic shock",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R57.1",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "T81.19X?",
-          "title": "",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF POSTOPERATIVE HYPOVOLEMIC SHOCK CHOOSE T81.19X? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
-          "always": false,
-          "role": "principal",
-          "order": 2
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.5508
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 3
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Acute kidney injury",
-      "score": 55.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "hypotension, abnormal labs"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Hypotension and abnormal labs suggest potential kidney injury.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "14669001",
-        "preferred_term": "Acute renal failure syndrome",
-        "fsn": "Acute kidney injury (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Acute kidney injury",
-        "aligned_hint": null
-      },
-      "icd10_primary": "N17.9",
-      "icd10_primary_title": "Acute kidney failure, unspecified",
-      "icd10_package": [
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1908,
-          "package_order": 2
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1908
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 2
-    },
-    {
-      "rank": 5,
-      "diagnosis": "SVC syndrome",
-      "score": 45.0,
-      "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "SVC stent placed, multiple venous thromboses",
-      "supporting_evidence": [
-        "confirmed SVC syndrome, recent labs"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "SVC syndrome is a known complication and is confirmed.",
+      "reasoning": "Hypotension is a complication of pericardiocentesis and is present.",
       "snomed_resolution": {
         "mapped": false,
         "concept_id": null,
         "preferred_term": null,
         "match_method": null,
         "score": 0.0,
-        "query": "SVC syndrome"
-      },
-      "icd10_primary": null,
-      "icd10_primary_title": null,
-      "icd10_package": [],
-      "icd10_principal": [],
-      "icd10_supporting": [],
-      "icd_status": "unmapped",
-      "n_icd_codes": 0
-    },
-    {
-      "rank": 6,
-      "diagnosis": "Neurological deterioration",
-      "score": 35.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "altered mental status, hypotension"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Altered mental status and hypotension suggest neurological involvement.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "1199008",
-        "preferred_term": "Neurologic",
-        "fsn": "Neurologic (qualifier value)",
-        "match_method": "fuzzy",
-        "score": 0.5186514212677167,
-        "query": "Neurological deterioration",
-        "aligned_hint": null
+        "query": "Hypotension secondary to pericardiocentesis"
       },
       "icd10_primary": null,
       "icd10_primary_title": null,
       "icd10_package": [
         {
-          "code": "R41.82",
-          "title": "Altered mental status, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R41.82",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "altered mental status",
-          "from_kind": "red_flag",
-          "from_snomed_id": "419284004",
-          "from_snomed_term": "Altered mental status",
-          "relevance_to_diagnosis": 0.397,
-          "package_order": 1
-        },
-        {
           "code": "I95.9",
           "title": "Hypotension, unspecified",
           "source": "snomed_extended_map",
@@ -435,32 +123,16 @@
           "role": "supporting",
           "order": 1,
           "from_term": "hypotension",
-          "from_kind": "red_flag",
+          "from_kind": "key_symptom",
           "from_snomed_id": "45007003",
           "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1913,
-          "package_order": 2
+          "relevance_to_diagnosis": 0.6482,
+          "package_order": 1
         }
       ],
       "icd10_principal": [],
       "icd10_supporting": [
         {
-          "code": "R41.82",
-          "title": "Altered mental status, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R41.82",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "altered mental status",
-          "from_kind": "red_flag",
-          "from_snomed_id": "419284004",
-          "from_snomed_term": "Altered mental status",
-          "relevance_to_diagnosis": 0.397
-        },
-        {
           "code": "I95.9",
           "title": "Hypotension, unspecified",
           "source": "snomed_extended_map",
@@ -471,19 +143,219 @@
           "role": "supporting",
           "order": 1,
           "from_term": "hypotension",
-          "from_kind": "red_flag",
+          "from_kind": "key_symptom",
           "from_snomed_id": "45007003",
           "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1913
+          "relevance_to_diagnosis": 0.6482
         }
       ],
       "icd_status": "supporting_only",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Acute kidney failure",
+      "score": 55.0,
+      "confidence": "low",
+      "category": "secondary",
+      "snomed_aligned": "Acute kidney failure, unspecified",
+      "supporting_evidence": [
+        "abnormal labs, low creatinine"
+      ],
+      "opposing_evidence": [
+        "no acute kidney injury symptoms"
+      ],
+      "reasoning": "Acute kidney failure is a potential secondary condition given the abnormal labs.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "56675007",
+        "preferred_term": "Acute heart failure",
+        "fsn": "Acute heart failure (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.5935728561881009,
+        "query": "Acute kidney failure",
+        "aligned_hint": "Acute kidney failure, unspecified"
+      },
+      "icd10_primary": "I50.9",
+      "icd10_primary_title": "Heart failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
       "n_icd_codes": 2
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Anemia",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low hematocrit, hemoglobin"
+      ],
+      "opposing_evidence": [
+        "no acute blood loss"
+      ],
+      "reasoning": "Anemia could explain the low hematocrit and hemoglobin.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Sodium imbalance",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Hypo-osmolality and hyponatremia",
+      "supporting_evidence": [
+        "low sodium"
+      ],
+      "opposing_evidence": [
+        "no clinical signs of sodium imbalance"
+      ],
+      "reasoning": "Sodium imbalance is a risk factor given the low sodium levels.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "267447008",
+        "preferred_term": "Hypo-osmolality and or hyponatremia",
+        "fsn": "Hypo-osmolality and or hyponatremia (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.8830617472970576,
+        "query": "Sodium imbalance",
+        "aligned_hint": "Hypo-osmolality and hyponatremia"
+      },
+      "icd10_primary": "E87.1",
+      "icd10_primary_title": "Hypo-osmolality and hyponatremia",
+      "icd10_package": [
+        {
+          "code": "E87.1",
+          "title": "Hypo-osmolality and hyponatremia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.1",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E87.1",
+          "title": "Hypo-osmolality and hyponatremia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.1",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Non-small cell lung cancer",
+      "why": "Not currently supported by evidence."
+    }
+  ],
   "uncertain_areas": [
-    "Further imaging of RUL PNA, more detailed neurological assessment"
+    "Further imaging to confirm new metastatic lesions",
+    "More detailed clinical history to confirm the exact nature of the PNA"
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis_with_icd",
@@ -492,7 +364,7 @@
   "_temperature": 0.4,
   "patient_id": "13196707",
   "hadm_id": "21475988",
-  "generated_at": "2026-08-15T17:32:11.234822",
+  "generated_at": "2026-08-20T00:10:10.757498",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,
@@ -655,8 +527,8 @@
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
     "n_diagnoses": 6,
-    "n_with_principal": 3,
+    "n_with_principal": 4,
     "n_unmapped": 1
   },
-  "generated_at_stage8": "2026-08-19T22:36:59.210689"
+  "generated_at_stage8": "2026-08-20T00:12:20.390272"
 }

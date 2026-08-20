@@ -5,48 +5,64 @@ Patient ID       : 13952483
 HADM ID          : 23852410
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:32:38.712958
+Generated        : 2026-08-20T00:10:41.130972
 Candidates       : 6
-Most likely      : Severe Pulmonary Hypertension with Cor Pulmonale
+Most likely      : Squamous Cell Lung CA
 Prior admissions : 2 (51 ICD codes as PMH context)
 
 Summary:
-  The patient presents with hypotension, weight loss, anorexia, and multiple constitutional symptoms likely related to lung cancer and immunosuppression. Prior comorbidities include lung cancer, chronic kidney disease, and pulmonary hypertension.
+  The patient presents with hypotension, weight loss, and pulmonary hypertension, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of cough and odynophagia.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Severe Pulmonary Hypertension with Cor Pulmonale  (complication)
-      SNOMED aligned : T8611 — Kidney transplant rejection
-      + Severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg on Right Heart Catheterization
-      why: Strong evidence from Right Heart Catheterization and symptoms of dyspnea and fatigue.
+  #1  [85.0/100 | high]  Squamous Cell Lung CA  (primary)
+      + Squamous Cell Lung CA (confirmed)
+      + hypotension
+      + pulmonary hypertension
+      + cough
+      + odynophagia
+      why: Confirmed diagnosis and evidence of ongoing symptoms related to lung cancer.
 
-  #2  [70.0/100 | medium]  Neutropenia  (complication)
-      + new neutropenia (ANC 750)
-      why: Recent onset of neutropenia, likely related to chemotherapy and radiation therapy.
+  #2  [75.0/100 | high]  Pulmonary Hypertension  (complication)
+      SNOMED aligned : Catheterization of right heart
+      + pulmonary hypertension
+      + severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg
+      why: Confirmed pulmonary hypertension with significant clinical findings.
 
   #3  [65.0/100 | medium]  Anemia  (complication)
-      + Hematocrit: 26.4 %, Hemoglobin: 8.2 g/dL
-      why: Severe anemia with low hematocrit and hemoglobin levels.
+      + hypotension
+      + weight loss
+      + anorexia
+      + neutropenia
+      + thrombocytopenia
+      why: Multiple laboratory abnormalities supporting anemia as a complication.
 
   #4  [55.0/100 | medium]  Malnutrition  (risk_factor)
-      + Overall anorexia and poor appetite
-      why: Persistent anorexia and malaise contributing to weight loss.
+      + anorexia
+      + weight loss
+      + neutropenia
+      + thrombocytopenia
+      why: Persistent anorexia and weight loss suggest malnutrition as a risk factor.
 
   #5  [45.0/100 | low]  Chronic Kidney Disease  (complication)
-      + Creatinine: 1.3 mg/dL, Urea Nitrogen: 28.0 mg/dL
-      why: Abnormal renal function tests, but no recent acute kidney injury.
+      + hypotension
+      + anemia
+      + neutropenia
+      + thrombocytopenia
+      why: Abnormal lab results suggest chronic kidney disease as a possible complication.
 
-  #6  [30.0/100 | low]  Pneumonia  (differential)
-      + Cough, pleuritic/MSK chest pain
-      why: Mild cough and chest pain, but no recent respiratory symptoms or imaging.
+  #6  [35.0/100 | low]  Cachexia  (risk_factor)
+      + weight loss
+      + anorexia
+      why: Weight loss and anorexia suggest cachexia as a risk factor.
 
 RULE-OUTS
 ---------
 
-  • Lung Cancer: Confirmed diagnosis, but not the primary current presentation.
+  • Pneumonia: No current evidence of pneumonia in the structured context.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging or biopsy results would clarify the extent of pulmonary hypertension and any new infections or malignancies
+  • Further clarification on the cause of hypotension and weight loss would refine the differential diagnosis.

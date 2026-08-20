@@ -8,7 +8,7 @@ Patient ID       : 13508515
 Admission ID     : 21834271
 
 Reasoning:
-  The patient presents with a history of renal mass and renal cell carcinoma, along with ongoing cardiovascular and metabolic issues.
+  The patient is a man with a history of severe CHF, ischemic heart disease, and renal cell carcinoma, admitted for laparoscopic left radical nephrectomy and lymph node dissection.
 
 Key symptoms     : dyspnea, pain
 Red flags        : systolic CHF with EF around 30%
@@ -21,24 +21,34 @@ CARDIOVASCULAR → Cardiovascular
       related: systolic CHF with EF around 30%
   • [present, mild] pain
       evidence: "pain well controlled on PCA"
-      related: left renal mass
+      related: systolic CHF with EF around 30%
 
 RENAL → Renal
 -------------
 
-  • [high, moderate] creatinine
+  • [high, mild] creatinine
       evidence: "Creatinine: 2.0 mg/dL"
-      related: left renal mass, renal cell carcinoma
-  • [low, moderate] hemoglobin
+      related: systolic CHF with EF around 30%
+  • [low, mild] hemoglobin
       evidence: "Hemoglobin: 8.9 g/dL"
-      related: left renal mass, renal cell carcinoma
+      related: systolic CHF with EF around 30%
   • [low, mild] platelet count
       evidence: "Platelet Count: 147.0 K/uL"
-      related: left renal mass, renal cell carcinoma
+      related: systolic CHF with EF around 30%
+  • [low, mild] calcium
+      evidence: "Calcium, Total: 8.2 mg/dL"
+      related: systolic CHF with EF around 30%
 
-METABOLIC → Metabolic
----------------------
+NEUROLOGIC → Neurologic
+-----------------------
 
-  • [high, mild] glucose
-      evidence: "Glucose: 113.0 mg/dL"
-      related: type 2 diabetes
+  • [confirmed] obstructive sleep apnea
+      evidence: "obstructive sleep apnea, on CPAP"
+      related: systolic CHF with EF around 30%
+
+OTHER → Other
+-------------
+
+  • [confirmed] left renal mass
+      evidence: "left renal mass"
+      related: renal cell carcinoma

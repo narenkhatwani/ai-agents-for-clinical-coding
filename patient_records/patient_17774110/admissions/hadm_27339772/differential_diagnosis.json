@@ -1,124 +1,124 @@
 {
-  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease and hepatitis C.",
-  "most_likely": "Severe sepsis with septic shock",
+  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient is also on mechanical ventilation due to hypoxic respiratory failure.",
+  "most_likely": "Acute liver failure",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Severe sepsis with septic shock",
+      "diagnosis": "Acute liver failure",
       "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "Acute liver failure",
+      "supporting_evidence": [
+        "Worsening liver failure, Hepatic encephalopathy, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L, PT 36.5 sec, PTT 104.2 sec"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Strong evidence of liver failure with elevated liver enzymes and coagulation parameters."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Septic shock",
+      "score": 75.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Septic shock, Klebsiella Aerogenes blood cultures grew"
+        "Septic shock, Bilirubin 13.3 mg/dL, WBC 8.4 K/uL, PT 36.5 sec, PTT 104.2 sec"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition, evidenced by septic shock and elevated inflammatory markers."
+      "reasoning": "Severe sepsis with evidence of systemic inflammatory response and coagulopathy."
     },
     {
-      "rank": 2,
+      "rank": 3,
       "diagnosis": "Hepatic encephalopathy",
-      "score": 75.0,
+      "score": 70.0,
       "confidence": "high",
       "category": "complication",
       "snomed_aligned": "Hepatic encephalopathy",
       "supporting_evidence": [
-        "Hepatic encephalopathy, RASS-5, sluggish pupil response"
+        "Hepatic encephalopathy, RASS-5, sluggish pupil response, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
       ],
       "opposing_evidence": [],
-      "reasoning": "Hepatic encephalopathy is a well-known complication of severe liver failure, supported by the patient's altered mental status and elevated liver enzymes."
-    },
-    {
-      "rank": 3,
-      "diagnosis": "Acute liver failure",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "primary",
-      "snomed_aligned": "Acute liver failure",
-      "supporting_evidence": [
-        "Worsening liver failure, Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Acute liver failure is a severe form of liver failure, evidenced by the patient's elevated liver enzymes and worsening liver function."
+      "reasoning": "Severe liver failure with evidence of altered mental status and elevated liver enzymes."
     },
     {
       "rank": 4,
-      "diagnosis": "GI bleeding",
+      "diagnosis": "Acute renal failure",
       "score": 65.0,
       "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "Gastrointestinal hemorrhage",
+      "snomed_aligned": "Acute renal failure",
       "supporting_evidence": [
-        "GI bleeding, black coffee-ground GI contents"
+        "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units"
       ],
       "opposing_evidence": [],
-      "reasoning": "GI bleeding is a critical complication, evidenced by the patient's black coffee-ground GI contents and low platelet count."
+      "reasoning": "Severe acidosis and electrolyte disturbances suggesting acute renal failure."
     },
     {
       "rank": 5,
-      "diagnosis": "Atrial fibrillation/flutter",
-      "score": 50.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Atrial fibrillation/flutter, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Atrial fibrillation/flutter is a known complication, evidenced by the patient's elevated INR and prolonged coagulation times."
-    },
-    {
-      "rank": 6,
       "diagnosis": "Pleural effusion",
-      "score": 45.0,
+      "score": 60.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "Pleural effusion",
       "supporting_evidence": [
-        "Pleural effusion, large pleural effusion with compressive consolidation versus atelectasis"
+        "Large pleural effusion with compressive consolidation versus atelectasis"
       ],
       "opposing_evidence": [],
-      "reasoning": "Pleural effusion is a common complication, evidenced by the patient's bilateral pleural effusions."
+      "reasoning": "Evidence of pleural effusion on imaging, but less likely primary cause given other severe systemic issues."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "IVC thrombus",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "IVC thrombus",
+      "supporting_evidence": [
+        "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "IVC thrombus present, but less likely primary cause given other severe systemic issues."
     },
     {
       "rank": 7,
-      "diagnosis": "Renal failure",
-      "score": 40.0,
+      "diagnosis": "Cirrhosis",
+      "score": 50.0,
       "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "category": "secondary",
+      "snomed_aligned": "Cirrhosis of liver",
       "supporting_evidence": [
-        "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L"
+        "Cirrhosis, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
       ],
       "opposing_evidence": [],
-      "reasoning": "Renal failure is a significant complication, evidenced by the patient's elevated creatinine and bicarbonate levels."
+      "reasoning": "Chronic condition with evidence of liver dysfunction."
     },
     {
       "rank": 8,
-      "diagnosis": "Coagulopathy",
-      "score": 35.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "diagnosis": "Bipolar disorder",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Bipolar disorder",
       "supporting_evidence": [
-        "Coagulopathy, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+        "Bipolar disorder, unspecified"
       ],
       "opposing_evidence": [],
-      "reasoning": "Coagulopathy is a critical complication, evidenced by the patient's prolonged coagulation times."
+      "reasoning": "Previous diagnosis, but less likely to be the primary cause of current acute presentation."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Cirrhosis",
-      "why": "Cirrhosis is a chronic condition and not the primary driver of the current presentation."
+      "diagnosis": "GI bleeding",
+      "why": "GI bleeding is present but less likely to be the primary cause given the severity of liver failure and septic shock."
     },
     {
-      "diagnosis": "Hepatocellular carcinoma",
-      "why": "While present, the primary focus is on the acute complications and sepsis."
+      "diagnosis": "Atrial fibrillation/flutter",
+      "why": "Atrial fibrillation/flutter is present but less likely to be the primary cause given the severity of liver failure and septic shock."
     }
   ],
   "uncertain_areas": [
-    "Further details on the source of sepsis and the exact nature of the liver failure would refine the differential diagnosis."
+    "Further clarification on the source of infection and the exact nature of the liver failure would change the ranking"
   ],
   "n_candidates": 8,
   "type": "differential_diagnosis",
@@ -127,7 +127,7 @@
   "_temperature": 0.4,
   "patient_id": "17774110",
   "hadm_id": "27339772",
-  "generated_at": "2026-08-15T17:33:14.305981",
+  "generated_at": "2026-08-20T00:11:17.961790",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 15,

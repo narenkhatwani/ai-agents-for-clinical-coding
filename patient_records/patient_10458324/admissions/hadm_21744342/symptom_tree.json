@@ -1,13 +1,13 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and psychiatric conditions.",
+  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a fall, with ongoing respiratory symptoms and signs of trauma.",
   "branches": [
     {
       "category": "respiratory",
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "right sided rib fractures",
+          "term": "right rib fractures",
           "status": "present",
           "severity": "moderate",
           "evidence": "right sided rib fractures",
@@ -19,9 +19,18 @@
             {
               "term": "right PTX",
               "status": "present",
-              "severity": "mild",
               "evidence": "small right PTX"
             }
+          ]
+        },
+        {
+          "term": "hypoxia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "satting 96% on 4L",
+          "related_findings": [
+            "right PTX",
+            "subcutaneous emphysema"
           ]
         },
         {
@@ -67,13 +76,11 @@
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "hypoxia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "satting 96% on 4L",
-          "related_findings": [
-            "right PTX"
-          ]
+          "term": "hypotension",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "BP 121/72",
+          "related_findings": []
         }
       ]
     },
@@ -82,22 +89,29 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "influenza A",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "influenza A PCR +"
+          "term": "bacterial pneumonia",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "Gram stain and culture results negative",
+          "related_findings": [
+            "cough",
+            "fever",
+            "nasal congestion",
+            "sore throat"
+          ]
         }
       ]
     },
     {
       "category": "neurologic",
-      "ontology_hint": "Neurologic",
+      "ontology_hint": "Neurology",
       "symptoms": [
         {
           "term": "insomnia",
           "status": "present",
           "severity": "mild",
-          "evidence": "nightmares of being left alone and mistreated"
+          "evidence": "nightmares of being left alone and mistreated",
+          "related_findings": []
         }
       ]
     },
@@ -109,30 +123,33 @@
           "term": "vomiting",
           "status": "present",
           "severity": "mild",
-          "evidence": "one episode of vomiting"
+          "evidence": "one episode of vomiting",
+          "related_findings": []
         },
         {
           "term": "diarrhea",
           "status": "present",
           "severity": "mild",
-          "evidence": "diarrhea"
+          "evidence": "diarrhea",
+          "related_findings": []
         }
       ]
     }
   ],
   "key_symptoms": [
-    "right sided rib fractures",
+    "right rib fractures",
     "hypoxia",
-    "cough"
+    "cough",
+    "fever"
   ],
   "red_flags": [
-    "hypoxia",
-    "insomnia"
+    "hypotension",
+    "AMS"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10458324",
   "admission_id": "21744342",
-  "generated_at": "2026-08-08T16:18:51.903113"
+  "generated_at": "2026-08-19T23:19:32.076465"
 }

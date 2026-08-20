@@ -2,26 +2,14 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 17774110
 HADM ID          : 27339772
-Most likely      : Severe sepsis with septic shock
+Most likely      : Acute liver failure
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-19T22:37:02.364591
+Generated (S8)   : 2026-08-20T00:12:23.472131
 
 Summary:
-  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease and hepatitis C.
+  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient is also on mechanical ventilation due to hypoxic respiratory failure.
 
-#1  [85.0/100 | high]  Severe sepsis with septic shock  (primary)
-    SNOMED: Septic shock (76571007) [fuzzy score=0.5913563849048451]
-    ICD status: mapped | primary: R65.21
-      1. [principal] R65.21 — Severe sepsis with septic shock
-
-#2  [75.0/100 | high]  Hepatic encephalopathy  (complication)
-    SNOMED: Hepatic encephalopathy (13920009) [exact score=1.0]
-    ICD status: mapped | primary: K76.82
-      1. [principal] K76.82 — Hepatic encephalopathy
-      2. [supporting] K72.00 — Acute and subacute hepatic failure without coma  ← Worsening liver failure (symptom)
-      3. [supporting] K76.7 — Hepatorenal syndrome  ← Worsening liver failure (symptom)
-
-#3  [70.0/100 | medium]  Acute liver failure  (primary)
+#1  [85.0/100 | high]  Acute liver failure  (primary)
     SNOMED: Acute liver failure (197270009) [exact score=1.0]
     ICD status: mapped | primary: K72.00
       1. [principal] K72.00 — Acute and subacute hepatic failure without coma
@@ -33,35 +21,44 @@ Summary:
       7. [supporting] K76.82 — Hepatic encephalopathy  ← Hepatic encephalopathy (symptom)
       8. [supporting] K74.69 — Other cirrhosis of liver  ← Cirrhosis (diagnosis)
 
-#4  [65.0/100 | high]  GI bleeding  (complication)
-    SNOMED: Gastrointestinal hemorrhage (74474003) [exact score=1.0]
-    ICD status: mapped | primary: K92.2
-      1. [principal] K92.2 — Gastrointestinal hemorrhage, unspecified
-      2. [principal] P54.3 — Other neonatal gastrointestinal hemorrhage
+#2  [75.0/100 | high]  Septic shock  (primary)
+    SNOMED: Septic shock (76571007) [exact score=1.0]
+    ICD status: mapped | primary: R65.21
+      1. [principal] R65.21 — Severe sepsis with septic shock
 
-#5  [50.0/100 | medium]  Atrial fibrillation/flutter  (complication)
-    SNOMED: Atrial fibrillation (49436004) [fuzzy score=0.6170956778314645]
-    ICD status: mapped | primary: I48.91
-      1. [principal] I48.91 — Unspecified atrial fibrillation
+#3  [70.0/100 | high]  Hepatic encephalopathy  (complication)
+    SNOMED: Hepatic encephalopathy (13920009) [exact score=1.0]
+    ICD status: mapped | primary: K76.82
+      1. [principal] K76.82 — Hepatic encephalopathy
+      2. [supporting] K72.00 — Acute and subacute hepatic failure without coma  ← Worsening liver failure (symptom)
+      3. [supporting] K76.7 — Hepatorenal syndrome  ← Worsening liver failure (symptom)
 
-#6  [45.0/100 | medium]  Pleural effusion  (complication)
+#4  [65.0/100 | high]  Acute renal failure  (complication)
+    SNOMED: Acute renal failure syndrome (14669001) [exact score=1.0]
+    ICD status: mapped | primary: N17.9
+      1. [principal] N17.9 — Acute kidney failure, unspecified
+      2. [supporting] K72.00 — Acute and subacute hepatic failure without coma  ← Acute liver failure (retained_snomed)
+      3. [supporting] K76.7 — Hepatorenal syndrome  ← Acute liver failure (retained_snomed)
+
+#5  [60.0/100 | medium]  Pleural effusion  (complication)
     SNOMED: Pleural effusion (60046008) [exact score=1.0]
     ICD status: mapped | primary: J90
       1. [principal] J90 — Pleural effusion, not elsewhere classified
       2. [principal] P28.89 — Other specified respiratory conditions of newborn
-      3. [supporting] J98.11 — Atelectasis  ← Atelectasis (tree_symptom)
 
-#7  [40.0/100 | medium]  Renal failure  (complication)
-    SNOMED: Renal failure syndrome (42399005) [exact score=1.0]
-    ICD status: mapped | primary: N19
-      1. [principal] N19 — Unspecified kidney failure
-      2. [principal] P96.0 — Congenital renal failure
-      3. [supporting] N17.9 — Acute kidney failure, unspecified  ← Acute renal failure (red_flag)
-      4. [supporting] K72.00 — Acute and subacute hepatic failure without coma  ← Acute liver failure (retained_snomed)
-      5. [supporting] K76.7 — Hepatorenal syndrome  ← Acute liver failure (retained_snomed)
+#6  [55.0/100 | medium]  IVC thrombus  (complication)
+    SNOMED: Thrombus (396339007) [fuzzy score=0.7040731195102493]
+    ICD status: unmapped | primary: None
 
-#8  [35.0/100 | medium]  Coagulopathy  (complication)
-    SNOMED: Blood coagulation disorder (64779008) [exact score=1.0]
-    ICD status: mapped | primary: D68.9
-      1. [principal] D68.9 — Coagulation defect, unspecified
-      2. [principal] P61.6 — Other transient neonatal disorders of coagulation
+#7  [50.0/100 | medium]  Cirrhosis  (secondary)
+    SNOMED: Cirrhosis of liver (19943007) [exact score=1.0]
+    ICD status: mapped | primary: K74.60
+      1. [principal] K74.60 — Unspecified cirrhosis of liver
+      2. [supporting] K74.69 — Other cirrhosis of liver  ← Early cirrhosis (retained_snomed)
+      3. [supporting] K72.00 — Acute and subacute hepatic failure without coma  ← Worsening liver failure (symptom)
+      4. [supporting] K76.7 — Hepatorenal syndrome  ← Worsening liver failure (symptom)
+
+#8  [30.0/100 | low]  Bipolar disorder  (risk_factor)
+    SNOMED: Bipolar disorder (13746004) [exact score=1.0]
+    ICD status: mapped | primary: F31.9
+      1. [principal] F31.9 — Bipolar disorder, unspecified

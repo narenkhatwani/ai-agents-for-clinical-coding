@@ -1,79 +1,61 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with a fall and subsequent minor abrasions and soreness, along with a history of metastatic sarcoma and recurrent hematoma. The patient's anemia and thrombocytopenia are significant, with ongoing issues related to his malignancy and prior treatments.",
+  "reasoning": "The patient fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He is on hospice for metastatic sarcoma and has a history of recurrent hematoma and thrombocytopenia.",
   "branches": [
     {
       "category": "constitutional",
-      "ontology_hint": "Other",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
           "term": "weakness",
           "status": "present",
           "evidence": "attributes it to weakness",
           "related_findings": [
-            "anemia",
-            "thrombocytopenia"
+            "metastatic sarcoma"
           ],
-          "children": [
-            {
-              "term": "fatigue",
-              "status": "present",
-              "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-            }
-          ]
+          "children": []
         },
         {
-          "term": "anemia",
+          "term": "bruising",
           "status": "present",
-          "severity": "severe",
-          "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
+          "evidence": "hit his knees and elbows resulting in minor abrasions and soreness",
           "related_findings": [
-            "thrombocytopenia",
-            "cytokine effects"
+            "metastatic sarcoma"
           ],
-          "children": [
-            {
-              "term": "fatigue",
-              "status": "present",
-              "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-            }
-          ]
+          "children": []
         },
-        {
-          "term": "thrombocytopenia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Platelet Count: 63.0 K/uL",
-          "related_findings": [
-            "cytokine effects",
-            "chemotherapy side effects"
-          ],
-          "children": [
-            {
-              "term": "easy bruising",
-              "status": "history",
-              "evidence": "denies easy bruising"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurology",
-      "symptoms": [
         {
           "term": "headache",
           "status": "present",
           "evidence": "hit his head",
           "related_findings": [
-            "intracranial bleeding"
+            "metastatic sarcoma"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "hematologic",
+      "ontology_hint": "Hematologic",
+      "symptoms": [
+        {
+          "term": "anemia",
+          "status": "present",
+          "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
+          "related_findings": [
+            "thigh hematoma",
+            "cytokine-induced thrombocytopenia"
           ],
           "children": [
             {
-              "term": "dizziness",
-              "status": "history",
-              "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+              "term": "thrombocytopenia",
+              "status": "present",
+              "evidence": "Platelet Count: 63.0 K/uL",
+              "related_findings": [
+                "cytokine-induced thrombocytopenia"
+              ],
+              "children": []
             }
           ]
         }
@@ -86,37 +68,34 @@
         {
           "term": "hypotension",
           "status": "history",
-          "evidence": "Blood Pressure: 114/66",
+          "evidence": "BP 114/66",
           "related_findings": [
-            "cytokine effects",
-            "chemotherapy side effects"
+            "metastatic sarcoma"
           ],
-          "children": [
-            {
-              "term": "dizziness",
-              "status": "history",
-              "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-            }
-          ]
+          "children": []
         }
       ]
     },
     {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
       "symptoms": [
         {
-          "term": "fever",
-          "status": "history",
-          "evidence": "denies fevers/chills"
+          "term": "headache",
+          "status": "present",
+          "evidence": "hit his head",
+          "related_findings": [
+            "metastatic sarcoma"
+          ],
+          "children": []
         }
       ]
     }
   ],
   "key_symptoms": [
     "weakness",
-    "anemia",
-    "thrombocytopenia"
+    "bruising",
+    "headache"
   ],
   "red_flags": [
     "hypotension",
@@ -127,5 +106,5 @@
   "_agent": "symptom_tree",
   "patient_id": "16014068",
   "admission_id": "29042843",
-  "generated_at": "2026-08-08T16:20:36.434081"
+  "generated_at": "2026-08-19T23:20:55.809885"
 }

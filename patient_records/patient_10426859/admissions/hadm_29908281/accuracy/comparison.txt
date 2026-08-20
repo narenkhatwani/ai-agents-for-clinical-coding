@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10426859
 HADM ID          : 29908281
-Generated        : 2026-08-19T22:37:31.055904
+Generated        : 2026-08-20T00:13:00.834861
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
@@ -16,7 +16,7 @@ DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
   Matched DiffDx rank  : 1
   Matched diagnosis    : Supraventricular tachycardia
     score=85.0  confidence=high
-  LLM reason           : Rank 1 diagnosis 'Supraventricular tachycardia' matches the ground truth diagnosis.
+  LLM reason           : The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
@@ -29,14 +29,14 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : Rank 1 mapped ICD 'I47.10' matches the ground truth ICD 'I47.1'.
+  LLM ICD reason       : The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.
   Stage 9 final ICD    : I47.10 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
    1. Supraventricular tachycardia  [score=85.0, high]  ICD=I47.10 — 
-   2. Hip fracture  [score=70.0, medium]  ICD=S72.009? — 
-   3. Anemia  [score=65.0, medium]  ICD=D64.9 — Anemia, unspecified
-   4. Dehydration  [score=55.0, low]  ICD=E86.0 — Dehydration
-   5. Hypokalemia  [score=40.0, low]  ICD=E87.6 — Hypokalemia
+   2. Right hip fracture  [score=70.0, high]  ICD=S72.009? — 
+   3. Hypocalcemia  [score=65.0, medium]  ICD=E83.51 — Hypocalcemia
+   4. Cerebral infarct  [score=50.0, low]  ICD=I63.9 — Cerebral infarction, unspecified
+   5. Anxiety disorder  [score=40.0, low]  ICD=F41.9 — Anxiety disorder, unspecified

@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of chronic heart failure, atrial fibrillation, and renal dysfunction.",
+  "summary": "The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.",
   "most_likely": "Acute decompensated heart failure",
   "differential": [
     {
@@ -8,121 +8,97 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "I50.9",
       "supporting_evidence": [
-        "dyspnea, orthopnea, pitting edema"
+        "dyspnea, orthopnea, pitting edema",
+        "mild pulmonary edema",
+        "mild pleural effusions",
+        "mild atrial fibrillation",
+        "creatinine elevation"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary presentation with dyspnea, orthopnea, and pitting edema, consistent with acute decompensated heart failure."
+      "reasoning": "Symptoms and findings strongly support acute decompensation of chronic heart failure."
     },
     {
       "rank": 2,
-      "diagnosis": "Chronic kidney disease",
+      "diagnosis": "Atrial fibrillation",
       "score": 70.0,
       "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "42717001",
       "supporting_evidence": [
-        "creatinine elevation, urea nitrogen elevation"
+        "paroxysmal atrial fibrillation",
+        "mild atrial fibrillation"
       ],
       "opposing_evidence": [],
-      "reasoning": "Persistent elevation of creatinine and urea nitrogen, consistent with chronic kidney disease."
+      "reasoning": "Paroxysmal atrial fibrillation is present and may contribute to symptoms."
     },
     {
       "rank": 3,
-      "diagnosis": "Anemia",
+      "diagnosis": "Renal insufficiency",
       "score": 65.0,
       "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "N17.9",
       "supporting_evidence": [
-        "low hemoglobin, low MCH, low MCV, low RDW, low RDW-SD"
+        "creatinine elevation",
+        "urea nitrogen elevation",
+        "anemia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Low hemoglobin, MCH, MCV, RDW, and RDW-SD, consistent with anemia."
+      "reasoning": "Renal function tests indicate worsening renal insufficiency."
     },
     {
       "rank": 4,
-      "diagnosis": "Atrial fibrillation",
-      "score": 55.0,
-      "confidence": "medium",
+      "diagnosis": "Myasthenia gravis",
+      "score": 50.0,
+      "confidence": "low",
       "category": "differential",
-      "snomed_aligned": "AF - Paroxysmal atrial fibrillation",
+      "snomed_aligned": "G70.0",
       "supporting_evidence": [
-        "paroxysmal atrial fibrillation confirmed"
+        "tremors",
+        "increased spasms in the upper extremities"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed paroxysmal atrial fibrillation, a known risk factor for heart failure exacerbation."
+      "opposing_evidence": [
+        "no specific myasthenia gravis findings on chest X-ray"
+      ],
+      "reasoning": "Tremors and increased spasms suggest myasthenia gravis, but no specific findings support this."
     },
     {
       "rank": 5,
-      "diagnosis": "Myasthenia gravis",
-      "score": 45.0,
+      "diagnosis": "Anemia",
+      "score": 40.0,
       "confidence": "low",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "myasthenia gravis confirmed"
+        "low hemoglobin and hematocrit"
       ],
       "opposing_evidence": [],
-      "reasoning": "Myasthenia gravis, a known risk factor for respiratory muscle weakness and exacerbation of heart failure."
-    },
-    {
-      "rank": 6,
-      "diagnosis": "Pulmonary embolism",
-      "score": 35.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "personal history of pulmonary embolism"
-      ],
-      "opposing_evidence": [
-        "no current evidence of acute pulmonary embolism"
-      ],
-      "reasoning": "Prior history of pulmonary embolism, but no current evidence of acute event."
-    },
-    {
-      "rank": 7,
-      "diagnosis": "Obstructive sleep apnea",
-      "score": 30.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "obstructive sleep apnea confirmed"
-      ],
-      "opposing_evidence": [
-        "no current evidence of acute exacerbation"
-      ],
-      "reasoning": "Obstructive sleep apnea, a known risk factor for heart failure exacerbation, but no current evidence of acute exacerbation."
-    },
-    {
-      "rank": 8,
-      "diagnosis": "Hypothyroidism",
-      "score": 25.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "hypothyroidism confirmed"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Hypothyroidism, a known risk factor for heart failure, but no current evidence of acute exacerbation."
+      "reasoning": "Anemia is present but does not fully explain the current presentation."
     }
   ],
-  "rule_outs": [],
-  "uncertain_areas": [
-    "more detailed imaging to confirm pulmonary edema and pleural effusions"
+  "rule_outs": [
+    {
+      "diagnosis": "Pneumonia",
+      "why": "No evidence of respiratory infection."
+    },
+    {
+      "diagnosis": "Acute coronary syndrome",
+      "why": "No chest pain or ECG changes."
+    }
   ],
-  "n_candidates": 8,
+  "uncertain_areas": [
+    "Further imaging to confirm presence of pleural effusions and pulmonary edema"
+  ],
+  "n_candidates": 5,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "12007928",
   "hadm_id": "23749816",
-  "generated_at": "2026-08-15T17:31:57.828573",
+  "generated_at": "2026-08-20T00:09:53.056804",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 5,

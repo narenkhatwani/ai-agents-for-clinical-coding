@@ -8,28 +8,22 @@ Patient ID       : 10361982
 Admission ID     : 24286431
 
 Reasoning:
-  The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.
+  The patient presents with heavy vaginal bleeding after a recent hysterectomy, which is the primary reason for admission.
 
-Key symptoms     : heavy vaginal bleeding, abdominal bloatedness
-Red flags        : hematocrit decreased
+Key symptoms     : heavy vaginal bleeding, passing clots
 
-GYNECOLOGIC → Obstetrics/Gynecology
------------------------------------
+GI → Gynecology
+---------------
 
-  • [present, severe] heavy vaginal bleeding
+  • [present, moderate] heavy vaginal bleeding
       evidence: "heavy vaginal bleeding after hysterectomy"
-      related: hematocrit decreased from 40.1 to 38.1
+      related: menorrhagia, vaginal spotting to light bleeding
       • [present] passing clots
           evidence: "passing 'munchin' sized clots"
-  • [history, mild] abdominal bloatedness
-      evidence: "abdominal bloatedness secondary to gas"
-  • [history, mild] vaginal spotting to light bleeding
-      evidence: "vaginal spotting to light bleeding"
-  • [history, moderate] menorrhagia
-      evidence: "history of abnormal uterine bleeding"
-  • [history, moderate] dysmenorrhea
-      evidence: "dysmenorrhea"
-  • [history, moderate] intra-menstrual bleeding
-      evidence: "intra-menstrual bleeding"
-  • [history, mild] post-coital bleeding
-      evidence: "post-coital bleeding"
+
+CONSTITUTIONAL → Hematology
+---------------------------
+
+  • [abnormal, mild] hemoglobin level
+      evidence: "HGB-12.6"
+      related: HCT-38.1

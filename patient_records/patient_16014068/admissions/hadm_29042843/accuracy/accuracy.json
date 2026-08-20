@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "16014068",
   "hadm_id": "29042843",
-  "generated_at": "2026-08-19T22:37:31.065269",
+  "generated_at": "2026-08-20T00:13:31.452930",
   "ground_truth": {
     "primary_icd_code": "C7931",
     "primary_dx_title": "Secondary malignant neoplasm of brain",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Secondary malignant neoplasm of brain",
-      "rank1_diagnosis": "Anemia due to malignancy",
+      "rank1_diagnosis": "Metastatic sarcoma with hematologic complications",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -25,58 +25,66 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Secondary malignant neoplasm of brain'.",
-      "llm_expanded_ground_truth": "Secondary malignant neoplasm of brain",
+      "llm_reason": "The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.",
+      "llm_expanded_ground_truth": "",
       "llm_expanded_matched": "",
       "diagnosis_items": [
         {
-          "diagnosis": "Anemia due to malignancy",
+          "diagnosis": "Metastatic sarcoma with hematologic complications",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": "B99.9",
-          "icd10_primary_title": "Unspecified infectious disease"
+          "icd10_primary": "C79.89",
+          "icd10_primary_title": "Secondary malignant neoplasm of other specified sites"
         },
         {
-          "diagnosis": "Thrombocytopenia due to malignancy",
+          "diagnosis": "Anemia",
           "rank": 2,
-          "score": 75.0,
+          "score": 70.0,
           "confidence": "high",
-          "icd10_primary": "U07.1",
-          "icd10_primary_title": "COVID-19"
+          "icd10_primary": "D64.9",
+          "icd10_primary_title": "Anemia, unspecified"
+        },
+        {
+          "diagnosis": "Thrombocytopenia",
+          "rank": 3,
+          "score": 65.0,
+          "confidence": "high",
+          "icd10_primary": "O36.8290",
+          "icd10_primary_title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified"
         },
         {
           "diagnosis": "Hypotension",
-          "rank": 3,
-          "score": 60.0,
+          "rank": 4,
+          "score": 50.0,
           "confidence": "medium",
           "icd10_primary": "I95.9",
           "icd10_primary_title": "Hypotension, unspecified"
         },
         {
           "diagnosis": "Headache",
-          "rank": 4,
-          "score": 50.0,
+          "rank": 5,
+          "score": 45.0,
           "confidence": "medium",
           "icd10_primary": "R51.9",
           "icd10_primary_title": "Headache, unspecified"
         },
         {
-          "diagnosis": "Metastatic sarcoma to the brain",
-          "rank": 5,
-          "score": 45.0,
+          "diagnosis": "Abdominal pain",
+          "rank": 6,
+          "score": 35.0,
           "confidence": "low",
-          "icd10_primary": "C79.89",
-          "icd10_primary_title": "Secondary malignant neoplasm of other specified sites"
+          "icd10_primary": "R10.9",
+          "icd10_primary_title": "Unspecified abdominal pain"
         }
       ],
-      "n_diffdx": 5
+      "n_diffdx": 6
     },
     "icd_linked": {
       "ground_truth_icd": "C79.31",
       "ground_truth_icd_title": "Secondary malignant neoplasm of brain",
-      "rank1_predicted_icd": "B99.9",
-      "rank1_predicted_icd_title": "Unspecified infectious disease",
+      "rank1_predicted_icd": "C79.89",
+      "rank1_predicted_icd_title": "Secondary malignant neoplasm of other specified sites",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -84,9 +92,9 @@
       "icd_family_match": false,
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
-      "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code C79.31.",
-      "llm_expanded_ground_truth_icd": "C79.31 — Secondary malignant neoplasm of brain",
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.",
+      "llm_expanded_ground_truth_icd": "",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "B99.9",
       "diagnosis_match": false,
@@ -98,19 +106,15 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Secondary malignant neoplasm of brain'.",
-      "ground_truth_expansions": [
-        "Secondary malignant neoplasm of brain"
-      ],
+      "diagnosis_reason": "The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.",
+      "ground_truth_expansions": [],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code C79.31.",
-      "ground_truth_icd_expansions": [
-        "C79.31 — Secondary malignant neoplasm of brain"
-      ],
+      "icd_reason": "The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.",
+      "ground_truth_icd_expansions": [],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

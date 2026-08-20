@@ -1,83 +1,90 @@
 {
-  "summary": "A 70-year-old man with a history of atrial fibrillation (AFib), heart failure with preserved ejection fraction (HFpEF), peripheral vascular disease (PVD), and chronic kidney disease (CKD) presents post-ERCP for cholangitis, with symptoms including nocturnal hypoxia and leg swelling.",
-  "most_likely": "Heart failure with preserved ejection fraction (HFpEF)",
+  "summary": "A 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease presents post-ERCP with mild edema and nocturnal hypoxia that improved with diuresis.",
+  "most_likely": "Atrial fibrillation with heart failure",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+      "diagnosis": "Atrial fibrillation with heart failure",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "Right bundle branch block",
       "supporting_evidence": [
-        "HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+        "atrial fibrillation on apixaban",
+        "HFpEF, held home Lasix"
       ],
       "opposing_evidence": [],
-      "reasoning": "HFpEF is the most likely primary diagnosis given the patient's history and current symptoms."
+      "reasoning": "The patient has a history of atrial fibrillation and heart failure, and the current presentation aligns with these chronic conditions."
     },
     {
       "rank": 2,
-      "diagnosis": "Peripheral vascular disease (PVD)",
-      "score": 70.0,
+      "diagnosis": "Peripheral vascular disease",
+      "score": 75.0,
       "confidence": "medium",
       "category": "secondary",
       "snomed_aligned": "Peripheral vascular disease",
       "supporting_evidence": [
-        "PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+        "PVD with remote bypass graft"
       ],
-      "opposing_evidence": [],
-      "reasoning": "PVD is a significant comorbidity but less likely to be the primary cause of current symptoms."
+      "opposing_evidence": [
+        "mild edema and swelling improve during the night"
+      ],
+      "reasoning": "Peripheral vascular disease is a chronic condition and a known risk factor for edema, but the current presentation suggests mild symptoms."
     },
     {
       "rank": 3,
-      "diagnosis": "Atrial fibrillation (AFib)",
-      "score": 65.0,
+      "diagnosis": "Chronic kidney disease",
+      "score": 70.0,
       "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "Atrial fibrillation",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "AFib on apixaban, Creatinine: 1.4 mg/dL, Hemoglobin: 12.6 g/dL"
+        "Creatinine: 1.4 mg/dL",
+        "Hematocrit: 38.3 %",
+        "Hemoglobin: 12.6 g/dL"
       ],
       "opposing_evidence": [],
-      "reasoning": "AFib is a known complication but less likely to be the primary cause of current symptoms."
+      "reasoning": "Chronic kidney disease is a known chronic condition in the patient's history, and the current labs suggest mild renal impairment."
     },
     {
       "rank": 4,
-      "diagnosis": "Chronic kidney disease (CKD)",
-      "score": 55.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Chronic kidney disease",
-      "supporting_evidence": [
-        "CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "CKD is a significant comorbidity but less likely to be the primary cause of current symptoms."
-    },
-    {
-      "rank": 5,
       "diagnosis": "Nocturnal hypoxia",
-      "score": 40.0,
+      "score": 65.0,
       "confidence": "low",
-      "category": "differential",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
         "nocturnal hypoxia that improved with diuresis"
       ],
       "opposing_evidence": [
-        "resolved with diuresis, no current symptoms"
+        "improved with diuresis"
       ],
-      "reasoning": "Nocturnal hypoxia is a historical finding and not currently causing symptoms."
+      "reasoning": "Nocturnal hypoxia is a known chronic condition, but the current presentation suggests it has improved."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Cholangitis",
+      "score": 55.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "history of cholangitis"
+      ],
+      "opposing_evidence": [
+        "current presentation suggests mild symptoms"
+      ],
+      "reasoning": "Cholangitis is a known past condition, but the current presentation suggests mild symptoms."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Cholangitis",
-      "why": "Symptoms have improved post-ERCP, and current labs are within normal range."
+      "diagnosis": "Pneumothorax",
+      "why": "No radiographic evidence and the presentation does not suggest acute respiratory distress."
     }
   ],
   "uncertain_areas": [
-    "Further clarification on the patient's current respiratory status and fluid management would help refine the differential diagnosis."
+    "Further radiographic imaging would help clarify the presence of any acute lung issues or other causes of nocturnal hypoxia"
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -86,7 +93,7 @@
   "_temperature": 0.4,
   "patient_id": "11474876",
   "hadm_id": "29672491",
-  "generated_at": "2026-08-15T17:31:28.467580",
+  "generated_at": "2026-08-20T00:09:21.276946",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 13,

@@ -8,42 +8,38 @@ Patient ID       : 11251337
 Admission ID     : 29568708
 
 Reasoning:
-  The patient presents with symptoms of nephrolithiasis, including hematuria, dysuria, and fever, following a difficult right PCNL procedure.
+  The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL, with residual stones requiring further intervention.
 
 Key symptoms     : hematuria, pain, dysuria, fever
-Red flags        : Hemorrhagic CVA, hypertension
+Red flags        : fever
 
-RENAL|UROLOGIC → Renal Diseases
--------------------------------
+RENAL|UROLOGIC → Urology
+------------------------
 
-  • [present, mild] hematuria
+  • [present] hematuria
       evidence: "1x episode of hematuria"
       related: Bilateral staghorn renal calculi
-  • [present, moderate] pain
+  • [present] pain
       evidence: "pain around the nephrostomy tubes"
       related: Bilateral staghorn renal calculi
-  • [present, mild] dysuria
+  • [present] dysuria
       evidence: "pain around the nephrostomy tubes and fevers"
       related: Bilateral staghorn renal calculi
-  • [present, mild] fever
+  • [present] fever
       evidence: "temperature of 102 at ___ prior to transfer"
       related: Complicated urinary tract infection
 
-CARDIOVASCULAR → Cardiovascular Diseases
-----------------------------------------
+RENAL|METABOLIC → Renal
+-----------------------
 
-  • [present] hypertension
-      evidence: "Hypertension"
-
-NEUROLOGIC → Neurological Diseases
-----------------------------------
-
-  • [present] Hemorrhagic CVA
-      evidence: "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness"
-
-RENAL → Renal Diseases
-----------------------
-
-  • [present, moderate] renal calculi
-      evidence: "Bilateral staghorn renal calculi"
-      related: Hypertension, Hemorrhagic CVA
+  • [present, mild] anemia
+      evidence: "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
+      related: MCV: 104.0 fL, RDW-SD: 59.6 fL
+  • [absent] hyperkalemia
+      evidence: "Potassium: 4.7 mEq/L"
+  • [present, mild] hyperglycemia
+      evidence: "Glucose: 105.0 mg/dL"
+  • [present, mild] hyperuremia
+      evidence: "Urea Nitrogen: 22.0 mg/dL"
+  • [present, mild] hypercreatininemia
+      evidence: "Creatinine: 2.5 mg/dL"

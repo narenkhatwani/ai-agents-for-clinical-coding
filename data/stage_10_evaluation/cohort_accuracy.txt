@@ -12,7 +12,7 @@ DIFFERENTIAL DIAGNOSIS vs GT primary
 LINKED ICD vs GT primary (ICD from matched DiffDx rank)
   ICD match (exact or LLM)     3 / 15  (20.0%)
   ICD exact code               0 / 15  (0.0%)
-  ICD 3-char family            1 / 15  (6.7%)
+  ICD 3-char family            2 / 15  (13.3%)
   Diagnosis YES, ICD NO        0
 
 → diffdx_match.csv, icd_match.csv
@@ -22,18 +22,18 @@ PER-ADMISSION SUMMARY
 
 Dx   R1   ICD  Rank  Patient      Matched diagnosis                    GT primary
 --------------------------------------------------------------------------------------------------------------
-NO        NO         10361982     Hemorrhage following hysterectomy    Postprocedural hemorrhage of a genitour...
+NO        NO         10361982     Post-hysterectomy uterine atony      Postprocedural hemorrhage of a genitour...
 YES  YES  YES  1     10426859     Supraventricular tachycardia         Supraventricular tachycardia
-YES  NO   YES  3     10458324     Pneumothorax                         Traumatic pneumothorax, initial encounter
-NO        NO         11251337     Nephrolithiasis                      Hydronephrosis with renal and ureteral ...
-NO        NO         11474876     Heart failure with preserved ej...   Calculus of bile duct with cholangitis,...
-YES  YES  YES  1     11607177     Refractory VT                        Ventricular tachycardia
+YES  NO   YES  2     10458324     Pneumothorax                         Traumatic pneumothorax, initial encounter
+NO        NO         11251337     Acute kidney injury due to neph...   Hydronephrosis with renal and ureteral ...
+NO        NO         11474876     Atrial fibrillation with heart ...   Calculus of bile duct with cholangitis,...
+YES  YES  YES  1     11607177     Refractory ventricular tachycardia   Ventricular tachycardia
 NO        NO         12007928     Acute decompensated heart failure    Acute on chronic diastolic (congestive)...
-NO        NO         13196707     Severe sepsis due to RUL PNA         Sepsis, unspecified organism
+NO        NO         13196707     Severe sepsis secondary to RUL PNA   Sepsis, unspecified organism
 NO        NO         13508515     Acute on chronic systolic heart...   Malignant neoplasm of left kidney, exce...
-NO        NO         13952483     Severe Pulmonary Hypertension w...   Other hypotension
-NO        NO         16014068     Anemia due to malignancy             Secondary malignant neoplasm of brain
-NO        NO         17774110     Severe sepsis with septic shock      Other specified sepsis
-NO        NO         18412100     Post-procedural pain                 Neoplasm of uncertain behavior of conne...
+NO        NO         13952483     Squamous Cell Lung CA                Other hypotension
+NO        NO         16014068     Metastatic sarcoma with hematol...   Secondary malignant neoplasm of brain
+NO        NO         17774110     Acute liver failure                  Other specified sepsis
+NO        NO         18412100     Post-procedural pain and tender...   Neoplasm of uncertain behavior of conne...
 NO        NO         19104262     Diabetic ketoacidosis                Pre-existing type 1 diabetes mellitus, ...
-NO        NO         19632936     Acute on chronic macrocytic anemia   Iron deficiency anemia, unspecified
+NO        NO         19632936     Acute macrocytic anemia              Iron deficiency anemia, unspecified

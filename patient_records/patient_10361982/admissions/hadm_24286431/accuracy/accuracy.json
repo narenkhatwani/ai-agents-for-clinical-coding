@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "10361982",
   "hadm_id": "24286431",
-  "generated_at": "2026-08-19T22:37:31.053957",
+  "generated_at": "2026-08-20T00:12:56.969546",
   "ground_truth": {
     "primary_icd_code": "N99820",
     "primary_dx_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
-      "rank1_diagnosis": "Hemorrhage following hysterectomy",
+      "rank1_diagnosis": "Post-hysterectomy uterine atony",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -25,50 +25,58 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis.",
+      "llm_reason": "None of the differential diagnoses match the ground truth diagnosis.",
       "llm_expanded_ground_truth": "",
       "llm_expanded_matched": "",
       "diagnosis_items": [
         {
-          "diagnosis": "Hemorrhage following hysterectomy",
+          "diagnosis": "Post-hysterectomy uterine atony",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": "N93.9",
-          "icd10_primary_title": "Abnormal uterine and vaginal bleeding, unspecified"
+          "icd10_primary": "O62.2",
+          "icd10_primary_title": "Other uterine inertia"
         },
         {
-          "diagnosis": "Postoperative bleeding",
+          "diagnosis": "Post-hysterectomy uterine inversion",
           "rank": 2,
-          "score": 75.0,
-          "confidence": "high",
-          "icd10_primary": "N93.9",
-          "icd10_primary_title": "Abnormal uterine and vaginal bleeding, unspecified"
+          "score": 65.0,
+          "confidence": "medium",
+          "icd10_primary": "O71.2",
+          "icd10_primary_title": "Postpartum inversion of uterus"
         },
         {
           "diagnosis": "Endometriosis",
           "rank": 3,
-          "score": 60.0,
+          "score": 40.0,
           "confidence": "medium",
-          "icd10_primary": "N80.00",
-          "icd10_primary_title": "Endometriosis of the uterus, unspecified"
+          "icd10_primary": "N80.9",
+          "icd10_primary_title": "Endometriosis, unspecified"
         },
         {
-          "diagnosis": "Hypothyroidism",
+          "diagnosis": "Hemorrhagic shock",
           "rank": 4,
-          "score": 40.0,
+          "score": 30.0,
           "confidence": "low",
-          "icd10_primary": "E03.9",
-          "icd10_primary_title": "Hypothyroidism, unspecified"
+          "icd10_primary": "R57.1",
+          "icd10_primary_title": "Hypovolemic shock"
+        },
+        {
+          "diagnosis": "Infection",
+          "rank": 5,
+          "score": 25.0,
+          "confidence": "low",
+          "icd10_primary": "B99.9",
+          "icd10_primary_title": "Unspecified infectious disease"
         }
       ],
-      "n_diffdx": 4
+      "n_diffdx": 5
     },
     "icd_linked": {
       "ground_truth_icd": "N99.820",
       "ground_truth_icd_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
-      "rank1_predicted_icd": "N93.9",
-      "rank1_predicted_icd_title": "Abnormal uterine and vaginal bleeding, unspecified",
+      "rank1_predicted_icd": "O62.2",
+      "rank1_predicted_icd_title": "Other uterine inertia",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -77,7 +85,7 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
+      "llm_icd_reason": "None of the differential diagnoses have an equivalent ICD code.",
       "llm_expanded_ground_truth_icd": "",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "N93.9",
@@ -90,15 +98,15 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis.",
+      "diagnosis_reason": "None of the differential diagnoses match the ground truth diagnosis.",
       "ground_truth_expansions": [],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
+      "icd_reason": "None of the differential diagnoses have an equivalent ICD code.",
       "ground_truth_icd_expansions": [],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

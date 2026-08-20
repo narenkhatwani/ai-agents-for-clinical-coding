@@ -3,40 +3,40 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11607177
 HADM ID          : 23293838
-Generated        : 2026-08-19T22:37:31.059840
+Generated        : 2026-08-20T00:13:15.194893
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Ventricular tachycardia
-  Rank-1 predicted     : Refractory VT
+  Rank-1 predicted     : Refractory ventricular tachycardia
     score=85.0  confidence=high
   Diagnosis match      : YES
   Is rank-1 match      : YES
   Matched DiffDx rank  : 1
-  Matched diagnosis    : Refractory VT
+  Matched diagnosis    : Refractory ventricular tachycardia
     score=85.0  confidence=high
-  LLM reason           : Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.
+  LLM reason           : Refractory ventricular tachycardia matches Ventricular tachycardia.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
 
   Ground truth ICD     : I47.2 — Ventricular tachycardia
-  Rank-1 mapped ICD    : - — 
-  Matched mapped ICD   : - — 
+  Rank-1 mapped ICD    : I47.20 — Ventricular tachycardia, unspecified
+  Matched mapped ICD   : I47.20 — Ventricular tachycardia, unspecified
   ICD match            : YES
   ICD exact            : NO
-  ICD 3-char family    : NO
+  ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.
+  LLM ICD reason       : ICD code I47.20 matches I47.2.
   Stage 9 final ICD    : I50.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Refractory VT  [score=85.0, high]  ICD=- — 
-   2. Heart transplantation  [score=70.0, medium]  ICD=- — 
-   3. Chronic heart failure  [score=65.0, medium]  ICD=I50.9 — Heart failure, unspecified
-   4. Sleep apnea  [score=50.0, low]  ICD=G47.30 — Sleep apnea, unspecified
-   5. Obesity  [score=45.0, low]  ICD=E66.9 — Obesity, unspecified
+   1. Refractory ventricular tachycardia  [score=85.0, high]  ICD=I47.20 — Ventricular tachycardia, unspecified
+   2. Dilated non-ischemic cardiomyopathy  [score=75.0, high]  ICD=I42.0 — Dilated cardiomyopathy
+   3. Congestive heart failure  [score=65.0, medium]  ICD=I50.9 — Heart failure, unspecified
+   4. Hypokalemia  [score=50.0, low]  ICD=E87.6 — Hypokalemia
+   5. Anemia  [score=40.0, low]  ICD=D64.9 — Anemia, unspecified

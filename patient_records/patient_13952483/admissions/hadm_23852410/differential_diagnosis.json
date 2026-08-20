@@ -1,32 +1,37 @@
 {
-  "summary": "The patient presents with hypotension, weight loss, anorexia, and multiple constitutional symptoms likely related to lung cancer and immunosuppression. Prior comorbidities include lung cancer, chronic kidney disease, and pulmonary hypertension.",
-  "most_likely": "Severe Pulmonary Hypertension with Cor Pulmonale",
+  "summary": "The patient presents with hypotension, weight loss, and pulmonary hypertension, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of cough and odynophagia.",
+  "most_likely": "Squamous Cell Lung CA",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+      "diagnosis": "Squamous Cell Lung CA",
       "score": 85.0,
       "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "T8611 — Kidney transplant rejection",
+      "category": "primary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg on Right Heart Catheterization"
+        "Squamous Cell Lung CA (confirmed)",
+        "hypotension",
+        "pulmonary hypertension",
+        "cough",
+        "odynophagia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Strong evidence from Right Heart Catheterization and symptoms of dyspnea and fatigue."
+      "reasoning": "Confirmed diagnosis and evidence of ongoing symptoms related to lung cancer."
     },
     {
       "rank": 2,
-      "diagnosis": "Neutropenia",
-      "score": 70.0,
-      "confidence": "medium",
+      "diagnosis": "Pulmonary Hypertension",
+      "score": 75.0,
+      "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "Catheterization of right heart",
       "supporting_evidence": [
-        "new neutropenia (ANC 750)"
+        "pulmonary hypertension",
+        "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
       ],
       "opposing_evidence": [],
-      "reasoning": "Recent onset of neutropenia, likely related to chemotherapy and radiation therapy."
+      "reasoning": "Confirmed pulmonary hypertension with significant clinical findings."
     },
     {
       "rank": 3,
@@ -36,10 +41,14 @@
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Hematocrit: 26.4 %, Hemoglobin: 8.2 g/dL"
+        "hypotension",
+        "weight loss",
+        "anorexia",
+        "neutropenia",
+        "thrombocytopenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe anemia with low hematocrit and hemoglobin levels."
+      "reasoning": "Multiple laboratory abnormalities supporting anemia as a complication."
     },
     {
       "rank": 4,
@@ -49,10 +58,13 @@
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Overall anorexia and poor appetite"
+        "anorexia",
+        "weight loss",
+        "neutropenia",
+        "thrombocytopenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Persistent anorexia and malaise contributing to weight loss."
+      "reasoning": "Persistent anorexia and weight loss suggest malnutrition as a risk factor."
     },
     {
       "rank": 5,
@@ -62,33 +74,37 @@
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Creatinine: 1.3 mg/dL, Urea Nitrogen: 28.0 mg/dL"
+        "hypotension",
+        "anemia",
+        "neutropenia",
+        "thrombocytopenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Abnormal renal function tests, but no recent acute kidney injury."
+      "reasoning": "Abnormal lab results suggest chronic kidney disease as a possible complication."
     },
     {
       "rank": 6,
-      "diagnosis": "Pneumonia",
-      "score": 30.0,
+      "diagnosis": "Cachexia",
+      "score": 35.0,
       "confidence": "low",
-      "category": "differential",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Cough, pleuritic/MSK chest pain"
+        "weight loss",
+        "anorexia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Mild cough and chest pain, but no recent respiratory symptoms or imaging."
+      "reasoning": "Weight loss and anorexia suggest cachexia as a risk factor."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Lung Cancer",
-      "why": "Confirmed diagnosis, but not the primary current presentation."
+      "diagnosis": "Pneumonia",
+      "why": "No current evidence of pneumonia in the structured context."
     }
   ],
   "uncertain_areas": [
-    "Further imaging or biopsy results would clarify the extent of pulmonary hypertension and any new infections or malignancies"
+    "Further clarification on the cause of hypotension and weight loss would refine the differential diagnosis."
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis",
@@ -97,7 +113,7 @@
   "_temperature": 0.4,
   "patient_id": "13952483",
   "hadm_id": "23852410",
-  "generated_at": "2026-08-15T17:32:38.712958",
+  "generated_at": "2026-08-20T00:10:41.130972",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,

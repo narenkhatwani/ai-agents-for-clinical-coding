@@ -8,52 +8,35 @@ Patient ID       : 18412100
 Admission ID     : 26093939
 
 Reasoning:
-  The patient is presenting with post-procedural pain and tenderness in the abdomen following a cryoablation procedure for a desmoid tumor.
+  The patient is presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure for a desmoid tumor.
 
-Key symptoms     : post-procedural pain, nausea
+Key symptoms     : post-procedural pain, abdominal tenderness
+Red flags        : abdominal pain
 
 OTHER → Other
 -------------
 
-  • [present, mild] post-procedural pain
+  • [present, moderate] post-procedural pain
       evidence: "post-procedural pain in the right side of the abdomen"
-      related: abdominal pain
-      • [present, mild] abdominal pain
+      related: abdominal tenderness to palpation
+      • [present] abdominal tenderness
           evidence: "tender in the right upper and right lower quadrant to palpation"
   • [present, mild] nausea
       evidence: "one brief episode of nausea"
       related: abdominal pain
 
-NEUROLOGIC → Neurologic
------------------------
-
-  • [present, mild] pain
-      evidence: "similar to the previous procedure"
-      related: abdominal pain
-
-GI → Gastrointestinal
----------------------
-
-  • [present, mild] abdominal pain
-      evidence: "tender in the right upper and right lower quadrant to palpation"
-      related: desmoid tumor
-
-INFECTIOUS → Infectious Diseases
---------------------------------
+CONSTITUTIONAL → Other
+----------------------
 
   • [absent] fever
       evidence: "denies fever, chills, night sweats"
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
+  • [absent] shortness of breath
+      evidence: "denies shortness of breath"
   • [absent] palpitations
       evidence: "denies palpitations"
   • [absent] chest pain
       evidence: "denies chest pain"
-
-RESPIRATORY → Respiratory
--------------------------
-
-  • [absent] shortness of breath
-      evidence: "denies shortness of breath"
+  • [absent] diarrhea
+      evidence: "denies diarrhea"
+  • [absent] constipation
+      evidence: "denies constipation"

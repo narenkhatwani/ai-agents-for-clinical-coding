@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "17774110",
   "hadm_id": "27339772",
-  "generated_at": "2026-08-19T22:37:31.066043",
+  "generated_at": "2026-08-20T00:13:34.577565",
   "ground_truth": {
     "primary_icd_code": "A4189",
     "primary_dx_title": "Other specified sepsis",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Other specified sepsis",
-      "rank1_diagnosis": "Severe sepsis with septic shock",
+      "rank1_diagnosis": "Acute liver failure",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -25,73 +25,73 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
-      "llm_expanded_ground_truth": "Other specified sepsis",
+      "llm_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of 'Other specified sepsis'.",
+      "llm_expanded_ground_truth": "A41.89 — Other specified sepsis",
       "llm_expanded_matched": "",
       "diagnosis_items": [
         {
-          "diagnosis": "Severe sepsis with septic shock",
+          "diagnosis": "Acute liver failure",
           "rank": 1,
           "score": 85.0,
+          "confidence": "high",
+          "icd10_primary": "K72.00",
+          "icd10_primary_title": "Acute and subacute hepatic failure without coma"
+        },
+        {
+          "diagnosis": "Septic shock",
+          "rank": 2,
+          "score": 75.0,
           "confidence": "high",
           "icd10_primary": "R65.21",
           "icd10_primary_title": "Severe sepsis with septic shock"
         },
         {
           "diagnosis": "Hepatic encephalopathy",
-          "rank": 2,
-          "score": 75.0,
+          "rank": 3,
+          "score": 70.0,
           "confidence": "high",
           "icd10_primary": "K76.82",
           "icd10_primary_title": "Hepatic encephalopathy"
         },
         {
-          "diagnosis": "Acute liver failure",
-          "rank": 3,
-          "score": 70.0,
-          "confidence": "medium",
-          "icd10_primary": "K72.00",
-          "icd10_primary_title": "Acute and subacute hepatic failure without coma"
-        },
-        {
-          "diagnosis": "GI bleeding",
+          "diagnosis": "Acute renal failure",
           "rank": 4,
           "score": 65.0,
           "confidence": "high",
-          "icd10_primary": "K92.2",
-          "icd10_primary_title": "Gastrointestinal hemorrhage, unspecified"
-        },
-        {
-          "diagnosis": "Atrial fibrillation/flutter",
-          "rank": 5,
-          "score": 50.0,
-          "confidence": "medium",
-          "icd10_primary": "I48.91",
-          "icd10_primary_title": "Unspecified atrial fibrillation"
+          "icd10_primary": "N17.9",
+          "icd10_primary_title": "Acute kidney failure, unspecified"
         },
         {
           "diagnosis": "Pleural effusion",
-          "rank": 6,
-          "score": 45.0,
+          "rank": 5,
+          "score": 60.0,
           "confidence": "medium",
           "icd10_primary": "J90",
           "icd10_primary_title": "Pleural effusion, not elsewhere classified"
         },
         {
-          "diagnosis": "Renal failure",
-          "rank": 7,
-          "score": 40.0,
+          "diagnosis": "IVC thrombus",
+          "rank": 6,
+          "score": 55.0,
           "confidence": "medium",
-          "icd10_primary": "N19",
-          "icd10_primary_title": "Unspecified kidney failure"
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Coagulopathy",
-          "rank": 8,
-          "score": 35.0,
+          "diagnosis": "Cirrhosis",
+          "rank": 7,
+          "score": 50.0,
           "confidence": "medium",
-          "icd10_primary": "D68.9",
-          "icd10_primary_title": "Coagulation defect, unspecified"
+          "icd10_primary": "K74.60",
+          "icd10_primary_title": "Unspecified cirrhosis of liver"
+        },
+        {
+          "diagnosis": "Bipolar disorder",
+          "rank": 8,
+          "score": 30.0,
+          "confidence": "low",
+          "icd10_primary": "F31.9",
+          "icd10_primary_title": "Bipolar disorder, unspecified"
         }
       ],
       "n_diffdx": 8
@@ -99,8 +99,8 @@
     "icd_linked": {
       "ground_truth_icd": "A41.89",
       "ground_truth_icd_title": "Other specified sepsis",
-      "rank1_predicted_icd": "R65.21",
-      "rank1_predicted_icd_title": "Severe sepsis with septic shock",
+      "rank1_predicted_icd": "K72.00",
+      "rank1_predicted_icd_title": "Acute and subacute hepatic failure without coma",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -109,7 +109,7 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to 'A41.89 — Other specified sepsis'.",
       "llm_expanded_ground_truth_icd": "A41.89 — Other specified sepsis",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "R65.21",
@@ -122,19 +122,19 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of 'Other specified sepsis'.",
       "ground_truth_expansions": [
-        "Other specified sepsis"
+        "A41.89 — Other specified sepsis"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to 'A41.89 — Other specified sepsis'.",
       "ground_truth_icd_expansions": [
         "A41.89 — Other specified sepsis"
       ],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

@@ -1,89 +1,105 @@
 {
-  "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.",
-  "most_likely": "Severe sepsis due to RUL PNA",
+  "summary": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
+  "most_likely": "Severe sepsis secondary to RUL PNA",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Severe sepsis due to RUL PNA",
+      "diagnosis": "Severe sepsis secondary to RUL PNA",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "RUL PNA, hypotension, fever"
+        "RUL PNA, persistent consolidative opacities in both lower lobes"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the recent onset of RUL PNA and clinical signs of sepsis."
+      "reasoning": "Severe sepsis is the most likely diagnosis given the RUL PNA and hypotension."
     },
     {
       "rank": 2,
       "diagnosis": "Metastatic adenocarcinoma of unknown primary",
       "score": 75.0,
-      "confidence": "high",
+      "confidence": "medium",
       "category": "primary",
       "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
       "supporting_evidence": [
-        "confirmed diagnosis, recent RUL PNA"
+        "confirmed metastatic adenocarcinoma of unknown primary"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Underlying cancer is a known risk factor for sepsis and RUL PNA."
+      "opposing_evidence": [
+        "no new metastatic lesions noted"
+      ],
+      "reasoning": "Given the patient’s history of metastatic adenocarcinoma, this is a significant risk factor."
     },
     {
       "rank": 3,
-      "diagnosis": "Hypovolemic shock",
+      "diagnosis": "Hypotension secondary to pericardiocentesis",
       "score": 65.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "severe hypotension, low hematocrit"
+        "recent pericardiocentesis, hypotension"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Hypotension and low hematocrit suggest potential hypovolemic state."
+      "opposing_evidence": [
+        "hypotension is moderate and managed"
+      ],
+      "reasoning": "Hypotension is a complication of pericardiocentesis and is present."
     },
     {
       "rank": 4,
-      "diagnosis": "Acute kidney injury",
+      "diagnosis": "Acute kidney failure",
       "score": 55.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "confidence": "low",
+      "category": "secondary",
+      "snomed_aligned": "Acute kidney failure, unspecified",
       "supporting_evidence": [
-        "hypotension, abnormal labs"
+        "abnormal labs, low creatinine"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Hypotension and abnormal labs suggest potential kidney injury."
+      "opposing_evidence": [
+        "no acute kidney injury symptoms"
+      ],
+      "reasoning": "Acute kidney failure is a potential secondary condition given the abnormal labs."
     },
     {
       "rank": 5,
-      "diagnosis": "SVC syndrome",
+      "diagnosis": "Anemia",
       "score": 45.0,
-      "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "SVC stent placed, multiple venous thromboses",
+      "confidence": "low",
+      "category": "secondary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "confirmed SVC syndrome, recent labs"
+        "low hematocrit, hemoglobin"
       ],
-      "opposing_evidence": [],
-      "reasoning": "SVC syndrome is a known complication and is confirmed."
+      "opposing_evidence": [
+        "no acute blood loss"
+      ],
+      "reasoning": "Anemia could explain the low hematocrit and hemoglobin."
     },
     {
       "rank": 6,
-      "diagnosis": "Neurological deterioration",
+      "diagnosis": "Sodium imbalance",
       "score": 35.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Hypo-osmolality and hyponatremia",
       "supporting_evidence": [
-        "altered mental status, hypotension"
+        "low sodium"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Altered mental status and hypotension suggest neurological involvement."
+      "opposing_evidence": [
+        "no clinical signs of sodium imbalance"
+      ],
+      "reasoning": "Sodium imbalance is a risk factor given the low sodium levels."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Non-small cell lung cancer",
+      "why": "Not currently supported by evidence."
+    }
+  ],
   "uncertain_areas": [
-    "Further imaging of RUL PNA, more detailed neurological assessment"
+    "Further imaging to confirm new metastatic lesions",
+    "More detailed clinical history to confirm the exact nature of the PNA"
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis",
@@ -92,7 +108,7 @@
   "_temperature": 0.4,
   "patient_id": "13196707",
   "hadm_id": "21475988",
-  "generated_at": "2026-08-15T17:32:11.234822",
+  "generated_at": "2026-08-20T00:10:10.757498",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,

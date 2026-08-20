@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with a history of dilated cardiomyopathy and refractory VT, with recent ICD shock and ongoing edema. The patient is currently on multiple medications for his heart failure and arrhythmias.",
+  "reasoning": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -13,18 +13,17 @@
           "evidence": "ICD shock on ___",
           "related_findings": [
             "Refractory VT",
-            "LVAD in place"
+            "Dilated non-ischemic cardiomyopathy"
           ],
           "children": []
         },
         {
-          "term": "refractory VT",
+          "term": "lightheadedness",
           "status": "present",
-          "severity": "unknown",
-          "evidence": "Refractory VT requiring ganglionic block",
+          "severity": "mild",
+          "evidence": "lightheadedness with position changes",
           "related_findings": [
-            "ICD shock",
-            "LVAD in place"
+            "Dilated non-ischemic cardiomyopathy"
           ],
           "children": []
         },
@@ -34,75 +33,8 @@
           "severity": "mild",
           "evidence": "some increased ___ edema over the last several days",
           "related_findings": [
-            "LVAD in place"
+            "Dilated non-ischemic cardiomyopathy"
           ],
-          "children": []
-        },
-        {
-          "term": "lightheadedness",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "lightheadedness with position changes",
-          "related_findings": [
-            "ICD shock",
-            "LVAD in place"
-          ],
-          "children": []
-        },
-        {
-          "term": "shaking",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "feels some 'shaking' in his chest in the morning for the last 4 months",
-          "related_findings": [
-            "LVAD in place"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "constitutional",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "fevers",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "denies fevers",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "chills",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "denies chills",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "cough",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "denies cough",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "nausea",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "denies N/V/D",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "palpitations",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "denies other palpitations",
-          "related_findings": [],
           "children": []
         }
       ]
@@ -113,13 +45,12 @@
     "edema"
   ],
   "red_flags": [
-    "ICD shock",
-    "lightheadedness"
+    "ICD shock"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "11607177",
   "admission_id": "23293838",
-  "generated_at": "2026-08-08T16:19:27.394653"
+  "generated_at": "2026-08-19T23:20:08.367062"
 }

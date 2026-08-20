@@ -1,10 +1,10 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression.",
+  "reasoning": "The patient presents with hypotension and weight loss, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of odynophagia, cough, and malaise.",
   "branches": [
     {
-      "category": "constitutional",
-      "ontology_hint": "Infectious Diseases",
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
           "term": "hypotension",
@@ -15,8 +15,42 @@
             "new neutropenia (ANC 750)",
             "thrombocytopenia (plts 93)"
           ],
-          "children": []
-        },
+          "children": [
+            {
+              "term": "pulmonary hypertension",
+              "status": "present",
+              "evidence": "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "cough",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "cough, pleuritic/MSK chest pain",
+          "related_findings": [
+            "moderate growth of commensal respiratory flora"
+          ],
+          "children": [
+            {
+              "term": "odynophagia",
+              "status": "present",
+              "evidence": "persistent odynophagia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "constitutional",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
         {
           "term": "weight loss",
           "status": "present",
@@ -26,88 +60,30 @@
             "new neutropenia (ANC 750)",
             "thrombocytopenia (plts 93)"
           ],
-          "children": []
-        },
-        {
-          "term": "anorexia",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "overall anorexia and poor appetite",
-          "related_findings": [
-            "new neutropenia (ANC 750)",
-            "thrombocytopenia (plts 93)"
-          ],
-          "children": []
-        },
-        {
-          "term": "malaise",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "malaise due to his chemotherapy and radiation therapy",
-          "related_findings": [
-            "new neutropenia (ANC 750)",
-            "thrombocytopenia (plts 93)"
-          ],
-          "children": []
-        },
-        {
-          "term": "cough",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "cough, pleuritic/MSK chest pain",
-          "related_findings": [
-            "new neutropenia (ANC 750)",
-            "thrombocytopenia (plts 93)"
-          ],
-          "children": []
-        },
-        {
-          "term": "chest pain",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "pleuritic/MSK chest pain",
-          "related_findings": [
-            "new neutropenia (ANC 750)",
-            "thrombocytopenia (plts 93)"
-          ],
-          "children": []
-        },
-        {
-          "term": "odynophagia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "persistent odynophagia",
-          "related_findings": [
-            "new neutropenia (ANC 750)",
-            "thrombocytopenia (plts 93)"
-          ],
-          "children": []
-        },
-        {
-          "term": "pain",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "pain with swallowing",
-          "related_findings": [
-            "new neutropenia (ANC 750)",
-            "thrombocytopenia (plts 93)"
-          ],
-          "children": []
+          "children": [
+            {
+              "term": "anorexia",
+              "status": "present",
+              "evidence": "overall anorexia and poor appetite"
+            }
+          ]
         }
       ]
     }
   ],
   "key_symptoms": [
     "hypotension",
+    "cough",
     "weight loss"
   ],
   "red_flags": [
-    "hypotension"
+    "hypotension",
+    "pulmonary hypertension"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "13952483",
   "admission_id": "23852410",
-  "generated_at": "2026-08-08T16:20:19.782594"
+  "generated_at": "2026-08-19T23:20:45.624277"
 }

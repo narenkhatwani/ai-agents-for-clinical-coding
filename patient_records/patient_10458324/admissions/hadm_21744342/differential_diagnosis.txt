@@ -5,53 +5,56 @@ Patient ID       : 10458324
 HADM ID          : 21744342
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:30:59.620619
+Generated        : 2026-08-20T00:08:52.578487
 Candidates       : 6
-Most likely      : Acute respiratory distress secondary to right-sided rib fractures and influenza A
+Most likely      : Acute respiratory distress secondary to rib fractures and hypoxemia
 Prior admissions : 1 (8 ICD codes as PMH context)
 
 Summary:
-  The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and bipolar disorder. Recent influenza A infection is also noted.
+  The patient is a 45-year-old man with right-sided rib fractures and hypoxemia following a mechanical fall. He has a history of polysubstance abuse and chronic conditions including opioid dependence and tachycardia.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Acute respiratory distress secondary to right-sided rib fractures and influenza A  (primary)
-      + right sided rib fractures, hypoxia, influenza A PCR +
-      why: Right-sided rib fractures and influenza A infection are present, leading to respiratory distress.
+  #1  [85.0/100 | high]  Acute respiratory distress secondary to rib fractures and hypoxemia  (primary)
+      + right rib fractures, hypoxia, patchy parenchymal opacities on chest X-ray
+      why: The patient's right rib fractures and hypoxemia are the primary presenting symptoms, supported by chest X-ray findings.
 
-  #2  [75.0/100 | high]  Influenza A  (primary)
+  #2  [75.0/100 | medium]  Pneumothorax  (complication)
+      + small right PTX noted on chest X-ray
+      why: Small right pneumothorax is noted on chest X-ray, which could be a complication of rib fractures.
+
+  #3  [60.0/100 | medium]  Opioid dependence  (risk_factor)
+      SNOMED aligned : Opium dependence
+      + Opioid dependence listed as chronic condition
+      − No acute opioid withdrawal symptoms noted
+      why: The patient has a history of opioid dependence, which increases the risk of respiratory complications.
+
+  #4  [45.0/100 | low]  Influenza A  (differential)
       SNOMED aligned : Influenza A (H1N1)
-      + influenza A PCR +
-      why: Confirmed influenza A infection with symptoms of cough and fever.
+      + Influenza A listed as prior PMH
+      − No current symptoms or findings consistent with influenza
+      why: Influenza A is a past PMH, but the current presentation does not support an acute influenza infection.
 
-  #3  [70.0/100 | medium]  Pneumothorax  (complication)
-      + right PTX
-      − no evidence of infection or other cause
-      why: Small right pneumothorax noted, which could be related to rib fractures.
-
-  #4  [60.0/100 | medium]  Bipolar disorder  (risk_factor)
+  #5  [30.0/100 | low]  Bipolar disorder  (risk_factor)
       SNOMED aligned : Bipolar disorder
-      + bipolar disorder
-      − no acute psychiatric symptoms
-      why: History of bipolar disorder, but no acute psychiatric symptoms noted.
+      + Bipolar disorder listed as prior PMH
+      − No current mood instability or manic symptoms
+      why: Bipolar disorder is a chronic condition, but it is not currently contributing to the acute presentation.
 
-  #5  [55.0/100 | medium]  Substance abuse  (risk_factor)
-      SNOMED aligned : Opiate dependence
-      + opiate dependence
-      why: History of opiate dependence, but no acute substance abuse symptoms.
-
-  #6  [40.0/100 | low]  Dehydration  (differential)
-      + vomiting, diarrhea
-      − normal electrolyte levels
-      why: Vomiting and diarrhea present, but electrolytes are within normal range.
+  #6  [20.0/100 | low]  Tachycardia  (risk_factor)
+      SNOMED aligned : Tachycardia, unspecified
+      + Tachycardia listed as chronic condition
+      − No acute tachycardia symptoms or findings
+      why: Tachycardia is a chronic condition, but it is not currently contributing to the acute presentation.
 
 RULE-OUTS
 ---------
 
-  • Pneumonia: No signs of consolidation or infection in the lungs.
+  • PTSD: No current symptoms or findings consistent with PTSD
+  • Bipolar disorder: No current mood instability or manic symptoms
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging to confirm the extent of pneumothorax and rib fractures
+  • Further clarification on the patient's current mental state and respiratory status would help refine the differential

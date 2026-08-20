@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "13508515",
   "hadm_id": "21834271",
-  "generated_at": "2026-08-19T22:37:31.063536",
+  "generated_at": "2026-08-20T00:13:25.599643",
   "ground_truth": {
     "primary_icd_code": "C642",
     "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
@@ -25,7 +25,7 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.",
+      "llm_reason": "The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.",
       "llm_expanded_ground_truth": "",
       "llm_expanded_matched": "",
       "diagnosis_items": [
@@ -40,42 +40,42 @@
         {
           "diagnosis": "Renal cell carcinoma",
           "rank": 2,
-          "score": 75.0,
-          "confidence": "high",
+          "score": 70.0,
+          "confidence": "medium",
           "icd10_primary": null,
           "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Anemia",
-          "rank": 3,
-          "score": 70.0,
-          "confidence": "medium",
-          "icd10_primary": "D64.9",
-          "icd10_primary_title": "Anemia, unspecified"
-        },
-        {
-          "diagnosis": "Hypokalemia",
-          "rank": 4,
-          "score": 65.0,
-          "confidence": "medium",
-          "icd10_primary": "E87.6",
-          "icd10_primary_title": "Hypokalemia"
-        },
-        {
           "diagnosis": "Obstructive sleep apnea",
-          "rank": 5,
+          "rank": 3,
           "score": 60.0,
           "confidence": "medium",
           "icd10_primary": "G47.33",
           "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)"
         },
         {
-          "diagnosis": "Diabetes mellitus",
-          "rank": 6,
+          "diagnosis": "Anemia",
+          "rank": 4,
           "score": 55.0,
           "confidence": "medium",
-          "icd10_primary": "E11.9",
-          "icd10_primary_title": "Type 2 diabetes mellitus without complications"
+          "icd10_primary": "D64.9",
+          "icd10_primary_title": "Anemia, unspecified"
+        },
+        {
+          "diagnosis": "Hypokalemia",
+          "rank": 5,
+          "score": 50.0,
+          "confidence": "low",
+          "icd10_primary": "E87.6",
+          "icd10_primary_title": "Hypokalemia"
+        },
+        {
+          "diagnosis": "Chronic kidney disease",
+          "rank": 6,
+          "score": 45.0,
+          "confidence": "low",
+          "icd10_primary": "N18.9",
+          "icd10_primary_title": "Chronic kidney disease, unspecified"
         }
       ],
       "n_diffdx": 6
@@ -93,7 +93,7 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.",
+      "llm_icd_reason": "The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.",
       "llm_expanded_ground_truth_icd": "",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I50.23",
@@ -106,15 +106,15 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.",
+      "diagnosis_reason": "The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.",
       "ground_truth_expansions": [],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.",
+      "icd_reason": "The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.",
       "ground_truth_icd_expansions": [],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

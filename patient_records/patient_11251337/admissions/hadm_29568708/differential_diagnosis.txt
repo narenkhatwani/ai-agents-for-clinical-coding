@@ -5,42 +5,47 @@ Patient ID       : 11251337
 HADM ID          : 29568708
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:31:12.707927
+Generated        : 2026-08-20T00:09:06.518702
 Candidates       : 5
-Most likely      : Nephrolithiasis
+Most likely      : Acute kidney injury due to nephrolithiasis and PCNL
 Prior admissions : 2 (12 ICD codes as PMH context)
 
 Summary:
-  The patient presents with nephrolithiasis following a right PCNL procedure, with symptoms of hematuria, dysuria, pain, and fever. Past medical history includes hydronephrosis, pyonephrosis, hypertension, and hemorrhagic CVA.
+  The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL. The patient presents with hematuria, pain, and mild anemia, along with metabolic derangements including hyperglycemia and hyperuremia. Chronic conditions include pyonephrosis and chronic kidney disease.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Nephrolithiasis  (primary)
-      + hematuria, dysuria, pain, fever following PCNL procedure
-      why: Primary diagnosis supported by current symptoms and procedure.
+  #1  [85.0/100 | high]  Acute kidney injury due to nephrolithiasis and PCNL  (primary)
+      + Creatinine: 2.5 mg/dL, Hematuria, Pain
+      why: High creatinine and presence of hematuria and pain strongly suggest acute kidney injury related to nephrolithiasis and PCNL.
 
-  #2  [65.0/100 | medium]  Chronic kidney disease  (complication)
-      + Bilateral staghorn renal calculi, hypertension, past pyonephrosis
-      − recent acute presentation
-      why: Chronic condition with risk factors, but recent acute presentation.
+  #2  [75.0/100 | medium]  Chronic kidney disease, unspecified  (secondary)
+      + Chronic kidney disease, unspecified in prior PMH
+      − Acute kidney injury more likely given recent PCNL
+      why: Chronic kidney disease is present in prior PMH but is less likely to be the primary acute issue given recent PCNL.
 
-  #3  [55.0/100 | medium]  Hypertension  (risk_factor)
-      + Hypertension listed in PMH
-      − recent acute presentation
-      why: Risk factor for kidney disease, but not primary acute presentation.
+  #3  [65.0/100 | medium]  Anemia in chronic kidney disease  (complication)
+      + Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL
+      − No specific evidence of chronic anemia
+      why: Anemia is present but may be secondary to chronic kidney disease, which is a known risk factor.
 
-  #4  [45.0/100 | low]  Acute kidney injury  (complication)
-      + Fever, hematuria, dysuria, and recent PCNL procedure
-      − Creatinine levels not extremely elevated
-      why: Possible complication, but less likely given current lab values.
+  #4  [55.0/100 | medium]  Complicated urinary tract infection  (differential)
+      + Fever: 102 at ___ prior to transfer
+      − No fever currently present
+      why: Previous history of pyonephrosis suggests a possibility of a complicated UTI, but no current fever.
 
-  #5  [30.0/100 | low]  Hemorrhagic CVA  (risk_factor)
-      + History of hemorrhagic CVA
-      − No current neurological symptoms
-      why: Risk factor with past history, but no current neurological symptoms.
+  #5  [45.0/100 | low]  Hypertensive chronic kidney disease  (risk_factor)
+      + Hypertensive chronic kidney disease in prior PMH
+      − No current hypertension noted
+      why: Hypertensive chronic kidney disease is a known risk factor but not currently evident.
+
+RULE-OUTS
+---------
+
+  • Pneumothorax: No radiology evidence or clinical signs of pneumothorax.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging to confirm residual stone and kidney function
+  • Further details on the cause of anemia and the exact nature of chronic kidney disease would refine the differential

@@ -1,7 +1,7 @@
 {
   "stage": 10,
   "description": "LLM query expansion: DiffDx match (any rank) + linked ICD from matched rank vs GT primary",
-  "generated_at": "2026-08-19T22:37:31.071173",
+  "generated_at": "2026-08-20T00:13:44.918420",
   "summary": {
     "n_admissions": 15,
     "n_scored": 15,
@@ -19,8 +19,8 @@
       "match_rate": 0.2,
       "exact_match_n": 0,
       "exact_match_rate": 0.0,
-      "family_match_n": 1,
-      "family_match_rate": 0.0667,
+      "family_match_n": 2,
+      "family_match_rate": 0.1333,
       "diagnosis_yes_icd_no_n": 0
     }
   },
@@ -31,7 +31,7 @@
       "method": "llm_query_expansion",
       "patient_id": "10361982",
       "hadm_id": "24286431",
-      "generated_at": "2026-08-19T22:37:31.053957",
+      "generated_at": "2026-08-20T00:12:56.969546",
       "ground_truth": {
         "primary_icd_code": "N99820",
         "primary_dx_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
@@ -41,7 +41,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
-          "rank1_diagnosis": "Hemorrhage following hysterectomy",
+          "rank1_diagnosis": "Post-hysterectomy uterine atony",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -52,50 +52,58 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis.",
+          "llm_reason": "None of the differential diagnoses match the ground truth diagnosis.",
           "llm_expanded_ground_truth": "",
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Hemorrhage following hysterectomy",
+              "diagnosis": "Post-hysterectomy uterine atony",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
-              "icd10_primary": "N93.9",
-              "icd10_primary_title": "Abnormal uterine and vaginal bleeding, unspecified"
+              "icd10_primary": "O62.2",
+              "icd10_primary_title": "Other uterine inertia"
             },
             {
-              "diagnosis": "Postoperative bleeding",
+              "diagnosis": "Post-hysterectomy uterine inversion",
               "rank": 2,
-              "score": 75.0,
-              "confidence": "high",
-              "icd10_primary": "N93.9",
-              "icd10_primary_title": "Abnormal uterine and vaginal bleeding, unspecified"
+              "score": 65.0,
+              "confidence": "medium",
+              "icd10_primary": "O71.2",
+              "icd10_primary_title": "Postpartum inversion of uterus"
             },
             {
               "diagnosis": "Endometriosis",
               "rank": 3,
-              "score": 60.0,
+              "score": 40.0,
               "confidence": "medium",
-              "icd10_primary": "N80.00",
-              "icd10_primary_title": "Endometriosis of the uterus, unspecified"
+              "icd10_primary": "N80.9",
+              "icd10_primary_title": "Endometriosis, unspecified"
             },
             {
-              "diagnosis": "Hypothyroidism",
+              "diagnosis": "Hemorrhagic shock",
               "rank": 4,
-              "score": 40.0,
+              "score": 30.0,
               "confidence": "low",
-              "icd10_primary": "E03.9",
-              "icd10_primary_title": "Hypothyroidism, unspecified"
+              "icd10_primary": "R57.1",
+              "icd10_primary_title": "Hypovolemic shock"
+            },
+            {
+              "diagnosis": "Infection",
+              "rank": 5,
+              "score": 25.0,
+              "confidence": "low",
+              "icd10_primary": "B99.9",
+              "icd10_primary_title": "Unspecified infectious disease"
             }
           ],
-          "n_diffdx": 4
+          "n_diffdx": 5
         },
         "icd_linked": {
           "ground_truth_icd": "N99.820",
           "ground_truth_icd_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
-          "rank1_predicted_icd": "N93.9",
-          "rank1_predicted_icd_title": "Abnormal uterine and vaginal bleeding, unspecified",
+          "rank1_predicted_icd": "O62.2",
+          "rank1_predicted_icd_title": "Other uterine inertia",
           "matched_predicted_icd": "",
           "matched_predicted_icd_title": "",
           "icd_match": false,
@@ -104,7 +112,7 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
+          "llm_icd_reason": "None of the differential diagnoses have an equivalent ICD code.",
           "llm_expanded_ground_truth_icd": "",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "N93.9",
@@ -117,15 +125,15 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis.",
+          "diagnosis_reason": "None of the differential diagnoses match the ground truth diagnosis.",
           "ground_truth_expansions": [],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
+          "icd_reason": "None of the differential diagnoses have an equivalent ICD code.",
           "ground_truth_icd_expansions": [],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -138,7 +146,7 @@
       "method": "llm_query_expansion",
       "patient_id": "10426859",
       "hadm_id": "29908281",
-      "generated_at": "2026-08-19T22:37:31.055904",
+      "generated_at": "2026-08-20T00:13:00.834861",
       "ground_truth": {
         "primary_icd_code": "I471",
         "primary_dx_title": "Supraventricular tachycardia",
@@ -159,7 +167,7 @@
           "matched_confidence": "high",
           "llm_relationship": "same_principal",
           "llm_confidence": "high",
-          "llm_reason": "Rank 1 diagnosis 'Supraventricular tachycardia' matches the ground truth diagnosis.",
+          "llm_reason": "The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.",
           "llm_expanded_ground_truth": "Supraventricular tachycardia",
           "llm_expanded_matched": "Supraventricular tachycardia",
           "diagnosis_items": [
@@ -172,36 +180,36 @@
               "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Hip fracture",
+              "diagnosis": "Right hip fracture",
               "rank": 2,
               "score": 70.0,
-              "confidence": "medium",
+              "confidence": "high",
               "icd10_primary": "S72.009?",
               "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Anemia",
+              "diagnosis": "Hypocalcemia",
               "rank": 3,
               "score": 65.0,
               "confidence": "medium",
-              "icd10_primary": "D64.9",
-              "icd10_primary_title": "Anemia, unspecified"
+              "icd10_primary": "E83.51",
+              "icd10_primary_title": "Hypocalcemia"
             },
             {
-              "diagnosis": "Dehydration",
+              "diagnosis": "Cerebral infarct",
               "rank": 4,
-              "score": 55.0,
+              "score": 50.0,
               "confidence": "low",
-              "icd10_primary": "E86.0",
-              "icd10_primary_title": "Dehydration"
+              "icd10_primary": "I63.9",
+              "icd10_primary_title": "Cerebral infarction, unspecified"
             },
             {
-              "diagnosis": "Hypokalemia",
+              "diagnosis": "Anxiety disorder",
               "rank": 5,
               "score": 40.0,
               "confidence": "low",
-              "icd10_primary": "E87.6",
-              "icd10_primary_title": "Hypokalemia"
+              "icd10_primary": "F41.9",
+              "icd10_primary_title": "Anxiety disorder, unspecified"
             }
           ],
           "n_diffdx": 5
@@ -219,7 +227,7 @@
           "icd_llm_match": true,
           "is_rank1_icd_match": true,
           "is_rank1_icd_family_match": true,
-          "llm_icd_reason": "Rank 1 mapped ICD 'I47.10' matches the ground truth ICD 'I47.1'.",
+          "llm_icd_reason": "The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.",
           "llm_expanded_ground_truth_icd": "I47.1 — Supraventricular tachycardia",
           "llm_expanded_matched_icd": "I47.10 —",
           "stage9_final_primary_icd": "I47.10",
@@ -232,7 +240,7 @@
           "diagnosis_equivalent": true,
           "diagnosis_relationship": "same_principal",
           "diagnosis_confidence": "high",
-          "diagnosis_reason": "Rank 1 diagnosis 'Supraventricular tachycardia' matches the ground truth diagnosis.",
+          "diagnosis_reason": "The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.",
           "ground_truth_expansions": [
             "Supraventricular tachycardia"
           ],
@@ -241,14 +249,14 @@
           ],
           "icd_equivalent": true,
           "icd_confidence": "high",
-          "icd_reason": "Rank 1 mapped ICD 'I47.10' matches the ground truth ICD 'I47.1'.",
+          "icd_reason": "The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.",
           "ground_truth_icd_expansions": [
             "I47.1 — Supraventricular tachycardia"
           ],
           "matched_icd_expansions": [
             "I47.10 —"
           ],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -261,7 +269,7 @@
       "method": "llm_query_expansion",
       "patient_id": "10458324",
       "hadm_id": "21744342",
-      "generated_at": "2026-08-19T22:37:31.056900",
+      "generated_at": "2026-08-20T00:13:04.266304",
       "ground_truth": {
         "primary_icd_code": "S270XXA",
         "primary_dx_title": "Traumatic pneumothorax, initial encounter",
@@ -271,14 +279,14 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Traumatic pneumothorax, initial encounter",
-          "rank1_diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "rank1_diagnosis": "Acute respiratory distress secondary to rib fractures and hypoxemia",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": true,
           "is_rank1_match": false,
-          "matched_diffdx_rank": 3,
+          "matched_diffdx_rank": 2,
           "matched_diagnosis": "Pneumothorax",
-          "matched_score": 70.0,
+          "matched_score": 75.0,
           "matched_confidence": "medium",
           "llm_relationship": "same_principal",
           "llm_confidence": "medium",
@@ -287,7 +295,7 @@
           "llm_expanded_matched": "Pneumothorax",
           "diagnosis_items": [
             {
-              "diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+              "diagnosis": "Acute respiratory distress secondary to rib fractures and hypoxemia",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
@@ -295,44 +303,44 @@
               "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Influenza A",
+              "diagnosis": "Pneumothorax",
               "rank": 2,
               "score": 75.0,
-              "confidence": "high",
-              "icd10_primary": "J10.1",
-              "icd10_primary_title": "Influenza due to other identified influenza virus with other respiratory manifestations"
-            },
-            {
-              "diagnosis": "Pneumothorax",
-              "rank": 3,
-              "score": 70.0,
               "confidence": "medium",
               "icd10_primary": "J93.9",
               "icd10_primary_title": "Pneumothorax, unspecified"
             },
             {
-              "diagnosis": "Bipolar disorder",
-              "rank": 4,
+              "diagnosis": "Opioid dependence",
+              "rank": 3,
               "score": 60.0,
               "confidence": "medium",
+              "icd10_primary": "F11.20",
+              "icd10_primary_title": "Opioid dependence, uncomplicated"
+            },
+            {
+              "diagnosis": "Influenza A",
+              "rank": 4,
+              "score": 45.0,
+              "confidence": "low",
+              "icd10_primary": "J10.1",
+              "icd10_primary_title": "Influenza due to other identified influenza virus with other respiratory manifestations"
+            },
+            {
+              "diagnosis": "Bipolar disorder",
+              "rank": 5,
+              "score": 30.0,
+              "confidence": "low",
               "icd10_primary": "F31.9",
               "icd10_primary_title": "Bipolar disorder, unspecified"
             },
             {
-              "diagnosis": "Substance abuse",
-              "rank": 5,
-              "score": 55.0,
-              "confidence": "medium",
-              "icd10_primary": "F19.10",
-              "icd10_primary_title": "Other psychoactive substance abuse, uncomplicated"
-            },
-            {
-              "diagnosis": "Dehydration",
+              "diagnosis": "Tachycardia",
               "rank": 6,
-              "score": 40.0,
+              "score": 20.0,
               "confidence": "low",
-              "icd10_primary": "E86.0",
-              "icd10_primary_title": "Dehydration"
+              "icd10_primary": "R00.0",
+              "icd10_primary_title": "Tachycardia, unspecified"
             }
           ],
           "n_diffdx": 6
@@ -350,16 +358,16 @@
           "icd_llm_match": true,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "J93.9 matches S27.0XXA for pneumothorax, unspecified",
+          "llm_icd_reason": "J93.9 matches S27.0XXA as both code pneumothorax",
           "llm_expanded_ground_truth_icd": "S27.0XXA — Traumatic pneumothorax, initial encounter",
           "llm_expanded_matched_icd": "J93.9 — Pneumothorax, unspecified",
           "stage9_final_primary_icd": "J10.1",
           "diagnosis_match": true,
           "is_rank1_diagnosis_match": false,
-          "matched_diffdx_rank": 3
+          "matched_diffdx_rank": 2
         },
         "llm_qe_raw": {
-          "matched_rank": 3,
+          "matched_rank": 2,
           "diagnosis_equivalent": true,
           "diagnosis_relationship": "same_principal",
           "diagnosis_confidence": "medium",
@@ -372,14 +380,14 @@
           ],
           "icd_equivalent": true,
           "icd_confidence": "medium",
-          "icd_reason": "J93.9 matches S27.0XXA for pneumothorax, unspecified",
+          "icd_reason": "J93.9 matches S27.0XXA as both code pneumothorax",
           "ground_truth_icd_expansions": [
             "S27.0XXA — Traumatic pneumothorax, initial encounter"
           ],
           "matched_icd_expansions": [
             "J93.9 — Pneumothorax, unspecified"
           ],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -392,7 +400,7 @@
       "method": "llm_query_expansion",
       "patient_id": "11251337",
       "hadm_id": "29568708",
-      "generated_at": "2026-08-19T22:37:31.057737",
+      "generated_at": "2026-08-20T00:13:08.261331",
       "ground_truth": {
         "primary_icd_code": "N132",
         "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
@@ -402,7 +410,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Hydronephrosis with renal and ureteral calculous obstruction",
-          "rank1_diagnosis": "Nephrolithiasis",
+          "rank1_diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -413,49 +421,49 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.",
-          "llm_expanded_ground_truth": "Hydronephrosis | Renal and ureteral calculous obstruction",
-          "llm_expanded_matched": "",
+          "llm_reason": "The ground truth diagnosis 'Hydronephrosis with renal and ureteral calculous obstruction' does not match any of the differential diagnoses provided.",
+          "llm_expanded_ground_truth": "Hydronephrosis with renal calculi and ureteral obstruction",
+          "llm_expanded_matched": "Acute kidney injury due to nephrolithiasis and PCNL",
           "diagnosis_items": [
             {
-              "diagnosis": "Nephrolithiasis",
+              "diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
-              "icd10_primary": "N20.0",
-              "icd10_primary_title": "Calculus of kidney"
+              "icd10_primary": null,
+              "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Chronic kidney disease",
+              "diagnosis": "Chronic kidney disease, unspecified",
               "rank": 2,
+              "score": 75.0,
+              "confidence": "medium",
+              "icd10_primary": "N28.9",
+              "icd10_primary_title": "Disorder of kidney and ureter, unspecified"
+            },
+            {
+              "diagnosis": "Anemia in chronic kidney disease",
+              "rank": 3,
               "score": 65.0,
               "confidence": "medium",
               "icd10_primary": "N18.9",
               "icd10_primary_title": "Chronic kidney disease, unspecified"
             },
             {
-              "diagnosis": "Hypertension",
-              "rank": 3,
+              "diagnosis": "Complicated urinary tract infection",
+              "rank": 4,
               "score": 55.0,
               "confidence": "medium",
-              "icd10_primary": "I10",
-              "icd10_primary_title": "Essential (primary) hypertension"
+              "icd10_primary": "N39.0",
+              "icd10_primary_title": "Urinary tract infection, site not specified"
             },
             {
-              "diagnosis": "Acute kidney injury",
-              "rank": 4,
+              "diagnosis": "Hypertensive chronic kidney disease",
+              "rank": 5,
               "score": 45.0,
               "confidence": "low",
-              "icd10_primary": "N17.9",
-              "icd10_primary_title": "Acute kidney failure, unspecified"
-            },
-            {
-              "diagnosis": "Hemorrhagic CVA",
-              "rank": 5,
-              "score": 30.0,
-              "confidence": "low",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
+              "icd10_primary": "I12.0",
+              "icd10_primary_title": "Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease"
             }
           ],
           "n_diffdx": 5
@@ -463,8 +471,8 @@
         "icd_linked": {
           "ground_truth_icd": "N13.2",
           "ground_truth_icd_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-          "rank1_predicted_icd": "N20.0",
-          "rank1_predicted_icd_title": "Calculus of kidney",
+          "rank1_predicted_icd": "",
+          "rank1_predicted_icd_title": "",
           "matched_predicted_icd": "",
           "matched_predicted_icd_title": "",
           "icd_match": false,
@@ -473,33 +481,36 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.",
-          "llm_expanded_ground_truth_icd": "N13.2 — Hydronephrosis with renal and ureteral calculous obstruction",
-          "llm_expanded_matched_icd": "",
+          "llm_icd_reason": "The mapped ICD code for the differential diagnosis 'Acute kidney injury due to nephrolithiasis and PCNL' does not match the ground truth ICD code N13.2.",
+          "llm_expanded_ground_truth_icd": "Hydronephrosis with renal and ureteral calculous obstruction",
+          "llm_expanded_matched_icd": "(none)",
           "stage9_final_primary_icd": "N20.0",
           "diagnosis_match": false,
           "is_rank1_diagnosis_match": null,
           "matched_diffdx_rank": null
         },
         "llm_qe_raw": {
-          "matched_rank": null,
+          "matched_rank": 1,
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.",
+          "diagnosis_reason": "The ground truth diagnosis 'Hydronephrosis with renal and ureteral calculous obstruction' does not match any of the differential diagnoses provided.",
           "ground_truth_expansions": [
-            "Hydronephrosis",
-            "Renal and ureteral calculous obstruction"
+            "Hydronephrosis with renal calculi and ureteral obstruction"
           ],
-          "matched_diagnosis_expansions": [],
+          "matched_diagnosis_expansions": [
+            "Acute kidney injury due to nephrolithiasis and PCNL"
+          ],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.",
+          "icd_reason": "The mapped ICD code for the differential diagnosis 'Acute kidney injury due to nephrolithiasis and PCNL' does not match the ground truth ICD code N13.2.",
           "ground_truth_icd_expansions": [
-            "N13.2 — Hydronephrosis with renal and ureteral calculous obstruction"
+            "Hydronephrosis with renal and ureteral calculous obstruction"
           ],
-          "matched_icd_expansions": [],
-          "_cache_hit": true
+          "matched_icd_expansions": [
+            "(none)"
+          ],
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -512,7 +523,7 @@
       "method": "llm_query_expansion",
       "patient_id": "11474876",
       "hadm_id": "29672491",
-      "generated_at": "2026-08-19T22:37:31.058626",
+      "generated_at": "2026-08-20T00:13:12.018468",
       "ground_truth": {
         "primary_icd_code": "K8030",
         "primary_dx_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
@@ -522,7 +533,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
-          "rank1_diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+          "rank1_diagnosis": "Atrial fibrillation with heart failure",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -533,49 +544,49 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis.",
-          "llm_expanded_ground_truth": "",
+          "llm_reason": "The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.",
+          "llm_expanded_ground_truth": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+              "diagnosis": "Atrial fibrillation with heart failure",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
-              "icd10_primary": "I50.30",
-              "icd10_primary_title": "Unspecified diastolic (congestive) heart failure"
+              "icd10_primary": "I45.10",
+              "icd10_primary_title": "Unspecified right bundle-branch block"
             },
             {
-              "diagnosis": "Peripheral vascular disease (PVD)",
+              "diagnosis": "Peripheral vascular disease",
               "rank": 2,
-              "score": 70.0,
+              "score": 75.0,
               "confidence": "medium",
               "icd10_primary": "I73.9",
               "icd10_primary_title": "Peripheral vascular disease, unspecified"
             },
             {
-              "diagnosis": "Atrial fibrillation (AFib)",
+              "diagnosis": "Chronic kidney disease",
               "rank": 3,
-              "score": 65.0,
-              "confidence": "medium",
-              "icd10_primary": "I48.91",
-              "icd10_primary_title": "Unspecified atrial fibrillation"
-            },
-            {
-              "diagnosis": "Chronic kidney disease (CKD)",
-              "rank": 4,
-              "score": 55.0,
+              "score": 70.0,
               "confidence": "medium",
               "icd10_primary": "N18.9",
               "icd10_primary_title": "Chronic kidney disease, unspecified"
             },
             {
               "diagnosis": "Nocturnal hypoxia",
-              "rank": 5,
-              "score": 40.0,
+              "rank": 4,
+              "score": 65.0,
               "confidence": "low",
               "icd10_primary": "R09.02",
               "icd10_primary_title": "Hypoxemia"
+            },
+            {
+              "diagnosis": "Cholangitis",
+              "rank": 5,
+              "score": 55.0,
+              "confidence": "low",
+              "icd10_primary": "K83.09",
+              "icd10_primary_title": "Other cholangitis"
             }
           ],
           "n_diffdx": 5
@@ -583,8 +594,8 @@
         "icd_linked": {
           "ground_truth_icd": "K80.30",
           "ground_truth_icd_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
-          "rank1_predicted_icd": "I50.30",
-          "rank1_predicted_icd_title": "Unspecified diastolic (congestive) heart failure",
+          "rank1_predicted_icd": "I45.10",
+          "rank1_predicted_icd_title": "Unspecified right bundle-branch block",
           "matched_predicted_icd": "",
           "matched_predicted_icd_title": "",
           "icd_match": false,
@@ -593,8 +604,8 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
-          "llm_expanded_ground_truth_icd": "",
+          "llm_icd_reason": "The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.",
+          "llm_expanded_ground_truth_icd": "K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "I50.30",
           "diagnosis_match": false,
@@ -606,15 +617,19 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis.",
-          "ground_truth_expansions": [],
+          "diagnosis_reason": "The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.",
+          "ground_truth_expansions": [
+            "Calculus of bile duct with cholangitis, unspecified, without obstruction"
+          ],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
-          "ground_truth_icd_expansions": [],
+          "icd_reason": "The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.",
+          "ground_truth_icd_expansions": [
+            "K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction"
+          ],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -627,7 +642,7 @@
       "method": "llm_query_expansion",
       "patient_id": "11607177",
       "hadm_id": "23293838",
-      "generated_at": "2026-08-19T22:37:31.059840",
+      "generated_at": "2026-08-20T00:13:15.194893",
       "ground_truth": {
         "primary_icd_code": "I472",
         "primary_dx_title": "Ventricular tachycardia",
@@ -637,39 +652,39 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Ventricular tachycardia",
-          "rank1_diagnosis": "Refractory VT",
+          "rank1_diagnosis": "Refractory ventricular tachycardia",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": true,
           "is_rank1_match": true,
           "matched_diffdx_rank": 1,
-          "matched_diagnosis": "Refractory VT",
+          "matched_diagnosis": "Refractory ventricular tachycardia",
           "matched_score": 85.0,
           "matched_confidence": "high",
           "llm_relationship": "same_principal",
           "llm_confidence": "high",
-          "llm_reason": "Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.",
-          "llm_expanded_ground_truth": "Ventricular tachycardia | VT",
-          "llm_expanded_matched": "Refractory VT | VT",
+          "llm_reason": "Refractory ventricular tachycardia matches Ventricular tachycardia.",
+          "llm_expanded_ground_truth": "Ventricular tachycardia",
+          "llm_expanded_matched": "Refractory ventricular tachycardia",
           "diagnosis_items": [
             {
-              "diagnosis": "Refractory VT",
+              "diagnosis": "Refractory ventricular tachycardia",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
+              "icd10_primary": "I47.20",
+              "icd10_primary_title": "Ventricular tachycardia, unspecified"
             },
             {
-              "diagnosis": "Heart transplantation",
+              "diagnosis": "Dilated non-ischemic cardiomyopathy",
               "rank": 2,
-              "score": 70.0,
-              "confidence": "medium",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
+              "score": 75.0,
+              "confidence": "high",
+              "icd10_primary": "I42.0",
+              "icd10_primary_title": "Dilated cardiomyopathy"
             },
             {
-              "diagnosis": "Chronic heart failure",
+              "diagnosis": "Congestive heart failure",
               "rank": 3,
               "score": 65.0,
               "confidence": "medium",
@@ -677,20 +692,20 @@
               "icd10_primary_title": "Heart failure, unspecified"
             },
             {
-              "diagnosis": "Sleep apnea",
+              "diagnosis": "Hypokalemia",
               "rank": 4,
               "score": 50.0,
               "confidence": "low",
-              "icd10_primary": "G47.30",
-              "icd10_primary_title": "Sleep apnea, unspecified"
+              "icd10_primary": "E87.6",
+              "icd10_primary_title": "Hypokalemia"
             },
             {
-              "diagnosis": "Obesity",
+              "diagnosis": "Anemia",
               "rank": 5,
-              "score": 45.0,
+              "score": 40.0,
               "confidence": "low",
-              "icd10_primary": "E66.9",
-              "icd10_primary_title": "Obesity, unspecified"
+              "icd10_primary": "D64.9",
+              "icd10_primary_title": "Anemia, unspecified"
             }
           ],
           "n_diffdx": 5
@@ -698,19 +713,19 @@
         "icd_linked": {
           "ground_truth_icd": "I47.2",
           "ground_truth_icd_title": "Ventricular tachycardia",
-          "rank1_predicted_icd": "",
-          "rank1_predicted_icd_title": "",
-          "matched_predicted_icd": "",
-          "matched_predicted_icd_title": "",
+          "rank1_predicted_icd": "I47.20",
+          "rank1_predicted_icd_title": "Ventricular tachycardia, unspecified",
+          "matched_predicted_icd": "I47.20",
+          "matched_predicted_icd_title": "Ventricular tachycardia, unspecified",
           "icd_match": true,
           "icd_exact_match": false,
-          "icd_family_match": false,
+          "icd_family_match": true,
           "icd_llm_match": true,
           "is_rank1_icd_match": true,
-          "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.",
-          "llm_expanded_ground_truth_icd": "I47.2 — Ventricular tachycardia",
-          "llm_expanded_matched_icd": "",
+          "is_rank1_icd_family_match": true,
+          "llm_icd_reason": "ICD code I47.20 matches I47.2.",
+          "llm_expanded_ground_truth_icd": "Ventricular tachycardia",
+          "llm_expanded_matched_icd": "Ventricular tachycardia, unspecified",
           "stage9_final_primary_icd": "I50.9",
           "diagnosis_match": true,
           "is_rank1_diagnosis_match": true,
@@ -721,23 +736,23 @@
           "diagnosis_equivalent": true,
           "diagnosis_relationship": "same_principal",
           "diagnosis_confidence": "high",
-          "diagnosis_reason": "Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.",
+          "diagnosis_reason": "Refractory ventricular tachycardia matches Ventricular tachycardia.",
           "ground_truth_expansions": [
-            "Ventricular tachycardia",
-            "VT"
+            "Ventricular tachycardia"
           ],
           "matched_diagnosis_expansions": [
-            "Refractory VT",
-            "VT"
+            "Refractory ventricular tachycardia"
           ],
           "icd_equivalent": true,
           "icd_confidence": "high",
-          "icd_reason": "The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.",
+          "icd_reason": "ICD code I47.20 matches I47.2.",
           "ground_truth_icd_expansions": [
-            "I47.2 — Ventricular tachycardia"
+            "Ventricular tachycardia"
           ],
-          "matched_icd_expansions": [],
-          "_cache_hit": true
+          "matched_icd_expansions": [
+            "Ventricular tachycardia, unspecified"
+          ],
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -750,7 +765,7 @@
       "method": "llm_query_expansion",
       "patient_id": "12007928",
       "hadm_id": "23749816",
-      "generated_at": "2026-08-19T22:37:31.061946",
+      "generated_at": "2026-08-20T00:13:19.520624",
       "ground_truth": {
         "primary_icd_code": "I5033",
         "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
@@ -771,9 +786,9 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Acute on chronic diastolic (congestive) heart failure'.",
-          "llm_expanded_ground_truth": "Acute on chronic diastolic heart failure | Acute on chronic congestive heart failure",
-          "llm_expanded_matched": "",
+          "llm_reason": "The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.",
+          "llm_expanded_ground_truth": "Acute on chronic diastolic heart failure",
+          "llm_expanded_matched": "Acute decompensated heart failure",
           "diagnosis_items": [
             {
               "diagnosis": "Acute decompensated heart failure",
@@ -784,63 +799,39 @@
               "icd10_primary_title": "Heart failure, unspecified"
             },
             {
-              "diagnosis": "Chronic kidney disease",
+              "diagnosis": "Atrial fibrillation",
               "rank": 2,
               "score": 70.0,
               "confidence": "medium",
-              "icd10_primary": "N18.9",
-              "icd10_primary_title": "Chronic kidney disease, unspecified"
+              "icd10_primary": "I48.91",
+              "icd10_primary_title": "Unspecified atrial fibrillation"
             },
             {
-              "diagnosis": "Anemia",
+              "diagnosis": "Renal insufficiency",
               "rank": 3,
               "score": 65.0,
               "confidence": "medium",
-              "icd10_primary": "D64.9",
-              "icd10_primary_title": "Anemia, unspecified"
-            },
-            {
-              "diagnosis": "Atrial fibrillation",
-              "rank": 4,
-              "score": 55.0,
-              "confidence": "medium",
-              "icd10_primary": "I48.0",
-              "icd10_primary_title": "Paroxysmal atrial fibrillation"
+              "icd10_primary": "N28.9",
+              "icd10_primary_title": "Disorder of kidney and ureter, unspecified"
             },
             {
               "diagnosis": "Myasthenia gravis",
-              "rank": 5,
-              "score": 45.0,
+              "rank": 4,
+              "score": 50.0,
               "confidence": "low",
               "icd10_primary": "G70.00",
               "icd10_primary_title": "Myasthenia gravis without (acute) exacerbation"
             },
             {
-              "diagnosis": "Pulmonary embolism",
-              "rank": 6,
-              "score": 35.0,
+              "diagnosis": "Anemia",
+              "rank": 5,
+              "score": 40.0,
               "confidence": "low",
-              "icd10_primary": "I26.99",
-              "icd10_primary_title": "Other pulmonary embolism without acute cor pulmonale"
-            },
-            {
-              "diagnosis": "Obstructive sleep apnea",
-              "rank": 7,
-              "score": 30.0,
-              "confidence": "low",
-              "icd10_primary": "G47.33",
-              "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)"
-            },
-            {
-              "diagnosis": "Hypothyroidism",
-              "rank": 8,
-              "score": 25.0,
-              "confidence": "low",
-              "icd10_primary": "E03.9",
-              "icd10_primary_title": "Hypothyroidism, unspecified"
+              "icd10_primary": "D64.9",
+              "icd10_primary_title": "Anemia, unspecified"
             }
           ],
-          "n_diffdx": 8
+          "n_diffdx": 5
         },
         "icd_linked": {
           "ground_truth_icd": "I50.33",
@@ -855,34 +846,36 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": true,
-          "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code 'I50.33 — Acute on chronic diastolic (congestive) heart failure'.",
-          "llm_expanded_ground_truth_icd": "I50.33 — Acute on chronic diastolic heart failure | I50.33 — Acute on chronic congestive heart failure",
-          "llm_expanded_matched_icd": "",
+          "llm_icd_reason": "The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.",
+          "llm_expanded_ground_truth_icd": "I50.33 — Acute on chronic diastolic (congestive) heart failure",
+          "llm_expanded_matched_icd": "I50.9 — Heart failure, unspecified",
           "stage9_final_primary_icd": "I50.9",
           "diagnosis_match": false,
           "is_rank1_diagnosis_match": null,
           "matched_diffdx_rank": null
         },
         "llm_qe_raw": {
-          "matched_rank": null,
+          "matched_rank": 1,
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Acute on chronic diastolic (congestive) heart failure'.",
+          "diagnosis_reason": "The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.",
           "ground_truth_expansions": [
-            "Acute on chronic diastolic heart failure",
-            "Acute on chronic congestive heart failure"
+            "Acute on chronic diastolic heart failure"
           ],
-          "matched_diagnosis_expansions": [],
+          "matched_diagnosis_expansions": [
+            "Acute decompensated heart failure"
+          ],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code 'I50.33 — Acute on chronic diastolic (congestive) heart failure'.",
+          "icd_reason": "The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.",
           "ground_truth_icd_expansions": [
-            "I50.33 — Acute on chronic diastolic heart failure",
-            "I50.33 — Acute on chronic congestive heart failure"
+            "I50.33 — Acute on chronic diastolic (congestive) heart failure"
           ],
-          "matched_icd_expansions": [],
-          "_cache_hit": true
+          "matched_icd_expansions": [
+            "I50.9 — Heart failure, unspecified"
+          ],
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -895,7 +888,7 @@
       "method": "llm_query_expansion",
       "patient_id": "13196707",
       "hadm_id": "21475988",
-      "generated_at": "2026-08-19T22:37:31.062842",
+      "generated_at": "2026-08-20T00:13:22.394699",
       "ground_truth": {
         "primary_icd_code": "A419",
         "primary_dx_title": "Sepsis, unspecified organism",
@@ -905,7 +898,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Sepsis, unspecified organism",
-          "rank1_diagnosis": "Severe sepsis due to RUL PNA",
+          "rank1_diagnosis": "Severe sepsis secondary to RUL PNA",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -916,12 +909,12 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of 'Sepsis, unspecified organism'.",
-          "llm_expanded_ground_truth": "Sepsis, unspecified organism",
+          "llm_reason": "The ground truth diagnosis 'Sepsis, unspecified organism' does not match any of the ranked differential diagnoses.",
+          "llm_expanded_ground_truth": "",
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Severe sepsis due to RUL PNA",
+              "diagnosis": "Severe sepsis secondary to RUL PNA",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
@@ -932,41 +925,41 @@
               "diagnosis": "Metastatic adenocarcinoma of unknown primary",
               "rank": 2,
               "score": 75.0,
-              "confidence": "high",
+              "confidence": "medium",
               "icd10_primary": "C79.9",
               "icd10_primary_title": "Secondary malignant neoplasm of unspecified site"
             },
             {
-              "diagnosis": "Hypovolemic shock",
+              "diagnosis": "Hypotension secondary to pericardiocentesis",
               "rank": 3,
               "score": 65.0,
               "confidence": "medium",
-              "icd10_primary": "R57.1",
-              "icd10_primary_title": "Hypovolemic shock"
+              "icd10_primary": null,
+              "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Acute kidney injury",
+              "diagnosis": "Acute kidney failure",
               "rank": 4,
               "score": 55.0,
-              "confidence": "medium",
-              "icd10_primary": "N17.9",
-              "icd10_primary_title": "Acute kidney failure, unspecified"
+              "confidence": "low",
+              "icd10_primary": "I50.9",
+              "icd10_primary_title": "Heart failure, unspecified"
             },
             {
-              "diagnosis": "SVC syndrome",
+              "diagnosis": "Anemia",
               "rank": 5,
               "score": 45.0,
-              "confidence": "high",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
+              "confidence": "low",
+              "icd10_primary": "D64.9",
+              "icd10_primary_title": "Anemia, unspecified"
             },
             {
-              "diagnosis": "Neurological deterioration",
+              "diagnosis": "Sodium imbalance",
               "rank": 6,
               "score": 35.0,
-              "confidence": "medium",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
+              "confidence": "low",
+              "icd10_primary": "E87.1",
+              "icd10_primary_title": "Hypo-osmolality and hyponatremia"
             }
           ],
           "n_diffdx": 6
@@ -984,8 +977,8 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the ranked differential diagnoses have an ICD-10 code that matches or is clinically equivalent to the ground truth ICD-10 code A41.9.",
-          "llm_expanded_ground_truth_icd": "A41.9 — Sepsis, unspecified organism",
+          "llm_icd_reason": "The ground truth ICD code 'A41.9' does not match any of the mapped ICD codes in the ranked differential diagnoses.",
+          "llm_expanded_ground_truth_icd": "",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "R50.9",
           "diagnosis_match": false,
@@ -997,19 +990,15 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of 'Sepsis, unspecified organism'.",
-          "ground_truth_expansions": [
-            "Sepsis, unspecified organism"
-          ],
+          "diagnosis_reason": "The ground truth diagnosis 'Sepsis, unspecified organism' does not match any of the ranked differential diagnoses.",
+          "ground_truth_expansions": [],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the ranked differential diagnoses have an ICD-10 code that matches or is clinically equivalent to the ground truth ICD-10 code A41.9.",
-          "ground_truth_icd_expansions": [
-            "A41.9 — Sepsis, unspecified organism"
-          ],
+          "icd_reason": "The ground truth ICD code 'A41.9' does not match any of the mapped ICD codes in the ranked differential diagnoses.",
+          "ground_truth_icd_expansions": [],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -1022,7 +1011,7 @@
       "method": "llm_query_expansion",
       "patient_id": "13508515",
       "hadm_id": "21834271",
-      "generated_at": "2026-08-19T22:37:31.063536",
+      "generated_at": "2026-08-20T00:13:25.599643",
       "ground_truth": {
         "primary_icd_code": "C642",
         "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
@@ -1043,7 +1032,7 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.",
+          "llm_reason": "The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.",
           "llm_expanded_ground_truth": "",
           "llm_expanded_matched": "",
           "diagnosis_items": [
@@ -1058,42 +1047,42 @@
             {
               "diagnosis": "Renal cell carcinoma",
               "rank": 2,
-              "score": 75.0,
-              "confidence": "high",
+              "score": 70.0,
+              "confidence": "medium",
               "icd10_primary": null,
               "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Anemia",
-              "rank": 3,
-              "score": 70.0,
-              "confidence": "medium",
-              "icd10_primary": "D64.9",
-              "icd10_primary_title": "Anemia, unspecified"
-            },
-            {
-              "diagnosis": "Hypokalemia",
-              "rank": 4,
-              "score": 65.0,
-              "confidence": "medium",
-              "icd10_primary": "E87.6",
-              "icd10_primary_title": "Hypokalemia"
-            },
-            {
               "diagnosis": "Obstructive sleep apnea",
-              "rank": 5,
+              "rank": 3,
               "score": 60.0,
               "confidence": "medium",
               "icd10_primary": "G47.33",
               "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)"
             },
             {
-              "diagnosis": "Diabetes mellitus",
-              "rank": 6,
+              "diagnosis": "Anemia",
+              "rank": 4,
               "score": 55.0,
               "confidence": "medium",
-              "icd10_primary": "E11.9",
-              "icd10_primary_title": "Type 2 diabetes mellitus without complications"
+              "icd10_primary": "D64.9",
+              "icd10_primary_title": "Anemia, unspecified"
+            },
+            {
+              "diagnosis": "Hypokalemia",
+              "rank": 5,
+              "score": 50.0,
+              "confidence": "low",
+              "icd10_primary": "E87.6",
+              "icd10_primary_title": "Hypokalemia"
+            },
+            {
+              "diagnosis": "Chronic kidney disease",
+              "rank": 6,
+              "score": 45.0,
+              "confidence": "low",
+              "icd10_primary": "N18.9",
+              "icd10_primary_title": "Chronic kidney disease, unspecified"
             }
           ],
           "n_diffdx": 6
@@ -1111,7 +1100,7 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.",
+          "llm_icd_reason": "The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.",
           "llm_expanded_ground_truth_icd": "",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "I50.23",
@@ -1124,15 +1113,15 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Malignant neoplasm of left kidney, except renal pelvis'.",
+          "diagnosis_reason": "The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.",
           "ground_truth_expansions": [],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'C64.2'.",
+          "icd_reason": "The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.",
           "ground_truth_icd_expansions": [],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -1145,7 +1134,7 @@
       "method": "llm_query_expansion",
       "patient_id": "13952483",
       "hadm_id": "23852410",
-      "generated_at": "2026-08-19T22:37:31.064393",
+      "generated_at": "2026-08-20T00:13:28.322996",
       "ground_truth": {
         "primary_icd_code": "I9589",
         "primary_dx_title": "Other hypotension",
@@ -1155,7 +1144,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Other hypotension",
-          "rank1_diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+          "rank1_diagnosis": "Squamous Cell Lung CA",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -1166,25 +1155,25 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis of Other hypotension.",
+          "llm_reason": "None of the ranked differential diagnoses match 'Other hypotension'.",
           "llm_expanded_ground_truth": "Other hypotension",
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+              "diagnosis": "Squamous Cell Lung CA",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
-              "icd10_primary": "T86.91",
-              "icd10_primary_title": "Unspecified transplanted organ and tissue rejection"
+              "icd10_primary": null,
+              "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Neutropenia",
+              "diagnosis": "Pulmonary Hypertension",
               "rank": 2,
-              "score": 70.0,
-              "confidence": "medium",
-              "icd10_primary": "D70.9",
-              "icd10_primary_title": "Neutropenia, unspecified"
+              "score": 75.0,
+              "confidence": "high",
+              "icd10_primary": null,
+              "icd10_primary_title": ""
             },
             {
               "diagnosis": "Anemia",
@@ -1211,12 +1200,12 @@
               "icd10_primary_title": "Chronic kidney disease, unspecified"
             },
             {
-              "diagnosis": "Pneumonia",
+              "diagnosis": "Cachexia",
               "rank": 6,
-              "score": 30.0,
+              "score": 35.0,
               "confidence": "low",
-              "icd10_primary": "J18.9",
-              "icd10_primary_title": "Pneumonia, unspecified organism"
+              "icd10_primary": "R64",
+              "icd10_primary_title": "Cachexia"
             }
           ],
           "n_diffdx": 6
@@ -1224,8 +1213,8 @@
         "icd_linked": {
           "ground_truth_icd": "I95.89",
           "ground_truth_icd_title": "Other hypotension",
-          "rank1_predicted_icd": "T86.91",
-          "rank1_predicted_icd_title": "Unspecified transplanted organ and tissue rejection",
+          "rank1_predicted_icd": "",
+          "rank1_predicted_icd_title": "",
           "matched_predicted_icd": "",
           "matched_predicted_icd_title": "",
           "icd_match": false,
@@ -1234,7 +1223,7 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the mapped ICD codes match or are clinically equivalent to the ground truth ICD code I95.89.",
+          "llm_icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.",
           "llm_expanded_ground_truth_icd": "I95.89 — Other hypotension",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "I27.20",
@@ -1247,19 +1236,19 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis of Other hypotension.",
+          "diagnosis_reason": "None of the ranked differential diagnoses match 'Other hypotension'.",
           "ground_truth_expansions": [
             "Other hypotension"
           ],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the mapped ICD codes match or are clinically equivalent to the ground truth ICD code I95.89.",
+          "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.",
           "ground_truth_icd_expansions": [
             "I95.89 — Other hypotension"
           ],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -1272,7 +1261,7 @@
       "method": "llm_query_expansion",
       "patient_id": "16014068",
       "hadm_id": "29042843",
-      "generated_at": "2026-08-19T22:37:31.065269",
+      "generated_at": "2026-08-20T00:13:31.452930",
       "ground_truth": {
         "primary_icd_code": "C7931",
         "primary_dx_title": "Secondary malignant neoplasm of brain",
@@ -1282,7 +1271,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Secondary malignant neoplasm of brain",
-          "rank1_diagnosis": "Anemia due to malignancy",
+          "rank1_diagnosis": "Metastatic sarcoma with hematologic complications",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -1293,58 +1282,66 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Secondary malignant neoplasm of brain'.",
-          "llm_expanded_ground_truth": "Secondary malignant neoplasm of brain",
+          "llm_reason": "The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.",
+          "llm_expanded_ground_truth": "",
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Anemia due to malignancy",
+              "diagnosis": "Metastatic sarcoma with hematologic complications",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
-              "icd10_primary": "B99.9",
-              "icd10_primary_title": "Unspecified infectious disease"
+              "icd10_primary": "C79.89",
+              "icd10_primary_title": "Secondary malignant neoplasm of other specified sites"
             },
             {
-              "diagnosis": "Thrombocytopenia due to malignancy",
+              "diagnosis": "Anemia",
               "rank": 2,
-              "score": 75.0,
+              "score": 70.0,
               "confidence": "high",
-              "icd10_primary": "U07.1",
-              "icd10_primary_title": "COVID-19"
+              "icd10_primary": "D64.9",
+              "icd10_primary_title": "Anemia, unspecified"
+            },
+            {
+              "diagnosis": "Thrombocytopenia",
+              "rank": 3,
+              "score": 65.0,
+              "confidence": "high",
+              "icd10_primary": "O36.8290",
+              "icd10_primary_title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified"
             },
             {
               "diagnosis": "Hypotension",
-              "rank": 3,
-              "score": 60.0,
+              "rank": 4,
+              "score": 50.0,
               "confidence": "medium",
               "icd10_primary": "I95.9",
               "icd10_primary_title": "Hypotension, unspecified"
             },
             {
               "diagnosis": "Headache",
-              "rank": 4,
-              "score": 50.0,
+              "rank": 5,
+              "score": 45.0,
               "confidence": "medium",
               "icd10_primary": "R51.9",
               "icd10_primary_title": "Headache, unspecified"
             },
             {
-              "diagnosis": "Metastatic sarcoma to the brain",
-              "rank": 5,
-              "score": 45.0,
+              "diagnosis": "Abdominal pain",
+              "rank": 6,
+              "score": 35.0,
               "confidence": "low",
-              "icd10_primary": "C79.89",
-              "icd10_primary_title": "Secondary malignant neoplasm of other specified sites"
+              "icd10_primary": "R10.9",
+              "icd10_primary_title": "Unspecified abdominal pain"
             }
           ],
-          "n_diffdx": 5
+          "n_diffdx": 6
         },
         "icd_linked": {
           "ground_truth_icd": "C79.31",
           "ground_truth_icd_title": "Secondary malignant neoplasm of brain",
-          "rank1_predicted_icd": "B99.9",
-          "rank1_predicted_icd_title": "Unspecified infectious disease",
+          "rank1_predicted_icd": "C79.89",
+          "rank1_predicted_icd_title": "Secondary malignant neoplasm of other specified sites",
           "matched_predicted_icd": "",
           "matched_predicted_icd_title": "",
           "icd_match": false,
@@ -1352,9 +1349,9 @@
           "icd_family_match": false,
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
-          "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code C79.31.",
-          "llm_expanded_ground_truth_icd": "C79.31 — Secondary malignant neoplasm of brain",
+          "is_rank1_icd_family_match": true,
+          "llm_icd_reason": "The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.",
+          "llm_expanded_ground_truth_icd": "",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "B99.9",
           "diagnosis_match": false,
@@ -1366,19 +1363,15 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Secondary malignant neoplasm of brain'.",
-          "ground_truth_expansions": [
-            "Secondary malignant neoplasm of brain"
-          ],
+          "diagnosis_reason": "The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.",
+          "ground_truth_expansions": [],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code C79.31.",
-          "ground_truth_icd_expansions": [
-            "C79.31 — Secondary malignant neoplasm of brain"
-          ],
+          "icd_reason": "The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.",
+          "ground_truth_icd_expansions": [],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -1391,7 +1384,7 @@
       "method": "llm_query_expansion",
       "patient_id": "17774110",
       "hadm_id": "27339772",
-      "generated_at": "2026-08-19T22:37:31.066043",
+      "generated_at": "2026-08-20T00:13:34.577565",
       "ground_truth": {
         "primary_icd_code": "A4189",
         "primary_dx_title": "Other specified sepsis",
@@ -1401,7 +1394,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Other specified sepsis",
-          "rank1_diagnosis": "Severe sepsis with septic shock",
+          "rank1_diagnosis": "Acute liver failure",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -1412,73 +1405,73 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
-          "llm_expanded_ground_truth": "Other specified sepsis",
+          "llm_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of 'Other specified sepsis'.",
+          "llm_expanded_ground_truth": "A41.89 — Other specified sepsis",
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Severe sepsis with septic shock",
+              "diagnosis": "Acute liver failure",
               "rank": 1,
               "score": 85.0,
+              "confidence": "high",
+              "icd10_primary": "K72.00",
+              "icd10_primary_title": "Acute and subacute hepatic failure without coma"
+            },
+            {
+              "diagnosis": "Septic shock",
+              "rank": 2,
+              "score": 75.0,
               "confidence": "high",
               "icd10_primary": "R65.21",
               "icd10_primary_title": "Severe sepsis with septic shock"
             },
             {
               "diagnosis": "Hepatic encephalopathy",
-              "rank": 2,
-              "score": 75.0,
+              "rank": 3,
+              "score": 70.0,
               "confidence": "high",
               "icd10_primary": "K76.82",
               "icd10_primary_title": "Hepatic encephalopathy"
             },
             {
-              "diagnosis": "Acute liver failure",
-              "rank": 3,
-              "score": 70.0,
-              "confidence": "medium",
-              "icd10_primary": "K72.00",
-              "icd10_primary_title": "Acute and subacute hepatic failure without coma"
-            },
-            {
-              "diagnosis": "GI bleeding",
+              "diagnosis": "Acute renal failure",
               "rank": 4,
               "score": 65.0,
               "confidence": "high",
-              "icd10_primary": "K92.2",
-              "icd10_primary_title": "Gastrointestinal hemorrhage, unspecified"
-            },
-            {
-              "diagnosis": "Atrial fibrillation/flutter",
-              "rank": 5,
-              "score": 50.0,
-              "confidence": "medium",
-              "icd10_primary": "I48.91",
-              "icd10_primary_title": "Unspecified atrial fibrillation"
+              "icd10_primary": "N17.9",
+              "icd10_primary_title": "Acute kidney failure, unspecified"
             },
             {
               "diagnosis": "Pleural effusion",
-              "rank": 6,
-              "score": 45.0,
+              "rank": 5,
+              "score": 60.0,
               "confidence": "medium",
               "icd10_primary": "J90",
               "icd10_primary_title": "Pleural effusion, not elsewhere classified"
             },
             {
-              "diagnosis": "Renal failure",
-              "rank": 7,
-              "score": 40.0,
+              "diagnosis": "IVC thrombus",
+              "rank": 6,
+              "score": 55.0,
               "confidence": "medium",
-              "icd10_primary": "N19",
-              "icd10_primary_title": "Unspecified kidney failure"
+              "icd10_primary": null,
+              "icd10_primary_title": ""
             },
             {
-              "diagnosis": "Coagulopathy",
-              "rank": 8,
-              "score": 35.0,
+              "diagnosis": "Cirrhosis",
+              "rank": 7,
+              "score": 50.0,
               "confidence": "medium",
-              "icd10_primary": "D68.9",
-              "icd10_primary_title": "Coagulation defect, unspecified"
+              "icd10_primary": "K74.60",
+              "icd10_primary_title": "Unspecified cirrhosis of liver"
+            },
+            {
+              "diagnosis": "Bipolar disorder",
+              "rank": 8,
+              "score": 30.0,
+              "confidence": "low",
+              "icd10_primary": "F31.9",
+              "icd10_primary_title": "Bipolar disorder, unspecified"
             }
           ],
           "n_diffdx": 8
@@ -1486,8 +1479,8 @@
         "icd_linked": {
           "ground_truth_icd": "A41.89",
           "ground_truth_icd_title": "Other specified sepsis",
-          "rank1_predicted_icd": "R65.21",
-          "rank1_predicted_icd_title": "Severe sepsis with septic shock",
+          "rank1_predicted_icd": "K72.00",
+          "rank1_predicted_icd_title": "Acute and subacute hepatic failure without coma",
           "matched_predicted_icd": "",
           "matched_predicted_icd_title": "",
           "icd_match": false,
@@ -1496,7 +1489,7 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+          "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to 'A41.89 — Other specified sepsis'.",
           "llm_expanded_ground_truth_icd": "A41.89 — Other specified sepsis",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "R65.21",
@@ -1509,19 +1502,19 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+          "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of 'Other specified sepsis'.",
           "ground_truth_expansions": [
-            "Other specified sepsis"
+            "A41.89 — Other specified sepsis"
           ],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis 'Other specified sepsis'.",
+          "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to 'A41.89 — Other specified sepsis'.",
           "ground_truth_icd_expansions": [
             "A41.89 — Other specified sepsis"
           ],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -1534,7 +1527,7 @@
       "method": "llm_query_expansion",
       "patient_id": "18412100",
       "hadm_id": "26093939",
-      "generated_at": "2026-08-19T22:37:31.067339",
+      "generated_at": "2026-08-20T00:13:37.548129",
       "ground_truth": {
         "primary_icd_code": "D481",
         "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
@@ -1544,7 +1537,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Neoplasm of uncertain behavior of connective and other soft tissue",
-          "rank1_diagnosis": "Post-procedural pain",
+          "rank1_diagnosis": "Post-procedural pain and tenderness",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -1560,7 +1553,7 @@
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Post-procedural pain",
+              "diagnosis": "Post-procedural pain and tenderness",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
@@ -1568,31 +1561,47 @@
               "icd10_primary_title": "Unspecified abdominal pain"
             },
             {
-              "diagnosis": "Desmoid tumor",
-              "rank": 2,
-              "score": 75.0,
-              "confidence": "medium",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
-            },
-            {
               "diagnosis": "Hepatitis C",
-              "rank": 3,
-              "score": 60.0,
+              "rank": 2,
+              "score": 70.0,
               "confidence": "medium",
               "icd10_primary": "B19.20",
               "icd10_primary_title": "Unspecified viral hepatitis C without hepatic coma"
             },
             {
+              "diagnosis": "Desmoid tumor",
+              "rank": 3,
+              "score": 65.0,
+              "confidence": "medium",
+              "icd10_primary": null,
+              "icd10_primary_title": ""
+            },
+            {
               "diagnosis": "Anemia",
               "rank": 4,
-              "score": 50.0,
-              "confidence": "low",
+              "score": 55.0,
+              "confidence": "medium",
               "icd10_primary": "D64.9",
               "icd10_primary_title": "Anemia, unspecified"
+            },
+            {
+              "diagnosis": "Hypokalemia",
+              "rank": 5,
+              "score": 45.0,
+              "confidence": "low",
+              "icd10_primary": "E87.6",
+              "icd10_primary_title": "Hypokalemia"
+            },
+            {
+              "diagnosis": "Hypomagnesemia",
+              "rank": 6,
+              "score": 40.0,
+              "confidence": "low",
+              "icd10_primary": "E83.42",
+              "icd10_primary_title": "Hypomagnesemia"
             }
           ],
-          "n_diffdx": 4
+          "n_diffdx": 6
         },
         "icd_linked": {
           "ground_truth_icd": "D48.1",
@@ -1607,7 +1616,7 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue'.",
+          "llm_icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1'.",
           "llm_expanded_ground_truth_icd": "",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "R10.9",
@@ -1625,10 +1634,10 @@
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue'.",
+          "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1'.",
           "ground_truth_icd_expansions": [],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -1641,7 +1650,7 @@
       "method": "llm_query_expansion",
       "patient_id": "19104262",
       "hadm_id": "24271247",
-      "generated_at": "2026-08-19T22:37:31.068746",
+      "generated_at": "2026-08-20T00:13:42.105280",
       "ground_truth": {
         "primary_icd_code": "O2403",
         "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
@@ -1662,7 +1671,7 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.",
+          "llm_reason": "The ground truth primary diagnosis is 'Pre-existing type 1 diabetes mellitus, in the puerperium', which does not match any of the differential diagnoses provided.",
           "llm_expanded_ground_truth": "Pre-existing type 1 diabetes mellitus, in the puerperium",
           "llm_expanded_matched": "",
           "diagnosis_items": [
@@ -1677,61 +1686,45 @@
             {
               "diagnosis": "C difficile colitis",
               "rank": 2,
-              "score": 60.0,
+              "score": 70.0,
               "confidence": "medium",
               "icd10_primary": "A04.72",
               "icd10_primary_title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
             },
             {
-              "diagnosis": "Missed abortion",
+              "diagnosis": "Preeclampsia",
               "rank": 3,
-              "score": 55.0,
-              "confidence": "high",
+              "score": 65.0,
+              "confidence": "medium",
+              "icd10_primary": "O14.90",
+              "icd10_primary_title": "Unspecified pre-eclampsia, unspecified trimester"
+            },
+            {
+              "diagnosis": "Missed abortion",
+              "rank": 4,
+              "score": 50.0,
+              "confidence": "low",
               "icd10_primary": "O02.1",
               "icd10_primary_title": "Missed abortion"
             },
             {
-              "diagnosis": "Abdominal pain",
-              "rank": 4,
+              "diagnosis": "Type 1 diabetes mellitus",
+              "rank": 5,
               "score": 45.0,
               "confidence": "medium",
-              "icd10_primary": "R10.9",
-              "icd10_primary_title": "Unspecified abdominal pain"
+              "icd10_primary": "E10.9",
+              "icd10_primary_title": "Type 1 diabetes mellitus without complications"
             },
             {
-              "diagnosis": "Vaginal bleeding",
-              "rank": 5,
-              "score": 40.0,
-              "confidence": "medium",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
-            },
-            {
-              "diagnosis": "Decreased fetal movement",
+              "diagnosis": "Infection",
               "rank": 6,
-              "score": 35.0,
-              "confidence": "medium",
-              "icd10_primary": "O36.8190",
-              "icd10_primary_title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-            },
-            {
-              "diagnosis": "Headache",
-              "rank": 7,
               "score": 30.0,
               "confidence": "low",
-              "icd10_primary": "R51.9",
-              "icd10_primary_title": "Headache, unspecified"
-            },
-            {
-              "diagnosis": "Nausea",
-              "rank": 8,
-              "score": 25.0,
-              "confidence": "low",
-              "icd10_primary": "R11.0",
-              "icd10_primary_title": "Nausea"
+              "icd10_primary": "B99.9",
+              "icd10_primary_title": "Unspecified infectious disease"
             }
           ],
-          "n_diffdx": 8
+          "n_diffdx": 6
         },
         "icd_linked": {
           "ground_truth_icd": "O24.03",
@@ -1746,7 +1739,7 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.",
+          "llm_icd_reason": "The ground truth ICD code is O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium, which does not match any of the mapped ICD codes provided.",
           "llm_expanded_ground_truth_icd": "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "E13.10",
@@ -1759,19 +1752,19 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.",
+          "diagnosis_reason": "The ground truth primary diagnosis is 'Pre-existing type 1 diabetes mellitus, in the puerperium', which does not match any of the differential diagnoses provided.",
           "ground_truth_expansions": [
             "Pre-existing type 1 diabetes mellitus, in the puerperium"
           ],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.",
+          "icd_reason": "The ground truth ICD code is O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium, which does not match any of the mapped ICD codes provided.",
           "ground_truth_icd_expansions": [
             "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium"
           ],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,
@@ -1784,7 +1777,7 @@
       "method": "llm_query_expansion",
       "patient_id": "19632936",
       "hadm_id": "26696232",
-      "generated_at": "2026-08-19T22:37:31.069920",
+      "generated_at": "2026-08-20T00:13:44.914512",
       "ground_truth": {
         "primary_icd_code": "D509",
         "primary_dx_title": "Iron deficiency anemia, unspecified",
@@ -1794,7 +1787,7 @@
       "evaluation": {
         "diagnosis": {
           "ground_truth_primary": "Iron deficiency anemia, unspecified",
-          "rank1_diagnosis": "Acute on chronic macrocytic anemia",
+          "rank1_diagnosis": "Acute macrocytic anemia",
           "rank1_score": 85.0,
           "rank1_confidence": "high",
           "match": false,
@@ -1805,12 +1798,12 @@
           "matched_confidence": "",
           "llm_relationship": "different",
           "llm_confidence": "low",
-          "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of Iron deficiency anemia, unspecified.",
-          "llm_expanded_ground_truth": "Iron deficiency anemia",
+          "llm_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of Iron deficiency anemia, unspecified.",
+          "llm_expanded_ground_truth": "",
           "llm_expanded_matched": "",
           "diagnosis_items": [
             {
-              "diagnosis": "Acute on chronic macrocytic anemia",
+              "diagnosis": "Acute macrocytic anemia",
               "rank": 1,
               "score": 85.0,
               "confidence": "high",
@@ -1818,9 +1811,9 @@
               "icd10_primary_title": "Nutritional anemia, unspecified"
             },
             {
-              "diagnosis": "Heart failure",
+              "diagnosis": "Acute heart failure",
               "rank": 2,
-              "score": 70.0,
+              "score": 75.0,
               "confidence": "medium",
               "icd10_primary": "I50.9",
               "icd10_primary_title": "Heart failure, unspecified"
@@ -1834,20 +1827,20 @@
               "icd10_primary_title": "Unspecified atrial fibrillation"
             },
             {
-              "diagnosis": "Anemia of chronic disease",
+              "diagnosis": "Anemia",
               "rank": 4,
-              "score": 55.0,
-              "confidence": "low",
-              "icd10_primary": "D63.8",
-              "icd10_primary_title": "Anemia in other chronic diseases classified elsewhere"
+              "score": 60.0,
+              "confidence": "medium",
+              "icd10_primary": "D64.9",
+              "icd10_primary_title": "Anemia, unspecified"
             },
             {
-              "diagnosis": "Infectious cause of anemia",
+              "diagnosis": "Renal insufficiency",
               "rank": 5,
-              "score": 40.0,
+              "score": 55.0,
               "confidence": "low",
-              "icd10_primary": null,
-              "icd10_primary_title": ""
+              "icd10_primary": "N19",
+              "icd10_primary_title": "Unspecified kidney failure"
             }
           ],
           "n_diffdx": 5
@@ -1865,8 +1858,8 @@
           "icd_llm_match": false,
           "is_rank1_icd_match": false,
           "is_rank1_icd_family_match": false,
-          "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code D50.9.",
-          "llm_expanded_ground_truth_icd": "Iron deficiency anemia, unspecified",
+          "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to D50.9.",
+          "llm_expanded_ground_truth_icd": "",
           "llm_expanded_matched_icd": "",
           "stage9_final_primary_icd": "D53.9",
           "diagnosis_match": false,
@@ -1878,19 +1871,15 @@
           "diagnosis_equivalent": false,
           "diagnosis_relationship": "different",
           "diagnosis_confidence": "low",
-          "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of Iron deficiency anemia, unspecified.",
-          "ground_truth_expansions": [
-            "Iron deficiency anemia"
-          ],
+          "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of Iron deficiency anemia, unspecified.",
+          "ground_truth_expansions": [],
           "matched_diagnosis_expansions": [],
           "icd_equivalent": false,
           "icd_confidence": "low",
-          "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code D50.9.",
-          "ground_truth_icd_expansions": [
-            "Iron deficiency anemia, unspecified"
-          ],
+          "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to D50.9.",
+          "ground_truth_icd_expansions": [],
           "matched_icd_expansions": [],
-          "_cache_hit": true
+          "_cache_hit": false
         }
       },
       "has_stage8": true,

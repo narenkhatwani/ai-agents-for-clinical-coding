@@ -1,74 +1,46 @@
 {
-  "summary": "The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.",
-  "most_likely": "Anemia due to malignancy",
+  "summary": "The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.",
+  "most_likely": "Metastatic sarcoma with hematologic complications",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Anemia due to malignancy",
+      "diagnosis": "Metastatic sarcoma with hematologic complications",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "Metastatic sarcoma",
       "supporting_evidence": [
-        "anemia, thrombocytopenia, history of metastatic sarcoma"
+        "metastatic sarcoma",
+        "thrombocytopenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Anemia is severe and aligns with the patient's history of metastatic sarcoma and prior chemotherapy.",
+      "reasoning": "Primary diagnosis given the patient's history of metastatic sarcoma and current symptoms related to hematologic complications.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "111570005",
-        "preferred_term": "Anemia due to infection",
-        "fsn": "Anemia due to infection (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.6043242097462528,
-        "query": "Anemia due to malignancy",
-        "aligned_hint": null
+        "concept_id": "443144000",
+        "preferred_term": "Metastatic sarcoma",
+        "fsn": "Metastatic sarcoma (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Metastatic sarcoma with hematologic complications",
+        "aligned_hint": "Metastatic sarcoma"
       },
-      "icd10_primary": "B99.9",
-      "icd10_primary_title": "Unspecified infectious disease",
+      "icd10_primary": "C79.89",
+      "icd10_primary_title": "Secondary malignant neoplasm of other specified sites",
       "icd10_package": [
         {
-          "code": "B99.9",
-          "title": "Unspecified infectious disease",
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "D64.89",
-          "title": "Other specified anemias",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS D64.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anemia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "271737000",
-          "from_snomed_term": "Anemia",
-          "relevance_to_diagnosis": 0.7618,
-          "package_order": 3
-        },
-        {
           "code": "O36.8290",
           "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
           "source": "snomed_extended_map",
@@ -79,11 +51,11 @@
           "role": "supporting",
           "order": 1,
           "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
+          "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3501,
-          "package_order": 4
+          "relevance_to_diagnosis": 0.2502,
+          "package_order": 2
         },
         {
           "code": "Z3A.00",
@@ -96,71 +68,27 @@
           "role": "supporting",
           "order": 2,
           "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
+          "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3501,
-          "package_order": 5
-        },
-        {
-          "code": "C79.89",
-          "title": "Secondary malignant neoplasm of other specified sites",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Metastatic sarcoma",
-          "from_kind": "retained_snomed",
-          "from_snomed_id": "443144000",
-          "from_snomed_term": "Metastatic sarcoma",
-          "relevance_to_diagnosis": 0.2875,
-          "package_order": 6
+          "relevance_to_diagnosis": 0.2502,
+          "package_order": 3
         }
       ],
       "icd10_principal": [
         {
-          "code": "B99.9",
-          "title": "Unspecified infectious disease",
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
-        },
-        {
-          "code": "D64.89",
-          "title": "Other specified anemias",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS D64.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 2
         }
       ],
       "icd10_supporting": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anemia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "271737000",
-          "from_snomed_term": "Anemia",
-          "relevance_to_diagnosis": 0.7618
-        },
         {
           "code": "O36.8290",
           "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
@@ -172,10 +100,10 @@
           "role": "supporting",
           "order": 1,
           "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
+          "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3501
+          "relevance_to_diagnosis": 0.2502
         },
         {
           "code": "Z3A.00",
@@ -188,98 +116,108 @@
           "role": "supporting",
           "order": 2,
           "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
+          "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3501
-        },
-        {
-          "code": "C79.89",
-          "title": "Secondary malignant neoplasm of other specified sites",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Metastatic sarcoma",
-          "from_kind": "retained_snomed",
-          "from_snomed_id": "443144000",
-          "from_snomed_term": "Metastatic sarcoma",
-          "relevance_to_diagnosis": 0.2875
+          "relevance_to_diagnosis": 0.2502
         }
       ],
       "icd_status": "mapped",
-      "n_icd_codes": 6
+      "n_icd_codes": 3
     },
     {
       "rank": 2,
-      "diagnosis": "Thrombocytopenia due to malignancy",
-      "score": 75.0,
+      "diagnosis": "Anemia",
+      "score": 70.0,
       "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "",
+      "category": "secondary",
+      "snomed_aligned": "Anemia due to antineoplastic chemotherapy",
       "supporting_evidence": [
-        "thrombocytopenia, history of metastatic sarcoma"
+        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
       ],
       "opposing_evidence": [],
-      "reasoning": "Thrombocytopenia is mild but significant and related to the patient's malignancy.",
+      "reasoning": "Anemia is a significant finding and likely secondary to the patient's malignancy.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "866152006",
-        "preferred_term": "Thrombocytopenia due to SARS-CoV-2",
-        "fsn": "Thrombocytopenia due to severe acute respiratory syndrome coronavirus 2 (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.6835094570887016,
-        "query": "Thrombocytopenia due to malignancy",
-        "aligned_hint": null
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": "Anemia due to antineoplastic chemotherapy"
       },
-      "icd10_primary": "U07.1",
-      "icd10_primary_title": "COVID-19",
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
       "icd10_package": [
         {
-          "code": "U07.1",
-          "title": "COVID-19",
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS U07.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Thrombocytopenia",
+      "score": 65.0,
+      "confidence": "high",
+      "category": "secondary",
+      "snomed_aligned": "Cytokine-induced thrombocytopenia",
+      "supporting_evidence": [
+        "Platelet Count: 63.0 K/uL"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Thrombocytopenia is present and likely related to the patient's malignancy.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "10752381000119101",
+        "preferred_term": "Fetal thrombocytopenia",
+        "fsn": "Fetal thrombocytopenia (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.724041575982343,
+        "query": "Thrombocytopenia",
+        "aligned_hint": "Cytokine-induced thrombocytopenia"
+      },
+      "icd10_primary": "O36.8290",
+      "icd10_primary_title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+      "icd10_package": [
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "D69.59",
-          "title": "Other secondary thrombocytopenia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS D69.59",
-          "always": true,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.9003,
-          "package_order": 3
-        },
-        {
           "code": "Z3A.00",
           "title": "Weeks of gestation of pregnancy not specified",
           "source": "snomed_extended_map",
@@ -287,75 +225,24 @@
           "map_group": 2,
           "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
           "always": true,
-          "role": "supporting",
+          "role": "principal",
           "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.9003,
-          "package_order": 4
-        },
-        {
-          "code": "C79.89",
-          "title": "Secondary malignant neoplasm of other specified sites",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Metastatic sarcoma",
-          "from_kind": "retained_snomed",
-          "from_snomed_id": "443144000",
-          "from_snomed_term": "Metastatic sarcoma",
-          "relevance_to_diagnosis": 0.2593,
-          "package_order": 5
+          "package_order": 2
         }
       ],
       "icd10_principal": [
         {
-          "code": "U07.1",
-          "title": "COVID-19",
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS U07.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
           "always": true,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "D69.59",
-          "title": "Other secondary thrombocytopenia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS D69.59",
-          "always": true,
-          "role": "principal",
-          "order": 2
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.9003
-        },
-        {
           "code": "Z3A.00",
           "title": "Weeks of gestation of pregnancy not specified",
           "source": "snomed_extended_map",
@@ -363,48 +250,26 @@
           "map_group": 2,
           "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
           "always": true,
-          "role": "supporting",
-          "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.9003
-        },
-        {
-          "code": "C79.89",
-          "title": "Secondary malignant neoplasm of other specified sites",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Metastatic sarcoma",
-          "from_kind": "retained_snomed",
-          "from_snomed_id": "443144000",
-          "from_snomed_term": "Metastatic sarcoma",
-          "relevance_to_diagnosis": 0.2593
+          "role": "principal",
+          "order": 2
         }
       ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 5
+      "n_icd_codes": 2
     },
     {
-      "rank": 3,
+      "rank": 4,
       "diagnosis": "Hypotension",
-      "score": 60.0,
+      "score": 50.0,
       "confidence": "medium",
-      "category": "secondary",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hypotension, history of malignancy and chemotherapy side effects"
+        "BP 114/66"
       ],
-      "opposing_evidence": [
-        "no evidence of acute cardiovascular issues"
-      ],
-      "reasoning": "Hypotension is noted but may be secondary to malignancy and chemotherapy effects.",
+      "opposing_evidence": [],
+      "reasoning": "Hypotension is noted and may be a risk factor for further complications.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "45007003",
@@ -449,19 +314,17 @@
       "n_icd_codes": 1
     },
     {
-      "rank": 4,
+      "rank": 5,
       "diagnosis": "Headache",
-      "score": 50.0,
+      "score": 45.0,
       "confidence": "medium",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "headache after fall, history of cerebellar hemorrhage"
+        "hit his head"
       ],
-      "opposing_evidence": [
-        "no evidence of acute intracranial bleeding"
-      ],
-      "reasoning": "Headache is present but may be related to the fall rather than acute intracranial issues.",
+      "opposing_evidence": [],
+      "reasoning": "Headache is present but may be secondary to the fall and underlying malignancy.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "25064002",
@@ -506,109 +369,78 @@
       "n_icd_codes": 1
     },
     {
-      "rank": 5,
-      "diagnosis": "Metastatic sarcoma to the brain",
-      "score": 45.0,
+      "rank": 6,
+      "diagnosis": "Abdominal pain",
+      "score": 35.0,
       "confidence": "low",
       "category": "differential",
-      "snomed_aligned": "",
+      "snomed_aligned": "Abdominal pain",
       "supporting_evidence": [
-        "history of metastatic sarcoma, recent fall and headache"
+        "abdominal pain"
       ],
-      "opposing_evidence": [
-        "no recent evidence of new neurological deficits"
-      ],
-      "reasoning": "Metastasis to the brain is a risk but not strongly supported by current evidence.",
+      "opposing_evidence": [],
+      "reasoning": "Abdominal pain is noted but not strongly supported by current findings.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "443144000",
-        "preferred_term": "Metastatic sarcoma",
-        "fsn": "Metastatic sarcoma (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.6291004191006289,
-        "query": "Metastatic sarcoma to the brain",
-        "aligned_hint": null
+        "concept_id": "21522001",
+        "preferred_term": "Abdominal pain",
+        "fsn": "Abdominal pain (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Abdominal pain",
+        "aligned_hint": "Abdominal pain"
       },
-      "icd10_primary": "C79.89",
-      "icd10_primary_title": "Secondary malignant neoplasm of other specified sites",
+      "icd10_primary": "R10.9",
+      "icd10_primary_title": "Unspecified abdominal pain",
       "icd10_package": [
         {
-          "code": "C79.89",
-          "title": "Secondary malignant neoplasm of other specified sites",
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
-        },
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "headache",
-          "from_kind": "red_flag",
-          "from_snomed_id": "25064002",
-          "from_snomed_term": "Headache",
-          "relevance_to_diagnosis": 0.2345,
-          "package_order": 2
         }
       ],
       "icd10_principal": [
         {
-          "code": "C79.89",
-          "title": "Secondary malignant neoplasm of other specified sites",
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
         }
       ],
-      "icd10_supporting": [
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "headache",
-          "from_kind": "red_flag",
-          "from_snomed_id": "25064002",
-          "from_snomed_term": "Headache",
-          "relevance_to_diagnosis": 0.2345
-        }
-      ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 1
     }
   ],
-  "rule_outs": [],
-  "uncertain_areas": [
-    "need for further imaging or clinical follow-up to confirm intracranial bleeding or metastasis"
+  "rule_outs": [
+    {
+      "diagnosis": "Pneumothorax",
+      "why": "No evidence of pneumothorax in chest radiograph or structured clinical context."
+    }
   ],
-  "n_candidates": 5,
+  "uncertain_areas": [
+    "Further details on the patient's pain and hematologic status would clarify the severity and management of these conditions."
+  ],
+  "n_candidates": 6,
   "type": "differential_diagnosis_with_icd",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "16014068",
   "hadm_id": "29042843",
-  "generated_at": "2026-08-15T17:32:52.278033",
+  "generated_at": "2026-08-20T00:10:56.014695",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,
@@ -1278,9 +1110,9 @@
   "icd_map_refset": "6011000124106",
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
-    "n_diagnoses": 5,
-    "n_with_principal": 5,
+    "n_diagnoses": 6,
+    "n_with_principal": 6,
     "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-19T22:37:01.550139"
+  "generated_at_stage8": "2026-08-20T00:12:22.678648"
 }

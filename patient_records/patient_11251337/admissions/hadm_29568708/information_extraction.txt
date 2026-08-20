@@ -5,40 +5,47 @@ Patient ID       : 11251337
 Admission ID     : 29568708
 Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 
+REASON FOR ADMISSION
+--------------------
+
+  nephrolithiasis management and PCNL
+  Presenting complaint : nephrolithiasis
+  Admission context    : surgical
+
+PROCEDURES THIS STAY
+--------------------
+
+  • Difficult right PCNL, right antegrade nephrostogram, right antegrade ureteroscopy, right antegrade ureteral stent placement, removal of right nephrostomy tube [current]
+
 SYMPTOMS
 --------
 
-  • [present] hematuria — "1x episode of hematuria"
-  • [present] pain — "pain around the nephrostomy tubes"
-  • [present] dysuria — "pain around the nephrostomy tubes and fevers"
-  • [present] fever — "temperature of 102 at ___ prior to transfer"
+  • [present] pain — "Abdomen soft, appropriately tender along incisions"
+  • [absent] fever — "No fever noted in vitals or history"
 
 VITALS
 ------
 
-• BMI (kg/m2): 24.4
-• Weight (Lbs): 170
+• Weight: 170 Lbs
+• BMI: 24.4 kg/m2
 
 LABS
 ----
 
 • Hematocrit: 30.8 % [low]
 • Hemoglobin: 9.4 g/dL [low]
-• MCHC: 30.5 g/dL [low]
 • MCV: 104.0 fL [high]
+• MCHC: 30.5 g/dL [low]
 • Red Blood Cells: 2.95 m/uL [low]
 • RDW-SD: 59.6 fL [high]
 • Creatinine: 2.5 mg/dL [high]
-• Glucose: 105.0 mg/dL [high]
-• Urea Nitrogen: 22.0 mg/dL [high]
+• Glucose: 105 mg/dL [high]
+• Urea Nitrogen: 22 mg/dL [high]
 
 DIAGNOSES MENTIONED
 -------------------
 
   • [confirmed] nephrolithiasis
-  • [confirmed] Hypertension
-  • [confirmed] Hemorrhagic CVA
-  • [confirmed] Bilateral staghorn renal calculi
 
 MEDICATIONS
 -----------
@@ -48,11 +55,7 @@ MEDICATIONS
 PROCEDURES
 ----------
 
-  • Difficult right PCNL: stone greater than 2cm removed
-  • Right antegrade nephrostogram: 
-  • Right antegrade ureteroscopy: 
-  • Right antegrade ureteral stent placement: 
-  • Right PCNL: 
+  • Difficult right PCNL, right antegrade nephrostogram, right antegrade ureteroscopy, right antegrade ureteral stent placement, removal of right nephrostomy tube: well tolerated
 
 NEGATIONS
 ---------
@@ -62,4 +65,4 @@ NEGATIONS
 TEMPORAL
 --------
 
-  • residual stone: present
+  • stone burden: residual stone

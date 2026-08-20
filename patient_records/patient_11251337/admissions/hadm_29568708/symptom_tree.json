@@ -1,15 +1,15 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with symptoms of nephrolithiasis, including hematuria, dysuria, and fever, following a difficult right PCNL procedure.",
+  "reasoning": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL, with residual stones requiring further intervention.",
   "branches": [
     {
       "category": "renal|urologic",
-      "ontology_hint": "Renal Diseases",
+      "ontology_hint": "Urology",
       "symptoms": [
         {
           "term": "hematuria",
           "status": "present",
-          "severity": "mild",
+          "severity": "unknown",
           "evidence": "1x episode of hematuria",
           "related_findings": [
             "Bilateral staghorn renal calculi"
@@ -19,7 +19,7 @@
         {
           "term": "pain",
           "status": "present",
-          "severity": "moderate",
+          "severity": "unknown",
           "evidence": "pain around the nephrostomy tubes",
           "related_findings": [
             "Bilateral staghorn renal calculi"
@@ -29,7 +29,7 @@
         {
           "term": "dysuria",
           "status": "present",
-          "severity": "mild",
+          "severity": "unknown",
           "evidence": "pain around the nephrostomy tubes and fevers",
           "related_findings": [
             "Bilateral staghorn renal calculi"
@@ -39,7 +39,7 @@
         {
           "term": "fever",
           "status": "present",
-          "severity": "mild",
+          "severity": "unknown",
           "evidence": "temperature of 102 at ___ prior to transfer",
           "related_findings": [
             "Complicated urinary tract infection"
@@ -49,46 +49,49 @@
       ]
     },
     {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular Diseases",
+      "category": "renal|metabolic",
+      "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "hypertension",
+          "term": "anemia",
           "status": "present",
-          "severity": "unknown",
-          "evidence": "Hypertension",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurological Diseases",
-      "symptoms": [
-        {
-          "term": "Hemorrhagic CVA",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "renal",
-      "ontology_hint": "Renal Diseases",
-      "symptoms": [
-        {
-          "term": "renal calculi",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "Bilateral staghorn renal calculi",
+          "severity": "mild",
+          "evidence": "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL",
           "related_findings": [
-            "Hypertension",
-            "Hemorrhagic CVA"
+            "MCV: 104.0 fL, RDW-SD: 59.6 fL"
           ],
+          "children": []
+        },
+        {
+          "term": "hyperkalemia",
+          "status": "absent",
+          "severity": "unknown",
+          "evidence": "Potassium: 4.7 mEq/L",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "hyperglycemia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Glucose: 105.0 mg/dL",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "hyperuremia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Urea Nitrogen: 22.0 mg/dL",
+          "related_findings": [],
+          "children": []
+        },
+        {
+          "term": "hypercreatininemia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Creatinine: 2.5 mg/dL",
+          "related_findings": [],
           "children": []
         }
       ]
@@ -101,13 +104,12 @@
     "fever"
   ],
   "red_flags": [
-    "Hemorrhagic CVA",
-    "hypertension"
+    "fever"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "11251337",
   "admission_id": "29568708",
-  "generated_at": "2026-08-08T16:19:01.757313"
+  "generated_at": "2026-08-19T23:19:43.135733"
 }

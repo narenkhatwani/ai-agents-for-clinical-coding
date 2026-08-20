@@ -5,48 +5,45 @@ Patient ID       : 10426859
 HADM ID          : 29908281
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:30:44.353634
+Generated        : 2026-08-20T00:08:36.075612
 Candidates       : 5
 Most likely      : Supraventricular tachycardia
 Prior admissions : 2 (31 ICD codes as PMH context)
 
 Summary:
-  The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. She has a history of cardiovascular issues including SVT, hypertension, and hyperlipidemia.
+  The patient presents with recurrent supraventricular tachycardia (SVT) causing falls and headache, with new findings of right hip fracture and hypocalcemia. The patient has a history of cardiovascular and neurologic conditions.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Supraventricular tachycardia  (primary)
       SNOMED aligned : Supraventricular tachycardia
-      + Supraventricular tachycardia (SVT) in symptom tree, current stay
-      why: Primary diagnosis supported by symptom tree and retained SNOMED context.
+      + SVT confirmed, recurrent SVT causing falls and headache
+      why: Primary diagnosis supported by recurrent SVT and falls, confirmed in ED.
 
-  #2  [70.0/100 | medium]  Hip fracture  (complication)
-      + Nondisplaced comminuted fracture in the right superior pubic ramus in symptom tree, current stay
-      − No imaging evidence of fracture in current stay
-      why: Hip fracture is a potential complication of the fall, but imaging is inconclusive.
+  #2  [70.0/100 | high]  Right hip fracture  (complication)
+      + Nondisplaced comminuted fracture in the right superior pubic ramus
+      why: Recent fracture confirmed by radiology, causing pain and fall.
 
-  #3  [65.0/100 | medium]  Anemia  (differential)
-      + Red Blood Cells: 3.89 m/uL [abnormal] in labs, current stay
-      − No other symptoms or findings strongly supporting anemia
-      why: Low RBC count suggests anemia, but other findings are not strongly indicative.
+  #3  [65.0/100 | medium]  Hypocalcemia  (differential)
+      SNOMED aligned : Calcium, Total
+      + Calcium, Total: 9.2 mg/dL (low)
+      why: Low calcium level noted, but not yet clinically significant.
 
-  #4  [55.0/100 | low]  Dehydration  (differential)
-      + Hematocrit: 36.8 % in labs, current stay
-      − Normal serum electrolytes, no other signs of dehydration
-      why: Hematocrit is slightly elevated, but no other evidence strongly supports dehydration.
+  #4  [50.0/100 | low]  Cerebral infarct  (complication)
+      + Tiny chronic right cerebellar infarct, new since prior
+      why: Chronic infarct noted, but not recent or acute.
 
-  #5  [40.0/100 | low]  Hypokalemia  (differential)
-      + Potassium: 3.9 mEq/L in labs, current stay
-      − No other symptoms or findings strongly supporting hypokalemia
-      why: Low potassium level is present, but other findings do not strongly support this diagnosis.
+  #5  [40.0/100 | low]  Anxiety disorder  (risk_factor)
+      + Major depressive disorder, single episode, unspecified
+      why: Previous anxiety disorder noted, but not currently active.
 
 RULE-OUTS
 ---------
 
-  • Cardiac ischemia: No evidence of acute infarction or elevated troponin in imaging or labs.
+  • Pneumothorax: No evidence of pneumothorax in chest radiology or clinical presentation.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Need more imaging evidence to confirm hip fracture. More lab results to confirm or rule out anemia and hypokalemia.
+  • More detailed clinical history on current anxiety symptoms and hypocalcemia would refine rankings

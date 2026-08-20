@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "11474876",
   "hadm_id": "29672491",
-  "generated_at": "2026-08-19T22:37:31.058626",
+  "generated_at": "2026-08-20T00:13:12.018468",
   "ground_truth": {
     "primary_icd_code": "K8030",
     "primary_dx_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
-      "rank1_diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+      "rank1_diagnosis": "Atrial fibrillation with heart failure",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -25,49 +25,49 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis.",
-      "llm_expanded_ground_truth": "",
+      "llm_reason": "The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.",
+      "llm_expanded_ground_truth": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
       "llm_expanded_matched": "",
       "diagnosis_items": [
         {
-          "diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+          "diagnosis": "Atrial fibrillation with heart failure",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": "I50.30",
-          "icd10_primary_title": "Unspecified diastolic (congestive) heart failure"
+          "icd10_primary": "I45.10",
+          "icd10_primary_title": "Unspecified right bundle-branch block"
         },
         {
-          "diagnosis": "Peripheral vascular disease (PVD)",
+          "diagnosis": "Peripheral vascular disease",
           "rank": 2,
-          "score": 70.0,
+          "score": 75.0,
           "confidence": "medium",
           "icd10_primary": "I73.9",
           "icd10_primary_title": "Peripheral vascular disease, unspecified"
         },
         {
-          "diagnosis": "Atrial fibrillation (AFib)",
+          "diagnosis": "Chronic kidney disease",
           "rank": 3,
-          "score": 65.0,
-          "confidence": "medium",
-          "icd10_primary": "I48.91",
-          "icd10_primary_title": "Unspecified atrial fibrillation"
-        },
-        {
-          "diagnosis": "Chronic kidney disease (CKD)",
-          "rank": 4,
-          "score": 55.0,
+          "score": 70.0,
           "confidence": "medium",
           "icd10_primary": "N18.9",
           "icd10_primary_title": "Chronic kidney disease, unspecified"
         },
         {
           "diagnosis": "Nocturnal hypoxia",
-          "rank": 5,
-          "score": 40.0,
+          "rank": 4,
+          "score": 65.0,
           "confidence": "low",
           "icd10_primary": "R09.02",
           "icd10_primary_title": "Hypoxemia"
+        },
+        {
+          "diagnosis": "Cholangitis",
+          "rank": 5,
+          "score": 55.0,
+          "confidence": "low",
+          "icd10_primary": "K83.09",
+          "icd10_primary_title": "Other cholangitis"
         }
       ],
       "n_diffdx": 5
@@ -75,8 +75,8 @@
     "icd_linked": {
       "ground_truth_icd": "K80.30",
       "ground_truth_icd_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
-      "rank1_predicted_icd": "I50.30",
-      "rank1_predicted_icd_title": "Unspecified diastolic (congestive) heart failure",
+      "rank1_predicted_icd": "I45.10",
+      "rank1_predicted_icd_title": "Unspecified right bundle-branch block",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -85,8 +85,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
-      "llm_expanded_ground_truth_icd": "",
+      "llm_icd_reason": "The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.",
+      "llm_expanded_ground_truth_icd": "K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I50.30",
       "diagnosis_match": false,
@@ -98,15 +98,19 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis.",
-      "ground_truth_expansions": [],
+      "diagnosis_reason": "The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.",
+      "ground_truth_expansions": [
+        "Calculus of bile duct with cholangitis, unspecified, without obstruction"
+      ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.",
-      "ground_truth_icd_expansions": [],
+      "icd_reason": "The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.",
+      "ground_truth_icd_expansions": [
+        "K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction"
+      ],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

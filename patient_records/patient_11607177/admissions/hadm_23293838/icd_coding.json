@@ -1,101 +1,130 @@
 {
-  "summary": "The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.",
-  "most_likely": "Refractory VT",
+  "summary": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.",
+  "most_likely": "Refractory ventricular tachycardia",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Refractory VT",
+      "diagnosis": "Refractory ventricular tachycardia",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "I472",
       "supporting_evidence": [
-        "Refractory VT requiring ganglionic block"
+        "ICD shock on ___",
+        "Refractory VT in symptom tree"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary concern given current ICD shock and ongoing VT.",
+      "reasoning": "ICD shock and refractory VT are present, strongly supporting this diagnosis.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "20646008",
-        "preferred_term": "Intractable",
-        "fsn": "Intractable (qualifier value)",
+        "concept_id": "25569003",
+        "preferred_term": "Ventricular tachycardia",
+        "fsn": "Ventricular tachycardia (disorder)",
         "match_method": "fuzzy",
-        "score": 0.6273819106188662,
-        "query": "Refractory VT",
-        "aligned_hint": null
+        "score": 0.782363076456486,
+        "query": "Refractory ventricular tachycardia",
+        "aligned_hint": "I472"
       },
-      "icd10_primary": null,
-      "icd10_primary_title": null,
-      "icd10_package": [],
-      "icd10_principal": [],
-      "icd10_supporting": [],
-      "icd_status": "unmapped",
-      "n_icd_codes": 0
-    },
-    {
-      "rank": 2,
-      "diagnosis": "Heart transplantation",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Transplantation of heart",
-      "supporting_evidence": [
-        "Heart transplantation in retained SNOMED context"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Recent ICD shock and LVAD suggest potential complications from heart transplantation.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "32413006",
-        "preferred_term": "Transplantation of heart",
-        "fsn": "Transplantation of heart (procedure)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Heart transplantation",
-        "aligned_hint": "Transplantation of heart"
-      },
-      "icd10_primary": null,
-      "icd10_primary_title": null,
-      "icd10_package": [],
-      "icd10_principal": [],
-      "icd10_supporting": [],
-      "icd_status": "unmapped",
-      "n_icd_codes": 0
-    },
-    {
-      "rank": 3,
-      "diagnosis": "Chronic heart failure",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "History of dilated cardiomyopathy and LVAD"
-      ],
-      "opposing_evidence": [
-        "No acute symptoms of heart failure"
-      ],
-      "reasoning": "History of chronic heart failure but no acute symptoms.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "48447003",
-        "preferred_term": "Chronic heart failure",
-        "fsn": "Chronic heart failure (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Chronic heart failure",
-        "aligned_hint": null
-      },
-      "icd10_primary": "I50.9",
-      "icd10_primary_title": "Heart failure, unspecified",
+      "icd10_primary": "I47.20",
+      "icd10_primary_title": "Ventricular tachycardia, unspecified",
       "icd10_package": [
         {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified",
+          "code": "I47.20",
+          "title": "Ventricular tachycardia, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | THIS IS A MANIFESTATION CODE FOR USE IN A SECONDARY POSITION",
+          "map_advice": "ALWAYS I47.20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "R57.9",
+          "title": "Shock, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R57.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "ICD shock",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "27942005",
+          "from_snomed_term": "Shock",
+          "relevance_to_diagnosis": 0.1937,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I47.20",
+          "title": "Ventricular tachycardia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I47.20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R57.9",
+          "title": "Shock, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R57.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "ICD shock",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "27942005",
+          "from_snomed_term": "Shock",
+          "relevance_to_diagnosis": 0.1937
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Dilated non-ischemic cardiomyopathy",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "I420",
+      "supporting_evidence": [
+        "Dilated non-ischemic cardiomyopathy in symptom tree",
+        "Dilated cardiomyopathy in prior ICDs"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Dilated cardiomyopathy is a chronic condition and a known cause of ICD shock.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "399020009",
+        "preferred_term": "Congestive cardiomyopathy",
+        "fsn": "Congestive cardiomyopathy (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.7462331077653483,
+        "query": "Dilated non-ischemic cardiomyopathy",
+        "aligned_hint": "I420"
+      },
+      "icd10_primary": "I42.0",
+      "icd10_primary_title": "Dilated cardiomyopathy",
+      "icd10_package": [
+        {
+          "code": "I42.0",
+          "title": "Dilated cardiomyopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I42.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
@@ -104,12 +133,12 @@
       ],
       "icd10_principal": [
         {
-          "code": "I50.9",
-          "title": "Heart failure, unspecified",
+          "code": "I42.0",
+          "title": "Dilated cardiomyopathy",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | THIS IS A MANIFESTATION CODE FOR USE IN A SECONDARY POSITION",
+          "map_advice": "ALWAYS I42.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
@@ -120,51 +149,50 @@
       "n_icd_codes": 1
     },
     {
-      "rank": 4,
-      "diagnosis": "Sleep apnea",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "Sleep apnea",
+      "rank": 3,
+      "diagnosis": "Congestive heart failure",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Sleep apnea in retained SNOMED context"
+        "edema in symptom tree",
+        "Dilated cardiomyopathy in prior ICDs"
       ],
-      "opposing_evidence": [
-        "No current symptoms of sleep apnea"
-      ],
-      "reasoning": "Previous history of sleep apnea but no current symptoms.",
+      "opposing_evidence": [],
+      "reasoning": "Edema and dilated cardiomyopathy suggest heart failure exacerbation.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "73430006",
-        "preferred_term": "Sleep apnea",
-        "fsn": "Sleep apnea (disorder)",
+        "concept_id": "42343007",
+        "preferred_term": "Congestive heart failure",
+        "fsn": "Congestive heart failure (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Sleep apnea",
-        "aligned_hint": "Sleep apnea"
+        "query": "Congestive heart failure",
+        "aligned_hint": null
       },
-      "icd10_primary": "G47.30",
-      "icd10_primary_title": "Sleep apnea, unspecified",
+      "icd10_primary": "I50.9",
+      "icd10_primary_title": "Heart failure, unspecified",
       "icd10_package": [
         {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified",
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS G47.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified",
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2,
@@ -173,23 +201,23 @@
       ],
       "icd10_principal": [
         {
-          "code": "G47.30",
-          "title": "Sleep apnea, unspecified",
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS G47.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "P28.30",
-          "title": "Primary sleep apnea of newborn, unspecified",
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P28.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2
@@ -200,39 +228,37 @@
       "n_icd_codes": 2
     },
     {
-      "rank": 5,
-      "diagnosis": "Obesity",
-      "score": 45.0,
+      "rank": 4,
+      "diagnosis": "Hypokalemia",
+      "score": 50.0,
       "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "Obesity",
+      "category": "differential",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "BMI 36.7 and obesity in retained SNOMED context"
+        "low potassium in labs"
       ],
-      "opposing_evidence": [
-        "No current symptoms of obesity"
-      ],
-      "reasoning": "History of obesity but no current symptoms.",
+      "opposing_evidence": [],
+      "reasoning": "Low potassium could explain some symptoms but is not the primary focus.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "414916001",
-        "preferred_term": "Obesity",
-        "fsn": "Obesity (disorder)",
+        "concept_id": "43339004",
+        "preferred_term": "Hypokalemia",
+        "fsn": "Hypokalemia (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Obesity",
-        "aligned_hint": "Obesity"
+        "query": "Hypokalemia",
+        "aligned_hint": null
       },
-      "icd10_primary": "E66.9",
-      "icd10_primary_title": "Obesity, unspecified",
+      "icd10_primary": "E87.6",
+      "icd10_primary_title": "Hypokalemia",
       "icd10_package": [
         {
-          "code": "E66.9",
-          "title": "Obesity, unspecified",
+          "code": "E87.6",
+          "title": "Hypokalemia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS E66.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
@@ -241,12 +267,67 @@
       ],
       "icd10_principal": [
         {
-          "code": "E66.9",
-          "title": "Obesity, unspecified",
+          "code": "E87.6",
+          "title": "Hypokalemia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS E66.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Anemia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low hematocrit and hemoglobin in labs"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low hematocrit and hemoglobin suggest anemia but are secondary to heart failure.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
@@ -257,9 +338,14 @@
       "n_icd_codes": 1
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Sleep apnea",
+      "why": "While present, it is not the primary focus of the current admission."
+    }
+  ],
   "uncertain_areas": [
-    "More detailed information on current symptoms and labs would improve ranking"
+    "Further imaging or detailed cardiac function tests would clarify the exact nature of the cardiomyopathy and ICD shock"
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis_with_icd",
@@ -268,7 +354,7 @@
   "_temperature": 0.4,
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-15T17:31:40.840602",
+  "generated_at": "2026-08-20T00:09:36.317014",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,
@@ -644,8 +730,8 @@
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
     "n_diagnoses": 5,
-    "n_with_principal": 3,
-    "n_unmapped": 2
+    "n_with_principal": 5,
+    "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-19T22:36:57.632267"
+  "generated_at_stage8": "2026-08-20T00:12:18.748316"
 }

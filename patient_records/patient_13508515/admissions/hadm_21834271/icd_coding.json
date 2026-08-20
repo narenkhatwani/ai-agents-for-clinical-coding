@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.",
+  "summary": "The patient is a man with a history of systolic chronic heart failure, renal cell carcinoma, and multiple chronic conditions, admitted for laparoscopic left radical nephrectomy and lymph node dissection. Current symptoms include dyspnea and mild pain, with laboratory findings indicating renal and hematological abnormalities.",
   "most_likely": "Acute on chronic systolic heart failure",
   "differential": [
     {
@@ -8,12 +8,14 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "426720004",
+      "snomed_aligned": "I5023",
       "supporting_evidence": [
-        "systolic CHF with EF around 30%"
+        "systolic CHF with EF around 30%",
+        "Creatinine: 2.0 mg/dL",
+        "Hemoglobin: 8.9 g/dL"
       ],
       "opposing_evidence": [],
-      "reasoning": "Strong clinical evidence of systolic heart failure, supported by low EF.",
+      "reasoning": "The patient has a history of systolic heart failure and current symptoms and lab findings support acute exacerbation.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "443253003",
@@ -22,7 +24,7 @@
         "match_method": "exact",
         "score": 1.0,
         "query": "Acute on chronic systolic heart failure",
-        "aligned_hint": "426720004"
+        "aligned_hint": "I5023"
       },
       "icd10_primary": "I50.23",
       "icd10_primary_title": "Acute on chronic systolic (congestive) heart failure",
@@ -83,16 +85,18 @@
     {
       "rank": 2,
       "diagnosis": "Renal cell carcinoma",
-      "score": 75.0,
-      "confidence": "high",
-      "category": "primary",
-      "snomed_aligned": "77882004",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "C649",
       "supporting_evidence": [
         "left renal mass",
         "renal cell carcinoma"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis with significant clinical findings.",
+      "opposing_evidence": [
+        "Laparoscopic left radical nephrectomy performed"
+      ],
+      "reasoning": "The presence of a left renal mass and renal cell carcinoma in the past supports this diagnosis, but recent surgery may have resolved the mass.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "41607009",
@@ -101,138 +105,65 @@
         "match_method": "exact",
         "score": 1.0,
         "query": "Renal cell carcinoma",
-        "aligned_hint": "77882004"
+        "aligned_hint": "C649"
       },
       "icd10_primary": null,
       "icd10_primary_title": null,
-      "icd10_package": [],
+      "icd10_package": [
+        {
+          "code": "N28.89",
+          "title": "Other specified disorders of kidney and ureter",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N28.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "left renal mass",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "309088003",
+          "from_snomed_term": "Kidney mass",
+          "relevance_to_diagnosis": 0.5399,
+          "package_order": 1
+        }
+      ],
       "icd10_principal": [],
-      "icd10_supporting": [],
-      "icd_status": "unmapped",
-      "n_icd_codes": 0
+      "icd10_supporting": [
+        {
+          "code": "N28.89",
+          "title": "Other specified disorders of kidney and ureter",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N28.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "left renal mass",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "309088003",
+          "from_snomed_term": "Kidney mass",
+          "relevance_to_diagnosis": 0.5399
+        }
+      ],
+      "icd_status": "supporting_only",
+      "n_icd_codes": 1
     },
     {
       "rank": 3,
-      "diagnosis": "Anemia",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "low hemoglobin, hematocrit"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Low hemoglobin and hematocrit levels suggest anemia.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "271737000",
-        "preferred_term": "Anemia",
-        "fsn": "Anemia (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Anemia",
-        "aligned_hint": null
-      },
-      "icd10_primary": "D64.9",
-      "icd10_primary_title": "Anemia, unspecified",
-      "icd10_package": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Hypokalemia",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "low potassium"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Low potassium levels suggest hypokalemia.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "43339004",
-        "preferred_term": "Hypokalemia",
-        "fsn": "Hypokalemia (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Hypokalemia",
-        "aligned_hint": null
-      },
-      "icd10_primary": "E87.6",
-      "icd10_primary_title": "Hypokalemia",
-      "icd10_package": [
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "E87.6",
-          "title": "Hypokalemia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 5,
       "diagnosis": "Obstructive sleep apnea",
       "score": 60.0,
       "confidence": "medium",
-      "category": "risk_factor",
+      "category": "secondary",
       "snomed_aligned": "78275009",
       "supporting_evidence": [
-        "confirmed diagnosis"
+        "obstructive sleep apnea, on CPAP"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis with potential impact on overall health.",
+      "opposing_evidence": [
+        "no new respiratory symptoms"
+      ],
+      "reasoning": "The patient has a history of obstructive sleep apnea, but no new respiratory symptoms are present.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "78275009",
@@ -334,93 +265,187 @@
       "n_icd_codes": 3
     },
     {
-      "rank": 6,
-      "diagnosis": "Diabetes mellitus",
+      "rank": 4,
+      "diagnosis": "Anemia",
       "score": 55.0,
       "confidence": "medium",
-      "category": "secondary",
+      "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "confirmed diagnosis",
-        "mild hyperglycemia"
+        "Hemoglobin: 8.9 g/dL",
+        "Hematocrit: 27.3 %"
       ],
       "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis with mild hyperglycemia.",
+      "reasoning": "Low hemoglobin and hematocrit levels suggest anemia, which could be secondary to chronic heart failure.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "73211009",
-        "preferred_term": "Diabetes mellitus",
-        "fsn": "Diabetes mellitus (disorder)",
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Diabetes mellitus",
+        "query": "Anemia",
         "aligned_hint": null
       },
-      "icd10_primary": "E11.9",
-      "icd10_primary_title": "Type 2 diabetes mellitus without complications",
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
       "icd10_package": [
         {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications",
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS E11.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING ON OR AFTER 1.0 YEAR AND IF AGE AT ONSET OF CLINICAL FINDING BEFORE 18.0 YEARS CHOOSE E10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
         }
       ],
       "icd10_principal": [
         {
-          "code": "E11.9",
-          "title": "Type 2 diabetes mellitus without complications",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS E11.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "E10.9",
-          "title": "Type 1 diabetes mellitus without complications",
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING ON OR AFTER 1.0 YEAR AND IF AGE AT ONSET OF CLINICAL FINDING BEFORE 18.0 YEARS CHOOSE E10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
           "role": "principal",
-          "order": 2
+          "order": 1
         }
       ],
       "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hypokalemia",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Calcium, Total: 8.2 mg/dL",
+        "Low potassium levels"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low calcium levels and low potassium may be related, but more specific evidence is needed to confirm hypokalemia.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "43339004",
+        "preferred_term": "Hypokalemia",
+        "fsn": "Hypokalemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypokalemia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "E87.6",
+      "icd10_primary_title": "Hypokalemia",
+      "icd10_package": [
+        {
+          "code": "E87.6",
+          "title": "Hypokalemia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E87.6",
+          "title": "Hypokalemia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Chronic kidney disease",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "N189",
+      "supporting_evidence": [
+        "Creatinine: 2.0 mg/dL",
+        "Chronic kidney disease"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Chronic kidney disease is a known chronic condition, but the current acute presentation is more likely related to heart failure.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "709044004",
+        "preferred_term": "Chronic kidney disease",
+        "fsn": "Chronic kidney disease (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Chronic kidney disease",
+        "aligned_hint": "N189"
+      },
+      "icd10_primary": "N18.9",
+      "icd10_primary_title": "Chronic kidney disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Acute kidney injury",
-      "why": "Creatinine levels are moderately elevated but not critically so."
+      "diagnosis": "Left renal mass",
+      "why": "Laparoscopic left radical nephrectomy performed"
+    },
+    {
+      "diagnosis": "Calf pain",
+      "why": "No reported calf pain to deep palpation"
     }
   ],
   "uncertain_areas": [
-    "Further imaging or lab results could clarify the extent of renal involvement and heart failure status"
+    "Further imaging or lab results to confirm renal mass status",
+    "More detailed respiratory assessment to confirm obstructive sleep apnea status"
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis_with_icd",
@@ -429,7 +454,7 @@
   "_temperature": 0.4,
   "patient_id": "13508515",
   "hadm_id": "21834271",
-  "generated_at": "2026-08-15T17:32:23.633611",
+  "generated_at": "2026-08-20T00:10:27.070020",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,
@@ -525,7 +550,7 @@
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
     "n_diagnoses": 6,
     "n_with_principal": 5,
-    "n_unmapped": 1
+    "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-19T22:36:59.922717"
+  "generated_at_stage8": "2026-08-20T00:12:21.167614"
 }

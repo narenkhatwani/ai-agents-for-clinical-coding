@@ -3,40 +3,40 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11474876
 HADM ID          : 29672491
-Generated        : 2026-08-19T22:37:31.058626
+Generated        : 2026-08-20T00:13:12.018468
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Calculus of bile duct with cholangitis, unspecified, without obstruction
-  Rank-1 predicted     : Heart failure with preserved ejection fraction (HFpEF)
+  Rank-1 predicted     : Atrial fibrillation with heart failure
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the ranked differential diagnoses match the ground truth primary diagnosis.
+  LLM reason           : The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
 
   Ground truth ICD     : K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction
-  Rank-1 mapped ICD    : I50.30 — Unspecified diastolic (congestive) heart failure
+  Rank-1 mapped ICD    : I45.10 — Unspecified right bundle-branch block
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.
+  LLM ICD reason       : The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.
   Stage 9 final ICD    : I50.30 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Heart failure with preserved ejection fraction (HFpEF)  [score=85.0, high]  ICD=I50.30 — Unspecified diastolic (congestive) heart failure
-   2. Peripheral vascular disease (PVD)  [score=70.0, medium]  ICD=I73.9 — Peripheral vascular disease, unspecified
-   3. Atrial fibrillation (AFib)  [score=65.0, medium]  ICD=I48.91 — Unspecified atrial fibrillation
-   4. Chronic kidney disease (CKD)  [score=55.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
-   5. Nocturnal hypoxia  [score=40.0, low]  ICD=R09.02 — Hypoxemia
+   1. Atrial fibrillation with heart failure  [score=85.0, high]  ICD=I45.10 — Unspecified right bundle-branch block
+   2. Peripheral vascular disease  [score=75.0, medium]  ICD=I73.9 — Peripheral vascular disease, unspecified
+   3. Chronic kidney disease  [score=70.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
+   4. Nocturnal hypoxia  [score=65.0, low]  ICD=R09.02 — Hypoxemia
+   5. Cholangitis  [score=55.0, low]  ICD=K83.09 — Other cholangitis

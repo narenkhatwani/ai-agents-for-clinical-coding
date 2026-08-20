@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a 30-year-old female with a history of Type 1 Diabetes Mellitus (T1DM) and recurrent Diabetic Ketoacidosis (DKA). She is currently admitted with DKA and lactic acidosis, with no infectious precipitants identified. She has a history of complications including missed abortion and C. difficile colitis.",
+  "reasoning": "The patient is admitted with DKA/lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.",
   "branches": [
     {
       "category": "infectious",
@@ -12,33 +12,6 @@
           "severity": "unknown",
           "evidence": "fevers/chills/nightsweats for the past few days",
           "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "C difficile colitis",
-          "status": "suspected",
-          "severity": "unknown",
-          "evidence": "C difficile colitis along with diarrhea",
-          "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
-          ],
           "children": []
         }
       ]
@@ -52,29 +25,21 @@
           "status": "history",
           "severity": "unknown",
           "evidence": "lower abdominal pain/cramping for the past week",
-          "related_findings": [
-            "Hematocrit: 46.2%",
-            "Hemoglobin: 14.4 g/dL",
-            "Monocytes: 4.8%",
-            "Red Blood Cells: 5.06 m/uL",
-            "Lactate: 3.6 mmol/L",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Calcium, Total: 10.2 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
-          ],
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "neurologic",
+      "ontology_hint": "Neurology",
+      "symptoms": [
+        {
+          "term": "headache",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "pressure-like frontal headache",
+          "related_findings": [],
           "children": []
         }
       ]
@@ -84,10 +49,10 @@
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "respiratory rate",
-          "status": "normal",
-          "severity": "normal",
-          "evidence": "Respiratory Rate: 16 insp/min",
+          "term": "nausea",
+          "status": "present",
+          "severity": "unknown",
+          "evidence": "nausea and vomiting",
           "related_findings": [],
           "children": []
         }
@@ -95,60 +60,14 @@
     },
     {
       "category": "gi",
-      "ontology_hint": "GI",
+      "ontology_hint": "Gastroenterology",
       "symptoms": [
-        {
-          "term": "nausea",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "nausea and vomiting",
-          "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
-          ],
-          "children": []
-        },
         {
           "term": "vaginal bleeding",
           "status": "history",
           "severity": "unknown",
           "evidence": "vaginal spotting",
-          "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
-          ],
+          "related_findings": [],
           "children": []
         },
         {
@@ -156,12 +75,26 @@
           "status": "history",
           "severity": "unknown",
           "evidence": "decreased fetal movement",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
           "related_findings": [
             "Glucose: 263 mg/dL",
             "Anion Gap: 19.0 mEq/L",
             "Bicarbonate: 20.0 mEq/L",
             "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
             "pO2: 60.0 mm Hg",
             "Potassium: 6.8 mEq/L",
             "Phosphate: 7.1 mg/dL",
@@ -169,10 +102,6 @@
             "Albumin: 3.6 g/dL",
             "Alkaline Phosphatase: 125.0 IU/L",
             "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
             "pCO2: 33.0 mm Hg",
             "pH: 7.34 units"
           ],
@@ -190,11 +119,10 @@
           "severity": "unknown",
           "evidence": "fevers/chills/nightsweats for the past few days",
           "related_findings": [
-            "Glucose: 263 mg/dL",
             "Anion Gap: 19.0 mEq/L",
             "Bicarbonate: 20.0 mEq/L",
             "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
             "pO2: 60.0 mm Hg",
             "Potassium: 6.8 mEq/L",
             "Phosphate: 7.1 mg/dL",
@@ -202,10 +130,6 @@
             "Albumin: 3.6 g/dL",
             "Alkaline Phosphatase: 125.0 IU/L",
             "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
             "pCO2: 33.0 mm Hg",
             "pH: 7.34 units"
           ],
@@ -214,20 +138,19 @@
       ]
     },
     {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "headache",
+          "term": "decreased fetal movement",
           "status": "history",
           "severity": "unknown",
-          "evidence": "pressure-like frontal headache",
+          "evidence": "decreased fetal movement",
           "related_findings": [
-            "Glucose: 263 mg/dL",
             "Anion Gap: 19.0 mEq/L",
             "Bicarbonate: 20.0 mEq/L",
             "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
             "pO2: 60.0 mm Hg",
             "Potassium: 6.8 mEq/L",
             "Phosphate: 7.1 mg/dL",
@@ -235,10 +158,6 @@
             "Albumin: 3.6 g/dL",
             "Alkaline Phosphatase: 125.0 IU/L",
             "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
             "pCO2: 33.0 mm Hg",
             "pH: 7.34 units"
           ],
@@ -247,47 +166,20 @@
       ]
     },
     {
-      "category": "endocrine",
-      "ontology_hint": "Endocrine",
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "DKA",
-          "status": "present",
-          "severity": "severe",
-          "evidence": "admission with DKA/lactic acidosis",
-          "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
-          ],
-          "children": []
-        },
-        {
-          "term": "missed abortion",
-          "status": "confirmed",
+          "term": "C difficile colitis",
+          "status": "suspected",
           "severity": "unknown",
-          "evidence": "Missed abortion requiring D&C",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
           "related_findings": [
             "Glucose: 263 mg/dL",
             "Anion Gap: 19.0 mEq/L",
             "Bicarbonate: 20.0 mEq/L",
             "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 10.2 mg/dL",
+            "Calcium, Total: 8.6 mg/dL",
             "pO2: 60.0 mm Hg",
             "Potassium: 6.8 mEq/L",
             "Phosphate: 7.1 mg/dL",
@@ -295,36 +187,290 @@
             "Albumin: 3.6 g/dL",
             "Alkaline Phosphatase: 125.0 IU/L",
             "Magnesium: 7.4 mg/dL",
-            "Sodium: 130 mEq/L",
-            "Lactate Dehydrogenase (LD): 276.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "Calcium, Total: 8.6 mg/dL",
             "pCO2: 33.0 mm Hg",
             "pH: 7.34 units"
           ],
           "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "fevers/chills/nightsweats for the past few days",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "decreased fetal movement",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "decreased fetal movement",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "fevers/chills/nightsweats for the past few days",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "decreased fetal movement",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "decreased fetal movement",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "fevers/chills/nightsweats for the past few days",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "decreased fetal movement",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "decreased fetal movement",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Glucose: 263 mg/dL",
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate: 3.6 mmol/L",
+            "Calcium, Total: 8.6 mg/dL",
+            "pO2: 60.0 mm Hg",
+            "Potassium: 6.8 mEq/L",
+            "Phosphate: 7.1 mg/dL",
+            "Urea Nitrogen: 26 mg/dL",
+            "Albumin: 3.6 g/dL",
+            "Alkaline Phosphatase: 125.0 IU/L",
+            "Magnesium: 7.4 mg/dL",
+            "pCO2: 33.0 mm Hg",
+            "pH: 7.34 units"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "fevers/chills/nightsweats for the past few days",
+          "related_findings": [
+            "Anion Gap: 19.0 mEq/L",
+            "Bicarbonate: 20.0 mEq/L",
+            "Lactate:"
+          ]
         }
       ]
     }
-  ],
-  "key_symptoms": [
-    "DKA",
-    "fever",
-    "abdominal pain",
-    "headache",
-    "nausea",
-    "vaginal bleeding",
-    "decreased fetal movement"
-  ],
-  "red_flags": [
-    "fever",
-    "abdominal pain",
-    "decreased fetal movement"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "19104262",
   "admission_id": "24271247",
-  "generated_at": "2026-08-08T16:22:03.483616"
+  "generated_at": "2026-08-19T23:22:16.412879"
 }

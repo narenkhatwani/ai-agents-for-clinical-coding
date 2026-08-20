@@ -1,91 +1,104 @@
 {
-  "summary": "The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.",
-  "most_likely": "Anemia due to malignancy",
+  "summary": "The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.",
+  "most_likely": "Metastatic sarcoma with hematologic complications",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Anemia due to malignancy",
+      "diagnosis": "Metastatic sarcoma with hematologic complications",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "Metastatic sarcoma",
       "supporting_evidence": [
-        "anemia, thrombocytopenia, history of metastatic sarcoma"
+        "metastatic sarcoma",
+        "thrombocytopenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Anemia is severe and aligns with the patient's history of metastatic sarcoma and prior chemotherapy."
+      "reasoning": "Primary diagnosis given the patient's history of metastatic sarcoma and current symptoms related to hematologic complications."
     },
     {
       "rank": 2,
-      "diagnosis": "Thrombocytopenia due to malignancy",
-      "score": 75.0,
+      "diagnosis": "Anemia",
+      "score": 70.0,
       "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "",
+      "category": "secondary",
+      "snomed_aligned": "Anemia due to antineoplastic chemotherapy",
       "supporting_evidence": [
-        "thrombocytopenia, history of metastatic sarcoma"
+        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
       ],
       "opposing_evidence": [],
-      "reasoning": "Thrombocytopenia is mild but significant and related to the patient's malignancy."
+      "reasoning": "Anemia is a significant finding and likely secondary to the patient's malignancy."
     },
     {
       "rank": 3,
-      "diagnosis": "Hypotension",
-      "score": 60.0,
-      "confidence": "medium",
+      "diagnosis": "Thrombocytopenia",
+      "score": 65.0,
+      "confidence": "high",
       "category": "secondary",
-      "snomed_aligned": "",
+      "snomed_aligned": "Cytokine-induced thrombocytopenia",
       "supporting_evidence": [
-        "hypotension, history of malignancy and chemotherapy side effects"
+        "Platelet Count: 63.0 K/uL"
       ],
-      "opposing_evidence": [
-        "no evidence of acute cardiovascular issues"
-      ],
-      "reasoning": "Hypotension is noted but may be secondary to malignancy and chemotherapy effects."
+      "opposing_evidence": [],
+      "reasoning": "Thrombocytopenia is present and likely related to the patient's malignancy."
     },
     {
       "rank": 4,
-      "diagnosis": "Headache",
+      "diagnosis": "Hypotension",
       "score": 50.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "BP 114/66"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hypotension is noted and may be a risk factor for further complications."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Headache",
+      "score": 45.0,
       "confidence": "medium",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "headache after fall, history of cerebellar hemorrhage"
+        "hit his head"
       ],
-      "opposing_evidence": [
-        "no evidence of acute intracranial bleeding"
-      ],
-      "reasoning": "Headache is present but may be related to the fall rather than acute intracranial issues."
+      "opposing_evidence": [],
+      "reasoning": "Headache is present but may be secondary to the fall and underlying malignancy."
     },
     {
-      "rank": 5,
-      "diagnosis": "Metastatic sarcoma to the brain",
-      "score": 45.0,
+      "rank": 6,
+      "diagnosis": "Abdominal pain",
+      "score": 35.0,
       "confidence": "low",
       "category": "differential",
-      "snomed_aligned": "",
+      "snomed_aligned": "Abdominal pain",
       "supporting_evidence": [
-        "history of metastatic sarcoma, recent fall and headache"
+        "abdominal pain"
       ],
-      "opposing_evidence": [
-        "no recent evidence of new neurological deficits"
-      ],
-      "reasoning": "Metastasis to the brain is a risk but not strongly supported by current evidence."
+      "opposing_evidence": [],
+      "reasoning": "Abdominal pain is noted but not strongly supported by current findings."
     }
   ],
-  "rule_outs": [],
-  "uncertain_areas": [
-    "need for further imaging or clinical follow-up to confirm intracranial bleeding or metastasis"
+  "rule_outs": [
+    {
+      "diagnosis": "Pneumothorax",
+      "why": "No evidence of pneumothorax in chest radiograph or structured clinical context."
+    }
   ],
-  "n_candidates": 5,
+  "uncertain_areas": [
+    "Further details on the patient's pain and hematologic status would clarify the severity and management of these conditions."
+  ],
+  "n_candidates": 6,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "16014068",
   "hadm_id": "29042843",
-  "generated_at": "2026-08-15T17:32:52.278033",
+  "generated_at": "2026-08-20T00:10:56.014695",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,

@@ -1,82 +1,109 @@
 {
   "stage": 7,
   "checkpoint": true,
-  "generated_at": "2026-08-15T17:33:57.534515",
+  "generated_at": "2026-08-20T00:12:06.364165",
   "n_admissions": 15,
   "results": [
     {
-      "summary": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.",
-      "most_likely": "Hemorrhage following hysterectomy",
+      "summary": "Patient presents with heavy vaginal bleeding post hysterectomy, with no free fluid or hematoma noted on ultrasound. Chronic conditions include endometriosis and other uterine neoplasms.",
+      "most_likely": "Post-hysterectomy uterine atony",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Hemorrhage following hysterectomy",
+          "diagnosis": "Post-hysterectomy uterine atony",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
-          "snomed_aligned": "Heavy episode of vaginal bleeding",
+          "snomed_aligned": "315224006",
           "supporting_evidence": [
-            "heavy vaginal bleeding after hysterectomy; hematocrit decreased"
+            "heavy vaginal bleeding after hysterectomy",
+            "normal postoperative changes and a normal appearing vaginal cuff are noted",
+            "no free fluid or hematoma seen on ultrasound"
           ],
           "opposing_evidence": [],
-          "reasoning": "Heavy bleeding and decreased hematocrit strongly suggest hemorrhage post-hysterectomy."
+          "reasoning": "Heavy vaginal bleeding post hysterectomy strongly supports uterine atony as the primary cause."
         },
         {
           "rank": 2,
-          "diagnosis": "Postoperative bleeding",
-          "score": 75.0,
-          "confidence": "high",
-          "category": "secondary",
-          "snomed_aligned": "Heavy episode of vaginal bleeding",
+          "diagnosis": "Post-hysterectomy uterine inversion",
+          "score": 65.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
           "supporting_evidence": [
-            "heavy vaginal bleeding after hysterectomy"
+            "heavy vaginal bleeding after hysterectomy",
+            "normal postoperative changes and a normal appearing vaginal cuff are noted"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Postoperative bleeding is a common complication following hysterectomy."
+          "opposing_evidence": [
+            "no free fluid or hematoma seen on ultrasound"
+          ],
+          "reasoning": "While less likely, uterine inversion is a known complication of hysterectomy and could explain the bleeding."
         },
         {
           "rank": 3,
           "diagnosis": "Endometriosis",
-          "score": 60.0,
+          "score": 40.0,
           "confidence": "medium",
           "category": "risk_factor",
-          "snomed_aligned": "Endometriosis of uterus",
+          "snomed_aligned": "N800",
           "supporting_evidence": [
-            "history of endometriosis"
+            "endometriosis of uterus listed as chronic condition"
           ],
           "opposing_evidence": [
-            "no current evidence of active endometriosis"
+            "no current evidence of endometriosis causing bleeding"
           ],
-          "reasoning": "Endometriosis is a known risk factor for abnormal uterine bleeding, but current evidence is not strong."
+          "reasoning": "Endometriosis is a chronic condition and a risk factor for heavy bleeding, but no current evidence supports it as the primary cause."
         },
         {
           "rank": 4,
-          "diagnosis": "Hypothyroidism",
-          "score": 40.0,
+          "diagnosis": "Hemorrhagic shock",
+          "score": 30.0,
           "confidence": "low",
-          "category": "risk_factor",
+          "category": "differential",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "history of hypothyroidism"
+            "heavy vaginal bleeding after hysterectomy"
           ],
           "opposing_evidence": [
-            "no current thyroid function tests or symptoms"
+            "normal hemoglobin and hematocrit levels",
+            "no free fluid or hematoma seen on ultrasound"
           ],
-          "reasoning": "Hypothyroidism can contribute to menstrual irregularities, but current evidence is weak."
+          "reasoning": "While possible, hemorrhagic shock is less likely given normal hemoglobin levels and no signs of free fluid."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Infection",
+          "score": 25.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "heavy vaginal bleeding after hysterectomy"
+          ],
+          "opposing_evidence": [
+            "normal hemoglobin and hematocrit levels",
+            "no free fluid or hematoma seen on ultrasound"
+          ],
+          "reasoning": "Infection could be a factor, but no current evidence supports it as the primary cause."
         }
       ],
-      "rule_outs": [],
-      "uncertain_areas": [
-        "more specific etiology of bleeding, thyroid function tests"
+      "rule_outs": [
+        {
+          "diagnosis": "Uterine rupture",
+          "why": "No evidence of free fluid or signs of rupture on imaging"
+        }
       ],
-      "n_candidates": 4,
+      "uncertain_areas": [
+        "Need to know if patient has a history of uterine inversion or if there are signs of infection"
+      ],
+      "n_candidates": 5,
       "type": "differential_diagnosis",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "differential_diagnosis",
       "_temperature": 0.4,
       "patient_id": "10361982",
       "hadm_id": "24286431",
-      "generated_at": "2026-08-15T17:30:31.325786",
+      "generated_at": "2026-08-20T00:08:23.377128",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 4,
@@ -148,7 +175,7 @@
       ]
     },
     {
-      "summary": "The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. She has a history of cardiovascular issues including SVT, hypertension, and hyperlipidemia.",
+      "summary": "The patient presents with recurrent supraventricular tachycardia (SVT) causing falls and headache, with new findings of right hip fracture and hypocalcemia. The patient has a history of cardiovascular and neurologic conditions.",
       "most_likely": "Supraventricular tachycardia",
       "differential": [
         {
@@ -159,80 +186,72 @@
           "category": "primary",
           "snomed_aligned": "Supraventricular tachycardia",
           "supporting_evidence": [
-            "Supraventricular tachycardia (SVT) in symptom tree, current stay"
+            "SVT confirmed, recurrent SVT causing falls and headache"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary diagnosis supported by symptom tree and retained SNOMED context."
+          "reasoning": "Primary diagnosis supported by recurrent SVT and falls, confirmed in ED."
         },
         {
           "rank": 2,
-          "diagnosis": "Hip fracture",
+          "diagnosis": "Right hip fracture",
           "score": 70.0,
-          "confidence": "medium",
+          "confidence": "high",
           "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Nondisplaced comminuted fracture in the right superior pubic ramus in symptom tree, current stay"
+            "Nondisplaced comminuted fracture in the right superior pubic ramus"
           ],
-          "opposing_evidence": [
-            "No imaging evidence of fracture in current stay"
-          ],
-          "reasoning": "Hip fracture is a potential complication of the fall, but imaging is inconclusive."
+          "opposing_evidence": [],
+          "reasoning": "Recent fracture confirmed by radiology, causing pain and fall."
         },
         {
           "rank": 3,
-          "diagnosis": "Anemia",
+          "diagnosis": "Hypocalcemia",
           "score": 65.0,
           "confidence": "medium",
           "category": "differential",
-          "snomed_aligned": "",
+          "snomed_aligned": "Calcium, Total",
           "supporting_evidence": [
-            "Red Blood Cells: 3.89 m/uL [abnormal] in labs, current stay"
+            "Calcium, Total: 9.2 mg/dL (low)"
           ],
-          "opposing_evidence": [
-            "No other symptoms or findings strongly supporting anemia"
-          ],
-          "reasoning": "Low RBC count suggests anemia, but other findings are not strongly indicative."
+          "opposing_evidence": [],
+          "reasoning": "Low calcium level noted, but not yet clinically significant."
         },
         {
           "rank": 4,
-          "diagnosis": "Dehydration",
-          "score": 55.0,
+          "diagnosis": "Cerebral infarct",
+          "score": 50.0,
           "confidence": "low",
-          "category": "differential",
+          "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Hematocrit: 36.8 % in labs, current stay"
+            "Tiny chronic right cerebellar infarct, new since prior"
           ],
-          "opposing_evidence": [
-            "Normal serum electrolytes, no other signs of dehydration"
-          ],
-          "reasoning": "Hematocrit is slightly elevated, but no other evidence strongly supports dehydration."
+          "opposing_evidence": [],
+          "reasoning": "Chronic infarct noted, but not recent or acute."
         },
         {
           "rank": 5,
-          "diagnosis": "Hypokalemia",
+          "diagnosis": "Anxiety disorder",
           "score": 40.0,
           "confidence": "low",
-          "category": "differential",
+          "category": "risk_factor",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Potassium: 3.9 mEq/L in labs, current stay"
+            "Major depressive disorder, single episode, unspecified"
           ],
-          "opposing_evidence": [
-            "No other symptoms or findings strongly supporting hypokalemia"
-          ],
-          "reasoning": "Low potassium level is present, but other findings do not strongly support this diagnosis."
+          "opposing_evidence": [],
+          "reasoning": "Previous anxiety disorder noted, but not currently active."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Cardiac ischemia",
-          "why": "No evidence of acute infarction or elevated troponin in imaging or labs."
+          "diagnosis": "Pneumothorax",
+          "why": "No evidence of pneumothorax in chest radiology or clinical presentation."
         }
       ],
       "uncertain_areas": [
-        "Need more imaging evidence to confirm hip fracture. More lab results to confirm or rule out anemia and hypokalemia."
+        "More detailed clinical history on current anxiety symptoms and hypocalcemia would refine rankings"
       ],
       "n_candidates": 5,
       "type": "differential_diagnosis",
@@ -241,7 +260,7 @@
       "_temperature": 0.4,
       "patient_id": "10426859",
       "hadm_id": "29908281",
-      "generated_at": "2026-08-15T17:30:44.353634",
+      "generated_at": "2026-08-20T00:08:36.075612",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 10,
@@ -404,102 +423,108 @@
       ]
     },
     {
-      "summary": "The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and bipolar disorder. Recent influenza A infection is also noted.",
-      "most_likely": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+      "summary": "The patient is a 45-year-old man with right-sided rib fractures and hypoxemia following a mechanical fall. He has a history of polysubstance abuse and chronic conditions including opioid dependence and tachycardia.",
+      "most_likely": "Acute respiratory distress secondary to rib fractures and hypoxemia",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+          "diagnosis": "Acute respiratory distress secondary to rib fractures and hypoxemia",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "right sided rib fractures, hypoxia, influenza A PCR +"
+            "right rib fractures, hypoxia, patchy parenchymal opacities on chest X-ray"
           ],
           "opposing_evidence": [],
-          "reasoning": "Right-sided rib fractures and influenza A infection are present, leading to respiratory distress."
+          "reasoning": "The patient's right rib fractures and hypoxemia are the primary presenting symptoms, supported by chest X-ray findings."
         },
         {
           "rank": 2,
-          "diagnosis": "Influenza A",
-          "score": 75.0,
-          "confidence": "high",
-          "category": "primary",
-          "snomed_aligned": "Influenza A (H1N1)",
-          "supporting_evidence": [
-            "influenza A PCR +"
-          ],
-          "opposing_evidence": [],
-          "reasoning": "Confirmed influenza A infection with symptoms of cough and fever."
-        },
-        {
-          "rank": 3,
           "diagnosis": "Pneumothorax",
-          "score": 70.0,
+          "score": 75.0,
           "confidence": "medium",
           "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "right PTX"
+            "small right PTX noted on chest X-ray"
           ],
-          "opposing_evidence": [
-            "no evidence of infection or other cause"
-          ],
-          "reasoning": "Small right pneumothorax noted, which could be related to rib fractures."
+          "opposing_evidence": [],
+          "reasoning": "Small right pneumothorax is noted on chest X-ray, which could be a complication of rib fractures."
         },
         {
-          "rank": 4,
-          "diagnosis": "Bipolar disorder",
+          "rank": 3,
+          "diagnosis": "Opioid dependence",
           "score": 60.0,
           "confidence": "medium",
           "category": "risk_factor",
-          "snomed_aligned": "Bipolar disorder",
+          "snomed_aligned": "Opium dependence",
           "supporting_evidence": [
-            "bipolar disorder"
+            "Opioid dependence listed as chronic condition"
           ],
           "opposing_evidence": [
-            "no acute psychiatric symptoms"
+            "No acute opioid withdrawal symptoms noted"
           ],
-          "reasoning": "History of bipolar disorder, but no acute psychiatric symptoms noted."
+          "reasoning": "The patient has a history of opioid dependence, which increases the risk of respiratory complications."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Influenza A",
+          "score": 45.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "Influenza A (H1N1)",
+          "supporting_evidence": [
+            "Influenza A listed as prior PMH"
+          ],
+          "opposing_evidence": [
+            "No current symptoms or findings consistent with influenza"
+          ],
+          "reasoning": "Influenza A is a past PMH, but the current presentation does not support an acute influenza infection."
         },
         {
           "rank": 5,
-          "diagnosis": "Substance abuse",
-          "score": 55.0,
-          "confidence": "medium",
+          "diagnosis": "Bipolar disorder",
+          "score": 30.0,
+          "confidence": "low",
           "category": "risk_factor",
-          "snomed_aligned": "Opiate dependence",
+          "snomed_aligned": "Bipolar disorder",
           "supporting_evidence": [
-            "opiate dependence"
+            "Bipolar disorder listed as prior PMH"
           ],
-          "opposing_evidence": [],
-          "reasoning": "History of opiate dependence, but no acute substance abuse symptoms."
+          "opposing_evidence": [
+            "No current mood instability or manic symptoms"
+          ],
+          "reasoning": "Bipolar disorder is a chronic condition, but it is not currently contributing to the acute presentation."
         },
         {
           "rank": 6,
-          "diagnosis": "Dehydration",
-          "score": 40.0,
+          "diagnosis": "Tachycardia",
+          "score": 20.0,
           "confidence": "low",
-          "category": "differential",
-          "snomed_aligned": "",
+          "category": "risk_factor",
+          "snomed_aligned": "Tachycardia, unspecified",
           "supporting_evidence": [
-            "vomiting, diarrhea"
+            "Tachycardia listed as chronic condition"
           ],
           "opposing_evidence": [
-            "normal electrolyte levels"
+            "No acute tachycardia symptoms or findings"
           ],
-          "reasoning": "Vomiting and diarrhea present, but electrolytes are within normal range."
+          "reasoning": "Tachycardia is a chronic condition, but it is not currently contributing to the acute presentation."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Pneumonia",
-          "why": "No signs of consolidation or infection in the lungs."
+          "diagnosis": "PTSD",
+          "why": "No current symptoms or findings consistent with PTSD"
+        },
+        {
+          "diagnosis": "Bipolar disorder",
+          "why": "No current mood instability or manic symptoms"
         }
       ],
       "uncertain_areas": [
-        "Further imaging to confirm the extent of pneumothorax and rib fractures"
+        "Further clarification on the patient's current mental state and respiratory status would help refine the differential"
       ],
       "n_candidates": 6,
       "type": "differential_diagnosis",
@@ -508,7 +533,7 @@
       "_temperature": 0.4,
       "patient_id": "10458324",
       "hadm_id": "21744342",
-      "generated_at": "2026-08-15T17:30:59.620619",
+      "generated_at": "2026-08-20T00:08:52.578487",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 10,
@@ -568,86 +593,91 @@
       ]
     },
     {
-      "summary": "The patient presents with nephrolithiasis following a right PCNL procedure, with symptoms of hematuria, dysuria, pain, and fever. Past medical history includes hydronephrosis, pyonephrosis, hypertension, and hemorrhagic CVA.",
-      "most_likely": "Nephrolithiasis",
+      "summary": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL. The patient presents with hematuria, pain, and mild anemia, along with metabolic derangements including hyperglycemia and hyperuremia. Chronic conditions include pyonephrosis and chronic kidney disease.",
+      "most_likely": "Acute kidney injury due to nephrolithiasis and PCNL",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Nephrolithiasis",
+          "diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "hematuria, dysuria, pain, fever following PCNL procedure"
+            "Creatinine: 2.5 mg/dL, Hematuria, Pain"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary diagnosis supported by current symptoms and procedure."
+          "reasoning": "High creatinine and presence of hematuria and pain strongly suggest acute kidney injury related to nephrolithiasis and PCNL."
         },
         {
           "rank": 2,
-          "diagnosis": "Chronic kidney disease",
+          "diagnosis": "Chronic kidney disease, unspecified",
+          "score": 75.0,
+          "confidence": "medium",
+          "category": "secondary",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Chronic kidney disease, unspecified in prior PMH"
+          ],
+          "opposing_evidence": [
+            "Acute kidney injury more likely given recent PCNL"
+          ],
+          "reasoning": "Chronic kidney disease is present in prior PMH but is less likely to be the primary acute issue given recent PCNL."
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Anemia in chronic kidney disease",
           "score": 65.0,
           "confidence": "medium",
           "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Bilateral staghorn renal calculi, hypertension, past pyonephrosis"
+            "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
           ],
           "opposing_evidence": [
-            "recent acute presentation"
+            "No specific evidence of chronic anemia"
           ],
-          "reasoning": "Chronic condition with risk factors, but recent acute presentation."
-        },
-        {
-          "rank": 3,
-          "diagnosis": "Hypertension",
-          "score": 55.0,
-          "confidence": "medium",
-          "category": "risk_factor",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "Hypertension listed in PMH"
-          ],
-          "opposing_evidence": [
-            "recent acute presentation"
-          ],
-          "reasoning": "Risk factor for kidney disease, but not primary acute presentation."
+          "reasoning": "Anemia is present but may be secondary to chronic kidney disease, which is a known risk factor."
         },
         {
           "rank": 4,
-          "diagnosis": "Acute kidney injury",
-          "score": 45.0,
-          "confidence": "low",
-          "category": "complication",
+          "diagnosis": "Complicated urinary tract infection",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "differential",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Fever, hematuria, dysuria, and recent PCNL procedure"
+            "Fever: 102 at ___ prior to transfer"
           ],
           "opposing_evidence": [
-            "Creatinine levels not extremely elevated"
+            "No fever currently present"
           ],
-          "reasoning": "Possible complication, but less likely given current lab values."
+          "reasoning": "Previous history of pyonephrosis suggests a possibility of a complicated UTI, but no current fever."
         },
         {
           "rank": 5,
-          "diagnosis": "Hemorrhagic CVA",
-          "score": 30.0,
+          "diagnosis": "Hypertensive chronic kidney disease",
+          "score": 45.0,
           "confidence": "low",
           "category": "risk_factor",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "History of hemorrhagic CVA"
+            "Hypertensive chronic kidney disease in prior PMH"
           ],
           "opposing_evidence": [
-            "No current neurological symptoms"
+            "No current hypertension noted"
           ],
-          "reasoning": "Risk factor with past history, but no current neurological symptoms."
+          "reasoning": "Hypertensive chronic kidney disease is a known risk factor but not currently evident."
         }
       ],
-      "rule_outs": [],
+      "rule_outs": [
+        {
+          "diagnosis": "Pneumothorax",
+          "why": "No radiology evidence or clinical signs of pneumothorax."
+        }
+      ],
       "uncertain_areas": [
-        "Further imaging to confirm residual stone and kidney function"
+        "Further details on the cause of anemia and the exact nature of chronic kidney disease would refine the differential"
       ],
       "n_candidates": 5,
       "type": "differential_diagnosis",
@@ -656,7 +686,7 @@
       "_temperature": 0.4,
       "patient_id": "11251337",
       "hadm_id": "29568708",
-      "generated_at": "2026-08-15T17:31:12.707927",
+      "generated_at": "2026-08-20T00:09:06.518702",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 2,
@@ -743,85 +773,92 @@
       ]
     },
     {
-      "summary": "A 70-year-old man with a history of atrial fibrillation (AFib), heart failure with preserved ejection fraction (HFpEF), peripheral vascular disease (PVD), and chronic kidney disease (CKD) presents post-ERCP for cholangitis, with symptoms including nocturnal hypoxia and leg swelling.",
-      "most_likely": "Heart failure with preserved ejection fraction (HFpEF)",
+      "summary": "A 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease presents post-ERCP with mild edema and nocturnal hypoxia that improved with diuresis.",
+      "most_likely": "Atrial fibrillation with heart failure",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Heart failure with preserved ejection fraction (HFpEF)",
+          "diagnosis": "Atrial fibrillation with heart failure",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
-          "snomed_aligned": "",
+          "snomed_aligned": "Right bundle branch block",
           "supporting_evidence": [
-            "HFpEF, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+            "atrial fibrillation on apixaban",
+            "HFpEF, held home Lasix"
           ],
           "opposing_evidence": [],
-          "reasoning": "HFpEF is the most likely primary diagnosis given the patient's history and current symptoms."
+          "reasoning": "The patient has a history of atrial fibrillation and heart failure, and the current presentation aligns with these chronic conditions."
         },
         {
           "rank": 2,
-          "diagnosis": "Peripheral vascular disease (PVD)",
-          "score": 70.0,
+          "diagnosis": "Peripheral vascular disease",
+          "score": 75.0,
           "confidence": "medium",
           "category": "secondary",
           "snomed_aligned": "Peripheral vascular disease",
           "supporting_evidence": [
-            "PVD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
+            "PVD with remote bypass graft"
           ],
-          "opposing_evidence": [],
-          "reasoning": "PVD is a significant comorbidity but less likely to be the primary cause of current symptoms."
+          "opposing_evidence": [
+            "mild edema and swelling improve during the night"
+          ],
+          "reasoning": "Peripheral vascular disease is a chronic condition and a known risk factor for edema, but the current presentation suggests mild symptoms."
         },
         {
           "rank": 3,
-          "diagnosis": "Atrial fibrillation (AFib)",
-          "score": 65.0,
+          "diagnosis": "Chronic kidney disease",
+          "score": 70.0,
           "confidence": "medium",
           "category": "complication",
-          "snomed_aligned": "Atrial fibrillation",
+          "snomed_aligned": "",
           "supporting_evidence": [
-            "AFib on apixaban, Creatinine: 1.4 mg/dL, Hemoglobin: 12.6 g/dL"
+            "Creatinine: 1.4 mg/dL",
+            "Hematocrit: 38.3 %",
+            "Hemoglobin: 12.6 g/dL"
           ],
           "opposing_evidence": [],
-          "reasoning": "AFib is a known complication but less likely to be the primary cause of current symptoms."
+          "reasoning": "Chronic kidney disease is a known chronic condition in the patient's history, and the current labs suggest mild renal impairment."
         },
         {
           "rank": 4,
-          "diagnosis": "Chronic kidney disease (CKD)",
-          "score": 55.0,
-          "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "Chronic kidney disease",
-          "supporting_evidence": [
-            "CKD, Creatinine: 1.4 mg/dL, Potassium: 4.3 mEq/L"
-          ],
-          "opposing_evidence": [],
-          "reasoning": "CKD is a significant comorbidity but less likely to be the primary cause of current symptoms."
-        },
-        {
-          "rank": 5,
           "diagnosis": "Nocturnal hypoxia",
-          "score": 40.0,
+          "score": 65.0,
           "confidence": "low",
-          "category": "differential",
+          "category": "risk_factor",
           "snomed_aligned": "",
           "supporting_evidence": [
             "nocturnal hypoxia that improved with diuresis"
           ],
           "opposing_evidence": [
-            "resolved with diuresis, no current symptoms"
+            "improved with diuresis"
           ],
-          "reasoning": "Nocturnal hypoxia is a historical finding and not currently causing symptoms."
+          "reasoning": "Nocturnal hypoxia is a known chronic condition, but the current presentation suggests it has improved."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Cholangitis",
+          "score": 55.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "history of cholangitis"
+          ],
+          "opposing_evidence": [
+            "current presentation suggests mild symptoms"
+          ],
+          "reasoning": "Cholangitis is a known past condition, but the current presentation suggests mild symptoms."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Cholangitis",
-          "why": "Symptoms have improved post-ERCP, and current labs are within normal range."
+          "diagnosis": "Pneumothorax",
+          "why": "No radiographic evidence and the presentation does not suggest acute respiratory distress."
         }
       ],
       "uncertain_areas": [
-        "Further clarification on the patient's current respiratory status and fluid management would help refine the differential diagnosis."
+        "Further radiographic imaging would help clarify the presence of any acute lung issues or other causes of nocturnal hypoxia"
       ],
       "n_candidates": 5,
       "type": "differential_diagnosis",
@@ -830,7 +867,7 @@
       "_temperature": 0.4,
       "patient_id": "11474876",
       "hadm_id": "29672491",
-      "generated_at": "2026-08-15T17:31:28.467580",
+      "generated_at": "2026-08-20T00:09:21.276946",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 13,
@@ -950,84 +987,86 @@
       ]
     },
     {
-      "summary": "The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.",
-      "most_likely": "Refractory VT",
+      "summary": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.",
+      "most_likely": "Refractory ventricular tachycardia",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Refractory VT",
+          "diagnosis": "Refractory ventricular tachycardia",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
-          "snomed_aligned": "",
+          "snomed_aligned": "I472",
           "supporting_evidence": [
-            "Refractory VT requiring ganglionic block"
+            "ICD shock on ___",
+            "Refractory VT in symptom tree"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary concern given current ICD shock and ongoing VT."
+          "reasoning": "ICD shock and refractory VT are present, strongly supporting this diagnosis."
         },
         {
           "rank": 2,
-          "diagnosis": "Heart transplantation",
-          "score": 70.0,
-          "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "Transplantation of heart",
+          "diagnosis": "Dilated non-ischemic cardiomyopathy",
+          "score": 75.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "I420",
           "supporting_evidence": [
-            "Heart transplantation in retained SNOMED context"
+            "Dilated non-ischemic cardiomyopathy in symptom tree",
+            "Dilated cardiomyopathy in prior ICDs"
           ],
           "opposing_evidence": [],
-          "reasoning": "Recent ICD shock and LVAD suggest potential complications from heart transplantation."
+          "reasoning": "Dilated cardiomyopathy is a chronic condition and a known cause of ICD shock."
         },
         {
           "rank": 3,
-          "diagnosis": "Chronic heart failure",
+          "diagnosis": "Congestive heart failure",
           "score": 65.0,
           "confidence": "medium",
-          "category": "secondary",
+          "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "History of dilated cardiomyopathy and LVAD"
+            "edema in symptom tree",
+            "Dilated cardiomyopathy in prior ICDs"
           ],
-          "opposing_evidence": [
-            "No acute symptoms of heart failure"
-          ],
-          "reasoning": "History of chronic heart failure but no acute symptoms."
+          "opposing_evidence": [],
+          "reasoning": "Edema and dilated cardiomyopathy suggest heart failure exacerbation."
         },
         {
           "rank": 4,
-          "diagnosis": "Sleep apnea",
+          "diagnosis": "Hypokalemia",
           "score": 50.0,
           "confidence": "low",
-          "category": "risk_factor",
-          "snomed_aligned": "Sleep apnea",
+          "category": "differential",
+          "snomed_aligned": "",
           "supporting_evidence": [
-            "Sleep apnea in retained SNOMED context"
+            "low potassium in labs"
           ],
-          "opposing_evidence": [
-            "No current symptoms of sleep apnea"
-          ],
-          "reasoning": "Previous history of sleep apnea but no current symptoms."
+          "opposing_evidence": [],
+          "reasoning": "Low potassium could explain some symptoms but is not the primary focus."
         },
         {
           "rank": 5,
-          "diagnosis": "Obesity",
-          "score": 45.0,
+          "diagnosis": "Anemia",
+          "score": 40.0,
           "confidence": "low",
-          "category": "risk_factor",
-          "snomed_aligned": "Obesity",
+          "category": "complication",
+          "snomed_aligned": "",
           "supporting_evidence": [
-            "BMI 36.7 and obesity in retained SNOMED context"
+            "low hematocrit and hemoglobin in labs"
           ],
-          "opposing_evidence": [
-            "No current symptoms of obesity"
-          ],
-          "reasoning": "History of obesity but no current symptoms."
+          "opposing_evidence": [],
+          "reasoning": "Low hematocrit and hemoglobin suggest anemia but are secondary to heart failure."
         }
       ],
-      "rule_outs": [],
+      "rule_outs": [
+        {
+          "diagnosis": "Sleep apnea",
+          "why": "While present, it is not the primary focus of the current admission."
+        }
+      ],
       "uncertain_areas": [
-        "More detailed information on current symptoms and labs would improve ranking"
+        "Further imaging or detailed cardiac function tests would clarify the exact nature of the cardiomyopathy and ICD shock"
       ],
       "n_candidates": 5,
       "type": "differential_diagnosis",
@@ -1036,7 +1075,7 @@
       "_temperature": 0.4,
       "patient_id": "11607177",
       "hadm_id": "23293838",
-      "generated_at": "2026-08-15T17:31:40.840602",
+      "generated_at": "2026-08-20T00:09:36.317014",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 10,
@@ -1409,7 +1448,7 @@
       ]
     },
     {
-      "summary": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of chronic heart failure, atrial fibrillation, and renal dysfunction.",
+      "summary": "The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.",
       "most_likely": "Acute decompensated heart failure",
       "differential": [
         {
@@ -1418,121 +1457,97 @@
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
-          "snomed_aligned": "",
+          "snomed_aligned": "I50.9",
           "supporting_evidence": [
-            "dyspnea, orthopnea, pitting edema"
+            "dyspnea, orthopnea, pitting edema",
+            "mild pulmonary edema",
+            "mild pleural effusions",
+            "mild atrial fibrillation",
+            "creatinine elevation"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary presentation with dyspnea, orthopnea, and pitting edema, consistent with acute decompensated heart failure."
+          "reasoning": "Symptoms and findings strongly support acute decompensation of chronic heart failure."
         },
         {
           "rank": 2,
-          "diagnosis": "Chronic kidney disease",
+          "diagnosis": "Atrial fibrillation",
           "score": 70.0,
           "confidence": "medium",
           "category": "complication",
-          "snomed_aligned": "",
+          "snomed_aligned": "42717001",
           "supporting_evidence": [
-            "creatinine elevation, urea nitrogen elevation"
+            "paroxysmal atrial fibrillation",
+            "mild atrial fibrillation"
           ],
           "opposing_evidence": [],
-          "reasoning": "Persistent elevation of creatinine and urea nitrogen, consistent with chronic kidney disease."
+          "reasoning": "Paroxysmal atrial fibrillation is present and may contribute to symptoms."
         },
         {
           "rank": 3,
-          "diagnosis": "Anemia",
+          "diagnosis": "Renal insufficiency",
           "score": 65.0,
           "confidence": "medium",
           "category": "complication",
-          "snomed_aligned": "",
+          "snomed_aligned": "N17.9",
           "supporting_evidence": [
-            "low hemoglobin, low MCH, low MCV, low RDW, low RDW-SD"
+            "creatinine elevation",
+            "urea nitrogen elevation",
+            "anemia"
           ],
           "opposing_evidence": [],
-          "reasoning": "Low hemoglobin, MCH, MCV, RDW, and RDW-SD, consistent with anemia."
+          "reasoning": "Renal function tests indicate worsening renal insufficiency."
         },
         {
           "rank": 4,
-          "diagnosis": "Atrial fibrillation",
-          "score": 55.0,
-          "confidence": "medium",
+          "diagnosis": "Myasthenia gravis",
+          "score": 50.0,
+          "confidence": "low",
           "category": "differential",
-          "snomed_aligned": "AF - Paroxysmal atrial fibrillation",
+          "snomed_aligned": "G70.0",
           "supporting_evidence": [
-            "paroxysmal atrial fibrillation confirmed"
+            "tremors",
+            "increased spasms in the upper extremities"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Confirmed paroxysmal atrial fibrillation, a known risk factor for heart failure exacerbation."
+          "opposing_evidence": [
+            "no specific myasthenia gravis findings on chest X-ray"
+          ],
+          "reasoning": "Tremors and increased spasms suggest myasthenia gravis, but no specific findings support this."
         },
         {
           "rank": 5,
-          "diagnosis": "Myasthenia gravis",
-          "score": 45.0,
+          "diagnosis": "Anemia",
+          "score": 40.0,
           "confidence": "low",
           "category": "risk_factor",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "myasthenia gravis confirmed"
+            "low hemoglobin and hematocrit"
           ],
           "opposing_evidence": [],
-          "reasoning": "Myasthenia gravis, a known risk factor for respiratory muscle weakness and exacerbation of heart failure."
-        },
-        {
-          "rank": 6,
-          "diagnosis": "Pulmonary embolism",
-          "score": 35.0,
-          "confidence": "low",
-          "category": "differential",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "personal history of pulmonary embolism"
-          ],
-          "opposing_evidence": [
-            "no current evidence of acute pulmonary embolism"
-          ],
-          "reasoning": "Prior history of pulmonary embolism, but no current evidence of acute event."
-        },
-        {
-          "rank": 7,
-          "diagnosis": "Obstructive sleep apnea",
-          "score": 30.0,
-          "confidence": "low",
-          "category": "differential",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "obstructive sleep apnea confirmed"
-          ],
-          "opposing_evidence": [
-            "no current evidence of acute exacerbation"
-          ],
-          "reasoning": "Obstructive sleep apnea, a known risk factor for heart failure exacerbation, but no current evidence of acute exacerbation."
-        },
-        {
-          "rank": 8,
-          "diagnosis": "Hypothyroidism",
-          "score": 25.0,
-          "confidence": "low",
-          "category": "differential",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "hypothyroidism confirmed"
-          ],
-          "opposing_evidence": [],
-          "reasoning": "Hypothyroidism, a known risk factor for heart failure, but no current evidence of acute exacerbation."
+          "reasoning": "Anemia is present but does not fully explain the current presentation."
         }
       ],
-      "rule_outs": [],
-      "uncertain_areas": [
-        "more detailed imaging to confirm pulmonary edema and pleural effusions"
+      "rule_outs": [
+        {
+          "diagnosis": "Pneumonia",
+          "why": "No evidence of respiratory infection."
+        },
+        {
+          "diagnosis": "Acute coronary syndrome",
+          "why": "No chest pain or ECG changes."
+        }
       ],
-      "n_candidates": 8,
+      "uncertain_areas": [
+        "Further imaging to confirm presence of pleural effusions and pulmonary edema"
+      ],
+      "n_candidates": 5,
       "type": "differential_diagnosis",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "differential_diagnosis",
       "_temperature": 0.4,
       "patient_id": "12007928",
       "hadm_id": "23749816",
-      "generated_at": "2026-08-15T17:31:57.828573",
+      "generated_at": "2026-08-20T00:09:53.056804",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 5,
@@ -1751,91 +1766,107 @@
       ]
     },
     {
-      "summary": "A 45-year-old male with metastatic adenocarcinoma of unknown primary presents with severe sepsis, hypotension, RUL PNA, and altered mental status. Recent labs show abnormal electrolytes and low hematocrit.",
-      "most_likely": "Severe sepsis due to RUL PNA",
+      "summary": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
+      "most_likely": "Severe sepsis secondary to RUL PNA",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Severe sepsis due to RUL PNA",
+          "diagnosis": "Severe sepsis secondary to RUL PNA",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "RUL PNA, hypotension, fever"
+            "RUL PNA, persistent consolidative opacities in both lower lobes"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary diagnosis given the recent onset of RUL PNA and clinical signs of sepsis."
+          "reasoning": "Severe sepsis is the most likely diagnosis given the RUL PNA and hypotension."
         },
         {
           "rank": 2,
           "diagnosis": "Metastatic adenocarcinoma of unknown primary",
           "score": 75.0,
-          "confidence": "high",
+          "confidence": "medium",
           "category": "primary",
           "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
           "supporting_evidence": [
-            "confirmed diagnosis, recent RUL PNA"
+            "confirmed metastatic adenocarcinoma of unknown primary"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Underlying cancer is a known risk factor for sepsis and RUL PNA."
+          "opposing_evidence": [
+            "no new metastatic lesions noted"
+          ],
+          "reasoning": "Given the patient’s history of metastatic adenocarcinoma, this is a significant risk factor."
         },
         {
           "rank": 3,
-          "diagnosis": "Hypovolemic shock",
+          "diagnosis": "Hypotension secondary to pericardiocentesis",
           "score": 65.0,
           "confidence": "medium",
           "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "severe hypotension, low hematocrit"
+            "recent pericardiocentesis, hypotension"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Hypotension and low hematocrit suggest potential hypovolemic state."
+          "opposing_evidence": [
+            "hypotension is moderate and managed"
+          ],
+          "reasoning": "Hypotension is a complication of pericardiocentesis and is present."
         },
         {
           "rank": 4,
-          "diagnosis": "Acute kidney injury",
+          "diagnosis": "Acute kidney failure",
           "score": 55.0,
-          "confidence": "medium",
-          "category": "complication",
-          "snomed_aligned": "",
+          "confidence": "low",
+          "category": "secondary",
+          "snomed_aligned": "Acute kidney failure, unspecified",
           "supporting_evidence": [
-            "hypotension, abnormal labs"
+            "abnormal labs, low creatinine"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Hypotension and abnormal labs suggest potential kidney injury."
+          "opposing_evidence": [
+            "no acute kidney injury symptoms"
+          ],
+          "reasoning": "Acute kidney failure is a potential secondary condition given the abnormal labs."
         },
         {
           "rank": 5,
-          "diagnosis": "SVC syndrome",
+          "diagnosis": "Anemia",
           "score": 45.0,
-          "confidence": "high",
-          "category": "complication",
-          "snomed_aligned": "SVC stent placed, multiple venous thromboses",
+          "confidence": "low",
+          "category": "secondary",
+          "snomed_aligned": "",
           "supporting_evidence": [
-            "confirmed SVC syndrome, recent labs"
+            "low hematocrit, hemoglobin"
           ],
-          "opposing_evidence": [],
-          "reasoning": "SVC syndrome is a known complication and is confirmed."
+          "opposing_evidence": [
+            "no acute blood loss"
+          ],
+          "reasoning": "Anemia could explain the low hematocrit and hemoglobin."
         },
         {
           "rank": 6,
-          "diagnosis": "Neurological deterioration",
+          "diagnosis": "Sodium imbalance",
           "score": 35.0,
-          "confidence": "medium",
-          "category": "complication",
-          "snomed_aligned": "",
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "Hypo-osmolality and hyponatremia",
           "supporting_evidence": [
-            "altered mental status, hypotension"
+            "low sodium"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Altered mental status and hypotension suggest neurological involvement."
+          "opposing_evidence": [
+            "no clinical signs of sodium imbalance"
+          ],
+          "reasoning": "Sodium imbalance is a risk factor given the low sodium levels."
         }
       ],
-      "rule_outs": [],
+      "rule_outs": [
+        {
+          "diagnosis": "Non-small cell lung cancer",
+          "why": "Not currently supported by evidence."
+        }
+      ],
       "uncertain_areas": [
-        "Further imaging of RUL PNA, more detailed neurological assessment"
+        "Further imaging to confirm new metastatic lesions",
+        "More detailed clinical history to confirm the exact nature of the PNA"
       ],
       "n_candidates": 6,
       "type": "differential_diagnosis",
@@ -1844,7 +1875,7 @@
       "_temperature": 0.4,
       "patient_id": "13196707",
       "hadm_id": "21475988",
-      "generated_at": "2026-08-15T17:32:11.234822",
+      "generated_at": "2026-08-20T00:10:10.757498",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 11,
@@ -2004,7 +2035,7 @@
       ]
     },
     {
-      "summary": "The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.",
+      "summary": "The patient is a man with a history of systolic chronic heart failure, renal cell carcinoma, and multiple chronic conditions, admitted for laparoscopic left radical nephrectomy and lymph node dissection. Current symptoms include dyspnea and mild pain, with laboratory findings indicating renal and hematological abnormalities.",
       "most_likely": "Acute on chronic systolic heart failure",
       "differential": [
         {
@@ -2013,89 +2044,102 @@
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
-          "snomed_aligned": "426720004",
+          "snomed_aligned": "I5023",
           "supporting_evidence": [
-            "systolic CHF with EF around 30%"
+            "systolic CHF with EF around 30%",
+            "Creatinine: 2.0 mg/dL",
+            "Hemoglobin: 8.9 g/dL"
           ],
           "opposing_evidence": [],
-          "reasoning": "Strong clinical evidence of systolic heart failure, supported by low EF."
+          "reasoning": "The patient has a history of systolic heart failure and current symptoms and lab findings support acute exacerbation."
         },
         {
           "rank": 2,
           "diagnosis": "Renal cell carcinoma",
-          "score": 75.0,
-          "confidence": "high",
-          "category": "primary",
-          "snomed_aligned": "77882004",
+          "score": 70.0,
+          "confidence": "medium",
+          "category": "differential",
+          "snomed_aligned": "C649",
           "supporting_evidence": [
             "left renal mass",
             "renal cell carcinoma"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Confirmed diagnosis with significant clinical findings."
+          "opposing_evidence": [
+            "Laparoscopic left radical nephrectomy performed"
+          ],
+          "reasoning": "The presence of a left renal mass and renal cell carcinoma in the past supports this diagnosis, but recent surgery may have resolved the mass."
         },
         {
           "rank": 3,
-          "diagnosis": "Anemia",
-          "score": 70.0,
-          "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "low hemoglobin, hematocrit"
-          ],
-          "opposing_evidence": [],
-          "reasoning": "Low hemoglobin and hematocrit levels suggest anemia."
-        },
-        {
-          "rank": 4,
-          "diagnosis": "Hypokalemia",
-          "score": 65.0,
-          "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "low potassium"
-          ],
-          "opposing_evidence": [],
-          "reasoning": "Low potassium levels suggest hypokalemia."
-        },
-        {
-          "rank": 5,
           "diagnosis": "Obstructive sleep apnea",
           "score": 60.0,
           "confidence": "medium",
-          "category": "risk_factor",
+          "category": "secondary",
           "snomed_aligned": "78275009",
           "supporting_evidence": [
-            "confirmed diagnosis"
+            "obstructive sleep apnea, on CPAP"
+          ],
+          "opposing_evidence": [
+            "no new respiratory symptoms"
+          ],
+          "reasoning": "The patient has a history of obstructive sleep apnea, but no new respiratory symptoms are present."
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Anemia",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Hemoglobin: 8.9 g/dL",
+            "Hematocrit: 27.3 %"
           ],
           "opposing_evidence": [],
-          "reasoning": "Confirmed diagnosis with potential impact on overall health."
+          "reasoning": "Low hemoglobin and hematocrit levels suggest anemia, which could be secondary to chronic heart failure."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Hypokalemia",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "Calcium, Total: 8.2 mg/dL",
+            "Low potassium levels"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Low calcium levels and low potassium may be related, but more specific evidence is needed to confirm hypokalemia."
         },
         {
           "rank": 6,
-          "diagnosis": "Diabetes mellitus",
-          "score": 55.0,
-          "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "",
+          "diagnosis": "Chronic kidney disease",
+          "score": 45.0,
+          "confidence": "low",
+          "category": "complication",
+          "snomed_aligned": "N189",
           "supporting_evidence": [
-            "confirmed diagnosis",
-            "mild hyperglycemia"
+            "Creatinine: 2.0 mg/dL",
+            "Chronic kidney disease"
           ],
           "opposing_evidence": [],
-          "reasoning": "Confirmed diagnosis with mild hyperglycemia."
+          "reasoning": "Chronic kidney disease is a known chronic condition, but the current acute presentation is more likely related to heart failure."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Acute kidney injury",
-          "why": "Creatinine levels are moderately elevated but not critically so."
+          "diagnosis": "Left renal mass",
+          "why": "Laparoscopic left radical nephrectomy performed"
+        },
+        {
+          "diagnosis": "Calf pain",
+          "why": "No reported calf pain to deep palpation"
         }
       ],
       "uncertain_areas": [
-        "Further imaging or lab results could clarify the extent of renal involvement and heart failure status"
+        "Further imaging or lab results to confirm renal mass status",
+        "More detailed respiratory assessment to confirm obstructive sleep apnea status"
       ],
       "n_candidates": 6,
       "type": "differential_diagnosis",
@@ -2104,7 +2148,7 @@
       "_temperature": 0.4,
       "patient_id": "13508515",
       "hadm_id": "21834271",
-      "generated_at": "2026-08-15T17:32:23.633611",
+      "generated_at": "2026-08-20T00:10:27.070020",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 7,
@@ -2196,34 +2240,39 @@
       ]
     },
     {
-      "summary": "The patient presents with hypotension, weight loss, anorexia, and multiple constitutional symptoms likely related to lung cancer and immunosuppression. Prior comorbidities include lung cancer, chronic kidney disease, and pulmonary hypertension.",
-      "most_likely": "Severe Pulmonary Hypertension with Cor Pulmonale",
+      "summary": "The patient presents with hypotension, weight loss, and pulmonary hypertension, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of cough and odynophagia.",
+      "most_likely": "Squamous Cell Lung CA",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+          "diagnosis": "Squamous Cell Lung CA",
           "score": 85.0,
           "confidence": "high",
-          "category": "complication",
-          "snomed_aligned": "T8611 — Kidney transplant rejection",
+          "category": "primary",
+          "snomed_aligned": "",
           "supporting_evidence": [
-            "Severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg on Right Heart Catheterization"
+            "Squamous Cell Lung CA (confirmed)",
+            "hypotension",
+            "pulmonary hypertension",
+            "cough",
+            "odynophagia"
           ],
           "opposing_evidence": [],
-          "reasoning": "Strong evidence from Right Heart Catheterization and symptoms of dyspnea and fatigue."
+          "reasoning": "Confirmed diagnosis and evidence of ongoing symptoms related to lung cancer."
         },
         {
           "rank": 2,
-          "diagnosis": "Neutropenia",
-          "score": 70.0,
-          "confidence": "medium",
+          "diagnosis": "Pulmonary Hypertension",
+          "score": 75.0,
+          "confidence": "high",
           "category": "complication",
-          "snomed_aligned": "",
+          "snomed_aligned": "Catheterization of right heart",
           "supporting_evidence": [
-            "new neutropenia (ANC 750)"
+            "pulmonary hypertension",
+            "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
           ],
           "opposing_evidence": [],
-          "reasoning": "Recent onset of neutropenia, likely related to chemotherapy and radiation therapy."
+          "reasoning": "Confirmed pulmonary hypertension with significant clinical findings."
         },
         {
           "rank": 3,
@@ -2233,10 +2282,14 @@
           "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Hematocrit: 26.4 %, Hemoglobin: 8.2 g/dL"
+            "hypotension",
+            "weight loss",
+            "anorexia",
+            "neutropenia",
+            "thrombocytopenia"
           ],
           "opposing_evidence": [],
-          "reasoning": "Severe anemia with low hematocrit and hemoglobin levels."
+          "reasoning": "Multiple laboratory abnormalities supporting anemia as a complication."
         },
         {
           "rank": 4,
@@ -2246,10 +2299,13 @@
           "category": "risk_factor",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Overall anorexia and poor appetite"
+            "anorexia",
+            "weight loss",
+            "neutropenia",
+            "thrombocytopenia"
           ],
           "opposing_evidence": [],
-          "reasoning": "Persistent anorexia and malaise contributing to weight loss."
+          "reasoning": "Persistent anorexia and weight loss suggest malnutrition as a risk factor."
         },
         {
           "rank": 5,
@@ -2259,33 +2315,37 @@
           "category": "complication",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Creatinine: 1.3 mg/dL, Urea Nitrogen: 28.0 mg/dL"
+            "hypotension",
+            "anemia",
+            "neutropenia",
+            "thrombocytopenia"
           ],
           "opposing_evidence": [],
-          "reasoning": "Abnormal renal function tests, but no recent acute kidney injury."
+          "reasoning": "Abnormal lab results suggest chronic kidney disease as a possible complication."
         },
         {
           "rank": 6,
-          "diagnosis": "Pneumonia",
-          "score": 30.0,
+          "diagnosis": "Cachexia",
+          "score": 35.0,
           "confidence": "low",
-          "category": "differential",
+          "category": "risk_factor",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Cough, pleuritic/MSK chest pain"
+            "weight loss",
+            "anorexia"
           ],
           "opposing_evidence": [],
-          "reasoning": "Mild cough and chest pain, but no recent respiratory symptoms or imaging."
+          "reasoning": "Weight loss and anorexia suggest cachexia as a risk factor."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Lung Cancer",
-          "why": "Confirmed diagnosis, but not the primary current presentation."
+          "diagnosis": "Pneumonia",
+          "why": "No current evidence of pneumonia in the structured context."
         }
       ],
       "uncertain_areas": [
-        "Further imaging or biopsy results would clarify the extent of pulmonary hypertension and any new infections or malignancies"
+        "Further clarification on the cause of hypotension and weight loss would refine the differential diagnosis."
       ],
       "n_candidates": 6,
       "type": "differential_diagnosis",
@@ -2294,7 +2354,7 @@
       "_temperature": 0.4,
       "patient_id": "13952483",
       "hadm_id": "23852410",
-      "generated_at": "2026-08-15T17:32:38.712958",
+      "generated_at": "2026-08-20T00:10:41.130972",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 11,
@@ -2537,93 +2597,106 @@
       ]
     },
     {
-      "summary": "The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.",
-      "most_likely": "Anemia due to malignancy",
+      "summary": "The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.",
+      "most_likely": "Metastatic sarcoma with hematologic complications",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Anemia due to malignancy",
+          "diagnosis": "Metastatic sarcoma with hematologic complications",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
-          "snomed_aligned": "",
+          "snomed_aligned": "Metastatic sarcoma",
           "supporting_evidence": [
-            "anemia, thrombocytopenia, history of metastatic sarcoma"
+            "metastatic sarcoma",
+            "thrombocytopenia"
           ],
           "opposing_evidence": [],
-          "reasoning": "Anemia is severe and aligns with the patient's history of metastatic sarcoma and prior chemotherapy."
+          "reasoning": "Primary diagnosis given the patient's history of metastatic sarcoma and current symptoms related to hematologic complications."
         },
         {
           "rank": 2,
-          "diagnosis": "Thrombocytopenia due to malignancy",
-          "score": 75.0,
+          "diagnosis": "Anemia",
+          "score": 70.0,
           "confidence": "high",
-          "category": "complication",
-          "snomed_aligned": "",
+          "category": "secondary",
+          "snomed_aligned": "Anemia due to antineoplastic chemotherapy",
           "supporting_evidence": [
-            "thrombocytopenia, history of metastatic sarcoma"
+            "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
           ],
           "opposing_evidence": [],
-          "reasoning": "Thrombocytopenia is mild but significant and related to the patient's malignancy."
+          "reasoning": "Anemia is a significant finding and likely secondary to the patient's malignancy."
         },
         {
           "rank": 3,
-          "diagnosis": "Hypotension",
-          "score": 60.0,
-          "confidence": "medium",
+          "diagnosis": "Thrombocytopenia",
+          "score": 65.0,
+          "confidence": "high",
           "category": "secondary",
-          "snomed_aligned": "",
+          "snomed_aligned": "Cytokine-induced thrombocytopenia",
           "supporting_evidence": [
-            "hypotension, history of malignancy and chemotherapy side effects"
+            "Platelet Count: 63.0 K/uL"
           ],
-          "opposing_evidence": [
-            "no evidence of acute cardiovascular issues"
-          ],
-          "reasoning": "Hypotension is noted but may be secondary to malignancy and chemotherapy effects."
+          "opposing_evidence": [],
+          "reasoning": "Thrombocytopenia is present and likely related to the patient's malignancy."
         },
         {
           "rank": 4,
-          "diagnosis": "Headache",
+          "diagnosis": "Hypotension",
           "score": 50.0,
+          "confidence": "medium",
+          "category": "risk_factor",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "BP 114/66"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Hypotension is noted and may be a risk factor for further complications."
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Headache",
+          "score": 45.0,
           "confidence": "medium",
           "category": "differential",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "headache after fall, history of cerebellar hemorrhage"
+            "hit his head"
           ],
-          "opposing_evidence": [
-            "no evidence of acute intracranial bleeding"
-          ],
-          "reasoning": "Headache is present but may be related to the fall rather than acute intracranial issues."
+          "opposing_evidence": [],
+          "reasoning": "Headache is present but may be secondary to the fall and underlying malignancy."
         },
         {
-          "rank": 5,
-          "diagnosis": "Metastatic sarcoma to the brain",
-          "score": 45.0,
+          "rank": 6,
+          "diagnosis": "Abdominal pain",
+          "score": 35.0,
           "confidence": "low",
           "category": "differential",
-          "snomed_aligned": "",
+          "snomed_aligned": "Abdominal pain",
           "supporting_evidence": [
-            "history of metastatic sarcoma, recent fall and headache"
+            "abdominal pain"
           ],
-          "opposing_evidence": [
-            "no recent evidence of new neurological deficits"
-          ],
-          "reasoning": "Metastasis to the brain is a risk but not strongly supported by current evidence."
+          "opposing_evidence": [],
+          "reasoning": "Abdominal pain is noted but not strongly supported by current findings."
         }
       ],
-      "rule_outs": [],
-      "uncertain_areas": [
-        "need for further imaging or clinical follow-up to confirm intracranial bleeding or metastasis"
+      "rule_outs": [
+        {
+          "diagnosis": "Pneumothorax",
+          "why": "No evidence of pneumothorax in chest radiograph or structured clinical context."
+        }
       ],
-      "n_candidates": 5,
+      "uncertain_areas": [
+        "Further details on the patient's pain and hematologic status would clarify the severity and management of these conditions."
+      ],
+      "n_candidates": 6,
       "type": "differential_diagnosis",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "differential_diagnosis",
       "_temperature": 0.4,
       "patient_id": "16014068",
       "hadm_id": "29042843",
-      "generated_at": "2026-08-15T17:32:52.278033",
+      "generated_at": "2026-08-20T00:10:56.014695",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 7,
@@ -3291,126 +3364,126 @@
       ]
     },
     {
-      "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease and hepatitis C.",
-      "most_likely": "Severe sepsis with septic shock",
+      "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient is also on mechanical ventilation due to hypoxic respiratory failure.",
+      "most_likely": "Acute liver failure",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Severe sepsis with septic shock",
+          "diagnosis": "Acute liver failure",
           "score": 85.0,
+          "confidence": "high",
+          "category": "primary",
+          "snomed_aligned": "Acute liver failure",
+          "supporting_evidence": [
+            "Worsening liver failure, Hepatic encephalopathy, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L, PT 36.5 sec, PTT 104.2 sec"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "Strong evidence of liver failure with elevated liver enzymes and coagulation parameters."
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Septic shock",
+          "score": 75.0,
           "confidence": "high",
           "category": "primary",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "Septic shock, Klebsiella Aerogenes blood cultures grew"
+            "Septic shock, Bilirubin 13.3 mg/dL, WBC 8.4 K/uL, PT 36.5 sec, PTT 104.2 sec"
           ],
           "opposing_evidence": [],
-          "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition, evidenced by septic shock and elevated inflammatory markers."
+          "reasoning": "Severe sepsis with evidence of systemic inflammatory response and coagulopathy."
         },
         {
-          "rank": 2,
+          "rank": 3,
           "diagnosis": "Hepatic encephalopathy",
-          "score": 75.0,
+          "score": 70.0,
           "confidence": "high",
           "category": "complication",
           "snomed_aligned": "Hepatic encephalopathy",
           "supporting_evidence": [
-            "Hepatic encephalopathy, RASS-5, sluggish pupil response"
+            "Hepatic encephalopathy, RASS-5, sluggish pupil response, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
           ],
           "opposing_evidence": [],
-          "reasoning": "Hepatic encephalopathy is a well-known complication of severe liver failure, supported by the patient's altered mental status and elevated liver enzymes."
-        },
-        {
-          "rank": 3,
-          "diagnosis": "Acute liver failure",
-          "score": 70.0,
-          "confidence": "medium",
-          "category": "primary",
-          "snomed_aligned": "Acute liver failure",
-          "supporting_evidence": [
-            "Worsening liver failure, Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
-          ],
-          "opposing_evidence": [],
-          "reasoning": "Acute liver failure is a severe form of liver failure, evidenced by the patient's elevated liver enzymes and worsening liver function."
+          "reasoning": "Severe liver failure with evidence of altered mental status and elevated liver enzymes."
         },
         {
           "rank": 4,
-          "diagnosis": "GI bleeding",
+          "diagnosis": "Acute renal failure",
           "score": 65.0,
           "confidence": "high",
           "category": "complication",
-          "snomed_aligned": "Gastrointestinal hemorrhage",
+          "snomed_aligned": "Acute renal failure",
           "supporting_evidence": [
-            "GI bleeding, black coffee-ground GI contents"
+            "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units"
           ],
           "opposing_evidence": [],
-          "reasoning": "GI bleeding is a critical complication, evidenced by the patient's black coffee-ground GI contents and low platelet count."
+          "reasoning": "Severe acidosis and electrolyte disturbances suggesting acute renal failure."
         },
         {
           "rank": 5,
-          "diagnosis": "Atrial fibrillation/flutter",
-          "score": 50.0,
-          "confidence": "medium",
-          "category": "complication",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "Atrial fibrillation/flutter, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
-          ],
-          "opposing_evidence": [],
-          "reasoning": "Atrial fibrillation/flutter is a known complication, evidenced by the patient's elevated INR and prolonged coagulation times."
-        },
-        {
-          "rank": 6,
           "diagnosis": "Pleural effusion",
-          "score": 45.0,
+          "score": 60.0,
           "confidence": "medium",
           "category": "complication",
           "snomed_aligned": "Pleural effusion",
           "supporting_evidence": [
-            "Pleural effusion, large pleural effusion with compressive consolidation versus atelectasis"
+            "Large pleural effusion with compressive consolidation versus atelectasis"
           ],
           "opposing_evidence": [],
-          "reasoning": "Pleural effusion is a common complication, evidenced by the patient's bilateral pleural effusions."
+          "reasoning": "Evidence of pleural effusion on imaging, but less likely primary cause given other severe systemic issues."
+        },
+        {
+          "rank": 6,
+          "diagnosis": "IVC thrombus",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "complication",
+          "snomed_aligned": "IVC thrombus",
+          "supporting_evidence": [
+            "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
+          ],
+          "opposing_evidence": [],
+          "reasoning": "IVC thrombus present, but less likely primary cause given other severe systemic issues."
         },
         {
           "rank": 7,
-          "diagnosis": "Renal failure",
-          "score": 40.0,
+          "diagnosis": "Cirrhosis",
+          "score": 50.0,
           "confidence": "medium",
-          "category": "complication",
-          "snomed_aligned": "",
+          "category": "secondary",
+          "snomed_aligned": "Cirrhosis of liver",
           "supporting_evidence": [
-            "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L"
+            "Cirrhosis, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
           ],
           "opposing_evidence": [],
-          "reasoning": "Renal failure is a significant complication, evidenced by the patient's elevated creatinine and bicarbonate levels."
+          "reasoning": "Chronic condition with evidence of liver dysfunction."
         },
         {
           "rank": 8,
-          "diagnosis": "Coagulopathy",
-          "score": 35.0,
-          "confidence": "medium",
-          "category": "complication",
-          "snomed_aligned": "",
+          "diagnosis": "Bipolar disorder",
+          "score": 30.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "Bipolar disorder",
           "supporting_evidence": [
-            "Coagulopathy, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+            "Bipolar disorder, unspecified"
           ],
           "opposing_evidence": [],
-          "reasoning": "Coagulopathy is a critical complication, evidenced by the patient's prolonged coagulation times."
+          "reasoning": "Previous diagnosis, but less likely to be the primary cause of current acute presentation."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Cirrhosis",
-          "why": "Cirrhosis is a chronic condition and not the primary driver of the current presentation."
+          "diagnosis": "GI bleeding",
+          "why": "GI bleeding is present but less likely to be the primary cause given the severity of liver failure and septic shock."
         },
         {
-          "diagnosis": "Hepatocellular carcinoma",
-          "why": "While present, the primary focus is on the acute complications and sepsis."
+          "diagnosis": "Atrial fibrillation/flutter",
+          "why": "Atrial fibrillation/flutter is present but less likely to be the primary cause given the severity of liver failure and septic shock."
         }
       ],
       "uncertain_areas": [
-        "Further details on the source of sepsis and the exact nature of the liver failure would refine the differential diagnosis."
+        "Further clarification on the source of infection and the exact nature of the liver failure would change the ranking"
       ],
       "n_candidates": 8,
       "type": "differential_diagnosis",
@@ -3419,7 +3492,7 @@
       "_temperature": 0.4,
       "patient_id": "17774110",
       "hadm_id": "27339772",
-      "generated_at": "2026-08-15T17:33:14.305981",
+      "generated_at": "2026-08-20T00:11:17.961790",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 15,
@@ -3594,85 +3667,112 @@
       ]
     },
     {
-      "summary": "Patient post-cryoablation for desmoid tumor with mild abdominal pain and nausea. History of desmoid tumor and hepatitis C.",
-      "most_likely": "Post-procedural pain",
+      "summary": "The patient is a 45-year-old woman with a history of desmoid tumor, presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure. She also has chronic conditions including hepatitis C and obesity.",
+      "most_likely": "Post-procedural pain and tenderness",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Post-procedural pain",
+          "diagnosis": "Post-procedural pain and tenderness",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
-          "snomed_aligned": "Abdominal pain",
+          "snomed_aligned": "Abdominal pain (21522001)",
           "supporting_evidence": [
-            "post-procedural pain in the right side of the abdomen"
+            "post-procedural pain in the right side of the abdomen",
+            "abdominal tenderness to palpation"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary presentation after cryoablation procedure."
+          "reasoning": "Primary presentation after cryoablation procedure"
         },
         {
           "rank": 2,
-          "diagnosis": "Desmoid tumor",
-          "score": 75.0,
+          "diagnosis": "Hepatitis C",
+          "score": 70.0,
           "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "",
+          "category": "risk_factor",
+          "snomed_aligned": "Viral hepatitis C (50711007)",
           "supporting_evidence": [
-            "abdominal pain related to desmoid tumor"
+            "chronic condition"
           ],
-          "opposing_evidence": [
-            "pain similar to previous procedure"
-          ],
-          "reasoning": "Secondary to ongoing desmoid tumor, but pain is post-procedural."
+          "opposing_evidence": [],
+          "reasoning": "Chronic condition with no acute symptoms"
         },
         {
           "rank": 3,
-          "diagnosis": "Hepatitis C",
-          "score": 60.0,
+          "diagnosis": "Desmoid tumor",
+          "score": 65.0,
           "confidence": "medium",
-          "category": "risk_factor",
-          "snomed_aligned": "Viral hepatitis C",
+          "category": "differential",
+          "snomed_aligned": "Desmoid tumor (confirmed)",
           "supporting_evidence": [
-            "history of hepatitis C"
+            "desmoid tumor (confirmed)"
           ],
           "opposing_evidence": [
-            "no current symptoms or signs of hepatitis C"
+            "no active tumor growth"
           ],
-          "reasoning": "Patient has a history of hepatitis C, but no current active symptoms."
+          "reasoning": "Previous diagnosis with no acute symptoms"
         },
         {
           "rank": 4,
           "diagnosis": "Anemia",
-          "score": 50.0,
-          "confidence": "low",
-          "category": "differential",
+          "score": 55.0,
+          "confidence": "medium",
+          "category": "secondary",
           "snomed_aligned": "",
           "supporting_evidence": [
             "low hematocrit and hemoglobin"
           ],
-          "opposing_evidence": [
-            "no signs of anemia such as fatigue or pallor"
+          "opposing_evidence": [],
+          "reasoning": "Low hematocrit and hemoglobin levels"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Hypokalemia",
+          "score": 45.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "low potassium level"
           ],
-          "reasoning": "Low hematocrit and hemoglobin levels suggest possible anemia, but not strongly supported."
+          "opposing_evidence": [
+            "no symptoms of hypokalemia"
+          ],
+          "reasoning": "Low potassium level with no symptoms"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Hypomagnesemia",
+          "score": 40.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
+          "supporting_evidence": [
+            "low magnesium level"
+          ],
+          "opposing_evidence": [
+            "no symptoms of hypomagnesemia"
+          ],
+          "reasoning": "Low magnesium level with no symptoms"
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Infection",
-          "why": "No fever, chills, or other signs of infection."
+          "diagnosis": "Pneumothorax",
+          "why": "No radiological evidence or symptoms"
         }
       ],
       "uncertain_areas": [
-        "Further labs to confirm anemia and more details on post-procedural pain"
+        "Additional imaging to confirm the extent of post-procedural pain and tenderness"
       ],
-      "n_candidates": 4,
+      "n_candidates": 6,
       "type": "differential_diagnosis",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "differential_diagnosis",
       "_temperature": 0.4,
       "patient_id": "18412100",
       "hadm_id": "26093939",
-      "generated_at": "2026-08-15T17:33:25.612854",
+      "generated_at": "2026-08-20T00:11:34.087096",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 8,
@@ -3736,7 +3836,7 @@
       ]
     },
     {
-      "summary": "A 30-year-old female with a history of Type 1 Diabetes Mellitus and recurrent diabetic ketoacidosis (DKA) presents with DKA and lactic acidosis, along with abdominal pain, vaginal bleeding, and decreased fetal movement.",
+      "summary": "The patient is a pregnant woman admitted with DKA and lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.",
       "most_likely": "Diabetic ketoacidosis",
       "differential": [
         {
@@ -3747,132 +3847,106 @@
           "category": "primary",
           "snomed_aligned": "Diabetic ketoacidosis",
           "supporting_evidence": [
-            "admission with DKA/lactic acidosis"
+            "Diabetic ketoacidosis (confirmed), DKA/lactic acidosis"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary diagnosis given the presenting symptoms and known history of Type 1 Diabetes Mellitus."
+          "reasoning": "DKA is confirmed and the primary presenting condition."
         },
         {
           "rank": 2,
           "diagnosis": "C difficile colitis",
-          "score": 60.0,
+          "score": 70.0,
           "confidence": "medium",
           "category": "differential",
-          "snomed_aligned": "Clostridium difficile colitis",
+          "snomed_aligned": "Clostridioides difficile infection",
           "supporting_evidence": [
-            "C difficile colitis along with diarrhea"
+            "C difficile colitis: Improving but still with some diarrhea at discharge"
           ],
           "opposing_evidence": [
-            "no infectious precipitants identified"
+            "Improved since discharge"
           ],
-          "reasoning": "Suspected given the presence of C difficile colitis and diarrhea, but no infectious precipitants."
+          "reasoning": "C difficile colitis is suspected and has been a chronic condition."
         },
         {
           "rank": 3,
-          "diagnosis": "Missed abortion",
-          "score": 55.0,
-          "confidence": "high",
+          "diagnosis": "Preeclampsia",
+          "score": 65.0,
+          "confidence": "medium",
           "category": "complication",
-          "snomed_aligned": "Missed abortion",
+          "snomed_aligned": "Preeclampsia",
           "supporting_evidence": [
-            "Missed abortion requiring D&C"
+            "Unspecified pre-eclampsia, third trimester"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Confirmed complication given the history and current presentation."
+          "opposing_evidence": [
+            "No current signs of hypertension or proteinuria"
+          ],
+          "reasoning": "Preeclampsia is a known chronic condition and risk factor."
         },
         {
           "rank": 4,
-          "diagnosis": "Abdominal pain",
-          "score": 45.0,
-          "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "Abdominal pain",
+          "diagnosis": "Missed abortion",
+          "score": 50.0,
+          "confidence": "low",
+          "category": "risk_factor",
+          "snomed_aligned": "Missed abortion",
           "supporting_evidence": [
-            "lower abdominal pain/cramping for the past week"
+            "Missed abortion"
           ],
           "opposing_evidence": [
-            "no specific cause identified"
+            "No current signs of bleeding or pregnancy complications"
           ],
-          "reasoning": "Secondary to DKA and potential gastrointestinal issues."
+          "reasoning": "Missed abortion is a chronic condition but not currently presenting."
         },
         {
           "rank": 5,
-          "diagnosis": "Vaginal bleeding",
-          "score": 40.0,
+          "diagnosis": "Type 1 diabetes mellitus",
+          "score": 45.0,
           "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "Bleeding from vagina",
+          "category": "primary",
+          "snomed_aligned": "Type 1 diabetes mellitus",
           "supporting_evidence": [
-            "vaginal spotting"
+            "Type 1 diabetes mellitus with ketoacidosis without coma"
           ],
           "opposing_evidence": [
-            "no specific cause identified"
+            "No current signs of hyperglycemia"
           ],
-          "reasoning": "Secondary to DKA and potential obstetric issues."
+          "reasoning": "Type 1 diabetes mellitus is a chronic condition and risk factor."
         },
         {
           "rank": 6,
-          "diagnosis": "Decreased fetal movement",
-          "score": 35.0,
-          "confidence": "medium",
-          "category": "secondary",
-          "snomed_aligned": "Low fetal movement",
+          "diagnosis": "Infection",
+          "score": 30.0,
+          "confidence": "low",
+          "category": "differential",
+          "snomed_aligned": "",
           "supporting_evidence": [
+            "fevers/chills/nightsweats for the past few days",
+            "abdominal pain",
             "decreased fetal movement"
           ],
           "opposing_evidence": [
-            "no specific cause identified"
+            "No current signs of infection"
           ],
-          "reasoning": "Secondary to DKA and potential obstetric issues."
-        },
-        {
-          "rank": 7,
-          "diagnosis": "Headache",
-          "score": 30.0,
-          "confidence": "low",
-          "category": "risk_factor",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "pressure-like frontal headache"
-          ],
-          "opposing_evidence": [
-            "no specific cause identified"
-          ],
-          "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus."
-        },
-        {
-          "rank": 8,
-          "diagnosis": "Nausea",
-          "score": 25.0,
-          "confidence": "low",
-          "category": "risk_factor",
-          "snomed_aligned": "",
-          "supporting_evidence": [
-            "nausea and vomiting"
-          ],
-          "opposing_evidence": [
-            "no specific cause identified"
-          ],
-          "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus."
+          "reasoning": "Infection is a possible differential but not the primary presenting condition."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Infectious diseases",
-          "why": "No specific infectious precipitants identified."
+          "diagnosis": "Lactic acidosis",
+          "why": "Lactic acidosis is a consequence of DKA and not a primary diagnosis."
         }
       ],
       "uncertain_areas": [
-        "Further imaging or cultures may clarify the cause of abdominal pain and vaginal bleeding."
+        "Further labs and imaging to confirm infection or other causes of lactic acidosis"
       ],
-      "n_candidates": 8,
+      "n_candidates": 6,
       "type": "differential_diagnosis",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "differential_diagnosis",
       "_temperature": 0.4,
       "patient_id": "19104262",
       "hadm_id": "24271247",
-      "generated_at": "2026-08-15T17:33:42.688414",
+      "generated_at": "2026-08-20T00:11:51.235327",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 13,
@@ -4128,87 +4202,93 @@
       ]
     },
     {
-      "summary": "The patient presents with acute on chronic dyspnea on exertion, fatigue, and macrocytic anemia. The patient has a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
-      "most_likely": "Acute on chronic macrocytic anemia",
+      "summary": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome. The patient has a recent history of macrocytic anemia and is on anticoagulation therapy.",
+      "most_likely": "Acute macrocytic anemia",
       "differential": [
         {
           "rank": 1,
-          "diagnosis": "Acute on chronic macrocytic anemia",
+          "diagnosis": "Acute macrocytic anemia",
           "score": 85.0,
           "confidence": "high",
           "category": "primary",
           "snomed_aligned": "Macrocytic anemia",
           "supporting_evidence": [
-            "acute on chronic macrocytic anemia (current symptom tree)"
+            "acute on chronic macrocytic anemia",
+            "Hgb 6.7, MCV 106, RDW 18.2, Reticulocyte Count, Automated: 3.6 %"
           ],
           "opposing_evidence": [],
-          "reasoning": "Primary diagnosis given the patient's history of chronic anemia and current presentation."
+          "reasoning": "Acute macrocytic anemia is strongly supported by the lab findings and is the primary presenting issue."
         },
         {
           "rank": 2,
-          "diagnosis": "Heart failure",
-          "score": 70.0,
+          "diagnosis": "Acute heart failure",
+          "score": 75.0,
           "confidence": "medium",
-          "category": "complication",
-          "snomed_aligned": "Congestive heart failure",
+          "category": "primary",
+          "snomed_aligned": "Heart failure",
           "supporting_evidence": [
-            "acute on chronic dyspnea on exertion (current symptom tree)"
+            "moderate AS, mild pulmonary hypertension",
+            "worsening dyspnea over the past year"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Secondary to chronic coronary artery disease and atrial fibrillation."
+          "opposing_evidence": [
+            "no recent radiology findings"
+          ],
+          "reasoning": "Acute heart failure is supported by the history of chronic heart failure and worsening dyspnea, but lacks recent radiology evidence."
         },
         {
           "rank": 3,
           "diagnosis": "Atrial fibrillation",
           "score": 65.0,
           "confidence": "medium",
-          "category": "secondary",
+          "category": "complication",
           "snomed_aligned": "Atrial fibrillation",
           "supporting_evidence": [
-            "history of atrial fibrillation (current symptom tree)"
+            "Afib on warfarin",
+            "recent history of atrial fibrillation"
           ],
-          "opposing_evidence": [],
-          "reasoning": "Given the patient's history and current symptoms."
+          "opposing_evidence": [
+            "INR elevated to 2.4"
+          ],
+          "reasoning": "Atrial fibrillation is a known chronic condition, but the INR is elevated, suggesting good control."
         },
         {
           "rank": 4,
-          "diagnosis": "Anemia of chronic disease",
-          "score": 55.0,
-          "confidence": "low",
-          "category": "differential",
+          "diagnosis": "Anemia",
+          "score": 60.0,
+          "confidence": "medium",
+          "category": "primary",
           "snomed_aligned": "",
           "supporting_evidence": [
-            "chronic conditions (prior ICD-10)"
+            "acute on chronic macrocytic anemia",
+            "Hgb 6.7, MCV 106, RDW 18.2"
           ],
-          "opposing_evidence": [
-            "acute presentation (current symptom tree)"
-          ],
-          "reasoning": "Possible given the patient's chronic conditions, but not primary given acute presentation."
+          "opposing_evidence": [],
+          "reasoning": "Anemia is a broad term that encompasses macrocytic anemia but lacks specific supporting evidence."
         },
         {
           "rank": 5,
-          "diagnosis": "Infectious cause of anemia",
-          "score": 40.0,
+          "diagnosis": "Renal insufficiency",
+          "score": 55.0,
           "confidence": "low",
-          "category": "differential",
-          "snomed_aligned": "",
+          "category": "complication",
+          "snomed_aligned": "Renal failure",
           "supporting_evidence": [
-            "acute on chronic macrocytic anemia (current symptom tree)"
+            "low calcium, mild anemia"
           ],
           "opposing_evidence": [
-            "no clear infectious symptoms (current symptom tree)"
+            "no recent renal function tests indicating acute decline"
           ],
-          "reasoning": "Possible given the patient's chronic conditions, but no clear evidence of infection."
+          "reasoning": "Renal insufficiency is a possible complication given the low calcium and mild anemia, but lacks strong evidence."
         }
       ],
       "rule_outs": [
         {
-          "diagnosis": "Acute coronary syndrome",
-          "why": "No evidence of acute chest pain or ischemic changes in labs."
+          "diagnosis": "Coronary artery disease",
+          "why": "While a known chronic condition, the current presentation is more aligned with acute anemia and heart failure."
         }
       ],
       "uncertain_areas": [
-        "Further labs to confirm iron deficiency or other causes of macrocytic anemia"
+        "More recent radiology findings, specific etiology of macrocytic anemia"
       ],
       "n_candidates": 5,
       "type": "differential_diagnosis",
@@ -4217,7 +4297,7 @@
       "_temperature": 0.4,
       "patient_id": "19632936",
       "hadm_id": "26696232",
-      "generated_at": "2026-08-15T17:33:57.532824",
+      "generated_at": "2026-08-20T00:12:06.360079",
       "inputs": {
         "symptom_tree": true,
         "retained_snomed_entities": 14,

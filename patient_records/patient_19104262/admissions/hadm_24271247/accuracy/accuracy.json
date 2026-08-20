@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "19104262",
   "hadm_id": "24271247",
-  "generated_at": "2026-08-19T22:37:31.068746",
+  "generated_at": "2026-08-20T00:13:42.105280",
   "ground_truth": {
     "primary_icd_code": "O2403",
     "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
@@ -25,7 +25,7 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.",
+      "llm_reason": "The ground truth primary diagnosis is 'Pre-existing type 1 diabetes mellitus, in the puerperium', which does not match any of the differential diagnoses provided.",
       "llm_expanded_ground_truth": "Pre-existing type 1 diabetes mellitus, in the puerperium",
       "llm_expanded_matched": "",
       "diagnosis_items": [
@@ -40,61 +40,45 @@
         {
           "diagnosis": "C difficile colitis",
           "rank": 2,
-          "score": 60.0,
+          "score": 70.0,
           "confidence": "medium",
           "icd10_primary": "A04.72",
           "icd10_primary_title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
         },
         {
-          "diagnosis": "Missed abortion",
+          "diagnosis": "Preeclampsia",
           "rank": 3,
-          "score": 55.0,
-          "confidence": "high",
+          "score": 65.0,
+          "confidence": "medium",
+          "icd10_primary": "O14.90",
+          "icd10_primary_title": "Unspecified pre-eclampsia, unspecified trimester"
+        },
+        {
+          "diagnosis": "Missed abortion",
+          "rank": 4,
+          "score": 50.0,
+          "confidence": "low",
           "icd10_primary": "O02.1",
           "icd10_primary_title": "Missed abortion"
         },
         {
-          "diagnosis": "Abdominal pain",
-          "rank": 4,
+          "diagnosis": "Type 1 diabetes mellitus",
+          "rank": 5,
           "score": 45.0,
           "confidence": "medium",
-          "icd10_primary": "R10.9",
-          "icd10_primary_title": "Unspecified abdominal pain"
+          "icd10_primary": "E10.9",
+          "icd10_primary_title": "Type 1 diabetes mellitus without complications"
         },
         {
-          "diagnosis": "Vaginal bleeding",
-          "rank": 5,
-          "score": 40.0,
-          "confidence": "medium",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
-        },
-        {
-          "diagnosis": "Decreased fetal movement",
+          "diagnosis": "Infection",
           "rank": 6,
-          "score": 35.0,
-          "confidence": "medium",
-          "icd10_primary": "O36.8190",
-          "icd10_primary_title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
-        },
-        {
-          "diagnosis": "Headache",
-          "rank": 7,
           "score": 30.0,
           "confidence": "low",
-          "icd10_primary": "R51.9",
-          "icd10_primary_title": "Headache, unspecified"
-        },
-        {
-          "diagnosis": "Nausea",
-          "rank": 8,
-          "score": 25.0,
-          "confidence": "low",
-          "icd10_primary": "R11.0",
-          "icd10_primary_title": "Nausea"
+          "icd10_primary": "B99.9",
+          "icd10_primary_title": "Unspecified infectious disease"
         }
       ],
-      "n_diffdx": 8
+      "n_diffdx": 6
     },
     "icd_linked": {
       "ground_truth_icd": "O24.03",
@@ -109,7 +93,7 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.",
+      "llm_icd_reason": "The ground truth ICD code is O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium, which does not match any of the mapped ICD codes provided.",
       "llm_expanded_ground_truth_icd": "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "E13.10",
@@ -122,19 +106,19 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.",
+      "diagnosis_reason": "The ground truth primary diagnosis is 'Pre-existing type 1 diabetes mellitus, in the puerperium', which does not match any of the differential diagnoses provided.",
       "ground_truth_expansions": [
         "Pre-existing type 1 diabetes mellitus, in the puerperium"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.",
+      "icd_reason": "The ground truth ICD code is O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium, which does not match any of the mapped ICD codes provided.",
       "ground_truth_icd_expansions": [
         "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium"
       ],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

@@ -4,10 +4,10 @@ Patient ID       : 19104262
 HADM ID          : 24271247
 Most likely      : Diabetic ketoacidosis
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-19T22:37:04.037106
+Generated (S8)   : 2026-08-20T00:12:25.102298
 
 Summary:
-  A 30-year-old female with a history of Type 1 Diabetes Mellitus and recurrent diabetic ketoacidosis (DKA) presents with DKA and lactic acidosis, along with abdominal pain, vaginal bleeding, and decreased fetal movement.
+  The patient is a pregnant woman admitted with DKA and lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.
 
 #1  [85.0/100 | high]  Diabetic ketoacidosis  (primary)
     SNOMED: Diabetic ketoacidosis (420422005) [exact score=1.0]
@@ -18,37 +18,37 @@ Summary:
       4. [principal] E11.01 — Type 2 diabetes mellitus with hyperosmolarity with coma
       5. [principal] E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma
 
-#2  [60.0/100 | medium]  C difficile colitis  (differential)
-    SNOMED: Clostridium difficile colitis (423590009) [exact score=1.0]
+#2  [70.0/100 | medium]  C difficile colitis  (differential)
+    SNOMED: Clostridium difficile infection (186431008) [exact score=1.0]
     ICD status: mapped | primary: A04.72
       1. [principal] A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
-      2. [principal] A04.71 — Enterocolitis due to Clostridium difficile, recurrent
+      2. [principal] A48.8 — Other specified bacterial diseases
+      3. [principal] A04.71 — Enterocolitis due to Clostridium difficile, recurrent
 
-#3  [55.0/100 | high]  Missed abortion  (complication)
+#3  [65.0/100 | medium]  Preeclampsia  (complication)
+    SNOMED: Pre-eclampsia (398254007) [exact score=1.0]
+    ICD status: mapped | primary: O14.90
+      1. [principal] O14.90 — Unspecified pre-eclampsia, unspecified trimester
+      2. [principal] O14.00 — Mild to moderate pre-eclampsia, unspecified trimester
+      3. [principal] O14.10 — Severe pre-eclampsia, unspecified trimester
+      4. [principal] O11.9 — Pre-existing hypertension with pre-eclampsia, unspecified trimester
+      5. [principal] O14.95 — Unspecified pre-eclampsia, complicating the puerperium
+
+#4  [50.0/100 | low]  Missed abortion  (risk_factor)
     SNOMED: Missed abortion (16607004) [exact score=1.0]
     ICD status: mapped | primary: O02.1
       1. [principal] O02.1 — Missed abortion
 
-#4  [45.0/100 | medium]  Abdominal pain  (secondary)
-    SNOMED: Abdominal pain (21522001) [exact score=1.0]
-    ICD status: mapped | primary: R10.9
-      1. [principal] R10.9 — Unspecified abdominal pain
+#5  [45.0/100 | medium]  Type 1 diabetes mellitus  (primary)
+    SNOMED: Diabetes mellitus type I (46635009) [exact score=1.0]
+    ICD status: mapped | primary: E10.9
+      1. [principal] E10.9 — Type 1 diabetes mellitus without complications
 
-#5  [40.0/100 | medium]  Vaginal bleeding  (secondary)
-    SNOMED: Bleeding from vagina (289530006) [exact score=1.0]
-    ICD status: unmapped | primary: None
-
-#6  [35.0/100 | medium]  Decreased fetal movement  (secondary)
-    SNOMED: Low fetal movement (276369006) [exact score=1.0]
-    ICD status: mapped | primary: O36.8190
-      1. [principal] O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified
-
-#7  [30.0/100 | low]  Headache  (risk_factor)
-    SNOMED: Headache (25064002) [exact score=1.0]
-    ICD status: mapped | primary: R51.9
-      1. [principal] R51.9 — Headache, unspecified
-
-#8  [25.0/100 | low]  Nausea  (risk_factor)
-    SNOMED: Nausea (422587007) [exact score=1.0]
-    ICD status: mapped | primary: R11.0
-      1. [principal] R11.0 — Nausea
+#6  [30.0/100 | low]  Infection  (differential)
+    SNOMED: Infectious disease (40733004) [exact score=1.0]
+    ICD status: mapped | primary: B99.9
+      1. [principal] B99.9 — Unspecified infectious disease
+      2. [principal] P39.9 — Infection specific to the perinatal period, unspecified
+      3. [supporting] R50.9 — Fever, unspecified  ← fever (tree_symptom)
+      4. [supporting] R10.9 — Unspecified abdominal pain  ← abdominal pain (symptom)
+      5. [supporting] O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified  ← decreased fetal movement (symptom)

@@ -1,5 +1,5 @@
 {
-  "summary": "A 30-year-old female with a history of Type 1 Diabetes Mellitus and recurrent diabetic ketoacidosis (DKA) presents with DKA and lactic acidosis, along with abdominal pain, vaginal bleeding, and decreased fetal movement.",
+  "summary": "The patient is a pregnant woman admitted with DKA and lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.",
   "most_likely": "Diabetic ketoacidosis",
   "differential": [
     {
@@ -10,10 +10,10 @@
       "category": "primary",
       "snomed_aligned": "Diabetic ketoacidosis",
       "supporting_evidence": [
-        "admission with DKA/lactic acidosis"
+        "Diabetic ketoacidosis (confirmed), DKA/lactic acidosis"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the presenting symptoms and known history of Type 1 Diabetes Mellitus.",
+      "reasoning": "DKA is confirmed and the primary presenting condition.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "420422005",
@@ -152,26 +152,26 @@
     {
       "rank": 2,
       "diagnosis": "C difficile colitis",
-      "score": 60.0,
+      "score": 70.0,
       "confidence": "medium",
       "category": "differential",
-      "snomed_aligned": "Clostridium difficile colitis",
+      "snomed_aligned": "Clostridioides difficile infection",
       "supporting_evidence": [
-        "C difficile colitis along with diarrhea"
+        "C difficile colitis: Improving but still with some diarrhea at discharge"
       ],
       "opposing_evidence": [
-        "no infectious precipitants identified"
+        "Improved since discharge"
       ],
-      "reasoning": "Suspected given the presence of C difficile colitis and diarrhea, but no infectious precipitants.",
+      "reasoning": "C difficile colitis is suspected and has been a chronic condition.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "423590009",
-        "preferred_term": "Clostridium difficile colitis",
-        "fsn": "Clostridium difficile colitis (disorder)",
+        "concept_id": "186431008",
+        "preferred_term": "Clostridium difficile infection",
+        "fsn": "Infection caused by Clostridioides difficile (disorder)",
         "match_method": "exact",
         "score": 1.0,
         "query": "C difficile colitis",
-        "aligned_hint": "Clostridium difficile colitis"
+        "aligned_hint": "Clostridioides difficile infection"
       },
       "icd10_primary": "A04.72",
       "icd10_primary_title": "Enterocolitis due to Clostridium difficile, not specified as recurrent",
@@ -180,7 +180,7 @@
           "code": "A04.72",
           "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 5,
           "map_group": 1,
           "map_advice": "ALWAYS A04.72",
           "always": true,
@@ -189,16 +189,28 @@
           "package_order": 1
         },
         {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent",
+          "code": "A48.8",
+          "title": "Other specified bacterial diseases",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF RECURRENT COLITIS CAUSED BY CLOSTRIDIUM DIFFICILE CHOOSE A04.71 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF EXTRAINTESTINAL INFECTION CAUSED BY CLOSTRIDIOIDES DIFFICILE CHOOSE A48.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2,
           "package_order": 2
+        },
+        {
+          "code": "A04.71",
+          "title": "Enterocolitis due to Clostridium difficile, recurrent",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF RECURRENT CLOSTRIDIUM DIFFICILE INFECTION CHOOSE A04.71 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3,
+          "package_order": 3
         }
       ],
       "icd10_principal": [
@@ -206,7 +218,7 @@
           "code": "A04.72",
           "title": "Enterocolitis due to Clostridium difficile, not specified as recurrent",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 5,
           "map_group": 1,
           "map_advice": "ALWAYS A04.72",
           "always": true,
@@ -214,33 +226,195 @@
           "order": 1
         },
         {
-          "code": "A04.71",
-          "title": "Enterocolitis due to Clostridium difficile, recurrent",
+          "code": "A48.8",
+          "title": "Other specified bacterial diseases",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF RECURRENT COLITIS CAUSED BY CLOSTRIDIUM DIFFICILE CHOOSE A04.71 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF EXTRAINTESTINAL INFECTION CAUSED BY CLOSTRIDIOIDES DIFFICILE CHOOSE A48.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2
+        },
+        {
+          "code": "A04.71",
+          "title": "Enterocolitis due to Clostridium difficile, recurrent",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF RECURRENT CLOSTRIDIUM DIFFICILE INFECTION CHOOSE A04.71 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3
         }
       ],
       "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 3
     },
     {
       "rank": 3,
-      "diagnosis": "Missed abortion",
-      "score": 55.0,
-      "confidence": "high",
+      "diagnosis": "Preeclampsia",
+      "score": 65.0,
+      "confidence": "medium",
       "category": "complication",
+      "snomed_aligned": "Preeclampsia",
+      "supporting_evidence": [
+        "Unspecified pre-eclampsia, third trimester"
+      ],
+      "opposing_evidence": [
+        "No current signs of hypertension or proteinuria"
+      ],
+      "reasoning": "Preeclampsia is a known chronic condition and risk factor.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "398254007",
+        "preferred_term": "Pre-eclampsia",
+        "fsn": "Pre-eclampsia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Preeclampsia",
+        "aligned_hint": "Preeclampsia"
+      },
+      "icd10_primary": "O14.90",
+      "icd10_primary_title": "Unspecified pre-eclampsia, unspecified trimester",
+      "icd10_package": [
+        {
+          "code": "O14.90",
+          "title": "Unspecified pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 8,
+          "map_group": 1,
+          "map_advice": "ALWAYS O14.90 | CONSIDER TRIMESTER SPECIFICATION",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "O14.00",
+          "title": "Mild to moderate pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF MILD PRE-ECLAMPSIA CHOOSE O14.00 | CONSIDER TRIMESTER SPECIFICATION | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "O14.10",
+          "title": "Severe pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF SEVERE PRE-ECLAMPSIA CHOOSE O14.10 | CONSIDER TRIMESTER SPECIFICATION | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3,
+          "package_order": 3
+        },
+        {
+          "code": "O11.9",
+          "title": "Pre-existing hypertension with pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF PRE-ECLAMPSIA ADDED TO PRE-EXISTING HYPERTENSION CHOOSE O11.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | CONSIDER TRIMESTER SPECIFICATION | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4,
+          "package_order": 4
+        },
+        {
+          "code": "O14.95",
+          "title": "Unspecified pre-eclampsia, complicating the puerperium",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF MATERNAL POSTPARTUM PRE-ECLAMPSIA CHOOSE O14.95 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5,
+          "package_order": 5
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "O14.90",
+          "title": "Unspecified pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 8,
+          "map_group": 1,
+          "map_advice": "ALWAYS O14.90 | CONSIDER TRIMESTER SPECIFICATION",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "O14.00",
+          "title": "Mild to moderate pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF MILD PRE-ECLAMPSIA CHOOSE O14.00 | CONSIDER TRIMESTER SPECIFICATION | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        },
+        {
+          "code": "O14.10",
+          "title": "Severe pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "IF SEVERE PRE-ECLAMPSIA CHOOSE O14.10 | CONSIDER TRIMESTER SPECIFICATION | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 3
+        },
+        {
+          "code": "O11.9",
+          "title": "Pre-existing hypertension with pre-eclampsia, unspecified trimester",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF PRE-ECLAMPSIA ADDED TO PRE-EXISTING HYPERTENSION CHOOSE O11.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | CONSIDER TRIMESTER SPECIFICATION | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4
+        },
+        {
+          "code": "O14.95",
+          "title": "Unspecified pre-eclampsia, complicating the puerperium",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF MATERNAL POSTPARTUM PRE-ECLAMPSIA CHOOSE O14.95 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 5
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Missed abortion",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "risk_factor",
       "snomed_aligned": "Missed abortion",
       "supporting_evidence": [
-        "Missed abortion requiring D&C"
+        "Missed abortion"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed complication given the history and current presentation.",
+      "opposing_evidence": [
+        "No current signs of bleeding or pregnancy complications"
+      ],
+      "reasoning": "Missed abortion is a chronic condition but not currently presenting.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "16607004",
@@ -285,39 +459,39 @@
       "n_icd_codes": 1
     },
     {
-      "rank": 4,
-      "diagnosis": "Abdominal pain",
+      "rank": 5,
+      "diagnosis": "Type 1 diabetes mellitus",
       "score": 45.0,
       "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Abdominal pain",
+      "category": "primary",
+      "snomed_aligned": "Type 1 diabetes mellitus",
       "supporting_evidence": [
-        "lower abdominal pain/cramping for the past week"
+        "Type 1 diabetes mellitus with ketoacidosis without coma"
       ],
       "opposing_evidence": [
-        "no specific cause identified"
+        "No current signs of hyperglycemia"
       ],
-      "reasoning": "Secondary to DKA and potential gastrointestinal issues.",
+      "reasoning": "Type 1 diabetes mellitus is a chronic condition and risk factor.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "21522001",
-        "preferred_term": "Abdominal pain",
-        "fsn": "Abdominal pain (finding)",
+        "concept_id": "46635009",
+        "preferred_term": "Diabetes mellitus type I",
+        "fsn": "Diabetes mellitus type 1 (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Abdominal pain",
-        "aligned_hint": "Abdominal pain"
+        "query": "Type 1 diabetes mellitus",
+        "aligned_hint": "Type 1 diabetes mellitus"
       },
-      "icd10_primary": "R10.9",
-      "icd10_primary_title": "Unspecified abdominal pain",
+      "icd10_primary": "E10.9",
+      "icd10_primary_title": "Type 1 diabetes mellitus without complications",
       "icd10_package": [
         {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain",
+          "code": "E10.9",
+          "title": "Type 1 diabetes mellitus without complications",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
@@ -326,12 +500,12 @@
       ],
       "icd10_principal": [
         {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain",
+          "code": "E10.9",
+          "title": "Type 1 diabetes mellitus without complications",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
@@ -340,66 +514,94 @@
       "icd10_supporting": [],
       "icd_status": "mapped",
       "n_icd_codes": 1
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Vaginal bleeding",
-      "score": 40.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Bleeding from vagina",
-      "supporting_evidence": [
-        "vaginal spotting"
-      ],
-      "opposing_evidence": [
-        "no specific cause identified"
-      ],
-      "reasoning": "Secondary to DKA and potential obstetric issues.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "289530006",
-        "preferred_term": "Bleeding from vagina",
-        "fsn": "Bleeding from vagina (finding)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Vaginal bleeding",
-        "aligned_hint": "Bleeding from vagina"
-      },
-      "icd10_primary": null,
-      "icd10_primary_title": null,
-      "icd10_package": [],
-      "icd10_principal": [],
-      "icd10_supporting": [],
-      "icd_status": "unmapped",
-      "n_icd_codes": 0
     },
     {
       "rank": 6,
-      "diagnosis": "Decreased fetal movement",
-      "score": 35.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Low fetal movement",
+      "diagnosis": "Infection",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
       "supporting_evidence": [
+        "fevers/chills/nightsweats for the past few days",
+        "abdominal pain",
         "decreased fetal movement"
       ],
       "opposing_evidence": [
-        "no specific cause identified"
+        "No current signs of infection"
       ],
-      "reasoning": "Secondary to DKA and potential obstetric issues.",
+      "reasoning": "Infection is a possible differential but not the primary presenting condition.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "276369006",
-        "preferred_term": "Low fetal movement",
-        "fsn": "Reduced fetal movement (finding)",
+        "concept_id": "40733004",
+        "preferred_term": "Infectious disease",
+        "fsn": "Infectious disease (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Decreased fetal movement",
-        "aligned_hint": "Low fetal movement"
+        "query": "Infection",
+        "aligned_hint": null
       },
-      "icd10_primary": "O36.8190",
-      "icd10_primary_title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified",
+      "icd10_primary": "B99.9",
+      "icd10_primary_title": "Unspecified infectious disease",
       "icd10_package": [
+        {
+          "code": "B99.9",
+          "title": "Unspecified infectious disease",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P39.9",
+          "title": "Infection specific to the perinatal period, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P39.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        },
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "fever",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "386661006",
+          "from_snomed_term": "Fever",
+          "relevance_to_diagnosis": 0.643,
+          "package_order": 3
+        },
+        {
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "abdominal pain",
+          "from_kind": "symptom",
+          "from_snomed_id": "21522001",
+          "from_snomed_term": "Abdominal pain",
+          "relevance_to_diagnosis": 0.3117,
+          "package_order": 4
+        },
         {
           "code": "O36.8190",
           "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified",
@@ -408,12 +610,73 @@
           "map_group": 1,
           "map_advice": "ALWAYS O36.8190 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
           "always": true,
-          "role": "principal",
+          "role": "supporting",
           "order": 1,
-          "package_order": 1
+          "from_term": "decreased fetal movement",
+          "from_kind": "symptom",
+          "from_snomed_id": "276369006",
+          "from_snomed_term": "Low fetal movement",
+          "relevance_to_diagnosis": 0.0104,
+          "package_order": 5
         }
       ],
       "icd10_principal": [
+        {
+          "code": "B99.9",
+          "title": "Unspecified infectious disease",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P39.9",
+          "title": "Infection specific to the perinatal period, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P39.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R50.9",
+          "title": "Fever, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "fever",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "386661006",
+          "from_snomed_term": "Fever",
+          "relevance_to_diagnosis": 0.643
+        },
+        {
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "abdominal pain",
+          "from_kind": "symptom",
+          "from_snomed_id": "21522001",
+          "from_snomed_term": "Abdominal pain",
+          "relevance_to_diagnosis": 0.3117
+        },
         {
           "code": "O36.8190",
           "title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified",
@@ -422,146 +685,36 @@
           "map_group": 1,
           "map_advice": "ALWAYS O36.8190 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
           "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 7,
-      "diagnosis": "Headache",
-      "score": 30.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "pressure-like frontal headache"
-      ],
-      "opposing_evidence": [
-        "no specific cause identified"
-      ],
-      "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "25064002",
-        "preferred_term": "Headache",
-        "fsn": "Headache (finding)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Headache",
-        "aligned_hint": null
-      },
-      "icd10_primary": "R51.9",
-      "icd10_primary_title": "Headache, unspecified",
-      "icd10_package": [
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
+          "role": "supporting",
           "order": 1,
-          "package_order": 1
+          "from_term": "decreased fetal movement",
+          "from_kind": "symptom",
+          "from_snomed_id": "276369006",
+          "from_snomed_term": "Low fetal movement",
+          "relevance_to_diagnosis": 0.0104
         }
       ],
-      "icd10_principal": [
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 8,
-      "diagnosis": "Nausea",
-      "score": 25.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "nausea and vomiting"
-      ],
-      "opposing_evidence": [
-        "no specific cause identified"
-      ],
-      "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "422587007",
-        "preferred_term": "Nausea",
-        "fsn": "Nausea (finding)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Nausea",
-        "aligned_hint": null
-      },
-      "icd10_primary": "R11.0",
-      "icd10_primary_title": "Nausea",
-      "icd10_package": [
-        {
-          "code": "R11.0",
-          "title": "Nausea",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R11.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "R11.0",
-          "title": "Nausea",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R11.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
+      "n_icd_codes": 5
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Infectious diseases",
-      "why": "No specific infectious precipitants identified."
+      "diagnosis": "Lactic acidosis",
+      "why": "Lactic acidosis is a consequence of DKA and not a primary diagnosis."
     }
   ],
   "uncertain_areas": [
-    "Further imaging or cultures may clarify the cause of abdominal pain and vaginal bleeding."
+    "Further labs and imaging to confirm infection or other causes of lactic acidosis"
   ],
-  "n_candidates": 8,
+  "n_candidates": 6,
   "type": "differential_diagnosis_with_icd",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "19104262",
   "hadm_id": "24271247",
-  "generated_at": "2026-08-15T17:33:42.688414",
+  "generated_at": "2026-08-20T00:11:51.235327",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 13,
@@ -819,9 +972,9 @@
   "icd_map_refset": "6011000124106",
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
-    "n_diagnoses": 8,
-    "n_with_principal": 7,
-    "n_unmapped": 1
+    "n_diagnoses": 6,
+    "n_with_principal": 6,
+    "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-19T22:37:04.037106"
+  "generated_at_stage8": "2026-08-20T00:12:25.102298"
 }

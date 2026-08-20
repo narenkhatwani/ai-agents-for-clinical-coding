@@ -4,10 +4,10 @@ Patient ID       : 12007928
 HADM ID          : 23749816
 Most likely      : Acute decompensated heart failure
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-19T22:36:58.385370
+Generated (S8)   : 2026-08-20T00:12:19.573243
 
 Summary:
-  The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of chronic heart failure, atrial fibrillation, and renal dysfunction.
+  The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.
 
 #1  [85.0/100 | high]  Acute decompensated heart failure  (primary)
     SNOMED: Acute heart failure (56675007) [fuzzy score=0.7628679165962815]
@@ -17,43 +17,26 @@ Summary:
       3. [supporting] R06.00 — Dyspnea, unspecified  ← dyspnea (key_symptom)
       4. [supporting] R06.01 — Orthopnea  ← orthopnea (key_symptom)
 
-#2  [70.0/100 | medium]  Chronic kidney disease  (complication)
-    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
-    ICD status: mapped | primary: N18.9
-      1. [principal] N18.9 — Chronic kidney disease, unspecified
+#2  [70.0/100 | medium]  Atrial fibrillation  (complication)
+    SNOMED: Atrial fibrillation (49436004) [exact score=1.0]
+    ICD status: mapped | primary: I48.91
+      1. [principal] I48.91 — Unspecified atrial fibrillation
+      2. [supporting] I48.0 — Paroxysmal atrial fibrillation  ← paroxysmal atrial fibrillation (diagnosis)
 
-#3  [65.0/100 | medium]  Anemia  (complication)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
-      2. [supporting] R71.8 — Other abnormality of red blood cells  ← low MCV (tree_symptom)
+#3  [65.0/100 | medium]  Renal insufficiency  (complication)
+    SNOMED: Renal insufficiency (723188008) [exact score=1.0]
+    ICD status: mapped | primary: N28.9
+      1. [principal] N28.9 — Disorder of kidney and ureter, unspecified
+      2. [principal] L90.8 — Other atrophic disorders of skin
+      3. [principal] N18.9 — Chronic kidney disease, unspecified
 
-#4  [55.0/100 | medium]  Atrial fibrillation  (differential)
-    SNOMED: AF - Paroxysmal atrial fibrillation (282825002) [exact score=1.0]
-    ICD status: mapped | primary: I48.0
-      1. [principal] I48.0 — Paroxysmal atrial fibrillation
-      2. [principal] I38 — Endocarditis, valve unspecified
-
-#5  [45.0/100 | low]  Myasthenia gravis  (risk_factor)
+#4  [50.0/100 | low]  Myasthenia gravis  (differential)
     SNOMED: Myasthenia gravis (91637004) [exact score=1.0]
     ICD status: mapped | primary: G70.00
       1. [principal] G70.00 — Myasthenia gravis without (acute) exacerbation
       2. [principal] P94.0 — Transient neonatal myasthenia gravis
 
-#6  [35.0/100 | low]  Pulmonary embolism  (differential)
-    SNOMED: Pulmonary embolism (59282003) [exact score=1.0]
-    ICD status: mapped | primary: I26.99
-      1. [principal] I26.99 — Other pulmonary embolism without acute cor pulmonale
-
-#7  [30.0/100 | low]  Obstructive sleep apnea  (differential)
-    SNOMED: Obstructive sleep apnea syndrome (78275009) [exact score=1.0]
-    ICD status: mapped | primary: G47.33
-      1. [principal] G47.33 — Obstructive sleep apnea (adult) (pediatric)
-      2. [principal] P28.32 — Primary obstructive sleep apnea of newborn
-      3. [supporting] R06.00 — Dyspnea, unspecified  ← dyspnea (key_symptom)
-
-#8  [25.0/100 | low]  Hypothyroidism  (differential)
-    SNOMED: Hypothyroidism (40930008) [exact score=1.0]
-    ICD status: mapped | primary: E03.9
-      1. [principal] E03.9 — Hypothyroidism, unspecified
-      2. [principal] P72.2 — Other transitory neonatal disorders of thyroid function, not elsewhere classified
+#5  [40.0/100 | low]  Anemia  (risk_factor)
+    SNOMED: Anemia (271737000) [exact score=1.0]
+    ICD status: mapped | primary: D64.9
+      1. [principal] D64.9 — Anemia, unspecified

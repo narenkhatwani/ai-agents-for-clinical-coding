@@ -1,84 +1,89 @@
 {
-  "summary": "The patient presents with nephrolithiasis following a right PCNL procedure, with symptoms of hematuria, dysuria, pain, and fever. Past medical history includes hydronephrosis, pyonephrosis, hypertension, and hemorrhagic CVA.",
-  "most_likely": "Nephrolithiasis",
+  "summary": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL. The patient presents with hematuria, pain, and mild anemia, along with metabolic derangements including hyperglycemia and hyperuremia. Chronic conditions include pyonephrosis and chronic kidney disease.",
+  "most_likely": "Acute kidney injury due to nephrolithiasis and PCNL",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Nephrolithiasis",
+      "diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hematuria, dysuria, pain, fever following PCNL procedure"
+        "Creatinine: 2.5 mg/dL, Hematuria, Pain"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis supported by current symptoms and procedure."
+      "reasoning": "High creatinine and presence of hematuria and pain strongly suggest acute kidney injury related to nephrolithiasis and PCNL."
     },
     {
       "rank": 2,
-      "diagnosis": "Chronic kidney disease",
+      "diagnosis": "Chronic kidney disease, unspecified",
+      "score": 75.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Chronic kidney disease, unspecified in prior PMH"
+      ],
+      "opposing_evidence": [
+        "Acute kidney injury more likely given recent PCNL"
+      ],
+      "reasoning": "Chronic kidney disease is present in prior PMH but is less likely to be the primary acute issue given recent PCNL."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Anemia in chronic kidney disease",
       "score": 65.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Bilateral staghorn renal calculi, hypertension, past pyonephrosis"
+        "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
       ],
       "opposing_evidence": [
-        "recent acute presentation"
+        "No specific evidence of chronic anemia"
       ],
-      "reasoning": "Chronic condition with risk factors, but recent acute presentation."
-    },
-    {
-      "rank": 3,
-      "diagnosis": "Hypertension",
-      "score": 55.0,
-      "confidence": "medium",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Hypertension listed in PMH"
-      ],
-      "opposing_evidence": [
-        "recent acute presentation"
-      ],
-      "reasoning": "Risk factor for kidney disease, but not primary acute presentation."
+      "reasoning": "Anemia is present but may be secondary to chronic kidney disease, which is a known risk factor."
     },
     {
       "rank": 4,
-      "diagnosis": "Acute kidney injury",
-      "score": 45.0,
-      "confidence": "low",
-      "category": "complication",
+      "diagnosis": "Complicated urinary tract infection",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Fever, hematuria, dysuria, and recent PCNL procedure"
+        "Fever: 102 at ___ prior to transfer"
       ],
       "opposing_evidence": [
-        "Creatinine levels not extremely elevated"
+        "No fever currently present"
       ],
-      "reasoning": "Possible complication, but less likely given current lab values."
+      "reasoning": "Previous history of pyonephrosis suggests a possibility of a complicated UTI, but no current fever."
     },
     {
       "rank": 5,
-      "diagnosis": "Hemorrhagic CVA",
-      "score": 30.0,
+      "diagnosis": "Hypertensive chronic kidney disease",
+      "score": 45.0,
       "confidence": "low",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "History of hemorrhagic CVA"
+        "Hypertensive chronic kidney disease in prior PMH"
       ],
       "opposing_evidence": [
-        "No current neurological symptoms"
+        "No current hypertension noted"
       ],
-      "reasoning": "Risk factor with past history, but no current neurological symptoms."
+      "reasoning": "Hypertensive chronic kidney disease is a known risk factor but not currently evident."
     }
   ],
-  "rule_outs": [],
+  "rule_outs": [
+    {
+      "diagnosis": "Pneumothorax",
+      "why": "No radiology evidence or clinical signs of pneumothorax."
+    }
+  ],
   "uncertain_areas": [
-    "Further imaging to confirm residual stone and kidney function"
+    "Further details on the cause of anemia and the exact nature of chronic kidney disease would refine the differential"
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -87,7 +92,7 @@
   "_temperature": 0.4,
   "patient_id": "11251337",
   "hadm_id": "29568708",
-  "generated_at": "2026-08-15T17:31:12.707927",
+  "generated_at": "2026-08-20T00:09:06.518702",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 2,

@@ -8,10 +8,10 @@ Patient ID       : 12007928
 Admission ID     : 23749816
 
 Reasoning:
-  The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF and atrial fibrillation. She also has signs of renal and hematologic dysfunction.
+  The patient presents with dyspnea, orthopnea, and worsening CHF, with significant fatigue and incontinence, following a fall and discharge from a previous hospital.
 
-Key symptoms     : dyspnea, orthopnea
-Red flags        : hypotension, AMS
+Key symptoms     : dyspnea, orthopnea, tremors
+Red flags        : pitting edema, crackles in lungs
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
@@ -22,47 +22,30 @@ CARDIOVASCULAR → Cardiovascular
       • [present] orthopnea
           evidence: "reports significant orthopnea"
       • [present] pitting edema
-          evidence: "2+ pitting lower extremity edema"
-  • [present, moderate] fatigue
+          evidence: "4+ pitting lower extremity edema"
+  • [present] crackles
+      evidence: "mild bibasilar crackles L > R"
+      related: pulmonary edema
+  • [present] fatigue
       evidence: "all activities now are quite fatiguing"
-      related: crackles in lungs, pitting edema
+
+NEUROLOGIC → Neurology
+----------------------
+
+  • [present, moderate] tremors
+      evidence: "increased spasms in the upper extremities"
+      related: myasthenia gravis
 
 RENAL → Renal
 -------------
 
-  • [present, mild] creatinine elevation
+  • [present, moderate] creatinine elevation
       evidence: "Creatinine: 1.6 mg/dL"
-      related: orthopnea, pitting edema
-
-HEMATOLOGIC → Hematologic
--------------------------
-
-  • [present, mild] anemia
-      evidence: "Hemoglobin: 10.2 g/dL"
-      related: orthopnea, pitting edema
-  • [present, mild] low MCHC
-      evidence: "MCHC: 30.0 g/dL"
-      related: orthopnea, pitting edema
-  • [present, mild] low MCV
-      evidence: "MCV: 81.0 fL"
-      related: orthopnea, pitting edema
-  • [present, mild] low RDW
-      evidence: "RDW: 18.2 %"
-      related: orthopnea, pitting edema
-  • [present, mild] low RDW-SD
-      evidence: "RDW-SD: 53.5 fL"
-      related: orthopnea, pitting edema
-
-NEUROLOGIC → Neurologic
------------------------
-
-  • [present, mild] tremors
-      evidence: "increased spasms in the upper extremities"
-      related: orthopnea, pitting edema
+      related: dyspnea, pitting edema
 
 GI → GI
 -------
 
-  • [present, mild] incontinence
+  • [present, moderate] incontinence
       evidence: "urine incontinence"
-      related: orthopnea, pitting edema
+      related: stress incontinence

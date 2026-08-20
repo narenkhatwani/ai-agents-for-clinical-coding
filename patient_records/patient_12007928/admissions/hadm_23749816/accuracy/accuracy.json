@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "12007928",
   "hadm_id": "23749816",
-  "generated_at": "2026-08-19T22:37:31.061946",
+  "generated_at": "2026-08-20T00:13:19.520624",
   "ground_truth": {
     "primary_icd_code": "I5033",
     "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
@@ -25,9 +25,9 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Acute on chronic diastolic (congestive) heart failure'.",
-      "llm_expanded_ground_truth": "Acute on chronic diastolic heart failure | Acute on chronic congestive heart failure",
-      "llm_expanded_matched": "",
+      "llm_reason": "The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.",
+      "llm_expanded_ground_truth": "Acute on chronic diastolic heart failure",
+      "llm_expanded_matched": "Acute decompensated heart failure",
       "diagnosis_items": [
         {
           "diagnosis": "Acute decompensated heart failure",
@@ -38,63 +38,39 @@
           "icd10_primary_title": "Heart failure, unspecified"
         },
         {
-          "diagnosis": "Chronic kidney disease",
+          "diagnosis": "Atrial fibrillation",
           "rank": 2,
           "score": 70.0,
           "confidence": "medium",
-          "icd10_primary": "N18.9",
-          "icd10_primary_title": "Chronic kidney disease, unspecified"
+          "icd10_primary": "I48.91",
+          "icd10_primary_title": "Unspecified atrial fibrillation"
         },
         {
-          "diagnosis": "Anemia",
+          "diagnosis": "Renal insufficiency",
           "rank": 3,
           "score": 65.0,
           "confidence": "medium",
-          "icd10_primary": "D64.9",
-          "icd10_primary_title": "Anemia, unspecified"
-        },
-        {
-          "diagnosis": "Atrial fibrillation",
-          "rank": 4,
-          "score": 55.0,
-          "confidence": "medium",
-          "icd10_primary": "I48.0",
-          "icd10_primary_title": "Paroxysmal atrial fibrillation"
+          "icd10_primary": "N28.9",
+          "icd10_primary_title": "Disorder of kidney and ureter, unspecified"
         },
         {
           "diagnosis": "Myasthenia gravis",
-          "rank": 5,
-          "score": 45.0,
+          "rank": 4,
+          "score": 50.0,
           "confidence": "low",
           "icd10_primary": "G70.00",
           "icd10_primary_title": "Myasthenia gravis without (acute) exacerbation"
         },
         {
-          "diagnosis": "Pulmonary embolism",
-          "rank": 6,
-          "score": 35.0,
+          "diagnosis": "Anemia",
+          "rank": 5,
+          "score": 40.0,
           "confidence": "low",
-          "icd10_primary": "I26.99",
-          "icd10_primary_title": "Other pulmonary embolism without acute cor pulmonale"
-        },
-        {
-          "diagnosis": "Obstructive sleep apnea",
-          "rank": 7,
-          "score": 30.0,
-          "confidence": "low",
-          "icd10_primary": "G47.33",
-          "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)"
-        },
-        {
-          "diagnosis": "Hypothyroidism",
-          "rank": 8,
-          "score": 25.0,
-          "confidence": "low",
-          "icd10_primary": "E03.9",
-          "icd10_primary_title": "Hypothyroidism, unspecified"
+          "icd10_primary": "D64.9",
+          "icd10_primary_title": "Anemia, unspecified"
         }
       ],
-      "n_diffdx": 8
+      "n_diffdx": 5
     },
     "icd_linked": {
       "ground_truth_icd": "I50.33",
@@ -109,34 +85,36 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code 'I50.33 — Acute on chronic diastolic (congestive) heart failure'.",
-      "llm_expanded_ground_truth_icd": "I50.33 — Acute on chronic diastolic heart failure | I50.33 — Acute on chronic congestive heart failure",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.",
+      "llm_expanded_ground_truth_icd": "I50.33 — Acute on chronic diastolic (congestive) heart failure",
+      "llm_expanded_matched_icd": "I50.9 — Heart failure, unspecified",
       "stage9_final_primary_icd": "I50.9",
       "diagnosis_match": false,
       "is_rank1_diagnosis_match": null,
       "matched_diffdx_rank": null
     },
     "llm_qe_raw": {
-      "matched_rank": null,
+      "matched_rank": 1,
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis 'Acute on chronic diastolic (congestive) heart failure'.",
+      "diagnosis_reason": "The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.",
       "ground_truth_expansions": [
-        "Acute on chronic diastolic heart failure",
-        "Acute on chronic congestive heart failure"
+        "Acute on chronic diastolic heart failure"
       ],
-      "matched_diagnosis_expansions": [],
+      "matched_diagnosis_expansions": [
+        "Acute decompensated heart failure"
+      ],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code 'I50.33 — Acute on chronic diastolic (congestive) heart failure'.",
+      "icd_reason": "The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.",
       "ground_truth_icd_expansions": [
-        "I50.33 — Acute on chronic diastolic heart failure",
-        "I50.33 — Acute on chronic congestive heart failure"
+        "I50.33 — Acute on chronic diastolic (congestive) heart failure"
       ],
-      "matched_icd_expansions": [],
-      "_cache_hit": true
+      "matched_icd_expansions": [
+        "I50.9 — Heart failure, unspecified"
+      ],
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

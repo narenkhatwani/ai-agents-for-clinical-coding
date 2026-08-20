@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "10426859",
   "hadm_id": "29908281",
-  "generated_at": "2026-08-19T22:37:31.055904",
+  "generated_at": "2026-08-20T00:13:00.834861",
   "ground_truth": {
     "primary_icd_code": "I471",
     "primary_dx_title": "Supraventricular tachycardia",
@@ -25,7 +25,7 @@
       "matched_confidence": "high",
       "llm_relationship": "same_principal",
       "llm_confidence": "high",
-      "llm_reason": "Rank 1 diagnosis 'Supraventricular tachycardia' matches the ground truth diagnosis.",
+      "llm_reason": "The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.",
       "llm_expanded_ground_truth": "Supraventricular tachycardia",
       "llm_expanded_matched": "Supraventricular tachycardia",
       "diagnosis_items": [
@@ -38,36 +38,36 @@
           "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Hip fracture",
+          "diagnosis": "Right hip fracture",
           "rank": 2,
           "score": 70.0,
-          "confidence": "medium",
+          "confidence": "high",
           "icd10_primary": "S72.009?",
           "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Anemia",
+          "diagnosis": "Hypocalcemia",
           "rank": 3,
           "score": 65.0,
           "confidence": "medium",
-          "icd10_primary": "D64.9",
-          "icd10_primary_title": "Anemia, unspecified"
+          "icd10_primary": "E83.51",
+          "icd10_primary_title": "Hypocalcemia"
         },
         {
-          "diagnosis": "Dehydration",
+          "diagnosis": "Cerebral infarct",
           "rank": 4,
-          "score": 55.0,
+          "score": 50.0,
           "confidence": "low",
-          "icd10_primary": "E86.0",
-          "icd10_primary_title": "Dehydration"
+          "icd10_primary": "I63.9",
+          "icd10_primary_title": "Cerebral infarction, unspecified"
         },
         {
-          "diagnosis": "Hypokalemia",
+          "diagnosis": "Anxiety disorder",
           "rank": 5,
           "score": 40.0,
           "confidence": "low",
-          "icd10_primary": "E87.6",
-          "icd10_primary_title": "Hypokalemia"
+          "icd10_primary": "F41.9",
+          "icd10_primary_title": "Anxiety disorder, unspecified"
         }
       ],
       "n_diffdx": 5
@@ -85,7 +85,7 @@
       "icd_llm_match": true,
       "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "Rank 1 mapped ICD 'I47.10' matches the ground truth ICD 'I47.1'.",
+      "llm_icd_reason": "The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.",
       "llm_expanded_ground_truth_icd": "I47.1 — Supraventricular tachycardia",
       "llm_expanded_matched_icd": "I47.10 —",
       "stage9_final_primary_icd": "I47.10",
@@ -98,7 +98,7 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Rank 1 diagnosis 'Supraventricular tachycardia' matches the ground truth diagnosis.",
+      "diagnosis_reason": "The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.",
       "ground_truth_expansions": [
         "Supraventricular tachycardia"
       ],
@@ -107,14 +107,14 @@
       ],
       "icd_equivalent": true,
       "icd_confidence": "high",
-      "icd_reason": "Rank 1 mapped ICD 'I47.10' matches the ground truth ICD 'I47.1'.",
+      "icd_reason": "The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.",
       "ground_truth_icd_expansions": [
         "I47.1 — Supraventricular tachycardia"
       ],
       "matched_icd_expansions": [
         "I47.10 —"
       ],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

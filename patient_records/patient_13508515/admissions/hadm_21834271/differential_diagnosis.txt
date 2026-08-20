@@ -5,52 +5,61 @@ Patient ID       : 13508515
 HADM ID          : 21834271
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:32:23.633611
+Generated        : 2026-08-20T00:10:27.070020
 Candidates       : 6
 Most likely      : Acute on chronic systolic heart failure
 Prior admissions : 1 (16 ICD codes as PMH context)
 
 Summary:
-  The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.
+  The patient is a man with a history of systolic chronic heart failure, renal cell carcinoma, and multiple chronic conditions, admitted for laparoscopic left radical nephrectomy and lymph node dissection. Current symptoms include dyspnea and mild pain, with laboratory findings indicating renal and hematological abnormalities.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Acute on chronic systolic heart failure  (primary)
-      SNOMED aligned : 426720004
+      SNOMED aligned : I5023
       + systolic CHF with EF around 30%
-      why: Strong clinical evidence of systolic heart failure, supported by low EF.
+      + Creatinine: 2.0 mg/dL
+      + Hemoglobin: 8.9 g/dL
+      why: The patient has a history of systolic heart failure and current symptoms and lab findings support acute exacerbation.
 
-  #2  [75.0/100 | high]  Renal cell carcinoma  (primary)
-      SNOMED aligned : 77882004
+  #2  [70.0/100 | medium]  Renal cell carcinoma  (differential)
+      SNOMED aligned : C649
       + left renal mass
       + renal cell carcinoma
-      why: Confirmed diagnosis with significant clinical findings.
+      − Laparoscopic left radical nephrectomy performed
+      why: The presence of a left renal mass and renal cell carcinoma in the past supports this diagnosis, but recent surgery may have resolved the mass.
 
-  #3  [70.0/100 | medium]  Anemia  (secondary)
-      + low hemoglobin, hematocrit
-      why: Low hemoglobin and hematocrit levels suggest anemia.
-
-  #4  [65.0/100 | medium]  Hypokalemia  (secondary)
-      + low potassium
-      why: Low potassium levels suggest hypokalemia.
-
-  #5  [60.0/100 | medium]  Obstructive sleep apnea  (risk_factor)
+  #3  [60.0/100 | medium]  Obstructive sleep apnea  (secondary)
       SNOMED aligned : 78275009
-      + confirmed diagnosis
-      why: Confirmed diagnosis with potential impact on overall health.
+      + obstructive sleep apnea, on CPAP
+      − no new respiratory symptoms
+      why: The patient has a history of obstructive sleep apnea, but no new respiratory symptoms are present.
 
-  #6  [55.0/100 | medium]  Diabetes mellitus  (secondary)
-      + confirmed diagnosis
-      + mild hyperglycemia
-      why: Confirmed diagnosis with mild hyperglycemia.
+  #4  [55.0/100 | medium]  Anemia  (complication)
+      + Hemoglobin: 8.9 g/dL
+      + Hematocrit: 27.3 %
+      why: Low hemoglobin and hematocrit levels suggest anemia, which could be secondary to chronic heart failure.
+
+  #5  [50.0/100 | low]  Hypokalemia  (differential)
+      + Calcium, Total: 8.2 mg/dL
+      + Low potassium levels
+      why: Low calcium levels and low potassium may be related, but more specific evidence is needed to confirm hypokalemia.
+
+  #6  [45.0/100 | low]  Chronic kidney disease  (complication)
+      SNOMED aligned : N189
+      + Creatinine: 2.0 mg/dL
+      + Chronic kidney disease
+      why: Chronic kidney disease is a known chronic condition, but the current acute presentation is more likely related to heart failure.
 
 RULE-OUTS
 ---------
 
-  • Acute kidney injury: Creatinine levels are moderately elevated but not critically so.
+  • Left renal mass: Laparoscopic left radical nephrectomy performed
+  • Calf pain: No reported calf pain to deep palpation
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging or lab results could clarify the extent of renal involvement and heart failure status
+  • Further imaging or lab results to confirm renal mass status
+  • More detailed respiratory assessment to confirm obstructive sleep apnea status

@@ -3,20 +3,20 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13196707
 HADM ID          : 21475988
-Generated        : 2026-08-19T22:37:31.062842
+Generated        : 2026-08-20T00:13:22.394699
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Sepsis, unspecified organism
-  Rank-1 predicted     : Severe sepsis due to RUL PNA
+  Rank-1 predicted     : Severe sepsis secondary to RUL PNA
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the ranked differential diagnoses match the ground truth primary diagnosis of 'Sepsis, unspecified organism'.
+  LLM reason           : The ground truth diagnosis 'Sepsis, unspecified organism' does not match any of the ranked differential diagnoses.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
@@ -29,15 +29,15 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have an ICD-10 code that matches or is clinically equivalent to the ground truth ICD-10 code A41.9.
+  LLM ICD reason       : The ground truth ICD code 'A41.9' does not match any of the mapped ICD codes in the ranked differential diagnoses.
   Stage 9 final ICD    : R50.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Severe sepsis due to RUL PNA  [score=85.0, high]  ICD=- — 
-   2. Metastatic adenocarcinoma of unknown primary  [score=75.0, high]  ICD=C79.9 — Secondary malignant neoplasm of unspecified site
-   3. Hypovolemic shock  [score=65.0, medium]  ICD=R57.1 — Hypovolemic shock
-   4. Acute kidney injury  [score=55.0, medium]  ICD=N17.9 — Acute kidney failure, unspecified
-   5. SVC syndrome  [score=45.0, high]  ICD=- — 
-   6. Neurological deterioration  [score=35.0, medium]  ICD=- — 
+   1. Severe sepsis secondary to RUL PNA  [score=85.0, high]  ICD=- — 
+   2. Metastatic adenocarcinoma of unknown primary  [score=75.0, medium]  ICD=C79.9 — Secondary malignant neoplasm of unspecified site
+   3. Hypotension secondary to pericardiocentesis  [score=65.0, medium]  ICD=- — 
+   4. Acute kidney failure  [score=55.0, low]  ICD=I50.9 — Heart failure, unspecified
+   5. Anemia  [score=45.0, low]  ICD=D64.9 — Anemia, unspecified
+   6. Sodium imbalance  [score=35.0, low]  ICD=E87.1 — Hypo-osmolality and hyponatremia

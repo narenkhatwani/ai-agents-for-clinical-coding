@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-19T22:37:31.059840",
+  "generated_at": "2026-08-20T00:13:15.194893",
   "ground_truth": {
     "primary_icd_code": "I472",
     "primary_dx_title": "Ventricular tachycardia",
@@ -14,39 +14,39 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Ventricular tachycardia",
-      "rank1_diagnosis": "Refractory VT",
+      "rank1_diagnosis": "Refractory ventricular tachycardia",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": true,
       "is_rank1_match": true,
       "matched_diffdx_rank": 1,
-      "matched_diagnosis": "Refractory VT",
+      "matched_diagnosis": "Refractory ventricular tachycardia",
       "matched_score": 85.0,
       "matched_confidence": "high",
       "llm_relationship": "same_principal",
       "llm_confidence": "high",
-      "llm_reason": "Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.",
-      "llm_expanded_ground_truth": "Ventricular tachycardia | VT",
-      "llm_expanded_matched": "Refractory VT | VT",
+      "llm_reason": "Refractory ventricular tachycardia matches Ventricular tachycardia.",
+      "llm_expanded_ground_truth": "Ventricular tachycardia",
+      "llm_expanded_matched": "Refractory ventricular tachycardia",
       "diagnosis_items": [
         {
-          "diagnosis": "Refractory VT",
+          "diagnosis": "Refractory ventricular tachycardia",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "I47.20",
+          "icd10_primary_title": "Ventricular tachycardia, unspecified"
         },
         {
-          "diagnosis": "Heart transplantation",
+          "diagnosis": "Dilated non-ischemic cardiomyopathy",
           "rank": 2,
-          "score": 70.0,
-          "confidence": "medium",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "score": 75.0,
+          "confidence": "high",
+          "icd10_primary": "I42.0",
+          "icd10_primary_title": "Dilated cardiomyopathy"
         },
         {
-          "diagnosis": "Chronic heart failure",
+          "diagnosis": "Congestive heart failure",
           "rank": 3,
           "score": 65.0,
           "confidence": "medium",
@@ -54,20 +54,20 @@
           "icd10_primary_title": "Heart failure, unspecified"
         },
         {
-          "diagnosis": "Sleep apnea",
+          "diagnosis": "Hypokalemia",
           "rank": 4,
           "score": 50.0,
           "confidence": "low",
-          "icd10_primary": "G47.30",
-          "icd10_primary_title": "Sleep apnea, unspecified"
+          "icd10_primary": "E87.6",
+          "icd10_primary_title": "Hypokalemia"
         },
         {
-          "diagnosis": "Obesity",
+          "diagnosis": "Anemia",
           "rank": 5,
-          "score": 45.0,
+          "score": 40.0,
           "confidence": "low",
-          "icd10_primary": "E66.9",
-          "icd10_primary_title": "Obesity, unspecified"
+          "icd10_primary": "D64.9",
+          "icd10_primary_title": "Anemia, unspecified"
         }
       ],
       "n_diffdx": 5
@@ -75,19 +75,19 @@
     "icd_linked": {
       "ground_truth_icd": "I47.2",
       "ground_truth_icd_title": "Ventricular tachycardia",
-      "rank1_predicted_icd": "",
-      "rank1_predicted_icd_title": "",
-      "matched_predicted_icd": "",
-      "matched_predicted_icd_title": "",
+      "rank1_predicted_icd": "I47.20",
+      "rank1_predicted_icd_title": "Ventricular tachycardia, unspecified",
+      "matched_predicted_icd": "I47.20",
+      "matched_predicted_icd_title": "Ventricular tachycardia, unspecified",
       "icd_match": true,
       "icd_exact_match": false,
-      "icd_family_match": false,
+      "icd_family_match": true,
       "icd_llm_match": true,
       "is_rank1_icd_match": true,
-      "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.",
-      "llm_expanded_ground_truth_icd": "I47.2 — Ventricular tachycardia",
-      "llm_expanded_matched_icd": "",
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "ICD code I47.20 matches I47.2.",
+      "llm_expanded_ground_truth_icd": "Ventricular tachycardia",
+      "llm_expanded_matched_icd": "Ventricular tachycardia, unspecified",
       "stage9_final_primary_icd": "I50.9",
       "diagnosis_match": true,
       "is_rank1_diagnosis_match": true,
@@ -98,23 +98,23 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Rank 1 differential diagnosis 'Refractory VT' matches the ground truth diagnosis 'Ventricular tachycardia'.",
+      "diagnosis_reason": "Refractory ventricular tachycardia matches Ventricular tachycardia.",
       "ground_truth_expansions": [
-        "Ventricular tachycardia",
-        "VT"
+        "Ventricular tachycardia"
       ],
       "matched_diagnosis_expansions": [
-        "Refractory VT",
-        "VT"
+        "Refractory ventricular tachycardia"
       ],
       "icd_equivalent": true,
       "icd_confidence": "high",
-      "icd_reason": "The mapped ICD for Rank 1 'Refractory VT' is not provided, but the ground truth ICD 'I47.2 — Ventricular tachycardia' is a valid code for the same condition.",
+      "icd_reason": "ICD code I47.20 matches I47.2.",
       "ground_truth_icd_expansions": [
-        "I47.2 — Ventricular tachycardia"
+        "Ventricular tachycardia"
       ],
-      "matched_icd_expansions": [],
-      "_cache_hit": true
+      "matched_icd_expansions": [
+        "Ventricular tachycardia, unspecified"
+      ],
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

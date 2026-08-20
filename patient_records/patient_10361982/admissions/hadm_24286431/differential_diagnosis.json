@@ -1,76 +1,103 @@
 {
-  "summary": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.",
-  "most_likely": "Hemorrhage following hysterectomy",
+  "summary": "Patient presents with heavy vaginal bleeding post hysterectomy, with no free fluid or hematoma noted on ultrasound. Chronic conditions include endometriosis and other uterine neoplasms.",
+  "most_likely": "Post-hysterectomy uterine atony",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Hemorrhage following hysterectomy",
+      "diagnosis": "Post-hysterectomy uterine atony",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "Heavy episode of vaginal bleeding",
+      "snomed_aligned": "315224006",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy; hematocrit decreased"
+        "heavy vaginal bleeding after hysterectomy",
+        "normal postoperative changes and a normal appearing vaginal cuff are noted",
+        "no free fluid or hematoma seen on ultrasound"
       ],
       "opposing_evidence": [],
-      "reasoning": "Heavy bleeding and decreased hematocrit strongly suggest hemorrhage post-hysterectomy."
+      "reasoning": "Heavy vaginal bleeding post hysterectomy strongly supports uterine atony as the primary cause."
     },
     {
       "rank": 2,
-      "diagnosis": "Postoperative bleeding",
-      "score": 75.0,
-      "confidence": "high",
-      "category": "secondary",
-      "snomed_aligned": "Heavy episode of vaginal bleeding",
+      "diagnosis": "Post-hysterectomy uterine inversion",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy"
+        "heavy vaginal bleeding after hysterectomy",
+        "normal postoperative changes and a normal appearing vaginal cuff are noted"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Postoperative bleeding is a common complication following hysterectomy."
+      "opposing_evidence": [
+        "no free fluid or hematoma seen on ultrasound"
+      ],
+      "reasoning": "While less likely, uterine inversion is a known complication of hysterectomy and could explain the bleeding."
     },
     {
       "rank": 3,
       "diagnosis": "Endometriosis",
-      "score": 60.0,
+      "score": 40.0,
       "confidence": "medium",
       "category": "risk_factor",
-      "snomed_aligned": "Endometriosis of uterus",
+      "snomed_aligned": "N800",
       "supporting_evidence": [
-        "history of endometriosis"
+        "endometriosis of uterus listed as chronic condition"
       ],
       "opposing_evidence": [
-        "no current evidence of active endometriosis"
+        "no current evidence of endometriosis causing bleeding"
       ],
-      "reasoning": "Endometriosis is a known risk factor for abnormal uterine bleeding, but current evidence is not strong."
+      "reasoning": "Endometriosis is a chronic condition and a risk factor for heavy bleeding, but no current evidence supports it as the primary cause."
     },
     {
       "rank": 4,
-      "diagnosis": "Hypothyroidism",
-      "score": 40.0,
+      "diagnosis": "Hemorrhagic shock",
+      "score": 30.0,
       "confidence": "low",
-      "category": "risk_factor",
+      "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "history of hypothyroidism"
+        "heavy vaginal bleeding after hysterectomy"
       ],
       "opposing_evidence": [
-        "no current thyroid function tests or symptoms"
+        "normal hemoglobin and hematocrit levels",
+        "no free fluid or hematoma seen on ultrasound"
       ],
-      "reasoning": "Hypothyroidism can contribute to menstrual irregularities, but current evidence is weak."
+      "reasoning": "While possible, hemorrhagic shock is less likely given normal hemoglobin levels and no signs of free fluid."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Infection",
+      "score": 25.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "heavy vaginal bleeding after hysterectomy"
+      ],
+      "opposing_evidence": [
+        "normal hemoglobin and hematocrit levels",
+        "no free fluid or hematoma seen on ultrasound"
+      ],
+      "reasoning": "Infection could be a factor, but no current evidence supports it as the primary cause."
     }
   ],
-  "rule_outs": [],
-  "uncertain_areas": [
-    "more specific etiology of bleeding, thyroid function tests"
+  "rule_outs": [
+    {
+      "diagnosis": "Uterine rupture",
+      "why": "No evidence of free fluid or signs of rupture on imaging"
+    }
   ],
-  "n_candidates": 4,
+  "uncertain_areas": [
+    "Need to know if patient has a history of uterine inversion or if there are signs of infection"
+  ],
+  "n_candidates": 5,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "10361982",
   "hadm_id": "24286431",
-  "generated_at": "2026-08-15T17:30:31.325786",
+  "generated_at": "2026-08-20T00:08:23.377128",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 4,

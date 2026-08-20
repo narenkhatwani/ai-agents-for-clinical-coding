@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 19104262
 HADM ID          : 24271247
-Generated        : 2026-08-19T22:37:31.068746
+Generated        : 2026-08-20T00:13:42.105280
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
@@ -16,7 +16,7 @@ DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis of 'Pre-existing type 1 diabetes mellitus, in the puerperium'.
+  LLM reason           : The ground truth primary diagnosis is 'Pre-existing type 1 diabetes mellitus, in the puerperium', which does not match any of the differential diagnoses provided.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
@@ -29,17 +29,15 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code O24.03.
+  LLM ICD reason       : The ground truth ICD code is O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium, which does not match any of the mapped ICD codes provided.
   Stage 9 final ICD    : E13.10 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
    1. Diabetic ketoacidosis  [score=85.0, high]  ICD=E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
-   2. C difficile colitis  [score=60.0, medium]  ICD=A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
-   3. Missed abortion  [score=55.0, high]  ICD=O02.1 — Missed abortion
-   4. Abdominal pain  [score=45.0, medium]  ICD=R10.9 — Unspecified abdominal pain
-   5. Vaginal bleeding  [score=40.0, medium]  ICD=- — 
-   6. Decreased fetal movement  [score=35.0, medium]  ICD=O36.8190 — Decreased fetal movements, unspecified trimester, not applicable or unspecified
-   7. Headache  [score=30.0, low]  ICD=R51.9 — Headache, unspecified
-   8. Nausea  [score=25.0, low]  ICD=R11.0 — Nausea
+   2. C difficile colitis  [score=70.0, medium]  ICD=A04.72 — Enterocolitis due to Clostridium difficile, not specified as recurrent
+   3. Preeclampsia  [score=65.0, medium]  ICD=O14.90 — Unspecified pre-eclampsia, unspecified trimester
+   4. Missed abortion  [score=50.0, low]  ICD=O02.1 — Missed abortion
+   5. Type 1 diabetes mellitus  [score=45.0, medium]  ICD=E10.9 — Type 1 diabetes mellitus without complications
+   6. Infection  [score=30.0, low]  ICD=B99.9 — Unspecified infectious disease

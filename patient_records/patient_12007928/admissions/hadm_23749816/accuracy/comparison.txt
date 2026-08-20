@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 12007928
 HADM ID          : 23749816
-Generated        : 2026-08-19T22:37:31.061946
+Generated        : 2026-08-20T00:13:19.520624
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
@@ -16,7 +16,7 @@ DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis 'Acute on chronic diastolic (congestive) heart failure'.
+  LLM reason           : The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
@@ -29,17 +29,14 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code 'I50.33 — Acute on chronic diastolic (congestive) heart failure'.
+  LLM ICD reason       : The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.
   Stage 9 final ICD    : I50.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
    1. Acute decompensated heart failure  [score=85.0, high]  ICD=I50.9 — Heart failure, unspecified
-   2. Chronic kidney disease  [score=70.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
-   3. Anemia  [score=65.0, medium]  ICD=D64.9 — Anemia, unspecified
-   4. Atrial fibrillation  [score=55.0, medium]  ICD=I48.0 — Paroxysmal atrial fibrillation
-   5. Myasthenia gravis  [score=45.0, low]  ICD=G70.00 — Myasthenia gravis without (acute) exacerbation
-   6. Pulmonary embolism  [score=35.0, low]  ICD=I26.99 — Other pulmonary embolism without acute cor pulmonale
-   7. Obstructive sleep apnea  [score=30.0, low]  ICD=G47.33 — Obstructive sleep apnea (adult) (pediatric)
-   8. Hypothyroidism  [score=25.0, low]  ICD=E03.9 — Hypothyroidism, unspecified
+   2. Atrial fibrillation  [score=70.0, medium]  ICD=I48.91 — Unspecified atrial fibrillation
+   3. Renal insufficiency  [score=65.0, medium]  ICD=N28.9 — Disorder of kidney and ureter, unspecified
+   4. Myasthenia gravis  [score=50.0, low]  ICD=G70.00 — Myasthenia gravis without (acute) exacerbation
+   5. Anemia  [score=40.0, low]  ICD=D64.9 — Anemia, unspecified

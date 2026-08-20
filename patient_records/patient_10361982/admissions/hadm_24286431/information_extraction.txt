@@ -5,18 +5,18 @@ Patient ID       : 10361982
 Admission ID     : 24286431
 Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 
+REASON FOR ADMISSION
+--------------------
+
+  heavy vaginal bleeding after hysterectomy
+  Presenting complaint : heavy vaginal bleeding like a heavy period with clots
+  Admission context    : surgical
+
 SYMPTOMS
 --------
 
-  • [present] heavy vaginal bleeding — "heavy vaginal bleeding after hysterectomy"
+  • [present] vaginal bleeding — "heavy vaginal bleeding like a heavy period with clots"
   • [history] abdominal bloatedness — "abdominal bloatedness secondary to gas"
-  • [history] vaginal spotting to light bleeding — "vaginal spotting to light bleeding"
-  • [history] menorrhagia — "history of abnormal uterine bleeding"
-  • [history] dysmenorrhea — "dysmenorrhea"
-  • [history] intra-menstrual bleeding — "intra-menstrual bleeding"
-  • [history] post-coital bleeding — "post-coital bleeding"
-  • [history] shortness of breath — "shortness of breath"
-  • [history] dyspareunia — "denies dyspareunia"
 
 VITALS
 ------
@@ -31,7 +31,7 @@ LABS
 • WBC: 8.7  [normal]
 • RBC: 4.75  [normal]
 • HGB: 12.6  [normal]
-• HCT: 38.1  [low]
+• HCT: 38.1  [normal]
 • MCV: 80*  [normal]
 • MCH: 26.5  [normal]
 • MCHC: 33.1  [normal]
@@ -42,7 +42,7 @@ LABS
 DIAGNOSES MENTIONED
 -------------------
 
-  • [confirmed] abnormal uterine and vaginal bleeding
+  • [confirmed] menorrhagia
 
 MEDICATIONS
 -----------
@@ -56,7 +56,7 @@ MEDICATIONS
 PROCEDURES
 ----------
 
-  • total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy: performed
+  • pelvic ultrasound: normal postoperative changes and a normal appearing vaginal cuff are noted. There is no vaginal cuff hematoma.
 
 NEGATIONS
 ---------
@@ -66,4 +66,4 @@ NEGATIONS
 TEMPORAL
 --------
 
-  • heavy vaginal bleeding: yesterday morning
+  • vaginal bleeding: yesterday morning

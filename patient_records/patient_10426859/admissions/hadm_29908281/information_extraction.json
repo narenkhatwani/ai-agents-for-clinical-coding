@@ -1,89 +1,57 @@
 {
+  "reason_for_admission": "Patient presents with recurrent SVT causing falls and headache.",
+  "presenting_complaint": "Recurrent SVT causing falls and headache.",
+  "admission_context": "medical",
+  "procedures_this_stay": [],
   "symptoms": [
-    {
-      "term": "lightheadedness",
-      "status": "present",
-      "evidence": "lightheadedness and palpitations"
-    },
     {
       "term": "palpitations",
       "status": "present",
-      "evidence": "palpitations"
+      "evidence": "History of Present Illness"
+    },
+    {
+      "term": "lightheadedness",
+      "status": "present",
+      "evidence": "History of Present Illness"
     },
     {
       "term": "headache",
       "status": "present",
-      "evidence": "headache"
-    },
-    {
-      "term": "fall",
-      "status": "present",
-      "evidence": "fell when she felt lightheaded"
-    },
-    {
-      "term": "pain in right hip",
-      "status": "present",
-      "evidence": "pain in her right hip"
+      "evidence": "History of Present Illness"
     },
     {
       "term": "pain in right leg",
       "status": "present",
-      "evidence": "pain in her entire right leg - her foot, ankle, leg, hip"
+      "evidence": "History of Present Illness"
     }
   ],
   "vitals": [
     {
-      "name": "BMI",
-      "value": "22.3",
-      "unit": "kg/m2"
+      "name": "BP",
+      "value": "101/59",
+      "unit": "mmHg"
     },
     {
-      "name": "Weight",
-      "value": "113.98",
-      "unit": "Lbs"
+      "name": "HR",
+      "value": "82",
+      "unit": "bpm"
+    },
+    {
+      "name": "RR",
+      "value": "22",
+      "unit": "breaths/min"
+    },
+    {
+      "name": "O2",
+      "value": "95%",
+      "unit": "%"
     }
   ],
   "labs": [
     {
-      "name": "Red Blood Cells",
-      "value": "3.89",
-      "unit": "m/uL",
-      "flag": "low"
-    },
-    {
-      "name": "RDW-SD",
-      "value": "47.2",
-      "unit": "fL",
-      "flag": "high"
-    },
-    {
-      "name": "Hyaline Casts",
-      "value": "16.0",
-      "unit": "#/lpf",
-      "flag": "high"
-    },
-    {
-      "name": "RBC",
-      "value": "15.0",
-      "unit": "#/hpf",
-      "flag": "high"
-    },
-    {
       "name": "WBC",
       "value": "45.0",
       "unit": "#/hpf",
-      "flag": "high"
-    },
-    {
-      "name": "Eosinophils",
-      "value": "0.9",
-      "unit": "%",
-      "flag": "low"
-    },
-    {
-      "name": "Neutrophils",
-      "value": "71.3",
-      "unit": "%",
       "flag": "high"
     },
     {
@@ -105,22 +73,8 @@
     {
       "name": "Calcium, Total",
       "value": "9.2",
-      "unit": "mg/dL"
-    },
-    {
-      "name": "Chloride",
-      "value": "102.0",
-      "unit": "mEq/L"
-    },
-    {
-      "name": "Creatinine",
-      "value": "0.7",
-      "unit": "mg/dL"
-    },
-    {
-      "name": "Glucose",
-      "value": "82.0",
-      "unit": "mg/dL"
+      "unit": "mg/dL",
+      "flag": "low"
     },
     {
       "name": "Magnesium",
@@ -133,11 +87,6 @@
       "unit": "mg/dL"
     },
     {
-      "name": "Potassium",
-      "value": "3.9",
-      "unit": "mEq/L"
-    },
-    {
       "name": "Sodium",
       "value": "138.0",
       "unit": "mEq/L"
@@ -146,36 +95,6 @@
       "name": "Urea Nitrogen",
       "value": "13.0",
       "unit": "mg/dL"
-    },
-    {
-      "name": "Hematocrit",
-      "value": "36.8",
-      "unit": "%"
-    },
-    {
-      "name": "Hemoglobin",
-      "value": "12.1",
-      "unit": "g/dL"
-    },
-    {
-      "name": "MCH",
-      "value": "31.1",
-      "unit": "pg"
-    },
-    {
-      "name": "MCHC",
-      "value": "32.9",
-      "unit": "g/dL"
-    },
-    {
-      "name": "MCV",
-      "value": "95.0",
-      "unit": "fL"
-    },
-    {
-      "name": "Platelet Count",
-      "value": "194.0",
-      "unit": "K/uL"
     }
   ],
   "diagnoses_mentioned": [
@@ -184,27 +103,7 @@
       "certainty": "confirmed"
     },
     {
-      "term": "Chest pain",
-      "certainty": "suspected"
-    },
-    {
-      "term": "Hypertension",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Hyperlipidemia",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Depression",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "Glucose intolerance",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "GERD",
+      "term": "Chronic kidney disease",
       "certainty": "confirmed"
     }
   ],
@@ -220,61 +119,22 @@
       "dose": "324mg",
       "route": "PO",
       "status": "started"
-    },
-    {
-      "name": "Ondansetron",
-      "dose": "4mg",
-      "route": "IV",
-      "status": "started"
-    },
-    {
-      "name": "Adenosine",
-      "dose": "6mg",
-      "route": "IV",
-      "status": "started"
-    },
-    {
-      "name": "Verapamil",
-      "dose": "2.5mg",
-      "route": "IV",
-      "status": "started"
     }
   ],
   "procedures": [
     {
-      "name": "IVF NS",
-      "result": "1000 mL ordered"
-    },
-    {
-      "name": "IV Adenosine 6 mg",
-      "result": "given"
-    },
-    {
-      "name": "IV Ondansetron 4 mg",
-      "result": "given"
-    },
-    {
-      "name": "IV Verapamil 2.5 mg",
-      "result": "given"
-    },
-    {
-      "name": "PO Aspirin 324 mg",
-      "result": "given"
+      "name": "CT Head W/O Contrast",
+      "result": "tiny chronic right cerebellar infarct, new since prior. Chronic infarct in the left internal capsule, left caudate head, putamen is unchanged from prior exam."
     }
   ],
-  "negations": [
-    "chest pain",
-    "shortness of breath",
-    "fevers",
-    "chills",
-    "cough"
-  ],
+  "negations": [],
   "temporal": [
     {
-      "finding": "pain in right hip",
-      "onset": "when nurse tried to reposition her"
+      "finding": "SVT",
+      "onset": "recent"
     }
   ],
+  "_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
   "_agent": "information_extraction",
   "_n_prior_admissions": 2
 }

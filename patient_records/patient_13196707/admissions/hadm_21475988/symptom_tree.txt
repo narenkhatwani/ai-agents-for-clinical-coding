@@ -8,45 +8,38 @@ Patient ID       : 13196707
 Admission ID     : 21475988
 
 Reasoning:
-  The patient is a male with metastatic adenocarcinoma of unknown primary presenting with severe sepsis and hypotension, likely secondary to RUL PNA.
+  The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.
 
-Key symptoms     : fever, RUL PNA
-Red flags        : hypotension, altered mental status
+Key symptoms     : RUL PNA, hypotension
+Red flags        : altered mental status
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
   • [history] fever
       evidence: "feverish at rehab, but currently doesn't feel like he's having a fever"
-      related: RUL PNA, severe sepsis
+      related: RUL PNA
   • [suspected, moderate] RUL PNA
-      evidence: "recently diagnosed, CT read described 'ground glass opacities' in the RUL"
-      related: hypotension, severe sepsis
+      evidence: "recently diagnosed"
+      related: CXR shows persistent consolidative opacities in both lower lobes
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, severe] hypotension
-      evidence: "BP 82-90/45-60 mmHg, required levophed to maintain pressures"
-      related: severe sepsis, SVC syndrome
+  • [present, moderate] hypotension
+      evidence: "BP 82-90/45-60 mmHg"
+      related: pericardiocentesis, hypotension, and persistent requirement for fluids
 
 RESPIRATORY → Respiratory
 -------------------------
 
-  • [suspected, moderate] RUL consolidation
-      evidence: "persistent consolidative opacities in both lower lobes, that could represent atelectasis, however pneumonia cannot be excluded"
-      related: RUL PNA
+  • [present, moderate] consolidative opacities
+      evidence: "persistent consolidative opacities in both lower lobes"
+      related: CXR shows persistent consolidative opacities in both lower lobes
 
 NEUROLOGIC → Neurologic
 -----------------------
 
-  • [present, moderate] altered mental status
-      evidence: "GCS 3, not following commands"
-      related: SVC syndrome, metastatic adenocarcinoma
-
-OTHER → Other
--------------
-
-  • [confirmed, moderate] SVC syndrome
-      evidence: "SVC stent placed, multiple venous thromboses"
-      related: metastatic adenocarcinoma
+  • [present, mild] altered mental status
+      evidence: "GCS 11, not following commands"
+      related: CT shows multiple metastatic lesions

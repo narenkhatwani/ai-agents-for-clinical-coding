@@ -1,83 +1,110 @@
 {
-  "summary": "Patient post-cryoablation for desmoid tumor with mild abdominal pain and nausea. History of desmoid tumor and hepatitis C.",
-  "most_likely": "Post-procedural pain",
+  "summary": "The patient is a 45-year-old woman with a history of desmoid tumor, presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure. She also has chronic conditions including hepatitis C and obesity.",
+  "most_likely": "Post-procedural pain and tenderness",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Post-procedural pain",
+      "diagnosis": "Post-procedural pain and tenderness",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "Abdominal pain",
+      "snomed_aligned": "Abdominal pain (21522001)",
       "supporting_evidence": [
-        "post-procedural pain in the right side of the abdomen"
+        "post-procedural pain in the right side of the abdomen",
+        "abdominal tenderness to palpation"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary presentation after cryoablation procedure."
+      "reasoning": "Primary presentation after cryoablation procedure"
     },
     {
       "rank": 2,
-      "diagnosis": "Desmoid tumor",
-      "score": 75.0,
+      "diagnosis": "Hepatitis C",
+      "score": 70.0,
       "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
+      "category": "risk_factor",
+      "snomed_aligned": "Viral hepatitis C (50711007)",
       "supporting_evidence": [
-        "abdominal pain related to desmoid tumor"
+        "chronic condition"
       ],
-      "opposing_evidence": [
-        "pain similar to previous procedure"
-      ],
-      "reasoning": "Secondary to ongoing desmoid tumor, but pain is post-procedural."
+      "opposing_evidence": [],
+      "reasoning": "Chronic condition with no acute symptoms"
     },
     {
       "rank": 3,
-      "diagnosis": "Hepatitis C",
-      "score": 60.0,
+      "diagnosis": "Desmoid tumor",
+      "score": 65.0,
       "confidence": "medium",
-      "category": "risk_factor",
-      "snomed_aligned": "Viral hepatitis C",
+      "category": "differential",
+      "snomed_aligned": "Desmoid tumor (confirmed)",
       "supporting_evidence": [
-        "history of hepatitis C"
+        "desmoid tumor (confirmed)"
       ],
       "opposing_evidence": [
-        "no current symptoms or signs of hepatitis C"
+        "no active tumor growth"
       ],
-      "reasoning": "Patient has a history of hepatitis C, but no current active symptoms."
+      "reasoning": "Previous diagnosis with no acute symptoms"
     },
     {
       "rank": 4,
       "diagnosis": "Anemia",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "differential",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "secondary",
       "snomed_aligned": "",
       "supporting_evidence": [
         "low hematocrit and hemoglobin"
       ],
-      "opposing_evidence": [
-        "no signs of anemia such as fatigue or pallor"
+      "opposing_evidence": [],
+      "reasoning": "Low hematocrit and hemoglobin levels"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hypokalemia",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low potassium level"
       ],
-      "reasoning": "Low hematocrit and hemoglobin levels suggest possible anemia, but not strongly supported."
+      "opposing_evidence": [
+        "no symptoms of hypokalemia"
+      ],
+      "reasoning": "Low potassium level with no symptoms"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Hypomagnesemia",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "low magnesium level"
+      ],
+      "opposing_evidence": [
+        "no symptoms of hypomagnesemia"
+      ],
+      "reasoning": "Low magnesium level with no symptoms"
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Infection",
-      "why": "No fever, chills, or other signs of infection."
+      "diagnosis": "Pneumothorax",
+      "why": "No radiological evidence or symptoms"
     }
   ],
   "uncertain_areas": [
-    "Further labs to confirm anemia and more details on post-procedural pain"
+    "Additional imaging to confirm the extent of post-procedural pain and tenderness"
   ],
-  "n_candidates": 4,
+  "n_candidates": 6,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "18412100",
   "hadm_id": "26093939",
-  "generated_at": "2026-08-15T17:33:25.612854",
+  "generated_at": "2026-08-20T00:11:34.087096",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 8,

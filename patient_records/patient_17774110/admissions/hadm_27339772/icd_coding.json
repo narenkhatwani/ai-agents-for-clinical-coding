@@ -1,196 +1,19 @@
 {
-  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease and hepatitis C.",
-  "most_likely": "Severe sepsis with septic shock",
+  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient is also on mechanical ventilation due to hypoxic respiratory failure.",
+  "most_likely": "Acute liver failure",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Severe sepsis with septic shock",
+      "diagnosis": "Acute liver failure",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Septic shock, Klebsiella Aerogenes blood cultures grew"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Severe sepsis with septic shock is the primary driver of the patient's critical condition, evidenced by septic shock and elevated inflammatory markers.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "76571007",
-        "preferred_term": "Septic shock",
-        "fsn": "Septic shock (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.5913563849048451,
-        "query": "Severe sepsis with septic shock",
-        "aligned_hint": null
-      },
-      "icd10_primary": "R65.21",
-      "icd10_primary_title": "Severe sepsis with septic shock",
-      "icd10_package": [
-        {
-          "code": "R65.21",
-          "title": "Severe sepsis with septic shock",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R65.21 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "R65.21",
-          "title": "Severe sepsis with septic shock",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R65.21 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 2,
-      "diagnosis": "Hepatic encephalopathy",
-      "score": 75.0,
-      "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "Hepatic encephalopathy",
-      "supporting_evidence": [
-        "Hepatic encephalopathy, RASS-5, sluggish pupil response"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Hepatic encephalopathy is a well-known complication of severe liver failure, supported by the patient's altered mental status and elevated liver enzymes.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "13920009",
-        "preferred_term": "Hepatic encephalopathy",
-        "fsn": "Hepatic encephalopathy (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Hepatic encephalopathy",
-        "aligned_hint": "Hepatic encephalopathy"
-      },
-      "icd10_primary": "K76.82",
-      "icd10_primary_title": "Hepatic encephalopathy",
-      "icd10_package": [
-        {
-          "code": "K76.82",
-          "title": "Hepatic encephalopathy",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "K72.00",
-          "title": "Acute and subacute hepatic failure without coma",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Worsening liver failure",
-          "from_kind": "symptom",
-          "from_snomed_id": "197270009",
-          "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5541,
-          "package_order": 2
-        },
-        {
-          "code": "K76.7",
-          "title": "Hepatorenal syndrome",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "supporting",
-          "order": 2,
-          "from_term": "Worsening liver failure",
-          "from_kind": "symptom",
-          "from_snomed_id": "197270009",
-          "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5541,
-          "package_order": 3
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "K76.82",
-          "title": "Hepatic encephalopathy",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "K72.00",
-          "title": "Acute and subacute hepatic failure without coma",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Worsening liver failure",
-          "from_kind": "symptom",
-          "from_snomed_id": "197270009",
-          "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5541
-        },
-        {
-          "code": "K76.7",
-          "title": "Hepatorenal syndrome",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "supporting",
-          "order": 2,
-          "from_term": "Worsening liver failure",
-          "from_kind": "symptom",
-          "from_snomed_id": "197270009",
-          "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5541
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 3
-    },
-    {
-      "rank": 3,
-      "diagnosis": "Acute liver failure",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "primary",
       "snomed_aligned": "Acute liver failure",
       "supporting_evidence": [
-        "Worsening liver failure, Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
+        "Worsening liver failure, Hepatic encephalopathy, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L, PT 36.5 sec, PTT 104.2 sec"
       ],
       "opposing_evidence": [],
-      "reasoning": "Acute liver failure is a severe form of liver failure, evidenced by the patient's elevated liver enzymes and worsening liver function.",
+      "reasoning": "Strong evidence of liver failure with elevated liver enzymes and coagulation parameters.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "197270009",
@@ -427,115 +250,37 @@
       "n_icd_codes": 8
     },
     {
-      "rank": 4,
-      "diagnosis": "GI bleeding",
-      "score": 65.0,
+      "rank": 2,
+      "diagnosis": "Septic shock",
+      "score": 75.0,
       "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "Gastrointestinal hemorrhage",
-      "supporting_evidence": [
-        "GI bleeding, black coffee-ground GI contents"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "GI bleeding is a critical complication, evidenced by the patient's black coffee-ground GI contents and low platelet count.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "74474003",
-        "preferred_term": "Gastrointestinal hemorrhage",
-        "fsn": "Gastrointestinal hemorrhage (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "GI bleeding",
-        "aligned_hint": "Gastrointestinal hemorrhage"
-      },
-      "icd10_primary": "K92.2",
-      "icd10_primary_title": "Gastrointestinal hemorrhage, unspecified",
-      "icd10_package": [
-        {
-          "code": "K92.2",
-          "title": "Gastrointestinal hemorrhage, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS K92.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "P54.3",
-          "title": "Other neonatal gastrointestinal hemorrhage",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P54.3 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "K92.2",
-          "title": "Gastrointestinal hemorrhage, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS K92.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "P54.3",
-          "title": "Other neonatal gastrointestinal hemorrhage",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P54.3 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 2
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Atrial fibrillation/flutter",
-      "score": 50.0,
-      "confidence": "medium",
-      "category": "complication",
+      "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Atrial fibrillation/flutter, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+        "Septic shock, Bilirubin 13.3 mg/dL, WBC 8.4 K/uL, PT 36.5 sec, PTT 104.2 sec"
       ],
       "opposing_evidence": [],
-      "reasoning": "Atrial fibrillation/flutter is a known complication, evidenced by the patient's elevated INR and prolonged coagulation times.",
+      "reasoning": "Severe sepsis with evidence of systemic inflammatory response and coagulopathy.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "49436004",
-        "preferred_term": "Atrial fibrillation",
-        "fsn": "Atrial fibrillation (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.6170956778314645,
-        "query": "Atrial fibrillation/flutter",
+        "concept_id": "76571007",
+        "preferred_term": "Septic shock",
+        "fsn": "Septic shock (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Septic shock",
         "aligned_hint": null
       },
-      "icd10_primary": "I48.91",
-      "icd10_primary_title": "Unspecified atrial fibrillation",
+      "icd10_primary": "R65.21",
+      "icd10_primary_title": "Severe sepsis with septic shock",
       "icd10_package": [
         {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation",
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS R65.21 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
@@ -544,12 +289,12 @@
       ],
       "icd10_principal": [
         {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation",
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS R65.21 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
@@ -560,17 +305,261 @@
       "n_icd_codes": 1
     },
     {
-      "rank": 6,
+      "rank": 3,
+      "diagnosis": "Hepatic encephalopathy",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Hepatic encephalopathy",
+      "supporting_evidence": [
+        "Hepatic encephalopathy, RASS-5, sluggish pupil response, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Severe liver failure with evidence of altered mental status and elevated liver enzymes.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "13920009",
+        "preferred_term": "Hepatic encephalopathy",
+        "fsn": "Hepatic encephalopathy (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hepatic encephalopathy",
+        "aligned_hint": "Hepatic encephalopathy"
+      },
+      "icd10_primary": "K76.82",
+      "icd10_primary_title": "Hepatic encephalopathy",
+      "icd10_package": [
+        {
+          "code": "K76.82",
+          "title": "Hepatic encephalopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541,
+          "package_order": 2
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "K76.82",
+          "title": "Hepatic encephalopathy",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS K76.82 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.5541
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Acute renal failure",
+      "score": 65.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Acute renal failure",
+      "supporting_evidence": [
+        "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Severe acidosis and electrolyte disturbances suggesting acute renal failure.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "14669001",
+        "preferred_term": "Acute renal failure syndrome",
+        "fsn": "Acute kidney injury (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Acute renal failure",
+        "aligned_hint": "Acute renal failure"
+      },
+      "icd10_primary": "N17.9",
+      "icd10_primary_title": "Acute kidney failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.666,
+          "package_order": 2
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.666,
+          "package_order": 3
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "K72.00",
+          "title": "Acute and subacute hepatic failure without coma",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF ACUTE INFANTILE LIVER FAILURE, CEREBELLAR ATAXIA, PERIPHERAL SENSORY MOTOR NEUROPATHY SYNDROME CHOOSE K72.00 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.666
+        },
+        {
+          "code": "K76.7",
+          "title": "Hepatorenal syndrome",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF HEPATORENAL SYNDROME WITH ACUTE KIDNEY INJURY CHOOSE K76.7 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "Acute liver failure",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "197270009",
+          "from_snomed_term": "Acute liver failure",
+          "relevance_to_diagnosis": 0.666
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 3
+    },
+    {
+      "rank": 5,
       "diagnosis": "Pleural effusion",
-      "score": 45.0,
+      "score": 60.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "Pleural effusion",
       "supporting_evidence": [
-        "Pleural effusion, large pleural effusion with compressive consolidation versus atelectasis"
+        "Large pleural effusion with compressive consolidation versus atelectasis"
       ],
       "opposing_evidence": [],
-      "reasoning": "Pleural effusion is a common complication, evidenced by the patient's bilateral pleural effusions.",
+      "reasoning": "Evidence of pleural effusion on imaging, but less likely primary cause given other severe systemic issues.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "60046008",
@@ -607,23 +596,6 @@
           "role": "principal",
           "order": 2,
           "package_order": 2
-        },
-        {
-          "code": "J98.11",
-          "title": "Atelectasis",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS J98.11 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Atelectasis",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "46621007",
-          "from_snomed_term": "Atelectasis",
-          "relevance_to_diagnosis": 0.2581,
-          "package_order": 3
         }
       ],
       "icd10_principal": [
@@ -650,92 +622,93 @@
           "order": 2
         }
       ],
-      "icd10_supporting": [
-        {
-          "code": "J98.11",
-          "title": "Atelectasis",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS J98.11 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "Atelectasis",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "46621007",
-          "from_snomed_term": "Atelectasis",
-          "relevance_to_diagnosis": 0.2581
-        }
-      ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 3
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 6,
+      "diagnosis": "IVC thrombus",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "IVC thrombus",
+      "supporting_evidence": [
+        "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "IVC thrombus present, but less likely primary cause given other severe systemic issues.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "396339007",
+        "preferred_term": "Thrombus",
+        "fsn": "Thrombus (morphologic abnormality)",
+        "match_method": "fuzzy",
+        "score": 0.7040731195102493,
+        "query": "IVC thrombus",
+        "aligned_hint": "IVC thrombus"
+      },
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [],
+      "icd10_principal": [],
+      "icd10_supporting": [],
+      "icd_status": "unmapped",
+      "n_icd_codes": 0
     },
     {
       "rank": 7,
-      "diagnosis": "Renal failure",
-      "score": 40.0,
+      "diagnosis": "Cirrhosis",
+      "score": 50.0,
       "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "category": "secondary",
+      "snomed_aligned": "Cirrhosis of liver",
       "supporting_evidence": [
-        "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L"
+        "Cirrhosis, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
       ],
       "opposing_evidence": [],
-      "reasoning": "Renal failure is a significant complication, evidenced by the patient's elevated creatinine and bicarbonate levels.",
+      "reasoning": "Chronic condition with evidence of liver dysfunction.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "42399005",
-        "preferred_term": "Renal failure syndrome",
-        "fsn": "Renal failure syndrome (disorder)",
+        "concept_id": "19943007",
+        "preferred_term": "Cirrhosis of liver",
+        "fsn": "Cirrhosis of liver (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Renal failure",
-        "aligned_hint": null
+        "query": "Cirrhosis",
+        "aligned_hint": "Cirrhosis of liver"
       },
-      "icd10_primary": "N19",
-      "icd10_primary_title": "Unspecified kidney failure",
+      "icd10_primary": "K74.60",
+      "icd10_primary_title": "Unspecified cirrhosis of liver",
       "icd10_package": [
         {
-          "code": "N19",
-          "title": "Unspecified kidney failure",
+          "code": "K74.60",
+          "title": "Unspecified cirrhosis of liver",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS N19 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS K74.60 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "P96.0",
-          "title": "Congenital renal failure",
+          "code": "K74.69",
+          "title": "Other cirrhosis of liver",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P96.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS K74.69 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "Acute renal failure",
-          "from_kind": "red_flag",
-          "from_snomed_id": "14669001",
-          "from_snomed_term": "Acute renal failure syndrome",
-          "relevance_to_diagnosis": 0.8511,
-          "package_order": 3
+          "from_term": "Early cirrhosis",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "371139006",
+          "from_snomed_term": "Early cirrhosis",
+          "relevance_to_diagnosis": 0.8389,
+          "package_order": 2
         },
         {
           "code": "K72.00",
@@ -747,12 +720,12 @@
           "always": false,
           "role": "supporting",
           "order": 1,
-          "from_term": "Acute liver failure",
-          "from_kind": "retained_snomed",
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
           "from_snomed_id": "197270009",
           "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5045,
-          "package_order": 4
+          "relevance_to_diagnosis": 0.5313,
+          "package_order": 3
         },
         {
           "code": "K76.7",
@@ -764,54 +737,43 @@
           "always": false,
           "role": "supporting",
           "order": 2,
-          "from_term": "Acute liver failure",
-          "from_kind": "retained_snomed",
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
           "from_snomed_id": "197270009",
           "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5045,
-          "package_order": 5
+          "relevance_to_diagnosis": 0.5313,
+          "package_order": 4
         }
       ],
       "icd10_principal": [
         {
-          "code": "N19",
-          "title": "Unspecified kidney failure",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS N19 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "P96.0",
-          "title": "Congenital renal failure",
+          "code": "K74.60",
+          "title": "Unspecified cirrhosis of liver",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P96.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
+          "map_advice": "ALWAYS K74.60 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
           "role": "principal",
-          "order": 2
+          "order": 1
         }
       ],
       "icd10_supporting": [
         {
-          "code": "N17.9",
-          "title": "Acute kidney failure, unspecified",
+          "code": "K74.69",
+          "title": "Other cirrhosis of liver",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS K74.69 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "Acute renal failure",
-          "from_kind": "red_flag",
-          "from_snomed_id": "14669001",
-          "from_snomed_term": "Acute renal failure syndrome",
-          "relevance_to_diagnosis": 0.8511
+          "from_term": "Early cirrhosis",
+          "from_kind": "retained_snomed",
+          "from_snomed_id": "371139006",
+          "from_snomed_term": "Early cirrhosis",
+          "relevance_to_diagnosis": 0.8389
         },
         {
           "code": "K72.00",
@@ -823,11 +785,11 @@
           "always": false,
           "role": "supporting",
           "order": 1,
-          "from_term": "Acute liver failure",
-          "from_kind": "retained_snomed",
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
           "from_snomed_id": "197270009",
           "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5045
+          "relevance_to_diagnosis": 0.5313
         },
         {
           "code": "K76.7",
@@ -839,107 +801,84 @@
           "always": false,
           "role": "supporting",
           "order": 2,
-          "from_term": "Acute liver failure",
-          "from_kind": "retained_snomed",
+          "from_term": "Worsening liver failure",
+          "from_kind": "symptom",
           "from_snomed_id": "197270009",
           "from_snomed_term": "Acute liver failure",
-          "relevance_to_diagnosis": 0.5045
+          "relevance_to_diagnosis": 0.5313
         }
       ],
       "icd_status": "mapped",
-      "n_icd_codes": 5
+      "n_icd_codes": 4
     },
     {
       "rank": 8,
-      "diagnosis": "Coagulopathy",
-      "score": 35.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "diagnosis": "Bipolar disorder",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Bipolar disorder",
       "supporting_evidence": [
-        "Coagulopathy, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+        "Bipolar disorder, unspecified"
       ],
       "opposing_evidence": [],
-      "reasoning": "Coagulopathy is a critical complication, evidenced by the patient's prolonged coagulation times.",
+      "reasoning": "Previous diagnosis, but less likely to be the primary cause of current acute presentation.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "64779008",
-        "preferred_term": "Blood coagulation disorder",
-        "fsn": "Blood coagulation disorder (disorder)",
+        "concept_id": "13746004",
+        "preferred_term": "Bipolar disorder",
+        "fsn": "Bipolar disorder (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Coagulopathy",
-        "aligned_hint": null
+        "query": "Bipolar disorder",
+        "aligned_hint": "Bipolar disorder"
       },
-      "icd10_primary": "D68.9",
-      "icd10_primary_title": "Coagulation defect, unspecified",
+      "icd10_primary": "F31.9",
+      "icd10_primary_title": "Bipolar disorder, unspecified",
       "icd10_package": [
         {
-          "code": "D68.9",
-          "title": "Coagulation defect, unspecified",
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS D68.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS F31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
-        },
-        {
-          "code": "P61.6",
-          "title": "Other transient neonatal disorders of coagulation",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
         }
       ],
       "icd10_principal": [
         {
-          "code": "D68.9",
-          "title": "Coagulation defect, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS D68.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "P61.6",
-          "title": "Other transient neonatal disorders of coagulation",
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
+          "map_advice": "ALWAYS F31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
           "role": "principal",
-          "order": 2
+          "order": 1
         }
       ],
       "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 1
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Cirrhosis",
-      "why": "Cirrhosis is a chronic condition and not the primary driver of the current presentation."
+      "diagnosis": "GI bleeding",
+      "why": "GI bleeding is present but less likely to be the primary cause given the severity of liver failure and septic shock."
     },
     {
-      "diagnosis": "Hepatocellular carcinoma",
-      "why": "While present, the primary focus is on the acute complications and sepsis."
+      "diagnosis": "Atrial fibrillation/flutter",
+      "why": "Atrial fibrillation/flutter is present but less likely to be the primary cause given the severity of liver failure and septic shock."
     }
   ],
   "uncertain_areas": [
-    "Further details on the source of sepsis and the exact nature of the liver failure would refine the differential diagnosis."
+    "Further clarification on the source of infection and the exact nature of the liver failure would change the ranking"
   ],
   "n_candidates": 8,
   "type": "differential_diagnosis_with_icd",
@@ -948,7 +887,7 @@
   "_temperature": 0.4,
   "patient_id": "17774110",
   "hadm_id": "27339772",
-  "generated_at": "2026-08-15T17:33:14.305981",
+  "generated_at": "2026-08-20T00:11:17.961790",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 15,
@@ -1126,8 +1065,8 @@
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
     "n_diagnoses": 8,
-    "n_with_principal": 8,
-    "n_unmapped": 0
+    "n_with_principal": 7,
+    "n_unmapped": 1
   },
-  "generated_at_stage8": "2026-08-19T22:37:02.364591"
+  "generated_at_stage8": "2026-08-20T00:12:23.472131"
 }

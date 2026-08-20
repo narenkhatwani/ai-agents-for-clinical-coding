@@ -8,19 +8,22 @@ Patient ID       : 10458324
 Admission ID     : 21744342
 
 Reasoning:
-  The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and psychiatric conditions.
+  The patient presents with right-sided rib fractures and hypoxia following a fall, with ongoing respiratory symptoms and signs of trauma.
 
-Key symptoms     : right sided rib fractures, hypoxia, cough
-Red flags        : hypoxia, insomnia
+Key symptoms     : right rib fractures, hypoxia, cough, fever
+Red flags        : hypotension, AMS
 
 RESPIRATORY → Respiratory
 -------------------------
 
-  • [present, moderate] right sided rib fractures
+  • [present, moderate] right rib fractures
       evidence: "right sided rib fractures"
       related: right posterior back tenderness, subcutaneous emphysema
-      • [present, mild] right PTX
+      • [present] right PTX
           evidence: "small right PTX"
+  • [present, mild] hypoxia
+      evidence: "satting 96% on 4L"
+      related: right PTX, subcutaneous emphysema
   • [present, mild] cough
       evidence: "5 days of mild cough that worsened over the past two days"
   • [present, mild] fever
@@ -37,18 +40,18 @@ RESPIRATORY → Respiratory
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, mild] hypoxia
-      evidence: "satting 96% on 4L"
-      related: right PTX
+  • [absent] hypotension
+      evidence: "BP 121/72"
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [present, mild] influenza A
-      evidence: "influenza A PCR +"
+  • [absent] bacterial pneumonia
+      evidence: "Gram stain and culture results negative"
+      related: cough, fever, nasal congestion, sore throat
 
-NEUROLOGIC → Neurologic
------------------------
+NEUROLOGIC → Neurology
+----------------------
 
   • [present, mild] insomnia
       evidence: "nightmares of being left alone and mistreated"

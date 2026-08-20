@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "13952483",
   "hadm_id": "23852410",
-  "generated_at": "2026-08-19T22:37:31.064393",
+  "generated_at": "2026-08-20T00:13:28.322996",
   "ground_truth": {
     "primary_icd_code": "I9589",
     "primary_dx_title": "Other hypotension",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Other hypotension",
-      "rank1_diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+      "rank1_diagnosis": "Squamous Cell Lung CA",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -25,25 +25,25 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the differential diagnoses match the ground truth primary diagnosis of Other hypotension.",
+      "llm_reason": "None of the ranked differential diagnoses match 'Other hypotension'.",
       "llm_expanded_ground_truth": "Other hypotension",
       "llm_expanded_matched": "",
       "diagnosis_items": [
         {
-          "diagnosis": "Severe Pulmonary Hypertension with Cor Pulmonale",
+          "diagnosis": "Squamous Cell Lung CA",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": "T86.91",
-          "icd10_primary_title": "Unspecified transplanted organ and tissue rejection"
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Neutropenia",
+          "diagnosis": "Pulmonary Hypertension",
           "rank": 2,
-          "score": 70.0,
-          "confidence": "medium",
-          "icd10_primary": "D70.9",
-          "icd10_primary_title": "Neutropenia, unspecified"
+          "score": 75.0,
+          "confidence": "high",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
           "diagnosis": "Anemia",
@@ -70,12 +70,12 @@
           "icd10_primary_title": "Chronic kidney disease, unspecified"
         },
         {
-          "diagnosis": "Pneumonia",
+          "diagnosis": "Cachexia",
           "rank": 6,
-          "score": 30.0,
+          "score": 35.0,
           "confidence": "low",
-          "icd10_primary": "J18.9",
-          "icd10_primary_title": "Pneumonia, unspecified organism"
+          "icd10_primary": "R64",
+          "icd10_primary_title": "Cachexia"
         }
       ],
       "n_diffdx": 6
@@ -83,8 +83,8 @@
     "icd_linked": {
       "ground_truth_icd": "I95.89",
       "ground_truth_icd_title": "Other hypotension",
-      "rank1_predicted_icd": "T86.91",
-      "rank1_predicted_icd_title": "Unspecified transplanted organ and tissue rejection",
+      "rank1_predicted_icd": "",
+      "rank1_predicted_icd_title": "",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -93,7 +93,7 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the mapped ICD codes match or are clinically equivalent to the ground truth ICD code I95.89.",
+      "llm_icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.",
       "llm_expanded_ground_truth_icd": "I95.89 — Other hypotension",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I27.20",
@@ -106,19 +106,19 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the differential diagnoses match the ground truth primary diagnosis of Other hypotension.",
+      "diagnosis_reason": "None of the ranked differential diagnoses match 'Other hypotension'.",
       "ground_truth_expansions": [
         "Other hypotension"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the mapped ICD codes match or are clinically equivalent to the ground truth ICD code I95.89.",
+      "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.",
       "ground_truth_icd_expansions": [
         "I95.89 — Other hypotension"
       ],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

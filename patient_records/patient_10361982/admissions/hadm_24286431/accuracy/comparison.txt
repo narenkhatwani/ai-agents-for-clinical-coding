@@ -3,39 +3,40 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10361982
 HADM ID          : 24286431
-Generated        : 2026-08-19T22:37:31.053957
+Generated        : 2026-08-20T00:12:56.969546
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
-  Rank-1 predicted     : Hemorrhage following hysterectomy
+  Rank-1 predicted     : Post-hysterectomy uterine atony
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the differential diagnoses match the ground truth primary diagnosis.
+  LLM reason           : None of the differential diagnoses match the ground truth diagnosis.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
 
   Ground truth ICD     : N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
-  Rank-1 mapped ICD    : N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+  Rank-1 mapped ICD    : O62.2 — Other uterine inertia
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code.
+  LLM ICD reason       : None of the differential diagnoses have an equivalent ICD code.
   Stage 9 final ICD    : N93.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Hemorrhage following hysterectomy  [score=85.0, high]  ICD=N93.9 — Abnormal uterine and vaginal bleeding, unspecified
-   2. Postoperative bleeding  [score=75.0, high]  ICD=N93.9 — Abnormal uterine and vaginal bleeding, unspecified
-   3. Endometriosis  [score=60.0, medium]  ICD=N80.00 — Endometriosis of the uterus, unspecified
-   4. Hypothyroidism  [score=40.0, low]  ICD=E03.9 — Hypothyroidism, unspecified
+   1. Post-hysterectomy uterine atony  [score=85.0, high]  ICD=O62.2 — Other uterine inertia
+   2. Post-hysterectomy uterine inversion  [score=65.0, medium]  ICD=O71.2 — Postpartum inversion of uterus
+   3. Endometriosis  [score=40.0, medium]  ICD=N80.9 — Endometriosis, unspecified
+   4. Hemorrhagic shock  [score=30.0, low]  ICD=R57.1 — Hypovolemic shock
+   5. Infection  [score=25.0, low]  ICD=B99.9 — Unspecified infectious disease

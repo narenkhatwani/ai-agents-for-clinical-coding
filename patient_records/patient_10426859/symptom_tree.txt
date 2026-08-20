@@ -8,10 +8,10 @@ Patient ID       : 10426859
 Admission ID     : 29908281
 
 Reasoning:
-  The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. The clinical picture is dominated by cardiovascular issues and musculoskeletal pain.
+  The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The primary focus is on the SVT and associated symptoms.
 
-Key symptoms     : palpitations, lightheadedness, pain in right hip
-Red flags        : Supraventricular tachycardia, Nondisplaced comminuted fracture in the right superior pubic ramus
+Key symptoms     : palpitations, lightheadedness, headache
+Red flags        : Supraventricular tachycardia
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
@@ -20,34 +20,21 @@ CARDIOVASCULAR → Cardiovascular
       evidence: "palpitations"
       related: Supraventricular tachycardia
       • [present] SVT
-          evidence: "Supraventricular tachycardia"
+          evidence: "found to be in SVT in the ED"
   • [present, mild] lightheadedness
       evidence: "lightheadedness and palpitations"
       related: Supraventricular tachycardia
-  • [history, mild] chest pain
-      evidence: "chest pain"
-      related: Supraventricular tachycardia
 
-NEUROLOGIC → Neurologic
------------------------
+NEUROLOGIC → Neurology
+----------------------
 
   • [present, mild] headache
       evidence: "headache"
       related: Supraventricular tachycardia
 
-MUSCULOSKELETAL → Musculoskeletal
----------------------------------
+SKELETAL → Orthopedics
+----------------------
 
-  • [present, mild] pain in right hip
+  • [present, moderate] pain in right hip
       evidence: "pain in her right hip"
-      related: Nondisplaced comminuted fracture in the right superior pubic ramus
-  • [present, mild] pain in right leg
-      evidence: "pain in her entire right leg - her foot, ankle, leg, hip"
-      related: Nondisplaced comminuted fracture in the right superior pubic ramus
-
-OTHER → Other
--------------
-
-  • [present, mild] fall
-      evidence: "fell when she felt lightheaded"
       related: Nondisplaced comminuted fracture in the right superior pubic ramus

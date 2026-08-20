@@ -1421,19 +1421,63 @@ def resolve_diagnosis_to_snomed(
     snomed_aligned: str = "",
 ) -> Dict[str, Any]:
     """Map DiffDx diagnosis (and optional snomed_aligned hint) to a SNOMED concept."""
-    # Prefer explicit aligned term if it maps exactly / well
-    candidates = []
-    if snomed_aligned:
-        candidates.append(map_term_to_snomed(snomed_aligned, snomed_index))
-    if diagnosis:
-        candidates.append(map_term_to_snomed(diagnosis, snomed_index))
+    _QUALIFIER_TAGS = {"qualifier value", "namespace concept", "linkage concept"}
+
+    def _is_clinical_concept(cid: Optional[str]) -> bool:
+        if not cid:
+            return False
+        tag = _fsn_semantic_tag(snomed_index.concept_fsn.get(cid))
+        return tag not in _QUALIFIER_TAGS
+
+    def _mapping_queries(dx: str, aligned: str) -> List[str]:
+        queries: List[str] = []
+
+        def add(q: str) -> None:
+            q = " ".join(str(q or "").split())
+            if q and q not in queries:
+                queries.append(q)
+
+        add(aligned)
+        add(dx)
+        stripped = re.sub(
+            r"^(refractory|acute|chronic|severe|mild|moderate|unspecified)\s+",
+            "",
+            str(dx or ""),
+            flags=re.I,
+        )
+        add(stripped)
+        low = str(dx or "").lower()
+        if re.search(r"\bvt\b", low):
+            add(re.sub(r"\bvt\b", "ventricular tachycardia", low, flags=re.I))
+            add("ventricular tachycardia")
+        if re.search(r"\bsvt\b", low):
+            add("supraventricular tachycardia")
+        if "sepsis" in low:
+            add("sepsis")
+        if "pna" in low or "pneumonia" in low:
+            add("pneumonia")
+        if " due to " in low:
+            add(low.split(" due to ", 1)[-1].strip())
+        if "pneumothorax" in low:
+            add("pneumothorax")
+        return queries
+
     best = None
-    for c in candidates:
-        if not c.get("mapped"):
+    best_qualifier = None
+    for query in _mapping_queries(diagnosis, snomed_aligned):
+        mapped = map_term_to_snomed(query, snomed_index)
+        if not mapped.get("mapped"):
             continue
-        if best is None or float(c.get("score") or 0) > float(best.get("score") or 0):
-            best = c
-    if best is None:
+        cid = mapped.get("concept_id")
+        score = float(mapped.get("score") or 0)
+        if _is_clinical_concept(cid):
+            if best is None or score > float(best.get("score") or 0):
+                best = {**mapped, "query": diagnosis, "aligned_hint": snomed_aligned or None}
+        elif best_qualifier is None or score > float(best_qualifier.get("score") or 0):
+            best_qualifier = {**mapped, "query": diagnosis, "aligned_hint": snomed_aligned or None}
+
+    chosen = best or best_qualifier
+    if chosen is None:
         return {
             "mapped": False,
             "concept_id": None,
@@ -1444,11 +1488,11 @@ def resolve_diagnosis_to_snomed(
         }
     return {
         "mapped": True,
-        "concept_id": best.get("concept_id"),
-        "preferred_term": best.get("preferred_term"),
-        "fsn": best.get("fsn"),
-        "match_method": best.get("match_method"),
-        "score": best.get("score"),
+        "concept_id": chosen.get("concept_id"),
+        "preferred_term": chosen.get("preferred_term"),
+        "fsn": chosen.get("fsn"),
+        "match_method": chosen.get("match_method"),
+        "score": chosen.get("score"),
         "query": diagnosis,
         "aligned_hint": snomed_aligned or None,
     }
@@ -1599,11 +1643,18 @@ def build_icd_package_for_diagnosis(
     supporting.sort(
         key=lambda x: (-float(x.get("relevance_to_diagnosis") or 0), x.get("map_priority") or 99)
     )
+
+    status = "mapped" if principal else ("supporting_only" if supporting else "unmapped")
+    if not principal and supporting:
+        promoted = dict(supporting[0])
+        promoted["role"] = "principal"
+        principal = [promoted]
+        status = "supporting_as_primary"
+
     package = []
     for i, row in enumerate(principal + supporting, start=1):
         package.append({**row, "package_order": i})
 
-    status = "mapped" if principal else ("supporting_only" if supporting else "unmapped")
     return {
         **diagnosis_row,
         "snomed_resolution": resolved,

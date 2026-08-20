@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "19632936",
   "hadm_id": "26696232",
-  "generated_at": "2026-08-19T22:37:31.069920",
+  "generated_at": "2026-08-20T00:13:44.914512",
   "ground_truth": {
     "primary_icd_code": "D509",
     "primary_dx_title": "Iron deficiency anemia, unspecified",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Iron deficiency anemia, unspecified",
-      "rank1_diagnosis": "Acute on chronic macrocytic anemia",
+      "rank1_diagnosis": "Acute macrocytic anemia",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -25,12 +25,12 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of Iron deficiency anemia, unspecified.",
-      "llm_expanded_ground_truth": "Iron deficiency anemia",
+      "llm_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of Iron deficiency anemia, unspecified.",
+      "llm_expanded_ground_truth": "",
       "llm_expanded_matched": "",
       "diagnosis_items": [
         {
-          "diagnosis": "Acute on chronic macrocytic anemia",
+          "diagnosis": "Acute macrocytic anemia",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
@@ -38,9 +38,9 @@
           "icd10_primary_title": "Nutritional anemia, unspecified"
         },
         {
-          "diagnosis": "Heart failure",
+          "diagnosis": "Acute heart failure",
           "rank": 2,
-          "score": 70.0,
+          "score": 75.0,
           "confidence": "medium",
           "icd10_primary": "I50.9",
           "icd10_primary_title": "Heart failure, unspecified"
@@ -54,20 +54,20 @@
           "icd10_primary_title": "Unspecified atrial fibrillation"
         },
         {
-          "diagnosis": "Anemia of chronic disease",
+          "diagnosis": "Anemia",
           "rank": 4,
-          "score": 55.0,
-          "confidence": "low",
-          "icd10_primary": "D63.8",
-          "icd10_primary_title": "Anemia in other chronic diseases classified elsewhere"
+          "score": 60.0,
+          "confidence": "medium",
+          "icd10_primary": "D64.9",
+          "icd10_primary_title": "Anemia, unspecified"
         },
         {
-          "diagnosis": "Infectious cause of anemia",
+          "diagnosis": "Renal insufficiency",
           "rank": 5,
-          "score": 40.0,
+          "score": 55.0,
           "confidence": "low",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "N19",
+          "icd10_primary_title": "Unspecified kidney failure"
         }
       ],
       "n_diffdx": 5
@@ -85,8 +85,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code D50.9.",
-      "llm_expanded_ground_truth_icd": "Iron deficiency anemia, unspecified",
+      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to D50.9.",
+      "llm_expanded_ground_truth_icd": "",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "D53.9",
       "diagnosis_match": false,
@@ -98,19 +98,15 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth primary diagnosis of Iron deficiency anemia, unspecified.",
-      "ground_truth_expansions": [
-        "Iron deficiency anemia"
-      ],
+      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of Iron deficiency anemia, unspecified.",
+      "ground_truth_expansions": [],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code D50.9.",
-      "ground_truth_icd_expansions": [
-        "Iron deficiency anemia, unspecified"
-      ],
+      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to D50.9.",
+      "ground_truth_icd_expansions": [],
       "matched_icd_expansions": [],
-      "_cache_hit": true
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

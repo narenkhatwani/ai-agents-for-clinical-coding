@@ -3,13 +3,13 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 18412100
 HADM ID          : 26093939
-Generated        : 2026-08-19T22:37:31.067339
+Generated        : 2026-08-20T00:13:37.548129
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Neoplasm of uncertain behavior of connective and other soft tissue
-  Rank-1 predicted     : Post-procedural pain
+  Rank-1 predicted     : Post-procedural pain and tenderness
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
@@ -29,13 +29,15 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue'.
+  LLM ICD reason       : None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1'.
   Stage 9 final ICD    : R10.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Post-procedural pain  [score=85.0, high]  ICD=R10.9 — Unspecified abdominal pain
-   2. Desmoid tumor  [score=75.0, medium]  ICD=- — 
-   3. Hepatitis C  [score=60.0, medium]  ICD=B19.20 — Unspecified viral hepatitis C without hepatic coma
-   4. Anemia  [score=50.0, low]  ICD=D64.9 — Anemia, unspecified
+   1. Post-procedural pain and tenderness  [score=85.0, high]  ICD=R10.9 — Unspecified abdominal pain
+   2. Hepatitis C  [score=70.0, medium]  ICD=B19.20 — Unspecified viral hepatitis C without hepatic coma
+   3. Desmoid tumor  [score=65.0, medium]  ICD=- — 
+   4. Anemia  [score=55.0, medium]  ICD=D64.9 — Anemia, unspecified
+   5. Hypokalemia  [score=45.0, low]  ICD=E87.6 — Hypokalemia
+   6. Hypomagnesemia  [score=40.0, low]  ICD=E83.42 — Hypomagnesemia

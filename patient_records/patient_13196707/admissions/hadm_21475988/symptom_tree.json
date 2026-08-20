@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a male with metastatic adenocarcinoma of unknown primary presenting with severe sepsis and hypotension, likely secondary to RUL PNA.",
+  "reasoning": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
   "branches": [
     {
       "category": "infectious",
@@ -12,8 +12,7 @@
           "severity": "unknown",
           "evidence": "feverish at rehab, but currently doesn't feel like he's having a fever",
           "related_findings": [
-            "RUL PNA",
-            "severe sepsis"
+            "RUL PNA"
           ],
           "children": []
         },
@@ -21,10 +20,9 @@
           "term": "RUL PNA",
           "status": "suspected",
           "severity": "moderate",
-          "evidence": "recently diagnosed, CT read described 'ground glass opacities' in the RUL",
+          "evidence": "recently diagnosed",
           "related_findings": [
-            "hypotension",
-            "severe sepsis"
+            "CXR shows persistent consolidative opacities in both lower lobes"
           ],
           "children": []
         }
@@ -37,11 +35,10 @@
         {
           "term": "hypotension",
           "status": "present",
-          "severity": "severe",
-          "evidence": "BP 82-90/45-60 mmHg, required levophed to maintain pressures",
+          "severity": "moderate",
+          "evidence": "BP 82-90/45-60 mmHg",
           "related_findings": [
-            "severe sepsis",
-            "SVC syndrome"
+            "pericardiocentesis, hypotension, and persistent requirement for fluids"
           ],
           "children": []
         }
@@ -52,12 +49,12 @@
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "RUL consolidation",
-          "status": "suspected",
+          "term": "consolidative opacities",
+          "status": "present",
           "severity": "moderate",
-          "evidence": "persistent consolidative opacities in both lower lobes, that could represent atelectasis, however pneumonia cannot be excluded",
+          "evidence": "persistent consolidative opacities in both lower lobes",
           "related_findings": [
-            "RUL PNA"
+            "CXR shows persistent consolidative opacities in both lower lobes"
           ],
           "children": []
         }
@@ -70,27 +67,10 @@
         {
           "term": "altered mental status",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "GCS 3, not following commands",
+          "severity": "mild",
+          "evidence": "GCS 11, not following commands",
           "related_findings": [
-            "SVC syndrome",
-            "metastatic adenocarcinoma"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "SVC syndrome",
-          "status": "confirmed",
-          "severity": "moderate",
-          "evidence": "SVC stent placed, multiple venous thromboses",
-          "related_findings": [
-            "metastatic adenocarcinoma"
+            "CT shows multiple metastatic lesions"
           ],
           "children": []
         }
@@ -98,11 +78,10 @@
     }
   ],
   "key_symptoms": [
-    "fever",
-    "RUL PNA"
+    "RUL PNA",
+    "hypotension"
   ],
   "red_flags": [
-    "hypotension",
     "altered mental status"
   ],
   "type": "symptom_tree",
@@ -110,5 +89,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13196707",
   "admission_id": "21475988",
-  "generated_at": "2026-08-08T16:19:54.148835"
+  "generated_at": "2026-08-19T23:20:26.518487"
 }

@@ -5,41 +5,52 @@ Patient ID       : 16014068
 HADM ID          : 29042843
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:32:52.278033
-Candidates       : 5
-Most likely      : Anemia due to malignancy
+Generated        : 2026-08-20T00:10:56.014695
+Candidates       : 6
+Most likely      : Metastatic sarcoma with hematologic complications
 Prior admissions : 9 (138 ICD codes as PMH context)
 
 Summary:
-  The patient is a metastatic sarcoma survivor with recurrent hematoma and anemia. Current presentation includes weakness, anemia, thrombocytopenia, and a fall with minor abrasions and headache.
+  The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Anemia due to malignancy  (primary)
-      + anemia, thrombocytopenia, history of metastatic sarcoma
-      why: Anemia is severe and aligns with the patient's history of metastatic sarcoma and prior chemotherapy.
+  #1  [85.0/100 | high]  Metastatic sarcoma with hematologic complications  (primary)
+      SNOMED aligned : Metastatic sarcoma
+      + metastatic sarcoma
+      + thrombocytopenia
+      why: Primary diagnosis given the patient's history of metastatic sarcoma and current symptoms related to hematologic complications.
 
-  #2  [75.0/100 | high]  Thrombocytopenia due to malignancy  (complication)
-      + thrombocytopenia, history of metastatic sarcoma
-      why: Thrombocytopenia is mild but significant and related to the patient's malignancy.
+  #2  [70.0/100 | high]  Anemia  (secondary)
+      SNOMED aligned : Anemia due to antineoplastic chemotherapy
+      + Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL
+      why: Anemia is a significant finding and likely secondary to the patient's malignancy.
 
-  #3  [60.0/100 | medium]  Hypotension  (secondary)
-      + hypotension, history of malignancy and chemotherapy side effects
-      − no evidence of acute cardiovascular issues
-      why: Hypotension is noted but may be secondary to malignancy and chemotherapy effects.
+  #3  [65.0/100 | high]  Thrombocytopenia  (secondary)
+      SNOMED aligned : Cytokine-induced thrombocytopenia
+      + Platelet Count: 63.0 K/uL
+      why: Thrombocytopenia is present and likely related to the patient's malignancy.
 
-  #4  [50.0/100 | medium]  Headache  (differential)
-      + headache after fall, history of cerebellar hemorrhage
-      − no evidence of acute intracranial bleeding
-      why: Headache is present but may be related to the fall rather than acute intracranial issues.
+  #4  [50.0/100 | medium]  Hypotension  (risk_factor)
+      + BP 114/66
+      why: Hypotension is noted and may be a risk factor for further complications.
 
-  #5  [45.0/100 | low]  Metastatic sarcoma to the brain  (differential)
-      + history of metastatic sarcoma, recent fall and headache
-      − no recent evidence of new neurological deficits
-      why: Metastasis to the brain is a risk but not strongly supported by current evidence.
+  #5  [45.0/100 | medium]  Headache  (differential)
+      + hit his head
+      why: Headache is present but may be secondary to the fall and underlying malignancy.
+
+  #6  [35.0/100 | low]  Abdominal pain  (differential)
+      SNOMED aligned : Abdominal pain
+      + abdominal pain
+      why: Abdominal pain is noted but not strongly supported by current findings.
+
+RULE-OUTS
+---------
+
+  • Pneumothorax: No evidence of pneumothorax in chest radiograph or structured clinical context.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • need for further imaging or clinical follow-up to confirm intracranial bleeding or metastasis
+  • Further details on the patient's pain and hematologic status would clarify the severity and management of these conditions.

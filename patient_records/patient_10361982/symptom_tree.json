@@ -1,18 +1,19 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.",
+  "reasoning": "The patient presents with heavy vaginal bleeding after a recent hysterectomy, which is the primary reason for admission.",
   "branches": [
     {
-      "category": "gynecologic",
-      "ontology_hint": "Obstetrics/Gynecology",
+      "category": "gi",
+      "ontology_hint": "Gynecology",
       "symptoms": [
         {
           "term": "heavy vaginal bleeding",
           "status": "present",
-          "severity": "severe",
+          "severity": "moderate",
           "evidence": "heavy vaginal bleeding after hysterectomy",
           "related_findings": [
-            "hematocrit decreased from 40.1 to 38.1"
+            "menorrhagia",
+            "vaginal spotting to light bleeding"
           ],
           "children": [
             {
@@ -21,63 +22,35 @@
               "evidence": "passing 'munchin' sized clots"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "category": "constitutional",
+      "ontology_hint": "Hematology",
+      "symptoms": [
         {
-          "term": "abdominal bloatedness",
-          "status": "history",
+          "term": "hemoglobin level",
+          "status": "abnormal",
           "severity": "mild",
-          "evidence": "abdominal bloatedness secondary to gas",
-          "related_findings": []
-        },
-        {
-          "term": "vaginal spotting to light bleeding",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "vaginal spotting to light bleeding",
-          "related_findings": []
-        },
-        {
-          "term": "menorrhagia",
-          "status": "history",
-          "severity": "moderate",
-          "evidence": "history of abnormal uterine bleeding",
-          "related_findings": []
-        },
-        {
-          "term": "dysmenorrhea",
-          "status": "history",
-          "severity": "moderate",
-          "evidence": "dysmenorrhea",
-          "related_findings": []
-        },
-        {
-          "term": "intra-menstrual bleeding",
-          "status": "history",
-          "severity": "moderate",
-          "evidence": "intra-menstrual bleeding",
-          "related_findings": []
-        },
-        {
-          "term": "post-coital bleeding",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "post-coital bleeding",
-          "related_findings": []
+          "evidence": "HGB-12.6",
+          "related_findings": [
+            "HCT-38.1"
+          ],
+          "children": []
         }
       ]
     }
   ],
   "key_symptoms": [
     "heavy vaginal bleeding",
-    "abdominal bloatedness"
+    "passing clots"
   ],
-  "red_flags": [
-    "hematocrit decreased"
-  ],
+  "red_flags": [],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10361982",
   "admission_id": "24286431",
-  "generated_at": "2026-08-08T16:18:27.672426"
+  "generated_at": "2026-08-19T23:19:11.124101"
 }

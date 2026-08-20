@@ -1,100 +1,106 @@
 {
-  "summary": "The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and bipolar disorder. Recent influenza A infection is also noted.",
-  "most_likely": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+  "summary": "The patient is a 45-year-old man with right-sided rib fractures and hypoxemia following a mechanical fall. He has a history of polysubstance abuse and chronic conditions including opioid dependence and tachycardia.",
+  "most_likely": "Acute respiratory distress secondary to rib fractures and hypoxemia",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Acute respiratory distress secondary to right-sided rib fractures and influenza A",
+      "diagnosis": "Acute respiratory distress secondary to rib fractures and hypoxemia",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "right sided rib fractures, hypoxia, influenza A PCR +"
+        "right rib fractures, hypoxia, patchy parenchymal opacities on chest X-ray"
       ],
       "opposing_evidence": [],
-      "reasoning": "Right-sided rib fractures and influenza A infection are present, leading to respiratory distress."
+      "reasoning": "The patient's right rib fractures and hypoxemia are the primary presenting symptoms, supported by chest X-ray findings."
     },
     {
       "rank": 2,
-      "diagnosis": "Influenza A",
-      "score": 75.0,
-      "confidence": "high",
-      "category": "primary",
-      "snomed_aligned": "Influenza A (H1N1)",
-      "supporting_evidence": [
-        "influenza A PCR +"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed influenza A infection with symptoms of cough and fever."
-    },
-    {
-      "rank": 3,
       "diagnosis": "Pneumothorax",
-      "score": 70.0,
+      "score": 75.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "right PTX"
+        "small right PTX noted on chest X-ray"
       ],
-      "opposing_evidence": [
-        "no evidence of infection or other cause"
-      ],
-      "reasoning": "Small right pneumothorax noted, which could be related to rib fractures."
+      "opposing_evidence": [],
+      "reasoning": "Small right pneumothorax is noted on chest X-ray, which could be a complication of rib fractures."
     },
     {
-      "rank": 4,
-      "diagnosis": "Bipolar disorder",
+      "rank": 3,
+      "diagnosis": "Opioid dependence",
       "score": 60.0,
       "confidence": "medium",
       "category": "risk_factor",
-      "snomed_aligned": "Bipolar disorder",
+      "snomed_aligned": "Opium dependence",
       "supporting_evidence": [
-        "bipolar disorder"
+        "Opioid dependence listed as chronic condition"
       ],
       "opposing_evidence": [
-        "no acute psychiatric symptoms"
+        "No acute opioid withdrawal symptoms noted"
       ],
-      "reasoning": "History of bipolar disorder, but no acute psychiatric symptoms noted."
+      "reasoning": "The patient has a history of opioid dependence, which increases the risk of respiratory complications."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Influenza A",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "Influenza A (H1N1)",
+      "supporting_evidence": [
+        "Influenza A listed as prior PMH"
+      ],
+      "opposing_evidence": [
+        "No current symptoms or findings consistent with influenza"
+      ],
+      "reasoning": "Influenza A is a past PMH, but the current presentation does not support an acute influenza infection."
     },
     {
       "rank": 5,
-      "diagnosis": "Substance abuse",
-      "score": 55.0,
-      "confidence": "medium",
+      "diagnosis": "Bipolar disorder",
+      "score": 30.0,
+      "confidence": "low",
       "category": "risk_factor",
-      "snomed_aligned": "Opiate dependence",
+      "snomed_aligned": "Bipolar disorder",
       "supporting_evidence": [
-        "opiate dependence"
+        "Bipolar disorder listed as prior PMH"
       ],
-      "opposing_evidence": [],
-      "reasoning": "History of opiate dependence, but no acute substance abuse symptoms."
+      "opposing_evidence": [
+        "No current mood instability or manic symptoms"
+      ],
+      "reasoning": "Bipolar disorder is a chronic condition, but it is not currently contributing to the acute presentation."
     },
     {
       "rank": 6,
-      "diagnosis": "Dehydration",
-      "score": 40.0,
+      "diagnosis": "Tachycardia",
+      "score": 20.0,
       "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "",
+      "category": "risk_factor",
+      "snomed_aligned": "Tachycardia, unspecified",
       "supporting_evidence": [
-        "vomiting, diarrhea"
+        "Tachycardia listed as chronic condition"
       ],
       "opposing_evidence": [
-        "normal electrolyte levels"
+        "No acute tachycardia symptoms or findings"
       ],
-      "reasoning": "Vomiting and diarrhea present, but electrolytes are within normal range."
+      "reasoning": "Tachycardia is a chronic condition, but it is not currently contributing to the acute presentation."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Pneumonia",
-      "why": "No signs of consolidation or infection in the lungs."
+      "diagnosis": "PTSD",
+      "why": "No current symptoms or findings consistent with PTSD"
+    },
+    {
+      "diagnosis": "Bipolar disorder",
+      "why": "No current mood instability or manic symptoms"
     }
   ],
   "uncertain_areas": [
-    "Further imaging to confirm the extent of pneumothorax and rib fractures"
+    "Further clarification on the patient's current mental state and respiratory status would help refine the differential"
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis",
@@ -103,7 +109,7 @@
   "_temperature": 0.4,
   "patient_id": "10458324",
   "hadm_id": "21744342",
-  "generated_at": "2026-08-15T17:30:59.620619",
+  "generated_at": "2026-08-20T00:08:52.578487",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,

@@ -8,40 +8,20 @@ Patient ID       : 11607177
 Admission ID     : 23293838
 
 Reasoning:
-  The patient presents with a history of dilated cardiomyopathy and refractory VT, with recent ICD shock and ongoing edema. The patient is currently on multiple medications for his heart failure and arrhythmias.
+  The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness.
 
 Key symptoms     : ICD shock, edema
-Red flags        : ICD shock, lightheadedness
+Red flags        : ICD shock
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present] ICD shock
       evidence: "ICD shock on ___"
-      related: Refractory VT, LVAD in place
-  • [present] refractory VT
-      evidence: "Refractory VT requiring ganglionic block"
-      related: ICD shock, LVAD in place
+      related: Refractory VT, Dilated non-ischemic cardiomyopathy
+  • [present, mild] lightheadedness
+      evidence: "lightheadedness with position changes"
+      related: Dilated non-ischemic cardiomyopathy
   • [present, mild] edema
       evidence: "some increased ___ edema over the last several days"
-      related: LVAD in place
-  • [present] lightheadedness
-      evidence: "lightheadedness with position changes"
-      related: ICD shock, LVAD in place
-  • [present] shaking
-      evidence: "feels some 'shaking' in his chest in the morning for the last 4 months"
-      related: LVAD in place
-
-CONSTITUTIONAL → Infectious Diseases
-------------------------------------
-
-  • [absent] fevers
-      evidence: "denies fevers"
-  • [absent] chills
-      evidence: "denies chills"
-  • [absent] cough
-      evidence: "denies cough"
-  • [absent] nausea
-      evidence: "denies N/V/D"
-  • [absent] palpitations
-      evidence: "denies other palpitations"
+      related: Dilated non-ischemic cardiomyopathy

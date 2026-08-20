@@ -1,102 +1,36 @@
 {
+  "reason_for_admission": "Mechanical fall with right sided rib fractures and hypoxemia.",
+  "presenting_complaint": "Mechanical fall and right sided rib fractures.",
+  "admission_context": "medical",
+  "procedures_this_stay": [
+    {
+      "name": "Pigtail placement",
+      "timing": "current"
+    }
+  ],
   "symptoms": [
-    {
-      "term": "right sided rib fractures",
-      "status": "present",
-      "evidence": "right sided rib fractures"
-    },
-    {
-      "term": "fall",
-      "status": "present",
-      "evidence": "mechanical fall"
-    },
-    {
-      "term": "right lateral chest pain",
-      "status": "present",
-      "evidence": "right lateral chest against the bathtub"
-    },
     {
       "term": "hypoxia",
       "status": "present",
       "evidence": "satting 96% on 4L"
     },
     {
-      "term": "right posterior back tenderness",
+      "term": "chest pain",
       "status": "present",
-      "evidence": "tenderness on right posterior back"
+      "evidence": "tenderness on right posterior back and along the right lateral chest"
     },
     {
       "term": "subcutaneous emphysema",
       "status": "present",
-      "evidence": "subcutaneous emphysema along the right posterior back"
-    },
-    {
-      "term": "right PTX",
-      "status": "present",
-      "evidence": "small right PTX"
-    },
-    {
-      "term": "insomnia",
-      "status": "present",
-      "evidence": "nightmares of being left alone and mistreated"
-    },
-    {
-      "term": "bipolar disorder",
-      "status": "present",
-      "evidence": "Bipolar disorder"
-    },
-    {
-      "term": "polysubstance use",
-      "status": "present",
-      "evidence": "Polysubstance use"
-    },
-    {
-      "term": "opiate dependence",
-      "status": "present",
-      "evidence": "Opiate dependence"
-    },
-    {
-      "term": "headache",
-      "status": "absent",
-      "evidence": "denies neck stiffness or headache"
-    },
-    {
-      "term": "myalgias",
-      "status": "present",
-      "evidence": "myalgias"
-    },
-    {
-      "term": "cough",
-      "status": "present",
-      "evidence": "5 days of mild cough that worsened over the past two days"
-    },
-    {
-      "term": "fever",
-      "status": "present",
-      "evidence": "fever"
-    },
-    {
-      "term": "nasal congestion",
-      "status": "present",
-      "evidence": "nasal congestion"
-    },
-    {
-      "term": "sore throat",
-      "status": "present",
-      "evidence": "sore throat"
-    },
-    {
-      "term": "vomiting",
-      "status": "present",
-      "evidence": "one episode of vomiting"
-    },
-    {
-      "term": "diarrhea",
-      "status": "present",
-      "evidence": "diarrhea"
+      "evidence": "areas of subcutaneous emphysema along the right posterior back"
     }
   ],
   "vitals": [
+    {
+      "name": "SpO2",
+      "value": "98",
+      "unit": "%"
+    },
     {
       "name": "HR",
       "value": "88",
@@ -108,11 +42,6 @@
       "unit": "mmHg"
     },
     {
-      "name": "SpO2",
-      "value": "98",
-      "unit": "%"
-    },
-    {
       "name": "RR",
       "value": "17",
       "unit": "insp/min"
@@ -120,12 +49,7 @@
     {
       "name": "BMI",
       "value": "17.9",
-      "unit": "kg/m2"
-    },
-    {
-      "name": "Weight",
-      "value": "125",
-      "unit": "lbs"
+      "unit": ""
     }
   ],
   "labs": [
@@ -136,13 +60,13 @@
       "flag": "high"
     },
     {
-      "name": "Hgb",
+      "name": "Hemoglobin",
       "value": "10.9",
       "unit": "g/dL",
       "flag": "low"
     },
     {
-      "name": "Hct",
+      "name": "Hematocrit",
       "value": "33.3",
       "unit": "%",
       "flag": "low"
@@ -154,13 +78,7 @@
       "flag": "high"
     },
     {
-      "name": "RBC",
-      "value": "3.72",
-      "unit": "m/uL",
-      "flag": "low"
-    },
-    {
-      "name": "Calcium, Total",
+      "name": "Calcium",
       "value": "8.3",
       "unit": "mg/dL",
       "flag": "low"
@@ -203,9 +121,9 @@
     },
     {
       "name": "Bacteria",
-      "value": "nan",
-      "unit": "/hpf",
-      "flag": "high"
+      "value": "nan /hpf",
+      "unit": "",
+      "flag": "abnormal"
     },
     {
       "name": "Protein",
@@ -253,10 +171,10 @@
       "name": "Magnesium",
       "value": "3.2",
       "unit": "mg/dL",
-      "flag": "high"
+      "flag": "normal"
     },
     {
-      "name": "Creatine Kinase (CK)",
+      "name": "Creatine Kinase",
       "value": "555",
       "unit": "IU/L",
       "flag": "high"
@@ -284,11 +202,63 @@
       "value": "0.8",
       "unit": "mg/dL",
       "flag": "normal"
+    },
+    {
+      "name": "H",
+      "value": "5.0",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "I",
+      "value": "0.0",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "L",
+      "value": "6.0",
+      "unit": "",
+      "flag": "unknown"
+    },
+    {
+      "name": "MCH",
+      "value": "29.3",
+      "unit": "pg",
+      "flag": "normal"
+    },
+    {
+      "name": "MCHC",
+      "value": "32.7",
+      "unit": "g/dL",
+      "flag": "normal"
+    },
+    {
+      "name": "MCV",
+      "value": "90",
+      "unit": "fL",
+      "flag": "normal"
+    },
+    {
+      "name": "RDW",
+      "value": "13.4",
+      "unit": "%",
+      "flag": "normal"
+    },
+    {
+      "name": "RDW-SD",
+      "value": "43.5",
+      "unit": "fL",
+      "flag": "normal"
     }
   ],
   "diagnoses_mentioned": [
     {
-      "term": "right rib fractures",
+      "term": "Rib fractures",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hypoxemia",
       "certainty": "confirmed"
     },
     {
@@ -296,19 +266,15 @@
       "certainty": "confirmed"
     },
     {
-      "term": "bipolar disorder",
+      "term": "Bipolar disorder",
       "certainty": "confirmed"
     },
     {
-      "term": "polysubstance use",
+      "term": "Polysubstance use",
       "certainty": "confirmed"
     },
     {
-      "term": "opiate dependence",
-      "certainty": "confirmed"
-    },
-    {
-      "term": "influenza A",
+      "term": "Opiate dependence",
       "certainty": "confirmed"
     }
   ],
@@ -334,357 +300,22 @@
   ],
   "procedures": [
     {
-      "name": "Pigtail placement",
-      "result": ""
+      "name": "Chest PA and lateral",
+      "result": "Bilateral effusions right greater than left are stable. Patchy parenchymal opacities bilaterally right greater than left are also unchanged. Multiple displaced right-sided rib fractures, unchanged."
     }
   ],
   "negations": [
-    "denies LOC/head strike",
-    "denies harm to others",
-    "denies access to weapons",
-    "denies suicide attempts",
-    "denies PNA",
-    "denies acute changes",
-    "denies interval change",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    "denies acute changes",
-    ""
+    "Denies harm to others",
+    "Denies access to weapons",
+    "Denies current suicidal ideation"
   ],
+  "temporal": [
+    {
+      "finding": "Rib fractures",
+      "onset": "recent"
+    }
+  ],
+  "_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
   "_agent": "information_extraction",
   "_n_prior_admissions": 1
 }

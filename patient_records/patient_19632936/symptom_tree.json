@@ -3,6 +3,11 @@
   "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
   "branches": [
     {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": []
+    },
+    {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
       "symptoms": [
@@ -13,7 +18,7 @@
           "evidence": "acute on chronic dyspnea on exertion",
           "related_findings": [
             "moderate AS",
-            "sick sinus syndrome"
+            "mild pulmonary hypertension"
           ],
           "children": [
             {
@@ -30,24 +35,8 @@
           "evidence": "acute on chronic fatigue",
           "related_findings": [
             "anemia"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "anemia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "acute on chronic macrocytic anemia",
-          "related_findings": [
-            "iron deficiency",
-            "low MCV",
-            "low MCHC"
-          ]
+          ],
+          "children": []
         }
       ]
     },
@@ -58,12 +47,51 @@
         {
           "term": "esophagitis",
           "status": "history",
-          "evidence": "esophagitis (___)"
+          "severity": "mild",
+          "evidence": "esophagitis (___)",
+          "related_findings": [],
+          "children": []
         },
         {
           "term": "nodular gastritis",
           "status": "history",
-          "evidence": "nodular gastritis"
+          "severity": "mild",
+          "evidence": "nodular gastritis",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal",
+      "symptoms": [
+        {
+          "term": "low calcium",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "Calcium, Total: 8.3 mg/dL",
+          "related_findings": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "macrocytic anemia",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "acute on chronic macrocytic anemia",
+          "related_findings": [
+            "Hgb 6.7",
+            "MCV 106",
+            "RDW 18.2",
+            "Reticulocyte Count, Automated: 3.6 %"
+          ],
+          "children": []
         }
       ]
     }
@@ -81,5 +109,5 @@
   "_agent": "symptom_tree",
   "patient_id": "19632936",
   "admission_id": "26696232",
-  "generated_at": "2026-08-08T16:22:12.245664"
+  "generated_at": "2026-08-19T23:22:25.917521"
 }

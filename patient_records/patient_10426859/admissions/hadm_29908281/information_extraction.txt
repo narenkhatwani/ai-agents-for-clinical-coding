@@ -5,90 +5,65 @@ Patient ID       : 10426859
 Admission ID     : 29908281
 Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 
+REASON FOR ADMISSION
+--------------------
+
+  Patient presents with recurrent SVT causing falls and headache.
+  Presenting complaint : Recurrent SVT causing falls and headache.
+  Admission context    : medical
+
 SYMPTOMS
 --------
 
-  • [present] lightheadedness — "lightheadedness and palpitations"
-  • [present] palpitations — "palpitations"
-  • [present] headache — "headache"
-  • [present] fall — "fell when she felt lightheaded"
-  • [present] pain in right hip — "pain in her right hip"
-  • [present] pain in right leg — "pain in her entire right leg - her foot, ankle, leg, hip"
+  • [present] palpitations — "History of Present Illness"
+  • [present] lightheadedness — "History of Present Illness"
+  • [present] headache — "History of Present Illness"
+  • [present] pain in right leg — "History of Present Illness"
 
 VITALS
 ------
 
-• BMI: 22.3 kg/m2
-• Weight: 113.98 Lbs
+• BP: 101/59 mmHg
+• HR: 82 bpm
+• RR: 22 breaths/min
+• O2: 95% %
 
 LABS
 ----
 
-• Red Blood Cells: 3.89 m/uL [low]
-• RDW-SD: 47.2 fL [high]
-• Hyaline Casts: 16.0 #/lpf [high]
-• RBC: 15.0 #/hpf [high]
 • WBC: 45.0 #/hpf [high]
-• Eosinophils: 0.9 % [low]
-• Neutrophils: 71.3 % [high]
 • Troponin T: 0.09 ng/mL [high]
 • Anion Gap: 15.0 mEq/L []
 • Bicarbonate: 25.0 mEq/L []
-• Calcium, Total: 9.2 mg/dL []
-• Chloride: 102.0 mEq/L []
-• Creatinine: 0.7 mg/dL []
-• Glucose: 82.0 mg/dL []
+• Calcium, Total: 9.2 mg/dL [low]
 • Magnesium: 2.1 mg/dL []
 • Phosphate: 3.1 mg/dL []
-• Potassium: 3.9 mEq/L []
 • Sodium: 138.0 mEq/L []
 • Urea Nitrogen: 13.0 mg/dL []
-• Hematocrit: 36.8 % []
-• Hemoglobin: 12.1 g/dL []
-• MCH: 31.1 pg []
-• MCHC: 32.9 g/dL []
-• MCV: 95.0 fL []
-• Platelet Count: 194.0 K/uL []
 
 DIAGNOSES MENTIONED
 -------------------
 
   • [confirmed] Supraventricular tachycardia
-  • [suspected] Chest pain
-  • [confirmed] Hypertension
-  • [confirmed] Hyperlipidemia
-  • [confirmed] Depression
-  • [confirmed] Glucose intolerance
-  • [confirmed] GERD
+  • [confirmed] Chronic kidney disease
 
 MEDICATIONS
 -----------
 
   • Verapamil ER (started)
   • Aspirin (started)
-  • Ondansetron (started)
-  • Adenosine (started)
-  • Verapamil (started)
 
 PROCEDURES
 ----------
 
-  • IVF NS: 1000 mL ordered
-  • IV Adenosine 6 mg: given
-  • IV Ondansetron 4 mg: given
-  • IV Verapamil 2.5 mg: given
-  • PO Aspirin 324 mg: given
+  • CT Head W/O Contrast: tiny chronic right cerebellar infarct, new since prior. Chronic infarct in the left internal capsule, left caudate head, putamen is unchanged from prior exam.
 
 NEGATIONS
 ---------
 
-  • chest pain
-  • shortness of breath
-  • fevers
-  • chills
-  • cough
+  (none)
 
 TEMPORAL
 --------
 
-  • pain in right hip: when nurse tried to reposition her
+  • SVT: recent

@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with a history of renal mass and renal cell carcinoma, along with ongoing cardiovascular and metabolic issues.",
+  "reasoning": "The patient is a man with a history of severe CHF, ischemic heart disease, and renal cell carcinoma, admitted for laparoscopic left radical nephrectomy and lymph node dissection.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -22,7 +22,7 @@
           "severity": "mild",
           "evidence": "pain well controlled on PCA",
           "related_findings": [
-            "left renal mass"
+            "systolic CHF with EF around 30%"
           ],
           "children": []
         }
@@ -35,22 +35,20 @@
         {
           "term": "creatinine",
           "status": "high",
-          "severity": "moderate",
+          "severity": "mild",
           "evidence": "Creatinine: 2.0 mg/dL",
           "related_findings": [
-            "left renal mass",
-            "renal cell carcinoma"
+            "systolic CHF with EF around 30%"
           ],
           "children": []
         },
         {
           "term": "hemoglobin",
           "status": "low",
-          "severity": "moderate",
+          "severity": "mild",
           "evidence": "Hemoglobin: 8.9 g/dL",
           "related_findings": [
-            "left renal mass",
-            "renal cell carcinoma"
+            "systolic CHF with EF around 30%"
           ],
           "children": []
         },
@@ -60,24 +58,49 @@
           "severity": "mild",
           "evidence": "Platelet Count: 147.0 K/uL",
           "related_findings": [
-            "left renal mass",
-            "renal cell carcinoma"
+            "systolic CHF with EF around 30%"
+          ],
+          "children": []
+        },
+        {
+          "term": "calcium",
+          "status": "low",
+          "severity": "mild",
+          "evidence": "Calcium, Total: 8.2 mg/dL",
+          "related_findings": [
+            "systolic CHF with EF around 30%"
           ],
           "children": []
         }
       ]
     },
     {
-      "category": "metabolic",
-      "ontology_hint": "Metabolic",
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
-          "term": "glucose",
-          "status": "high",
-          "severity": "mild",
-          "evidence": "Glucose: 113.0 mg/dL",
+          "term": "obstructive sleep apnea",
+          "status": "confirmed",
+          "severity": "unknown",
+          "evidence": "obstructive sleep apnea, on CPAP",
           "related_findings": [
-            "type 2 diabetes"
+            "systolic CHF with EF around 30%"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "other",
+      "ontology_hint": "Other",
+      "symptoms": [
+        {
+          "term": "left renal mass",
+          "status": "confirmed",
+          "severity": "unknown",
+          "evidence": "left renal mass",
+          "related_findings": [
+            "renal cell carcinoma"
           ],
           "children": []
         }
@@ -96,5 +119,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13508515",
   "admission_id": "21834271",
-  "generated_at": "2026-08-08T16:20:04.772717"
+  "generated_at": "2026-08-19T23:20:37.270506"
 }

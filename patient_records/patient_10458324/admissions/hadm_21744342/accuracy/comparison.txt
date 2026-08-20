@@ -3,19 +3,19 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10458324
 HADM ID          : 21744342
-Generated        : 2026-08-19T22:37:31.056900
+Generated        : 2026-08-20T00:13:04.266304
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Traumatic pneumothorax, initial encounter
-  Rank-1 predicted     : Acute respiratory distress secondary to right-sided rib fractures and influenza A
+  Rank-1 predicted     : Acute respiratory distress secondary to rib fractures and hypoxemia
     score=85.0  confidence=high
   Diagnosis match      : YES
   Is rank-1 match      : NO
-  Matched DiffDx rank  : 3
+  Matched DiffDx rank  : 2
   Matched diagnosis    : Pneumothorax
-    score=70.0  confidence=medium
+    score=75.0  confidence=medium
   LLM reason           : Pneumothorax matches Traumatic pneumothorax, initial encounter
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
@@ -29,15 +29,15 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : YES
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : J93.9 matches S27.0XXA for pneumothorax, unspecified
+  LLM ICD reason       : J93.9 matches S27.0XXA as both code pneumothorax
   Stage 9 final ICD    : J10.1 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Acute respiratory distress secondary to right-sided rib fractures and influenza A  [score=85.0, high]  ICD=- — 
-   2. Influenza A  [score=75.0, high]  ICD=J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
-   3. Pneumothorax  [score=70.0, medium]  ICD=J93.9 — Pneumothorax, unspecified
-   4. Bipolar disorder  [score=60.0, medium]  ICD=F31.9 — Bipolar disorder, unspecified
-   5. Substance abuse  [score=55.0, medium]  ICD=F19.10 — Other psychoactive substance abuse, uncomplicated
-   6. Dehydration  [score=40.0, low]  ICD=E86.0 — Dehydration
+   1. Acute respiratory distress secondary to rib fractures and hypoxemia  [score=85.0, high]  ICD=- — 
+   2. Pneumothorax  [score=75.0, medium]  ICD=J93.9 — Pneumothorax, unspecified
+   3. Opioid dependence  [score=60.0, medium]  ICD=F11.20 — Opioid dependence, uncomplicated
+   4. Influenza A  [score=45.0, low]  ICD=J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
+   5. Bipolar disorder  [score=30.0, low]  ICD=F31.9 — Bipolar disorder, unspecified
+   6. Tachycardia  [score=20.0, low]  ICD=R00.0 — Tachycardia, unspecified

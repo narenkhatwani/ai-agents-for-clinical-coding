@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. The clinical picture is dominated by cardiovascular issues and musculoskeletal pain.",
+  "reasoning": "The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The primary focus is on the SVT and associated symptoms.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -18,7 +18,7 @@
             {
               "term": "SVT",
               "status": "present",
-              "evidence": "Supraventricular tachycardia"
+              "evidence": "found to be in SVT in the ED"
             }
           ]
         },
@@ -30,21 +30,12 @@
           "related_findings": [
             "Supraventricular tachycardia"
           ]
-        },
-        {
-          "term": "chest pain",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "chest pain",
-          "related_findings": [
-            "Supraventricular tachycardia"
-          ]
         }
       ]
     },
     {
       "category": "neurologic",
-      "ontology_hint": "Neurologic",
+      "ontology_hint": "Neurology",
       "symptoms": [
         {
           "term": "headache",
@@ -58,38 +49,14 @@
       ]
     },
     {
-      "category": "musculoskeletal",
-      "ontology_hint": "Musculoskeletal",
+      "category": "skeletal",
+      "ontology_hint": "Orthopedics",
       "symptoms": [
         {
           "term": "pain in right hip",
           "status": "present",
-          "severity": "mild",
+          "severity": "moderate",
           "evidence": "pain in her right hip",
-          "related_findings": [
-            "Nondisplaced comminuted fracture in the right superior pubic ramus"
-          ]
-        },
-        {
-          "term": "pain in right leg",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "pain in her entire right leg - her foot, ankle, leg, hip",
-          "related_findings": [
-            "Nondisplaced comminuted fracture in the right superior pubic ramus"
-          ]
-        }
-      ]
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "fall",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "fell when she felt lightheaded",
           "related_findings": [
             "Nondisplaced comminuted fracture in the right superior pubic ramus"
           ]
@@ -100,16 +67,15 @@
   "key_symptoms": [
     "palpitations",
     "lightheadedness",
-    "pain in right hip"
+    "headache"
   ],
   "red_flags": [
-    "Supraventricular tachycardia",
-    "Nondisplaced comminuted fracture in the right superior pubic ramus"
+    "Supraventricular tachycardia"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10426859",
   "admission_id": "29908281",
-  "generated_at": "2026-08-08T16:18:38.373796"
+  "generated_at": "2026-08-19T23:19:18.929010"
 }

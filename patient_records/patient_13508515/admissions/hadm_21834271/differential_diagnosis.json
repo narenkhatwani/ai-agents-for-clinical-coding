@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with dyspnea and pain, with a history of renal cell carcinoma, systolic heart failure, and metabolic issues.",
+  "summary": "The patient is a man with a history of systolic chronic heart failure, renal cell carcinoma, and multiple chronic conditions, admitted for laparoscopic left radical nephrectomy and lymph node dissection. Current symptoms include dyspnea and mild pain, with laboratory findings indicating renal and hematological abnormalities.",
   "most_likely": "Acute on chronic systolic heart failure",
   "differential": [
     {
@@ -8,89 +8,102 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "426720004",
+      "snomed_aligned": "I5023",
       "supporting_evidence": [
-        "systolic CHF with EF around 30%"
+        "systolic CHF with EF around 30%",
+        "Creatinine: 2.0 mg/dL",
+        "Hemoglobin: 8.9 g/dL"
       ],
       "opposing_evidence": [],
-      "reasoning": "Strong clinical evidence of systolic heart failure, supported by low EF."
+      "reasoning": "The patient has a history of systolic heart failure and current symptoms and lab findings support acute exacerbation."
     },
     {
       "rank": 2,
       "diagnosis": "Renal cell carcinoma",
-      "score": 75.0,
-      "confidence": "high",
-      "category": "primary",
-      "snomed_aligned": "77882004",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "C649",
       "supporting_evidence": [
         "left renal mass",
         "renal cell carcinoma"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis with significant clinical findings."
+      "opposing_evidence": [
+        "Laparoscopic left radical nephrectomy performed"
+      ],
+      "reasoning": "The presence of a left renal mass and renal cell carcinoma in the past supports this diagnosis, but recent surgery may have resolved the mass."
     },
     {
       "rank": 3,
-      "diagnosis": "Anemia",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "low hemoglobin, hematocrit"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Low hemoglobin and hematocrit levels suggest anemia."
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Hypokalemia",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "low potassium"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Low potassium levels suggest hypokalemia."
-    },
-    {
-      "rank": 5,
       "diagnosis": "Obstructive sleep apnea",
       "score": 60.0,
       "confidence": "medium",
-      "category": "risk_factor",
+      "category": "secondary",
       "snomed_aligned": "78275009",
       "supporting_evidence": [
-        "confirmed diagnosis"
+        "obstructive sleep apnea, on CPAP"
+      ],
+      "opposing_evidence": [
+        "no new respiratory symptoms"
+      ],
+      "reasoning": "The patient has a history of obstructive sleep apnea, but no new respiratory symptoms are present."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Anemia",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hemoglobin: 8.9 g/dL",
+        "Hematocrit: 27.3 %"
       ],
       "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis with potential impact on overall health."
+      "reasoning": "Low hemoglobin and hematocrit levels suggest anemia, which could be secondary to chronic heart failure."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hypokalemia",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Calcium, Total: 8.2 mg/dL",
+        "Low potassium levels"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low calcium levels and low potassium may be related, but more specific evidence is needed to confirm hypokalemia."
     },
     {
       "rank": 6,
-      "diagnosis": "Diabetes mellitus",
-      "score": 55.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
+      "diagnosis": "Chronic kidney disease",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "N189",
       "supporting_evidence": [
-        "confirmed diagnosis",
-        "mild hyperglycemia"
+        "Creatinine: 2.0 mg/dL",
+        "Chronic kidney disease"
       ],
       "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis with mild hyperglycemia."
+      "reasoning": "Chronic kidney disease is a known chronic condition, but the current acute presentation is more likely related to heart failure."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Acute kidney injury",
-      "why": "Creatinine levels are moderately elevated but not critically so."
+      "diagnosis": "Left renal mass",
+      "why": "Laparoscopic left radical nephrectomy performed"
+    },
+    {
+      "diagnosis": "Calf pain",
+      "why": "No reported calf pain to deep palpation"
     }
   ],
   "uncertain_areas": [
-    "Further imaging or lab results could clarify the extent of renal involvement and heart failure status"
+    "Further imaging or lab results to confirm renal mass status",
+    "More detailed respiratory assessment to confirm obstructive sleep apnea status"
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis",
@@ -99,7 +112,7 @@
   "_temperature": 0.4,
   "patient_id": "13508515",
   "hadm_id": "21834271",
-  "generated_at": "2026-08-15T17:32:23.633611",
+  "generated_at": "2026-08-20T00:10:27.070020",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,

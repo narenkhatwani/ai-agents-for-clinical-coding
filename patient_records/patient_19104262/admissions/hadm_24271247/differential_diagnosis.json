@@ -1,5 +1,5 @@
 {
-  "summary": "A 30-year-old female with a history of Type 1 Diabetes Mellitus and recurrent diabetic ketoacidosis (DKA) presents with DKA and lactic acidosis, along with abdominal pain, vaginal bleeding, and decreased fetal movement.",
+  "summary": "The patient is a pregnant woman admitted with DKA and lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.",
   "most_likely": "Diabetic ketoacidosis",
   "differential": [
     {
@@ -10,132 +10,106 @@
       "category": "primary",
       "snomed_aligned": "Diabetic ketoacidosis",
       "supporting_evidence": [
-        "admission with DKA/lactic acidosis"
+        "Diabetic ketoacidosis (confirmed), DKA/lactic acidosis"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the presenting symptoms and known history of Type 1 Diabetes Mellitus."
+      "reasoning": "DKA is confirmed and the primary presenting condition."
     },
     {
       "rank": 2,
       "diagnosis": "C difficile colitis",
-      "score": 60.0,
+      "score": 70.0,
       "confidence": "medium",
       "category": "differential",
-      "snomed_aligned": "Clostridium difficile colitis",
+      "snomed_aligned": "Clostridioides difficile infection",
       "supporting_evidence": [
-        "C difficile colitis along with diarrhea"
+        "C difficile colitis: Improving but still with some diarrhea at discharge"
       ],
       "opposing_evidence": [
-        "no infectious precipitants identified"
+        "Improved since discharge"
       ],
-      "reasoning": "Suspected given the presence of C difficile colitis and diarrhea, but no infectious precipitants."
+      "reasoning": "C difficile colitis is suspected and has been a chronic condition."
     },
     {
       "rank": 3,
-      "diagnosis": "Missed abortion",
-      "score": 55.0,
-      "confidence": "high",
+      "diagnosis": "Preeclampsia",
+      "score": 65.0,
+      "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "Missed abortion",
+      "snomed_aligned": "Preeclampsia",
       "supporting_evidence": [
-        "Missed abortion requiring D&C"
+        "Unspecified pre-eclampsia, third trimester"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed complication given the history and current presentation."
+      "opposing_evidence": [
+        "No current signs of hypertension or proteinuria"
+      ],
+      "reasoning": "Preeclampsia is a known chronic condition and risk factor."
     },
     {
       "rank": 4,
-      "diagnosis": "Abdominal pain",
-      "score": 45.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Abdominal pain",
+      "diagnosis": "Missed abortion",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "Missed abortion",
       "supporting_evidence": [
-        "lower abdominal pain/cramping for the past week"
+        "Missed abortion"
       ],
       "opposing_evidence": [
-        "no specific cause identified"
+        "No current signs of bleeding or pregnancy complications"
       ],
-      "reasoning": "Secondary to DKA and potential gastrointestinal issues."
+      "reasoning": "Missed abortion is a chronic condition but not currently presenting."
     },
     {
       "rank": 5,
-      "diagnosis": "Vaginal bleeding",
-      "score": 40.0,
+      "diagnosis": "Type 1 diabetes mellitus",
+      "score": 45.0,
       "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Bleeding from vagina",
+      "category": "primary",
+      "snomed_aligned": "Type 1 diabetes mellitus",
       "supporting_evidence": [
-        "vaginal spotting"
+        "Type 1 diabetes mellitus with ketoacidosis without coma"
       ],
       "opposing_evidence": [
-        "no specific cause identified"
+        "No current signs of hyperglycemia"
       ],
-      "reasoning": "Secondary to DKA and potential obstetric issues."
+      "reasoning": "Type 1 diabetes mellitus is a chronic condition and risk factor."
     },
     {
       "rank": 6,
-      "diagnosis": "Decreased fetal movement",
-      "score": 35.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Low fetal movement",
+      "diagnosis": "Infection",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
       "supporting_evidence": [
+        "fevers/chills/nightsweats for the past few days",
+        "abdominal pain",
         "decreased fetal movement"
       ],
       "opposing_evidence": [
-        "no specific cause identified"
+        "No current signs of infection"
       ],
-      "reasoning": "Secondary to DKA and potential obstetric issues."
-    },
-    {
-      "rank": 7,
-      "diagnosis": "Headache",
-      "score": 30.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "pressure-like frontal headache"
-      ],
-      "opposing_evidence": [
-        "no specific cause identified"
-      ],
-      "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus."
-    },
-    {
-      "rank": 8,
-      "diagnosis": "Nausea",
-      "score": 25.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "nausea and vomiting"
-      ],
-      "opposing_evidence": [
-        "no specific cause identified"
-      ],
-      "reasoning": "Potential risk factor given the history of Type 1 Diabetes Mellitus."
+      "reasoning": "Infection is a possible differential but not the primary presenting condition."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Infectious diseases",
-      "why": "No specific infectious precipitants identified."
+      "diagnosis": "Lactic acidosis",
+      "why": "Lactic acidosis is a consequence of DKA and not a primary diagnosis."
     }
   ],
   "uncertain_areas": [
-    "Further imaging or cultures may clarify the cause of abdominal pain and vaginal bleeding."
+    "Further labs and imaging to confirm infection or other causes of lactic acidosis"
   ],
-  "n_candidates": 8,
+  "n_candidates": 6,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "19104262",
   "hadm_id": "24271247",
-  "generated_at": "2026-08-15T17:33:42.688414",
+  "generated_at": "2026-08-20T00:11:51.235327",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 13,

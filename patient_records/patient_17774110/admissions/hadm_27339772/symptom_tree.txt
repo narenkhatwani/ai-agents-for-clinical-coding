@@ -8,10 +8,10 @@ Patient ID       : 17774110
 Admission ID     : 27339772
 
 Reasoning:
-  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.
+  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.
 
 Key symptoms     : Septic shock, Hepatic encephalopathy, GI bleeding
-Red flags        : Septic shock, Hepatic encephalopathy, Acute renal failure
+Red flags        : Hypoxia, Hypoxic respiratory failure, Acute renal failure
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
@@ -25,17 +25,16 @@ CARDIOVASCULAR → Cardiovascular
 
   • [present, mild] Atrial fibrillation/flutter
       evidence: "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
-      related: INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
 
 RESPIRATORY → Respiratory
 -------------------------
 
-  • [present, mild] Hypoxia
+  • [present, moderate] Hypoxia
       evidence: "oxygen saturations in the ___ at his SNF"
-      related: SpO2 94.0%, pH 7.11 units
+      related: Bilateral effusions right greater than left are unchanged
   • [present, severe] Hypoxic respiratory failure
       evidence: "intubated for hypoxic respiratory failure"
-      related: Respiratory Rate 0.0 insp/min, SpO2 94.0%
+      related: Bilateral effusions right greater than left are unchanged
 
 NEUROLOGIC → Neurology
 ----------------------
@@ -49,13 +48,13 @@ GI → Gastrointestinal
 
   • [present, moderate] GI bleeding
       evidence: "black coffee-ground GI contents"
-      related: Platelet Count 44.0 K/uL, Bleeding from esophagus
+      related: epistaxis from the left nare
 
 RENAL → Renal
 -------------
 
   • [present, severe] Acute renal failure
-      evidence: "Acute renal failure ___ to septic shock and ATN on dialysis"
+      evidence: "acute renal failure ___ to septic shock and ATN on dialysis"
       related: Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units
 
 OTHER → Other
@@ -63,13 +62,6 @@ OTHER → Other
 
   • [present, moderate] IVC thrombus
       evidence: "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
-      related: INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
-  • [present, moderate] Pleural effusion
-      evidence: "large pleural effusion with compressive consolidation versus atelectasis"
-      related: Bilateral effusions right greater than left
-  • [present, moderate] Atelectasis
-      evidence: "Bilateral effusions right greater than left are unchanged"
-      related: Bilateral effusions right greater than left
-  • [present, severe] Worsening liver failure
-      evidence: "worsening liver failure"
-      related: Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L
+  • [present] Multifocal metastatic HCC
+      evidence: "multifocal metastatic HCC with known metastases to the left adrenal gland"
+      related: large heterogeneous solid mass is re-demonstrated within the left upper quadrant

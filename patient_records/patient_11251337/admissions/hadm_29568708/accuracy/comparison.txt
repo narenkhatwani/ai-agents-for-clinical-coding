@@ -3,40 +3,40 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11251337
 HADM ID          : 29568708
-Generated        : 2026-08-19T22:37:31.057737
+Generated        : 2026-08-20T00:13:08.261331
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Hydronephrosis with renal and ureteral calculous obstruction
-  Rank-1 predicted     : Nephrolithiasis
+  Rank-1 predicted     : Acute kidney injury due to nephrolithiasis and PCNL
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.
+  LLM reason           : The ground truth diagnosis 'Hydronephrosis with renal and ureteral calculous obstruction' does not match any of the differential diagnoses provided.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
 
   Ground truth ICD     : N13.2 — Hydronephrosis with renal and ureteral calculous obstruction
-  Rank-1 mapped ICD    : N20.0 — Calculus of kidney
+  Rank-1 mapped ICD    : - — 
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.
+  LLM ICD reason       : The mapped ICD code for the differential diagnosis 'Acute kidney injury due to nephrolithiasis and PCNL' does not match the ground truth ICD code N13.2.
   Stage 9 final ICD    : N20.0 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Nephrolithiasis  [score=85.0, high]  ICD=N20.0 — Calculus of kidney
-   2. Chronic kidney disease  [score=65.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
-   3. Hypertension  [score=55.0, medium]  ICD=I10 — Essential (primary) hypertension
-   4. Acute kidney injury  [score=45.0, low]  ICD=N17.9 — Acute kidney failure, unspecified
-   5. Hemorrhagic CVA  [score=30.0, low]  ICD=- — 
+   1. Acute kidney injury due to nephrolithiasis and PCNL  [score=85.0, high]  ICD=- — 
+   2. Chronic kidney disease, unspecified  [score=75.0, medium]  ICD=N28.9 — Disorder of kidney and ureter, unspecified
+   3. Anemia in chronic kidney disease  [score=65.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
+   4. Complicated urinary tract infection  [score=55.0, medium]  ICD=N39.0 — Urinary tract infection, site not specified
+   5. Hypertensive chronic kidney disease  [score=45.0, low]  ICD=I12.0 — Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease

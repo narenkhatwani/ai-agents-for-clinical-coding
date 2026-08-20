@@ -1,32 +1,35 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a 70-year-old man with multiple comorbidities, including AFib, HFpEF, PVD, and CKD, who underwent ERCP for cholangitis and is being managed post-procedurally.",
+  "reasoning": "The patient is a 70-year-old man with a history of AFib, HFpEF, PVD, and CKD who was admitted post-ERCP for cholangitis and subsequent stent placement. His current presentation includes mild edema and no acute symptoms, but he has a history of nocturnal hypoxia and leg swelling.",
   "branches": [
     {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "nocturnal hypoxia",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "nocturnal hypoxia that improved with diuresis",
-          "related_findings": [
-            "Hematocrit: 38.3%",
-            "Hemoglobin: 12.6 g/dL"
-          ],
-          "children": []
-        },
-        {
-          "term": "leg swelling",
+          "term": "edema",
           "status": "present",
           "severity": "mild",
           "evidence": "notes his edema improves during the night and worsens during the day",
           "related_findings": [
             "Creatinine: 1.4 mg/dL",
-            "Potassium: 4.3 mEq/L"
+            "Hematocrit: 38.3 %",
+            "Hemoglobin: 12.6 g/dL",
+            "MCH: 32.8 pg",
+            "MCV: 100.0 fL",
+            "Red Blood Cells: 3.84 m/uL",
+            "RDW-SD: 54.1 fL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "leg swelling",
+              "status": "present",
+              "evidence": "notes his edema improves during the night and worsens during the day"
+            }
+          ]
         }
       ]
     },
@@ -40,8 +43,41 @@
           "severity": "unknown",
           "evidence": "Admitted last month with cholangitis and underwent ERCP with stent placement",
           "related_findings": [
-            "White Blood Cells: 7.2 K/uL",
-            "Anion Gap: 16.0 mEq/L"
+            "Creatinine: 1.4 mg/dL",
+            "Hematocrit: 38.3 %",
+            "Hemoglobin: 12.6 g/dL",
+            "MCH: 32.8 pg",
+            "MCV: 100.0 fL",
+            "Red Blood Cells: 3.84 m/uL",
+            "RDW-SD: 54.1 fL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "nocturnal hypoxia",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "nocturnal hypoxia that improved with diuresis",
+          "related_findings": [
+            "Creatinine: 1.4 mg/dL",
+            "Hematocrit: 38.3 %",
+            "Hemoglobin: 12.6 g/dL",
+            "MCH: 32.8 pg",
+            "MCV: 100.0 fL",
+            "Red Blood Cells: 3.84 m/uL",
+            "RDW-SD: 54.1 fL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
           ],
           "children": []
         }
@@ -55,21 +91,43 @@
           "term": "atrial fibrillation",
           "status": "present",
           "severity": "mild",
-          "evidence": "AFib on apixaban",
+          "evidence": "on apixaban for AFib",
           "related_findings": [
-            "Hematocrit: 38.3%",
-            "Hemoglobin: 12.6 g/dL"
+            "Creatinine: 1.4 mg/dL",
+            "Hematocrit: 38.3 %",
+            "Hemoglobin: 12.6 g/dL",
+            "MCH: 32.8 pg",
+            "MCV: 100.0 fL",
+            "Red Blood Cells: 3.84 m/uL",
+            "RDW-SD: 54.1 fL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
           ],
           "children": []
-        },
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
         {
           "term": "heart failure",
           "status": "present",
           "severity": "mild",
-          "evidence": "HFpEF",
+          "evidence": "HFpEF, held home Lasix",
           "related_findings": [
             "Creatinine: 1.4 mg/dL",
-            "Potassium: 4.3 mEq/L"
+            "Hematocrit: 38.3 %",
+            "Hemoglobin: 12.6 g/dL",
+            "MCH: 32.8 pg",
+            "MCV: 100.0 fL",
+            "Red Blood Cells: 3.84 m/uL",
+            "RDW-SD: 54.1 fL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
           ],
           "children": []
         }
@@ -86,24 +144,15 @@
           "evidence": "PVD with remote bypass graft",
           "related_findings": [
             "Creatinine: 1.4 mg/dL",
-            "Potassium: 4.3 mEq/L"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "renal",
-      "ontology_hint": "Renal",
-      "symptoms": [
-        {
-          "term": "chronic kidney disease",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "CKD",
-          "related_findings": [
-            "Creatinine: 1.4 mg/dL",
-            "Potassium: 4.3 mEq/L"
+            "Hematocrit: 38.3 %",
+            "Hemoglobin: 12.6 g/dL",
+            "MCH: 32.8 pg",
+            "MCV: 100.0 fL",
+            "Red Blood Cells: 3.84 m/uL",
+            "RDW-SD: 54.1 fL",
+            "Calcium, Total: 8.7 mg/dL",
+            "Magnesium: 1.7 mg/dL",
+            "Phosphate: 2.9 mg/dL"
           ],
           "children": []
         }
@@ -111,7 +160,7 @@
     }
   ],
   "key_symptoms": [
-    "leg swelling",
+    "edema",
     "nocturnal hypoxia"
   ],
   "red_flags": [
@@ -123,5 +172,5 @@
   "_agent": "symptom_tree",
   "patient_id": "11474876",
   "admission_id": "29672491",
-  "generated_at": "2026-08-08T16:19:14.340540"
+  "generated_at": "2026-08-19T23:20:03.745166"
 }

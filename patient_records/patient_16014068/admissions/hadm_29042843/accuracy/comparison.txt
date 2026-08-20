@@ -3,40 +3,41 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 16014068
 HADM ID          : 29042843
-Generated        : 2026-08-19T22:37:31.065269
+Generated        : 2026-08-20T00:13:31.452930
 
 DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
 ------------------------------------
 
   Ground truth primary : Secondary malignant neoplasm of brain
-  Rank-1 predicted     : Anemia due to malignancy
+  Rank-1 predicted     : Metastatic sarcoma with hematologic complications
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the ranked differential diagnoses match the ground truth primary diagnosis 'Secondary malignant neoplasm of brain'.
+  LLM reason           : The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.
 
 LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
 ---------------------------------------------------
 
   Ground truth ICD     : C79.31 — Secondary malignant neoplasm of brain
-  Rank-1 mapped ICD    : B99.9 — Unspecified infectious disease
+  Rank-1 mapped ICD    : C79.89 — Secondary malignant neoplasm of other specified sites
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to the ground truth ICD code C79.31.
+  LLM ICD reason       : The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.
   Stage 9 final ICD    : B99.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Anemia due to malignancy  [score=85.0, high]  ICD=B99.9 — Unspecified infectious disease
-   2. Thrombocytopenia due to malignancy  [score=75.0, high]  ICD=U07.1 — COVID-19
-   3. Hypotension  [score=60.0, medium]  ICD=I95.9 — Hypotension, unspecified
-   4. Headache  [score=50.0, medium]  ICD=R51.9 — Headache, unspecified
-   5. Metastatic sarcoma to the brain  [score=45.0, low]  ICD=C79.89 — Secondary malignant neoplasm of other specified sites
+   1. Metastatic sarcoma with hematologic complications  [score=85.0, high]  ICD=C79.89 — Secondary malignant neoplasm of other specified sites
+   2. Anemia  [score=70.0, high]  ICD=D64.9 — Anemia, unspecified
+   3. Thrombocytopenia  [score=65.0, high]  ICD=O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified
+   4. Hypotension  [score=50.0, medium]  ICD=I95.9 — Hypotension, unspecified
+   5. Headache  [score=45.0, medium]  ICD=R51.9 — Headache, unspecified
+   6. Abdominal pain  [score=35.0, low]  ICD=R10.9 — Unspecified abdominal pain

@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "11251337",
   "hadm_id": "29568708",
-  "generated_at": "2026-08-19T22:37:31.057737",
+  "generated_at": "2026-08-20T00:13:08.261331",
   "ground_truth": {
     "primary_icd_code": "N132",
     "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
@@ -14,7 +14,7 @@
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "rank1_diagnosis": "Nephrolithiasis",
+      "rank1_diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -25,49 +25,49 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "low",
-      "llm_reason": "None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.",
-      "llm_expanded_ground_truth": "Hydronephrosis | Renal and ureteral calculous obstruction",
-      "llm_expanded_matched": "",
+      "llm_reason": "The ground truth diagnosis 'Hydronephrosis with renal and ureteral calculous obstruction' does not match any of the differential diagnoses provided.",
+      "llm_expanded_ground_truth": "Hydronephrosis with renal calculi and ureteral obstruction",
+      "llm_expanded_matched": "Acute kidney injury due to nephrolithiasis and PCNL",
       "diagnosis_items": [
         {
-          "diagnosis": "Nephrolithiasis",
+          "diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": "N20.0",
-          "icd10_primary_title": "Calculus of kidney"
+          "icd10_primary": null,
+          "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Chronic kidney disease",
+          "diagnosis": "Chronic kidney disease, unspecified",
           "rank": 2,
+          "score": 75.0,
+          "confidence": "medium",
+          "icd10_primary": "N28.9",
+          "icd10_primary_title": "Disorder of kidney and ureter, unspecified"
+        },
+        {
+          "diagnosis": "Anemia in chronic kidney disease",
+          "rank": 3,
           "score": 65.0,
           "confidence": "medium",
           "icd10_primary": "N18.9",
           "icd10_primary_title": "Chronic kidney disease, unspecified"
         },
         {
-          "diagnosis": "Hypertension",
-          "rank": 3,
+          "diagnosis": "Complicated urinary tract infection",
+          "rank": 4,
           "score": 55.0,
           "confidence": "medium",
-          "icd10_primary": "I10",
-          "icd10_primary_title": "Essential (primary) hypertension"
+          "icd10_primary": "N39.0",
+          "icd10_primary_title": "Urinary tract infection, site not specified"
         },
         {
-          "diagnosis": "Acute kidney injury",
-          "rank": 4,
+          "diagnosis": "Hypertensive chronic kidney disease",
+          "rank": 5,
           "score": 45.0,
           "confidence": "low",
-          "icd10_primary": "N17.9",
-          "icd10_primary_title": "Acute kidney failure, unspecified"
-        },
-        {
-          "diagnosis": "Hemorrhagic CVA",
-          "rank": 5,
-          "score": 30.0,
-          "confidence": "low",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "I12.0",
+          "icd10_primary_title": "Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease"
         }
       ],
       "n_diffdx": 5
@@ -75,8 +75,8 @@
     "icd_linked": {
       "ground_truth_icd": "N13.2",
       "ground_truth_icd_title": "Hydronephrosis with renal and ureteral calculous obstruction",
-      "rank1_predicted_icd": "N20.0",
-      "rank1_predicted_icd_title": "Calculus of kidney",
+      "rank1_predicted_icd": "",
+      "rank1_predicted_icd_title": "",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -85,33 +85,36 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.",
-      "llm_expanded_ground_truth_icd": "N13.2 — Hydronephrosis with renal and ureteral calculous obstruction",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "The mapped ICD code for the differential diagnosis 'Acute kidney injury due to nephrolithiasis and PCNL' does not match the ground truth ICD code N13.2.",
+      "llm_expanded_ground_truth_icd": "Hydronephrosis with renal and ureteral calculous obstruction",
+      "llm_expanded_matched_icd": "(none)",
       "stage9_final_primary_icd": "N20.0",
       "diagnosis_match": false,
       "is_rank1_diagnosis_match": null,
       "matched_diffdx_rank": null
     },
     "llm_qe_raw": {
-      "matched_rank": null,
+      "matched_rank": 1,
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the differential diagnoses match the ground truth diagnosis of Hydronephrosis with renal and ureteral calculous obstruction.",
+      "diagnosis_reason": "The ground truth diagnosis 'Hydronephrosis with renal and ureteral calculous obstruction' does not match any of the differential diagnoses provided.",
       "ground_truth_expansions": [
-        "Hydronephrosis",
-        "Renal and ureteral calculous obstruction"
+        "Hydronephrosis with renal calculi and ureteral obstruction"
       ],
-      "matched_diagnosis_expansions": [],
+      "matched_diagnosis_expansions": [
+        "Acute kidney injury due to nephrolithiasis and PCNL"
+      ],
       "icd_equivalent": false,
       "icd_confidence": "low",
-      "icd_reason": "None of the differential diagnoses have an ICD code that matches or is clinically equivalent to N13.2.",
+      "icd_reason": "The mapped ICD code for the differential diagnosis 'Acute kidney injury due to nephrolithiasis and PCNL' does not match the ground truth ICD code N13.2.",
       "ground_truth_icd_expansions": [
-        "N13.2 — Hydronephrosis with renal and ureteral calculous obstruction"
+        "Hydronephrosis with renal and ureteral calculous obstruction"
       ],
-      "matched_icd_expansions": [],
-      "_cache_hit": true
+      "matched_icd_expansions": [
+        "(none)"
+      ],
+      "_cache_hit": false
     }
   },
   "has_stage8": true,

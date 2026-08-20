@@ -5,60 +5,63 @@ Patient ID       : 17774110
 HADM ID          : 27339772
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-15T17:33:14.305981
+Generated        : 2026-08-20T00:11:17.961790
 Candidates       : 8
-Most likely      : Severe sepsis with septic shock
+Most likely      : Acute liver failure
 Prior admissions : 2 (34 ICD codes as PMH context)
 
 Summary:
-  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient has a history of chronic liver disease and hepatitis C.
+  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient is also on mechanical ventilation due to hypoxic respiratory failure.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Severe sepsis with septic shock  (primary)
-      + Septic shock, Klebsiella Aerogenes blood cultures grew
-      why: Severe sepsis with septic shock is the primary driver of the patient's critical condition, evidenced by septic shock and elevated inflammatory markers.
-
-  #2  [75.0/100 | high]  Hepatic encephalopathy  (complication)
-      SNOMED aligned : Hepatic encephalopathy
-      + Hepatic encephalopathy, RASS-5, sluggish pupil response
-      why: Hepatic encephalopathy is a well-known complication of severe liver failure, supported by the patient's altered mental status and elevated liver enzymes.
-
-  #3  [70.0/100 | medium]  Acute liver failure  (primary)
+  #1  [85.0/100 | high]  Acute liver failure  (primary)
       SNOMED aligned : Acute liver failure
-      + Worsening liver failure, Bilirubin, Total 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L
-      why: Acute liver failure is a severe form of liver failure, evidenced by the patient's elevated liver enzymes and worsening liver function.
+      + Worsening liver failure, Hepatic encephalopathy, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L, PT 36.5 sec, PTT 104.2 sec
+      why: Strong evidence of liver failure with elevated liver enzymes and coagulation parameters.
 
-  #4  [65.0/100 | high]  GI bleeding  (complication)
-      SNOMED aligned : Gastrointestinal hemorrhage
-      + GI bleeding, black coffee-ground GI contents
-      why: GI bleeding is a critical complication, evidenced by the patient's black coffee-ground GI contents and low platelet count.
+  #2  [75.0/100 | high]  Septic shock  (primary)
+      + Septic shock, Bilirubin 13.3 mg/dL, WBC 8.4 K/uL, PT 36.5 sec, PTT 104.2 sec
+      why: Severe sepsis with evidence of systemic inflammatory response and coagulopathy.
 
-  #5  [50.0/100 | medium]  Atrial fibrillation/flutter  (complication)
-      + Atrial fibrillation/flutter, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
-      why: Atrial fibrillation/flutter is a known complication, evidenced by the patient's elevated INR and prolonged coagulation times.
+  #3  [70.0/100 | high]  Hepatic encephalopathy  (complication)
+      SNOMED aligned : Hepatic encephalopathy
+      + Hepatic encephalopathy, RASS-5, sluggish pupil response, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L
+      why: Severe liver failure with evidence of altered mental status and elevated liver enzymes.
 
-  #6  [45.0/100 | medium]  Pleural effusion  (complication)
+  #4  [65.0/100 | high]  Acute renal failure  (complication)
+      SNOMED aligned : Acute renal failure
+      + Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units
+      why: Severe acidosis and electrolyte disturbances suggesting acute renal failure.
+
+  #5  [60.0/100 | medium]  Pleural effusion  (complication)
       SNOMED aligned : Pleural effusion
-      + Pleural effusion, large pleural effusion with compressive consolidation versus atelectasis
-      why: Pleural effusion is a common complication, evidenced by the patient's bilateral pleural effusions.
+      + Large pleural effusion with compressive consolidation versus atelectasis
+      why: Evidence of pleural effusion on imaging, but less likely primary cause given other severe systemic issues.
 
-  #7  [40.0/100 | medium]  Renal failure  (complication)
-      + Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L
-      why: Renal failure is a significant complication, evidenced by the patient's elevated creatinine and bicarbonate levels.
+  #6  [55.0/100 | medium]  IVC thrombus  (complication)
+      SNOMED aligned : IVC thrombus
+      + IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy
+      why: IVC thrombus present, but less likely primary cause given other severe systemic issues.
 
-  #8  [35.0/100 | medium]  Coagulopathy  (complication)
-      + Coagulopathy, INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
-      why: Coagulopathy is a critical complication, evidenced by the patient's prolonged coagulation times.
+  #7  [50.0/100 | medium]  Cirrhosis  (secondary)
+      SNOMED aligned : Cirrhosis of liver
+      + Cirrhosis, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L
+      why: Chronic condition with evidence of liver dysfunction.
+
+  #8  [30.0/100 | low]  Bipolar disorder  (risk_factor)
+      SNOMED aligned : Bipolar disorder
+      + Bipolar disorder, unspecified
+      why: Previous diagnosis, but less likely to be the primary cause of current acute presentation.
 
 RULE-OUTS
 ---------
 
-  • Cirrhosis: Cirrhosis is a chronic condition and not the primary driver of the current presentation.
-  • Hepatocellular carcinoma: While present, the primary focus is on the acute complications and sepsis.
+  • GI bleeding: GI bleeding is present but less likely to be the primary cause given the severity of liver failure and septic shock.
+  • Atrial fibrillation/flutter: Atrial fibrillation/flutter is present but less likely to be the primary cause given the severity of liver failure and septic shock.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further details on the source of sepsis and the exact nature of the liver failure would refine the differential diagnosis.
+  • Further clarification on the source of infection and the exact nature of the liver failure would change the ranking

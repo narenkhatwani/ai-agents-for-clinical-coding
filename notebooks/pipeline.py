@@ -1063,7 +1063,7 @@ import json
 import random
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Set, Union
 
 import pandas as pd
 
@@ -1637,8 +1637,14 @@ transitional issues) and Hospital Course problem titles are REDACTED — do not 
 labels from placeholders. Prefer structured vitals/labs over note text when they conflict.
 Tag prior-admission findings as status "history".
 
+Distinguish the REASON FOR THIS ADMISSION (why the patient is in hospital today) from chronic past medical history.
+
 Return ONLY valid JSON (no markdown) with this schema:
 {
+  "reason_for_admission": "1 sentence: principal reason patient is hospitalized THIS stay",
+  "presenting_complaint": "chief complaint or main symptom bringing patient in",
+  "admission_context": "medical|surgical|post_procedural|observation|other",
+  "procedures_this_stay": [{"name": "", "timing": "current|planned|recent|history"}],
   "symptoms": [{"term": "", "status": "present|absent|history", "evidence": "verbatim phrase from note"}],
   "vitals": [{"name": "", "value": "", "unit": ""}],
   "labs": [{"name": "", "value": "", "unit": "", "flag": "high|low|normal|unknown"}],
@@ -1648,16 +1654,20 @@ Return ONLY valid JSON (no markdown) with this schema:
   "negations": [""],
   "temporal": [{"finding": "", "onset": ""}]
 }
+For post-ERCP, post-op, or scheduled procedure admissions: name the condition being treated or monitored even if improving.
 Use standard clinical terminology. Keep evidence SHORT (≤15 words). Return COMPLETE JSON only."""
 
 SYMPTOM_TREE_SYSTEM_PROMPT = """You are a clinical Symptom Tree Agent.
 Given a clinical note, structured MIMIC vitals/labs/reports, and information extraction, build a hierarchical symptom tree
 for ontology routing (Infectious, Cardiovascular, Respiratory, etc.).
 
+Use reason_for_admission from the extraction JSON to anchor the dominant clinical picture for THIS stay
+(not merely chronic comorbidities from PMH).
+
 Return ONLY valid JSON (no markdown):
 {
   "root": "ClinicalPresentation",
-  "reasoning": "1-2 sentence summary of dominant clinical picture",
+  "reasoning": "1-2 sentence summary of dominant clinical picture for THIS admission",
   "branches": [
     {
       "category": "constitutional|respiratory|cardiovascular|infectious|neurologic|gi|renal|other",
@@ -1730,6 +1740,84 @@ def information_extraction_agent(
     if admission_history is not None:
         extracted["_n_prior_admissions"] = len(admission_history)
     return extracted
+
+
+def refresh_ie_exports(
+    export_dir: Union[str, Path] = None,
+    config: Optional[LLMConfig] = None,
+    delay_seconds: Optional[float] = None,
+    patient_ids: Optional[List[str]] = None,
+) -> Dict[str, Any]:
+    """
+    Re-run Stage 2 information extraction for admissions under patient_records/.
+    Writes information_extraction.json + .txt per admission folder.
+    """
+    import time
+
+    export_dir = Path(export_dir or EXPORT_DIR)
+    delay = LLM_REQUEST_DELAY_SECONDS if delay_seconds is None else delay_seconds
+    cfg = config or get_llm_config()
+    admissions = list_admission_export_dirs(export_dir)
+    if patient_ids:
+        pid_set = {str(p) for p in patient_ids}
+        admissions = [a for a in admissions if str(a.get("patient_id")) in pid_set]
+
+    records: List[Dict[str, Any]] = []
+    print(f"Stage 2 refresh: {len(admissions)} admission(s)")
+    for i, adm in enumerate(admissions, start=1):
+        adm_dir = Path(adm["admission_dir"])
+        pid, hid = adm["patient_id"], adm["hadm_id"]
+        note_path = adm_dir / "clinical_note.txt"
+        if not note_path.exists():
+            print(f"[{i}/{len(admissions)}] SKIP patient={pid} — no clinical_note.txt")
+            continue
+        note = note_path.read_text(encoding="utf-8")
+        ctx_path = adm_dir / "clinical_context.txt"
+        ctx = ctx_path.read_text(encoding="utf-8") if ctx_path.exists() else None
+        hist_path = adm_dir.parent.parent / "admission_history.json"
+        history: List[Dict[str, Any]] = []
+        if hist_path.exists():
+            raw = json.loads(hist_path.read_text(encoding="utf-8"))
+            history = raw if isinstance(raw, list) else []
+        print(f"[{i}/{len(admissions)}] IE patient={pid} hadm={hid}...")
+        try:
+            extracted = information_extraction_agent(
+                note,
+                config=cfg,
+                admission_history=history,
+                clinical_context_text=ctx,
+            )
+        except (ValueError, TimeoutError, LLMNotAvailableError) as exc:
+            print(f"  ERROR: {exc}")
+            records.append({"patient_id": pid, "hadm_id": hid, "error": str(exc)})
+            continue
+        meta = {
+            "patient_id": pid,
+            "admission_id": hid,
+            "extraction_method": extracted.get("_method"),
+            "n_prior_admissions": len(history),
+        }
+        _write_json(adm_dir / "information_extraction.json", extracted)
+        _write_text(
+            adm_dir / "information_extraction.txt",
+            format_extraction_txt(extracted, meta),
+        )
+        rfa = str(extracted.get("reason_for_admission") or "")[:80]
+        print(f"  reason_for_admission: {rfa or '(empty)'}")
+        records.append(
+            {
+                "patient_id": pid,
+                "hadm_id": hid,
+                "reason_for_admission": extracted.get("reason_for_admission"),
+                "presenting_complaint": extracted.get("presenting_complaint"),
+            }
+        )
+        if i < len(admissions) and delay and delay > 0:
+            time.sleep(delay)
+
+    n_rfa = sum(1 for r in records if r.get("reason_for_admission"))
+    print(f"Stage 2 refresh done: {n_rfa}/{len(records)} with reason_for_admission")
+    return {"n_admissions": len(records), "n_with_reason_for_admission": n_rfa, "results": records}
 
 
 def symptom_tree_agent(
@@ -1856,22 +1944,38 @@ For each candidate diagnosis:
 5. Note opposing evidence when the context weighs against the diagnosis.
 6. Optionally align to a retained SNOMED term when it matches the diagnosis concept.
 
+Diagnosis naming (important for clinical coding):
+- Each diagnosis string must be a FULL clinical condition phrase (typically 3–12 words), \
+  not a single generic word and not a procedure/symptom label.
+- Rank-1 must be a billable principal DISEASE/CONDITION (e.g. "Refractory ventricular tachycardia", \
+  "Traumatic pneumothorax"), NOT a presenting symptom or device event (avoid "ICD shock", \
+  "Post-PCNL complications", "Leg swelling" as rank-1).
+- When trauma, procedures, or infection are present, include injury-specific and anatomic \
+  alternatives as separate ranked items (e.g. pneumothorax, choledocholithiasis, rib fracture).
+- For chest trauma with rib fractures or hypoxia: include "Pneumothorax" (or traumatic \
+  pneumothorax) as its own ranked item when radiology or the note supports it.
+- When structured radiology or labs conflict with narrative impression, prefer the \
+  structured vitals/labs/radiology block for ranking injury and acute findings.
+- Do not collapse the differential into one long compound label — list distinct conditions.
+
 Also provide:
 - summary: 2–4 sentence synthesis of the CURRENT presentation (with PMH only as context)
-- most_likely: the top working diagnosis string for THIS admission
+- most_likely: the top working diagnosis string for THIS admission (full clinical phrase)
 - rule_outs: considered but weakly supported or contradicted
 - uncertain_areas: what missing data would change ranking
-- Aim for 3–8 differentials when evidence allows (more is fine if justified)
+- Aim for 5–8 differentials when evidence allows (more is fine if justified)
 
 Return COMPLETE valid JSON only (no markdown fences), matching the OUTPUT schema."""
 
 DIFF_DX_CONSTRAINTS = """\
 - Base every judgment solely on the CONTEXT provided. Do not invent symptoms, labs, \
   imaging, or history that are not present.
-- PRIOR admission ICD-10 codes are known past diagnoses / comorbidities only. Use them \
-  to inform risk, chronic conditions, and recurrence — do NOT copy them wholesale as the \
-  only current-admission diagnoses unless the CURRENT context strongly supports them \
-  for this stay.
+- Use the admission-context block (if present) to identify the principal DISEASE for this stay — \
+  not merely the presenting event. Rank-1 should be the condition a coder would list as principal, \
+  not the admission mechanism (e.g. prefer "Ventricular tachycardia" over "ICD shock").
+- PRIOR admission summary lists chronic conditions and prior stay principals. Use them to inform \
+  risk, chronic conditions, and recurrence — do NOT copy them wholesale as current-admission \
+  diagnoses unless the CURRENT context strongly supports them for this stay.
 - Do NOT use or guess CURRENT discharge diagnoses (they may be redacted). Current-stay \
   ground-truth ICD is never provided.
 - Do not use private outside-case knowledge about this specific patient.
@@ -2001,38 +2105,210 @@ def build_prior_icd_context(
     return out
 
 
-def format_prior_icd_context_text(prior_blocks: List[Dict[str, Any]]) -> str:
-    """Human-readable prior ICD block for the prompt CONTEXT section."""
+def _is_pmh_z_code(code: str) -> bool:
+    """Z-codes that are usually administrative / history-only for PMH summaries."""
+    c = str(code or "").upper().replace(".", "")
+    if not c.startswith("Z"):
+        return False
+    # Keep clinically meaningful Z codes (status/aftercare) in chronic list
+    if c.startswith(("Z85", "Z87", "Z90", "Z94", "Z95", "Z98")):
+        return False
+    return True
+
+
+def _normalize_chronic_title(title: str) -> str:
+    return " ".join(str(title or "").lower().split())
+
+
+def summarize_prior_icd_blocks(
+    prior_blocks: List[Dict[str, Any]],
+    reason_for_admission: Optional[str] = None,
+) -> Dict[str, Any]:
+    """
+    Compact PMH summary: prior stay principals + deduped chronic conditions.
+    Raw full ICD lists are omitted to reduce anchor bias in DiffDx prompts.
+    """
+    principals: List[Dict[str, str]] = []
+    chronic_seen: Set[str] = set()
+    chronic_conditions: List[str] = []
+    recurrence_hints: List[str] = []
+    rfa_norm = _normalize_chronic_title(reason_for_admission or "")
+
+    for adm in prior_blocks or []:
+        if not isinstance(adm, dict):
+            continue
+        pcode = str(adm.get("primary_icd_code") or "")
+        ptitle = str(adm.get("primary_dx_title") or "").strip()
+        if pcode or ptitle:
+            principals.append(
+                {
+                    "hadm_id": str(adm.get("hadm_id") or ""),
+                    "admittime": str(adm.get("admittime") or ""),
+                    "primary_icd_code": pcode,
+                    "primary_dx_title": ptitle,
+                }
+            )
+            if ptitle and rfa_norm:
+                pt_norm = _normalize_chronic_title(ptitle)
+                pt_tokens = set(pt_norm.split()) - {"with", "of", "the", "and", "unspecified", "without"}
+                rfa_tokens = set(rfa_norm.split()) - {"with", "of", "the", "and", "unspecified", "without"}
+                overlap = pt_tokens & rfa_tokens
+                if (
+                    pt_norm in rfa_norm
+                    or rfa_norm in pt_norm
+                    or len(overlap) >= 2
+                ):
+                    recurrence_hints.append(
+                        f"Prior stay principal may relate to current admission: {ptitle}"
+                    )
+
+        primary_key = _normalize_chronic_title(ptitle)
+        for row in adm.get("icd10_diagnoses") or []:
+            code = str(row.get("code") or "")
+            title = str(row.get("title") or "").strip()
+            if not title:
+                continue
+            if code and _is_pmh_z_code(code):
+                continue
+            key = _normalize_chronic_title(title)
+            if not key or key == primary_key:
+                continue
+            if key in chronic_seen:
+                continue
+            chronic_seen.add(key)
+            chronic_conditions.append(title)
+
+    return {
+        "n_prior_admissions": len(prior_blocks or []),
+        "prior_principals": principals,
+        "active_chronic_conditions": chronic_conditions[:15],
+        "recurrence_hints": recurrence_hints[:5],
+    }
+
+
+def format_prior_icd_context_text(
+    prior_blocks: List[Dict[str, Any]],
+    reason_for_admission: Optional[str] = None,
+) -> str:
+    """Human-readable summarized prior ICD block for LLM CONTEXT sections."""
     if not prior_blocks:
         return (
             "No prior admissions in export. "
             "Do not invent past diagnoses."
         )
+    summary = summarize_prior_icd_blocks(prior_blocks, reason_for_admission=reason_for_admission)
     lines = [
-        "PRIOR ADMISSIONS — known past ICD-10 diagnoses only "
-        "(NOT current discharge diagnoses; use as PMH / comorbidity / recurrence context).",
+        "PRIOR ADMISSIONS — summarized PMH (NOT current discharge diagnoses).",
+        "Use to inform chronic conditions, recurrence, and risk — do NOT copy as rank-1 unless",
+        "the CURRENT stay reason-for-admission supports it.",
         "",
+        f"Prior admissions in cohort: {summary.get('n_prior_admissions', 0)}",
+        "",
+        "Prior stay principals (why each prior admission was billed):",
     ]
-    for i, adm in enumerate(prior_blocks, start=1):
+    for i, adm in enumerate(summary.get("prior_principals") or [], start=1):
         lines.append(
-            f"--- Prior admission {i} | hadm_id={adm.get('hadm_id')} ---"
+            f"  {i}. hadm_id={adm.get('hadm_id')} ({adm.get('admittime') or 'date unknown'})"
         )
         lines.append(
-            f"  Admit: {adm.get('admittime')} | Discharge: {adm.get('dischtime')}"
+            f"     {adm.get('primary_icd_code')} — {adm.get('primary_dx_title')}"
         )
-        lines.append(f"  Type: {adm.get('admission_type')}")
-        lines.append(
-            f"  Primary: {adm.get('primary_icd_code')} — {adm.get('primary_dx_title')}"
+    if not summary.get("prior_principals"):
+        lines.append("  (none recorded)")
+
+    chronic = summary.get("active_chronic_conditions") or []
+    lines.extend(["", f"Active chronic conditions (deduped, max 15; {len(chronic)} listed):"])
+    if chronic:
+        for title in chronic:
+            lines.append(f"  • {title}")
+    else:
+        lines.append("  (none listed beyond prior principals)")
+
+    hints = summary.get("recurrence_hints") or []
+    if hints:
+        lines.extend(["", "Recurrence / relation to current stay:"])
+        for h in hints:
+            lines.append(f"  • {h}")
+
+    # Full ICD list for most recent prior stay only (closest to current admission)
+    if prior_blocks:
+        recent = prior_blocks[-1]
+        icds = (recent.get("icd10_diagnoses") or [])[:25]
+        lines.extend(
+            [
+                "",
+                f"Most recent prior stay — full ICD-10 list (hadm_id={recent.get('hadm_id')}, "
+                f"max 25 of {len(recent.get('icd10_diagnoses') or [])}):",
+            ]
         )
-        icds = adm.get("icd10_diagnoses") or []
-        lines.append(f"  All ICD-10 ({len(icds)}):")
-        for row in icds:
-            title = row.get("title") or ""
-            if title:
-                lines.append(f"    • {row.get('code')} — {title}")
+        if icds:
+            for row in icds:
+                title = row.get("title") or ""
+                code = row.get("code") or ""
+                if title:
+                    lines.append(f"  • {code} — {title}")
+                else:
+                    lines.append(f"  • {code}")
+        else:
+            lines.append("  (none recorded)")
+
+    return "\n".join(lines)
+
+
+def format_reason_for_admission_block(ie_summary: Optional[Dict[str, Any]]) -> str:
+    """Format IE reason-for-admission fields for DiffDx / confirm prompts."""
+    if not ie_summary:
+        return ""
+    rfa = str(ie_summary.get("reason_for_admission") or "").strip()
+    pc = str(ie_summary.get("presenting_complaint") or "").strip()
+    ctx = str(ie_summary.get("admission_context") or "").strip()
+    procs = ie_summary.get("procedures_this_stay") or []
+    if not any([rfa, pc, ctx, procs]):
+        return ""
+    lines = [
+        "--- ADMISSION CONTEXT (soft guidance — rank-1 must still be a principal disease, not this label) ---",
+    ]
+    if rfa:
+        lines.append(f"Reason for admission : {rfa}")
+    if pc:
+        lines.append(f"Presenting complaint   : {pc}")
+    if ctx:
+        lines.append(f"Admission context      : {ctx}")
+    if procs:
+        proc_bits = []
+        for p in procs[:8]:
+            if isinstance(p, dict):
+                name = str(p.get("name") or "").strip()
+                timing = str(p.get("timing") or "").strip()
+                proc_bits.append(f"{name} ({timing})" if timing else name)
             else:
-                lines.append(f"    • {row.get('code')}")
-        lines.append("")
+                proc_bits.append(str(p))
+        if proc_bits:
+            lines.append(f"Procedures this stay   : {'; '.join(proc_bits)}")
+    return "\n".join(lines)
+
+
+def format_ie_diagnosis_candidates_block(ie_summary: Optional[Dict[str, Any]]) -> str:
+    """Confirmed diagnoses from IE — must be considered in the differential."""
+    if not ie_summary:
+        return ""
+    items = ie_summary.get("diagnoses_mentioned") or []
+    confirmed = []
+    for d in items:
+        if not isinstance(d, dict):
+            continue
+        term = str(d.get("term") or "").strip()
+        cert = str(d.get("certainty") or "").strip().lower()
+        if term and cert in {"confirmed", "suspected"}:
+            confirmed.append(f"{term} ({cert})")
+    if not confirmed:
+        return ""
+    lines = [
+        "--- IE DIAGNOSIS CANDIDATES (include in differential when clinically relevant) ---",
+        "These were extracted from the current note; consider each before ranking:",
+    ]
+    for c in confirmed[:12]:
+        lines.append(f"  • {c}")
     return "\n".join(lines)
 
 
@@ -2047,24 +2323,30 @@ def build_diff_dx_context_block(
 ) -> str:
     """Assemble the CONTEXT section for the structured DiffDx prompt."""
     prior_blocks = prior_icd_blocks or []
+    reason_for_admission = (
+        str(ie_summary.get("reason_for_admission") or "").strip() if ie_summary else ""
+    )
     parts: List[str] = [
         f"Patient ID: {patient_id}",
         f"Current admission ID (HADM): {hadm_id}",
         "",
         "Materials below come from the coding pipeline for this patient.",
-        "CURRENT stay: symptom tree, retained SNOMED, optional context/IE.",
-        "PRIOR stays: all billed ICD-10 codes only (no current-stay ground truth).",
-        "",
-        "--- PRIOR ADMISSION ICD-10 CONTEXT ---",
-        format_prior_icd_context_text(prior_blocks),
-        "",
-        "--- CURRENT SYMPTOM TREE ---",
-        json.dumps(tree_slim, indent=2, ensure_ascii=False),
-        "",
-        "--- RETAINED SNOMED CT ONTOLOGY CONTEXT (current entities) ---",
-        "(MiniLM-filtered Is-a + outbound attributes for anatomic/process alignment.)",
-        json.dumps(retained_slim, indent=2, ensure_ascii=False),
+        "CURRENT stay: admission context, structured vitals/labs/radiology, IE candidates, "
+        "symptom tree, retained SNOMED.",
+        "PRIOR stays: summarized PMH (prior principals + chronic conditions; no current GT).",
     ]
+    rfa_block = format_reason_for_admission_block(ie_summary)
+    if rfa_block:
+        parts.extend(["", rfa_block])
+    parts.extend(
+        [
+            "",
+            "--- PRIOR ADMISSION PMH SUMMARY ---",
+            format_prior_icd_context_text(
+                prior_blocks, reason_for_admission=reason_for_admission or None
+            ),
+        ]
+    )
 
     if clinical_context_text:
         ctx = _clip_clinical_context(clinical_context_text)
@@ -2072,14 +2354,34 @@ def build_diff_dx_context_block(
             [
                 "",
                 "--- STRUCTURED CLINICAL CONTEXT (current stay vitals/labs/radiology) ---",
+                "(Prefer this block over narrative when findings conflict.)",
                 ctx,
             ]
         )
 
+    ie_dx_block = format_ie_diagnosis_candidates_block(ie_summary)
+    if ie_dx_block:
+        parts.extend(["", ie_dx_block])
+
+    parts.extend(
+        [
+            "",
+            "--- CURRENT SYMPTOM TREE ---",
+            json.dumps(tree_slim, indent=2, ensure_ascii=False),
+            "",
+            "--- RETAINED SNOMED CT ONTOLOGY CONTEXT (current entities) ---",
+            "(MiniLM-filtered Is-a + outbound attributes for anatomic/process alignment.)",
+            json.dumps(retained_slim, indent=2, ensure_ascii=False),
+        ]
+    )
+
     if ie_summary:
         keys = (
+            "reason_for_admission",
+            "presenting_complaint",
+            "admission_context",
+            "procedures_this_stay",
             "symptoms",
-            "diagnoses_mentioned",
             "procedures",
             "medications",
             "labs",
@@ -2589,6 +2891,25 @@ def format_extraction_txt(extracted: Dict[str, Any], meta: Dict[str, Any]) -> st
         f"Method           : {meta.get('extraction_method', 'unknown')}",
         "",
     ]
+    if extracted.get("reason_for_admission"):
+        lines.extend([
+            _format_section("REASON FOR ADMISSION", "-"),
+            f"  {extracted.get('reason_for_admission')}",
+            f"  Presenting complaint : {extracted.get('presenting_complaint') or '(none)'}",
+            f"  Admission context    : {extracted.get('admission_context') or '(none)'}",
+            "",
+        ])
+    procs_stay = extracted.get("procedures_this_stay") or []
+    if procs_stay:
+        lines.append(_format_section("PROCEDURES THIS STAY", "-"))
+        for p in procs_stay:
+            if isinstance(p, dict):
+                lines.append(
+                    f"  • {p.get('name', '')} [{p.get('timing', '')}]"
+                )
+            else:
+                lines.append(f"  • {p}")
+        lines.append("")
 
     def block(name: str, items: List[Any], formatter) -> None:
         lines.append(_format_section(name, "-"))
@@ -2988,6 +3309,10 @@ EXAMPLES (same_principal — diagnosis_equivalent=true):
 - GT "Traumatic pneumothorax, initial encounter" ↔ Rank 3 "Pneumothorax"
 - GT "Ventricular tachycardia" ↔ Rank 1 "Refractory VT"
 - GT "Supraventricular tachycardia" ↔ Rank 1 "Supraventricular tachycardia"
+- GT "Calculus of bile duct with cholangitis, unspecified, without obstruction" ↔ Rank "Cholangitis"
+- GT "Acute on chronic diastolic (congestive) heart failure" ↔ Rank "Acute decompensated heart failure"
+- GT "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure" ↔ Rank "Post-hysterectomy bleeding"
+- GT "Sepsis, unspecified organism" ↔ Rank "Severe sepsis due to pneumonia" (same principal sepsis)
 
 EXAMPLES (NOT same_principal — diagnosis_equivalent=false):
 - GT "Calculus of bile duct with cholangitis" ↔ Rank 1 "Heart failure with preserved ejection fraction"
@@ -3154,7 +3479,16 @@ def slim_stage08_for_prompt(stage08_row: Dict[str, Any]) -> Dict[str, Any]:
 def slim_ie_for_confirm(ie_summary: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     if not ie_summary:
         return {}
-    keys = ("symptoms", "diagnoses_mentioned", "procedures", "medications")
+    keys = (
+        "reason_for_admission",
+        "presenting_complaint",
+        "admission_context",
+        "procedures_this_stay",
+        "symptoms",
+        "diagnoses_mentioned",
+        "procedures",
+        "medications",
+    )
     out = {}
     for k in keys:
         val = ie_summary.get(k)
@@ -3178,13 +3512,25 @@ def build_icd_confirm_context(
         "Draft ICD packages below were produced by SNOMED US ExtendedMap (Stage 8).",
         "You may only KEEP codes that appear in those packages. Missing items = condition names.",
         "Current-stay ground-truth ICD is NOT provided and must not be guessed.",
-        "",
-        "--- PRIOR ADMISSION ICD-10 CONTEXT (PMH only) ---",
-        format_prior_icd_context_text(prior_icd_blocks or []),
-        "",
-        "--- STAGE 8 DRAFT ICD PACKAGES ---",
-        json.dumps(stage08_slim, indent=2, ensure_ascii=False),
     ]
+    rfa_block = format_reason_for_admission_block(ie_summary)
+    if rfa_block:
+        parts.extend(["", rfa_block])
+    parts.extend(
+        [
+            "",
+            "--- PRIOR ADMISSION PMH SUMMARY (not current stay) ---",
+            format_prior_icd_context_text(
+                prior_icd_blocks or [],
+                reason_for_admission=(
+                    str(ie_summary.get("reason_for_admission") or "").strip() if ie_summary else None
+                ),
+            ),
+            "",
+            "--- STAGE 8 DRAFT ICD PACKAGES ---",
+            json.dumps(stage08_slim, indent=2, ensure_ascii=False),
+        ]
+    )
     if clinical_context_text:
         ctx = _clip_clinical_context(clinical_context_text)
         parts.extend(["", "--- STRUCTURED CLINICAL CONTEXT (current stay vitals/labs/radiology) ---", ctx])
@@ -3741,6 +4087,22 @@ def _load_gt(admission_dir: Path) -> Dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _effective_rank_icd(d: Dict[str, Any]) -> Tuple[Optional[str], str]:
+    """Resolve icd10_primary for a DiffDx rank, falling back to package/supporting."""
+    code = d.get("icd10_primary")
+    title = str(d.get("icd10_primary_title") or "")
+    if code:
+        return code, title
+    for src in (d.get("icd10_principal") or [], d.get("icd10_package") or [], d.get("icd10_supporting") or []):
+        for row in src:
+            if not isinstance(row, dict):
+                continue
+            c = row.get("code")
+            if c:
+                return c, str(row.get("title") or "")
+    return None, ""
+
+
 def _stage8_predicted_codes(stage08_row: Dict[str, Any]) -> Dict[str, Any]:
     all_codes: List[Dict[str, str]] = []
     principals: List[Dict[str, str]] = []
@@ -3748,8 +4110,7 @@ def _stage8_predicted_codes(stage08_row: Dict[str, Any]) -> Dict[str, Any]:
     seen_p = set()
     diffs = stage08_row.get("differential") or []
     top = diffs[0] if diffs else {}
-    primary_code = top.get("icd10_primary")
-    primary_title = top.get("icd10_primary_title") or ""
+    primary_code, primary_title = _effective_rank_icd(top)
     primary_dx = stage08_row.get("most_likely") or top.get("diagnosis") or ""
     for d in diffs:
         for c in d.get("icd10_package") or []:
@@ -3789,18 +4150,20 @@ def _stage8_predicted_codes(stage08_row: Dict[str, Any]) -> Dict[str, Any]:
                 score = float(score) if score is not None and score != "" else None
             except (TypeError, ValueError):
                 score = None
+            eff_code, eff_title = _effective_rank_icd(d)
             diagnosis_items.append(
                 {
                     "diagnosis": name,
                     "rank": int(d.get("rank") or (i + 1)),
                     "score": score,
                     "confidence": str(d.get("confidence") or "").strip(),
-                    "icd10_primary": d.get("icd10_primary"),
-                    "icd10_primary_title": d.get("icd10_primary_title") or "",
+                    "icd10_primary": eff_code,
+                    "icd10_primary_title": eff_title,
                 }
             )
     if primary_dx and primary_dx.strip().lower() not in seen_dx:
         diagnoses.insert(0, primary_dx.strip())
+        top_code, top_title = _effective_rank_icd(top)
         diagnosis_items.insert(
             0,
             {
@@ -3808,8 +4171,8 @@ def _stage8_predicted_codes(stage08_row: Dict[str, Any]) -> Dict[str, Any]:
                 "rank": 1,
                 "score": None,
                 "confidence": "",
-                "icd10_primary": top.get("icd10_primary"),
-                "icd10_primary_title": top.get("icd10_primary_title") or "",
+                "icd10_primary": top_code,
+                "icd10_primary_title": top_title,
             },
         )
     return {

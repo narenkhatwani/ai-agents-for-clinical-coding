@@ -1,7 +1,7 @@
 {
   "stage": 3,
   "description": "Ollama symptom tree (admission + patient aggregate)",
-  "generated_at": "2026-08-08T16:22:12.266671",
+  "generated_at": "2026-08-19T23:22:25.934456",
   "n_admissions": 15,
   "n_patients": 15,
   "results": [
@@ -270,19 +270,20 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.",
+        "reasoning": "The patient presents with heavy vaginal bleeding after a recent hysterectomy, which is the primary reason for admission.",
         "branches": [
           {
-            "category": "gynecologic",
-            "ontology_hint": "Obstetrics/Gynecology",
+            "category": "gi",
+            "ontology_hint": "Gynecology",
             "symptoms": [
               {
                 "term": "heavy vaginal bleeding",
                 "status": "present",
-                "severity": "severe",
+                "severity": "moderate",
                 "evidence": "heavy vaginal bleeding after hysterectomy",
                 "related_findings": [
-                  "hematocrit decreased from 40.1 to 38.1"
+                  "menorrhagia",
+                  "vaginal spotting to light bleeding"
                 ],
                 "children": [
                   {
@@ -291,67 +292,39 @@
                     "evidence": "passing 'munchin' sized clots"
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "category": "constitutional",
+            "ontology_hint": "Hematology",
+            "symptoms": [
               {
-                "term": "abdominal bloatedness",
-                "status": "history",
+                "term": "hemoglobin level",
+                "status": "abnormal",
                 "severity": "mild",
-                "evidence": "abdominal bloatedness secondary to gas",
-                "related_findings": []
-              },
-              {
-                "term": "vaginal spotting to light bleeding",
-                "status": "history",
-                "severity": "mild",
-                "evidence": "vaginal spotting to light bleeding",
-                "related_findings": []
-              },
-              {
-                "term": "menorrhagia",
-                "status": "history",
-                "severity": "moderate",
-                "evidence": "history of abnormal uterine bleeding",
-                "related_findings": []
-              },
-              {
-                "term": "dysmenorrhea",
-                "status": "history",
-                "severity": "moderate",
-                "evidence": "dysmenorrhea",
-                "related_findings": []
-              },
-              {
-                "term": "intra-menstrual bleeding",
-                "status": "history",
-                "severity": "moderate",
-                "evidence": "intra-menstrual bleeding",
-                "related_findings": []
-              },
-              {
-                "term": "post-coital bleeding",
-                "status": "history",
-                "severity": "mild",
-                "evidence": "post-coital bleeding",
-                "related_findings": []
+                "evidence": "HGB-12.6",
+                "related_findings": [
+                  "HCT-38.1"
+                ],
+                "children": []
               }
             ]
           }
         ],
         "key_symptoms": [
           "heavy vaginal bleeding",
-          "abdominal bloatedness"
+          "passing clots"
         ],
-        "red_flags": [
-          "hematocrit decreased"
-        ],
+        "red_flags": [],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "10361982",
         "admission_id": "24286431",
-        "generated_at": "2026-08-08T16:18:27.672426"
+        "generated_at": "2026-08-19T23:19:11.124101"
       },
-      "branch_count": 1
+      "branch_count": 2
     },
     {
       "patient_id": "10426859",
@@ -1021,7 +994,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. The clinical picture is dominated by cardiovascular issues and musculoskeletal pain.",
+        "reasoning": "The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The primary focus is on the SVT and associated symptoms.",
         "branches": [
           {
             "category": "cardiovascular",
@@ -1039,7 +1012,7 @@
                   {
                     "term": "SVT",
                     "status": "present",
-                    "evidence": "Supraventricular tachycardia"
+                    "evidence": "found to be in SVT in the ED"
                   }
                 ]
               },
@@ -1051,21 +1024,12 @@
                 "related_findings": [
                   "Supraventricular tachycardia"
                 ]
-              },
-              {
-                "term": "chest pain",
-                "status": "history",
-                "severity": "mild",
-                "evidence": "chest pain",
-                "related_findings": [
-                  "Supraventricular tachycardia"
-                ]
               }
             ]
           },
           {
             "category": "neurologic",
-            "ontology_hint": "Neurologic",
+            "ontology_hint": "Neurology",
             "symptoms": [
               {
                 "term": "headache",
@@ -1079,38 +1043,14 @@
             ]
           },
           {
-            "category": "musculoskeletal",
-            "ontology_hint": "Musculoskeletal",
+            "category": "skeletal",
+            "ontology_hint": "Orthopedics",
             "symptoms": [
               {
                 "term": "pain in right hip",
                 "status": "present",
-                "severity": "mild",
+                "severity": "moderate",
                 "evidence": "pain in her right hip",
-                "related_findings": [
-                  "Nondisplaced comminuted fracture in the right superior pubic ramus"
-                ]
-              },
-              {
-                "term": "pain in right leg",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "pain in her entire right leg - her foot, ankle, leg, hip",
-                "related_findings": [
-                  "Nondisplaced comminuted fracture in the right superior pubic ramus"
-                ]
-              }
-            ]
-          },
-          {
-            "category": "other",
-            "ontology_hint": "Other",
-            "symptoms": [
-              {
-                "term": "fall",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "fell when she felt lightheaded",
                 "related_findings": [
                   "Nondisplaced comminuted fracture in the right superior pubic ramus"
                 ]
@@ -1121,20 +1061,19 @@
         "key_symptoms": [
           "palpitations",
           "lightheadedness",
-          "pain in right hip"
+          "headache"
         ],
         "red_flags": [
-          "Supraventricular tachycardia",
-          "Nondisplaced comminuted fracture in the right superior pubic ramus"
+          "Supraventricular tachycardia"
         ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "10426859",
         "admission_id": "29908281",
-        "generated_at": "2026-08-08T16:18:38.373796"
+        "generated_at": "2026-08-19T23:19:18.929010"
       },
-      "branch_count": 4
+      "branch_count": 3
     },
     {
       "patient_id": "10458324",
@@ -2015,14 +1954,14 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and psychiatric conditions.",
+        "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a fall, with ongoing respiratory symptoms and signs of trauma.",
         "branches": [
           {
             "category": "respiratory",
             "ontology_hint": "Respiratory",
             "symptoms": [
               {
-                "term": "right sided rib fractures",
+                "term": "right rib fractures",
                 "status": "present",
                 "severity": "moderate",
                 "evidence": "right sided rib fractures",
@@ -2034,9 +1973,18 @@
                   {
                     "term": "right PTX",
                     "status": "present",
-                    "severity": "mild",
                     "evidence": "small right PTX"
                   }
+                ]
+              },
+              {
+                "term": "hypoxia",
+                "status": "present",
+                "severity": "mild",
+                "evidence": "satting 96% on 4L",
+                "related_findings": [
+                  "right PTX",
+                  "subcutaneous emphysema"
                 ]
               },
               {
@@ -2082,13 +2030,11 @@
             "ontology_hint": "Cardiovascular",
             "symptoms": [
               {
-                "term": "hypoxia",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "satting 96% on 4L",
-                "related_findings": [
-                  "right PTX"
-                ]
+                "term": "hypotension",
+                "status": "absent",
+                "severity": "unknown",
+                "evidence": "BP 121/72",
+                "related_findings": []
               }
             ]
           },
@@ -2097,22 +2043,29 @@
             "ontology_hint": "Infectious Diseases",
             "symptoms": [
               {
-                "term": "influenza A",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "influenza A PCR +"
+                "term": "bacterial pneumonia",
+                "status": "absent",
+                "severity": "unknown",
+                "evidence": "Gram stain and culture results negative",
+                "related_findings": [
+                  "cough",
+                  "fever",
+                  "nasal congestion",
+                  "sore throat"
+                ]
               }
             ]
           },
           {
             "category": "neurologic",
-            "ontology_hint": "Neurologic",
+            "ontology_hint": "Neurology",
             "symptoms": [
               {
                 "term": "insomnia",
                 "status": "present",
                 "severity": "mild",
-                "evidence": "nightmares of being left alone and mistreated"
+                "evidence": "nightmares of being left alone and mistreated",
+                "related_findings": []
               }
             ]
           },
@@ -2124,32 +2077,35 @@
                 "term": "vomiting",
                 "status": "present",
                 "severity": "mild",
-                "evidence": "one episode of vomiting"
+                "evidence": "one episode of vomiting",
+                "related_findings": []
               },
               {
                 "term": "diarrhea",
                 "status": "present",
                 "severity": "mild",
-                "evidence": "diarrhea"
+                "evidence": "diarrhea",
+                "related_findings": []
               }
             ]
           }
         ],
         "key_symptoms": [
-          "right sided rib fractures",
+          "right rib fractures",
           "hypoxia",
-          "cough"
+          "cough",
+          "fever"
         ],
         "red_flags": [
-          "hypoxia",
-          "insomnia"
+          "hypotension",
+          "AMS"
         ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "10458324",
         "admission_id": "21744342",
-        "generated_at": "2026-08-08T16:18:51.903113"
+        "generated_at": "2026-08-19T23:19:32.076465"
       },
       "branch_count": 5
     },
@@ -2626,16 +2582,16 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with symptoms of nephrolithiasis, including hematuria, dysuria, and fever, following a difficult right PCNL procedure.",
+        "reasoning": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL, with residual stones requiring further intervention.",
         "branches": [
           {
             "category": "renal|urologic",
-            "ontology_hint": "Renal Diseases",
+            "ontology_hint": "Urology",
             "symptoms": [
               {
                 "term": "hematuria",
                 "status": "present",
-                "severity": "mild",
+                "severity": "unknown",
                 "evidence": "1x episode of hematuria",
                 "related_findings": [
                   "Bilateral staghorn renal calculi"
@@ -2645,7 +2601,7 @@
               {
                 "term": "pain",
                 "status": "present",
-                "severity": "moderate",
+                "severity": "unknown",
                 "evidence": "pain around the nephrostomy tubes",
                 "related_findings": [
                   "Bilateral staghorn renal calculi"
@@ -2655,7 +2611,7 @@
               {
                 "term": "dysuria",
                 "status": "present",
-                "severity": "mild",
+                "severity": "unknown",
                 "evidence": "pain around the nephrostomy tubes and fevers",
                 "related_findings": [
                   "Bilateral staghorn renal calculi"
@@ -2665,7 +2621,7 @@
               {
                 "term": "fever",
                 "status": "present",
-                "severity": "mild",
+                "severity": "unknown",
                 "evidence": "temperature of 102 at ___ prior to transfer",
                 "related_findings": [
                   "Complicated urinary tract infection"
@@ -2675,46 +2631,49 @@
             ]
           },
           {
-            "category": "cardiovascular",
-            "ontology_hint": "Cardiovascular Diseases",
+            "category": "renal|metabolic",
+            "ontology_hint": "Renal",
             "symptoms": [
               {
-                "term": "hypertension",
+                "term": "anemia",
                 "status": "present",
-                "severity": "unknown",
-                "evidence": "Hypertension",
-                "related_findings": [],
-                "children": []
-              }
-            ]
-          },
-          {
-            "category": "neurologic",
-            "ontology_hint": "Neurological Diseases",
-            "symptoms": [
-              {
-                "term": "Hemorrhagic CVA",
-                "status": "present",
-                "severity": "unknown",
-                "evidence": "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness",
-                "related_findings": [],
-                "children": []
-              }
-            ]
-          },
-          {
-            "category": "renal",
-            "ontology_hint": "Renal Diseases",
-            "symptoms": [
-              {
-                "term": "renal calculi",
-                "status": "present",
-                "severity": "moderate",
-                "evidence": "Bilateral staghorn renal calculi",
+                "severity": "mild",
+                "evidence": "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL",
                 "related_findings": [
-                  "Hypertension",
-                  "Hemorrhagic CVA"
+                  "MCV: 104.0 fL, RDW-SD: 59.6 fL"
                 ],
+                "children": []
+              },
+              {
+                "term": "hyperkalemia",
+                "status": "absent",
+                "severity": "unknown",
+                "evidence": "Potassium: 4.7 mEq/L",
+                "related_findings": [],
+                "children": []
+              },
+              {
+                "term": "hyperglycemia",
+                "status": "present",
+                "severity": "mild",
+                "evidence": "Glucose: 105.0 mg/dL",
+                "related_findings": [],
+                "children": []
+              },
+              {
+                "term": "hyperuremia",
+                "status": "present",
+                "severity": "mild",
+                "evidence": "Urea Nitrogen: 22.0 mg/dL",
+                "related_findings": [],
+                "children": []
+              },
+              {
+                "term": "hypercreatininemia",
+                "status": "present",
+                "severity": "mild",
+                "evidence": "Creatinine: 2.5 mg/dL",
+                "related_findings": [],
                 "children": []
               }
             ]
@@ -2727,17 +2686,16 @@
           "fever"
         ],
         "red_flags": [
-          "Hemorrhagic CVA",
-          "hypertension"
+          "fever"
         ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "11251337",
         "admission_id": "29568708",
-        "generated_at": "2026-08-08T16:19:01.757313"
+        "generated_at": "2026-08-19T23:19:43.135733"
       },
-      "branch_count": 4
+      "branch_count": 2
     },
     {
       "patient_id": "11474876",
@@ -3283,33 +3241,36 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient is a 70-year-old man with multiple comorbidities, including AFib, HFpEF, PVD, and CKD, who underwent ERCP for cholangitis and is being managed post-procedurally.",
+        "reasoning": "The patient is a 70-year-old man with a history of AFib, HFpEF, PVD, and CKD who was admitted post-ERCP for cholangitis and subsequent stent placement. His current presentation includes mild edema and no acute symptoms, but he has a history of nocturnal hypoxia and leg swelling.",
         "branches": [
           {
             "category": "cardiovascular",
             "ontology_hint": "Cardiovascular",
             "symptoms": [
               {
-                "term": "nocturnal hypoxia",
-                "status": "history",
-                "severity": "mild",
-                "evidence": "nocturnal hypoxia that improved with diuresis",
-                "related_findings": [
-                  "Hematocrit: 38.3%",
-                  "Hemoglobin: 12.6 g/dL"
-                ],
-                "children": []
-              },
-              {
-                "term": "leg swelling",
+                "term": "edema",
                 "status": "present",
                 "severity": "mild",
                 "evidence": "notes his edema improves during the night and worsens during the day",
                 "related_findings": [
                   "Creatinine: 1.4 mg/dL",
-                  "Potassium: 4.3 mEq/L"
+                  "Hematocrit: 38.3 %",
+                  "Hemoglobin: 12.6 g/dL",
+                  "MCH: 32.8 pg",
+                  "MCV: 100.0 fL",
+                  "Red Blood Cells: 3.84 m/uL",
+                  "RDW-SD: 54.1 fL",
+                  "Calcium, Total: 8.7 mg/dL",
+                  "Magnesium: 1.7 mg/dL",
+                  "Phosphate: 2.9 mg/dL"
                 ],
-                "children": []
+                "children": [
+                  {
+                    "term": "leg swelling",
+                    "status": "present",
+                    "evidence": "notes his edema improves during the night and worsens during the day"
+                  }
+                ]
               }
             ]
           },
@@ -3323,8 +3284,41 @@
                 "severity": "unknown",
                 "evidence": "Admitted last month with cholangitis and underwent ERCP with stent placement",
                 "related_findings": [
-                  "White Blood Cells: 7.2 K/uL",
-                  "Anion Gap: 16.0 mEq/L"
+                  "Creatinine: 1.4 mg/dL",
+                  "Hematocrit: 38.3 %",
+                  "Hemoglobin: 12.6 g/dL",
+                  "MCH: 32.8 pg",
+                  "MCV: 100.0 fL",
+                  "Red Blood Cells: 3.84 m/uL",
+                  "RDW-SD: 54.1 fL",
+                  "Calcium, Total: 8.7 mg/dL",
+                  "Magnesium: 1.7 mg/dL",
+                  "Phosphate: 2.9 mg/dL"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "cardiovascular",
+            "ontology_hint": "Cardiovascular",
+            "symptoms": [
+              {
+                "term": "nocturnal hypoxia",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "nocturnal hypoxia that improved with diuresis",
+                "related_findings": [
+                  "Creatinine: 1.4 mg/dL",
+                  "Hematocrit: 38.3 %",
+                  "Hemoglobin: 12.6 g/dL",
+                  "MCH: 32.8 pg",
+                  "MCV: 100.0 fL",
+                  "Red Blood Cells: 3.84 m/uL",
+                  "RDW-SD: 54.1 fL",
+                  "Calcium, Total: 8.7 mg/dL",
+                  "Magnesium: 1.7 mg/dL",
+                  "Phosphate: 2.9 mg/dL"
                 ],
                 "children": []
               }
@@ -3338,21 +3332,43 @@
                 "term": "atrial fibrillation",
                 "status": "present",
                 "severity": "mild",
-                "evidence": "AFib on apixaban",
+                "evidence": "on apixaban for AFib",
                 "related_findings": [
-                  "Hematocrit: 38.3%",
-                  "Hemoglobin: 12.6 g/dL"
+                  "Creatinine: 1.4 mg/dL",
+                  "Hematocrit: 38.3 %",
+                  "Hemoglobin: 12.6 g/dL",
+                  "MCH: 32.8 pg",
+                  "MCV: 100.0 fL",
+                  "Red Blood Cells: 3.84 m/uL",
+                  "RDW-SD: 54.1 fL",
+                  "Calcium, Total: 8.7 mg/dL",
+                  "Magnesium: 1.7 mg/dL",
+                  "Phosphate: 2.9 mg/dL"
                 ],
                 "children": []
-              },
+              }
+            ]
+          },
+          {
+            "category": "cardiovascular",
+            "ontology_hint": "Cardiovascular",
+            "symptoms": [
               {
                 "term": "heart failure",
                 "status": "present",
                 "severity": "mild",
-                "evidence": "HFpEF",
+                "evidence": "HFpEF, held home Lasix",
                 "related_findings": [
                   "Creatinine: 1.4 mg/dL",
-                  "Potassium: 4.3 mEq/L"
+                  "Hematocrit: 38.3 %",
+                  "Hemoglobin: 12.6 g/dL",
+                  "MCH: 32.8 pg",
+                  "MCV: 100.0 fL",
+                  "Red Blood Cells: 3.84 m/uL",
+                  "RDW-SD: 54.1 fL",
+                  "Calcium, Total: 8.7 mg/dL",
+                  "Magnesium: 1.7 mg/dL",
+                  "Phosphate: 2.9 mg/dL"
                 ],
                 "children": []
               }
@@ -3369,24 +3385,15 @@
                 "evidence": "PVD with remote bypass graft",
                 "related_findings": [
                   "Creatinine: 1.4 mg/dL",
-                  "Potassium: 4.3 mEq/L"
-                ],
-                "children": []
-              }
-            ]
-          },
-          {
-            "category": "renal",
-            "ontology_hint": "Renal",
-            "symptoms": [
-              {
-                "term": "chronic kidney disease",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "CKD",
-                "related_findings": [
-                  "Creatinine: 1.4 mg/dL",
-                  "Potassium: 4.3 mEq/L"
+                  "Hematocrit: 38.3 %",
+                  "Hemoglobin: 12.6 g/dL",
+                  "MCH: 32.8 pg",
+                  "MCV: 100.0 fL",
+                  "Red Blood Cells: 3.84 m/uL",
+                  "RDW-SD: 54.1 fL",
+                  "Calcium, Total: 8.7 mg/dL",
+                  "Magnesium: 1.7 mg/dL",
+                  "Phosphate: 2.9 mg/dL"
                 ],
                 "children": []
               }
@@ -3394,7 +3401,7 @@
           }
         ],
         "key_symptoms": [
-          "leg swelling",
+          "edema",
           "nocturnal hypoxia"
         ],
         "red_flags": [
@@ -3406,9 +3413,9 @@
         "_agent": "symptom_tree",
         "patient_id": "11474876",
         "admission_id": "29672491",
-        "generated_at": "2026-08-08T16:19:14.340540"
+        "generated_at": "2026-08-19T23:20:03.745166"
       },
-      "branch_count": 5
+      "branch_count": 6
     },
     {
       "patient_id": "11607177",
@@ -4604,7 +4611,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with a history of dilated cardiomyopathy and refractory VT, with recent ICD shock and ongoing edema. The patient is currently on multiple medications for his heart failure and arrhythmias.",
+        "reasoning": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness.",
         "branches": [
           {
             "category": "cardiovascular",
@@ -4617,18 +4624,17 @@
                 "evidence": "ICD shock on ___",
                 "related_findings": [
                   "Refractory VT",
-                  "LVAD in place"
+                  "Dilated non-ischemic cardiomyopathy"
                 ],
                 "children": []
               },
               {
-                "term": "refractory VT",
+                "term": "lightheadedness",
                 "status": "present",
-                "severity": "unknown",
-                "evidence": "Refractory VT requiring ganglionic block",
+                "severity": "mild",
+                "evidence": "lightheadedness with position changes",
                 "related_findings": [
-                  "ICD shock",
-                  "LVAD in place"
+                  "Dilated non-ischemic cardiomyopathy"
                 ],
                 "children": []
               },
@@ -4638,75 +4644,8 @@
                 "severity": "mild",
                 "evidence": "some increased ___ edema over the last several days",
                 "related_findings": [
-                  "LVAD in place"
+                  "Dilated non-ischemic cardiomyopathy"
                 ],
-                "children": []
-              },
-              {
-                "term": "lightheadedness",
-                "status": "present",
-                "severity": "unknown",
-                "evidence": "lightheadedness with position changes",
-                "related_findings": [
-                  "ICD shock",
-                  "LVAD in place"
-                ],
-                "children": []
-              },
-              {
-                "term": "shaking",
-                "status": "present",
-                "severity": "unknown",
-                "evidence": "feels some 'shaking' in his chest in the morning for the last 4 months",
-                "related_findings": [
-                  "LVAD in place"
-                ],
-                "children": []
-              }
-            ]
-          },
-          {
-            "category": "constitutional",
-            "ontology_hint": "Infectious Diseases",
-            "symptoms": [
-              {
-                "term": "fevers",
-                "status": "absent",
-                "severity": "unknown",
-                "evidence": "denies fevers",
-                "related_findings": [],
-                "children": []
-              },
-              {
-                "term": "chills",
-                "status": "absent",
-                "severity": "unknown",
-                "evidence": "denies chills",
-                "related_findings": [],
-                "children": []
-              },
-              {
-                "term": "cough",
-                "status": "absent",
-                "severity": "unknown",
-                "evidence": "denies cough",
-                "related_findings": [],
-                "children": []
-              },
-              {
-                "term": "nausea",
-                "status": "absent",
-                "severity": "unknown",
-                "evidence": "denies N/V/D",
-                "related_findings": [],
-                "children": []
-              },
-              {
-                "term": "palpitations",
-                "status": "absent",
-                "severity": "unknown",
-                "evidence": "denies other palpitations",
-                "related_findings": [],
                 "children": []
               }
             ]
@@ -4717,17 +4656,16 @@
           "edema"
         ],
         "red_flags": [
-          "ICD shock",
-          "lightheadedness"
+          "ICD shock"
         ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "11607177",
         "admission_id": "23293838",
-        "generated_at": "2026-08-08T16:19:27.394653"
+        "generated_at": "2026-08-19T23:20:08.367062"
       },
-      "branch_count": 2
+      "branch_count": 1
     },
     {
       "patient_id": "12007928",
@@ -5396,7 +5334,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF and atrial fibrillation. She also has signs of renal and hematologic dysfunction.",
+        "reasoning": "The patient presents with dyspnea, orthopnea, and worsening CHF, with significant fatigue and incontinence, following a fall and discharge from a previous hospital.",
         "branches": [
           {
             "category": "cardiovascular",
@@ -5421,18 +5359,36 @@
                   {
                     "term": "pitting edema",
                     "status": "present",
-                    "evidence": "2+ pitting lower extremity edema"
+                    "evidence": "4+ pitting lower extremity edema"
                   }
+                ]
+              },
+              {
+                "term": "crackles",
+                "status": "present",
+                "evidence": "mild bibasilar crackles L > R",
+                "related_findings": [
+                  "pulmonary edema"
                 ]
               },
               {
                 "term": "fatigue",
                 "status": "present",
+                "evidence": "all activities now are quite fatiguing"
+              }
+            ]
+          },
+          {
+            "category": "neurologic",
+            "ontology_hint": "Neurology",
+            "symptoms": [
+              {
+                "term": "tremors",
+                "status": "present",
                 "severity": "moderate",
-                "evidence": "all activities now are quite fatiguing",
+                "evidence": "increased spasms in the upper extremities",
                 "related_findings": [
-                  "crackles in lungs",
-                  "pitting edema"
+                  "myasthenia gravis"
                 ]
               }
             ]
@@ -5444,82 +5400,10 @@
               {
                 "term": "creatinine elevation",
                 "status": "present",
-                "severity": "mild",
+                "severity": "moderate",
                 "evidence": "Creatinine: 1.6 mg/dL",
                 "related_findings": [
-                  "orthopnea",
-                  "pitting edema"
-                ]
-              }
-            ]
-          },
-          {
-            "category": "hematologic",
-            "ontology_hint": "Hematologic",
-            "symptoms": [
-              {
-                "term": "anemia",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "Hemoglobin: 10.2 g/dL",
-                "related_findings": [
-                  "orthopnea",
-                  "pitting edema"
-                ]
-              },
-              {
-                "term": "low MCHC",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "MCHC: 30.0 g/dL",
-                "related_findings": [
-                  "orthopnea",
-                  "pitting edema"
-                ]
-              },
-              {
-                "term": "low MCV",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "MCV: 81.0 fL",
-                "related_findings": [
-                  "orthopnea",
-                  "pitting edema"
-                ]
-              },
-              {
-                "term": "low RDW",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "RDW: 18.2 %",
-                "related_findings": [
-                  "orthopnea",
-                  "pitting edema"
-                ]
-              },
-              {
-                "term": "low RDW-SD",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "RDW-SD: 53.5 fL",
-                "related_findings": [
-                  "orthopnea",
-                  "pitting edema"
-                ]
-              }
-            ]
-          },
-          {
-            "category": "neurologic",
-            "ontology_hint": "Neurologic",
-            "symptoms": [
-              {
-                "term": "tremors",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "increased spasms in the upper extremities",
-                "related_findings": [
-                  "orthopnea",
+                  "dyspnea",
                   "pitting edema"
                 ]
               }
@@ -5532,11 +5416,10 @@
               {
                 "term": "incontinence",
                 "status": "present",
-                "severity": "mild",
+                "severity": "moderate",
                 "evidence": "urine incontinence",
                 "related_findings": [
-                  "orthopnea",
-                  "pitting edema"
+                  "stress incontinence"
                 ]
               }
             ]
@@ -5544,20 +5427,21 @@
         ],
         "key_symptoms": [
           "dyspnea",
-          "orthopnea"
+          "orthopnea",
+          "tremors"
         ],
         "red_flags": [
-          "hypotension",
-          "AMS"
+          "pitting edema",
+          "crackles in lungs"
         ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "12007928",
         "admission_id": "23749816",
-        "generated_at": "2026-08-08T16:19:42.096211"
+        "generated_at": "2026-08-19T23:20:18.096250"
       },
-      "branch_count": 5
+      "branch_count": 4
     },
     {
       "patient_id": "13196707",
@@ -6226,7 +6110,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient is a male with metastatic adenocarcinoma of unknown primary presenting with severe sepsis and hypotension, likely secondary to RUL PNA.",
+        "reasoning": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
         "branches": [
           {
             "category": "infectious",
@@ -6238,8 +6122,7 @@
                 "severity": "unknown",
                 "evidence": "feverish at rehab, but currently doesn't feel like he's having a fever",
                 "related_findings": [
-                  "RUL PNA",
-                  "severe sepsis"
+                  "RUL PNA"
                 ],
                 "children": []
               },
@@ -6247,10 +6130,9 @@
                 "term": "RUL PNA",
                 "status": "suspected",
                 "severity": "moderate",
-                "evidence": "recently diagnosed, CT read described 'ground glass opacities' in the RUL",
+                "evidence": "recently diagnosed",
                 "related_findings": [
-                  "hypotension",
-                  "severe sepsis"
+                  "CXR shows persistent consolidative opacities in both lower lobes"
                 ],
                 "children": []
               }
@@ -6263,11 +6145,10 @@
               {
                 "term": "hypotension",
                 "status": "present",
-                "severity": "severe",
-                "evidence": "BP 82-90/45-60 mmHg, required levophed to maintain pressures",
+                "severity": "moderate",
+                "evidence": "BP 82-90/45-60 mmHg",
                 "related_findings": [
-                  "severe sepsis",
-                  "SVC syndrome"
+                  "pericardiocentesis, hypotension, and persistent requirement for fluids"
                 ],
                 "children": []
               }
@@ -6278,12 +6159,12 @@
             "ontology_hint": "Respiratory",
             "symptoms": [
               {
-                "term": "RUL consolidation",
-                "status": "suspected",
+                "term": "consolidative opacities",
+                "status": "present",
                 "severity": "moderate",
-                "evidence": "persistent consolidative opacities in both lower lobes, that could represent atelectasis, however pneumonia cannot be excluded",
+                "evidence": "persistent consolidative opacities in both lower lobes",
                 "related_findings": [
-                  "RUL PNA"
+                  "CXR shows persistent consolidative opacities in both lower lobes"
                 ],
                 "children": []
               }
@@ -6296,27 +6177,10 @@
               {
                 "term": "altered mental status",
                 "status": "present",
-                "severity": "moderate",
-                "evidence": "GCS 3, not following commands",
+                "severity": "mild",
+                "evidence": "GCS 11, not following commands",
                 "related_findings": [
-                  "SVC syndrome",
-                  "metastatic adenocarcinoma"
-                ],
-                "children": []
-              }
-            ]
-          },
-          {
-            "category": "other",
-            "ontology_hint": "Other",
-            "symptoms": [
-              {
-                "term": "SVC syndrome",
-                "status": "confirmed",
-                "severity": "moderate",
-                "evidence": "SVC stent placed, multiple venous thromboses",
-                "related_findings": [
-                  "metastatic adenocarcinoma"
+                  "CT shows multiple metastatic lesions"
                 ],
                 "children": []
               }
@@ -6324,11 +6188,10 @@
           }
         ],
         "key_symptoms": [
-          "fever",
-          "RUL PNA"
+          "RUL PNA",
+          "hypotension"
         ],
         "red_flags": [
-          "hypotension",
           "altered mental status"
         ],
         "type": "symptom_tree",
@@ -6336,9 +6199,9 @@
         "_agent": "symptom_tree",
         "patient_id": "13196707",
         "admission_id": "21475988",
-        "generated_at": "2026-08-08T16:19:54.148835"
+        "generated_at": "2026-08-19T23:20:26.518487"
       },
-      "branch_count": 5
+      "branch_count": 4
     },
     {
       "patient_id": "13508515",
@@ -6775,7 +6638,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with a history of renal mass and renal cell carcinoma, along with ongoing cardiovascular and metabolic issues.",
+        "reasoning": "The patient is a man with a history of severe CHF, ischemic heart disease, and renal cell carcinoma, admitted for laparoscopic left radical nephrectomy and lymph node dissection.",
         "branches": [
           {
             "category": "cardiovascular",
@@ -6797,7 +6660,7 @@
                 "severity": "mild",
                 "evidence": "pain well controlled on PCA",
                 "related_findings": [
-                  "left renal mass"
+                  "systolic CHF with EF around 30%"
                 ],
                 "children": []
               }
@@ -6810,22 +6673,20 @@
               {
                 "term": "creatinine",
                 "status": "high",
-                "severity": "moderate",
+                "severity": "mild",
                 "evidence": "Creatinine: 2.0 mg/dL",
                 "related_findings": [
-                  "left renal mass",
-                  "renal cell carcinoma"
+                  "systolic CHF with EF around 30%"
                 ],
                 "children": []
               },
               {
                 "term": "hemoglobin",
                 "status": "low",
-                "severity": "moderate",
+                "severity": "mild",
                 "evidence": "Hemoglobin: 8.9 g/dL",
                 "related_findings": [
-                  "left renal mass",
-                  "renal cell carcinoma"
+                  "systolic CHF with EF around 30%"
                 ],
                 "children": []
               },
@@ -6835,24 +6696,49 @@
                 "severity": "mild",
                 "evidence": "Platelet Count: 147.0 K/uL",
                 "related_findings": [
-                  "left renal mass",
-                  "renal cell carcinoma"
+                  "systolic CHF with EF around 30%"
+                ],
+                "children": []
+              },
+              {
+                "term": "calcium",
+                "status": "low",
+                "severity": "mild",
+                "evidence": "Calcium, Total: 8.2 mg/dL",
+                "related_findings": [
+                  "systolic CHF with EF around 30%"
                 ],
                 "children": []
               }
             ]
           },
           {
-            "category": "metabolic",
-            "ontology_hint": "Metabolic",
+            "category": "neurologic",
+            "ontology_hint": "Neurologic",
             "symptoms": [
               {
-                "term": "glucose",
-                "status": "high",
-                "severity": "mild",
-                "evidence": "Glucose: 113.0 mg/dL",
+                "term": "obstructive sleep apnea",
+                "status": "confirmed",
+                "severity": "unknown",
+                "evidence": "obstructive sleep apnea, on CPAP",
                 "related_findings": [
-                  "type 2 diabetes"
+                  "systolic CHF with EF around 30%"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "other",
+            "ontology_hint": "Other",
+            "symptoms": [
+              {
+                "term": "left renal mass",
+                "status": "confirmed",
+                "severity": "unknown",
+                "evidence": "left renal mass",
+                "related_findings": [
+                  "renal cell carcinoma"
                 ],
                 "children": []
               }
@@ -6871,9 +6757,9 @@
         "_agent": "symptom_tree",
         "patient_id": "13508515",
         "admission_id": "21834271",
-        "generated_at": "2026-08-08T16:20:04.772717"
+        "generated_at": "2026-08-19T23:20:37.270506"
       },
-      "branch_count": 3
+      "branch_count": 4
     },
     {
       "patient_id": "13952483",
@@ -7716,11 +7602,11 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression.",
+        "reasoning": "The patient presents with hypotension and weight loss, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of odynophagia, cough, and malaise.",
         "branches": [
           {
-            "category": "constitutional",
-            "ontology_hint": "Infectious Diseases",
+            "category": "cardiovascular",
+            "ontology_hint": "Cardiovascular",
             "symptoms": [
               {
                 "term": "hypotension",
@@ -7731,8 +7617,42 @@
                   "new neutropenia (ANC 750)",
                   "thrombocytopenia (plts 93)"
                 ],
-                "children": []
-              },
+                "children": [
+                  {
+                    "term": "pulmonary hypertension",
+                    "status": "present",
+                    "evidence": "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "category": "respiratory",
+            "ontology_hint": "Respiratory",
+            "symptoms": [
+              {
+                "term": "cough",
+                "status": "present",
+                "severity": "mild",
+                "evidence": "cough, pleuritic/MSK chest pain",
+                "related_findings": [
+                  "moderate growth of commensal respiratory flora"
+                ],
+                "children": [
+                  {
+                    "term": "odynophagia",
+                    "status": "present",
+                    "evidence": "persistent odynophagia"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "category": "constitutional",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
               {
                 "term": "weight loss",
                 "status": "present",
@@ -7742,92 +7662,34 @@
                   "new neutropenia (ANC 750)",
                   "thrombocytopenia (plts 93)"
                 ],
-                "children": []
-              },
-              {
-                "term": "anorexia",
-                "status": "present",
-                "severity": "moderate",
-                "evidence": "overall anorexia and poor appetite",
-                "related_findings": [
-                  "new neutropenia (ANC 750)",
-                  "thrombocytopenia (plts 93)"
-                ],
-                "children": []
-              },
-              {
-                "term": "malaise",
-                "status": "present",
-                "severity": "moderate",
-                "evidence": "malaise due to his chemotherapy and radiation therapy",
-                "related_findings": [
-                  "new neutropenia (ANC 750)",
-                  "thrombocytopenia (plts 93)"
-                ],
-                "children": []
-              },
-              {
-                "term": "cough",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "cough, pleuritic/MSK chest pain",
-                "related_findings": [
-                  "new neutropenia (ANC 750)",
-                  "thrombocytopenia (plts 93)"
-                ],
-                "children": []
-              },
-              {
-                "term": "chest pain",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "pleuritic/MSK chest pain",
-                "related_findings": [
-                  "new neutropenia (ANC 750)",
-                  "thrombocytopenia (plts 93)"
-                ],
-                "children": []
-              },
-              {
-                "term": "odynophagia",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "persistent odynophagia",
-                "related_findings": [
-                  "new neutropenia (ANC 750)",
-                  "thrombocytopenia (plts 93)"
-                ],
-                "children": []
-              },
-              {
-                "term": "pain",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "pain with swallowing",
-                "related_findings": [
-                  "new neutropenia (ANC 750)",
-                  "thrombocytopenia (plts 93)"
-                ],
-                "children": []
+                "children": [
+                  {
+                    "term": "anorexia",
+                    "status": "present",
+                    "evidence": "overall anorexia and poor appetite"
+                  }
+                ]
               }
             ]
           }
         ],
         "key_symptoms": [
           "hypotension",
+          "cough",
           "weight loss"
         ],
         "red_flags": [
-          "hypotension"
+          "hypotension",
+          "pulmonary hypertension"
         ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "13952483",
         "admission_id": "23852410",
-        "generated_at": "2026-08-08T16:20:19.782594"
+        "generated_at": "2026-08-19T23:20:45.624277"
       },
-      "branch_count": 1
+      "branch_count": 3
     },
     {
       "patient_id": "16014068",
@@ -9623,80 +9485,62 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with a fall and subsequent minor abrasions and soreness, along with a history of metastatic sarcoma and recurrent hematoma. The patient's anemia and thrombocytopenia are significant, with ongoing issues related to his malignancy and prior treatments.",
+        "reasoning": "The patient fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He is on hospice for metastatic sarcoma and has a history of recurrent hematoma and thrombocytopenia.",
         "branches": [
           {
             "category": "constitutional",
-            "ontology_hint": "Other",
+            "ontology_hint": "Infectious Diseases",
             "symptoms": [
               {
                 "term": "weakness",
                 "status": "present",
                 "evidence": "attributes it to weakness",
                 "related_findings": [
-                  "anemia",
-                  "thrombocytopenia"
+                  "metastatic sarcoma"
                 ],
-                "children": [
-                  {
-                    "term": "fatigue",
-                    "status": "present",
-                    "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-                  }
-                ]
+                "children": []
               },
               {
-                "term": "anemia",
+                "term": "bruising",
                 "status": "present",
-                "severity": "severe",
-                "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
+                "evidence": "hit his knees and elbows resulting in minor abrasions and soreness",
                 "related_findings": [
-                  "thrombocytopenia",
-                  "cytokine effects"
+                  "metastatic sarcoma"
                 ],
-                "children": [
-                  {
-                    "term": "fatigue",
-                    "status": "present",
-                    "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-                  }
-                ]
+                "children": []
               },
-              {
-                "term": "thrombocytopenia",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "Platelet Count: 63.0 K/uL",
-                "related_findings": [
-                  "cytokine effects",
-                  "chemotherapy side effects"
-                ],
-                "children": [
-                  {
-                    "term": "easy bruising",
-                    "status": "history",
-                    "evidence": "denies easy bruising"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "category": "neurologic",
-            "ontology_hint": "Neurology",
-            "symptoms": [
               {
                 "term": "headache",
                 "status": "present",
                 "evidence": "hit his head",
                 "related_findings": [
-                  "intracranial bleeding"
+                  "metastatic sarcoma"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "hematologic",
+            "ontology_hint": "Hematologic",
+            "symptoms": [
+              {
+                "term": "anemia",
+                "status": "present",
+                "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
+                "related_findings": [
+                  "thigh hematoma",
+                  "cytokine-induced thrombocytopenia"
                 ],
                 "children": [
                   {
-                    "term": "dizziness",
-                    "status": "history",
-                    "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+                    "term": "thrombocytopenia",
+                    "status": "present",
+                    "evidence": "Platelet Count: 63.0 K/uL",
+                    "related_findings": [
+                      "cytokine-induced thrombocytopenia"
+                    ],
+                    "children": []
                   }
                 ]
               }
@@ -9709,37 +9553,34 @@
               {
                 "term": "hypotension",
                 "status": "history",
-                "evidence": "Blood Pressure: 114/66",
+                "evidence": "BP 114/66",
                 "related_findings": [
-                  "cytokine effects",
-                  "chemotherapy side effects"
+                  "metastatic sarcoma"
                 ],
-                "children": [
-                  {
-                    "term": "dizziness",
-                    "status": "history",
-                    "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-                  }
-                ]
+                "children": []
               }
             ]
           },
           {
-            "category": "infectious",
-            "ontology_hint": "Infectious Diseases",
+            "category": "neurologic",
+            "ontology_hint": "Neurology",
             "symptoms": [
               {
-                "term": "fever",
-                "status": "history",
-                "evidence": "denies fevers/chills"
+                "term": "headache",
+                "status": "present",
+                "evidence": "hit his head",
+                "related_findings": [
+                  "metastatic sarcoma"
+                ],
+                "children": []
               }
             ]
           }
         ],
         "key_symptoms": [
           "weakness",
-          "anemia",
-          "thrombocytopenia"
+          "bruising",
+          "headache"
         ],
         "red_flags": [
           "hypotension",
@@ -9750,7 +9591,7 @@
         "_agent": "symptom_tree",
         "patient_id": "16014068",
         "admission_id": "29042843",
-        "generated_at": "2026-08-08T16:20:36.434081"
+        "generated_at": "2026-08-19T23:20:55.809885"
       },
       "branch_count": 4
     },
@@ -10545,7 +10386,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.",
+        "reasoning": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.",
         "branches": [
           {
             "category": "infectious",
@@ -10572,11 +10413,7 @@
                 "status": "present",
                 "severity": "mild",
                 "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
-                "related_findings": [
-                  "INR(PT) 3.4",
-                  "PT 36.5 sec",
-                  "PTT 104.2 sec"
-                ],
+                "related_findings": [],
                 "children": []
               }
             ]
@@ -10588,11 +10425,10 @@
               {
                 "term": "Hypoxia",
                 "status": "present",
-                "severity": "mild",
+                "severity": "moderate",
                 "evidence": "oxygen saturations in the ___ at his SNF",
                 "related_findings": [
-                  "SpO2 94.0%",
-                  "pH 7.11 units"
+                  "Bilateral effusions right greater than left are unchanged"
                 ],
                 "children": []
               },
@@ -10602,8 +10438,7 @@
                 "severity": "severe",
                 "evidence": "intubated for hypoxic respiratory failure",
                 "related_findings": [
-                  "Respiratory Rate 0.0 insp/min",
-                  "SpO2 94.0%"
+                  "Bilateral effusions right greater than left are unchanged"
                 ],
                 "children": []
               }
@@ -10619,8 +10454,7 @@
                 "severity": "moderate",
                 "evidence": "concerning for hepatic encephalopathy",
                 "related_findings": [
-                  "RASS-5",
-                  "sluggish pupil response"
+                  "RASS-5, sluggish pupil response"
                 ],
                 "children": []
               }
@@ -10636,8 +10470,7 @@
                 "severity": "moderate",
                 "evidence": "black coffee-ground GI contents",
                 "related_findings": [
-                  "Platelet Count 44.0 K/uL",
-                  "Bleeding from esophagus"
+                  "epistaxis from the left nare"
                 ],
                 "children": []
               }
@@ -10651,7 +10484,7 @@
                 "term": "Acute renal failure",
                 "status": "present",
                 "severity": "severe",
-                "evidence": "Acute renal failure ___ to septic shock and ATN on dialysis",
+                "evidence": "acute renal failure ___ to septic shock and ATN on dialysis",
                 "related_findings": [
                   "Creatinine 2.1 mg/dL",
                   "Bicarbonate 19 mEq/L",
@@ -10670,42 +10503,16 @@
                 "status": "present",
                 "severity": "moderate",
                 "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
-                "related_findings": [
-                  "INR(PT) 3.4",
-                  "PT 36.5 sec",
-                  "PTT 104.2 sec"
-                ],
+                "related_findings": [],
                 "children": []
               },
               {
-                "term": "Pleural effusion",
+                "term": "Multifocal metastatic HCC",
                 "status": "present",
-                "severity": "moderate",
-                "evidence": "large pleural effusion with compressive consolidation versus atelectasis",
+                "severity": "unknown",
+                "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland",
                 "related_findings": [
-                  "Bilateral effusions right greater than left"
-                ],
-                "children": []
-              },
-              {
-                "term": "Atelectasis",
-                "status": "present",
-                "severity": "moderate",
-                "evidence": "Bilateral effusions right greater than left are unchanged",
-                "related_findings": [
-                  "Bilateral effusions right greater than left"
-                ],
-                "children": []
-              },
-              {
-                "term": "Worsening liver failure",
-                "status": "present",
-                "severity": "severe",
-                "evidence": "worsening liver failure",
-                "related_findings": [
-                  "Bilirubin, Total 13.3 mg/dL",
-                  "ALT 439 IU/L",
-                  "AST 2481 IU/L"
+                  "large heterogeneous solid mass is re-demonstrated within the left upper quadrant"
                 ],
                 "children": []
               }
@@ -10718,8 +10525,8 @@
           "GI bleeding"
         ],
         "red_flags": [
-          "Septic shock",
-          "Hepatic encephalopathy",
+          "Hypoxia",
+          "Hypoxic respiratory failure",
           "Acute renal failure"
         ],
         "type": "symptom_tree",
@@ -10727,7 +10534,7 @@
         "_agent": "symptom_tree",
         "patient_id": "17774110",
         "admission_id": "27339772",
-        "generated_at": "2026-08-08T16:20:59.597072"
+        "generated_at": "2026-08-19T23:21:10.549297"
       },
       "branch_count": 7
     },
@@ -11151,7 +10958,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient is presenting with post-procedural pain and tenderness in the abdomen following a cryoablation procedure for a desmoid tumor.",
+        "reasoning": "The patient is presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure for a desmoid tumor.",
         "branches": [
           {
             "category": "other",
@@ -11160,16 +10967,15 @@
               {
                 "term": "post-procedural pain",
                 "status": "present",
-                "severity": "mild",
+                "severity": "moderate",
                 "evidence": "post-procedural pain in the right side of the abdomen",
                 "related_findings": [
-                  "abdominal pain"
+                  "abdominal tenderness to palpation"
                 ],
                 "children": [
                   {
-                    "term": "abdominal pain",
+                    "term": "abdominal tenderness",
                     "status": "present",
-                    "severity": "mild",
                     "evidence": "tender in the right upper and right lower quadrant to palpation"
                   }
                 ]
@@ -11186,91 +10992,57 @@
             ]
           },
           {
-            "category": "neurologic",
-            "ontology_hint": "Neurologic",
-            "symptoms": [
-              {
-                "term": "pain",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "similar to the previous procedure",
-                "related_findings": [
-                  "abdominal pain"
-                ]
-              }
-            ]
-          },
-          {
-            "category": "gi",
-            "ontology_hint": "Gastrointestinal",
-            "symptoms": [
-              {
-                "term": "abdominal pain",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "tender in the right upper and right lower quadrant to palpation",
-                "related_findings": [
-                  "desmoid tumor"
-                ]
-              }
-            ]
-          },
-          {
-            "category": "infectious",
-            "ontology_hint": "Infectious Diseases",
+            "category": "constitutional",
+            "ontology_hint": "Other",
             "symptoms": [
               {
                 "term": "fever",
                 "status": "absent",
-                "severity": "unknown",
                 "evidence": "denies fever, chills, night sweats"
-              }
-            ]
-          },
-          {
-            "category": "cardiovascular",
-            "ontology_hint": "Cardiovascular",
-            "symptoms": [
+              },
+              {
+                "term": "shortness of breath",
+                "status": "absent",
+                "evidence": "denies shortness of breath"
+              },
               {
                 "term": "palpitations",
                 "status": "absent",
-                "severity": "unknown",
                 "evidence": "denies palpitations"
               },
               {
                 "term": "chest pain",
                 "status": "absent",
-                "severity": "unknown",
                 "evidence": "denies chest pain"
-              }
-            ]
-          },
-          {
-            "category": "respiratory",
-            "ontology_hint": "Respiratory",
-            "symptoms": [
+              },
               {
-                "term": "shortness of breath",
+                "term": "diarrhea",
                 "status": "absent",
-                "severity": "unknown",
-                "evidence": "denies shortness of breath"
+                "evidence": "denies diarrhea"
+              },
+              {
+                "term": "constipation",
+                "status": "absent",
+                "evidence": "denies constipation"
               }
             ]
           }
         ],
         "key_symptoms": [
           "post-procedural pain",
-          "nausea"
+          "abdominal tenderness"
         ],
-        "red_flags": [],
+        "red_flags": [
+          "abdominal pain"
+        ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "18412100",
         "admission_id": "26093939",
-        "generated_at": "2026-08-08T16:21:12.086174"
+        "generated_at": "2026-08-19T23:21:18.444342"
       },
-      "branch_count": 6
+      "branch_count": 2
     },
     {
       "patient_id": "19104262",
@@ -12285,7 +12057,7 @@
       "symptom_tree_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "symptom_tree": {
         "root": "ClinicalPresentation",
-        "reasoning": "The patient is a 30-year-old female with a history of Type 1 Diabetes Mellitus (T1DM) and recurrent Diabetic Ketoacidosis (DKA). She is currently admitted with DKA and lactic acidosis, with no infectious precipitants identified. She has a history of complications including missed abortion and C. difficile colitis.",
+        "reasoning": "The patient is admitted with DKA/lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.",
         "branches": [
           {
             "category": "infectious",
@@ -12297,33 +12069,6 @@
                 "severity": "unknown",
                 "evidence": "fevers/chills/nightsweats for the past few days",
                 "related_findings": [],
-                "children": []
-              },
-              {
-                "term": "C difficile colitis",
-                "status": "suspected",
-                "severity": "unknown",
-                "evidence": "C difficile colitis along with diarrhea",
-                "related_findings": [
-                  "Glucose: 263 mg/dL",
-                  "Anion Gap: 19.0 mEq/L",
-                  "Bicarbonate: 20.0 mEq/L",
-                  "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
-                  "pO2: 60.0 mm Hg",
-                  "Potassium: 6.8 mEq/L",
-                  "Phosphate: 7.1 mg/dL",
-                  "Urea Nitrogen: 26 mg/dL",
-                  "Albumin: 3.6 g/dL",
-                  "Alkaline Phosphatase: 125.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
-                  "pCO2: 33.0 mm Hg",
-                  "pH: 7.34 units"
-                ],
                 "children": []
               }
             ]
@@ -12337,29 +12082,21 @@
                 "status": "history",
                 "severity": "unknown",
                 "evidence": "lower abdominal pain/cramping for the past week",
-                "related_findings": [
-                  "Hematocrit: 46.2%",
-                  "Hemoglobin: 14.4 g/dL",
-                  "Monocytes: 4.8%",
-                  "Red Blood Cells: 5.06 m/uL",
-                  "Lactate: 3.6 mmol/L",
-                  "Anion Gap: 19.0 mEq/L",
-                  "Bicarbonate: 20.0 mEq/L",
-                  "Calcium, Total: 10.2 mg/dL",
-                  "pO2: 60.0 mm Hg",
-                  "Potassium: 6.8 mEq/L",
-                  "Phosphate: 7.1 mg/dL",
-                  "Urea Nitrogen: 26 mg/dL",
-                  "Albumin: 3.6 g/dL",
-                  "Alkaline Phosphatase: 125.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
-                  "pCO2: 33.0 mm Hg",
-                  "pH: 7.34 units"
-                ],
+                "related_findings": [],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "neurologic",
+            "ontology_hint": "Neurology",
+            "symptoms": [
+              {
+                "term": "headache",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "pressure-like frontal headache",
+                "related_findings": [],
                 "children": []
               }
             ]
@@ -12369,10 +12106,10 @@
             "ontology_hint": "Respiratory",
             "symptoms": [
               {
-                "term": "respiratory rate",
-                "status": "normal",
-                "severity": "normal",
-                "evidence": "Respiratory Rate: 16 insp/min",
+                "term": "nausea",
+                "status": "present",
+                "severity": "unknown",
+                "evidence": "nausea and vomiting",
                 "related_findings": [],
                 "children": []
               }
@@ -12380,60 +12117,14 @@
           },
           {
             "category": "gi",
-            "ontology_hint": "GI",
+            "ontology_hint": "Gastroenterology",
             "symptoms": [
-              {
-                "term": "nausea",
-                "status": "present",
-                "severity": "unknown",
-                "evidence": "nausea and vomiting",
-                "related_findings": [
-                  "Glucose: 263 mg/dL",
-                  "Anion Gap: 19.0 mEq/L",
-                  "Bicarbonate: 20.0 mEq/L",
-                  "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
-                  "pO2: 60.0 mm Hg",
-                  "Potassium: 6.8 mEq/L",
-                  "Phosphate: 7.1 mg/dL",
-                  "Urea Nitrogen: 26 mg/dL",
-                  "Albumin: 3.6 g/dL",
-                  "Alkaline Phosphatase: 125.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
-                  "pCO2: 33.0 mm Hg",
-                  "pH: 7.34 units"
-                ],
-                "children": []
-              },
               {
                 "term": "vaginal bleeding",
                 "status": "history",
                 "severity": "unknown",
                 "evidence": "vaginal spotting",
-                "related_findings": [
-                  "Glucose: 263 mg/dL",
-                  "Anion Gap: 19.0 mEq/L",
-                  "Bicarbonate: 20.0 mEq/L",
-                  "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
-                  "pO2: 60.0 mm Hg",
-                  "Potassium: 6.8 mEq/L",
-                  "Phosphate: 7.1 mg/dL",
-                  "Urea Nitrogen: 26 mg/dL",
-                  "Albumin: 3.6 g/dL",
-                  "Alkaline Phosphatase: 125.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
-                  "pCO2: 33.0 mm Hg",
-                  "pH: 7.34 units"
-                ],
+                "related_findings": [],
                 "children": []
               },
               {
@@ -12441,12 +12132,26 @@
                 "status": "history",
                 "severity": "unknown",
                 "evidence": "decreased fetal movement",
+                "related_findings": [],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "C difficile colitis",
+                "status": "suspected",
+                "severity": "unknown",
+                "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
                 "related_findings": [
                   "Glucose: 263 mg/dL",
                   "Anion Gap: 19.0 mEq/L",
                   "Bicarbonate: 20.0 mEq/L",
                   "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
+                  "Calcium, Total: 8.6 mg/dL",
                   "pO2: 60.0 mm Hg",
                   "Potassium: 6.8 mEq/L",
                   "Phosphate: 7.1 mg/dL",
@@ -12454,10 +12159,6 @@
                   "Albumin: 3.6 g/dL",
                   "Alkaline Phosphatase: 125.0 IU/L",
                   "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
                   "pCO2: 33.0 mm Hg",
                   "pH: 7.34 units"
                 ],
@@ -12475,11 +12176,10 @@
                 "severity": "unknown",
                 "evidence": "fevers/chills/nightsweats for the past few days",
                 "related_findings": [
-                  "Glucose: 263 mg/dL",
                   "Anion Gap: 19.0 mEq/L",
                   "Bicarbonate: 20.0 mEq/L",
                   "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
+                  "Calcium, Total: 8.6 mg/dL",
                   "pO2: 60.0 mm Hg",
                   "Potassium: 6.8 mEq/L",
                   "Phosphate: 7.1 mg/dL",
@@ -12487,10 +12187,6 @@
                   "Albumin: 3.6 g/dL",
                   "Alkaline Phosphatase: 125.0 IU/L",
                   "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
                   "pCO2: 33.0 mm Hg",
                   "pH: 7.34 units"
                 ],
@@ -12499,20 +12195,19 @@
             ]
           },
           {
-            "category": "neurologic",
-            "ontology_hint": "Neurologic",
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
             "symptoms": [
               {
-                "term": "headache",
+                "term": "decreased fetal movement",
                 "status": "history",
                 "severity": "unknown",
-                "evidence": "pressure-like frontal headache",
+                "evidence": "decreased fetal movement",
                 "related_findings": [
-                  "Glucose: 263 mg/dL",
                   "Anion Gap: 19.0 mEq/L",
                   "Bicarbonate: 20.0 mEq/L",
                   "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
+                  "Calcium, Total: 8.6 mg/dL",
                   "pO2: 60.0 mm Hg",
                   "Potassium: 6.8 mEq/L",
                   "Phosphate: 7.1 mg/dL",
@@ -12520,10 +12215,6 @@
                   "Albumin: 3.6 g/dL",
                   "Alkaline Phosphatase: 125.0 IU/L",
                   "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
                   "pCO2: 33.0 mm Hg",
                   "pH: 7.34 units"
                 ],
@@ -12532,47 +12223,20 @@
             ]
           },
           {
-            "category": "endocrine",
-            "ontology_hint": "Endocrine",
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
             "symptoms": [
               {
-                "term": "DKA",
-                "status": "present",
-                "severity": "severe",
-                "evidence": "admission with DKA/lactic acidosis",
-                "related_findings": [
-                  "Glucose: 263 mg/dL",
-                  "Anion Gap: 19.0 mEq/L",
-                  "Bicarbonate: 20.0 mEq/L",
-                  "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
-                  "pO2: 60.0 mm Hg",
-                  "Potassium: 6.8 mEq/L",
-                  "Phosphate: 7.1 mg/dL",
-                  "Urea Nitrogen: 26 mg/dL",
-                  "Albumin: 3.6 g/dL",
-                  "Alkaline Phosphatase: 125.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
-                  "pCO2: 33.0 mm Hg",
-                  "pH: 7.34 units"
-                ],
-                "children": []
-              },
-              {
-                "term": "missed abortion",
-                "status": "confirmed",
+                "term": "C difficile colitis",
+                "status": "suspected",
                 "severity": "unknown",
-                "evidence": "Missed abortion requiring D&C",
+                "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
                 "related_findings": [
                   "Glucose: 263 mg/dL",
                   "Anion Gap: 19.0 mEq/L",
                   "Bicarbonate: 20.0 mEq/L",
                   "Lactate: 3.6 mmol/L",
-                  "Calcium, Total: 10.2 mg/dL",
+                  "Calcium, Total: 8.6 mg/dL",
                   "pO2: 60.0 mm Hg",
                   "Potassium: 6.8 mEq/L",
                   "Phosphate: 7.1 mg/dL",
@@ -12580,40 +12244,294 @@
                   "Albumin: 3.6 g/dL",
                   "Alkaline Phosphatase: 125.0 IU/L",
                   "Magnesium: 7.4 mg/dL",
-                  "Sodium: 130 mEq/L",
-                  "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                  "Magnesium: 7.4 mg/dL",
-                  "Calcium, Total: 8.6 mg/dL",
                   "pCO2: 33.0 mm Hg",
                   "pH: 7.34 units"
                 ],
                 "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "fever",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "fevers/chills/nightsweats for the past few days",
+                "related_findings": [
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "decreased fetal movement",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "decreased fetal movement",
+                "related_findings": [
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "C difficile colitis",
+                "status": "suspected",
+                "severity": "unknown",
+                "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+                "related_findings": [
+                  "Glucose: 263 mg/dL",
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "fever",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "fevers/chills/nightsweats for the past few days",
+                "related_findings": [
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "decreased fetal movement",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "decreased fetal movement",
+                "related_findings": [
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "C difficile colitis",
+                "status": "suspected",
+                "severity": "unknown",
+                "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+                "related_findings": [
+                  "Glucose: 263 mg/dL",
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "fever",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "fevers/chills/nightsweats for the past few days",
+                "related_findings": [
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "decreased fetal movement",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "decreased fetal movement",
+                "related_findings": [
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "C difficile colitis",
+                "status": "suspected",
+                "severity": "unknown",
+                "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+                "related_findings": [
+                  "Glucose: 263 mg/dL",
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate: 3.6 mmol/L",
+                  "Calcium, Total: 8.6 mg/dL",
+                  "pO2: 60.0 mm Hg",
+                  "Potassium: 6.8 mEq/L",
+                  "Phosphate: 7.1 mg/dL",
+                  "Urea Nitrogen: 26 mg/dL",
+                  "Albumin: 3.6 g/dL",
+                  "Alkaline Phosphatase: 125.0 IU/L",
+                  "Magnesium: 7.4 mg/dL",
+                  "pCO2: 33.0 mm Hg",
+                  "pH: 7.34 units"
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": [
+              {
+                "term": "fever",
+                "status": "history",
+                "severity": "unknown",
+                "evidence": "fevers/chills/nightsweats for the past few days",
+                "related_findings": [
+                  "Anion Gap: 19.0 mEq/L",
+                  "Bicarbonate: 20.0 mEq/L",
+                  "Lactate:"
+                ]
               }
             ]
           }
-        ],
-        "key_symptoms": [
-          "DKA",
-          "fever",
-          "abdominal pain",
-          "headache",
-          "nausea",
-          "vaginal bleeding",
-          "decreased fetal movement"
-        ],
-        "red_flags": [
-          "fever",
-          "abdominal pain",
-          "decreased fetal movement"
         ],
         "type": "symptom_tree",
         "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
         "_agent": "symptom_tree",
         "patient_id": "19104262",
         "admission_id": "24271247",
-        "generated_at": "2026-08-08T16:22:03.483616"
+        "generated_at": "2026-08-19T23:22:16.412879"
       },
-      "branch_count": 7
+      "branch_count": 19
     },
     {
       "patient_id": "19632936",
@@ -13099,6 +13017,11 @@
         "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
         "branches": [
           {
+            "category": "infectious",
+            "ontology_hint": "Infectious Diseases",
+            "symptoms": []
+          },
+          {
             "category": "cardiovascular",
             "ontology_hint": "Cardiovascular",
             "symptoms": [
@@ -13109,7 +13032,7 @@
                 "evidence": "acute on chronic dyspnea on exertion",
                 "related_findings": [
                   "moderate AS",
-                  "sick sinus syndrome"
+                  "mild pulmonary hypertension"
                 ],
                 "children": [
                   {
@@ -13126,24 +13049,8 @@
                 "evidence": "acute on chronic fatigue",
                 "related_findings": [
                   "anemia"
-                ]
-              }
-            ]
-          },
-          {
-            "category": "infectious",
-            "ontology_hint": "Infectious Diseases",
-            "symptoms": [
-              {
-                "term": "anemia",
-                "status": "present",
-                "severity": "mild",
-                "evidence": "acute on chronic macrocytic anemia",
-                "related_findings": [
-                  "iron deficiency",
-                  "low MCV",
-                  "low MCHC"
-                ]
+                ],
+                "children": []
               }
             ]
           },
@@ -13154,12 +13061,51 @@
               {
                 "term": "esophagitis",
                 "status": "history",
-                "evidence": "esophagitis (___)"
+                "severity": "mild",
+                "evidence": "esophagitis (___)",
+                "related_findings": [],
+                "children": []
               },
               {
                 "term": "nodular gastritis",
                 "status": "history",
-                "evidence": "nodular gastritis"
+                "severity": "mild",
+                "evidence": "nodular gastritis",
+                "related_findings": [],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "renal",
+            "ontology_hint": "Renal",
+            "symptoms": [
+              {
+                "term": "low calcium",
+                "status": "present",
+                "severity": "mild",
+                "evidence": "Calcium, Total: 8.3 mg/dL",
+                "related_findings": [],
+                "children": []
+              }
+            ]
+          },
+          {
+            "category": "other",
+            "ontology_hint": "Other",
+            "symptoms": [
+              {
+                "term": "macrocytic anemia",
+                "status": "present",
+                "severity": "moderate",
+                "evidence": "acute on chronic macrocytic anemia",
+                "related_findings": [
+                  "Hgb 6.7",
+                  "MCV 106",
+                  "RDW 18.2",
+                  "Reticulocyte Count, Automated: 3.6 %"
+                ],
+                "children": []
               }
             ]
           }
@@ -13177,27 +13123,28 @@
         "_agent": "symptom_tree",
         "patient_id": "19632936",
         "admission_id": "26696232",
-        "generated_at": "2026-08-08T16:22:12.245664"
+        "generated_at": "2026-08-19T23:22:25.917521"
       },
-      "branch_count": 3
+      "branch_count": 5
     }
   ],
   "patient_symptom_trees": {
     "10361982": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, with a history of abnormal uterine bleeding and other gynecological issues.",
+      "reasoning": "The patient presents with heavy vaginal bleeding after a recent hysterectomy, which is the primary reason for admission.",
       "branches": [
         {
-          "category": "gynecologic",
-          "ontology_hint": "Obstetrics/Gynecology",
+          "category": "gi",
+          "ontology_hint": "Gynecology",
           "symptoms": [
             {
               "term": "heavy vaginal bleeding",
               "status": "present",
-              "severity": "severe",
+              "severity": "moderate",
               "evidence": "heavy vaginal bleeding after hysterectomy",
               "related_findings": [
-                "hematocrit decreased from 40.1 to 38.1"
+                "menorrhagia",
+                "vaginal spotting to light bleeding"
               ],
               "children": [
                 {
@@ -13206,69 +13153,41 @@
                   "evidence": "passing 'munchin' sized clots"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "category": "constitutional",
+          "ontology_hint": "Hematology",
+          "symptoms": [
             {
-              "term": "abdominal bloatedness",
-              "status": "history",
+              "term": "hemoglobin level",
+              "status": "abnormal",
               "severity": "mild",
-              "evidence": "abdominal bloatedness secondary to gas",
-              "related_findings": []
-            },
-            {
-              "term": "vaginal spotting to light bleeding",
-              "status": "history",
-              "severity": "mild",
-              "evidence": "vaginal spotting to light bleeding",
-              "related_findings": []
-            },
-            {
-              "term": "menorrhagia",
-              "status": "history",
-              "severity": "moderate",
-              "evidence": "history of abnormal uterine bleeding",
-              "related_findings": []
-            },
-            {
-              "term": "dysmenorrhea",
-              "status": "history",
-              "severity": "moderate",
-              "evidence": "dysmenorrhea",
-              "related_findings": []
-            },
-            {
-              "term": "intra-menstrual bleeding",
-              "status": "history",
-              "severity": "moderate",
-              "evidence": "intra-menstrual bleeding",
-              "related_findings": []
-            },
-            {
-              "term": "post-coital bleeding",
-              "status": "history",
-              "severity": "mild",
-              "evidence": "post-coital bleeding",
-              "related_findings": []
+              "evidence": "HGB-12.6",
+              "related_findings": [
+                "HCT-38.1"
+              ],
+              "children": []
             }
           ]
         }
       ],
       "key_symptoms": [
         "heavy vaginal bleeding",
-        "abdominal bloatedness"
+        "passing clots"
       ],
-      "red_flags": [
-        "hematocrit decreased"
-      ],
+      "red_flags": [],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "10361982",
       "admission_id": "24286431",
-      "generated_at": "2026-08-08T16:18:27.672426"
+      "generated_at": "2026-08-19T23:19:11.124101"
     },
     "10426859": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with recurrent episodes of SVT, lightheadedness, and a fall resulting in hip pain. The clinical picture is dominated by cardiovascular issues and musculoskeletal pain.",
+      "reasoning": "The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The primary focus is on the SVT and associated symptoms.",
       "branches": [
         {
           "category": "cardiovascular",
@@ -13286,7 +13205,7 @@
                 {
                   "term": "SVT",
                   "status": "present",
-                  "evidence": "Supraventricular tachycardia"
+                  "evidence": "found to be in SVT in the ED"
                 }
               ]
             },
@@ -13298,21 +13217,12 @@
               "related_findings": [
                 "Supraventricular tachycardia"
               ]
-            },
-            {
-              "term": "chest pain",
-              "status": "history",
-              "severity": "mild",
-              "evidence": "chest pain",
-              "related_findings": [
-                "Supraventricular tachycardia"
-              ]
             }
           ]
         },
         {
           "category": "neurologic",
-          "ontology_hint": "Neurologic",
+          "ontology_hint": "Neurology",
           "symptoms": [
             {
               "term": "headache",
@@ -13326,38 +13236,14 @@
           ]
         },
         {
-          "category": "musculoskeletal",
-          "ontology_hint": "Musculoskeletal",
+          "category": "skeletal",
+          "ontology_hint": "Orthopedics",
           "symptoms": [
             {
               "term": "pain in right hip",
               "status": "present",
-              "severity": "mild",
+              "severity": "moderate",
               "evidence": "pain in her right hip",
-              "related_findings": [
-                "Nondisplaced comminuted fracture in the right superior pubic ramus"
-              ]
-            },
-            {
-              "term": "pain in right leg",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "pain in her entire right leg - her foot, ankle, leg, hip",
-              "related_findings": [
-                "Nondisplaced comminuted fracture in the right superior pubic ramus"
-              ]
-            }
-          ]
-        },
-        {
-          "category": "other",
-          "ontology_hint": "Other",
-          "symptoms": [
-            {
-              "term": "fall",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "fell when she felt lightheaded",
               "related_findings": [
                 "Nondisplaced comminuted fracture in the right superior pubic ramus"
               ]
@@ -13368,29 +13254,28 @@
       "key_symptoms": [
         "palpitations",
         "lightheadedness",
-        "pain in right hip"
+        "headache"
       ],
       "red_flags": [
-        "Supraventricular tachycardia",
-        "Nondisplaced comminuted fracture in the right superior pubic ramus"
+        "Supraventricular tachycardia"
       ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "10426859",
       "admission_id": "29908281",
-      "generated_at": "2026-08-08T16:18:38.373796"
+      "generated_at": "2026-08-19T23:19:18.929010"
     },
     "10458324": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with right-sided rib fractures, hypoxia, and respiratory symptoms, along with a history of substance abuse and psychiatric conditions.",
+      "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a fall, with ongoing respiratory symptoms and signs of trauma.",
       "branches": [
         {
           "category": "respiratory",
           "ontology_hint": "Respiratory",
           "symptoms": [
             {
-              "term": "right sided rib fractures",
+              "term": "right rib fractures",
               "status": "present",
               "severity": "moderate",
               "evidence": "right sided rib fractures",
@@ -13402,9 +13287,18 @@
                 {
                   "term": "right PTX",
                   "status": "present",
-                  "severity": "mild",
                   "evidence": "small right PTX"
                 }
+              ]
+            },
+            {
+              "term": "hypoxia",
+              "status": "present",
+              "severity": "mild",
+              "evidence": "satting 96% on 4L",
+              "related_findings": [
+                "right PTX",
+                "subcutaneous emphysema"
               ]
             },
             {
@@ -13450,13 +13344,11 @@
           "ontology_hint": "Cardiovascular",
           "symptoms": [
             {
-              "term": "hypoxia",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "satting 96% on 4L",
-              "related_findings": [
-                "right PTX"
-              ]
+              "term": "hypotension",
+              "status": "absent",
+              "severity": "unknown",
+              "evidence": "BP 121/72",
+              "related_findings": []
             }
           ]
         },
@@ -13465,22 +13357,29 @@
           "ontology_hint": "Infectious Diseases",
           "symptoms": [
             {
-              "term": "influenza A",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "influenza A PCR +"
+              "term": "bacterial pneumonia",
+              "status": "absent",
+              "severity": "unknown",
+              "evidence": "Gram stain and culture results negative",
+              "related_findings": [
+                "cough",
+                "fever",
+                "nasal congestion",
+                "sore throat"
+              ]
             }
           ]
         },
         {
           "category": "neurologic",
-          "ontology_hint": "Neurologic",
+          "ontology_hint": "Neurology",
           "symptoms": [
             {
               "term": "insomnia",
               "status": "present",
               "severity": "mild",
-              "evidence": "nightmares of being left alone and mistreated"
+              "evidence": "nightmares of being left alone and mistreated",
+              "related_findings": []
             }
           ]
         },
@@ -13492,45 +13391,48 @@
               "term": "vomiting",
               "status": "present",
               "severity": "mild",
-              "evidence": "one episode of vomiting"
+              "evidence": "one episode of vomiting",
+              "related_findings": []
             },
             {
               "term": "diarrhea",
               "status": "present",
               "severity": "mild",
-              "evidence": "diarrhea"
+              "evidence": "diarrhea",
+              "related_findings": []
             }
           ]
         }
       ],
       "key_symptoms": [
-        "right sided rib fractures",
+        "right rib fractures",
         "hypoxia",
-        "cough"
+        "cough",
+        "fever"
       ],
       "red_flags": [
-        "hypoxia",
-        "insomnia"
+        "hypotension",
+        "AMS"
       ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "10458324",
       "admission_id": "21744342",
-      "generated_at": "2026-08-08T16:18:51.903113"
+      "generated_at": "2026-08-19T23:19:32.076465"
     },
     "11251337": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with symptoms of nephrolithiasis, including hematuria, dysuria, and fever, following a difficult right PCNL procedure.",
+      "reasoning": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL, with residual stones requiring further intervention.",
       "branches": [
         {
           "category": "renal|urologic",
-          "ontology_hint": "Renal Diseases",
+          "ontology_hint": "Urology",
           "symptoms": [
             {
               "term": "hematuria",
               "status": "present",
-              "severity": "mild",
+              "severity": "unknown",
               "evidence": "1x episode of hematuria",
               "related_findings": [
                 "Bilateral staghorn renal calculi"
@@ -13540,7 +13442,7 @@
             {
               "term": "pain",
               "status": "present",
-              "severity": "moderate",
+              "severity": "unknown",
               "evidence": "pain around the nephrostomy tubes",
               "related_findings": [
                 "Bilateral staghorn renal calculi"
@@ -13550,7 +13452,7 @@
             {
               "term": "dysuria",
               "status": "present",
-              "severity": "mild",
+              "severity": "unknown",
               "evidence": "pain around the nephrostomy tubes and fevers",
               "related_findings": [
                 "Bilateral staghorn renal calculi"
@@ -13560,7 +13462,7 @@
             {
               "term": "fever",
               "status": "present",
-              "severity": "mild",
+              "severity": "unknown",
               "evidence": "temperature of 102 at ___ prior to transfer",
               "related_findings": [
                 "Complicated urinary tract infection"
@@ -13570,46 +13472,49 @@
           ]
         },
         {
-          "category": "cardiovascular",
-          "ontology_hint": "Cardiovascular Diseases",
+          "category": "renal|metabolic",
+          "ontology_hint": "Renal",
           "symptoms": [
             {
-              "term": "hypertension",
+              "term": "anemia",
               "status": "present",
-              "severity": "unknown",
-              "evidence": "Hypertension",
-              "related_findings": [],
-              "children": []
-            }
-          ]
-        },
-        {
-          "category": "neurologic",
-          "ontology_hint": "Neurological Diseases",
-          "symptoms": [
-            {
-              "term": "Hemorrhagic CVA",
-              "status": "present",
-              "severity": "unknown",
-              "evidence": "Hemorrhagic CVA in ___ ___ years ago with residual LUE weakness",
-              "related_findings": [],
-              "children": []
-            }
-          ]
-        },
-        {
-          "category": "renal",
-          "ontology_hint": "Renal Diseases",
-          "symptoms": [
-            {
-              "term": "renal calculi",
-              "status": "present",
-              "severity": "moderate",
-              "evidence": "Bilateral staghorn renal calculi",
+              "severity": "mild",
+              "evidence": "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL",
               "related_findings": [
-                "Hypertension",
-                "Hemorrhagic CVA"
+                "MCV: 104.0 fL, RDW-SD: 59.6 fL"
               ],
+              "children": []
+            },
+            {
+              "term": "hyperkalemia",
+              "status": "absent",
+              "severity": "unknown",
+              "evidence": "Potassium: 4.7 mEq/L",
+              "related_findings": [],
+              "children": []
+            },
+            {
+              "term": "hyperglycemia",
+              "status": "present",
+              "severity": "mild",
+              "evidence": "Glucose: 105.0 mg/dL",
+              "related_findings": [],
+              "children": []
+            },
+            {
+              "term": "hyperuremia",
+              "status": "present",
+              "severity": "mild",
+              "evidence": "Urea Nitrogen: 22.0 mg/dL",
+              "related_findings": [],
+              "children": []
+            },
+            {
+              "term": "hypercreatininemia",
+              "status": "present",
+              "severity": "mild",
+              "evidence": "Creatinine: 2.5 mg/dL",
+              "related_findings": [],
               "children": []
             }
           ]
@@ -13622,45 +13527,47 @@
         "fever"
       ],
       "red_flags": [
-        "Hemorrhagic CVA",
-        "hypertension"
+        "fever"
       ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "11251337",
       "admission_id": "29568708",
-      "generated_at": "2026-08-08T16:19:01.757313"
+      "generated_at": "2026-08-19T23:19:43.135733"
     },
     "11474876": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient is a 70-year-old man with multiple comorbidities, including AFib, HFpEF, PVD, and CKD, who underwent ERCP for cholangitis and is being managed post-procedurally.",
+      "reasoning": "The patient is a 70-year-old man with a history of AFib, HFpEF, PVD, and CKD who was admitted post-ERCP for cholangitis and subsequent stent placement. His current presentation includes mild edema and no acute symptoms, but he has a history of nocturnal hypoxia and leg swelling.",
       "branches": [
         {
           "category": "cardiovascular",
           "ontology_hint": "Cardiovascular",
           "symptoms": [
             {
-              "term": "nocturnal hypoxia",
-              "status": "history",
-              "severity": "mild",
-              "evidence": "nocturnal hypoxia that improved with diuresis",
-              "related_findings": [
-                "Hematocrit: 38.3%",
-                "Hemoglobin: 12.6 g/dL"
-              ],
-              "children": []
-            },
-            {
-              "term": "leg swelling",
+              "term": "edema",
               "status": "present",
               "severity": "mild",
               "evidence": "notes his edema improves during the night and worsens during the day",
               "related_findings": [
                 "Creatinine: 1.4 mg/dL",
-                "Potassium: 4.3 mEq/L"
+                "Hematocrit: 38.3 %",
+                "Hemoglobin: 12.6 g/dL",
+                "MCH: 32.8 pg",
+                "MCV: 100.0 fL",
+                "Red Blood Cells: 3.84 m/uL",
+                "RDW-SD: 54.1 fL",
+                "Calcium, Total: 8.7 mg/dL",
+                "Magnesium: 1.7 mg/dL",
+                "Phosphate: 2.9 mg/dL"
               ],
-              "children": []
+              "children": [
+                {
+                  "term": "leg swelling",
+                  "status": "present",
+                  "evidence": "notes his edema improves during the night and worsens during the day"
+                }
+              ]
             }
           ]
         },
@@ -13674,8 +13581,41 @@
               "severity": "unknown",
               "evidence": "Admitted last month with cholangitis and underwent ERCP with stent placement",
               "related_findings": [
-                "White Blood Cells: 7.2 K/uL",
-                "Anion Gap: 16.0 mEq/L"
+                "Creatinine: 1.4 mg/dL",
+                "Hematocrit: 38.3 %",
+                "Hemoglobin: 12.6 g/dL",
+                "MCH: 32.8 pg",
+                "MCV: 100.0 fL",
+                "Red Blood Cells: 3.84 m/uL",
+                "RDW-SD: 54.1 fL",
+                "Calcium, Total: 8.7 mg/dL",
+                "Magnesium: 1.7 mg/dL",
+                "Phosphate: 2.9 mg/dL"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "cardiovascular",
+          "ontology_hint": "Cardiovascular",
+          "symptoms": [
+            {
+              "term": "nocturnal hypoxia",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "nocturnal hypoxia that improved with diuresis",
+              "related_findings": [
+                "Creatinine: 1.4 mg/dL",
+                "Hematocrit: 38.3 %",
+                "Hemoglobin: 12.6 g/dL",
+                "MCH: 32.8 pg",
+                "MCV: 100.0 fL",
+                "Red Blood Cells: 3.84 m/uL",
+                "RDW-SD: 54.1 fL",
+                "Calcium, Total: 8.7 mg/dL",
+                "Magnesium: 1.7 mg/dL",
+                "Phosphate: 2.9 mg/dL"
               ],
               "children": []
             }
@@ -13689,21 +13629,43 @@
               "term": "atrial fibrillation",
               "status": "present",
               "severity": "mild",
-              "evidence": "AFib on apixaban",
+              "evidence": "on apixaban for AFib",
               "related_findings": [
-                "Hematocrit: 38.3%",
-                "Hemoglobin: 12.6 g/dL"
+                "Creatinine: 1.4 mg/dL",
+                "Hematocrit: 38.3 %",
+                "Hemoglobin: 12.6 g/dL",
+                "MCH: 32.8 pg",
+                "MCV: 100.0 fL",
+                "Red Blood Cells: 3.84 m/uL",
+                "RDW-SD: 54.1 fL",
+                "Calcium, Total: 8.7 mg/dL",
+                "Magnesium: 1.7 mg/dL",
+                "Phosphate: 2.9 mg/dL"
               ],
               "children": []
-            },
+            }
+          ]
+        },
+        {
+          "category": "cardiovascular",
+          "ontology_hint": "Cardiovascular",
+          "symptoms": [
             {
               "term": "heart failure",
               "status": "present",
               "severity": "mild",
-              "evidence": "HFpEF",
+              "evidence": "HFpEF, held home Lasix",
               "related_findings": [
                 "Creatinine: 1.4 mg/dL",
-                "Potassium: 4.3 mEq/L"
+                "Hematocrit: 38.3 %",
+                "Hemoglobin: 12.6 g/dL",
+                "MCH: 32.8 pg",
+                "MCV: 100.0 fL",
+                "Red Blood Cells: 3.84 m/uL",
+                "RDW-SD: 54.1 fL",
+                "Calcium, Total: 8.7 mg/dL",
+                "Magnesium: 1.7 mg/dL",
+                "Phosphate: 2.9 mg/dL"
               ],
               "children": []
             }
@@ -13720,24 +13682,15 @@
               "evidence": "PVD with remote bypass graft",
               "related_findings": [
                 "Creatinine: 1.4 mg/dL",
-                "Potassium: 4.3 mEq/L"
-              ],
-              "children": []
-            }
-          ]
-        },
-        {
-          "category": "renal",
-          "ontology_hint": "Renal",
-          "symptoms": [
-            {
-              "term": "chronic kidney disease",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "CKD",
-              "related_findings": [
-                "Creatinine: 1.4 mg/dL",
-                "Potassium: 4.3 mEq/L"
+                "Hematocrit: 38.3 %",
+                "Hemoglobin: 12.6 g/dL",
+                "MCH: 32.8 pg",
+                "MCV: 100.0 fL",
+                "Red Blood Cells: 3.84 m/uL",
+                "RDW-SD: 54.1 fL",
+                "Calcium, Total: 8.7 mg/dL",
+                "Magnesium: 1.7 mg/dL",
+                "Phosphate: 2.9 mg/dL"
               ],
               "children": []
             }
@@ -13745,7 +13698,7 @@
         }
       ],
       "key_symptoms": [
-        "leg swelling",
+        "edema",
         "nocturnal hypoxia"
       ],
       "red_flags": [
@@ -13757,11 +13710,11 @@
       "_agent": "symptom_tree",
       "patient_id": "11474876",
       "admission_id": "29672491",
-      "generated_at": "2026-08-08T16:19:14.340540"
+      "generated_at": "2026-08-19T23:20:03.745166"
     },
     "11607177": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with a history of dilated cardiomyopathy and refractory VT, with recent ICD shock and ongoing edema. The patient is currently on multiple medications for his heart failure and arrhythmias.",
+      "reasoning": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness.",
       "branches": [
         {
           "category": "cardiovascular",
@@ -13774,18 +13727,17 @@
               "evidence": "ICD shock on ___",
               "related_findings": [
                 "Refractory VT",
-                "LVAD in place"
+                "Dilated non-ischemic cardiomyopathy"
               ],
               "children": []
             },
             {
-              "term": "refractory VT",
+              "term": "lightheadedness",
               "status": "present",
-              "severity": "unknown",
-              "evidence": "Refractory VT requiring ganglionic block",
+              "severity": "mild",
+              "evidence": "lightheadedness with position changes",
               "related_findings": [
-                "ICD shock",
-                "LVAD in place"
+                "Dilated non-ischemic cardiomyopathy"
               ],
               "children": []
             },
@@ -13795,75 +13747,8 @@
               "severity": "mild",
               "evidence": "some increased ___ edema over the last several days",
               "related_findings": [
-                "LVAD in place"
+                "Dilated non-ischemic cardiomyopathy"
               ],
-              "children": []
-            },
-            {
-              "term": "lightheadedness",
-              "status": "present",
-              "severity": "unknown",
-              "evidence": "lightheadedness with position changes",
-              "related_findings": [
-                "ICD shock",
-                "LVAD in place"
-              ],
-              "children": []
-            },
-            {
-              "term": "shaking",
-              "status": "present",
-              "severity": "unknown",
-              "evidence": "feels some 'shaking' in his chest in the morning for the last 4 months",
-              "related_findings": [
-                "LVAD in place"
-              ],
-              "children": []
-            }
-          ]
-        },
-        {
-          "category": "constitutional",
-          "ontology_hint": "Infectious Diseases",
-          "symptoms": [
-            {
-              "term": "fevers",
-              "status": "absent",
-              "severity": "unknown",
-              "evidence": "denies fevers",
-              "related_findings": [],
-              "children": []
-            },
-            {
-              "term": "chills",
-              "status": "absent",
-              "severity": "unknown",
-              "evidence": "denies chills",
-              "related_findings": [],
-              "children": []
-            },
-            {
-              "term": "cough",
-              "status": "absent",
-              "severity": "unknown",
-              "evidence": "denies cough",
-              "related_findings": [],
-              "children": []
-            },
-            {
-              "term": "nausea",
-              "status": "absent",
-              "severity": "unknown",
-              "evidence": "denies N/V/D",
-              "related_findings": [],
-              "children": []
-            },
-            {
-              "term": "palpitations",
-              "status": "absent",
-              "severity": "unknown",
-              "evidence": "denies other palpitations",
-              "related_findings": [],
               "children": []
             }
           ]
@@ -13874,19 +13759,18 @@
         "edema"
       ],
       "red_flags": [
-        "ICD shock",
-        "lightheadedness"
+        "ICD shock"
       ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "11607177",
       "admission_id": "23293838",
-      "generated_at": "2026-08-08T16:19:27.394653"
+      "generated_at": "2026-08-19T23:20:08.367062"
     },
     "12007928": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with dyspnea, orthopnea, and significant fatigue, with a history of CHF and atrial fibrillation. She also has signs of renal and hematologic dysfunction.",
+      "reasoning": "The patient presents with dyspnea, orthopnea, and worsening CHF, with significant fatigue and incontinence, following a fall and discharge from a previous hospital.",
       "branches": [
         {
           "category": "cardiovascular",
@@ -13911,18 +13795,36 @@
                 {
                   "term": "pitting edema",
                   "status": "present",
-                  "evidence": "2+ pitting lower extremity edema"
+                  "evidence": "4+ pitting lower extremity edema"
                 }
+              ]
+            },
+            {
+              "term": "crackles",
+              "status": "present",
+              "evidence": "mild bibasilar crackles L > R",
+              "related_findings": [
+                "pulmonary edema"
               ]
             },
             {
               "term": "fatigue",
               "status": "present",
+              "evidence": "all activities now are quite fatiguing"
+            }
+          ]
+        },
+        {
+          "category": "neurologic",
+          "ontology_hint": "Neurology",
+          "symptoms": [
+            {
+              "term": "tremors",
+              "status": "present",
               "severity": "moderate",
-              "evidence": "all activities now are quite fatiguing",
+              "evidence": "increased spasms in the upper extremities",
               "related_findings": [
-                "crackles in lungs",
-                "pitting edema"
+                "myasthenia gravis"
               ]
             }
           ]
@@ -13934,82 +13836,10 @@
             {
               "term": "creatinine elevation",
               "status": "present",
-              "severity": "mild",
+              "severity": "moderate",
               "evidence": "Creatinine: 1.6 mg/dL",
               "related_findings": [
-                "orthopnea",
-                "pitting edema"
-              ]
-            }
-          ]
-        },
-        {
-          "category": "hematologic",
-          "ontology_hint": "Hematologic",
-          "symptoms": [
-            {
-              "term": "anemia",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "Hemoglobin: 10.2 g/dL",
-              "related_findings": [
-                "orthopnea",
-                "pitting edema"
-              ]
-            },
-            {
-              "term": "low MCHC",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "MCHC: 30.0 g/dL",
-              "related_findings": [
-                "orthopnea",
-                "pitting edema"
-              ]
-            },
-            {
-              "term": "low MCV",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "MCV: 81.0 fL",
-              "related_findings": [
-                "orthopnea",
-                "pitting edema"
-              ]
-            },
-            {
-              "term": "low RDW",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "RDW: 18.2 %",
-              "related_findings": [
-                "orthopnea",
-                "pitting edema"
-              ]
-            },
-            {
-              "term": "low RDW-SD",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "RDW-SD: 53.5 fL",
-              "related_findings": [
-                "orthopnea",
-                "pitting edema"
-              ]
-            }
-          ]
-        },
-        {
-          "category": "neurologic",
-          "ontology_hint": "Neurologic",
-          "symptoms": [
-            {
-              "term": "tremors",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "increased spasms in the upper extremities",
-              "related_findings": [
-                "orthopnea",
+                "dyspnea",
                 "pitting edema"
               ]
             }
@@ -14022,11 +13852,10 @@
             {
               "term": "incontinence",
               "status": "present",
-              "severity": "mild",
+              "severity": "moderate",
               "evidence": "urine incontinence",
               "related_findings": [
-                "orthopnea",
-                "pitting edema"
+                "stress incontinence"
               ]
             }
           ]
@@ -14034,22 +13863,23 @@
       ],
       "key_symptoms": [
         "dyspnea",
-        "orthopnea"
+        "orthopnea",
+        "tremors"
       ],
       "red_flags": [
-        "hypotension",
-        "AMS"
+        "pitting edema",
+        "crackles in lungs"
       ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "12007928",
       "admission_id": "23749816",
-      "generated_at": "2026-08-08T16:19:42.096211"
+      "generated_at": "2026-08-19T23:20:18.096250"
     },
     "13196707": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient is a male with metastatic adenocarcinoma of unknown primary presenting with severe sepsis and hypotension, likely secondary to RUL PNA.",
+      "reasoning": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
       "branches": [
         {
           "category": "infectious",
@@ -14061,8 +13891,7 @@
               "severity": "unknown",
               "evidence": "feverish at rehab, but currently doesn't feel like he's having a fever",
               "related_findings": [
-                "RUL PNA",
-                "severe sepsis"
+                "RUL PNA"
               ],
               "children": []
             },
@@ -14070,10 +13899,9 @@
               "term": "RUL PNA",
               "status": "suspected",
               "severity": "moderate",
-              "evidence": "recently diagnosed, CT read described 'ground glass opacities' in the RUL",
+              "evidence": "recently diagnosed",
               "related_findings": [
-                "hypotension",
-                "severe sepsis"
+                "CXR shows persistent consolidative opacities in both lower lobes"
               ],
               "children": []
             }
@@ -14086,11 +13914,10 @@
             {
               "term": "hypotension",
               "status": "present",
-              "severity": "severe",
-              "evidence": "BP 82-90/45-60 mmHg, required levophed to maintain pressures",
+              "severity": "moderate",
+              "evidence": "BP 82-90/45-60 mmHg",
               "related_findings": [
-                "severe sepsis",
-                "SVC syndrome"
+                "pericardiocentesis, hypotension, and persistent requirement for fluids"
               ],
               "children": []
             }
@@ -14101,12 +13928,12 @@
           "ontology_hint": "Respiratory",
           "symptoms": [
             {
-              "term": "RUL consolidation",
-              "status": "suspected",
+              "term": "consolidative opacities",
+              "status": "present",
               "severity": "moderate",
-              "evidence": "persistent consolidative opacities in both lower lobes, that could represent atelectasis, however pneumonia cannot be excluded",
+              "evidence": "persistent consolidative opacities in both lower lobes",
               "related_findings": [
-                "RUL PNA"
+                "CXR shows persistent consolidative opacities in both lower lobes"
               ],
               "children": []
             }
@@ -14119,27 +13946,10 @@
             {
               "term": "altered mental status",
               "status": "present",
-              "severity": "moderate",
-              "evidence": "GCS 3, not following commands",
+              "severity": "mild",
+              "evidence": "GCS 11, not following commands",
               "related_findings": [
-                "SVC syndrome",
-                "metastatic adenocarcinoma"
-              ],
-              "children": []
-            }
-          ]
-        },
-        {
-          "category": "other",
-          "ontology_hint": "Other",
-          "symptoms": [
-            {
-              "term": "SVC syndrome",
-              "status": "confirmed",
-              "severity": "moderate",
-              "evidence": "SVC stent placed, multiple venous thromboses",
-              "related_findings": [
-                "metastatic adenocarcinoma"
+                "CT shows multiple metastatic lesions"
               ],
               "children": []
             }
@@ -14147,11 +13957,10 @@
         }
       ],
       "key_symptoms": [
-        "fever",
-        "RUL PNA"
+        "RUL PNA",
+        "hypotension"
       ],
       "red_flags": [
-        "hypotension",
         "altered mental status"
       ],
       "type": "symptom_tree",
@@ -14159,11 +13968,11 @@
       "_agent": "symptom_tree",
       "patient_id": "13196707",
       "admission_id": "21475988",
-      "generated_at": "2026-08-08T16:19:54.148835"
+      "generated_at": "2026-08-19T23:20:26.518487"
     },
     "13508515": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with a history of renal mass and renal cell carcinoma, along with ongoing cardiovascular and metabolic issues.",
+      "reasoning": "The patient is a man with a history of severe CHF, ischemic heart disease, and renal cell carcinoma, admitted for laparoscopic left radical nephrectomy and lymph node dissection.",
       "branches": [
         {
           "category": "cardiovascular",
@@ -14185,7 +13994,7 @@
               "severity": "mild",
               "evidence": "pain well controlled on PCA",
               "related_findings": [
-                "left renal mass"
+                "systolic CHF with EF around 30%"
               ],
               "children": []
             }
@@ -14198,22 +14007,20 @@
             {
               "term": "creatinine",
               "status": "high",
-              "severity": "moderate",
+              "severity": "mild",
               "evidence": "Creatinine: 2.0 mg/dL",
               "related_findings": [
-                "left renal mass",
-                "renal cell carcinoma"
+                "systolic CHF with EF around 30%"
               ],
               "children": []
             },
             {
               "term": "hemoglobin",
               "status": "low",
-              "severity": "moderate",
+              "severity": "mild",
               "evidence": "Hemoglobin: 8.9 g/dL",
               "related_findings": [
-                "left renal mass",
-                "renal cell carcinoma"
+                "systolic CHF with EF around 30%"
               ],
               "children": []
             },
@@ -14223,24 +14030,49 @@
               "severity": "mild",
               "evidence": "Platelet Count: 147.0 K/uL",
               "related_findings": [
-                "left renal mass",
-                "renal cell carcinoma"
+                "systolic CHF with EF around 30%"
+              ],
+              "children": []
+            },
+            {
+              "term": "calcium",
+              "status": "low",
+              "severity": "mild",
+              "evidence": "Calcium, Total: 8.2 mg/dL",
+              "related_findings": [
+                "systolic CHF with EF around 30%"
               ],
               "children": []
             }
           ]
         },
         {
-          "category": "metabolic",
-          "ontology_hint": "Metabolic",
+          "category": "neurologic",
+          "ontology_hint": "Neurologic",
           "symptoms": [
             {
-              "term": "glucose",
-              "status": "high",
-              "severity": "mild",
-              "evidence": "Glucose: 113.0 mg/dL",
+              "term": "obstructive sleep apnea",
+              "status": "confirmed",
+              "severity": "unknown",
+              "evidence": "obstructive sleep apnea, on CPAP",
               "related_findings": [
-                "type 2 diabetes"
+                "systolic CHF with EF around 30%"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "other",
+          "ontology_hint": "Other",
+          "symptoms": [
+            {
+              "term": "left renal mass",
+              "status": "confirmed",
+              "severity": "unknown",
+              "evidence": "left renal mass",
+              "related_findings": [
+                "renal cell carcinoma"
               ],
               "children": []
             }
@@ -14259,15 +14091,15 @@
       "_agent": "symptom_tree",
       "patient_id": "13508515",
       "admission_id": "21834271",
-      "generated_at": "2026-08-08T16:20:04.772717"
+      "generated_at": "2026-08-19T23:20:37.270506"
     },
     "13952483": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with hypotension, weight loss, and multiple constitutional symptoms likely related to his lung cancer and immunosuppression.",
+      "reasoning": "The patient presents with hypotension and weight loss, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of odynophagia, cough, and malaise.",
       "branches": [
         {
-          "category": "constitutional",
-          "ontology_hint": "Infectious Diseases",
+          "category": "cardiovascular",
+          "ontology_hint": "Cardiovascular",
           "symptoms": [
             {
               "term": "hypotension",
@@ -14278,8 +14110,42 @@
                 "new neutropenia (ANC 750)",
                 "thrombocytopenia (plts 93)"
               ],
-              "children": []
-            },
+              "children": [
+                {
+                  "term": "pulmonary hypertension",
+                  "status": "present",
+                  "evidence": "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "respiratory",
+          "ontology_hint": "Respiratory",
+          "symptoms": [
+            {
+              "term": "cough",
+              "status": "present",
+              "severity": "mild",
+              "evidence": "cough, pleuritic/MSK chest pain",
+              "related_findings": [
+                "moderate growth of commensal respiratory flora"
+              ],
+              "children": [
+                {
+                  "term": "odynophagia",
+                  "status": "present",
+                  "evidence": "persistent odynophagia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "constitutional",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
             {
               "term": "weight loss",
               "status": "present",
@@ -14289,167 +14155,91 @@
                 "new neutropenia (ANC 750)",
                 "thrombocytopenia (plts 93)"
               ],
-              "children": []
-            },
-            {
-              "term": "anorexia",
-              "status": "present",
-              "severity": "moderate",
-              "evidence": "overall anorexia and poor appetite",
-              "related_findings": [
-                "new neutropenia (ANC 750)",
-                "thrombocytopenia (plts 93)"
-              ],
-              "children": []
-            },
-            {
-              "term": "malaise",
-              "status": "present",
-              "severity": "moderate",
-              "evidence": "malaise due to his chemotherapy and radiation therapy",
-              "related_findings": [
-                "new neutropenia (ANC 750)",
-                "thrombocytopenia (plts 93)"
-              ],
-              "children": []
-            },
-            {
-              "term": "cough",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "cough, pleuritic/MSK chest pain",
-              "related_findings": [
-                "new neutropenia (ANC 750)",
-                "thrombocytopenia (plts 93)"
-              ],
-              "children": []
-            },
-            {
-              "term": "chest pain",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "pleuritic/MSK chest pain",
-              "related_findings": [
-                "new neutropenia (ANC 750)",
-                "thrombocytopenia (plts 93)"
-              ],
-              "children": []
-            },
-            {
-              "term": "odynophagia",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "persistent odynophagia",
-              "related_findings": [
-                "new neutropenia (ANC 750)",
-                "thrombocytopenia (plts 93)"
-              ],
-              "children": []
-            },
-            {
-              "term": "pain",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "pain with swallowing",
-              "related_findings": [
-                "new neutropenia (ANC 750)",
-                "thrombocytopenia (plts 93)"
-              ],
-              "children": []
+              "children": [
+                {
+                  "term": "anorexia",
+                  "status": "present",
+                  "evidence": "overall anorexia and poor appetite"
+                }
+              ]
             }
           ]
         }
       ],
       "key_symptoms": [
         "hypotension",
+        "cough",
         "weight loss"
       ],
       "red_flags": [
-        "hypotension"
+        "hypotension",
+        "pulmonary hypertension"
       ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "13952483",
       "admission_id": "23852410",
-      "generated_at": "2026-08-08T16:20:19.782594"
+      "generated_at": "2026-08-19T23:20:45.624277"
     },
     "16014068": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with a fall and subsequent minor abrasions and soreness, along with a history of metastatic sarcoma and recurrent hematoma. The patient's anemia and thrombocytopenia are significant, with ongoing issues related to his malignancy and prior treatments.",
+      "reasoning": "The patient fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He is on hospice for metastatic sarcoma and has a history of recurrent hematoma and thrombocytopenia.",
       "branches": [
         {
           "category": "constitutional",
-          "ontology_hint": "Other",
+          "ontology_hint": "Infectious Diseases",
           "symptoms": [
             {
               "term": "weakness",
               "status": "present",
               "evidence": "attributes it to weakness",
               "related_findings": [
-                "anemia",
-                "thrombocytopenia"
+                "metastatic sarcoma"
               ],
-              "children": [
-                {
-                  "term": "fatigue",
-                  "status": "present",
-                  "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-                }
-              ]
+              "children": []
             },
             {
-              "term": "anemia",
+              "term": "bruising",
               "status": "present",
-              "severity": "severe",
-              "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
+              "evidence": "hit his knees and elbows resulting in minor abrasions and soreness",
               "related_findings": [
-                "thrombocytopenia",
-                "cytokine effects"
+                "metastatic sarcoma"
               ],
-              "children": [
-                {
-                  "term": "fatigue",
-                  "status": "present",
-                  "evidence": "denies easy bruising, denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-                }
-              ]
+              "children": []
             },
-            {
-              "term": "thrombocytopenia",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "Platelet Count: 63.0 K/uL",
-              "related_findings": [
-                "cytokine effects",
-                "chemotherapy side effects"
-              ],
-              "children": [
-                {
-                  "term": "easy bruising",
-                  "status": "history",
-                  "evidence": "denies easy bruising"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "neurologic",
-          "ontology_hint": "Neurology",
-          "symptoms": [
             {
               "term": "headache",
               "status": "present",
               "evidence": "hit his head",
               "related_findings": [
-                "intracranial bleeding"
+                "metastatic sarcoma"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "hematologic",
+          "ontology_hint": "Hematologic",
+          "symptoms": [
+            {
+              "term": "anemia",
+              "status": "present",
+              "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
+              "related_findings": [
+                "thigh hematoma",
+                "cytokine-induced thrombocytopenia"
               ],
               "children": [
                 {
-                  "term": "dizziness",
-                  "status": "history",
-                  "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
+                  "term": "thrombocytopenia",
+                  "status": "present",
+                  "evidence": "Platelet Count: 63.0 K/uL",
+                  "related_findings": [
+                    "cytokine-induced thrombocytopenia"
+                  ],
+                  "children": []
                 }
               ]
             }
@@ -14462,37 +14252,34 @@
             {
               "term": "hypotension",
               "status": "history",
-              "evidence": "Blood Pressure: 114/66",
+              "evidence": "BP 114/66",
               "related_findings": [
-                "cytokine effects",
-                "chemotherapy side effects"
+                "metastatic sarcoma"
               ],
-              "children": [
-                {
-                  "term": "dizziness",
-                  "status": "history",
-                  "evidence": "denies chest pain, denies shortness of breath, denies fevers/chills, denies nausea or vomiting, denies dysuria, denies flank pain"
-                }
-              ]
+              "children": []
             }
           ]
         },
         {
-          "category": "infectious",
-          "ontology_hint": "Infectious Diseases",
+          "category": "neurologic",
+          "ontology_hint": "Neurology",
           "symptoms": [
             {
-              "term": "fever",
-              "status": "history",
-              "evidence": "denies fevers/chills"
+              "term": "headache",
+              "status": "present",
+              "evidence": "hit his head",
+              "related_findings": [
+                "metastatic sarcoma"
+              ],
+              "children": []
             }
           ]
         }
       ],
       "key_symptoms": [
         "weakness",
-        "anemia",
-        "thrombocytopenia"
+        "bruising",
+        "headache"
       ],
       "red_flags": [
         "hypotension",
@@ -14503,11 +14290,11 @@
       "_agent": "symptom_tree",
       "patient_id": "16014068",
       "admission_id": "29042843",
-      "generated_at": "2026-08-08T16:20:36.434081"
+      "generated_at": "2026-08-19T23:20:55.809885"
     },
     "17774110": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, along with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.",
+      "reasoning": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.",
       "branches": [
         {
           "category": "infectious",
@@ -14534,11 +14321,7 @@
               "status": "present",
               "severity": "mild",
               "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
-              "related_findings": [
-                "INR(PT) 3.4",
-                "PT 36.5 sec",
-                "PTT 104.2 sec"
-              ],
+              "related_findings": [],
               "children": []
             }
           ]
@@ -14550,11 +14333,10 @@
             {
               "term": "Hypoxia",
               "status": "present",
-              "severity": "mild",
+              "severity": "moderate",
               "evidence": "oxygen saturations in the ___ at his SNF",
               "related_findings": [
-                "SpO2 94.0%",
-                "pH 7.11 units"
+                "Bilateral effusions right greater than left are unchanged"
               ],
               "children": []
             },
@@ -14564,8 +14346,7 @@
               "severity": "severe",
               "evidence": "intubated for hypoxic respiratory failure",
               "related_findings": [
-                "Respiratory Rate 0.0 insp/min",
-                "SpO2 94.0%"
+                "Bilateral effusions right greater than left are unchanged"
               ],
               "children": []
             }
@@ -14581,8 +14362,7 @@
               "severity": "moderate",
               "evidence": "concerning for hepatic encephalopathy",
               "related_findings": [
-                "RASS-5",
-                "sluggish pupil response"
+                "RASS-5, sluggish pupil response"
               ],
               "children": []
             }
@@ -14598,8 +14378,7 @@
               "severity": "moderate",
               "evidence": "black coffee-ground GI contents",
               "related_findings": [
-                "Platelet Count 44.0 K/uL",
-                "Bleeding from esophagus"
+                "epistaxis from the left nare"
               ],
               "children": []
             }
@@ -14613,7 +14392,7 @@
               "term": "Acute renal failure",
               "status": "present",
               "severity": "severe",
-              "evidence": "Acute renal failure ___ to septic shock and ATN on dialysis",
+              "evidence": "acute renal failure ___ to septic shock and ATN on dialysis",
               "related_findings": [
                 "Creatinine 2.1 mg/dL",
                 "Bicarbonate 19 mEq/L",
@@ -14632,42 +14411,16 @@
               "status": "present",
               "severity": "moderate",
               "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
-              "related_findings": [
-                "INR(PT) 3.4",
-                "PT 36.5 sec",
-                "PTT 104.2 sec"
-              ],
+              "related_findings": [],
               "children": []
             },
             {
-              "term": "Pleural effusion",
+              "term": "Multifocal metastatic HCC",
               "status": "present",
-              "severity": "moderate",
-              "evidence": "large pleural effusion with compressive consolidation versus atelectasis",
+              "severity": "unknown",
+              "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland",
               "related_findings": [
-                "Bilateral effusions right greater than left"
-              ],
-              "children": []
-            },
-            {
-              "term": "Atelectasis",
-              "status": "present",
-              "severity": "moderate",
-              "evidence": "Bilateral effusions right greater than left are unchanged",
-              "related_findings": [
-                "Bilateral effusions right greater than left"
-              ],
-              "children": []
-            },
-            {
-              "term": "Worsening liver failure",
-              "status": "present",
-              "severity": "severe",
-              "evidence": "worsening liver failure",
-              "related_findings": [
-                "Bilirubin, Total 13.3 mg/dL",
-                "ALT 439 IU/L",
-                "AST 2481 IU/L"
+                "large heterogeneous solid mass is re-demonstrated within the left upper quadrant"
               ],
               "children": []
             }
@@ -14680,8 +14433,8 @@
         "GI bleeding"
       ],
       "red_flags": [
-        "Septic shock",
-        "Hepatic encephalopathy",
+        "Hypoxia",
+        "Hypoxic respiratory failure",
         "Acute renal failure"
       ],
       "type": "symptom_tree",
@@ -14689,11 +14442,11 @@
       "_agent": "symptom_tree",
       "patient_id": "17774110",
       "admission_id": "27339772",
-      "generated_at": "2026-08-08T16:20:59.597072"
+      "generated_at": "2026-08-19T23:21:10.549297"
     },
     "18412100": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient is presenting with post-procedural pain and tenderness in the abdomen following a cryoablation procedure for a desmoid tumor.",
+      "reasoning": "The patient is presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure for a desmoid tumor.",
       "branches": [
         {
           "category": "other",
@@ -14702,16 +14455,15 @@
             {
               "term": "post-procedural pain",
               "status": "present",
-              "severity": "mild",
+              "severity": "moderate",
               "evidence": "post-procedural pain in the right side of the abdomen",
               "related_findings": [
-                "abdominal pain"
+                "abdominal tenderness to palpation"
               ],
               "children": [
                 {
-                  "term": "abdominal pain",
+                  "term": "abdominal tenderness",
                   "status": "present",
-                  "severity": "mild",
                   "evidence": "tender in the right upper and right lower quadrant to palpation"
                 }
               ]
@@ -14728,93 +14480,59 @@
           ]
         },
         {
-          "category": "neurologic",
-          "ontology_hint": "Neurologic",
-          "symptoms": [
-            {
-              "term": "pain",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "similar to the previous procedure",
-              "related_findings": [
-                "abdominal pain"
-              ]
-            }
-          ]
-        },
-        {
-          "category": "gi",
-          "ontology_hint": "Gastrointestinal",
-          "symptoms": [
-            {
-              "term": "abdominal pain",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "tender in the right upper and right lower quadrant to palpation",
-              "related_findings": [
-                "desmoid tumor"
-              ]
-            }
-          ]
-        },
-        {
-          "category": "infectious",
-          "ontology_hint": "Infectious Diseases",
+          "category": "constitutional",
+          "ontology_hint": "Other",
           "symptoms": [
             {
               "term": "fever",
               "status": "absent",
-              "severity": "unknown",
               "evidence": "denies fever, chills, night sweats"
-            }
-          ]
-        },
-        {
-          "category": "cardiovascular",
-          "ontology_hint": "Cardiovascular",
-          "symptoms": [
+            },
+            {
+              "term": "shortness of breath",
+              "status": "absent",
+              "evidence": "denies shortness of breath"
+            },
             {
               "term": "palpitations",
               "status": "absent",
-              "severity": "unknown",
               "evidence": "denies palpitations"
             },
             {
               "term": "chest pain",
               "status": "absent",
-              "severity": "unknown",
               "evidence": "denies chest pain"
-            }
-          ]
-        },
-        {
-          "category": "respiratory",
-          "ontology_hint": "Respiratory",
-          "symptoms": [
+            },
             {
-              "term": "shortness of breath",
+              "term": "diarrhea",
               "status": "absent",
-              "severity": "unknown",
-              "evidence": "denies shortness of breath"
+              "evidence": "denies diarrhea"
+            },
+            {
+              "term": "constipation",
+              "status": "absent",
+              "evidence": "denies constipation"
             }
           ]
         }
       ],
       "key_symptoms": [
         "post-procedural pain",
-        "nausea"
+        "abdominal tenderness"
       ],
-      "red_flags": [],
+      "red_flags": [
+        "abdominal pain"
+      ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "18412100",
       "admission_id": "26093939",
-      "generated_at": "2026-08-08T16:21:12.086174"
+      "generated_at": "2026-08-19T23:21:18.444342"
     },
     "19104262": {
       "root": "ClinicalPresentation",
-      "reasoning": "The patient is a 30-year-old female with a history of Type 1 Diabetes Mellitus (T1DM) and recurrent Diabetic Ketoacidosis (DKA). She is currently admitted with DKA and lactic acidosis, with no infectious precipitants identified. She has a history of complications including missed abortion and C. difficile colitis.",
+      "reasoning": "The patient is admitted with DKA/lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.",
       "branches": [
         {
           "category": "infectious",
@@ -14826,33 +14544,6 @@
               "severity": "unknown",
               "evidence": "fevers/chills/nightsweats for the past few days",
               "related_findings": [],
-              "children": []
-            },
-            {
-              "term": "C difficile colitis",
-              "status": "suspected",
-              "severity": "unknown",
-              "evidence": "C difficile colitis along with diarrhea",
-              "related_findings": [
-                "Glucose: 263 mg/dL",
-                "Anion Gap: 19.0 mEq/L",
-                "Bicarbonate: 20.0 mEq/L",
-                "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
-                "pO2: 60.0 mm Hg",
-                "Potassium: 6.8 mEq/L",
-                "Phosphate: 7.1 mg/dL",
-                "Urea Nitrogen: 26 mg/dL",
-                "Albumin: 3.6 g/dL",
-                "Alkaline Phosphatase: 125.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
-                "pCO2: 33.0 mm Hg",
-                "pH: 7.34 units"
-              ],
               "children": []
             }
           ]
@@ -14866,29 +14557,21 @@
               "status": "history",
               "severity": "unknown",
               "evidence": "lower abdominal pain/cramping for the past week",
-              "related_findings": [
-                "Hematocrit: 46.2%",
-                "Hemoglobin: 14.4 g/dL",
-                "Monocytes: 4.8%",
-                "Red Blood Cells: 5.06 m/uL",
-                "Lactate: 3.6 mmol/L",
-                "Anion Gap: 19.0 mEq/L",
-                "Bicarbonate: 20.0 mEq/L",
-                "Calcium, Total: 10.2 mg/dL",
-                "pO2: 60.0 mm Hg",
-                "Potassium: 6.8 mEq/L",
-                "Phosphate: 7.1 mg/dL",
-                "Urea Nitrogen: 26 mg/dL",
-                "Albumin: 3.6 g/dL",
-                "Alkaline Phosphatase: 125.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
-                "pCO2: 33.0 mm Hg",
-                "pH: 7.34 units"
-              ],
+              "related_findings": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "neurologic",
+          "ontology_hint": "Neurology",
+          "symptoms": [
+            {
+              "term": "headache",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "pressure-like frontal headache",
+              "related_findings": [],
               "children": []
             }
           ]
@@ -14898,10 +14581,10 @@
           "ontology_hint": "Respiratory",
           "symptoms": [
             {
-              "term": "respiratory rate",
-              "status": "normal",
-              "severity": "normal",
-              "evidence": "Respiratory Rate: 16 insp/min",
+              "term": "nausea",
+              "status": "present",
+              "severity": "unknown",
+              "evidence": "nausea and vomiting",
               "related_findings": [],
               "children": []
             }
@@ -14909,60 +14592,14 @@
         },
         {
           "category": "gi",
-          "ontology_hint": "GI",
+          "ontology_hint": "Gastroenterology",
           "symptoms": [
-            {
-              "term": "nausea",
-              "status": "present",
-              "severity": "unknown",
-              "evidence": "nausea and vomiting",
-              "related_findings": [
-                "Glucose: 263 mg/dL",
-                "Anion Gap: 19.0 mEq/L",
-                "Bicarbonate: 20.0 mEq/L",
-                "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
-                "pO2: 60.0 mm Hg",
-                "Potassium: 6.8 mEq/L",
-                "Phosphate: 7.1 mg/dL",
-                "Urea Nitrogen: 26 mg/dL",
-                "Albumin: 3.6 g/dL",
-                "Alkaline Phosphatase: 125.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
-                "pCO2: 33.0 mm Hg",
-                "pH: 7.34 units"
-              ],
-              "children": []
-            },
             {
               "term": "vaginal bleeding",
               "status": "history",
               "severity": "unknown",
               "evidence": "vaginal spotting",
-              "related_findings": [
-                "Glucose: 263 mg/dL",
-                "Anion Gap: 19.0 mEq/L",
-                "Bicarbonate: 20.0 mEq/L",
-                "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
-                "pO2: 60.0 mm Hg",
-                "Potassium: 6.8 mEq/L",
-                "Phosphate: 7.1 mg/dL",
-                "Urea Nitrogen: 26 mg/dL",
-                "Albumin: 3.6 g/dL",
-                "Alkaline Phosphatase: 125.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
-                "pCO2: 33.0 mm Hg",
-                "pH: 7.34 units"
-              ],
+              "related_findings": [],
               "children": []
             },
             {
@@ -14970,12 +14607,26 @@
               "status": "history",
               "severity": "unknown",
               "evidence": "decreased fetal movement",
+              "related_findings": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "C difficile colitis",
+              "status": "suspected",
+              "severity": "unknown",
+              "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
               "related_findings": [
                 "Glucose: 263 mg/dL",
                 "Anion Gap: 19.0 mEq/L",
                 "Bicarbonate: 20.0 mEq/L",
                 "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
+                "Calcium, Total: 8.6 mg/dL",
                 "pO2: 60.0 mm Hg",
                 "Potassium: 6.8 mEq/L",
                 "Phosphate: 7.1 mg/dL",
@@ -14983,10 +14634,6 @@
                 "Albumin: 3.6 g/dL",
                 "Alkaline Phosphatase: 125.0 IU/L",
                 "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
                 "pCO2: 33.0 mm Hg",
                 "pH: 7.34 units"
               ],
@@ -15004,11 +14651,10 @@
               "severity": "unknown",
               "evidence": "fevers/chills/nightsweats for the past few days",
               "related_findings": [
-                "Glucose: 263 mg/dL",
                 "Anion Gap: 19.0 mEq/L",
                 "Bicarbonate: 20.0 mEq/L",
                 "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
+                "Calcium, Total: 8.6 mg/dL",
                 "pO2: 60.0 mm Hg",
                 "Potassium: 6.8 mEq/L",
                 "Phosphate: 7.1 mg/dL",
@@ -15016,10 +14662,6 @@
                 "Albumin: 3.6 g/dL",
                 "Alkaline Phosphatase: 125.0 IU/L",
                 "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
                 "pCO2: 33.0 mm Hg",
                 "pH: 7.34 units"
               ],
@@ -15028,20 +14670,19 @@
           ]
         },
         {
-          "category": "neurologic",
-          "ontology_hint": "Neurologic",
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
           "symptoms": [
             {
-              "term": "headache",
+              "term": "decreased fetal movement",
               "status": "history",
               "severity": "unknown",
-              "evidence": "pressure-like frontal headache",
+              "evidence": "decreased fetal movement",
               "related_findings": [
-                "Glucose: 263 mg/dL",
                 "Anion Gap: 19.0 mEq/L",
                 "Bicarbonate: 20.0 mEq/L",
                 "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
+                "Calcium, Total: 8.6 mg/dL",
                 "pO2: 60.0 mm Hg",
                 "Potassium: 6.8 mEq/L",
                 "Phosphate: 7.1 mg/dL",
@@ -15049,10 +14690,6 @@
                 "Albumin: 3.6 g/dL",
                 "Alkaline Phosphatase: 125.0 IU/L",
                 "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
                 "pCO2: 33.0 mm Hg",
                 "pH: 7.34 units"
               ],
@@ -15061,47 +14698,20 @@
           ]
         },
         {
-          "category": "endocrine",
-          "ontology_hint": "Endocrine",
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
           "symptoms": [
             {
-              "term": "DKA",
-              "status": "present",
-              "severity": "severe",
-              "evidence": "admission with DKA/lactic acidosis",
-              "related_findings": [
-                "Glucose: 263 mg/dL",
-                "Anion Gap: 19.0 mEq/L",
-                "Bicarbonate: 20.0 mEq/L",
-                "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
-                "pO2: 60.0 mm Hg",
-                "Potassium: 6.8 mEq/L",
-                "Phosphate: 7.1 mg/dL",
-                "Urea Nitrogen: 26 mg/dL",
-                "Albumin: 3.6 g/dL",
-                "Alkaline Phosphatase: 125.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
-                "pCO2: 33.0 mm Hg",
-                "pH: 7.34 units"
-              ],
-              "children": []
-            },
-            {
-              "term": "missed abortion",
-              "status": "confirmed",
+              "term": "C difficile colitis",
+              "status": "suspected",
               "severity": "unknown",
-              "evidence": "Missed abortion requiring D&C",
+              "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
               "related_findings": [
                 "Glucose: 263 mg/dL",
                 "Anion Gap: 19.0 mEq/L",
                 "Bicarbonate: 20.0 mEq/L",
                 "Lactate: 3.6 mmol/L",
-                "Calcium, Total: 10.2 mg/dL",
+                "Calcium, Total: 8.6 mg/dL",
                 "pO2: 60.0 mm Hg",
                 "Potassium: 6.8 mEq/L",
                 "Phosphate: 7.1 mg/dL",
@@ -15109,43 +14719,302 @@
                 "Albumin: 3.6 g/dL",
                 "Alkaline Phosphatase: 125.0 IU/L",
                 "Magnesium: 7.4 mg/dL",
-                "Sodium: 130 mEq/L",
-                "Lactate Dehydrogenase (LD): 276.0 IU/L",
-                "Magnesium: 7.4 mg/dL",
-                "Calcium, Total: 8.6 mg/dL",
                 "pCO2: 33.0 mm Hg",
                 "pH: 7.34 units"
               ],
               "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "fever",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "fevers/chills/nightsweats for the past few days",
+              "related_findings": [
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "decreased fetal movement",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "decreased fetal movement",
+              "related_findings": [
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "C difficile colitis",
+              "status": "suspected",
+              "severity": "unknown",
+              "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+              "related_findings": [
+                "Glucose: 263 mg/dL",
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "fever",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "fevers/chills/nightsweats for the past few days",
+              "related_findings": [
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "decreased fetal movement",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "decreased fetal movement",
+              "related_findings": [
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "C difficile colitis",
+              "status": "suspected",
+              "severity": "unknown",
+              "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+              "related_findings": [
+                "Glucose: 263 mg/dL",
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "fever",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "fevers/chills/nightsweats for the past few days",
+              "related_findings": [
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "decreased fetal movement",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "decreased fetal movement",
+              "related_findings": [
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "C difficile colitis",
+              "status": "suspected",
+              "severity": "unknown",
+              "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+              "related_findings": [
+                "Glucose: 263 mg/dL",
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate: 3.6 mmol/L",
+                "Calcium, Total: 8.6 mg/dL",
+                "pO2: 60.0 mm Hg",
+                "Potassium: 6.8 mEq/L",
+                "Phosphate: 7.1 mg/dL",
+                "Urea Nitrogen: 26 mg/dL",
+                "Albumin: 3.6 g/dL",
+                "Alkaline Phosphatase: 125.0 IU/L",
+                "Magnesium: 7.4 mg/dL",
+                "pCO2: 33.0 mm Hg",
+                "pH: 7.34 units"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": [
+            {
+              "term": "fever",
+              "status": "history",
+              "severity": "unknown",
+              "evidence": "fevers/chills/nightsweats for the past few days",
+              "related_findings": [
+                "Anion Gap: 19.0 mEq/L",
+                "Bicarbonate: 20.0 mEq/L",
+                "Lactate:"
+              ]
             }
           ]
         }
-      ],
-      "key_symptoms": [
-        "DKA",
-        "fever",
-        "abdominal pain",
-        "headache",
-        "nausea",
-        "vaginal bleeding",
-        "decreased fetal movement"
-      ],
-      "red_flags": [
-        "fever",
-        "abdominal pain",
-        "decreased fetal movement"
       ],
       "type": "symptom_tree",
       "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
       "_agent": "symptom_tree",
       "patient_id": "19104262",
       "admission_id": "24271247",
-      "generated_at": "2026-08-08T16:22:03.483616"
+      "generated_at": "2026-08-19T23:22:16.412879"
     },
     "19632936": {
       "root": "ClinicalPresentation",
       "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
       "branches": [
+        {
+          "category": "infectious",
+          "ontology_hint": "Infectious Diseases",
+          "symptoms": []
+        },
         {
           "category": "cardiovascular",
           "ontology_hint": "Cardiovascular",
@@ -15157,7 +15026,7 @@
               "evidence": "acute on chronic dyspnea on exertion",
               "related_findings": [
                 "moderate AS",
-                "sick sinus syndrome"
+                "mild pulmonary hypertension"
               ],
               "children": [
                 {
@@ -15174,24 +15043,8 @@
               "evidence": "acute on chronic fatigue",
               "related_findings": [
                 "anemia"
-              ]
-            }
-          ]
-        },
-        {
-          "category": "infectious",
-          "ontology_hint": "Infectious Diseases",
-          "symptoms": [
-            {
-              "term": "anemia",
-              "status": "present",
-              "severity": "mild",
-              "evidence": "acute on chronic macrocytic anemia",
-              "related_findings": [
-                "iron deficiency",
-                "low MCV",
-                "low MCHC"
-              ]
+              ],
+              "children": []
             }
           ]
         },
@@ -15202,12 +15055,51 @@
             {
               "term": "esophagitis",
               "status": "history",
-              "evidence": "esophagitis (___)"
+              "severity": "mild",
+              "evidence": "esophagitis (___)",
+              "related_findings": [],
+              "children": []
             },
             {
               "term": "nodular gastritis",
               "status": "history",
-              "evidence": "nodular gastritis"
+              "severity": "mild",
+              "evidence": "nodular gastritis",
+              "related_findings": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "renal",
+          "ontology_hint": "Renal",
+          "symptoms": [
+            {
+              "term": "low calcium",
+              "status": "present",
+              "severity": "mild",
+              "evidence": "Calcium, Total: 8.3 mg/dL",
+              "related_findings": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "category": "other",
+          "ontology_hint": "Other",
+          "symptoms": [
+            {
+              "term": "macrocytic anemia",
+              "status": "present",
+              "severity": "moderate",
+              "evidence": "acute on chronic macrocytic anemia",
+              "related_findings": [
+                "Hgb 6.7",
+                "MCV 106",
+                "RDW 18.2",
+                "Reticulocyte Count, Automated: 3.6 %"
+              ],
+              "children": []
             }
           ]
         }
@@ -15225,7 +15117,7 @@
       "_agent": "symptom_tree",
       "patient_id": "19632936",
       "admission_id": "26696232",
-      "generated_at": "2026-08-08T16:22:12.245664"
+      "generated_at": "2026-08-19T23:22:25.917521"
     }
   }
 }

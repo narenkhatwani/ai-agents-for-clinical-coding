@@ -2,33 +2,36 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 11607177
 HADM ID          : 23293838
-Most likely      : Refractory VT
+Most likely      : Refractory ventricular tachycardia
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-19T22:36:57.632267
+Generated (S8)   : 2026-08-20T00:12:18.748316
 
 Summary:
-  The patient is a 41-year-old with a history of dilated cardiomyopathy, LVAD, and chronic heart failure. Current presentation includes ICD shock, refractory VT, and mild edema.
+  The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.
 
-#1  [85.0/100 | high]  Refractory VT  (primary)
-    SNOMED: Intractable (20646008) [fuzzy score=0.6273819106188662]
-    ICD status: unmapped | primary: None
+#1  [85.0/100 | high]  Refractory ventricular tachycardia  (primary)
+    SNOMED: Ventricular tachycardia (25569003) [fuzzy score=0.782363076456486]
+    ICD status: mapped | primary: I47.20
+      1. [principal] I47.20 — Ventricular tachycardia, unspecified
+      2. [supporting] R57.9 — Shock, unspecified  ← ICD shock (key_symptom)
 
-#2  [70.0/100 | medium]  Heart transplantation  (secondary)
-    SNOMED: Transplantation of heart (32413006) [exact score=1.0]
-    ICD status: unmapped | primary: None
+#2  [75.0/100 | high]  Dilated non-ischemic cardiomyopathy  (primary)
+    SNOMED: Congestive cardiomyopathy (399020009) [fuzzy score=0.7462331077653483]
+    ICD status: mapped | primary: I42.0
+      1. [principal] I42.0 — Dilated cardiomyopathy
 
-#3  [65.0/100 | medium]  Chronic heart failure  (secondary)
-    SNOMED: Chronic heart failure (48447003) [exact score=1.0]
+#3  [65.0/100 | medium]  Congestive heart failure  (complication)
+    SNOMED: Congestive heart failure (42343007) [exact score=1.0]
     ICD status: mapped | primary: I50.9
       1. [principal] I50.9 — Heart failure, unspecified
+      2. [principal] P29.0 — Neonatal cardiac failure
 
-#4  [50.0/100 | low]  Sleep apnea  (risk_factor)
-    SNOMED: Sleep apnea (73430006) [exact score=1.0]
-    ICD status: mapped | primary: G47.30
-      1. [principal] G47.30 — Sleep apnea, unspecified
-      2. [principal] P28.30 — Primary sleep apnea of newborn, unspecified
+#4  [50.0/100 | low]  Hypokalemia  (differential)
+    SNOMED: Hypokalemia (43339004) [exact score=1.0]
+    ICD status: mapped | primary: E87.6
+      1. [principal] E87.6 — Hypokalemia
 
-#5  [45.0/100 | low]  Obesity  (risk_factor)
-    SNOMED: Obesity (414916001) [exact score=1.0]
-    ICD status: mapped | primary: E66.9
-      1. [principal] E66.9 — Obesity, unspecified
+#5  [40.0/100 | low]  Anemia  (complication)
+    SNOMED: Anemia (271737000) [exact score=1.0]
+    ICD status: mapped | primary: D64.9
+      1. [principal] D64.9 — Anemia, unspecified

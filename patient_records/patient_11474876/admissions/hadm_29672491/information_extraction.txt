@@ -5,51 +5,60 @@ Patient ID       : 11474876
 Admission ID     : 29672491
 Method           : openrouter_nlp:qwen/qwen-2.5-7b-instruct
 
+REASON FOR ADMISSION
+--------------------
+
+  Scheduled ERCP for stent removal and follow-up after previous cholangitis episode.
+  Presenting complaint : Nocturnal hypoxia and leg swelling.
+  Admission context    : post_procedural
+
+PROCEDURES THIS STAY
+--------------------
+
+  • ERCP [current]
+
 SYMPTOMS
 --------
 
-  • [absent] abdominal pain — "no abdominal pain"
-  • [history] dyspnea — "developed acute shortness of breath requiring nonrebreather briefly"
-  • [present] leg swelling — "notes his edema improves during the night and worsens during the day"
-  • [history] nocturnal hypoxia — "nocturnal hypoxia that improved with diuresis"
+  • [present] nocturnal hypoxia — "improved with diuresis"
+  • [present] leg swelling — "improves during the night and worsens during the day"
 
 VITALS
 ------
 
 • Weight: 180 Lbs
-• BMI: 29.0 kg/m2
 
 LABS
 ----
 
-• Creatinine: 1.4 mg/dL [low]
-• INR(PT): 1.3  [low]
-• PT: 13.7 sec  [low]
-• Hematocrit: 38.3 % [low]
-• Hemoglobin: 12.6 g/dL [low]
-• MCH: 32.8 pg [low]
-• MCV: 100.0 fL [low]
-• Red Blood Cells: 3.84 m/uL [low]
-• RDW-SD: 54.1 fL [high]
-• Alanine Aminotransferase (ALT): 16.0 IU/L [normal]
-• Alkaline Phosphatase: 102.0 IU/L [normal]
-• Anion Gap: 16.0 mEq/L [normal]
-• Asparate Aminotransferase (AST): 23.0 IU/L [normal]
-• Bicarbonate: 26.0 mEq/L [normal]
-• Bilirubin, Total: 1.0 mg/dL [normal]
-• Calcium, Total: 8.7 mg/dL [low]
-• Chloride: 101.0 mEq/L [normal]
-• Estimated GFR (MDRD equation): unknown  [unknown]
-• Glucose: 83.0 mg/dL [normal]
-• Magnesium: 1.7 mg/dL [low]
-• Phosphate: 2.9 mg/dL [low]
-• Potassium: 4.3 mEq/L [normal]
-• Sodium: 143.0 mEq/L [normal]
-• Urea Nitrogen: 15.0 mg/dL [normal]
+• Creatinine: 1.4 mg/dL [normal]
+• INR(PT): 1.3  [normal]
+• PT: 13.7 sec  [normal]
+• Hematocrit: 38.3%  [normal]
+• Hemoglobin: 12.6 g/dL  [normal]
+• MCH: 32.8 pg  [normal]
+• MCV: 100.0 fL  [normal]
+• Red Blood Cells: 3.84 m/uL  [normal]
+• RDW-SD: 54.1 fL  [normal]
+• Alanine Aminotransferase (ALT): 16.0 IU/L  [normal]
+• Alkaline Phosphatase: 102.0 IU/L  [normal]
+• Anion Gap: 16.0 mEq/L  [normal]
+• Asparate Aminotransferase (AST): 23.0 IU/L  [normal]
+• Bicarbonate: 26.0 mEq/L  [normal]
+• Bilirubin, Total: 1.0 mg/dL  [normal]
+• Calcium, Total: 8.7 mg/dL  [normal]
+• Chloride: 101.0 mEq/L  [normal]
+• Estimated GFR (MDRD equation): nan  [unknown]
+• Glucose: 83.0 mg/dL  [normal]
+• Magnesium: 1.7 mg/dL  [normal]
+• Phosphate: 2.9 mg/dL  [normal]
+• Potassium: 4.3 mEq/L  [normal]
+• Sodium: 143.0 mEq/L  [normal]
+• Urea Nitrogen: 15.0 mg/dL  [normal]
 • PTT: 31.6 sec  [normal]
-• MCHC: 32.9 g/dL [normal]
-• Platelet Count: 157.0 K/uL [normal]
-• White Blood Cells: 7.2 K/uL [normal]
+• MCHC: 32.9 g/dL  [normal]
+• Platelet Count: 157.0 K/uL  [normal]
+• White Blood Cells: 7.2 K/uL  [normal]
 
 DIAGNOSES MENTIONED
 -------------------
@@ -58,41 +67,25 @@ DIAGNOSES MENTIONED
   • [confirmed] HFpEF
   • [confirmed] PVD
   • [confirmed] CKD
-  • [confirmed] Cholangitis
-  • [confirmed] Peripheral vascular disease
-  • [confirmed] Aortobifemoral bypass graft
-  • [confirmed] Right bundle branch block
-  • [confirmed] Hypertension
-  • [confirmed] Hyperlipidemia
-  • [confirmed] PTSD
+  • [suspected] Cholangitis
 
 MEDICATIONS
 -----------
 
-  • Apixaban (continued)
-  • Lasix (stopped)
-  • Ciprofloxacin (stopped)
-  • Cefpodoxime (continued)
-  • Flagyl (continued)
+  • Apixaban (started)
+  • Lasix (continued)
 
 PROCEDURES
 ----------
 
-  • ERCP: stones extraction, sphincterotomy, stent removal
+  • ERCP: stones extracted, sphincterotomy performed, stent removed
 
 NEGATIONS
 ---------
 
-  • no abdominal pain
-  • no CP
-  • no dyspnea
-  • no CP
-  • no suprapubic tenderness
-  • no swollen or erythematous joints
-  • no rashes or ulcerations noted
-  • no TTP
+  (none)
 
 TEMPORAL
 --------
 
-  • edema: improves during the night and worsens during the day
+  • nocturnal hypoxia: improved with diuresis
