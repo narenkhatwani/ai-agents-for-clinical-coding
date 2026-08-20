@@ -4,86 +4,90 @@
   "method": "llm_query_expansion",
   "patient_id": "17774110",
   "hadm_id": "27339772",
-  "generated_at": "2026-08-20T00:13:34.577565",
+  "generated_at": "2026-08-20T17:30:46.472488",
   "ground_truth": {
     "primary_icd_code": "A4189",
     "primary_dx_title": "Other specified sepsis",
     "primary_icd_title": "Other specified sepsis",
+    "discharge_diagnosis": "",
+    "diffdx_gt": "Other specified sepsis",
+    "diffdx_gt_source": "icd_title_fallback",
     "n_diagnoses": 29
   },
   "evaluation": {
     "diagnosis": {
       "ground_truth_primary": "Other specified sepsis",
-      "rank1_diagnosis": "Acute liver failure",
+      "rank1_diagnosis": "Septic shock with multi-organ failure",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
-      "match": false,
-      "is_rank1_match": null,
-      "matched_diffdx_rank": null,
-      "matched_diagnosis": "",
-      "matched_score": null,
-      "matched_confidence": "",
-      "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of 'Other specified sepsis'.",
-      "llm_expanded_ground_truth": "A41.89 — Other specified sepsis",
-      "llm_expanded_matched": "",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Septic shock with multi-organ failure",
+      "matched_score": 85.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Septic shock with multi-organ failure' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — a systemic septic process; septic shock is a more specific/severe manifestation of the same sepsis episode. No lower-numbered rank matches, and remaining ranks (hepatic encephalopathy, liver failure, GI bleeding, coagulopathy, atrial fibrillation, pleural effusion, bipolar disorder) are distinct organ-specific conditions or complications.",
+      "llm_expanded_ground_truth": "other specified sepsis | sepsis due to other specified organism | bloodstream infection with systemic inflammatory response | septicemia | systemic infection / sepsis syndrome",
+      "llm_expanded_matched": "septic shock | sepsis with circulatory failure and hypotension | severe sepsis with multi-organ dysfunction syndrome (MODS) | septicemia with shock",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
-          "diagnosis": "Acute liver failure",
+          "diagnosis": "Septic shock with multi-organ failure",
           "rank": 1,
           "score": 85.0,
-          "confidence": "high",
-          "icd10_primary": "K72.00",
-          "icd10_primary_title": "Acute and subacute hepatic failure without coma"
-        },
-        {
-          "diagnosis": "Septic shock",
-          "rank": 2,
-          "score": 75.0,
           "confidence": "high",
           "icd10_primary": "R65.21",
           "icd10_primary_title": "Severe sepsis with septic shock"
         },
         {
           "diagnosis": "Hepatic encephalopathy",
-          "rank": 3,
-          "score": 70.0,
+          "rank": 2,
+          "score": 75.0,
           "confidence": "high",
           "icd10_primary": "K76.82",
           "icd10_primary_title": "Hepatic encephalopathy"
         },
         {
-          "diagnosis": "Acute renal failure",
+          "diagnosis": "Acute liver failure",
+          "rank": 3,
+          "score": 70.0,
+          "confidence": "high",
+          "icd10_primary": "K72.00",
+          "icd10_primary_title": "Acute and subacute hepatic failure without coma"
+        },
+        {
+          "diagnosis": "GI bleeding",
           "rank": 4,
           "score": 65.0,
           "confidence": "high",
-          "icd10_primary": "N17.9",
-          "icd10_primary_title": "Acute kidney failure, unspecified"
+          "icd10_primary": "K92.2",
+          "icd10_primary_title": "Gastrointestinal hemorrhage, unspecified"
         },
         {
-          "diagnosis": "Pleural effusion",
+          "diagnosis": "Coagulopathy",
           "rank": 5,
           "score": 60.0,
-          "confidence": "medium",
-          "icd10_primary": "J90",
-          "icd10_primary_title": "Pleural effusion, not elsewhere classified"
+          "confidence": "high",
+          "icd10_primary": "D61.818",
+          "icd10_primary_title": "Other pancytopenia"
         },
         {
-          "diagnosis": "IVC thrombus",
+          "diagnosis": "Atrial fibrillation/flutter",
           "rank": 6,
           "score": 55.0,
           "confidence": "medium",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "I48.91",
+          "icd10_primary_title": "Unspecified atrial fibrillation"
         },
         {
-          "diagnosis": "Cirrhosis",
+          "diagnosis": "Pleural effusion",
           "rank": 7,
           "score": 50.0,
           "confidence": "medium",
-          "icd10_primary": "K74.60",
-          "icd10_primary_title": "Unspecified cirrhosis of liver"
+          "icd10_primary": "J90",
+          "icd10_primary_title": "Pleural effusion, not elsewhere classified"
         },
         {
           "diagnosis": "Bipolar disorder",
@@ -99,41 +103,56 @@
     "icd_linked": {
       "ground_truth_icd": "A41.89",
       "ground_truth_icd_title": "Other specified sepsis",
-      "rank1_predicted_icd": "K72.00",
-      "rank1_predicted_icd_title": "Acute and subacute hepatic failure without coma",
-      "matched_predicted_icd": "",
-      "matched_predicted_icd_title": "",
-      "icd_match": false,
+      "rank1_predicted_icd": "R65.21",
+      "rank1_predicted_icd_title": "Severe sepsis with septic shock",
+      "matched_predicted_icd": "R65.21",
+      "matched_predicted_icd_title": "Severe sepsis with septic shock",
+      "icd_match": true,
       "icd_exact_match": false,
       "icd_family_match": false,
-      "icd_llm_match": false,
-      "is_rank1_icd_match": false,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to 'A41.89 — Other specified sepsis'.",
-      "llm_expanded_ground_truth_icd": "A41.89 — Other specified sepsis",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "Mapped code R65.21 (severe sepsis with septic shock) is not an exact match to billed A41.89 (other specified sepsis), but both code the same principal sepsis episode; in ICD-10-CM sepsis coding A41.89 is the underlying infection code and R65.21 the severity manifestation code reported together for the same condition, so a coder would accept them as clinically equivalent representations of the sepsis principal diagnosis.",
+      "llm_expanded_ground_truth_icd": "A41.89 — Other specified sepsis | A41.9 — Sepsis, unspecified organism | sepsis / septicemia codes (A40-A41)",
+      "llm_expanded_matched_icd": "R65.21 — Severe sepsis with septic shock | R65.20 — Severe sepsis without septic shock | sepsis severity manifestation code used with underlying infection code A41.-",
       "stage9_final_primary_icd": "R65.21",
-      "diagnosis_match": false,
-      "is_rank1_diagnosis_match": null,
-      "matched_diffdx_rank": null
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
     },
     "llm_qe_raw": {
-      "matched_rank": null,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of 'Other specified sepsis'.",
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Septic shock with multi-organ failure' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — a systemic septic process; septic shock is a more specific/severe manifestation of the same sepsis episode. No lower-numbered rank matches, and remaining ranks (hepatic encephalopathy, liver failure, GI bleeding, coagulopathy, atrial fibrillation, pleural effusion, bipolar disorder) are distinct organ-specific conditions or complications.",
       "ground_truth_expansions": [
-        "A41.89 — Other specified sepsis"
+        "other specified sepsis",
+        "sepsis due to other specified organism",
+        "bloodstream infection with systemic inflammatory response",
+        "septicemia",
+        "systemic infection / sepsis syndrome"
       ],
-      "matched_diagnosis_expansions": [],
-      "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to 'A41.89 — Other specified sepsis'.",
+      "matched_diagnosis_expansions": [
+        "septic shock",
+        "sepsis with circulatory failure and hypotension",
+        "severe sepsis with multi-organ dysfunction syndrome (MODS)",
+        "septicemia with shock"
+      ],
+      "icd_equivalent": true,
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped code R65.21 (severe sepsis with septic shock) is not an exact match to billed A41.89 (other specified sepsis), but both code the same principal sepsis episode; in ICD-10-CM sepsis coding A41.89 is the underlying infection code and R65.21 the severity manifestation code reported together for the same condition, so a coder would accept them as clinically equivalent representations of the sepsis principal diagnosis.",
       "ground_truth_icd_expansions": [
-        "A41.89 — Other specified sepsis"
+        "A41.89 — Other specified sepsis",
+        "A41.9 — Sepsis, unspecified organism",
+        "sepsis / septicemia codes (A40-A41)"
       ],
-      "matched_icd_expansions": [],
+      "matched_icd_expansions": [
+        "R65.21 — Severe sepsis with septic shock",
+        "R65.20 — Severe sepsis without septic shock",
+        "sepsis severity manifestation code used with underlying infection code A41.-"
+      ],
       "_cache_hit": false
     }
   },

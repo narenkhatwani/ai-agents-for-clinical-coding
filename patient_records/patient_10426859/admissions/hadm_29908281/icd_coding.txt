@@ -4,17 +4,19 @@ Patient ID       : 10426859
 HADM ID          : 29908281
 Most likely      : Supraventricular tachycardia
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:15.264418
+Generated (S8)   : 2026-08-20T17:19:16.491424
 
 Summary:
-  The patient presents with recurrent supraventricular tachycardia (SVT) causing falls and headache, with new findings of right hip fracture and hypocalcemia. The patient has a history of cardiovascular and neurologic conditions.
+  The patient presents with recurrent supraventricular tachycardia (SVT), lightheadedness, headache, and a fall resulting in a right hip fracture. The patient has a history of cardiovascular and neurologic conditions.
 
 #1  [85.0/100 | high]  Supraventricular tachycardia  (primary)
     SNOMED: Supraventricular tachycardia (6456007) [exact score=1.0]
     ICD status: mapped | primary: I47.10
       1. [principal] I47.10 — 
       2. [principal] P29.11 — Neonatal tachycardia
-      3. [supporting] R51.9 — Headache, unspecified  ← headache (key_symptom)
+      3. [supporting] R00.2 — Palpitations  ← palpitations (key_symptom)
+      4. [supporting] R51.9 — Headache, unspecified  ← headache (key_symptom)
+      5. [supporting] R42 — Dizziness and giddiness  ← lightheadedness (key_symptom)
 
 #2  [70.0/100 | high]  Right hip fracture  (complication)
     SNOMED: Fracture of neck of femur (5913000) [fuzzy score=0.6231912747673617]
@@ -23,18 +25,23 @@ Summary:
       2. [supporting] R10.31 — Right lower quadrant pain  ← pain in right hip (tree_symptom)
       3. [supporting] M79.604 — Pain in right leg  ← pain in right leg (symptom)
 
-#3  [65.0/100 | medium]  Hypocalcemia  (differential)
-    SNOMED: Hypocalcemia (5291005) [exact score=1.0]
-    ICD status: mapped | primary: E83.51
-      1. [principal] E83.51 — Hypocalcemia
-      2. [principal] P71.1 — Other neonatal hypocalcemia
-
-#4  [50.0/100 | low]  Cerebral infarct  (complication)
-    SNOMED: Silent cerebral infarct (723082006) [fuzzy score=0.7887317109255645]
-    ICD status: mapped | primary: I63.9
-      1. [principal] I63.9 — Cerebral infarction, unspecified
-
-#5  [40.0/100 | low]  Anxiety disorder  (risk_factor)
+#3  [60.0/100 | medium]  Anxiety disorder  (risk_factor)
     SNOMED: Anxiety disorder (197480006) [exact score=1.0]
     ICD status: mapped | primary: F41.9
       1. [principal] F41.9 — Anxiety disorder, unspecified
+
+#4  [55.0/100 | medium]  Hypertension  (risk_factor)
+    SNOMED: Essential hypertension (59621000) [exact score=1.0]
+    ICD status: mapped | primary: I10
+      1. [principal] I10 — Essential (primary) hypertension
+      2. [principal] P29.2 — Neonatal hypertension
+
+#5  [45.0/100 | medium]  Hyperlipidemia  (risk_factor)
+    SNOMED: Hyperlipidemia (55822004) [exact score=1.0]
+    ICD status: mapped | primary: E78.5
+      1. [principal] E78.5 — Hyperlipidemia, unspecified
+
+#6  [35.0/100 | medium]  Atherosclerotic heart disease  (complication)
+    SNOMED: Atherosclerosis of coronary artery without angina pectoris (451041000124103) [exact score=1.0]
+    ICD status: mapped | primary: I25.10
+      1. [principal] I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris

@@ -4,30 +4,34 @@
   "method": "llm_query_expansion",
   "patient_id": "13508515",
   "hadm_id": "21834271",
-  "generated_at": "2026-08-20T00:13:25.599643",
+  "generated_at": "2026-08-20T17:30:11.380609",
   "ground_truth": {
     "primary_icd_code": "C642",
     "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
     "primary_icd_title": "Malignant neoplasm of left kidney, except renal pelvis",
+    "discharge_diagnosis": "Left renal cell carcinoma.",
+    "diffdx_gt": "Left renal cell carcinoma.",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 14
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Malignant neoplasm of left kidney, except renal pelvis",
+      "ground_truth_primary": "Left renal cell carcinoma.",
       "rank1_diagnosis": "Acute on chronic systolic heart failure",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
-      "match": false,
-      "is_rank1_match": null,
-      "matched_diffdx_rank": null,
-      "matched_diagnosis": "",
-      "matched_score": null,
-      "matched_confidence": "",
-      "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.",
-      "llm_expanded_ground_truth": "",
-      "llm_expanded_matched": "",
+      "match": true,
+      "is_rank1_match": false,
+      "matched_diffdx_rank": 2,
+      "matched_diagnosis": "Renal cell carcinoma",
+      "matched_score": 70.0,
+      "matched_confidence": "medium",
+      "llm_relationship": "same_principal_broader",
+      "llm_confidence": "high",
+      "llm_reason": "Physician discharge diagnosis is left renal cell carcinoma; Rank 2 'Renal cell carcinoma' names the same principal condition, lacking only laterality specification. Rank 1 (heart failure) and other ranks are unrelated principals.",
+      "llm_expanded_ground_truth": "Left renal cell carcinoma | RCC of left kidney | Renal cell cancer, left | Hypernephroma | Malignant neoplasm of left kidney except renal pelvis",
+      "llm_expanded_matched": "Renal cell carcinoma | RCC | Kidney cancer | Renal adenocarcinoma | Hypernephroma",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
           "diagnosis": "Acute on chronic systolic heart failure",
@@ -46,36 +50,36 @@
           "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Obstructive sleep apnea",
+          "diagnosis": "Type 2 diabetes mellitus",
           "rank": 3,
-          "score": 60.0,
+          "score": 65.0,
           "confidence": "medium",
+          "icd10_primary": "E11.9",
+          "icd10_primary_title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "diagnosis": "Obstructive sleep apnea",
+          "rank": 4,
+          "score": 55.0,
+          "confidence": "low",
           "icd10_primary": "G47.33",
           "icd10_primary_title": "Obstructive sleep apnea (adult) (pediatric)"
         },
         {
           "diagnosis": "Anemia",
-          "rank": 4,
-          "score": 55.0,
+          "rank": 5,
+          "score": 50.0,
           "confidence": "medium",
           "icd10_primary": "D64.9",
           "icd10_primary_title": "Anemia, unspecified"
         },
         {
           "diagnosis": "Hypokalemia",
-          "rank": 5,
-          "score": 50.0,
+          "rank": 6,
+          "score": 40.0,
           "confidence": "low",
           "icd10_primary": "E87.6",
           "icd10_primary_title": "Hypokalemia"
-        },
-        {
-          "diagnosis": "Chronic kidney disease",
-          "rank": 6,
-          "score": 45.0,
-          "confidence": "low",
-          "icd10_primary": "N18.9",
-          "icd10_primary_title": "Chronic kidney disease, unspecified"
         }
       ],
       "n_diffdx": 6
@@ -93,26 +97,42 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.",
-      "llm_expanded_ground_truth_icd": "",
+      "llm_icd_reason": "No ICD code was mapped at the matched rank (Rank 2), so it cannot be compared to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).",
+      "llm_expanded_ground_truth_icd": "C64.2 Malignant neoplasm of left kidney, except renal pelvis | C64.9 unspecified kidney | C64.1 right kidney",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I50.23",
-      "diagnosis_match": false,
-      "is_rank1_diagnosis_match": null,
-      "matched_diffdx_rank": null
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": false,
+      "matched_diffdx_rank": 2
     },
     "llm_qe_raw": {
-      "matched_rank": null,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.",
-      "ground_truth_expansions": [],
-      "matched_diagnosis_expansions": [],
+      "matched_rank": 2,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_broader",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Physician discharge diagnosis is left renal cell carcinoma; Rank 2 'Renal cell carcinoma' names the same principal condition, lacking only laterality specification. Rank 1 (heart failure) and other ranks are unrelated principals.",
+      "ground_truth_expansions": [
+        "Left renal cell carcinoma",
+        "RCC of left kidney",
+        "Renal cell cancer, left",
+        "Hypernephroma",
+        "Malignant neoplasm of left kidney except renal pelvis"
+      ],
+      "matched_diagnosis_expansions": [
+        "Renal cell carcinoma",
+        "RCC",
+        "Kidney cancer",
+        "Renal adenocarcinoma",
+        "Hypernephroma"
+      ],
       "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.",
-      "ground_truth_icd_expansions": [],
+      "icd_confidence": "high",
+      "icd_reason": "No ICD code was mapped at the matched rank (Rank 2), so it cannot be compared to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).",
+      "ground_truth_icd_expansions": [
+        "C64.2 Malignant neoplasm of left kidney, except renal pelvis",
+        "C64.9 unspecified kidney",
+        "C64.1 right kidney"
+      ],
       "matched_icd_expansions": [],
       "_cache_hit": false
     }

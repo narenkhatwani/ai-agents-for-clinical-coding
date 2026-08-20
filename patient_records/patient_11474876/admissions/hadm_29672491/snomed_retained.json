@@ -1,7 +1,7 @@
 {
   "stage": 6,
   "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
-  "generated_at": "2026-08-19T23:22:49.292691",
+  "generated_at": "2026-08-20T17:13:56.935154",
   "patient_id": "11474876",
   "hadm_id": "29672491",
   "min_cosine_similarity": 0.7,
@@ -10,7 +10,7 @@
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "n_entities": 50,
   "n_entities_with_retained": 13,
-  "n_retained_links": 17,
+  "n_retained_links": 18,
   "entities": [
     {
       "term": "abdominal pain",
@@ -158,9 +158,23 @@
       "snomed_concept_id": "400047006",
       "snomed_preferred_term": "Peripheral vascular disease",
       "anchor_term": "Peripheral vascular disease",
-      "n_retained": 1,
-      "n_high_confidence": 0,
-      "retained_ancestors": [],
+      "n_retained": 2,
+      "n_high_confidence": 1,
+      "retained_ancestors": [
+        {
+          "concept_id": "27550009",
+          "term": "Vascular disease",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8525,
+          "cosine_distance": 0.1475,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Peripheral vascular disease"
+        }
+      ],
       "retained_attribute_relations": [
         {
           "concept_id": "51833009",
@@ -178,6 +192,19 @@
         }
       ],
       "retained": [
+        {
+          "concept_id": "27550009",
+          "term": "Vascular disease",
+          "relation": "is_a",
+          "depth": 1,
+          "role": "ancestor",
+          "cosine_similarity": 0.8525,
+          "cosine_distance": 0.1475,
+          "retained": true,
+          "high_confidence": true,
+          "similarity_method": "minilm",
+          "anchor_term": "Peripheral vascular disease"
+        },
         {
           "concept_id": "51833009",
           "term": "Peripheral vascular system",

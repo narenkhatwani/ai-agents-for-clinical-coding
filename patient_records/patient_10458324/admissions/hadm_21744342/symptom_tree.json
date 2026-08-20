@@ -1,25 +1,29 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with right-sided rib fractures and hypoxia following a fall, with ongoing respiratory symptoms and signs of trauma.",
+  "reasoning": "The dominant clinical picture for this admission is a patient with right-sided rib fractures and associated respiratory issues, including hypoxemia and pneumothorax.",
   "branches": [
     {
       "category": "respiratory",
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "right rib fractures",
+          "term": "right sided rib fractures",
           "status": "present",
           "severity": "moderate",
           "evidence": "right sided rib fractures",
           "related_findings": [
-            "right posterior back tenderness",
-            "subcutaneous emphysema"
+            "subcutaneous emphysema",
+            "right PTX"
           ],
           "children": [
             {
               "term": "right PTX",
               "status": "present",
-              "evidence": "small right PTX"
+              "evidence": "small right PTX",
+              "related_findings": [
+                "right pneumothorax",
+                "subcutaneous emphysema"
+              ]
             }
           ]
         },
@@ -37,119 +41,78 @@
           "term": "cough",
           "status": "present",
           "severity": "mild",
-          "evidence": "5 days of mild cough that worsened over the past two days"
+          "evidence": "5 days of mild cough that worsened over the past two days",
+          "related_findings": [
+            "right PTX",
+            "subcutaneous emphysema"
+          ]
         },
         {
           "term": "fever",
           "status": "present",
           "severity": "mild",
-          "evidence": "fever"
+          "evidence": "fever",
+          "related_findings": [
+            "right PTX",
+            "subcutaneous emphysema"
+          ]
         },
         {
           "term": "nasal congestion",
           "status": "present",
           "severity": "mild",
-          "evidence": "nasal congestion"
+          "evidence": "nasal congestion",
+          "related_findings": [
+            "right PTX",
+            "subcutaneous emphysema"
+          ]
         },
         {
           "term": "sore throat",
           "status": "present",
           "severity": "mild",
-          "evidence": "sore throat"
-        },
-        {
-          "term": "vomiting",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "one episode of vomiting"
-        },
-        {
-          "term": "diarrhea",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "diarrhea"
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "hypotension",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "BP 121/72",
-          "related_findings": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "bacterial pneumonia",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "Gram stain and culture results negative",
+          "evidence": "sore throat",
           "related_findings": [
-            "cough",
-            "fever",
-            "nasal congestion",
-            "sore throat"
+            "right PTX",
+            "subcutaneous emphysema"
           ]
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurology",
-      "symptoms": [
-        {
-          "term": "insomnia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "nightmares of being left alone and mistreated",
-          "related_findings": []
-        }
-      ]
-    },
-    {
-      "category": "gi",
-      "ontology_hint": "Gastrointestinal",
-      "symptoms": [
+        },
         {
           "term": "vomiting",
           "status": "present",
           "severity": "mild",
           "evidence": "one episode of vomiting",
-          "related_findings": []
+          "related_findings": [
+            "right PTX",
+            "subcutaneous emphysema"
+          ]
         },
         {
           "term": "diarrhea",
           "status": "present",
           "severity": "mild",
           "evidence": "diarrhea",
-          "related_findings": []
+          "related_findings": [
+            "right PTX",
+            "subcutaneous emphysema"
+          ]
         }
       ]
     }
   ],
   "key_symptoms": [
-    "right rib fractures",
-    "hypoxia",
-    "cough",
-    "fever"
+    "right sided rib fractures",
+    "right PTX",
+    "hypoxia"
   ],
   "red_flags": [
-    "hypotension",
-    "AMS"
+    "hypoxia",
+    "subcutaneous emphysema"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10458324",
   "admission_id": "21744342",
-  "generated_at": "2026-08-19T23:19:32.076465"
+  "generated_at": "2026-08-20T17:09:29.295645"
 }

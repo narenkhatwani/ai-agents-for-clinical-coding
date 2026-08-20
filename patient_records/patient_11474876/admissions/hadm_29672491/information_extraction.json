@@ -1,23 +1,24 @@
 {
-  "reason_for_admission": "Scheduled ERCP for stent removal and follow-up after previous cholangitis episode.",
-  "presenting_complaint": "Nocturnal hypoxia and leg swelling.",
-  "admission_context": "post_procedural",
-  "procedures_this_stay": [
-    {
-      "name": "ERCP",
-      "timing": "current"
-    }
-  ],
   "symptoms": [
     {
-      "term": "nocturnal hypoxia",
-      "status": "present",
-      "evidence": "improved with diuresis"
+      "term": "abdominal pain",
+      "status": "absent",
+      "evidence": "no abdominal pain"
+    },
+    {
+      "term": "dyspnea",
+      "status": "history",
+      "evidence": "developed acute shortness of breath requiring nonrebreather briefly"
     },
     {
       "term": "leg swelling",
       "status": "present",
-      "evidence": "improves during the night and worsens during the day"
+      "evidence": "notes his edema improves during the night and worsens during the day"
+    },
+    {
+      "term": "nocturnal hypoxia",
+      "status": "history",
+      "evidence": "nocturnal hypoxia that improved with diuresis"
     }
   ],
   "vitals": [
@@ -25,6 +26,11 @@
       "name": "Weight",
       "value": "180",
       "unit": "Lbs"
+    },
+    {
+      "name": "BMI",
+      "value": "29.0",
+      "unit": "kg/m2"
     }
   ],
   "labs": [
@@ -32,144 +38,144 @@
       "name": "Creatinine",
       "value": "1.4",
       "unit": "mg/dL",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "INR(PT)",
       "value": "1.3",
       "unit": "",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "PT",
       "value": "13.7 sec",
       "unit": "",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "Hematocrit",
-      "value": "38.3%",
-      "unit": "",
-      "flag": "normal"
+      "value": "38.3",
+      "unit": "%",
+      "flag": "low"
     },
     {
       "name": "Hemoglobin",
-      "value": "12.6 g/dL",
-      "unit": "",
-      "flag": "normal"
+      "value": "12.6",
+      "unit": "g/dL",
+      "flag": "low"
     },
     {
       "name": "MCH",
-      "value": "32.8 pg",
-      "unit": "",
-      "flag": "normal"
+      "value": "32.8",
+      "unit": "pg",
+      "flag": "low"
     },
     {
       "name": "MCV",
-      "value": "100.0 fL",
-      "unit": "",
-      "flag": "normal"
+      "value": "100.0",
+      "unit": "fL",
+      "flag": "low"
     },
     {
       "name": "Red Blood Cells",
-      "value": "3.84 m/uL",
-      "unit": "",
-      "flag": "normal"
+      "value": "3.84",
+      "unit": "m/uL",
+      "flag": "low"
     },
     {
       "name": "RDW-SD",
-      "value": "54.1 fL",
-      "unit": "",
-      "flag": "normal"
+      "value": "54.1",
+      "unit": "fL",
+      "flag": "high"
     },
     {
       "name": "Alanine Aminotransferase (ALT)",
-      "value": "16.0 IU/L",
-      "unit": "",
+      "value": "16.0",
+      "unit": "IU/L",
       "flag": "normal"
     },
     {
       "name": "Alkaline Phosphatase",
-      "value": "102.0 IU/L",
-      "unit": "",
+      "value": "102.0",
+      "unit": "IU/L",
       "flag": "normal"
     },
     {
       "name": "Anion Gap",
-      "value": "16.0 mEq/L",
-      "unit": "",
+      "value": "16.0",
+      "unit": "mEq/L",
       "flag": "normal"
     },
     {
       "name": "Asparate Aminotransferase (AST)",
-      "value": "23.0 IU/L",
-      "unit": "",
+      "value": "23.0",
+      "unit": "IU/L",
       "flag": "normal"
     },
     {
       "name": "Bicarbonate",
-      "value": "26.0 mEq/L",
-      "unit": "",
+      "value": "26.0",
+      "unit": "mEq/L",
       "flag": "normal"
     },
     {
       "name": "Bilirubin, Total",
-      "value": "1.0 mg/dL",
-      "unit": "",
+      "value": "1.0",
+      "unit": "mg/dL",
       "flag": "normal"
     },
     {
       "name": "Calcium, Total",
-      "value": "8.7 mg/dL",
-      "unit": "",
-      "flag": "normal"
+      "value": "8.7",
+      "unit": "mg/dL",
+      "flag": "low"
     },
     {
       "name": "Chloride",
-      "value": "101.0 mEq/L",
-      "unit": "",
+      "value": "101.0",
+      "unit": "mEq/L",
       "flag": "normal"
     },
     {
       "name": "Estimated GFR (MDRD equation)",
-      "value": "nan",
+      "value": "unknown",
       "unit": "",
       "flag": "unknown"
     },
     {
       "name": "Glucose",
-      "value": "83.0 mg/dL",
-      "unit": "",
+      "value": "83.0",
+      "unit": "mg/dL",
       "flag": "normal"
     },
     {
       "name": "Magnesium",
-      "value": "1.7 mg/dL",
-      "unit": "",
-      "flag": "normal"
+      "value": "1.7",
+      "unit": "mg/dL",
+      "flag": "low"
     },
     {
       "name": "Phosphate",
-      "value": "2.9 mg/dL",
-      "unit": "",
-      "flag": "normal"
+      "value": "2.9",
+      "unit": "mg/dL",
+      "flag": "low"
     },
     {
       "name": "Potassium",
-      "value": "4.3 mEq/L",
-      "unit": "",
+      "value": "4.3",
+      "unit": "mEq/L",
       "flag": "normal"
     },
     {
       "name": "Sodium",
-      "value": "143.0 mEq/L",
-      "unit": "",
+      "value": "143.0",
+      "unit": "mEq/L",
       "flag": "normal"
     },
     {
       "name": "Urea Nitrogen",
-      "value": "15.0 mg/dL",
-      "unit": "",
+      "value": "15.0",
+      "unit": "mg/dL",
       "flag": "normal"
     },
     {
@@ -180,20 +186,20 @@
     },
     {
       "name": "MCHC",
-      "value": "32.9 g/dL",
-      "unit": "",
+      "value": "32.9",
+      "unit": "g/dL",
       "flag": "normal"
     },
     {
       "name": "Platelet Count",
-      "value": "157.0 K/uL",
-      "unit": "",
+      "value": "157.0",
+      "unit": "K/uL",
       "flag": "normal"
     },
     {
       "name": "White Blood Cells",
-      "value": "7.2 K/uL",
-      "unit": "",
+      "value": "7.2",
+      "unit": "K/uL",
       "flag": "normal"
     }
   ],
@@ -216,7 +222,31 @@
     },
     {
       "term": "Cholangitis",
-      "certainty": "suspected"
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Peripheral vascular disease",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Aortobifemoral bypass graft",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Right bundle branch block",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hypertension",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hyperlipidemia",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "PTSD",
+      "certainty": "confirmed"
     }
   ],
   "medications": [
@@ -224,11 +254,29 @@
       "name": "Apixaban",
       "dose": "started",
       "route": "oral",
-      "status": "started"
+      "status": "continued"
     },
     {
       "name": "Lasix",
-      "dose": "increased",
+      "dose": "20 mg",
+      "route": "IV",
+      "status": "stopped"
+    },
+    {
+      "name": "Ciprofloxacin",
+      "dose": "started",
+      "route": "oral",
+      "status": "stopped"
+    },
+    {
+      "name": "Cefpodoxime",
+      "dose": "started",
+      "route": "oral",
+      "status": "continued"
+    },
+    {
+      "name": "Flagyl",
+      "dose": "started",
       "route": "oral",
       "status": "continued"
     }
@@ -236,17 +284,25 @@
   "procedures": [
     {
       "name": "ERCP",
-      "result": "stones extracted, sphincterotomy performed, stent removed"
+      "result": "stones extraction, sphincterotomy, stent removal"
     }
   ],
-  "negations": [],
+  "negations": [
+    "no abdominal pain",
+    "no CP",
+    "no dyspnea",
+    "no CP",
+    "no suprapubic tenderness",
+    "no swollen or erythematous joints",
+    "no rashes or ulcerations noted",
+    "no TTP"
+  ],
   "temporal": [
     {
-      "finding": "nocturnal hypoxia",
-      "onset": "improved with diuresis"
+      "finding": "edema",
+      "onset": "improves during the night and worsens during the day"
     }
   ],
-  "_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
   "_agent": "information_extraction",
   "_n_prior_admissions": 1
 }

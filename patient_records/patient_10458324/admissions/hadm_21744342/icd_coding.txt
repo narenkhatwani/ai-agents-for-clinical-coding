@@ -2,43 +2,51 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 10458324
 HADM ID          : 21744342
-Most likely      : Acute respiratory distress secondary to rib fractures and hypoxemia
+Most likely      : Traumatic pneumothorax
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:16.124717
+Generated (S8)   : 2026-08-20T17:19:17.171610
 
 Summary:
-  The patient is a 45-year-old man with right-sided rib fractures and hypoxemia following a mechanical fall. He has a history of polysubstance abuse and chronic conditions including opioid dependence and tachycardia.
+  A 46-year-old male with a history of polysubstance use and opioid dependence presents with right-sided rib fractures, hypoxia, and respiratory symptoms. Radiology shows bilateral pleural effusions and pneumothorax.
 
-#1  [85.0/100 | high]  Acute respiratory distress secondary to rib fractures and hypoxemia  (primary)
-    SNOMED: (unmapped)
-    ICD status: supporting_only | primary: None
-      1. [supporting] R09.02 — Hypoxemia  ← hypoxia (key_symptom)
-
-#2  [75.0/100 | medium]  Pneumothorax  (complication)
+#1  [85.0/100 | high]  Traumatic pneumothorax  (primary)
     SNOMED: Pneumothorax (36118008) [exact score=1.0]
     ICD status: mapped | primary: J93.9
       1. [principal] J93.9 — Pneumothorax, unspecified
       2. [principal] P25.1 — Pneumothorax originating in the perinatal period
+      3. [supporting] J98.2 — Interstitial emphysema  ← subcutaneous emphysema (symptom)
 
-#3  [60.0/100 | medium]  Opioid dependence  (risk_factor)
-    SNOMED: Opium dependence (231480002) [exact score=1.0]
-    ICD status: mapped | primary: F11.20
-      1. [principal] F11.20 — Opioid dependence, uncomplicated
+#2  [75.0/100 | high]  Acute respiratory failure  (primary)
+    SNOMED: Acute respiratory failure (65710008) [exact score=1.0]
+    ICD status: mapped | primary: J96.00
+      1. [principal] J96.00 — Acute respiratory failure, unspecified whether with hypoxia or hypercapnia
+      2. [supporting] J98.2 — Interstitial emphysema  ← subcutaneous emphysema (symptom)
+      3. [supporting] R09.02 — Hypoxemia  ← hypoxia (key_symptom)
 
-#4  [45.0/100 | low]  Influenza A  (differential)
+#3  [60.0/100 | medium]  Influenza A  (differential)
     SNOMED: Influenza A (H1N1) (442696006) [exact score=1.0]
     ICD status: mapped | primary: J10.1
       1. [principal] J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
       2. [principal] J10.00 — Influenza due to other identified influenza virus with unspecified type of pneumonia
-      3. [supporting] R50.9 — Fever, unspecified  ← fever (key_symptom)
+      3. [supporting] R50.9 — Fever, unspecified  ← fever (tree_symptom)
+      4. [supporting] J02.9 — Acute pharyngitis, unspecified  ← sore throat (symptom)
+      5. [supporting] R05.9 — Cough, unspecified  ← cough (tree_symptom)
+      6. [supporting] R09.81 — Nasal congestion  ← nasal congestion (tree_symptom)
 
-#5  [30.0/100 | low]  Bipolar disorder  (risk_factor)
+#4  [55.0/100 | medium]  Opioid dependence  (risk_factor)
+    SNOMED: Opium dependence (231480002) [exact score=1.0]
+    ICD status: mapped | primary: F11.20
+      1. [principal] F11.20 — Opioid dependence, uncomplicated
+
+#5  [40.0/100 | low]  Bipolar disorder  (risk_factor)
     SNOMED: Bipolar disorder (13746004) [exact score=1.0]
     ICD status: mapped | primary: F31.9
       1. [principal] F31.9 — Bipolar disorder, unspecified
 
-#6  [20.0/100 | low]  Tachycardia  (risk_factor)
-    SNOMED: Tachycardia (3424008) [exact score=1.0]
-    ICD status: mapped | primary: R00.0
-      1. [principal] R00.0 — Tachycardia, unspecified
-      2. [principal] P29.11 — Neonatal tachycardia
+#6  [30.0/100 | medium]  Subcutaneous emphysema  (complication)
+    SNOMED: Subcutaneous emphysema (3830001) [exact score=1.0]
+    ICD status: mapped | primary: J98.2
+      1. [principal] J98.2 — Interstitial emphysema
+      2. [principal] T81.82X? — 
+      3. [principal] T79.7XX? — 
+      4. [principal] P25.0 — Interstitial emphysema originating in the perinatal period

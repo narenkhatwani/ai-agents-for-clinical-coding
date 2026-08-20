@@ -1,22 +1,22 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure for a desmoid tumor.",
+  "reasoning": "The patient is presenting with post-procedural pain and nausea after cryoablation of a residual desmoid tumor.",
   "branches": [
     {
-      "category": "other",
+      "category": "constitutional|respiratory|cardiovascular|infectious|neurologic|gi|renal|other",
       "ontology_hint": "Other",
       "symptoms": [
         {
           "term": "post-procedural pain",
           "status": "present",
-          "severity": "moderate",
+          "severity": "mild",
           "evidence": "post-procedural pain in the right side of the abdomen",
           "related_findings": [
-            "abdominal tenderness to palpation"
+            "abdominal pain"
           ],
           "children": [
             {
-              "term": "abdominal tenderness",
+              "term": "abdominal pain",
               "status": "present",
               "evidence": "tender in the right upper and right lower quadrant to palpation"
             }
@@ -32,47 +32,11 @@
           ]
         }
       ]
-    },
-    {
-      "category": "constitutional",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "fever",
-          "status": "absent",
-          "evidence": "denies fever, chills, night sweats"
-        },
-        {
-          "term": "shortness of breath",
-          "status": "absent",
-          "evidence": "denies shortness of breath"
-        },
-        {
-          "term": "palpitations",
-          "status": "absent",
-          "evidence": "denies palpitations"
-        },
-        {
-          "term": "chest pain",
-          "status": "absent",
-          "evidence": "denies chest pain"
-        },
-        {
-          "term": "diarrhea",
-          "status": "absent",
-          "evidence": "denies diarrhea"
-        },
-        {
-          "term": "constipation",
-          "status": "absent",
-          "evidence": "denies constipation"
-        }
-      ]
     }
   ],
   "key_symptoms": [
     "post-procedural pain",
-    "abdominal tenderness"
+    "nausea"
   ],
   "red_flags": [
     "abdominal pain"
@@ -82,5 +46,5 @@
   "_agent": "symptom_tree",
   "patient_id": "18412100",
   "admission_id": "26093939",
-  "generated_at": "2026-08-19T23:21:18.444342"
+  "generated_at": "2026-08-20T17:11:49.257857"
 }

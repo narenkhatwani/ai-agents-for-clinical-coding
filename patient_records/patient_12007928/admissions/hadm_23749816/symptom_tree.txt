@@ -8,44 +8,42 @@ Patient ID       : 12007928
 Admission ID     : 23749816
 
 Reasoning:
-  The patient presents with dyspnea, orthopnea, and worsening CHF, with significant fatigue and incontinence, following a fall and discharge from a previous hospital.
+  The patient presents with dyspnea, orthopnea, and worsening heart failure, with significant fluid overload and pleural effusions.
 
-Key symptoms     : dyspnea, orthopnea, tremors
-Red flags        : pitting edema, crackles in lungs
+Key symptoms     : dyspnea, orthopnea
+Red flags        : hypotension, AMS
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, moderate] dyspnea
-      evidence: "increased dyspnea"
-      related: orthopnea, crackles in lungs, pitting edema
+  • [present, severe] dyspnea
+      evidence: "increased dyspnea, unable to walk about 10 steps without feeling short of breath"
+      related: orthopnea, pulmonary edema, pleural effusions
       • [present] orthopnea
           evidence: "reports significant orthopnea"
-      • [present] pitting edema
-          evidence: "4+ pitting lower extremity edema"
-  • [present] crackles
-      evidence: "mild bibasilar crackles L > R"
-      related: pulmonary edema
-  • [present] fatigue
+      • [present] pulmonary edema
+          evidence: "mild to moderate pulmonary edema on CXR"
+      • [present] pleural effusions
+          evidence: "likely present on CXR"
+  • [present, moderate] fatigue
       evidence: "all activities now are quite fatiguing"
+  • [present, severe] shortness of breath
+      evidence: "unable to walk about 10 steps without feeling short of breath"
 
 NEUROLOGIC → Neurology
 ----------------------
 
-  • [present, moderate] tremors
+  • [present, mild] tremors
       evidence: "increased spasms in the upper extremities"
-      related: myasthenia gravis
 
 RENAL → Renal
 -------------
 
-  • [present, moderate] creatinine elevation
-      evidence: "Creatinine: 1.6 mg/dL"
-      related: dyspnea, pitting edema
+  • [present, mild] creatinine elevation
+      evidence: "Creatinine: 1.6 mg/dL [abnormal]"
 
 GI → GI
 -------
 
-  • [present, moderate] incontinence
+  • [present, mild] incontinence
       evidence: "urine incontinence"
-      related: stress incontinence

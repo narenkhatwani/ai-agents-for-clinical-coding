@@ -3,41 +3,43 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13196707
 HADM ID          : 21475988
-Generated        : 2026-08-20T00:13:22.394699
+Generated        : 2026-08-20T17:30:03.218762
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Sepsis, unspecified organism
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Stage IV Adenocarcinoma, unknown origin
+  Billed ICD title     : Sepsis, unspecified organism (ICD metric only)
   Rank-1 predicted     : Severe sepsis secondary to RUL PNA
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : The ground truth diagnosis 'Sepsis, unspecified organism' does not match any of the ranked differential diagnoses.
+  Diagnosis match      : YES
+  Is rank-1 match      : NO
+  Matched DiffDx rank  : 2
+  Matched diagnosis    : Metastatic adenocarcinoma of unknown primary
+    score=75.0  confidence=high
+  LLM reason           : Physician discharge diagnosis 'Stage IV Adenocarcinoma, unknown origin' names the same principal condition as Rank 2 'Metastatic adenocarcinoma of unknown primary' — Stage IV denotes distant metastatic disease and 'unknown origin' equals 'unknown primary'. Rank 1 (sepsis due to right upper lobe pneumonia) is a different principal condition, so the lowest matching rank is 2.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : A41.9 — Sepsis, unspecified organism
-  Rank-1 mapped ICD    : - — 
-  Matched mapped ICD   : - — 
+  Rank-1 mapped ICD    : A41.9 — Sepsis, unspecified organism
+  Matched mapped ICD   : C79.9 — Secondary malignant neoplasm of unspecified site
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
-  Is rank-1 ICD match  : NO
-  LLM ICD reason       : The ground truth ICD code 'A41.9' does not match any of the mapped ICD codes in the ranked differential diagnoses.
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism). These are entirely different principal conditions (malignancy vs systemic infection) and a coder would not accept them as equivalent. Note A41.9 appears at Rank 1, but that rank did not match the physician discharge diagnosis.
   Stage 9 final ICD    : R50.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Severe sepsis secondary to RUL PNA  [score=85.0, high]  ICD=- — 
-   2. Metastatic adenocarcinoma of unknown primary  [score=75.0, medium]  ICD=C79.9 — Secondary malignant neoplasm of unspecified site
-   3. Hypotension secondary to pericardiocentesis  [score=65.0, medium]  ICD=- — 
-   4. Acute kidney failure  [score=55.0, low]  ICD=I50.9 — Heart failure, unspecified
-   5. Anemia  [score=45.0, low]  ICD=D64.9 — Anemia, unspecified
-   6. Sodium imbalance  [score=35.0, low]  ICD=E87.1 — Hypo-osmolality and hyponatremia
+   1. Severe sepsis secondary to RUL PNA  [score=85.0, high]  ICD=A41.9 — Sepsis, unspecified organism
+   2. Metastatic adenocarcinoma of unknown primary  [score=75.0, high]  ICD=C79.9 — Secondary malignant neoplasm of unspecified site
+   3. Altered mental status due to metastatic brain lesions  [score=65.0, medium]  ICD=R41.82 — Altered mental status, unspecified
+   4. Hypotension  [score=60.0, high]  ICD=I95.9 — Hypotension, unspecified
+   5. Pneumonia  [score=55.0, medium]  ICD=J18.9 — Pneumonia, unspecified organism
+   6. Acute kidney failure  [score=45.0, medium]  ICD=I50.9 — Heart failure, unspecified

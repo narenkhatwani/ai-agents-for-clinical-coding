@@ -5,56 +5,49 @@ Patient ID       : 13196707
 HADM ID          : 21475988
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:10:10.757498
+Generated        : 2026-08-20T17:16:35.248925
 Candidates       : 6
 Most likely      : Severe sepsis secondary to RUL PNA
 Prior admissions : 1 (33 ICD codes as PMH context)
 
 Summary:
-  The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.
+  The patient is a 50-year-old male with a history of metastatic adenocarcinoma of unknown primary presenting with severe sepsis secondary to RUL PNA, hypotension, and altered mental status. He has a history of multiple metastatic brain lesions and SVC syndrome.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Severe sepsis secondary to RUL PNA  (primary)
-      + RUL PNA, persistent consolidative opacities in both lower lobes
-      why: Severe sepsis is the most likely diagnosis given the RUL PNA and hypotension.
+      + RUL PNA (suspected)
+      why: Severe sepsis is the primary clinical presentation and is strongly supported by the recent diagnosis of RUL PNA and the presence of hypotension and altered mental status.
 
-  #2  [75.0/100 | medium]  Metastatic adenocarcinoma of unknown primary  (primary)
-      SNOMED aligned : Metastatic adenocarcinoma of unknown origin
-      + confirmed metastatic adenocarcinoma of unknown primary
-      − no new metastatic lesions noted
-      why: Given the patient’s history of metastatic adenocarcinoma, this is a significant risk factor.
+  #2  [75.0/100 | high]  Metastatic adenocarcinoma of unknown primary  (primary)
+      SNOMED aligned : Metastatic adenocarcinoma of unknown origin (307226002)
+      + Metastatic adenocarcinoma of unknown primary (confirmed)
+      why: The patient has a confirmed history of metastatic adenocarcinoma of unknown primary, which is a significant risk factor for the current presentation.
 
-  #3  [65.0/100 | medium]  Hypotension secondary to pericardiocentesis  (complication)
-      + recent pericardiocentesis, hypotension
-      − hypotension is moderate and managed
-      why: Hypotension is a complication of pericardiocentesis and is present.
+  #3  [65.0/100 | medium]  Altered mental status due to metastatic brain lesions  (complication)
+      + Altered mental status possibly seizures from metastases
+      why: The patient has multiple metastatic brain lesions, which could contribute to his altered mental status.
 
-  #4  [55.0/100 | low]  Acute kidney failure  (secondary)
-      SNOMED aligned : Acute kidney failure, unspecified
-      + abnormal labs, low creatinine
-      − no acute kidney injury symptoms
-      why: Acute kidney failure is a potential secondary condition given the abnormal labs.
+  #4  [60.0/100 | high]  Hypotension  (complication)
+      + Hypotension with pressures in the 80's, hypotension with pressures in the 90's systolic
+      why: Hypotension is a critical finding and a complication of severe sepsis.
 
-  #5  [45.0/100 | low]  Anemia  (secondary)
-      + low hematocrit, hemoglobin
-      − no acute blood loss
-      why: Anemia could explain the low hematocrit and hemoglobin.
+  #5  [55.0/100 | medium]  Pneumonia  (secondary)
+      + RUL PNA (suspected)
+      why: RUL PNA is suspected and is a significant secondary condition contributing to the patient's presentation.
 
-  #6  [35.0/100 | low]  Sodium imbalance  (risk_factor)
-      SNOMED aligned : Hypo-osmolality and hyponatremia
-      + low sodium
-      − no clinical signs of sodium imbalance
-      why: Sodium imbalance is a risk factor given the low sodium levels.
+  #6  [45.0/100 | medium]  Acute kidney failure  (complication)
+      + Acute kidney failure, unspecified
+      why: The patient has a history of acute kidney failure, which could be a complication of his current presentation.
 
 RULE-OUTS
 ---------
 
-  • Non-small cell lung cancer: Not currently supported by evidence.
+  • Non-small cell lung cancer: While suspected, the current presentation is more consistent with adenocarcinoma.
+  • Pericardiocentesis: The procedure was performed and is not a primary diagnosis.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging to confirm new metastatic lesions
-  • More detailed clinical history to confirm the exact nature of the PNA
+  • Further clarification on the exact nature of the RUL PNA and its causative agent would refine the differential diagnosis.

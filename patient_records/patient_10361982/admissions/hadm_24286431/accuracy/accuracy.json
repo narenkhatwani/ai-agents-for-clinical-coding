@@ -4,108 +4,123 @@
   "method": "llm_query_expansion",
   "patient_id": "10361982",
   "hadm_id": "24286431",
-  "generated_at": "2026-08-20T00:12:56.969546",
+  "generated_at": "2026-08-20T17:28:56.130144",
   "ground_truth": {
     "primary_icd_code": "N99820",
     "primary_dx_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
     "primary_icd_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+    "discharge_diagnosis": "Heavy vaginal bleeding after total laparoscopic hysterectomy",
+    "diffdx_gt": "Heavy vaginal bleeding after total laparoscopic hysterectomy",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 5
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
-      "rank1_diagnosis": "Post-hysterectomy uterine atony",
+      "ground_truth_primary": "Heavy vaginal bleeding after total laparoscopic hysterectomy",
+      "rank1_diagnosis": "Post-hysterectomy bleeding",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
-      "match": false,
-      "is_rank1_match": null,
-      "matched_diffdx_rank": null,
-      "matched_diagnosis": "",
-      "matched_score": null,
-      "matched_confidence": "",
-      "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "None of the differential diagnoses match the ground truth diagnosis.",
-      "llm_expanded_ground_truth": "",
-      "llm_expanded_matched": "",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Post-hysterectomy bleeding",
+      "matched_score": 85.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Post-hysterectomy bleeding' names the same principal condition as the physician discharge diagnosis 'Heavy vaginal bleeding after total laparoscopic hysterectomy' — vaginal hemorrhage occurring after hysterectomy (TLH = total laparoscopic hysterectomy).",
+      "llm_expanded_ground_truth": "heavy vaginal bleeding | vaginal hemorrhage | TLH = total laparoscopic hysterectomy | post-hysterectomy vaginal cuff bleeding | postoperative/postprocedural hemorrhage after gynecologic surgery",
+      "llm_expanded_matched": "post-hysterectomy bleeding | bleeding after hysterectomy | vaginal cuff bleeding | postoperative gynecologic hemorrhage",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
-          "diagnosis": "Post-hysterectomy uterine atony",
+          "diagnosis": "Post-hysterectomy bleeding",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": "O62.2",
-          "icd10_primary_title": "Other uterine inertia"
+          "icd10_primary": "N93.9",
+          "icd10_primary_title": "Abnormal uterine and vaginal bleeding, unspecified"
         },
         {
-          "diagnosis": "Post-hysterectomy uterine inversion",
+          "diagnosis": "Menorrhagia",
           "rank": 2,
           "score": 65.0,
           "confidence": "medium",
-          "icd10_primary": "O71.2",
-          "icd10_primary_title": "Postpartum inversion of uterus"
+          "icd10_primary": "N92.0",
+          "icd10_primary_title": "Excessive and frequent menstruation with regular cycle"
         },
         {
-          "diagnosis": "Endometriosis",
+          "diagnosis": "Hypothyroidism",
           "rank": 3,
-          "score": 40.0,
-          "confidence": "medium",
-          "icd10_primary": "N80.9",
-          "icd10_primary_title": "Endometriosis, unspecified"
+          "score": 50.0,
+          "confidence": "low",
+          "icd10_primary": "E03.9",
+          "icd10_primary_title": "Hypothyroidism, unspecified"
         },
         {
-          "diagnosis": "Hemorrhagic shock",
+          "diagnosis": "Anxiety disorder",
           "rank": 4,
           "score": 30.0,
           "confidence": "low",
-          "icd10_primary": "R57.1",
-          "icd10_primary_title": "Hypovolemic shock"
-        },
-        {
-          "diagnosis": "Infection",
-          "rank": 5,
-          "score": 25.0,
-          "confidence": "low",
-          "icd10_primary": "B99.9",
-          "icd10_primary_title": "Unspecified infectious disease"
+          "icd10_primary": "F41.9",
+          "icd10_primary_title": "Anxiety disorder, unspecified"
         }
       ],
-      "n_diffdx": 5
+      "n_diffdx": 4
     },
     "icd_linked": {
       "ground_truth_icd": "N99.820",
       "ground_truth_icd_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
-      "rank1_predicted_icd": "O62.2",
-      "rank1_predicted_icd_title": "Other uterine inertia",
-      "matched_predicted_icd": "",
-      "matched_predicted_icd_title": "",
+      "rank1_predicted_icd": "N93.9",
+      "rank1_predicted_icd_title": "Abnormal uterine and vaginal bleeding, unspecified",
+      "matched_predicted_icd": "N93.9",
+      "matched_predicted_icd_title": "Abnormal uterine and vaginal bleeding, unspecified",
       "icd_match": false,
       "icd_exact_match": false,
       "icd_family_match": false,
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the differential diagnoses have an equivalent ICD code.",
-      "llm_expanded_ground_truth_icd": "",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "Mapped code at matched rank is N93.9 (abnormal uterine and vaginal bleeding, unspecified), a nonspecific symptom code that does not capture the postprocedural/complication nature of the billed N99.820 (postprocedural hemorrhage of a genitourinary organ following a GU procedure). Coding guidelines require the complication code when bleeding follows a surgical procedure, and N93.9 (uterine/vaginal bleeding) is also inconsistent after hysterectomy, so a coder would not accept it as equivalent.",
+      "llm_expanded_ground_truth_icd": "N99.820 postprocedural hemorrhage of GU organ following GU procedure | postoperative bleeding complication of hysterectomy | complication-of-care code",
+      "llm_expanded_matched_icd": "N93.9 abnormal uterine and vaginal bleeding, unspecified | unspecified vaginal bleeding | non-procedural symptom code",
       "stage9_final_primary_icd": "N93.9",
-      "diagnosis_match": false,
-      "is_rank1_diagnosis_match": null,
-      "matched_diffdx_rank": null
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
     },
     "llm_qe_raw": {
-      "matched_rank": null,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the differential diagnoses match the ground truth diagnosis.",
-      "ground_truth_expansions": [],
-      "matched_diagnosis_expansions": [],
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Post-hysterectomy bleeding' names the same principal condition as the physician discharge diagnosis 'Heavy vaginal bleeding after total laparoscopic hysterectomy' — vaginal hemorrhage occurring after hysterectomy (TLH = total laparoscopic hysterectomy).",
+      "ground_truth_expansions": [
+        "heavy vaginal bleeding",
+        "vaginal hemorrhage",
+        "TLH = total laparoscopic hysterectomy",
+        "post-hysterectomy vaginal cuff bleeding",
+        "postoperative/postprocedural hemorrhage after gynecologic surgery"
+      ],
+      "matched_diagnosis_expansions": [
+        "post-hysterectomy bleeding",
+        "bleeding after hysterectomy",
+        "vaginal cuff bleeding",
+        "postoperative gynecologic hemorrhage"
+      ],
       "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "None of the differential diagnoses have an equivalent ICD code.",
-      "ground_truth_icd_expansions": [],
-      "matched_icd_expansions": [],
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped code at matched rank is N93.9 (abnormal uterine and vaginal bleeding, unspecified), a nonspecific symptom code that does not capture the postprocedural/complication nature of the billed N99.820 (postprocedural hemorrhage of a genitourinary organ following a GU procedure). Coding guidelines require the complication code when bleeding follows a surgical procedure, and N93.9 (uterine/vaginal bleeding) is also inconsistent after hysterectomy, so a coder would not accept it as equivalent.",
+      "ground_truth_icd_expansions": [
+        "N99.820 postprocedural hemorrhage of GU organ following GU procedure",
+        "postoperative bleeding complication of hysterectomy",
+        "complication-of-care code"
+      ],
+      "matched_icd_expansions": [
+        "N93.9 abnormal uterine and vaginal bleeding, unspecified",
+        "unspecified vaginal bleeding",
+        "non-procedural symptom code"
+      ],
       "_cache_hit": false
     }
   },

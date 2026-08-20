@@ -8,38 +8,38 @@ Patient ID       : 13196707
 Admission ID     : 21475988
 
 Reasoning:
-  The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.
+  The patient is presenting with severe sepsis secondary to RUL PNA, with a history of metastatic adenocarcinoma of unknown primary and SVC syndrome.
 
-Key symptoms     : RUL PNA, hypotension
-Red flags        : altered mental status
+Key symptoms     : RUL PNA, hypotension, altered mental status
+Red flags        : hypotension, altered mental status
+
+RESPIRATORY → Respiratory
+-------------------------
+
+  • [present, moderate] RUL PNA
+      evidence: "recently diagnosed"
+      related: CXR: persistent consolidative opacities in both lower lobes
+      • [present] fever
+          evidence: "feverish at rehab, currently doesn't feel like he's having a fever"
+      • [present] cough
+          evidence: "cough"
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [history] fever
-      evidence: "feverish at rehab, but currently doesn't feel like he's having a fever"
-      related: RUL PNA
-  • [suspected, moderate] RUL PNA
-      evidence: "recently diagnosed"
-      related: CXR shows persistent consolidative opacities in both lower lobes
+  • [present, severe] sepsis
+      evidence: "severe sepsis probably secondary to RUL PNA"
+      related: hypotension, hypotensive with pressures in the 80's, hypotension with pressures in the 90's systolic
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, moderate] hypotension
-      evidence: "BP 82-90/45-60 mmHg"
-      related: pericardiocentesis, hypotension, and persistent requirement for fluids
+      evidence: "hypotensive with pressures in the 80's, hypotension with pressures in the 90's systolic"
 
-RESPIRATORY → Respiratory
--------------------------
+NEUROLOGIC → Neurology
+----------------------
 
-  • [present, moderate] consolidative opacities
-      evidence: "persistent consolidative opacities in both lower lobes"
-      related: CXR shows persistent consolidative opacities in both lower lobes
-
-NEUROLOGIC → Neurologic
------------------------
-
-  • [present, mild] altered mental status
-      evidence: "GCS 11, not following commands"
-      related: CT shows multiple metastatic lesions
+  • [present, moderate] altered mental status
+      evidence: "altered mental status possibly seizures from metastases"
+      related: CT HEAD: multiple scattered metastatic lesions, with small area of microhemorrhage versus mineralization

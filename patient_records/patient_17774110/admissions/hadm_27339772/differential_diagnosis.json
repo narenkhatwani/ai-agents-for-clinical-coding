@@ -1,97 +1,103 @@
 {
-  "summary": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient is also on mechanical ventilation due to hypoxic respiratory failure.",
-  "most_likely": "Acute liver failure",
+  "summary": "The patient is critically ill with septic shock, hypoxia, and multi-organ dysfunction, including liver and renal failure, coagulopathy, and pleural effusion. Chronic conditions include cirrhosis, hepatic failure, and esophageal varices.",
+  "most_likely": "Septic shock with multi-organ failure",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Acute liver failure",
+      "diagnosis": "Septic shock with multi-organ failure",
       "score": 85.0,
-      "confidence": "high",
-      "category": "primary",
-      "snomed_aligned": "Acute liver failure",
-      "supporting_evidence": [
-        "Worsening liver failure, Hepatic encephalopathy, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L, PT 36.5 sec, PTT 104.2 sec"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Strong evidence of liver failure with elevated liver enzymes and coagulation parameters."
-    },
-    {
-      "rank": 2,
-      "diagnosis": "Septic shock",
-      "score": 75.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Septic shock, Bilirubin 13.3 mg/dL, WBC 8.4 K/uL, PT 36.5 sec, PTT 104.2 sec"
+        "Septic shock (confirmed)",
+        "Hypoxia (confirmed)",
+        "Hepatic encephalopathy (confirmed)",
+        "GI bleeding (confirmed)",
+        "Pleural effusion (confirmed)"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe sepsis with evidence of systemic inflammatory response and coagulopathy."
+      "reasoning": "Primary diagnosis given the confirmed septic shock and multi-organ dysfunction."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Hepatic encephalopathy",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Hepatic encephalopathy (13920009)",
+      "supporting_evidence": [
+        "Hepatic encephalopathy (confirmed)",
+        "Worsening liver failure"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Directly related to the liver failure and supported by clinical symptoms."
     },
     {
       "rank": 3,
-      "diagnosis": "Hepatic encephalopathy",
+      "diagnosis": "Acute liver failure",
       "score": 70.0,
       "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "Hepatic encephalopathy",
+      "snomed_aligned": "Acute liver failure (197270009)",
       "supporting_evidence": [
-        "Hepatic encephalopathy, RASS-5, sluggish pupil response, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
+        "Worsening liver failure"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe liver failure with evidence of altered mental status and elevated liver enzymes."
+      "reasoning": "Supports the liver failure and encephalopathy."
     },
     {
       "rank": 4,
-      "diagnosis": "Acute renal failure",
+      "diagnosis": "GI bleeding",
       "score": 65.0,
       "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "Acute renal failure",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units"
+        "GI bleeding (confirmed)",
+        "Esophageal varices (confirmed)"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe acidosis and electrolyte disturbances suggesting acute renal failure."
+      "reasoning": "GI bleeding is a complication of esophageal varices and liver failure."
     },
     {
       "rank": 5,
-      "diagnosis": "Pleural effusion",
+      "diagnosis": "Coagulopathy",
       "score": 60.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "Pancytopenia (127034005)",
+      "supporting_evidence": [
+        "INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Coagulopathy is a complication of liver failure and sepsis."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Atrial fibrillation/flutter",
+      "score": 55.0,
       "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "Pleural effusion",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Atrial fibrillation/flutter s/p amiodarone bolus now on metoprolol"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Atrial fibrillation is a known complication of liver failure and sepsis."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Pleural effusion",
+      "score": 50.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Pleural effusion (60046008)",
       "supporting_evidence": [
         "Large pleural effusion with compressive consolidation versus atelectasis"
       ],
       "opposing_evidence": [],
-      "reasoning": "Evidence of pleural effusion on imaging, but less likely primary cause given other severe systemic issues."
-    },
-    {
-      "rank": 6,
-      "diagnosis": "IVC thrombus",
-      "score": 55.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "IVC thrombus",
-      "supporting_evidence": [
-        "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "IVC thrombus present, but less likely primary cause given other severe systemic issues."
-    },
-    {
-      "rank": 7,
-      "diagnosis": "Cirrhosis",
-      "score": 50.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "Cirrhosis of liver",
-      "supporting_evidence": [
-        "Cirrhosis, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Chronic condition with evidence of liver dysfunction."
+      "reasoning": "Pleural effusion is a complication of liver failure and sepsis."
     },
     {
       "rank": 8,
@@ -99,26 +105,26 @@
       "score": 30.0,
       "confidence": "low",
       "category": "risk_factor",
-      "snomed_aligned": "Bipolar disorder",
+      "snomed_aligned": "Bipolar disorder (13746004)",
       "supporting_evidence": [
-        "Bipolar disorder, unspecified"
+        "Bipolar disorder (confirmed)"
       ],
       "opposing_evidence": [],
-      "reasoning": "Previous diagnosis, but less likely to be the primary cause of current acute presentation."
+      "reasoning": "While a chronic condition, it is not currently driving the acute presentation."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "GI bleeding",
-      "why": "GI bleeding is present but less likely to be the primary cause given the severity of liver failure and septic shock."
+      "diagnosis": "Chronic obstructive pulmonary disease",
+      "why": "Not supported by current acute findings."
     },
     {
-      "diagnosis": "Atrial fibrillation/flutter",
-      "why": "Atrial fibrillation/flutter is present but less likely to be the primary cause given the severity of liver failure and septic shock."
+      "diagnosis": "Esophageal varices",
+      "why": "Esophageal varices are a complication, not the primary acute condition."
     }
   ],
   "uncertain_areas": [
-    "Further clarification on the source of infection and the exact nature of the liver failure would change the ranking"
+    "Further details on the source of infection and specific pathogen would refine the septic shock diagnosis."
   ],
   "n_candidates": 8,
   "type": "differential_diagnosis",
@@ -127,11 +133,11 @@
   "_temperature": 0.4,
   "patient_id": "17774110",
   "hadm_id": "27339772",
-  "generated_at": "2026-08-20T00:11:17.961790",
+  "generated_at": "2026-08-20T17:18:02.159839",
   "inputs": {
     "symptom_tree": true,
-    "retained_snomed_entities": 15,
-    "retained_links": 20,
+    "retained_snomed_entities": 14,
+    "retained_links": 18,
     "clinical_context": true,
     "information_extraction": true,
     "prior_admissions": 2,

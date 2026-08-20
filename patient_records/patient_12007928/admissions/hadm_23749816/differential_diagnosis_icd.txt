@@ -4,39 +4,36 @@ Patient ID       : 12007928
 HADM ID          : 23749816
 Most likely      : Acute decompensated heart failure
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:19.573243
+Generated (S8)   : 2026-08-20T17:19:20.261632
 
 Summary:
-  The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.
+  The patient presents with dyspnea, orthopnea, and worsening heart failure, with significant fluid overload and pleural effusions. The patient has a history of chronic diastolic heart failure and acute kidney failure.
 
 #1  [85.0/100 | high]  Acute decompensated heart failure  (primary)
     SNOMED: Acute heart failure (56675007) [fuzzy score=0.7628679165962815]
     ICD status: mapped | primary: I50.9
       1. [principal] I50.9 — Heart failure, unspecified
       2. [principal] P29.0 — Neonatal cardiac failure
-      3. [supporting] R06.00 — Dyspnea, unspecified  ← dyspnea (key_symptom)
-      4. [supporting] R06.01 — Orthopnea  ← orthopnea (key_symptom)
+      3. [supporting] J81.1 — Chronic pulmonary edema  ← pulmonary edema (tree_symptom)
 
-#2  [70.0/100 | medium]  Atrial fibrillation  (complication)
-    SNOMED: Atrial fibrillation (49436004) [exact score=1.0]
-    ICD status: mapped | primary: I48.91
-      1. [principal] I48.91 — Unspecified atrial fibrillation
-      2. [supporting] I48.0 — Paroxysmal atrial fibrillation  ← paroxysmal atrial fibrillation (diagnosis)
+#2  [70.0/100 | medium]  Chronic kidney disease  (secondary)
+    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
+    ICD status: mapped | primary: N18.9
+      1. [principal] N18.9 — Chronic kidney disease, unspecified
 
-#3  [65.0/100 | medium]  Renal insufficiency  (complication)
-    SNOMED: Renal insufficiency (723188008) [exact score=1.0]
-    ICD status: mapped | primary: N28.9
-      1. [principal] N28.9 — Disorder of kidney and ureter, unspecified
-      2. [principal] L90.8 — Other atrophic disorders of skin
-      3. [principal] N18.9 — Chronic kidney disease, unspecified
+#3  [65.0/100 | high]  Paroxysmal atrial fibrillation  (complication)
+    SNOMED: AF - Paroxysmal atrial fibrillation (282825002) [exact score=1.0]
+    ICD status: mapped | primary: I48.0
+      1. [principal] I48.0 — Paroxysmal atrial fibrillation
+      2. [principal] I38 — Endocarditis, valve unspecified
 
-#4  [50.0/100 | low]  Myasthenia gravis  (differential)
-    SNOMED: Myasthenia gravis (91637004) [exact score=1.0]
+#4  [60.0/100 | medium]  Congestive heart failure  (complication)
+    SNOMED: Congestive heart failure (42343007) [exact score=1.0]
+    ICD status: mapped | primary: I50.9
+      1. [principal] I50.9 — Heart failure, unspecified
+      2. [principal] P29.0 — Neonatal cardiac failure
+
+#5  [40.0/100 | low]  Myasthenia gravis  (differential)
+    SNOMED: Myasthenia gravis without exacerbation (77471000119103) [exact score=1.0]
     ICD status: mapped | primary: G70.00
       1. [principal] G70.00 — Myasthenia gravis without (acute) exacerbation
-      2. [principal] P94.0 — Transient neonatal myasthenia gravis
-
-#5  [40.0/100 | low]  Anemia  (risk_factor)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified

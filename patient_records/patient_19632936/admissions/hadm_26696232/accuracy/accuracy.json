@@ -4,33 +4,37 @@
   "method": "llm_query_expansion",
   "patient_id": "19632936",
   "hadm_id": "26696232",
-  "generated_at": "2026-08-20T00:13:44.914512",
+  "generated_at": "2026-08-20T17:31:21.537821",
   "ground_truth": {
     "primary_icd_code": "D509",
     "primary_dx_title": "Iron deficiency anemia, unspecified",
     "primary_icd_title": "Iron deficiency anemia, unspecified",
+    "discharge_diagnosis": "Macrocytic anemia",
+    "diffdx_gt": "Macrocytic anemia",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 15
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Iron deficiency anemia, unspecified",
-      "rank1_diagnosis": "Acute macrocytic anemia",
+      "ground_truth_primary": "Macrocytic anemia",
+      "rank1_diagnosis": "Acute macrocytic anemia with respiratory compromise",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
-      "match": false,
-      "is_rank1_match": null,
-      "matched_diffdx_rank": null,
-      "matched_diagnosis": "",
-      "matched_score": null,
-      "matched_confidence": "",
-      "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of Iron deficiency anemia, unspecified.",
-      "llm_expanded_ground_truth": "",
-      "llm_expanded_matched": "",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Acute macrocytic anemia with respiratory compromise",
+      "matched_score": 85.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles acuity and an associated symptom (respiratory compromise) with the same core diagnosis.",
+      "llm_expanded_ground_truth": "Macrocytic anemia | Anemia with elevated MCV (mean corpuscular volume) | Megaloblastic/macrocytic anemia | Anemia, macrocytic type (e.g., B12/folate deficiency related)",
+      "llm_expanded_matched": "Acute macrocytic anemia | Macrocytic anemia with hypoxia/dyspnea | Anemia with high MCV causing respiratory symptoms",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
-          "diagnosis": "Acute macrocytic anemia",
+          "diagnosis": "Acute macrocytic anemia with respiratory compromise",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
@@ -38,12 +42,12 @@
           "icd10_primary_title": "Nutritional anemia, unspecified"
         },
         {
-          "diagnosis": "Acute heart failure",
+          "diagnosis": "Chronic diastolic heart failure",
           "rank": 2,
-          "score": 75.0,
+          "score": 70.0,
           "confidence": "medium",
-          "icd10_primary": "I50.9",
-          "icd10_primary_title": "Heart failure, unspecified"
+          "icd10_primary": "I50.32",
+          "icd10_primary_title": "Chronic diastolic (congestive) heart failure"
         },
         {
           "diagnosis": "Atrial fibrillation",
@@ -54,58 +58,84 @@
           "icd10_primary_title": "Unspecified atrial fibrillation"
         },
         {
-          "diagnosis": "Anemia",
+          "diagnosis": "Anemia of chronic disease",
           "rank": 4,
-          "score": 60.0,
-          "confidence": "medium",
-          "icd10_primary": "D64.9",
-          "icd10_primary_title": "Anemia, unspecified"
-        },
-        {
-          "diagnosis": "Renal insufficiency",
-          "rank": 5,
           "score": 55.0,
           "confidence": "low",
-          "icd10_primary": "N19",
-          "icd10_primary_title": "Unspecified kidney failure"
+          "icd10_primary": "D63.8",
+          "icd10_primary_title": "Anemia in other chronic diseases classified elsewhere"
+        },
+        {
+          "diagnosis": "Volume depletion",
+          "rank": 5,
+          "score": 50.0,
+          "confidence": "low",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
+        },
+        {
+          "diagnosis": "Coronary artery disease",
+          "rank": 6,
+          "score": 45.0,
+          "confidence": "low",
+          "icd10_primary": "I25.10",
+          "icd10_primary_title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
         }
       ],
-      "n_diffdx": 5
+      "n_diffdx": 6
     },
     "icd_linked": {
       "ground_truth_icd": "D50.9",
       "ground_truth_icd_title": "Iron deficiency anemia, unspecified",
       "rank1_predicted_icd": "D53.9",
       "rank1_predicted_icd_title": "Nutritional anemia, unspecified",
-      "matched_predicted_icd": "",
-      "matched_predicted_icd_title": "",
+      "matched_predicted_icd": "D53.9",
+      "matched_predicted_icd_title": "Nutritional anemia, unspecified",
       "icd_match": false,
       "icd_exact_match": false,
       "icd_family_match": false,
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to D50.9.",
-      "llm_expanded_ground_truth_icd": "",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "Mapped code at matched rank is D53.9 (Nutritional anemia, unspecified), whereas the billed primary is D50.9 (Iron deficiency anemia, unspecified). Although both fall in the nutritional anemia block (D50-D53), they designate different anemia etiologies/morphologies — iron deficiency anemia is characteristically microcytic while D53.9 covers unspecified nutritional (including macrocytic/megaloblastic-type) anemia — so a coder would not treat them as interchangeable for the principal diagnosis.",
+      "llm_expanded_ground_truth_icd": "D50.9 Iron deficiency anemia, unspecified | Sideropenic anemia | Hypochromic microcytic anemia due to iron deficiency",
+      "llm_expanded_matched_icd": "D53.9 Nutritional anemia, unspecified | Simple chronic anemia | Deficiency anemia not otherwise specified | Related: D51.9 B12 deficiency anemia, D52.9 folate deficiency anemia",
       "stage9_final_primary_icd": "D53.9",
-      "diagnosis_match": false,
-      "is_rank1_diagnosis_match": null,
-      "matched_diffdx_rank": null
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
     },
     "llm_qe_raw": {
-      "matched_rank": null,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the ranked differential diagnoses match the ground truth diagnosis of Iron deficiency anemia, unspecified.",
-      "ground_truth_expansions": [],
-      "matched_diagnosis_expansions": [],
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles acuity and an associated symptom (respiratory compromise) with the same core diagnosis.",
+      "ground_truth_expansions": [
+        "Macrocytic anemia",
+        "Anemia with elevated MCV (mean corpuscular volume)",
+        "Megaloblastic/macrocytic anemia",
+        "Anemia, macrocytic type (e.g., B12/folate deficiency related)"
+      ],
+      "matched_diagnosis_expansions": [
+        "Acute macrocytic anemia",
+        "Macrocytic anemia with hypoxia/dyspnea",
+        "Anemia with high MCV causing respiratory symptoms"
+      ],
       "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to D50.9.",
-      "ground_truth_icd_expansions": [],
-      "matched_icd_expansions": [],
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped code at matched rank is D53.9 (Nutritional anemia, unspecified), whereas the billed primary is D50.9 (Iron deficiency anemia, unspecified). Although both fall in the nutritional anemia block (D50-D53), they designate different anemia etiologies/morphologies — iron deficiency anemia is characteristically microcytic while D53.9 covers unspecified nutritional (including macrocytic/megaloblastic-type) anemia — so a coder would not treat them as interchangeable for the principal diagnosis.",
+      "ground_truth_icd_expansions": [
+        "D50.9 Iron deficiency anemia, unspecified",
+        "Sideropenic anemia",
+        "Hypochromic microcytic anemia due to iron deficiency"
+      ],
+      "matched_icd_expansions": [
+        "D53.9 Nutritional anemia, unspecified",
+        "Simple chronic anemia",
+        "Deficiency anemia not otherwise specified",
+        "Related: D51.9 B12 deficiency anemia, D52.9 folate deficiency anemia"
+      ],
       "_cache_hit": false
     }
   },

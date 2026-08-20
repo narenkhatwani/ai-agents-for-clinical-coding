@@ -3,41 +3,43 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10458324
 HADM ID          : 21744342
-Generated        : 2026-08-20T00:13:04.266304
+Generated        : 2026-08-20T17:29:20.839179
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Traumatic pneumothorax, initial encounter
-  Rank-1 predicted     : Acute respiratory distress secondary to rib fractures and hypoxemia
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Rib fracture
+  Billed ICD title     : Traumatic pneumothorax, initial encounter (ICD metric only)
+  Rank-1 predicted     : Traumatic pneumothorax
     score=85.0  confidence=high
-  Diagnosis match      : YES
-  Is rank-1 match      : NO
-  Matched DiffDx rank  : 2
-  Matched diagnosis    : Pneumothorax
-    score=75.0  confidence=medium
-  LLM reason           : Pneumothorax matches Traumatic pneumothorax, initial encounter
+  Diagnosis match      : NO
+  Is rank-1 match      : N/A
+  Matched DiffDx rank  : -
+  Matched diagnosis    : -
+    score=None  confidence=-
+  LLM reason           : The physician discharge diagnosis is 'Rib fracture' (traumatic fracture of one or more ribs, e.g. S22.3-/S22.4-). No rank in the differential names a rib fracture or any fracture. Rank 1 'Traumatic pneumothorax' is a frequently co-occurring thoracic injury but is a distinct principal condition (air in the pleural space) and does not contain or subsume 'rib fracture' in its label. Rank 2 acute respiratory failure, Rank 3 influenza A, Rank 4 opioid dependence, Rank 5 bipolar disorder, and Rank 6 subcutaneous emphysema are all unrelated or secondary/associated conditions, not rib fracture. Therefore no rank matches the principal discharge diagnosis.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : S27.0XXA — Traumatic pneumothorax, initial encounter
-  Rank-1 mapped ICD    : - — 
-  Matched mapped ICD   : J93.9 — Pneumothorax, unspecified
-  ICD match            : YES
+  Rank-1 mapped ICD    : J93.9 — Pneumothorax, unspecified
+  Matched mapped ICD   : - — 
+  ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
-  ICD LLM match        : YES
+  ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : J93.9 matches S27.0XXA as both code pneumothorax
+  LLM ICD reason       : No rank matched the physician discharge diagnosis, so there is no mapped ICD at a matched rank to compare against the billed primary code S27.0XXA (traumatic pneumothorax, initial encounter). For reference, Rank 1's mapped code J93.9 (pneumothorax, unspecified) would be clinically equivalent to S27.0XXA as a pneumothorax code, but since the diagnosis-level match failed (rib fracture vs pneumothorax), no matched-rank ICD equivalence can be asserted.
   Stage 9 final ICD    : J10.1 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Acute respiratory distress secondary to rib fractures and hypoxemia  [score=85.0, high]  ICD=- — 
-   2. Pneumothorax  [score=75.0, medium]  ICD=J93.9 — Pneumothorax, unspecified
-   3. Opioid dependence  [score=60.0, medium]  ICD=F11.20 — Opioid dependence, uncomplicated
-   4. Influenza A  [score=45.0, low]  ICD=J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
-   5. Bipolar disorder  [score=30.0, low]  ICD=F31.9 — Bipolar disorder, unspecified
-   6. Tachycardia  [score=20.0, low]  ICD=R00.0 — Tachycardia, unspecified
+   1. Traumatic pneumothorax  [score=85.0, high]  ICD=J93.9 — Pneumothorax, unspecified
+   2. Acute respiratory failure  [score=75.0, high]  ICD=J96.00 — Acute respiratory failure, unspecified whether with hypoxia or hypercapnia
+   3. Influenza A  [score=60.0, medium]  ICD=J10.1 — Influenza due to other identified influenza virus with other respiratory manifestations
+   4. Opioid dependence  [score=55.0, medium]  ICD=F11.20 — Opioid dependence, uncomplicated
+   5. Bipolar disorder  [score=40.0, low]  ICD=F31.9 — Bipolar disorder, unspecified
+   6. Subcutaneous emphysema  [score=30.0, medium]  ICD=J98.2 — Interstitial emphysema

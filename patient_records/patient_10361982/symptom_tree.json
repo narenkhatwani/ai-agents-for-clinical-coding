@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with heavy vaginal bleeding after a recent hysterectomy, which is the primary reason for admission.",
+  "reasoning": "The patient presents with heavy vaginal bleeding after a hysterectomy, which is the primary reason for admission.",
   "branches": [
     {
       "category": "gi",
@@ -9,7 +9,7 @@
         {
           "term": "heavy vaginal bleeding",
           "status": "present",
-          "severity": "moderate",
+          "severity": "severe",
           "evidence": "heavy vaginal bleeding after hysterectomy",
           "related_findings": [
             "menorrhagia",
@@ -30,14 +30,13 @@
       "ontology_hint": "Hematology",
       "symptoms": [
         {
-          "term": "hemoglobin level",
-          "status": "abnormal",
+          "term": "low hematocrit",
+          "status": "present",
           "severity": "mild",
-          "evidence": "HGB-12.6",
+          "evidence": "HCT-38.1 (stable from preoperative HCT of 40.1)",
           "related_findings": [
-            "HCT-38.1"
-          ],
-          "children": []
+            "menorrhagia"
+          ]
         }
       ]
     }
@@ -46,11 +45,13 @@
     "heavy vaginal bleeding",
     "passing clots"
   ],
-  "red_flags": [],
+  "red_flags": [
+    "menorrhagia"
+  ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10361982",
   "admission_id": "24286431",
-  "generated_at": "2026-08-19T23:19:11.124101"
+  "generated_at": "2026-08-20T17:09:02.647614"
 }

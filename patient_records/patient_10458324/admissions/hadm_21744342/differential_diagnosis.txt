@@ -5,56 +5,62 @@ Patient ID       : 10458324
 HADM ID          : 21744342
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:08:52.578487
+Generated        : 2026-08-20T17:15:00.703692
 Candidates       : 6
-Most likely      : Acute respiratory distress secondary to rib fractures and hypoxemia
+Most likely      : Traumatic pneumothorax
 Prior admissions : 1 (8 ICD codes as PMH context)
 
 Summary:
-  The patient is a 45-year-old man with right-sided rib fractures and hypoxemia following a mechanical fall. He has a history of polysubstance abuse and chronic conditions including opioid dependence and tachycardia.
+  A 46-year-old male with a history of polysubstance use and opioid dependence presents with right-sided rib fractures, hypoxia, and respiratory symptoms. Radiology shows bilateral pleural effusions and pneumothorax.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Acute respiratory distress secondary to rib fractures and hypoxemia  (primary)
-      + right rib fractures, hypoxia, patchy parenchymal opacities on chest X-ray
-      why: The patient's right rib fractures and hypoxemia are the primary presenting symptoms, supported by chest X-ray findings.
+  #1  [85.0/100 | high]  Traumatic pneumothorax  (primary)
+      SNOMED aligned : Pneumothorax
+      + right PTX
+      + subcutaneous emphysema
+      + small right PTX
+      why: Radiology and symptoms strongly support pneumothorax.
 
-  #2  [75.0/100 | medium]  Pneumothorax  (complication)
-      + small right PTX noted on chest X-ray
-      why: Small right pneumothorax is noted on chest X-ray, which could be a complication of rib fractures.
+  #2  [75.0/100 | high]  Acute respiratory failure  (primary)
+      + hypoxia
+      + right PTX
+      + subcutaneous emphysema
+      why: Hypoxia and respiratory symptoms indicate acute respiratory failure.
 
-  #3  [60.0/100 | medium]  Opioid dependence  (risk_factor)
-      SNOMED aligned : Opium dependence
-      + Opioid dependence listed as chronic condition
-      − No acute opioid withdrawal symptoms noted
-      why: The patient has a history of opioid dependence, which increases the risk of respiratory complications.
-
-  #4  [45.0/100 | low]  Influenza A  (differential)
+  #3  [60.0/100 | medium]  Influenza A  (differential)
       SNOMED aligned : Influenza A (H1N1)
-      + Influenza A listed as prior PMH
-      − No current symptoms or findings consistent with influenza
-      why: Influenza A is a past PMH, but the current presentation does not support an acute influenza infection.
+      + fever
+      + cough
+      + nasal congestion
+      + sore throat
+      − radiology findings favor trauma over infection
+      why: Symptoms suggest influenza, but radiology findings are more consistent with trauma.
 
-  #5  [30.0/100 | low]  Bipolar disorder  (risk_factor)
+  #4  [55.0/100 | medium]  Opioid dependence  (risk_factor)
+      SNOMED aligned : Opium dependence
+      + opioid dependence
+      − current presentation is more trauma-related
+      why: History of opioid dependence may contribute to current symptoms.
+
+  #5  [40.0/100 | low]  Bipolar disorder  (risk_factor)
       SNOMED aligned : Bipolar disorder
-      + Bipolar disorder listed as prior PMH
-      − No current mood instability or manic symptoms
-      why: Bipolar disorder is a chronic condition, but it is not currently contributing to the acute presentation.
+      + bipolar disorder
+      − current presentation is more trauma-related
+      why: Bipolar disorder is a chronic condition but not the primary presenting issue.
 
-  #6  [20.0/100 | low]  Tachycardia  (risk_factor)
-      SNOMED aligned : Tachycardia, unspecified
-      + Tachycardia listed as chronic condition
-      − No acute tachycardia symptoms or findings
-      why: Tachycardia is a chronic condition, but it is not currently contributing to the acute presentation.
+  #6  [30.0/100 | medium]  Subcutaneous emphysema  (complication)
+      SNOMED aligned : Subcutaneous emphysema
+      + subcutaneous emphysema
+      why: Subcutaneous emphysema is a complication of trauma.
 
 RULE-OUTS
 ---------
 
-  • PTSD: No current symptoms or findings consistent with PTSD
-  • Bipolar disorder: No current mood instability or manic symptoms
+  • Leg swelling: No evidence of leg swelling in the current context.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further clarification on the patient's current mental state and respiratory status would help refine the differential
+  • Missing details on the extent of rib fractures and specific etiology of hypoxia could affect ranking

@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The primary focus is on the SVT and associated symptoms.",
+  "reasoning": "The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The SVT is the dominant clinical picture for this admission.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -29,6 +29,13 @@
           "evidence": "lightheadedness and palpitations",
           "related_findings": [
             "Supraventricular tachycardia"
+          ],
+          "children": [
+            {
+              "term": "SVT",
+              "status": "present",
+              "evidence": "found to be in SVT in the ED"
+            }
           ]
         }
       ]
@@ -44,21 +51,35 @@
           "evidence": "headache",
           "related_findings": [
             "Supraventricular tachycardia"
+          ],
+          "children": [
+            {
+              "term": "SVT",
+              "status": "present",
+              "evidence": "found to be in SVT in the ED"
+            }
           ]
         }
       ]
     },
     {
-      "category": "skeletal",
+      "category": "musculoskeletal",
       "ontology_hint": "Orthopedics",
       "symptoms": [
         {
           "term": "pain in right hip",
           "status": "present",
-          "severity": "moderate",
+          "severity": "mild",
           "evidence": "pain in her right hip",
           "related_findings": [
-            "Nondisplaced comminuted fracture in the right superior pubic ramus"
+            "nondisplaced comminuted fracture in the right superior pubic ramus"
+          ],
+          "children": [
+            {
+              "term": "fracture",
+              "status": "present",
+              "evidence": "nondisplaced comminuted fracture in the right superior pubic ramus"
+            }
           ]
         }
       ]
@@ -70,12 +91,13 @@
     "headache"
   ],
   "red_flags": [
-    "Supraventricular tachycardia"
+    "SVT",
+    "fracture"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "10426859",
   "admission_id": "29908281",
-  "generated_at": "2026-08-19T23:19:18.929010"
+  "generated_at": "2026-08-20T17:09:15.370554"
 }

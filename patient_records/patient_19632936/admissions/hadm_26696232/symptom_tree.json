@@ -1,15 +1,10 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.",
+  "reasoning": "The patient presents with acute on chronic macrocytic anemia and dyspnea on exertion, with a history of CAD, AFib, and moderate AS. The dominant clinical picture is anemia and its effects on respiratory function.",
   "branches": [
     {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": []
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
+      "category": "cardiovascular|respiratory",
+      "ontology_hint": "Cardiovascular|Respiratory",
       "symptoms": [
         {
           "term": "dyspnea on exertion",
@@ -34,71 +29,60 @@
           "severity": "moderate",
           "evidence": "acute on chronic fatigue",
           "related_findings": [
-            "anemia"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "gi",
-      "ontology_hint": "Gastrointestinal",
-      "symptoms": [
-        {
-          "term": "esophagitis",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "esophagitis (___)",
-          "related_findings": [],
-          "children": []
+            "macrocytic anemia"
+          ]
         },
         {
-          "term": "nodular gastritis",
-          "status": "history",
-          "severity": "mild",
-          "evidence": "nodular gastritis",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "renal",
-      "ontology_hint": "Renal",
-      "symptoms": [
-        {
-          "term": "low calcium",
+          "term": "anemia",
           "status": "present",
-          "severity": "mild",
-          "evidence": "Calcium, Total: 8.3 mg/dL",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "macrocytic anemia",
-          "status": "present",
-          "severity": "moderate",
+          "severity": "severe",
           "evidence": "acute on chronic macrocytic anemia",
           "related_findings": [
             "Hgb 6.7",
             "MCV 106",
-            "RDW 18.2",
-            "Reticulocyte Count, Automated: 3.6 %"
-          ],
-          "children": []
+            "Hematocrit 26.8"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "moderate AS",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "moderate AS",
+          "related_findings": [
+            "mild pulmonary hypertension"
+          ]
+        },
+        {
+          "term": "sick sinus syndrome",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "Sick sinus s/p PPM",
+          "related_findings": [
+            "rate controlled with diltiazem"
+          ]
+        },
+        {
+          "term": "atrial fibrillation",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "Afib on warfarin",
+          "related_findings": [
+            "INR 2.4"
+          ]
         }
       ]
     }
   ],
   "key_symptoms": [
     "dyspnea on exertion",
-    "fatigue"
+    "fatigue",
+    "anemia"
   ],
   "red_flags": [
     "hypotension",
@@ -109,5 +93,5 @@
   "_agent": "symptom_tree",
   "patient_id": "19632936",
   "admission_id": "26696232",
-  "generated_at": "2026-08-19T23:22:25.917521"
+  "generated_at": "2026-08-20T17:13:38.094711"
 }

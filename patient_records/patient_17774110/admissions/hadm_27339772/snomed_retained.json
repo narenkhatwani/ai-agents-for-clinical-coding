@@ -1,7 +1,7 @@
 {
   "stage": 6,
   "description": "Retained ontology context only (MiniLM sim ≥ threshold)",
-  "generated_at": "2026-08-19T23:22:49.292691",
+  "generated_at": "2026-08-20T17:13:56.935154",
   "patient_id": "17774110",
   "hadm_id": "27339772",
   "min_cosine_similarity": 0.7,
@@ -9,8 +9,8 @@
   "similarity_method": "minilm",
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "n_entities": 56,
-  "n_entities_with_retained": 15,
-  "n_retained_links": 20,
+  "n_entities_with_retained": 14,
+  "n_retained_links": 18,
   "entities": [
     {
       "term": "Hypoxic respiratory failure",
@@ -269,76 +269,6 @@
           "high_confidence": false,
           "similarity_method": "minilm",
           "anchor_term": "Pleural effusion"
-        }
-      ]
-    },
-    {
-      "term": "Cirrhosis",
-      "kind": "diagnosis",
-      "status": "confirmed",
-      "snomed_concept_id": "371139006",
-      "snomed_preferred_term": "Early cirrhosis",
-      "anchor_term": "Cirrhosis",
-      "n_retained": 2,
-      "n_high_confidence": 1,
-      "retained_ancestors": [
-        {
-          "concept_id": "19943007",
-          "term": "Cirrhosis of liver",
-          "relation": "is_a",
-          "depth": 1,
-          "role": "ancestor",
-          "cosine_similarity": 0.8925,
-          "cosine_distance": 0.1075,
-          "retained": true,
-          "high_confidence": true,
-          "similarity_method": "minilm",
-          "anchor_term": "Cirrhosis"
-        }
-      ],
-      "retained_attribute_relations": [
-        {
-          "concept_id": "10200004",
-          "term": "Liver",
-          "relation": "has_finding_site",
-          "hop": "direct",
-          "via_concept_id": null,
-          "role": "attribute_target",
-          "cosine_similarity": 0.7045,
-          "cosine_distance": 0.2955,
-          "retained": true,
-          "high_confidence": false,
-          "similarity_method": "minilm",
-          "anchor_term": "Cirrhosis"
-        }
-      ],
-      "retained": [
-        {
-          "concept_id": "19943007",
-          "term": "Cirrhosis of liver",
-          "relation": "is_a",
-          "depth": 1,
-          "role": "ancestor",
-          "cosine_similarity": 0.8925,
-          "cosine_distance": 0.1075,
-          "retained": true,
-          "high_confidence": true,
-          "similarity_method": "minilm",
-          "anchor_term": "Cirrhosis"
-        },
-        {
-          "concept_id": "10200004",
-          "term": "Liver",
-          "relation": "has_finding_site",
-          "hop": "direct",
-          "via_concept_id": null,
-          "role": "attribute_target",
-          "cosine_similarity": 0.7045,
-          "cosine_distance": 0.2955,
-          "retained": true,
-          "high_confidence": false,
-          "similarity_method": "minilm",
-          "anchor_term": "Cirrhosis"
         }
       ]
     },

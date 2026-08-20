@@ -1,18 +1,49 @@
 {
-  "reason_for_admission": "heavy vaginal bleeding after hysterectomy",
-  "presenting_complaint": "heavy vaginal bleeding like a heavy period with clots",
-  "admission_context": "surgical",
-  "procedures_this_stay": [],
   "symptoms": [
     {
-      "term": "vaginal bleeding",
+      "term": "heavy vaginal bleeding",
       "status": "present",
-      "evidence": "heavy vaginal bleeding like a heavy period with clots"
+      "evidence": "heavy vaginal bleeding after hysterectomy"
     },
     {
       "term": "abdominal bloatedness",
       "status": "history",
       "evidence": "abdominal bloatedness secondary to gas"
+    },
+    {
+      "term": "vaginal spotting to light bleeding",
+      "status": "history",
+      "evidence": "vaginal spotting to light bleeding"
+    },
+    {
+      "term": "menorrhagia",
+      "status": "history",
+      "evidence": "history of abnormal uterine bleeding"
+    },
+    {
+      "term": "dysmenorrhea",
+      "status": "history",
+      "evidence": "dysmenorrhea"
+    },
+    {
+      "term": "intra-menstrual bleeding",
+      "status": "history",
+      "evidence": "intra-menstrual bleeding"
+    },
+    {
+      "term": "post-coital bleeding",
+      "status": "history",
+      "evidence": "post-coital bleeding"
+    },
+    {
+      "term": "shortness of breath",
+      "status": "history",
+      "evidence": "shortness of breath"
+    },
+    {
+      "term": "dyspareunia",
+      "status": "history",
+      "evidence": "denies dyspareunia"
     }
   ],
   "vitals": [
@@ -55,7 +86,7 @@
       "name": "HCT",
       "value": "38.1",
       "unit": "",
-      "flag": "normal"
+      "flag": "low"
     },
     {
       "name": "MCV",
@@ -96,7 +127,7 @@
   ],
   "diagnoses_mentioned": [
     {
-      "term": "menorrhagia",
+      "term": "abnormal uterine and vaginal bleeding",
       "certainty": "confirmed"
     }
   ],
@@ -134,18 +165,17 @@
   ],
   "procedures": [
     {
-      "name": "pelvic ultrasound",
-      "result": "normal postoperative changes and a normal appearing vaginal cuff are noted. There is no vaginal cuff hematoma."
+      "name": "total laparoscopic hysterectomy, bilateral salpingectomy, cystoscopy",
+      "result": "performed"
     }
   ],
   "negations": [],
   "temporal": [
     {
-      "finding": "vaginal bleeding",
+      "finding": "heavy vaginal bleeding",
       "onset": "yesterday morning"
     }
   ],
-  "_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
   "_agent": "information_extraction",
   "_n_prior_admissions": 1
 }

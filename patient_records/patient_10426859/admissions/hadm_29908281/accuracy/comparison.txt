@@ -3,12 +3,14 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10426859
 HADM ID          : 29908281
-Generated        : 2026-08-20T00:13:00.834861
+Generated        : 2026-08-20T17:29:03.143723
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Supraventricular tachycardia
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : supraventricular tachycardia, non-displaced
+  Billed ICD title     : Supraventricular tachycardia (ICD metric only)
   Rank-1 predicted     : Supraventricular tachycardia
     score=85.0  confidence=high
   Diagnosis match      : YES
@@ -16,10 +18,10 @@ DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
   Matched DiffDx rank  : 1
   Matched diagnosis    : Supraventricular tachycardia
     score=85.0  confidence=high
-  LLM reason           : The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.
+  LLM reason           : Rank 1 'Supraventricular tachycardia' names the identical principal condition as the physician discharge diagnosis 'supraventricular tachycardia' (the trailing 'non-displaced' refers to an accompanying non-displaced fracture descriptor, not the principal diagnosis).
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : I47.1 — Supraventricular tachycardia
   Rank-1 mapped ICD    : I47.10 — 
@@ -29,7 +31,7 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.
+  LLM ICD reason       : Mapped code I47.10 (supraventricular tachycardia, unspecified) is the current-revision expansion of billed I47.1 (supraventricular tachycardia); a coder would accept these as the same principal condition code.
   Stage 9 final ICD    : I47.10 (debug)
 
 FULL DIFFERENTIAL LIST
@@ -37,6 +39,7 @@ FULL DIFFERENTIAL LIST
 
    1. Supraventricular tachycardia  [score=85.0, high]  ICD=I47.10 — 
    2. Right hip fracture  [score=70.0, high]  ICD=S72.009? — 
-   3. Hypocalcemia  [score=65.0, medium]  ICD=E83.51 — Hypocalcemia
-   4. Cerebral infarct  [score=50.0, low]  ICD=I63.9 — Cerebral infarction, unspecified
-   5. Anxiety disorder  [score=40.0, low]  ICD=F41.9 — Anxiety disorder, unspecified
+   3. Anxiety disorder  [score=60.0, medium]  ICD=F41.9 — Anxiety disorder, unspecified
+   4. Hypertension  [score=55.0, medium]  ICD=I10 — Essential (primary) hypertension
+   5. Hyperlipidemia  [score=45.0, medium]  ICD=E78.5 — Hyperlipidemia, unspecified
+   6. Atherosclerotic heart disease  [score=35.0, medium]  ICD=I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris

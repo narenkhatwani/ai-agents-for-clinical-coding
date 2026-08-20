@@ -1,5 +1,5 @@
 Clinical Coding Pipeline — Patient Records Export
-Generated: 2026-08-19T23:22:33.751442
+Generated: 2026-08-20T17:13:42.165265
 
 15 patients | latest admission note + prior history
 Agents: LLM information extraction + symptom tree

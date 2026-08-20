@@ -5,47 +5,46 @@ Patient ID       : 11251337
 HADM ID          : 29568708
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:09:06.518702
+Generated        : 2026-08-20T17:15:20.651458
 Candidates       : 5
-Most likely      : Acute kidney injury due to nephrolithiasis and PCNL
+Most likely      : Acute kidney injury
 Prior admissions : 2 (12 ICD codes as PMH context)
 
 Summary:
-  The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL. The patient presents with hematuria, pain, and mild anemia, along with metabolic derangements including hyperglycemia and hyperuremia. Chronic conditions include pyonephrosis and chronic kidney disease.
+  The patient was admitted for management of nephrolithiasis and underwent a difficult right PCNL. Presenting symptoms include hematuria, pain around nephrostomy tubes, dysuria, and fever. The patient has a history of chronic kidney disease and recent complications including acute kidney injury and anemia.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Acute kidney injury due to nephrolithiasis and PCNL  (primary)
-      + Creatinine: 2.5 mg/dL, Hematuria, Pain
-      why: High creatinine and presence of hematuria and pain strongly suggest acute kidney injury related to nephrolithiasis and PCNL.
+  #1  [85.0/100 | high]  Acute kidney injury  (primary)
+      SNOMED aligned : N17 — Acute kidney injury
+      + Creatinine 2.5 mg/dL (elevated)
+      why: High creatinine and ongoing nephrolithiasis likely contributing to acute kidney injury.
 
-  #2  [75.0/100 | medium]  Chronic kidney disease, unspecified  (secondary)
-      + Chronic kidney disease, unspecified in prior PMH
-      − Acute kidney injury more likely given recent PCNL
-      why: Chronic kidney disease is present in prior PMH but is less likely to be the primary acute issue given recent PCNL.
+  #2  [75.0/100 | medium]  Anemia  (secondary)
+      SNOMED aligned : D64 — Anemia
+      + Hematocrit 30.8%, Hemoglobin 9.4 g/dL (low)
+      why: Low hematocrit and hemoglobin levels suggest anemia, possibly due to chronic kidney disease.
 
-  #3  [65.0/100 | medium]  Anemia in chronic kidney disease  (complication)
-      + Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL
-      − No specific evidence of chronic anemia
-      why: Anemia is present but may be secondary to chronic kidney disease, which is a known risk factor.
+  #3  [70.0/100 | high]  Hematuria  (differential)
+      SNOMED aligned : 7678004 — Hematuria
+      + 1x episode of hematuria
+      why: Presented with hematuria, likely related to nephrolithiasis.
 
-  #4  [55.0/100 | medium]  Complicated urinary tract infection  (differential)
-      + Fever: 102 at ___ prior to transfer
-      − No fever currently present
-      why: Previous history of pyonephrosis suggests a possibility of a complicated UTI, but no current fever.
+  #4  [65.0/100 | medium]  Pain around nephrostomy tubes  (differential)
+      + pain around the nephrostomy tubes
+      why: Pain around nephrostomy tubes is a symptom but may be secondary to other conditions.
 
-  #5  [45.0/100 | low]  Hypertensive chronic kidney disease  (risk_factor)
-      + Hypertensive chronic kidney disease in prior PMH
-      − No current hypertension noted
-      why: Hypertensive chronic kidney disease is a known risk factor but not currently evident.
+  #5  [60.0/100 | medium]  Fever  (differential)
+      + temperature of 102 at ___ prior to transfer
+      why: Fever present but not the primary focus of the admission.
 
 RULE-OUTS
 ---------
 
-  • Pneumothorax: No radiology evidence or clinical signs of pneumothorax.
+  • Hypertension: While present, not the primary focus of the admission.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further details on the cause of anemia and the exact nature of chronic kidney disease would refine the differential
+  • Further details on the cause of anemia and the exact nature of the acute kidney injury would clarify the differential diagnosis.

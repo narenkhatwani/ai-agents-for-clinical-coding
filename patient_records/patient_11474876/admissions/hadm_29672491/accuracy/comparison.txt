@@ -3,40 +3,43 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11474876
 HADM ID          : 29672491
-Generated        : 2026-08-20T00:13:12.018468
+Generated        : 2026-08-20T17:29:36.381722
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Calculus of bile duct with cholangitis, unspecified, without obstruction
-  Rank-1 predicted     : Atrial fibrillation with heart failure
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Choledocholithiasis
+  Billed ICD title     : Calculus of bile duct with cholangitis, unspecified, without obstruction (ICD metric only)
+  Rank-1 predicted     : Heart failure with preserved ejection fraction
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.
+  LLM reason           : Physician discharge diagnosis is choledocholithiasis (common bile duct stone, a hepatobiliary condition). None of the six ranked differentials names a biliary/hepatobiliary condition: they are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), a nonspecific symptom (leg swelling), and nocturnal hypoxia. No rank shares the same principal condition.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction
-  Rank-1 mapped ICD    : I45.10 — Unspecified right bundle-branch block
+  Rank-1 mapped ICD    : I50.30 — Unspecified diastolic (congestive) heart failure
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.
+  LLM ICD reason       : Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) belong to entirely different body systems; no coder would accept any as equivalent to K80.30.
   Stage 9 final ICD    : I50.30 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Atrial fibrillation with heart failure  [score=85.0, high]  ICD=I45.10 — Unspecified right bundle-branch block
-   2. Peripheral vascular disease  [score=75.0, medium]  ICD=I73.9 — Peripheral vascular disease, unspecified
-   3. Chronic kidney disease  [score=70.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
-   4. Nocturnal hypoxia  [score=65.0, low]  ICD=R09.02 — Hypoxemia
-   5. Cholangitis  [score=55.0, low]  ICD=K83.09 — Other cholangitis
+   1. Heart failure with preserved ejection fraction  [score=85.0, high]  ICD=I50.30 — Unspecified diastolic (congestive) heart failure
+   2. Peripheral vascular disease  [score=75.0, high]  ICD=I73.9 — Peripheral vascular disease, unspecified
+   3. Chronic kidney disease  [score=70.0, high]  ICD=N18.30 — Chronic kidney disease, stage 3 unspecified
+   4. Atrial fibrillation  [score=65.0, medium]  ICD=I48.91 — Unspecified atrial fibrillation
+   5. Leg swelling  [score=60.0, medium]  ICD=M79.89 — Other specified soft tissue disorders
+   6. Nocturnal hypoxia  [score=55.0, low]  ICD=R09.02 — Hypoxemia

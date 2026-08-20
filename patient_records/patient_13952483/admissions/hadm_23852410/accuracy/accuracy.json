@@ -4,17 +4,20 @@
   "method": "llm_query_expansion",
   "patient_id": "13952483",
   "hadm_id": "23852410",
-  "generated_at": "2026-08-20T00:13:28.322996",
+  "generated_at": "2026-08-20T17:30:20.685840",
   "ground_truth": {
     "primary_icd_code": "I9589",
     "primary_dx_title": "Other hypotension",
     "primary_icd_title": "Other hypotension",
+    "discharge_diagnosis": "Failure to thrive",
+    "diffdx_gt": "Failure to thrive",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 25
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Other hypotension",
-      "rank1_diagnosis": "Squamous Cell Lung CA",
+      "ground_truth_primary": "Failure to thrive",
+      "rank1_diagnosis": "Squamous Cell Lung Carcinoma",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -24,31 +27,32 @@
       "matched_score": null,
       "matched_confidence": "",
       "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "None of the ranked differential diagnoses match 'Other hypotension'.",
-      "llm_expanded_ground_truth": "Other hypotension",
+      "llm_confidence": "high",
+      "llm_reason": "The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive / debility, generalized decline in functional status, weight loss and poor intake). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition) is a commonly associated/contributing condition but is a distinct principal diagnosis from failure to thrive, and is not a subtype or synonym of it. The remaining ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.",
+      "llm_expanded_ground_truth": "failure to thrive | FTT | adult failure to thrive | debility | generalized weakness with weight loss | poor oral intake with functional decline | R62.7",
       "llm_expanded_matched": "",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
-          "diagnosis": "Squamous Cell Lung CA",
+          "diagnosis": "Squamous Cell Lung Carcinoma",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "C34.90",
+          "icd10_primary_title": "Malignant neoplasm of unspecified part of unspecified bronchus or lung"
         },
         {
           "diagnosis": "Pulmonary Hypertension",
           "rank": 2,
           "score": 75.0,
           "confidence": "high",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "I27.20",
+          "icd10_primary_title": "Pulmonary hypertension, unspecified"
         },
         {
           "diagnosis": "Anemia",
           "rank": 3,
-          "score": 65.0,
+          "score": 70.0,
           "confidence": "medium",
           "icd10_primary": "D64.9",
           "icd10_primary_title": "Anemia, unspecified"
@@ -56,35 +60,51 @@
         {
           "diagnosis": "Malnutrition",
           "rank": 4,
-          "score": 55.0,
+          "score": 65.0,
           "confidence": "medium",
           "icd10_primary": "E46",
           "icd10_primary_title": "Unspecified protein-calorie malnutrition"
         },
         {
-          "diagnosis": "Chronic Kidney Disease",
+          "diagnosis": "Thrombocytopenia",
           "rank": 5,
-          "score": 45.0,
-          "confidence": "low",
-          "icd10_primary": "N18.9",
-          "icd10_primary_title": "Chronic kidney disease, unspecified"
+          "score": 60.0,
+          "confidence": "medium",
+          "icd10_primary": "D69.6",
+          "icd10_primary_title": "Thrombocytopenia, unspecified"
         },
         {
-          "diagnosis": "Cachexia",
+          "diagnosis": "Neutropenia",
           "rank": 6,
-          "score": 35.0,
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": "D70.9",
+          "icd10_primary_title": "Neutropenia, unspecified"
+        },
+        {
+          "diagnosis": "Chronic Obstructive Pulmonary Disease",
+          "rank": 7,
+          "score": 50.0,
           "confidence": "low",
-          "icd10_primary": "R64",
-          "icd10_primary_title": "Cachexia"
+          "icd10_primary": "J44.9",
+          "icd10_primary_title": "Chronic obstructive pulmonary disease, unspecified"
+        },
+        {
+          "diagnosis": "Kidney Transplant Rejection",
+          "rank": 8,
+          "score": 45.0,
+          "confidence": "low",
+          "icd10_primary": "T86.91",
+          "icd10_primary_title": "Unspecified transplanted organ and tissue rejection"
         }
       ],
-      "n_diffdx": 6
+      "n_diffdx": 8
     },
     "icd_linked": {
       "ground_truth_icd": "I95.89",
       "ground_truth_icd_title": "Other hypotension",
-      "rank1_predicted_icd": "",
-      "rank1_predicted_icd_title": "",
+      "rank1_predicted_icd": "C34.90",
+      "rank1_predicted_icd_title": "Malignant neoplasm of unspecified part of unspecified bronchus or lung",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -93,8 +113,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.",
-      "llm_expanded_ground_truth_icd": "I95.89 — Other hypotension",
+      "llm_icd_reason": "No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. Additionally, the billed primary code I95.89 (other hypotension) is not represented by any mapped code in the differential list; the closest candidate codes (E46 malnutrition, I27.20 pulmonary hypertension, C34.90 lung cancer) are clinically distinct from hypotension and would not be accepted as equivalent by a coder.",
+      "llm_expanded_ground_truth_icd": "I95.89 | other hypotension | low blood pressure | chronic hypotension | I95 category hypotension",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I27.20",
       "diagnosis_match": false,
@@ -105,17 +125,27 @@
       "matched_rank": null,
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "None of the ranked differential diagnoses match 'Other hypotension'.",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive / debility, generalized decline in functional status, weight loss and poor intake). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition) is a commonly associated/contributing condition but is a distinct principal diagnosis from failure to thrive, and is not a subtype or synonym of it. The remaining ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.",
       "ground_truth_expansions": [
-        "Other hypotension"
+        "failure to thrive",
+        "FTT",
+        "adult failure to thrive",
+        "debility",
+        "generalized weakness with weight loss",
+        "poor oral intake with functional decline",
+        "R62.7"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.",
+      "icd_confidence": "high",
+      "icd_reason": "No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. Additionally, the billed primary code I95.89 (other hypotension) is not represented by any mapped code in the differential list; the closest candidate codes (E46 malnutrition, I27.20 pulmonary hypertension, C34.90 lung cancer) are clinically distinct from hypotension and would not be accepted as equivalent by a coder.",
       "ground_truth_icd_expansions": [
-        "I95.89 — Other hypotension"
+        "I95.89",
+        "other hypotension",
+        "low blood pressure",
+        "chronic hypotension",
+        "I95 category hypotension"
       ],
       "matched_icd_expansions": [],
       "_cache_hit": false

@@ -2,37 +2,44 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 11474876
 HADM ID          : 29672491
-Most likely      : Atrial fibrillation with heart failure
+Most likely      : Heart failure with preserved ejection fraction
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:17.866280
+Generated (S8)   : 2026-08-20T17:19:18.686168
 
 Summary:
-  A 70-year-old man with a history of atrial fibrillation, heart failure, peripheral vascular disease, and chronic kidney disease presents post-ERCP with mild edema and nocturnal hypoxia that improved with diuresis.
+  The patient is a chronic cardiac and renal disease patient post-ERCP with mild leg swelling and nocturnal hypoxia. The current presentation includes mild peripheral vascular disease and heart failure with preserved ejection fraction.
 
-#1  [85.0/100 | high]  Atrial fibrillation with heart failure  (primary)
-    SNOMED: Right bundle branch block (59118001) [exact score=1.0]
-    ICD status: mapped | primary: I45.10
-      1. [principal] I45.10 — Unspecified right bundle-branch block
-      2. [supporting] I48.91 — Unspecified atrial fibrillation  ← atrial fibrillation (tree_symptom)
-      3. [supporting] I50.9 — Heart failure, unspecified  ← heart failure (tree_symptom)
+#1  [85.0/100 | high]  Heart failure with preserved ejection fraction  (primary)
+    SNOMED: Heart failure with normal ejection fraction (446221000) [exact score=1.0]
+    ICD status: mapped | primary: I50.30
+      1. [principal] I50.30 — Unspecified diastolic (congestive) heart failure
+      2. [principal] I38 — Endocarditis, valve unspecified
+      3. [principal] I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+      4. [principal] I51.4 — Myocarditis, unspecified
+      5. [principal] I42.9 — Cardiomyopathy, unspecified
 
-#2  [75.0/100 | medium]  Peripheral vascular disease  (secondary)
+#2  [75.0/100 | high]  Peripheral vascular disease  (secondary)
     SNOMED: Peripheral vascular disease (400047006) [exact score=1.0]
     ICD status: mapped | primary: I73.9
       1. [principal] I73.9 — Peripheral vascular disease, unspecified
 
-#3  [70.0/100 | medium]  Chronic kidney disease  (complication)
-    SNOMED: Chronic kidney disease (709044004) [exact score=1.0]
-    ICD status: mapped | primary: N18.9
-      1. [principal] N18.9 — Chronic kidney disease, unspecified
+#3  [70.0/100 | high]  Chronic kidney disease  (complication)
+    SNOMED: Chronic kidney disease stage 3 (433144002) [exact score=1.0]
+    ICD status: mapped | primary: N18.30
+      1. [principal] N18.30 — Chronic kidney disease, stage 3 unspecified
 
-#4  [65.0/100 | low]  Nocturnal hypoxia  (risk_factor)
+#4  [65.0/100 | medium]  Atrial fibrillation  (complication)
+    SNOMED: Atrial fibrillation (49436004) [exact score=1.0]
+    ICD status: mapped | primary: I48.91
+      1. [principal] I48.91 — Unspecified atrial fibrillation
+
+#5  [60.0/100 | medium]  Leg swelling  (differential)
+    SNOMED: Leg swelling symptom (248480008) [exact score=1.0]
+    ICD status: mapped | primary: M79.89
+      1. [principal] M79.89 — Other specified soft tissue disorders
+
+#6  [55.0/100 | low]  Nocturnal hypoxia  (risk_factor)
     SNOMED: Hypoxia (389086002) [fuzzy score=0.6079289213558614]
     ICD status: mapped | primary: R09.02
       1. [principal] R09.02 — Hypoxemia
       2. [principal] P84 — Other problems with newborn
-
-#5  [55.0/100 | low]  Cholangitis  (differential)
-    SNOMED: Cholangitis (82403002) [exact score=1.0]
-    ICD status: mapped | primary: K83.09
-      1. [principal] K83.09 — Other cholangitis

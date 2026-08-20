@@ -1,5 +1,5 @@
 {
-  "summary": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.",
+  "summary": "The patient is a 41-year-old with a history of dilated non-ischemic cardiomyopathy and refractory ventricular tachycardia, presenting with ICD shock and subsequent management of heart failure symptoms. Current labs show abnormalities including elevated INR, PT, PTT, and low hematocrit and hemoglobin levels.",
   "most_likely": "Refractory ventricular tachycardia",
   "differential": [
     {
@@ -8,13 +8,13 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "I472",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "ICD shock on ___",
-        "Refractory VT in symptom tree"
+        "ICD shock on admission",
+        "shaking in chest for last 4 months"
       ],
       "opposing_evidence": [],
-      "reasoning": "ICD shock and refractory VT are present, strongly supporting this diagnosis.",
+      "reasoning": "ICD shock and history of refractory VT strongly support this diagnosis.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "25569003",
@@ -23,7 +23,7 @@
         "match_method": "fuzzy",
         "score": 0.782363076456486,
         "query": "Refractory ventricular tachycardia",
-        "aligned_hint": "I472"
+        "aligned_hint": null
       },
       "icd10_primary": "I47.20",
       "icd10_primary_title": "Ventricular tachycardia, unspecified",
@@ -56,6 +56,23 @@
           "from_snomed_term": "Shock",
           "relevance_to_diagnosis": 0.1937,
           "package_order": 2
+        },
+        {
+          "code": "R25.1",
+          "title": "Tremor, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R25.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "shaking",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "26079004",
+          "from_snomed_term": "Tremor",
+          "relevance_to_diagnosis": 0.0771,
+          "package_order": 3
         }
       ],
       "icd10_principal": [
@@ -87,24 +104,40 @@
           "from_snomed_id": "27942005",
           "from_snomed_term": "Shock",
           "relevance_to_diagnosis": 0.1937
+        },
+        {
+          "code": "R25.1",
+          "title": "Tremor, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R25.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "shaking",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "26079004",
+          "from_snomed_term": "Tremor",
+          "relevance_to_diagnosis": 0.0771
         }
       ],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 3
     },
     {
       "rank": 2,
       "diagnosis": "Dilated non-ischemic cardiomyopathy",
       "score": 75.0,
       "confidence": "high",
-      "category": "primary",
-      "snomed_aligned": "I420",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Dilated non-ischemic cardiomyopathy in symptom tree",
-        "Dilated cardiomyopathy in prior ICDs"
+        "ICD shock on admission",
+        "edema over last several days"
       ],
       "opposing_evidence": [],
-      "reasoning": "Dilated cardiomyopathy is a chronic condition and a known cause of ICD shock.",
+      "reasoning": "Cardiomyopathy is a known complication of VT and supports the current presentation.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "399020009",
@@ -113,7 +146,7 @@
         "match_method": "fuzzy",
         "score": 0.7462331077653483,
         "query": "Dilated non-ischemic cardiomyopathy",
-        "aligned_hint": "I420"
+        "aligned_hint": null
       },
       "icd10_primary": "I42.0",
       "icd10_primary_title": "Dilated cardiomyopathy",
@@ -129,6 +162,23 @@
           "role": "principal",
           "order": 1,
           "package_order": 1
+        },
+        {
+          "code": "R57.9",
+          "title": "Shock, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R57.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "ICD shock",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "27942005",
+          "from_snomed_term": "Shock",
+          "relevance_to_diagnosis": 0.0673,
+          "package_order": 2
         }
       ],
       "icd10_principal": [
@@ -144,31 +194,47 @@
           "order": 1
         }
       ],
-      "icd10_supporting": [],
+      "icd10_supporting": [
+        {
+          "code": "R57.9",
+          "title": "Shock, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R57.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "ICD shock",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "27942005",
+          "from_snomed_term": "Shock",
+          "relevance_to_diagnosis": 0.0673
+        }
+      ],
       "icd_status": "mapped",
-      "n_icd_codes": 1
+      "n_icd_codes": 2
     },
     {
       "rank": 3,
-      "diagnosis": "Congestive heart failure",
-      "score": 65.0,
+      "diagnosis": "Heart failure",
+      "score": 60.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "edema in symptom tree",
-        "Dilated cardiomyopathy in prior ICDs"
+        "edema over last several days"
       ],
       "opposing_evidence": [],
-      "reasoning": "Edema and dilated cardiomyopathy suggest heart failure exacerbation.",
+      "reasoning": "Edema suggests heart failure as a complication of cardiomyopathy.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "42343007",
-        "preferred_term": "Congestive heart failure",
-        "fsn": "Congestive heart failure (disorder)",
+        "concept_id": "84114007",
+        "preferred_term": "Heart failure",
+        "fsn": "Heart failure (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Congestive heart failure",
+        "query": "Heart failure",
         "aligned_hint": null
       },
       "icd10_primary": "I50.9",
@@ -229,91 +295,114 @@
     },
     {
       "rank": 4,
-      "diagnosis": "Hypokalemia",
+      "diagnosis": "Hypertension",
       "score": 50.0,
-      "confidence": "low",
-      "category": "differential",
+      "confidence": "medium",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "low potassium in labs"
+        "History of hypertension"
       ],
       "opposing_evidence": [],
-      "reasoning": "Low potassium could explain some symptoms but is not the primary focus.",
+      "reasoning": "Hypertension is a known risk factor for cardiomyopathy and VT.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "43339004",
-        "preferred_term": "Hypokalemia",
-        "fsn": "Hypokalemia (disorder)",
+        "concept_id": "38341003",
+        "preferred_term": "High blood pressure",
+        "fsn": "Hypertensive disorder, systemic arterial (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Hypokalemia",
+        "query": "Hypertension",
         "aligned_hint": null
       },
-      "icd10_primary": "E87.6",
-      "icd10_primary_title": "Hypokalemia",
+      "icd10_primary": "I10",
+      "icd10_primary_title": "Essential (primary) hypertension",
       "icd10_package": [
         {
-          "code": "E87.6",
-          "title": "Hypokalemia",
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS I10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
+        },
+        {
+          "code": "P29.2",
+          "title": "Neonatal hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
         }
       ],
       "icd10_principal": [
         {
-          "code": "E87.6",
-          "title": "Hypokalemia",
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS E87.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS I10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
+        },
+        {
+          "code": "P29.2",
+          "title": "Neonatal hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
         }
       ],
       "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 1
+      "n_icd_codes": 2
     },
     {
       "rank": 5,
-      "diagnosis": "Anemia",
+      "diagnosis": "Obesity",
       "score": 40.0,
       "confidence": "low",
-      "category": "complication",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "low hematocrit and hemoglobin in labs"
+        "BMI of 36.7"
       ],
       "opposing_evidence": [],
-      "reasoning": "Low hematocrit and hemoglobin suggest anemia but are secondary to heart failure.",
+      "reasoning": "Obesity is a known risk factor for cardiomyopathy and VT, but less strongly supported by current presentation.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "271737000",
-        "preferred_term": "Anemia",
-        "fsn": "Anemia (disorder)",
+        "concept_id": "414916001",
+        "preferred_term": "Obesity",
+        "fsn": "Obesity (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Anemia",
+        "query": "Obesity",
         "aligned_hint": null
       },
-      "icd10_primary": "D64.9",
-      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_primary": "E66.9",
+      "icd10_primary_title": "Obesity, unspecified",
       "icd10_package": [
         {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
+          "code": "E66.9",
+          "title": "Obesity, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E66.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
@@ -322,12 +411,12 @@
       ],
       "icd10_principal": [
         {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
+          "code": "E66.9",
+          "title": "Obesity, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E66.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
@@ -341,11 +430,15 @@
   "rule_outs": [
     {
       "diagnosis": "Sleep apnea",
-      "why": "While present, it is not the primary focus of the current admission."
+      "why": "Current presentation does not strongly support sleep apnea as the primary cause of symptoms."
+    },
+    {
+      "diagnosis": "Gout",
+      "why": "Current labs do not strongly indicate gout."
     }
   ],
   "uncertain_areas": [
-    "Further imaging or detailed cardiac function tests would clarify the exact nature of the cardiomyopathy and ICD shock"
+    "Further imaging or detailed history would clarify the presence of complications such as heart failure or other cardiac issues."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis_with_icd",
@@ -354,7 +447,7 @@
   "_temperature": 0.4,
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-20T00:09:36.317014",
+  "generated_at": "2026-08-20T17:15:55.458829",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,
@@ -733,5 +826,5 @@
     "n_with_principal": 5,
     "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:18.748316"
+  "generated_at_stage8": "2026-08-20T17:19:19.432162"
 }

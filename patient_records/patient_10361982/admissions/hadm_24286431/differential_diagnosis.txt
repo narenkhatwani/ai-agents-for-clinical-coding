@@ -5,54 +5,45 @@ Patient ID       : 10361982
 HADM ID          : 24286431
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:08:23.377128
-Candidates       : 5
-Most likely      : Post-hysterectomy uterine atony
+Generated        : 2026-08-20T17:14:14.448992
+Candidates       : 4
+Most likely      : Post-hysterectomy bleeding
 Prior admissions : 1 (11 ICD codes as PMH context)
 
 Summary:
-  Patient presents with heavy vaginal bleeding post hysterectomy, with no free fluid or hematoma noted on ultrasound. Chronic conditions include endometriosis and other uterine neoplasms.
+  The patient is a 45-year-old woman post-total laparoscopic hysterectomy with a history of abnormal uterine bleeding, presenting with heavy vaginal bleeding and passing clots.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Post-hysterectomy uterine atony  (primary)
-      SNOMED aligned : 315224006
+  #1  [85.0/100 | high]  Post-hysterectomy bleeding  (primary)
+      SNOMED aligned : Heavy episode of vaginal bleeding
       + heavy vaginal bleeding after hysterectomy
-      + normal postoperative changes and a normal appearing vaginal cuff are noted
-      + no free fluid or hematoma seen on ultrasound
-      why: Heavy vaginal bleeding post hysterectomy strongly supports uterine atony as the primary cause.
+      + passing clots
+      why: Primary diagnosis given the recent hysterectomy and heavy vaginal bleeding.
 
-  #2  [65.0/100 | medium]  Post-hysterectomy uterine inversion  (complication)
-      + heavy vaginal bleeding after hysterectomy
-      + normal postoperative changes and a normal appearing vaginal cuff are noted
-      − no free fluid or hematoma seen on ultrasound
-      why: While less likely, uterine inversion is a known complication of hysterectomy and could explain the bleeding.
+  #2  [65.0/100 | medium]  Menorrhagia  (differential)
+      + history of abnormal uterine bleeding
+      − no current bleeding symptoms
+      why: History of menorrhagia, but no current symptoms to support active condition.
 
-  #3  [40.0/100 | medium]  Endometriosis  (risk_factor)
-      SNOMED aligned : N800
-      + endometriosis of uterus listed as chronic condition
-      − no current evidence of endometriosis causing bleeding
-      why: Endometriosis is a chronic condition and a risk factor for heavy bleeding, but no current evidence supports it as the primary cause.
+  #3  [50.0/100 | low]  Hypothyroidism  (risk_factor)
+      SNOMED aligned : Hypothyroidism, unspecified
+      + history of hypothyroidism
+      − normal thyroid lab values
+      why: History of hypothyroidism, but normal current thyroid lab values.
 
-  #4  [30.0/100 | low]  Hemorrhagic shock  (differential)
-      + heavy vaginal bleeding after hysterectomy
-      − normal hemoglobin and hematocrit levels
-      − no free fluid or hematoma seen on ultrasound
-      why: While possible, hemorrhagic shock is less likely given normal hemoglobin levels and no signs of free fluid.
-
-  #5  [25.0/100 | low]  Infection  (differential)
-      + heavy vaginal bleeding after hysterectomy
-      − normal hemoglobin and hematocrit levels
-      − no free fluid or hematoma seen on ultrasound
-      why: Infection could be a factor, but no current evidence supports it as the primary cause.
+  #4  [30.0/100 | low]  Anxiety disorder  (differential)
+      + history of anxiety disorder
+      − no current symptoms
+      why: History of anxiety disorder, but no current symptoms to support active condition.
 
 RULE-OUTS
 ---------
 
-  • Uterine rupture: No evidence of free fluid or signs of rupture on imaging
+  • Dyspareunia: Denies dyspareunia.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Need to know if patient has a history of uterine inversion or if there are signs of infection
+  • Further details on the cause of bleeding and any infection would change ranking

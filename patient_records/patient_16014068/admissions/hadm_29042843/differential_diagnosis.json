@@ -1,104 +1,94 @@
 {
-  "summary": "The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.",
-  "most_likely": "Metastatic sarcoma with hematologic complications",
+  "summary": "The patient is a recurrent cancer patient with a history of metastatic sarcoma and chronic hematoma. This admission involves symptoms of a fall resulting in minor abrasions and soreness, along with recurrent hematological issues.",
+  "most_likely": "Metastatic sarcoma with anemia and thrombocytopenia",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Metastatic sarcoma with hematologic complications",
+      "diagnosis": "Metastatic sarcoma with anemia and thrombocytopenia",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "Metastatic sarcoma",
       "supporting_evidence": [
-        "metastatic sarcoma",
-        "thrombocytopenia"
+        "High-grade unclassified sarcoma of the right femur, Metastatic Sarcoma to Brain"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the patient's history of metastatic sarcoma and current symptoms related to hematologic complications."
+      "reasoning": "The patient has a history of metastatic sarcoma and current lab findings consistent with anemia and thrombocytopenia."
     },
     {
       "rank": 2,
-      "diagnosis": "Anemia",
+      "diagnosis": "Chronic anemia and thrombocytopenia",
       "score": 70.0,
       "confidence": "high",
       "category": "secondary",
-      "snomed_aligned": "Anemia due to antineoplastic chemotherapy",
+      "snomed_aligned": "Anemia due to antineoplastic chemotherapy, Thrombocytopenia",
       "supporting_evidence": [
-        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
+        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL, Platelet Count: 63.0 K/uL"
       ],
       "opposing_evidence": [],
-      "reasoning": "Anemia is a significant finding and likely secondary to the patient's malignancy."
+      "reasoning": "The patient has chronic anemia and thrombocytopenia due to antineoplastic chemotherapy."
     },
     {
       "rank": 3,
-      "diagnosis": "Thrombocytopenia",
-      "score": 65.0,
-      "confidence": "high",
-      "category": "secondary",
-      "snomed_aligned": "Cytokine-induced thrombocytopenia",
+      "diagnosis": "Cervical spine degenerative changes",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Platelet Count: 63.0 K/uL"
+        "Degenerative changes of the cervical spine are moderate in severity"
       ],
       "opposing_evidence": [],
-      "reasoning": "Thrombocytopenia is present and likely related to the patient's malignancy."
+      "reasoning": "The patient has degenerative changes in the cervical spine, which may be a complication of the fall."
     },
     {
       "rank": 4,
-      "diagnosis": "Hypotension",
-      "score": 50.0,
+      "diagnosis": "Acute kidney failure",
+      "score": 40.0,
       "confidence": "medium",
-      "category": "risk_factor",
-      "snomed_aligned": "",
+      "category": "differential",
+      "snomed_aligned": "Acute kidney failure, unspecified",
       "supporting_evidence": [
-        "BP 114/66"
+        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL, Platelet Count: 63.0 K/uL"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Hypotension is noted and may be a risk factor for further complications."
+      "opposing_evidence": [
+        "No recent history of acute kidney failure"
+      ],
+      "reasoning": "The patient has lab findings consistent with acute kidney failure, but no recent history."
     },
     {
       "rank": 5,
-      "diagnosis": "Headache",
-      "score": 45.0,
-      "confidence": "medium",
-      "category": "differential",
+      "diagnosis": "Hypotension",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hit his head"
+        "Denies chest pain, hypotension"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Headache is present but may be secondary to the fall and underlying malignancy."
-    },
-    {
-      "rank": 6,
-      "diagnosis": "Abdominal pain",
-      "score": 35.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "Abdominal pain",
-      "supporting_evidence": [
-        "abdominal pain"
+      "opposing_evidence": [
+        "No recent history of hypotension"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Abdominal pain is noted but not strongly supported by current findings."
+      "reasoning": "The patient denies hypotension, but it could be a risk factor given the fall and hematological issues."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Pneumothorax",
-      "why": "No evidence of pneumothorax in chest radiograph or structured clinical context."
+      "diagnosis": "Pneumonia",
+      "why": "No discrete focal consolidation concerning for pneumonia in chest radiography."
     }
   ],
   "uncertain_areas": [
-    "Further details on the patient's pain and hematologic status would clarify the severity and management of these conditions."
+    "Recent history of acute kidney failure, hypotension"
   ],
-  "n_candidates": 6,
+  "n_candidates": 5,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "16014068",
   "hadm_id": "29042843",
-  "generated_at": "2026-08-20T00:10:56.014695",
+  "generated_at": "2026-08-20T17:17:35.313690",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,

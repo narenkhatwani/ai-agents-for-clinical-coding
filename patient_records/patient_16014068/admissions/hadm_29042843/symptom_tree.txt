@@ -8,44 +8,52 @@ Patient ID       : 16014068
 Admission ID     : 29042843
 
 Reasoning:
-  The patient fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He is on hospice for metastatic sarcoma and has a history of recurrent hematoma and thrombocytopenia.
+  The patient's dominant clinical picture for this admission is a fall resulting in minor abrasions and soreness, with a history of metastatic sarcoma and recurrent hematoma leading to anemia and thrombocytopenia.
 
-Key symptoms     : weakness, bruising, headache
+Key symptoms     : anemia, hematoma
 Red flags        : hypotension, headache
 
 CONSTITUTIONAL → Infectious Diseases
 ------------------------------------
 
-  • [present] weakness
-      evidence: "attributes it to weakness"
-      related: metastatic sarcoma
-  • [present] bruising
-      evidence: "hit his knees and elbows resulting in minor abrasions and soreness"
-      related: metastatic sarcoma
-  • [present] headache
-      evidence: "hit his head"
-      related: metastatic sarcoma
-
-HEMATOLOGIC → Hematologic
--------------------------
-
-  • [present] anemia
-      evidence: "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
-      related: thigh hematoma, cytokine-induced thrombocytopenia
-      • [present] thrombocytopenia
-          evidence: "Platelet Count: 63.0 K/uL"
-          related: cytokine-induced thrombocytopenia
+  • [history] fever
+      evidence: "denies fevers/chills"
+  • [history] cough
+      evidence: "denies cough"
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [history] hypotension
-      evidence: "BP 114/66"
-      related: metastatic sarcoma
+      evidence: "denies chest pain, hypotension"
 
-NEUROLOGIC → Neurology
-----------------------
+HEMATOLOGIC → Hematologic
+-------------------------
 
-  • [present] headache
+  • [present, severe] anemia
+      evidence: "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
+      related: Thigh Hematoma, Chronic
+      • [present, mild] thrombocytopenia
+          evidence: "Platelet Count: 63.0 K/uL"
+          related: IVC Filter Placement
+
+NEUROLOGIC → Neurologic
+-----------------------
+
+  • [present, mild] headache
       evidence: "hit his head"
-      related: metastatic sarcoma
+      related: Intracranial Hemorrhage
+
+SKELETAL → Skeletal
+-------------------
+
+  • [present, chronic] hematoma
+      evidence: "hit his knees and elbows resulting in minor abrasions and soreness"
+      related: Thigh Hematoma, Chronic
+
+ONCOLOGIC → Oncologic
+---------------------
+
+  • [present, high-grade] sarcoma
+      evidence: "High-grade unclassified sarcoma (malignant fibrous histiocytoma) of the right femur"
+      related: Metastatic Sarcoma to Brain

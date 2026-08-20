@@ -5,45 +5,58 @@ Patient ID       : 10426859
 HADM ID          : 29908281
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:08:36.075612
-Candidates       : 5
+Generated        : 2026-08-20T17:14:38.533043
+Candidates       : 6
 Most likely      : Supraventricular tachycardia
 Prior admissions : 2 (31 ICD codes as PMH context)
 
 Summary:
-  The patient presents with recurrent supraventricular tachycardia (SVT) causing falls and headache, with new findings of right hip fracture and hypocalcemia. The patient has a history of cardiovascular and neurologic conditions.
+  The patient presents with recurrent supraventricular tachycardia (SVT), lightheadedness, headache, and a fall resulting in a right hip fracture. The patient has a history of cardiovascular and neurologic conditions.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Supraventricular tachycardia  (primary)
       SNOMED aligned : Supraventricular tachycardia
-      + SVT confirmed, recurrent SVT causing falls and headache
-      why: Primary diagnosis supported by recurrent SVT and falls, confirmed in ED.
+      + SVT found in the ED
+      + SVT related to palpitations, lightheadedness, headache
+      why: SVT is the dominant clinical presentation and confirmed in the ED.
 
   #2  [70.0/100 | high]  Right hip fracture  (complication)
+      SNOMED aligned : Nondisplaced comminuted fracture in the right superior pubic ramus
       + Nondisplaced comminuted fracture in the right superior pubic ramus
-      why: Recent fracture confirmed by radiology, causing pain and fall.
+      − No evidence of dislocation, no heterotopic ossification
+      why: The fracture is confirmed by radiology and is a complication of the fall.
 
-  #3  [65.0/100 | medium]  Hypocalcemia  (differential)
-      SNOMED aligned : Calcium, Total
-      + Calcium, Total: 9.2 mg/dL (low)
-      why: Low calcium level noted, but not yet clinically significant.
+  #3  [60.0/100 | medium]  Anxiety disorder  (risk_factor)
+      + Anxiety disorder, unspecified
+      − No specific evidence of anxiety symptoms in current presentation
+      why: The patient has a history of anxiety disorder, which may contribute to her current presentation.
 
-  #4  [50.0/100 | low]  Cerebral infarct  (complication)
-      + Tiny chronic right cerebellar infarct, new since prior
-      why: Chronic infarct noted, but not recent or acute.
+  #4  [55.0/100 | medium]  Hypertension  (risk_factor)
+      SNOMED aligned : Essential (primary) hypertension
+      + Essential (primary) hypertension
+      − No specific evidence of hypertension exacerbation in current presentation
+      why: The patient has a history of hypertension, which may be a risk factor for her current presentation.
 
-  #5  [40.0/100 | low]  Anxiety disorder  (risk_factor)
-      + Major depressive disorder, single episode, unspecified
-      why: Previous anxiety disorder noted, but not currently active.
+  #5  [45.0/100 | medium]  Hyperlipidemia  (risk_factor)
+      SNOMED aligned : Hyperlipidemia, unspecified
+      + Hyperlipidemia, unspecified
+      − No specific evidence of hyperlipidemia exacerbation in current presentation
+      why: The patient has a history of hyperlipidemia, which may be a risk factor for her current presentation.
+
+  #6  [35.0/100 | medium]  Atherosclerotic heart disease  (complication)
+      SNOMED aligned : Atherosclerotic heart disease of native coronary artery without angina pectoris
+      + Atherosclerotic heart disease of native coronary artery without angina pectoris
+      − No specific evidence of acute coronary event in current presentation
+      why: The patient has a history of atherosclerotic heart disease, which may be a complication of her current presentation.
 
 RULE-OUTS
 ---------
 
-  • Pneumothorax: No evidence of pneumothorax in chest radiology or clinical presentation.
+  • Pneumothorax: No evidence of pneumothorax in chest X-ray
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • More detailed clinical history on current anxiety symptoms and hypocalcemia would refine rankings
+  • Further history of specific anxiety symptoms, more detailed cardiovascular assessment

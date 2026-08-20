@@ -1,20 +1,19 @@
 {
-  "summary": "The patient is a 45-year-old woman with a history of desmoid tumor, presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure. She also has chronic conditions including hepatitis C and obesity.",
-  "most_likely": "Post-procedural pain and tenderness",
+  "summary": "A 31-year-old woman presents with post-procedural pain and mild nausea following cryoablation of a residual desmoid tumor. Chronic conditions include hepatitis C and other acute postprocedural pain.",
+  "most_likely": "Post-procedural pain",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Post-procedural pain and tenderness",
+      "diagnosis": "Post-procedural pain",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "Abdominal pain (21522001)",
+      "snomed_aligned": "Abdominal pain",
       "supporting_evidence": [
-        "post-procedural pain in the right side of the abdomen",
-        "abdominal tenderness to palpation"
+        "abdominal pain tender in the right upper and right lower quadrant to palpation"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary presentation after cryoablation procedure"
+      "reasoning": "Primary diagnosis given the patient's recent cryoablation procedure and presence of abdominal pain."
     },
     {
       "rank": 2,
@@ -22,89 +21,78 @@
       "score": 70.0,
       "confidence": "medium",
       "category": "risk_factor",
-      "snomed_aligned": "Viral hepatitis C (50711007)",
+      "snomed_aligned": "Viral hepatitis C",
       "supporting_evidence": [
-        "chronic condition"
+        "chronic condition from prior admission"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Chronic condition with no acute symptoms"
+      "opposing_evidence": [
+        "no current symptoms or acute findings"
+      ],
+      "reasoning": "Risk factor given chronic condition and need for monitoring."
     },
     {
       "rank": 3,
-      "diagnosis": "Desmoid tumor",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "differential",
-      "snomed_aligned": "Desmoid tumor (confirmed)",
-      "supporting_evidence": [
-        "desmoid tumor (confirmed)"
-      ],
-      "opposing_evidence": [
-        "no active tumor growth"
-      ],
-      "reasoning": "Previous diagnosis with no acute symptoms"
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Anemia",
-      "score": 55.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "low hematocrit and hemoglobin"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Low hematocrit and hemoglobin levels"
-    },
-    {
-      "rank": 5,
       "diagnosis": "Hypokalemia",
-      "score": 45.0,
-      "confidence": "low",
+      "score": 60.0,
+      "confidence": "medium",
       "category": "differential",
-      "snomed_aligned": "",
+      "snomed_aligned": "Hypokalemia",
       "supporting_evidence": [
         "low potassium level"
       ],
       "opposing_evidence": [
         "no symptoms of hypokalemia"
       ],
-      "reasoning": "Low potassium level with no symptoms"
+      "reasoning": "Possible given low potassium level, though no symptoms present."
     },
     {
-      "rank": 6,
-      "diagnosis": "Hypomagnesemia",
-      "score": 40.0,
-      "confidence": "low",
+      "rank": 4,
+      "diagnosis": "Hypocalcemia",
+      "score": 55.0,
+      "confidence": "medium",
       "category": "differential",
-      "snomed_aligned": "",
+      "snomed_aligned": "Hypocalcemia",
       "supporting_evidence": [
-        "low magnesium level"
+        "low calcium level"
       ],
       "opposing_evidence": [
-        "no symptoms of hypomagnesemia"
+        "no symptoms of hypocalcemia"
       ],
-      "reasoning": "Low magnesium level with no symptoms"
+      "reasoning": "Possible given low calcium level, though no symptoms present."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Anemia",
+      "score": 50.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "Anemia",
+      "supporting_evidence": [
+        "low hemoglobin and hematocrit levels"
+      ],
+      "opposing_evidence": [
+        "mild symptoms only"
+      ],
+      "reasoning": "Possible given low hemoglobin and hematocrit levels, though symptoms are mild."
     }
   ],
   "rule_outs": [
     {
       "diagnosis": "Pneumothorax",
-      "why": "No radiological evidence or symptoms"
+      "why": "No radiological evidence or clinical signs."
     }
   ],
   "uncertain_areas": [
-    "Additional imaging to confirm the extent of post-procedural pain and tenderness"
+    "Further imaging or clinical signs of hypokalemia or hypocalcemia could change the ranking"
   ],
-  "n_candidates": 6,
+  "n_candidates": 5,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "18412100",
   "hadm_id": "26093939",
-  "generated_at": "2026-08-20T00:11:34.087096",
+  "generated_at": "2026-08-20T17:18:19.043720",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 8,

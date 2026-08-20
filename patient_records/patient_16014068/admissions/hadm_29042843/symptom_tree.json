@@ -1,36 +1,39 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He is on hospice for metastatic sarcoma and has a history of recurrent hematoma and thrombocytopenia.",
+  "reasoning": "The patient's dominant clinical picture for this admission is a fall resulting in minor abrasions and soreness, with a history of metastatic sarcoma and recurrent hematoma leading to anemia and thrombocytopenia.",
   "branches": [
     {
       "category": "constitutional",
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "weakness",
-          "status": "present",
-          "evidence": "attributes it to weakness",
-          "related_findings": [
-            "metastatic sarcoma"
-          ],
+          "term": "fever",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "denies fevers/chills",
+          "related_findings": [],
           "children": []
         },
         {
-          "term": "bruising",
-          "status": "present",
-          "evidence": "hit his knees and elbows resulting in minor abrasions and soreness",
-          "related_findings": [
-            "metastatic sarcoma"
-          ],
+          "term": "cough",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "denies cough",
+          "related_findings": [],
           "children": []
-        },
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
         {
-          "term": "headache",
-          "status": "present",
-          "evidence": "hit his head",
-          "related_findings": [
-            "metastatic sarcoma"
-          ],
+          "term": "hypotension",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "denies chest pain, hypotension",
+          "related_findings": [],
           "children": []
         }
       ]
@@ -42,18 +45,19 @@
         {
           "term": "anemia",
           "status": "present",
+          "severity": "severe",
           "evidence": "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL",
           "related_findings": [
-            "thigh hematoma",
-            "cytokine-induced thrombocytopenia"
+            "Thigh Hematoma, Chronic"
           ],
           "children": [
             {
               "term": "thrombocytopenia",
               "status": "present",
+              "severity": "mild",
               "evidence": "Platelet Count: 63.0 K/uL",
               "related_findings": [
-                "cytokine-induced thrombocytopenia"
+                "IVC Filter Placement"
               ],
               "children": []
             }
@@ -62,30 +66,48 @@
       ]
     },
     {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
-          "term": "hypotension",
-          "status": "history",
-          "evidence": "BP 114/66",
+          "term": "headache",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "hit his head",
           "related_findings": [
-            "metastatic sarcoma"
+            "Intracranial Hemorrhage"
           ],
           "children": []
         }
       ]
     },
     {
-      "category": "neurologic",
-      "ontology_hint": "Neurology",
+      "category": "skeletal",
+      "ontology_hint": "Skeletal",
       "symptoms": [
         {
-          "term": "headache",
+          "term": "hematoma",
           "status": "present",
-          "evidence": "hit his head",
+          "severity": "chronic",
+          "evidence": "hit his knees and elbows resulting in minor abrasions and soreness",
           "related_findings": [
-            "metastatic sarcoma"
+            "Thigh Hematoma, Chronic"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "oncologic",
+      "ontology_hint": "Oncologic",
+      "symptoms": [
+        {
+          "term": "sarcoma",
+          "status": "present",
+          "severity": "high-grade",
+          "evidence": "High-grade unclassified sarcoma (malignant fibrous histiocytoma) of the right femur",
+          "related_findings": [
+            "Metastatic Sarcoma to Brain"
           ],
           "children": []
         }
@@ -93,9 +115,8 @@
     }
   ],
   "key_symptoms": [
-    "weakness",
-    "bruising",
-    "headache"
+    "anemia",
+    "hematoma"
   ],
   "red_flags": [
     "hypotension",
@@ -106,5 +127,5 @@
   "_agent": "symptom_tree",
   "patient_id": "16014068",
   "admission_id": "29042843",
-  "generated_at": "2026-08-19T23:20:55.809885"
+  "generated_at": "2026-08-20T17:11:17.635583"
 }

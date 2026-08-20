@@ -1,6 +1,6 @@
 {
   "stage": 6,
-  "generated_at": "2026-08-19T23:22:49.292691",
+  "generated_at": "2026-08-20T17:13:56.935154",
   "patient_id": "11474876",
   "hadm_id": "29672491",
   "n_entities": 50,
@@ -269,14 +269,14 @@
             "anchor_term": "dyspnea"
           },
           {
-            "concept_id": "312419003",
-            "term": "Respiratory and intrathoracic structures",
+            "concept_id": "91689009",
+            "term": "Organ system",
             "relation": "has_finding_site",
             "hop": "ancestor_of_target",
             "via_concept_id": "20139000",
             "role": "attribute_target_ancestor",
-            "cosine_similarity": 0.392,
-            "cosine_distance": 0.608,
+            "cosine_similarity": 0.298,
+            "cosine_distance": 0.702,
             "retained": false,
             "high_confidence": false,
             "similarity_method": "minilm",
@@ -669,14 +669,14 @@
             "anchor_term": "nocturnal hypoxia"
           },
           {
-            "concept_id": "312419003",
-            "term": "Respiratory and intrathoracic structures",
+            "concept_id": "91689009",
+            "term": "Organ system",
             "relation": "has_finding_site",
             "hop": "ancestor_of_target",
             "via_concept_id": "20139000",
             "role": "attribute_target_ancestor",
-            "cosine_similarity": 0.2558,
-            "cosine_distance": 0.7442,
+            "cosine_similarity": 0.183,
+            "cosine_distance": 0.817,
             "retained": false,
             "high_confidence": false,
             "similarity_method": "minilm",
@@ -1059,10 +1059,23 @@
         "anchor_field": "ie_entity_term",
         "ancestors_depth2_all": [
           {
+            "concept_id": "27550009",
+            "term": "Vascular disease",
+            "relation": "is_a",
+            "depth": 1,
+            "role": "ancestor",
+            "cosine_similarity": 0.8525,
+            "cosine_distance": 0.1475,
+            "retained": true,
+            "high_confidence": true,
+            "similarity_method": "minilm",
+            "anchor_term": "Peripheral vascular disease"
+          },
+          {
             "concept_id": "49601007",
             "term": "Cardiovascular disorder",
             "relation": "is_a",
-            "depth": 1,
+            "depth": 2,
             "role": "ancestor",
             "cosine_similarity": 0.5564,
             "cosine_distance": 0.4436,
@@ -1072,26 +1085,26 @@
             "anchor_term": "Peripheral vascular disease"
           },
           {
-            "concept_id": "362965005",
-            "term": "Disorder of body system",
+            "concept_id": "21829004",
+            "term": "Blood vessel finding",
             "relation": "is_a",
             "depth": 2,
             "role": "ancestor",
-            "cosine_similarity": 0.315,
-            "cosine_distance": 0.685,
+            "cosine_similarity": 0.504,
+            "cosine_distance": 0.496,
             "retained": false,
             "high_confidence": false,
             "similarity_method": "minilm",
             "anchor_term": "Peripheral vascular disease"
           },
           {
-            "concept_id": "106063007",
-            "term": "Cardiovascular finding",
+            "concept_id": "19660004",
+            "term": "Disorder of soft tissue",
             "relation": "is_a",
             "depth": 2,
             "role": "ancestor",
-            "cosine_similarity": 0.3711,
-            "cosine_distance": 0.6289,
+            "cosine_similarity": 0.3246,
+            "cosine_distance": 0.6754,
             "retained": false,
             "high_confidence": false,
             "similarity_method": "minilm",
@@ -1114,21 +1127,35 @@
             "anchor_term": "Peripheral vascular disease"
           },
           {
-            "concept_id": "51840005",
-            "term": "Systemic circulatory system",
+            "concept_id": "281157001",
+            "term": "Systemic vascular structure",
             "relation": "has_finding_site",
             "hop": "ancestor_of_target",
             "via_concept_id": "51833009",
             "role": "attribute_target_ancestor",
-            "cosine_similarity": 0.4177,
-            "cosine_distance": 0.5823,
+            "cosine_similarity": 0.5899,
+            "cosine_distance": 0.4101,
             "retained": false,
             "high_confidence": false,
             "similarity_method": "minilm",
             "anchor_term": "Peripheral vascular disease"
           }
         ],
-        "retained_ancestors": [],
+        "retained_ancestors": [
+          {
+            "concept_id": "27550009",
+            "term": "Vascular disease",
+            "relation": "is_a",
+            "depth": 1,
+            "role": "ancestor",
+            "cosine_similarity": 0.8525,
+            "cosine_distance": 0.1475,
+            "retained": true,
+            "high_confidence": true,
+            "similarity_method": "minilm",
+            "anchor_term": "Peripheral vascular disease"
+          }
+        ],
         "retained_attribute_relations": [
           {
             "concept_id": "51833009",
@@ -1147,6 +1174,19 @@
         ],
         "retained": [
           {
+            "concept_id": "27550009",
+            "term": "Vascular disease",
+            "relation": "is_a",
+            "depth": 1,
+            "role": "ancestor",
+            "cosine_similarity": 0.8525,
+            "cosine_distance": 0.1475,
+            "retained": true,
+            "high_confidence": true,
+            "similarity_method": "minilm",
+            "anchor_term": "Peripheral vascular disease"
+          },
+          {
             "concept_id": "51833009",
             "term": "Peripheral vascular system",
             "relation": "has_finding_site",
@@ -1161,8 +1201,8 @@
             "anchor_term": "Peripheral vascular disease"
           }
         ],
-        "n_retained": 1,
-        "n_high_confidence": 0,
+        "n_retained": 2,
+        "n_high_confidence": 1,
         "min_cosine_similarity": 0.7,
         "high_conf_similarity": 0.8,
         "max_cosine_distance": 0.3,
@@ -1558,14 +1598,14 @@
             "anchor_term": "Hypertension"
           },
           {
-            "concept_id": "113257007",
-            "term": "Cardiovascular system",
+            "concept_id": "118970008",
+            "term": "Cardiovascular system subdivision",
             "relation": "has_finding_site",
             "hop": "ancestor_of_target",
             "via_concept_id": "51840005",
             "role": "attribute_target_ancestor",
-            "cosine_similarity": 0.4551,
-            "cosine_distance": 0.5449,
+            "cosine_similarity": 0.3425,
+            "cosine_distance": 0.6575,
             "retained": false,
             "high_confidence": false,
             "similarity_method": "minilm",

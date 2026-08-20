@@ -5,57 +5,49 @@ Patient ID       : 12007928
 HADM ID          : 23749816
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:09:53.056804
+Generated        : 2026-08-20T17:16:14.410101
 Candidates       : 5
 Most likely      : Acute decompensated heart failure
 Prior admissions : 2 (45 ICD codes as PMH context)
 
 Summary:
-  The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.
+  The patient presents with dyspnea, orthopnea, and worsening heart failure, with significant fluid overload and pleural effusions. The patient has a history of chronic diastolic heart failure and acute kidney failure.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Acute decompensated heart failure  (primary)
-      SNOMED aligned : I50.9
-      + dyspnea, orthopnea, pitting edema
-      + mild pulmonary edema
-      + mild pleural effusions
-      + mild atrial fibrillation
-      + creatinine elevation
-      why: Symptoms and findings strongly support acute decompensation of chronic heart failure.
+      + mild to moderate pulmonary edema on CXR
+      + history of chronic diastolic heart failure
+      why: The patient's current symptoms and imaging findings strongly support acute heart failure, and the history of chronic diastolic heart failure increases the likelihood.
 
-  #2  [70.0/100 | medium]  Atrial fibrillation  (complication)
-      SNOMED aligned : 42717001
-      + paroxysmal atrial fibrillation
-      + mild atrial fibrillation
-      why: Paroxysmal atrial fibrillation is present and may contribute to symptoms.
+  #2  [70.0/100 | medium]  Chronic kidney disease  (secondary)
+      + Creatinine: 1.6 mg/dL [abnormal]
+      + history of acute kidney failure
+      why: The elevated creatinine and history of acute kidney failure support chronic kidney disease, but it is secondary to the primary diagnosis of acute heart failure.
 
-  #3  [65.0/100 | medium]  Renal insufficiency  (complication)
-      SNOMED aligned : N17.9
-      + creatinine elevation
-      + urea nitrogen elevation
-      + anemia
-      why: Renal function tests indicate worsening renal insufficiency.
+  #3  [65.0/100 | high]  Paroxysmal atrial fibrillation  (complication)
+      SNOMED aligned : AF - Paroxysmal atrial fibrillation
+      + confirmed paroxysmal atrial fibrillation
+      why: The patient has a confirmed history of paroxysmal atrial fibrillation, which can complicate heart failure.
 
-  #4  [50.0/100 | low]  Myasthenia gravis  (differential)
-      SNOMED aligned : G70.0
-      + tremors
-      + increased spasms in the upper extremities
-      − no specific myasthenia gravis findings on chest X-ray
-      why: Tremors and increased spasms suggest myasthenia gravis, but no specific findings support this.
+  #4  [60.0/100 | medium]  Congestive heart failure  (complication)
+      + history of chronic diastolic heart failure
+      why: Congestive heart failure is a more general term that encompasses the current presentation, but it is less specific than acute decompensated heart failure.
 
-  #5  [40.0/100 | low]  Anemia  (risk_factor)
-      + low hemoglobin and hematocrit
-      why: Anemia is present but does not fully explain the current presentation.
+  #5  [40.0/100 | low]  Myasthenia gravis  (differential)
+      SNOMED aligned : Myasthenia gravis without (acute) exacerbation
+      + confirmed myasthenia gravis
+      − no current exacerbation symptoms
+      why: The patient has a confirmed history of myasthenia gravis, but the current presentation does not strongly support an exacerbation.
 
 RULE-OUTS
 ---------
 
-  • Pneumonia: No evidence of respiratory infection.
-  • Acute coronary syndrome: No chest pain or ECG changes.
+  • Obstructive sleep apnea: No current symptoms or findings supporting acute exacerbation.
+  • Dementia: No current cognitive symptoms or findings.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging to confirm presence of pleural effusions and pulmonary edema
+  • Further lab results for electrolytes and cardiac markers would help refine the differential diagnosis.

@@ -5,64 +5,51 @@ Patient ID       : 13952483
 HADM ID          : 23852410
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:10:41.130972
-Candidates       : 6
-Most likely      : Squamous Cell Lung CA
+Generated        : 2026-08-20T17:17:16.618666
+Candidates       : 8
+Most likely      : Squamous Cell Lung Carcinoma
 Prior admissions : 2 (51 ICD codes as PMH context)
 
 Summary:
-  The patient presents with hypotension, weight loss, and pulmonary hypertension, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of cough and odynophagia.
+  The patient presents with hypotension, weight loss, and chest pain, likely due to chemotherapy/radiation toxicity, pulmonary hypertension, and malnutrition. Chronic conditions include malignant neoplasm and kidney transplant rejection.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Squamous Cell Lung CA  (primary)
-      + Squamous Cell Lung CA (confirmed)
-      + hypotension
-      + pulmonary hypertension
-      + cough
-      + odynophagia
-      why: Confirmed diagnosis and evidence of ongoing symptoms related to lung cancer.
+  #1  [85.0/100 | high]  Squamous Cell Lung Carcinoma  (primary)
+      + confirmed diagnosis from ___ guided lung biopsy
+      why: Confirmed diagnosis from biopsy and clinical presentation.
 
-  #2  [75.0/100 | high]  Pulmonary Hypertension  (complication)
-      SNOMED aligned : Catheterization of right heart
-      + pulmonary hypertension
-      + severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg
-      why: Confirmed pulmonary hypertension with significant clinical findings.
+  #2  [75.0/100 | high]  Pulmonary Hypertension  (primary)
+      + idiopathic pHTN, severe Pulmonary HTN with Cor Pulmonale
+      why: Severe pulmonary hypertension with cor pulmonale confirmed by right heart catheterization.
 
-  #3  [65.0/100 | medium]  Anemia  (complication)
-      + hypotension
-      + weight loss
-      + anorexia
-      + neutropenia
+  #3  [70.0/100 | medium]  Anemia  (complication)
+      + low hematocrit, hemoglobin, and MCHC
+      why: Multiple laboratory abnormalities indicating anemia.
+
+  #4  [65.0/100 | medium]  Malnutrition  (risk_factor)
+      + weight loss, anorexia, and malaise
+      why: Evidence of weight loss and malaise supporting malnutrition.
+
+  #5  [60.0/100 | medium]  Thrombocytopenia  (complication)
+      SNOMED aligned : Thrombocytopenic disorder
       + thrombocytopenia
-      why: Multiple laboratory abnormalities supporting anemia as a complication.
+      why: Low platelet count confirmed by lab results.
 
-  #4  [55.0/100 | medium]  Malnutrition  (risk_factor)
-      + anorexia
-      + weight loss
-      + neutropenia
-      + thrombocytopenia
-      why: Persistent anorexia and weight loss suggest malnutrition as a risk factor.
+  #6  [55.0/100 | medium]  Neutropenia  (complication)
+      + new neutropenia
+      why: Low absolute neutrophil count confirmed by lab results.
 
-  #5  [45.0/100 | low]  Chronic Kidney Disease  (complication)
-      + hypotension
-      + anemia
-      + neutropenia
-      + thrombocytopenia
-      why: Abnormal lab results suggest chronic kidney disease as a possible complication.
+  #7  [50.0/100 | low]  Chronic Obstructive Pulmonary Disease  (differential)
+      + chronic obstructive pulmonary disease, unspecified
+      why: COPD is a differential diagnosis given the patient's history.
 
-  #6  [35.0/100 | low]  Cachexia  (risk_factor)
-      + weight loss
-      + anorexia
-      why: Weight loss and anorexia suggest cachexia as a risk factor.
-
-RULE-OUTS
----------
-
-  • Pneumonia: No current evidence of pneumonia in the structured context.
+  #8  [45.0/100 | low]  Kidney Transplant Rejection  (risk_factor)
+      + kidney transplant rejection
+      why: Chronic condition with potential for acute exacerbation.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further clarification on the cause of hypotension and weight loss would refine the differential diagnosis.
+  • Further imaging to confirm pulmonary hypertension, additional labs to assess anemia severity

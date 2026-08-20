@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with recurrent supraventricular tachycardia (SVT) causing falls and headache, with new findings of right hip fracture and hypocalcemia. The patient has a history of cardiovascular and neurologic conditions.",
+  "summary": "The patient presents with recurrent supraventricular tachycardia (SVT), lightheadedness, headache, and a fall resulting in a right hip fracture. The patient has a history of cardiovascular and neurologic conditions.",
   "most_likely": "Supraventricular tachycardia",
   "differential": [
     {
@@ -10,10 +10,11 @@
       "category": "primary",
       "snomed_aligned": "Supraventricular tachycardia",
       "supporting_evidence": [
-        "SVT confirmed, recurrent SVT causing falls and headache"
+        "SVT found in the ED",
+        "SVT related to palpitations, lightheadedness, headache"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis supported by recurrent SVT and falls, confirmed in ED.",
+      "reasoning": "SVT is the dominant clinical presentation and confirmed in the ED.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "6456007",
@@ -52,6 +53,23 @@
           "package_order": 2
         },
         {
+          "code": "R00.2",
+          "title": "Palpitations",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R00.2",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "palpitations",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "80313002",
+          "from_snomed_term": "Palpitations",
+          "relevance_to_diagnosis": 0.3656,
+          "package_order": 3
+        },
+        {
           "code": "R51.9",
           "title": "Headache, unspecified",
           "source": "snomed_extended_map",
@@ -66,7 +84,24 @@
           "from_snomed_id": "25064002",
           "from_snomed_term": "Headache",
           "relevance_to_diagnosis": 0.228,
-          "package_order": 3
+          "package_order": 4
+        },
+        {
+          "code": "R42",
+          "title": "Dizziness and giddiness",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R42",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "lightheadedness",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "386705008",
+          "from_snomed_term": "Lightheadedness",
+          "relevance_to_diagnosis": 0.1607,
+          "package_order": 5
         }
       ],
       "icd10_principal": [
@@ -95,6 +130,22 @@
       ],
       "icd10_supporting": [
         {
+          "code": "R00.2",
+          "title": "Palpitations",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R00.2",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "palpitations",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "80313002",
+          "from_snomed_term": "Palpitations",
+          "relevance_to_diagnosis": 0.3656
+        },
+        {
           "code": "R51.9",
           "title": "Headache, unspecified",
           "source": "snomed_extended_map",
@@ -109,10 +160,26 @@
           "from_snomed_id": "25064002",
           "from_snomed_term": "Headache",
           "relevance_to_diagnosis": 0.228
+        },
+        {
+          "code": "R42",
+          "title": "Dizziness and giddiness",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R42",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "lightheadedness",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "386705008",
+          "from_snomed_term": "Lightheadedness",
+          "relevance_to_diagnosis": 0.1607
         }
       ],
       "icd_status": "mapped",
-      "n_icd_codes": 3
+      "n_icd_codes": 5
     },
     {
       "rank": 2,
@@ -120,12 +187,14 @@
       "score": 70.0,
       "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "Nondisplaced comminuted fracture in the right superior pubic ramus",
       "supporting_evidence": [
         "Nondisplaced comminuted fracture in the right superior pubic ramus"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Recent fracture confirmed by radiology, causing pain and fall.",
+      "opposing_evidence": [
+        "No evidence of dislocation, no heterotopic ossification"
+      ],
+      "reasoning": "The fracture is confirmed by radiology and is a complication of the fall.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "5913000",
@@ -134,7 +203,7 @@
         "match_method": "fuzzy",
         "score": 0.6231912747673617,
         "query": "Right hip fracture",
-        "aligned_hint": null
+        "aligned_hint": "Nondisplaced comminuted fracture in the right superior pubic ramus"
       },
       "icd10_primary": "S72.009?",
       "icd10_primary_title": "",
@@ -238,149 +307,18 @@
     },
     {
       "rank": 3,
-      "diagnosis": "Hypocalcemia",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "differential",
-      "snomed_aligned": "Calcium, Total",
-      "supporting_evidence": [
-        "Calcium, Total: 9.2 mg/dL (low)"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Low calcium level noted, but not yet clinically significant.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "5291005",
-        "preferred_term": "Hypocalcemia",
-        "fsn": "Hypocalcemia (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Hypocalcemia",
-        "aligned_hint": "Calcium, Total"
-      },
-      "icd10_primary": "E83.51",
-      "icd10_primary_title": "Hypocalcemia",
-      "icd10_package": [
-        {
-          "code": "E83.51",
-          "title": "Hypocalcemia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS E83.51 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "P71.1",
-          "title": "Other neonatal hypocalcemia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P71.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "E83.51",
-          "title": "Hypocalcemia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS E83.51 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "P71.1",
-          "title": "Other neonatal hypocalcemia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P71.1 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 2
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Cerebral infarct",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Tiny chronic right cerebellar infarct, new since prior"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Chronic infarct noted, but not recent or acute.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "723082006",
-        "preferred_term": "Silent cerebral infarct",
-        "fsn": "Silent cerebral infarct (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.7887317109255645,
-        "query": "Cerebral infarct",
-        "aligned_hint": null
-      },
-      "icd10_primary": "I63.9",
-      "icd10_primary_title": "Cerebral infarction, unspecified",
-      "icd10_package": [
-        {
-          "code": "I63.9",
-          "title": "Cerebral infarction, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I63.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "I63.9",
-          "title": "Cerebral infarction, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I63.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 5,
       "diagnosis": "Anxiety disorder",
-      "score": 40.0,
-      "confidence": "low",
+      "score": 60.0,
+      "confidence": "medium",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Major depressive disorder, single episode, unspecified"
+        "Anxiety disorder, unspecified"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Previous anxiety disorder noted, but not currently active.",
+      "opposing_evidence": [
+        "No specific evidence of anxiety symptoms in current presentation"
+      ],
+      "reasoning": "The patient has a history of anxiety disorder, which may contribute to her current presentation.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "197480006",
@@ -423,25 +361,219 @@
       "icd10_supporting": [],
       "icd_status": "mapped",
       "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Hypertension",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Essential (primary) hypertension",
+      "supporting_evidence": [
+        "Essential (primary) hypertension"
+      ],
+      "opposing_evidence": [
+        "No specific evidence of hypertension exacerbation in current presentation"
+      ],
+      "reasoning": "The patient has a history of hypertension, which may be a risk factor for her current presentation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "59621000",
+        "preferred_term": "Essential hypertension",
+        "fsn": "Essential hypertension (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypertension",
+        "aligned_hint": "Essential (primary) hypertension"
+      },
+      "icd10_primary": "I10",
+      "icd10_primary_title": "Essential (primary) hypertension",
+      "icd10_package": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P29.2",
+          "title": "Neonatal hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P29.2",
+          "title": "Neonatal hypertension",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hyperlipidemia",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Hyperlipidemia, unspecified",
+      "supporting_evidence": [
+        "Hyperlipidemia, unspecified"
+      ],
+      "opposing_evidence": [
+        "No specific evidence of hyperlipidemia exacerbation in current presentation"
+      ],
+      "reasoning": "The patient has a history of hyperlipidemia, which may be a risk factor for her current presentation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "55822004",
+        "preferred_term": "Hyperlipidemia",
+        "fsn": "Hyperlipidemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hyperlipidemia",
+        "aligned_hint": "Hyperlipidemia, unspecified"
+      },
+      "icd10_primary": "E78.5",
+      "icd10_primary_title": "Hyperlipidemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E78.5 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS E78.5 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Atherosclerotic heart disease",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "supporting_evidence": [
+        "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+      ],
+      "opposing_evidence": [
+        "No specific evidence of acute coronary event in current presentation"
+      ],
+      "reasoning": "The patient has a history of atherosclerotic heart disease, which may be a complication of her current presentation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "451041000124103",
+        "preferred_term": "Atherosclerosis of coronary artery without angina pectoris",
+        "fsn": "Atherosclerosis of coronary artery without angina pectoris (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Atherosclerotic heart disease",
+        "aligned_hint": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+      },
+      "icd10_primary": "I25.10",
+      "icd10_primary_title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "icd10_package": [
+        {
+          "code": "I25.10",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I25.10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I25.10",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS I25.10 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
     }
   ],
   "rule_outs": [
     {
       "diagnosis": "Pneumothorax",
-      "why": "No evidence of pneumothorax in chest radiology or clinical presentation."
+      "why": "No evidence of pneumothorax in chest X-ray"
     }
   ],
   "uncertain_areas": [
-    "More detailed clinical history on current anxiety symptoms and hypocalcemia would refine rankings"
+    "Further history of specific anxiety symptoms, more detailed cardiovascular assessment"
   ],
-  "n_candidates": 5,
+  "n_candidates": 6,
   "type": "differential_diagnosis_with_icd",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "10426859",
   "hadm_id": "29908281",
-  "generated_at": "2026-08-20T00:08:36.075612",
+  "generated_at": "2026-08-20T17:14:38.533043",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,
@@ -606,9 +738,9 @@
   "icd_map_refset": "6011000124106",
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
-    "n_diagnoses": 5,
-    "n_with_principal": 5,
+    "n_diagnoses": 6,
+    "n_with_principal": 6,
     "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:15.264418"
+  "generated_at_stage8": "2026-08-20T17:19:16.491424"
 }

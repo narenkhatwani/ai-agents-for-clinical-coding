@@ -3,41 +3,45 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13952483
 HADM ID          : 23852410
-Generated        : 2026-08-20T00:13:28.322996
+Generated        : 2026-08-20T17:30:20.685840
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Other hypotension
-  Rank-1 predicted     : Squamous Cell Lung CA
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Failure to thrive
+  Billed ICD title     : Other hypotension (ICD metric only)
+  Rank-1 predicted     : Squamous Cell Lung Carcinoma
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the ranked differential diagnoses match 'Other hypotension'.
+  LLM reason           : The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive / debility, generalized decline in functional status, weight loss and poor intake). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition) is a commonly associated/contributing condition but is a distinct principal diagnosis from failure to thrive, and is not a subtype or synonym of it. The remaining ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : I95.89 — Other hypotension
-  Rank-1 mapped ICD    : - — 
+  Rank-1 mapped ICD    : C34.90 — Malignant neoplasm of unspecified part of unspecified bronchus or lung
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have a mapped ICD code that matches I95.89.
+  LLM ICD reason       : No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. Additionally, the billed primary code I95.89 (other hypotension) is not represented by any mapped code in the differential list; the closest candidate codes (E46 malnutrition, I27.20 pulmonary hypertension, C34.90 lung cancer) are clinically distinct from hypotension and would not be accepted as equivalent by a coder.
   Stage 9 final ICD    : I27.20 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Squamous Cell Lung CA  [score=85.0, high]  ICD=- — 
-   2. Pulmonary Hypertension  [score=75.0, high]  ICD=- — 
-   3. Anemia  [score=65.0, medium]  ICD=D64.9 — Anemia, unspecified
-   4. Malnutrition  [score=55.0, medium]  ICD=E46 — Unspecified protein-calorie malnutrition
-   5. Chronic Kidney Disease  [score=45.0, low]  ICD=N18.9 — Chronic kidney disease, unspecified
-   6. Cachexia  [score=35.0, low]  ICD=R64 — Cachexia
+   1. Squamous Cell Lung Carcinoma  [score=85.0, high]  ICD=C34.90 — Malignant neoplasm of unspecified part of unspecified bronchus or lung
+   2. Pulmonary Hypertension  [score=75.0, high]  ICD=I27.20 — Pulmonary hypertension, unspecified
+   3. Anemia  [score=70.0, medium]  ICD=D64.9 — Anemia, unspecified
+   4. Malnutrition  [score=65.0, medium]  ICD=E46 — Unspecified protein-calorie malnutrition
+   5. Thrombocytopenia  [score=60.0, medium]  ICD=D69.6 — Thrombocytopenia, unspecified
+   6. Neutropenia  [score=55.0, medium]  ICD=D70.9 — Neutropenia, unspecified
+   7. Chronic Obstructive Pulmonary Disease  [score=50.0, low]  ICD=J44.9 — Chronic obstructive pulmonary disease, unspecified
+   8. Kidney Transplant Rejection  [score=45.0, low]  ICD=T86.91 — Unspecified transplanted organ and tissue rejection

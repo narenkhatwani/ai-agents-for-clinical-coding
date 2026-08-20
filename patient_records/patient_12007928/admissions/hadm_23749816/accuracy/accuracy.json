@@ -4,30 +4,34 @@
   "method": "llm_query_expansion",
   "patient_id": "12007928",
   "hadm_id": "23749816",
-  "generated_at": "2026-08-20T00:13:19.520624",
+  "generated_at": "2026-08-20T17:29:53.737143",
   "ground_truth": {
     "primary_icd_code": "I5033",
     "primary_dx_title": "Acute on chronic diastolic (congestive) heart failure",
     "primary_icd_title": "Acute on chronic diastolic (congestive) heart failure",
+    "discharge_diagnosis": "Acute on chronic decompensated diastolic heart failure",
+    "diffdx_gt": "Acute on chronic decompensated diastolic heart failure",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 19
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Acute on chronic diastolic (congestive) heart failure",
+      "ground_truth_primary": "Acute on chronic decompensated diastolic heart failure",
       "rank1_diagnosis": "Acute decompensated heart failure",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
-      "match": false,
-      "is_rank1_match": null,
-      "matched_diffdx_rank": null,
-      "matched_diagnosis": "",
-      "matched_score": null,
-      "matched_confidence": "",
-      "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.",
-      "llm_expanded_ground_truth": "Acute on chronic diastolic heart failure",
-      "llm_expanded_matched": "Acute decompensated heart failure",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Acute decompensated heart failure",
+      "matched_score": 85.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_broader",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Acute decompensated heart failure' names the same principal condition as the physician diagnosis 'Acute on chronic decompensated diastolic heart failure'; the differential label is broader (does not specify diastolic/HFpEF or chronicity) but codes the same acute decompensated heart failure episode.",
+      "llm_expanded_ground_truth": "Acute on chronic decompensated diastolic heart failure | Acute exacerbation of chronic diastolic congestive heart failure | Acute decompensated HFpEF (heart failure with preserved ejection fraction) | ADHF | CHF exacerbation, diastolic type",
+      "llm_expanded_matched": "Acute decompensated heart failure | ADHF | Acute CHF exacerbation | Decompensated congestive heart failure",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
           "diagnosis": "Acute decompensated heart failure",
@@ -38,36 +42,36 @@
           "icd10_primary_title": "Heart failure, unspecified"
         },
         {
-          "diagnosis": "Atrial fibrillation",
+          "diagnosis": "Chronic kidney disease",
           "rank": 2,
           "score": 70.0,
           "confidence": "medium",
-          "icd10_primary": "I48.91",
-          "icd10_primary_title": "Unspecified atrial fibrillation"
+          "icd10_primary": "N18.9",
+          "icd10_primary_title": "Chronic kidney disease, unspecified"
         },
         {
-          "diagnosis": "Renal insufficiency",
+          "diagnosis": "Paroxysmal atrial fibrillation",
           "rank": 3,
           "score": 65.0,
+          "confidence": "high",
+          "icd10_primary": "I48.0",
+          "icd10_primary_title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "diagnosis": "Congestive heart failure",
+          "rank": 4,
+          "score": 60.0,
           "confidence": "medium",
-          "icd10_primary": "N28.9",
-          "icd10_primary_title": "Disorder of kidney and ureter, unspecified"
+          "icd10_primary": "I50.9",
+          "icd10_primary_title": "Heart failure, unspecified"
         },
         {
           "diagnosis": "Myasthenia gravis",
-          "rank": 4,
-          "score": 50.0,
-          "confidence": "low",
-          "icd10_primary": "G70.00",
-          "icd10_primary_title": "Myasthenia gravis without (acute) exacerbation"
-        },
-        {
-          "diagnosis": "Anemia",
           "rank": 5,
           "score": 40.0,
           "confidence": "low",
-          "icd10_primary": "D64.9",
-          "icd10_primary_title": "Anemia, unspecified"
+          "icd10_primary": "G70.00",
+          "icd10_primary_title": "Myasthenia gravis without (acute) exacerbation"
         }
       ],
       "n_diffdx": 5
@@ -77,42 +81,53 @@
       "ground_truth_icd_title": "Acute on chronic diastolic (congestive) heart failure",
       "rank1_predicted_icd": "I50.9",
       "rank1_predicted_icd_title": "Heart failure, unspecified",
-      "matched_predicted_icd": "",
-      "matched_predicted_icd_title": "",
-      "icd_match": false,
+      "matched_predicted_icd": "I50.9",
+      "matched_predicted_icd_title": "Heart failure, unspecified",
+      "icd_match": true,
       "icd_exact_match": false,
-      "icd_family_match": false,
-      "icd_llm_match": false,
-      "is_rank1_icd_match": false,
+      "icd_family_match": true,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.",
-      "llm_expanded_ground_truth_icd": "I50.33 — Acute on chronic diastolic (congestive) heart failure",
-      "llm_expanded_matched_icd": "I50.9 — Heart failure, unspecified",
+      "llm_icd_reason": "Mapped code I50.9 (Heart failure, unspecified) is the unspecified parent of billed I50.33 (Acute on chronic diastolic congestive heart failure). Not an exact code match and lacks the diastolic/acuity specificity required for billing, but a coder would recognize it as the same principal condition (heart failure) — acceptable as clinically equivalent at the category level.",
+      "llm_expanded_ground_truth_icd": "I50.33 Acute on chronic diastolic (congestive) heart failure | I50.3x diastolic heart failure family | HFpEF acute on chronic",
+      "llm_expanded_matched_icd": "I50.9 Heart failure, unspecified | I50 Heart failure category | Congestive heart failure NOS",
       "stage9_final_primary_icd": "I50.9",
-      "diagnosis_match": false,
-      "is_rank1_diagnosis_match": null,
-      "matched_diffdx_rank": null
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
     },
     "llm_qe_raw": {
       "matched_rank": 1,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.",
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_broader",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Acute decompensated heart failure' names the same principal condition as the physician diagnosis 'Acute on chronic decompensated diastolic heart failure'; the differential label is broader (does not specify diastolic/HFpEF or chronicity) but codes the same acute decompensated heart failure episode.",
       "ground_truth_expansions": [
-        "Acute on chronic diastolic heart failure"
+        "Acute on chronic decompensated diastolic heart failure",
+        "Acute exacerbation of chronic diastolic congestive heart failure",
+        "Acute decompensated HFpEF (heart failure with preserved ejection fraction)",
+        "ADHF",
+        "CHF exacerbation, diastolic type"
       ],
       "matched_diagnosis_expansions": [
-        "Acute decompensated heart failure"
+        "Acute decompensated heart failure",
+        "ADHF",
+        "Acute CHF exacerbation",
+        "Decompensated congestive heart failure"
       ],
-      "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.",
+      "icd_equivalent": true,
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped code I50.9 (Heart failure, unspecified) is the unspecified parent of billed I50.33 (Acute on chronic diastolic congestive heart failure). Not an exact code match and lacks the diastolic/acuity specificity required for billing, but a coder would recognize it as the same principal condition (heart failure) — acceptable as clinically equivalent at the category level.",
       "ground_truth_icd_expansions": [
-        "I50.33 — Acute on chronic diastolic (congestive) heart failure"
+        "I50.33 Acute on chronic diastolic (congestive) heart failure",
+        "I50.3x diastolic heart failure family",
+        "HFpEF acute on chronic"
       ],
       "matched_icd_expansions": [
-        "I50.9 — Heart failure, unspecified"
+        "I50.9 Heart failure, unspecified",
+        "I50 Heart failure category",
+        "Congestive heart failure NOS"
       ],
       "_cache_hit": false
     }

@@ -2,42 +2,35 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 10361982
 HADM ID          : 24286431
-Most likely      : Post-hysterectomy uterine atony
+Most likely      : Post-hysterectomy bleeding
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:14.439241
+Generated (S8)   : 2026-08-20T17:19:15.653612
 
 Summary:
-  Patient presents with heavy vaginal bleeding post hysterectomy, with no free fluid or hematoma noted on ultrasound. Chronic conditions include endometriosis and other uterine neoplasms.
+  The patient is a 45-year-old woman post-total laparoscopic hysterectomy with a history of abnormal uterine bleeding, presenting with heavy vaginal bleeding and passing clots.
 
-#1  [85.0/100 | high]  Post-hysterectomy uterine atony  (primary)
-    SNOMED: Atony of uterus (9293002) [fuzzy score=0.701759503180656]
-    ICD status: mapped | primary: O62.2
-      1. [principal] O62.2 — Other uterine inertia
-      2. [supporting] N93.9 — Abnormal uterine and vaginal bleeding, unspecified  ← heavy vaginal bleeding (symptom)
+#1  [85.0/100 | high]  Post-hysterectomy bleeding  (primary)
+    SNOMED: Heavy episode of vaginal bleeding (315224006) [exact score=1.0]
+    ICD status: mapped | primary: N93.9
+      1. [principal] N93.9 — Abnormal uterine and vaginal bleeding, unspecified
 
-#2  [65.0/100 | medium]  Post-hysterectomy uterine inversion  (complication)
-    SNOMED: Uterine inversion (27215002) [fuzzy score=0.7247388503003056]
-    ICD status: mapped | primary: O71.2
-      1. [principal] O71.2 — Postpartum inversion of uterus
-      2. [principal] N85.5 — Inversion of uterus
-      3. [principal] N88.8 — Other specified noninflammatory disorders of cervix uteri
-      4. [supporting] N93.9 — Abnormal uterine and vaginal bleeding, unspecified  ← heavy vaginal bleeding (symptom)
+#2  [65.0/100 | medium]  Menorrhagia  (differential)
+    SNOMED: Menorrhagia (386692008) [exact score=1.0]
+    ICD status: mapped | primary: N92.0
+      1. [principal] N92.0 — Excessive and frequent menstruation with regular cycle
+      2. [principal] D68.9 — Coagulation defect, unspecified
+      3. [principal] N92.2 — Excessive menstruation at puberty
+      4. [principal] N93.8 — Other specified abnormal uterine and vaginal bleeding
+      5. [principal] N92.1 — Excessive and frequent menstruation with irregular cycle
+      6. [supporting] N93.9 — Abnormal uterine and vaginal bleeding, unspecified  ← Heavy episode of vaginal bleeding (retained_snomed)
 
-#3  [40.0/100 | medium]  Endometriosis  (risk_factor)
-    SNOMED: Endometriosis (clinical) (129103003) [exact score=1.0]
-    ICD status: mapped | primary: N80.9
-      1. [principal] N80.9 — Endometriosis, unspecified
-      2. [supporting] N93.9 — Abnormal uterine and vaginal bleeding, unspecified  ← abnormal uterine and vaginal bleeding (diagnosis)
+#3  [50.0/100 | low]  Hypothyroidism  (risk_factor)
+    SNOMED: Hypothyroidism (40930008) [exact score=1.0]
+    ICD status: mapped | primary: E03.9
+      1. [principal] E03.9 — Hypothyroidism, unspecified
+      2. [principal] P72.2 — Other transitory neonatal disorders of thyroid function, not elsewhere classified
 
-#4  [30.0/100 | low]  Hemorrhagic shock  (differential)
-    SNOMED: Hemorrhagic shock (355001) [exact score=1.0]
-    ICD status: mapped | primary: R57.1
-      1. [principal] R57.1 — Hypovolemic shock
-      2. [supporting] N93.9 — Abnormal uterine and vaginal bleeding, unspecified  ← heavy vaginal bleeding (symptom)
-
-#5  [25.0/100 | low]  Infection  (differential)
-    SNOMED: Infectious disease (40733004) [exact score=1.0]
-    ICD status: mapped | primary: B99.9
-      1. [principal] B99.9 — Unspecified infectious disease
-      2. [principal] P39.9 — Infection specific to the perinatal period, unspecified
-      3. [supporting] N93.9 — Abnormal uterine and vaginal bleeding, unspecified  ← heavy vaginal bleeding (symptom)
+#4  [30.0/100 | low]  Anxiety disorder  (differential)
+    SNOMED: Anxiety disorder (197480006) [exact score=1.0]
+    ICD status: mapped | primary: F41.9
+      1. [principal] F41.9 — Anxiety disorder, unspecified

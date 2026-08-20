@@ -4,37 +4,39 @@ Patient ID       : 13196707
 HADM ID          : 21475988
 Most likely      : Severe sepsis secondary to RUL PNA
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:20.390272
+Generated (S8)   : 2026-08-20T17:19:21.199093
 
 Summary:
-  The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.
+  The patient is a 50-year-old male with a history of metastatic adenocarcinoma of unknown primary presenting with severe sepsis secondary to RUL PNA, hypotension, and altered mental status. He has a history of multiple metastatic brain lesions and SVC syndrome.
 
 #1  [85.0/100 | high]  Severe sepsis secondary to RUL PNA  (primary)
     SNOMED: (unmapped)
-    ICD status: unmapped | primary: None
+    ICD status: supporting_only | primary: None
+      1. [supporting] A41.9 — Sepsis, unspecified organism  ← sepsis (tree_symptom)
 
-#2  [75.0/100 | medium]  Metastatic adenocarcinoma of unknown primary  (primary)
+#2  [75.0/100 | high]  Metastatic adenocarcinoma of unknown primary  (primary)
     SNOMED: Metastatic adenocarcinoma of unknown origin (307226002) [exact score=1.0]
     ICD status: mapped | primary: C79.9
       1. [principal] C79.9 — Secondary malignant neoplasm of unspecified site
 
-#3  [65.0/100 | medium]  Hypotension secondary to pericardiocentesis  (complication)
+#3  [65.0/100 | medium]  Altered mental status due to metastatic brain lesions  (complication)
     SNOMED: (unmapped)
     ICD status: supporting_only | primary: None
-      1. [supporting] I95.9 — Hypotension, unspecified  ← hypotension (key_symptom)
+      1. [supporting] R41.82 — Altered mental status, unspecified  ← altered mental status (key_symptom)
 
-#4  [55.0/100 | low]  Acute kidney failure  (secondary)
+#4  [60.0/100 | high]  Hypotension  (complication)
+    SNOMED: Hypotension (45007003) [exact score=1.0]
+    ICD status: mapped | primary: I95.9
+      1. [principal] I95.9 — Hypotension, unspecified
+
+#5  [55.0/100 | medium]  Pneumonia  (secondary)
+    SNOMED: Pneumonia (233604007) [exact score=1.0]
+    ICD status: mapped | primary: J18.9
+      1. [principal] J18.9 — Pneumonia, unspecified organism
+      2. [supporting] A41.9 — Sepsis, unspecified organism  ← sepsis (tree_symptom)
+
+#6  [45.0/100 | medium]  Acute kidney failure  (complication)
     SNOMED: Acute heart failure (56675007) [fuzzy score=0.5935728561881009]
     ICD status: mapped | primary: I50.9
       1. [principal] I50.9 — Heart failure, unspecified
       2. [principal] P29.0 — Neonatal cardiac failure
-
-#5  [45.0/100 | low]  Anemia  (secondary)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
-
-#6  [35.0/100 | low]  Sodium imbalance  (risk_factor)
-    SNOMED: Hypo-osmolality and or hyponatremia (267447008) [fuzzy score=0.8830617472970576]
-    ICD status: mapped | primary: E87.1
-      1. [principal] E87.1 — Hypo-osmolality and hyponatremia

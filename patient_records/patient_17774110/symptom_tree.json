@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC.",
+  "reasoning": "The patient presents with septic shock, hypoxia, and multiple organ system failures, including liver and renal dysfunction, coagulopathy, and pleural effusion. The dominant clinical picture is sepsis with multi-organ involvement.",
   "branches": [
     {
       "category": "infectious",
@@ -12,23 +12,16 @@
           "severity": "severe",
           "evidence": "Admission for septic shock",
           "related_findings": [
-            "Klebsiella Aerogenes blood cultures grew"
+            "large pleural effusion with compressive consolidation versus atelectasis",
+            "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy"
           ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "Atrial fibrillation/flutter",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol",
-          "related_findings": [],
-          "children": []
+          "children": [
+            {
+              "term": "Klebsiella Aerogenes infection",
+              "status": "present",
+              "evidence": "Blood cultures grew Klebsiella Aerogenes"
+            }
+          ]
         }
       ]
     },
@@ -42,41 +35,68 @@
           "severity": "moderate",
           "evidence": "oxygen saturations in the ___ at his SNF",
           "related_findings": [
-            "Bilateral effusions right greater than left are unchanged"
+            "Bilateral effusions right greater than left are unchanged",
+            "large pleural effusion with compressive consolidation versus atelectasis"
           ],
-          "children": []
-        },
+          "children": [
+            {
+              "term": "Atelectasis",
+              "status": "present",
+              "evidence": "Bilateral effusions right greater than left are unchanged"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
         {
-          "term": "Hypoxic respiratory failure",
+          "term": "Hypotension",
           "status": "present",
           "severity": "severe",
-          "evidence": "intubated for hypoxic respiratory failure",
+          "evidence": "MAP and worsening lactate",
           "related_findings": [
-            "Bilateral effusions right greater than left are unchanged"
+            "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
+            "Atrial fibrillation/flutter s/p amiodarone bolus now on metoprolol"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "Atrial fibrillation/flutter",
+              "status": "present",
+              "evidence": "a.fib/a.flutter s/p amiodarone bolus now on metoprolol"
+            }
+          ]
         }
       ]
     },
     {
       "category": "neurologic",
-      "ontology_hint": "Neurology",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
-          "term": "Hepatic encephalopathy",
+          "term": "Altered mental status",
           "status": "present",
           "severity": "moderate",
-          "evidence": "concerning for hepatic encephalopathy",
+          "evidence": "RASS-5, sluggish pupil response",
           "related_findings": [
-            "RASS-5, sluggish pupil response"
+            "Hepatic encephalopathy",
+            "worsening liver failure"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "Hepatic encephalopathy",
+              "status": "present",
+              "evidence": "concerning for hepatic encephalopathy"
+            }
+          ]
         }
       ]
     },
     {
       "category": "gi",
-      "ontology_hint": "Gastrointestinal",
+      "ontology_hint": "GI",
       "symptoms": [
         {
           "term": "GI bleeding",
@@ -84,9 +104,16 @@
           "severity": "moderate",
           "evidence": "black coffee-ground GI contents",
           "related_findings": [
-            "epistaxis from the left nare"
+            "epistaxis from the left nare",
+            "worsening liver failure"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "Esophageal varices",
+              "status": "present",
+              "evidence": "known esophageal varices s/p TIPS"
+            }
+          ]
         }
       ]
     },
@@ -98,37 +125,19 @@
           "term": "Acute renal failure",
           "status": "present",
           "severity": "severe",
-          "evidence": "acute renal failure ___ to septic shock and ATN on dialysis",
+          "evidence": "worsening liver failure",
           "related_findings": [
             "Creatinine 2.1 mg/dL",
             "Bicarbonate 19 mEq/L",
             "pH 7.11 units"
           ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "IVC thrombus",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "Multifocal metastatic HCC",
-          "status": "present",
-          "severity": "unknown",
-          "evidence": "multifocal metastatic HCC with known metastases to the left adrenal gland",
-          "related_findings": [
-            "large heterogeneous solid mass is re-demonstrated within the left upper quadrant"
-          ],
-          "children": []
+          "children": [
+            {
+              "term": "Coagulopathy",
+              "status": "present",
+              "evidence": "INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec"
+            }
+          ]
         }
       ]
     }
@@ -139,14 +148,13 @@
     "GI bleeding"
   ],
   "red_flags": [
-    "Hypoxia",
-    "Hypoxic respiratory failure",
-    "Acute renal failure"
+    "Hypotension",
+    "Atrial fibrillation/flutter"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "17774110",
   "admission_id": "27339772",
-  "generated_at": "2026-08-19T23:21:10.549297"
+  "generated_at": "2026-08-20T17:11:42.357543"
 }

@@ -1,103 +1,84 @@
 {
-  "summary": "Patient presents with heavy vaginal bleeding post hysterectomy, with no free fluid or hematoma noted on ultrasound. Chronic conditions include endometriosis and other uterine neoplasms.",
-  "most_likely": "Post-hysterectomy uterine atony",
+  "summary": "The patient is a 45-year-old woman post-total laparoscopic hysterectomy with a history of abnormal uterine bleeding, presenting with heavy vaginal bleeding and passing clots.",
+  "most_likely": "Post-hysterectomy bleeding",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Post-hysterectomy uterine atony",
+      "diagnosis": "Post-hysterectomy bleeding",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "315224006",
+      "snomed_aligned": "Heavy episode of vaginal bleeding",
       "supporting_evidence": [
         "heavy vaginal bleeding after hysterectomy",
-        "normal postoperative changes and a normal appearing vaginal cuff are noted",
-        "no free fluid or hematoma seen on ultrasound"
+        "passing clots"
       ],
       "opposing_evidence": [],
-      "reasoning": "Heavy vaginal bleeding post hysterectomy strongly supports uterine atony as the primary cause."
+      "reasoning": "Primary diagnosis given the recent hysterectomy and heavy vaginal bleeding."
     },
     {
       "rank": 2,
-      "diagnosis": "Post-hysterectomy uterine inversion",
+      "diagnosis": "Menorrhagia",
       "score": 65.0,
       "confidence": "medium",
-      "category": "complication",
+      "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy",
-        "normal postoperative changes and a normal appearing vaginal cuff are noted"
+        "history of abnormal uterine bleeding"
       ],
       "opposing_evidence": [
-        "no free fluid or hematoma seen on ultrasound"
+        "no current bleeding symptoms"
       ],
-      "reasoning": "While less likely, uterine inversion is a known complication of hysterectomy and could explain the bleeding."
+      "reasoning": "History of menorrhagia, but no current symptoms to support active condition."
     },
     {
       "rank": 3,
-      "diagnosis": "Endometriosis",
-      "score": 40.0,
-      "confidence": "medium",
+      "diagnosis": "Hypothyroidism",
+      "score": 50.0,
+      "confidence": "low",
       "category": "risk_factor",
-      "snomed_aligned": "N800",
+      "snomed_aligned": "Hypothyroidism, unspecified",
       "supporting_evidence": [
-        "endometriosis of uterus listed as chronic condition"
+        "history of hypothyroidism"
       ],
       "opposing_evidence": [
-        "no current evidence of endometriosis causing bleeding"
+        "normal thyroid lab values"
       ],
-      "reasoning": "Endometriosis is a chronic condition and a risk factor for heavy bleeding, but no current evidence supports it as the primary cause."
+      "reasoning": "History of hypothyroidism, but normal current thyroid lab values."
     },
     {
       "rank": 4,
-      "diagnosis": "Hemorrhagic shock",
+      "diagnosis": "Anxiety disorder",
       "score": 30.0,
       "confidence": "low",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy"
+        "history of anxiety disorder"
       ],
       "opposing_evidence": [
-        "normal hemoglobin and hematocrit levels",
-        "no free fluid or hematoma seen on ultrasound"
+        "no current symptoms"
       ],
-      "reasoning": "While possible, hemorrhagic shock is less likely given normal hemoglobin levels and no signs of free fluid."
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Infection",
-      "score": 25.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy"
-      ],
-      "opposing_evidence": [
-        "normal hemoglobin and hematocrit levels",
-        "no free fluid or hematoma seen on ultrasound"
-      ],
-      "reasoning": "Infection could be a factor, but no current evidence supports it as the primary cause."
+      "reasoning": "History of anxiety disorder, but no current symptoms to support active condition."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Uterine rupture",
-      "why": "No evidence of free fluid or signs of rupture on imaging"
+      "diagnosis": "Dyspareunia",
+      "why": "Denies dyspareunia."
     }
   ],
   "uncertain_areas": [
-    "Need to know if patient has a history of uterine inversion or if there are signs of infection"
+    "Further details on the cause of bleeding and any infection would change ranking"
   ],
-  "n_candidates": 5,
+  "n_candidates": 4,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "10361982",
   "hadm_id": "24286431",
-  "generated_at": "2026-08-20T00:08:23.377128",
+  "generated_at": "2026-08-20T17:14:14.448992",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 4,

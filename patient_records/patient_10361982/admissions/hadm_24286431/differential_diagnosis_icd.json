@@ -1,46 +1,33 @@
 {
-  "summary": "Patient presents with heavy vaginal bleeding post hysterectomy, with no free fluid or hematoma noted on ultrasound. Chronic conditions include endometriosis and other uterine neoplasms.",
-  "most_likely": "Post-hysterectomy uterine atony",
+  "summary": "The patient is a 45-year-old woman post-total laparoscopic hysterectomy with a history of abnormal uterine bleeding, presenting with heavy vaginal bleeding and passing clots.",
+  "most_likely": "Post-hysterectomy bleeding",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Post-hysterectomy uterine atony",
+      "diagnosis": "Post-hysterectomy bleeding",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "315224006",
+      "snomed_aligned": "Heavy episode of vaginal bleeding",
       "supporting_evidence": [
         "heavy vaginal bleeding after hysterectomy",
-        "normal postoperative changes and a normal appearing vaginal cuff are noted",
-        "no free fluid or hematoma seen on ultrasound"
+        "passing clots"
       ],
       "opposing_evidence": [],
-      "reasoning": "Heavy vaginal bleeding post hysterectomy strongly supports uterine atony as the primary cause.",
+      "reasoning": "Primary diagnosis given the recent hysterectomy and heavy vaginal bleeding.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "9293002",
-        "preferred_term": "Atony of uterus",
-        "fsn": "Atony of uterus (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.701759503180656,
-        "query": "Post-hysterectomy uterine atony",
-        "aligned_hint": "315224006"
+        "concept_id": "315224006",
+        "preferred_term": "Heavy episode of vaginal bleeding",
+        "fsn": "Heavy episode of vaginal bleeding (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Post-hysterectomy bleeding",
+        "aligned_hint": "Heavy episode of vaginal bleeding"
       },
-      "icd10_primary": "O62.2",
-      "icd10_primary_title": "Other uterine inertia",
+      "icd10_primary": "N93.9",
+      "icd10_primary_title": "Abnormal uterine and vaginal bleeding, unspecified",
       "icd10_package": [
-        {
-          "code": "O62.2",
-          "title": "Other uterine inertia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS O62.2",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
         {
           "code": "N93.9",
           "title": "Abnormal uterine and vaginal bleeding, unspecified",
@@ -49,115 +36,116 @@
           "map_group": 1,
           "map_advice": "ALWAYS N93.9",
           "always": true,
-          "role": "supporting",
+          "role": "principal",
           "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
-          "from_snomed_id": "315224006",
-          "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.3259,
-          "package_order": 2
+          "package_order": 1
         }
       ],
       "icd10_principal": [
         {
-          "code": "O62.2",
-          "title": "Other uterine inertia",
+          "code": "N93.9",
+          "title": "Abnormal uterine and vaginal bleeding, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS O62.2",
+          "map_advice": "ALWAYS N93.9",
           "always": true,
           "role": "principal",
           "order": 1
         }
       ],
-      "icd10_supporting": [
-        {
-          "code": "N93.9",
-          "title": "Abnormal uterine and vaginal bleeding, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N93.9",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
-          "from_snomed_id": "315224006",
-          "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.3259
-        }
-      ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 1
     },
     {
       "rank": 2,
-      "diagnosis": "Post-hysterectomy uterine inversion",
+      "diagnosis": "Menorrhagia",
       "score": 65.0,
       "confidence": "medium",
-      "category": "complication",
+      "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy",
-        "normal postoperative changes and a normal appearing vaginal cuff are noted"
+        "history of abnormal uterine bleeding"
       ],
       "opposing_evidence": [
-        "no free fluid or hematoma seen on ultrasound"
+        "no current bleeding symptoms"
       ],
-      "reasoning": "While less likely, uterine inversion is a known complication of hysterectomy and could explain the bleeding.",
+      "reasoning": "History of menorrhagia, but no current symptoms to support active condition.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "27215002",
-        "preferred_term": "Uterine inversion",
-        "fsn": "Inversion of uterus (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.7247388503003056,
-        "query": "Post-hysterectomy uterine inversion",
+        "concept_id": "386692008",
+        "preferred_term": "Menorrhagia",
+        "fsn": "Menorrhagia (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Menorrhagia",
         "aligned_hint": null
       },
-      "icd10_primary": "O71.2",
-      "icd10_primary_title": "Postpartum inversion of uterus",
+      "icd10_primary": "N92.0",
+      "icd10_primary_title": "Excessive and frequent menstruation with regular cycle",
       "icd10_package": [
         {
-          "code": "O71.2",
-          "title": "Postpartum inversion of uterus",
+          "code": "N92.0",
+          "title": "Excessive and frequent menstruation with regular cycle",
           "source": "snomed_extended_map",
-          "map_priority": 3,
+          "map_priority": 6,
           "map_group": 1,
-          "map_advice": "ALWAYS O71.2",
+          "map_advice": "ALWAYS N92.0",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "N85.5",
-          "title": "Inversion of uterus",
+          "code": "D68.9",
+          "title": "Coagulation defect, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF CHRONIC INVERSION OF UTERUS CHOOSE N85.5 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF MENORRHAGIA DUE TO BLEEDING DISORDER CHOOSE D68.9 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2,
           "package_order": 2
         },
         {
-          "code": "N88.8",
-          "title": "Other specified noninflammatory disorders of cervix uteri",
+          "code": "N92.2",
+          "title": "Excessive menstruation at puberty",
           "source": "snomed_extended_map",
           "map_priority": 2,
           "map_group": 1,
-          "map_advice": "IF ENTROPION OF CERVIX CHOOSE N88.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF PUBERTAL MENORRHAGIA CHOOSE N92.2 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 3,
           "package_order": 3
         },
         {
+          "code": "N93.8",
+          "title": "Other specified abnormal uterine and vaginal bleeding",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF METROPATHIA HEMORRHAGICA CHOOSE N93.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4,
+          "package_order": 4
+        },
+        {
+          "code": "N92.1",
+          "title": "Excessive and frequent menstruation with irregular cycle",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF MENOMETRORRHAGIA CHOOSE N92.1 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5,
+          "package_order": 5
+        },
+        {
           "code": "N93.9",
           "title": "Abnormal uterine and vaginal bleeding, unspecified",
           "source": "snomed_extended_map",
@@ -167,47 +155,69 @@
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
+          "from_term": "Heavy episode of vaginal bleeding",
+          "from_kind": "retained_snomed",
           "from_snomed_id": "315224006",
           "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.2849,
-          "package_order": 4
+          "relevance_to_diagnosis": 0.5137,
+          "package_order": 6
         }
       ],
       "icd10_principal": [
         {
-          "code": "O71.2",
-          "title": "Postpartum inversion of uterus",
+          "code": "N92.0",
+          "title": "Excessive and frequent menstruation with regular cycle",
           "source": "snomed_extended_map",
-          "map_priority": 3,
+          "map_priority": 6,
           "map_group": 1,
-          "map_advice": "ALWAYS O71.2",
+          "map_advice": "ALWAYS N92.0",
           "always": true,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "N85.5",
-          "title": "Inversion of uterus",
+          "code": "D68.9",
+          "title": "Coagulation defect, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF CHRONIC INVERSION OF UTERUS CHOOSE N85.5 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF MENORRHAGIA DUE TO BLEEDING DISORDER CHOOSE D68.9 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2
         },
         {
-          "code": "N88.8",
-          "title": "Other specified noninflammatory disorders of cervix uteri",
+          "code": "N92.2",
+          "title": "Excessive menstruation at puberty",
           "source": "snomed_extended_map",
           "map_priority": 2,
           "map_group": 1,
-          "map_advice": "IF ENTROPION OF CERVIX CHOOSE N88.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF PUBERTAL MENORRHAGIA CHOOSE N92.2 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 3
+        },
+        {
+          "code": "N93.8",
+          "title": "Other specified abnormal uterine and vaginal bleeding",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF METROPATHIA HEMORRHAGICA CHOOSE N93.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4
+        },
+        {
+          "code": "N92.1",
+          "title": "Excessive and frequent menstruation with irregular cycle",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF MENOMETRORRHAGIA CHOOSE N92.1 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 5
         }
       ],
       "icd10_supporting": [
@@ -221,332 +231,171 @@
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
+          "from_term": "Heavy episode of vaginal bleeding",
+          "from_kind": "retained_snomed",
           "from_snomed_id": "315224006",
           "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.2849
+          "relevance_to_diagnosis": 0.5137
         }
       ],
       "icd_status": "mapped",
-      "n_icd_codes": 4
+      "n_icd_codes": 6
     },
     {
       "rank": 3,
-      "diagnosis": "Endometriosis",
-      "score": 40.0,
-      "confidence": "medium",
+      "diagnosis": "Hypothyroidism",
+      "score": 50.0,
+      "confidence": "low",
       "category": "risk_factor",
-      "snomed_aligned": "N800",
+      "snomed_aligned": "Hypothyroidism, unspecified",
       "supporting_evidence": [
-        "endometriosis of uterus listed as chronic condition"
+        "history of hypothyroidism"
       ],
       "opposing_evidence": [
-        "no current evidence of endometriosis causing bleeding"
+        "normal thyroid lab values"
       ],
-      "reasoning": "Endometriosis is a chronic condition and a risk factor for heavy bleeding, but no current evidence supports it as the primary cause.",
+      "reasoning": "History of hypothyroidism, but normal current thyroid lab values.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "129103003",
-        "preferred_term": "Endometriosis (clinical)",
-        "fsn": "Endometriosis (disorder)",
+        "concept_id": "40930008",
+        "preferred_term": "Hypothyroidism",
+        "fsn": "Hypothyroidism (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Endometriosis",
-        "aligned_hint": "N800"
+        "query": "Hypothyroidism",
+        "aligned_hint": "Hypothyroidism, unspecified"
       },
-      "icd10_primary": "N80.9",
-      "icd10_primary_title": "Endometriosis, unspecified",
+      "icd10_primary": "E03.9",
+      "icd10_primary_title": "Hypothyroidism, unspecified",
       "icd10_package": [
         {
-          "code": "N80.9",
-          "title": "Endometriosis, unspecified",
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS N80.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E03.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "N93.9",
-          "title": "Abnormal uterine and vaginal bleeding, unspecified",
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified",
           "source": "snomed_extended_map",
-          "map_priority": 5,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS N93.9",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "abnormal uterine and vaginal bleeding",
-          "from_kind": "diagnosis",
-          "from_snomed_id": "301822002",
-          "from_snomed_term": "Abnormal vaginal bleeding",
-          "relevance_to_diagnosis": 0.5381,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P72.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
           "package_order": 2
         }
       ],
       "icd10_principal": [
         {
-          "code": "N80.9",
-          "title": "Endometriosis, unspecified",
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS N80.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS E03.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
-        }
-      ],
-      "icd10_supporting": [
+        },
         {
-          "code": "N93.9",
-          "title": "Abnormal uterine and vaginal bleeding, unspecified",
+          "code": "P72.2",
+          "title": "Other transitory neonatal disorders of thyroid function, not elsewhere classified",
           "source": "snomed_extended_map",
-          "map_priority": 5,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS N93.9",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "abnormal uterine and vaginal bleeding",
-          "from_kind": "diagnosis",
-          "from_snomed_id": "301822002",
-          "from_snomed_term": "Abnormal vaginal bleeding",
-          "relevance_to_diagnosis": 0.5381
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P72.2 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
         }
       ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
       "n_icd_codes": 2
     },
     {
       "rank": 4,
-      "diagnosis": "Hemorrhagic shock",
+      "diagnosis": "Anxiety disorder",
       "score": 30.0,
       "confidence": "low",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy"
+        "history of anxiety disorder"
       ],
       "opposing_evidence": [
-        "normal hemoglobin and hematocrit levels",
-        "no free fluid or hematoma seen on ultrasound"
+        "no current symptoms"
       ],
-      "reasoning": "While possible, hemorrhagic shock is less likely given normal hemoglobin levels and no signs of free fluid.",
+      "reasoning": "History of anxiety disorder, but no current symptoms to support active condition.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "355001",
-        "preferred_term": "Hemorrhagic shock",
-        "fsn": "Hemorrhagic shock (disorder)",
+        "concept_id": "197480006",
+        "preferred_term": "Anxiety disorder",
+        "fsn": "Anxiety disorder (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Hemorrhagic shock",
+        "query": "Anxiety disorder",
         "aligned_hint": null
       },
-      "icd10_primary": "R57.1",
-      "icd10_primary_title": "Hypovolemic shock",
+      "icd10_primary": "F41.9",
+      "icd10_primary_title": "Anxiety disorder, unspecified",
       "icd10_package": [
         {
-          "code": "R57.1",
-          "title": "Hypovolemic shock",
+          "code": "F41.9",
+          "title": "Anxiety disorder, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R57.1",
+          "map_advice": "ALWAYS F41.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
-        },
-        {
-          "code": "N93.9",
-          "title": "Abnormal uterine and vaginal bleeding, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N93.9",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
-          "from_snomed_id": "315224006",
-          "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.4682,
-          "package_order": 2
         }
       ],
       "icd10_principal": [
         {
-          "code": "R57.1",
-          "title": "Hypovolemic shock",
+          "code": "F41.9",
+          "title": "Anxiety disorder, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R57.1",
+          "map_advice": "ALWAYS F41.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
         }
       ],
-      "icd10_supporting": [
-        {
-          "code": "N93.9",
-          "title": "Abnormal uterine and vaginal bleeding, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N93.9",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
-          "from_snomed_id": "315224006",
-          "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.4682
-        }
-      ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 2
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Infection",
-      "score": 25.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "heavy vaginal bleeding after hysterectomy"
-      ],
-      "opposing_evidence": [
-        "normal hemoglobin and hematocrit levels",
-        "no free fluid or hematoma seen on ultrasound"
-      ],
-      "reasoning": "Infection could be a factor, but no current evidence supports it as the primary cause.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "40733004",
-        "preferred_term": "Infectious disease",
-        "fsn": "Infectious disease (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Infection",
-        "aligned_hint": null
-      },
-      "icd10_primary": "B99.9",
-      "icd10_primary_title": "Unspecified infectious disease",
-      "icd10_package": [
-        {
-          "code": "B99.9",
-          "title": "Unspecified infectious disease",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "P39.9",
-          "title": "Infection specific to the perinatal period, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P39.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "N93.9",
-          "title": "Abnormal uterine and vaginal bleeding, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N93.9",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
-          "from_snomed_id": "315224006",
-          "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.2588,
-          "package_order": 3
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "B99.9",
-          "title": "Unspecified infectious disease",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS B99.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "P39.9",
-          "title": "Infection specific to the perinatal period, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P39.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "N93.9",
-          "title": "Abnormal uterine and vaginal bleeding, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N93.9",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "heavy vaginal bleeding",
-          "from_kind": "symptom",
-          "from_snomed_id": "315224006",
-          "from_snomed_term": "Heavy episode of vaginal bleeding",
-          "relevance_to_diagnosis": 0.2588
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 3
+      "n_icd_codes": 1
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Uterine rupture",
-      "why": "No evidence of free fluid or signs of rupture on imaging"
+      "diagnosis": "Dyspareunia",
+      "why": "Denies dyspareunia."
     }
   ],
   "uncertain_areas": [
-    "Need to know if patient has a history of uterine inversion or if there are signs of infection"
+    "Further details on the cause of bleeding and any infection would change ranking"
   ],
-  "n_candidates": 5,
+  "n_candidates": 4,
   "type": "differential_diagnosis_with_icd",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "10361982",
   "hadm_id": "24286431",
-  "generated_at": "2026-08-20T00:08:23.377128",
+  "generated_at": "2026-08-20T17:14:14.448992",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 4,
@@ -620,9 +469,9 @@
   "icd_map_refset": "6011000124106",
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
-    "n_diagnoses": 5,
-    "n_with_principal": 5,
+    "n_diagnoses": 4,
+    "n_with_principal": 4,
     "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:14.439241"
+  "generated_at_stage8": "2026-08-20T17:19:15.653612"
 }

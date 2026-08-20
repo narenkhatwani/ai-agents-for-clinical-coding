@@ -8,14 +8,15 @@ Patient ID       : 10361982
 Admission ID     : 24286431
 
 Reasoning:
-  The patient presents with heavy vaginal bleeding after a recent hysterectomy, which is the primary reason for admission.
+  The patient presents with heavy vaginal bleeding after a hysterectomy, which is the primary reason for admission.
 
 Key symptoms     : heavy vaginal bleeding, passing clots
+Red flags        : menorrhagia
 
 GI → Gynecology
 ---------------
 
-  • [present, moderate] heavy vaginal bleeding
+  • [present, severe] heavy vaginal bleeding
       evidence: "heavy vaginal bleeding after hysterectomy"
       related: menorrhagia, vaginal spotting to light bleeding
       • [present] passing clots
@@ -24,6 +25,6 @@ GI → Gynecology
 CONSTITUTIONAL → Hematology
 ---------------------------
 
-  • [abnormal, mild] hemoglobin level
-      evidence: "HGB-12.6"
-      related: HCT-38.1
+  • [present, mild] low hematocrit
+      evidence: "HCT-38.1 (stable from preoperative HCT of 40.1)"
+      related: menorrhagia

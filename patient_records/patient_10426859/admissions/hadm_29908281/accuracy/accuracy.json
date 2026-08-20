@@ -4,16 +4,19 @@
   "method": "llm_query_expansion",
   "patient_id": "10426859",
   "hadm_id": "29908281",
-  "generated_at": "2026-08-20T00:13:00.834861",
+  "generated_at": "2026-08-20T17:29:03.143723",
   "ground_truth": {
     "primary_icd_code": "I471",
     "primary_dx_title": "Supraventricular tachycardia",
     "primary_icd_title": "Supraventricular tachycardia",
+    "discharge_diagnosis": "supraventricular tachycardia, non-displaced",
+    "diffdx_gt": "supraventricular tachycardia, non-displaced",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 22
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Supraventricular tachycardia",
+      "ground_truth_primary": "supraventricular tachycardia, non-displaced",
       "rank1_diagnosis": "Supraventricular tachycardia",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
@@ -25,9 +28,10 @@
       "matched_confidence": "high",
       "llm_relationship": "same_principal",
       "llm_confidence": "high",
-      "llm_reason": "The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.",
-      "llm_expanded_ground_truth": "Supraventricular tachycardia",
-      "llm_expanded_matched": "Supraventricular tachycardia",
+      "llm_reason": "Rank 1 'Supraventricular tachycardia' names the identical principal condition as the physician discharge diagnosis 'supraventricular tachycardia' (the trailing 'non-displaced' refers to an accompanying non-displaced fracture descriptor, not the principal diagnosis).",
+      "llm_expanded_ground_truth": "SVT | supraventricular tachycardia | paroxysmal supraventricular tachycardia | PSVT | AV nodal reentrant tachycardia | narrow complex tachyarrhythmia",
+      "llm_expanded_matched": "SVT | supraventricular tachycardia | paroxysmal SVT | atrioventricular reentrant tachycardia | narrow complex tachycardia",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
           "diagnosis": "Supraventricular tachycardia",
@@ -46,31 +50,39 @@
           "icd10_primary_title": ""
         },
         {
-          "diagnosis": "Hypocalcemia",
-          "rank": 3,
-          "score": 65.0,
-          "confidence": "medium",
-          "icd10_primary": "E83.51",
-          "icd10_primary_title": "Hypocalcemia"
-        },
-        {
-          "diagnosis": "Cerebral infarct",
-          "rank": 4,
-          "score": 50.0,
-          "confidence": "low",
-          "icd10_primary": "I63.9",
-          "icd10_primary_title": "Cerebral infarction, unspecified"
-        },
-        {
           "diagnosis": "Anxiety disorder",
-          "rank": 5,
-          "score": 40.0,
-          "confidence": "low",
+          "rank": 3,
+          "score": 60.0,
+          "confidence": "medium",
           "icd10_primary": "F41.9",
           "icd10_primary_title": "Anxiety disorder, unspecified"
+        },
+        {
+          "diagnosis": "Hypertension",
+          "rank": 4,
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": "I10",
+          "icd10_primary_title": "Essential (primary) hypertension"
+        },
+        {
+          "diagnosis": "Hyperlipidemia",
+          "rank": 5,
+          "score": 45.0,
+          "confidence": "medium",
+          "icd10_primary": "E78.5",
+          "icd10_primary_title": "Hyperlipidemia, unspecified"
+        },
+        {
+          "diagnosis": "Atherosclerotic heart disease",
+          "rank": 6,
+          "score": 35.0,
+          "confidence": "medium",
+          "icd10_primary": "I25.10",
+          "icd10_primary_title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
         }
       ],
-      "n_diffdx": 5
+      "n_diffdx": 6
     },
     "icd_linked": {
       "ground_truth_icd": "I47.1",
@@ -85,9 +97,9 @@
       "icd_llm_match": true,
       "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.",
-      "llm_expanded_ground_truth_icd": "I47.1 — Supraventricular tachycardia",
-      "llm_expanded_matched_icd": "I47.10 —",
+      "llm_icd_reason": "Mapped code I47.10 (supraventricular tachycardia, unspecified) is the current-revision expansion of billed I47.1 (supraventricular tachycardia); a coder would accept these as the same principal condition code.",
+      "llm_expanded_ground_truth_icd": "I47.1 Supraventricular tachycardia | I47.10 Supraventricular tachycardia, unspecified | paroxysmal supraventricular tachycardia",
+      "llm_expanded_matched_icd": "I47.10 Supraventricular tachycardia, unspecified | I47.1 Supraventricular tachycardia | SVT NOS",
       "stage9_final_primary_icd": "I47.10",
       "diagnosis_match": true,
       "is_rank1_diagnosis_match": true,
@@ -98,21 +110,34 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "The ranked differential diagnosis 'Supraventricular tachycardia' matches the ground truth primary diagnosis 'Supraventricular tachycardia'.",
+      "diagnosis_reason": "Rank 1 'Supraventricular tachycardia' names the identical principal condition as the physician discharge diagnosis 'supraventricular tachycardia' (the trailing 'non-displaced' refers to an accompanying non-displaced fracture descriptor, not the principal diagnosis).",
       "ground_truth_expansions": [
-        "Supraventricular tachycardia"
+        "SVT",
+        "supraventricular tachycardia",
+        "paroxysmal supraventricular tachycardia",
+        "PSVT",
+        "AV nodal reentrant tachycardia",
+        "narrow complex tachyarrhythmia"
       ],
       "matched_diagnosis_expansions": [
-        "Supraventricular tachycardia"
+        "SVT",
+        "supraventricular tachycardia",
+        "paroxysmal SVT",
+        "atrioventricular reentrant tachycardia",
+        "narrow complex tachycardia"
       ],
       "icd_equivalent": true,
       "icd_confidence": "high",
-      "icd_reason": "The mapped ICD code I47.10 for the ranked differential diagnosis matches the ground truth ICD code I47.1.",
+      "icd_reason": "Mapped code I47.10 (supraventricular tachycardia, unspecified) is the current-revision expansion of billed I47.1 (supraventricular tachycardia); a coder would accept these as the same principal condition code.",
       "ground_truth_icd_expansions": [
-        "I47.1 — Supraventricular tachycardia"
+        "I47.1 Supraventricular tachycardia",
+        "I47.10 Supraventricular tachycardia, unspecified",
+        "paroxysmal supraventricular tachycardia"
       ],
       "matched_icd_expansions": [
-        "I47.10 —"
+        "I47.10 Supraventricular tachycardia, unspecified",
+        "I47.1 Supraventricular tachycardia",
+        "SVT NOS"
       ],
       "_cache_hit": false
     }

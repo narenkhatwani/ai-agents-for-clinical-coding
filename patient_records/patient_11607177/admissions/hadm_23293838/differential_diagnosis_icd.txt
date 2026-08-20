@@ -4,34 +4,37 @@ Patient ID       : 11607177
 HADM ID          : 23293838
 Most likely      : Refractory ventricular tachycardia
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:18.748316
+Generated (S8)   : 2026-08-20T17:19:19.432162
 
 Summary:
-  The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.
+  The patient is a 41-year-old with a history of dilated non-ischemic cardiomyopathy and refractory ventricular tachycardia, presenting with ICD shock and subsequent management of heart failure symptoms. Current labs show abnormalities including elevated INR, PT, PTT, and low hematocrit and hemoglobin levels.
 
 #1  [85.0/100 | high]  Refractory ventricular tachycardia  (primary)
     SNOMED: Ventricular tachycardia (25569003) [fuzzy score=0.782363076456486]
     ICD status: mapped | primary: I47.20
       1. [principal] I47.20 — Ventricular tachycardia, unspecified
       2. [supporting] R57.9 — Shock, unspecified  ← ICD shock (key_symptom)
+      3. [supporting] R25.1 — Tremor, unspecified  ← shaking (tree_symptom)
 
-#2  [75.0/100 | high]  Dilated non-ischemic cardiomyopathy  (primary)
+#2  [75.0/100 | high]  Dilated non-ischemic cardiomyopathy  (complication)
     SNOMED: Congestive cardiomyopathy (399020009) [fuzzy score=0.7462331077653483]
     ICD status: mapped | primary: I42.0
       1. [principal] I42.0 — Dilated cardiomyopathy
+      2. [supporting] R57.9 — Shock, unspecified  ← ICD shock (key_symptom)
 
-#3  [65.0/100 | medium]  Congestive heart failure  (complication)
-    SNOMED: Congestive heart failure (42343007) [exact score=1.0]
+#3  [60.0/100 | medium]  Heart failure  (complication)
+    SNOMED: Heart failure (84114007) [exact score=1.0]
     ICD status: mapped | primary: I50.9
       1. [principal] I50.9 — Heart failure, unspecified
       2. [principal] P29.0 — Neonatal cardiac failure
 
-#4  [50.0/100 | low]  Hypokalemia  (differential)
-    SNOMED: Hypokalemia (43339004) [exact score=1.0]
-    ICD status: mapped | primary: E87.6
-      1. [principal] E87.6 — Hypokalemia
+#4  [50.0/100 | medium]  Hypertension  (risk_factor)
+    SNOMED: High blood pressure (38341003) [exact score=1.0]
+    ICD status: mapped | primary: I10
+      1. [principal] I10 — Essential (primary) hypertension
+      2. [principal] P29.2 — Neonatal hypertension
 
-#5  [40.0/100 | low]  Anemia  (complication)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
+#5  [40.0/100 | low]  Obesity  (risk_factor)
+    SNOMED: Obesity (414916001) [exact score=1.0]
+    ICD status: mapped | primary: E66.9
+      1. [principal] E66.9 — Obesity, unspecified

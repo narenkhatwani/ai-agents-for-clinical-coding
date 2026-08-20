@@ -1,48 +1,230 @@
 {
-  "summary": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL. The patient presents with hematuria, pain, and mild anemia, along with metabolic derangements including hyperglycemia and hyperuremia. Chronic conditions include pyonephrosis and chronic kidney disease.",
-  "most_likely": "Acute kidney injury due to nephrolithiasis and PCNL",
+  "summary": "The patient was admitted for management of nephrolithiasis and underwent a difficult right PCNL. Presenting symptoms include hematuria, pain around nephrostomy tubes, dysuria, and fever. The patient has a history of chronic kidney disease and recent complications including acute kidney injury and anemia.",
+  "most_likely": "Acute kidney injury",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
+      "diagnosis": "Acute kidney injury",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "N17 — Acute kidney injury",
       "supporting_evidence": [
-        "Creatinine: 2.5 mg/dL, Hematuria, Pain"
+        "Creatinine 2.5 mg/dL (elevated)"
       ],
       "opposing_evidence": [],
-      "reasoning": "High creatinine and presence of hematuria and pain strongly suggest acute kidney injury related to nephrolithiasis and PCNL.",
+      "reasoning": "High creatinine and ongoing nephrolithiasis likely contributing to acute kidney injury.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "14669001",
+        "preferred_term": "Acute renal failure syndrome",
+        "fsn": "Acute kidney injury (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Acute kidney injury",
+        "aligned_hint": "N17 — Acute kidney injury"
+      },
+      "icd10_primary": "N17.9",
+      "icd10_primary_title": "Acute kidney failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N17.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Anemia",
+      "score": 75.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "D64 — Anemia",
+      "supporting_evidence": [
+        "Hematocrit 30.8%, Hemoglobin 9.4 g/dL (low)"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low hematocrit and hemoglobin levels suggest anemia, possibly due to chronic kidney disease.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "271737000",
+        "preferred_term": "Anemia",
+        "fsn": "Anemia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Anemia",
+        "aligned_hint": "D64 — Anemia"
+      },
+      "icd10_primary": "D64.9",
+      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_package": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hematuria",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "differential",
+      "snomed_aligned": "7678004 — Hematuria",
+      "supporting_evidence": [
+        "1x episode of hematuria"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Presented with hematuria, likely related to nephrolithiasis.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "34436003",
+        "preferred_term": "Hematuria",
+        "fsn": "Blood in urine (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hematuria",
+        "aligned_hint": "7678004 — Hematuria"
+      },
+      "icd10_primary": "R31.9",
+      "icd10_primary_title": "Hematuria, unspecified",
+      "icd10_package": [
+        {
+          "code": "R31.9",
+          "title": "Hematuria, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "R30.0",
+          "title": "Dysuria",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R30.0",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dysuria",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "49650001",
+          "from_snomed_term": "Dysuria",
+          "relevance_to_diagnosis": 0.5944,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "R31.9",
+          "title": "Hematuria, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R30.0",
+          "title": "Dysuria",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R30.0",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "dysuria",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "49650001",
+          "from_snomed_term": "Dysuria",
+          "relevance_to_diagnosis": 0.5944
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Pain around nephrostomy tubes",
+      "score": 65.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "pain around the nephrostomy tubes"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Pain around nephrostomy tubes is a symptom but may be secondary to other conditions.",
       "snomed_resolution": {
         "mapped": false,
         "concept_id": null,
         "preferred_term": null,
         "match_method": null,
         "score": 0.0,
-        "query": "Acute kidney injury due to nephrolithiasis and PCNL"
+        "query": "Pain around nephrostomy tubes"
       },
       "icd10_primary": null,
       "icd10_primary_title": null,
       "icd10_package": [
         {
-          "code": "R31.9",
-          "title": "Hematuria, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hematuria",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "34436003",
-          "from_snomed_term": "Hematuria",
-          "relevance_to_diagnosis": 0.3191,
-          "package_order": 1
-        },
-        {
           "code": "R52",
           "title": "Pain, unspecified",
           "source": "snomed_extended_map",
@@ -56,29 +238,13 @@
           "from_kind": "key_symptom",
           "from_snomed_id": "22253000",
           "from_snomed_term": "Pain",
-          "relevance_to_diagnosis": 0.1278,
-          "package_order": 2
+          "relevance_to_diagnosis": 0.3862,
+          "package_order": 1
         }
       ],
       "icd10_principal": [],
       "icd10_supporting": [
         {
-          "code": "R31.9",
-          "title": "Hematuria, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R31.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hematuria",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "34436003",
-          "from_snomed_term": "Hematuria",
-          "relevance_to_diagnosis": 0.3191
-        },
-        {
           "code": "R52",
           "title": "Pain, unspecified",
           "source": "snomed_extended_map",
@@ -92,337 +258,37 @@
           "from_kind": "key_symptom",
           "from_snomed_id": "22253000",
           "from_snomed_term": "Pain",
-          "relevance_to_diagnosis": 0.1278
+          "relevance_to_diagnosis": 0.3862
         }
       ],
       "icd_status": "supporting_only",
-      "n_icd_codes": 2
+      "n_icd_codes": 1
     },
     {
-      "rank": 2,
-      "diagnosis": "Chronic kidney disease, unspecified",
-      "score": 75.0,
-      "confidence": "medium",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Chronic kidney disease, unspecified in prior PMH"
-      ],
-      "opposing_evidence": [
-        "Acute kidney injury more likely given recent PCNL"
-      ],
-      "reasoning": "Chronic kidney disease is present in prior PMH but is less likely to be the primary acute issue given recent PCNL.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "90708001",
-        "preferred_term": "Kidney disease",
-        "fsn": "Kidney disease (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.6079289213558614,
-        "query": "Chronic kidney disease, unspecified",
-        "aligned_hint": null
-      },
-      "icd10_primary": "N28.9",
-      "icd10_primary_title": "Disorder of kidney and ureter, unspecified",
-      "icd10_package": [
-        {
-          "code": "N28.9",
-          "title": "Disorder of kidney and ureter, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N28.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "R30.0",
-          "title": "Dysuria",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R30.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "dysuria",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "49650001",
-          "from_snomed_term": "Dysuria",
-          "relevance_to_diagnosis": 0.5123,
-          "package_order": 2
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "N28.9",
-          "title": "Disorder of kidney and ureter, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS N28.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "R30.0",
-          "title": "Dysuria",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R30.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "dysuria",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "49650001",
-          "from_snomed_term": "Dysuria",
-          "relevance_to_diagnosis": 0.5123
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 2
-    },
-    {
-      "rank": 3,
-      "diagnosis": "Anemia in chronic kidney disease",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
-      ],
-      "opposing_evidence": [
-        "No specific evidence of chronic anemia"
-      ],
-      "reasoning": "Anemia is present but may be secondary to chronic kidney disease, which is a known risk factor.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "707323002",
-        "preferred_term": "Anemia co-occurrent and due to chronic kidney disease",
-        "fsn": "Anemia co-occurrent and due to chronic kidney disease (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Anemia in chronic kidney disease",
-        "aligned_hint": null
-      },
-      "icd10_primary": "N18.9",
-      "icd10_primary_title": "Chronic kidney disease, unspecified",
-      "icd10_package": [
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 6,
-          "map_group": 1,
-          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "N18.1",
-          "title": "Chronic kidney disease, stage 1",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA DUE TO CHRONIC KIDNEY DISEASE STAGE 1 CHOOSE N18.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "N18.4",
-          "title": "Chronic kidney disease, stage 4 (severe)",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA IN CHRONIC KIDNEY DISEASE STAGE 4 CHOOSE N18.4 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3,
-          "package_order": 3
-        },
-        {
-          "code": "N18.5",
-          "title": "Chronic kidney disease, stage 5",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA IN CHRONIC KIDNEY DISEASE STAGE 5 CHOOSE N18.5 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 4,
-          "package_order": 4
-        },
-        {
-          "code": "N18.30",
-          "title": "Chronic kidney disease, stage 3 unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 4,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA CO-OCCURRENT AND DUE TO CHRONIC KIDNEY DISEASE STAGE 3 CHOOSE N18.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 5,
-          "package_order": 5
-        },
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anemia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "271737000",
-          "from_snomed_term": "Anemia",
-          "relevance_to_diagnosis": 0.712,
-          "package_order": 6
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 6,
-          "map_group": 1,
-          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "N18.1",
-          "title": "Chronic kidney disease, stage 1",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA DUE TO CHRONIC KIDNEY DISEASE STAGE 1 CHOOSE N18.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2
-        },
-        {
-          "code": "N18.4",
-          "title": "Chronic kidney disease, stage 4 (severe)",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA IN CHRONIC KIDNEY DISEASE STAGE 4 CHOOSE N18.4 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3
-        },
-        {
-          "code": "N18.5",
-          "title": "Chronic kidney disease, stage 5",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA IN CHRONIC KIDNEY DISEASE STAGE 5 CHOOSE N18.5 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 4
-        },
-        {
-          "code": "N18.30",
-          "title": "Chronic kidney disease, stage 3 unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 4,
-          "map_group": 1,
-          "map_advice": "IF ANEMIA CO-OCCURRENT AND DUE TO CHRONIC KIDNEY DISEASE STAGE 3 CHOOSE N18.30 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 5
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anemia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "271737000",
-          "from_snomed_term": "Anemia",
-          "relevance_to_diagnosis": 0.712
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 6
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Complicated urinary tract infection",
-      "score": 55.0,
+      "rank": 5,
+      "diagnosis": "Fever",
+      "score": 60.0,
       "confidence": "medium",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Fever: 102 at ___ prior to transfer"
+        "temperature of 102 at ___ prior to transfer"
       ],
-      "opposing_evidence": [
-        "No fever currently present"
-      ],
-      "reasoning": "Previous history of pyonephrosis suggests a possibility of a complicated UTI, but no current fever.",
+      "opposing_evidence": [],
+      "reasoning": "Fever present but not the primary focus of the admission.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "68566005",
-        "preferred_term": "Urinary tract infectious disease",
-        "fsn": "Urinary tract infectious disease (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.8133539158577778,
-        "query": "Complicated urinary tract infection",
+        "concept_id": "386661006",
+        "preferred_term": "Fever",
+        "fsn": "Fever (finding)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Fever",
         "aligned_hint": null
       },
-      "icd10_primary": "N39.0",
-      "icd10_primary_title": "Urinary tract infection, site not specified",
+      "icd10_primary": "R50.9",
+      "icd10_primary_title": "Fever, unspecified",
       "icd10_package": [
-        {
-          "code": "N39.0",
-          "title": "Urinary tract infection, site not specified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS N39.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "P39.3",
-          "title": "Neonatal urinary tract infection",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P39.3 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
         {
           "code": "R50.9",
           "title": "Fever, unspecified",
@@ -431,41 +297,24 @@
           "map_group": 1,
           "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "fever",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "386661006",
-          "from_snomed_term": "Fever",
-          "relevance_to_diagnosis": 0.3109,
-          "package_order": 3
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "N39.0",
-          "title": "Urinary tract infection, site not specified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS N39.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
           "role": "principal",
-          "order": 1
+          "order": 1,
+          "package_order": 1
         },
         {
-          "code": "P39.3",
-          "title": "Neonatal urinary tract infection",
+          "code": "P81.9",
+          "title": "Disturbance of temperature regulation of newborn, unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P39.3 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P81.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
-          "order": 2
+          "order": 2,
+          "package_order": 2
         }
       ],
-      "icd10_supporting": [
+      "icd10_principal": [
         {
           "code": "R50.9",
           "title": "Fever, unspecified",
@@ -474,176 +323,34 @@
           "map_group": 1,
           "map_advice": "ALWAYS R50.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "fever",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "386661006",
-          "from_snomed_term": "Fever",
-          "relevance_to_diagnosis": 0.3109
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 3
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Hypertensive chronic kidney disease",
-      "score": 45.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Hypertensive chronic kidney disease in prior PMH"
-      ],
-      "opposing_evidence": [
-        "No current hypertension noted"
-      ],
-      "reasoning": "Hypertensive chronic kidney disease is a known risk factor but not currently evident.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "285831000119108",
-        "preferred_term": "Malignant hypertensive chronic kidney disease",
-        "fsn": "Malignant hypertensive chronic kidney disease (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.8750544070285085,
-        "query": "Hypertensive chronic kidney disease",
-        "aligned_hint": null
-      },
-      "icd10_primary": "I12.0",
-      "icd10_primary_title": "Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease",
-      "icd10_package": [
-        {
-          "code": "I12.0",
-          "title": "Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 5 CHOOSE I12.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "I12.9",
-          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 1 CHOOSE I12.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "N18.5",
-          "title": "Chronic kidney disease, stage 5",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 5 CHOOSE N18.5 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3,
-          "package_order": 3
-        },
-        {
-          "code": "N18.6",
-          "title": "End stage renal disease",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 2,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE END STAGE RENAL DISEASE CHOOSE N18.6 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 4,
-          "package_order": 4
-        },
-        {
-          "code": "N18.1",
-          "title": "Chronic kidney disease, stage 1",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 2,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 1 CHOOSE N18.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 5,
-          "package_order": 5
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "I12.0",
-          "title": "Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 5 CHOOSE I12.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "I12.9",
-          "title": "Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease",
+          "code": "P81.9",
+          "title": "Disturbance of temperature regulation of newborn, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 3,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 1 CHOOSE I12.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P81.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2
-        },
-        {
-          "code": "N18.5",
-          "title": "Chronic kidney disease, stage 5",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 5 CHOOSE N18.5 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3
-        },
-        {
-          "code": "N18.6",
-          "title": "End stage renal disease",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 2,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE END STAGE RENAL DISEASE CHOOSE N18.6 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 4
-        },
-        {
-          "code": "N18.1",
-          "title": "Chronic kidney disease, stage 1",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 2,
-          "map_advice": "IF MALIGNANT HYPERTENSIVE CHRONIC KIDNEY DISEASE STAGE 1 CHOOSE N18.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 5
         }
       ],
       "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 5
+      "n_icd_codes": 2
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Pneumothorax",
-      "why": "No radiology evidence or clinical signs of pneumothorax."
+      "diagnosis": "Hypertension",
+      "why": "While present, not the primary focus of the admission."
     }
   ],
   "uncertain_areas": [
-    "Further details on the cause of anemia and the exact nature of chronic kidney disease would refine the differential"
+    "Further details on the cause of anemia and the exact nature of the acute kidney injury would clarify the differential diagnosis."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis_with_icd",
@@ -652,7 +359,7 @@
   "_temperature": 0.4,
   "patient_id": "11251337",
   "hadm_id": "29568708",
-  "generated_at": "2026-08-20T00:09:06.518702",
+  "generated_at": "2026-08-20T17:15:20.651458",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 2,
@@ -745,5 +452,5 @@
     "n_with_principal": 4,
     "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:17.000031"
+  "generated_at_stage8": "2026-08-20T17:19:17.965867"
 }

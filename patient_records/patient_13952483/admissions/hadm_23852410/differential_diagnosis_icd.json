@@ -1,35 +1,86 @@
 {
-  "summary": "The patient presents with hypotension, weight loss, and pulmonary hypertension, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of cough and odynophagia.",
-  "most_likely": "Squamous Cell Lung CA",
+  "summary": "The patient presents with hypotension, weight loss, and chest pain, likely due to chemotherapy/radiation toxicity, pulmonary hypertension, and malnutrition. Chronic conditions include malignant neoplasm and kidney transplant rejection.",
+  "most_likely": "Squamous Cell Lung Carcinoma",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Squamous Cell Lung CA",
+      "diagnosis": "Squamous Cell Lung Carcinoma",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Squamous Cell Lung CA (confirmed)",
-        "hypotension",
-        "pulmonary hypertension",
-        "cough",
-        "odynophagia"
+        "confirmed diagnosis from ___ guided lung biopsy"
       ],
       "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis and evidence of ongoing symptoms related to lung cancer.",
+      "reasoning": "Confirmed diagnosis from biopsy and clinical presentation.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "80554009",
-        "preferred_term": "Squamous epithelial cell",
-        "fsn": "Squamous epithelial cell (cell)",
+        "concept_id": "254634000",
+        "preferred_term": "Squamous cell carcinoma of lung",
+        "fsn": "Squamous cell carcinoma of lung (disorder)",
         "match_method": "fuzzy",
-        "score": 0.6577376858581938,
-        "query": "Squamous Cell Lung CA",
+        "score": 0.8753736268110235,
+        "query": "Squamous Cell Lung Carcinoma",
         "aligned_hint": null
       },
-      "icd10_primary": null,
-      "icd10_primary_title": null,
+      "icd10_primary": "C34.90",
+      "icd10_primary_title": "Malignant neoplasm of unspecified part of unspecified bronchus or lung",
+      "icd10_package": [
+        {
+          "code": "C34.90",
+          "title": "Malignant neoplasm of unspecified part of unspecified bronchus or lung",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C34.90 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | CONSIDER LATERALITY SPECIFICATION | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "C34.90",
+          "title": "Malignant neoplasm of unspecified part of unspecified bronchus or lung",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C34.90 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | CONSIDER LATERALITY SPECIFICATION | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Pulmonary Hypertension",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "idiopathic pHTN, severe Pulmonary HTN with Cor Pulmonale"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Severe pulmonary hypertension with cor pulmonale confirmed by right heart catheterization.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "70995007",
+        "preferred_term": "Pulmonary hypertension",
+        "fsn": "Pulmonary hypertension (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Pulmonary Hypertension",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I27.20",
+      "icd10_primary_title": "Pulmonary hypertension, unspecified",
       "icd10_package": [
         {
           "code": "I27.20",
@@ -39,69 +90,24 @@
           "map_group": 1,
           "map_advice": "ALWAYS I27.20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
-          "role": "supporting",
+          "role": "principal",
           "order": 1,
-          "from_term": "pulmonary hypertension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "70995007",
-          "from_snomed_term": "Pulmonary hypertension",
-          "relevance_to_diagnosis": 0.4332,
           "package_order": 1
         },
         {
-          "code": "R05.9",
-          "title": "Cough, unspecified",
+          "code": "P29.30",
+          "title": "Pulmonary hypertension of newborn",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R05.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "cough",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "49727002",
-          "from_snomed_term": "Cough",
-          "relevance_to_diagnosis": 0.2123,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.30 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
           "package_order": 2
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1133,
-          "package_order": 3
-        },
-        {
-          "code": "R13.19",
-          "title": "Other dysphagia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R13.19 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "odynophagia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "30233002",
-          "from_snomed_term": "Odynophagia",
-          "relevance_to_diagnosis": 0.0951,
-          "package_order": 4
         }
       ],
-      "icd10_principal": [],
-      "icd10_supporting": [
+      "icd10_principal": [
         {
           "code": "I27.20",
           "title": "Pulmonary hypertension, unspecified",
@@ -110,113 +116,37 @@
           "map_group": 1,
           "map_advice": "ALWAYS I27.20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "pulmonary hypertension",
-          "from_kind": "red_flag",
-          "from_snomed_id": "70995007",
-          "from_snomed_term": "Pulmonary hypertension",
-          "relevance_to_diagnosis": 0.4332
+          "role": "principal",
+          "order": 1
         },
         {
-          "code": "R05.9",
-          "title": "Cough, unspecified",
+          "code": "P29.30",
+          "title": "Pulmonary hypertension of newborn",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R05.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "cough",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "49727002",
-          "from_snomed_term": "Cough",
-          "relevance_to_diagnosis": 0.2123
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1133
-        },
-        {
-          "code": "R13.19",
-          "title": "Other dysphagia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R13.19 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "odynophagia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "30233002",
-          "from_snomed_term": "Odynophagia",
-          "relevance_to_diagnosis": 0.0951
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.30 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
         }
       ],
-      "icd_status": "supporting_only",
-      "n_icd_codes": 4
-    },
-    {
-      "rank": 2,
-      "diagnosis": "Pulmonary Hypertension",
-      "score": 75.0,
-      "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "Catheterization of right heart",
-      "supporting_evidence": [
-        "pulmonary hypertension",
-        "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Confirmed pulmonary hypertension with significant clinical findings.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "40403005",
-        "preferred_term": "Catheterization of right heart",
-        "fsn": "Catheterization of right heart (procedure)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Pulmonary Hypertension",
-        "aligned_hint": "Catheterization of right heart"
-      },
-      "icd10_primary": null,
-      "icd10_primary_title": null,
-      "icd10_package": [],
-      "icd10_principal": [],
       "icd10_supporting": [],
-      "icd_status": "unmapped",
-      "n_icd_codes": 0
+      "icd_status": "mapped",
+      "n_icd_codes": 2
     },
     {
       "rank": 3,
       "diagnosis": "Anemia",
-      "score": 65.0,
+      "score": 70.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hypotension",
-        "weight loss",
-        "anorexia",
-        "neutropenia",
-        "thrombocytopenia"
+        "low hematocrit, hemoglobin, and MCHC"
       ],
       "opposing_evidence": [],
-      "reasoning": "Multiple laboratory abnormalities supporting anemia as a complication.",
+      "reasoning": "Multiple laboratory abnormalities indicating anemia.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "271737000",
@@ -241,74 +171,6 @@
           "role": "principal",
           "order": 1,
           "package_order": 1
-        },
-        {
-          "code": "R63.0",
-          "title": "Anorexia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R63.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anorexia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "79890006",
-          "from_snomed_term": "Loss of appetite",
-          "relevance_to_diagnosis": 0.482,
-          "package_order": 2
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.3439,
-          "package_order": 3
-        },
-        {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3295,
-          "package_order": 4
-        },
-        {
-          "code": "Z3A.00",
-          "title": "Weeks of gestation of pregnancy not specified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "supporting",
-          "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3295,
-          "package_order": 5
         }
       ],
       "icd10_principal": [
@@ -324,90 +186,22 @@
           "order": 1
         }
       ],
-      "icd10_supporting": [
-        {
-          "code": "R63.0",
-          "title": "Anorexia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R63.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anorexia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "79890006",
-          "from_snomed_term": "Loss of appetite",
-          "relevance_to_diagnosis": 0.482
-        },
-        {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.3439
-        },
-        {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3295
-        },
-        {
-          "code": "Z3A.00",
-          "title": "Weeks of gestation of pregnancy not specified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "supporting",
-          "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.3295
-        }
-      ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 5
+      "n_icd_codes": 1
     },
     {
       "rank": 4,
       "diagnosis": "Malnutrition",
-      "score": 55.0,
+      "score": 65.0,
       "confidence": "medium",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "anorexia",
-        "weight loss",
-        "neutropenia",
-        "thrombocytopenia"
+        "weight loss, anorexia, and malaise"
       ],
       "opposing_evidence": [],
-      "reasoning": "Persistent anorexia and weight loss suggest malnutrition as a risk factor.",
+      "reasoning": "Evidence of weight loss and malaise supporting malnutrition.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "272588001",
@@ -480,57 +274,6 @@
           "role": "principal",
           "order": 5,
           "package_order": 5
-        },
-        {
-          "code": "R63.0",
-          "title": "Anorexia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R63.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anorexia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "79890006",
-          "from_snomed_term": "Loss of appetite",
-          "relevance_to_diagnosis": 0.4,
-          "package_order": 6
-        },
-        {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.156,
-          "package_order": 7
-        },
-        {
-          "code": "Z3A.00",
-          "title": "Weeks of gestation of pregnancy not specified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "supporting",
-          "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.156,
-          "package_order": 8
         }
       ],
       "icd10_principal": [
@@ -590,114 +333,57 @@
           "order": 5
         }
       ],
-      "icd10_supporting": [
-        {
-          "code": "R63.0",
-          "title": "Anorexia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R63.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "anorexia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "79890006",
-          "from_snomed_term": "Loss of appetite",
-          "relevance_to_diagnosis": 0.4
-        },
-        {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.156
-        },
-        {
-          "code": "Z3A.00",
-          "title": "Weeks of gestation of pregnancy not specified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
-          "role": "supporting",
-          "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
-          "from_snomed_id": "10752381000119101",
-          "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.156
-        }
-      ],
+      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 8
+      "n_icd_codes": 5
     },
     {
       "rank": 5,
-      "diagnosis": "Chronic Kidney Disease",
-      "score": 45.0,
-      "confidence": "low",
+      "diagnosis": "Thrombocytopenia",
+      "score": 60.0,
+      "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "Thrombocytopenic disorder",
       "supporting_evidence": [
-        "hypotension",
-        "anemia",
-        "neutropenia",
         "thrombocytopenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Abnormal lab results suggest chronic kidney disease as a possible complication.",
+      "reasoning": "Low platelet count confirmed by lab results.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "709044004",
-        "preferred_term": "Chronic kidney disease",
-        "fsn": "Chronic kidney disease (disorder)",
+        "concept_id": "302215000",
+        "preferred_term": "Thrombocytopenic disorder",
+        "fsn": "Thrombocytopenic disorder (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Chronic Kidney Disease",
-        "aligned_hint": null
+        "query": "Thrombocytopenia",
+        "aligned_hint": "Thrombocytopenic disorder"
       },
-      "icd10_primary": "N18.9",
-      "icd10_primary_title": "Chronic kidney disease, unspecified",
+      "icd10_primary": "D69.6",
+      "icd10_primary_title": "Thrombocytopenia, unspecified",
       "icd10_package": [
         {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified",
+          "code": "D69.6",
+          "title": "Thrombocytopenia, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS D69.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
+          "code": "P61.0",
+          "title": "Transient neonatal thrombocytopenia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1931,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
           "package_order": 2
         },
         {
@@ -710,11 +396,11 @@
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
+          "from_term": "Fetal thrombocytopenia",
+          "from_kind": "retained_snomed",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.1612,
+          "relevance_to_diagnosis": 0.8587,
           "package_order": 3
         },
         {
@@ -727,44 +413,39 @@
           "always": true,
           "role": "supporting",
           "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
+          "from_term": "Fetal thrombocytopenia",
+          "from_kind": "retained_snomed",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.1612,
+          "relevance_to_diagnosis": 0.8587,
           "package_order": 4
         }
       ],
       "icd10_principal": [
         {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified",
+          "code": "D69.6",
+          "title": "Thrombocytopenia, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS D69.6 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
-        }
-      ],
-      "icd10_supporting": [
+        },
         {
-          "code": "I95.9",
-          "title": "Hypotension, unspecified",
+          "code": "P61.0",
+          "title": "Transient neonatal thrombocytopenia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.1931
-        },
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [
         {
           "code": "O36.8290",
           "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
@@ -775,11 +456,11 @@
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
+          "from_term": "Fetal thrombocytopenia",
+          "from_kind": "retained_snomed",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.1612
+          "relevance_to_diagnosis": 0.8587
         },
         {
           "code": "Z3A.00",
@@ -791,11 +472,11 @@
           "always": true,
           "role": "supporting",
           "order": 2,
-          "from_term": "thrombocytopenia",
-          "from_kind": "symptom",
+          "from_term": "Fetal thrombocytopenia",
+          "from_kind": "retained_snomed",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.1612
+          "relevance_to_diagnosis": 0.8587
         }
       ],
       "icd_status": "mapped",
@@ -803,204 +484,306 @@
     },
     {
       "rank": 6,
-      "diagnosis": "Cachexia",
-      "score": 35.0,
-      "confidence": "low",
-      "category": "risk_factor",
+      "diagnosis": "Neutropenia",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "weight loss",
-        "anorexia"
+        "new neutropenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Weight loss and anorexia suggest cachexia as a risk factor.",
+      "reasoning": "Low absolute neutrophil count confirmed by lab results.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "238108007",
-        "preferred_term": "Cachectic",
-        "fsn": "Cachexia (finding)",
+        "concept_id": "165517008",
+        "preferred_term": "Neutropenia",
+        "fsn": "Neutropenia (finding)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Cachexia",
+        "query": "Neutropenia",
         "aligned_hint": null
       },
-      "icd10_primary": "R64",
-      "icd10_primary_title": "Cachexia",
+      "icd10_primary": "D70.9",
+      "icd10_primary_title": "Neutropenia, unspecified",
       "icd10_package": [
         {
-          "code": "R64",
-          "title": "Cachexia",
+          "code": "D70.9",
+          "title": "Neutropenia, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 6,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS R64",
+          "map_advice": "ALWAYS D70.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "I51.9",
-          "title": "Heart disease, unspecified",
+          "code": "P61.5",
+          "title": "Transient neonatal neutropenia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF CARDIAC CACHEXIA CHOOSE I51.9 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.5 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2,
           "package_order": 2
         },
         {
-          "code": "B20",
-          "title": "Human immunodeficiency virus [HIV] disease",
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF CACHEXIA ASSOCIATED WITH AIDS CHOOSE B20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3,
-          "package_order": 3
-        },
-        {
-          "code": "C80.1",
-          "title": "Malignant (primary) neoplasm, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "IF MALIGNANT CACHEXIA CHOOSE C80.1 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 4,
-          "package_order": 4
-        },
-        {
-          "code": "R54",
-          "title": "Age-related physical debility",
-          "source": "snomed_extended_map",
-          "map_priority": 5,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING ON OR AFTER 65.0 YEARS CHOOSE R54 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 5,
-          "package_order": 5
-        },
-        {
-          "code": "R63.0",
-          "title": "Anorexia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R63.0",
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "anorexia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "79890006",
-          "from_snomed_term": "Loss of appetite",
-          "relevance_to_diagnosis": 0.2778,
-          "package_order": 6
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087,
+          "package_order": 3
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087,
+          "package_order": 4
         }
       ],
       "icd10_principal": [
         {
-          "code": "R64",
-          "title": "Cachexia",
+          "code": "D70.9",
+          "title": "Neutropenia, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 6,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS R64",
+          "map_advice": "ALWAYS D70.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "I51.9",
-          "title": "Heart disease, unspecified",
+          "code": "P61.5",
+          "title": "Transient neonatal neutropenia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF CARDIAC CACHEXIA CHOOSE I51.9 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P61.5 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2
-        },
-        {
-          "code": "B20",
-          "title": "Human immunodeficiency virus [HIV] disease",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "IF CACHEXIA ASSOCIATED WITH AIDS CHOOSE B20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3
-        },
-        {
-          "code": "C80.1",
-          "title": "Malignant (primary) neoplasm, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "IF MALIGNANT CACHEXIA CHOOSE C80.1 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 4
-        },
-        {
-          "code": "R54",
-          "title": "Age-related physical debility",
-          "source": "snomed_extended_map",
-          "map_priority": 5,
-          "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING ON OR AFTER 65.0 YEARS CHOOSE R54 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 5
         }
       ],
       "icd10_supporting": [
         {
-          "code": "R63.0",
-          "title": "Anorexia",
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R63.0",
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "anorexia",
-          "from_kind": "tree_symptom",
-          "from_snomed_id": "79890006",
-          "from_snomed_term": "Loss of appetite",
-          "relevance_to_diagnosis": 0.2778
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5087
         }
       ],
       "icd_status": "mapped",
-      "n_icd_codes": 6
-    }
-  ],
-  "rule_outs": [
+      "n_icd_codes": 4
+    },
     {
-      "diagnosis": "Pneumonia",
-      "why": "No current evidence of pneumonia in the structured context."
+      "rank": 7,
+      "diagnosis": "Chronic Obstructive Pulmonary Disease",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "chronic obstructive pulmonary disease, unspecified"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "COPD is a differential diagnosis given the patient's history.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "13645005",
+        "preferred_term": "Chronic obstructive lung disease",
+        "fsn": "Chronic obstructive pulmonary disease (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Chronic Obstructive Pulmonary Disease",
+        "aligned_hint": null
+      },
+      "icd10_primary": "J44.9",
+      "icd10_primary_title": "Chronic obstructive pulmonary disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "J44.9",
+          "title": "Chronic obstructive pulmonary disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS J44.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "I27.20",
+          "title": "Pulmonary hypertension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I27.20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "pulmonary hypertension",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "70995007",
+          "from_snomed_term": "Pulmonary hypertension",
+          "relevance_to_diagnosis": 0.5657,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "J44.9",
+          "title": "Chronic obstructive pulmonary disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS J44.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I27.20",
+          "title": "Pulmonary hypertension, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I27.20 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "pulmonary hypertension",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "70995007",
+          "from_snomed_term": "Pulmonary hypertension",
+          "relevance_to_diagnosis": 0.5657
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Kidney Transplant Rejection",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "risk_factor",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "kidney transplant rejection"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Chronic condition with potential for acute exacerbation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "213148006",
+        "preferred_term": "Transplant rejection",
+        "fsn": "Transplanted organ rejection (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.8033646312031287,
+        "query": "Kidney Transplant Rejection",
+        "aligned_hint": null
+      },
+      "icd10_primary": "T86.91",
+      "icd10_primary_title": "Unspecified transplanted organ and tissue rejection",
+      "icd10_package": [
+        {
+          "code": "T86.91",
+          "title": "Unspecified transplanted organ and tissue rejection",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS T86.91 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "T86.91",
+          "title": "Unspecified transplanted organ and tissue rejection",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS T86.91 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
     }
   ],
+  "rule_outs": [],
   "uncertain_areas": [
-    "Further clarification on the cause of hypotension and weight loss would refine the differential diagnosis."
+    "Further imaging to confirm pulmonary hypertension, additional labs to assess anemia severity"
   ],
-  "n_candidates": 6,
+  "n_candidates": 8,
   "type": "differential_diagnosis_with_icd",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "13952483",
   "hadm_id": "23852410",
-  "generated_at": "2026-08-20T00:10:41.130972",
+  "generated_at": "2026-08-20T17:17:16.618666",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,
@@ -1245,9 +1028,9 @@
   "icd_map_refset": "6011000124106",
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
-    "n_diagnoses": 6,
-    "n_with_principal": 4,
-    "n_unmapped": 1
+    "n_diagnoses": 8,
+    "n_with_principal": 8,
+    "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:21.921242"
+  "generated_at_stage8": "2026-08-20T17:19:22.686855"
 }

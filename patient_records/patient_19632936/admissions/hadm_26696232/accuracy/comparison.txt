@@ -3,40 +3,43 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 19632936
 HADM ID          : 26696232
-Generated        : 2026-08-20T00:13:44.914512
+Generated        : 2026-08-20T17:31:21.537821
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Iron deficiency anemia, unspecified
-  Rank-1 predicted     : Acute macrocytic anemia
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Macrocytic anemia
+  Billed ICD title     : Iron deficiency anemia, unspecified (ICD metric only)
+  Rank-1 predicted     : Acute macrocytic anemia with respiratory compromise
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : None of the ranked differential diagnoses match the ground truth diagnosis of Iron deficiency anemia, unspecified.
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Acute macrocytic anemia with respiratory compromise
+    score=85.0  confidence=high
+  LLM reason           : Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles acuity and an associated symptom (respiratory compromise) with the same core diagnosis.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : D50.9 — Iron deficiency anemia, unspecified
   Rank-1 mapped ICD    : D53.9 — Nutritional anemia, unspecified
-  Matched mapped ICD   : - — 
+  Matched mapped ICD   : D53.9 — Nutritional anemia, unspecified
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to D50.9.
+  LLM ICD reason       : Mapped code at matched rank is D53.9 (Nutritional anemia, unspecified), whereas the billed primary is D50.9 (Iron deficiency anemia, unspecified). Although both fall in the nutritional anemia block (D50-D53), they designate different anemia etiologies/morphologies — iron deficiency anemia is characteristically microcytic while D53.9 covers unspecified nutritional (including macrocytic/megaloblastic-type) anemia — so a coder would not treat them as interchangeable for the principal diagnosis.
   Stage 9 final ICD    : D53.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Acute macrocytic anemia  [score=85.0, high]  ICD=D53.9 — Nutritional anemia, unspecified
-   2. Acute heart failure  [score=75.0, medium]  ICD=I50.9 — Heart failure, unspecified
+   1. Acute macrocytic anemia with respiratory compromise  [score=85.0, high]  ICD=D53.9 — Nutritional anemia, unspecified
+   2. Chronic diastolic heart failure  [score=70.0, medium]  ICD=I50.32 — Chronic diastolic (congestive) heart failure
    3. Atrial fibrillation  [score=65.0, medium]  ICD=I48.91 — Unspecified atrial fibrillation
-   4. Anemia  [score=60.0, medium]  ICD=D64.9 — Anemia, unspecified
-   5. Renal insufficiency  [score=55.0, low]  ICD=N19 — Unspecified kidney failure
+   4. Anemia of chronic disease  [score=55.0, low]  ICD=D63.8 — Anemia in other chronic diseases classified elsewhere
+   5. Volume depletion  [score=50.0, low]  ICD=- — 
+   6. Coronary artery disease  [score=45.0, low]  ICD=I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris

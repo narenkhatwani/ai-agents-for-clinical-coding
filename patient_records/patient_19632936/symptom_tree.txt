@@ -8,17 +8,13 @@ Patient ID       : 19632936
 Admission ID     : 26696232
 
 Reasoning:
-  The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome.
+  The patient presents with acute on chronic macrocytic anemia and dyspnea on exertion, with a history of CAD, AFib, and moderate AS. The dominant clinical picture is anemia and its effects on respiratory function.
 
-Key symptoms     : dyspnea on exertion, fatigue
+Key symptoms     : dyspnea on exertion, fatigue, anemia
 Red flags        : hypotension, AMS
 
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
+CARDIOVASCULAR|RESPIRATORY → Cardiovascular|Respiratory
+-------------------------------------------------------
 
   • [present, moderate] dyspnea on exertion
       evidence: "acute on chronic dyspnea on exertion"
@@ -27,25 +23,20 @@ CARDIOVASCULAR → Cardiovascular
           evidence: "worsening dyspnea over the past year"
   • [present, moderate] fatigue
       evidence: "acute on chronic fatigue"
-      related: anemia
-
-GI → Gastrointestinal
----------------------
-
-  • [history, mild] esophagitis
-      evidence: "esophagitis (___)"
-  • [history, mild] nodular gastritis
-      evidence: "nodular gastritis"
-
-RENAL → Renal
--------------
-
-  • [present, mild] low calcium
-      evidence: "Calcium, Total: 8.3 mg/dL"
-
-OTHER → Other
--------------
-
-  • [present, moderate] macrocytic anemia
+      related: macrocytic anemia
+  • [present, severe] anemia
       evidence: "acute on chronic macrocytic anemia"
-      related: Hgb 6.7, MCV 106, RDW 18.2, Reticulocyte Count, Automated: 3.6 %
+      related: Hgb 6.7, MCV 106, Hematocrit 26.8
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history, mild] moderate AS
+      evidence: "moderate AS"
+      related: mild pulmonary hypertension
+  • [history, mild] sick sinus syndrome
+      evidence: "Sick sinus s/p PPM"
+      related: rate controlled with diltiazem
+  • [history, mild] atrial fibrillation
+      evidence: "Afib on warfarin"
+      related: INR 2.4

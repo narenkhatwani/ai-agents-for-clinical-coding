@@ -3,23 +3,25 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13508515
 HADM ID          : 21834271
-Generated        : 2026-08-20T00:13:25.599643
+Generated        : 2026-08-20T17:30:11.380609
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Malignant neoplasm of left kidney, except renal pelvis
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Left renal cell carcinoma.
+  Billed ICD title     : Malignant neoplasm of left kidney, except renal pelvis (ICD metric only)
   Rank-1 predicted     : Acute on chronic systolic heart failure
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : The ground truth primary diagnosis is 'Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the ranked differential diagnoses.
+  Diagnosis match      : YES
+  Is rank-1 match      : NO
+  Matched DiffDx rank  : 2
+  Matched diagnosis    : Renal cell carcinoma
+    score=70.0  confidence=medium
+  LLM reason           : Physician discharge diagnosis is left renal cell carcinoma; Rank 2 'Renal cell carcinoma' names the same principal condition, lacking only laterality specification. Rank 1 (heart failure) and other ranks are unrelated principals.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : C64.2 — Malignant neoplasm of left kidney, except renal pelvis
   Rank-1 mapped ICD    : I50.23 — Acute on chronic systolic (congestive) heart failure
@@ -29,7 +31,7 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : The ground truth ICD code is 'C64.2 — Malignant neoplasm of left kidney, except renal pelvis', which does not match any of the mapped ICD codes in the ranked differential diagnoses.
+  LLM ICD reason       : No ICD code was mapped at the matched rank (Rank 2), so it cannot be compared to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).
   Stage 9 final ICD    : I50.23 (debug)
 
 FULL DIFFERENTIAL LIST
@@ -37,7 +39,7 @@ FULL DIFFERENTIAL LIST
 
    1. Acute on chronic systolic heart failure  [score=85.0, high]  ICD=I50.23 — Acute on chronic systolic (congestive) heart failure
    2. Renal cell carcinoma  [score=70.0, medium]  ICD=- — 
-   3. Obstructive sleep apnea  [score=60.0, medium]  ICD=G47.33 — Obstructive sleep apnea (adult) (pediatric)
-   4. Anemia  [score=55.0, medium]  ICD=D64.9 — Anemia, unspecified
-   5. Hypokalemia  [score=50.0, low]  ICD=E87.6 — Hypokalemia
-   6. Chronic kidney disease  [score=45.0, low]  ICD=N18.9 — Chronic kidney disease, unspecified
+   3. Type 2 diabetes mellitus  [score=65.0, medium]  ICD=E11.9 — Type 2 diabetes mellitus without complications
+   4. Obstructive sleep apnea  [score=55.0, low]  ICD=G47.33 — Obstructive sleep apnea (adult) (pediatric)
+   5. Anemia  [score=50.0, medium]  ICD=D64.9 — Anemia, unspecified
+   6. Hypokalemia  [score=40.0, low]  ICD=E87.6 — Hypokalemia

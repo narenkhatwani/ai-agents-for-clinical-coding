@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness.",
+  "reasoning": "The dominant clinical picture for this admission is a patient with a history of dilated non-ischemic cardiomyopathy and refractory ventricular tachycardia, presenting with ICD shock and subsequent management of heart failure symptoms.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -9,20 +9,10 @@
         {
           "term": "ICD shock",
           "status": "present",
-          "severity": "unknown",
+          "severity": "severe",
           "evidence": "ICD shock on ___",
           "related_findings": [
             "Refractory VT",
-            "Dilated non-ischemic cardiomyopathy"
-          ],
-          "children": []
-        },
-        {
-          "term": "lightheadedness",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "lightheadedness with position changes",
-          "related_findings": [
             "Dilated non-ischemic cardiomyopathy"
           ],
           "children": []
@@ -36,6 +26,16 @@
             "Dilated non-ischemic cardiomyopathy"
           ],
           "children": []
+        },
+        {
+          "term": "shaking",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "feels some 'shaking' in his chest in the morning for the last 4 months",
+          "related_findings": [
+            "Refractory VT"
+          ],
+          "children": []
         }
       ]
     }
@@ -45,12 +45,13 @@
     "edema"
   ],
   "red_flags": [
-    "ICD shock"
+    "ICD shock",
+    "Refractory VT"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "11607177",
   "admission_id": "23293838",
-  "generated_at": "2026-08-19T23:20:08.367062"
+  "generated_at": "2026-08-20T17:10:09.245590"
 }

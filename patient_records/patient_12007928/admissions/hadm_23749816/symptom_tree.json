@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with dyspnea, orthopnea, and worsening CHF, with significant fatigue and incontinence, following a fall and discharge from a previous hospital.",
+  "reasoning": "The patient presents with dyspnea, orthopnea, and worsening heart failure, with significant fluid overload and pleural effusions.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -9,12 +9,12 @@
         {
           "term": "dyspnea",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "increased dyspnea",
+          "severity": "severe",
+          "evidence": "increased dyspnea, unable to walk about 10 steps without feeling short of breath",
           "related_findings": [
             "orthopnea",
-            "crackles in lungs",
-            "pitting edema"
+            "pulmonary edema",
+            "pleural effusions"
           ],
           "children": [
             {
@@ -23,24 +23,28 @@
               "evidence": "reports significant orthopnea"
             },
             {
-              "term": "pitting edema",
+              "term": "pulmonary edema",
               "status": "present",
-              "evidence": "4+ pitting lower extremity edema"
+              "evidence": "mild to moderate pulmonary edema on CXR"
+            },
+            {
+              "term": "pleural effusions",
+              "status": "present",
+              "evidence": "likely present on CXR"
             }
-          ]
-        },
-        {
-          "term": "crackles",
-          "status": "present",
-          "evidence": "mild bibasilar crackles L > R",
-          "related_findings": [
-            "pulmonary edema"
           ]
         },
         {
           "term": "fatigue",
           "status": "present",
+          "severity": "moderate",
           "evidence": "all activities now are quite fatiguing"
+        },
+        {
+          "term": "shortness of breath",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "unable to walk about 10 steps without feeling short of breath"
         }
       ]
     },
@@ -51,11 +55,8 @@
         {
           "term": "tremors",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "increased spasms in the upper extremities",
-          "related_findings": [
-            "myasthenia gravis"
-          ]
+          "severity": "mild",
+          "evidence": "increased spasms in the upper extremities"
         }
       ]
     },
@@ -66,12 +67,8 @@
         {
           "term": "creatinine elevation",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "Creatinine: 1.6 mg/dL",
-          "related_findings": [
-            "dyspnea",
-            "pitting edema"
-          ]
+          "severity": "mild",
+          "evidence": "Creatinine: 1.6 mg/dL [abnormal]"
         }
       ]
     },
@@ -82,28 +79,24 @@
         {
           "term": "incontinence",
           "status": "present",
-          "severity": "moderate",
-          "evidence": "urine incontinence",
-          "related_findings": [
-            "stress incontinence"
-          ]
+          "severity": "mild",
+          "evidence": "urine incontinence"
         }
       ]
     }
   ],
   "key_symptoms": [
     "dyspnea",
-    "orthopnea",
-    "tremors"
+    "orthopnea"
   ],
   "red_flags": [
-    "pitting edema",
-    "crackles in lungs"
+    "hypotension",
+    "AMS"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "12007928",
   "admission_id": "23749816",
-  "generated_at": "2026-08-19T23:20:18.096250"
+  "generated_at": "2026-08-20T17:10:21.738944"
 }

@@ -5,59 +5,71 @@ Patient ID       : 19104262
 HADM ID          : 24271247
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:11:51.235327
-Candidates       : 6
+Generated        : 2026-08-20T17:18:45.058712
+Candidates       : 8
 Most likely      : Diabetic ketoacidosis
 Prior admissions : 5 (46 ICD codes as PMH context)
 
 Summary:
-  The patient is a pregnant woman admitted with DKA and lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.
+  The patient is a post-partum woman admitted with diabetic ketoacidosis (DKA) and lactic acidosis, with a history of type 1 diabetes mellitus, vaginal bleeding, and decreased fetal movement.
 
 RANKED DIFFERENTIAL
 -------------------
 
   #1  [85.0/100 | high]  Diabetic ketoacidosis  (primary)
       SNOMED aligned : Diabetic ketoacidosis
-      + Diabetic ketoacidosis (confirmed), DKA/lactic acidosis
-      why: DKA is confirmed and the primary presenting condition.
+      + Diabetic ketoacidosis (confirmed)
+      + Glucose: 263 mg/dL
+      + Anion Gap: 19.0 mEq/L
+      + Bicarbonate: 20.0 mEq/L
+      + pH: 7.34 units
+      why: Strong evidence of DKA with high glucose, anion gap, and low pH.
 
-  #2  [70.0/100 | medium]  C difficile colitis  (differential)
-      SNOMED aligned : Clostridioides difficile infection
-      + C difficile colitis: Improving but still with some diarrhea at discharge
-      − Improved since discharge
-      why: C difficile colitis is suspected and has been a chronic condition.
+  #2  [70.0/100 | high]  Type 1 diabetes mellitus with ketoacidosis  (primary)
+      SNOMED aligned : Diabetes mellitus type I
+      + Diabetes mellitus type 1 (confirmed)
+      + Glucose: 263 mg/dL
+      + Anion Gap: 19.0 mEq/L
+      + Bicarbonate: 20.0 mEq/L
+      + pH: 7.34 units
+      why: Confirmed type 1 diabetes mellitus with concurrent ketoacidosis.
 
-  #3  [65.0/100 | medium]  Preeclampsia  (complication)
-      SNOMED aligned : Preeclampsia
-      + Unspecified pre-eclampsia, third trimester
-      − No current signs of hypertension or proteinuria
-      why: Preeclampsia is a known chronic condition and risk factor.
+  #3  [65.0/100 | high]  Lactic acidosis  (primary)
+      + Lactate: 3.6 mmol/L
+      + Anion Gap: 19.0 mEq/L
+      + pH: 7.34 units
+      − Lactate: 3.6 mmol/L (normal)
+      why: Lactic acidosis is present but less likely the primary cause given DKA.
 
-  #4  [50.0/100 | low]  Missed abortion  (risk_factor)
+  #4  [45.0/100 | medium]  Missed abortion  (risk_factor)
       SNOMED aligned : Missed abortion
-      + Missed abortion
-      − No current signs of bleeding or pregnancy complications
-      why: Missed abortion is a chronic condition but not currently presenting.
+      + Missed abortion (confirmed)
+      + Decreased fetal movement
+      why: History of missed abortion and decreased fetal movement, but not currently present.
 
-  #5  [45.0/100 | medium]  Type 1 diabetes mellitus  (primary)
-      SNOMED aligned : Type 1 diabetes mellitus
-      + Type 1 diabetes mellitus with ketoacidosis without coma
-      − No current signs of hyperglycemia
-      why: Type 1 diabetes mellitus is a chronic condition and risk factor.
+  #5  [40.0/100 | medium]  Vaginal bleeding  (secondary)
+      SNOMED aligned : Bleeding from vagina
+      + Vaginal bleeding
+      why: History of vaginal bleeding but not currently present.
 
-  #6  [30.0/100 | low]  Infection  (differential)
-      + fevers/chills/nightsweats for the past few days
-      + abdominal pain
-      + decreased fetal movement
-      − No current signs of infection
-      why: Infection is a possible differential but not the primary presenting condition.
+  #6  [35.0/100 | high]  Type 1 diabetes mellitus  (primary)
+      SNOMED aligned : Diabetes mellitus type I
+      + Diabetes mellitus type 1 (confirmed)
+      + Hemoglobin: 14.4 g/dL
+      + Hematocrit: 46.2 %
+      why: Confirmed type 1 diabetes mellitus with normal hemoglobin and hematocrit.
 
-RULE-OUTS
----------
+  #7  [30.0/100 | medium]  Decreased fetal movement  (secondary)
+      SNOMED aligned : Low fetal movement
+      + Decreased fetal movement
+      why: History of decreased fetal movement but not currently present.
 
-  • Lactic acidosis: Lactic acidosis is a consequence of DKA and not a primary diagnosis.
+  #8  [25.0/100 | low]  Abdominal pain  (differential)
+      SNOMED aligned : Abdominal pain
+      + Abdominal pain
+      why: History of abdominal pain but not currently present.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further labs and imaging to confirm infection or other causes of lactic acidosis
+  • Further clarification on the cause of lactic acidosis and the status of vaginal bleeding and decreased fetal movement would refine the differential

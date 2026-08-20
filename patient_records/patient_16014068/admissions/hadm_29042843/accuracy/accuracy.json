@@ -4,33 +4,37 @@
   "method": "llm_query_expansion",
   "patient_id": "16014068",
   "hadm_id": "29042843",
-  "generated_at": "2026-08-20T00:13:31.452930",
+  "generated_at": "2026-08-20T17:30:34.535987",
   "ground_truth": {
     "primary_icd_code": "C7931",
     "primary_dx_title": "Secondary malignant neoplasm of brain",
     "primary_icd_title": "Secondary malignant neoplasm of brain",
+    "discharge_diagnosis": "High-grade unclassified sarcoma (malignant fibrous histiocytoma)",
+    "diffdx_gt": "High-grade unclassified sarcoma (malignant fibrous histiocytoma)",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 19
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Secondary malignant neoplasm of brain",
-      "rank1_diagnosis": "Metastatic sarcoma with hematologic complications",
+      "ground_truth_primary": "High-grade unclassified sarcoma (malignant fibrous histiocytoma)",
+      "rank1_diagnosis": "Metastatic sarcoma with anemia and thrombocytopenia",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
-      "match": false,
-      "is_rank1_match": null,
-      "matched_diffdx_rank": null,
-      "matched_diagnosis": "",
-      "matched_score": null,
-      "matched_confidence": "",
-      "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.",
-      "llm_expanded_ground_truth": "",
-      "llm_expanded_matched": "",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Metastatic sarcoma with anemia and thrombocytopenia",
+      "matched_score": 85.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Metastatic sarcoma with anemia and thrombocytopenia' names the same principal condition as the physician discharge diagnosis of high-grade unclassified sarcoma (malignant fibrous histiocytoma / undifferentiated pleomorphic sarcoma) with metastatic spread; the anemia and thrombocytopenia are bundled comorbidities in the same phrase and do not change the principal diagnosis. No other rank (anemia/thrombocytopenia, cervical degenerative change, renal failure, hypotension) names the sarcoma.",
+      "llm_expanded_ground_truth": "high-grade unclassified sarcoma | malignant fibrous histiocytoma (MFH) | undifferentiated pleomorphic sarcoma | soft tissue sarcoma, high grade | malignant soft tissue neoplasm | metastatic sarcoma",
+      "llm_expanded_matched": "metastatic sarcoma | sarcoma with distant metastases | secondary malignant neoplasm from sarcoma | anemia | thrombocytopenia (low platelets)",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
-          "diagnosis": "Metastatic sarcoma with hematologic complications",
+          "diagnosis": "Metastatic sarcoma with anemia and thrombocytopenia",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
@@ -38,82 +42,97 @@
           "icd10_primary_title": "Secondary malignant neoplasm of other specified sites"
         },
         {
-          "diagnosis": "Anemia",
+          "diagnosis": "Chronic anemia and thrombocytopenia",
           "rank": 2,
           "score": 70.0,
           "confidence": "high",
-          "icd10_primary": "D64.9",
-          "icd10_primary_title": "Anemia, unspecified"
+          "icd10_primary": "D61.810",
+          "icd10_primary_title": "Antineoplastic chemotherapy induced pancytopenia"
         },
         {
-          "diagnosis": "Thrombocytopenia",
+          "diagnosis": "Cervical spine degenerative changes",
           "rank": 3,
-          "score": 65.0,
-          "confidence": "high",
-          "icd10_primary": "O36.8290",
-          "icd10_primary_title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified"
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
+        },
+        {
+          "diagnosis": "Acute kidney failure",
+          "rank": 4,
+          "score": 40.0,
+          "confidence": "medium",
+          "icd10_primary": "I50.9",
+          "icd10_primary_title": "Heart failure, unspecified"
         },
         {
           "diagnosis": "Hypotension",
-          "rank": 4,
-          "score": 50.0,
-          "confidence": "medium",
+          "rank": 5,
+          "score": 30.0,
+          "confidence": "low",
           "icd10_primary": "I95.9",
           "icd10_primary_title": "Hypotension, unspecified"
-        },
-        {
-          "diagnosis": "Headache",
-          "rank": 5,
-          "score": 45.0,
-          "confidence": "medium",
-          "icd10_primary": "R51.9",
-          "icd10_primary_title": "Headache, unspecified"
-        },
-        {
-          "diagnosis": "Abdominal pain",
-          "rank": 6,
-          "score": 35.0,
-          "confidence": "low",
-          "icd10_primary": "R10.9",
-          "icd10_primary_title": "Unspecified abdominal pain"
         }
       ],
-      "n_diffdx": 6
+      "n_diffdx": 5
     },
     "icd_linked": {
       "ground_truth_icd": "C79.31",
       "ground_truth_icd_title": "Secondary malignant neoplasm of brain",
       "rank1_predicted_icd": "C79.89",
       "rank1_predicted_icd_title": "Secondary malignant neoplasm of other specified sites",
-      "matched_predicted_icd": "",
-      "matched_predicted_icd_title": "",
-      "icd_match": false,
+      "matched_predicted_icd": "C79.89",
+      "matched_predicted_icd_title": "Secondary malignant neoplasm of other specified sites",
+      "icd_match": true,
       "icd_exact_match": false,
-      "icd_family_match": false,
-      "icd_llm_match": false,
-      "is_rank1_icd_match": false,
+      "icd_family_match": true,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.",
-      "llm_expanded_ground_truth_icd": "",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "Billed primary code C79.31 (secondary malignant neoplasm of brain) and mapped code C79.89 (secondary malignant neoplasm of other specified sites) both fall in the C79 category coding metastatic (secondary) malignant neoplasm from the sarcoma; the codes differ only in the metastatic site specified (brain vs other specified site), so a coder would accept them as clinically equivalent for the same principal condition of metastatic sarcoma, though the billed code is site-specific to brain.",
+      "llm_expanded_ground_truth_icd": "C79.31 secondary malignant neoplasm of brain | brain metastasis | metastatic disease to brain | secondary malignancy CNS",
+      "llm_expanded_matched_icd": "C79.89 secondary malignant neoplasm of other specified sites | metastatic disease, other site | secondary malignant neoplasm, unspecified/other site | distant metastases from sarcoma",
       "stage9_final_primary_icd": "B99.9",
-      "diagnosis_match": false,
-      "is_rank1_diagnosis_match": null,
-      "matched_diffdx_rank": null
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
     },
     "llm_qe_raw": {
-      "matched_rank": null,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.",
-      "ground_truth_expansions": [],
-      "matched_diagnosis_expansions": [],
-      "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.",
-      "ground_truth_icd_expansions": [],
-      "matched_icd_expansions": [],
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Metastatic sarcoma with anemia and thrombocytopenia' names the same principal condition as the physician discharge diagnosis of high-grade unclassified sarcoma (malignant fibrous histiocytoma / undifferentiated pleomorphic sarcoma) with metastatic spread; the anemia and thrombocytopenia are bundled comorbidities in the same phrase and do not change the principal diagnosis. No other rank (anemia/thrombocytopenia, cervical degenerative change, renal failure, hypotension) names the sarcoma.",
+      "ground_truth_expansions": [
+        "high-grade unclassified sarcoma",
+        "malignant fibrous histiocytoma (MFH)",
+        "undifferentiated pleomorphic sarcoma",
+        "soft tissue sarcoma, high grade",
+        "malignant soft tissue neoplasm",
+        "metastatic sarcoma"
+      ],
+      "matched_diagnosis_expansions": [
+        "metastatic sarcoma",
+        "sarcoma with distant metastases",
+        "secondary malignant neoplasm from sarcoma",
+        "anemia",
+        "thrombocytopenia (low platelets)"
+      ],
+      "icd_equivalent": true,
+      "icd_confidence": "medium",
+      "icd_reason": "Billed primary code C79.31 (secondary malignant neoplasm of brain) and mapped code C79.89 (secondary malignant neoplasm of other specified sites) both fall in the C79 category coding metastatic (secondary) malignant neoplasm from the sarcoma; the codes differ only in the metastatic site specified (brain vs other specified site), so a coder would accept them as clinically equivalent for the same principal condition of metastatic sarcoma, though the billed code is site-specific to brain.",
+      "ground_truth_icd_expansions": [
+        "C79.31 secondary malignant neoplasm of brain",
+        "brain metastasis",
+        "metastatic disease to brain",
+        "secondary malignancy CNS"
+      ],
+      "matched_icd_expansions": [
+        "C79.89 secondary malignant neoplasm of other specified sites",
+        "metastatic disease, other site",
+        "secondary malignant neoplasm, unspecified/other site",
+        "distant metastases from sarcoma"
+      ],
       "_cache_hit": false
     }
   },

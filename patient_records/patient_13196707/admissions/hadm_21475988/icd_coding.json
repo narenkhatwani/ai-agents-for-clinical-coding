@@ -1,5 +1,5 @@
 {
-  "summary": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
+  "summary": "The patient is a 50-year-old male with a history of metastatic adenocarcinoma of unknown primary presenting with severe sepsis secondary to RUL PNA, hypotension, and altered mental status. He has a history of multiple metastatic brain lesions and SVC syndrome.",
   "most_likely": "Severe sepsis secondary to RUL PNA",
   "differential": [
     {
@@ -10,10 +10,10 @@
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "RUL PNA, persistent consolidative opacities in both lower lobes"
+        "RUL PNA (suspected)"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe sepsis is the most likely diagnosis given the RUL PNA and hypotension.",
+      "reasoning": "Severe sepsis is the primary clinical presentation and is strongly supported by the recent diagnosis of RUL PNA and the presence of hypotension and altered mental status.",
       "snomed_resolution": {
         "mapped": false,
         "concept_id": null,
@@ -24,26 +24,59 @@
       },
       "icd10_primary": null,
       "icd10_primary_title": null,
-      "icd10_package": [],
+      "icd10_package": [
+        {
+          "code": "A41.9",
+          "title": "Sepsis, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS A41.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sepsis",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "91302008",
+          "from_snomed_term": "Systemic infection",
+          "relevance_to_diagnosis": 0.5085,
+          "package_order": 1
+        }
+      ],
       "icd10_principal": [],
-      "icd10_supporting": [],
-      "icd_status": "unmapped",
-      "n_icd_codes": 0
+      "icd10_supporting": [
+        {
+          "code": "A41.9",
+          "title": "Sepsis, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS A41.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sepsis",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "91302008",
+          "from_snomed_term": "Systemic infection",
+          "relevance_to_diagnosis": 0.5085
+        }
+      ],
+      "icd_status": "supporting_only",
+      "n_icd_codes": 1
     },
     {
       "rank": 2,
       "diagnosis": "Metastatic adenocarcinoma of unknown primary",
       "score": 75.0,
-      "confidence": "medium",
+      "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
+      "snomed_aligned": "Metastatic adenocarcinoma of unknown origin (307226002)",
       "supporting_evidence": [
-        "confirmed metastatic adenocarcinoma of unknown primary"
+        "Metastatic adenocarcinoma of unknown primary (confirmed)"
       ],
-      "opposing_evidence": [
-        "no new metastatic lesions noted"
-      ],
-      "reasoning": "Given the patient’s history of metastatic adenocarcinoma, this is a significant risk factor.",
+      "opposing_evidence": [],
+      "reasoning": "The patient has a confirmed history of metastatic adenocarcinoma of unknown primary, which is a significant risk factor for the current presentation.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "307226002",
@@ -52,7 +85,7 @@
         "match_method": "exact",
         "score": 1.0,
         "query": "Metastatic adenocarcinoma of unknown primary",
-        "aligned_hint": "Metastatic adenocarcinoma of unknown origin"
+        "aligned_hint": "Metastatic adenocarcinoma of unknown origin (307226002)"
       },
       "icd10_primary": "C79.9",
       "icd10_primary_title": "Secondary malignant neoplasm of unspecified site",
@@ -89,28 +122,91 @@
     },
     {
       "rank": 3,
-      "diagnosis": "Hypotension secondary to pericardiocentesis",
+      "diagnosis": "Altered mental status due to metastatic brain lesions",
       "score": 65.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "recent pericardiocentesis, hypotension"
+        "Altered mental status possibly seizures from metastases"
       ],
-      "opposing_evidence": [
-        "hypotension is moderate and managed"
-      ],
-      "reasoning": "Hypotension is a complication of pericardiocentesis and is present.",
+      "opposing_evidence": [],
+      "reasoning": "The patient has multiple metastatic brain lesions, which could contribute to his altered mental status.",
       "snomed_resolution": {
         "mapped": false,
         "concept_id": null,
         "preferred_term": null,
         "match_method": null,
         "score": 0.0,
-        "query": "Hypotension secondary to pericardiocentesis"
+        "query": "Altered mental status due to metastatic brain lesions"
       },
       "icd10_primary": null,
       "icd10_primary_title": null,
+      "icd10_package": [
+        {
+          "code": "R41.82",
+          "title": "Altered mental status, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R41.82",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "altered mental status",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "419284004",
+          "from_snomed_term": "Altered mental status",
+          "relevance_to_diagnosis": 0.6216,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [],
+      "icd10_supporting": [
+        {
+          "code": "R41.82",
+          "title": "Altered mental status, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R41.82",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "altered mental status",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "419284004",
+          "from_snomed_term": "Altered mental status",
+          "relevance_to_diagnosis": 0.6216
+        }
+      ],
+      "icd_status": "supporting_only",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Hypotension",
+      "score": 60.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Hypotension with pressures in the 80's, hypotension with pressures in the 90's systolic"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Hypotension is a critical finding and a complication of severe sepsis.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "45007003",
+        "preferred_term": "Hypotension",
+        "fsn": "Low blood pressure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Hypotension",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I95.9",
+      "icd10_primary_title": "Hypotension, unspecified",
       "icd10_package": [
         {
           "code": "I95.9",
@@ -120,18 +216,12 @@
           "map_group": 1,
           "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
-          "role": "supporting",
+          "role": "principal",
           "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.6482,
           "package_order": 1
         }
       ],
-      "icd10_principal": [],
-      "icd10_supporting": [
+      "icd10_principal": [
         {
           "code": "I95.9",
           "title": "Hypotension, unspecified",
@@ -140,32 +230,115 @@
           "map_group": 1,
           "map_advice": "ALWAYS I95.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypotension",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "45007003",
-          "from_snomed_term": "Hypotension",
-          "relevance_to_diagnosis": 0.6482
+          "role": "principal",
+          "order": 1
         }
       ],
-      "icd_status": "supporting_only",
+      "icd10_supporting": [],
+      "icd_status": "mapped",
       "n_icd_codes": 1
     },
     {
-      "rank": 4,
-      "diagnosis": "Acute kidney failure",
+      "rank": 5,
+      "diagnosis": "Pneumonia",
       "score": 55.0,
-      "confidence": "low",
+      "confidence": "medium",
       "category": "secondary",
-      "snomed_aligned": "Acute kidney failure, unspecified",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "abnormal labs, low creatinine"
+        "RUL PNA (suspected)"
       ],
-      "opposing_evidence": [
-        "no acute kidney injury symptoms"
+      "opposing_evidence": [],
+      "reasoning": "RUL PNA is suspected and is a significant secondary condition contributing to the patient's presentation.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "233604007",
+        "preferred_term": "Pneumonia",
+        "fsn": "Pneumonia (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Pneumonia",
+        "aligned_hint": null
+      },
+      "icd10_primary": "J18.9",
+      "icd10_primary_title": "Pneumonia, unspecified organism",
+      "icd10_package": [
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS J18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "A41.9",
+          "title": "Sepsis, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS A41.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sepsis",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "91302008",
+          "from_snomed_term": "Systemic infection",
+          "relevance_to_diagnosis": 0.5499,
+          "package_order": 2
+        }
       ],
-      "reasoning": "Acute kidney failure is a potential secondary condition given the abnormal labs.",
+      "icd10_principal": [
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS J18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "A41.9",
+          "title": "Sepsis, unspecified organism",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS A41.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sepsis",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "91302008",
+          "from_snomed_term": "Systemic infection",
+          "relevance_to_diagnosis": 0.5499
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Acute kidney failure",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "Acute kidney failure, unspecified"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "The patient has a history of acute kidney failure, which could be a complication of his current presentation.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "56675007",
@@ -174,7 +347,7 @@
         "match_method": "fuzzy",
         "score": 0.5935728561881009,
         "query": "Acute kidney failure",
-        "aligned_hint": "Acute kidney failure, unspecified"
+        "aligned_hint": null
       },
       "icd10_primary": "I50.9",
       "icd10_primary_title": "Heart failure, unspecified",
@@ -231,131 +404,20 @@
       "icd10_supporting": [],
       "icd_status": "mapped",
       "n_icd_codes": 2
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Anemia",
-      "score": 45.0,
-      "confidence": "low",
-      "category": "secondary",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "low hematocrit, hemoglobin"
-      ],
-      "opposing_evidence": [
-        "no acute blood loss"
-      ],
-      "reasoning": "Anemia could explain the low hematocrit and hemoglobin.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "271737000",
-        "preferred_term": "Anemia",
-        "fsn": "Anemia (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Anemia",
-        "aligned_hint": null
-      },
-      "icd10_primary": "D64.9",
-      "icd10_primary_title": "Anemia, unspecified",
-      "icd10_package": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 6,
-      "diagnosis": "Sodium imbalance",
-      "score": 35.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "Hypo-osmolality and hyponatremia",
-      "supporting_evidence": [
-        "low sodium"
-      ],
-      "opposing_evidence": [
-        "no clinical signs of sodium imbalance"
-      ],
-      "reasoning": "Sodium imbalance is a risk factor given the low sodium levels.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "267447008",
-        "preferred_term": "Hypo-osmolality and or hyponatremia",
-        "fsn": "Hypo-osmolality and or hyponatremia (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.8830617472970576,
-        "query": "Sodium imbalance",
-        "aligned_hint": "Hypo-osmolality and hyponatremia"
-      },
-      "icd10_primary": "E87.1",
-      "icd10_primary_title": "Hypo-osmolality and hyponatremia",
-      "icd10_package": [
-        {
-          "code": "E87.1",
-          "title": "Hypo-osmolality and hyponatremia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS E87.1",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "E87.1",
-          "title": "Hypo-osmolality and hyponatremia",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS E87.1",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
     }
   ],
   "rule_outs": [
     {
       "diagnosis": "Non-small cell lung cancer",
-      "why": "Not currently supported by evidence."
+      "why": "While suspected, the current presentation is more consistent with adenocarcinoma."
+    },
+    {
+      "diagnosis": "Pericardiocentesis",
+      "why": "The procedure was performed and is not a primary diagnosis."
     }
   ],
   "uncertain_areas": [
-    "Further imaging to confirm new metastatic lesions",
-    "More detailed clinical history to confirm the exact nature of the PNA"
+    "Further clarification on the exact nature of the RUL PNA and its causative agent would refine the differential diagnosis."
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis_with_icd",
@@ -364,7 +426,7 @@
   "_temperature": 0.4,
   "patient_id": "13196707",
   "hadm_id": "21475988",
-  "generated_at": "2026-08-20T00:10:10.757498",
+  "generated_at": "2026-08-20T17:16:35.248925",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,
@@ -528,7 +590,7 @@
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
     "n_diagnoses": 6,
     "n_with_principal": 4,
-    "n_unmapped": 1
+    "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:20.390272"
+  "generated_at_stage8": "2026-08-20T17:19:21.199093"
 }

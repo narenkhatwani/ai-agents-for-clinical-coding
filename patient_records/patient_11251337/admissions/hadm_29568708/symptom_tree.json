@@ -1,15 +1,15 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL, with residual stones requiring further intervention.",
+  "reasoning": "The patient was admitted for management of nephrolithiasis and underwent a difficult right PCNL, with ongoing symptoms including pain around the nephrostomy tubes and fever.",
   "branches": [
     {
       "category": "renal|urologic",
-      "ontology_hint": "Urology",
+      "ontology_hint": "Renal Diseases|Urology",
       "symptoms": [
         {
           "term": "hematuria",
           "status": "present",
-          "severity": "unknown",
+          "severity": "mild",
           "evidence": "1x episode of hematuria",
           "related_findings": [
             "Bilateral staghorn renal calculi"
@@ -19,17 +19,18 @@
         {
           "term": "pain",
           "status": "present",
-          "severity": "unknown",
+          "severity": "moderate",
           "evidence": "pain around the nephrostomy tubes",
           "related_findings": [
-            "Bilateral staghorn renal calculi"
+            "Bilateral staghorn renal calculi",
+            "Hypertension"
           ],
           "children": []
         },
         {
           "term": "dysuria",
           "status": "present",
-          "severity": "unknown",
+          "severity": "mild",
           "evidence": "pain around the nephrostomy tubes and fevers",
           "related_findings": [
             "Bilateral staghorn renal calculi"
@@ -39,7 +40,7 @@
         {
           "term": "fever",
           "status": "present",
-          "severity": "unknown",
+          "severity": "mild",
           "evidence": "temperature of 102 at ___ prior to transfer",
           "related_findings": [
             "Complicated urinary tract infection"
@@ -49,49 +50,78 @@
       ]
     },
     {
-      "category": "renal|metabolic",
-      "ontology_hint": "Renal",
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "hypertension",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "BPs ranging from 120-150s/70-80s",
+          "related_findings": [
+            "Hypertension"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "hematologic",
+      "ontology_hint": "Hematology",
       "symptoms": [
         {
           "term": "anemia",
           "status": "present",
-          "severity": "mild",
-          "evidence": "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL",
+          "severity": "moderate",
+          "evidence": "Hematocrit 30.8%, Hemoglobin 9.4 g/dL",
           "related_findings": [
-            "MCV: 104.0 fL, RDW-SD: 59.6 fL"
+            "Normocytic anemia"
           ],
-          "children": []
-        },
+          "children": [
+            {
+              "term": "low MCHC",
+              "status": "present",
+              "evidence": "MCHC 30.5 g/dL",
+              "related_findings": [
+                "Normocytic anemia"
+              ],
+              "children": []
+            },
+            {
+              "term": "high MCV",
+              "status": "present",
+              "evidence": "MCV 104.0 fL",
+              "related_findings": [
+                "Normocytic anemia"
+              ],
+              "children": []
+            },
+            {
+              "term": "high RDW-SD",
+              "status": "present",
+              "evidence": "RDW-SD 59.6 fL",
+              "related_findings": [
+                "Normocytic anemia"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "renal",
+      "ontology_hint": "Renal Diseases",
+      "symptoms": [
         {
-          "term": "hyperkalemia",
-          "status": "absent",
-          "severity": "unknown",
-          "evidence": "Potassium: 4.7 mEq/L",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "hyperglycemia",
+          "term": "creatinine elevation",
           "status": "present",
-          "severity": "mild",
-          "evidence": "Glucose: 105.0 mg/dL",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "hyperuremia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Urea Nitrogen: 22.0 mg/dL",
-          "related_findings": [],
-          "children": []
-        },
-        {
-          "term": "hypercreatininemia",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "Creatinine: 2.5 mg/dL",
-          "related_findings": [],
+          "severity": "moderate",
+          "evidence": "Creatinine 2.5 mg/dL",
+          "related_findings": [
+            "Acute kidney injury",
+            "Bilateral staghorn renal calculi"
+          ],
           "children": []
         }
       ]
@@ -104,6 +134,7 @@
     "fever"
   ],
   "red_flags": [
+    "hypertension",
     "fever"
   ],
   "type": "symptom_tree",
@@ -111,5 +142,5 @@
   "_agent": "symptom_tree",
   "patient_id": "11251337",
   "admission_id": "29568708",
-  "generated_at": "2026-08-19T23:19:43.135733"
+  "generated_at": "2026-08-20T17:09:45.981660"
 }

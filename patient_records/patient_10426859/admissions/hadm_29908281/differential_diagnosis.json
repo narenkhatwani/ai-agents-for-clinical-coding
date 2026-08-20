@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with recurrent supraventricular tachycardia (SVT) causing falls and headache, with new findings of right hip fracture and hypocalcemia. The patient has a history of cardiovascular and neurologic conditions.",
+  "summary": "The patient presents with recurrent supraventricular tachycardia (SVT), lightheadedness, headache, and a fall resulting in a right hip fracture. The patient has a history of cardiovascular and neurologic conditions.",
   "most_likely": "Supraventricular tachycardia",
   "differential": [
     {
@@ -10,10 +10,11 @@
       "category": "primary",
       "snomed_aligned": "Supraventricular tachycardia",
       "supporting_evidence": [
-        "SVT confirmed, recurrent SVT causing falls and headache"
+        "SVT found in the ED",
+        "SVT related to palpitations, lightheadedness, headache"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis supported by recurrent SVT and falls, confirmed in ED."
+      "reasoning": "SVT is the dominant clinical presentation and confirmed in the ED."
     },
     {
       "rank": 2,
@@ -21,70 +22,93 @@
       "score": 70.0,
       "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "Nondisplaced comminuted fracture in the right superior pubic ramus",
       "supporting_evidence": [
         "Nondisplaced comminuted fracture in the right superior pubic ramus"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Recent fracture confirmed by radiology, causing pain and fall."
+      "opposing_evidence": [
+        "No evidence of dislocation, no heterotopic ossification"
+      ],
+      "reasoning": "The fracture is confirmed by radiology and is a complication of the fall."
     },
     {
       "rank": 3,
-      "diagnosis": "Hypocalcemia",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "differential",
-      "snomed_aligned": "Calcium, Total",
-      "supporting_evidence": [
-        "Calcium, Total: 9.2 mg/dL (low)"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Low calcium level noted, but not yet clinically significant."
-    },
-    {
-      "rank": 4,
-      "diagnosis": "Cerebral infarct",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "Tiny chronic right cerebellar infarct, new since prior"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Chronic infarct noted, but not recent or acute."
-    },
-    {
-      "rank": 5,
       "diagnosis": "Anxiety disorder",
-      "score": 40.0,
-      "confidence": "low",
+      "score": 60.0,
+      "confidence": "medium",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Major depressive disorder, single episode, unspecified"
+        "Anxiety disorder, unspecified"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Previous anxiety disorder noted, but not currently active."
+      "opposing_evidence": [
+        "No specific evidence of anxiety symptoms in current presentation"
+      ],
+      "reasoning": "The patient has a history of anxiety disorder, which may contribute to her current presentation."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Hypertension",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Essential (primary) hypertension",
+      "supporting_evidence": [
+        "Essential (primary) hypertension"
+      ],
+      "opposing_evidence": [
+        "No specific evidence of hypertension exacerbation in current presentation"
+      ],
+      "reasoning": "The patient has a history of hypertension, which may be a risk factor for her current presentation."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hyperlipidemia",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Hyperlipidemia, unspecified",
+      "supporting_evidence": [
+        "Hyperlipidemia, unspecified"
+      ],
+      "opposing_evidence": [
+        "No specific evidence of hyperlipidemia exacerbation in current presentation"
+      ],
+      "reasoning": "The patient has a history of hyperlipidemia, which may be a risk factor for her current presentation."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Atherosclerotic heart disease",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "supporting_evidence": [
+        "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+      ],
+      "opposing_evidence": [
+        "No specific evidence of acute coronary event in current presentation"
+      ],
+      "reasoning": "The patient has a history of atherosclerotic heart disease, which may be a complication of her current presentation."
     }
   ],
   "rule_outs": [
     {
       "diagnosis": "Pneumothorax",
-      "why": "No evidence of pneumothorax in chest radiology or clinical presentation."
+      "why": "No evidence of pneumothorax in chest X-ray"
     }
   ],
   "uncertain_areas": [
-    "More detailed clinical history on current anxiety symptoms and hypocalcemia would refine rankings"
+    "Further history of specific anxiety symptoms, more detailed cardiovascular assessment"
   ],
-  "n_candidates": 5,
+  "n_candidates": 6,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "10426859",
   "hadm_id": "29908281",
-  "generated_at": "2026-08-20T00:08:36.075612",
+  "generated_at": "2026-08-20T17:14:38.533043",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,

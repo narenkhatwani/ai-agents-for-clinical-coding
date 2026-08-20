@@ -5,52 +5,48 @@ Patient ID       : 16014068
 HADM ID          : 29042843
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:10:56.014695
-Candidates       : 6
-Most likely      : Metastatic sarcoma with hematologic complications
+Generated        : 2026-08-20T17:17:35.313690
+Candidates       : 5
+Most likely      : Metastatic sarcoma with anemia and thrombocytopenia
 Prior admissions : 9 (138 ICD codes as PMH context)
 
 Summary:
-  The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.
+  The patient is a recurrent cancer patient with a history of metastatic sarcoma and chronic hematoma. This admission involves symptoms of a fall resulting in minor abrasions and soreness, along with recurrent hematological issues.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Metastatic sarcoma with hematologic complications  (primary)
+  #1  [85.0/100 | high]  Metastatic sarcoma with anemia and thrombocytopenia  (primary)
       SNOMED aligned : Metastatic sarcoma
-      + metastatic sarcoma
-      + thrombocytopenia
-      why: Primary diagnosis given the patient's history of metastatic sarcoma and current symptoms related to hematologic complications.
+      + High-grade unclassified sarcoma of the right femur, Metastatic Sarcoma to Brain
+      why: The patient has a history of metastatic sarcoma and current lab findings consistent with anemia and thrombocytopenia.
 
-  #2  [70.0/100 | high]  Anemia  (secondary)
-      SNOMED aligned : Anemia due to antineoplastic chemotherapy
-      + Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL
-      why: Anemia is a significant finding and likely secondary to the patient's malignancy.
+  #2  [70.0/100 | high]  Chronic anemia and thrombocytopenia  (secondary)
+      SNOMED aligned : Anemia due to antineoplastic chemotherapy, Thrombocytopenia
+      + Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL, Platelet Count: 63.0 K/uL
+      why: The patient has chronic anemia and thrombocytopenia due to antineoplastic chemotherapy.
 
-  #3  [65.0/100 | high]  Thrombocytopenia  (secondary)
-      SNOMED aligned : Cytokine-induced thrombocytopenia
-      + Platelet Count: 63.0 K/uL
-      why: Thrombocytopenia is present and likely related to the patient's malignancy.
+  #3  [55.0/100 | medium]  Cervical spine degenerative changes  (complication)
+      + Degenerative changes of the cervical spine are moderate in severity
+      why: The patient has degenerative changes in the cervical spine, which may be a complication of the fall.
 
-  #4  [50.0/100 | medium]  Hypotension  (risk_factor)
-      + BP 114/66
-      why: Hypotension is noted and may be a risk factor for further complications.
+  #4  [40.0/100 | medium]  Acute kidney failure  (differential)
+      SNOMED aligned : Acute kidney failure, unspecified
+      + Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL, Platelet Count: 63.0 K/uL
+      − No recent history of acute kidney failure
+      why: The patient has lab findings consistent with acute kidney failure, but no recent history.
 
-  #5  [45.0/100 | medium]  Headache  (differential)
-      + hit his head
-      why: Headache is present but may be secondary to the fall and underlying malignancy.
-
-  #6  [35.0/100 | low]  Abdominal pain  (differential)
-      SNOMED aligned : Abdominal pain
-      + abdominal pain
-      why: Abdominal pain is noted but not strongly supported by current findings.
+  #5  [30.0/100 | low]  Hypotension  (risk_factor)
+      + Denies chest pain, hypotension
+      − No recent history of hypotension
+      why: The patient denies hypotension, but it could be a risk factor given the fall and hematological issues.
 
 RULE-OUTS
 ---------
 
-  • Pneumothorax: No evidence of pneumothorax in chest radiograph or structured clinical context.
+  • Pneumonia: No discrete focal consolidation concerning for pneumonia in chest radiography.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further details on the patient's pain and hematologic status would clarify the severity and management of these conditions.
+  • Recent history of acute kidney failure, hypotension

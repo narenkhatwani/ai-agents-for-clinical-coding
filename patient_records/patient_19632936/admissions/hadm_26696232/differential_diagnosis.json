@@ -1,100 +1,117 @@
 {
-  "summary": "The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome. The patient has a recent history of macrocytic anemia and is on anticoagulation therapy.",
-  "most_likely": "Acute macrocytic anemia",
+  "summary": "The patient presents with acute on chronic macrocytic anemia and dyspnea on exertion, with a history of CAD, AFib, and moderate AS. The dominant clinical picture is anemia and its effects on respiratory function.",
+  "most_likely": "Acute macrocytic anemia with respiratory compromise",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Acute macrocytic anemia",
+      "diagnosis": "Acute macrocytic anemia with respiratory compromise",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "Macrocytic anemia",
       "supporting_evidence": [
         "acute on chronic macrocytic anemia",
-        "Hgb 6.7, MCV 106, RDW 18.2, Reticulocyte Count, Automated: 3.6 %"
+        "worsening dyspnea over the past year",
+        "moderate AS"
       ],
       "opposing_evidence": [],
-      "reasoning": "Acute macrocytic anemia is strongly supported by the lab findings and is the primary presenting issue."
+      "reasoning": "The patient's acute macrocytic anemia is the primary presenting issue and is associated with worsening dyspnea and moderate AS."
     },
     {
       "rank": 2,
-      "diagnosis": "Acute heart failure",
-      "score": 75.0,
+      "diagnosis": "Chronic diastolic heart failure",
+      "score": 70.0,
       "confidence": "medium",
-      "category": "primary",
-      "snomed_aligned": "Heart failure",
+      "category": "complication",
+      "snomed_aligned": "Chronic diastolic (congestive) heart failure",
       "supporting_evidence": [
-        "moderate AS, mild pulmonary hypertension",
+        "history of chronic diastolic heart failure",
         "worsening dyspnea over the past year"
       ],
       "opposing_evidence": [
-        "no recent radiology findings"
+        "no new signs of acute heart failure"
       ],
-      "reasoning": "Acute heart failure is supported by the history of chronic heart failure and worsening dyspnea, but lacks recent radiology evidence."
+      "reasoning": "Chronic heart failure is a known comorbidity and may be contributing to the patient's symptoms, but there are no new signs of acute heart failure."
     },
     {
       "rank": 3,
       "diagnosis": "Atrial fibrillation",
       "score": 65.0,
       "confidence": "medium",
-      "category": "complication",
+      "category": "differential",
       "snomed_aligned": "Atrial fibrillation",
       "supporting_evidence": [
-        "Afib on warfarin",
-        "recent history of atrial fibrillation"
+        "history of atrial fibrillation",
+        "INR 2.4"
       ],
       "opposing_evidence": [
-        "INR elevated to 2.4"
+        "no new atrial fibrillation symptoms"
       ],
-      "reasoning": "Atrial fibrillation is a known chronic condition, but the INR is elevated, suggesting good control."
+      "reasoning": "Atrial fibrillation is a known comorbidity and is associated with an elevated INR, but there are no new symptoms of atrial fibrillation."
     },
     {
       "rank": 4,
-      "diagnosis": "Anemia",
-      "score": 60.0,
-      "confidence": "medium",
-      "category": "primary",
+      "diagnosis": "Anemia of chronic disease",
+      "score": 55.0,
+      "confidence": "low",
+      "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "acute on chronic macrocytic anemia",
-        "Hgb 6.7, MCV 106, RDW 18.2"
+        "history of chronic conditions such as CAD and AFib"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Anemia is a broad term that encompasses macrocytic anemia but lacks specific supporting evidence."
+      "opposing_evidence": [
+        "acute presentation of macrocytic anemia"
+      ],
+      "reasoning": "Anemia of chronic disease is a possibility given the patient's chronic conditions, but the acute presentation of macrocytic anemia is more likely."
     },
     {
       "rank": 5,
-      "diagnosis": "Renal insufficiency",
-      "score": 55.0,
+      "diagnosis": "Volume depletion",
+      "score": 50.0,
       "confidence": "low",
-      "category": "complication",
-      "snomed_aligned": "Renal failure",
+      "category": "risk_factor",
+      "snomed_aligned": "Volume depletion, unspecified",
       "supporting_evidence": [
-        "low calcium, mild anemia"
+        "low hematocrit and hemoglobin levels"
       ],
       "opposing_evidence": [
-        "no recent renal function tests indicating acute decline"
+        "no signs of acute volume depletion"
       ],
-      "reasoning": "Renal insufficiency is a possible complication given the low calcium and mild anemia, but lacks strong evidence."
+      "reasoning": "Volume depletion is a risk factor given the patient's low hematocrit and hemoglobin levels, but there are no signs of acute volume depletion."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Coronary artery disease",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "complication",
+      "snomed_aligned": "Coronary arteriosclerosis",
+      "supporting_evidence": [
+        "history of coronary artery disease"
+      ],
+      "opposing_evidence": [
+        "no new signs of acute coronary artery disease"
+      ],
+      "reasoning": "Coronary artery disease is a known comorbidity, but there are no new signs of acute coronary artery disease."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Coronary artery disease",
-      "why": "While a known chronic condition, the current presentation is more aligned with acute anemia and heart failure."
+      "diagnosis": "Pneumothorax",
+      "why": "No radiology evidence and no clinical signs of pneumothorax"
     }
   ],
   "uncertain_areas": [
-    "More recent radiology findings, specific etiology of macrocytic anemia"
+    "Need more information on the cause of macrocytic anemia and the status of chronic heart failure"
   ],
-  "n_candidates": 5,
+  "n_candidates": 6,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "19632936",
   "hadm_id": "26696232",
-  "generated_at": "2026-08-20T00:12:06.360079",
+  "generated_at": "2026-08-20T17:19:08.699756",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 14,

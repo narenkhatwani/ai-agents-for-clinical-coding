@@ -8,38 +8,53 @@ Patient ID       : 11251337
 Admission ID     : 29568708
 
 Reasoning:
-  The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL, with residual stones requiring further intervention.
+  The patient was admitted for management of nephrolithiasis and underwent a difficult right PCNL, with ongoing symptoms including pain around the nephrostomy tubes and fever.
 
 Key symptoms     : hematuria, pain, dysuria, fever
-Red flags        : fever
+Red flags        : hypertension, fever
 
-RENAL|UROLOGIC → Urology
-------------------------
+RENAL|UROLOGIC → Renal Diseases|Urology
+---------------------------------------
 
-  • [present] hematuria
+  • [present, mild] hematuria
       evidence: "1x episode of hematuria"
       related: Bilateral staghorn renal calculi
-  • [present] pain
+  • [present, moderate] pain
       evidence: "pain around the nephrostomy tubes"
-      related: Bilateral staghorn renal calculi
-  • [present] dysuria
+      related: Bilateral staghorn renal calculi, Hypertension
+  • [present, mild] dysuria
       evidence: "pain around the nephrostomy tubes and fevers"
       related: Bilateral staghorn renal calculi
-  • [present] fever
+  • [present, mild] fever
       evidence: "temperature of 102 at ___ prior to transfer"
       related: Complicated urinary tract infection
 
-RENAL|METABOLIC → Renal
------------------------
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
 
-  • [present, mild] anemia
-      evidence: "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
-      related: MCV: 104.0 fL, RDW-SD: 59.6 fL
-  • [absent] hyperkalemia
-      evidence: "Potassium: 4.7 mEq/L"
-  • [present, mild] hyperglycemia
-      evidence: "Glucose: 105.0 mg/dL"
-  • [present, mild] hyperuremia
-      evidence: "Urea Nitrogen: 22.0 mg/dL"
-  • [present, mild] hypercreatininemia
-      evidence: "Creatinine: 2.5 mg/dL"
+  • [present, mild] hypertension
+      evidence: "BPs ranging from 120-150s/70-80s"
+      related: Hypertension
+
+HEMATOLOGIC → Hematology
+------------------------
+
+  • [present, moderate] anemia
+      evidence: "Hematocrit 30.8%, Hemoglobin 9.4 g/dL"
+      related: Normocytic anemia
+      • [present] low MCHC
+          evidence: "MCHC 30.5 g/dL"
+          related: Normocytic anemia
+      • [present] high MCV
+          evidence: "MCV 104.0 fL"
+          related: Normocytic anemia
+      • [present] high RDW-SD
+          evidence: "RDW-SD 59.6 fL"
+          related: Normocytic anemia
+
+RENAL → Renal Diseases
+----------------------
+
+  • [present, moderate] creatinine elevation
+      evidence: "Creatinine 2.5 mg/dL"
+      related: Acute kidney injury, Bilateral staghorn renal calculi

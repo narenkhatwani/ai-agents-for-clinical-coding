@@ -1,30 +1,46 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
+  "reasoning": "The patient is presenting with severe sepsis secondary to RUL PNA, with a history of metastatic adenocarcinoma of unknown primary and SVC syndrome.",
   "branches": [
+    {
+      "category": "respiratory",
+      "ontology_hint": "Respiratory",
+      "symptoms": [
+        {
+          "term": "RUL PNA",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "recently diagnosed",
+          "related_findings": [
+            "CXR: persistent consolidative opacities in both lower lobes"
+          ],
+          "children": [
+            {
+              "term": "fever",
+              "status": "present",
+              "evidence": "feverish at rehab, currently doesn't feel like he's having a fever"
+            },
+            {
+              "term": "cough",
+              "status": "present",
+              "evidence": "cough"
+            }
+          ]
+        }
+      ]
+    },
     {
       "category": "infectious",
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "fever",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "feverish at rehab, but currently doesn't feel like he's having a fever",
+          "term": "sepsis",
+          "status": "present",
+          "severity": "severe",
+          "evidence": "severe sepsis probably secondary to RUL PNA",
           "related_findings": [
-            "RUL PNA"
-          ],
-          "children": []
-        },
-        {
-          "term": "RUL PNA",
-          "status": "suspected",
-          "severity": "moderate",
-          "evidence": "recently diagnosed",
-          "related_findings": [
-            "CXR shows persistent consolidative opacities in both lower lobes"
-          ],
-          "children": []
+            "hypotension, hypotensive with pressures in the 80's, hypotension with pressures in the 90's systolic"
+          ]
         }
       ]
     },
@@ -36,52 +52,33 @@
           "term": "hypotension",
           "status": "present",
           "severity": "moderate",
-          "evidence": "BP 82-90/45-60 mmHg",
-          "related_findings": [
-            "pericardiocentesis, hypotension, and persistent requirement for fluids"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "respiratory",
-      "ontology_hint": "Respiratory",
-      "symptoms": [
-        {
-          "term": "consolidative opacities",
-          "status": "present",
-          "severity": "moderate",
-          "evidence": "persistent consolidative opacities in both lower lobes",
-          "related_findings": [
-            "CXR shows persistent consolidative opacities in both lower lobes"
-          ],
-          "children": []
+          "evidence": "hypotensive with pressures in the 80's, hypotension with pressures in the 90's systolic"
         }
       ]
     },
     {
       "category": "neurologic",
-      "ontology_hint": "Neurologic",
+      "ontology_hint": "Neurology",
       "symptoms": [
         {
           "term": "altered mental status",
           "status": "present",
-          "severity": "mild",
-          "evidence": "GCS 11, not following commands",
+          "severity": "moderate",
+          "evidence": "altered mental status possibly seizures from metastases",
           "related_findings": [
-            "CT shows multiple metastatic lesions"
-          ],
-          "children": []
+            "CT HEAD: multiple scattered metastatic lesions, with small area of microhemorrhage versus mineralization"
+          ]
         }
       ]
     }
   ],
   "key_symptoms": [
     "RUL PNA",
-    "hypotension"
+    "hypotension",
+    "altered mental status"
   ],
   "red_flags": [
+    "hypotension",
     "altered mental status"
   ],
   "type": "symptom_tree",
@@ -89,5 +86,5 @@
   "_agent": "symptom_tree",
   "patient_id": "13196707",
   "admission_id": "21475988",
-  "generated_at": "2026-08-19T23:20:26.518487"
+  "generated_at": "2026-08-20T17:10:34.047417"
 }

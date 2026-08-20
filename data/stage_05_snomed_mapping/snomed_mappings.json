@@ -1,7 +1,7 @@
 {
   "stage": 5,
   "description": "Entity → SNOMED CT mapping (offline RF2 lexical)",
-  "generated_at": "2026-08-19T23:22:41.323955",
+  "generated_at": "2026-08-20T17:13:46.463220",
   "n_entities": 626,
   "n_mapped": 509,
   "n_unmapped": 117,
@@ -3899,13 +3899,7 @@
         "fsn": "Family history of stroke (situation)",
         "match_method": "fuzzy",
         "score": 0.6439087296526013,
-        "candidates": [
-          {
-            "concept_id": "275526006",
-            "term": "H/O: CVA",
-            "score": 0.6150595188893875
-          }
-        ]
+        "candidates": []
       }
     },
     {
@@ -8738,23 +8732,12 @@
       "snomed": {
         "query_term": "Cirrhosis",
         "mapped": true,
-        "concept_id": "371139006",
-        "preferred_term": "Early cirrhosis",
-        "fsn": "Early cirrhosis (disorder)",
-        "match_method": "fuzzy",
-        "score": 0.6810281680828159,
-        "candidates": [
-          {
-            "concept_id": "123604002",
-            "term": "Toxic cirrhosis",
-            "score": 0.6810281680828159
-          },
-          {
-            "concept_id": "78208005",
-            "term": "Pigment cirrhosis",
-            "score": 0.6675000000000001
-          }
-        ]
+        "concept_id": "1381616004",
+        "preferred_term": "Cirrhosis",
+        "fsn": "Cirrhosis (morphologic abnormality)",
+        "match_method": "exact",
+        "score": 1.0,
+        "candidates": []
       }
     },
     {

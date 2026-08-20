@@ -2,42 +2,40 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 16014068
 HADM ID          : 29042843
-Most likely      : Metastatic sarcoma with hematologic complications
+Most likely      : Metastatic sarcoma with anemia and thrombocytopenia
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:22.678648
+Generated (S8)   : 2026-08-20T17:19:23.594758
 
 Summary:
-  The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.
+  The patient is a recurrent cancer patient with a history of metastatic sarcoma and chronic hematoma. This admission involves symptoms of a fall resulting in minor abrasions and soreness, along with recurrent hematological issues.
 
-#1  [85.0/100 | high]  Metastatic sarcoma with hematologic complications  (primary)
+#1  [85.0/100 | high]  Metastatic sarcoma with anemia and thrombocytopenia  (primary)
     SNOMED: Metastatic sarcoma (443144000) [exact score=1.0]
     ICD status: mapped | primary: C79.89
       1. [principal] C79.89 — Secondary malignant neoplasm of other specified sites
+      2. [supporting] C49.9 — Malignant neoplasm of connective and soft tissue, unspecified  ← sarcoma (tree_symptom)
+      3. [supporting] O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified  ← thrombocytopenia (tree_symptom)
+      4. [supporting] Z3A.00 — Weeks of gestation of pregnancy not specified  ← thrombocytopenia (tree_symptom)
+
+#2  [70.0/100 | high]  Chronic anemia and thrombocytopenia  (secondary)
+    SNOMED: Pancytopenia due to antineoplastic chemotherapy (328301000119102) [fuzzy score=0.7456334501594366]
+    ICD status: mapped | primary: D61.810
+      1. [principal] D61.810 — Antineoplastic chemotherapy induced pancytopenia
       2. [supporting] O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified  ← thrombocytopenia (tree_symptom)
       3. [supporting] Z3A.00 — Weeks of gestation of pregnancy not specified  ← thrombocytopenia (tree_symptom)
+      4. [supporting] D64.9 — Anemia, unspecified  ← anemia (key_symptom)
 
-#2  [70.0/100 | high]  Anemia  (secondary)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
+#3  [55.0/100 | medium]  Cervical spine degenerative changes  (complication)
+    SNOMED: Cervical spine (122494005) [fuzzy score=0.6028505426185218]
+    ICD status: unmapped | primary: None
 
-#3  [65.0/100 | high]  Thrombocytopenia  (secondary)
-    SNOMED: Fetal thrombocytopenia (10752381000119101) [fuzzy score=0.724041575982343]
-    ICD status: mapped | primary: O36.8290
-      1. [principal] O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified
-      2. [principal] Z3A.00 — Weeks of gestation of pregnancy not specified
+#4  [40.0/100 | medium]  Acute kidney failure  (differential)
+    SNOMED: Acute heart failure (56675007) [fuzzy score=0.5935728561881009]
+    ICD status: mapped | primary: I50.9
+      1. [principal] I50.9 — Heart failure, unspecified
+      2. [principal] P29.0 — Neonatal cardiac failure
 
-#4  [50.0/100 | medium]  Hypotension  (risk_factor)
+#5  [30.0/100 | low]  Hypotension  (risk_factor)
     SNOMED: Hypotension (45007003) [exact score=1.0]
     ICD status: mapped | primary: I95.9
       1. [principal] I95.9 — Hypotension, unspecified
-
-#5  [45.0/100 | medium]  Headache  (differential)
-    SNOMED: Headache (25064002) [exact score=1.0]
-    ICD status: mapped | primary: R51.9
-      1. [principal] R51.9 — Headache, unspecified
-
-#6  [35.0/100 | low]  Abdominal pain  (differential)
-    SNOMED: Abdominal pain (21522001) [exact score=1.0]
-    ICD status: mapped | primary: R10.9
-      1. [principal] R10.9 — Unspecified abdominal pain

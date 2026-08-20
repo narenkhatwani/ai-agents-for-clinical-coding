@@ -2,39 +2,46 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 19632936
 HADM ID          : 26696232
-Most likely      : Acute macrocytic anemia
+Most likely      : Acute macrocytic anemia with respiratory compromise
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:25.904776
+Generated (S8)   : 2026-08-20T17:19:26.794104
 
 Summary:
-  The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome. The patient has a recent history of macrocytic anemia and is on anticoagulation therapy.
+  The patient presents with acute on chronic macrocytic anemia and dyspnea on exertion, with a history of CAD, AFib, and moderate AS. The dominant clinical picture is anemia and its effects on respiratory function.
 
-#1  [85.0/100 | high]  Acute macrocytic anemia  (primary)
+#1  [85.0/100 | high]  Acute macrocytic anemia with respiratory compromise  (primary)
     SNOMED: Macrocytic anemia (83414005) [exact score=1.0]
     ICD status: mapped | primary: D53.9
       1. [principal] D53.9 — Nutritional anemia, unspecified
-
-#2  [75.0/100 | medium]  Acute heart failure  (primary)
-    SNOMED: Heart failure (84114007) [exact score=1.0]
-    ICD status: mapped | primary: I50.9
-      1. [principal] I50.9 — Heart failure, unspecified
-      2. [principal] P29.0 — Neonatal cardiac failure
+      2. [supporting] D64.9 — Anemia, unspecified  ← anemia (key_symptom)
       3. [supporting] R06.00 — Dyspnea, unspecified  ← worsening dyspnea (tree_symptom)
 
-#3  [65.0/100 | medium]  Atrial fibrillation  (complication)
+#2  [70.0/100 | medium]  Chronic diastolic heart failure  (complication)
+    SNOMED: Chronic diastolic heart failure (441530006) [exact score=1.0]
+    ICD status: mapped | primary: I50.32
+      1. [principal] I50.32 — Chronic diastolic (congestive) heart failure
+      2. [principal] I50.42 — Chronic combined systolic (congestive) and diastolic (congestive) heart failure
+      3. [principal] I50.33 — Acute on chronic diastolic (congestive) heart failure
+      4. [principal] I50.43 — Acute on chronic combined systolic (congestive) and diastolic (congestive) heart failure
+      5. [supporting] R06.00 — Dyspnea, unspecified  ← worsening dyspnea (tree_symptom)
+
+#3  [65.0/100 | medium]  Atrial fibrillation  (differential)
     SNOMED: Atrial fibrillation (49436004) [exact score=1.0]
     ICD status: mapped | primary: I48.91
       1. [principal] I48.91 — Unspecified atrial fibrillation
 
-#4  [60.0/100 | medium]  Anemia  (primary)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
-      2. [supporting] D53.9 — Nutritional anemia, unspecified  ← macrocytic anemia (diagnosis)
+#4  [55.0/100 | low]  Anemia of chronic disease  (differential)
+    SNOMED: Anaemia of chronic disease (234347009) [exact score=1.0]
+    ICD status: mapped | primary: D63.8
+      1. [principal] D63.8 — Anemia in other chronic diseases classified elsewhere
+      2. [supporting] D64.9 — Anemia, unspecified  ← anemia (key_symptom)
+      3. [supporting] D53.9 — Nutritional anemia, unspecified  ← macrocytic anemia (diagnosis)
 
-#5  [55.0/100 | low]  Renal insufficiency  (complication)
-    SNOMED: Renal failure syndrome (42399005) [exact score=1.0]
-    ICD status: mapped | primary: N19
-      1. [principal] N19 — Unspecified kidney failure
-      2. [principal] P96.0 — Congenital renal failure
-      3. [supporting] Z76.89 — Persons encountering health services in other specified circumstances  ← low calcium (tree_symptom)
+#5  [50.0/100 | low]  Volume depletion  (risk_factor)
+    SNOMED: Depletion (69251000) [fuzzy score=0.6675000000000001]
+    ICD status: unmapped | primary: None
+
+#6  [45.0/100 | low]  Coronary artery disease  (complication)
+    SNOMED: Coronary arteriosclerosis (53741008) [exact score=1.0]
+    ICD status: mapped | primary: I25.10
+      1. [principal] I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris

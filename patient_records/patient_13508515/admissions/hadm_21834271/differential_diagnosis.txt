@@ -5,13 +5,13 @@ Patient ID       : 13508515
 HADM ID          : 21834271
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:10:27.070020
+Generated        : 2026-08-20T17:16:55.401738
 Candidates       : 6
 Most likely      : Acute on chronic systolic heart failure
 Prior admissions : 1 (16 ICD codes as PMH context)
 
 Summary:
-  The patient is a man with a history of systolic chronic heart failure, renal cell carcinoma, and multiple chronic conditions, admitted for laparoscopic left radical nephrectomy and lymph node dissection. Current symptoms include dyspnea and mild pain, with laboratory findings indicating renal and hematological abnormalities.
+  A 55-year-old man with a history of systolic heart failure, renal cell carcinoma, and chronic kidney disease presents post-laparoscopic left radical nephrectomy and lymph node dissection. He has mild dyspnea, mild pain, and laboratory findings indicating renal and hematological compromise.
 
 RANKED DIFFERENTIAL
 -------------------
@@ -20,46 +20,43 @@ RANKED DIFFERENTIAL
       SNOMED aligned : I5023
       + systolic CHF with EF around 30%
       + Creatinine: 2.0 mg/dL
-      + Hemoglobin: 8.9 g/dL
-      why: The patient has a history of systolic heart failure and current symptoms and lab findings support acute exacerbation.
+      why: Presenting dyspnea and renal dysfunction strongly suggest acute exacerbation of chronic systolic heart failure.
 
-  #2  [70.0/100 | medium]  Renal cell carcinoma  (differential)
+  #2  [70.0/100 | medium]  Renal cell carcinoma  (primary)
       SNOMED aligned : C649
-      + left renal mass
-      + renal cell carcinoma
-      − Laparoscopic left radical nephrectomy performed
-      why: The presence of a left renal mass and renal cell carcinoma in the past supports this diagnosis, but recent surgery may have resolved the mass.
+      + left renal mass (confirmed)
+      + renal cell carcinoma (confirmed)
+      − no recent radiology to suggest new metastasis
+      why: Confirmed renal mass and carcinoma, but no recent imaging to suggest new metastatic disease.
 
-  #3  [60.0/100 | medium]  Obstructive sleep apnea  (secondary)
+  #3  [65.0/100 | medium]  Type 2 diabetes mellitus  (secondary)
+      + Glucose: 113.0 mg/dL
+      + Type 2 diabetes mellitus with diabetic chronic kidney disease
+      − No recent changes in glucose levels
+      why: Chronic condition with recent laboratory findings indicating elevated glucose.
+
+  #4  [55.0/100 | low]  Obstructive sleep apnea  (risk_factor)
       SNOMED aligned : 78275009
-      + obstructive sleep apnea, on CPAP
-      − no new respiratory symptoms
-      why: The patient has a history of obstructive sleep apnea, but no new respiratory symptoms are present.
+      + Obstructive sleep apnea (confirmed)
+      − No recent changes in sleep patterns
+      why: Chronic condition, but no recent exacerbation or changes noted.
 
-  #4  [55.0/100 | medium]  Anemia  (complication)
-      + Hemoglobin: 8.9 g/dL
-      + Hematocrit: 27.3 %
-      why: Low hemoglobin and hematocrit levels suggest anemia, which could be secondary to chronic heart failure.
+  #5  [50.0/100 | medium]  Anemia  (complication)
+      + Hemoglobin: 8.9 g/dL, Hematocrit: 27.3%
+      − No recent changes in anemia
+      why: Chronic condition with recent laboratory findings indicating anemia.
 
-  #5  [50.0/100 | low]  Hypokalemia  (differential)
-      + Calcium, Total: 8.2 mg/dL
-      + Low potassium levels
-      why: Low calcium levels and low potassium may be related, but more specific evidence is needed to confirm hypokalemia.
-
-  #6  [45.0/100 | low]  Chronic kidney disease  (complication)
-      SNOMED aligned : N189
-      + Creatinine: 2.0 mg/dL
-      + Chronic kidney disease
-      why: Chronic kidney disease is a known chronic condition, but the current acute presentation is more likely related to heart failure.
+  #6  [40.0/100 | low]  Hypokalemia  (differential)
+      + Potassium: 3.9 mEq/L
+      − No recent changes in potassium levels
+      why: Chronic condition with recent laboratory findings indicating mild hypokalemia.
 
 RULE-OUTS
 ---------
 
-  • Left renal mass: Laparoscopic left radical nephrectomy performed
-  • Calf pain: No reported calf pain to deep palpation
+  • Pneumothorax: No radiology findings or clinical evidence.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further imaging or lab results to confirm renal mass status
-  • More detailed respiratory assessment to confirm obstructive sleep apnea status
+  • Need for recent radiology to assess renal mass and metastasis, changes in glucose and potassium levels

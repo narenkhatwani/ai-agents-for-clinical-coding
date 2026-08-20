@@ -4,78 +4,82 @@
   "method": "llm_query_expansion",
   "patient_id": "13196707",
   "hadm_id": "21475988",
-  "generated_at": "2026-08-20T00:13:22.394699",
+  "generated_at": "2026-08-20T17:30:03.218762",
   "ground_truth": {
     "primary_icd_code": "A419",
     "primary_dx_title": "Sepsis, unspecified organism",
     "primary_icd_title": "Sepsis, unspecified organism",
+    "discharge_diagnosis": "Stage IV Adenocarcinoma, unknown origin",
+    "diffdx_gt": "Stage IV Adenocarcinoma, unknown origin",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 32
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Sepsis, unspecified organism",
+      "ground_truth_primary": "Stage IV Adenocarcinoma, unknown origin",
       "rank1_diagnosis": "Severe sepsis secondary to RUL PNA",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
-      "match": false,
-      "is_rank1_match": null,
-      "matched_diffdx_rank": null,
-      "matched_diagnosis": "",
-      "matched_score": null,
-      "matched_confidence": "",
-      "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "The ground truth diagnosis 'Sepsis, unspecified organism' does not match any of the ranked differential diagnoses.",
-      "llm_expanded_ground_truth": "",
-      "llm_expanded_matched": "",
+      "match": true,
+      "is_rank1_match": false,
+      "matched_diffdx_rank": 2,
+      "matched_diagnosis": "Metastatic adenocarcinoma of unknown primary",
+      "matched_score": 75.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal",
+      "llm_confidence": "high",
+      "llm_reason": "Physician discharge diagnosis 'Stage IV Adenocarcinoma, unknown origin' names the same principal condition as Rank 2 'Metastatic adenocarcinoma of unknown primary' — Stage IV denotes distant metastatic disease and 'unknown origin' equals 'unknown primary'. Rank 1 (sepsis due to right upper lobe pneumonia) is a different principal condition, so the lowest matching rank is 2.",
+      "llm_expanded_ground_truth": "Stage IV adenocarcinoma | metastatic adenocarcinoma | carcinoma of unknown primary (CUP) | adenocarcinoma of unknown primary site | disseminated adenocarcinoma",
+      "llm_expanded_matched": "metastatic adenocarcinoma | secondary malignant neoplasm, adenocarcinoma histology | unknown primary site malignancy | carcinoma of unknown primary",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
           "diagnosis": "Severe sepsis secondary to RUL PNA",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "A41.9",
+          "icd10_primary_title": "Sepsis, unspecified organism"
         },
         {
           "diagnosis": "Metastatic adenocarcinoma of unknown primary",
           "rank": 2,
           "score": 75.0,
-          "confidence": "medium",
+          "confidence": "high",
           "icd10_primary": "C79.9",
           "icd10_primary_title": "Secondary malignant neoplasm of unspecified site"
         },
         {
-          "diagnosis": "Hypotension secondary to pericardiocentesis",
+          "diagnosis": "Altered mental status due to metastatic brain lesions",
           "rank": 3,
           "score": 65.0,
           "confidence": "medium",
-          "icd10_primary": null,
-          "icd10_primary_title": ""
+          "icd10_primary": "R41.82",
+          "icd10_primary_title": "Altered mental status, unspecified"
+        },
+        {
+          "diagnosis": "Hypotension",
+          "rank": 4,
+          "score": 60.0,
+          "confidence": "high",
+          "icd10_primary": "I95.9",
+          "icd10_primary_title": "Hypotension, unspecified"
+        },
+        {
+          "diagnosis": "Pneumonia",
+          "rank": 5,
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": "J18.9",
+          "icd10_primary_title": "Pneumonia, unspecified organism"
         },
         {
           "diagnosis": "Acute kidney failure",
-          "rank": 4,
-          "score": 55.0,
-          "confidence": "low",
+          "rank": 6,
+          "score": 45.0,
+          "confidence": "medium",
           "icd10_primary": "I50.9",
           "icd10_primary_title": "Heart failure, unspecified"
-        },
-        {
-          "diagnosis": "Anemia",
-          "rank": 5,
-          "score": 45.0,
-          "confidence": "low",
-          "icd10_primary": "D64.9",
-          "icd10_primary_title": "Anemia, unspecified"
-        },
-        {
-          "diagnosis": "Sodium imbalance",
-          "rank": 6,
-          "score": 35.0,
-          "confidence": "low",
-          "icd10_primary": "E87.1",
-          "icd10_primary_title": "Hypo-osmolality and hyponatremia"
         }
       ],
       "n_diffdx": 6
@@ -83,37 +87,56 @@
     "icd_linked": {
       "ground_truth_icd": "A41.9",
       "ground_truth_icd_title": "Sepsis, unspecified organism",
-      "rank1_predicted_icd": "",
-      "rank1_predicted_icd_title": "",
-      "matched_predicted_icd": "",
-      "matched_predicted_icd_title": "",
+      "rank1_predicted_icd": "A41.9",
+      "rank1_predicted_icd_title": "Sepsis, unspecified organism",
+      "matched_predicted_icd": "C79.9",
+      "matched_predicted_icd_title": "Secondary malignant neoplasm of unspecified site",
       "icd_match": false,
       "icd_exact_match": false,
       "icd_family_match": false,
       "icd_llm_match": false,
-      "is_rank1_icd_match": false,
-      "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "The ground truth ICD code 'A41.9' does not match any of the mapped ICD codes in the ranked differential diagnoses.",
-      "llm_expanded_ground_truth_icd": "",
-      "llm_expanded_matched_icd": "",
+      "is_rank1_icd_match": true,
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism). These are entirely different principal conditions (malignancy vs systemic infection) and a coder would not accept them as equivalent. Note A41.9 appears at Rank 1, but that rank did not match the physician discharge diagnosis.",
+      "llm_expanded_ground_truth_icd": "A41.9 sepsis unspecified organism | septicemia | bloodstream infection with systemic response",
+      "llm_expanded_matched_icd": "C79.9 secondary malignant neoplasm of unspecified site | metastatic cancer, site unspecified | C80.1 malignant neoplasm unspecified / unknown primary",
       "stage9_final_primary_icd": "R50.9",
-      "diagnosis_match": false,
-      "is_rank1_diagnosis_match": null,
-      "matched_diffdx_rank": null
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": false,
+      "matched_diffdx_rank": 2
     },
     "llm_qe_raw": {
-      "matched_rank": null,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "The ground truth diagnosis 'Sepsis, unspecified organism' does not match any of the ranked differential diagnoses.",
-      "ground_truth_expansions": [],
-      "matched_diagnosis_expansions": [],
+      "matched_rank": 2,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Physician discharge diagnosis 'Stage IV Adenocarcinoma, unknown origin' names the same principal condition as Rank 2 'Metastatic adenocarcinoma of unknown primary' — Stage IV denotes distant metastatic disease and 'unknown origin' equals 'unknown primary'. Rank 1 (sepsis due to right upper lobe pneumonia) is a different principal condition, so the lowest matching rank is 2.",
+      "ground_truth_expansions": [
+        "Stage IV adenocarcinoma",
+        "metastatic adenocarcinoma",
+        "carcinoma of unknown primary (CUP)",
+        "adenocarcinoma of unknown primary site",
+        "disseminated adenocarcinoma"
+      ],
+      "matched_diagnosis_expansions": [
+        "metastatic adenocarcinoma",
+        "secondary malignant neoplasm, adenocarcinoma histology",
+        "unknown primary site malignancy",
+        "carcinoma of unknown primary"
+      ],
       "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "The ground truth ICD code 'A41.9' does not match any of the mapped ICD codes in the ranked differential diagnoses.",
-      "ground_truth_icd_expansions": [],
-      "matched_icd_expansions": [],
+      "icd_confidence": "high",
+      "icd_reason": "Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism). These are entirely different principal conditions (malignancy vs systemic infection) and a coder would not accept them as equivalent. Note A41.9 appears at Rank 1, but that rank did not match the physician discharge diagnosis.",
+      "ground_truth_icd_expansions": [
+        "A41.9 sepsis unspecified organism",
+        "septicemia",
+        "bloodstream infection with systemic response"
+      ],
+      "matched_icd_expansions": [
+        "C79.9 secondary malignant neoplasm of unspecified site",
+        "metastatic cancer, site unspecified",
+        "C80.1 malignant neoplasm unspecified / unknown primary"
+      ],
       "_cache_hit": false
     }
   },

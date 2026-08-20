@@ -8,58 +8,38 @@ Patient ID       : 10458324
 Admission ID     : 21744342
 
 Reasoning:
-  The patient presents with right-sided rib fractures and hypoxia following a fall, with ongoing respiratory symptoms and signs of trauma.
+  The dominant clinical picture for this admission is a patient with right-sided rib fractures and associated respiratory issues, including hypoxemia and pneumothorax.
 
-Key symptoms     : right rib fractures, hypoxia, cough, fever
-Red flags        : hypotension, AMS
+Key symptoms     : right sided rib fractures, right PTX, hypoxia
+Red flags        : hypoxia, subcutaneous emphysema
 
 RESPIRATORY → Respiratory
 -------------------------
 
-  • [present, moderate] right rib fractures
+  • [present, moderate] right sided rib fractures
       evidence: "right sided rib fractures"
-      related: right posterior back tenderness, subcutaneous emphysema
+      related: subcutaneous emphysema, right PTX
       • [present] right PTX
           evidence: "small right PTX"
+          related: right pneumothorax, subcutaneous emphysema
   • [present, mild] hypoxia
       evidence: "satting 96% on 4L"
       related: right PTX, subcutaneous emphysema
   • [present, mild] cough
       evidence: "5 days of mild cough that worsened over the past two days"
+      related: right PTX, subcutaneous emphysema
   • [present, mild] fever
       evidence: "fever"
+      related: right PTX, subcutaneous emphysema
   • [present, mild] nasal congestion
       evidence: "nasal congestion"
+      related: right PTX, subcutaneous emphysema
   • [present, mild] sore throat
       evidence: "sore throat"
+      related: right PTX, subcutaneous emphysema
   • [present, mild] vomiting
       evidence: "one episode of vomiting"
+      related: right PTX, subcutaneous emphysema
   • [present, mild] diarrhea
       evidence: "diarrhea"
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [absent] hypotension
-      evidence: "BP 121/72"
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [absent] bacterial pneumonia
-      evidence: "Gram stain and culture results negative"
-      related: cough, fever, nasal congestion, sore throat
-
-NEUROLOGIC → Neurology
-----------------------
-
-  • [present, mild] insomnia
-      evidence: "nightmares of being left alone and mistreated"
-
-GI → Gastrointestinal
----------------------
-
-  • [present, mild] vomiting
-      evidence: "one episode of vomiting"
-  • [present, mild] diarrhea
-      evidence: "diarrhea"
+      related: right PTX, subcutaneous emphysema

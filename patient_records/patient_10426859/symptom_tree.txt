@@ -8,10 +8,10 @@ Patient ID       : 10426859
 Admission ID     : 29908281
 
 Reasoning:
-  The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The primary focus is on the SVT and associated symptoms.
+  The patient presents with recurrent SVT, lightheadedness, and a fall, leading to a right hip fracture. The SVT is the dominant clinical picture for this admission.
 
 Key symptoms     : palpitations, lightheadedness, headache
-Red flags        : Supraventricular tachycardia
+Red flags        : SVT, fracture
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
@@ -24,6 +24,8 @@ CARDIOVASCULAR → Cardiovascular
   • [present, mild] lightheadedness
       evidence: "lightheadedness and palpitations"
       related: Supraventricular tachycardia
+      • [present] SVT
+          evidence: "found to be in SVT in the ED"
 
 NEUROLOGIC → Neurology
 ----------------------
@@ -31,10 +33,14 @@ NEUROLOGIC → Neurology
   • [present, mild] headache
       evidence: "headache"
       related: Supraventricular tachycardia
+      • [present] SVT
+          evidence: "found to be in SVT in the ED"
 
-SKELETAL → Orthopedics
-----------------------
+MUSCULOSKELETAL → Orthopedics
+-----------------------------
 
-  • [present, moderate] pain in right hip
+  • [present, mild] pain in right hip
       evidence: "pain in her right hip"
-      related: Nondisplaced comminuted fracture in the right superior pubic ramus
+      related: nondisplaced comminuted fracture in the right superior pubic ramus
+      • [present] fracture
+          evidence: "nondisplaced comminuted fracture in the right superior pubic ramus"

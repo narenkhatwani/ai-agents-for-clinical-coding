@@ -8,51 +8,54 @@ Patient ID       : 11474876
 Admission ID     : 29672491
 
 Reasoning:
-  The patient is a 70-year-old man with a history of AFib, HFpEF, PVD, and CKD who was admitted post-ERCP for cholangitis and subsequent stent placement. His current presentation includes mild edema and no acute symptoms, but he has a history of nocturnal hypoxia and leg swelling.
+  The patient was admitted for post-ERCP management, with the primary focus on monitoring and managing his chronic conditions and the complications from the procedure.
 
-Key symptoms     : edema, nocturnal hypoxia
+Key symptoms     : leg swelling, nocturnal hypoxia
 Red flags        : hypotension, AMS
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present, mild] edema
-      evidence: "notes his edema improves during the night and worsens during the day"
-      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3 %, Hemoglobin: 12.6 g/dL, MCH: 32.8 pg, MCV: 100.0 fL, Red Blood Cells: 3.84 m/uL, RDW-SD: 54.1 fL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
-      • [present] leg swelling
-          evidence: "notes his edema improves during the night and worsens during the day"
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [history] cholangitis
-      evidence: "Admitted last month with cholangitis and underwent ERCP with stent placement"
-      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3 %, Hemoglobin: 12.6 g/dL, MCH: 32.8 pg, MCV: 100.0 fL, Red Blood Cells: 3.84 m/uL, RDW-SD: 54.1 fL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
-  • [history] nocturnal hypoxia
-      evidence: "nocturnal hypoxia that improved with diuresis"
-      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3 %, Hemoglobin: 12.6 g/dL, MCH: 32.8 pg, MCV: 100.0 fL, Red Blood Cells: 3.84 m/uL, RDW-SD: 54.1 fL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
-
-CARDIOVASCULAR → Cardiovascular
--------------------------------
-
   • [present, mild] atrial fibrillation
-      evidence: "on apixaban for AFib"
-      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3 %, Hemoglobin: 12.6 g/dL, MCH: 32.8 pg, MCV: 100.0 fL, Red Blood Cells: 3.84 m/uL, RDW-SD: 54.1 fL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
+      evidence: "on apixaban for atrial fibrillation"
+      related: AFib on apixaban
+      • [present] atrial fibrillation
+          evidence: "on apixaban for atrial fibrillation"
+  • [present, mild] hypertension
+      evidence: "on lisinopril, amlodipine"
+      related: Hypertension
 
-CARDIOVASCULAR → Cardiovascular
--------------------------------
+RENAL → Renal
+-------------
 
-  • [present, mild] heart failure
-      evidence: "HFpEF, held home Lasix"
-      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3 %, Hemoglobin: 12.6 g/dL, MCH: 32.8 pg, MCV: 100.0 fL, Red Blood Cells: 3.84 m/uL, RDW-SD: 54.1 fL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
+  • [present, moderate] chronic kidney disease
+      evidence: "baseline creatinine around 1.6-1.7"
+      related: Creatinine 1.4 mg/dL, Hematocrit 38.3%, Hemoglobin 12.6 g/dL, MCH 32.8 pg, MCV 100.0 fL, RDW-SD 54.1 fL, Calcium 8.7 mg/dL, Magnesium 1.7 mg/dL, Phosphate 2.9 mg/dL
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
   • [present, mild] peripheral vascular disease
       evidence: "PVD with remote bypass graft"
-      related: Creatinine: 1.4 mg/dL, Hematocrit: 38.3 %, Hemoglobin: 12.6 g/dL, MCH: 32.8 pg, MCV: 100.0 fL, Red Blood Cells: 3.84 m/uL, RDW-SD: 54.1 fL, Calcium, Total: 8.7 mg/dL, Magnesium: 1.7 mg/dL, Phosphate: 2.9 mg/dL
+      related: PVD with remote bypass graft
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present, mild] heart failure with preserved ejection fraction
+      evidence: "HFpEF"
+      related: HFpEF
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [present, mild] leg swelling
+      evidence: "notes his edema improves during the night and worsens during the day"
+      related: leg swelling
+
+CARDIOVASCULAR → Cardiovascular
+-------------------------------
+
+  • [history, mild] nocturnal hypoxia
+      evidence: "nocturnal hypoxia that improved with diuresis"
+      related: nocturnal hypoxia

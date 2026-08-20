@@ -1,35 +1,36 @@
 {
-  "reason_for_admission": "nephrolithiasis management and PCNL",
-  "presenting_complaint": "nephrolithiasis",
-  "admission_context": "surgical",
-  "procedures_this_stay": [
-    {
-      "name": "Difficult right PCNL, right antegrade nephrostogram, right antegrade ureteroscopy, right antegrade ureteral stent placement, removal of right nephrostomy tube",
-      "timing": "current"
-    }
-  ],
   "symptoms": [
+    {
+      "term": "hematuria",
+      "status": "present",
+      "evidence": "1x episode of hematuria"
+    },
     {
       "term": "pain",
       "status": "present",
-      "evidence": "Abdomen soft, appropriately tender along incisions"
+      "evidence": "pain around the nephrostomy tubes"
+    },
+    {
+      "term": "dysuria",
+      "status": "present",
+      "evidence": "pain around the nephrostomy tubes and fevers"
     },
     {
       "term": "fever",
-      "status": "absent",
-      "evidence": "No fever noted in vitals or history"
+      "status": "present",
+      "evidence": "temperature of 102 at ___ prior to transfer"
     }
   ],
   "vitals": [
     {
-      "name": "Weight",
-      "value": "170",
-      "unit": "Lbs"
+      "name": "BMI (kg/m2)",
+      "value": "24.4",
+      "unit": ""
     },
     {
-      "name": "BMI",
-      "value": "24.4",
-      "unit": "kg/m2"
+      "name": "Weight (Lbs)",
+      "value": "170",
+      "unit": ""
     }
   ],
   "labs": [
@@ -46,16 +47,16 @@
       "flag": "low"
     },
     {
-      "name": "MCV",
-      "value": "104.0",
-      "unit": "fL",
-      "flag": "high"
-    },
-    {
       "name": "MCHC",
       "value": "30.5",
       "unit": "g/dL",
       "flag": "low"
+    },
+    {
+      "name": "MCV",
+      "value": "104.0",
+      "unit": "fL",
+      "flag": "high"
     },
     {
       "name": "Red Blood Cells",
@@ -77,13 +78,13 @@
     },
     {
       "name": "Glucose",
-      "value": "105",
+      "value": "105.0",
       "unit": "mg/dL",
       "flag": "high"
     },
     {
       "name": "Urea Nitrogen",
-      "value": "22",
+      "value": "22.0",
       "unit": "mg/dL",
       "flag": "high"
     }
@@ -91,6 +92,18 @@
   "diagnoses_mentioned": [
     {
       "term": "nephrolithiasis",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hypertension",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Hemorrhagic CVA",
+      "certainty": "confirmed"
+    },
+    {
+      "term": "Bilateral staghorn renal calculi",
       "certainty": "confirmed"
     }
   ],
@@ -104,18 +117,33 @@
   ],
   "procedures": [
     {
-      "name": "Difficult right PCNL, right antegrade nephrostogram, right antegrade ureteroscopy, right antegrade ureteral stent placement, removal of right nephrostomy tube",
-      "result": "well tolerated"
+      "name": "Difficult right PCNL",
+      "result": "stone greater than 2cm removed"
+    },
+    {
+      "name": "Right antegrade nephrostogram",
+      "result": ""
+    },
+    {
+      "name": "Right antegrade ureteroscopy",
+      "result": ""
+    },
+    {
+      "name": "Right antegrade ureteral stent placement",
+      "result": ""
+    },
+    {
+      "name": "Right PCNL",
+      "result": ""
     }
   ],
   "negations": [],
   "temporal": [
     {
-      "finding": "stone burden",
-      "onset": "residual stone"
+      "finding": "residual stone",
+      "onset": "present"
     }
   ],
-  "_method": "openrouter_nlp:qwen/qwen-2.5-7b-instruct",
   "_agent": "information_extraction",
   "_n_prior_admissions": 2
 }

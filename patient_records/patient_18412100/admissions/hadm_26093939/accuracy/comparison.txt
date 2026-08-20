@@ -3,23 +3,25 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 18412100
 HADM ID          : 26093939
-Generated        : 2026-08-20T00:13:37.548129
+Generated        : 2026-08-20T17:30:54.996703
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Neoplasm of uncertain behavior of connective and other soft tissue
-  Rank-1 predicted     : Post-procedural pain and tenderness
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Desmoid tumor
+  Billed ICD title     : Neoplasm of uncertain behavior of connective and other soft tissue (ICD metric only)
+  Rank-1 predicted     : Post-procedural pain
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : None of the ranked differential diagnoses match the ground truth primary diagnosis 'Neoplasm of uncertain behavior of connective and other soft tissue'.
+  LLM reason           : The physician discharge diagnosis is desmoid tumor (aggressive fibromatosis, a locally aggressive soft-tissue fibroblastic neoplasm of uncertain behavior). No rank in the differential names a neoplasm or soft-tissue tumor. Rank 1 (post-procedural pain) may be a downstream symptom of tumor resection but is not the same principal condition; ranks 2-5 (hepatitis C, hypokalemia, hypocalcemia, anemia) are unrelated infectious, electrolyte, and hematologic conditions.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue
   Rank-1 mapped ICD    : R10.9 — Unspecified abdominal pain
@@ -29,15 +31,14 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have a mapped ICD code that matches or is clinically equivalent to the ground truth ICD code 'D48.1'.
+  LLM ICD reason       : Billed primary code D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) codes the desmoid tumor. No rank matched; the closest rank ICD, R10.9 (unspecified abdominal pain), is a symptom code and would not be accepted by a coder as equivalent to a soft-tissue neoplasm code. Other mapped codes (B19.20, E87.6, E83.51, D64.9) are in entirely different chapters.
   Stage 9 final ICD    : R10.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Post-procedural pain and tenderness  [score=85.0, high]  ICD=R10.9 — Unspecified abdominal pain
+   1. Post-procedural pain  [score=85.0, high]  ICD=R10.9 — Unspecified abdominal pain
    2. Hepatitis C  [score=70.0, medium]  ICD=B19.20 — Unspecified viral hepatitis C without hepatic coma
-   3. Desmoid tumor  [score=65.0, medium]  ICD=- — 
-   4. Anemia  [score=55.0, medium]  ICD=D64.9 — Anemia, unspecified
-   5. Hypokalemia  [score=45.0, low]  ICD=E87.6 — Hypokalemia
-   6. Hypomagnesemia  [score=40.0, low]  ICD=E83.42 — Hypomagnesemia
+   3. Hypokalemia  [score=60.0, medium]  ICD=E87.6 — Hypokalemia
+   4. Hypocalcemia  [score=55.0, medium]  ICD=E83.51 — Hypocalcemia
+   5. Anemia  [score=50.0, medium]  ICD=D64.9 — Anemia, unspecified

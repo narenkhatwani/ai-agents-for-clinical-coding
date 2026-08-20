@@ -9,12 +9,18 @@
         {
           "term": "dyspnea",
           "status": "present",
-          "severity": "mild",
+          "severity": "moderate",
           "evidence": "sudden onset dyspnea",
           "related_findings": [
             "systolic CHF with EF around 30%"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "orthopnea",
+              "status": "absent",
+              "evidence": ""
+            }
+          ]
         },
         {
           "term": "pain",
@@ -22,9 +28,8 @@
           "severity": "mild",
           "evidence": "pain well controlled on PCA",
           "related_findings": [
-            "systolic CHF with EF around 30%"
-          ],
-          "children": []
+            "no reported calf pain to deep palpation"
+          ]
         }
       ]
     },
@@ -33,76 +38,37 @@
       "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "creatinine",
-          "status": "high",
-          "severity": "mild",
+          "term": "creatinine elevation",
+          "status": "present",
+          "severity": "moderate",
           "evidence": "Creatinine: 2.0 mg/dL",
           "related_findings": [
             "systolic CHF with EF around 30%"
-          ],
-          "children": []
+          ]
         },
         {
-          "term": "hemoglobin",
-          "status": "low",
+          "term": "hemoglobin and hematocrit decrease",
+          "status": "present",
           "severity": "mild",
-          "evidence": "Hemoglobin: 8.9 g/dL",
+          "evidence": "Hemoglobin: 8.9 g/dL, Hematocrit: 27.3%",
           "related_findings": [
             "systolic CHF with EF around 30%"
-          ],
-          "children": []
-        },
-        {
-          "term": "platelet count",
-          "status": "low",
-          "severity": "mild",
-          "evidence": "Platelet Count: 147.0 K/uL",
-          "related_findings": [
-            "systolic CHF with EF around 30%"
-          ],
-          "children": []
-        },
-        {
-          "term": "calcium",
-          "status": "low",
-          "severity": "mild",
-          "evidence": "Calcium, Total: 8.2 mg/dL",
-          "related_findings": [
-            "systolic CHF with EF around 30%"
-          ],
-          "children": []
+          ]
         }
       ]
     },
     {
-      "category": "neurologic",
-      "ontology_hint": "Neurologic",
+      "category": "constitutional",
+      "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "obstructive sleep apnea",
-          "status": "confirmed",
+          "term": "fever",
+          "status": "absent",
           "severity": "unknown",
-          "evidence": "obstructive sleep apnea, on CPAP",
+          "evidence": "",
           "related_findings": [
-            "systolic CHF with EF around 30%"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "other",
-      "ontology_hint": "Other",
-      "symptoms": [
-        {
-          "term": "left renal mass",
-          "status": "confirmed",
-          "severity": "unknown",
-          "evidence": "left renal mass",
-          "related_findings": [
-            "renal cell carcinoma"
-          ],
-          "children": []
+            "no reported fever"
+          ]
         }
       ]
     }
@@ -112,12 +78,13 @@
     "pain"
   ],
   "red_flags": [
-    "systolic CHF with EF around 30%"
+    "hypotension",
+    "cardiogenic shock"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "13508515",
   "admission_id": "21834271",
-  "generated_at": "2026-08-19T23:20:37.270506"
+  "generated_at": "2026-08-20T17:10:44.810055"
 }

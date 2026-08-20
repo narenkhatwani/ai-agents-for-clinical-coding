@@ -8,20 +8,20 @@ Patient ID       : 11607177
 Admission ID     : 23293838
 
 Reasoning:
-  The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness.
+  The dominant clinical picture for this admission is a patient with a history of dilated non-ischemic cardiomyopathy and refractory ventricular tachycardia, presenting with ICD shock and subsequent management of heart failure symptoms.
 
 Key symptoms     : ICD shock, edema
-Red flags        : ICD shock
+Red flags        : ICD shock, Refractory VT
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [present] ICD shock
+  • [present, severe] ICD shock
       evidence: "ICD shock on ___"
       related: Refractory VT, Dilated non-ischemic cardiomyopathy
-  • [present, mild] lightheadedness
-      evidence: "lightheadedness with position changes"
-      related: Dilated non-ischemic cardiomyopathy
   • [present, mild] edema
       evidence: "some increased ___ edema over the last several days"
       related: Dilated non-ischemic cardiomyopathy
+  • [present, mild] shaking
+      evidence: "feels some 'shaking' in his chest in the morning for the last 4 months"
+      related: Refractory VT

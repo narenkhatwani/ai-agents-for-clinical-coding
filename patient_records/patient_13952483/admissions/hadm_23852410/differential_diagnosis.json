@@ -1,119 +1,124 @@
 {
-  "summary": "The patient presents with hypotension, weight loss, and pulmonary hypertension, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of cough and odynophagia.",
-  "most_likely": "Squamous Cell Lung CA",
+  "summary": "The patient presents with hypotension, weight loss, and chest pain, likely due to chemotherapy/radiation toxicity, pulmonary hypertension, and malnutrition. Chronic conditions include malignant neoplasm and kidney transplant rejection.",
+  "most_likely": "Squamous Cell Lung Carcinoma",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Squamous Cell Lung CA",
+      "diagnosis": "Squamous Cell Lung Carcinoma",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Squamous Cell Lung CA (confirmed)",
-        "hypotension",
-        "pulmonary hypertension",
-        "cough",
-        "odynophagia"
+        "confirmed diagnosis from ___ guided lung biopsy"
       ],
       "opposing_evidence": [],
-      "reasoning": "Confirmed diagnosis and evidence of ongoing symptoms related to lung cancer."
+      "reasoning": "Confirmed diagnosis from biopsy and clinical presentation."
     },
     {
       "rank": 2,
       "diagnosis": "Pulmonary Hypertension",
       "score": 75.0,
       "confidence": "high",
-      "category": "complication",
-      "snomed_aligned": "Catheterization of right heart",
+      "category": "primary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "pulmonary hypertension",
-        "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
+        "idiopathic pHTN, severe Pulmonary HTN with Cor Pulmonale"
       ],
       "opposing_evidence": [],
-      "reasoning": "Confirmed pulmonary hypertension with significant clinical findings."
+      "reasoning": "Severe pulmonary hypertension with cor pulmonale confirmed by right heart catheterization."
     },
     {
       "rank": 3,
       "diagnosis": "Anemia",
-      "score": 65.0,
+      "score": 70.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "hypotension",
-        "weight loss",
-        "anorexia",
-        "neutropenia",
-        "thrombocytopenia"
+        "low hematocrit, hemoglobin, and MCHC"
       ],
       "opposing_evidence": [],
-      "reasoning": "Multiple laboratory abnormalities supporting anemia as a complication."
+      "reasoning": "Multiple laboratory abnormalities indicating anemia."
     },
     {
       "rank": 4,
       "diagnosis": "Malnutrition",
-      "score": 55.0,
+      "score": 65.0,
       "confidence": "medium",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "anorexia",
-        "weight loss",
-        "neutropenia",
-        "thrombocytopenia"
+        "weight loss, anorexia, and malaise"
       ],
       "opposing_evidence": [],
-      "reasoning": "Persistent anorexia and weight loss suggest malnutrition as a risk factor."
+      "reasoning": "Evidence of weight loss and malaise supporting malnutrition."
     },
     {
       "rank": 5,
-      "diagnosis": "Chronic Kidney Disease",
-      "score": 45.0,
-      "confidence": "low",
+      "diagnosis": "Thrombocytopenia",
+      "score": 60.0,
+      "confidence": "medium",
       "category": "complication",
-      "snomed_aligned": "",
+      "snomed_aligned": "Thrombocytopenic disorder",
       "supporting_evidence": [
-        "hypotension",
-        "anemia",
-        "neutropenia",
         "thrombocytopenia"
       ],
       "opposing_evidence": [],
-      "reasoning": "Abnormal lab results suggest chronic kidney disease as a possible complication."
+      "reasoning": "Low platelet count confirmed by lab results."
     },
     {
       "rank": 6,
-      "diagnosis": "Cachexia",
-      "score": 35.0,
+      "diagnosis": "Neutropenia",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "new neutropenia"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Low absolute neutrophil count confirmed by lab results."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Chronic Obstructive Pulmonary Disease",
+      "score": 50.0,
+      "confidence": "low",
+      "category": "differential",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "chronic obstructive pulmonary disease, unspecified"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "COPD is a differential diagnosis given the patient's history."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Kidney Transplant Rejection",
+      "score": 45.0,
       "confidence": "low",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "weight loss",
-        "anorexia"
+        "kidney transplant rejection"
       ],
       "opposing_evidence": [],
-      "reasoning": "Weight loss and anorexia suggest cachexia as a risk factor."
+      "reasoning": "Chronic condition with potential for acute exacerbation."
     }
   ],
-  "rule_outs": [
-    {
-      "diagnosis": "Pneumonia",
-      "why": "No current evidence of pneumonia in the structured context."
-    }
-  ],
+  "rule_outs": [],
   "uncertain_areas": [
-    "Further clarification on the cause of hypotension and weight loss would refine the differential diagnosis."
+    "Further imaging to confirm pulmonary hypertension, additional labs to assess anemia severity"
   ],
-  "n_candidates": 6,
+  "n_candidates": 8,
   "type": "differential_diagnosis",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "13952483",
   "hadm_id": "23852410",
-  "generated_at": "2026-08-20T00:10:41.130972",
+  "generated_at": "2026-08-20T17:17:16.618666",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,

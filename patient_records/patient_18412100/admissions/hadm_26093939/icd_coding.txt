@@ -2,40 +2,35 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 18412100
 HADM ID          : 26093939
-Most likely      : Post-procedural pain and tenderness
+Most likely      : Post-procedural pain
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:24.279253
+Generated (S8)   : 2026-08-20T17:19:25.112294
 
 Summary:
-  The patient is a 45-year-old woman with a history of desmoid tumor, presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure. She also has chronic conditions including hepatitis C and obesity.
+  A 31-year-old woman presents with post-procedural pain and mild nausea following cryoablation of a residual desmoid tumor. Chronic conditions include hepatitis C and other acute postprocedural pain.
 
-#1  [85.0/100 | high]  Post-procedural pain and tenderness  (primary)
+#1  [85.0/100 | high]  Post-procedural pain  (primary)
     SNOMED: Abdominal pain (21522001) [exact score=1.0]
     ICD status: mapped | primary: R10.9
       1. [principal] R10.9 — Unspecified abdominal pain
-      2. [supporting] R10.819 — Abdominal tenderness, unspecified site  ← abdominal tenderness (key_symptom)
 
 #2  [70.0/100 | medium]  Hepatitis C  (risk_factor)
     SNOMED: Viral hepatitis C (50711007) [exact score=1.0]
     ICD status: mapped | primary: B19.20
       1. [principal] B19.20 — Unspecified viral hepatitis C without hepatic coma
 
-#3  [65.0/100 | medium]  Desmoid tumor  (differential)
-    SNOMED: Aggressive fibromatosis (47284001) [exact score=1.0]
-    ICD status: unmapped | primary: None
-
-#4  [55.0/100 | medium]  Anemia  (secondary)
-    SNOMED: Anemia (271737000) [exact score=1.0]
-    ICD status: mapped | primary: D64.9
-      1. [principal] D64.9 — Anemia, unspecified
-
-#5  [45.0/100 | low]  Hypokalemia  (differential)
+#3  [60.0/100 | medium]  Hypokalemia  (differential)
     SNOMED: Hypokalemia (43339004) [exact score=1.0]
     ICD status: mapped | primary: E87.6
       1. [principal] E87.6 — Hypokalemia
 
-#6  [40.0/100 | low]  Hypomagnesemia  (differential)
-    SNOMED: Hypomagnesaemia (190855004) [exact score=1.0]
-    ICD status: mapped | primary: E83.42
-      1. [principal] E83.42 — Hypomagnesemia
-      2. [principal] P71.2 — Neonatal hypomagnesemia
+#4  [55.0/100 | medium]  Hypocalcemia  (differential)
+    SNOMED: Hypocalcemia (5291005) [exact score=1.0]
+    ICD status: mapped | primary: E83.51
+      1. [principal] E83.51 — Hypocalcemia
+      2. [principal] P71.1 — Other neonatal hypocalcemia
+
+#5  [50.0/100 | medium]  Anemia  (differential)
+    SNOMED: Anemia (271737000) [exact score=1.0]
+    ICD status: mapped | primary: D64.9
+      1. [principal] D64.9 — Anemia, unspecified

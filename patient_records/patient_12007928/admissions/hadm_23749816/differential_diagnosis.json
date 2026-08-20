@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.",
+  "summary": "The patient presents with dyspnea, orthopnea, and worsening heart failure, with significant fluid overload and pleural effusions. The patient has a history of chronic diastolic heart failure and acute kidney failure.",
   "most_likely": "Acute decompensated heart failure",
   "differential": [
     {
@@ -8,88 +8,82 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "I50.9",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "dyspnea, orthopnea, pitting edema",
-        "mild pulmonary edema",
-        "mild pleural effusions",
-        "mild atrial fibrillation",
-        "creatinine elevation"
+        "mild to moderate pulmonary edema on CXR",
+        "history of chronic diastolic heart failure"
       ],
       "opposing_evidence": [],
-      "reasoning": "Symptoms and findings strongly support acute decompensation of chronic heart failure."
+      "reasoning": "The patient's current symptoms and imaging findings strongly support acute heart failure, and the history of chronic diastolic heart failure increases the likelihood."
     },
     {
       "rank": 2,
-      "diagnosis": "Atrial fibrillation",
+      "diagnosis": "Chronic kidney disease",
       "score": 70.0,
       "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "42717001",
+      "category": "secondary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "paroxysmal atrial fibrillation",
-        "mild atrial fibrillation"
+        "Creatinine: 1.6 mg/dL [abnormal]",
+        "history of acute kidney failure"
       ],
       "opposing_evidence": [],
-      "reasoning": "Paroxysmal atrial fibrillation is present and may contribute to symptoms."
+      "reasoning": "The elevated creatinine and history of acute kidney failure support chronic kidney disease, but it is secondary to the primary diagnosis of acute heart failure."
     },
     {
       "rank": 3,
-      "diagnosis": "Renal insufficiency",
+      "diagnosis": "Paroxysmal atrial fibrillation",
       "score": 65.0,
-      "confidence": "medium",
+      "confidence": "high",
       "category": "complication",
-      "snomed_aligned": "N17.9",
+      "snomed_aligned": "AF - Paroxysmal atrial fibrillation",
       "supporting_evidence": [
-        "creatinine elevation",
-        "urea nitrogen elevation",
-        "anemia"
+        "confirmed paroxysmal atrial fibrillation"
       ],
       "opposing_evidence": [],
-      "reasoning": "Renal function tests indicate worsening renal insufficiency."
+      "reasoning": "The patient has a confirmed history of paroxysmal atrial fibrillation, which can complicate heart failure."
     },
     {
       "rank": 4,
-      "diagnosis": "Myasthenia gravis",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "G70.0",
+      "diagnosis": "Congestive heart failure",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "tremors",
-        "increased spasms in the upper extremities"
+        "history of chronic diastolic heart failure"
       ],
-      "opposing_evidence": [
-        "no specific myasthenia gravis findings on chest X-ray"
-      ],
-      "reasoning": "Tremors and increased spasms suggest myasthenia gravis, but no specific findings support this."
+      "opposing_evidence": [],
+      "reasoning": "Congestive heart failure is a more general term that encompasses the current presentation, but it is less specific than acute decompensated heart failure."
     },
     {
       "rank": 5,
-      "diagnosis": "Anemia",
+      "diagnosis": "Myasthenia gravis",
       "score": 40.0,
       "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
+      "category": "differential",
+      "snomed_aligned": "Myasthenia gravis without (acute) exacerbation",
       "supporting_evidence": [
-        "low hemoglobin and hematocrit"
+        "confirmed myasthenia gravis"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Anemia is present but does not fully explain the current presentation."
+      "opposing_evidence": [
+        "no current exacerbation symptoms"
+      ],
+      "reasoning": "The patient has a confirmed history of myasthenia gravis, but the current presentation does not strongly support an exacerbation."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Pneumonia",
-      "why": "No evidence of respiratory infection."
+      "diagnosis": "Obstructive sleep apnea",
+      "why": "No current symptoms or findings supporting acute exacerbation."
     },
     {
-      "diagnosis": "Acute coronary syndrome",
-      "why": "No chest pain or ECG changes."
+      "diagnosis": "Dementia",
+      "why": "No current cognitive symptoms or findings."
     }
   ],
   "uncertain_areas": [
-    "Further imaging to confirm presence of pleural effusions and pulmonary edema"
+    "Further lab results for electrolytes and cardiac markers would help refine the differential diagnosis."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -98,7 +92,7 @@
   "_temperature": 0.4,
   "patient_id": "12007928",
   "hadm_id": "23749816",
-  "generated_at": "2026-08-20T00:09:53.056804",
+  "generated_at": "2026-08-20T17:16:14.410101",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 5,

@@ -1,20 +1,19 @@
 {
-  "summary": "The patient is a hospice patient with metastatic sarcoma who fell and hit his head, knees, and elbows, resulting in minor abrasions and soreness. He presents with weakness, bruising, and headache, with laboratory findings indicating anemia and thrombocytopenia.",
-  "most_likely": "Metastatic sarcoma with hematologic complications",
+  "summary": "The patient is a recurrent cancer patient with a history of metastatic sarcoma and chronic hematoma. This admission involves symptoms of a fall resulting in minor abrasions and soreness, along with recurrent hematological issues.",
+  "most_likely": "Metastatic sarcoma with anemia and thrombocytopenia",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Metastatic sarcoma with hematologic complications",
+      "diagnosis": "Metastatic sarcoma with anemia and thrombocytopenia",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
       "snomed_aligned": "Metastatic sarcoma",
       "supporting_evidence": [
-        "metastatic sarcoma",
-        "thrombocytopenia"
+        "High-grade unclassified sarcoma of the right femur, Metastatic Sarcoma to Brain"
       ],
       "opposing_evidence": [],
-      "reasoning": "Primary diagnosis given the patient's history of metastatic sarcoma and current symptoms related to hematologic complications.",
+      "reasoning": "The patient has a history of metastatic sarcoma and current lab findings consistent with anemia and thrombocytopenia.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "443144000",
@@ -22,7 +21,7 @@
         "fsn": "Metastatic sarcoma (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Metastatic sarcoma with hematologic complications",
+        "query": "Metastatic sarcoma with anemia and thrombocytopenia",
         "aligned_hint": "Metastatic sarcoma"
       },
       "icd10_primary": "C79.89",
@@ -35,6 +34,161 @@
           "map_priority": 1,
           "map_group": 1,
           "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "C49.9",
+          "title": "Malignant neoplasm of connective and soft tissue, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C49.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sarcoma",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "424413001",
+          "from_snomed_term": "Sarcoma",
+          "relevance_to_diagnosis": 0.576,
+          "package_order": 2
+        },
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5376,
+          "package_order": 3
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5376,
+          "package_order": 4
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C49.9",
+          "title": "Malignant neoplasm of connective and soft tissue, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS C49.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sarcoma",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "424413001",
+          "from_snomed_term": "Sarcoma",
+          "relevance_to_diagnosis": 0.576
+        },
+        {
+          "code": "O36.8290",
+          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "thrombocytopenia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5376
+        },
+        {
+          "code": "Z3A.00",
+          "title": "Weeks of gestation of pregnancy not specified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 2,
+          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 2,
+          "from_term": "thrombocytopenia",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "10752381000119101",
+          "from_snomed_term": "Fetal thrombocytopenia",
+          "relevance_to_diagnosis": 0.5376
+        }
+      ],
+      "icd_status": "mapped",
+      "n_icd_codes": 4
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Chronic anemia and thrombocytopenia",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "secondary",
+      "snomed_aligned": "Anemia due to antineoplastic chemotherapy, Thrombocytopenia",
+      "supporting_evidence": [
+        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL, Platelet Count: 63.0 K/uL"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "The patient has chronic anemia and thrombocytopenia due to antineoplastic chemotherapy.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "328301000119102",
+        "preferred_term": "Pancytopenia due to antineoplastic chemotherapy",
+        "fsn": "Pancytopenia due to antineoplastic chemotherapy (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.7456334501594366,
+        "query": "Chronic anemia and thrombocytopenia",
+        "aligned_hint": "Anemia due to antineoplastic chemotherapy, Thrombocytopenia"
+      },
+      "icd10_primary": "D61.810",
+      "icd10_primary_title": "Antineoplastic chemotherapy induced pancytopenia",
+      "icd10_package": [
+        {
+          "code": "D61.810",
+          "title": "Antineoplastic chemotherapy induced pancytopenia",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D61.810",
           "always": true,
           "role": "principal",
           "order": 1,
@@ -54,7 +208,7 @@
           "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.2502,
+          "relevance_to_diagnosis": 0.7421,
           "package_order": 2
         },
         {
@@ -71,18 +225,35 @@
           "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.2502,
+          "relevance_to_diagnosis": 0.7421,
           "package_order": 3
+        },
+        {
+          "code": "D64.9",
+          "title": "Anemia, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "anemia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.6737,
+          "package_order": 4
         }
       ],
       "icd10_principal": [
         {
-          "code": "C79.89",
-          "title": "Secondary malignant neoplasm of other specified sites",
+          "code": "D61.810",
+          "title": "Antineoplastic chemotherapy induced pancytopenia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS C79.89 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS D61.810",
           "always": true,
           "role": "principal",
           "order": 1
@@ -103,7 +274,7 @@
           "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.2502
+          "relevance_to_diagnosis": 0.7421
         },
         {
           "code": "Z3A.00",
@@ -119,37 +290,8 @@
           "from_kind": "tree_symptom",
           "from_snomed_id": "10752381000119101",
           "from_snomed_term": "Fetal thrombocytopenia",
-          "relevance_to_diagnosis": 0.2502
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 3
-    },
-    {
-      "rank": 2,
-      "diagnosis": "Anemia",
-      "score": 70.0,
-      "confidence": "high",
-      "category": "secondary",
-      "snomed_aligned": "Anemia due to antineoplastic chemotherapy",
-      "supporting_evidence": [
-        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Anemia is a significant finding and likely secondary to the patient's malignancy.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "271737000",
-        "preferred_term": "Anemia",
-        "fsn": "Anemia (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Anemia",
-        "aligned_hint": "Anemia due to antineoplastic chemotherapy"
-      },
-      "icd10_primary": "D64.9",
-      "icd10_primary_title": "Anemia, unspecified",
-      "icd10_package": [
+          "relevance_to_diagnosis": 0.7421
+        },
         {
           "code": "D64.9",
           "title": "Anemia, unspecified",
@@ -158,73 +300,95 @@
           "map_group": 1,
           "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
-          "role": "principal",
+          "role": "supporting",
           "order": 1,
-          "package_order": 1
+          "from_term": "anemia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "271737000",
+          "from_snomed_term": "Anemia",
+          "relevance_to_diagnosis": 0.6737
         }
       ],
-      "icd10_principal": [
-        {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 1
+      "n_icd_codes": 4
     },
     {
       "rank": 3,
-      "diagnosis": "Thrombocytopenia",
-      "score": 65.0,
-      "confidence": "high",
-      "category": "secondary",
-      "snomed_aligned": "Cytokine-induced thrombocytopenia",
+      "diagnosis": "Cervical spine degenerative changes",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Platelet Count: 63.0 K/uL"
+        "Degenerative changes of the cervical spine are moderate in severity"
       ],
       "opposing_evidence": [],
-      "reasoning": "Thrombocytopenia is present and likely related to the patient's malignancy.",
+      "reasoning": "The patient has degenerative changes in the cervical spine, which may be a complication of the fall.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "10752381000119101",
-        "preferred_term": "Fetal thrombocytopenia",
-        "fsn": "Fetal thrombocytopenia (disorder)",
+        "concept_id": "122494005",
+        "preferred_term": "Cervical spine",
+        "fsn": "Structure of cervical vertebral column (body structure)",
         "match_method": "fuzzy",
-        "score": 0.724041575982343,
-        "query": "Thrombocytopenia",
-        "aligned_hint": "Cytokine-induced thrombocytopenia"
+        "score": 0.6028505426185218,
+        "query": "Cervical spine degenerative changes",
+        "aligned_hint": null
       },
-      "icd10_primary": "O36.8290",
-      "icd10_primary_title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+      "icd10_primary": null,
+      "icd10_primary_title": null,
+      "icd10_package": [],
+      "icd10_principal": [],
+      "icd10_supporting": [],
+      "icd_status": "unmapped",
+      "n_icd_codes": 0
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Acute kidney failure",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "differential",
+      "snomed_aligned": "Acute kidney failure, unspecified",
+      "supporting_evidence": [
+        "Hematocrit: 23.6%, Hemoglobin: 7.7 g/dL, Platelet Count: 63.0 K/uL"
+      ],
+      "opposing_evidence": [
+        "No recent history of acute kidney failure"
+      ],
+      "reasoning": "The patient has lab findings consistent with acute kidney failure, but no recent history.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "56675007",
+        "preferred_term": "Acute heart failure",
+        "fsn": "Acute heart failure (disorder)",
+        "match_method": "fuzzy",
+        "score": 0.5935728561881009,
+        "query": "Acute kidney failure",
+        "aligned_hint": "Acute kidney failure, unspecified"
+      },
+      "icd10_primary": "I50.9",
+      "icd10_primary_title": "Heart failure, unspecified",
       "icd10_package": [
         {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "Z3A.00",
-          "title": "Weeks of gestation of pregnancy not specified",
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
           "source": "snomed_extended_map",
           "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
           "role": "principal",
           "order": 2,
           "package_order": 2
@@ -232,24 +396,24 @@
       ],
       "icd10_principal": [
         {
-          "code": "O36.8290",
-          "title": "Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified",
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
           "source": "snomed_extended_map",
-          "map_priority": 1,
+          "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS O36.8290 | CONSIDER TRIMESTER SPECIFICATION | CONSIDER WHICH FETUS IS AFFECTED BY THE MATERNAL CONDITION",
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "Z3A.00",
-          "title": "Weeks of gestation of pregnancy not specified",
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
           "source": "snomed_extended_map",
           "map_priority": 1,
-          "map_group": 2,
-          "map_advice": "ALWAYS Z3A.00 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
-          "always": true,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
           "role": "principal",
           "order": 2
         }
@@ -259,17 +423,19 @@
       "n_icd_codes": 2
     },
     {
-      "rank": 4,
+      "rank": 5,
       "diagnosis": "Hypotension",
-      "score": 50.0,
-      "confidence": "medium",
+      "score": 30.0,
+      "confidence": "low",
       "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "BP 114/66"
+        "Denies chest pain, hypotension"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Hypotension is noted and may be a risk factor for further complications.",
+      "opposing_evidence": [
+        "No recent history of hypotension"
+      ],
+      "reasoning": "The patient denies hypotension, but it could be a risk factor given the fall and hematological issues.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "45007003",
@@ -312,135 +478,25 @@
       "icd10_supporting": [],
       "icd_status": "mapped",
       "n_icd_codes": 1
-    },
-    {
-      "rank": 5,
-      "diagnosis": "Headache",
-      "score": 45.0,
-      "confidence": "medium",
-      "category": "differential",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "hit his head"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Headache is present but may be secondary to the fall and underlying malignancy.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "25064002",
-        "preferred_term": "Headache",
-        "fsn": "Headache (finding)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Headache",
-        "aligned_hint": null
-      },
-      "icd10_primary": "R51.9",
-      "icd10_primary_title": "Headache, unspecified",
-      "icd10_package": [
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "R51.9",
-          "title": "Headache, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R51.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 6,
-      "diagnosis": "Abdominal pain",
-      "score": 35.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "Abdominal pain",
-      "supporting_evidence": [
-        "abdominal pain"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Abdominal pain is noted but not strongly supported by current findings.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "21522001",
-        "preferred_term": "Abdominal pain",
-        "fsn": "Abdominal pain (finding)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Abdominal pain",
-        "aligned_hint": "Abdominal pain"
-      },
-      "icd10_primary": "R10.9",
-      "icd10_primary_title": "Unspecified abdominal pain",
-      "icd10_package": [
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "R10.9",
-          "title": "Unspecified abdominal pain",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R10.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [],
-      "icd_status": "mapped",
-      "n_icd_codes": 1
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Pneumothorax",
-      "why": "No evidence of pneumothorax in chest radiograph or structured clinical context."
+      "diagnosis": "Pneumonia",
+      "why": "No discrete focal consolidation concerning for pneumonia in chest radiography."
     }
   ],
   "uncertain_areas": [
-    "Further details on the patient's pain and hematologic status would clarify the severity and management of these conditions."
+    "Recent history of acute kidney failure, hypotension"
   ],
-  "n_candidates": 6,
+  "n_candidates": 5,
   "type": "differential_diagnosis_with_icd",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "differential_diagnosis",
   "_temperature": 0.4,
   "patient_id": "16014068",
   "hadm_id": "29042843",
-  "generated_at": "2026-08-20T00:10:56.014695",
+  "generated_at": "2026-08-20T17:17:35.313690",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 7,
@@ -1110,9 +1166,9 @@
   "icd_map_refset": "6011000124106",
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
-    "n_diagnoses": 6,
-    "n_with_principal": 6,
-    "n_unmapped": 0
+    "n_diagnoses": 5,
+    "n_with_principal": 4,
+    "n_unmapped": 1
   },
-  "generated_at_stage8": "2026-08-20T00:12:22.678648"
+  "generated_at_stage8": "2026-08-20T17:19:23.594758"
 }

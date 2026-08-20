@@ -1,89 +1,81 @@
 {
-  "summary": "The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL. The patient presents with hematuria, pain, and mild anemia, along with metabolic derangements including hyperglycemia and hyperuremia. Chronic conditions include pyonephrosis and chronic kidney disease.",
-  "most_likely": "Acute kidney injury due to nephrolithiasis and PCNL",
+  "summary": "The patient was admitted for management of nephrolithiasis and underwent a difficult right PCNL. Presenting symptoms include hematuria, pain around nephrostomy tubes, dysuria, and fever. The patient has a history of chronic kidney disease and recent complications including acute kidney injury and anemia.",
+  "most_likely": "Acute kidney injury",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Acute kidney injury due to nephrolithiasis and PCNL",
+      "diagnosis": "Acute kidney injury",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "N17 — Acute kidney injury",
       "supporting_evidence": [
-        "Creatinine: 2.5 mg/dL, Hematuria, Pain"
+        "Creatinine 2.5 mg/dL (elevated)"
       ],
       "opposing_evidence": [],
-      "reasoning": "High creatinine and presence of hematuria and pain strongly suggest acute kidney injury related to nephrolithiasis and PCNL."
+      "reasoning": "High creatinine and ongoing nephrolithiasis likely contributing to acute kidney injury."
     },
     {
       "rank": 2,
-      "diagnosis": "Chronic kidney disease, unspecified",
+      "diagnosis": "Anemia",
       "score": 75.0,
       "confidence": "medium",
       "category": "secondary",
-      "snomed_aligned": "",
+      "snomed_aligned": "D64 — Anemia",
       "supporting_evidence": [
-        "Chronic kidney disease, unspecified in prior PMH"
+        "Hematocrit 30.8%, Hemoglobin 9.4 g/dL (low)"
       ],
-      "opposing_evidence": [
-        "Acute kidney injury more likely given recent PCNL"
-      ],
-      "reasoning": "Chronic kidney disease is present in prior PMH but is less likely to be the primary acute issue given recent PCNL."
+      "opposing_evidence": [],
+      "reasoning": "Low hematocrit and hemoglobin levels suggest anemia, possibly due to chronic kidney disease."
     },
     {
       "rank": 3,
-      "diagnosis": "Anemia in chronic kidney disease",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
+      "diagnosis": "Hematuria",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "differential",
+      "snomed_aligned": "7678004 — Hematuria",
       "supporting_evidence": [
-        "Hematocrit: 30.8 %, Hemoglobin: 9.4 g/dL"
+        "1x episode of hematuria"
       ],
-      "opposing_evidence": [
-        "No specific evidence of chronic anemia"
-      ],
-      "reasoning": "Anemia is present but may be secondary to chronic kidney disease, which is a known risk factor."
+      "opposing_evidence": [],
+      "reasoning": "Presented with hematuria, likely related to nephrolithiasis."
     },
     {
       "rank": 4,
-      "diagnosis": "Complicated urinary tract infection",
-      "score": 55.0,
+      "diagnosis": "Pain around nephrostomy tubes",
+      "score": 65.0,
       "confidence": "medium",
       "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Fever: 102 at ___ prior to transfer"
+        "pain around the nephrostomy tubes"
       ],
-      "opposing_evidence": [
-        "No fever currently present"
-      ],
-      "reasoning": "Previous history of pyonephrosis suggests a possibility of a complicated UTI, but no current fever."
+      "opposing_evidence": [],
+      "reasoning": "Pain around nephrostomy tubes is a symptom but may be secondary to other conditions."
     },
     {
       "rank": 5,
-      "diagnosis": "Hypertensive chronic kidney disease",
-      "score": 45.0,
-      "confidence": "low",
-      "category": "risk_factor",
+      "diagnosis": "Fever",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "differential",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "Hypertensive chronic kidney disease in prior PMH"
+        "temperature of 102 at ___ prior to transfer"
       ],
-      "opposing_evidence": [
-        "No current hypertension noted"
-      ],
-      "reasoning": "Hypertensive chronic kidney disease is a known risk factor but not currently evident."
+      "opposing_evidence": [],
+      "reasoning": "Fever present but not the primary focus of the admission."
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "Pneumothorax",
-      "why": "No radiology evidence or clinical signs of pneumothorax."
+      "diagnosis": "Hypertension",
+      "why": "While present, not the primary focus of the admission."
     }
   ],
   "uncertain_areas": [
-    "Further details on the cause of anemia and the exact nature of chronic kidney disease would refine the differential"
+    "Further details on the cause of anemia and the exact nature of the acute kidney injury would clarify the differential diagnosis."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -92,7 +84,7 @@
   "_temperature": 0.4,
   "patient_id": "11251337",
   "hadm_id": "29568708",
-  "generated_at": "2026-08-20T00:09:06.518702",
+  "generated_at": "2026-08-20T17:15:20.651458",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 2,

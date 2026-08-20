@@ -3,43 +3,45 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 17774110
 HADM ID          : 27339772
-Generated        : 2026-08-20T00:13:34.577565
+Generated        : 2026-08-20T17:30:46.472488
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Other specified sepsis
-  Rank-1 predicted     : Acute liver failure
+  DiffDx GT source     : icd_title_fallback
+  Ground truth (note)  : Other specified sepsis
+  Billed ICD title     : Other specified sepsis (ICD metric only)
+  Rank-1 predicted     : Septic shock with multi-organ failure
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : None of the ranked differential diagnoses match the ground truth diagnosis of 'Other specified sepsis'.
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Septic shock with multi-organ failure
+    score=85.0  confidence=high
+  LLM reason           : Rank 1 'Septic shock with multi-organ failure' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — a systemic septic process; septic shock is a more specific/severe manifestation of the same sepsis episode. No lower-numbered rank matches, and remaining ranks (hepatic encephalopathy, liver failure, GI bleeding, coagulopathy, atrial fibrillation, pleural effusion, bipolar disorder) are distinct organ-specific conditions or complications.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : A41.89 — Other specified sepsis
-  Rank-1 mapped ICD    : K72.00 — Acute and subacute hepatic failure without coma
-  Matched mapped ICD   : - — 
-  ICD match            : NO
+  Rank-1 mapped ICD    : R65.21 — Severe sepsis with septic shock
+  Matched mapped ICD   : R65.21 — Severe sepsis with septic shock
+  ICD match            : YES
   ICD exact            : NO
   ICD 3-char family    : NO
-  ICD LLM match        : NO
-  Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the ranked differential diagnoses have an ICD code that matches or is clinically equivalent to 'A41.89 — Other specified sepsis'.
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped code R65.21 (severe sepsis with septic shock) is not an exact match to billed A41.89 (other specified sepsis), but both code the same principal sepsis episode; in ICD-10-CM sepsis coding A41.89 is the underlying infection code and R65.21 the severity manifestation code reported together for the same condition, so a coder would accept them as clinically equivalent representations of the sepsis principal diagnosis.
   Stage 9 final ICD    : R65.21 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Acute liver failure  [score=85.0, high]  ICD=K72.00 — Acute and subacute hepatic failure without coma
-   2. Septic shock  [score=75.0, high]  ICD=R65.21 — Severe sepsis with septic shock
-   3. Hepatic encephalopathy  [score=70.0, high]  ICD=K76.82 — Hepatic encephalopathy
-   4. Acute renal failure  [score=65.0, high]  ICD=N17.9 — Acute kidney failure, unspecified
-   5. Pleural effusion  [score=60.0, medium]  ICD=J90 — Pleural effusion, not elsewhere classified
-   6. IVC thrombus  [score=55.0, medium]  ICD=- — 
-   7. Cirrhosis  [score=50.0, medium]  ICD=K74.60 — Unspecified cirrhosis of liver
+   1. Septic shock with multi-organ failure  [score=85.0, high]  ICD=R65.21 — Severe sepsis with septic shock
+   2. Hepatic encephalopathy  [score=75.0, high]  ICD=K76.82 — Hepatic encephalopathy
+   3. Acute liver failure  [score=70.0, high]  ICD=K72.00 — Acute and subacute hepatic failure without coma
+   4. GI bleeding  [score=65.0, high]  ICD=K92.2 — Gastrointestinal hemorrhage, unspecified
+   5. Coagulopathy  [score=60.0, high]  ICD=D61.818 — Other pancytopenia
+   6. Atrial fibrillation/flutter  [score=55.0, medium]  ICD=I48.91 — Unspecified atrial fibrillation
+   7. Pleural effusion  [score=50.0, medium]  ICD=J90 — Pleural effusion, not elsewhere classified
    8. Bipolar disorder  [score=30.0, low]  ICD=F31.9 — Bipolar disorder, unspecified

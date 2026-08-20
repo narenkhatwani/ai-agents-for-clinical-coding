@@ -8,10 +8,10 @@ Patient ID       : 13952483
 Admission ID     : 23852410
 
 Reasoning:
-  The patient presents with hypotension and weight loss, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of odynophagia, cough, and malaise.
+  The dominant clinical picture for this admission is a patient with hypotension and weight loss, likely due to a combination of chemotherapy/radiation toxicity, pulmonary hypertension, and malnutrition.
 
-Key symptoms     : hypotension, cough, weight loss
-Red flags        : hypotension, pulmonary hypertension
+Key symptoms     : hypotension, cough, odynophagia
+Red flags        : hypotension, chest pain
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
@@ -19,23 +19,25 @@ CARDIOVASCULAR → Cardiovascular
   • [present, mild] hypotension
       evidence: "Hypotension and Weight Loss"
       related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
-      • [present] pulmonary hypertension
-          evidence: "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
+      • [present] chest pain
+          evidence: "pleuritic/MSK chest pain"
+  • [present, moderate] pulmonary hypertension
+      evidence: "idiopathic pHTN, severe Pulmonary HTN with Cor Pulmonale"
+      related: right heart catheterization showing severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg
 
 RESPIRATORY → Respiratory
 -------------------------
 
   • [present, mild] cough
       evidence: "cough, pleuritic/MSK chest pain"
-      related: moderate growth of commensal respiratory flora
-      • [present] odynophagia
-          evidence: "persistent odynophagia"
+      related: chest X-ray showing left basilar opacification
+  • [present, mild] odynophagia
+      evidence: "persistent odynophagia"
+      related: radiation esophagitis
 
 CONSTITUTIONAL → Infectious Diseases
 ------------------------------------
 
   • [present, moderate] weight loss
       evidence: "weight loss and hypotension"
-      related: new neutropenia (ANC 750), thrombocytopenia (plts 93)
-      • [present] anorexia
-          evidence: "overall anorexia and poor appetite"
+      related: failure to thrive, anorexia

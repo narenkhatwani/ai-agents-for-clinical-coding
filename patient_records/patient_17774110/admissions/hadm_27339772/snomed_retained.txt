@@ -1,9 +1,9 @@
 Patient: 17774110  HADM: 27339772
-Generated: 2026-08-19T23:22:49.292691
+Generated: 2026-08-20T17:13:56.935154
 Min cosine similarity: 0.7
 High-confidence: 0.8
 Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
-Entities with retained: 15 / 56  |  links: 20
+Entities with retained: 14 / 56  |  links: 18
 
 • Hypoxic respiratory failure  [symptom]  → SNOMED: Chronic respiratory failure (39871006)
     - [is_a] Respiratory failure (id=409622000, sim=0.8149) [HIGH]
@@ -21,10 +21,6 @@ Entities with retained: 15 / 56  |  links: 20
 • Pleural effusion  [symptom]  → SNOMED: Pleural effusion (60046008)
     - [is_a] Disorder of pleura and pleural cavity (id=233635001, sim=0.7055)
     - [has_finding_site] Pleural cavity (id=91381003, sim=0.7079)
-
-• Cirrhosis  [diagnosis]  → SNOMED: Early cirrhosis (371139006)
-    - [is_a] Cirrhosis of liver (id=19943007, sim=0.8925) [HIGH]
-    - [has_finding_site] Liver (id=10200004, sim=0.7045)
 
 • Pancytopenia  [diagnosis]  → SNOMED: Pancytopenia (127034005)
     - [is_a] Cytopenia (id=50820005, sim=0.7283)

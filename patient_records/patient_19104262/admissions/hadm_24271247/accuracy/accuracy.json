@@ -4,16 +4,19 @@
   "method": "llm_query_expansion",
   "patient_id": "19104262",
   "hadm_id": "24271247",
-  "generated_at": "2026-08-20T00:13:42.105280",
+  "generated_at": "2026-08-20T17:31:06.748717",
   "ground_truth": {
     "primary_icd_code": "O2403",
     "primary_dx_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
     "primary_icd_title": "Pre-existing type 1 diabetes mellitus, in the puerperium",
+    "discharge_diagnosis": "Diabetes type I with DKA",
+    "diffdx_gt": "Diabetes type I with DKA",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 10
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Pre-existing type 1 diabetes mellitus, in the puerperium",
+      "ground_truth_primary": "Diabetes type I with DKA",
       "rank1_diagnosis": "Diabetic ketoacidosis",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
@@ -23,11 +26,12 @@
       "matched_diagnosis": "",
       "matched_score": null,
       "matched_confidence": "",
-      "llm_relationship": "different",
+      "llm_relationship": "same_principal",
       "llm_confidence": "low",
-      "llm_reason": "The ground truth primary diagnosis is 'Pre-existing type 1 diabetes mellitus, in the puerperium', which does not match any of the differential diagnoses provided.",
-      "llm_expanded_ground_truth": "Pre-existing type 1 diabetes mellitus, in the puerperium",
-      "llm_expanded_matched": "",
+      "llm_reason": "Physician discharge diagnosis 'Diabetes type I with DKA' (type 1 diabetes mellitus with diabetic ketoacidosis) names diabetic ketoacidosis as the principal condition. Rank 1 'Diabetic ketoacidosis' is the same principal condition (broader as to diabetes type); Rank 2 'Type 1 diabetes mellitus with ketoacidosis' is an exact match, but the lowest matching rank is 1.",
+      "llm_expanded_ground_truth": "Type 1 diabetes mellitus | DKA | diabetic ketoacidosis | insulin-dependent diabetes with ketoacidosis | hyperglycemic ketoacidosis",
+      "llm_expanded_matched": "DKA | diabetic ketoacidosis | ketoacidosis due to diabetes mellitus",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
           "diagnosis": "Diabetic ketoacidosis",
@@ -38,47 +42,63 @@
           "icd10_primary_title": "Other specified diabetes mellitus with ketoacidosis without coma"
         },
         {
-          "diagnosis": "C difficile colitis",
+          "diagnosis": "Type 1 diabetes mellitus with ketoacidosis",
           "rank": 2,
           "score": 70.0,
-          "confidence": "medium",
-          "icd10_primary": "A04.72",
-          "icd10_primary_title": "Enterocolitis due to Clostridium difficile, not specified as recurrent"
-        },
-        {
-          "diagnosis": "Preeclampsia",
-          "rank": 3,
-          "score": 65.0,
-          "confidence": "medium",
-          "icd10_primary": "O14.90",
-          "icd10_primary_title": "Unspecified pre-eclampsia, unspecified trimester"
-        },
-        {
-          "diagnosis": "Missed abortion",
-          "rank": 4,
-          "score": 50.0,
-          "confidence": "low",
-          "icd10_primary": "O02.1",
-          "icd10_primary_title": "Missed abortion"
-        },
-        {
-          "diagnosis": "Type 1 diabetes mellitus",
-          "rank": 5,
-          "score": 45.0,
-          "confidence": "medium",
+          "confidence": "high",
           "icd10_primary": "E10.9",
           "icd10_primary_title": "Type 1 diabetes mellitus without complications"
         },
         {
-          "diagnosis": "Infection",
+          "diagnosis": "Lactic acidosis",
+          "rank": 3,
+          "score": 65.0,
+          "confidence": "high",
+          "icd10_primary": "E87.20",
+          "icd10_primary_title": "Acidosis, unspecified"
+        },
+        {
+          "diagnosis": "Missed abortion",
+          "rank": 4,
+          "score": 45.0,
+          "confidence": "medium",
+          "icd10_primary": "O02.1",
+          "icd10_primary_title": "Missed abortion"
+        },
+        {
+          "diagnosis": "Vaginal bleeding",
+          "rank": 5,
+          "score": 40.0,
+          "confidence": "medium",
+          "icd10_primary": null,
+          "icd10_primary_title": ""
+        },
+        {
+          "diagnosis": "Type 1 diabetes mellitus",
           "rank": 6,
+          "score": 35.0,
+          "confidence": "high",
+          "icd10_primary": "E10.9",
+          "icd10_primary_title": "Type 1 diabetes mellitus without complications"
+        },
+        {
+          "diagnosis": "Decreased fetal movement",
+          "rank": 7,
           "score": 30.0,
+          "confidence": "medium",
+          "icd10_primary": "O36.8190",
+          "icd10_primary_title": "Decreased fetal movements, unspecified trimester, not applicable or unspecified"
+        },
+        {
+          "diagnosis": "Abdominal pain",
+          "rank": 8,
+          "score": 25.0,
           "confidence": "low",
-          "icd10_primary": "B99.9",
-          "icd10_primary_title": "Unspecified infectious disease"
+          "icd10_primary": "R10.9",
+          "icd10_primary_title": "Unspecified abdominal pain"
         }
       ],
-      "n_diffdx": 6
+      "n_diffdx": 8
     },
     "icd_linked": {
       "ground_truth_icd": "O24.03",
@@ -93,31 +113,46 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "The ground truth ICD code is O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium, which does not match any of the mapped ICD codes provided.",
-      "llm_expanded_ground_truth_icd": "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "Mapped code at rank 1 is E13.10 (other specified diabetes mellitus with ketoacidosis without coma), while the billed primary code is O24.03 (pre-existing type 1 diabetes mellitus, in the puerperium), an obstetric chapter 15 code that takes sequencing priority in the puerperium. Different code chapters and different specificity (obstetric pre-existing type 1 diabetes vs non-obstetric 'other specified' diabetes with ketoacidosis); a coder would not accept E13.10 as equivalent to O24.03. Note rank 2/6 map to E10.9, which is also not equivalent to the obstetric O24.03 code.",
+      "llm_expanded_ground_truth_icd": "O24.03 | pre-existing type 1 diabetes mellitus in the puerperium | obstetric diabetes coding, chapter 15 | pregnancy/puerperium-related pre-existing IDDM",
+      "llm_expanded_matched_icd": "E13.10 | other specified diabetes mellitus with ketoacidosis without coma | related non-obstetric codes: E10.10 type 1 diabetes with ketoacidosis without coma",
       "stage9_final_primary_icd": "E13.10",
       "diagnosis_match": false,
       "is_rank1_diagnosis_match": null,
       "matched_diffdx_rank": null
     },
     "llm_qe_raw": {
-      "matched_rank": null,
-      "diagnosis_equivalent": false,
-      "diagnosis_relationship": "different",
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
       "diagnosis_confidence": "low",
-      "diagnosis_reason": "The ground truth primary diagnosis is 'Pre-existing type 1 diabetes mellitus, in the puerperium', which does not match any of the differential diagnoses provided.",
+      "diagnosis_reason": "Physician discharge diagnosis 'Diabetes type I with DKA' (type 1 diabetes mellitus with diabetic ketoacidosis) names diabetic ketoacidosis as the principal condition. Rank 1 'Diabetic ketoacidosis' is the same principal condition (broader as to diabetes type); Rank 2 'Type 1 diabetes mellitus with ketoacidosis' is an exact match, but the lowest matching rank is 1.",
       "ground_truth_expansions": [
-        "Pre-existing type 1 diabetes mellitus, in the puerperium"
+        "Type 1 diabetes mellitus",
+        "DKA",
+        "diabetic ketoacidosis",
+        "insulin-dependent diabetes with ketoacidosis",
+        "hyperglycemic ketoacidosis"
       ],
-      "matched_diagnosis_expansions": [],
+      "matched_diagnosis_expansions": [
+        "DKA",
+        "diabetic ketoacidosis",
+        "ketoacidosis due to diabetes mellitus"
+      ],
       "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "The ground truth ICD code is O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium, which does not match any of the mapped ICD codes provided.",
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped code at rank 1 is E13.10 (other specified diabetes mellitus with ketoacidosis without coma), while the billed primary code is O24.03 (pre-existing type 1 diabetes mellitus, in the puerperium), an obstetric chapter 15 code that takes sequencing priority in the puerperium. Different code chapters and different specificity (obstetric pre-existing type 1 diabetes vs non-obstetric 'other specified' diabetes with ketoacidosis); a coder would not accept E13.10 as equivalent to O24.03. Note rank 2/6 map to E10.9, which is also not equivalent to the obstetric O24.03 code.",
       "ground_truth_icd_expansions": [
-        "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium"
+        "O24.03",
+        "pre-existing type 1 diabetes mellitus in the puerperium",
+        "obstetric diabetes coding, chapter 15",
+        "pregnancy/puerperium-related pre-existing IDDM"
       ],
-      "matched_icd_expansions": [],
+      "matched_icd_expansions": [
+        "E13.10",
+        "other specified diabetes mellitus with ketoacidosis without coma",
+        "related non-obstetric codes: E10.10 type 1 diabetes with ketoacidosis without coma"
+      ],
       "_cache_hit": false
     }
   },

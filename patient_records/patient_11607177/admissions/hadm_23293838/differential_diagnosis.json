@@ -1,5 +1,5 @@
 {
-  "summary": "The patient is admitted due to ICD shock and presents with symptoms of heart failure exacerbation, including edema and lightheadedness. Chronic conditions include dilated cardiomyopathy and ventricular tachycardia.",
+  "summary": "The patient is a 41-year-old with a history of dilated non-ischemic cardiomyopathy and refractory ventricular tachycardia, presenting with ICD shock and subsequent management of heart failure symptoms. Current labs show abnormalities including elevated INR, PT, PTT, and low hematocrit and hemoglobin levels.",
   "most_likely": "Refractory ventricular tachycardia",
   "differential": [
     {
@@ -8,77 +8,80 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "I472",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "ICD shock on ___",
-        "Refractory VT in symptom tree"
+        "ICD shock on admission",
+        "shaking in chest for last 4 months"
       ],
       "opposing_evidence": [],
-      "reasoning": "ICD shock and refractory VT are present, strongly supporting this diagnosis."
+      "reasoning": "ICD shock and history of refractory VT strongly support this diagnosis."
     },
     {
       "rank": 2,
       "diagnosis": "Dilated non-ischemic cardiomyopathy",
       "score": 75.0,
       "confidence": "high",
-      "category": "primary",
-      "snomed_aligned": "I420",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Dilated non-ischemic cardiomyopathy in symptom tree",
-        "Dilated cardiomyopathy in prior ICDs"
+        "ICD shock on admission",
+        "edema over last several days"
       ],
       "opposing_evidence": [],
-      "reasoning": "Dilated cardiomyopathy is a chronic condition and a known cause of ICD shock."
+      "reasoning": "Cardiomyopathy is a known complication of VT and supports the current presentation."
     },
     {
       "rank": 3,
-      "diagnosis": "Congestive heart failure",
-      "score": 65.0,
+      "diagnosis": "Heart failure",
+      "score": 60.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "edema in symptom tree",
-        "Dilated cardiomyopathy in prior ICDs"
+        "edema over last several days"
       ],
       "opposing_evidence": [],
-      "reasoning": "Edema and dilated cardiomyopathy suggest heart failure exacerbation."
+      "reasoning": "Edema suggests heart failure as a complication of cardiomyopathy."
     },
     {
       "rank": 4,
-      "diagnosis": "Hypokalemia",
+      "diagnosis": "Hypertension",
       "score": 50.0,
-      "confidence": "low",
-      "category": "differential",
+      "confidence": "medium",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "low potassium in labs"
+        "History of hypertension"
       ],
       "opposing_evidence": [],
-      "reasoning": "Low potassium could explain some symptoms but is not the primary focus."
+      "reasoning": "Hypertension is a known risk factor for cardiomyopathy and VT."
     },
     {
       "rank": 5,
-      "diagnosis": "Anemia",
+      "diagnosis": "Obesity",
       "score": 40.0,
       "confidence": "low",
-      "category": "complication",
+      "category": "risk_factor",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "low hematocrit and hemoglobin in labs"
+        "BMI of 36.7"
       ],
       "opposing_evidence": [],
-      "reasoning": "Low hematocrit and hemoglobin suggest anemia but are secondary to heart failure."
+      "reasoning": "Obesity is a known risk factor for cardiomyopathy and VT, but less strongly supported by current presentation."
     }
   ],
   "rule_outs": [
     {
       "diagnosis": "Sleep apnea",
-      "why": "While present, it is not the primary focus of the current admission."
+      "why": "Current presentation does not strongly support sleep apnea as the primary cause of symptoms."
+    },
+    {
+      "diagnosis": "Gout",
+      "why": "Current labs do not strongly indicate gout."
     }
   ],
   "uncertain_areas": [
-    "Further imaging or detailed cardiac function tests would clarify the exact nature of the cardiomyopathy and ICD shock"
+    "Further imaging or detailed history would clarify the presence of complications such as heart failure or other cardiac issues."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis",
@@ -87,7 +90,7 @@
   "_temperature": 0.4,
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-20T00:09:36.317014",
+  "generated_at": "2026-08-20T17:15:55.458829",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,

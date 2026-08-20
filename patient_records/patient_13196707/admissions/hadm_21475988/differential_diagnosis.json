@@ -1,5 +1,5 @@
 {
-  "summary": "The patient is presenting with severe sepsis secondary to RUL PNA in the context of metastatic adenocarcinoma of unknown primary, with recent pericardiocentesis and hypotension.",
+  "summary": "The patient is a 50-year-old male with a history of metastatic adenocarcinoma of unknown primary presenting with severe sepsis secondary to RUL PNA, hypotension, and altered mental status. He has a history of multiple metastatic brain lesions and SVC syndrome.",
   "most_likely": "Severe sepsis secondary to RUL PNA",
   "differential": [
     {
@@ -10,96 +10,89 @@
       "category": "primary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "RUL PNA, persistent consolidative opacities in both lower lobes"
+        "RUL PNA (suspected)"
       ],
       "opposing_evidence": [],
-      "reasoning": "Severe sepsis is the most likely diagnosis given the RUL PNA and hypotension."
+      "reasoning": "Severe sepsis is the primary clinical presentation and is strongly supported by the recent diagnosis of RUL PNA and the presence of hypotension and altered mental status."
     },
     {
       "rank": 2,
       "diagnosis": "Metastatic adenocarcinoma of unknown primary",
       "score": 75.0,
-      "confidence": "medium",
+      "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "Metastatic adenocarcinoma of unknown origin",
+      "snomed_aligned": "Metastatic adenocarcinoma of unknown origin (307226002)",
       "supporting_evidence": [
-        "confirmed metastatic adenocarcinoma of unknown primary"
+        "Metastatic adenocarcinoma of unknown primary (confirmed)"
       ],
-      "opposing_evidence": [
-        "no new metastatic lesions noted"
-      ],
-      "reasoning": "Given the patient’s history of metastatic adenocarcinoma, this is a significant risk factor."
+      "opposing_evidence": [],
+      "reasoning": "The patient has a confirmed history of metastatic adenocarcinoma of unknown primary, which is a significant risk factor for the current presentation."
     },
     {
       "rank": 3,
-      "diagnosis": "Hypotension secondary to pericardiocentesis",
+      "diagnosis": "Altered mental status due to metastatic brain lesions",
       "score": 65.0,
       "confidence": "medium",
       "category": "complication",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "recent pericardiocentesis, hypotension"
+        "Altered mental status possibly seizures from metastases"
       ],
-      "opposing_evidence": [
-        "hypotension is moderate and managed"
-      ],
-      "reasoning": "Hypotension is a complication of pericardiocentesis and is present."
+      "opposing_evidence": [],
+      "reasoning": "The patient has multiple metastatic brain lesions, which could contribute to his altered mental status."
     },
     {
       "rank": 4,
-      "diagnosis": "Acute kidney failure",
-      "score": 55.0,
-      "confidence": "low",
-      "category": "secondary",
-      "snomed_aligned": "Acute kidney failure, unspecified",
+      "diagnosis": "Hypotension",
+      "score": 60.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "abnormal labs, low creatinine"
+        "Hypotension with pressures in the 80's, hypotension with pressures in the 90's systolic"
       ],
-      "opposing_evidence": [
-        "no acute kidney injury symptoms"
-      ],
-      "reasoning": "Acute kidney failure is a potential secondary condition given the abnormal labs."
+      "opposing_evidence": [],
+      "reasoning": "Hypotension is a critical finding and a complication of severe sepsis."
     },
     {
       "rank": 5,
-      "diagnosis": "Anemia",
-      "score": 45.0,
-      "confidence": "low",
+      "diagnosis": "Pneumonia",
+      "score": 55.0,
+      "confidence": "medium",
       "category": "secondary",
       "snomed_aligned": "",
       "supporting_evidence": [
-        "low hematocrit, hemoglobin"
+        "RUL PNA (suspected)"
       ],
-      "opposing_evidence": [
-        "no acute blood loss"
-      ],
-      "reasoning": "Anemia could explain the low hematocrit and hemoglobin."
+      "opposing_evidence": [],
+      "reasoning": "RUL PNA is suspected and is a significant secondary condition contributing to the patient's presentation."
     },
     {
       "rank": 6,
-      "diagnosis": "Sodium imbalance",
-      "score": 35.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "Hypo-osmolality and hyponatremia",
+      "diagnosis": "Acute kidney failure",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "low sodium"
+        "Acute kidney failure, unspecified"
       ],
-      "opposing_evidence": [
-        "no clinical signs of sodium imbalance"
-      ],
-      "reasoning": "Sodium imbalance is a risk factor given the low sodium levels."
+      "opposing_evidence": [],
+      "reasoning": "The patient has a history of acute kidney failure, which could be a complication of his current presentation."
     }
   ],
   "rule_outs": [
     {
       "diagnosis": "Non-small cell lung cancer",
-      "why": "Not currently supported by evidence."
+      "why": "While suspected, the current presentation is more consistent with adenocarcinoma."
+    },
+    {
+      "diagnosis": "Pericardiocentesis",
+      "why": "The procedure was performed and is not a primary diagnosis."
     }
   ],
   "uncertain_areas": [
-    "Further imaging to confirm new metastatic lesions",
-    "More detailed clinical history to confirm the exact nature of the PNA"
+    "Further clarification on the exact nature of the RUL PNA and its causative agent would refine the differential diagnosis."
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis",
@@ -108,7 +101,7 @@
   "_temperature": 0.4,
   "patient_id": "13196707",
   "hadm_id": "21475988",
-  "generated_at": "2026-08-20T00:10:10.757498",
+  "generated_at": "2026-08-20T17:16:35.248925",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 11,

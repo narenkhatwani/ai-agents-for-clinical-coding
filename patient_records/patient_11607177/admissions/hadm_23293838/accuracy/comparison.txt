@@ -3,12 +3,14 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11607177
 HADM ID          : 23293838
-Generated        : 2026-08-20T00:13:15.194893
+Generated        : 2026-08-20T17:29:44.357752
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Ventricular tachycardia
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Refractory VT s/p stellate ganglion block
+  Billed ICD title     : Ventricular tachycardia (ICD metric only)
   Rank-1 predicted     : Refractory ventricular tachycardia
     score=85.0  confidence=high
   Diagnosis match      : YES
@@ -16,10 +18,10 @@ DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
   Matched DiffDx rank  : 1
   Matched diagnosis    : Refractory ventricular tachycardia
     score=85.0  confidence=high
-  LLM reason           : Refractory ventricular tachycardia matches Ventricular tachycardia.
+  LLM reason           : Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia status post stellate ganglion block; Rank 1 'Refractory ventricular tachycardia' names the identical principal condition, with the ganglion block being the treatment rendered rather than a separate diagnosis.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : I47.2 — Ventricular tachycardia
   Rank-1 mapped ICD    : I47.20 — Ventricular tachycardia, unspecified
@@ -29,7 +31,7 @@ LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
   ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : ICD code I47.20 matches I47.2.
+  LLM ICD reason       : Mapped I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) are the same code concept at different levels of the ICD-10 hierarchy/version; a coder would accept them as clinically equivalent for the same principal condition.
   Stage 9 final ICD    : I50.9 (debug)
 
 FULL DIFFERENTIAL LIST
@@ -37,6 +39,6 @@ FULL DIFFERENTIAL LIST
 
    1. Refractory ventricular tachycardia  [score=85.0, high]  ICD=I47.20 — Ventricular tachycardia, unspecified
    2. Dilated non-ischemic cardiomyopathy  [score=75.0, high]  ICD=I42.0 — Dilated cardiomyopathy
-   3. Congestive heart failure  [score=65.0, medium]  ICD=I50.9 — Heart failure, unspecified
-   4. Hypokalemia  [score=50.0, low]  ICD=E87.6 — Hypokalemia
-   5. Anemia  [score=40.0, low]  ICD=D64.9 — Anemia, unspecified
+   3. Heart failure  [score=60.0, medium]  ICD=I50.9 — Heart failure, unspecified
+   4. Hypertension  [score=50.0, medium]  ICD=I10 — Essential (primary) hypertension
+   5. Obesity  [score=40.0, low]  ICD=E66.9 — Obesity, unspecified

@@ -8,7 +8,7 @@ Patient ID       : 19104262
 Admission ID     : 24271247
 
 Reasoning:
-  The patient is admitted with DKA/lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.
+  The patient is admitted with DKA and lactic acidosis, likely due to nonadherence to insulin regimen in the setting of social stress.
 
 
 INFECTIOUS → Infectious Diseases
@@ -16,127 +16,271 @@ INFECTIOUS → Infectious Diseases
 
   • [history] fever
       evidence: "fevers/chills/nightsweats for the past few days"
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 CARDIOVASCULAR → Cardiovascular
 -------------------------------
 
-  • [history] abdominal pain
-      evidence: "lower abdominal pain/cramping for the past week"
-
-NEUROLOGIC → Neurology
-----------------------
-
-  • [history] headache
-      evidence: "pressure-like frontal headache"
+  • [absent] hypotension
+      related: DBP, SBP
 
 RESPIRATORY → Respiratory
 -------------------------
 
-  • [present] nausea
-      evidence: "nausea and vomiting"
+  • [absent] cough
+      related: SpO2
 
-GI → Gastroenterology
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Lactate, Calcium, Total, pCO2, pH
+
+GI → Gastrointestinal
 ---------------------
 
-  • [history] vaginal bleeding
-      evidence: "vaginal spotting"
+  • [present] nausea
+      evidence: "nausea and vomiting"
+      related: Glucose, Anion Gap, Bicarbonate, Calcium, Total
+  • [present] vomiting
+      evidence: "nausea and vomiting"
+      related: Glucose, Anion Gap, Bicarbonate, Calcium, Total
   • [history] decreased fetal movement
       evidence: "decreased fetal movement"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+NEUROLOGIC → Neurologic
+-----------------------
+
+  • [history] headache
+      evidence: "pressure-like frontal headache"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+RENAL → Renal
+-------------
+
+  • [history] proteinuria
+      evidence: "proteinuria of 414mg on ___ which increased to 850mg on ___"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
   • [suspected] C difficile colitis
       evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
-      related: Glucose: 263 mg/dL, Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [history] fever
-      evidence: "fevers/chills/nightsweats for the past few days"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [history] decreased fetal movement
-      evidence: "decreased fetal movement"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [suspected] C difficile colitis
-      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
-      related: Glucose: 263 mg/dL, Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [history] fever
-      evidence: "fevers/chills/nightsweats for the past few days"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [history] decreased fetal movement
-      evidence: "decreased fetal movement"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
   • [suspected] C difficile colitis
       evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
-      related: Glucose: 263 mg/dL, Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [history] fever
-      evidence: "fevers/chills/nightsweats for the past few days"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [history] decreased fetal movement
-      evidence: "decreased fetal movement"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [suspected] C difficile colitis
-      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
-      related: Glucose: 263 mg/dL, Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [history] fever
-      evidence: "fevers/chills/nightsweats for the past few days"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
-
-INFECTIOUS → Infectious Diseases
---------------------------------
-
-  • [history] decreased fetal movement
-      evidence: "decreased fetal movement"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
   • [suspected] C difficile colitis
       evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
-      related: Glucose: 263 mg/dL, Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate: 3.6 mmol/L, Calcium, Total: 8.6 mg/dL, pO2: 60.0 mm Hg, Potassium: 6.8 mEq/L, Phosphate: 7.1 mg/dL, Urea Nitrogen: 26 mg/dL, Albumin: 3.6 g/dL, Alkaline Phosphatase: 125.0 IU/L, Magnesium: 7.4 mg/dL, pCO2: 33.0 mm Hg, pH: 7.34 units
+      related: Anion Gap, Bicarbonate, pO2, pH
 
 INFECTIOUS → Infectious Diseases
 --------------------------------
 
-  • [history] fever
-      evidence: "fevers/chills/nightsweats for the past few days"
-      related: Anion Gap: 19.0 mEq/L, Bicarbonate: 20.0 mEq/L, Lactate:
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] genital HSV
+      evidence: "genital HSV"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [suspected] C difficile colitis
+      evidence: "C difficile colitis: Improving but still with some diarrhea at discharge."
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+INFECTIOUS → Infectious Diseases
+--------------------------------
+
+  • [history] UTI
+      evidence: "UTI and dental infection"
+      related: Anion Gap, Bicarbonate, pO2, pH
+
+OTHER → 
+--------
+

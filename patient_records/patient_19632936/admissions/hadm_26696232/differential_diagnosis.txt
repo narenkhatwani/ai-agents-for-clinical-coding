@@ -5,54 +5,61 @@ Patient ID       : 19632936
 HADM ID          : 26696232
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:12:06.360079
-Candidates       : 5
-Most likely      : Acute macrocytic anemia
+Generated        : 2026-08-20T17:19:08.699756
+Candidates       : 6
+Most likely      : Acute macrocytic anemia with respiratory compromise
 Prior admissions : 1 (18 ICD codes as PMH context)
 
 Summary:
-  The patient presents with acute on chronic macrocytic anemia, dyspnea on exertion, and fatigue, with a history of coronary artery disease, atrial fibrillation, and sick sinus syndrome. The patient has a recent history of macrocytic anemia and is on anticoagulation therapy.
+  The patient presents with acute on chronic macrocytic anemia and dyspnea on exertion, with a history of CAD, AFib, and moderate AS. The dominant clinical picture is anemia and its effects on respiratory function.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Acute macrocytic anemia  (primary)
+  #1  [85.0/100 | high]  Acute macrocytic anemia with respiratory compromise  (primary)
       SNOMED aligned : Macrocytic anemia
       + acute on chronic macrocytic anemia
-      + Hgb 6.7, MCV 106, RDW 18.2, Reticulocyte Count, Automated: 3.6 %
-      why: Acute macrocytic anemia is strongly supported by the lab findings and is the primary presenting issue.
-
-  #2  [75.0/100 | medium]  Acute heart failure  (primary)
-      SNOMED aligned : Heart failure
-      + moderate AS, mild pulmonary hypertension
       + worsening dyspnea over the past year
-      − no recent radiology findings
-      why: Acute heart failure is supported by the history of chronic heart failure and worsening dyspnea, but lacks recent radiology evidence.
+      + moderate AS
+      why: The patient's acute macrocytic anemia is the primary presenting issue and is associated with worsening dyspnea and moderate AS.
 
-  #3  [65.0/100 | medium]  Atrial fibrillation  (complication)
+  #2  [70.0/100 | medium]  Chronic diastolic heart failure  (complication)
+      SNOMED aligned : Chronic diastolic (congestive) heart failure
+      + history of chronic diastolic heart failure
+      + worsening dyspnea over the past year
+      − no new signs of acute heart failure
+      why: Chronic heart failure is a known comorbidity and may be contributing to the patient's symptoms, but there are no new signs of acute heart failure.
+
+  #3  [65.0/100 | medium]  Atrial fibrillation  (differential)
       SNOMED aligned : Atrial fibrillation
-      + Afib on warfarin
-      + recent history of atrial fibrillation
-      − INR elevated to 2.4
-      why: Atrial fibrillation is a known chronic condition, but the INR is elevated, suggesting good control.
+      + history of atrial fibrillation
+      + INR 2.4
+      − no new atrial fibrillation symptoms
+      why: Atrial fibrillation is a known comorbidity and is associated with an elevated INR, but there are no new symptoms of atrial fibrillation.
 
-  #4  [60.0/100 | medium]  Anemia  (primary)
-      + acute on chronic macrocytic anemia
-      + Hgb 6.7, MCV 106, RDW 18.2
-      why: Anemia is a broad term that encompasses macrocytic anemia but lacks specific supporting evidence.
+  #4  [55.0/100 | low]  Anemia of chronic disease  (differential)
+      + history of chronic conditions such as CAD and AFib
+      − acute presentation of macrocytic anemia
+      why: Anemia of chronic disease is a possibility given the patient's chronic conditions, but the acute presentation of macrocytic anemia is more likely.
 
-  #5  [55.0/100 | low]  Renal insufficiency  (complication)
-      SNOMED aligned : Renal failure
-      + low calcium, mild anemia
-      − no recent renal function tests indicating acute decline
-      why: Renal insufficiency is a possible complication given the low calcium and mild anemia, but lacks strong evidence.
+  #5  [50.0/100 | low]  Volume depletion  (risk_factor)
+      SNOMED aligned : Volume depletion, unspecified
+      + low hematocrit and hemoglobin levels
+      − no signs of acute volume depletion
+      why: Volume depletion is a risk factor given the patient's low hematocrit and hemoglobin levels, but there are no signs of acute volume depletion.
+
+  #6  [45.0/100 | low]  Coronary artery disease  (complication)
+      SNOMED aligned : Coronary arteriosclerosis
+      + history of coronary artery disease
+      − no new signs of acute coronary artery disease
+      why: Coronary artery disease is a known comorbidity, but there are no new signs of acute coronary artery disease.
 
 RULE-OUTS
 ---------
 
-  • Coronary artery disease: While a known chronic condition, the current presentation is more aligned with acute anemia and heart failure.
+  • Pneumothorax: No radiology evidence and no clinical signs of pneumothorax
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • More recent radiology findings, specific etiology of macrocytic anemia
+  • Need more information on the cause of macrocytic anemia and the status of chronic heart failure

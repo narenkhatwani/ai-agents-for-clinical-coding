@@ -3,40 +3,42 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11251337
 HADM ID          : 29568708
-Generated        : 2026-08-20T00:13:08.261331
+Generated        : 2026-08-20T17:29:29.816575
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Hydronephrosis with renal and ureteral calculous obstruction
-  Rank-1 predicted     : Acute kidney injury due to nephrolithiasis and PCNL
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm
+  Billed ICD title     : Hydronephrosis with renal and ureteral calculous obstruction (ICD metric only)
+  Rank-1 predicted     : Acute kidney injury
     score=85.0  confidence=high
   Diagnosis match      : NO
   Is rank-1 match      : N/A
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : The ground truth diagnosis 'Hydronephrosis with renal and ureteral calculous obstruction' does not match any of the differential diagnoses provided.
+  LLM reason           : The physician discharge diagnosis is nephrolithiasis (a complex right ureteropelvic junction stone >2cm). No rank in the differential names urolithiasis/kidney stone or obstructive uropathy. Ranks 1-5 (acute kidney injury, anemia, hematuria, nephrostomy tube pain, fever) are complications, associated findings, or symptoms that can accompany an obstructing renal calculus, but none is the same principal condition. Hematuria and AKI are downstream manifestations, not the stone disease itself.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : N13.2 — Hydronephrosis with renal and ureteral calculous obstruction
-  Rank-1 mapped ICD    : - — 
+  Rank-1 mapped ICD    : N17.9 — Acute kidney failure, unspecified
   Matched mapped ICD   : - — 
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : The mapped ICD code for the differential diagnosis 'Acute kidney injury due to nephrolithiasis and PCNL' does not match the ground truth ICD code N13.2.
+  LLM ICD reason       : No matching rank, so no mapped ICD to compare. The billed primary code N13.2 (hydronephrosis with renal and ureteral calculous obstruction) is not clinically equivalent to N17.9 (acute kidney failure), D64.9, R31.9, R52, or R50.9, which are symptom/complication codes rather than obstructive calculous disease codes.
   Stage 9 final ICD    : N20.0 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Acute kidney injury due to nephrolithiasis and PCNL  [score=85.0, high]  ICD=- — 
-   2. Chronic kidney disease, unspecified  [score=75.0, medium]  ICD=N28.9 — Disorder of kidney and ureter, unspecified
-   3. Anemia in chronic kidney disease  [score=65.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
-   4. Complicated urinary tract infection  [score=55.0, medium]  ICD=N39.0 — Urinary tract infection, site not specified
-   5. Hypertensive chronic kidney disease  [score=45.0, low]  ICD=I12.0 — Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease
+   1. Acute kidney injury  [score=85.0, high]  ICD=N17.9 — Acute kidney failure, unspecified
+   2. Anemia  [score=75.0, medium]  ICD=D64.9 — Anemia, unspecified
+   3. Hematuria  [score=70.0, high]  ICD=R31.9 — Hematuria, unspecified
+   4. Pain around nephrostomy tubes  [score=65.0, medium]  ICD=R52 — Pain, unspecified
+   5. Fever  [score=60.0, medium]  ICD=R50.9 — Fever, unspecified

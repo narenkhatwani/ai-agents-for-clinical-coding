@@ -1,82 +1,21 @@
 {
-  "summary": "The patient is a 45-year-old man with right-sided rib fractures and hypoxemia following a mechanical fall. He has a history of polysubstance abuse and chronic conditions including opioid dependence and tachycardia.",
-  "most_likely": "Acute respiratory distress secondary to rib fractures and hypoxemia",
+  "summary": "A 46-year-old male with a history of polysubstance use and opioid dependence presents with right-sided rib fractures, hypoxia, and respiratory symptoms. Radiology shows bilateral pleural effusions and pneumothorax.",
+  "most_likely": "Traumatic pneumothorax",
   "differential": [
     {
       "rank": 1,
-      "diagnosis": "Acute respiratory distress secondary to rib fractures and hypoxemia",
+      "diagnosis": "Traumatic pneumothorax",
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "",
+      "snomed_aligned": "Pneumothorax",
       "supporting_evidence": [
-        "right rib fractures, hypoxia, patchy parenchymal opacities on chest X-ray"
+        "right PTX",
+        "subcutaneous emphysema",
+        "small right PTX"
       ],
       "opposing_evidence": [],
-      "reasoning": "The patient's right rib fractures and hypoxemia are the primary presenting symptoms, supported by chest X-ray findings.",
-      "snomed_resolution": {
-        "mapped": false,
-        "concept_id": null,
-        "preferred_term": null,
-        "match_method": null,
-        "score": 0.0,
-        "query": "Acute respiratory distress secondary to rib fractures and hypoxemia"
-      },
-      "icd10_primary": null,
-      "icd10_primary_title": null,
-      "icd10_package": [
-        {
-          "code": "R09.02",
-          "title": "Hypoxemia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypoxia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "389086002",
-          "from_snomed_term": "Hypoxia",
-          "relevance_to_diagnosis": 0.3674,
-          "package_order": 1
-        }
-      ],
-      "icd10_principal": [],
-      "icd10_supporting": [
-        {
-          "code": "R09.02",
-          "title": "Hypoxemia",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "hypoxia",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "389086002",
-          "from_snomed_term": "Hypoxia",
-          "relevance_to_diagnosis": 0.3674
-        }
-      ],
-      "icd_status": "supporting_only",
-      "n_icd_codes": 1
-    },
-    {
-      "rank": 2,
-      "diagnosis": "Pneumothorax",
-      "score": 75.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "",
-      "supporting_evidence": [
-        "small right PTX noted on chest X-ray"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Small right pneumothorax is noted on chest X-ray, which could be a complication of rib fractures.",
+      "reasoning": "Radiology and symptoms strongly support pneumothorax.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "36118008",
@@ -84,8 +23,8 @@
         "fsn": "Pneumothorax (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Pneumothorax",
-        "aligned_hint": null
+        "query": "Traumatic pneumothorax",
+        "aligned_hint": "Pneumothorax"
       },
       "icd10_primary": "J93.9",
       "icd10_primary_title": "Pneumothorax, unspecified",
@@ -113,6 +52,23 @@
           "role": "principal",
           "order": 2,
           "package_order": 2
+        },
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema",
+          "source": "snomed_extended_map",
+          "map_priority": 5,
+          "map_group": 1,
+          "map_advice": "ALWAYS J98.2 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "subcutaneous emphysema",
+          "from_kind": "symptom",
+          "from_snomed_id": "3830001",
+          "from_snomed_term": "Subcutaneous emphysema",
+          "relevance_to_diagnosis": 0.3878,
+          "package_order": 3
         }
       ],
       "icd10_principal": [
@@ -139,81 +95,168 @@
           "order": 2
         }
       ],
-      "icd10_supporting": [],
+      "icd10_supporting": [
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema",
+          "source": "snomed_extended_map",
+          "map_priority": 5,
+          "map_group": 1,
+          "map_advice": "ALWAYS J98.2 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "subcutaneous emphysema",
+          "from_kind": "symptom",
+          "from_snomed_id": "3830001",
+          "from_snomed_term": "Subcutaneous emphysema",
+          "relevance_to_diagnosis": 0.3878
+        }
+      ],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 3
     },
     {
-      "rank": 3,
-      "diagnosis": "Opioid dependence",
-      "score": 60.0,
-      "confidence": "medium",
-      "category": "risk_factor",
-      "snomed_aligned": "Opium dependence",
+      "rank": 2,
+      "diagnosis": "Acute respiratory failure",
+      "score": 75.0,
+      "confidence": "high",
+      "category": "primary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "Opioid dependence listed as chronic condition"
+        "hypoxia",
+        "right PTX",
+        "subcutaneous emphysema"
       ],
-      "opposing_evidence": [
-        "No acute opioid withdrawal symptoms noted"
-      ],
-      "reasoning": "The patient has a history of opioid dependence, which increases the risk of respiratory complications.",
+      "opposing_evidence": [],
+      "reasoning": "Hypoxia and respiratory symptoms indicate acute respiratory failure.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "231480002",
-        "preferred_term": "Opium dependence",
-        "fsn": "Opium dependence (disorder)",
+        "concept_id": "65710008",
+        "preferred_term": "Acute respiratory failure",
+        "fsn": "Acute respiratory failure (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Opioid dependence",
-        "aligned_hint": "Opium dependence"
+        "query": "Acute respiratory failure",
+        "aligned_hint": null
       },
-      "icd10_primary": "F11.20",
-      "icd10_primary_title": "Opioid dependence, uncomplicated",
+      "icd10_primary": "J96.00",
+      "icd10_primary_title": "Acute respiratory failure, unspecified whether with hypoxia or hypercapnia",
       "icd10_package": [
         {
-          "code": "F11.20",
-          "title": "Opioid dependence, uncomplicated",
+          "code": "J96.00",
+          "title": "Acute respiratory failure, unspecified whether with hypoxia or hypercapnia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS F11.20",
+          "map_advice": "ALWAYS J96.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
+        },
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema",
+          "source": "snomed_extended_map",
+          "map_priority": 5,
+          "map_group": 1,
+          "map_advice": "ALWAYS J98.2 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "subcutaneous emphysema",
+          "from_kind": "symptom",
+          "from_snomed_id": "3830001",
+          "from_snomed_term": "Subcutaneous emphysema",
+          "relevance_to_diagnosis": 0.3617,
+          "package_order": 2
+        },
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypoxia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "389086002",
+          "from_snomed_term": "Hypoxia",
+          "relevance_to_diagnosis": 0.2813,
+          "package_order": 3
         }
       ],
       "icd10_principal": [
         {
-          "code": "F11.20",
-          "title": "Opioid dependence, uncomplicated",
+          "code": "J96.00",
+          "title": "Acute respiratory failure, unspecified whether with hypoxia or hypercapnia",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS F11.20",
+          "map_advice": "ALWAYS J96.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "principal",
           "order": 1
         }
       ],
-      "icd10_supporting": [],
+      "icd10_supporting": [
+        {
+          "code": "J98.2",
+          "title": "Interstitial emphysema",
+          "source": "snomed_extended_map",
+          "map_priority": 5,
+          "map_group": 1,
+          "map_advice": "ALWAYS J98.2 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "subcutaneous emphysema",
+          "from_kind": "symptom",
+          "from_snomed_id": "3830001",
+          "from_snomed_term": "Subcutaneous emphysema",
+          "relevance_to_diagnosis": 0.3617
+        },
+        {
+          "code": "R09.02",
+          "title": "Hypoxemia",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.02 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "hypoxia",
+          "from_kind": "key_symptom",
+          "from_snomed_id": "389086002",
+          "from_snomed_term": "Hypoxia",
+          "relevance_to_diagnosis": 0.2813
+        }
+      ],
       "icd_status": "mapped",
-      "n_icd_codes": 1
+      "n_icd_codes": 3
     },
     {
-      "rank": 4,
+      "rank": 3,
       "diagnosis": "Influenza A",
-      "score": 45.0,
-      "confidence": "low",
+      "score": 60.0,
+      "confidence": "medium",
       "category": "differential",
       "snomed_aligned": "Influenza A (H1N1)",
       "supporting_evidence": [
-        "Influenza A listed as prior PMH"
+        "fever",
+        "cough",
+        "nasal congestion",
+        "sore throat"
       ],
       "opposing_evidence": [
-        "No current symptoms or findings consistent with influenza"
+        "radiology findings favor trauma over infection"
       ],
-      "reasoning": "Influenza A is a past PMH, but the current presentation does not support an acute influenza infection.",
+      "reasoning": "Symptoms suggest influenza, but radiology findings are more consistent with trauma.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "442696006",
@@ -262,11 +305,62 @@
           "role": "supporting",
           "order": 1,
           "from_term": "fever",
-          "from_kind": "key_symptom",
+          "from_kind": "tree_symptom",
           "from_snomed_id": "386661006",
           "from_snomed_term": "Fever",
           "relevance_to_diagnosis": 0.5555,
           "package_order": 3
+        },
+        {
+          "code": "J02.9",
+          "title": "Acute pharyngitis, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J02.9",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sore throat",
+          "from_kind": "symptom",
+          "from_snomed_id": "267102003",
+          "from_snomed_term": "Throat soreness",
+          "relevance_to_diagnosis": 0.3235,
+          "package_order": 4
+        },
+        {
+          "code": "R05.9",
+          "title": "Cough, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R05.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "cough",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "49727002",
+          "from_snomed_term": "Cough",
+          "relevance_to_diagnosis": 0.3181,
+          "package_order": 5
+        },
+        {
+          "code": "R09.81",
+          "title": "Nasal congestion",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.81",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "nasal congestion",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "68235000",
+          "from_snomed_term": "Nasal congestion",
+          "relevance_to_diagnosis": 0.2691,
+          "package_order": 6
         }
       ],
       "icd10_principal": [
@@ -305,29 +399,134 @@
           "role": "supporting",
           "order": 1,
           "from_term": "fever",
-          "from_kind": "key_symptom",
+          "from_kind": "tree_symptom",
           "from_snomed_id": "386661006",
           "from_snomed_term": "Fever",
           "relevance_to_diagnosis": 0.5555
+        },
+        {
+          "code": "J02.9",
+          "title": "Acute pharyngitis, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS J02.9",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "sore throat",
+          "from_kind": "symptom",
+          "from_snomed_id": "267102003",
+          "from_snomed_term": "Throat soreness",
+          "relevance_to_diagnosis": 0.3235
+        },
+        {
+          "code": "R05.9",
+          "title": "Cough, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R05.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "cough",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "49727002",
+          "from_snomed_term": "Cough",
+          "relevance_to_diagnosis": 0.3181
+        },
+        {
+          "code": "R09.81",
+          "title": "Nasal congestion",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS R09.81",
+          "always": true,
+          "role": "supporting",
+          "order": 1,
+          "from_term": "nasal congestion",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "68235000",
+          "from_snomed_term": "Nasal congestion",
+          "relevance_to_diagnosis": 0.2691
         }
       ],
       "icd_status": "mapped",
-      "n_icd_codes": 3
+      "n_icd_codes": 6
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Opioid dependence",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "snomed_aligned": "Opium dependence",
+      "supporting_evidence": [
+        "opioid dependence"
+      ],
+      "opposing_evidence": [
+        "current presentation is more trauma-related"
+      ],
+      "reasoning": "History of opioid dependence may contribute to current symptoms.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "231480002",
+        "preferred_term": "Opium dependence",
+        "fsn": "Opium dependence (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Opioid dependence",
+        "aligned_hint": "Opium dependence"
+      },
+      "icd10_primary": "F11.20",
+      "icd10_primary_title": "Opioid dependence, uncomplicated",
+      "icd10_package": [
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F11.20",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS F11.20",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
     },
     {
       "rank": 5,
       "diagnosis": "Bipolar disorder",
-      "score": 30.0,
+      "score": 40.0,
       "confidence": "low",
       "category": "risk_factor",
       "snomed_aligned": "Bipolar disorder",
       "supporting_evidence": [
-        "Bipolar disorder listed as prior PMH"
+        "bipolar disorder"
       ],
       "opposing_evidence": [
-        "No current mood instability or manic symptoms"
+        "current presentation is more trauma-related"
       ],
-      "reasoning": "Bipolar disorder is a chronic condition, but it is not currently contributing to the acute presentation.",
+      "reasoning": "Bipolar disorder is a chronic condition but not the primary presenting issue.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "13746004",
@@ -373,97 +572,137 @@
     },
     {
       "rank": 6,
-      "diagnosis": "Tachycardia",
-      "score": 20.0,
-      "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "Tachycardia, unspecified",
+      "diagnosis": "Subcutaneous emphysema",
+      "score": 30.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "Subcutaneous emphysema",
       "supporting_evidence": [
-        "Tachycardia listed as chronic condition"
+        "subcutaneous emphysema"
       ],
-      "opposing_evidence": [
-        "No acute tachycardia symptoms or findings"
-      ],
-      "reasoning": "Tachycardia is a chronic condition, but it is not currently contributing to the acute presentation.",
+      "opposing_evidence": [],
+      "reasoning": "Subcutaneous emphysema is a complication of trauma.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "3424008",
-        "preferred_term": "Tachycardia",
-        "fsn": "Tachycardia (finding)",
+        "concept_id": "3830001",
+        "preferred_term": "Subcutaneous emphysema",
+        "fsn": "Subcutaneous emphysema (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Tachycardia",
-        "aligned_hint": "Tachycardia, unspecified"
+        "query": "Subcutaneous emphysema",
+        "aligned_hint": "Subcutaneous emphysema"
       },
-      "icd10_primary": "R00.0",
-      "icd10_primary_title": "Tachycardia, unspecified",
+      "icd10_primary": "J98.2",
+      "icd10_primary_title": "Interstitial emphysema",
       "icd10_package": [
         {
-          "code": "R00.0",
-          "title": "Tachycardia, unspecified",
+          "code": "J98.2",
+          "title": "Interstitial emphysema",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 5,
           "map_group": 1,
-          "map_advice": "ALWAYS R00.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS J98.2 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "P29.11",
-          "title": "Neonatal tachycardia",
+          "code": "T81.82X?",
+          "title": "",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.11 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF INTRAOPERATIVE SUBCUTANEOUS EMPHYSEMA CHOOSE T81.82X? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
           "always": false,
           "role": "principal",
           "order": 2,
           "package_order": 2
+        },
+        {
+          "code": "T79.7XX?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF TRAUMATIC SUBCUTANEOUS EMPHYSEMA CHOOSE T79.7XX? | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": false,
+          "role": "principal",
+          "order": 3,
+          "package_order": 3
+        },
+        {
+          "code": "P25.0",
+          "title": "Interstitial emphysema originating in the perinatal period",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P25.0 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4,
+          "package_order": 4
         }
       ],
       "icd10_principal": [
         {
-          "code": "R00.0",
-          "title": "Tachycardia, unspecified",
+          "code": "J98.2",
+          "title": "Interstitial emphysema",
           "source": "snomed_extended_map",
-          "map_priority": 2,
+          "map_priority": 5,
           "map_group": 1,
-          "map_advice": "ALWAYS R00.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS J98.2 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE",
           "always": true,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "P29.11",
-          "title": "Neonatal tachycardia",
+          "code": "T81.82X?",
+          "title": "",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.11 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF INTRAOPERATIVE SUBCUTANEOUS EMPHYSEMA CHOOSE T81.82X? | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
           "always": false,
           "role": "principal",
           "order": 2
+        },
+        {
+          "code": "T79.7XX?",
+          "title": "",
+          "source": "snomed_extended_map",
+          "map_priority": 3,
+          "map_group": 1,
+          "map_advice": "IF TRAUMATIC SUBCUTANEOUS EMPHYSEMA CHOOSE T79.7XX? | EPISODE OF CARE INFORMATION NEEDED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT | POSSIBLE REQUIREMENT FOR AN EXTERNAL CAUSE CODE",
+          "always": false,
+          "role": "principal",
+          "order": 3
+        },
+        {
+          "code": "P25.0",
+          "title": "Interstitial emphysema originating in the perinatal period",
+          "source": "snomed_extended_map",
+          "map_priority": 4,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P25.0 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 4
         }
       ],
       "icd10_supporting": [],
       "icd_status": "mapped",
-      "n_icd_codes": 2
+      "n_icd_codes": 4
     }
   ],
   "rule_outs": [
     {
-      "diagnosis": "PTSD",
-      "why": "No current symptoms or findings consistent with PTSD"
-    },
-    {
-      "diagnosis": "Bipolar disorder",
-      "why": "No current mood instability or manic symptoms"
+      "diagnosis": "Leg swelling",
+      "why": "No evidence of leg swelling in the current context."
     }
   ],
   "uncertain_areas": [
-    "Further clarification on the patient's current mental state and respiratory status would help refine the differential"
+    "Missing details on the extent of rib fractures and specific etiology of hypoxia could affect ranking"
   ],
   "n_candidates": 6,
   "type": "differential_diagnosis_with_icd",
@@ -472,7 +711,7 @@
   "_temperature": 0.4,
   "patient_id": "10458324",
   "hadm_id": "21744342",
-  "generated_at": "2026-08-20T00:08:52.578487",
+  "generated_at": "2026-08-20T17:15:00.703692",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 10,
@@ -535,8 +774,8 @@
   "icd_enrichment": {
     "method": "snomed_extended_map_icd10cm + supporting_from_tree_retained",
     "n_diagnoses": 6,
-    "n_with_principal": 5,
+    "n_with_principal": 6,
     "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:16.124717"
+  "generated_at_stage8": "2026-08-20T17:19:17.171610"
 }

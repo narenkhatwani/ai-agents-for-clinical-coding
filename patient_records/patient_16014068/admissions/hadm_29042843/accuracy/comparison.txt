@@ -3,41 +3,42 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 16014068
 HADM ID          : 29042843
-Generated        : 2026-08-20T00:13:31.452930
+Generated        : 2026-08-20T17:30:34.535987
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Secondary malignant neoplasm of brain
-  Rank-1 predicted     : Metastatic sarcoma with hematologic complications
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : High-grade unclassified sarcoma (malignant fibrous histiocytoma)
+  Billed ICD title     : Secondary malignant neoplasm of brain (ICD metric only)
+  Rank-1 predicted     : Metastatic sarcoma with anemia and thrombocytopenia
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : The ground truth primary diagnosis is 'Secondary malignant neoplasm of brain', which does not match any of the ranked differential diagnoses.
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Metastatic sarcoma with anemia and thrombocytopenia
+    score=85.0  confidence=high
+  LLM reason           : Rank 1 'Metastatic sarcoma with anemia and thrombocytopenia' names the same principal condition as the physician discharge diagnosis of high-grade unclassified sarcoma (malignant fibrous histiocytoma / undifferentiated pleomorphic sarcoma) with metastatic spread; the anemia and thrombocytopenia are bundled comorbidities in the same phrase and do not change the principal diagnosis. No other rank (anemia/thrombocytopenia, cervical degenerative change, renal failure, hypotension) names the sarcoma.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : C79.31 — Secondary malignant neoplasm of brain
   Rank-1 mapped ICD    : C79.89 — Secondary malignant neoplasm of other specified sites
-  Matched mapped ICD   : - — 
-  ICD match            : NO
+  Matched mapped ICD   : C79.89 — Secondary malignant neoplasm of other specified sites
+  ICD match            : YES
   ICD exact            : NO
-  ICD 3-char family    : NO
-  ICD LLM match        : NO
-  Is rank-1 ICD match  : NO
-  LLM ICD reason       : The ground truth ICD code C79.31 does not match any of the mapped ICD codes in the ranked differential diagnoses.
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Billed primary code C79.31 (secondary malignant neoplasm of brain) and mapped code C79.89 (secondary malignant neoplasm of other specified sites) both fall in the C79 category coding metastatic (secondary) malignant neoplasm from the sarcoma; the codes differ only in the metastatic site specified (brain vs other specified site), so a coder would accept them as clinically equivalent for the same principal condition of metastatic sarcoma, though the billed code is site-specific to brain.
   Stage 9 final ICD    : B99.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Metastatic sarcoma with hematologic complications  [score=85.0, high]  ICD=C79.89 — Secondary malignant neoplasm of other specified sites
-   2. Anemia  [score=70.0, high]  ICD=D64.9 — Anemia, unspecified
-   3. Thrombocytopenia  [score=65.0, high]  ICD=O36.8290 — Fetal anemia and thrombocytopenia, unspecified trimester, not applicable or unspecified
-   4. Hypotension  [score=50.0, medium]  ICD=I95.9 — Hypotension, unspecified
-   5. Headache  [score=45.0, medium]  ICD=R51.9 — Headache, unspecified
-   6. Abdominal pain  [score=35.0, low]  ICD=R10.9 — Unspecified abdominal pain
+   1. Metastatic sarcoma with anemia and thrombocytopenia  [score=85.0, high]  ICD=C79.89 — Secondary malignant neoplasm of other specified sites
+   2. Chronic anemia and thrombocytopenia  [score=70.0, high]  ICD=D61.810 — Antineoplastic chemotherapy induced pancytopenia
+   3. Cervical spine degenerative changes  [score=55.0, medium]  ICD=- — 
+   4. Acute kidney failure  [score=40.0, medium]  ICD=I50.9 — Heart failure, unspecified
+   5. Hypotension  [score=30.0, low]  ICD=I95.9 — Hypotension, unspecified

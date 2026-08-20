@@ -2,47 +2,36 @@ DIFFERENTIAL DIAGNOSIS + ICD-10-CM PACKAGES
 ==========================================
 Patient ID       : 11251337
 HADM ID          : 29568708
-Most likely      : Acute kidney injury due to nephrolithiasis and PCNL
+Most likely      : Acute kidney injury
 Map refset       : 6011000124106
-Generated (S8)   : 2026-08-20T00:12:17.000031
+Generated (S8)   : 2026-08-20T17:19:17.965867
 
 Summary:
-  The patient was admitted for nephrolithiasis management and underwent a difficult right PCNL. The patient presents with hematuria, pain, and mild anemia, along with metabolic derangements including hyperglycemia and hyperuremia. Chronic conditions include pyonephrosis and chronic kidney disease.
+  The patient was admitted for management of nephrolithiasis and underwent a difficult right PCNL. Presenting symptoms include hematuria, pain around nephrostomy tubes, dysuria, and fever. The patient has a history of chronic kidney disease and recent complications including acute kidney injury and anemia.
 
-#1  [85.0/100 | high]  Acute kidney injury due to nephrolithiasis and PCNL  (primary)
-    SNOMED: (unmapped)
-    ICD status: supporting_only | primary: None
-      1. [supporting] R31.9 — Hematuria, unspecified  ← hematuria (key_symptom)
-      2. [supporting] R52 — Pain, unspecified  ← pain (key_symptom)
+#1  [85.0/100 | high]  Acute kidney injury  (primary)
+    SNOMED: Acute renal failure syndrome (14669001) [exact score=1.0]
+    ICD status: mapped | primary: N17.9
+      1. [principal] N17.9 — Acute kidney failure, unspecified
 
-#2  [75.0/100 | medium]  Chronic kidney disease, unspecified  (secondary)
-    SNOMED: Kidney disease (90708001) [fuzzy score=0.6079289213558614]
-    ICD status: mapped | primary: N28.9
-      1. [principal] N28.9 — Disorder of kidney and ureter, unspecified
+#2  [75.0/100 | medium]  Anemia  (secondary)
+    SNOMED: Anemia (271737000) [exact score=1.0]
+    ICD status: mapped | primary: D64.9
+      1. [principal] D64.9 — Anemia, unspecified
+
+#3  [70.0/100 | high]  Hematuria  (differential)
+    SNOMED: Hematuria (34436003) [exact score=1.0]
+    ICD status: mapped | primary: R31.9
+      1. [principal] R31.9 — Hematuria, unspecified
       2. [supporting] R30.0 — Dysuria  ← dysuria (key_symptom)
 
-#3  [65.0/100 | medium]  Anemia in chronic kidney disease  (complication)
-    SNOMED: Anemia co-occurrent and due to chronic kidney disease (707323002) [exact score=1.0]
-    ICD status: mapped | primary: N18.9
-      1. [principal] N18.9 — Chronic kidney disease, unspecified
-      2. [principal] N18.1 — Chronic kidney disease, stage 1
-      3. [principal] N18.4 — Chronic kidney disease, stage 4 (severe)
-      4. [principal] N18.5 — Chronic kidney disease, stage 5
-      5. [principal] N18.30 — Chronic kidney disease, stage 3 unspecified
-      6. [supporting] D64.9 — Anemia, unspecified  ← anemia (tree_symptom)
+#4  [65.0/100 | medium]  Pain around nephrostomy tubes  (differential)
+    SNOMED: (unmapped)
+    ICD status: supporting_only | primary: None
+      1. [supporting] R52 — Pain, unspecified  ← pain (key_symptom)
 
-#4  [55.0/100 | medium]  Complicated urinary tract infection  (differential)
-    SNOMED: Urinary tract infectious disease (68566005) [fuzzy score=0.8133539158577778]
-    ICD status: mapped | primary: N39.0
-      1. [principal] N39.0 — Urinary tract infection, site not specified
-      2. [principal] P39.3 — Neonatal urinary tract infection
-      3. [supporting] R50.9 — Fever, unspecified  ← fever (key_symptom)
-
-#5  [45.0/100 | low]  Hypertensive chronic kidney disease  (risk_factor)
-    SNOMED: Malignant hypertensive chronic kidney disease (285831000119108) [fuzzy score=0.8750544070285085]
-    ICD status: mapped | primary: I12.0
-      1. [principal] I12.0 — Hypertensive chronic kidney disease with stage 5 chronic kidney disease or end stage renal disease
-      2. [principal] I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
-      3. [principal] N18.5 — Chronic kidney disease, stage 5
-      4. [principal] N18.6 — End stage renal disease
-      5. [principal] N18.1 — Chronic kidney disease, stage 1
+#5  [60.0/100 | medium]  Fever  (differential)
+    SNOMED: Fever (386661006) [exact score=1.0]
+    ICD status: mapped | primary: R50.9
+      1. [principal] R50.9 — Fever, unspecified
+      2. [principal] P81.9 — Disturbance of temperature regulation of newborn, unspecified

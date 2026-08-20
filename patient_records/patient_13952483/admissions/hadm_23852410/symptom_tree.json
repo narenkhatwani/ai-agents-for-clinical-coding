@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient presents with hypotension and weight loss, likely due to chemotherapy and radiation therapy for squamous cell lung cancer, with ongoing symptoms of odynophagia, cough, and malaise.",
+  "reasoning": "The dominant clinical picture for this admission is a patient with hypotension and weight loss, likely due to a combination of chemotherapy/radiation toxicity, pulmonary hypertension, and malnutrition.",
   "branches": [
     {
       "category": "cardiovascular",
@@ -17,10 +17,19 @@
           ],
           "children": [
             {
-              "term": "pulmonary hypertension",
+              "term": "chest pain",
               "status": "present",
-              "evidence": "severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
+              "evidence": "pleuritic/MSK chest pain"
             }
+          ]
+        },
+        {
+          "term": "pulmonary hypertension",
+          "status": "present",
+          "severity": "moderate",
+          "evidence": "idiopathic pHTN, severe Pulmonary HTN with Cor Pulmonale",
+          "related_findings": [
+            "right heart catheterization showing severe Pulmonary HTN with Cor Pulmonale and mod-severe 3+ Tricuspid Regurg"
           ]
         }
       ]
@@ -35,14 +44,16 @@
           "severity": "mild",
           "evidence": "cough, pleuritic/MSK chest pain",
           "related_findings": [
-            "moderate growth of commensal respiratory flora"
-          ],
-          "children": [
-            {
-              "term": "odynophagia",
-              "status": "present",
-              "evidence": "persistent odynophagia"
-            }
+            "chest X-ray showing left basilar opacification"
+          ]
+        },
+        {
+          "term": "odynophagia",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "persistent odynophagia",
+          "related_findings": [
+            "radiation esophagitis"
           ]
         }
       ]
@@ -57,15 +68,8 @@
           "severity": "moderate",
           "evidence": "weight loss and hypotension",
           "related_findings": [
-            "new neutropenia (ANC 750)",
-            "thrombocytopenia (plts 93)"
-          ],
-          "children": [
-            {
-              "term": "anorexia",
-              "status": "present",
-              "evidence": "overall anorexia and poor appetite"
-            }
+            "failure to thrive",
+            "anorexia"
           ]
         }
       ]
@@ -74,16 +78,16 @@
   "key_symptoms": [
     "hypotension",
     "cough",
-    "weight loss"
+    "odynophagia"
   ],
   "red_flags": [
     "hypotension",
-    "pulmonary hypertension"
+    "chest pain"
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "13952483",
   "admission_id": "23852410",
-  "generated_at": "2026-08-19T23:20:45.624277"
+  "generated_at": "2026-08-20T17:10:57.739511"
 }

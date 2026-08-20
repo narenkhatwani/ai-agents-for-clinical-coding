@@ -1,6 +1,6 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is admitted with DKA/lactic acidosis, with a history of recurrent DKA and other pregnancy-related complications.",
+  "reasoning": "The patient is admitted with DKA and lactic acidosis, likely due to nonadherence to insulin regimen in the setting of social stress.",
   "branches": [
     {
       "category": "infectious",
@@ -11,7 +11,12 @@
           "status": "history",
           "severity": "unknown",
           "evidence": "fevers/chills/nightsweats for the past few days",
-          "related_findings": [],
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
           "children": []
         }
       ]
@@ -21,25 +26,14 @@
       "ontology_hint": "Cardiovascular",
       "symptoms": [
         {
-          "term": "abdominal pain",
-          "status": "history",
+          "term": "hypotension",
+          "status": "absent",
           "severity": "unknown",
-          "evidence": "lower abdominal pain/cramping for the past week",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "neurologic",
-      "ontology_hint": "Neurology",
-      "symptoms": [
-        {
-          "term": "headache",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "pressure-like frontal headache",
-          "related_findings": [],
+          "evidence": "",
+          "related_findings": [
+            "DBP",
+            "SBP"
+          ],
           "children": []
         }
       ]
@@ -49,25 +43,64 @@
       "ontology_hint": "Respiratory",
       "symptoms": [
         {
-          "term": "nausea",
-          "status": "present",
+          "term": "cough",
+          "status": "absent",
           "severity": "unknown",
-          "evidence": "nausea and vomiting",
-          "related_findings": [],
+          "evidence": "",
+          "related_findings": [
+            "SpO2"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Lactate",
+            "Calcium, Total",
+            "pCO2",
+            "pH"
+          ],
           "children": []
         }
       ]
     },
     {
       "category": "gi",
-      "ontology_hint": "Gastroenterology",
+      "ontology_hint": "Gastrointestinal",
       "symptoms": [
         {
-          "term": "vaginal bleeding",
-          "status": "history",
+          "term": "nausea",
+          "status": "present",
           "severity": "unknown",
-          "evidence": "vaginal spotting",
-          "related_findings": [],
+          "evidence": "nausea and vomiting",
+          "related_findings": [
+            "Glucose",
+            "Anion Gap",
+            "Bicarbonate",
+            "Calcium, Total"
+          ],
+          "children": []
+        },
+        {
+          "term": "vomiting",
+          "status": "present",
+          "severity": "unknown",
+          "evidence": "nausea and vomiting",
+          "related_findings": [
+            "Glucose",
+            "Anion Gap",
+            "Bicarbonate",
+            "Calcium, Total"
+          ],
           "children": []
         },
         {
@@ -75,91 +108,49 @@
           "status": "history",
           "severity": "unknown",
           "evidence": "decreased fetal movement",
-          "related_findings": [],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "C difficile colitis",
-          "status": "suspected",
-          "severity": "unknown",
-          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
           "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
       ]
     },
     {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
+      "category": "neurologic",
+      "ontology_hint": "Neurologic",
       "symptoms": [
         {
-          "term": "fever",
+          "term": "headache",
           "status": "history",
           "severity": "unknown",
-          "evidence": "fevers/chills/nightsweats for the past few days",
+          "evidence": "pressure-like frontal headache",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
       ]
     },
     {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
+      "category": "renal",
+      "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "decreased fetal movement",
+          "term": "proteinuria",
           "status": "history",
           "severity": "unknown",
-          "evidence": "decreased fetal movement",
+          "evidence": "proteinuria of 414mg on ___ which increased to 850mg on ___",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -170,53 +161,15 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "C difficile colitis",
-          "status": "suspected",
-          "severity": "unknown",
-          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
-          "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "fever",
+          "term": "UTI",
           "status": "history",
           "severity": "unknown",
-          "evidence": "fevers/chills/nightsweats for the past few days",
+          "evidence": "UTI and dental infection",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -227,24 +180,15 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "decreased fetal movement",
+          "term": "genital HSV",
           "status": "history",
           "severity": "unknown",
-          "evidence": "decreased fetal movement",
+          "evidence": "genital HSV",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -260,20 +204,10 @@
           "severity": "unknown",
           "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
           "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -284,24 +218,15 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "fever",
+          "term": "UTI",
           "status": "history",
           "severity": "unknown",
-          "evidence": "fevers/chills/nightsweats for the past few days",
+          "evidence": "UTI and dental infection",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -312,24 +237,15 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "decreased fetal movement",
+          "term": "genital HSV",
           "status": "history",
           "severity": "unknown",
-          "evidence": "decreased fetal movement",
+          "evidence": "genital HSV",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -345,20 +261,10 @@
           "severity": "unknown",
           "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
           "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -369,24 +275,15 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "fever",
+          "term": "UTI",
           "status": "history",
           "severity": "unknown",
-          "evidence": "fevers/chills/nightsweats for the past few days",
+          "evidence": "UTI and dental infection",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -397,24 +294,15 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "decreased fetal movement",
+          "term": "genital HSV",
           "status": "history",
           "severity": "unknown",
-          "evidence": "decreased fetal movement",
+          "evidence": "genital HSV",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -430,20 +318,10 @@
           "severity": "unknown",
           "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
           "related_findings": [
-            "Glucose: 263 mg/dL",
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate: 3.6 mmol/L",
-            "Calcium, Total: 8.6 mg/dL",
-            "pO2: 60.0 mm Hg",
-            "Potassium: 6.8 mEq/L",
-            "Phosphate: 7.1 mg/dL",
-            "Urea Nitrogen: 26 mg/dL",
-            "Albumin: 3.6 g/dL",
-            "Alkaline Phosphatase: 125.0 IU/L",
-            "Magnesium: 7.4 mg/dL",
-            "pCO2: 33.0 mm Hg",
-            "pH: 7.34 units"
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
           ],
           "children": []
         }
@@ -454,23 +332,425 @@
       "ontology_hint": "Infectious Diseases",
       "symptoms": [
         {
-          "term": "fever",
+          "term": "UTI",
           "status": "history",
           "severity": "unknown",
-          "evidence": "fevers/chills/nightsweats for the past few days",
+          "evidence": "UTI and dental infection",
           "related_findings": [
-            "Anion Gap: 19.0 mEq/L",
-            "Bicarbonate: 20.0 mEq/L",
-            "Lactate:"
-          ]
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
         }
       ]
-    }
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "genital HSV",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "genital HSV",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "UTI",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "UTI and dental infection",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "genital HSV",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "genital HSV",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "UTI",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "UTI and dental infection",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "genital HSV",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "genital HSV",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "UTI",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "UTI and dental infection",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "genital HSV",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "genital HSV",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "UTI",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "UTI and dental infection",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "genital HSV",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "genital HSV",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "UTI",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "UTI and dental infection",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "genital HSV",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "genital HSV",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "UTI",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "UTI and dental infection",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "genital HSV",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "genital HSV",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "C difficile colitis",
+          "status": "suspected",
+          "severity": "unknown",
+          "evidence": "C difficile colitis: Improving but still with some diarrhea at discharge.",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "category": "infectious",
+      "ontology_hint": "Infectious Diseases",
+      "symptoms": [
+        {
+          "term": "UTI",
+          "status": "history",
+          "severity": "unknown",
+          "evidence": "UTI and dental infection",
+          "related_findings": [
+            "Anion Gap",
+            "Bicarbonate",
+            "pO2",
+            "pH"
+          ],
+          "children": []
+        }
+      ]
+    },
+    {}
   ],
   "type": "symptom_tree",
   "_method": "openrouter_llm:qwen/qwen-2.5-7b-instruct",
   "_agent": "symptom_tree",
   "patient_id": "19104262",
   "admission_id": "24271247",
-  "generated_at": "2026-08-19T23:22:16.412879"
+  "generated_at": "2026-08-20T17:13:24.305561"
 }

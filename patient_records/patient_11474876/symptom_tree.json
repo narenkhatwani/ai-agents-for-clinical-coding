@@ -1,88 +1,7 @@
 {
   "root": "ClinicalPresentation",
-  "reasoning": "The patient is a 70-year-old man with a history of AFib, HFpEF, PVD, and CKD who was admitted post-ERCP for cholangitis and subsequent stent placement. His current presentation includes mild edema and no acute symptoms, but he has a history of nocturnal hypoxia and leg swelling.",
+  "reasoning": "The patient was admitted for post-ERCP management, with the primary focus on monitoring and managing his chronic conditions and the complications from the procedure.",
   "branches": [
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "edema",
-          "status": "present",
-          "severity": "mild",
-          "evidence": "notes his edema improves during the night and worsens during the day",
-          "related_findings": [
-            "Creatinine: 1.4 mg/dL",
-            "Hematocrit: 38.3 %",
-            "Hemoglobin: 12.6 g/dL",
-            "MCH: 32.8 pg",
-            "MCV: 100.0 fL",
-            "Red Blood Cells: 3.84 m/uL",
-            "RDW-SD: 54.1 fL",
-            "Calcium, Total: 8.7 mg/dL",
-            "Magnesium: 1.7 mg/dL",
-            "Phosphate: 2.9 mg/dL"
-          ],
-          "children": [
-            {
-              "term": "leg swelling",
-              "status": "present",
-              "evidence": "notes his edema improves during the night and worsens during the day"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "category": "infectious",
-      "ontology_hint": "Infectious Diseases",
-      "symptoms": [
-        {
-          "term": "cholangitis",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "Admitted last month with cholangitis and underwent ERCP with stent placement",
-          "related_findings": [
-            "Creatinine: 1.4 mg/dL",
-            "Hematocrit: 38.3 %",
-            "Hemoglobin: 12.6 g/dL",
-            "MCH: 32.8 pg",
-            "MCV: 100.0 fL",
-            "Red Blood Cells: 3.84 m/uL",
-            "RDW-SD: 54.1 fL",
-            "Calcium, Total: 8.7 mg/dL",
-            "Magnesium: 1.7 mg/dL",
-            "Phosphate: 2.9 mg/dL"
-          ],
-          "children": []
-        }
-      ]
-    },
-    {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
-      "symptoms": [
-        {
-          "term": "nocturnal hypoxia",
-          "status": "history",
-          "severity": "unknown",
-          "evidence": "nocturnal hypoxia that improved with diuresis",
-          "related_findings": [
-            "Creatinine: 1.4 mg/dL",
-            "Hematocrit: 38.3 %",
-            "Hemoglobin: 12.6 g/dL",
-            "MCH: 32.8 pg",
-            "MCV: 100.0 fL",
-            "Red Blood Cells: 3.84 m/uL",
-            "RDW-SD: 54.1 fL",
-            "Calcium, Total: 8.7 mg/dL",
-            "Magnesium: 1.7 mg/dL",
-            "Phosphate: 2.9 mg/dL"
-          ],
-          "children": []
-        }
-      ]
-    },
     {
       "category": "cardiovascular",
       "ontology_hint": "Cardiovascular",
@@ -91,45 +10,49 @@
           "term": "atrial fibrillation",
           "status": "present",
           "severity": "mild",
-          "evidence": "on apixaban for AFib",
+          "evidence": "on apixaban for atrial fibrillation",
           "related_findings": [
-            "Creatinine: 1.4 mg/dL",
-            "Hematocrit: 38.3 %",
-            "Hemoglobin: 12.6 g/dL",
-            "MCH: 32.8 pg",
-            "MCV: 100.0 fL",
-            "Red Blood Cells: 3.84 m/uL",
-            "RDW-SD: 54.1 fL",
-            "Calcium, Total: 8.7 mg/dL",
-            "Magnesium: 1.7 mg/dL",
-            "Phosphate: 2.9 mg/dL"
+            "AFib on apixaban"
           ],
-          "children": []
+          "children": [
+            {
+              "term": "atrial fibrillation",
+              "status": "present",
+              "evidence": "on apixaban for atrial fibrillation"
+            }
+          ]
+        },
+        {
+          "term": "hypertension",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "on lisinopril, amlodipine",
+          "related_findings": [
+            "Hypertension"
+          ]
         }
       ]
     },
     {
-      "category": "cardiovascular",
-      "ontology_hint": "Cardiovascular",
+      "category": "renal",
+      "ontology_hint": "Renal",
       "symptoms": [
         {
-          "term": "heart failure",
+          "term": "chronic kidney disease",
           "status": "present",
-          "severity": "mild",
-          "evidence": "HFpEF, held home Lasix",
+          "severity": "moderate",
+          "evidence": "baseline creatinine around 1.6-1.7",
           "related_findings": [
-            "Creatinine: 1.4 mg/dL",
-            "Hematocrit: 38.3 %",
-            "Hemoglobin: 12.6 g/dL",
-            "MCH: 32.8 pg",
-            "MCV: 100.0 fL",
-            "Red Blood Cells: 3.84 m/uL",
-            "RDW-SD: 54.1 fL",
-            "Calcium, Total: 8.7 mg/dL",
-            "Magnesium: 1.7 mg/dL",
-            "Phosphate: 2.9 mg/dL"
-          ],
-          "children": []
+            "Creatinine 1.4 mg/dL",
+            "Hematocrit 38.3%",
+            "Hemoglobin 12.6 g/dL",
+            "MCH 32.8 pg",
+            "MCV 100.0 fL",
+            "RDW-SD 54.1 fL",
+            "Calcium 8.7 mg/dL",
+            "Magnesium 1.7 mg/dL",
+            "Phosphate 2.9 mg/dL"
+          ]
         }
       ]
     },
@@ -143,24 +66,59 @@
           "severity": "mild",
           "evidence": "PVD with remote bypass graft",
           "related_findings": [
-            "Creatinine: 1.4 mg/dL",
-            "Hematocrit: 38.3 %",
-            "Hemoglobin: 12.6 g/dL",
-            "MCH: 32.8 pg",
-            "MCV: 100.0 fL",
-            "Red Blood Cells: 3.84 m/uL",
-            "RDW-SD: 54.1 fL",
-            "Calcium, Total: 8.7 mg/dL",
-            "Magnesium: 1.7 mg/dL",
-            "Phosphate: 2.9 mg/dL"
-          ],
-          "children": []
+            "PVD with remote bypass graft"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "heart failure with preserved ejection fraction",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "HFpEF",
+          "related_findings": [
+            "HFpEF"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "leg swelling",
+          "status": "present",
+          "severity": "mild",
+          "evidence": "notes his edema improves during the night and worsens during the day",
+          "related_findings": [
+            "leg swelling"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "cardiovascular",
+      "ontology_hint": "Cardiovascular",
+      "symptoms": [
+        {
+          "term": "nocturnal hypoxia",
+          "status": "history",
+          "severity": "mild",
+          "evidence": "nocturnal hypoxia that improved with diuresis",
+          "related_findings": [
+            "nocturnal hypoxia"
+          ]
         }
       ]
     }
   ],
   "key_symptoms": [
-    "edema",
+    "leg swelling",
     "nocturnal hypoxia"
   ],
   "red_flags": [
@@ -172,5 +130,5 @@
   "_agent": "symptom_tree",
   "patient_id": "11474876",
   "admission_id": "29672491",
-  "generated_at": "2026-08-19T23:20:03.745166"
+  "generated_at": "2026-08-20T17:10:01.896186"
 }

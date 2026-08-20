@@ -4,17 +4,20 @@
   "method": "llm_query_expansion",
   "patient_id": "11474876",
   "hadm_id": "29672491",
-  "generated_at": "2026-08-20T00:13:12.018468",
+  "generated_at": "2026-08-20T17:29:36.381722",
   "ground_truth": {
     "primary_icd_code": "K8030",
     "primary_dx_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
     "primary_icd_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
+    "discharge_diagnosis": "Choledocholithiasis",
+    "diffdx_gt": "Choledocholithiasis",
+    "diffdx_gt_source": "discharge_diagnosis",
     "n_diagnoses": 17
   },
   "evaluation": {
     "diagnosis": {
-      "ground_truth_primary": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
-      "rank1_diagnosis": "Atrial fibrillation with heart failure",
+      "ground_truth_primary": "Choledocholithiasis",
+      "rank1_diagnosis": "Heart failure with preserved ejection fraction",
       "rank1_score": 85.0,
       "rank1_confidence": "high",
       "match": false,
@@ -24,24 +27,25 @@
       "matched_score": null,
       "matched_confidence": "",
       "llm_relationship": "different",
-      "llm_confidence": "low",
-      "llm_reason": "The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.",
-      "llm_expanded_ground_truth": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
+      "llm_confidence": "high",
+      "llm_reason": "Physician discharge diagnosis is choledocholithiasis (common bile duct stone, a hepatobiliary condition). None of the six ranked differentials names a biliary/hepatobiliary condition: they are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), a nonspecific symptom (leg swelling), and nocturnal hypoxia. No rank shares the same principal condition.",
+      "llm_expanded_ground_truth": "Choledocholithiasis | Common bile duct stone | Calculus of bile duct | CBD stone | Bile duct calculus with cholangitis | Gallstone in common bile duct",
       "llm_expanded_matched": "",
+      "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
-          "diagnosis": "Atrial fibrillation with heart failure",
+          "diagnosis": "Heart failure with preserved ejection fraction",
           "rank": 1,
           "score": 85.0,
           "confidence": "high",
-          "icd10_primary": "I45.10",
-          "icd10_primary_title": "Unspecified right bundle-branch block"
+          "icd10_primary": "I50.30",
+          "icd10_primary_title": "Unspecified diastolic (congestive) heart failure"
         },
         {
           "diagnosis": "Peripheral vascular disease",
           "rank": 2,
           "score": 75.0,
-          "confidence": "medium",
+          "confidence": "high",
           "icd10_primary": "I73.9",
           "icd10_primary_title": "Peripheral vascular disease, unspecified"
         },
@@ -49,34 +53,42 @@
           "diagnosis": "Chronic kidney disease",
           "rank": 3,
           "score": 70.0,
+          "confidence": "high",
+          "icd10_primary": "N18.30",
+          "icd10_primary_title": "Chronic kidney disease, stage 3 unspecified"
+        },
+        {
+          "diagnosis": "Atrial fibrillation",
+          "rank": 4,
+          "score": 65.0,
           "confidence": "medium",
-          "icd10_primary": "N18.9",
-          "icd10_primary_title": "Chronic kidney disease, unspecified"
+          "icd10_primary": "I48.91",
+          "icd10_primary_title": "Unspecified atrial fibrillation"
+        },
+        {
+          "diagnosis": "Leg swelling",
+          "rank": 5,
+          "score": 60.0,
+          "confidence": "medium",
+          "icd10_primary": "M79.89",
+          "icd10_primary_title": "Other specified soft tissue disorders"
         },
         {
           "diagnosis": "Nocturnal hypoxia",
-          "rank": 4,
-          "score": 65.0,
+          "rank": 6,
+          "score": 55.0,
           "confidence": "low",
           "icd10_primary": "R09.02",
           "icd10_primary_title": "Hypoxemia"
-        },
-        {
-          "diagnosis": "Cholangitis",
-          "rank": 5,
-          "score": 55.0,
-          "confidence": "low",
-          "icd10_primary": "K83.09",
-          "icd10_primary_title": "Other cholangitis"
         }
       ],
-      "n_diffdx": 5
+      "n_diffdx": 6
     },
     "icd_linked": {
       "ground_truth_icd": "K80.30",
       "ground_truth_icd_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
-      "rank1_predicted_icd": "I45.10",
-      "rank1_predicted_icd_title": "Unspecified right bundle-branch block",
+      "rank1_predicted_icd": "I50.30",
+      "rank1_predicted_icd_title": "Unspecified diastolic (congestive) heart failure",
       "matched_predicted_icd": "",
       "matched_predicted_icd_title": "",
       "icd_match": false,
@@ -85,8 +97,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.",
-      "llm_expanded_ground_truth_icd": "K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction",
+      "llm_icd_reason": "Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) belong to entirely different body systems; no coder would accept any as equivalent to K80.30.",
+      "llm_expanded_ground_truth_icd": "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction | K80.5x choledocholithiasis without cholangitis or cholecystitis | K83.0 cholangitis",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I50.30",
       "diagnosis_match": false,
@@ -97,17 +109,24 @@
       "matched_rank": null,
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
-      "diagnosis_confidence": "low",
-      "diagnosis_reason": "The ground truth diagnosis 'Calculus of bile duct with cholangitis, unspecified, without obstruction' does not match any of the ranked differential diagnoses.",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Physician discharge diagnosis is choledocholithiasis (common bile duct stone, a hepatobiliary condition). None of the six ranked differentials names a biliary/hepatobiliary condition: they are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), a nonspecific symptom (leg swelling), and nocturnal hypoxia. No rank shares the same principal condition.",
       "ground_truth_expansions": [
-        "Calculus of bile duct with cholangitis, unspecified, without obstruction"
+        "Choledocholithiasis",
+        "Common bile duct stone",
+        "Calculus of bile duct",
+        "CBD stone",
+        "Bile duct calculus with cholangitis",
+        "Gallstone in common bile duct"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
-      "icd_confidence": "low",
-      "icd_reason": "The ground truth ICD code K80.30 does not match any of the mapped ICD codes from the ranked differential diagnoses.",
+      "icd_confidence": "high",
+      "icd_reason": "Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) belong to entirely different body systems; no coder would accept any as equivalent to K80.30.",
       "ground_truth_icd_expansions": [
-        "K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction"
+        "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction",
+        "K80.5x choledocholithiasis without cholangitis or cholecystitis",
+        "K83.0 cholangitis"
       ],
       "matched_icd_expansions": [],
       "_cache_hit": false

@@ -3,40 +3,42 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 12007928
 HADM ID          : 23749816
-Generated        : 2026-08-20T00:13:19.520624
+Generated        : 2026-08-20T17:29:53.737143
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Acute on chronic diastolic (congestive) heart failure
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Acute on chronic decompensated diastolic heart failure
+  Billed ICD title     : Acute on chronic diastolic (congestive) heart failure (ICD metric only)
   Rank-1 predicted     : Acute decompensated heart failure
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : The ground truth diagnosis is 'Acute on chronic diastolic (congestive) heart failure', while the top-ranked differential diagnosis is 'Acute decompensated heart failure'. Although both are forms of heart failure, they are not the same principal condition.
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Acute decompensated heart failure
+    score=85.0  confidence=high
+  LLM reason           : Rank 1 'Acute decompensated heart failure' names the same principal condition as the physician diagnosis 'Acute on chronic decompensated diastolic heart failure'; the differential label is broader (does not specify diastolic/HFpEF or chronicity) but codes the same acute decompensated heart failure episode.
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : I50.33 — Acute on chronic diastolic (congestive) heart failure
   Rank-1 mapped ICD    : I50.9 — Heart failure, unspecified
-  Matched mapped ICD   : - — 
-  ICD match            : NO
+  Matched mapped ICD   : I50.9 — Heart failure, unspecified
+  ICD match            : YES
   ICD exact            : NO
-  ICD 3-char family    : NO
-  ICD LLM match        : NO
-  Is rank-1 ICD match  : NO
-  LLM ICD reason       : The ground truth ICD code is I50.33, while the mapped ICD for the top-ranked differential diagnosis is I50.9. Although both codes are related to heart failure, they are not the same principal condition.
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped code I50.9 (Heart failure, unspecified) is the unspecified parent of billed I50.33 (Acute on chronic diastolic congestive heart failure). Not an exact code match and lacks the diastolic/acuity specificity required for billing, but a coder would recognize it as the same principal condition (heart failure) — acceptable as clinically equivalent at the category level.
   Stage 9 final ICD    : I50.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
    1. Acute decompensated heart failure  [score=85.0, high]  ICD=I50.9 — Heart failure, unspecified
-   2. Atrial fibrillation  [score=70.0, medium]  ICD=I48.91 — Unspecified atrial fibrillation
-   3. Renal insufficiency  [score=65.0, medium]  ICD=N28.9 — Disorder of kidney and ureter, unspecified
-   4. Myasthenia gravis  [score=50.0, low]  ICD=G70.00 — Myasthenia gravis without (acute) exacerbation
-   5. Anemia  [score=40.0, low]  ICD=D64.9 — Anemia, unspecified
+   2. Chronic kidney disease  [score=70.0, medium]  ICD=N18.9 — Chronic kidney disease, unspecified
+   3. Paroxysmal atrial fibrillation  [score=65.0, high]  ICD=I48.0 — Paroxysmal atrial fibrillation
+   4. Congestive heart failure  [score=60.0, medium]  ICD=I50.9 — Heart failure, unspecified
+   5. Myasthenia gravis  [score=40.0, low]  ICD=G70.00 — Myasthenia gravis without (acute) exacerbation

@@ -1,5 +1,5 @@
 {
-  "summary": "The patient presents with dyspnea, orthopnea, and worsening heart failure, along with significant fatigue and incontinence, following a previous hospitalization for heart failure. Chronic conditions include diastolic heart failure and renal insufficiency.",
+  "summary": "The patient presents with dyspnea, orthopnea, and worsening heart failure, with significant fluid overload and pleural effusions. The patient has a history of chronic diastolic heart failure and acute kidney failure.",
   "most_likely": "Acute decompensated heart failure",
   "differential": [
     {
@@ -8,16 +8,13 @@
       "score": 85.0,
       "confidence": "high",
       "category": "primary",
-      "snomed_aligned": "I50.9",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "dyspnea, orthopnea, pitting edema",
-        "mild pulmonary edema",
-        "mild pleural effusions",
-        "mild atrial fibrillation",
-        "creatinine elevation"
+        "mild to moderate pulmonary edema on CXR",
+        "history of chronic diastolic heart failure"
       ],
       "opposing_evidence": [],
-      "reasoning": "Symptoms and findings strongly support acute decompensation of chronic heart failure.",
+      "reasoning": "The patient's current symptoms and imaging findings strongly support acute heart failure, and the history of chronic diastolic heart failure increases the likelihood.",
       "snomed_resolution": {
         "mapped": true,
         "concept_id": "56675007",
@@ -26,7 +23,7 @@
         "match_method": "fuzzy",
         "score": 0.7628679165962815,
         "query": "Acute decompensated heart failure",
-        "aligned_hint": "I50.9"
+        "aligned_hint": null
       },
       "icd10_primary": "I50.9",
       "icd10_primary_title": "Heart failure, unspecified",
@@ -56,38 +53,21 @@
           "package_order": 2
         },
         {
-          "code": "R06.00",
-          "title": "Dyspnea, unspecified",
+          "code": "J81.1",
+          "title": "Chronic pulmonary edema",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS J81.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "dyspnea",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "267036007",
-          "from_snomed_term": "Dyspnea",
-          "relevance_to_diagnosis": 0.3154,
+          "from_term": "pulmonary edema",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "19242006",
+          "from_snomed_term": "Pulmonary edema",
+          "relevance_to_diagnosis": 0.3495,
           "package_order": 3
-        },
-        {
-          "code": "R06.01",
-          "title": "Orthopnea",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R06.01",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "orthopnea",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "62744007",
-          "from_snomed_term": "Orthopnea",
-          "relevance_to_diagnosis": 0.1387,
-          "package_order": 4
         }
       ],
       "icd10_principal": [
@@ -116,281 +96,125 @@
       ],
       "icd10_supporting": [
         {
-          "code": "R06.00",
-          "title": "Dyspnea, unspecified",
+          "code": "J81.1",
+          "title": "Chronic pulmonary edema",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS R06.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS J81.1 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
           "always": true,
           "role": "supporting",
           "order": 1,
-          "from_term": "dyspnea",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "267036007",
-          "from_snomed_term": "Dyspnea",
-          "relevance_to_diagnosis": 0.3154
-        },
-        {
-          "code": "R06.01",
-          "title": "Orthopnea",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS R06.01",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "orthopnea",
-          "from_kind": "key_symptom",
-          "from_snomed_id": "62744007",
-          "from_snomed_term": "Orthopnea",
-          "relevance_to_diagnosis": 0.1387
+          "from_term": "pulmonary edema",
+          "from_kind": "tree_symptom",
+          "from_snomed_id": "19242006",
+          "from_snomed_term": "Pulmonary edema",
+          "relevance_to_diagnosis": 0.3495
         }
       ],
-      "icd_status": "mapped",
-      "n_icd_codes": 4
-    },
-    {
-      "rank": 2,
-      "diagnosis": "Atrial fibrillation",
-      "score": 70.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "42717001",
-      "supporting_evidence": [
-        "paroxysmal atrial fibrillation",
-        "mild atrial fibrillation"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Paroxysmal atrial fibrillation is present and may contribute to symptoms.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "49436004",
-        "preferred_term": "Atrial fibrillation",
-        "fsn": "Atrial fibrillation (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Atrial fibrillation",
-        "aligned_hint": "42717001"
-      },
-      "icd10_primary": "I48.91",
-      "icd10_primary_title": "Unspecified atrial fibrillation",
-      "icd10_package": [
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "I48.0",
-          "title": "Paroxysmal atrial fibrillation",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS I48.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "paroxysmal atrial fibrillation",
-          "from_kind": "diagnosis",
-          "from_snomed_id": "282825002",
-          "from_snomed_term": "AF - Paroxysmal atrial fibrillation",
-          "relevance_to_diagnosis": 0.8351,
-          "package_order": 2
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "I48.91",
-          "title": "Unspecified atrial fibrillation",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "ALWAYS I48.91 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        }
-      ],
-      "icd10_supporting": [
-        {
-          "code": "I48.0",
-          "title": "Paroxysmal atrial fibrillation",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "ALWAYS I48.0",
-          "always": true,
-          "role": "supporting",
-          "order": 1,
-          "from_term": "paroxysmal atrial fibrillation",
-          "from_kind": "diagnosis",
-          "from_snomed_id": "282825002",
-          "from_snomed_term": "AF - Paroxysmal atrial fibrillation",
-          "relevance_to_diagnosis": 0.8351
-        }
-      ],
-      "icd_status": "mapped",
-      "n_icd_codes": 2
-    },
-    {
-      "rank": 3,
-      "diagnosis": "Renal insufficiency",
-      "score": 65.0,
-      "confidence": "medium",
-      "category": "complication",
-      "snomed_aligned": "N17.9",
-      "supporting_evidence": [
-        "creatinine elevation",
-        "urea nitrogen elevation",
-        "anemia"
-      ],
-      "opposing_evidence": [],
-      "reasoning": "Renal function tests indicate worsening renal insufficiency.",
-      "snomed_resolution": {
-        "mapped": true,
-        "concept_id": "723188008",
-        "preferred_term": "Renal insufficiency",
-        "fsn": "Renal insufficiency (disorder)",
-        "match_method": "exact",
-        "score": 1.0,
-        "query": "Renal insufficiency",
-        "aligned_hint": "N17.9"
-      },
-      "icd10_primary": "N28.9",
-      "icd10_primary_title": "Disorder of kidney and ureter, unspecified",
-      "icd10_package": [
-        {
-          "code": "N28.9",
-          "title": "Disorder of kidney and ureter, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "ALWAYS N28.9",
-          "always": true,
-          "role": "principal",
-          "order": 1,
-          "package_order": 1
-        },
-        {
-          "code": "L90.8",
-          "title": "Other atrophic disorders of skin",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF NEPHROGENIC SYSTEMIC FIBROSIS CHOOSE L90.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2,
-          "package_order": 2
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "IF CHRONIC RENAL INSUFFICIENCY CHOOSE N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3,
-          "package_order": 3
-        }
-      ],
-      "icd10_principal": [
-        {
-          "code": "N28.9",
-          "title": "Disorder of kidney and ureter, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 3,
-          "map_group": 1,
-          "map_advice": "ALWAYS N28.9",
-          "always": true,
-          "role": "principal",
-          "order": 1
-        },
-        {
-          "code": "L90.8",
-          "title": "Other atrophic disorders of skin",
-          "source": "snomed_extended_map",
-          "map_priority": 1,
-          "map_group": 1,
-          "map_advice": "IF NEPHROGENIC SYSTEMIC FIBROSIS CHOOSE L90.8 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 2
-        },
-        {
-          "code": "N18.9",
-          "title": "Chronic kidney disease, unspecified",
-          "source": "snomed_extended_map",
-          "map_priority": 2,
-          "map_group": 1,
-          "map_advice": "IF CHRONIC RENAL INSUFFICIENCY CHOOSE N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
-          "always": false,
-          "role": "principal",
-          "order": 3
-        }
-      ],
-      "icd10_supporting": [],
       "icd_status": "mapped",
       "n_icd_codes": 3
     },
     {
-      "rank": 4,
-      "diagnosis": "Myasthenia gravis",
-      "score": 50.0,
-      "confidence": "low",
-      "category": "differential",
-      "snomed_aligned": "G70.0",
+      "rank": 2,
+      "diagnosis": "Chronic kidney disease",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "snomed_aligned": "",
       "supporting_evidence": [
-        "tremors",
-        "increased spasms in the upper extremities"
+        "Creatinine: 1.6 mg/dL [abnormal]",
+        "history of acute kidney failure"
       ],
-      "opposing_evidence": [
-        "no specific myasthenia gravis findings on chest X-ray"
-      ],
-      "reasoning": "Tremors and increased spasms suggest myasthenia gravis, but no specific findings support this.",
+      "opposing_evidence": [],
+      "reasoning": "The elevated creatinine and history of acute kidney failure support chronic kidney disease, but it is secondary to the primary diagnosis of acute heart failure.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "91637004",
-        "preferred_term": "Myasthenia gravis",
-        "fsn": "Myasthenia gravis (disorder)",
+        "concept_id": "709044004",
+        "preferred_term": "Chronic kidney disease",
+        "fsn": "Chronic kidney disease (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Myasthenia gravis",
-        "aligned_hint": "G70.0"
+        "query": "Chronic kidney disease",
+        "aligned_hint": null
       },
-      "icd10_primary": "G70.00",
-      "icd10_primary_title": "Myasthenia gravis without (acute) exacerbation",
+      "icd10_primary": "N18.9",
+      "icd10_primary_title": "Chronic kidney disease, unspecified",
       "icd10_package": [
         {
-          "code": "G70.00",
-          "title": "Myasthenia gravis without (acute) exacerbation",
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "ALWAYS N18.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 1
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Paroxysmal atrial fibrillation",
+      "score": 65.0,
+      "confidence": "high",
+      "category": "complication",
+      "snomed_aligned": "AF - Paroxysmal atrial fibrillation",
+      "supporting_evidence": [
+        "confirmed paroxysmal atrial fibrillation"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "The patient has a confirmed history of paroxysmal atrial fibrillation, which can complicate heart failure.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "282825002",
+        "preferred_term": "AF - Paroxysmal atrial fibrillation",
+        "fsn": "Paroxysmal atrial fibrillation (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Paroxysmal atrial fibrillation",
+        "aligned_hint": "AF - Paroxysmal atrial fibrillation"
+      },
+      "icd10_primary": "I48.0",
+      "icd10_primary_title": "Paroxysmal atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation",
           "source": "snomed_extended_map",
           "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS G70.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS I48.0",
           "always": true,
           "role": "principal",
           "order": 1,
           "package_order": 1
         },
         {
-          "code": "P94.0",
-          "title": "Transient neonatal myasthenia gravis",
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P94.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF PAROXYSMAL ATRIAL FIBRILLATION DUE TO HEART VALVE DISORDER CHOOSE I38 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2,
@@ -399,23 +223,101 @@
       ],
       "icd10_principal": [
         {
-          "code": "G70.00",
-          "title": "Myasthenia gravis without (acute) exacerbation",
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation",
           "source": "snomed_extended_map",
           "map_priority": 2,
           "map_group": 1,
-          "map_advice": "ALWAYS G70.00 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS I48.0",
           "always": true,
           "role": "principal",
           "order": 1
         },
         {
-          "code": "P94.0",
-          "title": "Transient neonatal myasthenia gravis",
+          "code": "I38",
+          "title": "Endocarditis, valve unspecified",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P94.0 | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "map_advice": "IF PAROXYSMAL ATRIAL FIBRILLATION DUE TO HEART VALVE DISORDER CHOOSE I38 | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2
+        }
+      ],
+      "icd10_supporting": [],
+      "icd_status": "mapped",
+      "n_icd_codes": 2
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Congestive heart failure",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "snomed_aligned": "",
+      "supporting_evidence": [
+        "history of chronic diastolic heart failure"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Congestive heart failure is a more general term that encompasses the current presentation, but it is less specific than acute decompensated heart failure.",
+      "snomed_resolution": {
+        "mapped": true,
+        "concept_id": "42343007",
+        "preferred_term": "Congestive heart failure",
+        "fsn": "Congestive heart failure (disorder)",
+        "match_method": "exact",
+        "score": 1.0,
+        "query": "Congestive heart failure",
+        "aligned_hint": null
+      },
+      "icd10_primary": "I50.9",
+      "icd10_primary_title": "Heart failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1,
+          "package_order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
+          "always": false,
+          "role": "principal",
+          "order": 2,
+          "package_order": 2
+        }
+      ],
+      "icd10_principal": [
+        {
+          "code": "I50.9",
+          "title": "Heart failure, unspecified",
+          "source": "snomed_extended_map",
+          "map_priority": 2,
+          "map_group": 1,
+          "map_advice": "ALWAYS I50.9 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "always": true,
+          "role": "principal",
+          "order": 1
+        },
+        {
+          "code": "P29.0",
+          "title": "Neonatal cardiac failure",
+          "source": "snomed_extended_map",
+          "map_priority": 1,
+          "map_group": 1,
+          "map_advice": "IF AGE AT ONSET OF CLINICAL FINDING BEFORE 29.0 DAYS CHOOSE P29.0 | CONSIDER ADDITIONAL CODE TO IDENTIFY SPECIFIC CONDITION OR DISEASE | DESCENDANTS NOT EXHAUSTIVELY MAPPED | MAP OF SOURCE CONCEPT IS CONTEXT DEPENDENT",
           "always": false,
           "role": "principal",
           "order": 2
@@ -427,36 +329,38 @@
     },
     {
       "rank": 5,
-      "diagnosis": "Anemia",
+      "diagnosis": "Myasthenia gravis",
       "score": 40.0,
       "confidence": "low",
-      "category": "risk_factor",
-      "snomed_aligned": "",
+      "category": "differential",
+      "snomed_aligned": "Myasthenia gravis without (acute) exacerbation",
       "supporting_evidence": [
-        "low hemoglobin and hematocrit"
+        "confirmed myasthenia gravis"
       ],
-      "opposing_evidence": [],
-      "reasoning": "Anemia is present but does not fully explain the current presentation.",
+      "opposing_evidence": [
+        "no current exacerbation symptoms"
+      ],
+      "reasoning": "The patient has a confirmed history of myasthenia gravis, but the current presentation does not strongly support an exacerbation.",
       "snomed_resolution": {
         "mapped": true,
-        "concept_id": "271737000",
-        "preferred_term": "Anemia",
-        "fsn": "Anemia (disorder)",
+        "concept_id": "77471000119103",
+        "preferred_term": "Myasthenia gravis without exacerbation",
+        "fsn": "Myasthenia gravis without exacerbation (disorder)",
         "match_method": "exact",
         "score": 1.0,
-        "query": "Anemia",
-        "aligned_hint": null
+        "query": "Myasthenia gravis",
+        "aligned_hint": "Myasthenia gravis without (acute) exacerbation"
       },
-      "icd10_primary": "D64.9",
-      "icd10_primary_title": "Anemia, unspecified",
+      "icd10_primary": "G70.00",
+      "icd10_primary_title": "Myasthenia gravis without (acute) exacerbation",
       "icd10_package": [
         {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS G70.00",
           "always": true,
           "role": "principal",
           "order": 1,
@@ -465,12 +369,12 @@
       ],
       "icd10_principal": [
         {
-          "code": "D64.9",
-          "title": "Anemia, unspecified",
+          "code": "G70.00",
+          "title": "Myasthenia gravis without (acute) exacerbation",
           "source": "snomed_extended_map",
           "map_priority": 1,
           "map_group": 1,
-          "map_advice": "ALWAYS D64.9 | DESCENDANTS NOT EXHAUSTIVELY MAPPED",
+          "map_advice": "ALWAYS G70.00",
           "always": true,
           "role": "principal",
           "order": 1
@@ -483,16 +387,16 @@
   ],
   "rule_outs": [
     {
-      "diagnosis": "Pneumonia",
-      "why": "No evidence of respiratory infection."
+      "diagnosis": "Obstructive sleep apnea",
+      "why": "No current symptoms or findings supporting acute exacerbation."
     },
     {
-      "diagnosis": "Acute coronary syndrome",
-      "why": "No chest pain or ECG changes."
+      "diagnosis": "Dementia",
+      "why": "No current cognitive symptoms or findings."
     }
   ],
   "uncertain_areas": [
-    "Further imaging to confirm presence of pleural effusions and pulmonary edema"
+    "Further lab results for electrolytes and cardiac markers would help refine the differential diagnosis."
   ],
   "n_candidates": 5,
   "type": "differential_diagnosis_with_icd",
@@ -501,7 +405,7 @@
   "_temperature": 0.4,
   "patient_id": "12007928",
   "hadm_id": "23749816",
-  "generated_at": "2026-08-20T00:09:53.056804",
+  "generated_at": "2026-08-20T17:16:14.410101",
   "inputs": {
     "symptom_tree": true,
     "retained_snomed_entities": 5,
@@ -726,5 +630,5 @@
     "n_with_principal": 5,
     "n_unmapped": 0
   },
-  "generated_at_stage8": "2026-08-20T00:12:19.573243"
+  "generated_at_stage8": "2026-08-20T17:19:20.261632"
 }

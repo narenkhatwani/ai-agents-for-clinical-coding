@@ -5,54 +5,52 @@ Patient ID       : 18412100
 HADM ID          : 26093939
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:11:34.087096
-Candidates       : 6
-Most likely      : Post-procedural pain and tenderness
+Generated        : 2026-08-20T17:18:19.043720
+Candidates       : 5
+Most likely      : Post-procedural pain
 Prior admissions : 1 (9 ICD codes as PMH context)
 
 Summary:
-  The patient is a 45-year-old woman with a history of desmoid tumor, presenting with post-procedural pain and abdominal tenderness after a cryoablation procedure. She also has chronic conditions including hepatitis C and obesity.
+  A 31-year-old woman presents with post-procedural pain and mild nausea following cryoablation of a residual desmoid tumor. Chronic conditions include hepatitis C and other acute postprocedural pain.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Post-procedural pain and tenderness  (primary)
-      SNOMED aligned : Abdominal pain (21522001)
-      + post-procedural pain in the right side of the abdomen
-      + abdominal tenderness to palpation
-      why: Primary presentation after cryoablation procedure
+  #1  [85.0/100 | high]  Post-procedural pain  (primary)
+      SNOMED aligned : Abdominal pain
+      + abdominal pain tender in the right upper and right lower quadrant to palpation
+      why: Primary diagnosis given the patient's recent cryoablation procedure and presence of abdominal pain.
 
   #2  [70.0/100 | medium]  Hepatitis C  (risk_factor)
-      SNOMED aligned : Viral hepatitis C (50711007)
-      + chronic condition
-      why: Chronic condition with no acute symptoms
+      SNOMED aligned : Viral hepatitis C
+      + chronic condition from prior admission
+      − no current symptoms or acute findings
+      why: Risk factor given chronic condition and need for monitoring.
 
-  #3  [65.0/100 | medium]  Desmoid tumor  (differential)
-      SNOMED aligned : Desmoid tumor (confirmed)
-      + desmoid tumor (confirmed)
-      − no active tumor growth
-      why: Previous diagnosis with no acute symptoms
-
-  #4  [55.0/100 | medium]  Anemia  (secondary)
-      + low hematocrit and hemoglobin
-      why: Low hematocrit and hemoglobin levels
-
-  #5  [45.0/100 | low]  Hypokalemia  (differential)
+  #3  [60.0/100 | medium]  Hypokalemia  (differential)
+      SNOMED aligned : Hypokalemia
       + low potassium level
       − no symptoms of hypokalemia
-      why: Low potassium level with no symptoms
+      why: Possible given low potassium level, though no symptoms present.
 
-  #6  [40.0/100 | low]  Hypomagnesemia  (differential)
-      + low magnesium level
-      − no symptoms of hypomagnesemia
-      why: Low magnesium level with no symptoms
+  #4  [55.0/100 | medium]  Hypocalcemia  (differential)
+      SNOMED aligned : Hypocalcemia
+      + low calcium level
+      − no symptoms of hypocalcemia
+      why: Possible given low calcium level, though no symptoms present.
+
+  #5  [50.0/100 | medium]  Anemia  (differential)
+      SNOMED aligned : Anemia
+      + low hemoglobin and hematocrit levels
+      − mild symptoms only
+      why: Possible given low hemoglobin and hematocrit levels, though symptoms are mild.
 
 RULE-OUTS
 ---------
 
-  • Pneumothorax: No radiological evidence or symptoms
+  • Pneumothorax: No radiological evidence or clinical signs.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Additional imaging to confirm the extent of post-procedural pain and tenderness
+  • Further imaging or clinical signs of hypokalemia or hypocalcemia could change the ranking

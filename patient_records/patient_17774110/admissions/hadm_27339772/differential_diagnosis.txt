@@ -5,63 +5,67 @@ Patient ID       : 17774110
 HADM ID          : 27339772
 Method           : openrouter_llm:qwen/qwen-2.5-7b-instruct
 Temperature      : 0.4
-Generated        : 2026-08-20T00:11:17.961790
+Generated        : 2026-08-20T17:18:02.159839
 Candidates       : 8
-Most likely      : Acute liver failure
+Most likely      : Septic shock with multi-organ failure
 Prior admissions : 2 (34 ICD codes as PMH context)
 
 Summary:
-  The patient presents with septic shock, hepatic encephalopathy, and worsening liver failure, with multiple comorbidities including cirrhosis, esophageal varices, and multifocal metastatic HCC. The patient is also on mechanical ventilation due to hypoxic respiratory failure.
+  The patient is critically ill with septic shock, hypoxia, and multi-organ dysfunction, including liver and renal failure, coagulopathy, and pleural effusion. Chronic conditions include cirrhosis, hepatic failure, and esophageal varices.
 
 RANKED DIFFERENTIAL
 -------------------
 
-  #1  [85.0/100 | high]  Acute liver failure  (primary)
-      SNOMED aligned : Acute liver failure
-      + Worsening liver failure, Hepatic encephalopathy, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L, PT 36.5 sec, PTT 104.2 sec
-      why: Strong evidence of liver failure with elevated liver enzymes and coagulation parameters.
+  #1  [85.0/100 | high]  Septic shock with multi-organ failure  (primary)
+      + Septic shock (confirmed)
+      + Hypoxia (confirmed)
+      + Hepatic encephalopathy (confirmed)
+      + GI bleeding (confirmed)
+      + Pleural effusion (confirmed)
+      why: Primary diagnosis given the confirmed septic shock and multi-organ dysfunction.
 
-  #2  [75.0/100 | high]  Septic shock  (primary)
-      + Septic shock, Bilirubin 13.3 mg/dL, WBC 8.4 K/uL, PT 36.5 sec, PTT 104.2 sec
-      why: Severe sepsis with evidence of systemic inflammatory response and coagulopathy.
+  #2  [75.0/100 | high]  Hepatic encephalopathy  (complication)
+      SNOMED aligned : Hepatic encephalopathy (13920009)
+      + Hepatic encephalopathy (confirmed)
+      + Worsening liver failure
+      why: Directly related to the liver failure and supported by clinical symptoms.
 
-  #3  [70.0/100 | high]  Hepatic encephalopathy  (complication)
-      SNOMED aligned : Hepatic encephalopathy
-      + Hepatic encephalopathy, RASS-5, sluggish pupil response, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L
-      why: Severe liver failure with evidence of altered mental status and elevated liver enzymes.
+  #3  [70.0/100 | high]  Acute liver failure  (complication)
+      SNOMED aligned : Acute liver failure (197270009)
+      + Worsening liver failure
+      why: Supports the liver failure and encephalopathy.
 
-  #4  [65.0/100 | high]  Acute renal failure  (complication)
-      SNOMED aligned : Acute renal failure
-      + Acute renal failure, Creatinine 2.1 mg/dL, Bicarbonate 19 mEq/L, pH 7.11 units
-      why: Severe acidosis and electrolyte disturbances suggesting acute renal failure.
+  #4  [65.0/100 | high]  GI bleeding  (complication)
+      + GI bleeding (confirmed)
+      + Esophageal varices (confirmed)
+      why: GI bleeding is a complication of esophageal varices and liver failure.
 
-  #5  [60.0/100 | medium]  Pleural effusion  (complication)
-      SNOMED aligned : Pleural effusion
+  #5  [60.0/100 | high]  Coagulopathy  (complication)
+      SNOMED aligned : Pancytopenia (127034005)
+      + INR(PT) 3.4, PT 36.5 sec, PTT 104.2 sec
+      why: Coagulopathy is a complication of liver failure and sepsis.
+
+  #6  [55.0/100 | medium]  Atrial fibrillation/flutter  (complication)
+      + Atrial fibrillation/flutter s/p amiodarone bolus now on metoprolol
+      why: Atrial fibrillation is a known complication of liver failure and sepsis.
+
+  #7  [50.0/100 | medium]  Pleural effusion  (complication)
+      SNOMED aligned : Pleural effusion (60046008)
       + Large pleural effusion with compressive consolidation versus atelectasis
-      why: Evidence of pleural effusion on imaging, but less likely primary cause given other severe systemic issues.
-
-  #6  [55.0/100 | medium]  IVC thrombus  (complication)
-      SNOMED aligned : IVC thrombus
-      + IVC thrombus, not on anticoagulation due to thrombocytopenia and coagulaopathy
-      why: IVC thrombus present, but less likely primary cause given other severe systemic issues.
-
-  #7  [50.0/100 | medium]  Cirrhosis  (secondary)
-      SNOMED aligned : Cirrhosis of liver
-      + Cirrhosis, Bilirubin 13.3 mg/dL, ALT 439 IU/L, AST 2481 IU/L
-      why: Chronic condition with evidence of liver dysfunction.
+      why: Pleural effusion is a complication of liver failure and sepsis.
 
   #8  [30.0/100 | low]  Bipolar disorder  (risk_factor)
-      SNOMED aligned : Bipolar disorder
-      + Bipolar disorder, unspecified
-      why: Previous diagnosis, but less likely to be the primary cause of current acute presentation.
+      SNOMED aligned : Bipolar disorder (13746004)
+      + Bipolar disorder (confirmed)
+      why: While a chronic condition, it is not currently driving the acute presentation.
 
 RULE-OUTS
 ---------
 
-  • GI bleeding: GI bleeding is present but less likely to be the primary cause given the severity of liver failure and septic shock.
-  • Atrial fibrillation/flutter: Atrial fibrillation/flutter is present but less likely to be the primary cause given the severity of liver failure and septic shock.
+  • Chronic obstructive pulmonary disease: Not supported by current acute findings.
+  • Esophageal varices: Esophageal varices are a complication, not the primary acute condition.
 
 UNCERTAIN / NEED MORE DATA
 --------------------------
 
-  • Further clarification on the source of infection and the exact nature of the liver failure would change the ranking
+  • Further details on the source of infection and specific pathogen would refine the septic shock diagnosis.

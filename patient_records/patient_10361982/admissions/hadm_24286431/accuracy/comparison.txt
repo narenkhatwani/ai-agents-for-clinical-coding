@@ -3,40 +3,41 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10361982
 HADM ID          : 24286431
-Generated        : 2026-08-20T00:12:56.969546
+Generated        : 2026-08-20T17:28:56.130144
 
-DIFFERENTIAL DIAGNOSIS vs GT PRIMARY
-------------------------------------
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
 
-  Ground truth primary : Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
-  Rank-1 predicted     : Post-hysterectomy uterine atony
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Heavy vaginal bleeding after total laparoscopic hysterectomy
+  Billed ICD title     : Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure (ICD metric only)
+  Rank-1 predicted     : Post-hysterectomy bleeding
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : None of the differential diagnoses match the ground truth diagnosis.
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Post-hysterectomy bleeding
+    score=85.0  confidence=high
+  LLM reason           : Rank 1 'Post-hysterectomy bleeding' names the same principal condition as the physician discharge diagnosis 'Heavy vaginal bleeding after total laparoscopic hysterectomy' — vaginal hemorrhage occurring after hysterectomy (TLH = total laparoscopic hysterectomy).
 
-LINKED ICD vs GT PRIMARY (from matched DiffDx rank)
----------------------------------------------------
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
 
   Ground truth ICD     : N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
-  Rank-1 mapped ICD    : O62.2 — Other uterine inertia
-  Matched mapped ICD   : - — 
+  Rank-1 mapped ICD    : N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+  Matched mapped ICD   : N93.9 — Abnormal uterine and vaginal bleeding, unspecified
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : None of the differential diagnoses have an equivalent ICD code.
+  LLM ICD reason       : Mapped code at matched rank is N93.9 (abnormal uterine and vaginal bleeding, unspecified), a nonspecific symptom code that does not capture the postprocedural/complication nature of the billed N99.820 (postprocedural hemorrhage of a genitourinary organ following a GU procedure). Coding guidelines require the complication code when bleeding follows a surgical procedure, and N93.9 (uterine/vaginal bleeding) is also inconsistent after hysterectomy, so a coder would not accept it as equivalent.
   Stage 9 final ICD    : N93.9 (debug)
 
 FULL DIFFERENTIAL LIST
 ----------------------
 
-   1. Post-hysterectomy uterine atony  [score=85.0, high]  ICD=O62.2 — Other uterine inertia
-   2. Post-hysterectomy uterine inversion  [score=65.0, medium]  ICD=O71.2 — Postpartum inversion of uterus
-   3. Endometriosis  [score=40.0, medium]  ICD=N80.9 — Endometriosis, unspecified
-   4. Hemorrhagic shock  [score=30.0, low]  ICD=R57.1 — Hypovolemic shock
-   5. Infection  [score=25.0, low]  ICD=B99.9 — Unspecified infectious disease
+   1. Post-hysterectomy bleeding  [score=85.0, high]  ICD=N93.9 — Abnormal uterine and vaginal bleeding, unspecified
+   2. Menorrhagia  [score=65.0, medium]  ICD=N92.0 — Excessive and frequent menstruation with regular cycle
+   3. Hypothyroidism  [score=50.0, low]  ICD=E03.9 — Hypothyroidism, unspecified
+   4. Anxiety disorder  [score=30.0, low]  ICD=F41.9 — Anxiety disorder, unspecified

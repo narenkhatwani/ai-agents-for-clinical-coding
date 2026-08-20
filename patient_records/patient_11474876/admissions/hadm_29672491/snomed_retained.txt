@@ -1,9 +1,9 @@
 Patient: 11474876  HADM: 29672491
-Generated: 2026-08-19T23:22:49.292691
+Generated: 2026-08-20T17:13:56.935154
 Min cosine similarity: 0.7
 High-confidence: 0.8
 Method: minilm (sentence-transformers/all-MiniLM-L6-v2)
-Entities with retained: 13 / 50  |  links: 17
+Entities with retained: 13 / 50  |  links: 18
 
 • abdominal pain  [symptom]  → SNOMED: Abdominal pain (21522001)
     - [has_finding_site] Abdomen (id=818983003, sim=0.7045)
@@ -14,6 +14,7 @@ Entities with retained: 13 / 50  |  links: 17
     - [has_associated_morphology] Swelling (id=442672001, sim=0.7557)
 
 • Peripheral vascular disease  [diagnosis]  → SNOMED: Peripheral vascular disease (400047006)
+    - [is_a] Vascular disease (id=27550009, sim=0.8525) [HIGH]
     - [has_finding_site] Peripheral vascular system (id=51833009, sim=0.7694)
 
 • Right bundle branch block  [diagnosis]  → SNOMED: Right bundle branch block (59118001)
