@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "17774110",
   "hadm_id": "27339772",
-  "generated_at": "2026-08-20T17:30:46.472488",
+  "generated_at": "2026-08-20T22:07:48.639138",
   "ground_truth": {
     "primary_icd_code": "A4189",
     "primary_dx_title": "Other specified sepsis",
@@ -28,9 +28,9 @@
       "matched_confidence": "high",
       "llm_relationship": "same_principal_more_specific",
       "llm_confidence": "high",
-      "llm_reason": "Rank 1 'Septic shock with multi-organ failure' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — a systemic septic process; septic shock is a more specific/severe manifestation of the same sepsis episode. No lower-numbered rank matches, and remaining ranks (hepatic encephalopathy, liver failure, GI bleeding, coagulopathy, atrial fibrillation, pleural effusion, bipolar disorder) are distinct organ-specific conditions or complications.",
-      "llm_expanded_ground_truth": "other specified sepsis | sepsis due to other specified organism | bloodstream infection with systemic inflammatory response | septicemia | systemic infection / sepsis syndrome",
-      "llm_expanded_matched": "septic shock | sepsis with circulatory failure and hypotension | severe sepsis with multi-organ dysfunction syndrome (MODS) | septicemia with shock",
+      "llm_reason": "Physician discharge diagnosis is 'other specified sepsis'. Rank 1 'Septic shock with multi-organ failure' names the same principal condition (sepsis) in a more specific/severe form (sepsis progressing to septic shock with organ dysfunction). No other rank names sepsis; ranks 2-8 are organ-specific complications or unrelated conditions.",
+      "llm_expanded_ground_truth": "sepsis | other specified sepsis | bloodstream infection with systemic inflammatory response | septicemia due to specified organism | A41.89",
+      "llm_expanded_matched": "septic shock | sepsis with circulatory failure | severe sepsis with hypotension | multi-organ dysfunction syndrome secondary to sepsis | MODS",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
@@ -113,9 +113,9 @@
       "icd_llm_match": true,
       "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "Mapped code R65.21 (severe sepsis with septic shock) is not an exact match to billed A41.89 (other specified sepsis), but both code the same principal sepsis episode; in ICD-10-CM sepsis coding A41.89 is the underlying infection code and R65.21 the severity manifestation code reported together for the same condition, so a coder would accept them as clinically equivalent representations of the sepsis principal diagnosis.",
-      "llm_expanded_ground_truth_icd": "A41.89 — Other specified sepsis | A41.9 — Sepsis, unspecified organism | sepsis / septicemia codes (A40-A41)",
-      "llm_expanded_matched_icd": "R65.21 — Severe sepsis with septic shock | R65.20 — Severe sepsis without septic shock | sepsis severity manifestation code used with underlying infection code A41.-",
+      "llm_icd_reason": "Billed primary is A41.89 (other specified sepsis); mapped code at rank 1 is R65.21 (severe sepsis with septic shock). Both code the same principal condition of sepsis — R65.21 is the severity/manifestation add-on that accompanies an A41.- sepsis code, so a coder would accept it as clinically equivalent for the same sepsis episode, though it is not the exact billed code and would not stand alone as principal.",
+      "llm_expanded_ground_truth_icd": "A41.89 other specified sepsis | A41.9 sepsis unspecified organism | septicemia",
+      "llm_expanded_matched_icd": "R65.21 severe sepsis with septic shock | R65.20 severe sepsis without septic shock | sepsis with acute organ dysfunction",
       "stage9_final_primary_icd": "R65.21",
       "diagnosis_match": true,
       "is_rank1_diagnosis_match": true,
@@ -126,32 +126,33 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal_more_specific",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Rank 1 'Septic shock with multi-organ failure' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — a systemic septic process; septic shock is a more specific/severe manifestation of the same sepsis episode. No lower-numbered rank matches, and remaining ranks (hepatic encephalopathy, liver failure, GI bleeding, coagulopathy, atrial fibrillation, pleural effusion, bipolar disorder) are distinct organ-specific conditions or complications.",
+      "diagnosis_reason": "Physician discharge diagnosis is 'other specified sepsis'. Rank 1 'Septic shock with multi-organ failure' names the same principal condition (sepsis) in a more specific/severe form (sepsis progressing to septic shock with organ dysfunction). No other rank names sepsis; ranks 2-8 are organ-specific complications or unrelated conditions.",
       "ground_truth_expansions": [
+        "sepsis",
         "other specified sepsis",
-        "sepsis due to other specified organism",
         "bloodstream infection with systemic inflammatory response",
-        "septicemia",
-        "systemic infection / sepsis syndrome"
+        "septicemia due to specified organism",
+        "A41.89"
       ],
       "matched_diagnosis_expansions": [
         "septic shock",
-        "sepsis with circulatory failure and hypotension",
-        "severe sepsis with multi-organ dysfunction syndrome (MODS)",
-        "septicemia with shock"
+        "sepsis with circulatory failure",
+        "severe sepsis with hypotension",
+        "multi-organ dysfunction syndrome secondary to sepsis",
+        "MODS"
       ],
       "icd_equivalent": true,
       "icd_confidence": "medium",
-      "icd_reason": "Mapped code R65.21 (severe sepsis with septic shock) is not an exact match to billed A41.89 (other specified sepsis), but both code the same principal sepsis episode; in ICD-10-CM sepsis coding A41.89 is the underlying infection code and R65.21 the severity manifestation code reported together for the same condition, so a coder would accept them as clinically equivalent representations of the sepsis principal diagnosis.",
+      "icd_reason": "Billed primary is A41.89 (other specified sepsis); mapped code at rank 1 is R65.21 (severe sepsis with septic shock). Both code the same principal condition of sepsis — R65.21 is the severity/manifestation add-on that accompanies an A41.- sepsis code, so a coder would accept it as clinically equivalent for the same sepsis episode, though it is not the exact billed code and would not stand alone as principal.",
       "ground_truth_icd_expansions": [
-        "A41.89 — Other specified sepsis",
-        "A41.9 — Sepsis, unspecified organism",
-        "sepsis / septicemia codes (A40-A41)"
+        "A41.89 other specified sepsis",
+        "A41.9 sepsis unspecified organism",
+        "septicemia"
       ],
       "matched_icd_expansions": [
-        "R65.21 — Severe sepsis with septic shock",
-        "R65.20 — Severe sepsis without septic shock",
-        "sepsis severity manifestation code used with underlying infection code A41.-"
+        "R65.21 severe sepsis with septic shock",
+        "R65.20 severe sepsis without septic shock",
+        "sepsis with acute organ dysfunction"
       ],
       "_cache_hit": false
     }

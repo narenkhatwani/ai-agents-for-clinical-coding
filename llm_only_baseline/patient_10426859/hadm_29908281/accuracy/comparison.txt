@@ -1,0 +1,47 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 10426859
+HADM ID          : 29908281
+Generated        : 2026-08-21T23:51:38.250150
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : supraventricular tachycardia, non-displaced comminuted fracture in the right superior pubic ramus, NSTEMI
+  Billed ICD title     : Supraventricular tachycardia (ICD metric only)
+  Rank-1 predicted     : Recurrent paroxysmal supraventricular tachycardia (AVNRT)
+    score=95.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Recurrent paroxysmal supraventricular tachycardia (AVNRT)
+    score=95.0  confidence=high
+  LLM reason           : Rank 1 'Recurrent paroxysmal supraventricular tachycardia (AVNRT)' names the same principal condition as the physician discharge diagnosis 'supraventricular tachycardia'; AVNRT/paroxysmal SVT is a more specific subtype of SVT.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : I47.1 — Supraventricular tachycardia
+  Rank-1 mapped ICD    : I47.10 — Supraventricular tachycardia, unspecified
+  Matched mapped ICD   : I47.10 — Supraventricular tachycardia, unspecified
+  ICD match            : YES
+  ICD exact            : NO
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped I47.10 (Supraventricular tachycardia, unspecified) is the current-code equivalent of billed I47.1 (Supraventricular tachycardia); same category and principal condition, differing only by coding-year subdivision.
+  Stage 9 final ICD    : I47.10 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Recurrent paroxysmal supraventricular tachycardia (AVNRT)  [score=95.0, high]  ICD=I47.10 — Supraventricular tachycardia, unspecified
+   2. Closed nondisplaced fracture of right superior pubic ramus from fall  [score=85.0, high]  ICD=S32.591A — Other specified fracture of right pubis, initial encounter for closed fracture
+   3. Type 2 myocardial injury (demand ischemia) due to tachycardia  [score=62.0, medium]  ICD=I24.8 — Other forms of acute ischemic heart disease
+   4. Syncope/near-syncope with mechanical fall secondary to arrhythmia  [score=58.0, high]  ICD=R55 — Syncope and collapse
+   5. Second degree atrioventricular block, Mobitz type I (Wenckebach), drug-related  [score=45.0, medium]  ICD=I44.1 — Atrioventricular block, second degree
+   6. Presumed urothelial (bladder) carcinoma, untreated, with sterile pyuria  [score=42.0, medium]  ICD=C67.9 — Malignant neoplasm of bladder, unspecified
+   7. Atherosclerotic coronary artery disease with hypertension and hyperlipidemia  [score=35.0, medium]  ICD=I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+   8. Urinary tract infection  [score=20.0, low]  ICD=N39.0 — Urinary tract infection, site not specified

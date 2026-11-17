@@ -1,0 +1,47 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 10361982
+HADM ID          : 24286431
+Generated        : 2026-08-21T23:51:31.313648
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Heavy vaginal bleeding after total laparoscopic hysterectomy
+  Billed ICD title     : Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure (ICD metric only)
+  Rank-1 predicted     : Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy
+    score=93.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy
+    score=93.0  confidence=high
+  LLM reason           : Rank 1 'Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy' names the same principal condition as the physician discharge diagnosis 'Heavy vaginal bleeding after total laparoscopic hysterectomy', specifying the vaginal cuff as the bleeding source (post-hysterectomy postprocedural hemorrhage).
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+  Rank-1 mapped ICD    : N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+  Matched mapped ICD   : N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+  ICD match            : YES
+  ICD exact            : YES
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped ICD at rank 1 is N99.820, an exact match to the billed ground-truth primary code N99.820 (postprocedural hemorrhage of a genitourinary system organ following a GU procedure).
+  Stage 9 final ICD    : N99.820 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy  [score=93.0, high]  ICD=N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+   2. Vaginal cuff granulation tissue with bleeding vessel  [score=62.0, medium]  ICD=N89.8 — Other specified noninflammatory disorders of vagina
+   3. Hypothyroidism on levothyroxine replacement  [score=55.0, high]  ICD=E03.9 — Hypothyroidism, unspecified
+   4. Attention-deficit hyperactivity disorder on stimulant therapy  [score=50.0, high]  ICD=F90.9 — Attention-deficit hyperactivity disorder, unspecified type
+   5. Depressive disorder / anxiety on venlafaxine therapy  [score=38.0, medium]  ICD=F32.9 — Major depressive disorder, single episode, unspecified
+   6. Vaginal cuff dehiscence after hysterectomy  [score=18.0, high]  ICD=T81.32XA — Disruption of internal operation (surgical) wound, not elsewhere classified, initial encounter
+   7. Acute blood loss anemia from vaginal hemorrhage  [score=15.0, high]  ICD=D62 — Acute posthemorrhagic anemia
+   8. Vaginal cuff hematoma following hysterectomy  [score=12.0, high]  ICD=N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure

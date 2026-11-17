@@ -1,0 +1,398 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "10426859",
+  "hadm_id": "29908281",
+  "most_likely": "Recurrent paroxysmal supraventricular tachycardia (AVNRT) with hemodynamic compromise",
+  "summary": "Elderly woman with known recurrent paroxysmal SVT (previously declined ablation/PPM) presents with palpitations, lightheadedness and a mechanical fall. EMS and ED documented SVT to 150-160s with transient hypotension, converted with adenosine and IV verapamil, with home verapamil uptitrated to 120 mg q8h and resulting asymptomatic Wenckebach. Work-up of the fall showed a nondisplaced comminuted right superior pubic ramus fracture (conservative management, WBAT) and a CT head with no acute intracranial injury; troponin rose 0.02→0.09 with normal CK-MB, interpreted as demand ischemia. Background of CAD, HTN, HLD, depression, presumed untreated urothelial carcinoma, DNR/DNI with transition to home hospice.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Recurrent paroxysmal supraventricular tachycardia (AVNRT)",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "SVT to 150s found by EMS, cardioverted with adenosine",
+        "Recurred in ED; treated with 2x adenosine and IV verapamil",
+        "Prior admission principal ICD I471 supraventricular tachycardia",
+        "Verapamil increased to 120 mg q8h with good rate control"
+      ],
+      "opposing_evidence": [
+        "Asymptomatic and in NSR by discharge"
+      ],
+      "reasoning": "The presenting arrhythmia is documented, treated and drives the entire admission and medication change; a coder would list this as principal disease.",
+      "icd10_primary": "I47.10",
+      "icd10_primary_title": "Supraventricular tachycardia, unspecified",
+      "icd10_package": [
+        {
+          "code": "I47.10",
+          "title": "Supraventricular tachycardia, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "R42",
+          "title": "Dizziness and giddiness",
+          "role": "supporting"
+        },
+        {
+          "code": "R00.2",
+          "title": "Palpitations",
+          "role": "supporting"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R42",
+          "title": "Dizziness and giddiness",
+          "role": "supporting"
+        },
+        {
+          "code": "R00.2",
+          "title": "Palpitations",
+          "role": "supporting"
+        },
+        {
+          "code": "Z66",
+          "title": "Do not resuscitate",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Admitted with SVT at 150s requiring adenosine and IV verapamil; principal reason for admission and treatment.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Closed nondisplaced fracture of right superior pubic ramus from fall",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Hip X-ray: nondisplaced comminuted right superior pubic ramus fracture",
+        "Right hip pain with hip flexion and cross-leg test",
+        "Orthopedics recommended conservative management, WBAT, oxycodone"
+      ],
+      "opposing_evidence": [
+        "Hip non-tender to palpation, no ecchymoses on exam"
+      ],
+      "reasoning": "Objectively imaged acute fracture treated during this stay; a strong secondary/co-principal diagnosis with clear resource use.",
+      "icd10_primary": "S32.591A",
+      "icd10_primary_title": "Other specified fracture of right pubis, initial encounter for closed fracture",
+      "icd10_package": [
+        {
+          "code": "S32.591A",
+          "title": "Other specified fracture of right pubis, initial encounter for closed fracture",
+          "role": "principal"
+        },
+        {
+          "code": "W19.XXXA",
+          "title": "Unspecified fall, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "Z96.641",
+          "title": "Presence of right artificial hip joint",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "W19.XXXA",
+          "title": "Unspecified fall, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "Z96.641",
+          "title": "Presence of right artificial hip joint",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "X-ray confirmed nondisplaced comminuted right superior pubic ramus fracture after fall; managed conservatively, weight-bearing as tolerated.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Type 2 myocardial injury (demand ischemia) due to tachycardia",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Troponin T rose 0.02 → 0.09 with CK-MB 2 (normal)",
+        "Note states 'most likely demand in setting of tachycardia'",
+        "ECG unchanged from prior baseline ST changes"
+      ],
+      "opposing_evidence": [
+        "No chest pain; no new ECG changes; further work-up deferred for goals of care"
+      ],
+      "reasoning": "Documented troponin elevation attributed to demand ischemia; codable as NSTEMI/demand ischemia (prior stay coded I214 similarly) but clinically secondary.",
+      "icd10_primary": "I24.8",
+      "icd10_primary_title": "Other forms of acute ischemic heart disease",
+      "icd10_package": [
+        {
+          "code": "I24.8",
+          "title": "Other forms of acute ischemic heart disease",
+          "role": "principal"
+        },
+        {
+          "code": "R79.89",
+          "title": "Other specified abnormal findings of blood chemistry",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R79.89",
+          "title": "Other specified abnormal findings of blood chemistry",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Troponin rose 0.02 to 0.09 with normal CK-MB, attributed to demand ischemia from tachycardia, not type 1 MI.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Syncope/near-syncope with mechanical fall secondary to arrhythmia",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Fell when lightheaded, caught fall with arm, no head strike",
+        "CT head ordered for post-fall headache — no acute abnormality",
+        "Note: falls due to lightheadedness, most likely related to SVT"
+      ],
+      "opposing_evidence": [
+        "Symptom/mechanism rather than a disease entity"
+      ],
+      "reasoning": "Well documented and drives imaging work-up, but is the mechanism of injury rather than a principal disease.",
+      "icd10_primary": "R55",
+      "icd10_primary_title": "Syncope and collapse",
+      "icd10_package": [
+        {
+          "code": "R55",
+          "title": "Syncope and collapse",
+          "role": "principal"
+        },
+        {
+          "code": "W19.XXXA",
+          "title": "Unspecified fall, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "R42",
+          "title": "Dizziness and giddiness",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "W19.XXXA",
+          "title": "Unspecified fall, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "R42",
+          "title": "Dizziness and giddiness",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Lightheadedness with fall attributed to SVT episodes; documented near-syncope preceding fall during this admission.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Second degree atrioventricular block, Mobitz type I (Wenckebach), drug-related",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Episodes of Wenckebach on higher dose verapamil during stay",
+        "Prior admission coded I441 second degree AV block",
+        "Prior Holter showed Wenckebach on nodal blockade"
+      ],
+      "opposing_evidence": [
+        "Asymptomatic; no intervention required; patient declined PPM"
+      ],
+      "reasoning": "Real documented conduction finding attributable to uptitrated verapamil, appropriate as a secondary/complication code.",
+      "icd10_primary": "I44.1",
+      "icd10_primary_title": "Atrioventricular block, second degree",
+      "icd10_package": [
+        {
+          "code": "I44.1",
+          "title": "Atrioventricular block, second degree",
+          "role": "principal"
+        },
+        {
+          "code": "T46.1X5A",
+          "title": "Adverse effect of calcium-channel blockers, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "T46.1X5A",
+          "title": "Adverse effect of calcium-channel blockers, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Wenckebach episodes documented on higher-dose verapamil during admission; adverse effect of properly administered nodal blocker.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Presumed urothelial (bladder) carcinoma, untreated, with sterile pyuria",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Note: likely undiagnosed uroepithelial carcinoma, declined work-up",
+        "UA with WBC 45/hpf, RBC 15/hpf; culture mixed flora contaminant",
+        "Prior ICD C679 malignant neoplasm of bladder"
+      ],
+      "opposing_evidence": [
+        "No tissue diagnosis; no imaging of urinary tract this stay"
+      ],
+      "reasoning": "Explicitly invoked to explain pyuria and drives hospice transition, though unconfirmed histologically.",
+      "icd10_primary": "C67.9",
+      "icd10_primary_title": "Malignant neoplasm of bladder, unspecified",
+      "icd10_package": [
+        {
+          "code": "C67.9",
+          "title": "Malignant neoplasm of bladder, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "R82.81",
+          "title": "Pyuria",
+          "role": "supporting"
+        },
+        {
+          "code": "Z51.5",
+          "title": "Encounter for palliative care",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R82.81",
+          "title": "Pyuria",
+          "role": "supporting"
+        },
+        {
+          "code": "Z51.5",
+          "title": "Encounter for palliative care",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented likely uroepithelial carcinoma, workup declined; pyuria attributed to tumor with contaminated urine culture.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Atherosclerotic coronary artery disease with hypertension and hyperlipidemia",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "PMH CAD s/p possible MI, HTN, HLD; prior ICD I2510, I10, E785",
+        "Continued aspirin 81 mg and rosuvastatin 10 mg during stay"
+      ],
+      "opposing_evidence": [
+        "No angina; no ischemic work-up this admission; BPs soft (97/61)"
+      ],
+      "reasoning": "Chronic comorbidities managed medically this stay; relevant secondary codes but do not explain the acute presentation.",
+      "icd10_primary": "I25.10",
+      "icd10_primary_title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+      "icd10_package": [
+        {
+          "code": "I25.10",
+          "title": "Atherosclerotic heart disease of native coronary artery without angina pectoris",
+          "role": "principal"
+        },
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
+          "role": "supporting"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z87.891",
+          "title": "Personal history of nicotine dependence",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I10",
+          "title": "Essential (primary) hypertension",
+          "role": "supporting"
+        },
+        {
+          "code": "E78.5",
+          "title": "Hyperlipidemia, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z87.891",
+          "title": "Personal history of nicotine dependence",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Chronic documented CAD, hypertension, hyperlipidemia listed as active comorbid risk factors influencing management.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Urinary tract infection",
+      "score": 20.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Pyuria on UA (WBC 45/hpf); admission WBC 12.2 with neutrophilia"
+      ],
+      "opposing_evidence": [
+        "Urine culture mixed flora/contaminant, no dysuria, afebrile, WBC normalized to 6.8",
+        "No antibiotics given"
+      ],
+      "reasoning": "Considered as an SVT trigger but effectively excluded by culture, absence of symptoms and untreated resolution of leukocytosis.",
+      "icd10_primary": "N39.0",
+      "icd10_primary_title": "Urinary tract infection, site not specified",
+      "icd10_package": [
+        {
+          "code": "N39.0",
+          "title": "Urinary tract infection, site not specified",
+          "role": "principal"
+        },
+        {
+          "code": "R82.81",
+          "title": "Pyuria",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R82.81",
+          "title": "Pyuria",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Considered for pyuria but culture showed contamination and no dysuria; low-probability differential only.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "I47.10",
+  "primary_icd_title": "Supraventricular tachycardia, unspecified",
+  "primary_condition": "Recurrent paroxysmal supraventricular tachycardia",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:36:35.551380",
+  "ontology_routing": false
+}

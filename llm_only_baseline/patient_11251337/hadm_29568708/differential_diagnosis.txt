@@ -1,0 +1,64 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 11251337
+HADM ID          : 29568708
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:38:35.684342
+Candidates       : 9
+Most likely      : Staghorn calculus of right kidney requiring percutaneous nephrolithotomy
+
+Summary:
+  Elective urology admission of a man with known bilateral staghorn renal calculi and bilateral percutaneous nephrostomy tubes for definitive stone treatment. He underwent difficult right percutaneous nephrolithotomy for stone >2 cm with antegrade nephrostogram, antegrade ureteroscopy, antegrade ureteral stent placement and removal of the right nephrostomy tube, with residual stone burden requiring interval ureteroscopy. Post-operative course was uncomplicated (POD1 discharge); labs show stable chronic renal impairment (Cr 2.1 → 2.5) and normocytic/macrocytic anemia (Hgb 9.4).
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [95.0/100 | high]  Bilateral staghorn calculi of kidney (right renal calculus treated this stay)  (primary)
+      + Chief complaint: nephrolithiasis
+      + Right PCNL for stone greater than 2 cm performed
+      + Fluoroscopy report: percutaneous lithotripsy
+      why: Admission was explicitly for planned stone removal; the renal calculus is the disease driving the entire stay and all procedures.
+  #2  [80.0/100 | high]  Chronic kidney disease, stage 4, from long-standing obstructive nephropathy  (secondary)
+      + Creatinine 2.1–2.5 mg/dL persistently over three admissions
+      + Prior ICD N18.9; bilateral atrophic thin renal parenchyma on prior imaging
+      - Exact stage/eGFR not reported this stay
+      why: Stable elevated creatinine with prior documented renal atrophy supports chronic kidney disease as a major active comorbidity affecting perioperative care.
+  #3  [72.0/100 | medium]  Hydronephrosis with renal and ureteral calculous obstruction (obstructive uropathy)  (primary)
+      + Prior ICD N13.2 with bilateral PCN tubes for obstructive uropathy
+      + Antegrade nephrostogram and ureteral stent placed this stay
+      - Current note does not restate active hydronephrosis
+      why: Chronic calculous obstruction is the documented indication for the nephrostomy/stent pathway and remains a plausible coded principal or secondary condition.
+  #4  [66.0/100 | medium]  Anemia of chronic kidney disease  (secondary)
+      + Hgb 9.4 g/dL, Hct 30.8%, RBC 2.95
+      + Prior ICD D63.1 anemia in CKD; ferritin 257, TSAT 22%
+      - Macrocytosis (MCV 104) not typical of pure CKD anemia
+      - Possible perioperative blood loss contribution
+      why: Persistent anemia paralleling CKD, though rising MCV and recent surgery raise alternative contributions.
+  #5  [55.0/100 | medium]  Hypertensive chronic kidney disease  (risk_factor)
+      + PMH hypertension documented; prior ICD I12.9
+      + Prior BPs 120–150s systolic
+      - No antihypertensive medications on admission; vitals stable (AVSS)
+      why: Longstanding hypertension coexisting with CKD is a codable chronic comorbidity, though untreated and quiescent this stay.
+  #6  [50.0/100 | high]  Presence of ureteral stent and nephrostomy tube status with residual stone burden  (complication)
+      + Right antegrade ureteral stent placed; right nephrostomy tube removed
+      + Residual stone requiring interval right ureteroscopy
+      - Device/status codes are not principal diagnoses
+      why: Status and residual disease are documented and codable as secondary items driving planned follow-up procedures.
+  #7  [45.0/100 | medium]  Hemiplegia following prior nontraumatic intracerebral hemorrhage, left nondominant side  (secondary)
+      + PMH hemorrhagic CVA with residual left upper extremity weakness
+      + Prior ICD I69.154
+      - No current neurologic deficit described in exam
+      why: Chronic sequela consistently coded in prior stays; relevant to mobility/perioperative care though not active now.
+  #8  [40.0/100 | low]  Acute kidney injury superimposed on chronic kidney disease, post-procedural  (complication)
+      + Creatinine rose 2.1 → 2.5 after PCNL
+      + Anion gap 17, bicarbonate 22
+      - Small change within prior baseline range 2.1–2.3
+      - Patient discharged POD1 voiding well
+      why: Modest post-operative creatinine rise could represent transient AKI but may simply be baseline CKD fluctuation.
+  #9  [12.0/100 | low]  Complicated urinary tract infection / pyonephrosis  (differential)
+      + Prior admission with Serratia UTI and pyonephrosis coding
+      - Urine culture: mixed flora consistent with contamination
+      - WBC 6.9, afebrile, only prophylactic antibiotics
+      why: Historically relevant but current cultures and inflammatory markers argue against active infection this stay.

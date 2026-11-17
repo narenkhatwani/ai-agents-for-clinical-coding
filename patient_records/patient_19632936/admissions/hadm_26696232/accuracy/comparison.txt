@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 19632936
 HADM ID          : 26696232
-Generated        : 2026-08-20T17:31:21.537821
+Generated        : 2026-08-20T22:08:17.230848
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 1
   Matched diagnosis    : Acute macrocytic anemia with respiratory compromise
     score=85.0  confidence=high
-  LLM reason           : Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles acuity and an associated symptom (respiratory compromise) with the same core diagnosis.
+  LLM reason           : Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles an acute presentation and associated respiratory compromise with the same anemia diagnosis.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : Mapped code at matched rank is D53.9 (Nutritional anemia, unspecified), whereas the billed primary is D50.9 (Iron deficiency anemia, unspecified). Although both fall in the nutritional anemia block (D50-D53), they designate different anemia etiologies/morphologies — iron deficiency anemia is characteristically microcytic while D53.9 covers unspecified nutritional (including macrocytic/megaloblastic-type) anemia — so a coder would not treat them as interchangeable for the principal diagnosis.
+  LLM ICD reason       : Mapped code at rank 1 is D53.9 (nutritional anemia, unspecified), while the billed primary code is D50.9 (iron deficiency anemia, unspecified). These are different anemia categories — iron deficiency (typically microcytic) versus unspecified nutritional/macrocytic anemia — and a coder would not treat them as interchangeable codes.
   Stage 9 final ICD    : D53.9 (debug)
 
 FULL DIFFERENTIAL LIST

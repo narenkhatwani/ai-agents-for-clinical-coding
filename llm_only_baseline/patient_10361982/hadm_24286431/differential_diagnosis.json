@@ -1,0 +1,172 @@
+{
+  "summary": "Woman ~3 weeks status post exam under anesthesia, extensive lysis of adhesions, total laparoscopic hysterectomy with bilateral salpingectomy and cystoscopy, presenting with acute heavy vaginal bleeding with clots after an initial period of only light spotting. Clinic exam showed no cuff dehiscence and a small bleeding vessel was cauterized; pelvic ultrasound showed a normal vaginal cuff with no hematoma. Hematocrit 38.1 (preop 40.1), hemodynamically stable, no procedure required this stay; bleeding decreased with observation and she was discharged on hospital day 2.",
+  "most_likely": "Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy",
+      "score": 93.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Chief complaint: heavy vaginal bleeding after hysterectomy",
+        "Small vessel at cuff cauterized in clinic",
+        "TLH/BS with extensive lysis of adhesions ~3 weeks prior"
+      ],
+      "opposing_evidence": [
+        "Hct stable at 38.1 vs preop 40.1",
+        "No transfusion or operative intervention required"
+      ],
+      "reasoning": "Bleeding is directly attributable to the recent hysterectomy site with an identified cuff vessel cauterized; this is the principal disease driving the admission for observation."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Vaginal cuff granulation tissue with bleeding vessel",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Small vessel cauterized at cuff in clinic",
+        "Ultrasound: normal-appearing vaginal cuff, normal postoperative changes"
+      ],
+      "opposing_evidence": [
+        "Granulation tissue not explicitly described in note"
+      ],
+      "reasoning": "Delayed cuff bleeding at 3 weeks postop commonly arises from healing granulation tissue/suture-line vessel; supported indirectly by successful cautery."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hypothyroidism on levothyroxine replacement",
+      "score": 55.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "PMH hypothyroidism; Synthroid 50 mcg continued inpatient",
+        "Prior admission billed E039"
+      ],
+      "opposing_evidence": [
+        "No thyroid labs recorded this stay"
+      ],
+      "reasoning": "Chronic comorbidity actively managed during the stay, appropriate as a secondary coded condition."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Attention-deficit hyperactivity disorder on stimulant therapy",
+      "score": 50.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Adderall 10 mg BID continued inpatient",
+        "Prior admission billed F909"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Documented chronic condition with continued medication during admission."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Depressive disorder / anxiety on venlafaxine therapy",
+      "score": 38.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Venlafaxine XR 75 mg continued inpatient",
+        "Prior billing included F329 and F419"
+      ],
+      "opposing_evidence": [
+        "Current note attributes venlafaxine to ADHD history, no mood symptoms documented"
+      ],
+      "reasoning": "Supported mainly by prior coding and ongoing SNRI therapy; current documentation is ambiguous."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Vaginal cuff dehiscence after hysterectomy",
+      "score": 18.0,
+      "confidence": "high",
+      "category": "differential",
+      "supporting_evidence": [
+        "Heavy vaginal bleeding with clots in early postoperative period"
+      ],
+      "opposing_evidence": [
+        "Clinic exam: no evidence of cuff dehiscence",
+        "Ultrasound shows normal-appearing vaginal cuff"
+      ],
+      "reasoning": "Important and dangerous differential for postop cuff bleeding but explicitly excluded on direct examination and imaging."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Acute blood loss anemia from vaginal hemorrhage",
+      "score": 15.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Reported heavy bleeding with passage of large clots"
+      ],
+      "opposing_evidence": [
+        "Hgb 12.6 / Hct 38.1, near preoperative baseline 40.1",
+        "Patient denies symptoms of acute blood loss anemia"
+      ],
+      "reasoning": "Explicitly considered but not met — hematocrit essentially stable and patient asymptomatic, so unlikely to be codable."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Vaginal cuff hematoma following hysterectomy",
+      "score": 12.0,
+      "confidence": "high",
+      "category": "differential",
+      "supporting_evidence": [
+        "Ultrasound indication was to evaluate for cuff hematoma"
+      ],
+      "opposing_evidence": [
+        "Ultrasound impression: no vaginal cuff hematoma, no free fluid"
+      ],
+      "reasoning": "Considered clinically and imaged, but definitively excluded by transabdominal/transvaginal pelvic ultrasound."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Vaginal cuff dehiscence",
+      "why": "No dehiscence on clinic exam; ultrasound shows intact, normal-appearing cuff"
+    },
+    {
+      "diagnosis": "Vaginal cuff or pelvic hematoma",
+      "why": "Pelvic ultrasound explicitly shows no hematoma and no free fluid"
+    },
+    {
+      "diagnosis": "Hemorrhagic shock / significant blood loss requiring transfusion",
+      "why": "Hemodynamically stable throughout, Hct 38.1 near baseline, no transfusion given"
+    },
+    {
+      "diagnosis": "Retained products or recurrent uterine bleeding",
+      "why": "Uterus surgically absent on imaging; bleeding is cuff-derived"
+    },
+    {
+      "diagnosis": "Postoperative pelvic infection / cuff cellulitis",
+      "why": "No fever, WBC 8.7 normal, no purulent discharge documented"
+    }
+  ],
+  "uncertain_areas": [
+    "Whether documentation specifies granulation tissue versus simple postprocedural hemorrhage at cuff",
+    "Whether the clinic cautery was coded as a procedure during this admission",
+    "Timing/attribution of bleeding as postprocedural complication versus routine postoperative bleeding",
+    "Coder treatment of thrombocytosis (PLT 434) and microcytosis (MCV 80) with normal hemoglobin",
+    "Whether depression/anxiety were actively addressed this stay or are historical only"
+  ],
+  "n_candidates": 8,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "10361982",
+  "hadm_id": "24286431",
+  "generated_at": "2026-08-21T23:35:14.150082",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

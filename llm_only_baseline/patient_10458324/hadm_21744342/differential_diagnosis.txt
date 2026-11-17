@@ -1,0 +1,78 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 10458324
+HADM ID          : 21744342
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:37:21.703810
+Candidates       : 10
+Most likely      : Multiple displaced right rib fractures with flail chest from blunt chest trauma
+
+Summary:
+  Cachectic middle-aged man with IVDU on methadone and PTSD presented after a mechanical fall in the bathtub, striking his right lateral chest, with multiple displaced right 4th–11th rib fractures (flail segment), small right traumatic pneumothorax/hydropneumothorax and extensive subcutaneous emphysema, managed with pigtail thoracostomy. Course was complicated by aspiration/multifocal pneumonia (heavy Haemophilus influenzae, beta-lactamase positive, in sputum), fever and hypotension requiring pressors, and acute hypoxemic respiratory failure requiring intubation (self-extubated), plus new paroxysmal atrial fibrillation with RVR requiring IV metoprolol/diltiazem then oral beta-blockade. He also developed volume overload with bilateral pleural effusions and peripheral edema responsive to IV furosemide; TTE showed preserved LVEF 65% with mild-moderate MR. He was weaned off oxygen and discharged to complete Augmentin, continuing methadone and gabapentin.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [95.0/100 | high]  Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)  (primary)
+      + Fall in bathtub, struck right lateral chest
+      + CT: acute fractures right 4th–11th ribs, all displaced except 11th
+      + Radiology indication states 'flail chest'
+      + Pain managed with oxycodone, incentive spirometry
+      why: The admitting and dominant condition driving the entire stay, imaging-confirmed and requiring chest tube, analgesia and ICU care.
+  #2  [90.0/100 | high]  Acute hypoxemic respiratory failure requiring mechanical ventilation  (complication)
+      + Hypoxic on arrival, 96% on 4L
+      + Intubated for worsening hypoxia, fever, hypotension
+      + pO2 52 on admission ABG; serial ETT chest films
+      + Transferred to medicine for ongoing hypoxemia with O2 requirement
+      - Successfully weaned to room air by discharge
+      why: Well documented respiratory failure with intubation and pressor need; a major coded complication of chest trauma and pneumonia.
+  #3  [85.0/100 | high]  Aspiration pneumonia with Haemophilus influenzae superinfection  (complication)
+      + CT: multifocal patchy/nodular opacities, mucous plugging, suspicious for aspiration/pneumonia
+      + Sputum heavy growth beta-lactamase positive H. influenzae
+      + Fever spike, treated broad-spectrum then 5-day Augmentin
+      + Right basal opacity 'likely aspiration/pneumonia' on CXR
+      - Blood and urine cultures no growth
+      - Some opacities attributed to contusion/atelectasis/edema
+      why: Microbiologic and radiographic support is strong; treated as pneumonia with targeted oral antibiotics at discharge.
+  #4  [84.0/100 | high]  Traumatic right pneumothorax/hydropneumothorax with subcutaneous emphysema  (complication)
+      + CT: small right pneumothorax and small nonhemorrhagic effusion
+      + Pigtail chest tube placed, later removed with tiny residual apical PTX
+      + Extensive right chest wall subcutaneous emphysema
+      - Final CXR: no pneumothorax seen
+      why: Directly documented traumatic complication requiring a procedure (pigtail placement) during this stay.
+  #5  [80.0/100 | high]  New-onset paroxysmal atrial fibrillation with rapid ventricular response  (complication)
+      + Transferred to ICU for afib with RVR
+      + Required IV metoprolol and diltiazem, then PO metoprolol succinate 75 mg
+      + CHA2DS2-VASc 0, no anticoagulation; back in NSR
+      - Prior admission EKG showed frequent PACs but no atrial fibrillation
+      why: Clearly documented new arrhythmia driving ICU transfer and discharge medication changes; likely triggered by trauma, pain and infection.
+  #6  [70.0/100 | high]  Opioid dependence maintained on methadone (IV drug use history)  (risk_factor)
+      + PMH IVDU, methadone 70 mg daily confirmed with clinic
+      + Prior admission ICD F1120 opioid dependence with withdrawal
+      why: Active, managed comorbidity affecting analgesia and disposition; coded as secondary condition rather than principal.
+  #7  [55.0/100 | medium]  Acute volume overload with bilateral pleural effusions and peripheral edema  (complication)
+      + JVP to midneck, bilateral pedal edema, bibasilar crackles
+      + Bilateral effusions right greater than left on CXR
+      + IV Lasix 20 mg x2 days with good output
+      - TTE LVEF 65% with normal systolic/diastolic function
+      - Not discharged on diuretic; edema described as new and not fluid-resuscitated
+      why: Documented fluid overload treated with diuresis but without a structural cardiac cause, so a secondary/complication code rather than heart failure.
+  #8  [45.0/100 | medium]  PTSD with polysubstance use and bipolar disorder history  (secondary)
+      + Home gabapentin continued for PTSD
+      + Psychiatry consulted, interested in outpatient follow-up
+      + Documented bipolar disorder, cannabis and polysubstance use
+      - No acute psychiatric decompensation or suicidal ideation this stay
+      why: Chronic comorbidity addressed in-house but not a driver of this admission.
+  #9  [40.0/100 | low]  Pulmonary contusion of right lung  (differential)
+      + CXR: right lung base atelectasis versus contusion after chest trauma
+      + Displaced multi-level rib fractures with adjacent pleural-based hematoma
+      - Radiologists favored aspiration/pneumonia and edema for the opacities
+      - Never explicitly diagnosed in hospital course
+      why: Plausible contributor to hypoxemia given blunt trauma, but opacities were attributed mainly to infection/edema.
+  #10  [35.0/100 | low]  Protein-calorie malnutrition/cachexia (BMI 17.9)  (secondary)
+      + BMI 17.9, weight 125 lb, down from 140 lb prior stay
+      + Exam: cachectic male; albumin 2.8
+      - No formal nutrition diagnosis documented in the note
+      why: Objective anthropometric and lab data support undernutrition, but it is not explicitly diagnosed or treated in the record provided.

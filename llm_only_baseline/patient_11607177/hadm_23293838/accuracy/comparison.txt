@@ -1,0 +1,49 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 11607177
+HADM ID          : 23293838
+Generated        : 2026-08-21T23:52:22.512205
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Refractory VT s/p stellate ganglion block; Heartware HVAD for nonischemic cardiomyopathy - listed at ___ for heart transplantation status IA (b)
+  Billed ICD title     : Ventricular tachycardia (ICD metric only)
+  Rank-1 predicted     : Refractory ventricular tachycardia with appropriate ICD shock
+    score=95.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Refractory ventricular tachycardia with appropriate ICD shock
+    score=95.0  confidence=high
+  LLM reason           : Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia; Rank 1 'Refractory ventricular tachycardia with appropriate ICD shock' names the same principal condition (ventricular tachycardia), with the additional detail of device shock not changing the principal diagnosis.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : I47.2 — Ventricular tachycardia
+  Rank-1 mapped ICD    : I47.20 — Ventricular tachycardia, unspecified
+  Matched mapped ICD   : I47.20 — Ventricular tachycardia, unspecified
+  ICD match            : YES
+  ICD exact            : NO
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Billed I47.2 (Ventricular tachycardia) and mapped I47.20 (Ventricular tachycardia, unspecified) are the same code family/category for ventricular tachycardia; I47.20 is the ICD-10-CM specific successor code for I47.2 and a coder would accept them as equivalent.
+  Stage 9 final ICD    : I47.20 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Refractory ventricular tachycardia with appropriate ICD shock  [score=95.0, high]  ICD=I47.20 — Ventricular tachycardia, unspecified
+   2. Chronic systolic (congestive) heart failure, NYHA class III/stage D  [score=82.0, high]  ICD=I50.22 — Chronic systolic (congestive) heart failure
+   3. Non-ischemic dilated cardiomyopathy with biventricular dysfunction  [score=80.0, high]  ICD=I42.0 — Dilated cardiomyopathy
+   4. Presence of left ventricular assist device (HeartMate II)  [score=76.0, high]  ICD=Z95.811 — Presence of heart assist device
+   5. Acute on chronic volume overload (decompensated right heart failure)  [score=55.0, medium]  ICD=I50.813 — Acute on chronic right heart failure
+   6. Horner syndrome following stellate ganglion block  [score=48.0, medium]  ICD=G90.2 — Horner's syndrome
+   7. Supratherapeutic INR on long-term warfarin anticoagulation  [score=40.0, medium]  ICD=R79.1 — Abnormal coagulation profile
+   8. Chronic kidney disease with mild creatinine elevation  [score=32.0, low]  ICD=N18.9 — Chronic kidney disease, unspecified
+   9. Type 2 diabetes mellitus without complications  [score=25.0, medium]  ICD=E11.9 — Type 2 diabetes mellitus without complications
+  10. Chronic tophaceous gout on urate-lowering therapy  [score=22.0, medium]  ICD=M1A.9XX0 — Chronic gout, unspecified, without tophus (tophi)

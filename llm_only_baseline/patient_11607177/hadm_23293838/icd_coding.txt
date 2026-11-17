@@ -1,0 +1,29 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 11607177
+HADM ID          : 23293838
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : I47.20 — Ventricular tachycardia, unspecified
+Primary condition: Refractory ventricular tachycardia with appropriate ICD shock in LVAD patient
+
+  #1  Refractory ventricular tachycardia with appropriate ICD shock  →  I47.20 — Ventricular tachycardia, unspecified
+      reason: Admitted after appropriate ICD shock; interrogation showed >20 VT events treated with ATP; stellate ganglion block performed.
+  #2  Chronic systolic (congestive) heart failure, NYHA class III/stage D  →  I50.22 — Chronic systolic (congestive) heart failure
+      reason: Documented NYHA III, stage D chronic systolic heart failure on torsemide, awaiting transplant.
+  #3  Non-ischemic dilated cardiomyopathy with biventricular dysfunction  →  I42.0 — Dilated cardiomyopathy
+      reason: TTE shows severe biventricular dilation and global hypokinesis, LVEF <20%, non-ischemic etiology.
+  #4  Presence of left ventricular assist device (HeartMate II)  →  Z95.811 — Presence of heart assist device
+      reason: HeartMate II LVAD in place, driveline managed by VAD team during stay.
+  #5  Acute on chronic volume overload (decompensated right heart failure)  →  I50.813 — Acute on chronic right heart failure
+      reason: JVD 14 cm, 2+ bilateral pitting edema on admission with RV dysfunction; diuretics titrated.
+  #6  Horner syndrome following stellate ganglion block  →  G90.2 — Horner's syndrome
+      reason: Expected sympathetic blockade effect after left stellate ganglion block performed for refractory VT.
+  #7  Supratherapeutic INR on long-term warfarin anticoagulation  →  R79.1 — Abnormal coagulation profile
+      reason: INR 3.3 above goal while on chronic warfarin for LVAD; no bleeding documented.
+  #8  Chronic kidney disease with mild creatinine elevation  →  N18.9 — Chronic kidney disease, unspecified
+      reason: Creatinine 1.4 on admission improving to 1.2; stage not documented, unspecified CKD assigned.
+  #9  Type 2 diabetes mellitus without complications  →  E11.9 — Type 2 diabetes mellitus without complications
+      reason: Diabetes listed in past medical history without documented complications this admission.
+  #10  Chronic tophaceous gout on urate-lowering therapy  →  M1A.9XX0 — Chronic gout, unspecified, without tophus (tophi)
+      reason: Tophaceous gout history; continued colchicine and febuxostat; site unspecified in current note.

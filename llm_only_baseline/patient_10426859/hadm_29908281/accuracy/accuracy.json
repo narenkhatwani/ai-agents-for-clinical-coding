@@ -1,0 +1,163 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "10426859",
+  "hadm_id": "29908281",
+  "generated_at": "2026-08-21T23:51:38.250150",
+  "ground_truth": {
+    "primary_icd_code": "I471",
+    "primary_dx_title": "Supraventricular tachycardia",
+    "primary_icd_title": "Supraventricular tachycardia",
+    "discharge_diagnosis": "supraventricular tachycardia, non-displaced comminuted fracture in the right superior pubic ramus, NSTEMI",
+    "diffdx_gt": "supraventricular tachycardia, non-displaced comminuted fracture in the right superior pubic ramus, NSTEMI",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 22
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "supraventricular tachycardia, non-displaced comminuted fracture in the right superior pubic ramus, NSTEMI",
+      "rank1_diagnosis": "Recurrent paroxysmal supraventricular tachycardia (AVNRT)",
+      "rank1_score": 95.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Recurrent paroxysmal supraventricular tachycardia (AVNRT)",
+      "matched_score": 95.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Recurrent paroxysmal supraventricular tachycardia (AVNRT)' names the same principal condition as the physician discharge diagnosis 'supraventricular tachycardia'; AVNRT/paroxysmal SVT is a more specific subtype of SVT.",
+      "llm_expanded_ground_truth": "SVT | supraventricular tachycardia | paroxysmal supraventricular tachycardia | PSVT | AVNRT | atrioventricular nodal reentrant tachycardia",
+      "llm_expanded_matched": "recurrent PSVT | AVNRT | AV nodal reentrant tachycardia | supraventricular tachycardia",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Recurrent paroxysmal supraventricular tachycardia (AVNRT)",
+          "score": 95.0,
+          "confidence": "high",
+          "icd10_primary": "I47.10",
+          "icd10_primary_title": "Supraventricular tachycardia, unspecified"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Closed nondisplaced fracture of right superior pubic ramus from fall",
+          "score": 85.0,
+          "confidence": "high",
+          "icd10_primary": "S32.591A",
+          "icd10_primary_title": "Other specified fracture of right pubis, initial encounter for closed fracture"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Type 2 myocardial injury (demand ischemia) due to tachycardia",
+          "score": 62.0,
+          "confidence": "medium",
+          "icd10_primary": "I24.8",
+          "icd10_primary_title": "Other forms of acute ischemic heart disease"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Syncope/near-syncope with mechanical fall secondary to arrhythmia",
+          "score": 58.0,
+          "confidence": "high",
+          "icd10_primary": "R55",
+          "icd10_primary_title": "Syncope and collapse"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Second degree atrioventricular block, Mobitz type I (Wenckebach), drug-related",
+          "score": 45.0,
+          "confidence": "medium",
+          "icd10_primary": "I44.1",
+          "icd10_primary_title": "Atrioventricular block, second degree"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Presumed urothelial (bladder) carcinoma, untreated, with sterile pyuria",
+          "score": 42.0,
+          "confidence": "medium",
+          "icd10_primary": "C67.9",
+          "icd10_primary_title": "Malignant neoplasm of bladder, unspecified"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Atherosclerotic coronary artery disease with hypertension and hyperlipidemia",
+          "score": 35.0,
+          "confidence": "medium",
+          "icd10_primary": "I25.10",
+          "icd10_primary_title": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Urinary tract infection",
+          "score": 20.0,
+          "confidence": "low",
+          "icd10_primary": "N39.0",
+          "icd10_primary_title": "Urinary tract infection, site not specified"
+        }
+      ],
+      "n_diffdx": 8
+    },
+    "icd_linked": {
+      "ground_truth_icd": "I47.1",
+      "ground_truth_icd_title": "Supraventricular tachycardia",
+      "rank1_predicted_icd": "I47.10",
+      "rank1_predicted_icd_title": "Supraventricular tachycardia, unspecified",
+      "matched_predicted_icd": "I47.10",
+      "matched_predicted_icd_title": "Supraventricular tachycardia, unspecified",
+      "icd_match": true,
+      "icd_exact_match": false,
+      "icd_family_match": true,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "Mapped I47.10 (Supraventricular tachycardia, unspecified) is the current-code equivalent of billed I47.1 (Supraventricular tachycardia); same category and principal condition, differing only by coding-year subdivision.",
+      "llm_expanded_ground_truth_icd": "I47.1 Supraventricular tachycardia | I47.10 SVT unspecified | I47.19 other SVT",
+      "llm_expanded_matched_icd": "I47.10 Supraventricular tachycardia, unspecified | I47.1 Supraventricular tachycardia",
+      "stage9_final_primary_icd": "I47.10",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
+    },
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Recurrent paroxysmal supraventricular tachycardia (AVNRT)' names the same principal condition as the physician discharge diagnosis 'supraventricular tachycardia'; AVNRT/paroxysmal SVT is a more specific subtype of SVT.",
+      "ground_truth_expansions": [
+        "SVT",
+        "supraventricular tachycardia",
+        "paroxysmal supraventricular tachycardia",
+        "PSVT",
+        "AVNRT",
+        "atrioventricular nodal reentrant tachycardia"
+      ],
+      "matched_diagnosis_expansions": [
+        "recurrent PSVT",
+        "AVNRT",
+        "AV nodal reentrant tachycardia",
+        "supraventricular tachycardia"
+      ],
+      "icd_equivalent": true,
+      "icd_confidence": "high",
+      "icd_reason": "Mapped I47.10 (Supraventricular tachycardia, unspecified) is the current-code equivalent of billed I47.1 (Supraventricular tachycardia); same category and principal condition, differing only by coding-year subdivision.",
+      "ground_truth_icd_expansions": [
+        "I47.1 Supraventricular tachycardia",
+        "I47.10 SVT unspecified",
+        "I47.19 other SVT"
+      ],
+      "matched_icd_expansions": [
+        "I47.10 Supraventricular tachycardia, unspecified",
+        "I47.1 Supraventricular tachycardia"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

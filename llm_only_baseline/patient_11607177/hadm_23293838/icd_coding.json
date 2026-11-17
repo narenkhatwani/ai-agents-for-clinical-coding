@@ -1,0 +1,402 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "11607177",
+  "hadm_id": "23293838",
+  "most_likely": "Refractory ventricular tachycardia in non-ischemic dilated cardiomyopathy with LVAD",
+  "summary": "Middle-aged/older man with non-ischemic dilated cardiomyopathy (EF <20%) s/p HeartMate II LVAD, listed status 1A(b) for heart transplant, admitted after a single ICD shock while on a fishing trip. Device interrogation showed one shock plus >20 VT episodes aborted by ATP despite maximal antiarrhythmic therapy (quinidine, mexiletine, metoprolol); he underwent a repeat left stellate ganglion block with no further VT on telemetry. He also had a week of increased lower extremity edema with JVD 14 cm on admission, managed by diuretic adjustment (torsemide held then resumed), discharged near-euvolemic at 120.4 kg.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Refractory ventricular tachycardia with appropriate ICD shock",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Chief complaint: ICD shock",
+        "Interrogation: one shock, >20 VT episodes aborted by ATP",
+        "Left stellate ganglion block performed this admission",
+        "Prior admission principal ICD-10 I472 for same problem"
+      ],
+      "opposing_evidence": [
+        "No VT recorded on telemetry after block"
+      ],
+      "reasoning": "The entire admission was driven by documented recurrent VT despite maximal antiarrhythmic therapy, requiring an invasive sympathetic block; this is the billable principal disease rather than the shock event.",
+      "icd10_primary": "I47.20",
+      "icd10_primary_title": "Ventricular tachycardia, unspecified",
+      "icd10_package": [
+        {
+          "code": "I47.20",
+          "title": "Ventricular tachycardia, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "Z95.810",
+          "title": "Presence of automatic (implantable) cardiac defibrillator",
+          "role": "supporting"
+        },
+        {
+          "code": "I42.0",
+          "title": "Dilated cardiomyopathy",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z95.810",
+          "title": "Presence of automatic (implantable) cardiac defibrillator",
+          "role": "supporting"
+        },
+        {
+          "code": "I42.0",
+          "title": "Dilated cardiomyopathy",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Admitted after appropriate ICD shock; interrogation showed >20 VT events treated with ATP; stellate ganglion block performed.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Chronic systolic (congestive) heart failure, NYHA class III/stage D",
+      "score": 82.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Stage D heart failure, LVEF <20% on TTE",
+        "JVD 14 cm and 2+ bilateral pitting edema on admission",
+        "Torsemide dose escalated at home then re-titrated inpatient"
+      ],
+      "opposing_evidence": [
+        "Lungs clear, no crackles, room air saturation 97-99%"
+      ],
+      "reasoning": "Actively managed volume overload with diuretic titration and daily weights makes chronic systolic HF a strongly supported concurrent diagnosis, though the acute driver was arrhythmia.",
+      "icd10_primary": "I50.22",
+      "icd10_primary_title": "Chronic systolic (congestive) heart failure",
+      "icd10_package": [
+        {
+          "code": "I50.22",
+          "title": "Chronic systolic (congestive) heart failure",
+          "role": "principal"
+        },
+        {
+          "code": "Z94.9",
+          "title": "Transplanted organ and tissue status, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z94.9",
+          "title": "Transplanted organ and tissue status, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented NYHA III, stage D chronic systolic heart failure on torsemide, awaiting transplant.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Non-ischemic dilated cardiomyopathy with biventricular dysfunction",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "TTE: severe biventricular dilation, severe global hypokinesis",
+        "Longstanding EF 10-20% non-ischemic DCM documented",
+        "Moderate-severe MR, moderate TR, mild-moderate AR"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Underlying substrate for both VT and heart failure, objectively confirmed on this admission's echocardiogram.",
+      "icd10_primary": "I42.0",
+      "icd10_primary_title": "Dilated cardiomyopathy",
+      "icd10_package": [
+        {
+          "code": "I42.0",
+          "title": "Dilated cardiomyopathy",
+          "role": "principal"
+        },
+        {
+          "code": "I50.22",
+          "title": "Chronic systolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I50.22",
+          "title": "Chronic systolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "TTE shows severe biventricular dilation and global hypokinesis, LVEF <20%, non-ischemic etiology.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Presence of left ventricular assist device (HeartMate II)",
+      "score": 76.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "LVAD flow 5.3-6.4, speed 9400, PI 3.1-4.4 documented daily",
+        "Driveline managed by VAD team",
+        "Doppler-only blood pressures"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Device status materially affected management (anticoagulation, Doppler BP, driveline care) and is a codable status condition for this stay.",
+      "icd10_primary": "Z95.811",
+      "icd10_primary_title": "Presence of heart assist device",
+      "icd10_package": [
+        {
+          "code": "Z95.811",
+          "title": "Presence of heart assist device",
+          "role": "principal"
+        },
+        {
+          "code": "Z76.82",
+          "title": "Awaiting organ transplant status",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z76.82",
+          "title": "Awaiting organ transplant status",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "HeartMate II LVAD in place, driveline managed by VAD team during stay.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute on chronic volume overload (decompensated right heart failure)",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "One week of increased lower extremity edema before shock",
+        "JVD 14 cm improving to 10 cm; weight 120.4 kg at discharge",
+        "Home torsemide increased to 30 mg then back-titrated"
+      ],
+      "opposing_evidence": [
+        "Clinician documented patient appeared relatively euvolemic",
+        "No pulmonary congestion or hypoxia"
+      ],
+      "reasoning": "Congestive signs were present and diuretics adjusted, but the note explicitly downplays overload, so this ranks as a contributory rather than principal issue.",
+      "icd10_primary": "I50.813",
+      "icd10_primary_title": "Acute on chronic right heart failure",
+      "icd10_package": [
+        {
+          "code": "I50.813",
+          "title": "Acute on chronic right heart failure",
+          "role": "principal"
+        },
+        {
+          "code": "I50.22",
+          "title": "Chronic systolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I50.22",
+          "title": "Chronic systolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "JVD 14 cm, 2+ bilateral pitting edema on admission with RV dysfunction; diuretics titrated.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Horner syndrome following stellate ganglion block",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Transitional issue: Horner Syndrome was induced after block",
+        "No hematoma or respiratory compromise at injection site"
+      ],
+      "opposing_evidence": [
+        "Expected physiologic effect of the procedure, not an adverse event"
+      ],
+      "reasoning": "Documented post-procedure finding worth capturing, though it is an anticipated consequence of a successful sympathetic block.",
+      "icd10_primary": "G90.2",
+      "icd10_primary_title": "Horner's syndrome",
+      "icd10_package": [
+        {
+          "code": "G90.2",
+          "title": "Horner's syndrome",
+          "role": "principal"
+        },
+        {
+          "code": "Y84.8",
+          "title": "Other medical procedures as the cause of abnormal reaction of the patient",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Y84.8",
+          "title": "Other medical procedures as the cause of abnormal reaction of the patient",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Expected sympathetic blockade effect after left stellate ganglion block performed for refractory VT.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Supratherapeutic INR on long-term warfarin anticoagulation",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "INR 3.3, PT 36.9, PTT 44.2 on labs",
+        "Warfarin regimen adjusted for discharge",
+        "Invasive neck block performed while anticoagulated"
+      ],
+      "opposing_evidence": [
+        "No bleeding, hemoglobin stable at 11.6",
+        "LVAD requires higher INR targets"
+      ],
+      "reasoning": "INR modestly above typical target with a periprocedural bleeding risk; clinically silent, so low-moderate score.",
+      "icd10_primary": "R79.1",
+      "icd10_primary_title": "Abnormal coagulation profile",
+      "icd10_package": [
+        {
+          "code": "R79.1",
+          "title": "Abnormal coagulation profile",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "INR 3.3 above goal while on chronic warfarin for LVAD; no bleeding documented.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Chronic kidney disease with mild creatinine elevation",
+      "score": 32.0,
+      "confidence": "low",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Creatinine 1.4 on admission, BUN 31 then 25",
+        "Prior admissions coded N189 and repeated AKI",
+        "Torsemide held for concern of overdiuresis"
+      ],
+      "opposing_evidence": [
+        "Creatinine improved to 1.2 at discharge, near baseline"
+      ],
+      "reasoning": "Baseline renal impairment with cardiorenal sensitivity influenced diuretic dosing, but no acute kidney injury was declared this stay.",
+      "icd10_primary": "N18.9",
+      "icd10_primary_title": "Chronic kidney disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "I50.22",
+          "title": "Chronic systolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I50.22",
+          "title": "Chronic systolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Creatinine 1.4 on admission improving to 1.2; stage not documented, unspecified CKD assigned.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Type 2 diabetes mellitus without complications",
+      "score": 25.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Longstanding T2DM in past medical history",
+        "Glucose 105-118 during stay"
+      ],
+      "opposing_evidence": [
+        "No diabetes medications listed on current admission med list"
+      ],
+      "reasoning": "Stable chronic comorbidity with mild hyperglycemia; codable background condition only.",
+      "icd10_primary": "E11.9",
+      "icd10_primary_title": "Type 2 diabetes mellitus without complications",
+      "icd10_package": [
+        {
+          "code": "E11.9",
+          "title": "Type 2 diabetes mellitus without complications",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Diabetes listed in past medical history without documented complications this admission.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 10,
+      "diagnosis": "Chronic tophaceous gout on urate-lowering therapy",
+      "score": 22.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Continued colchicine 0.6 mg QOD and febuxostat 80 mg daily",
+        "Tophaceous gout in PMH and prior ICD coding"
+      ],
+      "opposing_evidence": [
+        "No acute flare documented this admission"
+      ],
+      "reasoning": "Chronic condition actively medicated but clinically quiescent during this stay.",
+      "icd10_primary": "M1A.9XX0",
+      "icd10_primary_title": "Chronic gout, unspecified, without tophus (tophi)",
+      "icd10_package": [
+        {
+          "code": "M1A.9XX0",
+          "title": "Chronic gout, unspecified, without tophus (tophi)",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Tophaceous gout history; continued colchicine and febuxostat; site unspecified in current note.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "I47.20",
+  "primary_icd_title": "Ventricular tachycardia, unspecified",
+  "primary_condition": "Refractory ventricular tachycardia with appropriate ICD shock in LVAD patient",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:40:59.422921",
+  "ontology_routing": false
+}

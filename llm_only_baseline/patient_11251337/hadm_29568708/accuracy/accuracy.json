@@ -1,0 +1,172 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "11251337",
+  "hadm_id": "29568708",
+  "generated_at": "2026-08-21T23:52:02.580785",
+  "ground_truth": {
+    "primary_icd_code": "N132",
+    "primary_dx_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+    "primary_icd_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+    "discharge_diagnosis": "NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm",
+    "diffdx_gt": "NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 7
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm",
+      "rank1_diagnosis": "Bilateral staghorn calculi of kidney (right renal calculus treated this stay)",
+      "rank1_score": 95.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Bilateral staghorn calculi of kidney (right renal calculus treated this stay)",
+      "matched_score": 95.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal",
+      "llm_confidence": "high",
+      "llm_reason": "Physician discharge diagnosis is nephrolithiasis of the right kidney at the ureteropelvic junction, complex and >2 cm. Rank 1 'Bilateral staghorn calculi of kidney (right renal calculus treated this stay)' names the same principal condition — a large/complex renal calculus of the right kidney treated during the admission. Rank 3 also names an obstructive-stone condition, but rank 1 is the lowest matching rank.",
+      "llm_expanded_ground_truth": "nephrolithiasis | kidney stone | renal calculus | UPJ = ureteropelvic junction | complex large (>2 cm) right renal stone | staghorn-type stone burden",
+      "llm_expanded_matched": "staghorn calculi | calculus of kidney | renal stone disease | right renal calculus",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Bilateral staghorn calculi of kidney (right renal calculus treated this stay)",
+          "score": 95.0,
+          "confidence": "high",
+          "icd10_primary": "N20.0",
+          "icd10_primary_title": "Calculus of kidney"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Chronic kidney disease, stage 4, from long-standing obstructive nephropathy",
+          "score": 80.0,
+          "confidence": "high",
+          "icd10_primary": "N18.4",
+          "icd10_primary_title": "Chronic kidney disease, stage 4 (severe)"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Hydronephrosis with renal and ureteral calculous obstruction (obstructive uropathy)",
+          "score": 72.0,
+          "confidence": "medium",
+          "icd10_primary": "N13.2",
+          "icd10_primary_title": "Hydronephrosis with renal and ureteral calculous obstruction"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Anemia of chronic kidney disease",
+          "score": 66.0,
+          "confidence": "medium",
+          "icd10_primary": "D63.1",
+          "icd10_primary_title": "Anemia in chronic kidney disease"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Hypertensive chronic kidney disease",
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": "I12.9",
+          "icd10_primary_title": "Hypertensive chronic kidney disease with stage 1-4 CKD or unspecified CKD"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Presence of ureteral stent and nephrostomy tube status with residual stone burden",
+          "score": 50.0,
+          "confidence": "high",
+          "icd10_primary": "Z96.0",
+          "icd10_primary_title": "Presence of urogenital implants"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Hemiplegia following prior nontraumatic intracerebral hemorrhage, left nondominant side",
+          "score": 45.0,
+          "confidence": "medium",
+          "icd10_primary": "I69.154",
+          "icd10_primary_title": "Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Acute kidney injury superimposed on chronic kidney disease, post-procedural",
+          "score": 40.0,
+          "confidence": "low",
+          "icd10_primary": "N17.9",
+          "icd10_primary_title": "Acute kidney failure, unspecified"
+        },
+        {
+          "rank": 9,
+          "diagnosis": "Complicated urinary tract infection / pyonephrosis",
+          "score": 12.0,
+          "confidence": "low",
+          "icd10_primary": "N39.0",
+          "icd10_primary_title": "Urinary tract infection, site not specified"
+        }
+      ],
+      "n_diffdx": 9
+    },
+    "icd_linked": {
+      "ground_truth_icd": "N13.2",
+      "ground_truth_icd_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+      "rank1_predicted_icd": "N20.0",
+      "rank1_predicted_icd_title": "Calculus of kidney",
+      "matched_predicted_icd": "N20.0",
+      "matched_predicted_icd_title": "Calculus of kidney",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "Mapped ICD at matched rank 1 is N20.0 (Calculus of kidney), whereas the billed primary code is N13.2 (Hydronephrosis with renal and ureteral calculous obstruction). N13.2 requires documented obstructive hydronephrosis in addition to the calculus and is a combination code sequenced as principal; a coder would not accept plain N20.0 as equivalent. (Note: rank 3 carried the exact N13.2 code, but the lowest matching rank per the rules is rank 1.)",
+      "llm_expanded_ground_truth_icd": "N13.2 hydronephrosis with renal and ureteral calculous obstruction | obstructive uropathy due to stone | obstructing stone with hydronephrosis",
+      "llm_expanded_matched_icd": "N20.0 calculus of kidney | nephrolithiasis without stated obstruction | renal stone",
+      "stage9_final_primary_icd": "N20.0",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
+    },
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Physician discharge diagnosis is nephrolithiasis of the right kidney at the ureteropelvic junction, complex and >2 cm. Rank 1 'Bilateral staghorn calculi of kidney (right renal calculus treated this stay)' names the same principal condition — a large/complex renal calculus of the right kidney treated during the admission. Rank 3 also names an obstructive-stone condition, but rank 1 is the lowest matching rank.",
+      "ground_truth_expansions": [
+        "nephrolithiasis",
+        "kidney stone",
+        "renal calculus",
+        "UPJ = ureteropelvic junction",
+        "complex large (>2 cm) right renal stone",
+        "staghorn-type stone burden"
+      ],
+      "matched_diagnosis_expansions": [
+        "staghorn calculi",
+        "calculus of kidney",
+        "renal stone disease",
+        "right renal calculus"
+      ],
+      "icd_equivalent": false,
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped ICD at matched rank 1 is N20.0 (Calculus of kidney), whereas the billed primary code is N13.2 (Hydronephrosis with renal and ureteral calculous obstruction). N13.2 requires documented obstructive hydronephrosis in addition to the calculus and is a combination code sequenced as principal; a coder would not accept plain N20.0 as equivalent. (Note: rank 3 carried the exact N13.2 code, but the lowest matching rank per the rules is rank 1.)",
+      "ground_truth_icd_expansions": [
+        "N13.2 hydronephrosis with renal and ureteral calculous obstruction",
+        "obstructive uropathy due to stone",
+        "obstructing stone with hydronephrosis"
+      ],
+      "matched_icd_expansions": [
+        "N20.0 calculus of kidney",
+        "nephrolithiasis without stated obstruction",
+        "renal stone"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

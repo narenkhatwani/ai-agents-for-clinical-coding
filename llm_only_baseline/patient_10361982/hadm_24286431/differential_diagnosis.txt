@@ -1,0 +1,57 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 10361982
+HADM ID          : 24286431
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:35:14.150082
+Candidates       : 8
+Most likely      : Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy
+
+Summary:
+  Woman ~3 weeks status post exam under anesthesia, extensive lysis of adhesions, total laparoscopic hysterectomy with bilateral salpingectomy and cystoscopy, presenting with acute heavy vaginal bleeding with clots after an initial period of only light spotting. Clinic exam showed no cuff dehiscence and a small bleeding vessel was cauterized; pelvic ultrasound showed a normal vaginal cuff with no hematoma. Hematocrit 38.1 (preop 40.1), hemodynamically stable, no procedure required this stay; bleeding decreased with observation and she was discharged on hospital day 2.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [93.0/100 | high]  Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy  (complication)
+      + Chief complaint: heavy vaginal bleeding after hysterectomy
+      + Small vessel at cuff cauterized in clinic
+      + TLH/BS with extensive lysis of adhesions ~3 weeks prior
+      - Hct stable at 38.1 vs preop 40.1
+      - No transfusion or operative intervention required
+      why: Bleeding is directly attributable to the recent hysterectomy site with an identified cuff vessel cauterized; this is the principal disease driving the admission for observation.
+  #2  [62.0/100 | medium]  Vaginal cuff granulation tissue with bleeding vessel  (complication)
+      + Small vessel cauterized at cuff in clinic
+      + Ultrasound: normal-appearing vaginal cuff, normal postoperative changes
+      - Granulation tissue not explicitly described in note
+      why: Delayed cuff bleeding at 3 weeks postop commonly arises from healing granulation tissue/suture-line vessel; supported indirectly by successful cautery.
+  #3  [55.0/100 | high]  Hypothyroidism on levothyroxine replacement  (secondary)
+      + PMH hypothyroidism; Synthroid 50 mcg continued inpatient
+      + Prior admission billed E039
+      - No thyroid labs recorded this stay
+      why: Chronic comorbidity actively managed during the stay, appropriate as a secondary coded condition.
+  #4  [50.0/100 | high]  Attention-deficit hyperactivity disorder on stimulant therapy  (secondary)
+      + Adderall 10 mg BID continued inpatient
+      + Prior admission billed F909
+      why: Documented chronic condition with continued medication during admission.
+  #5  [38.0/100 | medium]  Depressive disorder / anxiety on venlafaxine therapy  (secondary)
+      + Venlafaxine XR 75 mg continued inpatient
+      + Prior billing included F329 and F419
+      - Current note attributes venlafaxine to ADHD history, no mood symptoms documented
+      why: Supported mainly by prior coding and ongoing SNRI therapy; current documentation is ambiguous.
+  #6  [18.0/100 | high]  Vaginal cuff dehiscence after hysterectomy  (differential)
+      + Heavy vaginal bleeding with clots in early postoperative period
+      - Clinic exam: no evidence of cuff dehiscence
+      - Ultrasound shows normal-appearing vaginal cuff
+      why: Important and dangerous differential for postop cuff bleeding but explicitly excluded on direct examination and imaging.
+  #7  [15.0/100 | high]  Acute blood loss anemia from vaginal hemorrhage  (complication)
+      + Reported heavy bleeding with passage of large clots
+      - Hgb 12.6 / Hct 38.1, near preoperative baseline 40.1
+      - Patient denies symptoms of acute blood loss anemia
+      why: Explicitly considered but not met — hematocrit essentially stable and patient asymptomatic, so unlikely to be codable.
+  #8  [12.0/100 | high]  Vaginal cuff hematoma following hysterectomy  (differential)
+      + Ultrasound indication was to evaluate for cuff hematoma
+      - Ultrasound impression: no vaginal cuff hematoma, no free fluid
+      why: Considered clinically and imaged, but definitively excluded by transabdominal/transvaginal pelvic ultrasound.

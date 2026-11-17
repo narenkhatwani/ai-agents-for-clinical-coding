@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11251337
 HADM ID          : 29568708
-Generated        : 2026-08-20T17:29:29.816575
+Generated        : 2026-08-20T22:06:33.932082
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : The physician discharge diagnosis is nephrolithiasis (a complex right ureteropelvic junction stone >2cm). No rank in the differential names urolithiasis/kidney stone or obstructive uropathy. Ranks 1-5 (acute kidney injury, anemia, hematuria, nephrostomy tube pain, fever) are complications, associated findings, or symptoms that can accompany an obstructing renal calculus, but none is the same principal condition. Hematuria and AKI are downstream manifestations, not the stone disease itself.
+  LLM reason           : The physician discharge diagnosis is nephrolithiasis (right, ureteropelvic junction, complex, >2 cm stone burden), i.e., an obstructing renal/ureteral calculus. None of the five ranked differentials names a urinary calculus or obstructive uropathy. Rank 1 acute kidney injury, rank 2 anemia, rank 3 hematuria, rank 4 nephrostomy tube site pain, and rank 5 fever are all complications, symptoms, or sequelae that may accompany obstructing stone disease, but none is the same principal condition. Hematuria and nephrostomy-related pain are symptom-level findings, not the underlying stone disease; AKI is a distinct renal functional diagnosis.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : No matching rank, so no mapped ICD to compare. The billed primary code N13.2 (hydronephrosis with renal and ureteral calculous obstruction) is not clinically equivalent to N17.9 (acute kidney failure), D64.9, R31.9, R52, or R50.9, which are symptom/complication codes rather than obstructive calculous disease codes.
+  LLM ICD reason       : No rank matched, so no mapped ICD can be compared. The billed primary code N13.2 (hydronephrosis with renal and ureteral calculous obstruction) is in the obstructive uropathy/calculus family; the ranked codes N17.9 (acute kidney failure), D64.9 (anemia), R31.9 (hematuria), R52 (pain), and R50.9 (fever) are all different principal conditions or nonspecific symptom codes that a coder would not accept as equivalent to N13.2.
   Stage 9 final ICD    : N20.0 (debug)
 
 FULL DIFFERENTIAL LIST

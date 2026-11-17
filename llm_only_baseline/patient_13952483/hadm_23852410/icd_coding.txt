@@ -1,0 +1,27 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 13952483
+HADM ID          : 23852410
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : K20.80 — Other esophagitis without bleeding
+Primary condition: Radiation esophagitis due to thoracic radiotherapy
+
+  #1  Radiation esophagitis due to thoracic radiotherapy  →  K20.80 — Other esophagitis without bleeding
+      reason: Persistent odynophagia during completion of thoracic XRT (fraction 34/34); radiation esophagitis indexes to other esophagitis without bleeding.
+  #2  Adult failure to thrive with severe protein-calorie malnutrition and cachexia  →  R62.7 — Adult failure to thrive
+      reason: Documented failure to thrive, anorexia, >10 lb weight loss, cachectic exam, BMI 15.8, weight 94.7 lbs.
+  #3  Hypovolemic hypotension due to dehydration and poor oral intake  →  I95.89 — Other hypotension
+      reason: Referred from clinic with BP 86/54 responding to 1L IVF; poor oral intake with concentrated urine supports hypovolemia.
+  #4  Antineoplastic chemotherapy-induced pancytopenia (neutropenia, anemia, thrombocytopenia)  →  D61.810 — Antineoplastic chemotherapy induced pancytopenia
+      reason: WBC 1.1 with ANC 750, Hgb 7.4, platelets 93 after recent completion of chemotherapy; pancytopenia attributed to antineoplastic therapy.
+  #5  Acute kidney injury on chronic kidney disease in renal transplant recipient (prerenal)  →  N17.9 — Acute kidney failure, unspecified
+      reason: Creatinine 1.4 on admission improving to 1.2 with fluids in transplant recipient with allograft nephropathy; prerenal AKI on CKD.
+  #6  Stage 3a squamous cell carcinoma of left lower lobe of lung  →  C34.32 — Malignant neoplasm of lower lobe, left bronchus or lung
+      reason: Biopsy-proven squamous cell carcinoma of left lower lobe with necrotic mass on imaging; receiving concurrent chemoradiation.
+  #7  Oropharyngeal candidiasis (oral thrush) in immunosuppressed host  →  B37.0 — Candidal stomatitis
+      reason: Admission exam documented thrush, resolved by discharge, in tacrolimus-immunosuppressed patient on chemoradiation.
+  #8  Severe pulmonary arterial hypertension with chronic cor pulmonale  →  I27.0 — Primary pulmonary hypertension
+      reason: Idiopathic pulmonary hypertension confirmed by right heart catheterization with cor pulmonale; CXR shows prominent pulmonary arteries.
+  #9  Chronic obstructive pulmonary disease with nicotine dependence  →  J44.9 — Chronic obstructive pulmonary disease, unspecified
+      reason: COPD listed in active problem list with prior smoking-related nicotine dependence documented; no exacerbation described this stay.

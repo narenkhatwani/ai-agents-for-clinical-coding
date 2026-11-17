@@ -1,0 +1,164 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "11474876",
+  "hadm_id": "29672491",
+  "generated_at": "2026-08-21T23:52:14.777492",
+  "ground_truth": {
+    "primary_icd_code": "K8030",
+    "primary_dx_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
+    "primary_icd_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
+    "discharge_diagnosis": "Choledocholithiasis",
+    "diffdx_gt": "Choledocholithiasis",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 17
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "Choledocholithiasis",
+      "rank1_diagnosis": "Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis",
+      "rank1_score": 93.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis",
+      "matched_score": 93.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis' names the identical principal condition as the physician discharge diagnosis 'Choledocholithiasis' (common bile duct stone). The rank string explicitly contains the ground-truth term; the added qualifier about absence of cholangitis is a specificity modifier, not a different principal condition.",
+      "llm_expanded_ground_truth": "Choledocholithiasis | common bile duct stone | calculus of bile duct | CBD stone | biliary duct calculus | bile duct stone with/without cholangitis",
+      "llm_expanded_matched": "Choledocholithiasis | calculus of bile duct | common bile duct stone without cholangitis or cholecystitis | CBD calculus, non-obstructing",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis",
+          "score": 93.0,
+          "confidence": "high",
+          "icd10_primary": "K80.50",
+          "icd10_primary_title": "Calculus of bile duct without cholangitis or cholecystitis without obstruction"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Cholelithiasis (gallbladder stones) with planned/deferred cholecystectomy",
+          "score": 62.0,
+          "confidence": "medium",
+          "icd10_primary": "K80.20",
+          "icd10_primary_title": "Calculus of gallbladder without cholecystitis without obstruction"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Paroxysmal atrial fibrillation on long-term anticoagulation, apixaban periprocedurally held",
+          "score": 58.0,
+          "confidence": "high",
+          "icd10_primary": "I48.0",
+          "icd10_primary_title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Chronic heart failure with preserved ejection fraction with peripheral volume overload",
+          "score": 52.0,
+          "confidence": "medium",
+          "icd10_primary": "I50.32",
+          "icd10_primary_title": "Chronic diastolic (congestive) heart failure"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Chronic kidney disease stage 3 (moderate)",
+          "score": 48.0,
+          "confidence": "medium",
+          "icd10_primary": "N18.30",
+          "icd10_primary_title": "Chronic kidney disease, stage 3 unspecified"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Essential hypertension with hypertensive heart disease",
+          "score": 42.0,
+          "confidence": "medium",
+          "icd10_primary": "I11.0",
+          "icd10_primary_title": "Hypertensive heart disease with heart failure"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Recurrent/resolved ascending cholangitis following prior biliary stenting",
+          "score": 25.0,
+          "confidence": "low",
+          "icd10_primary": "Z87.19",
+          "icd10_primary_title": "Personal history of other diseases of the digestive system"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Post-ERCP pancreatitis or post-sphincterotomy hemorrhage",
+          "score": 12.0,
+          "confidence": "low",
+          "icd10_primary": "K91.89",
+          "icd10_primary_title": "Other postprocedural complications and disorders of digestive system"
+        }
+      ],
+      "n_diffdx": 8
+    },
+    "icd_linked": {
+      "ground_truth_icd": "K80.30",
+      "ground_truth_icd_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
+      "rank1_predicted_icd": "K80.50",
+      "rank1_predicted_icd_title": "Calculus of bile duct without cholangitis or cholecystitis without obstruction",
+      "matched_predicted_icd": "K80.50",
+      "matched_predicted_icd_title": "Calculus of bile duct without cholangitis or cholecystitis without obstruction",
+      "icd_match": true,
+      "icd_exact_match": false,
+      "icd_family_match": true,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "Mapped K80.50 (calculus of bile duct without cholangitis or cholecystitis, without obstruction) and billed K80.30 (calculus of bile duct with cholangitis, unspecified, without obstruction) both code the same principal condition — a non-obstructing bile duct calculus in the K80.3-/K80.5- bile duct stone family; they differ only by the documented presence of accompanying cholangitis, an associated-condition modifier. A coder would recognize these as the same principal biliary calculus diagnosis, analogous to the J93.9 vs S27.0XXA pneumothorax example, though the cholangitis qualifier lowers confidence.",
+      "llm_expanded_ground_truth_icd": "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction | choledocholithiasis with cholangitis | bile duct stone, non-obstructing, with cholangitis",
+      "llm_expanded_matched_icd": "K80.50 Calculus of bile duct without cholangitis or cholecystitis without obstruction | choledocholithiasis, uncomplicated | non-obstructing common bile duct stone",
+      "stage9_final_primary_icd": "K80.50",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
+    },
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis' names the identical principal condition as the physician discharge diagnosis 'Choledocholithiasis' (common bile duct stone). The rank string explicitly contains the ground-truth term; the added qualifier about absence of cholangitis is a specificity modifier, not a different principal condition.",
+      "ground_truth_expansions": [
+        "Choledocholithiasis",
+        "common bile duct stone",
+        "calculus of bile duct",
+        "CBD stone",
+        "biliary duct calculus",
+        "bile duct stone with/without cholangitis"
+      ],
+      "matched_diagnosis_expansions": [
+        "Choledocholithiasis",
+        "calculus of bile duct",
+        "common bile duct stone without cholangitis or cholecystitis",
+        "CBD calculus, non-obstructing"
+      ],
+      "icd_equivalent": true,
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped K80.50 (calculus of bile duct without cholangitis or cholecystitis, without obstruction) and billed K80.30 (calculus of bile duct with cholangitis, unspecified, without obstruction) both code the same principal condition — a non-obstructing bile duct calculus in the K80.3-/K80.5- bile duct stone family; they differ only by the documented presence of accompanying cholangitis, an associated-condition modifier. A coder would recognize these as the same principal biliary calculus diagnosis, analogous to the J93.9 vs S27.0XXA pneumothorax example, though the cholangitis qualifier lowers confidence.",
+      "ground_truth_icd_expansions": [
+        "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction",
+        "choledocholithiasis with cholangitis",
+        "bile duct stone, non-obstructing, with cholangitis"
+      ],
+      "matched_icd_expansions": [
+        "K80.50 Calculus of bile duct without cholangitis or cholecystitis without obstruction",
+        "choledocholithiasis, uncomplicated",
+        "non-obstructing common bile duct stone"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

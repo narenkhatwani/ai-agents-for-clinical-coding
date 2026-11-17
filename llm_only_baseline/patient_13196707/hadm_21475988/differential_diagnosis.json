@@ -1,0 +1,180 @@
+{
+  "summary": "Elderly man with recently diagnosed widely metastatic adenocarcinoma of unknown primary (brain, bone, lung, liver, adrenal) transferred with chest pressure, fever and refractory hypotension requiring norepinephrine. Echo showed a moderate-to-large circumferential pericardial effusion with RV diastolic collapse/tamponade physiology, treated with pericardiocentesis; concurrent presumed pneumonia was treated. Course complicated by healthcare-associated/aspiration pneumonia, vancomycin-associated acute kidney injury, seizures with fluctuating altered mental status, hypernatremia, anemia and antibiotic/tube-feed diarrhea, ending in transition to inpatient hospice.",
+  "most_likely": "Malignant pericardial effusion with cardiac tamponade requiring pericardiocentesis",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Malignant pericardial effusion with cardiac tamponade",
+      "score": 90.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Pleuritic chest pressure, hypotension on levophed, pulsus 16",
+        "TTE: moderate-large circumferential effusion, RV diastolic collapse",
+        "Pericardiocentesis performed; diffuse ST elevations on EKG",
+        "Widely metastatic adenocarcinoma with pulmonary/mediastinal disease"
+      ],
+      "opposing_evidence": [
+        "Fever and RUL opacity raised infection as alternative cause of shock"
+      ],
+      "reasoning": "Discharge narrative states he presented with hypotension due to pericardial effusion, with tamponade physiology on echo and therapeutic pericardiocentesis — the condition chiefly responsible for this admission."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Metastatic adenocarcinoma of unknown primary with brain, bone, liver and lung metastases",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Biopsy-proven metastatic adenocarcinoma, unknown primary",
+        "CT head: numerous metastatic lesions with vasogenic edema",
+        "Alk phos 879, LDH 344; not chemotherapy candidate, hospice transfer"
+      ],
+      "opposing_evidence": [
+        "Malignancy known from prior admission, not the acute admitting event"
+      ],
+      "reasoning": "The underlying disease driving all complications and the terminal trajectory; a coder may list this as principal for an oncology admission ending in hospice."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Severe sepsis with hypotension due to pneumonia",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "primary",
+      "supporting_evidence": [
+        "ICU admission for severe sepsis, T 102.6, HR 105, BP 90/47",
+        "Norepinephrine required; broad antibiotics (ceftazidime/vanco) given",
+        "Bands 8%, neutrophilia 91%, lactate 2.6"
+      ],
+      "opposing_evidence": [
+        "Initial CXR 'no convincing signs of pneumonia'; lactate 1.7 in ED",
+        "Hypotension ultimately attributed to tamponade"
+      ],
+      "reasoning": "Septic physiology was the initial working diagnosis and contributed to shock, but pericardial tamponade was the confirmed hemodynamic cause."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Healthcare-associated and aspiration pneumonia",
+      "score": 68.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Two completed courses of HCAP therapy; second felt aspiration-related",
+        "CXR: persistent bibasilar consolidations, right pleural effusion",
+        "High aspiration risk from altered mental status, Dobhoff feeds"
+      ],
+      "opposing_evidence": [
+        "Radiology notes opacities could represent atelectasis"
+      ],
+      "reasoning": "Explicitly documented and treated with zosyn during this stay; a strong secondary/complication code."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute kidney injury, drug-induced (vancomycin) with dehydration",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Cr rose from 1.0 to peak 2.6, improved to 1.2 at discharge",
+        "Vancomycin level 23.7; granular casts 67/lpf in urine",
+        "Poor PO intake, treated with IV fluids"
+      ],
+      "opposing_evidence": [
+        "Creatinine near baseline at discharge"
+      ],
+      "reasoning": "Clearly documented in-hospital AKI attributed to vancomycin plus hypovolemia; codeable complication."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Symptomatic seizures with encephalopathy due to brain metastases",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "EEG epileptiform discharges left paracentrally; on Keppra, lacosamide, valproate",
+        "Waxing/waning mental status, AOx0 at discharge exam",
+        "Stable extensive brain metastases with vasogenic edema on imaging"
+      ],
+      "opposing_evidence": [
+        "No new hemorrhage, infarct or progression on repeat CT/MRI"
+      ],
+      "reasoning": "Altered mental status with epileptiform EEG in setting of known brain metastases; multifactorial (toxic-metabolic, infection) contribution possible."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Hypernatremia with free water deficit",
+      "score": 50.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Na persistently 147–low 150s; discharge Na 147, Cl 115",
+        "Poor PO/water intake, D5W given with minimal improvement"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Objectively documented electrolyte disorder actively managed during the stay."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Anemia of chronic disease requiring transfusion",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Hgb fell to 7.0; two units pRBC transfused",
+        "Low iron/TIBC, ferritin 2215, normal haptoglobin, guaiac negative"
+      ],
+      "opposing_evidence": [
+        "Macrocytosis (MCV 103) not typical of anemia of chronic disease"
+      ],
+      "reasoning": "Documented workup supports anemia of chronic disease/malignancy rather than bleeding or hemolysis."
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Upper extremity venous thrombosis with SVC syndrome status post stenting",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Ongoing enoxaparin 80 mg BID; swollen upper extremities on exam",
+        "Prior R subclavian and extensive left-sided thrombi, patent SVC stent"
+      ],
+      "opposing_evidence": [
+        "No new imaging of thrombus this admission"
+      ],
+      "reasoning": "Chronic active thrombotic disease requiring anticoagulation decisions this stay, but not the acute driver of admission."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Acute coronary syndrome",
+      "why": "Chest pressure with EKG ST elevations, but troponins unremarkable and echo showed hyperdynamic LV with pericardial effusion — pericarditis/tamponade pattern."
+    },
+    {
+      "diagnosis": "Acute intracranial hemorrhage or new brain metastasis progression",
+      "why": "Serial CT/MRI show stable metastases, no new hemorrhage, no midline shift."
+    },
+    {
+      "diagnosis": "Clostridioides difficile colitis",
+      "why": "Diarrhea attributed to zosyn and tube feeds; no positive testing documented."
+    },
+    {}
+  ],
+  "n_candidates": 9,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "13196707",
+  "hadm_id": "21475988",
+  "generated_at": "2026-08-21T23:42:56.510152",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "13952483",
+  "hadm_id": "23852410",
+  "generated_at": "2026-08-21T23:53:19.832560",
+  "ground_truth": {
+    "primary_icd_code": "I9589",
+    "primary_dx_title": "Other hypotension",
+    "primary_icd_title": "Other hypotension",
+    "discharge_diagnosis": "Failure to thrive; Dehydration; Acute kidney injury",
+    "diffdx_gt": "Failure to thrive; Dehydration; Acute kidney injury",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 25
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "Failure to thrive; Dehydration; Acute kidney injury",
+      "rank1_diagnosis": "Radiation esophagitis due to thoracic radiotherapy",
+      "rank1_score": 82.0,
+      "rank1_confidence": "medium",
+      "match": true,
+      "is_rank1_match": false,
+      "matched_diffdx_rank": 2,
+      "matched_diagnosis": "Adult failure to thrive with severe protein-calorie malnutrition and cachexia",
+      "matched_score": 78.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "The physician discharge diagnosis is a compound statement: 'Failure to thrive; Dehydration; Acute kidney injury.' Scanning all ranks, Rank 2 'Adult failure to thrive with severe protein-calorie malnutrition and cachexia' names the same principal condition as 'Failure to thrive' (more specific, bundled with malnutrition/cachexia). Rank 3 'Hypovolemic hypotension due to dehydration and poor oral intake' also captures the dehydration component, and Rank 5 'Acute kidney injury on chronic kidney disease (prerenal)' captures the AKI component. Per the lowest-matching-rank rule, the matched rank is 2.",
+      "llm_expanded_ground_truth": "failure to thrive (FTT) | adult failure to thrive | debility / cachexia / poor oral intake with weight loss | dehydration / volume depletion / hypovolemia | acute kidney injury (AKI) / acute renal failure / prerenal azotemia",
+      "llm_expanded_matched": "adult failure to thrive | FTT | severe protein-calorie malnutrition | cachexia / wasting",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Radiation esophagitis due to thoracic radiotherapy",
+          "score": 82.0,
+          "confidence": "medium",
+          "icd10_primary": "K20.80",
+          "icd10_primary_title": "Other esophagitis without bleeding"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Adult failure to thrive with severe protein-calorie malnutrition and cachexia",
+          "score": 78.0,
+          "confidence": "high",
+          "icd10_primary": "R62.7",
+          "icd10_primary_title": "Adult failure to thrive"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Hypovolemic hypotension due to dehydration and poor oral intake",
+          "score": 72.0,
+          "confidence": "high",
+          "icd10_primary": "I95.89",
+          "icd10_primary_title": "Other hypotension"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Antineoplastic chemotherapy-induced pancytopenia (neutropenia, anemia, thrombocytopenia)",
+          "score": 68.0,
+          "confidence": "high",
+          "icd10_primary": "D61.810",
+          "icd10_primary_title": "Antineoplastic chemotherapy induced pancytopenia"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Acute kidney injury on chronic kidney disease in renal transplant recipient (prerenal)",
+          "score": 60.0,
+          "confidence": "medium",
+          "icd10_primary": "N17.9",
+          "icd10_primary_title": "Acute kidney failure, unspecified"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Stage 3a squamous cell carcinoma of left lower lobe of lung",
+          "score": 58.0,
+          "confidence": "high",
+          "icd10_primary": "C34.32",
+          "icd10_primary_title": "Malignant neoplasm of lower lobe, left bronchus or lung"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Oropharyngeal candidiasis (oral thrush) in immunosuppressed host",
+          "score": 52.0,
+          "confidence": "medium",
+          "icd10_primary": "B37.0",
+          "icd10_primary_title": "Candidal stomatitis"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Severe pulmonary arterial hypertension with chronic cor pulmonale",
+          "score": 45.0,
+          "confidence": "medium",
+          "icd10_primary": "I27.0",
+          "icd10_primary_title": "Primary pulmonary hypertension"
+        },
+        {
+          "rank": 9,
+          "diagnosis": "Chronic obstructive pulmonary disease with nicotine dependence",
+          "score": 35.0,
+          "confidence": "medium",
+          "icd10_primary": "J44.9",
+          "icd10_primary_title": "Chronic obstructive pulmonary disease, unspecified"
+        }
+      ],
+      "n_diffdx": 9
+    },
+    "icd_linked": {
+      "ground_truth_icd": "I95.89",
+      "ground_truth_icd_title": "Other hypotension",
+      "rank1_predicted_icd": "K20.80",
+      "rank1_predicted_icd_title": "Other esophagitis without bleeding",
+      "matched_predicted_icd": "R62.7",
+      "matched_predicted_icd_title": "Adult failure to thrive",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "The mapped ICD at the matched rank (Rank 2) is R62.7 (Adult failure to thrive), whereas the billed ground-truth primary code is I95.89 (Other hypotension). These are distinct principal conditions in the coding sense (nutritional/debility symptom code vs circulatory hypotension code) and a coder would not accept R62.7 as equivalent to I95.89. Note that Rank 3 does map exactly to I95.89 (hypovolemic hypotension due to dehydration), but the ICD comparison is anchored to the matched rank.",
+      "llm_expanded_ground_truth_icd": "I95.89 Other hypotension | hypovolemic / dehydration-related low blood pressure | non-orthostatic, non-drug-induced hypotension",
+      "llm_expanded_matched_icd": "R62.7 Adult failure to thrive | adult debility / general physical deterioration | related but distinct: E43/E44 protein-calorie malnutrition, R64 cachexia",
+      "stage9_final_primary_icd": "K20.80",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": false,
+      "matched_diffdx_rank": 2
+    },
+    "llm_qe_raw": {
+      "matched_rank": 2,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "The physician discharge diagnosis is a compound statement: 'Failure to thrive; Dehydration; Acute kidney injury.' Scanning all ranks, Rank 2 'Adult failure to thrive with severe protein-calorie malnutrition and cachexia' names the same principal condition as 'Failure to thrive' (more specific, bundled with malnutrition/cachexia). Rank 3 'Hypovolemic hypotension due to dehydration and poor oral intake' also captures the dehydration component, and Rank 5 'Acute kidney injury on chronic kidney disease (prerenal)' captures the AKI component. Per the lowest-matching-rank rule, the matched rank is 2.",
+      "ground_truth_expansions": [
+        "failure to thrive (FTT)",
+        "adult failure to thrive",
+        "debility / cachexia / poor oral intake with weight loss",
+        "dehydration / volume depletion / hypovolemia",
+        "acute kidney injury (AKI) / acute renal failure / prerenal azotemia"
+      ],
+      "matched_diagnosis_expansions": [
+        "adult failure to thrive",
+        "FTT",
+        "severe protein-calorie malnutrition",
+        "cachexia / wasting"
+      ],
+      "icd_equivalent": false,
+      "icd_confidence": "high",
+      "icd_reason": "The mapped ICD at the matched rank (Rank 2) is R62.7 (Adult failure to thrive), whereas the billed ground-truth primary code is I95.89 (Other hypotension). These are distinct principal conditions in the coding sense (nutritional/debility symptom code vs circulatory hypotension code) and a coder would not accept R62.7 as equivalent to I95.89. Note that Rank 3 does map exactly to I95.89 (hypovolemic hypotension due to dehydration), but the ICD comparison is anchored to the matched rank.",
+      "ground_truth_icd_expansions": [
+        "I95.89 Other hypotension",
+        "hypovolemic / dehydration-related low blood pressure",
+        "non-orthostatic, non-drug-induced hypotension"
+      ],
+      "matched_icd_expansions": [
+        "R62.7 Adult failure to thrive",
+        "adult debility / general physical deterioration",
+        "related but distinct: E43/E44 protein-calorie malnutrition, R64 cachexia"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

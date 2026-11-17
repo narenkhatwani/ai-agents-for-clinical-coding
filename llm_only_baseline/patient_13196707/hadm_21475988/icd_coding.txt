@@ -1,0 +1,27 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 13196707
+HADM ID          : 21475988
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : I31.4 — Cardiac tamponade
+Primary condition: Malignant pericardial effusion with cardiac tamponade
+
+  #1  Malignant pericardial effusion with cardiac tamponade  →  I31.4 — Cardiac tamponade
+      reason: Chest pressure, diminished heart sounds, hypotension; pericardiocentesis performed for malignant pericardial effusion with tamponade physiology.
+  #2  Metastatic adenocarcinoma of unknown primary with brain, bone, liver and lung metastases  →  C80.1 — Malignant (primary) neoplasm, unspecified
+      reason: Documented metastatic adenocarcinoma of unknown primary with brain, bone, liver, and pulmonary metastases on imaging.
+  #3  Severe sepsis with hypotension due to pneumonia  →  A41.9 — Sepsis, unspecified organism
+      reason: Fever 102.6, tachycardia, persistent hypotension requiring norepinephrine, presumed pneumonic source documented as severe sepsis.
+  #4  Healthcare-associated and aspiration pneumonia  →  J69.0 — Pneumonitis due to inhalation of food and vomit
+      reason: HCAP treated during stay with bibasilar consolidations; aspiration risk with altered mental status and Dobhoff feeding.
+  #5  Acute kidney injury, drug-induced (vancomycin) with dehydration  →  N17.9 — Acute kidney failure, unspecified
+      reason: Acute kidney injury attributed to vancomycin exposure and volume depletion during hospitalization.
+  #6  Symptomatic seizures with encephalopathy due to brain metastases  →  R56.9 — Unspecified convulsions
+      reason: Altered mental status, EEG monitoring, seizures attributed to brain metastases with vasogenic edema on CT.
+  #7  Hypernatremia with free water deficit  →  E87.0 — Hyperosmolality and hypernatremia
+      reason: Documented hypernatremia requiring free water repletion during current admission.
+  #8  Anemia of chronic disease requiring transfusion  →  D63.0 — Anemia in neoplastic disease
+      reason: Hgb 8.9 with metastatic malignancy; anemia of chronic disease requiring transfusion support.
+  #9  Upper extremity venous thrombosis with SVC syndrome status post stenting  →  I82.601 — Acute embolism and thrombosis of unspecified veins of right upper extremity
+      reason: Multiple upper extremity venous thromboses on lovenox; SVC compression by tumor status post stent placement.

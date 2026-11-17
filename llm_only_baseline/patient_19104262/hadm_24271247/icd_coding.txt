@@ -1,0 +1,25 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 19104262
+HADM ID          : 24271247
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma
+Primary condition: Type 1 diabetes mellitus with ketoacidosis without coma
+
+  #1  Type 1 diabetes mellitus with ketoacidosis without coma  →  E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma
+      reason: Admission for DKA in known T1DM; pH 6.96, HCO3 3, glucose 854, treated with insulin drip, alert.
+  #2  Severe high anion gap metabolic acidosis with lactic acidosis  →  E87.20 — Acidosis, unspecified
+      reason: Documented severe anion gap metabolic acidosis with lactate 5.4/3.6; lactic acidosis coded as other acidosis.
+  #3  Hyperkalemia due to diabetic ketoacidosis  →  E87.5 — Hyperkalemia
+      reason: Potassium 8.8 and 6.8 on presentation with DKA, corrected during treatment.
+  #4  Insulin nonadherence / underdosing of prescribed insulin regimen  →  Z91.130 — Patient's underdosing of insulin due to financial hardship
+      reason: Note documents running out of insulin/nonadherence from social stress precipitating DKA; underdosing codes applied.
+  #5  Acute kidney injury secondary to volume depletion  →  N17.9 — Acute kidney failure, unspecified
+      reason: Creatinine 1.4 with BUN 26 on admission, normalized to 0.6 after fluids, consistent with prerenal AKI.
+  #6  Persistent postpartum vaginal bleeding without retained products of conception  →  O72.2 — Delayed and secondary postpartum hemorrhage
+      reason: Five weeks postpartum with persistent daily vaginal bleeding; ultrasound showed blood products, no retained POC.
+  #7  Sepsis or occult infection as DKA precipitant  →  R65.10 — Systemic inflammatory response syndrome (SIRS) of non-infectious origin without acute organ dysfunction
+      reason: Leukocytosis and tachycardia evaluated; no infectious precipitant identified, so sepsis not coded as confirmed.
+  #8  Upper extremity deep vein thrombosis related to PICC line  →  Z86.718 — Personal history of other venous thrombosis and embolism
+      reason: Upper extremity swelling evaluated; ultrasound negative for DVT, so thrombosis ruled out and not coded as current.

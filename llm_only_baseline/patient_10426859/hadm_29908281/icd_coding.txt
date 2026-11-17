@@ -1,0 +1,25 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 10426859
+HADM ID          : 29908281
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : I47.10 — Supraventricular tachycardia, unspecified
+Primary condition: Recurrent paroxysmal supraventricular tachycardia
+
+  #1  Recurrent paroxysmal supraventricular tachycardia (AVNRT)  →  I47.10 — Supraventricular tachycardia, unspecified
+      reason: Admitted with SVT at 150s requiring adenosine and IV verapamil; principal reason for admission and treatment.
+  #2  Closed nondisplaced fracture of right superior pubic ramus from fall  →  S32.591A — Other specified fracture of right pubis, initial encounter for closed fracture
+      reason: X-ray confirmed nondisplaced comminuted right superior pubic ramus fracture after fall; managed conservatively, weight-bearing as tolerated.
+  #3  Type 2 myocardial injury (demand ischemia) due to tachycardia  →  I24.8 — Other forms of acute ischemic heart disease
+      reason: Troponin rose 0.02 to 0.09 with normal CK-MB, attributed to demand ischemia from tachycardia, not type 1 MI.
+  #4  Syncope/near-syncope with mechanical fall secondary to arrhythmia  →  R55 — Syncope and collapse
+      reason: Lightheadedness with fall attributed to SVT episodes; documented near-syncope preceding fall during this admission.
+  #5  Second degree atrioventricular block, Mobitz type I (Wenckebach), drug-related  →  I44.1 — Atrioventricular block, second degree
+      reason: Wenckebach episodes documented on higher-dose verapamil during admission; adverse effect of properly administered nodal blocker.
+  #6  Presumed urothelial (bladder) carcinoma, untreated, with sterile pyuria  →  C67.9 — Malignant neoplasm of bladder, unspecified
+      reason: Documented likely uroepithelial carcinoma, workup declined; pyuria attributed to tumor with contaminated urine culture.
+  #7  Atherosclerotic coronary artery disease with hypertension and hyperlipidemia  →  I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+      reason: Chronic documented CAD, hypertension, hyperlipidemia listed as active comorbid risk factors influencing management.
+  #8  Urinary tract infection  →  N39.0 — Urinary tract infection, site not specified
+      reason: Considered for pyuria but culture showed contamination and no dysuria; low-probability differential only.

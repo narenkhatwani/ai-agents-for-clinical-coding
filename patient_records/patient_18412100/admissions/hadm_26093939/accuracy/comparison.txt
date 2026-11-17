@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 18412100
 HADM ID          : 26093939
-Generated        : 2026-08-20T17:30:54.996703
+Generated        : 2026-08-20T22:07:56.382014
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : The physician discharge diagnosis is desmoid tumor (aggressive fibromatosis, a locally aggressive soft-tissue fibroblastic neoplasm of uncertain behavior). No rank in the differential names a neoplasm or soft-tissue tumor. Rank 1 (post-procedural pain) may be a downstream symptom of tumor resection but is not the same principal condition; ranks 2-5 (hepatitis C, hypokalemia, hypocalcemia, anemia) are unrelated infectious, electrolyte, and hematologic conditions.
+  LLM reason           : The physician discharge diagnosis is desmoid tumor (aggressive fibromatosis, a locally aggressive soft-tissue fibroblastic neoplasm of uncertain behavior). No rank in the differential names a neoplasm or soft-tissue tumor. Rank 1 'Post-procedural pain' is a symptom/postoperative complication, not the tumor itself; ranks 2-5 (hepatitis C, hypokalemia, hypocalcemia, anemia) are unrelated infectious, electrolyte, and hematologic conditions. No same-principal condition is present at any rank.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : Billed primary code D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) codes the desmoid tumor. No rank matched; the closest rank ICD, R10.9 (unspecified abdominal pain), is a symptom code and would not be accepted by a coder as equivalent to a soft-tissue neoplasm code. Other mapped codes (B19.20, E87.6, E83.51, D64.9) are in entirely different chapters.
+  LLM ICD reason       : No rank matched, so no mapped ICD can be compared. Billed primary D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) is not clinically equivalent to R10.9 (unspecified abdominal pain) or any other mapped code in the list (B19.20, E87.6, E83.51, D64.9), which represent symptoms, viral hepatitis, electrolyte disorders, and anemia rather than a soft-tissue neoplasm.
   Stage 9 final ICD    : R10.9 (debug)
 
 FULL DIFFERENTIAL LIST

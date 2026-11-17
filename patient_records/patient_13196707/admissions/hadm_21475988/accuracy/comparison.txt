@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13196707
 HADM ID          : 21475988
-Generated        : 2026-08-20T17:30:03.218762
+Generated        : 2026-08-20T22:07:07.620663
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 2
   Matched diagnosis    : Metastatic adenocarcinoma of unknown primary
     score=75.0  confidence=high
-  LLM reason           : Physician discharge diagnosis 'Stage IV Adenocarcinoma, unknown origin' names the same principal condition as Rank 2 'Metastatic adenocarcinoma of unknown primary' — Stage IV denotes distant metastatic disease and 'unknown origin' equals 'unknown primary'. Rank 1 (sepsis due to right upper lobe pneumonia) is a different principal condition, so the lowest matching rank is 2.
+  LLM reason           : Physician discharge diagnosis 'Stage IV adenocarcinoma, unknown origin' denotes metastatic (stage IV) adenocarcinoma with an unidentified primary site. Rank 2 'Metastatic adenocarcinoma of unknown primary' names the identical principal condition (carcinoma of unknown primary, CUP). Rank 1 (sepsis from right upper lobe pneumonia) is a different principal condition, so the lowest truly matching rank is 2.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism). These are entirely different principal conditions (malignancy vs systemic infection) and a coder would not accept them as equivalent. Note A41.9 appears at Rank 1, but that rank did not match the physician discharge diagnosis.
+  LLM ICD reason       : Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), a neoplasm code, whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism), an infectious/systemic inflammatory condition. These are distinct principal conditions in different ICD-10 chapters and no coder would treat them as equivalent.
   Stage 9 final ICD    : R50.9 (debug)
 
 FULL DIFFERENTIAL LIST

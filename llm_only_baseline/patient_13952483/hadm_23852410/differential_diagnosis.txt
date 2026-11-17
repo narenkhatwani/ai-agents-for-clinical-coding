@@ -1,0 +1,76 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 13952483
+HADM ID          : 23852410
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:45:07.385641
+Candidates       : 9
+Most likely      : Radiation esophagitis with odynophagia causing failure to thrive and hypovolemic hypotension
+
+Summary:
+  Cachectic man with ESRD s/p deceased-donor kidney transplant on tacrolimus, severe idiopathic pulmonary hypertension and Stage 3a (T2N2M0) squamous cell carcinoma of the left lower lobe, recently discharged to rehab, re-presents from transplant clinic with hypotension (86/54, fluid-responsive), continued odynophagia, cough, anorexia and a further 5-lb weight loss (BMI 15.8). Labs show new neutropenia (ANC 750–890), thrombocytopenia (93K), anemia (Hgb 7.4) one week after last chemotherapy, mildly elevated Cr improving with IVF, and iron studies consistent with anemia of inflammation. Exam showed oral thrush; all cultures, Legionella and pneumococcal antigens negative and CXR unchanged, so antibiotics were stopped. He completed fraction 34/34 of XRT inpatient and improved with rehydration, mealtime analgesia, magic mouthwash, nystatin, appetite/energy stimulants and 2 units pRBC.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [82.0/100 | medium]  Radiation esophagitis due to thoracic radiotherapy  (primary)
+      + Persistent odynophagia and pain with swallowing on re-presentation
+      + Esophagus within radiation field; completed fraction 34/34 inpatient
+      + Treated with magic mouthwash, mealtime oxycodone elixir, Maalox
+      + Prior stay coded K208 other esophagitis / radiation sickness
+      - No endoscopy or imaging confirmation this stay
+      - Thrush also present and could contribute to odynophagia
+      why: Chemoradiation-induced esophagitis is the documented mechanism driving odynophagia, poor PO intake and the resulting dehydration/hypotension that prompted admission, making it the most defensible principal disease.
+  #2  [78.0/100 | high]  Adult failure to thrive with severe protein-calorie malnutrition and cachexia  (primary)
+      + BMI 15.8, weight 94.7 lbs, 5-lb further loss since prior discharge
+      + Anorexia, malaise, poor PO intake; dronabinol and Ritalin for appetite/energy
+      + Cachectic on exam; nutritional supplementation, prior PEG refusal
+      - Symptom rather than single organ disease; secondary to chemoradiation toxicity
+      why: Documented as the overarching reason for admission and heavily treated; strong candidate for principal or first-listed secondary diagnosis in coding.
+  #3  [72.0/100 | high]  Hypovolemic hypotension due to dehydration and poor oral intake  (complication)
+      + Referred from transplant clinic for hypotension; ED BP 86/54 → 110/70 after 1L IVF
+      + Note states 'hypovolemic hypotension' as reason for direct admission
+      + Blood pressures normalized with IVF and increased PO intake
+      - Hypotension is the admission mechanism, not the underlying disease
+      - Chronic low baseline BP with pulmonary hypertension and off beta blocker
+      why: Clearly present and treated, but represents the presenting physiologic derangement secondary to malnutrition/esophagitis rather than the root disease.
+  #4  [68.0/100 | high]  Antineoplastic chemotherapy-induced pancytopenia (neutropenia, anemia, thrombocytopenia)  (complication)
+      + Admission WBC 1.1, ANC 750, platelets 93, Hgb 7.4 one week post chemotherapy
+      + Received 2 units pRBC; counts recovered spontaneously by discharge (WBC 6.8)
+      + Prior stay coded D61810 chemotherapy-induced pancytopenia
+      - No febrile neutropenia or documented infection
+      - Anemia multifactorial with CKD low-EPO state and inflammation
+      why: Objectively documented cytopenias temporally linked to recent carboplatin/paclitaxel; a codable major complication of this stay.
+  #5  [60.0/100 | medium]  Acute kidney injury on chronic kidney disease in renal transplant recipient (prerenal)  (complication)
+      + Admission Cr 1.4, BUN 37, improving to Cr 1.2 with IVF
+      + Note: 'AKI due to pre-renal azotemia; ESRD s/p DCDRT', true baseline nearer 1.1
+      + Concentrated urine osm 580 with high urine urea
+      - Creatinine elevation modest and below historical baseline of 2.3–2.5
+      - No oliguria or electrolyte crisis documented
+      why: Prerenal azotemia superimposed on transplant allograft nephropathy, volume responsive; supportive secondary diagnosis with tacrolimus titration.
+  #6  [58.0/100 | high]  Stage 3a squamous cell carcinoma of left lower lobe of lung  (secondary)
+      + Biopsy-proven keratinizing SCC, T2N2M0 by PET-CT
+      + CXR: continued left basilar necrotic LLL mass with small pleural effusion
+      + Received final XRT fraction 34/34 during this admission
+      - Cancer itself stable; admission driven by treatment toxicity, not tumor progression
+      why: Underlying malignancy under active treatment during the stay; codable but the toxicity/nutritional failure dominates this encounter.
+  #7  [52.0/100 | medium]  Oropharyngeal candidiasis (oral thrush) in immunosuppressed host  (complication)
+      + Admission exam: hyperpigmented tongue patches with '+thrush'
+      + Started nystatin swish and swallow QID with resolution
+      + Immunosuppressed on tacrolimus, post-chemoradiation, neutropenic
+      - No fungal culture or endoscopy; possible esophageal extension not confirmed
+      why: Clinically diagnosed and treated infection contributing to odynophagia and poor intake; a distinct billable secondary condition.
+  #8  [45.0/100 | medium]  Severe pulmonary arterial hypertension with chronic cor pulmonale  (secondary)
+      + RHC mPAP 55, PVR 10.4, CI 2.86; on macitentan/sildenafil
+      + CXR: prominent pulmonary arteries suggesting pulmonary arterial hypertension
+      + Loud systolic murmur; high-output AVF shunt contribution
+      - No dyspnea, edema or hypoxemia this admission; 95–96% on room air
+      why: Chronic comorbidity actively managed with sildenafil in-house and limiting BP tolerance, but not the acute driver of this admission.
+  #9  [35.0/100 | medium]  Chronic obstructive pulmonary disease with nicotine dependence  (secondary)
+      + Chart diagnosis of COPD; treated with standing and PRN nebulizers
+      + Long smoking history, nicotine patch provided
+      + Coarse basal crackles, worsening cough treated with antitussives
+      - No wheezing on exam; cough attributed to necrotic tumor and radiation
+      why: Stable comorbidity requiring inpatient bronchodilator therapy; supports secondary

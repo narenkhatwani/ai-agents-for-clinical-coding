@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10361982
 HADM ID          : 24286431
-Generated        : 2026-08-20T17:28:56.130144
+Generated        : 2026-08-20T22:05:57.162317
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 1
   Matched diagnosis    : Post-hysterectomy bleeding
     score=85.0  confidence=high
-  LLM reason           : Rank 1 'Post-hysterectomy bleeding' names the same principal condition as the physician discharge diagnosis 'Heavy vaginal bleeding after total laparoscopic hysterectomy' — vaginal hemorrhage occurring after hysterectomy (TLH = total laparoscopic hysterectomy).
+  LLM reason           : Physician discharge diagnosis 'heavy vaginal bleeding after total laparoscopic hysterectomy' names the same principal condition as Rank 1 'Post-hysterectomy bleeding' — postoperative vaginal/vaginal cuff hemorrhage following hysterectomy.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : Mapped code at matched rank is N93.9 (abnormal uterine and vaginal bleeding, unspecified), a nonspecific symptom code that does not capture the postprocedural/complication nature of the billed N99.820 (postprocedural hemorrhage of a genitourinary organ following a GU procedure). Coding guidelines require the complication code when bleeding follows a surgical procedure, and N93.9 (uterine/vaginal bleeding) is also inconsistent after hysterectomy, so a coder would not accept it as equivalent.
+  LLM ICD reason       : Mapped code N93.9 (abnormal uterine and vaginal bleeding, unspecified) is a nonspecific gynecologic bleeding code and does not capture the postprocedural etiology; billed N99.820 specifically codes postprocedural hemorrhage of a genitourinary organ following a GU procedure. A coder would not accept N93.9 in place of N99.820 (also, uterine bleeding is not applicable post-hysterectomy).
   Stage 9 final ICD    : N93.9 (debug)
 
 FULL DIFFERENTIAL LIST

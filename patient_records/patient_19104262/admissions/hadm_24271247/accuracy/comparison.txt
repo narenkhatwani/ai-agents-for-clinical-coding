@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 19104262
 HADM ID          : 24271247
-Generated        : 2026-08-20T17:31:06.748717
+Generated        : 2026-08-20T22:08:08.550948
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -13,25 +13,25 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Billed ICD title     : Pre-existing type 1 diabetes mellitus, in the puerperium (ICD metric only)
   Rank-1 predicted     : Diabetic ketoacidosis
     score=85.0  confidence=high
-  Diagnosis match      : NO
-  Is rank-1 match      : N/A
-  Matched DiffDx rank  : -
-  Matched diagnosis    : -
-    score=None  confidence=-
-  LLM reason           : Physician discharge diagnosis 'Diabetes type I with DKA' (type 1 diabetes mellitus with diabetic ketoacidosis) names diabetic ketoacidosis as the principal condition. Rank 1 'Diabetic ketoacidosis' is the same principal condition (broader as to diabetes type); Rank 2 'Type 1 diabetes mellitus with ketoacidosis' is an exact match, but the lowest matching rank is 1.
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Diabetic ketoacidosis
+    score=85.0  confidence=high
+  LLM reason           : Physician discharge diagnosis 'Diabetes type I with DKA' expands to type 1 diabetes mellitus with diabetic ketoacidosis. Rank 1 'Diabetic ketoacidosis' names the same principal acute condition (rank 2 'Type 1 diabetes mellitus with ketoacidosis' is an exact match, but rank 1 is the lowest matching rank).
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
 
   Ground truth ICD     : O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium
   Rank-1 mapped ICD    : E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
-  Matched mapped ICD   : - — 
+  Matched mapped ICD   : E13.10 — Other specified diabetes mellitus with ketoacidosis without coma
   ICD match            : NO
   ICD exact            : NO
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : Mapped code at rank 1 is E13.10 (other specified diabetes mellitus with ketoacidosis without coma), while the billed primary code is O24.03 (pre-existing type 1 diabetes mellitus, in the puerperium), an obstetric chapter 15 code that takes sequencing priority in the puerperium. Different code chapters and different specificity (obstetric pre-existing type 1 diabetes vs non-obstetric 'other specified' diabetes with ketoacidosis); a coder would not accept E13.10 as equivalent to O24.03. Note rank 2/6 map to E10.9, which is also not equivalent to the obstetric O24.03 code.
+  LLM ICD reason       : Mapped ICD at rank 1 is E13.10 (other specified diabetes mellitus with ketoacidosis without coma), while the billed primary code is O24.03 (pre-existing type 1 diabetes mellitus, in the puerperium), an obstetric chapter code that takes coding sequencing priority in a puerperal admission. E13.10 is neither the same code nor an acceptable substitute for the obstetric pre-existing type 1 diabetes code (which would pair with E10.10, not E13.10).
   Stage 9 final ICD    : E13.10 (debug)
 
 FULL DIFFERENTIAL LIST

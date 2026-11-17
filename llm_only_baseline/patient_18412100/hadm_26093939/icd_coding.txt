@@ -1,0 +1,27 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 18412100
+HADM ID          : 26093939
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue
+Primary condition: Desmoid tumor (aggressive fibromatosis) of right anterior abdominal wall, status post staged cryoablation
+
+  #1  Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall — neoplasm of uncertain behavior of connective/soft tissue  →  D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue
+      reason: Admission for cryoablation of residual right abdominal wall desmoid tumor; desmoid coded as uncertain behavior soft tissue neoplasm.
+  #2  Acute post-procedural (post-ablation) abdominal pain requiring parenteral analgesia  →  G89.18 — Other acute postprocedural pain
+      reason: Post-cryoablation right abdominal pain managed with dilaudid PCA and IV toradol overnight.
+  #3  Post-procedural nausea following general anesthesia and cryoablation  →  R11.0 — Nausea
+      reason: One brief nausea episode without vomiting after general anesthesia; treated with IV Zofran.
+  #4  Chronic hepatitis C virus infection, genotype 3, with hepatic fibrosis  →  B18.2 — Chronic viral hepatitis C
+      reason: Documented genotype 3 chronic HCV with viral load 430,000 and FibroScan-documented fibrosis; no inpatient changes.
+  #5  Reactive leukocytosis secondary to tissue ablation and inflammatory response  →  D72.829 — Elevated white blood cell count, unspecified
+      reason: WBC rose 12.5 to 15.2 post-ablation without infection signs, consistent with inflammatory leukocytosis.
+  #6  Chronic pain due to abdominal wall neoplasm on long-term opioid therapy  →  G89.3 — Neoplasm related pain (acute) (chronic)
+      reason: Chronic tumor pain from painful desmoid, home oxycodone; discharged on PO dilaudid.
+  #7  Obesity, class I, with BMI 31.7  →  E66.9 — Obesity, unspecified
+      reason: Documented obesity with recorded BMI 31.7 in structured vitals.
+  #8  Hashimoto (autoimmune) thyroiditis with thyroid nodules  →  E06.3 — Autoimmune thyroiditis
+      reason: History of Hashimoto thyroiditis by FNA cytology with multiple thyroid nodules on ultrasound.
+  #9  Post-procedural hemorrhage or hematoma of abdominal wall  →  L76.32 — Postprocedural hematoma of skin and subcutaneous tissue following other procedure
+      reason: Considered but not documented; no bleeding on exam, hemostasis achieved post-procedure.

@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "10458324",
   "hadm_id": "21744342",
-  "generated_at": "2026-08-20T17:29:20.839179",
+  "generated_at": "2026-08-20T22:06:23.647169",
   "ground_truth": {
     "primary_icd_code": "S270XXA",
     "primary_dx_title": "Traumatic pneumothorax, initial encounter",
@@ -28,8 +28,8 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "high",
-      "llm_reason": "The physician discharge diagnosis is 'Rib fracture' (traumatic fracture of one or more ribs, e.g. S22.3-/S22.4-). No rank in the differential names a rib fracture or any fracture. Rank 1 'Traumatic pneumothorax' is a frequently co-occurring thoracic injury but is a distinct principal condition (air in the pleural space) and does not contain or subsume 'rib fracture' in its label. Rank 2 acute respiratory failure, Rank 3 influenza A, Rank 4 opioid dependence, Rank 5 bipolar disorder, and Rank 6 subcutaneous emphysema are all unrelated or secondary/associated conditions, not rib fracture. Therefore no rank matches the principal discharge diagnosis.",
-      "llm_expanded_ground_truth": "rib fracture | fractured rib | broken rib | traumatic rib fracture | multiple rib fractures | flail chest (if multiple contiguous) | chest wall fracture",
+      "llm_reason": "The physician discharge diagnosis is 'Rib fracture' (fracture of one or more ribs, a bony thoracic cage injury). No rank in the differential names a rib fracture or any fracture. Rank 1 'Traumatic pneumothorax' is an associated thoracic trauma complication (air in the pleural space) but is a different principal condition from a rib fracture; the remaining ranks (acute respiratory failure, influenza A, opioid dependence, bipolar disorder, subcutaneous emphysema) are unrelated to a rib fracture as the principal diagnosis.",
+      "llm_expanded_ground_truth": "Rib fracture | Fracture of rib(s) | Broken rib | Traumatic rib fracture | Multiple rib fractures / flail chest spectrum | Costal fracture",
       "llm_expanded_matched": "",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
@@ -97,9 +97,9 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "No rank matched the physician discharge diagnosis, so there is no mapped ICD at a matched rank to compare against the billed primary code S27.0XXA (traumatic pneumothorax, initial encounter). For reference, Rank 1's mapped code J93.9 (pneumothorax, unspecified) would be clinically equivalent to S27.0XXA as a pneumothorax code, but since the diagnosis-level match failed (rib fracture vs pneumothorax), no matched-rank ICD equivalence can be asserted.",
-      "llm_expanded_ground_truth_icd": "S27.0XXA traumatic pneumothorax, initial encounter | J93.9 pneumothorax unspecified | collapsed lung due to trauma | post-traumatic air in pleural space",
-      "llm_expanded_matched_icd": "",
+      "llm_icd_reason": "Billed primary ICD is S27.0XXA (traumatic pneumothorax, initial encounter). Although no rank matched the free-text discharge diagnosis of rib fracture, the top-ranked differential's mapped code J93.9 (pneumothorax, unspecified) codes the same principal condition as the billed code, differing only in traumatic etiology specificity — a coder would accept these as clinically equivalent pneumothorax codes (per the stated J93.9 vs S27.0XXA convention). Confidence is medium because this equivalence rests on rank 1, which was not judged diagnosis-equivalent to the physician's rib fracture wording.",
+      "llm_expanded_ground_truth_icd": "S27.0XXA — Traumatic pneumothorax, initial encounter | Pneumothorax due to trauma | Collapsed lung from chest injury | Closed traumatic pneumothorax",
+      "llm_expanded_matched_icd": "J93.9 — Pneumothorax, unspecified | Pneumothorax NOS | Air in pleural cavity | Collapsed lung",
       "stage9_final_primary_icd": "J10.1",
       "diagnosis_match": false,
       "is_rank1_diagnosis_match": null,
@@ -110,27 +110,31 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "The physician discharge diagnosis is 'Rib fracture' (traumatic fracture of one or more ribs, e.g. S22.3-/S22.4-). No rank in the differential names a rib fracture or any fracture. Rank 1 'Traumatic pneumothorax' is a frequently co-occurring thoracic injury but is a distinct principal condition (air in the pleural space) and does not contain or subsume 'rib fracture' in its label. Rank 2 acute respiratory failure, Rank 3 influenza A, Rank 4 opioid dependence, Rank 5 bipolar disorder, and Rank 6 subcutaneous emphysema are all unrelated or secondary/associated conditions, not rib fracture. Therefore no rank matches the principal discharge diagnosis.",
+      "diagnosis_reason": "The physician discharge diagnosis is 'Rib fracture' (fracture of one or more ribs, a bony thoracic cage injury). No rank in the differential names a rib fracture or any fracture. Rank 1 'Traumatic pneumothorax' is an associated thoracic trauma complication (air in the pleural space) but is a different principal condition from a rib fracture; the remaining ranks (acute respiratory failure, influenza A, opioid dependence, bipolar disorder, subcutaneous emphysema) are unrelated to a rib fracture as the principal diagnosis.",
       "ground_truth_expansions": [
-        "rib fracture",
-        "fractured rib",
-        "broken rib",
-        "traumatic rib fracture",
-        "multiple rib fractures",
-        "flail chest (if multiple contiguous)",
-        "chest wall fracture"
+        "Rib fracture",
+        "Fracture of rib(s)",
+        "Broken rib",
+        "Traumatic rib fracture",
+        "Multiple rib fractures / flail chest spectrum",
+        "Costal fracture"
       ],
       "matched_diagnosis_expansions": [],
-      "icd_equivalent": false,
+      "icd_equivalent": true,
       "icd_confidence": "medium",
-      "icd_reason": "No rank matched the physician discharge diagnosis, so there is no mapped ICD at a matched rank to compare against the billed primary code S27.0XXA (traumatic pneumothorax, initial encounter). For reference, Rank 1's mapped code J93.9 (pneumothorax, unspecified) would be clinically equivalent to S27.0XXA as a pneumothorax code, but since the diagnosis-level match failed (rib fracture vs pneumothorax), no matched-rank ICD equivalence can be asserted.",
+      "icd_reason": "Billed primary ICD is S27.0XXA (traumatic pneumothorax, initial encounter). Although no rank matched the free-text discharge diagnosis of rib fracture, the top-ranked differential's mapped code J93.9 (pneumothorax, unspecified) codes the same principal condition as the billed code, differing only in traumatic etiology specificity — a coder would accept these as clinically equivalent pneumothorax codes (per the stated J93.9 vs S27.0XXA convention). Confidence is medium because this equivalence rests on rank 1, which was not judged diagnosis-equivalent to the physician's rib fracture wording.",
       "ground_truth_icd_expansions": [
-        "S27.0XXA traumatic pneumothorax, initial encounter",
-        "J93.9 pneumothorax unspecified",
-        "collapsed lung due to trauma",
-        "post-traumatic air in pleural space"
+        "S27.0XXA — Traumatic pneumothorax, initial encounter",
+        "Pneumothorax due to trauma",
+        "Collapsed lung from chest injury",
+        "Closed traumatic pneumothorax"
       ],
-      "matched_icd_expansions": [],
+      "matched_icd_expansions": [
+        "J93.9 — Pneumothorax, unspecified",
+        "Pneumothorax NOS",
+        "Air in pleural cavity",
+        "Collapsed lung"
+      ],
       "_cache_hit": false
     }
   },

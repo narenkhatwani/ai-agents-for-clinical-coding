@@ -1,0 +1,173 @@
+{
+  "summary": "Cachectic man with ESRD s/p deceased-donor kidney transplant on tacrolimus, severe idiopathic pulmonary hypertension and Stage 3a (T2N2M0) squamous cell carcinoma of the left lower lobe, recently discharged to rehab, re-presents from transplant clinic with hypotension (86/54, fluid-responsive), continued odynophagia, cough, anorexia and a further 5-lb weight loss (BMI 15.8). Labs show new neutropenia (ANC 750–890), thrombocytopenia (93K), anemia (Hgb 7.4) one week after last chemotherapy, mildly elevated Cr improving with IVF, and iron studies consistent with anemia of inflammation. Exam showed oral thrush; all cultures, Legionella and pneumococcal antigens negative and CXR unchanged, so antibiotics were stopped. He completed fraction 34/34 of XRT inpatient and improved with rehydration, mealtime analgesia, magic mouthwash, nystatin, appetite/energy stimulants and 2 units pRBC.",
+  "most_likely": "Radiation esophagitis with odynophagia causing failure to thrive and hypovolemic hypotension",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Radiation esophagitis due to thoracic radiotherapy",
+      "score": 82.0,
+      "confidence": "medium",
+      "category": "primary",
+      "supporting_evidence": [
+        "Persistent odynophagia and pain with swallowing on re-presentation",
+        "Esophagus within radiation field; completed fraction 34/34 inpatient",
+        "Treated with magic mouthwash, mealtime oxycodone elixir, Maalox",
+        "Prior stay coded K208 other esophagitis / radiation sickness"
+      ],
+      "opposing_evidence": [
+        "No endoscopy or imaging confirmation this stay",
+        "Thrush also present and could contribute to odynophagia"
+      ],
+      "reasoning": "Chemoradiation-induced esophagitis is the documented mechanism driving odynophagia, poor PO intake and the resulting dehydration/hypotension that prompted admission, making it the most defensible principal disease."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Adult failure to thrive with severe protein-calorie malnutrition and cachexia",
+      "score": 78.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "BMI 15.8, weight 94.7 lbs, 5-lb further loss since prior discharge",
+        "Anorexia, malaise, poor PO intake; dronabinol and Ritalin for appetite/energy",
+        "Cachectic on exam; nutritional supplementation, prior PEG refusal"
+      ],
+      "opposing_evidence": [
+        "Symptom rather than single organ disease; secondary to chemoradiation toxicity"
+      ],
+      "reasoning": "Documented as the overarching reason for admission and heavily treated; strong candidate for principal or first-listed secondary diagnosis in coding."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hypovolemic hypotension due to dehydration and poor oral intake",
+      "score": 72.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Referred from transplant clinic for hypotension; ED BP 86/54 → 110/70 after 1L IVF",
+        "Note states 'hypovolemic hypotension' as reason for direct admission",
+        "Blood pressures normalized with IVF and increased PO intake"
+      ],
+      "opposing_evidence": [
+        "Hypotension is the admission mechanism, not the underlying disease",
+        "Chronic low baseline BP with pulmonary hypertension and off beta blocker"
+      ],
+      "reasoning": "Clearly present and treated, but represents the presenting physiologic derangement secondary to malnutrition/esophagitis rather than the root disease."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Antineoplastic chemotherapy-induced pancytopenia (neutropenia, anemia, thrombocytopenia)",
+      "score": 68.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Admission WBC 1.1, ANC 750, platelets 93, Hgb 7.4 one week post chemotherapy",
+        "Received 2 units pRBC; counts recovered spontaneously by discharge (WBC 6.8)",
+        "Prior stay coded D61810 chemotherapy-induced pancytopenia"
+      ],
+      "opposing_evidence": [
+        "No febrile neutropenia or documented infection",
+        "Anemia multifactorial with CKD low-EPO state and inflammation"
+      ],
+      "reasoning": "Objectively documented cytopenias temporally linked to recent carboplatin/paclitaxel; a codable major complication of this stay."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute kidney injury on chronic kidney disease in renal transplant recipient (prerenal)",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Admission Cr 1.4, BUN 37, improving to Cr 1.2 with IVF",
+        "Note: 'AKI due to pre-renal azotemia; ESRD s/p DCDRT', true baseline nearer 1.1",
+        "Concentrated urine osm 580 with high urine urea"
+      ],
+      "opposing_evidence": [
+        "Creatinine elevation modest and below historical baseline of 2.3–2.5",
+        "No oliguria or electrolyte crisis documented"
+      ],
+      "reasoning": "Prerenal azotemia superimposed on transplant allograft nephropathy, volume responsive; supportive secondary diagnosis with tacrolimus titration."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Stage 3a squamous cell carcinoma of left lower lobe of lung",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Biopsy-proven keratinizing SCC, T2N2M0 by PET-CT",
+        "CXR: continued left basilar necrotic LLL mass with small pleural effusion",
+        "Received final XRT fraction 34/34 during this admission"
+      ],
+      "opposing_evidence": [
+        "Cancer itself stable; admission driven by treatment toxicity, not tumor progression"
+      ],
+      "reasoning": "Underlying malignancy under active treatment during the stay; codable but the toxicity/nutritional failure dominates this encounter."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Oropharyngeal candidiasis (oral thrush) in immunosuppressed host",
+      "score": 52.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Admission exam: hyperpigmented tongue patches with '+thrush'",
+        "Started nystatin swish and swallow QID with resolution",
+        "Immunosuppressed on tacrolimus, post-chemoradiation, neutropenic"
+      ],
+      "opposing_evidence": [
+        "No fungal culture or endoscopy; possible esophageal extension not confirmed"
+      ],
+      "reasoning": "Clinically diagnosed and treated infection contributing to odynophagia and poor intake; a distinct billable secondary condition."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Severe pulmonary arterial hypertension with chronic cor pulmonale",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "RHC mPAP 55, PVR 10.4, CI 2.86; on macitentan/sildenafil",
+        "CXR: prominent pulmonary arteries suggesting pulmonary arterial hypertension",
+        "Loud systolic murmur; high-output AVF shunt contribution"
+      ],
+      "opposing_evidence": [
+        "No dyspnea, edema or hypoxemia this admission; 95–96% on room air"
+      ],
+      "reasoning": "Chronic comorbidity actively managed with sildenafil in-house and limiting BP tolerance, but not the acute driver of this admission."
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Chronic obstructive pulmonary disease with nicotine dependence",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Chart diagnosis of COPD; treated with standing and PRN nebulizers",
+        "Long smoking history, nicotine patch provided",
+        "Coarse basal crackles, worsening cough treated with antitussives"
+      ],
+      "opposing_evidence": [
+        "No wheezing on exam; cough attributed to necrotic tumor and radiation"
+      ],
+      "reasoning": "Stable comorbidity requiring inpatient bronchodilator therapy; supports secondary"
+    }
+  ],
+  "n_candidates": 9,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "13952483",
+  "hadm_id": "23852410",
+  "generated_at": "2026-08-21T23:45:07.385641",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

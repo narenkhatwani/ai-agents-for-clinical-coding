@@ -1,0 +1,62 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 19104262
+HADM ID          : 24271247
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:49:56.437728
+Candidates       : 8
+Most likely      : Type 1 diabetes mellitus with ketoacidosis without coma, precipitated by insulin nonadherence
+
+Summary:
+  Young woman with long-standing poorly controlled type 1 diabetes and multiple prior DKA episodes, now 5 weeks postpartum (infant in NICU), admitted to the ICU with severe DKA: glucose 854, HCO3 3, anion gap 36, pH 6.96, with concomitant lactic acidosis (lactate 3.6–5.4) and marked electrolyte derangement (K 8.8, Phos 7.1, Mg 7.4, transient Cr 1.4). Precipitant was medication nonadherence/running out of insulin in the setting of social stress; no infectious source identified (clear CXR, no pneumonia, negative UE ultrasound, head CT normal). She improved on insulin infusion and fluids, transferred to medicine, and pelvic ultrasound for persistent postpartum bleeding showed only intracavitary blood products without retained products of conception.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [96.0/100 | high]  Type 1 diabetes mellitus with ketoacidosis without coma  (primary)
+      + Glucose 854, HCO3 3, anion gap 36, pH 6.96
+      + Chief complaint 'DKA'; treated with insulin drip and IVF
+      + Alert/oriented x3, no coma documented
+      why: Textbook severe DKA with documented biochemical criteria and insulin-drip treatment; the condition that occasioned the ICU admission and principal focus of care.
+  #2  [80.0/100 | high]  Severe high anion gap metabolic acidosis with lactic acidosis  (complication)
+      + Lactate 5.4 and 3.6 mmol/L, later 1.9
+      + CXR ordered for 'unexplained lactic acidosis'
+      + Base excess -28, calTCO2 5
+      - Lactate cleared rapidly with volume resuscitation
+      why: Explicitly named as a problem in the hospital course and objectively supported; a codable complication of the hypoperfusion/ketoacidosis rather than a competing principal diagnosis.
+  #3  [72.0/100 | high]  Hyperkalemia due to diabetic ketoacidosis  (complication)
+      + K 8.8 whole blood, serum K 6.8 on admission
+      + Later hypokalemia (K 3.0) during insulin therapy
+      - Resolved rapidly, normal K 4.1 at discharge
+      why: Marked transcellular-shift hyperkalemia typical of severe DKA, requiring monitoring and treatment; clearly documented in labs.
+  #4  [68.0/100 | high]  Insulin nonadherence / underdosing of prescribed insulin regimen  (risk_factor)
+      + Admitted 'in the setting of running out of medications'
+      + 'Likely nonadherence' in hospital course; social work involved
+      + Preadmission medication list flagged as possibly inaccurate
+      why: Documented precipitant of this DKA episode; codable as underdosing/noncompliance and relevant to recurrence risk.
+  #5  [55.0/100 | medium]  Acute kidney injury secondary to volume depletion  (complication)
+      + Creatinine 1.4 with BUN 26 on admission, baseline 0.5–0.7
+      + Granular and hyaline casts on urinalysis
+      + Creatinine 0.6 after fluid resuscitation
+      - AKI not explicitly named in the hospital course text
+      why: Transient creatinine rise with rapid resolution on fluids meets prerenal AKI criteria, though documentation is only lab-based.
+  #6  [48.0/100 | medium]  Persistent postpartum vaginal bleeding without retained products of conception  (secondary)
+      + 5 weeks post-partum with persistent daily vaginal bleeding
+      + TVUS: heterogeneous endometrial material, likely blood products, no vascularity
+      + GYN consult: normal postpartum; GYN follow-up arranged
+      - No retained products; deemed physiologic by GYN
+      why: An active secondary problem evaluated this stay, but attributed to normal postpartum involution rather than pathology.
+  #7  [22.0/100 | low]  Sepsis or occult infection as DKA precipitant  (differential)
+      + WBC 17.9–19.2 with 80% neutrophils; lactate 5.4
+      + Pyuria (WBC 10/hpf, bacteria) on urinalysis
+      - 'No infectious precipitant identified' per hospital course
+      - Afebrile; clear chest radiographs; no antibiotics documented
+      why: Leukocytosis and lactate are explained by DKA stress response; explicit clinical statement that no infection was found lowers this substantially.
+  #8  [12.0/100 | low]  Upper extremity deep vein thrombosis related to PICC line  (differential)
+      + RUE swelling and tenderness prompting ultrasound
+      + Bilateral UE ecchymoses and left PICC on exam
+      - Ultrasound showed no DVT and no soft tissue abnormality
+      - PICC subsequently removed without event
+      why: Considered and actively excluded by duplex ultrasound; retained only as a documented rule-out.

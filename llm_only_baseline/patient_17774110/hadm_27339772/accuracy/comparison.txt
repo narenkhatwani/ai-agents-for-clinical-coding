@@ -1,0 +1,48 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 17774110
+HADM ID          : 27339772
+Generated        : 2026-08-21T23:53:39.054036
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : icd_title_fallback
+  Ground truth (note)  : Other specified sepsis
+  Billed ICD title     : Other specified sepsis (ICD metric only)
+  Rank-1 predicted     : Septic shock due to Klebsiella aerogenes bacteremia
+    score=92.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Septic shock due to Klebsiella aerogenes bacteremia
+    score=92.0  confidence=high
+  LLM reason           : Rank 1 'Septic shock due to Klebsiella aerogenes bacteremia' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — sepsis due to a specified organism, with the rank simply providing greater specificity (organism and shock severity).
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : A41.89 — Other specified sepsis
+  Rank-1 mapped ICD    : A41.50 — Gram-negative sepsis, unspecified
+  Matched mapped ICD   : A41.50 — Gram-negative sepsis, unspecified
+  ICD match            : YES
+  ICD exact            : NO
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped A41.50 (Gram-negative sepsis, unspecified) and billed A41.89 (Other specified sepsis) are both within the A41 'Other sepsis' category and code the same principal condition — sepsis due to a specified/other organism; a coder would accept the mapped code as clinically equivalent for the sepsis principal diagnosis, differing only in organism-specific subcategory.
+  Stage 9 final ICD    : A41.50 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Septic shock due to Klebsiella aerogenes bacteremia  [score=92.0, high]  ICD=A41.50 — Gram-negative sepsis, unspecified
+   2. Acute on chronic hepatic failure in HCV cirrhosis with coma  [score=85.0, high]  ICD=K72.11 — Chronic hepatic failure with coma
+   3. Acute hypoxemic respiratory failure with ARDS requiring mechanical ventilation  [score=80.0, high]  ICD=J96.01 — Acute respiratory failure with hypoxia
+   4. Acute kidney injury from acute tubular necrosis requiring CRRT  [score=78.0, high]  ICD=N17.0 — Acute kidney failure with tubular necrosis
+   5. Disseminated intravascular coagulation with severe coagulopathy  [score=72.0, medium]  ICD=D65 — Disseminated intravascular coagulation [defibrination syndrome]
+   6. Metastatic hepatocellular carcinoma with adrenal metastases, terminal  [score=70.0, high]  ICD=C22.0 — Liver cell carcinoma
+   7. Hepatic/toxic metabolic encephalopathy with unresponsiveness  [score=62.0, medium]  ICD=G93.41 — Metabolic encephalopathy
+   8. Atrial fibrillation/flutter with rapid ventricular response  [score=45.0, low]  ICD=I48.91 — Unspecified atrial fibrillation
+   9. Inferior vena cava thrombus (venous thromboembolism)  [score=35.0, low]  ICD=I82.220 — Acute embolism and thrombosis of inferior vena cava

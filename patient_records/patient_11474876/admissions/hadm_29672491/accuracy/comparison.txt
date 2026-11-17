@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11474876
 HADM ID          : 29672491
-Generated        : 2026-08-20T17:29:36.381722
+Generated        : 2026-08-20T22:06:41.387485
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : Physician discharge diagnosis is choledocholithiasis (common bile duct stone, a hepatobiliary condition). None of the six ranked differentials names a biliary/hepatobiliary condition: they are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), a nonspecific symptom (leg swelling), and nocturnal hypoxia. No rank shares the same principal condition.
+  LLM reason           : The physician discharge diagnosis is choledocholithiasis (common bile duct stone), a hepatobiliary condition. None of the six ranked differentials name a biliary or hepatobiliary condition; all are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), or nonspecific symptoms (leg swelling, nocturnal hypoxia). No rank shares the same principal clinical condition.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) belong to entirely different body systems; no coder would accept any as equivalent to K80.30.
+  LLM ICD reason       : Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) are cardiovascular, renal, soft tissue, or respiratory codes with no clinical equivalence to K80.30.
   Stage 9 final ICD    : I50.30 (debug)
 
 FULL DIFFERENTIAL LIST

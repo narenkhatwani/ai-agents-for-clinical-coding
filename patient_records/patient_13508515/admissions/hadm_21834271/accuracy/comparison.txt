@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13508515
 HADM ID          : 21834271
-Generated        : 2026-08-20T17:30:11.380609
+Generated        : 2026-08-20T22:07:14.740854
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 2
   Matched diagnosis    : Renal cell carcinoma
     score=70.0  confidence=medium
-  LLM reason           : Physician discharge diagnosis is left renal cell carcinoma; Rank 2 'Renal cell carcinoma' names the same principal condition, lacking only laterality specification. Rank 1 (heart failure) and other ranks are unrelated principals.
+  LLM reason           : Physician discharge diagnosis is 'Left renal cell carcinoma'; Rank 2 is 'Renal cell carcinoma' — the same principal condition, differing only by laterality specification (DiffDx is broader, GT specifies left side).
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : No ICD code was mapped at the matched rank (Rank 2), so it cannot be compared to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).
+  LLM ICD reason       : No ICD-10 code was mapped at the matched rank (Rank 2 mapped ICD is none), so it cannot be compared with or accepted as equivalent to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).
   Stage 9 final ICD    : I50.23 (debug)
 
 FULL DIFFERENTIAL LIST

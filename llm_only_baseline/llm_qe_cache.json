@@ -1,0 +1,515 @@
+{
+  "8f9bee27bc8c7aa19928d90371aefd1cead7dd903abce680e70c92ce4fd91cb6": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 'Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy' names the same principal condition as the physician discharge diagnosis 'Heavy vaginal bleeding after total laparoscopic hysterectomy', specifying the vaginal cuff as the bleeding source (post-hysterectomy postprocedural hemorrhage).",
+    "ground_truth_expansions": [
+      "Heavy vaginal bleeding after TLH",
+      "Post-hysterectomy vaginal hemorrhage",
+      "Postoperative bleeding following total laparoscopic hysterectomy",
+      "Vaginal cuff bleeding",
+      "Postprocedural genitourinary hemorrhage"
+    ],
+    "matched_diagnosis_expansions": [
+      "Vaginal cuff hemorrhage post TLH",
+      "Postoperative hemorrhage after hysterectomy",
+      "Post-hysterectomy bleeding",
+      "Postprocedural hemorrhage of genitourinary organ"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at rank 1 is N99.820, an exact match to the billed ground-truth primary code N99.820 (postprocedural hemorrhage of a genitourinary system organ following a GU procedure).",
+    "ground_truth_icd_expansions": [
+      "N99.820 postprocedural hemorrhage of GU organ following GU procedure",
+      "Post-hysterectomy hemorrhage code"
+    ],
+    "matched_icd_expansions": [
+      "N99.820 postprocedural hemorrhage of GU organ following GU procedure",
+      "Vaginal cuff bleeding after hysterectomy coded as N99.820"
+    ],
+    "_cache_hit": false
+  },
+  "a3eaf8af2c9a8147fd139027fceb22a787bc2c7b3e75da65493eb0db45362fd2": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 'Recurrent paroxysmal supraventricular tachycardia (AVNRT)' names the same principal condition as the physician discharge diagnosis 'supraventricular tachycardia'; AVNRT/paroxysmal SVT is a more specific subtype of SVT.",
+    "ground_truth_expansions": [
+      "SVT",
+      "supraventricular tachycardia",
+      "paroxysmal supraventricular tachycardia",
+      "PSVT",
+      "AVNRT",
+      "atrioventricular nodal reentrant tachycardia"
+    ],
+    "matched_diagnosis_expansions": [
+      "recurrent PSVT",
+      "AVNRT",
+      "AV nodal reentrant tachycardia",
+      "supraventricular tachycardia"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped I47.10 (Supraventricular tachycardia, unspecified) is the current-code equivalent of billed I47.1 (Supraventricular tachycardia); same category and principal condition, differing only by coding-year subdivision.",
+    "ground_truth_icd_expansions": [
+      "I47.1 Supraventricular tachycardia",
+      "I47.10 SVT unspecified",
+      "I47.19 other SVT"
+    ],
+    "matched_icd_expansions": [
+      "I47.10 Supraventricular tachycardia, unspecified",
+      "I47.1 Supraventricular tachycardia"
+    ],
+    "_cache_hit": false
+  },
+  "184c92908c97a7ededc39f516e80429a58d6c9e7eb3f273088ae7cf789a6d96d": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Physician discharge diagnosis lists 'Rib fracture' as the principal condition; Rank 1 'Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)' names the same principal condition (rib fractures) with greater specificity (multiple, displaced, right-sided, with flail segment). Rank 5 additionally matches the secondary discharge diagnosis of paroxysmal atrial fibrillation, but rank 1 is the lowest matching rank.",
+    "ground_truth_expansions": [
+      "rib fracture",
+      "fractured rib",
+      "broken rib",
+      "costal fracture",
+      "blunt chest wall injury",
+      "paroxysmal atrial fibrillation",
+      "PAF",
+      "intermittent AF/afib"
+    ],
+    "matched_diagnosis_expansions": [
+      "multiple rib fractures",
+      "closed displaced rib fractures",
+      "right-sided rib fractures",
+      "flail chest",
+      "blunt chest trauma",
+      "chest wall fracture"
+    ],
+    "icd_equivalent": false,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at matched rank 1 is S22.5XXA (Flail chest, initial encounter for closed fracture), a chest wall/rib fracture code. The billed primary ICD is S27.0XXA (Traumatic pneumothorax), an intrathoracic pleural air-collection injury. These code distinct principal conditions and are not interchangeable, although rank 4 separately mapped to S27.0XXA.",
+    "ground_truth_icd_expansions": [
+      "S27.0XXA",
+      "traumatic pneumothorax",
+      "post-traumatic air in pleural space",
+      "chest injury with collapsed lung"
+    ],
+    "matched_icd_expansions": [
+      "S22.5XXA",
+      "flail chest",
+      "multiple closed rib fractures with paradoxical chest wall movement",
+      "S22.4 multiple rib fractures"
+    ],
+    "_cache_hit": false
+  },
+  "2acc88bfc7c1ce726d126e733fd6ef58d50e6e2fca3188f1995447523aa34a55": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Physician discharge diagnosis is nephrolithiasis of the right kidney at the ureteropelvic junction, complex and >2 cm. Rank 1 'Bilateral staghorn calculi of kidney (right renal calculus treated this stay)' names the same principal condition — a large/complex renal calculus of the right kidney treated during the admission. Rank 3 also names an obstructive-stone condition, but rank 1 is the lowest matching rank.",
+    "ground_truth_expansions": [
+      "nephrolithiasis",
+      "kidney stone",
+      "renal calculus",
+      "UPJ = ureteropelvic junction",
+      "complex large (>2 cm) right renal stone",
+      "staghorn-type stone burden"
+    ],
+    "matched_diagnosis_expansions": [
+      "staghorn calculi",
+      "calculus of kidney",
+      "renal stone disease",
+      "right renal calculus"
+    ],
+    "icd_equivalent": false,
+    "icd_confidence": "medium",
+    "icd_reason": "Mapped ICD at matched rank 1 is N20.0 (Calculus of kidney), whereas the billed primary code is N13.2 (Hydronephrosis with renal and ureteral calculous obstruction). N13.2 requires documented obstructive hydronephrosis in addition to the calculus and is a combination code sequenced as principal; a coder would not accept plain N20.0 as equivalent. (Note: rank 3 carried the exact N13.2 code, but the lowest matching rank per the rules is rank 1.)",
+    "ground_truth_icd_expansions": [
+      "N13.2 hydronephrosis with renal and ureteral calculous obstruction",
+      "obstructive uropathy due to stone",
+      "obstructing stone with hydronephrosis"
+    ],
+    "matched_icd_expansions": [
+      "N20.0 calculus of kidney",
+      "nephrolithiasis without stated obstruction",
+      "renal stone"
+    ],
+    "_cache_hit": false
+  },
+  "555c337fd50c0c8b6984fdc81b17db639b8a7a6e3be73a9cb3db00c14119ea92": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 'Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis' names the identical principal condition as the physician discharge diagnosis 'Choledocholithiasis' (common bile duct stone). The rank string explicitly contains the ground-truth term; the added qualifier about absence of cholangitis is a specificity modifier, not a different principal condition.",
+    "ground_truth_expansions": [
+      "Choledocholithiasis",
+      "common bile duct stone",
+      "calculus of bile duct",
+      "CBD stone",
+      "biliary duct calculus",
+      "bile duct stone with/without cholangitis"
+    ],
+    "matched_diagnosis_expansions": [
+      "Choledocholithiasis",
+      "calculus of bile duct",
+      "common bile duct stone without cholangitis or cholecystitis",
+      "CBD calculus, non-obstructing"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "medium",
+    "icd_reason": "Mapped K80.50 (calculus of bile duct without cholangitis or cholecystitis, without obstruction) and billed K80.30 (calculus of bile duct with cholangitis, unspecified, without obstruction) both code the same principal condition — a non-obstructing bile duct calculus in the K80.3-/K80.5- bile duct stone family; they differ only by the documented presence of accompanying cholangitis, an associated-condition modifier. A coder would recognize these as the same principal biliary calculus diagnosis, analogous to the J93.9 vs S27.0XXA pneumothorax example, though the cholangitis qualifier lowers confidence.",
+    "ground_truth_icd_expansions": [
+      "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction",
+      "choledocholithiasis with cholangitis",
+      "bile duct stone, non-obstructing, with cholangitis"
+    ],
+    "matched_icd_expansions": [
+      "K80.50 Calculus of bile duct without cholangitis or cholecystitis without obstruction",
+      "choledocholithiasis, uncomplicated",
+      "non-obstructing common bile duct stone"
+    ],
+    "_cache_hit": false
+  },
+  "b83704f11f24976964a87d22cc436cf343624a5c2dbb25ba9bc39535aa95a9ca": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia; Rank 1 'Refractory ventricular tachycardia with appropriate ICD shock' names the same principal condition (ventricular tachycardia), with the additional detail of device shock not changing the principal diagnosis.",
+    "ground_truth_expansions": [
+      "VT = ventricular tachycardia",
+      "refractory ventricular tachycardia",
+      "ventricular arrhythmia refractory to therapy",
+      "s/p = status post stellate ganglion block (treatment for VT storm)",
+      "HVAD = HeartWare ventricular assist device",
+      "nonischemic cardiomyopathy"
+    ],
+    "matched_diagnosis_expansions": [
+      "refractory ventricular tachycardia",
+      "VT",
+      "ventricular tachyarrhythmia",
+      "ICD = implantable cardioverter-defibrillator shock for VT"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Billed I47.2 (Ventricular tachycardia) and mapped I47.20 (Ventricular tachycardia, unspecified) are the same code family/category for ventricular tachycardia; I47.20 is the ICD-10-CM specific successor code for I47.2 and a coder would accept them as equivalent.",
+    "ground_truth_icd_expansions": [
+      "I47.2 Ventricular tachycardia",
+      "paroxysmal tachycardia category I47",
+      "includes I47.20 unspecified VT, I47.21 torsades, I47.29 other VT"
+    ],
+    "matched_icd_expansions": [
+      "I47.20 Ventricular tachycardia, unspecified",
+      "subcode of I47.2",
+      "sustained/refractory VT"
+    ],
+    "_cache_hit": false
+  },
+  "3960c53e26dd0b587271c4e0b3008d08690a1e9ad665618b6d9981c1fb10879c": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 'Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation' names the same principal condition as the physician discharge diagnosis 'Acute on chronic decompensated diastolic heart failure'. Decompensated = exacerbation; diastolic heart failure = HFpEF.",
+    "ground_truth_expansions": [
+      "Acute on chronic decompensated diastolic heart failure",
+      "Acute decompensated HFpEF",
+      "Heart failure with preserved ejection fraction exacerbation",
+      "Acute on chronic congestive heart failure, diastolic type"
+    ],
+    "matched_diagnosis_expansions": [
+      "Acute on chronic diastolic congestive heart failure exacerbation",
+      "HFpEF = heart failure with preserved ejection fraction",
+      "CHF exacerbation, diastolic"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at rank 1 is I50.33, an exact match to the billed ground-truth primary code I50.33 (Acute on chronic diastolic (congestive) heart failure).",
+    "ground_truth_icd_expansions": [
+      "I50.33 Acute on chronic diastolic (congestive) heart failure",
+      "I50.3x diastolic heart failure family"
+    ],
+    "matched_icd_expansions": [
+      "I50.33 Acute on chronic diastolic (congestive) heart failure",
+      "HFpEF acute on chronic"
+    ],
+    "_cache_hit": false
+  },
+  "a7eac6cac4c5c7bcc154598d3f6f2cb3f785d7df33120dc642d6761b6e05c112": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 'Malignant pericardial effusion with cardiac tamponade' names the same principal condition as the physician's discharge diagnosis 'Pericardial effusion with tamponade features', and adds the malignant etiology consistent with the concurrently listed Stage IV adenocarcinoma of unknown origin. Rank 2 ('Metastatic adenocarcinoma of unknown primary') also matches the listed Stage IV adenocarcinoma of unknown origin, and Ranks 4/5 correspond to the listed pneumonia and acute kidney injury, but Rank 1 is the lowest matching rank.",
+    "ground_truth_expansions": [
+      "Stage IV adenocarcinoma of unknown primary site",
+      "metastatic adenocarcinoma, carcinoma of unknown primary (CUP)",
+      "pericardial effusion with tamponade physiology / cardiac tamponade",
+      "acute kidney injury (AKI, acute renal failure)",
+      "healthcare-associated / hospital-acquired / aspiration pneumonia",
+      "acute toxic-metabolic encephalopathy (acute confusional state, delirium)",
+      "diarrhea"
+    ],
+    "matched_diagnosis_expansions": [
+      "malignant pericardial effusion",
+      "neoplastic pericardial fluid accumulation",
+      "cardiac tamponade",
+      "pericardial tamponade / tamponade physiology"
+    ],
+    "icd_equivalent": false,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at matched rank 1 is I31.4 (cardiac tamponade / malignant pericardial effusion), whereas the billed primary code is A41.9 (sepsis, unspecified organism). These are distinct principal conditions and a coder would not accept I31.4 as equivalent to a sepsis code. Note that Rank 3 carries A41.9, but the ICD metric is judged at the lowest matching diagnosis rank.",
+    "ground_truth_icd_expansions": [
+      "A41.9 sepsis unspecified organism",
+      "septicemia, bloodstream infection, systemic infection with organ dysfunction"
+    ],
+    "matched_icd_expansions": [
+      "I31.4 cardiac tamponade",
+      "pericardial effusion causing hemodynamic compromise",
+      "I31.3 pericardial effusion (noninflammatory)"
+    ],
+    "_cache_hit": false
+  },
+  "b7fd734a1de9183bbd483ce85af4bfe71939ef3b2c22729fd3dccf61d9a04370": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 'Malignant neoplasm of left kidney (renal cell carcinoma), 8 cm mass' names the same principal condition as the physician discharge diagnosis 'Left renal cell carcinoma'; the rank string explicitly contains renal cell carcinoma of the left kidney, with added tumor size detail.",
+    "ground_truth_expansions": [
+      "Left renal cell carcinoma",
+      "RCC of left kidney",
+      "Malignant neoplasm of left kidney",
+      "Left kidney cancer",
+      "Renal adenocarcinoma, left"
+    ],
+    "matched_diagnosis_expansions": [
+      "Malignant neoplasm of left kidney",
+      "Renal cell carcinoma (RCC), left",
+      "Left renal mass 8 cm, malignant",
+      "Left kidney cancer excluding renal pelvis"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at rank 1 is C64.2, an exact match to the billed primary ICD C64.2 (Malignant neoplasm of left kidney, except renal pelvis).",
+    "ground_truth_icd_expansions": [
+      "C64.2 Malignant neoplasm of left kidney, except renal pelvis",
+      "Left renal cell carcinoma code"
+    ],
+    "matched_icd_expansions": [
+      "C64.2 Malignant neoplasm of left kidney, except renal pelvis"
+    ],
+    "_cache_hit": false
+  },
+  "8ec7a818ef3fd51595a8dda8b193ec3ea79873c5c3b8e1941723216ddc990688": {
+    "matched_rank": 2,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "The physician discharge diagnosis is a compound statement: 'Failure to thrive; Dehydration; Acute kidney injury.' Scanning all ranks, Rank 2 'Adult failure to thrive with severe protein-calorie malnutrition and cachexia' names the same principal condition as 'Failure to thrive' (more specific, bundled with malnutrition/cachexia). Rank 3 'Hypovolemic hypotension due to dehydration and poor oral intake' also captures the dehydration component, and Rank 5 'Acute kidney injury on chronic kidney disease (prerenal)' captures the AKI component. Per the lowest-matching-rank rule, the matched rank is 2.",
+    "ground_truth_expansions": [
+      "failure to thrive (FTT)",
+      "adult failure to thrive",
+      "debility / cachexia / poor oral intake with weight loss",
+      "dehydration / volume depletion / hypovolemia",
+      "acute kidney injury (AKI) / acute renal failure / prerenal azotemia"
+    ],
+    "matched_diagnosis_expansions": [
+      "adult failure to thrive",
+      "FTT",
+      "severe protein-calorie malnutrition",
+      "cachexia / wasting"
+    ],
+    "icd_equivalent": false,
+    "icd_confidence": "high",
+    "icd_reason": "The mapped ICD at the matched rank (Rank 2) is R62.7 (Adult failure to thrive), whereas the billed ground-truth primary code is I95.89 (Other hypotension). These are distinct principal conditions in the coding sense (nutritional/debility symptom code vs circulatory hypotension code) and a coder would not accept R62.7 as equivalent to I95.89. Note that Rank 3 does map exactly to I95.89 (hypovolemic hypotension due to dehydration), but the ICD comparison is anchored to the matched rank.",
+    "ground_truth_icd_expansions": [
+      "I95.89 Other hypotension",
+      "hypovolemic / dehydration-related low blood pressure",
+      "non-orthostatic, non-drug-induced hypotension"
+    ],
+    "matched_icd_expansions": [
+      "R62.7 Adult failure to thrive",
+      "adult debility / general physical deterioration",
+      "related but distinct: E43/E44 protein-calorie malnutrition, R64 cachexia"
+    ],
+    "_cache_hit": false
+  },
+  "882f241795a71b39edd6485d2182040014115f9c96affb497622baac14cf2341": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "The physician discharge diagnosis list includes 'Intracranial Metastatic Lesion' with associated 'Intracranial Hemorrhage' in a patient with high-grade unclassified sarcoma. Rank 1, 'Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage', names the same principal condition (brain metastasis from the known sarcoma) and additionally specifies location and hemorrhagic transformation, matching the billed primary code.",
+    "ground_truth_expansions": [
+      "intracranial metastatic lesion",
+      "brain metastasis",
+      "metastatic lesion to the brain",
+      "secondary malignant neoplasm of brain",
+      "intracranial hemorrhage (hemorrhage into metastatic lesion)",
+      "high-grade unclassified sarcoma / malignant fibrous histiocytoma of right femur"
+    ],
+    "matched_diagnosis_expansions": [
+      "secondary malignant neoplasm of brain",
+      "cerebellar metastasis",
+      "metastatic brain tumor",
+      "intratumoral hemorrhage",
+      "hemorrhagic brain metastasis"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at rank 1 is C79.31 (Secondary malignant neoplasm of brain), which is an exact code match with the billed ground-truth primary ICD C79.31.",
+    "ground_truth_icd_expansions": [
+      "C79.31",
+      "Secondary malignant neoplasm of brain",
+      "metastatic brain neoplasm",
+      "brain metastasis"
+    ],
+    "matched_icd_expansions": [
+      "C79.31",
+      "Secondary malignant neoplasm of brain",
+      "cerebellar metastatic deposit",
+      "hemorrhagic brain metastasis"
+    ],
+    "_cache_hit": false
+  },
+  "6778b41b1de71388cf0164ab66e2843fb4bbb0e4c8a57a1d642201ac4ebafba3": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 'Septic shock due to Klebsiella aerogenes bacteremia' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — sepsis due to a specified organism, with the rank simply providing greater specificity (organism and shock severity).",
+    "ground_truth_expansions": [
+      "sepsis",
+      "sepsis due to other specified organism",
+      "bloodstream infection",
+      "septicemia",
+      "bacteremia with systemic inflammatory response"
+    ],
+    "matched_diagnosis_expansions": [
+      "septic shock",
+      "sepsis with circulatory failure",
+      "Klebsiella aerogenes (Enterobacter aerogenes) bacteremia",
+      "gram-negative bacterial sepsis",
+      "septicemia due to specified organism"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "medium",
+    "icd_reason": "Mapped A41.50 (Gram-negative sepsis, unspecified) and billed A41.89 (Other specified sepsis) are both within the A41 'Other sepsis' category and code the same principal condition — sepsis due to a specified/other organism; a coder would accept the mapped code as clinically equivalent for the sepsis principal diagnosis, differing only in organism-specific subcategory.",
+    "ground_truth_icd_expansions": [
+      "A41.89 Other specified sepsis",
+      "A41 Other sepsis",
+      "sepsis due to other specified organism"
+    ],
+    "matched_icd_expansions": [
+      "A41.50 Gram-negative sepsis, unspecified",
+      "A41.5 Sepsis due to other Gram-negative organisms",
+      "A41.51/A41.59 gram-negative septicemia",
+      "R65.21 severe sepsis with septic shock (secondary)"
+    ],
+    "_cache_hit": false
+  },
+  "ae0529db0df3b6ec8565dbf4faf63a4bc5cc380913d50241029b1dba6e9f2ebc": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 1 names desmoid tumor (aggressive fibromatosis) of the anterior abdominal wall, the same principal condition as the physician discharge diagnosis 'Desmoid tumor', with added anatomic specificity.",
+    "ground_truth_expansions": [
+      "Desmoid tumor",
+      "Aggressive fibromatosis",
+      "Desmoid-type fibromatosis",
+      "Musculoaponeurotic fibromatosis",
+      "Soft tissue tumor of uncertain behavior"
+    ],
+    "matched_diagnosis_expansions": [
+      "Desmoid tumor of anterior abdominal wall",
+      "Aggressive fibromatosis",
+      "Neoplasm of uncertain behavior of connective and soft tissue"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at rank 1 is D48.1, an exact match to the billed primary ICD D48.1 (Neoplasm of uncertain behavior of connective and other soft tissue).",
+    "ground_truth_icd_expansions": [
+      "D48.1 Neoplasm of uncertain behavior of connective and other soft tissue"
+    ],
+    "matched_icd_expansions": [
+      "D48.1 Neoplasm of uncertain behavior of connective and other soft tissue"
+    ],
+    "_cache_hit": false
+  },
+  "572c3e738f51d5982407368fccc52615d3002801d118579b5d266a1ec420fb62": {
+    "matched_rank": 1,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Physician discharge diagnosis 'Diabetes type I with DKA' expands to type 1 diabetes mellitus with diabetic ketoacidosis, which is exactly Rank 1 'Type 1 diabetes mellitus with ketoacidosis without coma' (same principal condition, with added specificity regarding absence of coma). Ranks 2, 3, and 7 describe complications/precipitants of DKA rather than the principal diagnosis.",
+    "ground_truth_expansions": [
+      "Diabetes mellitus type 1",
+      "Insulin-dependent diabetes mellitus",
+      "DKA = diabetic ketoacidosis",
+      "Type 1 diabetes with ketoacidosis",
+      "Pre-existing type 1 diabetes (peripartum/puerperal context per billed code)"
+    ],
+    "matched_diagnosis_expansions": [
+      "T1DM with DKA",
+      "Type 1 diabetes mellitus with ketoacidosis",
+      "Diabetic ketoacidosis without coma",
+      "E10.10"
+    ],
+    "icd_equivalent": true,
+    "icd_confidence": "medium",
+    "icd_reason": "Mapped ICD at matched rank is E10.10 (Type 1 diabetes mellitus with ketoacidosis without coma); billed primary is O24.03 (Pre-existing type 1 diabetes mellitus, in the puerperium). Both code the same principal condition — pre-existing type 1 diabetes mellitus — with the obstetric chapter code sequenced first only because of the puerperal encounter, and O24.03 conventionally requires an additional E10.- code (here E10.10) to specify the ketoacidosis. A coder would accept these as clinically equivalent for the same principal condition, though the exact codes differ by chapter/obstetric sequencing rules.",
+    "ground_truth_icd_expansions": [
+      "O24.03 — Pre-existing type 1 diabetes mellitus, in the puerperium",
+      "Puerperal pre-existing insulin-dependent diabetes",
+      "Requires additional code from E10.- category to specify complication"
+    ],
+    "matched_icd_expansions": [
+      "E10.10 — Type 1 diabetes mellitus with ketoacidosis without coma",
+      "E10.- Type 1 diabetes mellitus category",
+      "DKA in type 1 diabetes"
+    ],
+    "_cache_hit": false
+  },
+  "405a05c64d623bc23859eeaa5f9083893276a5db3ddf976f9cfd16c86277aadc": {
+    "matched_rank": 3,
+    "diagnosis_equivalent": true,
+    "diagnosis_relationship": "same_principal_more_specific",
+    "diagnosis_confidence": "high",
+    "diagnosis_reason": "Rank 3 'Unexplained macrocytic anemia suspicious for myelodysplastic syndrome' explicitly names macrocytic anemia, the same principal condition as the physician discharge diagnosis 'Macrocytic anemia', with an added etiologic suspicion. Ranks 1 and 2 describe iron deficiency/blood loss (microcytic/posthemorrhagic) anemia, which is a different principal anemia type, so the lowest truly matching rank is 3.",
+    "ground_truth_expansions": [
+      "Macrocytic anemia",
+      "Anemia with elevated MCV",
+      "Megaloblastic anemia (subtype)",
+      "Large red cell anemia",
+      "B12/folate deficiency anemia (common cause)"
+    ],
+    "matched_diagnosis_expansions": [
+      "Unexplained macrocytic anemia",
+      "Macrocytic anemia of uncertain etiology",
+      "Anemia with high mean corpuscular volume",
+      "Possible myelodysplastic syndrome (MDS)"
+    ],
+    "icd_equivalent": false,
+    "icd_confidence": "high",
+    "icd_reason": "Mapped ICD at matched rank is D53.1 (other megaloblastic anemias), whereas the billed primary code is D50.9 (iron deficiency anemia, unspecified). These are distinct anemia categories (macrocytic/megaloblastic vs microcytic iron deficiency) in different ICD-10 blocks and would not be accepted as interchangeable by a coder.",
+    "ground_truth_icd_expansions": [
+      "D50.9 Iron deficiency anemia, unspecified",
+      "Sideropenic anemia",
+      "Hypochromic microcytic anemia due to iron deficiency"
+    ],
+    "matched_icd_expansions": [
+      "D53.1 Other megaloblastic anemias, not elsewhere classified",
+      "Megaloblastic anemia NOS",
+      "Macrocytic anemia related codes: D53.9, D51.9, D52.9"
+    ],
+    "_cache_hit": false
+  }
+}

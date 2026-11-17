@@ -1,0 +1,25 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 11474876
+HADM ID          : 29672491
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : K80.50 — Calculus of bile duct without cholangitis or cholecystitis without obstruction
+Primary condition: Choledocholithiasis status post ERCP with sphincterotomy, stone/sludge extraction and stent removal
+
+  #1  Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis  →  K80.50 — Calculus of bile duct without cholangitis or cholecystitis without obstruction
+      reason: ERCP removed bile duct stones/sludge with sphincterotomy; no cholangitis or cholecystitis documented this stay.
+  #2  Cholelithiasis (gallbladder stones) with planned/deferred cholecystectomy  →  K80.20 — Calculus of gallbladder without cholecystitis without obstruction
+      reason: Known gallstones; cholecystectomy discussed but patient declined and deferred to outpatient surgical follow-up.
+  #3  Paroxysmal atrial fibrillation on long-term anticoagulation, apixaban periprocedurally held  →  I48.0 — Paroxysmal atrial fibrillation
+      reason: Documented paroxysmal AF on amiodarone/propranolol; apixaban held periprocedurally and restarted.
+  #4  Chronic heart failure with preserved ejection fraction with peripheral volume overload  →  I50.32 — Chronic diastolic (congestive) heart failure
+      reason: HFpEF documented with bilateral pitting edema; Lasix held perioperatively and restarted at discharge.
+  #5  Chronic kidney disease stage 3 (moderate)  →  N18.30 — Chronic kidney disease, stage 3 unspecified
+      reason: CKD with baseline creatinine 1.6-1.8, current 1.4; home calcitriol continued.
+  #6  Essential hypertension with hypertensive heart disease  →  I11.0 — Hypertensive heart disease with heart failure
+      reason: Hypertension on three agents with coexisting HFpEF; combination code per ICD-10 convention.
+  #7  Recurrent/resolved ascending cholangitis following prior biliary stenting  →  Z87.19 — Personal history of other diseases of the digestive system
+      reason: Prior admission cholangitis treated with stent; resolved, normal LFTs now, so coded as history only.
+  #8  Post-ERCP pancreatitis or post-sphincterotomy hemorrhage  →  K91.89 — Other postprocedural complications and disorders of digestive system
+      reason: Considered complication; procedure documented uncomplicated with no pain or bleeding, so speculative only.

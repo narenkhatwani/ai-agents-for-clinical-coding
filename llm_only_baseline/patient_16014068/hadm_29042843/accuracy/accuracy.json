@@ -1,0 +1,183 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "16014068",
+  "hadm_id": "29042843",
+  "generated_at": "2026-08-21T23:53:28.466283",
+  "ground_truth": {
+    "primary_icd_code": "C7931",
+    "primary_dx_title": "Secondary malignant neoplasm of brain",
+    "primary_icd_title": "Secondary malignant neoplasm of brain",
+    "discharge_diagnosis": "High-grade unclassified sarcoma (malignant fibrous histiocytoma) of the R femur; Hematoma, chronic; Hypoproliferative Anemia; Vitamin B12 Deficiency; Elevated Prothrombin Time; Thrombocytopenia; History of bilateral PE and DVT; Intracranial Metastatic Lesion; Intracranial Hemorrhage",
+    "diffdx_gt": "High-grade unclassified sarcoma (malignant fibrous histiocytoma) of the R femur; Hematoma, chronic; Hypoproliferative Anemia; Vitamin B12 Deficiency; Elevated Prothrombin Time; Thrombocytopenia; History of bilateral PE and DVT; Intracranial Metastatic Lesion; Intracranial Hemorrhage",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 19
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "High-grade unclassified sarcoma (malignant fibrous histiocytoma) of the R femur; Hematoma, chronic; Hypoproliferative Anemia; Vitamin B12 Deficiency; Elevated Prothrombin Time; Thrombocytopenia; History of bilateral PE and DVT; Intracranial Metastatic Lesion; Intracranial Hemorrhage",
+      "rank1_diagnosis": "Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage",
+      "rank1_score": 92.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage",
+      "matched_score": 92.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "The physician discharge diagnosis list includes 'Intracranial Metastatic Lesion' with associated 'Intracranial Hemorrhage' in a patient with high-grade unclassified sarcoma. Rank 1, 'Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage', names the same principal condition (brain metastasis from the known sarcoma) and additionally specifies location and hemorrhagic transformation, matching the billed primary code.",
+      "llm_expanded_ground_truth": "intracranial metastatic lesion | brain metastasis | metastatic lesion to the brain | secondary malignant neoplasm of brain | intracranial hemorrhage (hemorrhage into metastatic lesion) | high-grade unclassified sarcoma / malignant fibrous histiocytoma of right femur",
+      "llm_expanded_matched": "secondary malignant neoplasm of brain | cerebellar metastasis | metastatic brain tumor | intratumoral hemorrhage | hemorrhagic brain metastasis",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage",
+          "score": 92.0,
+          "confidence": "high",
+          "icd10_primary": "C79.31",
+          "icd10_primary_title": "Secondary malignant neoplasm of brain"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Metastatic high-grade unclassified sarcoma of right femur with pulmonary metastases",
+          "score": 88.0,
+          "confidence": "high",
+          "icd10_primary": "C40.21",
+          "icd10_primary_title": "Malignant neoplasm of long bones of right lower limb"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Severe hypoproliferative anemia due to chronic thigh hematoma and malignancy",
+          "score": 78.0,
+          "confidence": "high",
+          "icd10_primary": "D63.0",
+          "icd10_primary_title": "Anemia in neoplastic disease"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Nontraumatic intracranial (intracerebellar) hemorrhage",
+          "score": 74.0,
+          "confidence": "medium",
+          "icd10_primary": "I61.4",
+          "icd10_primary_title": "Nontraumatic intracerebral hemorrhage in cerebellum"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Thrombocytopenia with acquired coagulopathy (elevated INR)",
+          "score": 66.0,
+          "confidence": "medium",
+          "icd10_primary": "D69.59",
+          "icd10_primary_title": "Other secondary thrombocytopenia"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Chronic nontraumatic right thigh hematoma from recurrent sarcoma",
+          "score": 60.0,
+          "confidence": "medium",
+          "icd10_primary": "M79.81",
+          "icd10_primary_title": "Nontraumatic hematoma of soft tissue"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Mechanical fall due to weakness and non-weight-bearing right leg",
+          "score": 55.0,
+          "confidence": "high",
+          "icd10_primary": "W19.XXXA",
+          "icd10_primary_title": "Unspecified fall, initial encounter"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Encounter for palliative care / hospice transition in terminal malignancy",
+          "score": 52.0,
+          "confidence": "medium",
+          "icd10_primary": "Z51.5",
+          "icd10_primary_title": "Encounter for palliative care"
+        },
+        {
+          "rank": 9,
+          "diagnosis": "Leukocytosis of uncertain etiology in advanced malignancy",
+          "score": 30.0,
+          "confidence": "low",
+          "icd10_primary": "D72.829",
+          "icd10_primary_title": "Elevated white blood cell count, unspecified"
+        },
+        {
+          "rank": 10,
+          "diagnosis": "Chronic pulmonary embolism with IVC filter, anticoagulation contraindicated",
+          "score": 28.0,
+          "confidence": "medium",
+          "icd10_primary": "I27.82",
+          "icd10_primary_title": "Chronic pulmonary embolism"
+        }
+      ],
+      "n_diffdx": 10
+    },
+    "icd_linked": {
+      "ground_truth_icd": "C79.31",
+      "ground_truth_icd_title": "Secondary malignant neoplasm of brain",
+      "rank1_predicted_icd": "C79.31",
+      "rank1_predicted_icd_title": "Secondary malignant neoplasm of brain",
+      "matched_predicted_icd": "C79.31",
+      "matched_predicted_icd_title": "Secondary malignant neoplasm of brain",
+      "icd_match": true,
+      "icd_exact_match": true,
+      "icd_family_match": true,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "Mapped ICD at rank 1 is C79.31 (Secondary malignant neoplasm of brain), which is an exact code match with the billed ground-truth primary ICD C79.31.",
+      "llm_expanded_ground_truth_icd": "C79.31 | Secondary malignant neoplasm of brain | metastatic brain neoplasm | brain metastasis",
+      "llm_expanded_matched_icd": "C79.31 | Secondary malignant neoplasm of brain | cerebellar metastatic deposit | hemorrhagic brain metastasis",
+      "stage9_final_primary_icd": "C79.31",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
+    },
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "The physician discharge diagnosis list includes 'Intracranial Metastatic Lesion' with associated 'Intracranial Hemorrhage' in a patient with high-grade unclassified sarcoma. Rank 1, 'Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage', names the same principal condition (brain metastasis from the known sarcoma) and additionally specifies location and hemorrhagic transformation, matching the billed primary code.",
+      "ground_truth_expansions": [
+        "intracranial metastatic lesion",
+        "brain metastasis",
+        "metastatic lesion to the brain",
+        "secondary malignant neoplasm of brain",
+        "intracranial hemorrhage (hemorrhage into metastatic lesion)",
+        "high-grade unclassified sarcoma / malignant fibrous histiocytoma of right femur"
+      ],
+      "matched_diagnosis_expansions": [
+        "secondary malignant neoplasm of brain",
+        "cerebellar metastasis",
+        "metastatic brain tumor",
+        "intratumoral hemorrhage",
+        "hemorrhagic brain metastasis"
+      ],
+      "icd_equivalent": true,
+      "icd_confidence": "high",
+      "icd_reason": "Mapped ICD at rank 1 is C79.31 (Secondary malignant neoplasm of brain), which is an exact code match with the billed ground-truth primary ICD C79.31.",
+      "ground_truth_icd_expansions": [
+        "C79.31",
+        "Secondary malignant neoplasm of brain",
+        "metastatic brain neoplasm",
+        "brain metastasis"
+      ],
+      "matched_icd_expansions": [
+        "C79.31",
+        "Secondary malignant neoplasm of brain",
+        "cerebellar metastatic deposit",
+        "hemorrhagic brain metastasis"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

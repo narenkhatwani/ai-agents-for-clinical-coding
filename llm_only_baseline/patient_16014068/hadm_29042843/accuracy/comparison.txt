@@ -1,0 +1,49 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 16014068
+HADM ID          : 29042843
+Generated        : 2026-08-21T23:53:28.466283
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : High-grade unclassified sarcoma (malignant fibrous histiocytoma) of the R femur; Hematoma, chronic; Hypoproliferative Anemia; Vitamin B12 Deficiency; Elevated Prothrombin Time; Thrombocytopenia; History of bilateral PE and DVT; Intracranial Metastatic Lesion; Intracranial Hemorrhage
+  Billed ICD title     : Secondary malignant neoplasm of brain (ICD metric only)
+  Rank-1 predicted     : Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage
+    score=92.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage
+    score=92.0  confidence=high
+  LLM reason           : The physician discharge diagnosis list includes 'Intracranial Metastatic Lesion' with associated 'Intracranial Hemorrhage' in a patient with high-grade unclassified sarcoma. Rank 1, 'Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage', names the same principal condition (brain metastasis from the known sarcoma) and additionally specifies location and hemorrhagic transformation, matching the billed primary code.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : C79.31 — Secondary malignant neoplasm of brain
+  Rank-1 mapped ICD    : C79.31 — Secondary malignant neoplasm of brain
+  Matched mapped ICD   : C79.31 — Secondary malignant neoplasm of brain
+  ICD match            : YES
+  ICD exact            : YES
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped ICD at rank 1 is C79.31 (Secondary malignant neoplasm of brain), which is an exact code match with the billed ground-truth primary ICD C79.31.
+  Stage 9 final ICD    : C79.31 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage  [score=92.0, high]  ICD=C79.31 — Secondary malignant neoplasm of brain
+   2. Metastatic high-grade unclassified sarcoma of right femur with pulmonary metastases  [score=88.0, high]  ICD=C40.21 — Malignant neoplasm of long bones of right lower limb
+   3. Severe hypoproliferative anemia due to chronic thigh hematoma and malignancy  [score=78.0, high]  ICD=D63.0 — Anemia in neoplastic disease
+   4. Nontraumatic intracranial (intracerebellar) hemorrhage  [score=74.0, medium]  ICD=I61.4 — Nontraumatic intracerebral hemorrhage in cerebellum
+   5. Thrombocytopenia with acquired coagulopathy (elevated INR)  [score=66.0, medium]  ICD=D69.59 — Other secondary thrombocytopenia
+   6. Chronic nontraumatic right thigh hematoma from recurrent sarcoma  [score=60.0, medium]  ICD=M79.81 — Nontraumatic hematoma of soft tissue
+   7. Mechanical fall due to weakness and non-weight-bearing right leg  [score=55.0, high]  ICD=W19.XXXA — Unspecified fall, initial encounter
+   8. Encounter for palliative care / hospice transition in terminal malignancy  [score=52.0, medium]  ICD=Z51.5 — Encounter for palliative care
+   9. Leukocytosis of uncertain etiology in advanced malignancy  [score=30.0, low]  ICD=D72.829 — Elevated white blood cell count, unspecified
+  10. Chronic pulmonary embolism with IVC filter, anticoagulation contraindicated  [score=28.0, medium]  ICD=I27.82 — Chronic pulmonary embolism

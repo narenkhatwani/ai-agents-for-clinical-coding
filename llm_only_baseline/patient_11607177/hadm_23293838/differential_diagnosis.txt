@@ -1,0 +1,75 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 11607177
+HADM ID          : 23293838
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:40:38.391938
+Candidates       : 10
+Most likely      : Refractory ventricular tachycardia in non-ischemic dilated cardiomyopathy with LVAD
+
+Summary:
+  Middle-aged/older man with non-ischemic dilated cardiomyopathy (EF <20%) s/p HeartMate II LVAD, listed status 1A(b) for heart transplant, admitted after a single ICD shock while on a fishing trip. Device interrogation showed one shock plus >20 VT episodes aborted by ATP despite maximal antiarrhythmic therapy (quinidine, mexiletine, metoprolol); he underwent a repeat left stellate ganglion block with no further VT on telemetry. He also had a week of increased lower extremity edema with JVD 14 cm on admission, managed by diuretic adjustment (torsemide held then resumed), discharged near-euvolemic at 120.4 kg.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [95.0/100 | high]  Refractory ventricular tachycardia with appropriate ICD shock  (primary)
+      + Chief complaint: ICD shock
+      + Interrogation: one shock, >20 VT episodes aborted by ATP
+      + Left stellate ganglion block performed this admission
+      + Prior admission principal ICD-10 I472 for same problem
+      - No VT recorded on telemetry after block
+      why: The entire admission was driven by documented recurrent VT despite maximal antiarrhythmic therapy, requiring an invasive sympathetic block; this is the billable principal disease rather than the shock event.
+  #2  [82.0/100 | high]  Chronic systolic (congestive) heart failure, NYHA class III/stage D  (secondary)
+      + Stage D heart failure, LVEF <20% on TTE
+      + JVD 14 cm and 2+ bilateral pitting edema on admission
+      + Torsemide dose escalated at home then re-titrated inpatient
+      - Lungs clear, no crackles, room air saturation 97-99%
+      why: Actively managed volume overload with diuretic titration and daily weights makes chronic systolic HF a strongly supported concurrent diagnosis, though the acute driver was arrhythmia.
+  #3  [80.0/100 | high]  Non-ischemic dilated cardiomyopathy with biventricular dysfunction  (secondary)
+      + TTE: severe biventricular dilation, severe global hypokinesis
+      + Longstanding EF 10-20% non-ischemic DCM documented
+      + Moderate-severe MR, moderate TR, mild-moderate AR
+      why: Underlying substrate for both VT and heart failure, objectively confirmed on this admission's echocardiogram.
+  #4  [76.0/100 | high]  Presence of left ventricular assist device (HeartMate II)  (secondary)
+      + LVAD flow 5.3-6.4, speed 9400, PI 3.1-4.4 documented daily
+      + Driveline managed by VAD team
+      + Doppler-only blood pressures
+      why: Device status materially affected management (anticoagulation, Doppler BP, driveline care) and is a codable status condition for this stay.
+  #5  [55.0/100 | medium]  Acute on chronic volume overload (decompensated right heart failure)  (complication)
+      + One week of increased lower extremity edema before shock
+      + JVD 14 cm improving to 10 cm; weight 120.4 kg at discharge
+      + Home torsemide increased to 30 mg then back-titrated
+      - Clinician documented patient appeared relatively euvolemic
+      - No pulmonary congestion or hypoxia
+      why: Congestive signs were present and diuretics adjusted, but the note explicitly downplays overload, so this ranks as a contributory rather than principal issue.
+  #6  [48.0/100 | medium]  Horner syndrome following stellate ganglion block  (complication)
+      + Transitional issue: Horner Syndrome was induced after block
+      + No hematoma or respiratory compromise at injection site
+      - Expected physiologic effect of the procedure, not an adverse event
+      why: Documented post-procedure finding worth capturing, though it is an anticipated consequence of a successful sympathetic block.
+  #7  [40.0/100 | medium]  Supratherapeutic INR on long-term warfarin anticoagulation  (complication)
+      + INR 3.3, PT 36.9, PTT 44.2 on labs
+      + Warfarin regimen adjusted for discharge
+      + Invasive neck block performed while anticoagulated
+      - No bleeding, hemoglobin stable at 11.6
+      - LVAD requires higher INR targets
+      why: INR modestly above typical target with a periprocedural bleeding risk; clinically silent, so low-moderate score.
+  #8  [32.0/100 | low]  Chronic kidney disease with mild creatinine elevation  (secondary)
+      + Creatinine 1.4 on admission, BUN 31 then 25
+      + Prior admissions coded N189 and repeated AKI
+      + Torsemide held for concern of overdiuresis
+      - Creatinine improved to 1.2 at discharge, near baseline
+      why: Baseline renal impairment with cardiorenal sensitivity influenced diuretic dosing, but no acute kidney injury was declared this stay.
+  #9  [25.0/100 | medium]  Type 2 diabetes mellitus without complications  (risk_factor)
+      + Longstanding T2DM in past medical history
+      + Glucose 105-118 during stay
+      - No diabetes medications listed on current admission med list
+      why: Stable chronic comorbidity with mild hyperglycemia; codable background condition only.
+  #10  [22.0/100 | medium]  Chronic tophaceous gout on urate-lowering therapy  (secondary)
+      + Continued colchicine 0.6 mg QOD and febuxostat 80 mg daily
+      + Tophaceous gout in PMH and prior ICD coding
+      - No acute flare documented this admission
+      why: Chronic condition actively medicated but clinically quiescent during this stay.

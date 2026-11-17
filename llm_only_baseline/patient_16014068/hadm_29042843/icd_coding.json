@@ -1,0 +1,474 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "16014068",
+  "hadm_id": "29042843",
+  "most_likely": "Hemorrhage into cerebellar metastasis from metastatic high-grade sarcoma (secondary malignant neoplasm of brain)",
+  "summary": "Elderly man with high-grade unclassified sarcoma (malignant fibrous histiocytoma) of the right femur, now widely metastatic (lung, pelvic nodes, cerebellum), off anticoagulation with IVC filter, transferred from an outside hospital after a mechanical fall at home. Outside head CT showed intracranial bleeding which neurosurgery attributed to hemorrhage within his known cerebellar metastasis rather than trauma; he was asymptomatic neurologically and underwent planned CyberKnife radiosurgery to the brain metastasis during the stay. Labs show severe hypoproliferative anemia (Hgb 7.7), thrombocytopenia (Plt 63), leukocytosis (WBC 16.1), and imaging shows progressive pulmonary metastases; care goals are palliative with planned hospice transition.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage",
+      "score": 92.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "\"bleeding is in the known metastatic lesion he has\"",
+        "Prior MRI: 12 x 8 mm right cerebellar enhancing lesion",
+        "Received CyberKnife to brain met this admission"
+      ],
+      "opposing_evidence": [
+        "Neurologically asymptomatic, exam grossly WNL"
+      ],
+      "reasoning": "The condition that drove admission, neurosurgical evaluation and definitive treatment (CK radiosurgery) this stay is the hemorrhagic cerebellar metastasis, making it the principal disease for coding.",
+      "icd10_primary": "C79.31",
+      "icd10_primary_title": "Secondary malignant neoplasm of brain",
+      "icd10_package": [
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "principal"
+        },
+        {
+          "code": "C40.21",
+          "title": "Malignant neoplasm of long bones of right lower limb",
+          "role": "supporting"
+        },
+        {
+          "code": "I61.9",
+          "title": "Nontraumatic intracerebral hemorrhage, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z51.5",
+          "title": "Encounter for palliative care",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C40.21",
+          "title": "Malignant neoplasm of long bones of right lower limb",
+          "role": "supporting"
+        },
+        {
+          "code": "I61.9",
+          "title": "Nontraumatic intracerebral hemorrhage, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z51.5",
+          "title": "Encounter for palliative care",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Known cerebellar metastasis with hemorrhage into lesion, treated with CyberKnife; primary focus of current admission.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Metastatic high-grade unclassified sarcoma of right femur with pulmonary metastases",
+      "score": 88.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "CXR: multiple bilateral nodules, advanced metastatic disease",
+        "CT C-spine: new 1.4 cm right apical lung nodule, worsening metastasis",
+        "Prior path: recurrent high-grade sarcoma, iliac node biopsy positive"
+      ],
+      "opposing_evidence": [
+        "No new tumor-directed systemic therapy given"
+      ],
+      "reasoning": "Underlying malignancy is actively progressing and drives every current problem; strongly codable as the underlying/secondary neoplastic diagnosis.",
+      "icd10_primary": "C40.21",
+      "icd10_primary_title": "Malignant neoplasm of long bones of right lower limb",
+      "icd10_package": [
+        {
+          "code": "C40.21",
+          "title": "Malignant neoplasm of long bones of right lower limb",
+          "role": "principal"
+        },
+        {
+          "code": "C78.00",
+          "title": "Secondary malignant neoplasm of unspecified lung",
+          "role": "supporting"
+        },
+        {
+          "code": "C77.5",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C78.00",
+          "title": "Secondary malignant neoplasm of unspecified lung",
+          "role": "supporting"
+        },
+        {
+          "code": "C77.5",
+          "title": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "High-grade unclassified sarcoma of right femur with documented bilateral pulmonary nodular metastases on imaging.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Severe hypoproliferative anemia due to chronic thigh hematoma and malignancy",
+      "score": 78.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Hgb 7.7, Hct 23.6, MCV 101, RDW 20",
+        "Plan: maintain Hgb >7, weekly transfusions for palliation",
+        "Prior admissions for Hgb 4–5 from thigh hematoma"
+      ],
+      "opposing_evidence": [
+        "No active extravasation on prior CTA"
+      ],
+      "reasoning": "Ongoing transfusion-dependent anemia is actively managed this stay and clearly documented, warranting a high secondary rank.",
+      "icd10_primary": "D63.0",
+      "icd10_primary_title": "Anemia in neoplastic disease",
+      "icd10_package": [
+        {
+          "code": "D63.0",
+          "title": "Anemia in neoplastic disease",
+          "role": "principal"
+        },
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia",
+          "role": "supporting"
+        },
+        {
+          "code": "C40.21",
+          "title": "Malignant neoplasm of long bones of right lower limb",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia",
+          "role": "supporting"
+        },
+        {
+          "code": "C40.21",
+          "title": "Malignant neoplasm of long bones of right lower limb",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Hgb 7.7, hypoproliferative anemia attributed to malignancy, prior radiation and ongoing oozing into thigh hematoma.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Nontraumatic intracranial (intracerebellar) hemorrhage",
+      "score": 74.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "OSH head CT with intracranial bleeding",
+        "Neurosurgery felt bleed unrelated to the fall",
+        "Thrombocytopenia Plt 63 and chronically elevated INR"
+      ],
+      "opposing_evidence": [
+        "Small volume, no neurologic deficit, no intervention"
+      ],
+      "reasoning": "A discrete, documented hemorrhagic event codable alongside the metastasis; scored below the metastasis because it is attributed to the tumor rather than an independent stroke.",
+      "icd10_primary": "I61.4",
+      "icd10_primary_title": "Nontraumatic intracerebral hemorrhage in cerebellum",
+      "icd10_package": [
+        {
+          "code": "I61.4",
+          "title": "Nontraumatic intracerebral hemorrhage in cerebellum",
+          "role": "principal"
+        },
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Neurosurgery attributed cerebellar bleed to metastatic lesion rather than fall, making it nontraumatic hemorrhage.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Thrombocytopenia with acquired coagulopathy (elevated INR)",
+      "score": 66.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Platelet count 63 K/uL",
+        "Note: \"Elevated INR # Thrombocytopenia\", goal Plt >50k",
+        "Prior acquired coagulation factor deficiency coded"
+      ],
+      "opposing_evidence": [
+        "No current INR value in structured labs"
+      ],
+      "reasoning": "Documented and monitored this admission, contributing to bleeding risk and precluding anticoagulation.",
+      "icd10_primary": "D69.59",
+      "icd10_primary_title": "Other secondary thrombocytopenia",
+      "icd10_package": [
+        {
+          "code": "D69.59",
+          "title": "Other secondary thrombocytopenia",
+          "role": "principal"
+        },
+        {
+          "code": "D68.4",
+          "title": "Acquired coagulation factor deficiency",
+          "role": "supporting"
+        },
+        {
+          "code": "D63.0",
+          "title": "Anemia in neoplastic disease",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "D68.4",
+          "title": "Acquired coagulation factor deficiency",
+          "role": "supporting"
+        },
+        {
+          "code": "D63.0",
+          "title": "Anemia in neoplastic disease",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Platelets 63 K/uL with documented acquired coagulopathy limiting therapeutic options in advanced malignancy.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Chronic nontraumatic right thigh hematoma from recurrent sarcoma",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Exam: enlarged girth of R proximal thigh, firm laterally",
+        "Note problem list: \"Thigh Hematoma, Chronic\"",
+        "Prior CT: 15.7 x 14.5 x 30.3 cm mass/hematoma"
+      ],
+      "opposing_evidence": [
+        "Nontender, no acute bleeding this stay"
+      ],
+      "reasoning": "Chronic ongoing problem addressed in the current plan as the source of transfusion-dependent blood loss.",
+      "icd10_primary": "M79.81",
+      "icd10_primary_title": "Nontraumatic hematoma of soft tissue",
+      "icd10_package": [
+        {
+          "code": "M79.81",
+          "title": "Nontraumatic hematoma of soft tissue",
+          "role": "principal"
+        },
+        {
+          "code": "C49.22",
+          "title": "Malignant neoplasm of connective and soft tissue of left lower limb, including hip",
+          "role": "supporting"
+        },
+        {
+          "code": "D63.0",
+          "title": "Anemia in neoplastic disease",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C49.22",
+          "title": "Malignant neoplasm of connective and soft tissue of left lower limb, including hip",
+          "role": "supporting"
+        },
+        {
+          "code": "D63.0",
+          "title": "Anemia in neoplastic disease",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Enlarging right thigh hematoma without extravasation on CTA, chronically oozing, associated with recurrent sarcoma.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Mechanical fall due to weakness and non-weight-bearing right leg",
+      "score": 55.0,
+      "confidence": "high",
+      "category": "differential",
+      "supporting_evidence": [
+        "\"got up this morning to use the bathroom and fell over\"",
+        "Attributes fall to weakness; uses crutches/wheelchair",
+        "Contusion left forehead, knee and elbow abrasions"
+      ],
+      "opposing_evidence": [
+        "No syncope or loss of consciousness"
+      ],
+      "reasoning": "The admission mechanism and a codable external cause/symptom, but not a principal disease; deconditioning and functional loss explain it.",
+      "icd10_primary": "W19.XXXA",
+      "icd10_primary_title": "Unspecified fall, initial encounter",
+      "icd10_package": [
+        {
+          "code": "W19.XXXA",
+          "title": "Unspecified fall, initial encounter",
+          "role": "principal"
+        },
+        {
+          "code": "R53.1",
+          "title": "Weakness",
+          "role": "supporting"
+        },
+        {
+          "code": "Z74.09",
+          "title": "Other reduced mobility",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R53.1",
+          "title": "Weakness",
+          "role": "supporting"
+        },
+        {
+          "code": "Z74.09",
+          "title": "Other reduced mobility",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Mechanical fall at home attributed to weakness and inability to bear weight on right leg.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Encounter for palliative care / hospice transition in terminal malignancy",
+      "score": 52.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "DNR/DNI code status documented",
+        "Planned transition to hospice, transfusions for palliation",
+        "No further tumor-directed therapy options"
+      ],
+      "opposing_evidence": [
+        "Formal hospice enrollment deferred to patient readiness"
+      ],
+      "reasoning": "Explicit goals-of-care/palliative status documented, commonly coded as an additional status diagnosis for this stay.",
+      "icd10_primary": "Z51.5",
+      "icd10_primary_title": "Encounter for palliative care",
+      "icd10_package": [
+        {
+          "code": "Z51.5",
+          "title": "Encounter for palliative care",
+          "role": "principal"
+        },
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Patient on hospice with no further treatment options; palliative management documented this admission.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Leukocytosis of uncertain etiology in advanced malignancy",
+      "score": 30.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "WBC 16.1 K/uL",
+        "History of back abscess/cellulitis and prior unexplained fevers"
+      ],
+      "opposing_evidence": [
+        "Afebrile T 97.5, CXR no consolidation, benign urinalysis"
+      ],
+      "reasoning": "Isolated leukocytosis without infectious source; likely tumor- or stress-related, so low score but worth noting.",
+      "icd10_primary": "D72.829",
+      "icd10_primary_title": "Elevated white blood cell count, unspecified",
+      "icd10_package": [
+        {
+          "code": "D72.829",
+          "title": "Elevated white blood cell count, unspecified",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "WBC 16.1 K/uL without documented infection; etiology unspecified.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 10,
+      "diagnosis": "Chronic pulmonary embolism with IVC filter, anticoagulation contraindicated",
+      "score": 28.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Note: \"Extensive B/L PE and DVT... IVC filter\"",
+        "DVT prophylaxis contraindicated due to bleeding diathesis"
+      ],
+      "opposing_evidence": [
+        "No dyspnea, hypoxia or new imaging of PE this stay"
+      ],
+      "reasoning": "Chronic comorbidity influencing management decisions but not an active problem driving this admission.",
+      "icd10_primary": "I27.82",
+      "icd10_primary_title": "Chronic pulmonary embolism",
+      "icd10_package": [
+        {
+          "code": "I27.82",
+          "title": "Chronic pulmonary embolism",
+          "role": "principal"
+        },
+        {
+          "code": "Z95.828",
+          "title": "Presence of other vascular implants and grafts",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z95.828",
+          "title": "Presence of other vascular implants and grafts",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "History of extensive bilateral PE, IVC filter placed, anticoagulation stopped due to bleeding risk.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "C79.31",
+  "primary_icd_title": "Secondary malignant neoplasm of brain",
+  "primary_condition": "Cerebellar metastasis from high-grade sarcoma with intratumoral hemorrhage",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:46:59.145738",
+  "ontology_routing": false
+}

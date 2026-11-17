@@ -1,0 +1,188 @@
+{
+  "summary": "Elderly man with CAD s/p 2 stents, atrial fibrillation on warfarin (INR 2.4 on arrival), sick sinus syndrome s/p pacemaker, mild-moderate aortic stenosis and known Barrett's esophagus presents with symptomatic acute-on-chronic macrocytic anemia (Hgb 6.7), dyspnea on exertion and fatigue after outpatient labs. Iron studies show marked iron deficiency (Fe 15, ferritin 27, TIBC 306) despite two recent Feraheme infusions; one guaiac-positive stool on the floor, but extensive prior EGD/colonoscopy/capsule showed only Barrett's esophagus and gastritis without active bleeding. He was transfused 3 units PRBC (discharge Hgb 8.7), given IV iron and started on B12 repletion (B12 255, low-normal), with hematology follow-up and planned bone marrow biopsy for the unexplained macrocytic component.",
+  "most_likely": "Iron deficiency anemia due to chronic occult gastrointestinal blood loss",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Iron deficiency anemia due to chronic occult gastrointestinal blood loss",
+      "score": 90.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Iron 15, ferritin 27, TIBC 306 on admission",
+        "Hgb 6.7 requiring 3 units PRBC",
+        "Guaiac-positive stool while on floor",
+        "Refractory despite two prior Feraheme infusions"
+      ],
+      "opposing_evidence": [
+        "MCV 106 (macrocytic, not classic microcytic)",
+        "Endoscopy/colonoscopy/capsule without active bleeding source"
+      ],
+      "reasoning": "Documented severe iron deficiency with heme-positive stool and transfusion requirement makes chronic GI blood-loss iron deficiency anemia the condition driving this admission and the likely principal diagnosis."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute on chronic blood loss anemia requiring transfusion",
+      "score": 72.0,
+      "confidence": "medium",
+      "category": "primary",
+      "supporting_evidence": [
+        "Hgb fell to 6.7 with failure to bump after 1 unit PRBC",
+        "Prior admission coded acute posthemorrhagic anemia",
+        "Guaiac-positive stool, warfarin INR 2.4"
+      ],
+      "opposing_evidence": [
+        "No hematemesis, melena or hematochezia reported",
+        "ED rectal exam guaiac negative initially"
+      ],
+      "reasoning": "Abrupt drop with inadequate transfusion response suggests ongoing occult hemorrhage superimposed on chronic anemia; strong competing principal-diagnosis candidate."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Unexplained macrocytic anemia suspicious for myelodysplastic syndrome",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "differential",
+      "supporting_evidence": [
+        "MCV 106, RDW 17–18, inadequate reticulocyte response (abs 0.08)",
+        "Bone marrow biopsy scheduled by outpatient hematology",
+        "Year-long anemia with unrevealing GI workup"
+      ],
+      "opposing_evidence": [
+        "No cytopenias other than anemia; WBC 6.3, platelets 235",
+        "No marrow diagnosis established this stay"
+      ],
+      "reasoning": "Macrocytosis with hypoproliferative reticulocyte response and planned marrow biopsy raises marrow disorder, but remains unconfirmed at discharge."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Vitamin B12 deficiency contributing to macrocytic anemia",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "B12 255 pg/mL (low-normal), repletion started in-house",
+        "MCV 99–106 macrocytic indices",
+        "MMA pending at discharge"
+      ],
+      "opposing_evidence": [
+        "Prior outpatient B12/folate reported within normal limits",
+        "MMA result not available to confirm"
+      ],
+      "reasoning": "Low-normal B12 with macrocytosis prompted treatment, but deficiency is unproven pending methylmalonic acid."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Occult gastrointestinal hemorrhage from Barrett's esophagus and gastritis on anticoagulation",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "EGD showed Barrett's esophagus and nodular gastritis",
+        "Warfarin therapy with INR 2.4 on admission",
+        "Guaiac-positive stool documented on floor"
+      ],
+      "opposing_evidence": [
+        "No active bleeding seen on any endoscopic study",
+        "No overt melena or hematochezia"
+      ],
+      "reasoning": "Anticoagulated patient with mucosal disease provides plausible bleeding substrate, but no confirmed active lesion this stay."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Dyspnea on exertion secondary to symptomatic anemia",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Must sit down mid-task due to breathlessness",
+        "Symptoms improved with transfusion and iron",
+        "Lungs clear, no edema, no infection"
+      ],
+      "opposing_evidence": [
+        "Symptom rather than a disease; not a principal diagnosis"
+      ],
+      "reasoning": "Clearly documented and attributed to anemia; codeable as a secondary symptom but cannot be rank-1."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Nonrheumatic aortic valve stenosis, mild to moderate",
+      "score": 32.0,
+      "confidence": "medium",
+      "category": "differential",
+      "supporting_evidence": [
+        "II/VI systolic ejection murmur at LUSB",
+        "TTE mild-moderate AS with mild pulmonary hypertension",
+        "Chronic exertional dyspnea over one year"
+      ],
+      "opposing_evidence": [
+        "Symptoms resolved with anemia correction",
+        "Cardiac catheterization deferred; ischemic workup negative"
+      ],
+      "reasoning": "Valvular disease is an alternative explanation for dyspnea and a relevant comorbidity, but was judged secondary to anemia this stay."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Chronic atrial fibrillation on long-term warfarin anticoagulation",
+      "score": 30.0,
+      "confidence": "high",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Afib on Coumadin, continued diltiazem inpatient",
+        "INR 1.9–2.4, PT prolonged",
+        "Prior admission coded I48.91 and Z79.01"
+      ],
+      "opposing_evidence": [
+        "Rate controlled, no arrhythmic events described this stay"
+      ],
+      "reasoning": "Stable comorbidity that critically influences bleeding risk and anemia management; secondary coding relevance only."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Hemolytic anemia",
+      "why": "Haptoglobin 208, LDH 141, bilirubin 0.4, low reticulocyte count argue against hemolysis."
+    },
+    {
+      "diagnosis": "Acute coronary syndrome",
+      "why": "No chest pain, negative recent stress echo, symptoms resolved with transfusion."
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "why": "Therapeutically anticoagulated, no risk factors or signs, 97% on room air."
+    },
+    {
+      "diagnosis": "Decompensated heart failure",
+      "why": "Lungs clear, no pitting edema, no radiographic congestion documented."
+    },
+    {
+      "diagnosis": "Acute kidney injury",
+      "why": "Creatinine stable at 1.2, improved from prior 1.4–1.5."
+    }
+  ],
+  "uncertain_areas": [
+    "Bone marrow biopsy result would confirm or exclude myelodysplastic syndrome",
+    "MMA level determining whether B12 deficiency is a true contributor",
+    "H. pylori testing and stool ova/parasites results pending",
+    "Whether documentation supports acute blood loss anemia versus chronic iron deficiency as principal",
+    "Repeat endoscopic evaluation to localize an occult bleeding source"
+  ],
+  "n_candidates": 8,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "19632936",
+  "hadm_id": "26696232",
+  "generated_at": "2026-08-21T23:51:01.479337",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

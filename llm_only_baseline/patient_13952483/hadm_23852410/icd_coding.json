@@ -1,0 +1,493 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "13952483",
+  "hadm_id": "23852410",
+  "most_likely": "Radiation esophagitis with odynophagia causing failure to thrive and hypovolemic hypotension",
+  "summary": "Cachectic man with ESRD s/p deceased-donor kidney transplant on tacrolimus, severe idiopathic pulmonary hypertension and Stage 3a (T2N2M0) squamous cell carcinoma of the left lower lobe, recently discharged to rehab, re-presents from transplant clinic with hypotension (86/54, fluid-responsive), continued odynophagia, cough, anorexia and a further 5-lb weight loss (BMI 15.8). Labs show new neutropenia (ANC 750–890), thrombocytopenia (93K), anemia (Hgb 7.4) one week after last chemotherapy, mildly elevated Cr improving with IVF, and iron studies consistent with anemia of inflammation. Exam showed oral thrush; all cultures, Legionella and pneumococcal antigens negative and CXR unchanged, so antibiotics were stopped. He completed fraction 34/34 of XRT inpatient and improved with rehydration, mealtime analgesia, magic mouthwash, nystatin, appetite/energy stimulants and 2 units pRBC.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Radiation esophagitis due to thoracic radiotherapy",
+      "score": 82.0,
+      "confidence": "medium",
+      "category": "primary",
+      "supporting_evidence": [
+        "Persistent odynophagia and pain with swallowing on re-presentation",
+        "Esophagus within radiation field; completed fraction 34/34 inpatient",
+        "Treated with magic mouthwash, mealtime oxycodone elixir, Maalox",
+        "Prior stay coded K208 other esophagitis / radiation sickness"
+      ],
+      "opposing_evidence": [
+        "No endoscopy or imaging confirmation this stay",
+        "Thrush also present and could contribute to odynophagia"
+      ],
+      "reasoning": "Chemoradiation-induced esophagitis is the documented mechanism driving odynophagia, poor PO intake and the resulting dehydration/hypotension that prompted admission, making it the most defensible principal disease.",
+      "icd10_primary": "K20.80",
+      "icd10_primary_title": "Other esophagitis without bleeding",
+      "icd10_package": [
+        {
+          "code": "K20.80",
+          "title": "Other esophagitis without bleeding",
+          "role": "principal"
+        },
+        {
+          "code": "Y84.2",
+          "title": "Radiological procedure and radiotherapy as the cause of abnormal reaction of the patient, without misadventure",
+          "role": "supporting"
+        },
+        {
+          "code": "R13.10",
+          "title": "Dysphagia, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "C34.32",
+          "title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Y84.2",
+          "title": "Radiological procedure and radiotherapy as the cause of abnormal reaction of the patient, without misadventure",
+          "role": "supporting"
+        },
+        {
+          "code": "R13.10",
+          "title": "Dysphagia, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "C34.32",
+          "title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Persistent odynophagia during completion of thoracic XRT (fraction 34/34); radiation esophagitis indexes to other esophagitis without bleeding.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Adult failure to thrive with severe protein-calorie malnutrition and cachexia",
+      "score": 78.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "BMI 15.8, weight 94.7 lbs, 5-lb further loss since prior discharge",
+        "Anorexia, malaise, poor PO intake; dronabinol and Ritalin for appetite/energy",
+        "Cachectic on exam; nutritional supplementation, prior PEG refusal"
+      ],
+      "opposing_evidence": [
+        "Symptom rather than single organ disease; secondary to chemoradiation toxicity"
+      ],
+      "reasoning": "Documented as the overarching reason for admission and heavily treated; strong candidate for principal or first-listed secondary diagnosis in coding.",
+      "icd10_primary": "R62.7",
+      "icd10_primary_title": "Adult failure to thrive",
+      "icd10_package": [
+        {
+          "code": "R62.7",
+          "title": "Adult failure to thrive",
+          "role": "principal"
+        },
+        {
+          "code": "E43",
+          "title": "Unspecified severe protein-calorie malnutrition",
+          "role": "supporting"
+        },
+        {
+          "code": "R64",
+          "title": "Cachexia",
+          "role": "supporting"
+        },
+        {
+          "code": "R63.0",
+          "title": "Anorexia",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E43",
+          "title": "Unspecified severe protein-calorie malnutrition",
+          "role": "supporting"
+        },
+        {
+          "code": "R64",
+          "title": "Cachexia",
+          "role": "supporting"
+        },
+        {
+          "code": "R63.0",
+          "title": "Anorexia",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented failure to thrive, anorexia, >10 lb weight loss, cachectic exam, BMI 15.8, weight 94.7 lbs.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hypovolemic hypotension due to dehydration and poor oral intake",
+      "score": 72.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Referred from transplant clinic for hypotension; ED BP 86/54 → 110/70 after 1L IVF",
+        "Note states 'hypovolemic hypotension' as reason for direct admission",
+        "Blood pressures normalized with IVF and increased PO intake"
+      ],
+      "opposing_evidence": [
+        "Hypotension is the admission mechanism, not the underlying disease",
+        "Chronic low baseline BP with pulmonary hypertension and off beta blocker"
+      ],
+      "reasoning": "Clearly present and treated, but represents the presenting physiologic derangement secondary to malnutrition/esophagitis rather than the root disease.",
+      "icd10_primary": "I95.89",
+      "icd10_primary_title": "Other hypotension",
+      "icd10_package": [
+        {
+          "code": "I95.89",
+          "title": "Other hypotension",
+          "role": "principal"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        },
+        {
+          "code": "R63.3",
+          "title": "Feeding difficulties",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        },
+        {
+          "code": "R63.3",
+          "title": "Feeding difficulties",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Referred from clinic with BP 86/54 responding to 1L IVF; poor oral intake with concentrated urine supports hypovolemia.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Antineoplastic chemotherapy-induced pancytopenia (neutropenia, anemia, thrombocytopenia)",
+      "score": 68.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Admission WBC 1.1, ANC 750, platelets 93, Hgb 7.4 one week post chemotherapy",
+        "Received 2 units pRBC; counts recovered spontaneously by discharge (WBC 6.8)",
+        "Prior stay coded D61810 chemotherapy-induced pancytopenia"
+      ],
+      "opposing_evidence": [
+        "No febrile neutropenia or documented infection",
+        "Anemia multifactorial with CKD low-EPO state and inflammation"
+      ],
+      "reasoning": "Objectively documented cytopenias temporally linked to recent carboplatin/paclitaxel; a codable major complication of this stay.",
+      "icd10_primary": "D61.810",
+      "icd10_primary_title": "Antineoplastic chemotherapy induced pancytopenia",
+      "icd10_package": [
+        {
+          "code": "D61.810",
+          "title": "Antineoplastic chemotherapy induced pancytopenia",
+          "role": "principal"
+        },
+        {
+          "code": "T45.1X5A",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "D70.1",
+          "title": "Agranulocytosis secondary to cancer chemotherapy",
+          "role": "supporting"
+        },
+        {
+          "code": "D64.81",
+          "title": "Anemia due to antineoplastic chemotherapy",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "T45.1X5A",
+          "title": "Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "D70.1",
+          "title": "Agranulocytosis secondary to cancer chemotherapy",
+          "role": "supporting"
+        },
+        {
+          "code": "D64.81",
+          "title": "Anemia due to antineoplastic chemotherapy",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "WBC 1.1 with ANC 750, Hgb 7.4, platelets 93 after recent completion of chemotherapy; pancytopenia attributed to antineoplastic therapy.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute kidney injury on chronic kidney disease in renal transplant recipient (prerenal)",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Admission Cr 1.4, BUN 37, improving to Cr 1.2 with IVF",
+        "Note: 'AKI due to pre-renal azotemia; ESRD s/p DCDRT', true baseline nearer 1.1",
+        "Concentrated urine osm 580 with high urine urea"
+      ],
+      "opposing_evidence": [
+        "Creatinine elevation modest and below historical baseline of 2.3–2.5",
+        "No oliguria or electrolyte crisis documented"
+      ],
+      "reasoning": "Prerenal azotemia superimposed on transplant allograft nephropathy, volume responsive; supportive secondary diagnosis with tacrolimus titration.",
+      "icd10_primary": "N17.9",
+      "icd10_primary_title": "Acute kidney failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z94.0",
+          "title": "Kidney transplant status",
+          "role": "supporting"
+        },
+        {
+          "code": "T86.19",
+          "title": "Other complication of kidney transplant",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N18.9",
+          "title": "Chronic kidney disease, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z94.0",
+          "title": "Kidney transplant status",
+          "role": "supporting"
+        },
+        {
+          "code": "T86.19",
+          "title": "Other complication of kidney transplant",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Creatinine 1.4 on admission improving to 1.2 with fluids in transplant recipient with allograft nephropathy; prerenal AKI on CKD.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Stage 3a squamous cell carcinoma of left lower lobe of lung",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Biopsy-proven keratinizing SCC, T2N2M0 by PET-CT",
+        "CXR: continued left basilar necrotic LLL mass with small pleural effusion",
+        "Received final XRT fraction 34/34 during this admission"
+      ],
+      "opposing_evidence": [
+        "Cancer itself stable; admission driven by treatment toxicity, not tumor progression"
+      ],
+      "reasoning": "Underlying malignancy under active treatment during the stay; codable but the toxicity/nutritional failure dominates this encounter.",
+      "icd10_primary": "C34.32",
+      "icd10_primary_title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+      "icd10_package": [
+        {
+          "code": "C34.32",
+          "title": "Malignant neoplasm of lower lobe, left bronchus or lung",
+          "role": "principal"
+        },
+        {
+          "code": "Z51.0",
+          "title": "Encounter for antineoplastic radiation therapy",
+          "role": "supporting"
+        },
+        {
+          "code": "J91.0",
+          "title": "Malignant pleural effusion",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z51.0",
+          "title": "Encounter for antineoplastic radiation therapy",
+          "role": "supporting"
+        },
+        {
+          "code": "J91.0",
+          "title": "Malignant pleural effusion",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Biopsy-proven squamous cell carcinoma of left lower lobe with necrotic mass on imaging; receiving concurrent chemoradiation.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Oropharyngeal candidiasis (oral thrush) in immunosuppressed host",
+      "score": 52.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Admission exam: hyperpigmented tongue patches with '+thrush'",
+        "Started nystatin swish and swallow QID with resolution",
+        "Immunosuppressed on tacrolimus, post-chemoradiation, neutropenic"
+      ],
+      "opposing_evidence": [
+        "No fungal culture or endoscopy; possible esophageal extension not confirmed"
+      ],
+      "reasoning": "Clinically diagnosed and treated infection contributing to odynophagia and poor intake; a distinct billable secondary condition.",
+      "icd10_primary": "B37.0",
+      "icd10_primary_title": "Candidal stomatitis",
+      "icd10_package": [
+        {
+          "code": "B37.0",
+          "title": "Candidal stomatitis",
+          "role": "principal"
+        },
+        {
+          "code": "Z94.0",
+          "title": "Kidney transplant status",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z94.0",
+          "title": "Kidney transplant status",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Admission exam documented thrush, resolved by discharge, in tacrolimus-immunosuppressed patient on chemoradiation.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Severe pulmonary arterial hypertension with chronic cor pulmonale",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "RHC mPAP 55, PVR 10.4, CI 2.86; on macitentan/sildenafil",
+        "CXR: prominent pulmonary arteries suggesting pulmonary arterial hypertension",
+        "Loud systolic murmur; high-output AVF shunt contribution"
+      ],
+      "opposing_evidence": [
+        "No dyspnea, edema or hypoxemia this admission; 95–96% on room air"
+      ],
+      "reasoning": "Chronic comorbidity actively managed with sildenafil in-house and limiting BP tolerance, but not the acute driver of this admission.",
+      "icd10_primary": "I27.0",
+      "icd10_primary_title": "Primary pulmonary hypertension",
+      "icd10_package": [
+        {
+          "code": "I27.0",
+          "title": "Primary pulmonary hypertension",
+          "role": "principal"
+        },
+        {
+          "code": "I27.81",
+          "title": "Cor pulmonale (chronic)",
+          "role": "supporting"
+        },
+        {
+          "code": "I36.1",
+          "title": "Nonrheumatic tricuspid (valve) insufficiency",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I27.81",
+          "title": "Cor pulmonale (chronic)",
+          "role": "supporting"
+        },
+        {
+          "code": "I36.1",
+          "title": "Nonrheumatic tricuspid (valve) insufficiency",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Idiopathic pulmonary hypertension confirmed by right heart catheterization with cor pulmonale; CXR shows prominent pulmonary arteries.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Chronic obstructive pulmonary disease with nicotine dependence",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Chart diagnosis of COPD; treated with standing and PRN nebulizers",
+        "Long smoking history, nicotine patch provided",
+        "Coarse basal crackles, worsening cough treated with antitussives"
+      ],
+      "opposing_evidence": [
+        "No wheezing on exam; cough attributed to necrotic tumor and radiation"
+      ],
+      "reasoning": "Stable comorbidity requiring inpatient bronchodilator therapy; supports secondary",
+      "icd10_primary": "J44.9",
+      "icd10_primary_title": "Chronic obstructive pulmonary disease, unspecified",
+      "icd10_package": [
+        {
+          "code": "J44.9",
+          "title": "Chronic obstructive pulmonary disease, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "F17.210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "F17.210",
+          "title": "Nicotine dependence, cigarettes, uncomplicated",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "COPD listed in active problem list with prior smoking-related nicotine dependence documented; no exacerbation described this stay.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "K20.80",
+  "primary_icd_title": "Other esophagitis without bleeding",
+  "primary_condition": "Radiation esophagitis due to thoracic radiotherapy",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:45:45.292656",
+  "ontology_routing": false
+}

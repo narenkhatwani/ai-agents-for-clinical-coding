@@ -5,15 +5,15 @@ Admissions scored : 15
 With Stage 9      : 15
 
 DIFFERENTIAL DIAGNOSIS vs physician Discharge Diagnosis (note)
-  Any-rank match               9 / 15  (60.0%)
-  Rank-1 only                  7 / 15  (46.7%)
+  Any-rank match               10 / 15  (66.7%)
+  Rank-1 only                  8 / 15  (53.3%)
   Lower-rank only              2 / 15
 
 LINKED ICD vs billed primary ICD (from matched DiffDx rank)
   ICD match (exact or LLM)     5 / 15  (33.3%)
   ICD exact code               0 / 15  (0.0%)
   ICD 3-char family            4 / 15  (26.7%)
-  Diagnosis YES, ICD NO        4
+  Diagnosis YES, ICD NO        5
 
 → diffdx_match.csv, icd_match.csv
 
@@ -35,5 +35,5 @@ NO        NO         13952483     Squamous Cell Lung Carcinoma         Failure t
 YES  YES  YES  1     16014068     Metastatic sarcoma with anemia ...   High-grade unclassified sarcoma (malign...
 YES  YES  YES  1     17774110     Septic shock with multi-organ f...   Other specified sepsis
 NO        NO         18412100     Post-procedural pain                 Desmoid tumor
-NO        NO         19104262     Diabetic ketoacidosis                Diabetes type I with DKA
+YES  YES  NO   1     19104262     Diabetic ketoacidosis                Diabetes type I with DKA
 YES  YES  NO   1     19632936     Acute macrocytic anemia with re...   Macrocytic anemia

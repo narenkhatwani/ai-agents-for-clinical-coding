@@ -1,0 +1,72 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 17774110
+HADM ID          : 27339772
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:47:47.671137
+Candidates       : 9
+Most likely      : Septic shock with Klebsiella aerogenes bacteremia complicating end-stage cirrhosis
+
+Summary:
+  Middle-aged man with HCV cirrhosis s/p TIPS, portal hypertension and multifocal metastatic hepatocellular carcinoma (left adrenal mets, no further oncologic options) transferred from an outside ICU after 10 days of intubation and vasopressor-dependent shock with Klebsiella aerogenes bacteremia. On arrival he had refractory distributive shock (warm, CVO2 80, three pressors, stress-dose steroids), lactate rising to 13.2, ARDS/hypoxic respiratory failure with large right pleural effusion, dialysis-dependent ATN, profound coagulopathy (INR 3.4, fibrinogen 77, platelets 44) concerning for DIC, rising transaminases (AST 2481) and bilirubin 13.3 indicating acute-on-chronic liver failure, plus unresponsive toxic-metabolic/hepatic encephalopathy. He continued to decompensate and died with family declining CPR and autopsy.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [92.0/100 | high]  Septic shock due to Klebsiella aerogenes bacteremia  (primary)
+      + Transferred 'for septic shock', blood cultures grew Klebsiella aerogenes
+      + Multi-pressor levophed/vasopressin plus third agent, stress-dose steroids
+      + Lactate 6.6 → 13.2, pH 7.11, HCO3 7, anion gap 22
+      + Warm extremities, CVO2 80 — distributive physiology
+      - Cultures already treated 8 days with ceftriaxone; no new organism isolated here
+      - Liver-failure vasodilation could mimic distributive shock
+      why: Documented organism-specific bacteremia with vasopressor-refractory distributive shock and severe lactic acidosis is the dominant reason for this stay and the likely principal coded disease.
+  #2  [85.0/100 | high]  Acute on chronic hepatic failure in HCV cirrhosis with coma  (primary)
+      + AST 2481, ALT 439, total bilirubin 13.3, INR 3.4
+      + Note: 'Acute on chronic Liver failure' with worsening HE
+      + Cirrhotic nodular liver, TIPS, splenomegaly, ascites on RUQ US
+      + Prior admissions for chronic hepatic failure and encephalopathy
+      - Ischemic hepatitis from shock may explain much of transaminase surge
+      why: Marked hyperbilirubinemia, coagulopathy and unresponsive encephalopathy on a cirrhotic substrate meet acute-on-chronic liver failure; competes closely with sepsis as principal.
+  #3  [80.0/100 | high]  Acute hypoxemic respiratory failure with ARDS requiring mechanical ventilation  (complication)
+      + Intubated for hypoxia, SpO2 50% at presentation; PEEP 14, FiO2 50%
+      + CXR: worsening pulmonary edema, bilateral effusions right > left
+      + Note documents ARDS, possible VAP, sputum with yeast
+      - Volume overload and large pleural effusion also contribute
+      why: Ventilator-dependent hypoxemic failure with bilateral infiltrates is explicitly documented and a major comorbid complication of this admission.
+  #4  [78.0/100 | high]  Acute kidney injury from acute tubular necrosis requiring CRRT  (complication)
+      + Creatinine 2.1–2.2 from baseline 0.6–0.8; K 6.5, HCO3 7
+      + On CRRT, 22 L positive; HD lines both IJ
+      + Attributed to septic shock and ATN without renal recovery
+      - Hepatorenal physiology cannot be excluded in end-stage cirrhosis
+      why: Dialysis-dependent renal failure in the setting of shock is clearly documented and materially affected management.
+  #5  [72.0/100 | medium]  Disseminated intravascular coagulation with severe coagulopathy  (complication)
+      + Fibrinogen 77–95, INR 3.4, PTT 104, platelets 36–44
+      + D-dimer 15335, haptoglobin <10, LDH 743
+      + Bleeding from rectum, foley, and epistaxis; cryo/FFP/platelets given
+      - Hepatic synthetic failure alone can produce identical coagulopathy
+      why: Consumptive picture with hypofibrinogenemia, very high D-dimer and multi-site bleeding supports DIC, though liver failure is a strong confounder.
+  #6  [70.0/100 | high]  Metastatic hepatocellular carcinoma with adrenal metastases, terminal  (secondary)
+      + Biopsy-proven left adrenal HCC metastasis; s/p RFA and failed chemotherapy
+      + RUQ US: stable 2.6 cm hepatic lesion, large left adrenal mass
+      + No further oncologic treatment available per referral center
+      - Not the acute driver of this admission's decompensation
+      why: Active malignancy underlies the terminal trajectory and malignant effusion, and is a key comorbidity even if not the acute principal diagnosis.
+  #7  [62.0/100 | medium]  Hepatic/toxic metabolic encephalopathy with unresponsiveness  (complication)
+      + RASS -5, no return of responsiveness off sedation
+      + High gastric residuals, no bowel movements, lactulose not absorbed
+      + Recurrent hepatic encephalopathy in both prior admissions
+      - Sedation, uremia, and sepsis confound assessment; no ammonia level given
+      why: Persistent coma attributable to liver failure plus sepsis and uremia; multifactorial so scored below the organ-failure diagnoses.
+  #8  [45.0/100 | low]  Atrial fibrillation/flutter with rapid ventricular response  (secondary)
+      + History of a.fib/a.flutter s/p amiodarone bolus, now on metoprolol
+      + Heart rate up to 103 recorded in ICU
+      - Arose at outside hospital; no current rhythm strip or ECG documented here
+      why: Documented arrhythmia treated during the illness episode, but managed prior to transfer and not an acute issue in this stay.
+  #9  [35.0/100 | low]  Inferior vena cava thrombus (venous thromboembolism)  (differential)
+      + Reported IVC thrombus at outside hospital, anticoagulation withheld
+      + D-dimer markedly elevated; RV dilation with pulmonary hypertension on TTE
+      - Current RUQ US: IVC patent, wall-to-wall flow; echoes felt artifactual
+      why: Reported historically but refuted by current imaging; retained as a low-probability differential for the RV dilation.

@@ -1,0 +1,25 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 19632936
+HADM ID          : 26696232
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : D50.0 — Iron deficiency anemia secondary to blood loss (chronic)
+Primary condition: Iron deficiency anemia due to chronic occult gastrointestinal blood loss
+
+  #1  Iron deficiency anemia due to chronic occult gastrointestinal blood loss  →  D50.0 — Iron deficiency anemia secondary to blood loss (chronic)
+      reason: Iron 15, ferritin 27, guaiac-positive stool, prior IV iron; chronic occult GI blood loss anemia.
+  #2  Acute on chronic blood loss anemia requiring transfusion  →  D62 — Acute posthemorrhagic anemia
+      reason: Hgb dropped to 6.7 requiring 3 units PRBC transfusion superimposed on chronic anemia.
+  #3  Unexplained macrocytic anemia suspicious for myelodysplastic syndrome  →  D53.1 — Other megaloblastic anemias, not elsewhere classified
+      reason: MCV 106 macrocytic anemia, bone marrow biopsy planned; MDS suspected but unconfirmed, so coded as macrocytic anemia.
+  #4  Vitamin B12 deficiency contributing to macrocytic anemia  →  E53.8 — Deficiency of other specified B group vitamins
+      reason: B12 255 low/normal, repletion started, MMA pending; documented as contributing deficiency.
+  #5  Occult gastrointestinal hemorrhage from Barrett's esophagus and gastritis on anticoagulation  →  K92.2 — Gastrointestinal hemorrhage, unspecified
+      reason: Guaiac-positive stool, prior EGD showing Barrett's and gastritis without active bleeding, on warfarin with INR 2.4.
+  #6  Dyspnea on exertion secondary to symptomatic anemia  →  R06.02 — Shortness of breath
+      reason: Exertional dyspnea and fatigue attributed to anemia; symptoms improved with transfusion.
+  #7  Nonrheumatic aortic valve stenosis, mild to moderate  →  I35.0 — Nonrheumatic aortic (valve) stenosis
+      reason: TTE documented mild-moderate aortic stenosis with mild pulmonary hypertension; systolic murmur on exam.
+  #8  Chronic atrial fibrillation on long-term warfarin anticoagulation  →  I48.20 — Chronic atrial fibrillation, unspecified
+      reason: Chronic atrial fibrillation maintained on Coumadin and diltiazem; sick sinus syndrome status post pacemaker.

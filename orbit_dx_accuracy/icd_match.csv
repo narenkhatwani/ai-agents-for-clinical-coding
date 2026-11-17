@@ -1,0 +1,248 @@
+Patient ID,Admission ID,Diagnosis match,Is rank-1 diagnosis match,Matched DiffDx rank,Ground truth primary ICD,Ground truth primary ICD title,All ICD-10 codes,Rank-1 predicted ICD,Rank-1 predicted ICD title,Matched predicted ICD,Matched predicted ICD title,ICD match,ICD exact match,ICD family match,Is rank-1 ICD match,LLM ICD reason,LLM expanded ground truth ICD terms,LLM expanded matched ICD terms,Stage 9 final primary ICD
+10361982,24286431,YES,YES,1,N99.820,Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure,"  1. N99820 Ñ Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+   2. Y836 Ñ Removal of other organ (partial) (total) as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure
+   3. Y92009 Ñ Unspecified place in unspecified non-institutional (private) residence as the place of occurrence of the external cause
+   4. E039 Ñ Hypothyroidism, unspecified
+   5. F909 Ñ Attention-deficit hyperactivity disorder, unspecified type",N93.9,"Abnormal uterine and vaginal bleeding, unspecified",N93.9,"Abnormal uterine and vaginal bleeding, unspecified",NO MATCH,NO,NO,NO,"Mapped code at matched rank is N93.9 (abnormal uterine and vaginal bleeding, unspecified), a nonspecific symptom code that does not capture the postprocedural/complication nature of the billed N99.820 (postprocedural hemorrhage of a genitourinary organ following a GU procedure). Coding guidelines require the complication code when bleeding follows a surgical procedure, and N93.9 (uterine/vaginal bleeding) is also inconsistent after hysterectomy, so a coder would not accept it as equivalent.",N99.820 postprocedural hemorrhage of GU organ following GU procedure | postoperative bleeding complication of hysterectomy | complication-of-care code,"N93.9 abnormal uterine and vaginal bleeding, unspecified | unspecified vaginal bleeding | non-procedural symptom code",N93.9
+10426859,29908281,YES,YES,1,I47.1,Supraventricular tachycardia,"   1. I471 Ñ Supraventricular tachycardia
+   2. I214 Ñ Non-ST elevation (NSTEMI) myocardial infarction
+   3. S32511A Ñ Fracture of superior rim of right pubis, initial encounter for closed fracture
+   4. E872 Ñ Acidosis
+   5. I959 Ñ Hypotension, unspecified
+   6. C689 Ñ Malignant neoplasm of urinary organ, unspecified
+   7. F329 Ñ Major depressive disorder, single episode, unspecified
+   8. I10 Ñ Essential (primary) hypertension
+   9. E785 Ñ Hyperlipidemia, unspecified
+  10. Z66 Ñ Do not resuscitate
+  11. I2510 Ñ Atherosclerotic heart disease of native coronary artery without angina pectoris
+  12. F419 Ñ Anxiety disorder, unspecified
+  13. K219 Ñ Gastro-esophageal reflux disease without esophagitis
+  14. I440 Ñ Atrioventricular block, first degree
+  15. G4700 Ñ Insomnia, unspecified
+  16. J310 Ñ Chronic rhinitis
+  17. Z9181 Ñ History of falling
+  18. Z96641 Ñ Presence of right artificial hip joint
+  19. Z87891 Ñ Personal history of nicotine dependence
+  20. Z8673 Ñ Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
+  21. W19XXXA Ñ Unspecified fall, initial encounter
+  22. Y929 Ñ Unspecified place or not applicable",I47.10,,I47.10,,YES,NO,YES,YES,"Mapped code I47.10 (supraventricular tachycardia, unspecified) is the current-revision expansion of billed I47.1 (supraventricular tachycardia); a coder would accept these as the same principal condition code.","I47.1 Supraventricular tachycardia | I47.10 Supraventricular tachycardia, unspecified | paroxysmal supraventricular tachycardia","I47.10 Supraventricular tachycardia, unspecified | I47.1 Supraventricular tachycardia | SVT NOS",I47.10
+10458324,21744342,NO,,,S27.0XXA,"Traumatic pneumothorax, initial encounter","   1. S270XXA Ñ Traumatic pneumothorax, initial encounter
+   2. J189 Ñ Pneumonia, unspecified organism
+   3. S2241XA Ñ Multiple fractures of ribs, right side, initial encounter for closed fracture
+   4. E46 Ñ Unspecified protein-calorie malnutrition
+   5. F1120 Ñ Opioid dependence, uncomplicated
+   6. Z681 Ñ Body mass index [BMI] 19.9 or less, adult
+   7. I480 Ñ Paroxysmal atrial fibrillation
+   8. W1830XA Ñ Fall on same level, unspecified, initial encounter
+   9. Y92002 Ñ Bathroom of unspecified non-institutional (private) residence as the place of occurrence of the external cause
+  10. R0902 Ñ Hypoxemia
+  11. R600 Ñ Localized edema
+  12. F4310 Ñ Post-traumatic stress disorder, unspecified",J93.9,"Pneumothorax, unspecified",,,PATIAL MATCH,NO,NO,NO,"No rank matched the physician discharge diagnosis, so there is no mapped ICD at a matched rank to compare against the billed primary code S27.0XXA (traumatic pneumothorax, initial encounter). For reference, Rank 1's mapped code J93.9 (pneumothorax, unspecified) would be clinically equivalent to S27.0XXA as a pneumothorax code, but since the diagnosis-level match failed (rib fracture vs pneumothorax), no matched-rank ICD equivalence can be asserted.","S27.0XXA traumatic pneumothorax, initial encounter | J93.9 pneumothorax unspecified | collapsed lung due to trauma | post-traumatic air in pleural space",,J10.1
+11251337,29568708,NO,,,N13.2,Hydronephrosis with renal and ureteral calculous obstruction,"   1. N132 Ñ Hydronephrosis with renal and ureteral calculous obstruction
+   2. Z936 Ñ Other artificial openings of urinary tract status
+   3. E785 Ñ Hyperlipidemia, unspecified
+   4. I69954 Ñ Hemiplegia and hemiparesis following unspecified cerebrovascular disease affecting left non-dominant side
+   5. I10 Ñ Essential (primary) hypertension
+   6. N19 Ñ Unspecified kidney failure
+   7. Z87440 Ñ Personal history of urinary (tract) infections",N17.9,"Acute kidney failure, unspecified",,,NO MATCH,NO,NO,NO,"No matching rank, so no mapped ICD to compare. The billed primary code N13.2 (hydronephrosis with renal and ureteral calculous obstruction) is not clinically equivalent to N17.9 (acute kidney failure), D64.9, R31.9, R52, or R50.9, which are symptom/complication codes rather than obstructive calculous disease codes.",N13.2 hydronephrosis with renal and ureteral calculous obstruction | related: N20.0 calculus of kidney | related: N20.1 calculus of ureter | related: N13.30 unspecified hydronephrosis,,N20.0
+11474876,29672491,NO,,,K80.30,"Calculus of bile duct with cholangitis, unspecified, without obstruction","   1. K8030 Ñ Calculus of bile duct with cholangitis, unspecified, without obstruction
+   2. I130 Ñ Hypertensive heart and chronic kidney disease with heart failure and stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
+   3. I5032 Ñ Chronic diastolic (congestive) heart failure
+   4. I480 Ñ Paroxysmal atrial fibrillation
+   5. I110 Ñ Hypertensive heart disease with heart failure
+   6. I739 Ñ Peripheral vascular disease, unspecified
+   7. I129 Ñ Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
+   8. N183 Ñ Chronic kidney disease, stage 3 (moderate)
+   9. I4510 Ñ Unspecified right bundle-branch block
+  10. E785 Ñ Hyperlipidemia, unspecified
+  11. F4310 Ñ Post-traumatic stress disorder, unspecified
+  12. N400 Ñ Benign prostatic hyperplasia without lower urinary tract symptoms
+  13. Z7902 Ñ Long term (current) use of antithrombotics/antiplatelets
+  14. Z87891 Ñ Personal history of nicotine dependence
+  15. Z85828 Ñ Personal history of other malignant neoplasm of skin
+  16. Z8249 Ñ Family history of ischemic heart disease and other diseases of the circulatory system
+  17. Z8546 Ñ Personal history of malignant neoplasm of prostate",I50.30,Unspecified diastolic (congestive) heart failure,,,NO MATCH,NO,NO,NO,"Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) belong to entirely different body systems; no coder would accept any as equivalent to K80.30.","K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction | K80.5x choledocholithiasis without cholangitis or cholecystitis | K83.0 cholangitis",,I50.30
+11607177,23293838,YES,YES,1,I47.2,Ventricular tachycardia,"   1. I472 Ñ Ventricular tachycardia
+   2. Z95811 Ñ Presence of heart assist device
+   3. N179 Ñ Acute kidney failure, unspecified
+   4. I429 Ñ Cardiomyopathy, unspecified
+   5. Z8673 Ñ Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits
+   6. E119 Ñ Type 2 diabetes mellitus without complications
+   7. E785 Ñ Hyperlipidemia, unspecified
+   8. I10 Ñ Essential (primary) hypertension
+   9. M109 Ñ Gout, unspecified
+  10. Z96652 Ñ Presence of left artificial knee joint
+  11. I272 Ñ Other secondary pulmonary hypertension
+  12. Z6837 Ñ Body mass index [BMI] 37.0-37.9, adult
+  13. E669 Ñ Obesity, unspecified",I47.20,"Ventricular tachycardia, unspecified",I47.20,"Ventricular tachycardia, unspecified",YES,NO,YES,YES,"Mapped I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) are the same code concept at different levels of the ICD-10 hierarchy/version; a coder would accept them as clinically equivalent for the same principal condition.",I47.2 Ventricular tachycardia | paroxysmal ventricular tachycardia | I47.2x family including I47.20 unspecified,"I47.20 Ventricular tachycardia, unspecified | subcategory of I47.2 ventricular tachycardia | paroxysmal tachycardia, ventricular type",I50.9
+12007928,23749816,YES,YES,1,I50.33,Acute on chronic diastolic (congestive) heart failure,"   1. I5033 Ñ Acute on chronic diastolic (congestive) heart failure
+   2. N179 Ñ Acute kidney failure, unspecified
+   3. G7000 Ñ Myasthenia gravis without (acute) exacerbation
+   4. Q211 Ñ Atrial septal defect
+   5. F0390 Ñ Unspecified dementia, unspecified severity, without behavioral disturbance, psychotic disturbance, mood disturbance, and anxiety
+   6. I480 Ñ Paroxysmal atrial fibrillation
+   7. G629 Ñ Polyneuropathy, unspecified
+   8. F329 Ñ Major depressive disorder, single episode, unspecified
+   9. I10 Ñ Essential (primary) hypertension
+  10. E041 Ñ Nontoxic single thyroid nodule
+  11. G40909 Ñ Epilepsy, unspecified, not intractable, without status epilepticus
+  12. E039 Ñ Hypothyroidism, unspecified
+  13. E785 Ñ Hyperlipidemia, unspecified
+  14. Z7901 Ñ Long term (current) use of anticoagulants
+  15. Z950 Ñ Presence of cardiac pacemaker
+  16. K219 Ñ Gastro-esophageal reflux disease without esophagitis
+  17. G4730 Ñ Sleep apnea, unspecified
+  18. N3941 Ñ Urge incontinence
+  19. Z66 Ñ Do not resuscitate",I50.9,"Heart failure, unspecified",I50.9,"Heart failure, unspecified",PATIAL MATCH,NO,YES,YES,"Mapped code I50.9 (Heart failure, unspecified) is the unspecified parent of billed I50.33 (Acute on chronic diastolic congestive heart failure). Not an exact code match and lacks the diastolic/acuity specificity required for billing, but a coder would recognize it as the same principal condition (heart failure) â€” acceptable as clinically equivalent at the category level.",I50.33 Acute on chronic diastolic (congestive) heart failure | I50.3x diastolic heart failure family | HFpEF acute on chronic,"I50.9 Heart failure, unspecified | I50 Heart failure category | Congestive heart failure NOS",I50.9
+13196707,21475988,YES,NO,2,A41.9,"Sepsis, unspecified organism","   1. A419 Ñ Sepsis, unspecified organism
+   2. G936 Ñ Cerebral edema
+   3. I314 Ñ Cardiac tamponade
+   4. J690 Ñ Pneumonitis due to inhalation of food and vomit
+   5. R6521 Ñ Severe sepsis with septic shock
+   6. E870 Ñ Hyperosmolality and hypernatremia
+   7. K521 Ñ Toxic gastroenteritis and colitis
+   8. G92 Ñ Toxic encephalopathy
+   9. E872 Ñ Acidosis
+  10. J189 Ñ Pneumonia, unspecified organism
+  11. L89153 Ñ Pressure ulcer of sacral region, stage 3
+  12. N179 Ñ Acute kidney failure, unspecified
+  13. C787 Ñ Secondary malignant neoplasm of liver and intrahepatic bile duct
+  14. C7931 Ñ Secondary malignant neoplasm of brain
+  15. C7951 Ñ Secondary malignant neoplasm of bone
+  16. I313 Ñ Pericardial effusion (noninflammatory)
+  17. I319 Ñ Disease of pericardium, unspecified
+  18. C3490 Ñ Malignant neoplasm of unspecified part of unspecified bronchus or lung
+  19. Z515 Ñ Encounter for palliative care
+  20. Z66 Ñ Do not resuscitate
+  21. I10 Ñ Essential (primary) hypertension
+  22. T360X5A Ñ Adverse effect of penicillins, initial encounter
+  23. Y92239 Ñ Unspecified place in hospital as the place of occurrence of the external cause
+  24. R740 Ñ Nonspecific elevation of levels of transaminase and lactic acid dehydrogenase [LDH]
+  25. D638 Ñ Anemia in other chronic diseases classified elsewhere
+  26. K259 Ñ Gastric ulcer, unspecified as acute or chronic, without hemorrhage or perforation
+  27. Z87891 Ñ Personal history of nicotine dependence
+  28. R569 Ñ Unspecified convulsions
+  29. K5900 Ñ Constipation, unspecified
+  30. Z7902 Ñ Long term (current) use of antithrombotics/antiplatelets
+  31. R0902 Ñ Hypoxemia
+  32. Z86718 Ñ Personal history of other venous thrombosis and embolism",A41.9,"Sepsis, unspecified organism",C79.9,Secondary malignant neoplasm of unspecified site,YES,NO,NO,YES,"Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism). These are entirely different principal conditions (malignancy vs systemic infection) and a coder would not accept them as equivalent. Note A41.9 appears at Rank 1, but that rank did not match the physician discharge diagnosis.",A41.9 sepsis unspecified organism | septicemia | bloodstream infection with systemic response,"C79.9 secondary malignant neoplasm of unspecified site | metastatic cancer, site unspecified | C80.1 malignant neoplasm unspecified / unknown primary",R50.9
+13508515,21834271,YES,NO,2,C64.2,"Malignant neoplasm of left kidney, except renal pelvis","   1. C642 Ñ Malignant neoplasm of left kidney, except renal pelvis
+   2. Z6841 Ñ Body mass index [BMI] 40.0-44.9, adult
+   3. I429 Ñ Cardiomyopathy, unspecified
+   4. I272 Ñ Other secondary pulmonary hypertension
+   5. I509 Ñ Heart failure, unspecified
+   6. I5020 Ñ Unspecified systolic (congestive) heart failure
+   7. J449 Ñ Chronic obstructive pulmonary disease, unspecified
+   8. E119 Ñ Type 2 diabetes mellitus without complications
+   9. I2510 Ñ Atherosclerotic heart disease of native coronary artery without angina pectoris
+  10. Z951 Ñ Presence of aortocoronary bypass graft
+  11. G4733 Ñ Obstructive sleep apnea (adult) (pediatric)
+  12. E669 Ñ Obesity, unspecified
+  13. Z87891 Ñ Personal history of nicotine dependence
+  14. I340 Ñ Nonrheumatic mitral (valve) insufficiency",I50.23,Acute on chronic systolic (congestive) heart failure,,,NO MATCH,NO,NO,NO,"No ICD code was mapped at the matched rank (Rank 2), so it cannot be compared to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).","C64.2 Malignant neoplasm of left kidney, except renal pelvis | C64.9 unspecified kidney | C64.1 right kidney",,I50.23
+13952483,23852410,NO,,,I95.89,Other hypotension,"   1. I9589 Ñ Other hypotension
+   2. N179 Ñ Acute kidney failure, unspecified
+   3. R64 Ñ Cachexia
+   4. D6959 Ñ Other secondary thrombocytopenia
+   5. B3781 Ñ Candidal esophagitis
+   6. I272 Ñ Other secondary pulmonary hypertension
+   7. D701 Ñ Agranulocytosis secondary to cancer chemotherapy
+   8. C3432 Ñ Malignant neoplasm of lower lobe, left bronchus or lung
+   9. Z940 Ñ Kidney transplant status
+  10. Z681 Ñ Body mass index [BMI] 19.9 or less, adult
+  11. J449 Ñ Chronic obstructive pulmonary disease, unspecified
+  12. E860 Ñ Dehydration
+  13. R627 Ñ Adult failure to thrive
+  14. D649 Ñ Anemia, unspecified
+  15. T451X5A Ñ Adverse effect of antineoplastic and immunosuppressive drugs, initial encounter
+  16. T66XXXA Ñ Radiation sickness, unspecified, initial encounter
+  17. I10 Ñ Essential (primary) hypertension
+  18. E785 Ñ Hyperlipidemia, unspecified
+  19. R1319 Ñ Other dysphagia
+  20. Y929 Ñ Unspecified place or not applicable
+  21. R630 Ñ Anorexia
+  22. B349 Ñ Viral infection, unspecified
+  23. F329 Ñ Major depressive disorder, single episode, unspecified
+  24. F17210 Ñ Nicotine dependence, cigarettes, uncomplicated
+  25. Z79899 Ñ Other long term (current) drug therapy",C34.90,Malignant neoplasm of unspecified part of unspecified bronchus or lung,,,PATIAL MATCH,NO,NO,NO,"No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. Additionally, the billed primary code I95.89 (other hypotension) is not represented by any mapped code in the differential list; the closest candidate codes (E46 malnutrition, I27.20 pulmonary hypertension, C34.90 lung cancer) are clinically distinct from hypotension and would not be accepted as equivalent by a coder.",I95.89 | other hypotension | low blood pressure | chronic hypotension | I95 category hypotension,,I27.20
+16014068,29042843,YES,YES,1,C79.31,Secondary malignant neoplasm of brain,"   1. C7931 Ñ Secondary malignant neoplasm of brain
+   2. G936 Ñ Cerebral edema
+   3. C7801 Ñ Secondary malignant neoplasm of right lung
+   4. D619 Ñ Aplastic anemia, unspecified
+   5. C7802 Ñ Secondary malignant neoplasm of left lung
+   6. C775 Ñ Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes
+   7. D696 Ñ Thrombocytopenia, unspecified
+   8. M7981 Ñ Nontraumatic hematoma of soft tissue
+   9. Z86711 Ñ Personal history of pulmonary embolism
+  10. Z86718 Ñ Personal history of other venous thrombosis and embolism
+  11. E538 Ñ Deficiency of other specified B group vitamins
+  12. L8992 Ñ Pressure ulcer of unspecified site, stage 2
+  13. R791 Ñ Abnormal coagulation profile
+  14. G629 Ñ Polyneuropathy, unspecified
+  15. K219 Ñ Gastro-esophageal reflux disease without esophagitis
+  16. I129 Ñ Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease
+  17. N183 Ñ Chronic kidney disease, stage 3 (moderate)
+  18. Z85830 Ñ Personal history of malignant neoplasm of bone
+  19. Z87891 Ñ Personal history of nicotine dependence",C79.89,Secondary malignant neoplasm of other specified sites,C79.89,Secondary malignant neoplasm of other specified sites,PATIAL MATCH,NO,YES,YES,"Billed primary code C79.31 (secondary malignant neoplasm of brain) and mapped code C79.89 (secondary malignant neoplasm of other specified sites) both fall in the C79 category coding metastatic (secondary) malignant neoplasm from the sarcoma; the codes differ only in the metastatic site specified (brain vs other specified site), so a coder would accept them as clinically equivalent for the same principal condition of metastatic sarcoma, though the billed code is site-specific to brain.",C79.31 secondary malignant neoplasm of brain | brain metastasis | metastatic disease to brain | secondary malignancy CNS,"C79.89 secondary malignant neoplasm of other specified sites | metastatic disease, other site | secondary malignant neoplasm, unspecified/other site | distant metastases from sarcoma",B99.9
+17774110,27339772,YES,YES,1,A41.89,Other specified sepsis,"   1. A4189 Ñ Other specified sepsis
+   2. R6521 Ñ Severe sepsis with septic shock
+   3. N170 Ñ Acute kidney failure with tubular necrosis
+   4. J9601 Ñ Acute respiratory failure with hypoxia
+   5. G92 Ñ Toxic encephalopathy
+   6. D65 Ñ Disseminated intravascular coagulation [defibrination syndrome]
+   7. I82220 Ñ Acute embolism and thrombosis of inferior vena cava
+   8. C7972 Ñ Secondary malignant neoplasm of left adrenal gland
+   9. J910 Ñ Malignant pleural effusion
+  10. D689 Ñ Coagulation defect, unspecified
+  11. I4892 Ñ Unspecified atrial flutter
+  12. C220 Ñ Liver cell carcinoma
+  13. K766 Ñ Portal hypertension
+  14. E872 Ñ Acidosis
+  15. K920 Ñ Hematemesis
+  16. Z515 Ñ Encounter for palliative care
+  17. B1920 Ñ Unspecified viral hepatitis C without hepatic coma
+  18. F319 Ñ Bipolar disorder, unspecified
+  19. F909 Ñ Attention-deficit hyperactivity disorder, unspecified type
+  20. K219 Ñ Gastro-esophageal reflux disease without esophagitis
+  21. J449 Ñ Chronic obstructive pulmonary disease, unspecified
+  22. K2270 Ñ Barrett's esophagus without dysplasia
+  23. F1010 Ñ Alcohol abuse, uncomplicated
+  24. B961 Ñ Klebsiella pneumoniae [K. pneumoniae] as the cause of diseases classified elsewhere
+  25. I4891 Ñ Unspecified atrial fibrillation
+  26. K7290 Ñ Hepatic failure, unspecified without coma
+  27. F209 Ñ Schizophrenia, unspecified
+  28. G40909 Ñ Epilepsy, unspecified, not intractable, without status epilepticus
+  29. K7030 Ñ Alcoholic cirrhosis of liver without ascites",R65.21,Severe sepsis with septic shock,R65.21,Severe sepsis with septic shock,YES,NO,NO,YES,"Mapped code R65.21 (severe sepsis with septic shock) is not an exact match to billed A41.89 (other specified sepsis), but both code the same principal sepsis episode; in ICD-10-CM sepsis coding A41.89 is the underlying infection code and R65.21 the severity manifestation code reported together for the same condition, so a coder would accept them as clinically equivalent representations of the sepsis principal diagnosis.","A41.89 â€” Other specified sepsis | A41.9 â€” Sepsis, unspecified organism | sepsis / septicemia codes (A40-A41)",R65.21 â€” Severe sepsis with septic shock | R65.20 â€” Severe sepsis without septic shock | sepsis severity manifestation code used with underlying infection code A41.-,R65.21
+18412100,26093939,NO,,,D48.1,Neoplasm of uncertain behavior of connective and other soft tissue,"   1. D481 Ñ Neoplasm of uncertain behavior of connective and other soft tissue
+   2. B1920 Ñ Unspecified viral hepatitis C without hepatic coma
+   3. K219 Ñ Gastro-esophageal reflux disease without esophagitis
+   4. G8918 Ñ Other acute postprocedural pain
+   5. R109 Ñ Unspecified abdominal pain
+   6. R110 Ñ Nausea
+   7. E669 Ñ Obesity, unspecified
+   8. Z6832 Ñ Body mass index [BMI] 32.0-32.9, adult",R10.9,Unspecified abdominal pain,,,YES,NO,NO,NO,"Billed primary code D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) codes the desmoid tumor. No rank matched; the closest rank ICD, R10.9 (unspecified abdominal pain), is a symptom code and would not be accepted by a coder as equivalent to a soft-tissue neoplasm code. Other mapped codes (B19.20, E87.6, E83.51, D64.9) are in entirely different chapters.",D48.1 neoplasm of uncertain behavior of connective and other soft tissue | desmoid tumor coding | aggressive fibromatosis (D48.1),,R10.9
+19104262,24271247,NO,,,O24.03,"Pre-existing type 1 diabetes mellitus, in the puerperium","   1. O2403 Ñ Pre-existing type 1 diabetes mellitus, in the puerperium
+   2. O904 Ñ Postpartum acute kidney failure
+   3. G9340 Ñ Encephalopathy, unspecified
+   4. E1010 Ñ Type 1 diabetes mellitus with ketoacidosis without coma
+   5. E875 Ñ Hyperkalemia
+   6. E860 Ñ Dehydration
+   7. O99355 Ñ Diseases of the nervous system complicating the puerperium
+   8. O99285 Ñ Endocrine, nutritional and metabolic diseases complicating the puerperium
+   9. Z794 Ñ Long term (current) use of insulin
+  10. Z9114 Ñ Patient's other noncompliance with medication regimen",E13.10,Other specified diabetes mellitus with ketoacidosis without coma,,,NO MATCH,NO,NO,NO,"Mapped code at rank 1 is E13.10 (other specified diabetes mellitus with ketoacidosis without coma), while the billed primary code is O24.03 (pre-existing type 1 diabetes mellitus, in the puerperium), an obstetric chapter 15 code that takes sequencing priority in the puerperium. Different code chapters and different specificity (obstetric pre-existing type 1 diabetes vs non-obstetric 'other specified' diabetes with ketoacidosis); a coder would not accept E13.10 as equivalent to O24.03. Note rank 2/6 map to E10.9, which is also not equivalent to the obstetric O24.03 code.","O24.03 | pre-existing type 1 diabetes mellitus in the puerperium | obstetric diabetes coding, chapter 15 | pregnancy/puerperium-related pre-existing IDDM",E13.10 | other specified diabetes mellitus with ketoacidosis without coma | related non-obstetric codes: E10.10 type 1 diabetes with ketoacidosis without coma,E13.10
+19632936,26696232,YES,YES,1,D50.9,"Iron deficiency anemia, unspecified","   1. D509 Ñ Iron deficiency anemia, unspecified
+   2. I272 Ñ Other secondary pulmonary hypertension
+   3. I495 Ñ Sick sinus syndrome
+   4. I2510 Ñ Atherosclerotic heart disease of native coronary artery without angina pectoris
+   5. I4891 Ñ Unspecified atrial fibrillation
+   6. I10 Ñ Essential (primary) hypertension
+   7. E785 Ñ Hyperlipidemia, unspecified
+   8. I350 Ñ Nonrheumatic aortic (valve) stenosis
+   9. Z955 Ñ Presence of coronary angioplasty implant and graft
+  10. Z7901 Ñ Long term (current) use of anticoagulants
+  11. Z950 Ñ Presence of cardiac pacemaker
+  12. Z87891 Ñ Personal history of nicotine dependence
+  13. N400 Ñ Benign prostatic hyperplasia without lower urinary tract symptoms
+  14. K2270 Ñ Barrett's esophagus without dysplasia
+  15. I878 Ñ Other specified disorders of veins",D53.9,"Nutritional anemia, unspecified",D53.9,"Nutritional anemia, unspecified",PATIAL MATCH,NO,NO,NO,"Mapped code at matched rank is D53.9 (Nutritional anemia, unspecified), whereas the billed primary is D50.9 (Iron deficiency anemia, unspecified). Although both fall in the nutritional anemia block (D50-D53), they designate different anemia etiologies/morphologies â€” iron deficiency anemia is characteristically microcytic while D53.9 covers unspecified nutritional (including macrocytic/megaloblastic-type) anemia â€” so a coder would not treat them as interchangeable for the principal diagnosis.","D50.9 Iron deficiency anemia, unspecified | Sideropenic anemia | Hypochromic microcytic anemia due to iron deficiency","D53.9 Nutritional anemia, unspecified | Simple chronic anemia | Deficiency anemia not otherwise specified | Related: D51.9 B12 deficiency anemia, D52.9 folate deficiency anemia",D53.9

@@ -1,0 +1,69 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 13196707
+HADM ID          : 21475988
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:42:56.510152
+Candidates       : 9
+Most likely      : Malignant pericardial effusion with cardiac tamponade requiring pericardiocentesis
+
+Summary:
+  Elderly man with recently diagnosed widely metastatic adenocarcinoma of unknown primary (brain, bone, lung, liver, adrenal) transferred with chest pressure, fever and refractory hypotension requiring norepinephrine. Echo showed a moderate-to-large circumferential pericardial effusion with RV diastolic collapse/tamponade physiology, treated with pericardiocentesis; concurrent presumed pneumonia was treated. Course complicated by healthcare-associated/aspiration pneumonia, vancomycin-associated acute kidney injury, seizures with fluctuating altered mental status, hypernatremia, anemia and antibiotic/tube-feed diarrhea, ending in transition to inpatient hospice.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [90.0/100 | high]  Malignant pericardial effusion with cardiac tamponade  (primary)
+      + Pleuritic chest pressure, hypotension on levophed, pulsus 16
+      + TTE: moderate-large circumferential effusion, RV diastolic collapse
+      + Pericardiocentesis performed; diffuse ST elevations on EKG
+      + Widely metastatic adenocarcinoma with pulmonary/mediastinal disease
+      - Fever and RUL opacity raised infection as alternative cause of shock
+      why: Discharge narrative states he presented with hypotension due to pericardial effusion, with tamponade physiology on echo and therapeutic pericardiocentesis — the condition chiefly responsible for this admission.
+  #2  [85.0/100 | high]  Metastatic adenocarcinoma of unknown primary with brain, bone, liver and lung metastases  (primary)
+      + Biopsy-proven metastatic adenocarcinoma, unknown primary
+      + CT head: numerous metastatic lesions with vasogenic edema
+      + Alk phos 879, LDH 344; not chemotherapy candidate, hospice transfer
+      - Malignancy known from prior admission, not the acute admitting event
+      why: The underlying disease driving all complications and the terminal trajectory; a coder may list this as principal for an oncology admission ending in hospice.
+  #3  [70.0/100 | medium]  Severe sepsis with hypotension due to pneumonia  (primary)
+      + ICU admission for severe sepsis, T 102.6, HR 105, BP 90/47
+      + Norepinephrine required; broad antibiotics (ceftazidime/vanco) given
+      + Bands 8%, neutrophilia 91%, lactate 2.6
+      - Initial CXR 'no convincing signs of pneumonia'; lactate 1.7 in ED
+      - Hypotension ultimately attributed to tamponade
+      why: Septic physiology was the initial working diagnosis and contributed to shock, but pericardial tamponade was the confirmed hemodynamic cause.
+  #4  [68.0/100 | medium]  Healthcare-associated and aspiration pneumonia  (complication)
+      + Two completed courses of HCAP therapy; second felt aspiration-related
+      + CXR: persistent bibasilar consolidations, right pleural effusion
+      + High aspiration risk from altered mental status, Dobhoff feeds
+      - Radiology notes opacities could represent atelectasis
+      why: Explicitly documented and treated with zosyn during this stay; a strong secondary/complication code.
+  #5  [62.0/100 | medium]  Acute kidney injury, drug-induced (vancomycin) with dehydration  (complication)
+      + Cr rose from 1.0 to peak 2.6, improved to 1.2 at discharge
+      + Vancomycin level 23.7; granular casts 67/lpf in urine
+      + Poor PO intake, treated with IV fluids
+      - Creatinine near baseline at discharge
+      why: Clearly documented in-hospital AKI attributed to vancomycin plus hypovolemia; codeable complication.
+  #6  [60.0/100 | medium]  Symptomatic seizures with encephalopathy due to brain metastases  (complication)
+      + EEG epileptiform discharges left paracentrally; on Keppra, lacosamide, valproate
+      + Waxing/waning mental status, AOx0 at discharge exam
+      + Stable extensive brain metastases with vasogenic edema on imaging
+      - No new hemorrhage, infarct or progression on repeat CT/MRI
+      why: Altered mental status with epileptiform EEG in setting of known brain metastases; multifactorial (toxic-metabolic, infection) contribution possible.
+  #7  [50.0/100 | high]  Hypernatremia with free water deficit  (secondary)
+      + Na persistently 147–low 150s; discharge Na 147, Cl 115
+      + Poor PO/water intake, D5W given with minimal improvement
+      why: Objectively documented electrolyte disorder actively managed during the stay.
+  #8  [48.0/100 | medium]  Anemia of chronic disease requiring transfusion  (secondary)
+      + Hgb fell to 7.0; two units pRBC transfused
+      + Low iron/TIBC, ferritin 2215, normal haptoglobin, guaiac negative
+      - Macrocytosis (MCV 103) not typical of anemia of chronic disease
+      why: Documented workup supports anemia of chronic disease/malignancy rather than bleeding or hemolysis.
+  #9  [42.0/100 | medium]  Upper extremity venous thrombosis with SVC syndrome status post stenting  (risk_factor)
+      + Ongoing enoxaparin 80 mg BID; swollen upper extremities on exam
+      + Prior R subclavian and extensive left-sided thrombi, patent SVC stent
+      - No new imaging of thrombus this admission
+      why: Chronic active thrombotic disease requiring anticoagulation decisions this stay, but not the acute driver of admission.

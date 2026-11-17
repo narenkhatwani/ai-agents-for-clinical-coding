@@ -1,0 +1,48 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 13196707
+HADM ID          : 21475988
+Generated        : 2026-08-21T23:52:42.461584
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Stage IV Adenocarcinoma, unknown origin; Pericardial effusion with tamponade features; Acute Kidney Injury; ___ Associated Pneumonia; Acute toxic-metabolic encephalopathy; Diarrhea
+  Billed ICD title     : Sepsis, unspecified organism (ICD metric only)
+  Rank-1 predicted     : Malignant pericardial effusion with cardiac tamponade
+    score=90.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Malignant pericardial effusion with cardiac tamponade
+    score=90.0  confidence=high
+  LLM reason           : Rank 1 'Malignant pericardial effusion with cardiac tamponade' names the same principal condition as the physician's discharge diagnosis 'Pericardial effusion with tamponade features', and adds the malignant etiology consistent with the concurrently listed Stage IV adenocarcinoma of unknown origin. Rank 2 ('Metastatic adenocarcinoma of unknown primary') also matches the listed Stage IV adenocarcinoma of unknown origin, and Ranks 4/5 correspond to the listed pneumonia and acute kidney injury, but Rank 1 is the lowest matching rank.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : A41.9 — Sepsis, unspecified organism
+  Rank-1 mapped ICD    : I31.4 — Cardiac tamponade
+  Matched mapped ICD   : I31.4 — Cardiac tamponade
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : Mapped ICD at matched rank 1 is I31.4 (cardiac tamponade / malignant pericardial effusion), whereas the billed primary code is A41.9 (sepsis, unspecified organism). These are distinct principal conditions and a coder would not accept I31.4 as equivalent to a sepsis code. Note that Rank 3 carries A41.9, but the ICD metric is judged at the lowest matching diagnosis rank.
+  Stage 9 final ICD    : I31.4 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Malignant pericardial effusion with cardiac tamponade  [score=90.0, high]  ICD=I31.4 — Cardiac tamponade
+   2. Metastatic adenocarcinoma of unknown primary with brain, bone, liver and lung metastases  [score=85.0, high]  ICD=C80.1 — Malignant (primary) neoplasm, unspecified
+   3. Severe sepsis with hypotension due to pneumonia  [score=70.0, medium]  ICD=A41.9 — Sepsis, unspecified organism
+   4. Healthcare-associated and aspiration pneumonia  [score=68.0, medium]  ICD=J69.0 — Pneumonitis due to inhalation of food and vomit
+   5. Acute kidney injury, drug-induced (vancomycin) with dehydration  [score=62.0, medium]  ICD=N17.9 — Acute kidney failure, unspecified
+   6. Symptomatic seizures with encephalopathy due to brain metastases  [score=60.0, medium]  ICD=R56.9 — Unspecified convulsions
+   7. Hypernatremia with free water deficit  [score=50.0, high]  ICD=E87.0 — Hyperosmolality and hypernatremia
+   8. Anemia of chronic disease requiring transfusion  [score=48.0, medium]  ICD=D63.0 — Anemia in neoplastic disease
+   9. Upper extremity venous thrombosis with SVC syndrome status post stenting  [score=42.0, medium]  ICD=I82.601 — Acute embolism and thrombosis of unspecified veins of right upper extremity

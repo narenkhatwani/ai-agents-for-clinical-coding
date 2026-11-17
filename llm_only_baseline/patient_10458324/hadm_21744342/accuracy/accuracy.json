@@ -1,0 +1,186 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "10458324",
+  "hadm_id": "21744342",
+  "generated_at": "2026-08-21T23:51:49.165147",
+  "ground_truth": {
+    "primary_icd_code": "S270XXA",
+    "primary_dx_title": "Traumatic pneumothorax, initial encounter",
+    "primary_icd_title": "Traumatic pneumothorax, initial encounter",
+    "discharge_diagnosis": "Rib fracture; Paroxsysmal Atrial Fibrillation",
+    "diffdx_gt": "Rib fracture; Paroxsysmal Atrial Fibrillation",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 12
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "Rib fracture; Paroxsysmal Atrial Fibrillation",
+      "rank1_diagnosis": "Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)",
+      "rank1_score": 95.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)",
+      "matched_score": 95.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "Physician discharge diagnosis lists 'Rib fracture' as the principal condition; Rank 1 'Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)' names the same principal condition (rib fractures) with greater specificity (multiple, displaced, right-sided, with flail segment). Rank 5 additionally matches the secondary discharge diagnosis of paroxysmal atrial fibrillation, but rank 1 is the lowest matching rank.",
+      "llm_expanded_ground_truth": "rib fracture | fractured rib | broken rib | costal fracture | blunt chest wall injury | paroxysmal atrial fibrillation | PAF | intermittent AF/afib",
+      "llm_expanded_matched": "multiple rib fractures | closed displaced rib fractures | right-sided rib fractures | flail chest | blunt chest trauma | chest wall fracture",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)",
+          "score": 95.0,
+          "confidence": "high",
+          "icd10_primary": "S22.5XXA",
+          "icd10_primary_title": "Flail chest, initial encounter for closed fracture"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Acute hypoxemic respiratory failure requiring mechanical ventilation",
+          "score": 90.0,
+          "confidence": "high",
+          "icd10_primary": "J96.01",
+          "icd10_primary_title": "Acute respiratory failure with hypoxia"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Aspiration pneumonia with Haemophilus influenzae superinfection",
+          "score": 85.0,
+          "confidence": "high",
+          "icd10_primary": "J69.0",
+          "icd10_primary_title": "Pneumonitis due to inhalation of food and vomit"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Traumatic right pneumothorax/hydropneumothorax with subcutaneous emphysema",
+          "score": 84.0,
+          "confidence": "high",
+          "icd10_primary": "S27.0XXA",
+          "icd10_primary_title": "Traumatic pneumothorax, initial encounter"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "New-onset paroxysmal atrial fibrillation with rapid ventricular response",
+          "score": 80.0,
+          "confidence": "high",
+          "icd10_primary": "I48.0",
+          "icd10_primary_title": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Opioid dependence maintained on methadone (IV drug use history)",
+          "score": 70.0,
+          "confidence": "high",
+          "icd10_primary": "F11.20",
+          "icd10_primary_title": "Opioid dependence, uncomplicated"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Acute volume overload with bilateral pleural effusions and peripheral edema",
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": "E87.70",
+          "icd10_primary_title": "Fluid overload, unspecified"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "PTSD with polysubstance use and bipolar disorder history",
+          "score": 45.0,
+          "confidence": "medium",
+          "icd10_primary": "F43.10",
+          "icd10_primary_title": "Post-traumatic stress disorder, unspecified"
+        },
+        {
+          "rank": 9,
+          "diagnosis": "Pulmonary contusion of right lung",
+          "score": 40.0,
+          "confidence": "low",
+          "icd10_primary": "S27.321A",
+          "icd10_primary_title": "Contusion of lung, unilateral, initial encounter"
+        },
+        {
+          "rank": 10,
+          "diagnosis": "Protein-calorie malnutrition/cachexia (BMI 17.9)",
+          "score": 35.0,
+          "confidence": "low",
+          "icd10_primary": "E46",
+          "icd10_primary_title": "Unspecified protein-calorie malnutrition"
+        }
+      ],
+      "n_diffdx": 10
+    },
+    "icd_linked": {
+      "ground_truth_icd": "S27.0XXA",
+      "ground_truth_icd_title": "Traumatic pneumothorax, initial encounter",
+      "rank1_predicted_icd": "S22.5XXA",
+      "rank1_predicted_icd_title": "Flail chest, initial encounter for closed fracture",
+      "matched_predicted_icd": "S22.5XXA",
+      "matched_predicted_icd_title": "Flail chest, initial encounter for closed fracture",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": false,
+      "llm_icd_reason": "Mapped ICD at matched rank 1 is S22.5XXA (Flail chest, initial encounter for closed fracture), a chest wall/rib fracture code. The billed primary ICD is S27.0XXA (Traumatic pneumothorax), an intrathoracic pleural air-collection injury. These code distinct principal conditions and are not interchangeable, although rank 4 separately mapped to S27.0XXA.",
+      "llm_expanded_ground_truth_icd": "S27.0XXA | traumatic pneumothorax | post-traumatic air in pleural space | chest injury with collapsed lung",
+      "llm_expanded_matched_icd": "S22.5XXA | flail chest | multiple closed rib fractures with paradoxical chest wall movement | S22.4 multiple rib fractures",
+      "stage9_final_primary_icd": "S22.5XXA",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
+    },
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Physician discharge diagnosis lists 'Rib fracture' as the principal condition; Rank 1 'Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)' names the same principal condition (rib fractures) with greater specificity (multiple, displaced, right-sided, with flail segment). Rank 5 additionally matches the secondary discharge diagnosis of paroxysmal atrial fibrillation, but rank 1 is the lowest matching rank.",
+      "ground_truth_expansions": [
+        "rib fracture",
+        "fractured rib",
+        "broken rib",
+        "costal fracture",
+        "blunt chest wall injury",
+        "paroxysmal atrial fibrillation",
+        "PAF",
+        "intermittent AF/afib"
+      ],
+      "matched_diagnosis_expansions": [
+        "multiple rib fractures",
+        "closed displaced rib fractures",
+        "right-sided rib fractures",
+        "flail chest",
+        "blunt chest trauma",
+        "chest wall fracture"
+      ],
+      "icd_equivalent": false,
+      "icd_confidence": "high",
+      "icd_reason": "Mapped ICD at matched rank 1 is S22.5XXA (Flail chest, initial encounter for closed fracture), a chest wall/rib fracture code. The billed primary ICD is S27.0XXA (Traumatic pneumothorax), an intrathoracic pleural air-collection injury. These code distinct principal conditions and are not interchangeable, although rank 4 separately mapped to S27.0XXA.",
+      "ground_truth_icd_expansions": [
+        "S27.0XXA",
+        "traumatic pneumothorax",
+        "post-traumatic air in pleural space",
+        "chest injury with collapsed lung"
+      ],
+      "matched_icd_expansions": [
+        "S22.5XXA",
+        "flail chest",
+        "multiple closed rib fractures with paradoxical chest wall movement",
+        "S22.4 multiple rib fractures"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

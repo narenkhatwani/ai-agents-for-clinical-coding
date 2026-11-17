@@ -1,0 +1,455 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "13196707",
+  "hadm_id": "21475988",
+  "most_likely": "Malignant pericardial effusion with cardiac tamponade requiring pericardiocentesis",
+  "summary": "Elderly man with recently diagnosed widely metastatic adenocarcinoma of unknown primary (brain, bone, lung, liver, adrenal) transferred with chest pressure, fever and refractory hypotension requiring norepinephrine. Echo showed a moderate-to-large circumferential pericardial effusion with RV diastolic collapse/tamponade physiology, treated with pericardiocentesis; concurrent presumed pneumonia was treated. Course complicated by healthcare-associated/aspiration pneumonia, vancomycin-associated acute kidney injury, seizures with fluctuating altered mental status, hypernatremia, anemia and antibiotic/tube-feed diarrhea, ending in transition to inpatient hospice.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Malignant pericardial effusion with cardiac tamponade",
+      "score": 90.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Pleuritic chest pressure, hypotension on levophed, pulsus 16",
+        "TTE: moderate-large circumferential effusion, RV diastolic collapse",
+        "Pericardiocentesis performed; diffuse ST elevations on EKG",
+        "Widely metastatic adenocarcinoma with pulmonary/mediastinal disease"
+      ],
+      "opposing_evidence": [
+        "Fever and RUL opacity raised infection as alternative cause of shock"
+      ],
+      "reasoning": "Discharge narrative states he presented with hypotension due to pericardial effusion, with tamponade physiology on echo and therapeutic pericardiocentesis — the condition chiefly responsible for this admission.",
+      "icd10_primary": "I31.4",
+      "icd10_primary_title": "Cardiac tamponade",
+      "icd10_package": [
+        {
+          "code": "I31.4",
+          "title": "Cardiac tamponade",
+          "role": "principal"
+        },
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "role": "supporting"
+        },
+        {
+          "code": "I31.3",
+          "title": "Pericardial effusion (noninflammatory)",
+          "role": "supporting"
+        },
+        {
+          "code": "C80.1",
+          "title": "Malignant (primary) neoplasm, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C79.89",
+          "title": "Secondary malignant neoplasm of other specified sites",
+          "role": "supporting"
+        },
+        {
+          "code": "I31.3",
+          "title": "Pericardial effusion (noninflammatory)",
+          "role": "supporting"
+        },
+        {
+          "code": "C80.1",
+          "title": "Malignant (primary) neoplasm, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Chest pressure, diminished heart sounds, hypotension; pericardiocentesis performed for malignant pericardial effusion with tamponade physiology.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Metastatic adenocarcinoma of unknown primary with brain, bone, liver and lung metastases",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Biopsy-proven metastatic adenocarcinoma, unknown primary",
+        "CT head: numerous metastatic lesions with vasogenic edema",
+        "Alk phos 879, LDH 344; not chemotherapy candidate, hospice transfer"
+      ],
+      "opposing_evidence": [
+        "Malignancy known from prior admission, not the acute admitting event"
+      ],
+      "reasoning": "The underlying disease driving all complications and the terminal trajectory; a coder may list this as principal for an oncology admission ending in hospice.",
+      "icd10_primary": "C80.1",
+      "icd10_primary_title": "Malignant (primary) neoplasm, unspecified",
+      "icd10_package": [
+        {
+          "code": "C80.1",
+          "title": "Malignant (primary) neoplasm, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        },
+        {
+          "code": "C79.51",
+          "title": "Secondary malignant neoplasm of bone",
+          "role": "supporting"
+        },
+        {
+          "code": "C78.00",
+          "title": "Secondary malignant neoplasm of unspecified lung",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        },
+        {
+          "code": "C79.51",
+          "title": "Secondary malignant neoplasm of bone",
+          "role": "supporting"
+        },
+        {
+          "code": "C78.00",
+          "title": "Secondary malignant neoplasm of unspecified lung",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented metastatic adenocarcinoma of unknown primary with brain, bone, liver, and pulmonary metastases on imaging.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Severe sepsis with hypotension due to pneumonia",
+      "score": 70.0,
+      "confidence": "medium",
+      "category": "primary",
+      "supporting_evidence": [
+        "ICU admission for severe sepsis, T 102.6, HR 105, BP 90/47",
+        "Norepinephrine required; broad antibiotics (ceftazidime/vanco) given",
+        "Bands 8%, neutrophilia 91%, lactate 2.6"
+      ],
+      "opposing_evidence": [
+        "Initial CXR 'no convincing signs of pneumonia'; lactate 1.7 in ED",
+        "Hypotension ultimately attributed to tamponade"
+      ],
+      "reasoning": "Septic physiology was the initial working diagnosis and contributed to shock, but pericardial tamponade was the confirmed hemodynamic cause.",
+      "icd10_primary": "A41.9",
+      "icd10_primary_title": "Sepsis, unspecified organism",
+      "icd10_package": [
+        {
+          "code": "A41.9",
+          "title": "Sepsis, unspecified organism",
+          "role": "principal"
+        },
+        {
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
+          "role": "supporting"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
+          "role": "supporting"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Fever 102.6, tachycardia, persistent hypotension requiring norepinephrine, presumed pneumonic source documented as severe sepsis.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Healthcare-associated and aspiration pneumonia",
+      "score": 68.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Two completed courses of HCAP therapy; second felt aspiration-related",
+        "CXR: persistent bibasilar consolidations, right pleural effusion",
+        "High aspiration risk from altered mental status, Dobhoff feeds"
+      ],
+      "opposing_evidence": [
+        "Radiology notes opacities could represent atelectasis"
+      ],
+      "reasoning": "Explicitly documented and treated with zosyn during this stay; a strong secondary/complication code.",
+      "icd10_primary": "J69.0",
+      "icd10_primary_title": "Pneumonitis due to inhalation of food and vomit",
+      "icd10_package": [
+        {
+          "code": "J69.0",
+          "title": "Pneumonitis due to inhalation of food and vomit",
+          "role": "principal"
+        },
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "J18.9",
+          "title": "Pneumonia, unspecified organism",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "HCAP treated during stay with bibasilar consolidations; aspiration risk with altered mental status and Dobhoff feeding.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute kidney injury, drug-induced (vancomycin) with dehydration",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Cr rose from 1.0 to peak 2.6, improved to 1.2 at discharge",
+        "Vancomycin level 23.7; granular casts 67/lpf in urine",
+        "Poor PO intake, treated with IV fluids"
+      ],
+      "opposing_evidence": [
+        "Creatinine near baseline at discharge"
+      ],
+      "reasoning": "Clearly documented in-hospital AKI attributed to vancomycin plus hypovolemia; codeable complication.",
+      "icd10_primary": "N17.9",
+      "icd10_primary_title": "Acute kidney failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        },
+        {
+          "code": "T36.8X5A",
+          "title": "Adverse effect of other systemic antibiotics, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        },
+        {
+          "code": "T36.8X5A",
+          "title": "Adverse effect of other systemic antibiotics, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Acute kidney injury attributed to vancomycin exposure and volume depletion during hospitalization.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Symptomatic seizures with encephalopathy due to brain metastases",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "EEG epileptiform discharges left paracentrally; on Keppra, lacosamide, valproate",
+        "Waxing/waning mental status, AOx0 at discharge exam",
+        "Stable extensive brain metastases with vasogenic edema on imaging"
+      ],
+      "opposing_evidence": [
+        "No new hemorrhage, infarct or progression on repeat CT/MRI"
+      ],
+      "reasoning": "Altered mental status with epileptiform EEG in setting of known brain metastases; multifactorial (toxic-metabolic, infection) contribution possible.",
+      "icd10_primary": "R56.9",
+      "icd10_primary_title": "Unspecified convulsions",
+      "icd10_package": [
+        {
+          "code": "R56.9",
+          "title": "Unspecified convulsions",
+          "role": "principal"
+        },
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        },
+        {
+          "code": "G93.40",
+          "title": "Encephalopathy, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C79.31",
+          "title": "Secondary malignant neoplasm of brain",
+          "role": "supporting"
+        },
+        {
+          "code": "G93.40",
+          "title": "Encephalopathy, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Altered mental status, EEG monitoring, seizures attributed to brain metastases with vasogenic edema on CT.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Hypernatremia with free water deficit",
+      "score": 50.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Na persistently 147–low 150s; discharge Na 147, Cl 115",
+        "Poor PO/water intake, D5W given with minimal improvement"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Objectively documented electrolyte disorder actively managed during the stay.",
+      "icd10_primary": "E87.0",
+      "icd10_primary_title": "Hyperosmolality and hypernatremia",
+      "icd10_package": [
+        {
+          "code": "E87.0",
+          "title": "Hyperosmolality and hypernatremia",
+          "role": "principal"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented hypernatremia requiring free water repletion during current admission.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Anemia of chronic disease requiring transfusion",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Hgb fell to 7.0; two units pRBC transfused",
+        "Low iron/TIBC, ferritin 2215, normal haptoglobin, guaiac negative"
+      ],
+      "opposing_evidence": [
+        "Macrocytosis (MCV 103) not typical of anemia of chronic disease"
+      ],
+      "reasoning": "Documented workup supports anemia of chronic disease/malignancy rather than bleeding or hemolysis.",
+      "icd10_primary": "D63.0",
+      "icd10_primary_title": "Anemia in neoplastic disease",
+      "icd10_package": [
+        {
+          "code": "D63.0",
+          "title": "Anemia in neoplastic disease",
+          "role": "principal"
+        },
+        {
+          "code": "C80.1",
+          "title": "Malignant (primary) neoplasm, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C80.1",
+          "title": "Malignant (primary) neoplasm, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Hgb 8.9 with metastatic malignancy; anemia of chronic disease requiring transfusion support.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Upper extremity venous thrombosis with SVC syndrome status post stenting",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Ongoing enoxaparin 80 mg BID; swollen upper extremities on exam",
+        "Prior R subclavian and extensive left-sided thrombi, patent SVC stent"
+      ],
+      "opposing_evidence": [
+        "No new imaging of thrombus this admission"
+      ],
+      "reasoning": "Chronic active thrombotic disease requiring anticoagulation decisions this stay, but not the acute driver of admission.",
+      "icd10_primary": "I82.601",
+      "icd10_primary_title": "Acute embolism and thrombosis of unspecified veins of right upper extremity",
+      "icd10_package": [
+        {
+          "code": "I82.601",
+          "title": "Acute embolism and thrombosis of unspecified veins of right upper extremity",
+          "role": "principal"
+        },
+        {
+          "code": "I87.1",
+          "title": "Compression of vein",
+          "role": "supporting"
+        },
+        {
+          "code": "Z95.828",
+          "title": "Presence of other vascular implants and grafts",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I87.1",
+          "title": "Compression of vein",
+          "role": "supporting"
+        },
+        {
+          "code": "Z95.828",
+          "title": "Presence of other vascular implants and grafts",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Multiple upper extremity venous thromboses on lovenox; SVC compression by tumor status post stent placement.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "I31.4",
+  "primary_icd_title": "Cardiac tamponade",
+  "primary_condition": "Malignant pericardial effusion with cardiac tamponade",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:43:17.864584",
+  "ontology_routing": false
+}

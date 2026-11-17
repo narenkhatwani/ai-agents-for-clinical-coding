@@ -1,0 +1,180 @@
+{
+  "summary": "Elderly woman with known recurrent paroxysmal SVT (previously declined ablation/PPM) presents with palpitations, lightheadedness and a mechanical fall. EMS and ED documented SVT to 150-160s with transient hypotension, converted with adenosine and IV verapamil, with home verapamil uptitrated to 120 mg q8h and resulting asymptomatic Wenckebach. Work-up of the fall showed a nondisplaced comminuted right superior pubic ramus fracture (conservative management, WBAT) and a CT head with no acute intracranial injury; troponin rose 0.02→0.09 with normal CK-MB, interpreted as demand ischemia. Background of CAD, HTN, HLD, depression, presumed untreated urothelial carcinoma, DNR/DNI with transition to home hospice.",
+  "most_likely": "Recurrent paroxysmal supraventricular tachycardia (AVNRT) with hemodynamic compromise",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Recurrent paroxysmal supraventricular tachycardia (AVNRT)",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "SVT to 150s found by EMS, cardioverted with adenosine",
+        "Recurred in ED; treated with 2x adenosine and IV verapamil",
+        "Prior admission principal ICD I471 supraventricular tachycardia",
+        "Verapamil increased to 120 mg q8h with good rate control"
+      ],
+      "opposing_evidence": [
+        "Asymptomatic and in NSR by discharge"
+      ],
+      "reasoning": "The presenting arrhythmia is documented, treated and drives the entire admission and medication change; a coder would list this as principal disease."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Closed nondisplaced fracture of right superior pubic ramus from fall",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Hip X-ray: nondisplaced comminuted right superior pubic ramus fracture",
+        "Right hip pain with hip flexion and cross-leg test",
+        "Orthopedics recommended conservative management, WBAT, oxycodone"
+      ],
+      "opposing_evidence": [
+        "Hip non-tender to palpation, no ecchymoses on exam"
+      ],
+      "reasoning": "Objectively imaged acute fracture treated during this stay; a strong secondary/co-principal diagnosis with clear resource use."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Type 2 myocardial injury (demand ischemia) due to tachycardia",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Troponin T rose 0.02 → 0.09 with CK-MB 2 (normal)",
+        "Note states 'most likely demand in setting of tachycardia'",
+        "ECG unchanged from prior baseline ST changes"
+      ],
+      "opposing_evidence": [
+        "No chest pain; no new ECG changes; further work-up deferred for goals of care"
+      ],
+      "reasoning": "Documented troponin elevation attributed to demand ischemia; codable as NSTEMI/demand ischemia (prior stay coded I214 similarly) but clinically secondary."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Syncope/near-syncope with mechanical fall secondary to arrhythmia",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Fell when lightheaded, caught fall with arm, no head strike",
+        "CT head ordered for post-fall headache — no acute abnormality",
+        "Note: falls due to lightheadedness, most likely related to SVT"
+      ],
+      "opposing_evidence": [
+        "Symptom/mechanism rather than a disease entity"
+      ],
+      "reasoning": "Well documented and drives imaging work-up, but is the mechanism of injury rather than a principal disease."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Second degree atrioventricular block, Mobitz type I (Wenckebach), drug-related",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Episodes of Wenckebach on higher dose verapamil during stay",
+        "Prior admission coded I441 second degree AV block",
+        "Prior Holter showed Wenckebach on nodal blockade"
+      ],
+      "opposing_evidence": [
+        "Asymptomatic; no intervention required; patient declined PPM"
+      ],
+      "reasoning": "Real documented conduction finding attributable to uptitrated verapamil, appropriate as a secondary/complication code."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Presumed urothelial (bladder) carcinoma, untreated, with sterile pyuria",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Note: likely undiagnosed uroepithelial carcinoma, declined work-up",
+        "UA with WBC 45/hpf, RBC 15/hpf; culture mixed flora contaminant",
+        "Prior ICD C679 malignant neoplasm of bladder"
+      ],
+      "opposing_evidence": [
+        "No tissue diagnosis; no imaging of urinary tract this stay"
+      ],
+      "reasoning": "Explicitly invoked to explain pyuria and drives hospice transition, though unconfirmed histologically."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Atherosclerotic coronary artery disease with hypertension and hyperlipidemia",
+      "score": 35.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "PMH CAD s/p possible MI, HTN, HLD; prior ICD I2510, I10, E785",
+        "Continued aspirin 81 mg and rosuvastatin 10 mg during stay"
+      ],
+      "opposing_evidence": [
+        "No angina; no ischemic work-up this admission; BPs soft (97/61)"
+      ],
+      "reasoning": "Chronic comorbidities managed medically this stay; relevant secondary codes but do not explain the acute presentation."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Urinary tract infection",
+      "score": 20.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Pyuria on UA (WBC 45/hpf); admission WBC 12.2 with neutrophilia"
+      ],
+      "opposing_evidence": [
+        "Urine culture mixed flora/contaminant, no dysuria, afebrile, WBC normalized to 6.8",
+        "No antibiotics given"
+      ],
+      "reasoning": "Considered as an SVT trigger but effectively excluded by culture, absence of symptoms and untreated resolution of leukocytosis."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Acute intracranial hemorrhage / traumatic brain injury after fall",
+      "why": "CT head showed no acute intracranial abnormality, no fracture; only chronic infarcts"
+    },
+    {
+      "diagnosis": "Acute type 1 NSTEMI / plaque rupture",
+      "why": "Troponin peak only 0.09 with normal CK-MB, no chest pain, ECG unchanged from baseline"
+    },
+    {
+      "diagnosis": "Pneumonia or acute decompensated heart failure",
+      "why": "CXR showed only low volumes, mild vascular congestion and atelectasis; afebrile, lungs clear"
+    },
+    {
+      "diagnosis": "Hip prosthesis loosening or periprosthetic fracture",
+      "why": "X-ray shows anatomically aligned right hip prosthesis, no lucency, osteolysis or dislocation"
+    },
+    {
+      "diagnosis": "Thyrotoxicosis as SVT trigger",
+      "why": "TSH 3.7 uIU/mL normal"
+    }
+  ],
+  "uncertain_areas": [
+    "Whether coders treat SVT or the pubic ramus fracture as the principal diagnosis for this stay",
+    "Whether troponin rise was documented as NSTEMI (type 2) versus non-ischemic myocardial injury",
+    "Whether verapamil-induced Wenckebach was formally documented as an adverse drug effect",
+    "Whether the hospice/palliative-care transition and DNR status were formally coded",
+    "Whether pyuria was labeled UTI versus attributed solely to presumed urothelial carcinoma"
+  ],
+  "n_candidates": 8,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "10426859",
+  "hadm_id": "29908281",
+  "generated_at": "2026-08-21T23:36:14.533296",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

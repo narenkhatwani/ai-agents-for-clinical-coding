@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "10426859",
   "hadm_id": "29908281",
-  "generated_at": "2026-08-20T17:29:03.143723",
+  "generated_at": "2026-08-20T22:06:03.784065",
   "ground_truth": {
     "primary_icd_code": "I471",
     "primary_dx_title": "Supraventricular tachycardia",
@@ -28,9 +28,9 @@
       "matched_confidence": "high",
       "llm_relationship": "same_principal",
       "llm_confidence": "high",
-      "llm_reason": "Rank 1 'Supraventricular tachycardia' names the identical principal condition as the physician discharge diagnosis 'supraventricular tachycardia' (the trailing 'non-displaced' refers to an accompanying non-displaced fracture descriptor, not the principal diagnosis).",
-      "llm_expanded_ground_truth": "SVT | supraventricular tachycardia | paroxysmal supraventricular tachycardia | PSVT | AV nodal reentrant tachycardia | narrow complex tachyarrhythmia",
-      "llm_expanded_matched": "SVT | supraventricular tachycardia | paroxysmal SVT | atrioventricular reentrant tachycardia | narrow complex tachycardia",
+      "llm_reason": "Physician discharge diagnosis is supraventricular tachycardia (SVT); Rank 1 states 'Supraventricular tachycardia' — identical principal condition. The trailing 'non-displaced' in the note refers to an associated fracture descriptor, not the principal cardiac diagnosis.",
+      "llm_expanded_ground_truth": "SVT | supraventricular tachycardia | paroxysmal supraventricular tachycardia | PSVT | AV nodal reentrant tachycardia",
+      "llm_expanded_matched": "SVT | supraventricular tachycardia | paroxysmal SVT | narrow complex tachycardia",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
@@ -97,9 +97,9 @@
       "icd_llm_match": true,
       "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "Mapped code I47.10 (supraventricular tachycardia, unspecified) is the current-revision expansion of billed I47.1 (supraventricular tachycardia); a coder would accept these as the same principal condition code.",
-      "llm_expanded_ground_truth_icd": "I47.1 Supraventricular tachycardia | I47.10 Supraventricular tachycardia, unspecified | paroxysmal supraventricular tachycardia",
-      "llm_expanded_matched_icd": "I47.10 Supraventricular tachycardia, unspecified | I47.1 Supraventricular tachycardia | SVT NOS",
+      "llm_icd_reason": "Mapped I47.10 (supraventricular tachycardia, unspecified) is the current-code-set equivalent of billed I47.1 (supraventricular tachycardia); same principal condition and same code family — a coder would accept these as equivalent.",
+      "llm_expanded_ground_truth_icd": "I47.1 supraventricular tachycardia | I47.10 unspecified SVT | I47.11 inappropriate sinus tachycardia | I47.19 other SVT",
+      "llm_expanded_matched_icd": "I47.10 supraventricular tachycardia, unspecified | I47.1 supraventricular tachycardia",
       "stage9_final_primary_icd": "I47.10",
       "diagnosis_match": true,
       "is_rank1_diagnosis_match": true,
@@ -110,34 +110,32 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Rank 1 'Supraventricular tachycardia' names the identical principal condition as the physician discharge diagnosis 'supraventricular tachycardia' (the trailing 'non-displaced' refers to an accompanying non-displaced fracture descriptor, not the principal diagnosis).",
+      "diagnosis_reason": "Physician discharge diagnosis is supraventricular tachycardia (SVT); Rank 1 states 'Supraventricular tachycardia' — identical principal condition. The trailing 'non-displaced' in the note refers to an associated fracture descriptor, not the principal cardiac diagnosis.",
       "ground_truth_expansions": [
         "SVT",
         "supraventricular tachycardia",
         "paroxysmal supraventricular tachycardia",
         "PSVT",
-        "AV nodal reentrant tachycardia",
-        "narrow complex tachyarrhythmia"
+        "AV nodal reentrant tachycardia"
       ],
       "matched_diagnosis_expansions": [
         "SVT",
         "supraventricular tachycardia",
         "paroxysmal SVT",
-        "atrioventricular reentrant tachycardia",
         "narrow complex tachycardia"
       ],
       "icd_equivalent": true,
       "icd_confidence": "high",
-      "icd_reason": "Mapped code I47.10 (supraventricular tachycardia, unspecified) is the current-revision expansion of billed I47.1 (supraventricular tachycardia); a coder would accept these as the same principal condition code.",
+      "icd_reason": "Mapped I47.10 (supraventricular tachycardia, unspecified) is the current-code-set equivalent of billed I47.1 (supraventricular tachycardia); same principal condition and same code family — a coder would accept these as equivalent.",
       "ground_truth_icd_expansions": [
-        "I47.1 Supraventricular tachycardia",
-        "I47.10 Supraventricular tachycardia, unspecified",
-        "paroxysmal supraventricular tachycardia"
+        "I47.1 supraventricular tachycardia",
+        "I47.10 unspecified SVT",
+        "I47.11 inappropriate sinus tachycardia",
+        "I47.19 other SVT"
       ],
       "matched_icd_expansions": [
-        "I47.10 Supraventricular tachycardia, unspecified",
-        "I47.1 Supraventricular tachycardia",
-        "SVT NOS"
+        "I47.10 supraventricular tachycardia, unspecified",
+        "I47.1 supraventricular tachycardia"
       ],
       "_cache_hit": false
     }

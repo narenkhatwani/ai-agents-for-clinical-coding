@@ -1,0 +1,49 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 12007928
+HADM ID          : 23749816
+Generated        : 2026-08-21T23:52:28.508394
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Acute on chronic decompensated diastolic heart failure; Myasthenia ___; Acute kidney injury
+  Billed ICD title     : Acute on chronic diastolic (congestive) heart failure (ICD metric only)
+  Rank-1 predicted     : Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation
+    score=96.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation
+    score=96.0  confidence=high
+  LLM reason           : Rank 1 'Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation' names the same principal condition as the physician discharge diagnosis 'Acute on chronic decompensated diastolic heart failure'. Decompensated = exacerbation; diastolic heart failure = HFpEF.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : I50.33 — Acute on chronic diastolic (congestive) heart failure
+  Rank-1 mapped ICD    : I50.33 — Acute on chronic diastolic (congestive) heart failure
+  Matched mapped ICD   : I50.33 — Acute on chronic diastolic (congestive) heart failure
+  ICD match            : YES
+  ICD exact            : YES
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped ICD at rank 1 is I50.33, an exact match to the billed ground-truth primary code I50.33 (Acute on chronic diastolic (congestive) heart failure).
+  Stage 9 final ICD    : I50.33 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation  [score=96.0, high]  ICD=I50.33 — Acute on chronic diastolic (congestive) heart failure
+   2. Acute kidney injury on chronic kidney disease, cardiorenal syndrome  [score=82.0, high]  ICD=N17.9 — Acute kidney failure, unspecified
+   3. Myasthenia gravis with respiratory muscle weakness contributing to dyspnea  [score=62.0, medium]  ICD=G70.00 — Myasthenia gravis without (acute) exacerbation
+   4. Paroxysmal atrial fibrillation with pacemaker-dependent ventricular pacing  [score=58.0, high]  ICD=I48.0 — Paroxysmal atrial fibrillation
+   5. Acute delirium superimposed on Alzheimer's dementia  [score=55.0, medium]  ICD=F05 — Delirium due to known physiological condition
+   6. Chronic venous stasis with lipodermatosclerosis and MSSA-colonized leg wounds  [score=48.0, medium]  ICD=I87.2 — Venous insufficiency (chronic) (peripheral)
+   7. Hypertensive heart and chronic kidney disease  [score=42.0, medium]  ICD=I13.0 — Hypertensive heart and chronic kidney disease with heart failure and stage 1-4 CKD
+   8. Acute hypoxemic respiratory failure requiring noninvasive ventilation  [score=40.0, medium]  ICD=J96.01 — Acute respiratory failure with hypoxia
+   9. Acute coronary syndrome / myocardial ischemia  [score=10.0, low]  ICD=R07.9 — Chest pain, unspecified
+  10. Pulmonary embolism as cause of acute dyspnea  [score=8.0, low]  ICD=Z86.711 — Personal history of pulmonary embolism

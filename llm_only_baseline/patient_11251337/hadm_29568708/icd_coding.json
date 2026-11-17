@@ -1,0 +1,358 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "11251337",
+  "hadm_id": "29568708",
+  "most_likely": "Staghorn calculus of right kidney requiring percutaneous nephrolithotomy",
+  "summary": "Elective urology admission of a man with known bilateral staghorn renal calculi and bilateral percutaneous nephrostomy tubes for definitive stone treatment. He underwent difficult right percutaneous nephrolithotomy for stone >2 cm with antegrade nephrostogram, antegrade ureteroscopy, antegrade ureteral stent placement and removal of the right nephrostomy tube, with residual stone burden requiring interval ureteroscopy. Post-operative course was uncomplicated (POD1 discharge); labs show stable chronic renal impairment (Cr 2.1 → 2.5) and normocytic/macrocytic anemia (Hgb 9.4).",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Bilateral staghorn calculi of kidney (right renal calculus treated this stay)",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Chief complaint: nephrolithiasis",
+        "Right PCNL for stone greater than 2 cm performed",
+        "Fluoroscopy report: percutaneous lithotripsy"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Admission was explicitly for planned stone removal; the renal calculus is the disease driving the entire stay and all procedures.",
+      "icd10_primary": "N20.0",
+      "icd10_primary_title": "Calculus of kidney",
+      "icd10_package": [
+        {
+          "code": "N20.0",
+          "title": "Calculus of kidney",
+          "role": "principal"
+        },
+        {
+          "code": "N20.2",
+          "title": "Calculus of kidney with calculus of ureter",
+          "role": "supporting"
+        },
+        {
+          "code": "Z98.890",
+          "title": "Other specified postprocedural states",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N20.2",
+          "title": "Calculus of kidney with calculus of ureter",
+          "role": "supporting"
+        },
+        {
+          "code": "Z98.890",
+          "title": "Other specified postprocedural states",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Admitted for nephrolithiasis; right PCNL performed for staghorn renal stone >2cm with residual burden.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Chronic kidney disease, stage 4, from long-standing obstructive nephropathy",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Creatinine 2.1–2.5 mg/dL persistently over three admissions",
+        "Prior ICD N18.9; bilateral atrophic thin renal parenchyma on prior imaging"
+      ],
+      "opposing_evidence": [
+        "Exact stage/eGFR not reported this stay"
+      ],
+      "reasoning": "Stable elevated creatinine with prior documented renal atrophy supports chronic kidney disease as a major active comorbidity affecting perioperative care.",
+      "icd10_primary": "N18.4",
+      "icd10_primary_title": "Chronic kidney disease, stage 4 (severe)",
+      "icd10_package": [
+        {
+          "code": "N18.4",
+          "title": "Chronic kidney disease, stage 4 (severe)",
+          "role": "principal"
+        },
+        {
+          "code": "N13.2",
+          "title": "Hydronephrosis with renal and ureteral calculous obstruction",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N13.2",
+          "title": "Hydronephrosis with renal and ureteral calculous obstruction",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Chronic renal atrophy and creatinine 2.1-2.5 support advanced CKD from chronic obstructive nephropathy.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hydronephrosis with renal and ureteral calculous obstruction (obstructive uropathy)",
+      "score": 72.0,
+      "confidence": "medium",
+      "category": "primary",
+      "supporting_evidence": [
+        "Prior ICD N13.2 with bilateral PCN tubes for obstructive uropathy",
+        "Antegrade nephrostogram and ureteral stent placed this stay"
+      ],
+      "opposing_evidence": [
+        "Current note does not restate active hydronephrosis"
+      ],
+      "reasoning": "Chronic calculous obstruction is the documented indication for the nephrostomy/stent pathway and remains a plausible coded principal or secondary condition.",
+      "icd10_primary": "N13.2",
+      "icd10_primary_title": "Hydronephrosis with renal and ureteral calculous obstruction",
+      "icd10_package": [
+        {
+          "code": "N13.2",
+          "title": "Hydronephrosis with renal and ureteral calculous obstruction",
+          "role": "principal"
+        },
+        {
+          "code": "N20.2",
+          "title": "Calculus of kidney with calculus of ureter",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N20.2",
+          "title": "Calculus of kidney with calculus of ureter",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented obstructive uropathy with hydronephrosis from bilateral staghorn calculi requiring drainage and stenting.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Anemia of chronic kidney disease",
+      "score": 66.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Hgb 9.4 g/dL, Hct 30.8%, RBC 2.95",
+        "Prior ICD D63.1 anemia in CKD; ferritin 257, TSAT 22%"
+      ],
+      "opposing_evidence": [
+        "Macrocytosis (MCV 104) not typical of pure CKD anemia",
+        "Possible perioperative blood loss contribution"
+      ],
+      "reasoning": "Persistent anemia paralleling CKD, though rising MCV and recent surgery raise alternative contributions.",
+      "icd10_primary": "D63.1",
+      "icd10_primary_title": "Anemia in chronic kidney disease",
+      "icd10_package": [
+        {
+          "code": "D63.1",
+          "title": "Anemia in chronic kidney disease",
+          "role": "principal"
+        },
+        {
+          "code": "N18.4",
+          "title": "Chronic kidney disease, stage 4 (severe)",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N18.4",
+          "title": "Chronic kidney disease, stage 4 (severe)",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Hgb 9.4, Hct 30.8 in setting of advanced CKD; code-first CKD convention applied.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hypertensive chronic kidney disease",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "PMH hypertension documented; prior ICD I12.9",
+        "Prior BPs 120–150s systolic"
+      ],
+      "opposing_evidence": [
+        "No antihypertensive medications on admission; vitals stable (AVSS)"
+      ],
+      "reasoning": "Longstanding hypertension coexisting with CKD is a codable chronic comorbidity, though untreated and quiescent this stay.",
+      "icd10_primary": "I12.9",
+      "icd10_primary_title": "Hypertensive chronic kidney disease with stage 1-4 CKD or unspecified CKD",
+      "icd10_package": [
+        {
+          "code": "I12.9",
+          "title": "Hypertensive chronic kidney disease with stage 1-4 CKD or unspecified CKD",
+          "role": "principal"
+        },
+        {
+          "code": "N18.4",
+          "title": "Chronic kidney disease, stage 4 (severe)",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N18.4",
+          "title": "Chronic kidney disease, stage 4 (severe)",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "History of hypertension documented with concurrent chronic kidney disease; combination code required.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Presence of ureteral stent and nephrostomy tube status with residual stone burden",
+      "score": 50.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Right antegrade ureteral stent placed; right nephrostomy tube removed",
+        "Residual stone requiring interval right ureteroscopy"
+      ],
+      "opposing_evidence": [
+        "Device/status codes are not principal diagnoses"
+      ],
+      "reasoning": "Status and residual disease are documented and codable as secondary items driving planned follow-up procedures.",
+      "icd10_primary": "Z96.0",
+      "icd10_primary_title": "Presence of urogenital implants",
+      "icd10_package": [
+        {
+          "code": "Z96.0",
+          "title": "Presence of urogenital implants",
+          "role": "principal"
+        },
+        {
+          "code": "N20.1",
+          "title": "Calculus of ureter",
+          "role": "supporting"
+        },
+        {
+          "code": "N20.0",
+          "title": "Calculus of kidney",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N20.1",
+          "title": "Calculus of ureter",
+          "role": "supporting"
+        },
+        {
+          "code": "N20.0",
+          "title": "Calculus of kidney",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Antegrade ureteral stent placed, nephrostomy tube removed; residual stone requires interval ureteroscopy.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Hemiplegia following prior nontraumatic intracerebral hemorrhage, left nondominant side",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "PMH hemorrhagic CVA with residual left upper extremity weakness",
+        "Prior ICD I69.154"
+      ],
+      "opposing_evidence": [
+        "No current neurologic deficit described in exam"
+      ],
+      "reasoning": "Chronic sequela consistently coded in prior stays; relevant to mobility/perioperative care though not active now.",
+      "icd10_primary": "I69.154",
+      "icd10_primary_title": "Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side",
+      "icd10_package": [
+        {
+          "code": "I69.154",
+          "title": "Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Hemorrhagic CVA with residual left upper extremity weakness documented in history.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Acute kidney injury superimposed on chronic kidney disease, post-procedural",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "complication",
+      "supporting_evidence": [
+        "Creatinine rose 2.1 → 2.5 after PCNL",
+        "Anion gap 17, bicarbonate 22"
+      ],
+      "opposing_evidence": [
+        "Small change within prior baseline range 2.1–2.3",
+        "Patient discharged POD1 voiding well"
+      ],
+      "reasoning": "Modest post-operative creatinine rise could represent transient AKI but may simply be baseline CKD fluctuation.",
+      "icd10_primary": "N17.9",
+      "icd10_primary_title": "Acute kidney failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "N18.4",
+          "title": "Chronic kidney disease, stage 4 (severe)",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "N18.4",
+          "title": "Chronic kidney disease, stage 4 (severe)",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Creatinine rose 2.1 to 2.5 postoperatively; low confidence, may reflect chronic baseline variation.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Complicated urinary tract infection / pyonephrosis",
+      "score": 12.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Prior admission with Serratia UTI and pyonephrosis coding"
+      ],
+      "opposing_evidence": [
+        "Urine culture: mixed flora consistent with contamination",
+        "WBC 6.9, afebrile, only prophylactic antibiotics"
+      ],
+      "reasoning": "Historically relevant but current cultures and inflammatory markers argue against active infection this stay.",
+      "icd10_primary": "N39.0",
+      "icd10_primary_title": "Urinary tract infection, site not specified",
+      "icd10_package": [
+        {
+          "code": "N39.0",
+          "title": "Urinary tract infection, site not specified",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Urine culture showed mixed flora consistent with contamination; infection not established, low confidence differential.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "N20.0",
+  "primary_icd_title": "Calculus of kidney",
+  "primary_condition": "Bilateral staghorn renal calculi, status post right percutaneous nephrolithotomy with residual stone burden",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:38:56.565854",
+  "ontology_routing": false
+}

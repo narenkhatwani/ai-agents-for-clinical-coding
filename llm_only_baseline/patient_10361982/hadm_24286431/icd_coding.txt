@@ -1,0 +1,25 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 10361982
+HADM ID          : 24286431
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+Primary condition: Postprocedural vaginal cuff hemorrhage following total laparoscopic hysterectomy
+
+  #1  Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy  →  N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+      reason: Heavy vaginal bleeding weeks after total laparoscopic hysterectomy; cuff vessel cauterized, coded as postprocedural GU hemorrhage.
+  #2  Vaginal cuff granulation tissue with bleeding vessel  →  N89.8 — Other specified noninflammatory disorders of vagina
+      reason: Bleeding small vessel at vaginal cuff cauterized in clinic; coded as other specified noninflammatory vaginal disorder.
+  #3  Hypothyroidism on levothyroxine replacement  →  E03.9 — Hypothyroidism, unspecified
+      reason: Documented hypothyroidism continued on levothyroxine during admission.
+  #4  Attention-deficit hyperactivity disorder on stimulant therapy  →  F90.9 — Attention-deficit hyperactivity disorder, unspecified type
+      reason: ADHD documented in history and Adderall continued inpatient.
+  #5  Depressive disorder / anxiety on venlafaxine therapy  →  F32.9 — Major depressive disorder, single episode, unspecified
+      reason: Venlafaxine continued; prior documented depression and anxiety diagnoses.
+  #6  Vaginal cuff dehiscence after hysterectomy  →  T81.32XA — Disruption of internal operation (surgical) wound, not elsewhere classified, initial encounter
+      reason: Considered but excluded on exam; no evidence of cuff dehiscence documented.
+  #7  Acute blood loss anemia from vaginal hemorrhage  →  D62 — Acute posthemorrhagic anemia
+      reason: Considered but hematocrit 38.1 stable from 40.1 preop; patient asymptomatic, anemia not confirmed.
+  #8  Vaginal cuff hematoma following hysterectomy  →  N99.820 — Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure
+      reason: Pelvic ultrasound showed normal vaginal cuff with no hematoma; ruled out.

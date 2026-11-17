@@ -1,0 +1,180 @@
+{
+  "summary": "Elective urology admission of a man with known bilateral staghorn renal calculi and bilateral percutaneous nephrostomy tubes for definitive stone treatment. He underwent difficult right percutaneous nephrolithotomy for stone >2 cm with antegrade nephrostogram, antegrade ureteroscopy, antegrade ureteral stent placement and removal of the right nephrostomy tube, with residual stone burden requiring interval ureteroscopy. Post-operative course was uncomplicated (POD1 discharge); labs show stable chronic renal impairment (Cr 2.1 → 2.5) and normocytic/macrocytic anemia (Hgb 9.4).",
+  "most_likely": "Staghorn calculus of right kidney requiring percutaneous nephrolithotomy",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Bilateral staghorn calculi of kidney (right renal calculus treated this stay)",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Chief complaint: nephrolithiasis",
+        "Right PCNL for stone greater than 2 cm performed",
+        "Fluoroscopy report: percutaneous lithotripsy"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Admission was explicitly for planned stone removal; the renal calculus is the disease driving the entire stay and all procedures."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Chronic kidney disease, stage 4, from long-standing obstructive nephropathy",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Creatinine 2.1–2.5 mg/dL persistently over three admissions",
+        "Prior ICD N18.9; bilateral atrophic thin renal parenchyma on prior imaging"
+      ],
+      "opposing_evidence": [
+        "Exact stage/eGFR not reported this stay"
+      ],
+      "reasoning": "Stable elevated creatinine with prior documented renal atrophy supports chronic kidney disease as a major active comorbidity affecting perioperative care."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hydronephrosis with renal and ureteral calculous obstruction (obstructive uropathy)",
+      "score": 72.0,
+      "confidence": "medium",
+      "category": "primary",
+      "supporting_evidence": [
+        "Prior ICD N13.2 with bilateral PCN tubes for obstructive uropathy",
+        "Antegrade nephrostogram and ureteral stent placed this stay"
+      ],
+      "opposing_evidence": [
+        "Current note does not restate active hydronephrosis"
+      ],
+      "reasoning": "Chronic calculous obstruction is the documented indication for the nephrostomy/stent pathway and remains a plausible coded principal or secondary condition."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Anemia of chronic kidney disease",
+      "score": 66.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Hgb 9.4 g/dL, Hct 30.8%, RBC 2.95",
+        "Prior ICD D63.1 anemia in CKD; ferritin 257, TSAT 22%"
+      ],
+      "opposing_evidence": [
+        "Macrocytosis (MCV 104) not typical of pure CKD anemia",
+        "Possible perioperative blood loss contribution"
+      ],
+      "reasoning": "Persistent anemia paralleling CKD, though rising MCV and recent surgery raise alternative contributions."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Hypertensive chronic kidney disease",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "PMH hypertension documented; prior ICD I12.9",
+        "Prior BPs 120–150s systolic"
+      ],
+      "opposing_evidence": [
+        "No antihypertensive medications on admission; vitals stable (AVSS)"
+      ],
+      "reasoning": "Longstanding hypertension coexisting with CKD is a codable chronic comorbidity, though untreated and quiescent this stay."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Presence of ureteral stent and nephrostomy tube status with residual stone burden",
+      "score": 50.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Right antegrade ureteral stent placed; right nephrostomy tube removed",
+        "Residual stone requiring interval right ureteroscopy"
+      ],
+      "opposing_evidence": [
+        "Device/status codes are not principal diagnoses"
+      ],
+      "reasoning": "Status and residual disease are documented and codable as secondary items driving planned follow-up procedures."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Hemiplegia following prior nontraumatic intracerebral hemorrhage, left nondominant side",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "PMH hemorrhagic CVA with residual left upper extremity weakness",
+        "Prior ICD I69.154"
+      ],
+      "opposing_evidence": [
+        "No current neurologic deficit described in exam"
+      ],
+      "reasoning": "Chronic sequela consistently coded in prior stays; relevant to mobility/perioperative care though not active now."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Acute kidney injury superimposed on chronic kidney disease, post-procedural",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "complication",
+      "supporting_evidence": [
+        "Creatinine rose 2.1 → 2.5 after PCNL",
+        "Anion gap 17, bicarbonate 22"
+      ],
+      "opposing_evidence": [
+        "Small change within prior baseline range 2.1–2.3",
+        "Patient discharged POD1 voiding well"
+      ],
+      "reasoning": "Modest post-operative creatinine rise could represent transient AKI but may simply be baseline CKD fluctuation."
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Complicated urinary tract infection / pyonephrosis",
+      "score": 12.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Prior admission with Serratia UTI and pyonephrosis coding"
+      ],
+      "opposing_evidence": [
+        "Urine culture: mixed flora consistent with contamination",
+        "WBC 6.9, afebrile, only prophylactic antibiotics"
+      ],
+      "reasoning": "Historically relevant but current cultures and inflammatory markers argue against active infection this stay."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Post-PCNL hemorrhage / perinephric hematoma",
+      "why": "Exam notes no hematoma at PCN site; Hgb stable 9.8 → 9.4 without transfusion."
+    },
+    {
+      "diagnosis": "Urosepsis after percutaneous lithotripsy",
+      "why": "Afebrile, normal WBC, contaminated urine culture, discharged POD1."
+    },
+    {
+      "diagnosis": "Deep vein thrombosis",
+      "why": "Extremities without edema and no calf tenderness on exam."
+    }
+  ],
+  "uncertain_areas": [
+    "Whether an obstructing/hydronephrotic component was documented intraoperatively (would support N13.2 as principal over N20.0)",
+    "Exact CKD stage/eGFR to code stage 4 vs unspecified",
+    "Whether post-op creatinine rise was formally called AKI on CKD",
+    "Stone composition and whether left kidney stone treatment was addressed this stay"
+  ],
+  "n_candidates": 9,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "11251337",
+  "hadm_id": "29568708",
+  "generated_at": "2026-08-21T23:38:35.684342",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

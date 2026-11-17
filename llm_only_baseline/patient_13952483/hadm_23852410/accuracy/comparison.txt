@@ -1,0 +1,48 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 13952483
+HADM ID          : 23852410
+Generated        : 2026-08-21T23:53:19.832560
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Failure to thrive; Dehydration; Acute kidney injury
+  Billed ICD title     : Other hypotension (ICD metric only)
+  Rank-1 predicted     : Radiation esophagitis due to thoracic radiotherapy
+    score=82.0  confidence=medium
+  Diagnosis match      : YES
+  Is rank-1 match      : NO
+  Matched DiffDx rank  : 2
+  Matched diagnosis    : Adult failure to thrive with severe protein-calorie malnutrition and cachexia
+    score=78.0  confidence=high
+  LLM reason           : The physician discharge diagnosis is a compound statement: 'Failure to thrive; Dehydration; Acute kidney injury.' Scanning all ranks, Rank 2 'Adult failure to thrive with severe protein-calorie malnutrition and cachexia' names the same principal condition as 'Failure to thrive' (more specific, bundled with malnutrition/cachexia). Rank 3 'Hypovolemic hypotension due to dehydration and poor oral intake' also captures the dehydration component, and Rank 5 'Acute kidney injury on chronic kidney disease (prerenal)' captures the AKI component. Per the lowest-matching-rank rule, the matched rank is 2.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : I95.89 — Other hypotension
+  Rank-1 mapped ICD    : K20.80 — Other esophagitis without bleeding
+  Matched mapped ICD   : R62.7 — Adult failure to thrive
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : The mapped ICD at the matched rank (Rank 2) is R62.7 (Adult failure to thrive), whereas the billed ground-truth primary code is I95.89 (Other hypotension). These are distinct principal conditions in the coding sense (nutritional/debility symptom code vs circulatory hypotension code) and a coder would not accept R62.7 as equivalent to I95.89. Note that Rank 3 does map exactly to I95.89 (hypovolemic hypotension due to dehydration), but the ICD comparison is anchored to the matched rank.
+  Stage 9 final ICD    : K20.80 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Radiation esophagitis due to thoracic radiotherapy  [score=82.0, medium]  ICD=K20.80 — Other esophagitis without bleeding
+   2. Adult failure to thrive with severe protein-calorie malnutrition and cachexia  [score=78.0, high]  ICD=R62.7 — Adult failure to thrive
+   3. Hypovolemic hypotension due to dehydration and poor oral intake  [score=72.0, high]  ICD=I95.89 — Other hypotension
+   4. Antineoplastic chemotherapy-induced pancytopenia (neutropenia, anemia, thrombocytopenia)  [score=68.0, high]  ICD=D61.810 — Antineoplastic chemotherapy induced pancytopenia
+   5. Acute kidney injury on chronic kidney disease in renal transplant recipient (prerenal)  [score=60.0, medium]  ICD=N17.9 — Acute kidney failure, unspecified
+   6. Stage 3a squamous cell carcinoma of left lower lobe of lung  [score=58.0, high]  ICD=C34.32 — Malignant neoplasm of lower lobe, left bronchus or lung
+   7. Oropharyngeal candidiasis (oral thrush) in immunosuppressed host  [score=52.0, medium]  ICD=B37.0 — Candidal stomatitis
+   8. Severe pulmonary arterial hypertension with chronic cor pulmonale  [score=45.0, medium]  ICD=I27.0 — Primary pulmonary hypertension
+   9. Chronic obstructive pulmonary disease with nicotine dependence  [score=35.0, medium]  ICD=J44.9 — Chronic obstructive pulmonary disease, unspecified

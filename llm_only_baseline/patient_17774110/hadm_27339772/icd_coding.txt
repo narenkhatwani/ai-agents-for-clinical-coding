@@ -1,0 +1,27 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 17774110
+HADM ID          : 27339772
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : A41.50 — Gram-negative sepsis, unspecified
+Primary condition: Septic shock due to Klebsiella aerogenes bacteremia
+
+  #1  Septic shock due to Klebsiella aerogenes bacteremia  →  A41.50 — Gram-negative sepsis, unspecified
+      reason: Klebsiella aerogenes bacteremia with distributive shock, pressors, lactate 13; gram-negative sepsis with septic shock coded.
+  #2  Acute on chronic hepatic failure in HCV cirrhosis with coma  →  K72.11 — Chronic hepatic failure with coma
+      reason: Worsening liver failure with unresponsiveness on background HCV cirrhosis; bilirubin 13.3, AST 2481.
+  #3  Acute hypoxemic respiratory failure with ARDS requiring mechanical ventilation  →  J96.01 — Acute respiratory failure with hypoxia
+      reason: Intubated for hypoxic respiratory failure; pO2 53 on ABG; ARDS documented with bilateral effusions/edema.
+  #4  Acute kidney injury from acute tubular necrosis requiring CRRT  →  N17.0 — Acute kidney failure with tubular necrosis
+      reason: Documented ATN from septic shock, creatinine 2.1, on CRRT via HD line.
+  #5  Disseminated intravascular coagulation with severe coagulopathy  →  D65 — Disseminated intravascular coagulation [defibrination syndrome]
+      reason: Concern for DIC with fibrinogen 95, platelets 36, prolonged PTT, epistaxis and GI bleeding.
+  #6  Metastatic hepatocellular carcinoma with adrenal metastases, terminal  →  C22.0 — Liver cell carcinoma
+      reason: Known multifocal HCC with left adrenal metastasis re-demonstrated on ultrasound; no further treatment options.
+  #7  Hepatic/toxic metabolic encephalopathy with unresponsiveness  →  G93.41 — Metabolic encephalopathy
+      reason: Unresponsive with worsening hepatic encephalopathy from liver failure and reduced lactulose/rifaximin intake.
+  #8  Atrial fibrillation/flutter with rapid ventricular response  →  I48.91 — Unspecified atrial fibrillation
+      reason: Documented atrial fibrillation/flutter treated with amiodarone bolus then metoprolol during current illness.
+  #9  Inferior vena cava thrombus (venous thromboembolism)  →  I82.220 — Acute embolism and thrombosis of inferior vena cava
+      reason: Reported IVC thrombus not anticoagulated due to coagulopathy; current ultrasound suggests artifact, so low confidence.

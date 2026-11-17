@@ -4215,37 +4215,55 @@ def _load_gt(admission_dir: Path) -> Dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _first_discharge_diagnosis_line(section_text: str) -> str:
+def _primary_discharge_diagnosis_text(section_text: str) -> str:
     """
-    Pick the primary physician discharge diagnosis from a Discharge Diagnosis section.
+    Full physician PRIMARY discharge diagnosis block for DiffDx evaluation.
 
-    Uses the first clinically meaningful line (physician primary), skipping blank lines
-    and label-only headers like "PRIMARY DIAGNOSIS:" / "Primary:".
+    Keeps every clinically meaningful line under Primary / PRIMARY DIAGNOSIS
+    (e.g. Failure to thrive; Dehydration; Acute kidney injury), joined with "; ".
+    Stops at Secondary / OTHER / Discharge Condition headers. Does not collapse
+    to the first line only.
     """
     text = (section_text or "").strip()
     if not text:
         return ""
-    # If the section accidentally includes later headers, cut at the next one.
+    # Cut at secondary / later discharge-package headers (colon optional).
     cut = re.search(
-        r"\n\s*(?:Discharge Condition|Discharge Instructions|Follow(?:\-|\s)?up Instructions|"
-        r"SECONDARY DIAGNOSIS|Secondary Diagnosis|OTHER DIAGNOSIS)\s*:",
+        r"\n\s*(?:"
+        r"Discharge Condition|Discharge Instructions|Follow(?:\-|\s)?up Instructions|"
+        r"SECONDARY DIAGNOS(?:IS|ES)|Secondary Diagnos(?:is|es)|"
+        r"OTHER DIAGNOS(?:IS|ES)|Other Diagnos(?:is|es)|"
+        r"Secondary|SECONDARY"
+        r")\s*:?\s*$",
         text,
-        flags=re.IGNORECASE,
+        flags=re.IGNORECASE | re.MULTILINE,
     )
     if cut:
         text = text[: cut.start()]
+    # Also cut mid-line forms: "Secondary: ..." / "Secondary Diagnoses: ..."
+    cut2 = re.search(
+        r"\n\s*(?:Secondary(?:\s+Diagnos(?:is|es))?|OTHER DIAGNOS(?:IS|ES))\s*:",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if cut2:
+        text = text[: cut2.start()]
 
     label_only = re.compile(
-        r"^(?:primary(?:\s+diagnosis)?|discharge\s+diagnos(?:is|es)|dx|diagnosis|"
+        r"^(?:primary(?:\s+diagnos(?:is|es))?|discharge\s+diagnos(?:is|es)|dx|diagnosis|"
         r"n/?a|none|unknown|=+)\s*:?\s*$",
         flags=re.IGNORECASE,
     )
     strip_prefix = re.compile(
-        r"^(?:primary(?:\s+diagnosis)?|discharge\s+diagnos(?:is|es))\s*:\s*",
+        r"^(?:primary(?:\s+diagnos(?:is|es))?|discharge\s+diagnos(?:is|es))\s*:\s*",
         flags=re.IGNORECASE,
     )
 
     candidates: List[str] = []
+    cont_start = re.compile(
+        r"^(?:of|for|with|without|due to|secondary to|s/p|and|or|to|in|on|from)\b",
+        flags=re.IGNORECASE,
+    )
     for raw in text.splitlines():
         line = raw.strip()
         if not line:
@@ -4256,24 +4274,45 @@ def _first_discharge_diagnosis_line(section_text: str) -> str:
         line = strip_prefix.sub("", line).strip()
         if not line or label_only.match(line) or len(line) < 3:
             continue
-        # Drop pure separators / ASCII art
         if re.fullmatch(r"[=_\-]{3,}", line):
             continue
-        candidates.append(" ".join(line.split()))
+        # Skip leftover secondary label fragments if cut missed them
+        if re.match(r"^(?:secondary|other)\b", line, flags=re.IGNORECASE):
+            break
+        cleaned = " ".join(line.split())
+        # Merge note line-wraps ("... histiocytoma)" + "of the R femur")
+        if candidates and (
+            cleaned[:1].islower() or cont_start.match(cleaned)
+        ):
+            candidates[-1] = f"{candidates[-1]} {cleaned}".strip()
+        else:
+            candidates.append(cleaned)
 
     if not candidates:
         return ""
-    # Prefer first substantial clinical phrase (>= 8 chars); else first candidate
+    # Deduplicate while preserving order (notes sometimes repeat a header line)
+    seen = set()
+    uniq: List[str] = []
     for c in candidates:
-        if len(c) >= 8:
-            return c
-    return candidates[0]
+        key = c.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        uniq.append(c)
+    return "; ".join(uniq)
+
+
+# Back-compat alias used by older call sites / notebooks
+def _first_discharge_diagnosis_line(section_text: str) -> str:
+    return _primary_discharge_diagnosis_text(section_text)
+
 
 def load_discharge_diagnosis_gt(admission_dir: Path) -> str:
     """
     Physician Discharge Diagnosis text for DiffDx evaluation.
 
     Prefer full note section parsing; fall back to redacted discharge package files.
+    Returns the full PRIMARY diagnosis block (all lines), not only the first line.
     Does NOT use billed ICD titles — those remain the ICD coding GT.
     """
     admission_dir = Path(admission_dir)
@@ -4284,7 +4323,7 @@ def load_discharge_diagnosis_gt(admission_dir: Path) -> str:
     if note_path.exists():
         sections = extract_note_sections(note_path.read_text(encoding="utf-8", errors="replace"))
         body = sections.get("discharge_diagnosis") or ""
-        primary = _first_discharge_diagnosis_line(body)
+        primary = _primary_discharge_diagnosis_text(body)
         if primary:
             return primary
 
@@ -4303,7 +4342,7 @@ def load_discharge_diagnosis_gt(admission_dir: Path) -> str:
                 flags=re.IGNORECASE | re.DOTALL,
             )
             body = m.group(1) if m else ""
-        primary = _first_discharge_diagnosis_line(body)
+        primary = _primary_discharge_diagnosis_text(body)
         if primary:
             return primary
 
@@ -4781,7 +4820,7 @@ def _llm_qe_cache_key(
 
     payload = json.dumps(
         {
-            "qe_prompt_version": "specificity_v2_discharge_dx_gt",
+            "qe_prompt_version": "specificity_v3_full_primary_dx_gt",
             "patient_id": patient_id,
             "hadm_id": hadm_id,
             "gt_diagnosis": gt_diagnosis,
@@ -4808,23 +4847,24 @@ def _normalize_dx_core(text: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def _same_principal_heuristic(gt_diagnosis: str, pred_diagnosis: str) -> bool:
-    """
-    Deterministic same-condition check for broader ↔ more-specific / compound labels.
-    Catches cases the LLM judge rejects (e.g. rib fractures with pneumothorax ↔ traumatic PTX).
-    Does NOT match unrelated diseases (anxiety vs ACS, hypotension vs PHTN).
-    """
-    a = _normalize_dx_core(gt_diagnosis)
-    b = _normalize_dx_core(pred_diagnosis)
+def _gt_diagnosis_parts(gt_diagnosis: str) -> List[str]:
+    """Split multi-line PRIMARY GT joined with '; ' into individual diagnoses."""
+    text = str(gt_diagnosis or "").strip()
+    if not text:
+        return []
+    parts = [p.strip() for p in text.split(";") if p.strip()]
+    return parts or [text]
+
+
+def _same_principal_pair(a: str, b: str) -> bool:
+    """Same-condition check for a single GT phrase vs one predicted diagnosis."""
     if not a or not b:
         return False
     if a == b:
         return True
-    # Full-core containment (compound / specificity)
     if a in b or b in a:
         return True
 
-    # Shared disease heads (same principal, different wording)
     shared_heads = (
         "pneumothorax",
         "cholangitis",
@@ -4834,17 +4874,18 @@ def _same_principal_heuristic(gt_diagnosis: str, pred_diagnosis: str) -> bool:
         "iron deficiency anemia",
         "diabetic ketoacidosis",
         "heart failure",
+        "failure to thrive",
+        "dehydration",
+        "acute kidney injury",
     )
     for head in shared_heads:
         if head in a and head in b:
             return True
 
-    # Sepsis family (sepsis / septic / septic shock)
     sepsis_re = re.compile(r"\bsepsis\b|\bseptic\b")
     if sepsis_re.search(a) and sepsis_re.search(b):
         return True
 
-    # Postprocedural / post-hysterectomy hemorrhage family
     if "hemorrhage" in a and "hemorrhage" in b:
         proc_a = bool(
             re.search(r"postprocedural|postoperative|procedure|hysterectomy", a)
@@ -4855,6 +4896,27 @@ def _same_principal_heuristic(gt_diagnosis: str, pred_diagnosis: str) -> bool:
         if proc_a and proc_b:
             return True
 
+    return False
+
+
+def _same_principal_heuristic(gt_diagnosis: str, pred_diagnosis: str) -> bool:
+    """
+    Deterministic same-condition check for broader ↔ more-specific / compound labels.
+    Catches cases the LLM judge rejects (e.g. rib fractures with pneumothorax ↔ traumatic PTX).
+    Multi-diagnosis PRIMARY GT (joined with '; ') matches if ANY component matches.
+    Does NOT match unrelated diseases (anxiety vs ACS, hypotension vs PHTN).
+    """
+    b = _normalize_dx_core(pred_diagnosis)
+    if not b:
+        return False
+    # Whole-string containment first (compound GT vs compound pred)
+    a_full = _normalize_dx_core(gt_diagnosis)
+    if a_full and _same_principal_pair(a_full, b):
+        return True
+    for part in _gt_diagnosis_parts(gt_diagnosis):
+        a = _normalize_dx_core(part)
+        if _same_principal_pair(a, b):
+            return True
     return False
 
 

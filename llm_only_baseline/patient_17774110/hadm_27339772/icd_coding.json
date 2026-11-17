@@ -1,0 +1,449 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "17774110",
+  "hadm_id": "27339772",
+  "most_likely": "Septic shock with Klebsiella aerogenes bacteremia complicating end-stage cirrhosis",
+  "summary": "Middle-aged man with HCV cirrhosis s/p TIPS, portal hypertension and multifocal metastatic hepatocellular carcinoma (left adrenal mets, no further oncologic options) transferred from an outside ICU after 10 days of intubation and vasopressor-dependent shock with Klebsiella aerogenes bacteremia. On arrival he had refractory distributive shock (warm, CVO2 80, three pressors, stress-dose steroids), lactate rising to 13.2, ARDS/hypoxic respiratory failure with large right pleural effusion, dialysis-dependent ATN, profound coagulopathy (INR 3.4, fibrinogen 77, platelets 44) concerning for DIC, rising transaminases (AST 2481) and bilirubin 13.3 indicating acute-on-chronic liver failure, plus unresponsive toxic-metabolic/hepatic encephalopathy. He continued to decompensate and died with family declining CPR and autopsy.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Septic shock due to Klebsiella aerogenes bacteremia",
+      "score": 92.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Transferred 'for septic shock', blood cultures grew Klebsiella aerogenes",
+        "Multi-pressor levophed/vasopressin plus third agent, stress-dose steroids",
+        "Lactate 6.6 → 13.2, pH 7.11, HCO3 7, anion gap 22",
+        "Warm extremities, CVO2 80 — distributive physiology"
+      ],
+      "opposing_evidence": [
+        "Cultures already treated 8 days with ceftriaxone; no new organism isolated here",
+        "Liver-failure vasodilation could mimic distributive shock"
+      ],
+      "reasoning": "Documented organism-specific bacteremia with vasopressor-refractory distributive shock and severe lactic acidosis is the dominant reason for this stay and the likely principal coded disease.",
+      "icd10_primary": "A41.50",
+      "icd10_primary_title": "Gram-negative sepsis, unspecified",
+      "icd10_package": [
+        {
+          "code": "A41.50",
+          "title": "Gram-negative sepsis, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
+          "role": "supporting"
+        },
+        {
+          "code": "B96.89",
+          "title": "Other specified bacterial agents as the cause of diseases classified elsewhere",
+          "role": "supporting"
+        },
+        {
+          "code": "R57.9",
+          "title": "Shock, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R65.21",
+          "title": "Severe sepsis with septic shock",
+          "role": "supporting"
+        },
+        {
+          "code": "B96.89",
+          "title": "Other specified bacterial agents as the cause of diseases classified elsewhere",
+          "role": "supporting"
+        },
+        {
+          "code": "R57.9",
+          "title": "Shock, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Klebsiella aerogenes bacteremia with distributive shock, pressors, lactate 13; gram-negative sepsis with septic shock coded.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute on chronic hepatic failure in HCV cirrhosis with coma",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "AST 2481, ALT 439, total bilirubin 13.3, INR 3.4",
+        "Note: 'Acute on chronic Liver failure' with worsening HE",
+        "Cirrhotic nodular liver, TIPS, splenomegaly, ascites on RUQ US",
+        "Prior admissions for chronic hepatic failure and encephalopathy"
+      ],
+      "opposing_evidence": [
+        "Ischemic hepatitis from shock may explain much of transaminase surge"
+      ],
+      "reasoning": "Marked hyperbilirubinemia, coagulopathy and unresponsive encephalopathy on a cirrhotic substrate meet acute-on-chronic liver failure; competes closely with sepsis as principal.",
+      "icd10_primary": "K72.11",
+      "icd10_primary_title": "Chronic hepatic failure with coma",
+      "icd10_package": [
+        {
+          "code": "K72.11",
+          "title": "Chronic hepatic failure with coma",
+          "role": "principal"
+        },
+        {
+          "code": "B18.2",
+          "title": "Chronic viral hepatitis C",
+          "role": "supporting"
+        },
+        {
+          "code": "K74.60",
+          "title": "Unspecified cirrhosis of liver",
+          "role": "supporting"
+        },
+        {
+          "code": "K76.6",
+          "title": "Portal hypertension",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "B18.2",
+          "title": "Chronic viral hepatitis C",
+          "role": "supporting"
+        },
+        {
+          "code": "K74.60",
+          "title": "Unspecified cirrhosis of liver",
+          "role": "supporting"
+        },
+        {
+          "code": "K76.6",
+          "title": "Portal hypertension",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Worsening liver failure with unresponsiveness on background HCV cirrhosis; bilirubin 13.3, AST 2481.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Acute hypoxemic respiratory failure with ARDS requiring mechanical ventilation",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Intubated for hypoxia, SpO2 50% at presentation; PEEP 14, FiO2 50%",
+        "CXR: worsening pulmonary edema, bilateral effusions right > left",
+        "Note documents ARDS, possible VAP, sputum with yeast"
+      ],
+      "opposing_evidence": [
+        "Volume overload and large pleural effusion also contribute"
+      ],
+      "reasoning": "Ventilator-dependent hypoxemic failure with bilateral infiltrates is explicitly documented and a major comorbid complication of this admission.",
+      "icd10_primary": "J96.01",
+      "icd10_primary_title": "Acute respiratory failure with hypoxia",
+      "icd10_package": [
+        {
+          "code": "J96.01",
+          "title": "Acute respiratory failure with hypoxia",
+          "role": "principal"
+        },
+        {
+          "code": "J80",
+          "title": "Acute respiratory distress syndrome",
+          "role": "supporting"
+        },
+        {
+          "code": "J90",
+          "title": "Pleural effusion, not elsewhere classified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z99.11",
+          "title": "Dependence on respirator [ventilator] status",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "J80",
+          "title": "Acute respiratory distress syndrome",
+          "role": "supporting"
+        },
+        {
+          "code": "J90",
+          "title": "Pleural effusion, not elsewhere classified",
+          "role": "supporting"
+        },
+        {
+          "code": "Z99.11",
+          "title": "Dependence on respirator [ventilator] status",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Intubated for hypoxic respiratory failure; pO2 53 on ABG; ARDS documented with bilateral effusions/edema.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Acute kidney injury from acute tubular necrosis requiring CRRT",
+      "score": 78.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Creatinine 2.1–2.2 from baseline 0.6–0.8; K 6.5, HCO3 7",
+        "On CRRT, 22 L positive; HD lines both IJ",
+        "Attributed to septic shock and ATN without renal recovery"
+      ],
+      "opposing_evidence": [
+        "Hepatorenal physiology cannot be excluded in end-stage cirrhosis"
+      ],
+      "reasoning": "Dialysis-dependent renal failure in the setting of shock is clearly documented and materially affected management.",
+      "icd10_primary": "N17.0",
+      "icd10_primary_title": "Acute kidney failure with tubular necrosis",
+      "icd10_package": [
+        {
+          "code": "N17.0",
+          "title": "Acute kidney failure with tubular necrosis",
+          "role": "principal"
+        },
+        {
+          "code": "Z99.2",
+          "title": "Dependence on renal dialysis",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z99.2",
+          "title": "Dependence on renal dialysis",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented ATN from septic shock, creatinine 2.1, on CRRT via HD line.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Disseminated intravascular coagulation with severe coagulopathy",
+      "score": 72.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Fibrinogen 77–95, INR 3.4, PTT 104, platelets 36–44",
+        "D-dimer 15335, haptoglobin <10, LDH 743",
+        "Bleeding from rectum, foley, and epistaxis; cryo/FFP/platelets given"
+      ],
+      "opposing_evidence": [
+        "Hepatic synthetic failure alone can produce identical coagulopathy"
+      ],
+      "reasoning": "Consumptive picture with hypofibrinogenemia, very high D-dimer and multi-site bleeding supports DIC, though liver failure is a strong confounder.",
+      "icd10_primary": "D65",
+      "icd10_primary_title": "Disseminated intravascular coagulation [defibrination syndrome]",
+      "icd10_package": [
+        {
+          "code": "D65",
+          "title": "Disseminated intravascular coagulation [defibrination syndrome]",
+          "role": "principal"
+        },
+        {
+          "code": "D69.6",
+          "title": "Thrombocytopenia, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "D69.6",
+          "title": "Thrombocytopenia, unspecified",
+          "role": "supporting"
+        },
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Concern for DIC with fibrinogen 95, platelets 36, prolonged PTT, epistaxis and GI bleeding.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Metastatic hepatocellular carcinoma with adrenal metastases, terminal",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Biopsy-proven left adrenal HCC metastasis; s/p RFA and failed chemotherapy",
+        "RUQ US: stable 2.6 cm hepatic lesion, large left adrenal mass",
+        "No further oncologic treatment available per referral center"
+      ],
+      "opposing_evidence": [
+        "Not the acute driver of this admission's decompensation"
+      ],
+      "reasoning": "Active malignancy underlies the terminal trajectory and malignant effusion, and is a key comorbidity even if not the acute principal diagnosis.",
+      "icd10_primary": "C22.0",
+      "icd10_primary_title": "Liver cell carcinoma",
+      "icd10_package": [
+        {
+          "code": "C22.0",
+          "title": "Liver cell carcinoma",
+          "role": "principal"
+        },
+        {
+          "code": "C79.70",
+          "title": "Secondary malignant neoplasm of unspecified adrenal gland",
+          "role": "supporting"
+        },
+        {
+          "code": "Z51.5",
+          "title": "Encounter for palliative care",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "C79.70",
+          "title": "Secondary malignant neoplasm of unspecified adrenal gland",
+          "role": "supporting"
+        },
+        {
+          "code": "Z51.5",
+          "title": "Encounter for palliative care",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Known multifocal HCC with left adrenal metastasis re-demonstrated on ultrasound; no further treatment options.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Hepatic/toxic metabolic encephalopathy with unresponsiveness",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "RASS -5, no return of responsiveness off sedation",
+        "High gastric residuals, no bowel movements, lactulose not absorbed",
+        "Recurrent hepatic encephalopathy in both prior admissions"
+      ],
+      "opposing_evidence": [
+        "Sedation, uremia, and sepsis confound assessment; no ammonia level given"
+      ],
+      "reasoning": "Persistent coma attributable to liver failure plus sepsis and uremia; multifactorial so scored below the organ-failure diagnoses.",
+      "icd10_primary": "G93.41",
+      "icd10_primary_title": "Metabolic encephalopathy",
+      "icd10_package": [
+        {
+          "code": "G93.41",
+          "title": "Metabolic encephalopathy",
+          "role": "principal"
+        },
+        {
+          "code": "K72.11",
+          "title": "Chronic hepatic failure with coma",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "K72.11",
+          "title": "Chronic hepatic failure with coma",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Unresponsive with worsening hepatic encephalopathy from liver failure and reduced lactulose/rifaximin intake.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Atrial fibrillation/flutter with rapid ventricular response",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "secondary",
+      "supporting_evidence": [
+        "History of a.fib/a.flutter s/p amiodarone bolus, now on metoprolol",
+        "Heart rate up to 103 recorded in ICU"
+      ],
+      "opposing_evidence": [
+        "Arose at outside hospital; no current rhythm strip or ECG documented here"
+      ],
+      "reasoning": "Documented arrhythmia treated during the illness episode, but managed prior to transfer and not an acute issue in this stay.",
+      "icd10_primary": "I48.91",
+      "icd10_primary_title": "Unspecified atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.91",
+          "title": "Unspecified atrial fibrillation",
+          "role": "principal"
+        },
+        {
+          "code": "I48.92",
+          "title": "Unspecified atrial flutter",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I48.92",
+          "title": "Unspecified atrial flutter",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented atrial fibrillation/flutter treated with amiodarone bolus then metoprolol during current illness.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Inferior vena cava thrombus (venous thromboembolism)",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Reported IVC thrombus at outside hospital, anticoagulation withheld",
+        "D-dimer markedly elevated; RV dilation with pulmonary hypertension on TTE"
+      ],
+      "opposing_evidence": [
+        "Current RUQ US: IVC patent, wall-to-wall flow; echoes felt artifactual"
+      ],
+      "reasoning": "Reported historically but refuted by current imaging; retained as a low-probability differential for the RV dilation.",
+      "icd10_primary": "I82.220",
+      "icd10_primary_title": "Acute embolism and thrombosis of inferior vena cava",
+      "icd10_package": [
+        {
+          "code": "I82.220",
+          "title": "Acute embolism and thrombosis of inferior vena cava",
+          "role": "principal"
+        },
+        {
+          "code": "D69.6",
+          "title": "Thrombocytopenia, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "D69.6",
+          "title": "Thrombocytopenia, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Reported IVC thrombus not anticoagulated due to coagulopathy; current ultrasound suggests artifact, so low confidence.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "A41.50",
+  "primary_icd_title": "Gram-negative sepsis, unspecified",
+  "primary_condition": "Septic shock due to Klebsiella aerogenes bacteremia",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:48:11.207661",
+  "ontology_routing": false
+}

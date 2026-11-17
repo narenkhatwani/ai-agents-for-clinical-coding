@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "11474876",
   "hadm_id": "29672491",
-  "generated_at": "2026-08-20T17:29:36.381722",
+  "generated_at": "2026-08-20T22:06:41.387485",
   "ground_truth": {
     "primary_icd_code": "K8030",
     "primary_dx_title": "Calculus of bile duct with cholangitis, unspecified, without obstruction",
@@ -28,8 +28,8 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "high",
-      "llm_reason": "Physician discharge diagnosis is choledocholithiasis (common bile duct stone, a hepatobiliary condition). None of the six ranked differentials names a biliary/hepatobiliary condition: they are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), a nonspecific symptom (leg swelling), and nocturnal hypoxia. No rank shares the same principal condition.",
-      "llm_expanded_ground_truth": "Choledocholithiasis | Common bile duct stone | Calculus of bile duct | CBD stone | Bile duct calculus with cholangitis | Gallstone in common bile duct",
+      "llm_reason": "The physician discharge diagnosis is choledocholithiasis (common bile duct stone), a hepatobiliary condition. None of the six ranked differentials name a biliary or hepatobiliary condition; all are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), or nonspecific symptoms (leg swelling, nocturnal hypoxia). No rank shares the same principal clinical condition.",
+      "llm_expanded_ground_truth": "Choledocholithiasis | Common bile duct stone | Calculus of bile duct | Bile duct stone with cholangitis | Gallstone in common bile duct | CBD stone",
       "llm_expanded_matched": "",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
@@ -97,8 +97,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) belong to entirely different body systems; no coder would accept any as equivalent to K80.30.",
-      "llm_expanded_ground_truth_icd": "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction | K80.5x choledocholithiasis without cholangitis or cholecystitis | K83.0 cholangitis",
+      "llm_icd_reason": "Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) are cardiovascular, renal, soft tissue, or respiratory codes with no clinical equivalence to K80.30.",
+      "llm_expanded_ground_truth_icd": "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction | K80.5 Calculus of bile duct without cholangitis or cholecystitis | Choledocholithiasis codes K80.3x-K80.7x",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I50.30",
       "diagnosis_match": false,
@@ -110,23 +110,23 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Physician discharge diagnosis is choledocholithiasis (common bile duct stone, a hepatobiliary condition). None of the six ranked differentials names a biliary/hepatobiliary condition: they are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), a nonspecific symptom (leg swelling), and nocturnal hypoxia. No rank shares the same principal condition.",
+      "diagnosis_reason": "The physician discharge diagnosis is choledocholithiasis (common bile duct stone), a hepatobiliary condition. None of the six ranked differentials name a biliary or hepatobiliary condition; all are cardiovascular (HFpEF, peripheral vascular disease, atrial fibrillation), renal (CKD), or nonspecific symptoms (leg swelling, nocturnal hypoxia). No rank shares the same principal clinical condition.",
       "ground_truth_expansions": [
         "Choledocholithiasis",
         "Common bile duct stone",
         "Calculus of bile duct",
-        "CBD stone",
-        "Bile duct calculus with cholangitis",
-        "Gallstone in common bile duct"
+        "Bile duct stone with cholangitis",
+        "Gallstone in common bile duct",
+        "CBD stone"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "high",
-      "icd_reason": "Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) belong to entirely different body systems; no coder would accept any as equivalent to K80.30.",
+      "icd_reason": "Billed primary ICD is K80.30 (calculus of bile duct with cholangitis, without obstruction), in the biliary tract chapter. No rank matched, and the mapped codes (I50.30, I73.9, N18.30, I48.91, M79.89, R09.02) are cardiovascular, renal, soft tissue, or respiratory codes with no clinical equivalence to K80.30.",
       "ground_truth_icd_expansions": [
         "K80.30 Calculus of bile duct with cholangitis, unspecified, without obstruction",
-        "K80.5x choledocholithiasis without cholangitis or cholecystitis",
-        "K83.0 cholangitis"
+        "K80.5 Calculus of bile duct without cholangitis or cholecystitis",
+        "Choledocholithiasis codes K80.3x-K80.7x"
       ],
       "matched_icd_expansions": [],
       "_cache_hit": false

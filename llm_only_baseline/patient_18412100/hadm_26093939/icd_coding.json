@@ -1,0 +1,337 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "18412100",
+  "hadm_id": "26093939",
+  "most_likely": "Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall, neoplasm of uncertain behavior of soft tissue, status post cryoablation",
+  "summary": "Middle-aged woman with a large painful right anterior abdominal wall desmoid tumor (biopsy-proven, previously 14 cm) admitted overnight after staged CT/ultrasound-guided cryoablation of the residual tumor. The procedure was uncomplicated; she was observed for post-procedural right-sided abdominal/flank pain and transient nausea, managed with dilaudid PCA, IV ketorolac and IV ondansetron, then transitioned to oral agents. Labs show a reactive post-ablation leukocytosis (WBC 12.5 → 15.2) and thrombocytosis without evidence of infection or bleeding; chronic hepatitis C (genotype 3, VL ~430,000) was unchanged inpatient.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall — neoplasm of uncertain behavior of connective/soft tissue",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Chief complaint: 'Desmoid tumor'",
+        "CT: residual large right abdominal wall desmoid tumor cryoablated",
+        "Prior stay principal ICD-10 D48.1 for same lesion"
+      ],
+      "opposing_evidence": [
+        "Admission mechanism was post-procedure observation rather than tumor complication"
+      ],
+      "reasoning": "The disease driving this planned staged-ablation admission is the residual abdominal wall desmoid tumor; it is the billable principal condition rather than the procedural event.",
+      "icd10_primary": "D48.1",
+      "icd10_primary_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+      "icd10_package": [
+        {
+          "code": "D48.1",
+          "title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+          "role": "principal"
+        },
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain",
+          "role": "supporting"
+        },
+        {
+          "code": "B18.2",
+          "title": "Chronic viral hepatitis C",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain",
+          "role": "supporting"
+        },
+        {
+          "code": "B18.2",
+          "title": "Chronic viral hepatitis C",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Admission for cryoablation of residual right abdominal wall desmoid tumor; desmoid coded as uncertain behavior soft tissue neoplasm.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute post-procedural (post-ablation) abdominal pain requiring parenteral analgesia",
+      "score": 88.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Post-procedural right abdominal pain radiating to back on floor exam",
+        "Managed with dilaudid PCA and IV toradol overnight",
+        "Prior admission coded G89.18 for identical scenario"
+      ],
+      "opposing_evidence": [
+        "Pain expected/anticipated, resolved by discharge"
+      ],
+      "reasoning": "Pain control was the explicit reason for the overnight stay and is well documented, making it a strong secondary/complication code.",
+      "icd10_primary": "G89.18",
+      "icd10_primary_title": "Other acute postprocedural pain",
+      "icd10_package": [
+        {
+          "code": "G89.18",
+          "title": "Other acute postprocedural pain",
+          "role": "principal"
+        },
+        {
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R10.9",
+          "title": "Unspecified abdominal pain",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Post-cryoablation right abdominal pain managed with dilaudid PCA and IV toradol overnight.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Post-procedural nausea following general anesthesia and cryoablation",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "'one brief episode of nausea that then passed', no vomiting",
+        "Treated with IV Zofran, discharged on prochlorperazine"
+      ],
+      "opposing_evidence": [
+        "Nausea mild and self-limited this admission, unlike prior stay with emesis"
+      ],
+      "reasoning": "Documented and treated symptom of the current stay, but milder than the prior admission so scored below pain.",
+      "icd10_primary": "R11.0",
+      "icd10_primary_title": "Nausea",
+      "icd10_package": [
+        {
+          "code": "R11.0",
+          "title": "Nausea",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "One brief nausea episode without vomiting after general anesthesia; treated with IV Zofran.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Chronic hepatitis C virus infection, genotype 3, with hepatic fibrosis",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Genotype 3 HCV, last viral load 430,000",
+        "FibroScan consistent with fibrosis; prior ICD B18.2"
+      ],
+      "opposing_evidence": [
+        "No inpatient management or hepatic decompensation this stay"
+      ],
+      "reasoning": "Active chronic comorbidity explicitly addressed in the hospital course ('no changes as inpatient'), supporting a secondary code.",
+      "icd10_primary": "B18.2",
+      "icd10_primary_title": "Chronic viral hepatitis C",
+      "icd10_package": [
+        {
+          "code": "B18.2",
+          "title": "Chronic viral hepatitis C",
+          "role": "principal"
+        },
+        {
+          "code": "K74.00",
+          "title": "Hepatic fibrosis, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "K74.00",
+          "title": "Hepatic fibrosis, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented genotype 3 chronic HCV with viral load 430,000 and FibroScan-documented fibrosis; no inpatient changes.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Reactive leukocytosis secondary to tissue ablation and inflammatory response",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "WBC 12.5 on admission rising to 15.2 at discharge; platelets 484",
+        "Prior stay WBC 19.4 attributed to post-procedure inflammation"
+      ],
+      "opposing_evidence": [
+        "Afebrile, no infectious signs, no antibiotics given"
+      ],
+      "reasoning": "Objective abnormal lab likely inflammatory/post-ablation; clinically non-actionable but codable as an abnormal finding.",
+      "icd10_primary": "D72.829",
+      "icd10_primary_title": "Elevated white blood cell count, unspecified",
+      "icd10_package": [
+        {
+          "code": "D72.829",
+          "title": "Elevated white blood cell count, unspecified",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "WBC rose 12.5 to 15.2 post-ablation without infection signs, consistent with inflammatory leukocytosis.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Chronic pain due to abdominal wall neoplasm on long-term opioid therapy",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "History of large painful desmoid with home oxycodone and Sulindac",
+        "Prior stay coded G89.29 chronic pain"
+      ],
+      "opposing_evidence": [
+        "Current documentation emphasizes acute post-procedural rather than baseline pain"
+      ],
+      "reasoning": "Baseline tumor-related chronic pain contextualizes analgesic needs but is secondary to the acute post-procedural pain this stay.",
+      "icd10_primary": "G89.3",
+      "icd10_primary_title": "Neoplasm related pain (acute) (chronic)",
+      "icd10_package": [
+        {
+          "code": "G89.3",
+          "title": "Neoplasm related pain (acute) (chronic)",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.891",
+          "title": "Long term (current) use of opiate analgesic",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.891",
+          "title": "Long term (current) use of opiate analgesic",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Chronic tumor pain from painful desmoid, home oxycodone; discharged on PO dilaudid.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Obesity, class I, with BMI 31.7",
+      "score": 33.0,
+      "confidence": "high",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Structured BMI 31.7 kg/m2, weight 179 lb",
+        "Prior coding E66.9 with BMI Z-code"
+      ],
+      "opposing_evidence": [
+        "Not discussed in current note text"
+      ],
+      "reasoning": "Objectively documented BMI supports an obesity plus BMI code as a comorbidity/risk factor.",
+      "icd10_primary": "E66.9",
+      "icd10_primary_title": "Obesity, unspecified",
+      "icd10_package": [
+        {
+          "code": "E66.9",
+          "title": "Obesity, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "Z68.31",
+          "title": "Body mass index [BMI] 31.0-31.9, adult",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z68.31",
+          "title": "Body mass index [BMI] 31.0-31.9, adult",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented obesity with recorded BMI 31.7 in structured vitals.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Hashimoto (autoimmune) thyroiditis with thyroid nodules",
+      "score": 25.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "PMH lists thyroiditis; prior FNA consistent with Hashimoto thyroiditis"
+      ],
+      "opposing_evidence": [
+        "No thyroid labs or treatment this admission"
+      ],
+      "reasoning": "Stable chronic comorbidity carried from PMH with no current activity, hence a low score.",
+      "icd10_primary": "E06.3",
+      "icd10_primary_title": "Autoimmune thyroiditis",
+      "icd10_package": [
+        {
+          "code": "E06.3",
+          "title": "Autoimmune thyroiditis",
+          "role": "principal"
+        },
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E04.1",
+          "title": "Nontoxic single thyroid nodule",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "History of Hashimoto thyroiditis by FNA cytology with multiple thyroid nodules on ultrasound.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Post-procedural hemorrhage or hematoma of abdominal wall",
+      "score": 10.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Hemoglobin fell 12.7 to 11.2; right-sided abdominal tenderness"
+      ],
+      "opposing_evidence": [
+        "Report states hemostasis achieved, no immediate complications",
+        "Hemodynamically stable, drop consistent with IV fluid dilution"
+      ],
+      "reasoning": "Considered because of the modest hemoglobin decline, but imaging and stable vitals argue strongly against clinically significant bleeding.",
+      "icd10_primary": "L76.32",
+      "icd10_primary_title": "Postprocedural hematoma of skin and subcutaneous tissue following other procedure",
+      "icd10_package": [
+        {
+          "code": "L76.32",
+          "title": "Postprocedural hematoma of skin and subcutaneous tissue following other procedure",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Considered but not documented; no bleeding on exam, hemostasis achieved post-procedure.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "D48.1",
+  "primary_icd_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
+  "primary_condition": "Desmoid tumor (aggressive fibromatosis) of right anterior abdominal wall, status post staged cryoablation",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:49:13.819790",
+  "ontology_routing": false
+}

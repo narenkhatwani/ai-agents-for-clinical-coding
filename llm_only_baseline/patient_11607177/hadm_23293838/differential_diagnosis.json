@@ -1,0 +1,209 @@
+{
+  "summary": "Middle-aged/older man with non-ischemic dilated cardiomyopathy (EF <20%) s/p HeartMate II LVAD, listed status 1A(b) for heart transplant, admitted after a single ICD shock while on a fishing trip. Device interrogation showed one shock plus >20 VT episodes aborted by ATP despite maximal antiarrhythmic therapy (quinidine, mexiletine, metoprolol); he underwent a repeat left stellate ganglion block with no further VT on telemetry. He also had a week of increased lower extremity edema with JVD 14 cm on admission, managed by diuretic adjustment (torsemide held then resumed), discharged near-euvolemic at 120.4 kg.",
+  "most_likely": "Refractory ventricular tachycardia in non-ischemic dilated cardiomyopathy with LVAD",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Refractory ventricular tachycardia with appropriate ICD shock",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Chief complaint: ICD shock",
+        "Interrogation: one shock, >20 VT episodes aborted by ATP",
+        "Left stellate ganglion block performed this admission",
+        "Prior admission principal ICD-10 I472 for same problem"
+      ],
+      "opposing_evidence": [
+        "No VT recorded on telemetry after block"
+      ],
+      "reasoning": "The entire admission was driven by documented recurrent VT despite maximal antiarrhythmic therapy, requiring an invasive sympathetic block; this is the billable principal disease rather than the shock event."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Chronic systolic (congestive) heart failure, NYHA class III/stage D",
+      "score": 82.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Stage D heart failure, LVEF <20% on TTE",
+        "JVD 14 cm and 2+ bilateral pitting edema on admission",
+        "Torsemide dose escalated at home then re-titrated inpatient"
+      ],
+      "opposing_evidence": [
+        "Lungs clear, no crackles, room air saturation 97-99%"
+      ],
+      "reasoning": "Actively managed volume overload with diuretic titration and daily weights makes chronic systolic HF a strongly supported concurrent diagnosis, though the acute driver was arrhythmia."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Non-ischemic dilated cardiomyopathy with biventricular dysfunction",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "TTE: severe biventricular dilation, severe global hypokinesis",
+        "Longstanding EF 10-20% non-ischemic DCM documented",
+        "Moderate-severe MR, moderate TR, mild-moderate AR"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Underlying substrate for both VT and heart failure, objectively confirmed on this admission's echocardiogram."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Presence of left ventricular assist device (HeartMate II)",
+      "score": 76.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "LVAD flow 5.3-6.4, speed 9400, PI 3.1-4.4 documented daily",
+        "Driveline managed by VAD team",
+        "Doppler-only blood pressures"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Device status materially affected management (anticoagulation, Doppler BP, driveline care) and is a codable status condition for this stay."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute on chronic volume overload (decompensated right heart failure)",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "One week of increased lower extremity edema before shock",
+        "JVD 14 cm improving to 10 cm; weight 120.4 kg at discharge",
+        "Home torsemide increased to 30 mg then back-titrated"
+      ],
+      "opposing_evidence": [
+        "Clinician documented patient appeared relatively euvolemic",
+        "No pulmonary congestion or hypoxia"
+      ],
+      "reasoning": "Congestive signs were present and diuretics adjusted, but the note explicitly downplays overload, so this ranks as a contributory rather than principal issue."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Horner syndrome following stellate ganglion block",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Transitional issue: Horner Syndrome was induced after block",
+        "No hematoma or respiratory compromise at injection site"
+      ],
+      "opposing_evidence": [
+        "Expected physiologic effect of the procedure, not an adverse event"
+      ],
+      "reasoning": "Documented post-procedure finding worth capturing, though it is an anticipated consequence of a successful sympathetic block."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Supratherapeutic INR on long-term warfarin anticoagulation",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "INR 3.3, PT 36.9, PTT 44.2 on labs",
+        "Warfarin regimen adjusted for discharge",
+        "Invasive neck block performed while anticoagulated"
+      ],
+      "opposing_evidence": [
+        "No bleeding, hemoglobin stable at 11.6",
+        "LVAD requires higher INR targets"
+      ],
+      "reasoning": "INR modestly above typical target with a periprocedural bleeding risk; clinically silent, so low-moderate score."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Chronic kidney disease with mild creatinine elevation",
+      "score": 32.0,
+      "confidence": "low",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Creatinine 1.4 on admission, BUN 31 then 25",
+        "Prior admissions coded N189 and repeated AKI",
+        "Torsemide held for concern of overdiuresis"
+      ],
+      "opposing_evidence": [
+        "Creatinine improved to 1.2 at discharge, near baseline"
+      ],
+      "reasoning": "Baseline renal impairment with cardiorenal sensitivity influenced diuretic dosing, but no acute kidney injury was declared this stay."
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Type 2 diabetes mellitus without complications",
+      "score": 25.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Longstanding T2DM in past medical history",
+        "Glucose 105-118 during stay"
+      ],
+      "opposing_evidence": [
+        "No diabetes medications listed on current admission med list"
+      ],
+      "reasoning": "Stable chronic comorbidity with mild hyperglycemia; codable background condition only."
+    },
+    {
+      "rank": 10,
+      "diagnosis": "Chronic tophaceous gout on urate-lowering therapy",
+      "score": 22.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Continued colchicine 0.6 mg QOD and febuxostat 80 mg daily",
+        "Tophaceous gout in PMH and prior ICD coding"
+      ],
+      "opposing_evidence": [
+        "No acute flare documented this admission"
+      ],
+      "reasoning": "Chronic condition actively medicated but clinically quiescent during this stay."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Inappropriate ICD shock due to atrial arrhythmia or lead malfunction",
+      "why": "Interrogation confirmed true VT episodes with ATP therapy, making the shock appropriate."
+    },
+    {
+      "diagnosis": "Acute coronary syndrome",
+      "why": "No chest pain, no troponin abnormality documented, known non-ischemic cardiomyopathy."
+    },
+    {
+      "diagnosis": "LVAD pump thrombosis or hemolysis",
+      "why": "Stable LVAD parameters, LDH only mildly elevated at 252 and falling to 203, hemoglobin stable."
+    },
+    {
+      "diagnosis": "Driveline or wound infection",
+      "why": "Afebrile, WBC 5.3, driveline managed routinely without infection signs."
+    },
+    {
+      "diagnosis": "Electrolyte-provoked arrhythmia (hypokalemia/hypomagnesemia)",
+      "why": "K 3.7-4.3 and Mg 1.8-2.2 with no significant derangement to explain VT."
+    }
+  ],
+  "uncertain_areas": [
+    "Whether coders would list decompensated/chronic systolic heart failure rather than VT as principal",
+    "Degree to which volume overload triggered the arrhythmia (no BNP or right heart cath data)",
+    "Whether Horner syndrome was documented as a procedural complication or expected effect",
+    "Absence of current radiology limits assessment of pulmonary congestion",
+    "Atrial fibrillation status post AVJ ablation not addressed in current note"
+  ],
+  "n_candidates": 10,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "11607177",
+  "hadm_id": "23293838",
+  "generated_at": "2026-08-21T23:40:38.391938",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

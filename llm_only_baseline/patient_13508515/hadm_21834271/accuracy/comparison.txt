@@ -1,0 +1,47 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 13508515
+HADM ID          : 21834271
+Generated        : 2026-08-21T23:52:49.311733
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Left renal cell carcinoma.
+  Billed ICD title     : Malignant neoplasm of left kidney, except renal pelvis (ICD metric only)
+  Rank-1 predicted     : Malignant neoplasm of left kidney (renal cell carcinoma), 8 cm mass
+    score=95.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Malignant neoplasm of left kidney (renal cell carcinoma), 8 cm mass
+    score=95.0  confidence=high
+  LLM reason           : Rank 1 'Malignant neoplasm of left kidney (renal cell carcinoma), 8 cm mass' names the same principal condition as the physician discharge diagnosis 'Left renal cell carcinoma'; the rank string explicitly contains renal cell carcinoma of the left kidney, with added tumor size detail.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : C64.2 — Malignant neoplasm of left kidney, except renal pelvis
+  Rank-1 mapped ICD    : C64.2 — Malignant neoplasm of left kidney, except renal pelvis
+  Matched mapped ICD   : C64.2 — Malignant neoplasm of left kidney, except renal pelvis
+  ICD match            : YES
+  ICD exact            : YES
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped ICD at rank 1 is C64.2, an exact match to the billed primary ICD C64.2 (Malignant neoplasm of left kidney, except renal pelvis).
+  Stage 9 final ICD    : C64.2 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Malignant neoplasm of left kidney (renal cell carcinoma), 8 cm mass  [score=95.0, high]  ICD=C64.2 — Malignant neoplasm of left kidney, except renal pelvis
+   2. Acute kidney injury on chronic kidney disease following nephrectomy  [score=66.0, medium]  ICD=N17.9 — Acute kidney failure, unspecified
+   3. Acute postoperative blood loss anemia  [score=60.0, medium]  ICD=D62 — Acute posthemorrhagic anemia
+   4. Type 2 diabetes mellitus with hyperglycemia and diabetic chronic kidney disease  [score=55.0, medium]  ICD=E11.22 — Type 2 diabetes mellitus with diabetic chronic kidney disease
+   5. Chronic systolic (congestive) heart failure with reduced ejection fraction  [score=50.0, medium]  ICD=I50.22 — Chronic systolic (congestive) heart failure
+   6. Coronary artery disease in patient with prior coronary artery bypass graft  [score=44.0, medium]  ICD=I25.10 — Atherosclerotic heart disease of native coronary artery without angina pectoris
+   7. Morbid obesity with obstructive sleep apnea on CPAP  [score=40.0, medium]  ICD=E66.01 — Morbid (severe) obesity due to excess calories
+   8. Essential hypertension with hypertensive chronic kidney disease  [score=35.0, low]  ICD=I12.9 — Hypertensive chronic kidney disease with stage 1 through stage 4 chronic kidney disease, or unspecified chronic kidney disease

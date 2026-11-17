@@ -1,0 +1,65 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 11474876
+HADM ID          : 29672491
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:39:35.069846
+Candidates       : 8
+Most likely      : Choledocholithiasis (bile duct calculi with sludge) treated by ERCP with sphincterotomy and stone extraction
+
+Summary:
+  Elderly man with paroxysmal atrial fibrillation on apixaban, HFpEF, PVD s/p aortobifemoral bypass, and CKD stage 3, admitted electively after a scheduled follow-up ERCP performed one month after stent placement for cholangitis. The ERCP demonstrated multiple bile duct stones and sludge; he underwent stent removal, sphincterotomy, and stone/sludge extraction without complication. Post-procedure he was asymptomatic with normal LFTs (ALT 16, AST 23, AlkPhos 102, TBili 1.0) and no leukocytosis, arguing against active cholangitis or post-ERCP pancreatitis. He was observed overnight with apixaban held 48 hours, Lasix briefly held then resumed, and declined inpatient surgical evaluation for cholecystectomy.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [93.0/100 | high]  Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis  (primary)
+      + ERCP showed multiple stones and sludge
+      + Sphincterotomy with stone/sludge extraction and stent removal
+      + Normal bilirubin 1.0, ALT 16, AlkPhos 102 — no active obstruction
+      - No current abdominal pain or cholestatic labs
+      why: The documented ERCP findings of multiple ductal stones and sludge treated with sphincterotomy make bile duct calculi the condition chiefly responsible for this admission.
+  #2  [62.0/100 | medium]  Cholelithiasis (gallbladder stones) with planned/deferred cholecystectomy  (secondary)
+      + Prior CT/US: mobile gallstones up to 4 mm, gallbladder wall thickening
+      + Surgery recommended CCY if stones found on repeat ERCP
+      + Patient declined surgery, will follow up in clinic
+      - No current imaging of the gallbladder this stay
+      why: Gallbladder stones are documented historically and drive the ongoing cholecystectomy discussion this admission, supporting a secondary code.
+  #3  [58.0/100 | high]  Paroxysmal atrial fibrillation on long-term anticoagulation, apixaban periprocedurally held  (secondary)
+      + Continued home propranolol and amiodarone
+      + Apixaban held 2 days pre-procedure, resume 48h post
+      + Prior ICD-10 I480, Z7901
+      - Exam RRR; no documented arrhythmia this stay
+      why: Active chronic condition managed and explicitly documented, with stroke-risk counseling around anticoagulation interruption.
+  #4  [52.0/100 | medium]  Chronic heart failure with preserved ejection fraction with peripheral volume overload  (secondary)
+      + HFpEF listed; cardiologist recently increased Lasix
+      + Moderate bilateral pitting edema on admission exam, mild at discharge
+      + Lasix held periprocedurally then restarted
+      - No dyspnea, lungs clear, no hypoxia this stay
+      why: Edema and active diuretic titration support a coded chronic HFpEF diagnosis, though no acute decompensation occurred.
+  #5  [48.0/100 | medium]  Chronic kidney disease stage 3 (moderate)  (secondary)
+      + Creatinine 1.4 mg/dL, baseline documented 1.6–1.8
+      + Home calcitriol continued
+      + Prior ICD-10 N183
+      - Creatinine actually better than baseline this stay
+      why: Documented chronic renal impairment managed during the stay; relevant to fluids, contrast, and drug dosing.
+  #6  [42.0/100 | medium]  Essential hypertension with hypertensive heart disease  (secondary)
+      + BP 142/57 on admission
+      + Continued propranolol, lisinopril, amlodipine
+      + Prior ICD-10 I110
+      - No hypertensive urgency or end-organ event this stay
+      why: Stable chronic hypertension actively treated with three agents; supports comorbidity coding.
+  #7  [25.0/100 | low]  Recurrent/resolved ascending cholangitis following prior biliary stenting  (differential)
+      + Prior admission principal diagnosis was cholangitis with stent placement
+      + Periprocedural ciprofloxacin given
+      - Afebrile, WBC 7.2, normal LFTs and bilirubin
+      - No further antibiotics recommended post-procedure
+      why: Historical context only; current labs and exam show no active biliary infection, so scored low.
+  #8  [12.0/100 | low]  Post-ERCP pancreatitis or post-sphincterotomy hemorrhage  (complication)
+      + Sphincterotomy performed with anticoagulation recently held
+      + Slight tenderness bilateral upper abdomen
+      - Procedure described as uncomplicated; tolerating regular diet
+      - Hgb 12.6 (improved), no lipase abnormality documented
+      why: Standard post-ERCP complications were monitored for but not documented; low likelihood given benign course.

@@ -1,0 +1,64 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 10426859
+HADM ID          : 29908281
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:36:14.533296
+Candidates       : 8
+Most likely      : Recurrent paroxysmal supraventricular tachycardia (AVNRT) with hemodynamic compromise
+
+Summary:
+  Elderly woman with known recurrent paroxysmal SVT (previously declined ablation/PPM) presents with palpitations, lightheadedness and a mechanical fall. EMS and ED documented SVT to 150-160s with transient hypotension, converted with adenosine and IV verapamil, with home verapamil uptitrated to 120 mg q8h and resulting asymptomatic Wenckebach. Work-up of the fall showed a nondisplaced comminuted right superior pubic ramus fracture (conservative management, WBAT) and a CT head with no acute intracranial injury; troponin rose 0.02→0.09 with normal CK-MB, interpreted as demand ischemia. Background of CAD, HTN, HLD, depression, presumed untreated urothelial carcinoma, DNR/DNI with transition to home hospice.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [95.0/100 | high]  Recurrent paroxysmal supraventricular tachycardia (AVNRT)  (primary)
+      + SVT to 150s found by EMS, cardioverted with adenosine
+      + Recurred in ED; treated with 2x adenosine and IV verapamil
+      + Prior admission principal ICD I471 supraventricular tachycardia
+      + Verapamil increased to 120 mg q8h with good rate control
+      - Asymptomatic and in NSR by discharge
+      why: The presenting arrhythmia is documented, treated and drives the entire admission and medication change; a coder would list this as principal disease.
+  #2  [85.0/100 | high]  Closed nondisplaced fracture of right superior pubic ramus from fall  (complication)
+      + Hip X-ray: nondisplaced comminuted right superior pubic ramus fracture
+      + Right hip pain with hip flexion and cross-leg test
+      + Orthopedics recommended conservative management, WBAT, oxycodone
+      - Hip non-tender to palpation, no ecchymoses on exam
+      why: Objectively imaged acute fracture treated during this stay; a strong secondary/co-principal diagnosis with clear resource use.
+  #3  [62.0/100 | medium]  Type 2 myocardial injury (demand ischemia) due to tachycardia  (complication)
+      + Troponin T rose 0.02 → 0.09 with CK-MB 2 (normal)
+      + Note states 'most likely demand in setting of tachycardia'
+      + ECG unchanged from prior baseline ST changes
+      - No chest pain; no new ECG changes; further work-up deferred for goals of care
+      why: Documented troponin elevation attributed to demand ischemia; codable as NSTEMI/demand ischemia (prior stay coded I214 similarly) but clinically secondary.
+  #4  [58.0/100 | high]  Syncope/near-syncope with mechanical fall secondary to arrhythmia  (secondary)
+      + Fell when lightheaded, caught fall with arm, no head strike
+      + CT head ordered for post-fall headache — no acute abnormality
+      + Note: falls due to lightheadedness, most likely related to SVT
+      - Symptom/mechanism rather than a disease entity
+      why: Well documented and drives imaging work-up, but is the mechanism of injury rather than a principal disease.
+  #5  [45.0/100 | medium]  Second degree atrioventricular block, Mobitz type I (Wenckebach), drug-related  (complication)
+      + Episodes of Wenckebach on higher dose verapamil during stay
+      + Prior admission coded I441 second degree AV block
+      + Prior Holter showed Wenckebach on nodal blockade
+      - Asymptomatic; no intervention required; patient declined PPM
+      why: Real documented conduction finding attributable to uptitrated verapamil, appropriate as a secondary/complication code.
+  #6  [42.0/100 | medium]  Presumed urothelial (bladder) carcinoma, untreated, with sterile pyuria  (secondary)
+      + Note: likely undiagnosed uroepithelial carcinoma, declined work-up
+      + UA with WBC 45/hpf, RBC 15/hpf; culture mixed flora contaminant
+      + Prior ICD C679 malignant neoplasm of bladder
+      - No tissue diagnosis; no imaging of urinary tract this stay
+      why: Explicitly invoked to explain pyuria and drives hospice transition, though unconfirmed histologically.
+  #7  [35.0/100 | medium]  Atherosclerotic coronary artery disease with hypertension and hyperlipidemia  (risk_factor)
+      + PMH CAD s/p possible MI, HTN, HLD; prior ICD I2510, I10, E785
+      + Continued aspirin 81 mg and rosuvastatin 10 mg during stay
+      - No angina; no ischemic work-up this admission; BPs soft (97/61)
+      why: Chronic comorbidities managed medically this stay; relevant secondary codes but do not explain the acute presentation.
+  #8  [20.0/100 | low]  Urinary tract infection  (differential)
+      + Pyuria on UA (WBC 45/hpf); admission WBC 12.2 with neutrophilia
+      - Urine culture mixed flora/contaminant, no dysuria, afebrile, WBC normalized to 6.8
+      - No antibiotics given
+      why: Considered as an SVT trigger but effectively excluded by culture, absence of symptoms and untreated resolution of leukocytosis.

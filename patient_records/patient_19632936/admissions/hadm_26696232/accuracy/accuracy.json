@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "19632936",
   "hadm_id": "26696232",
-  "generated_at": "2026-08-20T17:31:21.537821",
+  "generated_at": "2026-08-20T22:08:17.230848",
   "ground_truth": {
     "primary_icd_code": "D509",
     "primary_dx_title": "Iron deficiency anemia, unspecified",
@@ -28,9 +28,9 @@
       "matched_confidence": "high",
       "llm_relationship": "same_principal_more_specific",
       "llm_confidence": "high",
-      "llm_reason": "Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles acuity and an associated symptom (respiratory compromise) with the same core diagnosis.",
-      "llm_expanded_ground_truth": "Macrocytic anemia | Anemia with elevated MCV (mean corpuscular volume) | Megaloblastic/macrocytic anemia | Anemia, macrocytic type (e.g., B12/folate deficiency related)",
-      "llm_expanded_matched": "Acute macrocytic anemia | Macrocytic anemia with hypoxia/dyspnea | Anemia with high MCV causing respiratory symptoms",
+      "llm_reason": "Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles an acute presentation and associated respiratory compromise with the same anemia diagnosis.",
+      "llm_expanded_ground_truth": "Macrocytic anemia | Anemia with elevated MCV | Megaloblastic anemia (subtype) | Vitamin B12/folate deficiency anemia (common cause)",
+      "llm_expanded_matched": "Acute macrocytic anemia | Macrocytic anemia with hypoxia/dyspnea | Anemia with high mean corpuscular volume",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
@@ -97,9 +97,9 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "Mapped code at matched rank is D53.9 (Nutritional anemia, unspecified), whereas the billed primary is D50.9 (Iron deficiency anemia, unspecified). Although both fall in the nutritional anemia block (D50-D53), they designate different anemia etiologies/morphologies — iron deficiency anemia is characteristically microcytic while D53.9 covers unspecified nutritional (including macrocytic/megaloblastic-type) anemia — so a coder would not treat them as interchangeable for the principal diagnosis.",
+      "llm_icd_reason": "Mapped code at rank 1 is D53.9 (nutritional anemia, unspecified), while the billed primary code is D50.9 (iron deficiency anemia, unspecified). These are different anemia categories — iron deficiency (typically microcytic) versus unspecified nutritional/macrocytic anemia — and a coder would not treat them as interchangeable codes.",
       "llm_expanded_ground_truth_icd": "D50.9 Iron deficiency anemia, unspecified | Sideropenic anemia | Hypochromic microcytic anemia due to iron deficiency",
-      "llm_expanded_matched_icd": "D53.9 Nutritional anemia, unspecified | Simple chronic anemia | Deficiency anemia not otherwise specified | Related: D51.9 B12 deficiency anemia, D52.9 folate deficiency anemia",
+      "llm_expanded_matched_icd": "D53.9 Nutritional anemia, unspecified | Simple chronic anemia | Deficiency anemia NOS (often used for macrocytic/nutritional anemia)",
       "stage9_final_primary_icd": "D53.9",
       "diagnosis_match": true,
       "is_rank1_diagnosis_match": true,
@@ -110,21 +110,21 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal_more_specific",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles acuity and an associated symptom (respiratory compromise) with the same core diagnosis.",
+      "diagnosis_reason": "Rank 1 'Acute macrocytic anemia with respiratory compromise' names the same principal condition as the physician discharge diagnosis 'Macrocytic anemia'; the rank label simply bundles an acute presentation and associated respiratory compromise with the same anemia diagnosis.",
       "ground_truth_expansions": [
         "Macrocytic anemia",
-        "Anemia with elevated MCV (mean corpuscular volume)",
-        "Megaloblastic/macrocytic anemia",
-        "Anemia, macrocytic type (e.g., B12/folate deficiency related)"
+        "Anemia with elevated MCV",
+        "Megaloblastic anemia (subtype)",
+        "Vitamin B12/folate deficiency anemia (common cause)"
       ],
       "matched_diagnosis_expansions": [
         "Acute macrocytic anemia",
         "Macrocytic anemia with hypoxia/dyspnea",
-        "Anemia with high MCV causing respiratory symptoms"
+        "Anemia with high mean corpuscular volume"
       ],
       "icd_equivalent": false,
       "icd_confidence": "medium",
-      "icd_reason": "Mapped code at matched rank is D53.9 (Nutritional anemia, unspecified), whereas the billed primary is D50.9 (Iron deficiency anemia, unspecified). Although both fall in the nutritional anemia block (D50-D53), they designate different anemia etiologies/morphologies — iron deficiency anemia is characteristically microcytic while D53.9 covers unspecified nutritional (including macrocytic/megaloblastic-type) anemia — so a coder would not treat them as interchangeable for the principal diagnosis.",
+      "icd_reason": "Mapped code at rank 1 is D53.9 (nutritional anemia, unspecified), while the billed primary code is D50.9 (iron deficiency anemia, unspecified). These are different anemia categories — iron deficiency (typically microcytic) versus unspecified nutritional/macrocytic anemia — and a coder would not treat them as interchangeable codes.",
       "ground_truth_icd_expansions": [
         "D50.9 Iron deficiency anemia, unspecified",
         "Sideropenic anemia",
@@ -133,8 +133,7 @@
       "matched_icd_expansions": [
         "D53.9 Nutritional anemia, unspecified",
         "Simple chronic anemia",
-        "Deficiency anemia not otherwise specified",
-        "Related: D51.9 B12 deficiency anemia, D52.9 folate deficiency anemia"
+        "Deficiency anemia NOS (often used for macrocytic/nutritional anemia)"
       ],
       "_cache_hit": false
     }

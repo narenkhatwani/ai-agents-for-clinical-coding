@@ -1,0 +1,339 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "11474876",
+  "hadm_id": "29672491",
+  "most_likely": "Choledocholithiasis (bile duct calculi with sludge) treated by ERCP with sphincterotomy and stone extraction",
+  "summary": "Elderly man with paroxysmal atrial fibrillation on apixaban, HFpEF, PVD s/p aortobifemoral bypass, and CKD stage 3, admitted electively after a scheduled follow-up ERCP performed one month after stent placement for cholangitis. The ERCP demonstrated multiple bile duct stones and sludge; he underwent stent removal, sphincterotomy, and stone/sludge extraction without complication. Post-procedure he was asymptomatic with normal LFTs (ALT 16, AST 23, AlkPhos 102, TBili 1.0) and no leukocytosis, arguing against active cholangitis or post-ERCP pancreatitis. He was observed overnight with apixaban held 48 hours, Lasix briefly held then resumed, and declined inpatient surgical evaluation for cholecystectomy.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis",
+      "score": 93.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "ERCP showed multiple stones and sludge",
+        "Sphincterotomy with stone/sludge extraction and stent removal",
+        "Normal bilirubin 1.0, ALT 16, AlkPhos 102 — no active obstruction"
+      ],
+      "opposing_evidence": [
+        "No current abdominal pain or cholestatic labs"
+      ],
+      "reasoning": "The documented ERCP findings of multiple ductal stones and sludge treated with sphincterotomy make bile duct calculi the condition chiefly responsible for this admission.",
+      "icd10_primary": "K80.50",
+      "icd10_primary_title": "Calculus of bile duct without cholangitis or cholecystitis without obstruction",
+      "icd10_package": [
+        {
+          "code": "K80.50",
+          "title": "Calculus of bile duct without cholangitis or cholecystitis without obstruction",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "ERCP removed bile duct stones/sludge with sphincterotomy; no cholangitis or cholecystitis documented this stay.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Cholelithiasis (gallbladder stones) with planned/deferred cholecystectomy",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Prior CT/US: mobile gallstones up to 4 mm, gallbladder wall thickening",
+        "Surgery recommended CCY if stones found on repeat ERCP",
+        "Patient declined surgery, will follow up in clinic"
+      ],
+      "opposing_evidence": [
+        "No current imaging of the gallbladder this stay"
+      ],
+      "reasoning": "Gallbladder stones are documented historically and drive the ongoing cholecystectomy discussion this admission, supporting a secondary code.",
+      "icd10_primary": "K80.20",
+      "icd10_primary_title": "Calculus of gallbladder without cholecystitis without obstruction",
+      "icd10_package": [
+        {
+          "code": "K80.20",
+          "title": "Calculus of gallbladder without cholecystitis without obstruction",
+          "role": "principal"
+        },
+        {
+          "code": "Z53.20",
+          "title": "Procedure and treatment not carried out because of patient's decision, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z53.20",
+          "title": "Procedure and treatment not carried out because of patient's decision, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Known gallstones; cholecystectomy discussed but patient declined and deferred to outpatient surgical follow-up.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Paroxysmal atrial fibrillation on long-term anticoagulation, apixaban periprocedurally held",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Continued home propranolol and amiodarone",
+        "Apixaban held 2 days pre-procedure, resume 48h post",
+        "Prior ICD-10 I480, Z7901"
+      ],
+      "opposing_evidence": [
+        "Exam RRR; no documented arrhythmia this stay"
+      ],
+      "reasoning": "Active chronic condition managed and explicitly documented, with stroke-risk counseling around anticoagulation interruption.",
+      "icd10_primary": "I48.0",
+      "icd10_primary_title": "Paroxysmal atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.01",
+          "title": "Long term (current) use of anticoagulants",
+          "role": "supporting"
+        },
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented paroxysmal AF on amiodarone/propranolol; apixaban held periprocedurally and restarted.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Chronic heart failure with preserved ejection fraction with peripheral volume overload",
+      "score": 52.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "HFpEF listed; cardiologist recently increased Lasix",
+        "Moderate bilateral pitting edema on admission exam, mild at discharge",
+        "Lasix held periprocedurally then restarted"
+      ],
+      "opposing_evidence": [
+        "No dyspnea, lungs clear, no hypoxia this stay"
+      ],
+      "reasoning": "Edema and active diuretic titration support a coded chronic HFpEF diagnosis, though no acute decompensation occurred.",
+      "icd10_primary": "I50.32",
+      "icd10_primary_title": "Chronic diastolic (congestive) heart failure",
+      "icd10_package": [
+        {
+          "code": "I50.32",
+          "title": "Chronic diastolic (congestive) heart failure",
+          "role": "principal"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R60.0",
+          "title": "Localized edema",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "HFpEF documented with bilateral pitting edema; Lasix held perioperatively and restarted at discharge.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Chronic kidney disease stage 3 (moderate)",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Creatinine 1.4 mg/dL, baseline documented 1.6–1.8",
+        "Home calcitriol continued",
+        "Prior ICD-10 N183"
+      ],
+      "opposing_evidence": [
+        "Creatinine actually better than baseline this stay"
+      ],
+      "reasoning": "Documented chronic renal impairment managed during the stay; relevant to fluids, contrast, and drug dosing.",
+      "icd10_primary": "N18.30",
+      "icd10_primary_title": "Chronic kidney disease, stage 3 unspecified",
+      "icd10_package": [
+        {
+          "code": "N18.30",
+          "title": "Chronic kidney disease, stage 3 unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.899",
+          "title": "Other long term (current) drug therapy",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "CKD with baseline creatinine 1.6-1.8, current 1.4; home calcitriol continued.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Essential hypertension with hypertensive heart disease",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "BP 142/57 on admission",
+        "Continued propranolol, lisinopril, amlodipine",
+        "Prior ICD-10 I110"
+      ],
+      "opposing_evidence": [
+        "No hypertensive urgency or end-organ event this stay"
+      ],
+      "reasoning": "Stable chronic hypertension actively treated with three agents; supports comorbidity coding.",
+      "icd10_primary": "I11.0",
+      "icd10_primary_title": "Hypertensive heart disease with heart failure",
+      "icd10_package": [
+        {
+          "code": "I11.0",
+          "title": "Hypertensive heart disease with heart failure",
+          "role": "principal"
+        },
+        {
+          "code": "I50.32",
+          "title": "Chronic diastolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "I50.32",
+          "title": "Chronic diastolic (congestive) heart failure",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Hypertension on three agents with coexisting HFpEF; combination code per ICD-10 convention.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Recurrent/resolved ascending cholangitis following prior biliary stenting",
+      "score": 25.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Prior admission principal diagnosis was cholangitis with stent placement",
+        "Periprocedural ciprofloxacin given"
+      ],
+      "opposing_evidence": [
+        "Afebrile, WBC 7.2, normal LFTs and bilirubin",
+        "No further antibiotics recommended post-procedure"
+      ],
+      "reasoning": "Historical context only; current labs and exam show no active biliary infection, so scored low.",
+      "icd10_primary": "Z87.19",
+      "icd10_primary_title": "Personal history of other diseases of the digestive system",
+      "icd10_package": [
+        {
+          "code": "Z87.19",
+          "title": "Personal history of other diseases of the digestive system",
+          "role": "principal"
+        },
+        {
+          "code": "K83.09",
+          "title": "Other cholangitis",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "K83.09",
+          "title": "Other cholangitis",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Prior admission cholangitis treated with stent; resolved, normal LFTs now, so coded as history only.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Post-ERCP pancreatitis or post-sphincterotomy hemorrhage",
+      "score": 12.0,
+      "confidence": "low",
+      "category": "complication",
+      "supporting_evidence": [
+        "Sphincterotomy performed with anticoagulation recently held",
+        "Slight tenderness bilateral upper abdomen"
+      ],
+      "opposing_evidence": [
+        "Procedure described as uncomplicated; tolerating regular diet",
+        "Hgb 12.6 (improved), no lipase abnormality documented"
+      ],
+      "reasoning": "Standard post-ERCP complications were monitored for but not documented; low likelihood given benign course.",
+      "icd10_primary": "K91.89",
+      "icd10_primary_title": "Other postprocedural complications and disorders of digestive system",
+      "icd10_package": [
+        {
+          "code": "K91.89",
+          "title": "Other postprocedural complications and disorders of digestive system",
+          "role": "principal"
+        },
+        {
+          "code": "K85.90",
+          "title": "Acute pancreatitis without necrosis or infection, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "K85.90",
+          "title": "Acute pancreatitis without necrosis or infection, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Considered complication; procedure documented uncomplicated with no pain or bleeding, so speculative only.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "K80.50",
+  "primary_icd_title": "Calculus of bile duct without cholangitis or cholecystitis without obstruction",
+  "primary_condition": "Choledocholithiasis status post ERCP with sphincterotomy, stone/sludge extraction and stent removal",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:39:54.649633",
+  "ontology_routing": false
+}

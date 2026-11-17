@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "13952483",
   "hadm_id": "23852410",
-  "generated_at": "2026-08-20T17:30:20.685840",
+  "generated_at": "2026-08-20T22:07:24.584211",
   "ground_truth": {
     "primary_icd_code": "I9589",
     "primary_dx_title": "Other hypotension",
@@ -28,8 +28,8 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "high",
-      "llm_reason": "The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive / debility, generalized decline in functional status, weight loss and poor intake). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition) is a commonly associated/contributing condition but is a distinct principal diagnosis from failure to thrive, and is not a subtype or synonym of it. The remaining ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.",
-      "llm_expanded_ground_truth": "failure to thrive | FTT | adult failure to thrive | debility | generalized weakness with weight loss | poor oral intake with functional decline | R62.7",
+      "llm_reason": "The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive, debility/weight loss with functional decline, R62.7). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition, E46) is a related contributing/associated condition but is a distinct principal diagnosis from failure to thrive, analogous to the nephrolithiasis vs hydronephrosis exclusion. Other ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.",
+      "llm_expanded_ground_truth": "failure to thrive | adult failure to thrive | FTT | debility | unintentional weight loss with functional decline | cachexia/general decline",
       "llm_expanded_matched": "",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
@@ -113,8 +113,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. Additionally, the billed primary code I95.89 (other hypotension) is not represented by any mapped code in the differential list; the closest candidate codes (E46 malnutrition, I27.20 pulmonary hypertension, C34.90 lung cancer) are clinically distinct from hypotension and would not be accepted as equivalent by a coder.",
-      "llm_expanded_ground_truth_icd": "I95.89 | other hypotension | low blood pressure | chronic hypotension | I95 category hypotension",
+      "llm_icd_reason": "No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. The billed primary code I95.89 (other hypotension) does not correspond to any mapped code in the differential (C34.90, I27.20, D64.9, E46, D69.6, D70.9, J44.9, T86.91).",
+      "llm_expanded_ground_truth_icd": "I95.89 other hypotension | low blood pressure NEC | hypotension unspecified (I95.9)",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I27.20",
       "diagnosis_match": false,
@@ -126,26 +126,23 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive / debility, generalized decline in functional status, weight loss and poor intake). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition) is a commonly associated/contributing condition but is a distinct principal diagnosis from failure to thrive, and is not a subtype or synonym of it. The remaining ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.",
+      "diagnosis_reason": "The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive, debility/weight loss with functional decline, R62.7). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition, E46) is a related contributing/associated condition but is a distinct principal diagnosis from failure to thrive, analogous to the nephrolithiasis vs hydronephrosis exclusion. Other ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.",
       "ground_truth_expansions": [
         "failure to thrive",
-        "FTT",
         "adult failure to thrive",
+        "FTT",
         "debility",
-        "generalized weakness with weight loss",
-        "poor oral intake with functional decline",
-        "R62.7"
+        "unintentional weight loss with functional decline",
+        "cachexia/general decline"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "high",
-      "icd_reason": "No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. Additionally, the billed primary code I95.89 (other hypotension) is not represented by any mapped code in the differential list; the closest candidate codes (E46 malnutrition, I27.20 pulmonary hypertension, C34.90 lung cancer) are clinically distinct from hypotension and would not be accepted as equivalent by a coder.",
+      "icd_reason": "No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. The billed primary code I95.89 (other hypotension) does not correspond to any mapped code in the differential (C34.90, I27.20, D64.9, E46, D69.6, D70.9, J44.9, T86.91).",
       "ground_truth_icd_expansions": [
-        "I95.89",
-        "other hypotension",
-        "low blood pressure",
-        "chronic hypotension",
-        "I95 category hypotension"
+        "I95.89 other hypotension",
+        "low blood pressure NEC",
+        "hypotension unspecified (I95.9)"
       ],
       "matched_icd_expansions": [],
       "_cache_hit": false

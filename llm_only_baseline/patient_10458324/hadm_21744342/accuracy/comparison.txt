@@ -1,0 +1,49 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 10458324
+HADM ID          : 21744342
+Generated        : 2026-08-21T23:51:49.165147
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Rib fracture; Paroxsysmal Atrial Fibrillation
+  Billed ICD title     : Traumatic pneumothorax, initial encounter (ICD metric only)
+  Rank-1 predicted     : Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)
+    score=95.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)
+    score=95.0  confidence=high
+  LLM reason           : Physician discharge diagnosis lists 'Rib fracture' as the principal condition; Rank 1 'Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)' names the same principal condition (rib fractures) with greater specificity (multiple, displaced, right-sided, with flail segment). Rank 5 additionally matches the secondary discharge diagnosis of paroxysmal atrial fibrillation, but rank 1 is the lowest matching rank.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : S27.0XXA — Traumatic pneumothorax, initial encounter
+  Rank-1 mapped ICD    : S22.5XXA — Flail chest, initial encounter for closed fracture
+  Matched mapped ICD   : S22.5XXA — Flail chest, initial encounter for closed fracture
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : Mapped ICD at matched rank 1 is S22.5XXA (Flail chest, initial encounter for closed fracture), a chest wall/rib fracture code. The billed primary ICD is S27.0XXA (Traumatic pneumothorax), an intrathoracic pleural air-collection injury. These code distinct principal conditions and are not interchangeable, although rank 4 separately mapped to S27.0XXA.
+  Stage 9 final ICD    : S22.5XXA (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)  [score=95.0, high]  ICD=S22.5XXA — Flail chest, initial encounter for closed fracture
+   2. Acute hypoxemic respiratory failure requiring mechanical ventilation  [score=90.0, high]  ICD=J96.01 — Acute respiratory failure with hypoxia
+   3. Aspiration pneumonia with Haemophilus influenzae superinfection  [score=85.0, high]  ICD=J69.0 — Pneumonitis due to inhalation of food and vomit
+   4. Traumatic right pneumothorax/hydropneumothorax with subcutaneous emphysema  [score=84.0, high]  ICD=S27.0XXA — Traumatic pneumothorax, initial encounter
+   5. New-onset paroxysmal atrial fibrillation with rapid ventricular response  [score=80.0, high]  ICD=I48.0 — Paroxysmal atrial fibrillation
+   6. Opioid dependence maintained on methadone (IV drug use history)  [score=70.0, high]  ICD=F11.20 — Opioid dependence, uncomplicated
+   7. Acute volume overload with bilateral pleural effusions and peripheral edema  [score=55.0, medium]  ICD=E87.70 — Fluid overload, unspecified
+   8. PTSD with polysubstance use and bipolar disorder history  [score=45.0, medium]  ICD=F43.10 — Post-traumatic stress disorder, unspecified
+   9. Pulmonary contusion of right lung  [score=40.0, low]  ICD=S27.321A — Contusion of lung, unilateral, initial encounter
+  10. Protein-calorie malnutrition/cachexia (BMI 17.9)  [score=35.0, low]  ICD=E46 — Unspecified protein-calorie malnutrition

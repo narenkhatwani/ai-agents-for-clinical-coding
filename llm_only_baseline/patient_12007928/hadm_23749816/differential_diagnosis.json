@@ -1,0 +1,212 @@
+{
+  "summary": "An elderly obese woman with HFpEF (diastolic CHF, EF>55%), paroxysmal atrial fibrillation, sick sinus syndrome s/p dual-lead pacemaker, myasthenia gravis, seizure disorder and dementia presents days after discharge with severe dyspnea, orthopnea, JVP to the earlobe, 4+ lower extremity/sacral edema, crackles, and CXR showing pulmonary edema with bilateral pleural effusions. ProBNP 4640, troponin negative, TTE with preserved EF>55%, dilated RA/RV, RAP ≥15 mmHg and mild pulmonary hypertension. She required BiPAP in the CCU, was diuresed with IV Lasix then torsemide (weight 116.4 → 108.1 kg), with rising creatinine to 1.6 (baseline 1.1) consistent with cardiorenal acute kidney injury; myasthenia and myoclonic jerks were evaluated by neurology and EEG showed no seizures.",
+  "most_likely": "Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation",
+      "score": 96.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Dyspnea, orthopnea, JVP to earlobe, 4+ pitting edema",
+        "CXR: pulmonary edema, bilateral pleural effusions, cardiomegaly",
+        "proBNP 4640; TTE EF>55%, RAP ≥15 mmHg",
+        "Diuresed IV Lasix → torsemide, weight 116.4 → 108.1 kg"
+      ],
+      "opposing_evidence": [
+        "ProBNP lower than prior admission value of 9682"
+      ],
+      "reasoning": "Classic volume-overload presentation with preserved EF, imaging and biomarker support, and clear diuretic-driven hospital course; this is the principal disease treated."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute kidney injury on chronic kidney disease, cardiorenal syndrome",
+      "score": 82.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Admission creatinine 1.4, discharge 1.6, baseline 1.1",
+        "BUN 32 at discharge; note states 'cardiorenal in setting of under-diuresis'",
+        "Apixaban renally dosed at 2.5 mg BID"
+      ],
+      "opposing_evidence": [
+        "No oliguria or electrolyte derangement documented"
+      ],
+      "reasoning": "Documented rise above baseline creatinine attributed to cardiorenal physiology during aggressive diuresis; strongly codeable secondary/complication."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Myasthenia gravis with respiratory muscle weakness contributing to dyspnea",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Serial NIF measurements ~-30, lowest -22",
+        "Neurology consulted for myoclonic jerks and diaphragmatic irritation",
+        "Home pyridostigmine continued"
+      ],
+      "opposing_evidence": [
+        "NIF attributed mainly to poor effort; no medication change made",
+        "No bulbar symptoms or crisis"
+      ],
+      "reasoning": "Active neuromuscular contributor evaluated and monitored this stay, though without documented exacerbation or treatment escalation."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Paroxysmal atrial fibrillation with pacemaker-dependent ventricular pacing",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "EKG V-paced with probable underlying atrial fibrillation, 100% V-pacing",
+        "Continued apixaban 2.5 mg BID, telemetry monitoring",
+        "Prior ICD I480 and sick sinus syndrome s/p PPM"
+      ],
+      "opposing_evidence": [
+        "No rate-control agents required; rhythm not the driver of admission"
+      ],
+      "reasoning": "Chronic arrhythmia actively managed and anticoagulated this stay; a contributing but not principal diagnosis."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute delirium superimposed on Alzheimer's dementia",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Discharge exam AAOx2, sundowning during day",
+        "Seroquel 25 mg QHS PRN started; transitional issue mentions delirium",
+        "EEG showed mildly slow background suggesting mild encephalopathy"
+      ],
+      "opposing_evidence": [
+        "Oriented x3 on admission exam"
+      ],
+      "reasoning": "Documented acute confusional change on a dementia background requiring pharmacologic and non-pharmacologic management."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Chronic venous stasis with lipodermatosclerosis and MSSA-colonized leg wounds",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Weeping erythematous legs, unroofed blisters healing",
+        "Wound culture: Staph aureus coag positive, sparse growth",
+        "Wound care consult, aquaphor BID PRN; prior varicose veins with inflammation"
+      ],
+      "opposing_evidence": [
+        "No antibiotics given; no cellulitis, fever, or leukocytosis"
+      ],
+      "reasoning": "Real active skin problem addressed this stay but explicitly judged not a clinically significant infection."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Hypertensive heart and chronic kidney disease",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Lisinopril increased 2.5 → 5 mg daily this admission",
+        "LVH on TTE; SBP 120-147 on discharge",
+        "Prior ICD I129 hypertensive CKD"
+      ],
+      "opposing_evidence": [
+        "No hypertensive urgency or end-organ crisis this stay"
+      ],
+      "reasoning": "Longstanding hypertension underpinning HFpEF and CKD, actively titrated during the admission."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Acute hypoxemic respiratory failure requiring noninvasive ventilation",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Brought by EMS on non-rebreather for hypoxia and tachypnea",
+        "Initiated on BiPAP in the CCU; RR up to 23"
+      ],
+      "opposing_evidence": [
+        "ABG pH 7.45, pCO2 36, pO2 103; SpO2 94-100%"
+      ],
+      "reasoning": "BiPAP use and pre-hospital non-rebreather support a respiratory failure code, but gas exchange values were near normal after treatment."
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Acute coronary syndrome / myocardial ischemia",
+      "score": 10.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Fleeting 'little chest pains'; new TWI V4-V6 on EKG"
+      ],
+      "opposing_evidence": [
+        "Troponin <0.01 x2, CK-MB 3",
+        "Prior cath with minimal non-obstructive CAD"
+      ],
+      "reasoning": "Considered given chest discomfort and repolarization changes, but negative biomarkers and known minimal CAD make it very unlikely."
+    },
+    {
+      "rank": 10,
+      "diagnosis": "Pulmonary embolism as cause of acute dyspnea",
+      "score": 8.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "History of prior pulmonary embolism; dilated RV on TTE"
+      ],
+      "opposing_evidence": [
+        "Therapeutic on apixaban; prior CTA negative for PE",
+        "Findings fully explained by volume overload"
+      ],
+      "reasoning": "Anticoagulated with an alternative explanation for dyspnea; listed only for completeness."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Myasthenic crisis",
+      "why": "NIF around -30 attributed to effort, no bulbar weakness, no immunotherapy or intubation required."
+    },
+    {
+      "diagnosis": "Pneumonia / lower respiratory infection",
+      "why": "Afebrile, WBC 3.9-6.4, CXR findings consistent with edema and effusions, no antibiotics given."
+    },
+    {
+      "diagnosis": "Urinary tract infection",
+      "why": "UA negative for nitrite and leukocyte esterase, urine culture no growth despite foley and bladder spasms."
+    },
+    {
+      "diagnosis": "Seizure / status epilepticus",
+      "why": "EEG showed no epileptiform features or electrographic seizures despite myoclonic jerks."
+    },
+    {
+      "diagnosis": "Cardiac tamponade from pericardial effusion",
+      "why": "TTE showed only trivial to very small circumferential effusion with no echocardiographic signs of tamponade."
+    }
+  ],
+  "uncertain_areas": [
+    "Whether documentation supports coding acute hypoxemic respiratory failure given BiPAP use but normal ABG",
+    "Whether the MSSA wound growth was coded as a skin infection or as colonization only",
+    "Degree of chronic kidney disease staging versus pure acute kidney injury",
+    "Whether delirium was formally documented as a discharge diagnosis versus dementia alone",
+    "Whether myasthenia gravis was coded with or without acute exacerbation"
+  ],
+  "n_candidates": 10,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "12007928",
+  "hadm_id": "23749816",
+  "generated_at": "2026-08-21T23:41:44.631314",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

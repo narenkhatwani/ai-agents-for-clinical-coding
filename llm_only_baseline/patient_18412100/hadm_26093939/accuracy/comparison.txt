@@ -1,0 +1,48 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 18412100
+HADM ID          : 26093939
+Generated        : 2026-08-21T23:53:44.745503
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Desmoid tumor
+  Billed ICD title     : Neoplasm of uncertain behavior of connective and other soft tissue (ICD metric only)
+  Rank-1 predicted     : Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall — neoplasm of uncertain behavior of connective/soft tissue
+    score=95.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall — neoplasm of uncertain behavior of connective/soft tissue
+    score=95.0  confidence=high
+  LLM reason           : Rank 1 names desmoid tumor (aggressive fibromatosis) of the anterior abdominal wall, the same principal condition as the physician discharge diagnosis 'Desmoid tumor', with added anatomic specificity.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue
+  Rank-1 mapped ICD    : D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue
+  Matched mapped ICD   : D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue
+  ICD match            : YES
+  ICD exact            : YES
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped ICD at rank 1 is D48.1, an exact match to the billed primary ICD D48.1 (Neoplasm of uncertain behavior of connective and other soft tissue).
+  Stage 9 final ICD    : D48.1 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall — neoplasm of uncertain behavior of connective/soft tissue  [score=95.0, high]  ICD=D48.1 — Neoplasm of uncertain behavior of connective and other soft tissue
+   2. Acute post-procedural (post-ablation) abdominal pain requiring parenteral analgesia  [score=88.0, high]  ICD=G89.18 — Other acute postprocedural pain
+   3. Post-procedural nausea following general anesthesia and cryoablation  [score=62.0, medium]  ICD=R11.0 — Nausea
+   4. Chronic hepatitis C virus infection, genotype 3, with hepatic fibrosis  [score=58.0, high]  ICD=B18.2 — Chronic viral hepatitis C
+   5. Reactive leukocytosis secondary to tissue ablation and inflammatory response  [score=45.0, medium]  ICD=D72.829 — Elevated white blood cell count, unspecified
+   6. Chronic pain due to abdominal wall neoplasm on long-term opioid therapy  [score=40.0, medium]  ICD=G89.3 — Neoplasm related pain (acute) (chronic)
+   7. Obesity, class I, with BMI 31.7  [score=33.0, high]  ICD=E66.9 — Obesity, unspecified
+   8. Hashimoto (autoimmune) thyroiditis with thyroid nodules  [score=25.0, medium]  ICD=E06.3 — Autoimmune thyroiditis
+   9. Post-procedural hemorrhage or hematoma of abdominal wall  [score=10.0, low]  ICD=L76.32 — Postprocedural hematoma of skin and subcutaneous tissue following other procedure

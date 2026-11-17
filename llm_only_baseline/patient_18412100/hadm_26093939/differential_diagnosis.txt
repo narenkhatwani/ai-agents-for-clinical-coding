@@ -1,0 +1,63 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 18412100
+HADM ID          : 26093939
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:48:53.115708
+Candidates       : 9
+Most likely      : Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall, neoplasm of uncertain behavior of soft tissue, status post cryoablation
+
+Summary:
+  Middle-aged woman with a large painful right anterior abdominal wall desmoid tumor (biopsy-proven, previously 14 cm) admitted overnight after staged CT/ultrasound-guided cryoablation of the residual tumor. The procedure was uncomplicated; she was observed for post-procedural right-sided abdominal/flank pain and transient nausea, managed with dilaudid PCA, IV ketorolac and IV ondansetron, then transitioned to oral agents. Labs show a reactive post-ablation leukocytosis (WBC 12.5 → 15.2) and thrombocytosis without evidence of infection or bleeding; chronic hepatitis C (genotype 3, VL ~430,000) was unchanged inpatient.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [95.0/100 | high]  Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall — neoplasm of uncertain behavior of connective/soft tissue  (primary)
+      + Chief complaint: 'Desmoid tumor'
+      + CT: residual large right abdominal wall desmoid tumor cryoablated
+      + Prior stay principal ICD-10 D48.1 for same lesion
+      - Admission mechanism was post-procedure observation rather than tumor complication
+      why: The disease driving this planned staged-ablation admission is the residual abdominal wall desmoid tumor; it is the billable principal condition rather than the procedural event.
+  #2  [88.0/100 | high]  Acute post-procedural (post-ablation) abdominal pain requiring parenteral analgesia  (complication)
+      + Post-procedural right abdominal pain radiating to back on floor exam
+      + Managed with dilaudid PCA and IV toradol overnight
+      + Prior admission coded G89.18 for identical scenario
+      - Pain expected/anticipated, resolved by discharge
+      why: Pain control was the explicit reason for the overnight stay and is well documented, making it a strong secondary/complication code.
+  #3  [62.0/100 | medium]  Post-procedural nausea following general anesthesia and cryoablation  (complication)
+      + 'one brief episode of nausea that then passed', no vomiting
+      + Treated with IV Zofran, discharged on prochlorperazine
+      - Nausea mild and self-limited this admission, unlike prior stay with emesis
+      why: Documented and treated symptom of the current stay, but milder than the prior admission so scored below pain.
+  #4  [58.0/100 | high]  Chronic hepatitis C virus infection, genotype 3, with hepatic fibrosis  (secondary)
+      + Genotype 3 HCV, last viral load 430,000
+      + FibroScan consistent with fibrosis; prior ICD B18.2
+      - No inpatient management or hepatic decompensation this stay
+      why: Active chronic comorbidity explicitly addressed in the hospital course ('no changes as inpatient'), supporting a secondary code.
+  #5  [45.0/100 | medium]  Reactive leukocytosis secondary to tissue ablation and inflammatory response  (complication)
+      + WBC 12.5 on admission rising to 15.2 at discharge; platelets 484
+      + Prior stay WBC 19.4 attributed to post-procedure inflammation
+      - Afebrile, no infectious signs, no antibiotics given
+      why: Objective abnormal lab likely inflammatory/post-ablation; clinically non-actionable but codable as an abnormal finding.
+  #6  [40.0/100 | medium]  Chronic pain due to abdominal wall neoplasm on long-term opioid therapy  (secondary)
+      + History of large painful desmoid with home oxycodone and Sulindac
+      + Prior stay coded G89.29 chronic pain
+      - Current documentation emphasizes acute post-procedural rather than baseline pain
+      why: Baseline tumor-related chronic pain contextualizes analgesic needs but is secondary to the acute post-procedural pain this stay.
+  #7  [33.0/100 | high]  Obesity, class I, with BMI 31.7  (risk_factor)
+      + Structured BMI 31.7 kg/m2, weight 179 lb
+      + Prior coding E66.9 with BMI Z-code
+      - Not discussed in current note text
+      why: Objectively documented BMI supports an obesity plus BMI code as a comorbidity/risk factor.
+  #8  [25.0/100 | medium]  Hashimoto (autoimmune) thyroiditis with thyroid nodules  (secondary)
+      + PMH lists thyroiditis; prior FNA consistent with Hashimoto thyroiditis
+      - No thyroid labs or treatment this admission
+      why: Stable chronic comorbidity carried from PMH with no current activity, hence a low score.
+  #9  [10.0/100 | low]  Post-procedural hemorrhage or hematoma of abdominal wall  (differential)
+      + Hemoglobin fell 12.7 to 11.2; right-sided abdominal tenderness
+      - Report states hemostasis achieved, no immediate complications
+      - Hemodynamically stable, drop consistent with IV fluid dilution
+      why: Considered because of the modest hemoglobin decline, but imaging and stable vitals argue strongly against clinically significant bleeding.

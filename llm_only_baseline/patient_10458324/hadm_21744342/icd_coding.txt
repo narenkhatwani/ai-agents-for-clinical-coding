@@ -1,0 +1,29 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 10458324
+HADM ID          : 21744342
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : S22.5XXA — Flail chest, initial encounter for closed fracture
+Primary condition: Multiple displaced right rib fractures with flail chest after blunt chest trauma
+
+  #1  Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)  →  S22.5XXA — Flail chest, initial encounter for closed fracture
+      reason: CT shows multiple consecutive displaced right 6th-11th rib fractures after fall onto bathtub; flail chest documented clinically and radiographically.
+  #2  Acute hypoxemic respiratory failure requiring mechanical ventilation  →  J96.01 — Acute respiratory failure with hypoxia
+      reason: Hypoxia with pO2 52, 4L O2 requirement, intubation in TSICU then self-extubation documented in hospital course.
+  #3  Aspiration pneumonia with Haemophilus influenzae superinfection  →  J69.0 — Pneumonitis due to inhalation of food and vomit
+      reason: CT opacities suspicious for aspiration/pneumonia; sputum culture heavy growth beta-lactamase positive Haemophilus influenzae; fever treated with antibiotics.
+  #4  Traumatic right pneumothorax/hydropneumothorax with subcutaneous emphysema  →  S27.0XXA — Traumatic pneumothorax, initial encounter
+      reason: Right apical pneumothorax with pigtail drainage, right hydropneumothorax and right chest wall subcutaneous emphysema on serial imaging.
+  #5  New-onset paroxysmal atrial fibrillation with rapid ventricular response  →  I48.0 — Paroxysmal atrial fibrillation
+      reason: ICU transfer for atrial fibrillation with RVR; managed as new paroxysmal AF during admission.
+  #6  Opioid dependence maintained on methadone (IV drug use history)  →  F11.20 — Opioid dependence, uncomplicated
+      reason: Documented IVDU/opiate dependence history with methadone maintenance; no withdrawal complications described this stay.
+  #7  Acute volume overload with bilateral pleural effusions and peripheral edema  →  E87.70 — Fluid overload, unspecified
+      reason: Elevated JVP, bilateral pedal edema, bilateral effusions and edema-pattern opacities on chest imaging.
+  #8  PTSD with polysubstance use and bipolar disorder history  →  F43.10 — Post-traumatic stress disorder, unspecified
+      reason: Psychiatric history lists PTSD, bipolar disorder and polysubstance use, relevant to current management.
+  #9  Pulmonary contusion of right lung  →  S27.321A — Contusion of lung, unilateral, initial encounter
+      reason: CXR describes right lung base atelectasis versus contusion following blunt chest trauma; possible but not confirmed.
+  #10  Protein-calorie malnutrition/cachexia (BMI 17.9)  →  E46 — Unspecified protein-calorie malnutrition
+      reason: Cachectic on exam with BMI 17.9 and weight 125 lbs; severity not specified in note.

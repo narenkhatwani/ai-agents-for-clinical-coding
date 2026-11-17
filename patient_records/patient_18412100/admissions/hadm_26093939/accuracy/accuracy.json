@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "18412100",
   "hadm_id": "26093939",
-  "generated_at": "2026-08-20T17:30:54.996703",
+  "generated_at": "2026-08-20T22:07:56.382014",
   "ground_truth": {
     "primary_icd_code": "D481",
     "primary_dx_title": "Neoplasm of uncertain behavior of connective and other soft tissue",
@@ -28,8 +28,8 @@
       "matched_confidence": "",
       "llm_relationship": "different",
       "llm_confidence": "high",
-      "llm_reason": "The physician discharge diagnosis is desmoid tumor (aggressive fibromatosis, a locally aggressive soft-tissue fibroblastic neoplasm of uncertain behavior). No rank in the differential names a neoplasm or soft-tissue tumor. Rank 1 (post-procedural pain) may be a downstream symptom of tumor resection but is not the same principal condition; ranks 2-5 (hepatitis C, hypokalemia, hypocalcemia, anemia) are unrelated infectious, electrolyte, and hematologic conditions.",
-      "llm_expanded_ground_truth": "desmoid tumor | aggressive fibromatosis | desmoid-type fibromatosis | musculoaponeurotic fibromatosis | soft tissue neoplasm of uncertain behavior | abdominal wall/intra-abdominal desmoid",
+      "llm_reason": "The physician discharge diagnosis is desmoid tumor (aggressive fibromatosis, a locally aggressive soft-tissue fibroblastic neoplasm of uncertain behavior). No rank in the differential names a neoplasm or soft-tissue tumor. Rank 1 'Post-procedural pain' is a symptom/postoperative complication, not the tumor itself; ranks 2-5 (hepatitis C, hypokalemia, hypocalcemia, anemia) are unrelated infectious, electrolyte, and hematologic conditions. No same-principal condition is present at any rank.",
+      "llm_expanded_ground_truth": "Desmoid tumor | Desmoid-type fibromatosis | Aggressive fibromatosis | Musculoaponeurotic fibromatosis | Soft tissue neoplasm of uncertain behavior | Abdominal wall desmoid | Intra-abdominal fibromatosis",
       "llm_expanded_matched": "",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
@@ -89,8 +89,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "Billed primary code D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) codes the desmoid tumor. No rank matched; the closest rank ICD, R10.9 (unspecified abdominal pain), is a symptom code and would not be accepted by a coder as equivalent to a soft-tissue neoplasm code. Other mapped codes (B19.20, E87.6, E83.51, D64.9) are in entirely different chapters.",
-      "llm_expanded_ground_truth_icd": "D48.1 neoplasm of uncertain behavior of connective and other soft tissue | desmoid tumor coding | aggressive fibromatosis (D48.1)",
+      "llm_icd_reason": "No rank matched, so no mapped ICD can be compared. Billed primary D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) is not clinically equivalent to R10.9 (unspecified abdominal pain) or any other mapped code in the list (B19.20, E87.6, E83.51, D64.9), which represent symptoms, viral hepatitis, electrolyte disorders, and anemia rather than a soft-tissue neoplasm.",
+      "llm_expanded_ground_truth_icd": "D48.1 | Neoplasm of uncertain behavior of connective and other soft tissue | Desmoid tumor coding | Uncertain behavior soft tissue tumor",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "R10.9",
       "diagnosis_match": false,
@@ -102,23 +102,25 @@
       "diagnosis_equivalent": false,
       "diagnosis_relationship": "different",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "The physician discharge diagnosis is desmoid tumor (aggressive fibromatosis, a locally aggressive soft-tissue fibroblastic neoplasm of uncertain behavior). No rank in the differential names a neoplasm or soft-tissue tumor. Rank 1 (post-procedural pain) may be a downstream symptom of tumor resection but is not the same principal condition; ranks 2-5 (hepatitis C, hypokalemia, hypocalcemia, anemia) are unrelated infectious, electrolyte, and hematologic conditions.",
+      "diagnosis_reason": "The physician discharge diagnosis is desmoid tumor (aggressive fibromatosis, a locally aggressive soft-tissue fibroblastic neoplasm of uncertain behavior). No rank in the differential names a neoplasm or soft-tissue tumor. Rank 1 'Post-procedural pain' is a symptom/postoperative complication, not the tumor itself; ranks 2-5 (hepatitis C, hypokalemia, hypocalcemia, anemia) are unrelated infectious, electrolyte, and hematologic conditions. No same-principal condition is present at any rank.",
       "ground_truth_expansions": [
-        "desmoid tumor",
-        "aggressive fibromatosis",
-        "desmoid-type fibromatosis",
-        "musculoaponeurotic fibromatosis",
-        "soft tissue neoplasm of uncertain behavior",
-        "abdominal wall/intra-abdominal desmoid"
+        "Desmoid tumor",
+        "Desmoid-type fibromatosis",
+        "Aggressive fibromatosis",
+        "Musculoaponeurotic fibromatosis",
+        "Soft tissue neoplasm of uncertain behavior",
+        "Abdominal wall desmoid",
+        "Intra-abdominal fibromatosis"
       ],
       "matched_diagnosis_expansions": [],
       "icd_equivalent": false,
       "icd_confidence": "high",
-      "icd_reason": "Billed primary code D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) codes the desmoid tumor. No rank matched; the closest rank ICD, R10.9 (unspecified abdominal pain), is a symptom code and would not be accepted by a coder as equivalent to a soft-tissue neoplasm code. Other mapped codes (B19.20, E87.6, E83.51, D64.9) are in entirely different chapters.",
+      "icd_reason": "No rank matched, so no mapped ICD can be compared. Billed primary D48.1 (neoplasm of uncertain behavior of connective and other soft tissue) is not clinically equivalent to R10.9 (unspecified abdominal pain) or any other mapped code in the list (B19.20, E87.6, E83.51, D64.9), which represent symptoms, viral hepatitis, electrolyte disorders, and anemia rather than a soft-tissue neoplasm.",
       "ground_truth_icd_expansions": [
-        "D48.1 neoplasm of uncertain behavior of connective and other soft tissue",
-        "desmoid tumor coding",
-        "aggressive fibromatosis (D48.1)"
+        "D48.1",
+        "Neoplasm of uncertain behavior of connective and other soft tissue",
+        "Desmoid tumor coding",
+        "Uncertain behavior soft tissue tumor"
       ],
       "matched_icd_expansions": [],
       "_cache_hit": false

@@ -1,0 +1,177 @@
+{
+  "summary": "Morbidly obese man with CAD s/p CABG, chronic systolic heart failure (EF ~30%), type 2 diabetes and CKD was admitted electively to Urology for an 8 cm left renal mass and underwent laparoscopic left radical nephrectomy with retroperitoneal (para-aortic and hilar) lymph node dissection. Postoperative course was unremarkable apart from anemia (Hgb 8.5–8.9, Hct 26–28), creatinine rising to 2.0–2.3 mg/dL above his prior 1.3–1.6 baseline, and one markedly elevated glucose of 566 mg/dL. He was discharged tolerating diet, ambulating, voiding, on oral analgesia. The principal condition for this stay is the renal malignancy that prompted surgery, with post-nephrectomy renal insufficiency, anemia and diabetic hyperglycemia as secondary/complication codes.",
+  "most_likely": "Malignant neoplasm of left kidney (renal cell carcinoma) treated with radical nephrectomy",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Malignant neoplasm of left kidney (renal cell carcinoma), 8 cm mass",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Chief complaint: 8 cm left renal mass",
+        "Laparoscopic left radical nephrectomy plus retroperitoneal lymph node dissection",
+        "Prior ICD C649 malignant neoplasm of kidney"
+      ],
+      "opposing_evidence": [
+        "Final pathology not stated in redacted note"
+      ],
+      "reasoning": "Elective admission solely for definitive oncologic resection of a suspicious renal mass; radical nephrectomy with nodal dissection makes renal malignancy the principal diagnosis."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute kidney injury on chronic kidney disease following nephrectomy",
+      "score": 66.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Creatinine 1.8 → 2.3 → 2.0 mg/dL postoperatively",
+        "Prior baseline creatinine 1.3–1.6, known CKD/diabetic nephropathy",
+        "Loss of one kidney after radical nephrectomy"
+      ],
+      "opposing_evidence": [
+        "Urine output maintained >30 cc/hr; trend improving at discharge"
+      ],
+      "reasoning": "Postoperative creatinine clearly exceeds documented baseline in a solitary-kidney state, supporting acute renal insufficiency superimposed on CKD."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Acute postoperative blood loss anemia",
+      "score": 60.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Hgb 8.5–8.9 g/dL, Hct 26.3–28.3 after major laparoscopic resection",
+        "Prior admission Hgb 11.6 g/dL"
+      ],
+      "opposing_evidence": [
+        "No transfusion documented; no hematoma on exam",
+        "High RDW may suggest chronic component"
+      ],
+      "reasoning": "Significant hemoglobin drop from prior baseline in the immediate postoperative period after nephrectomy and node dissection is typical acute blood-loss anemia."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Type 2 diabetes mellitus with hyperglycemia and diabetic chronic kidney disease",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Glucose 566 mg/dL on one postoperative day; 113 on others",
+        "PMH non-insulin-dependent diabetes; prior ICD E1122"
+      ],
+      "opposing_evidence": [
+        "No documented ketoacidosis or hyperosmolar state",
+        "No diabetes medications on admission list"
+      ],
+      "reasoning": "A marked perioperative hyperglycemic excursion in a known diabetic with CKD supports coding diabetes with hyperglycemia as an active secondary condition."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Chronic systolic (congestive) heart failure with reduced ejection fraction",
+      "score": 50.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "History of severe CHF, EF ~30%",
+        "Home torsemide, spironolactone, carvedilol, hydralazine, isosorbide continued"
+      ],
+      "opposing_evidence": [
+        "No edema on exam; no documented decompensation this stay"
+      ],
+      "reasoning": "Chronic, medically managed HFrEF requiring careful perioperative fluid management—relevant comorbidity but not decompensated during this admission."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Coronary artery disease in patient with prior coronary artery bypass graft",
+      "score": 44.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "CAD s/p three-vessel CABG",
+        "Prior ICD Z951 presence of aortocoronary bypass graft; on aspirin, statin"
+      ],
+      "opposing_evidence": [
+        "No chest pain, ischemic events or troponins this stay"
+      ],
+      "reasoning": "Documented ischemic heart disease increases perioperative risk and is codable as a chronic comorbidity/status."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Morbid obesity with obstructive sleep apnea on CPAP",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "BMI 42.1 kg/m2, weight 285 lb",
+        "PMH morbid obesity and OSA on CPAP; prior ICD Z6841, G4733"
+      ],
+      "opposing_evidence": [
+        "No respiratory events documented this admission"
+      ],
+      "reasoning": "Objective BMI in the class III range with documented OSA supports secondary coding and affects perioperative risk."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Essential hypertension with hypertensive chronic kidney disease",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "secondary",
+      "supporting_evidence": [
+        "PMH hypertension; on losartan, carvedilol, hydralazine, isosorbide",
+        "Prior ICD I129 with CKD"
+      ],
+      "opposing_evidence": [
+        "Blood pressures not recorded in current structured data"
+      ],
+      "reasoning": "Chronic hypertension with renal involvement is well documented historically and continued pharmacologically, though not actively managed as a problem this stay."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Postoperative hemorrhage or retroperitoneal hematoma",
+      "why": "Hemoglobin low but stable; exam shows no hematoma collection, drains removed without difficulty."
+    },
+    {
+      "diagnosis": "Surgical site or urinary tract infection",
+      "why": "WBC normal at 8.3, incisions clean/dry/intact, only prophylactic antibiotics given."
+    },
+    {
+      "diagnosis": "Acute decompensated systolic heart failure",
+      "why": "No dyspnea, no edema, no pulmonary edema imaging this stay despite EF ~30% history."
+    },
+    {
+      "diagnosis": "Deep vein thrombosis / pulmonary embolism",
+      "why": "No calf tenderness or edema; pneumoboots prophylaxis, no symptoms documented."
+    },
+    {
+      "diagnosis": "Hyperosmolar hyperglycemic state",
+      "why": "Single glucose of 566 with normal sodium, anion gap 18, bicarbonate 23 and no altered mental status documented."
+    }
+  ],
+  "uncertain_areas": [
+    "Surgical pathology (RCC subtype, stage, nodal involvement) would confirm the malignancy code and laterality",
+    "Whether creatinine elevation was documented as acute kidney injury versus expected post-nephrectomy CKD progression",
+    "Whether anemia was labeled acute blood loss versus chronic disease; transfusion records unavailable",
+    "Whether the glucose 566 was treated as a coded hyperglycemia/HHS event or a lab artifact",
+    "Perioperative vitals and any cardiac monitoring results that could indicate arrhythmia or heart failure exacerbation"
+  ],
+  "n_candidates": 8,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "13508515",
+  "hadm_id": "21834271",
+  "generated_at": "2026-08-21T23:43:57.803513",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

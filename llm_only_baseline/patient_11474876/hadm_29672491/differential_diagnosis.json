@@ -1,0 +1,176 @@
+{
+  "summary": "Elderly man with paroxysmal atrial fibrillation on apixaban, HFpEF, PVD s/p aortobifemoral bypass, and CKD stage 3, admitted electively after a scheduled follow-up ERCP performed one month after stent placement for cholangitis. The ERCP demonstrated multiple bile duct stones and sludge; he underwent stent removal, sphincterotomy, and stone/sludge extraction without complication. Post-procedure he was asymptomatic with normal LFTs (ALT 16, AST 23, AlkPhos 102, TBili 1.0) and no leukocytosis, arguing against active cholangitis or post-ERCP pancreatitis. He was observed overnight with apixaban held 48 hours, Lasix briefly held then resumed, and declined inpatient surgical evaluation for cholecystectomy.",
+  "most_likely": "Choledocholithiasis (bile duct calculi with sludge) treated by ERCP with sphincterotomy and stone extraction",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis",
+      "score": 93.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "ERCP showed multiple stones and sludge",
+        "Sphincterotomy with stone/sludge extraction and stent removal",
+        "Normal bilirubin 1.0, ALT 16, AlkPhos 102 — no active obstruction"
+      ],
+      "opposing_evidence": [
+        "No current abdominal pain or cholestatic labs"
+      ],
+      "reasoning": "The documented ERCP findings of multiple ductal stones and sludge treated with sphincterotomy make bile duct calculi the condition chiefly responsible for this admission."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Cholelithiasis (gallbladder stones) with planned/deferred cholecystectomy",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Prior CT/US: mobile gallstones up to 4 mm, gallbladder wall thickening",
+        "Surgery recommended CCY if stones found on repeat ERCP",
+        "Patient declined surgery, will follow up in clinic"
+      ],
+      "opposing_evidence": [
+        "No current imaging of the gallbladder this stay"
+      ],
+      "reasoning": "Gallbladder stones are documented historically and drive the ongoing cholecystectomy discussion this admission, supporting a secondary code."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Paroxysmal atrial fibrillation on long-term anticoagulation, apixaban periprocedurally held",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Continued home propranolol and amiodarone",
+        "Apixaban held 2 days pre-procedure, resume 48h post",
+        "Prior ICD-10 I480, Z7901"
+      ],
+      "opposing_evidence": [
+        "Exam RRR; no documented arrhythmia this stay"
+      ],
+      "reasoning": "Active chronic condition managed and explicitly documented, with stroke-risk counseling around anticoagulation interruption."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Chronic heart failure with preserved ejection fraction with peripheral volume overload",
+      "score": 52.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "HFpEF listed; cardiologist recently increased Lasix",
+        "Moderate bilateral pitting edema on admission exam, mild at discharge",
+        "Lasix held periprocedurally then restarted"
+      ],
+      "opposing_evidence": [
+        "No dyspnea, lungs clear, no hypoxia this stay"
+      ],
+      "reasoning": "Edema and active diuretic titration support a coded chronic HFpEF diagnosis, though no acute decompensation occurred."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Chronic kidney disease stage 3 (moderate)",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Creatinine 1.4 mg/dL, baseline documented 1.6–1.8",
+        "Home calcitriol continued",
+        "Prior ICD-10 N183"
+      ],
+      "opposing_evidence": [
+        "Creatinine actually better than baseline this stay"
+      ],
+      "reasoning": "Documented chronic renal impairment managed during the stay; relevant to fluids, contrast, and drug dosing."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Essential hypertension with hypertensive heart disease",
+      "score": 42.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "BP 142/57 on admission",
+        "Continued propranolol, lisinopril, amlodipine",
+        "Prior ICD-10 I110"
+      ],
+      "opposing_evidence": [
+        "No hypertensive urgency or end-organ event this stay"
+      ],
+      "reasoning": "Stable chronic hypertension actively treated with three agents; supports comorbidity coding."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Recurrent/resolved ascending cholangitis following prior biliary stenting",
+      "score": 25.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Prior admission principal diagnosis was cholangitis with stent placement",
+        "Periprocedural ciprofloxacin given"
+      ],
+      "opposing_evidence": [
+        "Afebrile, WBC 7.2, normal LFTs and bilirubin",
+        "No further antibiotics recommended post-procedure"
+      ],
+      "reasoning": "Historical context only; current labs and exam show no active biliary infection, so scored low."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Post-ERCP pancreatitis or post-sphincterotomy hemorrhage",
+      "score": 12.0,
+      "confidence": "low",
+      "category": "complication",
+      "supporting_evidence": [
+        "Sphincterotomy performed with anticoagulation recently held",
+        "Slight tenderness bilateral upper abdomen"
+      ],
+      "opposing_evidence": [
+        "Procedure described as uncomplicated; tolerating regular diet",
+        "Hgb 12.6 (improved), no lipase abnormality documented"
+      ],
+      "reasoning": "Standard post-ERCP complications were monitored for but not documented; low likelihood given benign course."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Acute cholangitis",
+      "why": "Afebrile, WBC 7.2, normal bilirubin and alkaline phosphatase, no antibiotics continued."
+    },
+    {
+      "diagnosis": "Post-ERCP pancreatitis",
+      "why": "No abdominal pain, tolerating regular diet, discharged next day."
+    },
+    {
+      "diagnosis": "Acute decompensated heart failure",
+      "why": "No dyspnea or hypoxia, clear lungs; edema only, Lasix restarted at discharge."
+    },
+    {
+      "diagnosis": "Acute kidney injury",
+      "why": "Creatinine 1.4 is below documented baseline of 1.6–1.8."
+    }
+  ],
+  "uncertain_areas": [
+    "Whether the ERCP report designates stones in the common bile duct versus gallbladder only",
+    "Lipase/amylase values post-procedure to exclude subclinical pancreatitis",
+    "Documented ejection fraction and whether HFpEF was coded acute vs chronic",
+    "Whether cholecystitis was present on any current imaging (none recorded)"
+  ],
+  "n_candidates": 8,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "11474876",
+  "hadm_id": "29672491",
+  "generated_at": "2026-08-21T23:39:35.069846",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

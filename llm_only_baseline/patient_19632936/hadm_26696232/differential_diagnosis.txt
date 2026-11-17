@@ -1,0 +1,72 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 19632936
+HADM ID          : 26696232
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:51:01.479337
+Candidates       : 8
+Most likely      : Iron deficiency anemia due to chronic occult gastrointestinal blood loss
+
+Summary:
+  Elderly man with CAD s/p 2 stents, atrial fibrillation on warfarin (INR 2.4 on arrival), sick sinus syndrome s/p pacemaker, mild-moderate aortic stenosis and known Barrett's esophagus presents with symptomatic acute-on-chronic macrocytic anemia (Hgb 6.7), dyspnea on exertion and fatigue after outpatient labs. Iron studies show marked iron deficiency (Fe 15, ferritin 27, TIBC 306) despite two recent Feraheme infusions; one guaiac-positive stool on the floor, but extensive prior EGD/colonoscopy/capsule showed only Barrett's esophagus and gastritis without active bleeding. He was transfused 3 units PRBC (discharge Hgb 8.7), given IV iron and started on B12 repletion (B12 255, low-normal), with hematology follow-up and planned bone marrow biopsy for the unexplained macrocytic component.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [90.0/100 | high]  Iron deficiency anemia due to chronic occult gastrointestinal blood loss  (primary)
+      + Iron 15, ferritin 27, TIBC 306 on admission
+      + Hgb 6.7 requiring 3 units PRBC
+      + Guaiac-positive stool while on floor
+      + Refractory despite two prior Feraheme infusions
+      - MCV 106 (macrocytic, not classic microcytic)
+      - Endoscopy/colonoscopy/capsule without active bleeding source
+      why: Documented severe iron deficiency with heme-positive stool and transfusion requirement makes chronic GI blood-loss iron deficiency anemia the condition driving this admission and the likely principal diagnosis.
+  #2  [72.0/100 | medium]  Acute on chronic blood loss anemia requiring transfusion  (primary)
+      + Hgb fell to 6.7 with failure to bump after 1 unit PRBC
+      + Prior admission coded acute posthemorrhagic anemia
+      + Guaiac-positive stool, warfarin INR 2.4
+      - No hematemesis, melena or hematochezia reported
+      - ED rectal exam guaiac negative initially
+      why: Abrupt drop with inadequate transfusion response suggests ongoing occult hemorrhage superimposed on chronic anemia; strong competing principal-diagnosis candidate.
+  #3  [55.0/100 | medium]  Unexplained macrocytic anemia suspicious for myelodysplastic syndrome  (differential)
+      + MCV 106, RDW 17–18, inadequate reticulocyte response (abs 0.08)
+      + Bone marrow biopsy scheduled by outpatient hematology
+      + Year-long anemia with unrevealing GI workup
+      - No cytopenias other than anemia; WBC 6.3, platelets 235
+      - No marrow diagnosis established this stay
+      why: Macrocytosis with hypoproliferative reticulocyte response and planned marrow biopsy raises marrow disorder, but remains unconfirmed at discharge.
+  #4  [48.0/100 | medium]  Vitamin B12 deficiency contributing to macrocytic anemia  (secondary)
+      + B12 255 pg/mL (low-normal), repletion started in-house
+      + MCV 99–106 macrocytic indices
+      + MMA pending at discharge
+      - Prior outpatient B12/folate reported within normal limits
+      - MMA result not available to confirm
+      why: Low-normal B12 with macrocytosis prompted treatment, but deficiency is unproven pending methylmalonic acid.
+  #5  [45.0/100 | medium]  Occult gastrointestinal hemorrhage from Barrett's esophagus and gastritis on anticoagulation  (complication)
+      + EGD showed Barrett's esophagus and nodular gastritis
+      + Warfarin therapy with INR 2.4 on admission
+      + Guaiac-positive stool documented on floor
+      - No active bleeding seen on any endoscopic study
+      - No overt melena or hematochezia
+      why: Anticoagulated patient with mucosal disease provides plausible bleeding substrate, but no confirmed active lesion this stay.
+  #6  [42.0/100 | medium]  Dyspnea on exertion secondary to symptomatic anemia  (secondary)
+      + Must sit down mid-task due to breathlessness
+      + Symptoms improved with transfusion and iron
+      + Lungs clear, no edema, no infection
+      - Symptom rather than a disease; not a principal diagnosis
+      why: Clearly documented and attributed to anemia; codeable as a secondary symptom but cannot be rank-1.
+  #7  [32.0/100 | medium]  Nonrheumatic aortic valve stenosis, mild to moderate  (differential)
+      + II/VI systolic ejection murmur at LUSB
+      + TTE mild-moderate AS with mild pulmonary hypertension
+      + Chronic exertional dyspnea over one year
+      - Symptoms resolved with anemia correction
+      - Cardiac catheterization deferred; ischemic workup negative
+      why: Valvular disease is an alternative explanation for dyspnea and a relevant comorbidity, but was judged secondary to anemia this stay.
+  #8  [30.0/100 | high]  Chronic atrial fibrillation on long-term warfarin anticoagulation  (risk_factor)
+      + Afib on Coumadin, continued diltiazem inpatient
+      + INR 1.9–2.4, PT prolonged
+      + Prior admission coded I48.91 and Z79.01
+      - Rate controlled, no arrhythmic events described this stay
+      why: Stable comorbidity that critically influences bleeding risk and anemia management; secondary coding relevance only.

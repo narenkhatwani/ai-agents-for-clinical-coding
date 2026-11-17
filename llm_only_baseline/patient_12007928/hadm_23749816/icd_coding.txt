@@ -1,0 +1,29 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 12007928
+HADM ID          : 23749816
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : I50.33 — Acute on chronic diastolic (congestive) heart failure
+Primary condition: Acute on chronic diastolic (HFpEF) heart failure exacerbation with volume overload
+
+  #1  Acute on chronic diastolic (HFpEF) congestive heart failure exacerbation  →  I50.33 — Acute on chronic diastolic (congestive) heart failure
+      reason: Dyspnea, orthopnea, JVP to earlobe, 4+ edema, proBNP 4640, CXR edema/effusions; diuresis with preserved EF.
+  #2  Acute kidney injury on chronic kidney disease, cardiorenal syndrome  →  N17.9 — Acute kidney failure, unspecified
+      reason: Creatinine 1.4–1.6 above baseline 1.1 with BUN 32 in setting of heart failure decompensation.
+  #3  Myasthenia gravis with respiratory muscle weakness contributing to dyspnea  →  G70.00 — Myasthenia gravis without (acute) exacerbation
+      reason: Known myasthenia gravis; NIF monitoring performed, no documented crisis, home pyridostigmine continued.
+  #4  Paroxysmal atrial fibrillation with pacemaker-dependent ventricular pacing  →  I48.0 — Paroxysmal atrial fibrillation
+      reason: Documented paroxysmal AF, sick sinus syndrome status post permanent pacemaker; EKG V-paced at 70.
+  #5  Acute delirium superimposed on Alzheimer's dementia  →  F05 — Delirium due to known physiological condition
+      reason: Sundowning and fluctuating orientation (AAOx2) documented on Alzheimer's dementia background.
+  #6  Chronic venous stasis with lipodermatosclerosis and MSSA-colonized leg wounds  →  I87.2 — Venous insufficiency (chronic) (peripheral)
+      reason: Weeping erythematous legs with unroofed healing blisters; wound culture grew Staph aureus coagulase positive.
+  #7  Hypertensive heart and chronic kidney disease  →  I13.0 — Hypertensive heart and chronic kidney disease with heart failure and stage 1-4 CKD
+      reason: Documented hypertension with heart failure and chronic renal impairment; combination code applies.
+  #8  Acute hypoxemic respiratory failure requiring noninvasive ventilation  →  J96.01 — Acute respiratory failure with hypoxia
+      reason: Brought by EMS on non-rebreather for hypoxia and tachypnea; supplemental oxygen required during stay.
+  #9  Acute coronary syndrome / myocardial ischemia  →  R07.9 — Chest pain, unspecified
+      reason: Fleeting chest pains only; troponins negative x2, CK-MB 3; no ACS confirmed, code symptom.
+  #10  Pulmonary embolism as cause of acute dyspnea  →  Z86.711 — Personal history of pulmonary embolism
+      reason: PE considered but not diagnosed this stay; history of PE documented and anticoagulated.

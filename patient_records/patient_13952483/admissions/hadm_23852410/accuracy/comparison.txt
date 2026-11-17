@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 13952483
 HADM ID          : 23852410
-Generated        : 2026-08-20T17:30:20.685840
+Generated        : 2026-08-20T22:07:24.584211
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : -
   Matched diagnosis    : -
     score=None  confidence=-
-  LLM reason           : The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive / debility, generalized decline in functional status, weight loss and poor intake). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition) is a commonly associated/contributing condition but is a distinct principal diagnosis from failure to thrive, and is not a subtype or synonym of it. The remaining ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.
+  LLM reason           : The physician discharge diagnosis is 'failure to thrive' (adult failure to thrive, debility/weight loss with functional decline, R62.7). No rank in the differential names this principal condition. Rank 4 'Malnutrition' (protein-calorie malnutrition, E46) is a related contributing/associated condition but is a distinct principal diagnosis from failure to thrive, analogous to the nephrolithiasis vs hydronephrosis exclusion. Other ranks (squamous cell lung carcinoma, pulmonary hypertension, anemia, thrombocytopenia, neutropenia, COPD, transplant rejection) are unrelated principal conditions.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : NO
   ICD LLM match        : NO
   Is rank-1 ICD match  : NO
-  LLM ICD reason       : No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. Additionally, the billed primary code I95.89 (other hypotension) is not represented by any mapped code in the differential list; the closest candidate codes (E46 malnutrition, I27.20 pulmonary hypertension, C34.90 lung cancer) are clinically distinct from hypotension and would not be accepted as equivalent by a coder.
+  LLM ICD reason       : No rank matched the principal discharge diagnosis, so no mapped ICD can be compared. The billed primary code I95.89 (other hypotension) does not correspond to any mapped code in the differential (C34.90, I27.20, D64.9, E46, D69.6, D70.9, J44.9, T86.91).
   Stage 9 final ICD    : I27.20 (debug)
 
 FULL DIFFERENTIAL LIST

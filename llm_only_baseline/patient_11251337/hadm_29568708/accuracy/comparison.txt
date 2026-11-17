@@ -1,0 +1,48 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 11251337
+HADM ID          : 29568708
+Generated        : 2026-08-21T23:52:02.580785
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm
+  Billed ICD title     : Hydronephrosis with renal and ureteral calculous obstruction (ICD metric only)
+  Rank-1 predicted     : Bilateral staghorn calculi of kidney (right renal calculus treated this stay)
+    score=95.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Bilateral staghorn calculi of kidney (right renal calculus treated this stay)
+    score=95.0  confidence=high
+  LLM reason           : Physician discharge diagnosis is nephrolithiasis of the right kidney at the ureteropelvic junction, complex and >2 cm. Rank 1 'Bilateral staghorn calculi of kidney (right renal calculus treated this stay)' names the same principal condition — a large/complex renal calculus of the right kidney treated during the admission. Rank 3 also names an obstructive-stone condition, but rank 1 is the lowest matching rank.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : N13.2 — Hydronephrosis with renal and ureteral calculous obstruction
+  Rank-1 mapped ICD    : N20.0 — Calculus of kidney
+  Matched mapped ICD   : N20.0 — Calculus of kidney
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : Mapped ICD at matched rank 1 is N20.0 (Calculus of kidney), whereas the billed primary code is N13.2 (Hydronephrosis with renal and ureteral calculous obstruction). N13.2 requires documented obstructive hydronephrosis in addition to the calculus and is a combination code sequenced as principal; a coder would not accept plain N20.0 as equivalent. (Note: rank 3 carried the exact N13.2 code, but the lowest matching rank per the rules is rank 1.)
+  Stage 9 final ICD    : N20.0 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Bilateral staghorn calculi of kidney (right renal calculus treated this stay)  [score=95.0, high]  ICD=N20.0 — Calculus of kidney
+   2. Chronic kidney disease, stage 4, from long-standing obstructive nephropathy  [score=80.0, high]  ICD=N18.4 — Chronic kidney disease, stage 4 (severe)
+   3. Hydronephrosis with renal and ureteral calculous obstruction (obstructive uropathy)  [score=72.0, medium]  ICD=N13.2 — Hydronephrosis with renal and ureteral calculous obstruction
+   4. Anemia of chronic kidney disease  [score=66.0, medium]  ICD=D63.1 — Anemia in chronic kidney disease
+   5. Hypertensive chronic kidney disease  [score=55.0, medium]  ICD=I12.9 — Hypertensive chronic kidney disease with stage 1-4 CKD or unspecified CKD
+   6. Presence of ureteral stent and nephrostomy tube status with residual stone burden  [score=50.0, high]  ICD=Z96.0 — Presence of urogenital implants
+   7. Hemiplegia following prior nontraumatic intracerebral hemorrhage, left nondominant side  [score=45.0, medium]  ICD=I69.154 — Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side
+   8. Acute kidney injury superimposed on chronic kidney disease, post-procedural  [score=40.0, low]  ICD=N17.9 — Acute kidney failure, unspecified
+   9. Complicated urinary tract infection / pyonephrosis  [score=12.0, low]  ICD=N39.0 — Urinary tract infection, site not specified

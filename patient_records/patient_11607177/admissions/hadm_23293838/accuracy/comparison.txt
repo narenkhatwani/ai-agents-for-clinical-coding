@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 11607177
 HADM ID          : 23293838
-Generated        : 2026-08-20T17:29:44.357752
+Generated        : 2026-08-20T22:06:50.371463
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 1
   Matched diagnosis    : Refractory ventricular tachycardia
     score=85.0  confidence=high
-  LLM reason           : Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia status post stellate ganglion block; Rank 1 'Refractory ventricular tachycardia' names the identical principal condition, with the ganglion block being the treatment rendered rather than a separate diagnosis.
+  LLM reason           : Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia status post stellate ganglion block; Rank 1 'Refractory ventricular tachycardia' names the identical principal condition, with the procedure reference being treatment rather than a distinct diagnosis.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : Mapped I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) are the same code concept at different levels of the ICD-10 hierarchy/version; a coder would accept them as clinically equivalent for the same principal condition.
+  LLM ICD reason       : Mapped code I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) represent the same principal condition within the same code family, differing only by ICD-10-CM version-specific expansion of the category; a coder would accept them as clinically equivalent.
   Stage 9 final ICD    : I50.9 (debug)
 
 FULL DIFFERENTIAL LIST

@@ -1,0 +1,47 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 19632936
+HADM ID          : 26696232
+Generated        : 2026-08-21T23:54:10.276081
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Macrocytic anemia
+  Billed ICD title     : Iron deficiency anemia, unspecified (ICD metric only)
+  Rank-1 predicted     : Iron deficiency anemia due to chronic occult gastrointestinal blood loss
+    score=90.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : NO
+  Matched DiffDx rank  : 3
+  Matched diagnosis    : Unexplained macrocytic anemia suspicious for myelodysplastic syndrome
+    score=55.0  confidence=medium
+  LLM reason           : Rank 3 'Unexplained macrocytic anemia suspicious for myelodysplastic syndrome' explicitly names macrocytic anemia, the same principal condition as the physician discharge diagnosis 'Macrocytic anemia', with an added etiologic suspicion. Ranks 1 and 2 describe iron deficiency/blood loss (microcytic/posthemorrhagic) anemia, which is a different principal anemia type, so the lowest truly matching rank is 3.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : D50.9 — Iron deficiency anemia, unspecified
+  Rank-1 mapped ICD    : D50.0 — Iron deficiency anemia secondary to blood loss (chronic)
+  Matched mapped ICD   : D53.1 — Other megaloblastic anemias, not elsewhere classified
+  ICD match            : NO
+  ICD exact            : NO
+  ICD 3-char family    : NO
+  ICD LLM match        : NO
+  Is rank-1 ICD match  : NO
+  LLM ICD reason       : Mapped ICD at matched rank is D53.1 (other megaloblastic anemias), whereas the billed primary code is D50.9 (iron deficiency anemia, unspecified). These are distinct anemia categories (macrocytic/megaloblastic vs microcytic iron deficiency) in different ICD-10 blocks and would not be accepted as interchangeable by a coder.
+  Stage 9 final ICD    : D50.0 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Iron deficiency anemia due to chronic occult gastrointestinal blood loss  [score=90.0, high]  ICD=D50.0 — Iron deficiency anemia secondary to blood loss (chronic)
+   2. Acute on chronic blood loss anemia requiring transfusion  [score=72.0, medium]  ICD=D62 — Acute posthemorrhagic anemia
+   3. Unexplained macrocytic anemia suspicious for myelodysplastic syndrome  [score=55.0, medium]  ICD=D53.1 — Other megaloblastic anemias, not elsewhere classified
+   4. Vitamin B12 deficiency contributing to macrocytic anemia  [score=48.0, medium]  ICD=E53.8 — Deficiency of other specified B group vitamins
+   5. Occult gastrointestinal hemorrhage from Barrett's esophagus and gastritis on anticoagulation  [score=45.0, medium]  ICD=K92.2 — Gastrointestinal hemorrhage, unspecified
+   6. Dyspnea on exertion secondary to symptomatic anemia  [score=42.0, medium]  ICD=R06.02 — Shortness of breath
+   7. Nonrheumatic aortic valve stenosis, mild to moderate  [score=32.0, medium]  ICD=I35.0 — Nonrheumatic aortic (valve) stenosis
+   8. Chronic atrial fibrillation on long-term warfarin anticoagulation  [score=30.0, high]  ICD=I48.20 — Chronic atrial fibrillation, unspecified

@@ -1,0 +1,61 @@
+============================================================
+LLM-ONLY DIFFERENTIAL DIAGNOSIS (no ontology)
+============================================================
+Patient ID       : 13508515
+HADM ID          : 21834271
+Method           : openrouter_llm:anthropic/claude-opus-5
+Temperature      : 0.4
+Generated        : 2026-08-21T23:43:57.803513
+Candidates       : 8
+Most likely      : Malignant neoplasm of left kidney (renal cell carcinoma) treated with radical nephrectomy
+
+Summary:
+  Morbidly obese man with CAD s/p CABG, chronic systolic heart failure (EF ~30%), type 2 diabetes and CKD was admitted electively to Urology for an 8 cm left renal mass and underwent laparoscopic left radical nephrectomy with retroperitoneal (para-aortic and hilar) lymph node dissection. Postoperative course was unremarkable apart from anemia (Hgb 8.5–8.9, Hct 26–28), creatinine rising to 2.0–2.3 mg/dL above his prior 1.3–1.6 baseline, and one markedly elevated glucose of 566 mg/dL. He was discharged tolerating diet, ambulating, voiding, on oral analgesia. The principal condition for this stay is the renal malignancy that prompted surgery, with post-nephrectomy renal insufficiency, anemia and diabetic hyperglycemia as secondary/complication codes.
+
+----------------------------------------
+RANKED DIFFERENTIAL
+----------------------------------------
+  #1  [95.0/100 | high]  Malignant neoplasm of left kidney (renal cell carcinoma), 8 cm mass  (primary)
+      + Chief complaint: 8 cm left renal mass
+      + Laparoscopic left radical nephrectomy plus retroperitoneal lymph node dissection
+      + Prior ICD C649 malignant neoplasm of kidney
+      - Final pathology not stated in redacted note
+      why: Elective admission solely for definitive oncologic resection of a suspicious renal mass; radical nephrectomy with nodal dissection makes renal malignancy the principal diagnosis.
+  #2  [66.0/100 | medium]  Acute kidney injury on chronic kidney disease following nephrectomy  (complication)
+      + Creatinine 1.8 → 2.3 → 2.0 mg/dL postoperatively
+      + Prior baseline creatinine 1.3–1.6, known CKD/diabetic nephropathy
+      + Loss of one kidney after radical nephrectomy
+      - Urine output maintained >30 cc/hr; trend improving at discharge
+      why: Postoperative creatinine clearly exceeds documented baseline in a solitary-kidney state, supporting acute renal insufficiency superimposed on CKD.
+  #3  [60.0/100 | medium]  Acute postoperative blood loss anemia  (complication)
+      + Hgb 8.5–8.9 g/dL, Hct 26.3–28.3 after major laparoscopic resection
+      + Prior admission Hgb 11.6 g/dL
+      - No transfusion documented; no hematoma on exam
+      - High RDW may suggest chronic component
+      why: Significant hemoglobin drop from prior baseline in the immediate postoperative period after nephrectomy and node dissection is typical acute blood-loss anemia.
+  #4  [55.0/100 | medium]  Type 2 diabetes mellitus with hyperglycemia and diabetic chronic kidney disease  (secondary)
+      + Glucose 566 mg/dL on one postoperative day; 113 on others
+      + PMH non-insulin-dependent diabetes; prior ICD E1122
+      - No documented ketoacidosis or hyperosmolar state
+      - No diabetes medications on admission list
+      why: A marked perioperative hyperglycemic excursion in a known diabetic with CKD supports coding diabetes with hyperglycemia as an active secondary condition.
+  #5  [50.0/100 | medium]  Chronic systolic (congestive) heart failure with reduced ejection fraction  (secondary)
+      + History of severe CHF, EF ~30%
+      + Home torsemide, spironolactone, carvedilol, hydralazine, isosorbide continued
+      - No edema on exam; no documented decompensation this stay
+      why: Chronic, medically managed HFrEF requiring careful perioperative fluid management—relevant comorbidity but not decompensated during this admission.
+  #6  [44.0/100 | medium]  Coronary artery disease in patient with prior coronary artery bypass graft  (risk_factor)
+      + CAD s/p three-vessel CABG
+      + Prior ICD Z951 presence of aortocoronary bypass graft; on aspirin, statin
+      - No chest pain, ischemic events or troponins this stay
+      why: Documented ischemic heart disease increases perioperative risk and is codable as a chronic comorbidity/status.
+  #7  [40.0/100 | medium]  Morbid obesity with obstructive sleep apnea on CPAP  (risk_factor)
+      + BMI 42.1 kg/m2, weight 285 lb
+      + PMH morbid obesity and OSA on CPAP; prior ICD Z6841, G4733
+      - No respiratory events documented this admission
+      why: Objective BMI in the class III range with documented OSA supports secondary coding and affects perioperative risk.
+  #8  [35.0/100 | low]  Essential hypertension with hypertensive chronic kidney disease  (secondary)
+      + PMH hypertension; on losartan, carvedilol, hydralazine, isosorbide
+      + Prior ICD I129 with CKD
+      - Blood pressures not recorded in current structured data
+      why: Chronic hypertension with renal involvement is well documented historically and continued pharmacologically, though not actively managed as a problem this stay.

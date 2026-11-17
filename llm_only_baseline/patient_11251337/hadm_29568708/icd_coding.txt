@@ -1,0 +1,27 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 11251337
+HADM ID          : 29568708
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : N20.0 — Calculus of kidney
+Primary condition: Bilateral staghorn renal calculi, status post right percutaneous nephrolithotomy with residual stone burden
+
+  #1  Bilateral staghorn calculi of kidney (right renal calculus treated this stay)  →  N20.0 — Calculus of kidney
+      reason: Admitted for nephrolithiasis; right PCNL performed for staghorn renal stone >2cm with residual burden.
+  #2  Chronic kidney disease, stage 4, from long-standing obstructive nephropathy  →  N18.4 — Chronic kidney disease, stage 4 (severe)
+      reason: Chronic renal atrophy and creatinine 2.1-2.5 support advanced CKD from chronic obstructive nephropathy.
+  #3  Hydronephrosis with renal and ureteral calculous obstruction (obstructive uropathy)  →  N13.2 — Hydronephrosis with renal and ureteral calculous obstruction
+      reason: Documented obstructive uropathy with hydronephrosis from bilateral staghorn calculi requiring drainage and stenting.
+  #4  Anemia of chronic kidney disease  →  D63.1 — Anemia in chronic kidney disease
+      reason: Hgb 9.4, Hct 30.8 in setting of advanced CKD; code-first CKD convention applied.
+  #5  Hypertensive chronic kidney disease  →  I12.9 — Hypertensive chronic kidney disease with stage 1-4 CKD or unspecified CKD
+      reason: History of hypertension documented with concurrent chronic kidney disease; combination code required.
+  #6  Presence of ureteral stent and nephrostomy tube status with residual stone burden  →  Z96.0 — Presence of urogenital implants
+      reason: Antegrade ureteral stent placed, nephrostomy tube removed; residual stone requires interval ureteroscopy.
+  #7  Hemiplegia following prior nontraumatic intracerebral hemorrhage, left nondominant side  →  I69.154 — Hemiplegia and hemiparesis following nontraumatic intracerebral hemorrhage affecting left non-dominant side
+      reason: Hemorrhagic CVA with residual left upper extremity weakness documented in history.
+  #8  Acute kidney injury superimposed on chronic kidney disease, post-procedural  →  N17.9 — Acute kidney failure, unspecified
+      reason: Creatinine rose 2.1 to 2.5 postoperatively; low confidence, may reflect chronic baseline variation.
+  #9  Complicated urinary tract infection / pyonephrosis  →  N39.0 — Urinary tract infection, site not specified
+      reason: Urine culture showed mixed flora consistent with contamination; infection not established, low confidence differential.

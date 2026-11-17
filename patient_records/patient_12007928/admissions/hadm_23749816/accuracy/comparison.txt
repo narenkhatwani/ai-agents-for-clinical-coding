@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 12007928
 HADM ID          : 23749816
-Generated        : 2026-08-20T17:29:53.737143
+Generated        : 2026-08-20T22:06:58.003106
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 1
   Matched diagnosis    : Acute decompensated heart failure
     score=85.0  confidence=high
-  LLM reason           : Rank 1 'Acute decompensated heart failure' names the same principal condition as the physician diagnosis 'Acute on chronic decompensated diastolic heart failure'; the differential label is broader (does not specify diastolic/HFpEF or chronicity) but codes the same acute decompensated heart failure episode.
+  LLM reason           : Physician discharge diagnosis 'acute on chronic decompensated diastolic heart failure' names the same principal condition as Rank 1 'Acute decompensated heart failure'; the rank label is broader (does not specify diastolic/HFpEF or chronicity) but codes the same acute decompensated heart failure episode.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : Mapped code I50.9 (Heart failure, unspecified) is the unspecified parent of billed I50.33 (Acute on chronic diastolic congestive heart failure). Not an exact code match and lacks the diastolic/acuity specificity required for billing, but a coder would recognize it as the same principal condition (heart failure) — acceptable as clinically equivalent at the category level.
+  LLM ICD reason       : Mapped I50.9 (heart failure, unspecified) vs billed I50.33 (acute on chronic diastolic congestive heart failure) fall within the same I50 heart failure category and code the same principal condition; I50.9 is the unspecified/less specific form, clinically acceptable as equivalent though lacking diastolic/acuity specificity.
   Stage 9 final ICD    : I50.9 (debug)
 
 FULL DIFFERENTIAL LIST

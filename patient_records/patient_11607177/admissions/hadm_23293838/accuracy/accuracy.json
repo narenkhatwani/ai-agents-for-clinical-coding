@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "11607177",
   "hadm_id": "23293838",
-  "generated_at": "2026-08-20T17:29:44.357752",
+  "generated_at": "2026-08-20T22:06:50.371463",
   "ground_truth": {
     "primary_icd_code": "I472",
     "primary_dx_title": "Ventricular tachycardia",
@@ -28,9 +28,9 @@
       "matched_confidence": "high",
       "llm_relationship": "same_principal",
       "llm_confidence": "high",
-      "llm_reason": "Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia status post stellate ganglion block; Rank 1 'Refractory ventricular tachycardia' names the identical principal condition, with the ganglion block being the treatment rendered rather than a separate diagnosis.",
-      "llm_expanded_ground_truth": "VT = ventricular tachycardia | refractory ventricular tachycardia | drug-resistant/incessant ventricular tachycardia | s/p = status post | stellate ganglion block (sympathetic blockade therapy for VT storm) | ventricular arrhythmia",
-      "llm_expanded_matched": "refractory ventricular tachycardia | VT storm / electrical storm | sustained ventricular tachycardia | ventricular tachyarrhythmia",
+      "llm_reason": "Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia status post stellate ganglion block; Rank 1 'Refractory ventricular tachycardia' names the identical principal condition, with the procedure reference being treatment rather than a distinct diagnosis.",
+      "llm_expanded_ground_truth": "VT = ventricular tachycardia | refractory ventricular tachycardia | s/p = status post | stellate ganglion block (cardiac sympathetic denervation therapy) | drug-resistant / recurrent ventricular tachycardia | VT storm / electrical storm",
+      "llm_expanded_matched": "refractory ventricular tachycardia | VT | recurrent ventricular tachyarrhythmia | ventricular tachycardia unresponsive to therapy",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
@@ -89,9 +89,9 @@
       "icd_llm_match": true,
       "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "Mapped I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) are the same code concept at different levels of the ICD-10 hierarchy/version; a coder would accept them as clinically equivalent for the same principal condition.",
-      "llm_expanded_ground_truth_icd": "I47.2 Ventricular tachycardia | paroxysmal ventricular tachycardia | I47.2x family including I47.20 unspecified",
-      "llm_expanded_matched_icd": "I47.20 Ventricular tachycardia, unspecified | subcategory of I47.2 ventricular tachycardia | paroxysmal tachycardia, ventricular type",
+      "llm_icd_reason": "Mapped code I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) represent the same principal condition within the same code family, differing only by ICD-10-CM version-specific expansion of the category; a coder would accept them as clinically equivalent.",
+      "llm_expanded_ground_truth_icd": "I47.2 Ventricular tachycardia | paroxysmal ventricular tachycardia | sustained/nonsustained VT category",
+      "llm_expanded_matched_icd": "I47.20 Ventricular tachycardia, unspecified | subcode of I47.2 ventricular tachycardia | I47.2x family (I47.20, I47.21 torsades, I47.29 other VT)",
       "stage9_final_primary_icd": "I50.9",
       "diagnosis_match": true,
       "is_rank1_diagnosis_match": true,
@@ -102,33 +102,33 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia status post stellate ganglion block; Rank 1 'Refractory ventricular tachycardia' names the identical principal condition, with the ganglion block being the treatment rendered rather than a separate diagnosis.",
+      "diagnosis_reason": "Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia status post stellate ganglion block; Rank 1 'Refractory ventricular tachycardia' names the identical principal condition, with the procedure reference being treatment rather than a distinct diagnosis.",
       "ground_truth_expansions": [
         "VT = ventricular tachycardia",
         "refractory ventricular tachycardia",
-        "drug-resistant/incessant ventricular tachycardia",
         "s/p = status post",
-        "stellate ganglion block (sympathetic blockade therapy for VT storm)",
-        "ventricular arrhythmia"
+        "stellate ganglion block (cardiac sympathetic denervation therapy)",
+        "drug-resistant / recurrent ventricular tachycardia",
+        "VT storm / electrical storm"
       ],
       "matched_diagnosis_expansions": [
         "refractory ventricular tachycardia",
-        "VT storm / electrical storm",
-        "sustained ventricular tachycardia",
-        "ventricular tachyarrhythmia"
+        "VT",
+        "recurrent ventricular tachyarrhythmia",
+        "ventricular tachycardia unresponsive to therapy"
       ],
       "icd_equivalent": true,
       "icd_confidence": "high",
-      "icd_reason": "Mapped I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) are the same code concept at different levels of the ICD-10 hierarchy/version; a coder would accept them as clinically equivalent for the same principal condition.",
+      "icd_reason": "Mapped code I47.20 (Ventricular tachycardia, unspecified) and billed I47.2 (Ventricular tachycardia) represent the same principal condition within the same code family, differing only by ICD-10-CM version-specific expansion of the category; a coder would accept them as clinically equivalent.",
       "ground_truth_icd_expansions": [
         "I47.2 Ventricular tachycardia",
         "paroxysmal ventricular tachycardia",
-        "I47.2x family including I47.20 unspecified"
+        "sustained/nonsustained VT category"
       ],
       "matched_icd_expansions": [
         "I47.20 Ventricular tachycardia, unspecified",
-        "subcategory of I47.2 ventricular tachycardia",
-        "paroxysmal tachycardia, ventricular type"
+        "subcode of I47.2 ventricular tachycardia",
+        "I47.2x family (I47.20, I47.21 torsades, I47.29 other VT)"
       ],
       "_cache_hit": false
     }

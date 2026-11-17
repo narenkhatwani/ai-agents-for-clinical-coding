@@ -1,0 +1,196 @@
+{
+  "summary": "Middle-aged man with HCV cirrhosis s/p TIPS, portal hypertension and multifocal metastatic hepatocellular carcinoma (left adrenal mets, no further oncologic options) transferred from an outside ICU after 10 days of intubation and vasopressor-dependent shock with Klebsiella aerogenes bacteremia. On arrival he had refractory distributive shock (warm, CVO2 80, three pressors, stress-dose steroids), lactate rising to 13.2, ARDS/hypoxic respiratory failure with large right pleural effusion, dialysis-dependent ATN, profound coagulopathy (INR 3.4, fibrinogen 77, platelets 44) concerning for DIC, rising transaminases (AST 2481) and bilirubin 13.3 indicating acute-on-chronic liver failure, plus unresponsive toxic-metabolic/hepatic encephalopathy. He continued to decompensate and died with family declining CPR and autopsy.",
+  "most_likely": "Septic shock with Klebsiella aerogenes bacteremia complicating end-stage cirrhosis",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Septic shock due to Klebsiella aerogenes bacteremia",
+      "score": 92.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Transferred 'for septic shock', blood cultures grew Klebsiella aerogenes",
+        "Multi-pressor levophed/vasopressin plus third agent, stress-dose steroids",
+        "Lactate 6.6 → 13.2, pH 7.11, HCO3 7, anion gap 22",
+        "Warm extremities, CVO2 80 — distributive physiology"
+      ],
+      "opposing_evidence": [
+        "Cultures already treated 8 days with ceftriaxone; no new organism isolated here",
+        "Liver-failure vasodilation could mimic distributive shock"
+      ],
+      "reasoning": "Documented organism-specific bacteremia with vasopressor-refractory distributive shock and severe lactic acidosis is the dominant reason for this stay and the likely principal coded disease."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute on chronic hepatic failure in HCV cirrhosis with coma",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "AST 2481, ALT 439, total bilirubin 13.3, INR 3.4",
+        "Note: 'Acute on chronic Liver failure' with worsening HE",
+        "Cirrhotic nodular liver, TIPS, splenomegaly, ascites on RUQ US",
+        "Prior admissions for chronic hepatic failure and encephalopathy"
+      ],
+      "opposing_evidence": [
+        "Ischemic hepatitis from shock may explain much of transaminase surge"
+      ],
+      "reasoning": "Marked hyperbilirubinemia, coagulopathy and unresponsive encephalopathy on a cirrhotic substrate meet acute-on-chronic liver failure; competes closely with sepsis as principal."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Acute hypoxemic respiratory failure with ARDS requiring mechanical ventilation",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Intubated for hypoxia, SpO2 50% at presentation; PEEP 14, FiO2 50%",
+        "CXR: worsening pulmonary edema, bilateral effusions right > left",
+        "Note documents ARDS, possible VAP, sputum with yeast"
+      ],
+      "opposing_evidence": [
+        "Volume overload and large pleural effusion also contribute"
+      ],
+      "reasoning": "Ventilator-dependent hypoxemic failure with bilateral infiltrates is explicitly documented and a major comorbid complication of this admission."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Acute kidney injury from acute tubular necrosis requiring CRRT",
+      "score": 78.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Creatinine 2.1–2.2 from baseline 0.6–0.8; K 6.5, HCO3 7",
+        "On CRRT, 22 L positive; HD lines both IJ",
+        "Attributed to septic shock and ATN without renal recovery"
+      ],
+      "opposing_evidence": [
+        "Hepatorenal physiology cannot be excluded in end-stage cirrhosis"
+      ],
+      "reasoning": "Dialysis-dependent renal failure in the setting of shock is clearly documented and materially affected management."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Disseminated intravascular coagulation with severe coagulopathy",
+      "score": 72.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Fibrinogen 77–95, INR 3.4, PTT 104, platelets 36–44",
+        "D-dimer 15335, haptoglobin <10, LDH 743",
+        "Bleeding from rectum, foley, and epistaxis; cryo/FFP/platelets given"
+      ],
+      "opposing_evidence": [
+        "Hepatic synthetic failure alone can produce identical coagulopathy"
+      ],
+      "reasoning": "Consumptive picture with hypofibrinogenemia, very high D-dimer and multi-site bleeding supports DIC, though liver failure is a strong confounder."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Metastatic hepatocellular carcinoma with adrenal metastases, terminal",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Biopsy-proven left adrenal HCC metastasis; s/p RFA and failed chemotherapy",
+        "RUQ US: stable 2.6 cm hepatic lesion, large left adrenal mass",
+        "No further oncologic treatment available per referral center"
+      ],
+      "opposing_evidence": [
+        "Not the acute driver of this admission's decompensation"
+      ],
+      "reasoning": "Active malignancy underlies the terminal trajectory and malignant effusion, and is a key comorbidity even if not the acute principal diagnosis."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Hepatic/toxic metabolic encephalopathy with unresponsiveness",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "RASS -5, no return of responsiveness off sedation",
+        "High gastric residuals, no bowel movements, lactulose not absorbed",
+        "Recurrent hepatic encephalopathy in both prior admissions"
+      ],
+      "opposing_evidence": [
+        "Sedation, uremia, and sepsis confound assessment; no ammonia level given"
+      ],
+      "reasoning": "Persistent coma attributable to liver failure plus sepsis and uremia; multifactorial so scored below the organ-failure diagnoses."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Atrial fibrillation/flutter with rapid ventricular response",
+      "score": 45.0,
+      "confidence": "low",
+      "category": "secondary",
+      "supporting_evidence": [
+        "History of a.fib/a.flutter s/p amiodarone bolus, now on metoprolol",
+        "Heart rate up to 103 recorded in ICU"
+      ],
+      "opposing_evidence": [
+        "Arose at outside hospital; no current rhythm strip or ECG documented here"
+      ],
+      "reasoning": "Documented arrhythmia treated during the illness episode, but managed prior to transfer and not an acute issue in this stay."
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Inferior vena cava thrombus (venous thromboembolism)",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Reported IVC thrombus at outside hospital, anticoagulation withheld",
+        "D-dimer markedly elevated; RV dilation with pulmonary hypertension on TTE"
+      ],
+      "opposing_evidence": [
+        "Current RUQ US: IVC patent, wall-to-wall flow; echoes felt artifactual"
+      ],
+      "reasoning": "Reported historically but refuted by current imaging; retained as a low-probability differential for the RV dilation."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Cardiogenic shock",
+      "why": "TTE showed hyperdynamic LV and warm extremities with CVO2 80; team judged cardiogenic cause unlikely."
+    },
+    {
+      "diagnosis": "Adrenal crisis from bilateral adrenal metastases",
+      "why": "Considered given adrenal mets; empirically covered with stress-dose steroids without hemodynamic recovery."
+    },
+    {
+      "diagnosis": "Variceal upper GI hemorrhage",
+      "why": "Coffee-ground output raised concern; octreotide/PPI given, but no endoscopy or hemoglobin drop confirming active variceal bleed."
+    },
+    {
+      "diagnosis": "Bowel obstruction or ileus",
+      "why": "KUB showed no dilated loops or obstruction despite absent bowel movements."
+    },
+    {
+      "diagnosis": "Spontaneous bacterial peritonitis",
+      "why": "Only small-volume ascites, no tap documented; blood source was Klebsiella bacteremia."
+    }
+  ],
+  "uncertain_areas": [
+    "Whether a new resistant/ventilator-associated pneumonia or fungal infection was confirmed by final cultures",
+    "Ammonia level and degree to which encephalopathy was hepatic versus septic/uremic",
+    "Whether coagulop"
+  ],
+  "n_candidates": 9,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "17774110",
+  "hadm_id": "27339772",
+  "generated_at": "2026-08-21T23:47:47.671137",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

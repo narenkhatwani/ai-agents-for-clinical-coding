@@ -1,0 +1,424 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "10458324",
+  "hadm_id": "21744342",
+  "most_likely": "Multiple displaced right rib fractures with flail chest from blunt chest trauma",
+  "summary": "Cachectic middle-aged man with IVDU on methadone and PTSD presented after a mechanical fall in the bathtub, striking his right lateral chest, with multiple displaced right 4th–11th rib fractures (flail segment), small right traumatic pneumothorax/hydropneumothorax and extensive subcutaneous emphysema, managed with pigtail thoracostomy. Course was complicated by aspiration/multifocal pneumonia (heavy Haemophilus influenzae, beta-lactamase positive, in sputum), fever and hypotension requiring pressors, and acute hypoxemic respiratory failure requiring intubation (self-extubated), plus new paroxysmal atrial fibrillation with RVR requiring IV metoprolol/diltiazem then oral beta-blockade. He also developed volume overload with bilateral pleural effusions and peripheral edema responsive to IV furosemide; TTE showed preserved LVEF 65% with mild-moderate MR. He was weaned off oxygen and discharged to complete Augmentin, continuing methadone and gabapentin.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Multiple closed displaced right rib fractures with flail chest (blunt chest trauma)",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Fall in bathtub, struck right lateral chest",
+        "CT: acute fractures right 4th–11th ribs, all displaced except 11th",
+        "Radiology indication states 'flail chest'",
+        "Pain managed with oxycodone, incentive spirometry"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "The admitting and dominant condition driving the entire stay, imaging-confirmed and requiring chest tube, analgesia and ICU care.",
+      "icd10_primary": "S22.5XXA",
+      "icd10_primary_title": "Flail chest, initial encounter for closed fracture",
+      "icd10_package": [
+        {
+          "code": "S22.5XXA",
+          "title": "Flail chest, initial encounter for closed fracture",
+          "role": "principal"
+        },
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+          "role": "supporting"
+        },
+        {
+          "code": "W18.2XXA",
+          "title": "Fall in (into) shower or empty bathtub, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "S22.41XA",
+          "title": "Multiple fractures of ribs, right side, initial encounter for closed fracture",
+          "role": "supporting"
+        },
+        {
+          "code": "W18.2XXA",
+          "title": "Fall in (into) shower or empty bathtub, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "CT shows multiple consecutive displaced right 6th-11th rib fractures after fall onto bathtub; flail chest documented clinically and radiographically.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute hypoxemic respiratory failure requiring mechanical ventilation",
+      "score": 90.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Hypoxic on arrival, 96% on 4L",
+        "Intubated for worsening hypoxia, fever, hypotension",
+        "pO2 52 on admission ABG; serial ETT chest films",
+        "Transferred to medicine for ongoing hypoxemia with O2 requirement"
+      ],
+      "opposing_evidence": [
+        "Successfully weaned to room air by discharge"
+      ],
+      "reasoning": "Well documented respiratory failure with intubation and pressor need; a major coded complication of chest trauma and pneumonia.",
+      "icd10_primary": "J96.01",
+      "icd10_primary_title": "Acute respiratory failure with hypoxia",
+      "icd10_package": [
+        {
+          "code": "J96.01",
+          "title": "Acute respiratory failure with hypoxia",
+          "role": "principal"
+        },
+        {
+          "code": "Z99.11",
+          "title": "Dependence on respirator [ventilator] status",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z99.11",
+          "title": "Dependence on respirator [ventilator] status",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Hypoxia with pO2 52, 4L O2 requirement, intubation in TSICU then self-extubation documented in hospital course.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Aspiration pneumonia with Haemophilus influenzae superinfection",
+      "score": 85.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "CT: multifocal patchy/nodular opacities, mucous plugging, suspicious for aspiration/pneumonia",
+        "Sputum heavy growth beta-lactamase positive H. influenzae",
+        "Fever spike, treated broad-spectrum then 5-day Augmentin",
+        "Right basal opacity 'likely aspiration/pneumonia' on CXR"
+      ],
+      "opposing_evidence": [
+        "Blood and urine cultures no growth",
+        "Some opacities attributed to contusion/atelectasis/edema"
+      ],
+      "reasoning": "Microbiologic and radiographic support is strong; treated as pneumonia with targeted oral antibiotics at discharge.",
+      "icd10_primary": "J69.0",
+      "icd10_primary_title": "Pneumonitis due to inhalation of food and vomit",
+      "icd10_package": [
+        {
+          "code": "J69.0",
+          "title": "Pneumonitis due to inhalation of food and vomit",
+          "role": "principal"
+        },
+        {
+          "code": "J14",
+          "title": "Pneumonia due to Hemophilus influenzae",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "J14",
+          "title": "Pneumonia due to Hemophilus influenzae",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "CT opacities suspicious for aspiration/pneumonia; sputum culture heavy growth beta-lactamase positive Haemophilus influenzae; fever treated with antibiotics.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Traumatic right pneumothorax/hydropneumothorax with subcutaneous emphysema",
+      "score": 84.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "CT: small right pneumothorax and small nonhemorrhagic effusion",
+        "Pigtail chest tube placed, later removed with tiny residual apical PTX",
+        "Extensive right chest wall subcutaneous emphysema"
+      ],
+      "opposing_evidence": [
+        "Final CXR: no pneumothorax seen"
+      ],
+      "reasoning": "Directly documented traumatic complication requiring a procedure (pigtail placement) during this stay.",
+      "icd10_primary": "S27.0XXA",
+      "icd10_primary_title": "Traumatic pneumothorax, initial encounter",
+      "icd10_package": [
+        {
+          "code": "S27.0XXA",
+          "title": "Traumatic pneumothorax, initial encounter",
+          "role": "principal"
+        },
+        {
+          "code": "T79.7XXA",
+          "title": "Traumatic subcutaneous emphysema, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "S27.1XXA",
+          "title": "Traumatic hemothorax, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "T79.7XXA",
+          "title": "Traumatic subcutaneous emphysema, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "S27.1XXA",
+          "title": "Traumatic hemothorax, initial encounter",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Right apical pneumothorax with pigtail drainage, right hydropneumothorax and right chest wall subcutaneous emphysema on serial imaging.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "New-onset paroxysmal atrial fibrillation with rapid ventricular response",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Transferred to ICU for afib with RVR",
+        "Required IV metoprolol and diltiazem, then PO metoprolol succinate 75 mg",
+        "CHA2DS2-VASc 0, no anticoagulation; back in NSR"
+      ],
+      "opposing_evidence": [
+        "Prior admission EKG showed frequent PACs but no atrial fibrillation"
+      ],
+      "reasoning": "Clearly documented new arrhythmia driving ICU transfer and discharge medication changes; likely triggered by trauma, pain and infection.",
+      "icd10_primary": "I48.0",
+      "icd10_primary_title": "Paroxysmal atrial fibrillation",
+      "icd10_package": [
+        {
+          "code": "I48.0",
+          "title": "Paroxysmal atrial fibrillation",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "ICU transfer for atrial fibrillation with RVR; managed as new paroxysmal AF during admission.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Opioid dependence maintained on methadone (IV drug use history)",
+      "score": 70.0,
+      "confidence": "high",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "PMH IVDU, methadone 70 mg daily confirmed with clinic",
+        "Prior admission ICD F1120 opioid dependence with withdrawal"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Active, managed comorbidity affecting analgesia and disposition; coded as secondary condition rather than principal.",
+      "icd10_primary": "F11.20",
+      "icd10_primary_title": "Opioid dependence, uncomplicated",
+      "icd10_package": [
+        {
+          "code": "F11.20",
+          "title": "Opioid dependence, uncomplicated",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.891",
+          "title": "Long term (current) use of opiate analgesic",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.891",
+          "title": "Long term (current) use of opiate analgesic",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented IVDU/opiate dependence history with methadone maintenance; no withdrawal complications described this stay.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Acute volume overload with bilateral pleural effusions and peripheral edema",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "JVP to midneck, bilateral pedal edema, bibasilar crackles",
+        "Bilateral effusions right greater than left on CXR",
+        "IV Lasix 20 mg x2 days with good output"
+      ],
+      "opposing_evidence": [
+        "TTE LVEF 65% with normal systolic/diastolic function",
+        "Not discharged on diuretic; edema described as new and not fluid-resuscitated"
+      ],
+      "reasoning": "Documented fluid overload treated with diuresis but without a structural cardiac cause, so a secondary/complication code rather than heart failure.",
+      "icd10_primary": "E87.70",
+      "icd10_primary_title": "Fluid overload, unspecified",
+      "icd10_package": [
+        {
+          "code": "E87.70",
+          "title": "Fluid overload, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "J90",
+          "title": "Pleural effusion, not elsewhere classified",
+          "role": "supporting"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "J90",
+          "title": "Pleural effusion, not elsewhere classified",
+          "role": "supporting"
+        },
+        {
+          "code": "R60.0",
+          "title": "Localized edema",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Elevated JVP, bilateral pedal edema, bilateral effusions and edema-pattern opacities on chest imaging.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "PTSD with polysubstance use and bipolar disorder history",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Home gabapentin continued for PTSD",
+        "Psychiatry consulted, interested in outpatient follow-up",
+        "Documented bipolar disorder, cannabis and polysubstance use"
+      ],
+      "opposing_evidence": [
+        "No acute psychiatric decompensation or suicidal ideation this stay"
+      ],
+      "reasoning": "Chronic comorbidity addressed in-house but not a driver of this admission.",
+      "icd10_primary": "F43.10",
+      "icd10_primary_title": "Post-traumatic stress disorder, unspecified",
+      "icd10_package": [
+        {
+          "code": "F43.10",
+          "title": "Post-traumatic stress disorder, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated",
+          "role": "supporting"
+        },
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "F19.10",
+          "title": "Other psychoactive substance abuse, uncomplicated",
+          "role": "supporting"
+        },
+        {
+          "code": "F31.9",
+          "title": "Bipolar disorder, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Psychiatric history lists PTSD, bipolar disorder and polysubstance use, relevant to current management.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Pulmonary contusion of right lung",
+      "score": 40.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "CXR: right lung base atelectasis versus contusion after chest trauma",
+        "Displaced multi-level rib fractures with adjacent pleural-based hematoma"
+      ],
+      "opposing_evidence": [
+        "Radiologists favored aspiration/pneumonia and edema for the opacities",
+        "Never explicitly diagnosed in hospital course"
+      ],
+      "reasoning": "Plausible contributor to hypoxemia given blunt trauma, but opacities were attributed mainly to infection/edema.",
+      "icd10_primary": "S27.321A",
+      "icd10_primary_title": "Contusion of lung, unilateral, initial encounter",
+      "icd10_package": [
+        {
+          "code": "S27.321A",
+          "title": "Contusion of lung, unilateral, initial encounter",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "CXR describes right lung base atelectasis versus contusion following blunt chest trauma; possible but not confirmed.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 10,
+      "diagnosis": "Protein-calorie malnutrition/cachexia (BMI 17.9)",
+      "score": 35.0,
+      "confidence": "low",
+      "category": "secondary",
+      "supporting_evidence": [
+        "BMI 17.9, weight 125 lb, down from 140 lb prior stay",
+        "Exam: cachectic male; albumin 2.8"
+      ],
+      "opposing_evidence": [
+        "No formal nutrition diagnosis documented in the note"
+      ],
+      "reasoning": "Objective anthropometric and lab data support undernutrition, but it is not explicitly diagnosed or treated in the record provided.",
+      "icd10_primary": "E46",
+      "icd10_primary_title": "Unspecified protein-calorie malnutrition",
+      "icd10_package": [
+        {
+          "code": "E46",
+          "title": "Unspecified protein-calorie malnutrition",
+          "role": "principal"
+        },
+        {
+          "code": "Z68.1",
+          "title": "Body mass index (BMI) 19.9 or less, adult",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z68.1",
+          "title": "Body mass index (BMI) 19.9 or less, adult",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Cachectic on exam with BMI 17.9 and weight 125 lbs; severity not specified in note.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "S22.5XXA",
+  "primary_icd_title": "Flail chest, initial encounter for closed fracture",
+  "primary_condition": "Multiple displaced right rib fractures with flail chest after blunt chest trauma",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:37:55.909843",
+  "ontology_routing": false
+}

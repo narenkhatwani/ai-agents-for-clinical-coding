@@ -1,0 +1,184 @@
+{
+  "summary": "Middle-aged woman with a large painful right anterior abdominal wall desmoid tumor (biopsy-proven, previously 14 cm) admitted overnight after staged CT/ultrasound-guided cryoablation of the residual tumor. The procedure was uncomplicated; she was observed for post-procedural right-sided abdominal/flank pain and transient nausea, managed with dilaudid PCA, IV ketorolac and IV ondansetron, then transitioned to oral agents. Labs show a reactive post-ablation leukocytosis (WBC 12.5 → 15.2) and thrombocytosis without evidence of infection or bleeding; chronic hepatitis C (genotype 3, VL ~430,000) was unchanged inpatient.",
+  "most_likely": "Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall, neoplasm of uncertain behavior of soft tissue, status post cryoablation",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Desmoid tumor (aggressive fibromatosis) of anterior abdominal wall — neoplasm of uncertain behavior of connective/soft tissue",
+      "score": 95.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Chief complaint: 'Desmoid tumor'",
+        "CT: residual large right abdominal wall desmoid tumor cryoablated",
+        "Prior stay principal ICD-10 D48.1 for same lesion"
+      ],
+      "opposing_evidence": [
+        "Admission mechanism was post-procedure observation rather than tumor complication"
+      ],
+      "reasoning": "The disease driving this planned staged-ablation admission is the residual abdominal wall desmoid tumor; it is the billable principal condition rather than the procedural event."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Acute post-procedural (post-ablation) abdominal pain requiring parenteral analgesia",
+      "score": 88.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Post-procedural right abdominal pain radiating to back on floor exam",
+        "Managed with dilaudid PCA and IV toradol overnight",
+        "Prior admission coded G89.18 for identical scenario"
+      ],
+      "opposing_evidence": [
+        "Pain expected/anticipated, resolved by discharge"
+      ],
+      "reasoning": "Pain control was the explicit reason for the overnight stay and is well documented, making it a strong secondary/complication code."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Post-procedural nausea following general anesthesia and cryoablation",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "'one brief episode of nausea that then passed', no vomiting",
+        "Treated with IV Zofran, discharged on prochlorperazine"
+      ],
+      "opposing_evidence": [
+        "Nausea mild and self-limited this admission, unlike prior stay with emesis"
+      ],
+      "reasoning": "Documented and treated symptom of the current stay, but milder than the prior admission so scored below pain."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Chronic hepatitis C virus infection, genotype 3, with hepatic fibrosis",
+      "score": 58.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Genotype 3 HCV, last viral load 430,000",
+        "FibroScan consistent with fibrosis; prior ICD B18.2"
+      ],
+      "opposing_evidence": [
+        "No inpatient management or hepatic decompensation this stay"
+      ],
+      "reasoning": "Active chronic comorbidity explicitly addressed in the hospital course ('no changes as inpatient'), supporting a secondary code."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Reactive leukocytosis secondary to tissue ablation and inflammatory response",
+      "score": 45.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "WBC 12.5 on admission rising to 15.2 at discharge; platelets 484",
+        "Prior stay WBC 19.4 attributed to post-procedure inflammation"
+      ],
+      "opposing_evidence": [
+        "Afebrile, no infectious signs, no antibiotics given"
+      ],
+      "reasoning": "Objective abnormal lab likely inflammatory/post-ablation; clinically non-actionable but codable as an abnormal finding."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Chronic pain due to abdominal wall neoplasm on long-term opioid therapy",
+      "score": 40.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "History of large painful desmoid with home oxycodone and Sulindac",
+        "Prior stay coded G89.29 chronic pain"
+      ],
+      "opposing_evidence": [
+        "Current documentation emphasizes acute post-procedural rather than baseline pain"
+      ],
+      "reasoning": "Baseline tumor-related chronic pain contextualizes analgesic needs but is secondary to the acute post-procedural pain this stay."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Obesity, class I, with BMI 31.7",
+      "score": 33.0,
+      "confidence": "high",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Structured BMI 31.7 kg/m2, weight 179 lb",
+        "Prior coding E66.9 with BMI Z-code"
+      ],
+      "opposing_evidence": [
+        "Not discussed in current note text"
+      ],
+      "reasoning": "Objectively documented BMI supports an obesity plus BMI code as a comorbidity/risk factor."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Hashimoto (autoimmune) thyroiditis with thyroid nodules",
+      "score": 25.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "PMH lists thyroiditis; prior FNA consistent with Hashimoto thyroiditis"
+      ],
+      "opposing_evidence": [
+        "No thyroid labs or treatment this admission"
+      ],
+      "reasoning": "Stable chronic comorbidity carried from PMH with no current activity, hence a low score."
+    },
+    {
+      "rank": 9,
+      "diagnosis": "Post-procedural hemorrhage or hematoma of abdominal wall",
+      "score": 10.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "Hemoglobin fell 12.7 to 11.2; right-sided abdominal tenderness"
+      ],
+      "opposing_evidence": [
+        "Report states hemostasis achieved, no immediate complications",
+        "Hemodynamically stable, drop consistent with IV fluid dilution"
+      ],
+      "reasoning": "Considered because of the modest hemoglobin decline, but imaging and stable vitals argue strongly against clinically significant bleeding."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Post-procedural wound or intra-abdominal infection",
+      "why": "Afebrile with normal vitals and no antibiotics; leukocytosis attributed to ablation-induced inflammation"
+    },
+    {
+      "diagnosis": "Bowel injury or perforation from cryoprobe placement",
+      "why": "Soft abdomen without rebound or guarding; post-ablation CT showed normal intra-abdominal organs"
+    },
+    {
+      "diagnosis": "Malignant soft tissue sarcoma of abdominal wall",
+      "why": "Lesion is biopsy-proven desmoid (locally aggressive, uncertain behavior), not malignant sarcoma"
+    },
+    {
+      "diagnosis": "Cryoablation-induced acute kidney injury/rhabdomyolysis",
+      "why": "Creatinine 0.5, normal electrolytes, no myoglobinuria documented"
+    }
+  ],
+  "uncertain_areas": [
+    "Whether the coder assigns the desmoid neoplasm or acute post-procedural pain as principal for this observation stay",
+    "Absence of CRP/fever curve leaves inflammatory vs infectious cause of rising WBC unproven",
+    "Exact fibrosis stage of hepatitis C (cirrhosis vs fibrosis) would change comorbidity severity coding",
+    "Whether nausea was formally documented as post-procedural vomiting (R11.2) or nausea alone (R11.0)"
+  ],
+  "n_candidates": 9,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "18412100",
+  "hadm_id": "26093939",
+  "generated_at": "2026-08-21T23:48:53.115708",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

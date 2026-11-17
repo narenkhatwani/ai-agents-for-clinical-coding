@@ -1,0 +1,344 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "19104262",
+  "hadm_id": "24271247",
+  "most_likely": "Type 1 diabetes mellitus with ketoacidosis without coma, precipitated by insulin nonadherence",
+  "summary": "Young woman with long-standing poorly controlled type 1 diabetes and multiple prior DKA episodes, now 5 weeks postpartum (infant in NICU), admitted to the ICU with severe DKA: glucose 854, HCO3 3, anion gap 36, pH 6.96, with concomitant lactic acidosis (lactate 3.6–5.4) and marked electrolyte derangement (K 8.8, Phos 7.1, Mg 7.4, transient Cr 1.4). Precipitant was medication nonadherence/running out of insulin in the setting of social stress; no infectious source identified (clear CXR, no pneumonia, negative UE ultrasound, head CT normal). She improved on insulin infusion and fluids, transferred to medicine, and pelvic ultrasound for persistent postpartum bleeding showed only intracavitary blood products without retained products of conception.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "score": 96.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Glucose 854, HCO3 3, anion gap 36, pH 6.96",
+        "Chief complaint 'DKA'; treated with insulin drip and IVF",
+        "Alert/oriented x3, no coma documented"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Textbook severe DKA with documented biochemical criteria and insulin-drip treatment; the condition that occasioned the ICU admission and principal focus of care.",
+      "icd10_primary": "E10.10",
+      "icd10_primary_title": "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "icd10_package": [
+        {
+          "code": "E10.10",
+          "title": "Type 1 diabetes mellitus with ketoacidosis without coma",
+          "role": "principal"
+        },
+        {
+          "code": "Z79.4",
+          "title": "Long term (current) use of insulin",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z79.4",
+          "title": "Long term (current) use of insulin",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Admission for DKA in known T1DM; pH 6.96, HCO3 3, glucose 854, treated with insulin drip, alert.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Severe high anion gap metabolic acidosis with lactic acidosis",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Lactate 5.4 and 3.6 mmol/L, later 1.9",
+        "CXR ordered for 'unexplained lactic acidosis'",
+        "Base excess -28, calTCO2 5"
+      ],
+      "opposing_evidence": [
+        "Lactate cleared rapidly with volume resuscitation"
+      ],
+      "reasoning": "Explicitly named as a problem in the hospital course and objectively supported; a codable complication of the hypoperfusion/ketoacidosis rather than a competing principal diagnosis.",
+      "icd10_primary": "E87.20",
+      "icd10_primary_title": "Acidosis, unspecified",
+      "icd10_package": [
+        {
+          "code": "E87.20",
+          "title": "Acidosis, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "E87.29",
+          "title": "Other acidosis",
+          "role": "supporting"
+        },
+        {
+          "code": "E10.10",
+          "title": "Type 1 diabetes mellitus with ketoacidosis without coma",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E87.29",
+          "title": "Other acidosis",
+          "role": "supporting"
+        },
+        {
+          "code": "E10.10",
+          "title": "Type 1 diabetes mellitus with ketoacidosis without coma",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Documented severe anion gap metabolic acidosis with lactate 5.4/3.6; lactic acidosis coded as other acidosis.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hyperkalemia due to diabetic ketoacidosis",
+      "score": 72.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "K 8.8 whole blood, serum K 6.8 on admission",
+        "Later hypokalemia (K 3.0) during insulin therapy"
+      ],
+      "opposing_evidence": [
+        "Resolved rapidly, normal K 4.1 at discharge"
+      ],
+      "reasoning": "Marked transcellular-shift hyperkalemia typical of severe DKA, requiring monitoring and treatment; clearly documented in labs.",
+      "icd10_primary": "E87.5",
+      "icd10_primary_title": "Hyperkalemia",
+      "icd10_package": [
+        {
+          "code": "E87.5",
+          "title": "Hyperkalemia",
+          "role": "principal"
+        },
+        {
+          "code": "E10.10",
+          "title": "Type 1 diabetes mellitus with ketoacidosis without coma",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E10.10",
+          "title": "Type 1 diabetes mellitus with ketoacidosis without coma",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Potassium 8.8 and 6.8 on presentation with DKA, corrected during treatment.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Insulin nonadherence / underdosing of prescribed insulin regimen",
+      "score": 68.0,
+      "confidence": "high",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Admitted 'in the setting of running out of medications'",
+        "'Likely nonadherence' in hospital course; social work involved",
+        "Preadmission medication list flagged as possibly inaccurate"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Documented precipitant of this DKA episode; codable as underdosing/noncompliance and relevant to recurrence risk.",
+      "icd10_primary": "Z91.130",
+      "icd10_primary_title": "Patient's underdosing of insulin due to financial hardship",
+      "icd10_package": [
+        {
+          "code": "Z91.130",
+          "title": "Patient's underdosing of insulin due to financial hardship",
+          "role": "principal"
+        },
+        {
+          "code": "T38.3X6A",
+          "title": "Underdosing of insulin and oral hypoglycemic drugs, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "Z91.128",
+          "title": "Patient's intentional underdosing of other medication regimen for other reason",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "T38.3X6A",
+          "title": "Underdosing of insulin and oral hypoglycemic drugs, initial encounter",
+          "role": "supporting"
+        },
+        {
+          "code": "Z91.128",
+          "title": "Patient's intentional underdosing of other medication regimen for other reason",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Note documents running out of insulin/nonadherence from social stress precipitating DKA; underdosing codes applied.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute kidney injury secondary to volume depletion",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Creatinine 1.4 with BUN 26 on admission, baseline 0.5–0.7",
+        "Granular and hyaline casts on urinalysis",
+        "Creatinine 0.6 after fluid resuscitation"
+      ],
+      "opposing_evidence": [
+        "AKI not explicitly named in the hospital course text"
+      ],
+      "reasoning": "Transient creatinine rise with rapid resolution on fluids meets prerenal AKI criteria, though documentation is only lab-based.",
+      "icd10_primary": "N17.9",
+      "icd10_primary_title": "Acute kidney failure, unspecified",
+      "icd10_package": [
+        {
+          "code": "N17.9",
+          "title": "Acute kidney failure, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "E86.0",
+          "title": "Dehydration",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Creatinine 1.4 with BUN 26 on admission, normalized to 0.6 after fluids, consistent with prerenal AKI.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Persistent postpartum vaginal bleeding without retained products of conception",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "5 weeks post-partum with persistent daily vaginal bleeding",
+        "TVUS: heterogeneous endometrial material, likely blood products, no vascularity",
+        "GYN consult: normal postpartum; GYN follow-up arranged"
+      ],
+      "opposing_evidence": [
+        "No retained products; deemed physiologic by GYN"
+      ],
+      "reasoning": "An active secondary problem evaluated this stay, but attributed to normal postpartum involution rather than pathology.",
+      "icd10_primary": "O72.2",
+      "icd10_primary_title": "Delayed and secondary postpartum hemorrhage",
+      "icd10_package": [
+        {
+          "code": "O72.2",
+          "title": "Delayed and secondary postpartum hemorrhage",
+          "role": "principal"
+        },
+        {
+          "code": "Z39.2",
+          "title": "Encounter for routine postpartum follow-up",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z39.2",
+          "title": "Encounter for routine postpartum follow-up",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Five weeks postpartum with persistent daily vaginal bleeding; ultrasound showed blood products, no retained POC.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Sepsis or occult infection as DKA precipitant",
+      "score": 22.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "WBC 17.9–19.2 with 80% neutrophils; lactate 5.4",
+        "Pyuria (WBC 10/hpf, bacteria) on urinalysis"
+      ],
+      "opposing_evidence": [
+        "'No infectious precipitant identified' per hospital course",
+        "Afebrile; clear chest radiographs; no antibiotics documented"
+      ],
+      "reasoning": "Leukocytosis and lactate are explained by DKA stress response; explicit clinical statement that no infection was found lowers this substantially.",
+      "icd10_primary": "R65.10",
+      "icd10_primary_title": "Systemic inflammatory response syndrome (SIRS) of non-infectious origin without acute organ dysfunction",
+      "icd10_package": [
+        {
+          "code": "R65.10",
+          "title": "Systemic inflammatory response syndrome (SIRS) of non-infectious origin without acute organ dysfunction",
+          "role": "principal"
+        },
+        {
+          "code": "R79.82",
+          "title": "Elevated C-reactive protein (CRP)",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "R79.82",
+          "title": "Elevated C-reactive protein (CRP)",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Leukocytosis and tachycardia evaluated; no infectious precipitant identified, so sepsis not coded as confirmed.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Upper extremity deep vein thrombosis related to PICC line",
+      "score": 12.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "RUE swelling and tenderness prompting ultrasound",
+        "Bilateral UE ecchymoses and left PICC on exam"
+      ],
+      "opposing_evidence": [
+        "Ultrasound showed no DVT and no soft tissue abnormality",
+        "PICC subsequently removed without event"
+      ],
+      "reasoning": "Considered and actively excluded by duplex ultrasound; retained only as a documented rule-out.",
+      "icd10_primary": "Z86.718",
+      "icd10_primary_title": "Personal history of other venous thrombosis and embolism",
+      "icd10_package": [
+        {
+          "code": "Z86.718",
+          "title": "Personal history of other venous thrombosis and embolism",
+          "role": "principal"
+        },
+        {
+          "code": "M79.89",
+          "title": "Other specified soft tissue disorders",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "M79.89",
+          "title": "Other specified soft tissue disorders",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Upper extremity swelling evaluated; ultrasound negative for DVT, so thrombosis ruled out and not coded as current.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "E10.10",
+  "primary_icd_title": "Type 1 diabetes mellitus with ketoacidosis without coma",
+  "primary_condition": "Type 1 diabetes mellitus with ketoacidosis without coma",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:50:16.219792",
+  "ontology_routing": false
+}

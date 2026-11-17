@@ -1,0 +1,47 @@
+ACCURACY vs GROUND TRUTH (LLM query expansion)
+==============================================
+
+Patient ID       : 11474876
+HADM ID          : 29672491
+Generated        : 2026-08-21T23:52:14.777492
+
+DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
+-------------------------------------------------------
+
+  DiffDx GT source     : discharge_diagnosis
+  Ground truth (note)  : Choledocholithiasis
+  Billed ICD title     : Calculus of bile duct with cholangitis, unspecified, without obstruction (ICD metric only)
+  Rank-1 predicted     : Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis
+    score=93.0  confidence=high
+  Diagnosis match      : YES
+  Is rank-1 match      : YES
+  Matched DiffDx rank  : 1
+  Matched diagnosis    : Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis
+    score=93.0  confidence=high
+  LLM reason           : Rank 1 'Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis' names the identical principal condition as the physician discharge diagnosis 'Choledocholithiasis' (common bile duct stone). The rank string explicitly contains the ground-truth term; the added qualifier about absence of cholangitis is a specificity modifier, not a different principal condition.
+
+LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
+-----------------------------------------------------------
+
+  Ground truth ICD     : K80.30 — Calculus of bile duct with cholangitis, unspecified, without obstruction
+  Rank-1 mapped ICD    : K80.50 — Calculus of bile duct without cholangitis or cholecystitis without obstruction
+  Matched mapped ICD   : K80.50 — Calculus of bile duct without cholangitis or cholecystitis without obstruction
+  ICD match            : YES
+  ICD exact            : NO
+  ICD 3-char family    : YES
+  ICD LLM match        : YES
+  Is rank-1 ICD match  : YES
+  LLM ICD reason       : Mapped K80.50 (calculus of bile duct without cholangitis or cholecystitis, without obstruction) and billed K80.30 (calculus of bile duct with cholangitis, unspecified, without obstruction) both code the same principal condition — a non-obstructing bile duct calculus in the K80.3-/K80.5- bile duct stone family; they differ only by the documented presence of accompanying cholangitis, an associated-condition modifier. A coder would recognize these as the same principal biliary calculus diagnosis, analogous to the J93.9 vs S27.0XXA pneumothorax example, though the cholangitis qualifier lowers confidence.
+  Stage 9 final ICD    : K80.50 (debug)
+
+FULL DIFFERENTIAL LIST
+----------------------
+
+   1. Choledocholithiasis — calculus of bile duct without cholangitis or cholecystitis  [score=93.0, high]  ICD=K80.50 — Calculus of bile duct without cholangitis or cholecystitis without obstruction
+   2. Cholelithiasis (gallbladder stones) with planned/deferred cholecystectomy  [score=62.0, medium]  ICD=K80.20 — Calculus of gallbladder without cholecystitis without obstruction
+   3. Paroxysmal atrial fibrillation on long-term anticoagulation, apixaban periprocedurally held  [score=58.0, high]  ICD=I48.0 — Paroxysmal atrial fibrillation
+   4. Chronic heart failure with preserved ejection fraction with peripheral volume overload  [score=52.0, medium]  ICD=I50.32 — Chronic diastolic (congestive) heart failure
+   5. Chronic kidney disease stage 3 (moderate)  [score=48.0, medium]  ICD=N18.30 — Chronic kidney disease, stage 3 unspecified
+   6. Essential hypertension with hypertensive heart disease  [score=42.0, medium]  ICD=I11.0 — Hypertensive heart disease with heart failure
+   7. Recurrent/resolved ascending cholangitis following prior biliary stenting  [score=25.0, low]  ICD=Z87.19 — Personal history of other diseases of the digestive system
+   8. Post-ERCP pancreatitis or post-sphincterotomy hemorrhage  [score=12.0, low]  ICD=K91.89 — Other postprocedural complications and disorders of digestive system

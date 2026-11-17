@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "13196707",
   "hadm_id": "21475988",
-  "generated_at": "2026-08-20T17:30:03.218762",
+  "generated_at": "2026-08-20T22:07:07.620663",
   "ground_truth": {
     "primary_icd_code": "A419",
     "primary_dx_title": "Sepsis, unspecified organism",
@@ -28,9 +28,9 @@
       "matched_confidence": "high",
       "llm_relationship": "same_principal",
       "llm_confidence": "high",
-      "llm_reason": "Physician discharge diagnosis 'Stage IV Adenocarcinoma, unknown origin' names the same principal condition as Rank 2 'Metastatic adenocarcinoma of unknown primary' — Stage IV denotes distant metastatic disease and 'unknown origin' equals 'unknown primary'. Rank 1 (sepsis due to right upper lobe pneumonia) is a different principal condition, so the lowest matching rank is 2.",
-      "llm_expanded_ground_truth": "Stage IV adenocarcinoma | metastatic adenocarcinoma | carcinoma of unknown primary (CUP) | adenocarcinoma of unknown primary site | disseminated adenocarcinoma",
-      "llm_expanded_matched": "metastatic adenocarcinoma | secondary malignant neoplasm, adenocarcinoma histology | unknown primary site malignancy | carcinoma of unknown primary",
+      "llm_reason": "Physician discharge diagnosis 'Stage IV adenocarcinoma, unknown origin' denotes metastatic (stage IV) adenocarcinoma with an unidentified primary site. Rank 2 'Metastatic adenocarcinoma of unknown primary' names the identical principal condition (carcinoma of unknown primary, CUP). Rank 1 (sepsis from right upper lobe pneumonia) is a different principal condition, so the lowest truly matching rank is 2.",
+      "llm_expanded_ground_truth": "Stage IV adenocarcinoma | metastatic adenocarcinoma | adenocarcinoma of unknown primary site | carcinoma of unknown primary (CUP) | disseminated adenocarcinoma, primary site unknown",
+      "llm_expanded_matched": "metastatic adenocarcinoma | adenocarcinoma with unknown primary | secondary malignant neoplasm, primary unspecified | stage IV adenocarcinoma",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
@@ -97,9 +97,9 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": true,
       "is_rank1_icd_family_match": true,
-      "llm_icd_reason": "Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism). These are entirely different principal conditions (malignancy vs systemic infection) and a coder would not accept them as equivalent. Note A41.9 appears at Rank 1, but that rank did not match the physician discharge diagnosis.",
-      "llm_expanded_ground_truth_icd": "A41.9 sepsis unspecified organism | septicemia | bloodstream infection with systemic response",
-      "llm_expanded_matched_icd": "C79.9 secondary malignant neoplasm of unspecified site | metastatic cancer, site unspecified | C80.1 malignant neoplasm unspecified / unknown primary",
+      "llm_icd_reason": "Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), a neoplasm code, whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism), an infectious/systemic inflammatory condition. These are distinct principal conditions in different ICD-10 chapters and no coder would treat them as equivalent.",
+      "llm_expanded_ground_truth_icd": "A41.9 sepsis unspecified organism | septicemia NOS | systemic infection, organism unspecified",
+      "llm_expanded_matched_icd": "C79.9 secondary malignant neoplasm of unspecified site | metastatic cancer, site unspecified | metastasis NOS",
       "stage9_final_primary_icd": "R50.9",
       "diagnosis_match": true,
       "is_rank1_diagnosis_match": false,
@@ -110,32 +110,32 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Physician discharge diagnosis 'Stage IV Adenocarcinoma, unknown origin' names the same principal condition as Rank 2 'Metastatic adenocarcinoma of unknown primary' — Stage IV denotes distant metastatic disease and 'unknown origin' equals 'unknown primary'. Rank 1 (sepsis due to right upper lobe pneumonia) is a different principal condition, so the lowest matching rank is 2.",
+      "diagnosis_reason": "Physician discharge diagnosis 'Stage IV adenocarcinoma, unknown origin' denotes metastatic (stage IV) adenocarcinoma with an unidentified primary site. Rank 2 'Metastatic adenocarcinoma of unknown primary' names the identical principal condition (carcinoma of unknown primary, CUP). Rank 1 (sepsis from right upper lobe pneumonia) is a different principal condition, so the lowest truly matching rank is 2.",
       "ground_truth_expansions": [
         "Stage IV adenocarcinoma",
         "metastatic adenocarcinoma",
-        "carcinoma of unknown primary (CUP)",
         "adenocarcinoma of unknown primary site",
-        "disseminated adenocarcinoma"
+        "carcinoma of unknown primary (CUP)",
+        "disseminated adenocarcinoma, primary site unknown"
       ],
       "matched_diagnosis_expansions": [
         "metastatic adenocarcinoma",
-        "secondary malignant neoplasm, adenocarcinoma histology",
-        "unknown primary site malignancy",
-        "carcinoma of unknown primary"
+        "adenocarcinoma with unknown primary",
+        "secondary malignant neoplasm, primary unspecified",
+        "stage IV adenocarcinoma"
       ],
       "icd_equivalent": false,
       "icd_confidence": "high",
-      "icd_reason": "Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism). These are entirely different principal conditions (malignancy vs systemic infection) and a coder would not accept them as equivalent. Note A41.9 appears at Rank 1, but that rank did not match the physician discharge diagnosis.",
+      "icd_reason": "Mapped ICD at matched rank 2 is C79.9 (secondary malignant neoplasm of unspecified site), a neoplasm code, whereas the billed ground-truth primary code is A41.9 (sepsis, unspecified organism), an infectious/systemic inflammatory condition. These are distinct principal conditions in different ICD-10 chapters and no coder would treat them as equivalent.",
       "ground_truth_icd_expansions": [
         "A41.9 sepsis unspecified organism",
-        "septicemia",
-        "bloodstream infection with systemic response"
+        "septicemia NOS",
+        "systemic infection, organism unspecified"
       ],
       "matched_icd_expansions": [
         "C79.9 secondary malignant neoplasm of unspecified site",
         "metastatic cancer, site unspecified",
-        "C80.1 malignant neoplasm unspecified / unknown primary"
+        "metastasis NOS"
       ],
       "_cache_hit": false
     }

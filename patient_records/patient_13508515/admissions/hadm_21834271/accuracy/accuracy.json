@@ -4,7 +4,7 @@
   "method": "llm_query_expansion",
   "patient_id": "13508515",
   "hadm_id": "21834271",
-  "generated_at": "2026-08-20T17:30:11.380609",
+  "generated_at": "2026-08-20T22:07:14.740854",
   "ground_truth": {
     "primary_icd_code": "C642",
     "primary_dx_title": "Malignant neoplasm of left kidney, except renal pelvis",
@@ -28,9 +28,9 @@
       "matched_confidence": "medium",
       "llm_relationship": "same_principal_broader",
       "llm_confidence": "high",
-      "llm_reason": "Physician discharge diagnosis is left renal cell carcinoma; Rank 2 'Renal cell carcinoma' names the same principal condition, lacking only laterality specification. Rank 1 (heart failure) and other ranks are unrelated principals.",
-      "llm_expanded_ground_truth": "Left renal cell carcinoma | RCC of left kidney | Renal cell cancer, left | Hypernephroma | Malignant neoplasm of left kidney except renal pelvis",
-      "llm_expanded_matched": "Renal cell carcinoma | RCC | Kidney cancer | Renal adenocarcinoma | Hypernephroma",
+      "llm_reason": "Physician discharge diagnosis is 'Left renal cell carcinoma'; Rank 2 is 'Renal cell carcinoma' — the same principal condition, differing only by laterality specification (DiffDx is broader, GT specifies left side).",
+      "llm_expanded_ground_truth": "Left renal cell carcinoma | RCC of left kidney | Renal cell carcinoma, left | Malignant neoplasm of left kidney (except renal pelvis) | Hypernephroma | Kidney cancer, left",
+      "llm_expanded_matched": "Renal cell carcinoma | RCC | Renal adenocarcinoma | Hypernephroma | Kidney cancer",
       "heuristic_specificity_match": false,
       "diagnosis_items": [
         {
@@ -97,8 +97,8 @@
       "icd_llm_match": false,
       "is_rank1_icd_match": false,
       "is_rank1_icd_family_match": false,
-      "llm_icd_reason": "No ICD code was mapped at the matched rank (Rank 2), so it cannot be compared to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).",
-      "llm_expanded_ground_truth_icd": "C64.2 Malignant neoplasm of left kidney, except renal pelvis | C64.9 unspecified kidney | C64.1 right kidney",
+      "llm_icd_reason": "No ICD-10 code was mapped at the matched rank (Rank 2 mapped ICD is none), so it cannot be compared with or accepted as equivalent to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).",
+      "llm_expanded_ground_truth_icd": "C64.2 Malignant neoplasm of left kidney, except renal pelvis | C64.9 Malignant neoplasm of unspecified kidney, except renal pelvis | C64.1 Malignant neoplasm of right kidney, except renal pelvis",
       "llm_expanded_matched_icd": "",
       "stage9_final_primary_icd": "I50.23",
       "diagnosis_match": true,
@@ -110,28 +110,29 @@
       "diagnosis_equivalent": true,
       "diagnosis_relationship": "same_principal_broader",
       "diagnosis_confidence": "high",
-      "diagnosis_reason": "Physician discharge diagnosis is left renal cell carcinoma; Rank 2 'Renal cell carcinoma' names the same principal condition, lacking only laterality specification. Rank 1 (heart failure) and other ranks are unrelated principals.",
+      "diagnosis_reason": "Physician discharge diagnosis is 'Left renal cell carcinoma'; Rank 2 is 'Renal cell carcinoma' — the same principal condition, differing only by laterality specification (DiffDx is broader, GT specifies left side).",
       "ground_truth_expansions": [
         "Left renal cell carcinoma",
         "RCC of left kidney",
-        "Renal cell cancer, left",
+        "Renal cell carcinoma, left",
+        "Malignant neoplasm of left kidney (except renal pelvis)",
         "Hypernephroma",
-        "Malignant neoplasm of left kidney except renal pelvis"
+        "Kidney cancer, left"
       ],
       "matched_diagnosis_expansions": [
         "Renal cell carcinoma",
         "RCC",
-        "Kidney cancer",
         "Renal adenocarcinoma",
-        "Hypernephroma"
+        "Hypernephroma",
+        "Kidney cancer"
       ],
       "icd_equivalent": false,
       "icd_confidence": "high",
-      "icd_reason": "No ICD code was mapped at the matched rank (Rank 2), so it cannot be compared to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).",
+      "icd_reason": "No ICD-10 code was mapped at the matched rank (Rank 2 mapped ICD is none), so it cannot be compared with or accepted as equivalent to the billed primary code C64.2 (malignant neoplasm of left kidney, except renal pelvis).",
       "ground_truth_icd_expansions": [
         "C64.2 Malignant neoplasm of left kidney, except renal pelvis",
-        "C64.9 unspecified kidney",
-        "C64.1 right kidney"
+        "C64.9 Malignant neoplasm of unspecified kidney, except renal pelvis",
+        "C64.1 Malignant neoplasm of right kidney, except renal pelvis"
       ],
       "matched_icd_expansions": [],
       "_cache_hit": false

@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 16014068
 HADM ID          : 29042843
-Generated        : 2026-08-20T17:30:34.535987
+Generated        : 2026-08-20T22:07:38.093106
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 1
   Matched diagnosis    : Metastatic sarcoma with anemia and thrombocytopenia
     score=85.0  confidence=high
-  LLM reason           : Rank 1 'Metastatic sarcoma with anemia and thrombocytopenia' names the same principal condition as the physician discharge diagnosis of high-grade unclassified sarcoma (malignant fibrous histiocytoma / undifferentiated pleomorphic sarcoma) with metastatic spread; the anemia and thrombocytopenia are bundled comorbidities in the same phrase and do not change the principal diagnosis. No other rank (anemia/thrombocytopenia, cervical degenerative change, renal failure, hypotension) names the sarcoma.
+  LLM reason           : Rank 1 'Metastatic sarcoma with anemia and thrombocytopenia' names the same principal condition as the physician discharge diagnosis 'High-grade unclassified sarcoma (malignant fibrous histiocytoma)' — a high-grade soft tissue sarcoma (undifferentiated pleomorphic sarcoma / MFH) with metastatic spread. The compound label bundles hematologic comorbidities but the principal condition is the sarcoma.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : Billed primary code C79.31 (secondary malignant neoplasm of brain) and mapped code C79.89 (secondary malignant neoplasm of other specified sites) both fall in the C79 category coding metastatic (secondary) malignant neoplasm from the sarcoma; the codes differ only in the metastatic site specified (brain vs other specified site), so a coder would accept them as clinically equivalent for the same principal condition of metastatic sarcoma, though the billed code is site-specific to brain.
+  LLM ICD reason       : Mapped C79.89 (secondary malignant neoplasm of other specified sites) and billed C79.31 (secondary malignant neoplasm of brain) both code the same principal condition — metastatic (secondary) malignant neoplasm from the primary sarcoma — differing only in site specificity, which a coder would accept as clinically equivalent for the same principal metastatic disease.
   Stage 9 final ICD    : B99.9 (debug)
 
 FULL DIFFERENTIAL LIST

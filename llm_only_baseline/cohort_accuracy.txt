@@ -1,0 +1,39 @@
+STAGE 10 — ACCURACY (LLM query expansion)
+=========================================
+
+Admissions scored : 15
+With Stage 9      : 15
+
+DIFFERENTIAL DIAGNOSIS vs physician Discharge Diagnosis (note)
+  Any-rank match               15 / 15  (100.0%)
+  Rank-1 only                  13 / 15  (86.7%)
+  Lower-rank only              2 / 15
+
+LINKED ICD vs billed primary ICD (from matched DiffDx rank)
+  ICD match (exact or LLM)     10 / 15  (66.7%)
+  ICD exact code               5 / 15  (33.3%)
+  ICD 3-char family            9 / 15  (60.0%)
+  Diagnosis YES, ICD NO        5
+
+→ diffdx_match.csv, icd_match.csv
+
+PER-ADMISSION SUMMARY
+---------------------
+
+Dx   R1   ICD  Rank  Patient      Matched diagnosis                    GT (discharge dx)
+--------------------------------------------------------------------------------------------------------------
+YES  YES  YES  1     10361982     Postprocedural hemorrhage from ...   Heavy vaginal bleeding after total lapa...
+YES  YES  YES  1     10426859     Recurrent paroxysmal supraventr...   supraventricular tachycardia, non-displ...
+YES  YES  NO   1     10458324     Multiple closed displaced right...   Rib fracture; Paroxsysmal Atrial Fibril...
+YES  YES  NO   1     11251337     Bilateral staghorn calculi of k...   NEPHROLITHIASIS; RIGHT, UPJ, complex, >2cm
+YES  YES  YES  1     11474876     Choledocholithiasis — calculus ...   Choledocholithiasis
+YES  YES  YES  1     11607177     Refractory ventricular tachycar...   Refractory VT s/p stellate ganglion blo...
+YES  YES  YES  1     12007928     Acute on chronic diastolic (HFp...   Acute on chronic decompensated diastoli...
+YES  YES  NO   1     13196707     Malignant pericardial effusion ...   Stage IV Adenocarcinoma, unknown origin...
+YES  YES  YES  1     13508515     Malignant neoplasm of left kidn...   Left renal cell carcinoma.
+YES  NO   NO   2     13952483     Adult failure to thrive with se...   Failure to thrive; Dehydration; Acute k...
+YES  YES  YES  1     16014068     Secondary malignant neoplasm of...   High-grade unclassified sarcoma (malign...
+YES  YES  YES  1     17774110     Septic shock due to Klebsiella ...   Other specified sepsis
+YES  YES  YES  1     18412100     Desmoid tumor (aggressive fibro...   Desmoid tumor
+YES  YES  YES  1     19104262     Type 1 diabetes mellitus with k...   Diabetes type I with DKA
+YES  NO   NO   3     19632936     Unexplained macrocytic anemia s...   Macrocytic anemia

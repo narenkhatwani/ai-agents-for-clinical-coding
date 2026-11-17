@@ -1,0 +1,176 @@
+{
+  "summary": "Young woman with long-standing poorly controlled type 1 diabetes and multiple prior DKA episodes, now 5 weeks postpartum (infant in NICU), admitted to the ICU with severe DKA: glucose 854, HCO3 3, anion gap 36, pH 6.96, with concomitant lactic acidosis (lactate 3.6–5.4) and marked electrolyte derangement (K 8.8, Phos 7.1, Mg 7.4, transient Cr 1.4). Precipitant was medication nonadherence/running out of insulin in the setting of social stress; no infectious source identified (clear CXR, no pneumonia, negative UE ultrasound, head CT normal). She improved on insulin infusion and fluids, transferred to medicine, and pelvic ultrasound for persistent postpartum bleeding showed only intracavitary blood products without retained products of conception.",
+  "most_likely": "Type 1 diabetes mellitus with ketoacidosis without coma, precipitated by insulin nonadherence",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Type 1 diabetes mellitus with ketoacidosis without coma",
+      "score": 96.0,
+      "confidence": "high",
+      "category": "primary",
+      "supporting_evidence": [
+        "Glucose 854, HCO3 3, anion gap 36, pH 6.96",
+        "Chief complaint 'DKA'; treated with insulin drip and IVF",
+        "Alert/oriented x3, no coma documented"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Textbook severe DKA with documented biochemical criteria and insulin-drip treatment; the condition that occasioned the ICU admission and principal focus of care."
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Severe high anion gap metabolic acidosis with lactic acidosis",
+      "score": 80.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Lactate 5.4 and 3.6 mmol/L, later 1.9",
+        "CXR ordered for 'unexplained lactic acidosis'",
+        "Base excess -28, calTCO2 5"
+      ],
+      "opposing_evidence": [
+        "Lactate cleared rapidly with volume resuscitation"
+      ],
+      "reasoning": "Explicitly named as a problem in the hospital course and objectively supported; a codable complication of the hypoperfusion/ketoacidosis rather than a competing principal diagnosis."
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hyperkalemia due to diabetic ketoacidosis",
+      "score": 72.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "K 8.8 whole blood, serum K 6.8 on admission",
+        "Later hypokalemia (K 3.0) during insulin therapy"
+      ],
+      "opposing_evidence": [
+        "Resolved rapidly, normal K 4.1 at discharge"
+      ],
+      "reasoning": "Marked transcellular-shift hyperkalemia typical of severe DKA, requiring monitoring and treatment; clearly documented in labs."
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Insulin nonadherence / underdosing of prescribed insulin regimen",
+      "score": 68.0,
+      "confidence": "high",
+      "category": "risk_factor",
+      "supporting_evidence": [
+        "Admitted 'in the setting of running out of medications'",
+        "'Likely nonadherence' in hospital course; social work involved",
+        "Preadmission medication list flagged as possibly inaccurate"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Documented precipitant of this DKA episode; codable as underdosing/noncompliance and relevant to recurrence risk."
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Acute kidney injury secondary to volume depletion",
+      "score": 55.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Creatinine 1.4 with BUN 26 on admission, baseline 0.5–0.7",
+        "Granular and hyaline casts on urinalysis",
+        "Creatinine 0.6 after fluid resuscitation"
+      ],
+      "opposing_evidence": [
+        "AKI not explicitly named in the hospital course text"
+      ],
+      "reasoning": "Transient creatinine rise with rapid resolution on fluids meets prerenal AKI criteria, though documentation is only lab-based."
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Persistent postpartum vaginal bleeding without retained products of conception",
+      "score": 48.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "5 weeks post-partum with persistent daily vaginal bleeding",
+        "TVUS: heterogeneous endometrial material, likely blood products, no vascularity",
+        "GYN consult: normal postpartum; GYN follow-up arranged"
+      ],
+      "opposing_evidence": [
+        "No retained products; deemed physiologic by GYN"
+      ],
+      "reasoning": "An active secondary problem evaluated this stay, but attributed to normal postpartum involution rather than pathology."
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Sepsis or occult infection as DKA precipitant",
+      "score": 22.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "WBC 17.9–19.2 with 80% neutrophils; lactate 5.4",
+        "Pyuria (WBC 10/hpf, bacteria) on urinalysis"
+      ],
+      "opposing_evidence": [
+        "'No infectious precipitant identified' per hospital course",
+        "Afebrile; clear chest radiographs; no antibiotics documented"
+      ],
+      "reasoning": "Leukocytosis and lactate are explained by DKA stress response; explicit clinical statement that no infection was found lowers this substantially."
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Upper extremity deep vein thrombosis related to PICC line",
+      "score": 12.0,
+      "confidence": "low",
+      "category": "differential",
+      "supporting_evidence": [
+        "RUE swelling and tenderness prompting ultrasound",
+        "Bilateral UE ecchymoses and left PICC on exam"
+      ],
+      "opposing_evidence": [
+        "Ultrasound showed no DVT and no soft tissue abnormality",
+        "PICC subsequently removed without event"
+      ],
+      "reasoning": "Considered and actively excluded by duplex ultrasound; retained only as a documented rule-out."
+    }
+  ],
+  "rule_outs": [
+    {
+      "diagnosis": "Retained products of conception",
+      "why": "Transvaginal ultrasound showed only avascular endometrial blood products; GYN judged normal postpartum findings."
+    },
+    {
+      "diagnosis": "Upper extremity DVT / catheter-associated thrombosis",
+      "why": "Duplex ultrasound demonstrated patent, compressible veins with no thrombus or soft tissue abnormality."
+    },
+    {
+      "diagnosis": "Pneumonia or intrathoracic infection",
+      "why": "Serial chest radiographs clear with no consolidation, effusion, or congestion despite lactic acidosis."
+    },
+    {
+      "diagnosis": "Acute intracranial process causing altered mental status",
+      "why": "Noncontrast head CT showed no hemorrhage, infarct, edema, or mass; mentation normalized with DKA correction."
+    },
+    {
+      "diagnosis": "Urinary tract infection precipitating DKA",
+      "why": "Pyuria present but no fever, no documented culture-proven infection, and course states no infectious precipitant."
+    }
+  ],
+  "uncertain_areas": [
+    "Whether urine/blood cultures were positive would elevate an infectious precipitant and possibly sepsis coding",
+    "Whether AKI was formally documented by the treating team affects secondary diagnosis capture",
+    "Exact postpartum interval and whether obstetric puerperal codes (O24.03) apply given delivery ~5 weeks prior",
+    "Whether hypernatremia (Na 148), hypomagnesemia/hypermagnesemia, and hypophosphatemia were treated as separate problems",
+    "Confirmation of altered mental status severity (would distinguish DKA with vs. without coma)"
+  ],
+  "n_candidates": 8,
+  "type": "llm_only_differential_diagnosis",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_agent": "llm_only_diff_dx",
+  "_temperature": 0.4,
+  "patient_id": "19104262",
+  "hadm_id": "24271247",
+  "generated_at": "2026-08-21T23:49:56.437728",
+  "pipeline": "llm_only_baseline",
+  "inputs": {
+    "clinical_note_redacted": true,
+    "admission_history": true,
+    "clinical_context": true,
+    "snomed": false,
+    "symptom_tree": false,
+    "ontology_routing": false,
+    "temperature": 0.4
+  }
+}

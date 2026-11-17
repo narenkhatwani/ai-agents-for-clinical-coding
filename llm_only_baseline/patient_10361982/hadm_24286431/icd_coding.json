@@ -1,0 +1,275 @@
+{
+  "type": "llm_only_icd_coding",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "10361982",
+  "hadm_id": "24286431",
+  "most_likely": "Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy",
+  "summary": "Woman ~3 weeks status post exam under anesthesia, extensive lysis of adhesions, total laparoscopic hysterectomy with bilateral salpingectomy and cystoscopy, presenting with acute heavy vaginal bleeding with clots after an initial period of only light spotting. Clinic exam showed no cuff dehiscence and a small bleeding vessel was cauterized; pelvic ultrasound showed a normal vaginal cuff with no hematoma. Hematocrit 38.1 (preop 40.1), hemodynamically stable, no procedure required this stay; bleeding decreased with observation and she was discharged on hospital day 2.",
+  "differential": [
+    {
+      "rank": 1,
+      "diagnosis": "Postprocedural hemorrhage from vaginal cuff following total laparoscopic hysterectomy",
+      "score": 93.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Chief complaint: heavy vaginal bleeding after hysterectomy",
+        "Small vessel at cuff cauterized in clinic",
+        "TLH/BS with extensive lysis of adhesions ~3 weeks prior"
+      ],
+      "opposing_evidence": [
+        "Hct stable at 38.1 vs preop 40.1",
+        "No transfusion or operative intervention required"
+      ],
+      "reasoning": "Bleeding is directly attributable to the recent hysterectomy site with an identified cuff vessel cauterized; this is the principal disease driving the admission for observation.",
+      "icd10_primary": "N99.820",
+      "icd10_primary_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "icd10_package": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+          "role": "principal"
+        },
+        {
+          "code": "Z90.710",
+          "title": "Acquired absence of both cervix and uterus",
+          "role": "supporting"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z90.710",
+          "title": "Acquired absence of both cervix and uterus",
+          "role": "supporting"
+        },
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Heavy vaginal bleeding weeks after total laparoscopic hysterectomy; cuff vessel cauterized, coded as postprocedural GU hemorrhage.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 2,
+      "diagnosis": "Vaginal cuff granulation tissue with bleeding vessel",
+      "score": 62.0,
+      "confidence": "medium",
+      "category": "complication",
+      "supporting_evidence": [
+        "Small vessel cauterized at cuff in clinic",
+        "Ultrasound: normal-appearing vaginal cuff, normal postoperative changes"
+      ],
+      "opposing_evidence": [
+        "Granulation tissue not explicitly described in note"
+      ],
+      "reasoning": "Delayed cuff bleeding at 3 weeks postop commonly arises from healing granulation tissue/suture-line vessel; supported indirectly by successful cautery.",
+      "icd10_primary": "N89.8",
+      "icd10_primary_title": "Other specified noninflammatory disorders of vagina",
+      "icd10_package": [
+        {
+          "code": "N89.8",
+          "title": "Other specified noninflammatory disorders of vagina",
+          "role": "principal"
+        },
+        {
+          "code": "Z90.710",
+          "title": "Acquired absence of both cervix and uterus",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "Z90.710",
+          "title": "Acquired absence of both cervix and uterus",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Bleeding small vessel at vaginal cuff cauterized in clinic; coded as other specified noninflammatory vaginal disorder.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 3,
+      "diagnosis": "Hypothyroidism on levothyroxine replacement",
+      "score": 55.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "PMH hypothyroidism; Synthroid 50 mcg continued inpatient",
+        "Prior admission billed E039"
+      ],
+      "opposing_evidence": [
+        "No thyroid labs recorded this stay"
+      ],
+      "reasoning": "Chronic comorbidity actively managed during the stay, appropriate as a secondary coded condition.",
+      "icd10_primary": "E03.9",
+      "icd10_primary_title": "Hypothyroidism, unspecified",
+      "icd10_package": [
+        {
+          "code": "E03.9",
+          "title": "Hypothyroidism, unspecified",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Documented hypothyroidism continued on levothyroxine during admission.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 4,
+      "diagnosis": "Attention-deficit hyperactivity disorder on stimulant therapy",
+      "score": 50.0,
+      "confidence": "high",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Adderall 10 mg BID continued inpatient",
+        "Prior admission billed F909"
+      ],
+      "opposing_evidence": [],
+      "reasoning": "Documented chronic condition with continued medication during admission.",
+      "icd10_primary": "F90.9",
+      "icd10_primary_title": "Attention-deficit hyperactivity disorder, unspecified type",
+      "icd10_package": [
+        {
+          "code": "F90.9",
+          "title": "Attention-deficit hyperactivity disorder, unspecified type",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "ADHD documented in history and Adderall continued inpatient.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 5,
+      "diagnosis": "Depressive disorder / anxiety on venlafaxine therapy",
+      "score": 38.0,
+      "confidence": "medium",
+      "category": "secondary",
+      "supporting_evidence": [
+        "Venlafaxine XR 75 mg continued inpatient",
+        "Prior billing included F329 and F419"
+      ],
+      "opposing_evidence": [
+        "Current note attributes venlafaxine to ADHD history, no mood symptoms documented"
+      ],
+      "reasoning": "Supported mainly by prior coding and ongoing SNRI therapy; current documentation is ambiguous.",
+      "icd10_primary": "F32.9",
+      "icd10_primary_title": "Major depressive disorder, single episode, unspecified",
+      "icd10_package": [
+        {
+          "code": "F32.9",
+          "title": "Major depressive disorder, single episode, unspecified",
+          "role": "principal"
+        },
+        {
+          "code": "F41.9",
+          "title": "Anxiety disorder, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "icd10_supporting": [
+        {
+          "code": "F41.9",
+          "title": "Anxiety disorder, unspecified",
+          "role": "supporting"
+        }
+      ],
+      "coding_reason": "Venlafaxine continued; prior documented depression and anxiety diagnoses.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 6,
+      "diagnosis": "Vaginal cuff dehiscence after hysterectomy",
+      "score": 18.0,
+      "confidence": "high",
+      "category": "differential",
+      "supporting_evidence": [
+        "Heavy vaginal bleeding with clots in early postoperative period"
+      ],
+      "opposing_evidence": [
+        "Clinic exam: no evidence of cuff dehiscence",
+        "Ultrasound shows normal-appearing vaginal cuff"
+      ],
+      "reasoning": "Important and dangerous differential for postop cuff bleeding but explicitly excluded on direct examination and imaging.",
+      "icd10_primary": "T81.32XA",
+      "icd10_primary_title": "Disruption of internal operation (surgical) wound, not elsewhere classified, initial encounter",
+      "icd10_package": [
+        {
+          "code": "T81.32XA",
+          "title": "Disruption of internal operation (surgical) wound, not elsewhere classified, initial encounter",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Considered but excluded on exam; no evidence of cuff dehiscence documented.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 7,
+      "diagnosis": "Acute blood loss anemia from vaginal hemorrhage",
+      "score": 15.0,
+      "confidence": "high",
+      "category": "complication",
+      "supporting_evidence": [
+        "Reported heavy bleeding with passage of large clots"
+      ],
+      "opposing_evidence": [
+        "Hgb 12.6 / Hct 38.1, near preoperative baseline 40.1",
+        "Patient denies symptoms of acute blood loss anemia"
+      ],
+      "reasoning": "Explicitly considered but not met — hematocrit essentially stable and patient asymptomatic, so unlikely to be codable.",
+      "icd10_primary": "D62",
+      "icd10_primary_title": "Acute posthemorrhagic anemia",
+      "icd10_package": [
+        {
+          "code": "D62",
+          "title": "Acute posthemorrhagic anemia",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Considered but hematocrit 38.1 stable from 40.1 preop; patient asymptomatic, anemia not confirmed.",
+      "coding_method": "llm_only"
+    },
+    {
+      "rank": 8,
+      "diagnosis": "Vaginal cuff hematoma following hysterectomy",
+      "score": 12.0,
+      "confidence": "high",
+      "category": "differential",
+      "supporting_evidence": [
+        "Ultrasound indication was to evaluate for cuff hematoma"
+      ],
+      "opposing_evidence": [
+        "Ultrasound impression: no vaginal cuff hematoma, no free fluid"
+      ],
+      "reasoning": "Considered clinically and imaged, but definitively excluded by transabdominal/transvaginal pelvic ultrasound.",
+      "icd10_primary": "N99.820",
+      "icd10_primary_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+      "icd10_package": [
+        {
+          "code": "N99.820",
+          "title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+          "role": "principal"
+        }
+      ],
+      "icd10_supporting": [],
+      "coding_reason": "Pelvic ultrasound showed normal vaginal cuff with no hematoma; ruled out.",
+      "coding_method": "llm_only"
+    }
+  ],
+  "primary_icd_code": "N99.820",
+  "primary_icd_title": "Postprocedural hemorrhage of a genitourinary system organ or structure following a genitourinary system procedure",
+  "primary_condition": "Postprocedural vaginal cuff hemorrhage following total laparoscopic hysterectomy",
+  "_method": "openrouter_llm:anthropic/claude-opus-5",
+  "_temperature": 0.4,
+  "generated_at": "2026-08-21T23:35:32.883913",
+  "ontology_routing": false
+}

@@ -1,0 +1,29 @@
+============================================================
+LLM-ONLY ICD CODING (no SNOMED map)
+============================================================
+Patient ID       : 16014068
+HADM ID          : 29042843
+Method           : openrouter_llm:anthropic/claude-opus-5
+Primary ICD      : C79.31 — Secondary malignant neoplasm of brain
+Primary condition: Cerebellar metastasis from high-grade sarcoma with intratumoral hemorrhage
+
+  #1  Secondary malignant neoplasm of brain (cerebellar metastasis) with intratumoral hemorrhage  →  C79.31 — Secondary malignant neoplasm of brain
+      reason: Known cerebellar metastasis with hemorrhage into lesion, treated with CyberKnife; primary focus of current admission.
+  #2  Metastatic high-grade unclassified sarcoma of right femur with pulmonary metastases  →  C40.21 — Malignant neoplasm of long bones of right lower limb
+      reason: High-grade unclassified sarcoma of right femur with documented bilateral pulmonary nodular metastases on imaging.
+  #3  Severe hypoproliferative anemia due to chronic thigh hematoma and malignancy  →  D63.0 — Anemia in neoplastic disease
+      reason: Hgb 7.7, hypoproliferative anemia attributed to malignancy, prior radiation and ongoing oozing into thigh hematoma.
+  #4  Nontraumatic intracranial (intracerebellar) hemorrhage  →  I61.4 — Nontraumatic intracerebral hemorrhage in cerebellum
+      reason: Neurosurgery attributed cerebellar bleed to metastatic lesion rather than fall, making it nontraumatic hemorrhage.
+  #5  Thrombocytopenia with acquired coagulopathy (elevated INR)  →  D69.59 — Other secondary thrombocytopenia
+      reason: Platelets 63 K/uL with documented acquired coagulopathy limiting therapeutic options in advanced malignancy.
+  #6  Chronic nontraumatic right thigh hematoma from recurrent sarcoma  →  M79.81 — Nontraumatic hematoma of soft tissue
+      reason: Enlarging right thigh hematoma without extravasation on CTA, chronically oozing, associated with recurrent sarcoma.
+  #7  Mechanical fall due to weakness and non-weight-bearing right leg  →  W19.XXXA — Unspecified fall, initial encounter
+      reason: Mechanical fall at home attributed to weakness and inability to bear weight on right leg.
+  #8  Encounter for palliative care / hospice transition in terminal malignancy  →  Z51.5 — Encounter for palliative care
+      reason: Patient on hospice with no further treatment options; palliative management documented this admission.
+  #9  Leukocytosis of uncertain etiology in advanced malignancy  →  D72.829 — Elevated white blood cell count, unspecified
+      reason: WBC 16.1 K/uL without documented infection; etiology unspecified.
+  #10  Chronic pulmonary embolism with IVC filter, anticoagulation contraindicated  →  I27.82 — Chronic pulmonary embolism
+      reason: History of extensive bilateral PE, IVC filter placed, anticoagulation stopped due to bleeding risk.

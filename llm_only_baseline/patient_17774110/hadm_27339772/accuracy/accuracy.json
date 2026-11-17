@@ -1,0 +1,173 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "17774110",
+  "hadm_id": "27339772",
+  "generated_at": "2026-08-21T23:53:39.054036",
+  "ground_truth": {
+    "primary_icd_code": "A4189",
+    "primary_dx_title": "Other specified sepsis",
+    "primary_icd_title": "Other specified sepsis",
+    "discharge_diagnosis": "",
+    "diffdx_gt": "Other specified sepsis",
+    "diffdx_gt_source": "icd_title_fallback",
+    "n_diagnoses": 29
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "Other specified sepsis",
+      "rank1_diagnosis": "Septic shock due to Klebsiella aerogenes bacteremia",
+      "rank1_score": 92.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Septic shock due to Klebsiella aerogenes bacteremia",
+      "matched_score": 92.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 1 'Septic shock due to Klebsiella aerogenes bacteremia' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — sepsis due to a specified organism, with the rank simply providing greater specificity (organism and shock severity).",
+      "llm_expanded_ground_truth": "sepsis | sepsis due to other specified organism | bloodstream infection | septicemia | bacteremia with systemic inflammatory response",
+      "llm_expanded_matched": "septic shock | sepsis with circulatory failure | Klebsiella aerogenes (Enterobacter aerogenes) bacteremia | gram-negative bacterial sepsis | septicemia due to specified organism",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Septic shock due to Klebsiella aerogenes bacteremia",
+          "score": 92.0,
+          "confidence": "high",
+          "icd10_primary": "A41.50",
+          "icd10_primary_title": "Gram-negative sepsis, unspecified"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Acute on chronic hepatic failure in HCV cirrhosis with coma",
+          "score": 85.0,
+          "confidence": "high",
+          "icd10_primary": "K72.11",
+          "icd10_primary_title": "Chronic hepatic failure with coma"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Acute hypoxemic respiratory failure with ARDS requiring mechanical ventilation",
+          "score": 80.0,
+          "confidence": "high",
+          "icd10_primary": "J96.01",
+          "icd10_primary_title": "Acute respiratory failure with hypoxia"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Acute kidney injury from acute tubular necrosis requiring CRRT",
+          "score": 78.0,
+          "confidence": "high",
+          "icd10_primary": "N17.0",
+          "icd10_primary_title": "Acute kidney failure with tubular necrosis"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Disseminated intravascular coagulation with severe coagulopathy",
+          "score": 72.0,
+          "confidence": "medium",
+          "icd10_primary": "D65",
+          "icd10_primary_title": "Disseminated intravascular coagulation [defibrination syndrome]"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Metastatic hepatocellular carcinoma with adrenal metastases, terminal",
+          "score": 70.0,
+          "confidence": "high",
+          "icd10_primary": "C22.0",
+          "icd10_primary_title": "Liver cell carcinoma"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Hepatic/toxic metabolic encephalopathy with unresponsiveness",
+          "score": 62.0,
+          "confidence": "medium",
+          "icd10_primary": "G93.41",
+          "icd10_primary_title": "Metabolic encephalopathy"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Atrial fibrillation/flutter with rapid ventricular response",
+          "score": 45.0,
+          "confidence": "low",
+          "icd10_primary": "I48.91",
+          "icd10_primary_title": "Unspecified atrial fibrillation"
+        },
+        {
+          "rank": 9,
+          "diagnosis": "Inferior vena cava thrombus (venous thromboembolism)",
+          "score": 35.0,
+          "confidence": "low",
+          "icd10_primary": "I82.220",
+          "icd10_primary_title": "Acute embolism and thrombosis of inferior vena cava"
+        }
+      ],
+      "n_diffdx": 9
+    },
+    "icd_linked": {
+      "ground_truth_icd": "A41.89",
+      "ground_truth_icd_title": "Other specified sepsis",
+      "rank1_predicted_icd": "A41.50",
+      "rank1_predicted_icd_title": "Gram-negative sepsis, unspecified",
+      "matched_predicted_icd": "A41.50",
+      "matched_predicted_icd_title": "Gram-negative sepsis, unspecified",
+      "icd_match": true,
+      "icd_exact_match": false,
+      "icd_family_match": true,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "Mapped A41.50 (Gram-negative sepsis, unspecified) and billed A41.89 (Other specified sepsis) are both within the A41 'Other sepsis' category and code the same principal condition — sepsis due to a specified/other organism; a coder would accept the mapped code as clinically equivalent for the sepsis principal diagnosis, differing only in organism-specific subcategory.",
+      "llm_expanded_ground_truth_icd": "A41.89 Other specified sepsis | A41 Other sepsis | sepsis due to other specified organism",
+      "llm_expanded_matched_icd": "A41.50 Gram-negative sepsis, unspecified | A41.5 Sepsis due to other Gram-negative organisms | A41.51/A41.59 gram-negative septicemia | R65.21 severe sepsis with septic shock (secondary)",
+      "stage9_final_primary_icd": "A41.50",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
+    },
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 1 'Septic shock due to Klebsiella aerogenes bacteremia' names the same principal condition as the physician discharge diagnosis 'Other specified sepsis' — sepsis due to a specified organism, with the rank simply providing greater specificity (organism and shock severity).",
+      "ground_truth_expansions": [
+        "sepsis",
+        "sepsis due to other specified organism",
+        "bloodstream infection",
+        "septicemia",
+        "bacteremia with systemic inflammatory response"
+      ],
+      "matched_diagnosis_expansions": [
+        "septic shock",
+        "sepsis with circulatory failure",
+        "Klebsiella aerogenes (Enterobacter aerogenes) bacteremia",
+        "gram-negative bacterial sepsis",
+        "septicemia due to specified organism"
+      ],
+      "icd_equivalent": true,
+      "icd_confidence": "medium",
+      "icd_reason": "Mapped A41.50 (Gram-negative sepsis, unspecified) and billed A41.89 (Other specified sepsis) are both within the A41 'Other sepsis' category and code the same principal condition — sepsis due to a specified/other organism; a coder would accept the mapped code as clinically equivalent for the sepsis principal diagnosis, differing only in organism-specific subcategory.",
+      "ground_truth_icd_expansions": [
+        "A41.89 Other specified sepsis",
+        "A41 Other sepsis",
+        "sepsis due to other specified organism"
+      ],
+      "matched_icd_expansions": [
+        "A41.50 Gram-negative sepsis, unspecified",
+        "A41.5 Sepsis due to other Gram-negative organisms",
+        "A41.51/A41.59 gram-negative septicemia",
+        "R65.21 severe sepsis with septic shock (secondary)"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

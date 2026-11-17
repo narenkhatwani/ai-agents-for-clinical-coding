@@ -3,7 +3,7 @@ ACCURACY vs GROUND TRUTH (LLM query expansion)
 
 Patient ID       : 10426859
 HADM ID          : 29908281
-Generated        : 2026-08-20T17:29:03.143723
+Generated        : 2026-08-20T22:06:03.784065
 
 DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
 -------------------------------------------------------
@@ -18,7 +18,7 @@ DIFFERENTIAL DIAGNOSIS vs PHYSICIAN DISCHARGE DIAGNOSIS
   Matched DiffDx rank  : 1
   Matched diagnosis    : Supraventricular tachycardia
     score=85.0  confidence=high
-  LLM reason           : Rank 1 'Supraventricular tachycardia' names the identical principal condition as the physician discharge diagnosis 'supraventricular tachycardia' (the trailing 'non-displaced' refers to an accompanying non-displaced fracture descriptor, not the principal diagnosis).
+  LLM reason           : Physician discharge diagnosis is supraventricular tachycardia (SVT); Rank 1 states 'Supraventricular tachycardia' — identical principal condition. The trailing 'non-displaced' in the note refers to an associated fracture descriptor, not the principal cardiac diagnosis.
 
 LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
 -----------------------------------------------------------
@@ -31,7 +31,7 @@ LINKED ICD vs BILLED PRIMARY ICD (from matched DiffDx rank)
   ICD 3-char family    : YES
   ICD LLM match        : YES
   Is rank-1 ICD match  : YES
-  LLM ICD reason       : Mapped code I47.10 (supraventricular tachycardia, unspecified) is the current-revision expansion of billed I47.1 (supraventricular tachycardia); a coder would accept these as the same principal condition code.
+  LLM ICD reason       : Mapped I47.10 (supraventricular tachycardia, unspecified) is the current-code-set equivalent of billed I47.1 (supraventricular tachycardia); same principal condition and same code family — a coder would accept these as equivalent.
   Stage 9 final ICD    : I47.10 (debug)
 
 FULL DIFFERENTIAL LIST

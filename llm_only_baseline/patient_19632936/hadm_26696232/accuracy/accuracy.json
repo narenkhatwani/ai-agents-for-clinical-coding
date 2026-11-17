@@ -1,0 +1,163 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "19632936",
+  "hadm_id": "26696232",
+  "generated_at": "2026-08-21T23:54:10.276081",
+  "ground_truth": {
+    "primary_icd_code": "D509",
+    "primary_dx_title": "Iron deficiency anemia, unspecified",
+    "primary_icd_title": "Iron deficiency anemia, unspecified",
+    "discharge_diagnosis": "Macrocytic anemia",
+    "diffdx_gt": "Macrocytic anemia",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 15
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "Macrocytic anemia",
+      "rank1_diagnosis": "Iron deficiency anemia due to chronic occult gastrointestinal blood loss",
+      "rank1_score": 90.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": false,
+      "matched_diffdx_rank": 3,
+      "matched_diagnosis": "Unexplained macrocytic anemia suspicious for myelodysplastic syndrome",
+      "matched_score": 55.0,
+      "matched_confidence": "medium",
+      "llm_relationship": "same_principal_more_specific",
+      "llm_confidence": "high",
+      "llm_reason": "Rank 3 'Unexplained macrocytic anemia suspicious for myelodysplastic syndrome' explicitly names macrocytic anemia, the same principal condition as the physician discharge diagnosis 'Macrocytic anemia', with an added etiologic suspicion. Ranks 1 and 2 describe iron deficiency/blood loss (microcytic/posthemorrhagic) anemia, which is a different principal anemia type, so the lowest truly matching rank is 3.",
+      "llm_expanded_ground_truth": "Macrocytic anemia | Anemia with elevated MCV | Megaloblastic anemia (subtype) | Large red cell anemia | B12/folate deficiency anemia (common cause)",
+      "llm_expanded_matched": "Unexplained macrocytic anemia | Macrocytic anemia of uncertain etiology | Anemia with high mean corpuscular volume | Possible myelodysplastic syndrome (MDS)",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Iron deficiency anemia due to chronic occult gastrointestinal blood loss",
+          "score": 90.0,
+          "confidence": "high",
+          "icd10_primary": "D50.0",
+          "icd10_primary_title": "Iron deficiency anemia secondary to blood loss (chronic)"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Acute on chronic blood loss anemia requiring transfusion",
+          "score": 72.0,
+          "confidence": "medium",
+          "icd10_primary": "D62",
+          "icd10_primary_title": "Acute posthemorrhagic anemia"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Unexplained macrocytic anemia suspicious for myelodysplastic syndrome",
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": "D53.1",
+          "icd10_primary_title": "Other megaloblastic anemias, not elsewhere classified"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Vitamin B12 deficiency contributing to macrocytic anemia",
+          "score": 48.0,
+          "confidence": "medium",
+          "icd10_primary": "E53.8",
+          "icd10_primary_title": "Deficiency of other specified B group vitamins"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Occult gastrointestinal hemorrhage from Barrett's esophagus and gastritis on anticoagulation",
+          "score": 45.0,
+          "confidence": "medium",
+          "icd10_primary": "K92.2",
+          "icd10_primary_title": "Gastrointestinal hemorrhage, unspecified"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Dyspnea on exertion secondary to symptomatic anemia",
+          "score": 42.0,
+          "confidence": "medium",
+          "icd10_primary": "R06.02",
+          "icd10_primary_title": "Shortness of breath"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Nonrheumatic aortic valve stenosis, mild to moderate",
+          "score": 32.0,
+          "confidence": "medium",
+          "icd10_primary": "I35.0",
+          "icd10_primary_title": "Nonrheumatic aortic (valve) stenosis"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Chronic atrial fibrillation on long-term warfarin anticoagulation",
+          "score": 30.0,
+          "confidence": "high",
+          "icd10_primary": "I48.20",
+          "icd10_primary_title": "Chronic atrial fibrillation, unspecified"
+        }
+      ],
+      "n_diffdx": 8
+    },
+    "icd_linked": {
+      "ground_truth_icd": "D50.9",
+      "ground_truth_icd_title": "Iron deficiency anemia, unspecified",
+      "rank1_predicted_icd": "D50.0",
+      "rank1_predicted_icd_title": "Iron deficiency anemia secondary to blood loss (chronic)",
+      "matched_predicted_icd": "D53.1",
+      "matched_predicted_icd_title": "Other megaloblastic anemias, not elsewhere classified",
+      "icd_match": false,
+      "icd_exact_match": false,
+      "icd_family_match": false,
+      "icd_llm_match": false,
+      "is_rank1_icd_match": false,
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "Mapped ICD at matched rank is D53.1 (other megaloblastic anemias), whereas the billed primary code is D50.9 (iron deficiency anemia, unspecified). These are distinct anemia categories (macrocytic/megaloblastic vs microcytic iron deficiency) in different ICD-10 blocks and would not be accepted as interchangeable by a coder.",
+      "llm_expanded_ground_truth_icd": "D50.9 Iron deficiency anemia, unspecified | Sideropenic anemia | Hypochromic microcytic anemia due to iron deficiency",
+      "llm_expanded_matched_icd": "D53.1 Other megaloblastic anemias, not elsewhere classified | Megaloblastic anemia NOS | Macrocytic anemia related codes: D53.9, D51.9, D52.9",
+      "stage9_final_primary_icd": "D50.0",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": false,
+      "matched_diffdx_rank": 3
+    },
+    "llm_qe_raw": {
+      "matched_rank": 3,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal_more_specific",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Rank 3 'Unexplained macrocytic anemia suspicious for myelodysplastic syndrome' explicitly names macrocytic anemia, the same principal condition as the physician discharge diagnosis 'Macrocytic anemia', with an added etiologic suspicion. Ranks 1 and 2 describe iron deficiency/blood loss (microcytic/posthemorrhagic) anemia, which is a different principal anemia type, so the lowest truly matching rank is 3.",
+      "ground_truth_expansions": [
+        "Macrocytic anemia",
+        "Anemia with elevated MCV",
+        "Megaloblastic anemia (subtype)",
+        "Large red cell anemia",
+        "B12/folate deficiency anemia (common cause)"
+      ],
+      "matched_diagnosis_expansions": [
+        "Unexplained macrocytic anemia",
+        "Macrocytic anemia of uncertain etiology",
+        "Anemia with high mean corpuscular volume",
+        "Possible myelodysplastic syndrome (MDS)"
+      ],
+      "icd_equivalent": false,
+      "icd_confidence": "high",
+      "icd_reason": "Mapped ICD at matched rank is D53.1 (other megaloblastic anemias), whereas the billed primary code is D50.9 (iron deficiency anemia, unspecified). These are distinct anemia categories (macrocytic/megaloblastic vs microcytic iron deficiency) in different ICD-10 blocks and would not be accepted as interchangeable by a coder.",
+      "ground_truth_icd_expansions": [
+        "D50.9 Iron deficiency anemia, unspecified",
+        "Sideropenic anemia",
+        "Hypochromic microcytic anemia due to iron deficiency"
+      ],
+      "matched_icd_expansions": [
+        "D53.1 Other megaloblastic anemias, not elsewhere classified",
+        "Megaloblastic anemia NOS",
+        "Macrocytic anemia related codes: D53.9, D51.9, D52.9"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}

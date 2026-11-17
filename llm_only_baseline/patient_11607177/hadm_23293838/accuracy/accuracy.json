@@ -1,0 +1,180 @@
+{
+  "stage": "llm_only_baseline",
+  "type": "accuracy_vs_ground_truth",
+  "method": "llm_query_expansion",
+  "pipeline": "llm_only_baseline",
+  "patient_id": "11607177",
+  "hadm_id": "23293838",
+  "generated_at": "2026-08-21T23:52:22.512205",
+  "ground_truth": {
+    "primary_icd_code": "I472",
+    "primary_dx_title": "Ventricular tachycardia",
+    "primary_icd_title": "Ventricular tachycardia",
+    "discharge_diagnosis": "Refractory VT s/p stellate ganglion block; Heartware HVAD for nonischemic cardiomyopathy - listed at ___ for heart transplantation status IA (b)",
+    "diffdx_gt": "Refractory VT s/p stellate ganglion block; Heartware HVAD for nonischemic cardiomyopathy - listed at ___ for heart transplantation status IA (b)",
+    "diffdx_gt_source": "discharge_diagnosis",
+    "n_diagnoses": 13
+  },
+  "evaluation": {
+    "diagnosis": {
+      "ground_truth_primary": "Refractory VT s/p stellate ganglion block; Heartware HVAD for nonischemic cardiomyopathy - listed at ___ for heart transplantation status IA (b)",
+      "rank1_diagnosis": "Refractory ventricular tachycardia with appropriate ICD shock",
+      "rank1_score": 95.0,
+      "rank1_confidence": "high",
+      "match": true,
+      "is_rank1_match": true,
+      "matched_diffdx_rank": 1,
+      "matched_diagnosis": "Refractory ventricular tachycardia with appropriate ICD shock",
+      "matched_score": 95.0,
+      "matched_confidence": "high",
+      "llm_relationship": "same_principal",
+      "llm_confidence": "high",
+      "llm_reason": "Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia; Rank 1 'Refractory ventricular tachycardia with appropriate ICD shock' names the same principal condition (ventricular tachycardia), with the additional detail of device shock not changing the principal diagnosis.",
+      "llm_expanded_ground_truth": "VT = ventricular tachycardia | refractory ventricular tachycardia | ventricular arrhythmia refractory to therapy | s/p = status post stellate ganglion block (treatment for VT storm) | HVAD = HeartWare ventricular assist device | nonischemic cardiomyopathy",
+      "llm_expanded_matched": "refractory ventricular tachycardia | VT | ventricular tachyarrhythmia | ICD = implantable cardioverter-defibrillator shock for VT",
+      "heuristic_specificity_match": false,
+      "diagnosis_items": [
+        {
+          "rank": 1,
+          "diagnosis": "Refractory ventricular tachycardia with appropriate ICD shock",
+          "score": 95.0,
+          "confidence": "high",
+          "icd10_primary": "I47.20",
+          "icd10_primary_title": "Ventricular tachycardia, unspecified"
+        },
+        {
+          "rank": 2,
+          "diagnosis": "Chronic systolic (congestive) heart failure, NYHA class III/stage D",
+          "score": 82.0,
+          "confidence": "high",
+          "icd10_primary": "I50.22",
+          "icd10_primary_title": "Chronic systolic (congestive) heart failure"
+        },
+        {
+          "rank": 3,
+          "diagnosis": "Non-ischemic dilated cardiomyopathy with biventricular dysfunction",
+          "score": 80.0,
+          "confidence": "high",
+          "icd10_primary": "I42.0",
+          "icd10_primary_title": "Dilated cardiomyopathy"
+        },
+        {
+          "rank": 4,
+          "diagnosis": "Presence of left ventricular assist device (HeartMate II)",
+          "score": 76.0,
+          "confidence": "high",
+          "icd10_primary": "Z95.811",
+          "icd10_primary_title": "Presence of heart assist device"
+        },
+        {
+          "rank": 5,
+          "diagnosis": "Acute on chronic volume overload (decompensated right heart failure)",
+          "score": 55.0,
+          "confidence": "medium",
+          "icd10_primary": "I50.813",
+          "icd10_primary_title": "Acute on chronic right heart failure"
+        },
+        {
+          "rank": 6,
+          "diagnosis": "Horner syndrome following stellate ganglion block",
+          "score": 48.0,
+          "confidence": "medium",
+          "icd10_primary": "G90.2",
+          "icd10_primary_title": "Horner's syndrome"
+        },
+        {
+          "rank": 7,
+          "diagnosis": "Supratherapeutic INR on long-term warfarin anticoagulation",
+          "score": 40.0,
+          "confidence": "medium",
+          "icd10_primary": "R79.1",
+          "icd10_primary_title": "Abnormal coagulation profile"
+        },
+        {
+          "rank": 8,
+          "diagnosis": "Chronic kidney disease with mild creatinine elevation",
+          "score": 32.0,
+          "confidence": "low",
+          "icd10_primary": "N18.9",
+          "icd10_primary_title": "Chronic kidney disease, unspecified"
+        },
+        {
+          "rank": 9,
+          "diagnosis": "Type 2 diabetes mellitus without complications",
+          "score": 25.0,
+          "confidence": "medium",
+          "icd10_primary": "E11.9",
+          "icd10_primary_title": "Type 2 diabetes mellitus without complications"
+        },
+        {
+          "rank": 10,
+          "diagnosis": "Chronic tophaceous gout on urate-lowering therapy",
+          "score": 22.0,
+          "confidence": "medium",
+          "icd10_primary": "M1A.9XX0",
+          "icd10_primary_title": "Chronic gout, unspecified, without tophus (tophi)"
+        }
+      ],
+      "n_diffdx": 10
+    },
+    "icd_linked": {
+      "ground_truth_icd": "I47.2",
+      "ground_truth_icd_title": "Ventricular tachycardia",
+      "rank1_predicted_icd": "I47.20",
+      "rank1_predicted_icd_title": "Ventricular tachycardia, unspecified",
+      "matched_predicted_icd": "I47.20",
+      "matched_predicted_icd_title": "Ventricular tachycardia, unspecified",
+      "icd_match": true,
+      "icd_exact_match": false,
+      "icd_family_match": true,
+      "icd_llm_match": true,
+      "is_rank1_icd_match": true,
+      "is_rank1_icd_family_match": true,
+      "llm_icd_reason": "Billed I47.2 (Ventricular tachycardia) and mapped I47.20 (Ventricular tachycardia, unspecified) are the same code family/category for ventricular tachycardia; I47.20 is the ICD-10-CM specific successor code for I47.2 and a coder would accept them as equivalent.",
+      "llm_expanded_ground_truth_icd": "I47.2 Ventricular tachycardia | paroxysmal tachycardia category I47 | includes I47.20 unspecified VT, I47.21 torsades, I47.29 other VT",
+      "llm_expanded_matched_icd": "I47.20 Ventricular tachycardia, unspecified | subcode of I47.2 | sustained/refractory VT",
+      "stage9_final_primary_icd": "I47.20",
+      "diagnosis_match": true,
+      "is_rank1_diagnosis_match": true,
+      "matched_diffdx_rank": 1
+    },
+    "llm_qe_raw": {
+      "matched_rank": 1,
+      "diagnosis_equivalent": true,
+      "diagnosis_relationship": "same_principal",
+      "diagnosis_confidence": "high",
+      "diagnosis_reason": "Physician discharge diagnosis 'Refractory VT s/p stellate ganglion block' expands to refractory ventricular tachycardia; Rank 1 'Refractory ventricular tachycardia with appropriate ICD shock' names the same principal condition (ventricular tachycardia), with the additional detail of device shock not changing the principal diagnosis.",
+      "ground_truth_expansions": [
+        "VT = ventricular tachycardia",
+        "refractory ventricular tachycardia",
+        "ventricular arrhythmia refractory to therapy",
+        "s/p = status post stellate ganglion block (treatment for VT storm)",
+        "HVAD = HeartWare ventricular assist device",
+        "nonischemic cardiomyopathy"
+      ],
+      "matched_diagnosis_expansions": [
+        "refractory ventricular tachycardia",
+        "VT",
+        "ventricular tachyarrhythmia",
+        "ICD = implantable cardioverter-defibrillator shock for VT"
+      ],
+      "icd_equivalent": true,
+      "icd_confidence": "high",
+      "icd_reason": "Billed I47.2 (Ventricular tachycardia) and mapped I47.20 (Ventricular tachycardia, unspecified) are the same code family/category for ventricular tachycardia; I47.20 is the ICD-10-CM specific successor code for I47.2 and a coder would accept them as equivalent.",
+      "ground_truth_icd_expansions": [
+        "I47.2 Ventricular tachycardia",
+        "paroxysmal tachycardia category I47",
+        "includes I47.20 unspecified VT, I47.21 torsades, I47.29 other VT"
+      ],
+      "matched_icd_expansions": [
+        "I47.20 Ventricular tachycardia, unspecified",
+        "subcode of I47.2",
+        "sustained/refractory VT"
+      ],
+      "_cache_hit": false
+    }
+  },
+  "has_stage8": true,
+  "has_stage9": true,
+  "has_ground_truth": true
+}
